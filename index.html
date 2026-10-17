@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EFT 互动地图 · 离线免费版</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="panel" id="sidebar">
+  <header class="brand">
+    <h1>EFT 互动地图</h1>
+    <p class="brand-sub">离线免费版 · 不读取游戏进程</p>
+  </header>
+
+  <section class="block">
+    <h2>地图</h2>
+    <div id="map-list" class="map-list" role="listbox" aria-label="地图列表"></div>
+  </section>
+
+  <section class="block">
+    <h2>图层</h2>
+    <div id="layer-toggles" class="toggles">
+      <label class="toggle"><input type="checkbox" data-layer="extracts" checked><span class="dot dot-extract"></span>撤离点</label>
+      <label class="toggle"><input type="checkbox" data-layer="transits" checked><span class="dot dot-transit"></span>过境点</label>
+      <label class="toggle"><input type="checkbox" data-layer="spawns"><span class="dot dot-spawn"></span>出生点</label>
+      <label class="toggle"><input type="checkbox" data-layer="labels" checked><span class="dot dot-label"></span>地名标注</label>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>搜索</h2>
+    <input id="search" class="search" type="search" placeholder="输入撤离点 / 过境点 / 地名…" autocomplete="off">
+    <div id="search-results" class="search-results" hidden></div>
+  </section>
+
+  <section class="block" id="detail-block" hidden>
+    <h2>标记详情</h2>
+    <dl id="detail" class="detail"></dl>
+  </section>
+
+  <footer class="credits">
+    <p><strong>数据来源</strong>：tarkov.dev 公开数据（<a href="https://github.com/the-hideout/tarkov-dev" target="_blank" rel="noopener">the-hideout/tarkov-dev</a>，MIT）；底图 SVG（<a href="https://github.com/the-hideout/tarkov-dev-svg-maps" target="_blank" rel="noopener">tarkov-dev-svg-maps</a>，CC BY-NC-SA 4.0，非商业）。</p>
+    <p>《逃离塔科夫》商标与原始美术归 Battlestate Games。本工具永久免费、严禁售卖，与游戏进程零交互。</p>
+    <p id="meta-line" class="muted"></p>
+  </footer>
+</aside>
+
+<main id="stage">
+  <div id="viewport"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+
+  <div class="hud" id="hud">
+    <button id="zoom-in" title="放大（滚轮向上）">+</button>
+    <button id="zoom-out" title="缩小（滚轮向下）">−</button>
+    <button id="reset" title="复位视图（回到整图适配）">复位</button>
+  </div>
+
+  <div class="statusbar">
+    <span id="status-map">加载中…</span>
+    <span class="sep">|</span>
+    <span id="status-cursor" class="muted">世界坐标：—</span>
+    <span class="grow"></span>
+    <span id="status-position" class="pos-off" title="实时定位需要监听截图目录，M2 接入">定位：未接入</span>
+  </div>
+
+  <div id="error" class="error" hidden></div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

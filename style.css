@@ -1,0 +1,240 @@
+/* EFT 互动地图 · 深色战术风
+   注意：底图 SVG 注入后会带来自己的 .cls-* 样式，故本项目类名统一用 emk- 前缀避免冲突 */
+
+:root {
+  --bg: #0e1013;
+  --panel: #161a1f;
+  --panel-2: #1d222a;
+  --line: #2b323c;
+  --txt: #d9dee5;
+  --muted: #8b93a1;
+  --accent: #8fae4b;
+  --extract-pmc: #6ec06e;
+  --extract-scav: #d9a441;
+  --extract-shared: #6ea8d9;
+  --transit: #a97bd6;
+  --spawn: #7a869a;
+  --label: #b9c0cb;
+  --player: #4fd8e0;
+  --danger: #e06c6c;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--txt);
+  font: 13px/1.5 "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif;
+  overflow: hidden;
+}
+
+body { display: flex; }
+
+/* ---------- 侧栏 ---------- */
+.panel#sidebar {
+  width: 300px;
+  flex: 0 0 300px;
+  height: 100vh;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.brand { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); }
+.brand h1 { margin: 0; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
+.brand-sub { margin: 4px 0 0; font-size: 11px; color: var(--muted); }
+
+.block { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.block h2 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* 地图列表 */
+.map-list { display: flex; flex-direction: column; gap: 2px; }
+.map-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 7px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: var(--txt);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.map-item:hover { background: var(--panel-2); }
+.map-item[aria-selected="true"] {
+  background: rgba(143, 174, 75, .14);
+  border-color: rgba(143, 174, 75, .55);
+}
+.map-item .count { font-size: 11px; color: var(--muted); }
+
+/* 图层开关 */
+.toggles { display: flex; flex-direction: column; gap: 6px; }
+.toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.toggle input { accent-color: var(--accent); margin: 0; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.dot-extract { background: var(--extract-pmc); }
+.dot-transit { background: var(--transit); }
+.dot-spawn { background: var(--spawn); }
+.dot-label { background: var(--label); border-radius: 2px; }
+
+/* 搜索 */
+.search {
+  width: 100%;
+  padding: 7px 9px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--txt);
+  font: inherit;
+}
+.search:focus { outline: none; border-color: var(--accent); }
+.search-results { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; max-height: 190px; overflow-y: auto; }
+.search-item {
+  display: flex; justify-content: space-between; gap: 8px;
+  padding: 6px 9px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--txt);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.search-item:hover { border-color: var(--accent); }
+.search-item .kind { font-size: 11px; color: var(--muted); flex: 0 0 auto; }
+.search-empty { padding: 6px 2px; font-size: 12px; color: var(--muted); }
+
+/* 标记详情 */
+.detail { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 12px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; word-break: break-all; }
+
+/* 署名 */
+.credits { margin-top: auto; padding: 12px 16px 16px; font-size: 11px; color: var(--muted); }
+.credits p { margin: 0 0 6px; }
+.credits a { color: var(--accent); text-decoration: none; }
+.credits a:hover { text-decoration: underline; }
+.muted { color: var(--muted); }
+
+/* ---------- 地图区 ---------- */
+#stage {
+  position: relative;
+  flex: 1 1 auto;
+  height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 40%, #171b21 0%, var(--bg) 72%);
+}
+#viewport {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+#map-svg { width: 100%; height: 100%; display: block; }
+
+/* HUD */
+.hud { position: absolute; right: 12px; top: 12px; display: flex; gap: 6px; }
+.hud button {
+  min-width: 34px;
+  padding: 6px 9px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--txt);
+  font: 13px/1 "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  cursor: pointer;
+}
+.hud button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 状态条 */
+.statusbar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  background: rgba(16, 19, 23, .88);
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+  pointer-events: none;
+}
+.statusbar .grow { flex: 1 1 auto; }
+.statusbar .sep { opacity: .4; }
+.pos-off { color: var(--muted); }
+.pos-on { color: var(--player); }
+
+/* 错误提示 */
+.error {
+  position: absolute; left: 50%; top: 46%;
+  transform: translate(-50%, -50%);
+  max-width: 560px;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.error code {
+  background: var(--bg);
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: var(--accent);
+}
+
+/* ---------- 注入的底图 / 覆盖层 ---------- */
+#stage svg .emk-hidden { display: none; }
+
+.emk-label {
+  fill: var(--label);
+  paint-order: stroke;
+  stroke: rgba(8, 10, 12, .85);
+  stroke-width: 2.4px;
+  font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  pointer-events: none;
+}
+
+.emk-marker { cursor: pointer; }
+.emk-marker circle {
+  stroke: rgba(8, 10, 12, .9);
+  stroke-width: 1.1px;
+  vector-effect: non-scaling-stroke;
+}
+.emk-extract-pmc circle { fill: var(--extract-pmc); }
+.emk-extract-scav circle { fill: var(--extract-scav); }
+.emk-extract-shared circle { fill: var(--extract-shared); }
+.emk-transit circle { fill: var(--transit); }
+.emk-spawn { pointer-events: none; }
+.emk-spawn circle { fill: var(--spawn); opacity: .75; }
+
+/* 高亮脉冲环：用 CSS transform 动画（不使用 SVG2 的 r 动画，兼容性更稳） */
+.emk-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: emkRing 1.6s ease-out 2;
+}
+@keyframes emkRing {
+  from { transform: scale(.35); opacity: 1; }
+  to { transform: scale(2.8); opacity: 0; }
+}
+
+@media (max-width: 780px) {
+  body { flex-direction: column; }
+  .panel#sidebar { width: 100%; flex: 0 0 auto; height: auto; max-height: 46vh; }
+  #stage { height: 54vh; }
+}
