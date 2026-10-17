@@ -2,11 +2,15 @@
 __pycache__/
 *.py[cod]
 .venv/
+.pytest_cache/
 
 # 打包产物
 dist/
 build/_work/
 *.spec
+
+# 构建期原始缓存（上游大体积原始数据，不进仓库）
+build-cache/
 
 # 编辑器/系统
 .vscode/
