@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-17T04:49:15Z",
+ "generatedAt": "2026-10-17T04:59:54Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -8,15 +8,15 @@
    "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
    "url": "https://raw.githubusercontent.com/the-hideout/tarkov-dev/main/src/data/maps.json",
    "license": "MIT",
-   "sha256": "61b1ea800ef2ee01aa2466999c2b01072fcdb709a60d887025767ed530680a75",
-   "bytes": 43627
+   "sha256": "c53a327dcdcff67a49b9fe2d150731edb4c1611dfc2f75db2ce97444dee2ef77",
+   "bytes": 109867
   },
   {
    "name": "tarkov.dev 标注数据（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/maps",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "a3d0049a8515592a79d3cd04bf6b2524e3a6be292faaa4a0a6ef956b52b2694a",
-   "bytes": 8755228
+   "sha256": "7b4ec25cfd15ec0250f087ca52ef9763c6fc46b27fbb28561dfb661990a9bb71",
+   "bytes": 8729868
   },
   {
    "name": "tarkov.dev 中文翻译（json.tarkov.dev）",

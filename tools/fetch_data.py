@@ -156,6 +156,11 @@ def flatten_positions(node):
 # --------------------------------------------------------------------------- #
 # 构建
 # --------------------------------------------------------------------------- #
+def svg_basename(entry):
+    """从上游 svgPath 取底图文件名：``/maps/svg/Customs.svg`` → ``Customs.svg``。"""
+    return entry["svgPath"].rstrip("/").split("/")[-1]
+
+
 def select_maps(config, requested):
     """从上游配置里挑出有 SVG 底图的图（M1 只收录这类）。"""
     available = {}
@@ -248,8 +253,11 @@ def build_map(entry, markers_by_name, translations, svg_viewbox):
         "key": key,
         "id": map_id,
         "name": name,
-        "svg": "assets/maps/%s.svg" % entry["svgPath"].rstrip("/").split("/")[-1],
+        "svg": "assets/maps/%s" % svg_basename(entry),
         "viewBox": svg_viewbox,
+        # 底图铺满的世界坐标矩形（供前端推算外边距，也供测试校验角点不变式）
+        "svgBounds": [[float(svg_bounds[0][0]), float(svg_bounds[0][1])],
+                      [float(svg_bounds[1][0]), float(svg_bounds[1][1])]],
         "svgLayer": entry.get("svgLayer"),
         "worldToSvg": {k: world_to_svg[k] for k in "abcdef"},
         "labels": labels,
@@ -321,7 +329,7 @@ def run(args):
     viewboxes = {}
     svg_bytes = 0
     for key, entry in selected.items():
-        svg_name = entry["svgPath"].rstrip("/").split("/")[-1]
+        svg_name = svg_basename(entry)
         target = ASSETS_DIR / svg_name
         if target.exists() and not args.force:
             text = target.read_text(encoding="utf-8", errors="replace")

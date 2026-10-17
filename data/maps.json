@@ -1,21 +1,21 @@
 {
  "schema": 1,
  "gameMode": "regular",
- "generatedAt": "2026-10-17T04:49:15Z",
+ "generatedAt": "2026-10-17T04:59:54Z",
  "sources": [
   {
    "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
    "url": "https://raw.githubusercontent.com/the-hideout/tarkov-dev/main/src/data/maps.json",
    "license": "MIT",
-   "sha256": "61b1ea800ef2ee01aa2466999c2b01072fcdb709a60d887025767ed530680a75",
-   "bytes": 43627
+   "sha256": "c53a327dcdcff67a49b9fe2d150731edb4c1611dfc2f75db2ce97444dee2ef77",
+   "bytes": 109867
   },
   {
    "name": "tarkov.dev 标注数据（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/maps",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "a3d0049a8515592a79d3cd04bf6b2524e3a6be292faaa4a0a6ef956b52b2694a",
-   "bytes": 8755228
+   "sha256": "7b4ec25cfd15ec0250f087ca52ef9763c6fc46b27fbb28561dfb661990a9bb71",
+   "bytes": 8729868
   },
   {
    "name": "tarkov.dev 中文翻译（json.tarkov.dev）",
@@ -37,12 +37,22 @@
    "key": "streets-of-tarkov",
    "id": "5714dc692459777137212e12",
    "name": "塔科夫街区",
-   "svg": "assets/maps/StreetsOfTarkov.svg.svg",
+   "svg": "assets/maps/StreetsOfTarkov.svg",
    "viewBox": [
     0.0,
     0.0,
     605.32395,
     831.57753
+   ],
+   "svgBounds": [
+    [
+     323.0,
+     -295.0
+    ],
+    [
+     -280.0,
+     532.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -5023,12 +5033,22 @@
    "key": "ground-zero",
    "id": "653e6760052c01c1c805532f",
    "name": "中心区",
-   "svg": "assets/maps/GroundZero.svg.svg",
+   "svg": "assets/maps/GroundZero.svg",
    "viewBox": [
     0.0,
     0.0,
     348.92543,
     488.44792
+   ],
+   "svgBounds": [
+    [
+     249.0,
+     -124.0
+    ],
+    [
+     -99.0,
+     364.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -7263,12 +7283,22 @@
    "key": "customs",
    "id": "56f40101d2720b2a4d8b45d6",
    "name": "海关",
-   "svg": "assets/maps/Customs.svg.svg",
+   "svg": "assets/maps/Customs.svg",
    "viewBox": [
     0.0,
     0.0,
     1062.4827,
     535.17401
+   ],
+   "svgBounds": [
+    [
+     698.0,
+     -307.0
+    ],
+    [
+     -372.0,
+     237.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -10566,12 +10596,22 @@
    "key": "factory",
    "id": "55f2d3fd4bdc2d5f408b4567",
    "name": "工厂",
-   "svg": "assets/maps/Factory.svg.svg",
+   "svg": "assets/maps/Factory.svg",
    "viewBox": [
     0.0,
     0.0,
     130.81831,
     141.23242
+   ],
+   "svgBounds": [
+    [
+     77.0,
+     -64.5
+    ],
+    [
+     -65.5,
+     67.4
+    ]
    ],
    "svgLayer": "Ground_Floor",
    "worldToSvg": {
@@ -12030,12 +12070,22 @@
    "key": "interchange",
    "id": "5714dbc024597771384a510d",
    "name": "立交桥",
-   "svg": "assets/maps/Interchange.svg.svg",
+   "svg": "assets/maps/Interchange.svg",
    "viewBox": [
     0.0,
     0.0,
     1127.6852,
     947.02582
+   ],
+   "svgBounds": [
+    [
+     598.0,
+     -442.0
+    ],
+    [
+     -433.0,
+     426.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -14953,12 +15003,22 @@
    "key": "lighthouse",
    "id": "5704e4dad2720bb55b8b4567",
    "name": "灯塔",
-   "svg": "assets/maps/Lighthouse.svg.svg",
+   "svg": "assets/maps/Lighthouse.svg",
    "viewBox": [
     0.0,
     0.0,
     1059.3752,
     1722.9499
+   ],
+   "svgBounds": [
+    [
+     515.0,
+     -998.0
+    ],
+    [
+     -545.0,
+     725.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -17452,12 +17512,22 @@
    "key": "reserve",
    "id": "5704e5fad2720bc05b8b4567",
    "name": "储备站",
-   "svg": "assets/maps/Reserve.svg.svg",
+   "svg": "assets/maps/Reserve.svg",
    "viewBox": [
     0.0,
     0.0,
     827.28742,
     761.16437
+   ],
+   "svgBounds": [
+    [
+     289.0,
+     -274.0
+    ],
+    [
+     -303.0,
+     272.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -19479,12 +19549,22 @@
    "key": "shoreline",
    "id": "5704e554d2720bac5b8b456e",
    "name": "海岸线",
-   "svg": "assets/maps/Shoreline.svg.svg",
+   "svg": "assets/maps/Shoreline.svg",
    "viewBox": [
     0.0,
     0.0,
     1559.5717,
     1032.4935
+   ],
+   "svgBounds": [
+    [
+     504.0,
+     -415.0
+    ],
+    [
+     -1056.0,
+     618.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -22753,12 +22833,22 @@
    "key": "terminal",
    "id": "65cc8f81a9aac3e77d0cfd3e",
    "name": "码头",
-   "svg": "assets/maps/Terminal.svg.svg",
+   "svg": "assets/maps/Terminal.svg",
    "viewBox": [
     0.0,
     0.0,
     887.70096,
     1043.9554
+   ],
+   "svgBounds": [
+    [
+     463.0,
+     -580.0
+    ],
+    [
+     -433.0,
+     475.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
@@ -23975,12 +24065,22 @@
    "key": "woods",
    "id": "5704e3c2d2720bac5b8b4567",
    "name": "森林",
-   "svg": "assets/maps/Woods.svg.svg",
+   "svg": "assets/maps/Woods.svg",
    "viewBox": [
     0.0,
     0.0,
     1472.7926,
     1420.5995
+   ],
+   "svgBounds": [
+    [
+     646.0,
+     -914.0
+    ],
+    [
+     -761.0,
+     442.0
+    ]
    ],
    "svgLayer": "Ground_Level",
    "worldToSvg": {
