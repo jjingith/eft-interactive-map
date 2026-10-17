@@ -60,7 +60,7 @@
 | --- | --- | --- | --- |
 | T1 | 仓库骨架 | `.gitignore`（含 `build-cache/`、`dist/`、`*.spec`、`__pycache__`）、`README.md` 占位、`tools/`、`assets/maps/`、`data/`、`tests/` | 目录齐备，`.gitignore` 已生效 |
 | T2 | `tools/fetch_data.py` | 拉取 3 个 JSON + N 个 SVG → 规范化 | `python tools/fetch_data.py` 成功产出 `data/maps.json`（≤ 1 MB）与 10 张 SVG；重复运行幂等 |
-| T3 | 坐标变换模块 `tools/coord.py` | `compute_world_to_svg(mapcfg, viewbox)` 纯函数（被 T2 与测试复用） | 单测：bounds 两角点 → `(0,0)`/`(W,H)`；所有标注点在 viewBox 内 |
+| T3 | 坐标变换模块 `tools/coord.py` | `compute_world_to_svg(transform, rotation, svg_bounds, viewbox)` 纯函数（已随 T2 落地，T3 补测试） | 单测：矩形两角点 → `(0,0)`/`(W,H)`；旋转 0/90/180/270；每图 ≥90% 标注点在 viewBox 内；海关黄金值对照 |
 | T4 | `index.html` + `style.css` | 深色战术风外壳：侧栏（图列表/图层开关/搜索）、地图画布、右下角状态条（定位状态、来源署名） | 浏览器打开可见骨架，无控制台报错 |
 | T5 | `app.js` | 加载 `data/maps.json`、内嵌 SVG（`fetch` + 注入 DOM）、平移/缩放/复位、图层显隐（`localStorage` 记忆）、点击标记看详情、搜索高亮居中、仅显示 `svgLayer` 组、labels 可开关 | 手工核对 10 张图：底图不串层、标记落点合理、缩放平移跟手 |
 | T6 | `tools/serve.py`（M1 部分） | `http.server` 托管项目根目录；`--port`/`--no-browser`；端口占用报错清晰 | `curl 127.0.0.1:8787/data/maps.json` 200；浏览器能打开站点 |
@@ -84,7 +84,7 @@
 
 | 文件 | 覆盖 |
 | --- | --- |
-| `tests/test_coord_transform.py` | 仿射推导：角点映射、旋转 0/90/180/270、全量标注点落在 viewBox 内（用真实缓存数据，缺失则 skip） |
+| `tests/test_coord_transform.py` | 仿射推导：矩形角点映射到 `(0,0)`/`(W,H)`、旋转 0/90/180/270、每图 ≥90% 标注点落在 viewBox 内（用真实 `data/maps.json`，缺失则 skip）、海关黄金值对照 |
 | `tests/test_fetch_data.py` | 规范化：占位名替换为中文、`ex_*`/`tr_*` 解析、字段裁剪、幂等（不重复拉取）、失败不破坏已有数据 |
 | `tests/test_screenshot_parse.py` | 正/异常/半匹配样本、返回 `None` 而非抛错 |
 | `tests/test_serve.py` | `/api/health`、`/api/position`、SSE 首帧与广播、目录缺失降级 |

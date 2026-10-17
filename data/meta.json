@@ -1,0 +1,43 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-10-17T04:49:15Z",
+ "gameMode": "regular",
+ "tool": "tools/fetch_data.py",
+ "sources": [
+  {
+   "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
+   "url": "https://raw.githubusercontent.com/the-hideout/tarkov-dev/main/src/data/maps.json",
+   "license": "MIT",
+   "sha256": "61b1ea800ef2ee01aa2466999c2b01072fcdb709a60d887025767ed530680a75",
+   "bytes": 43627
+  },
+  {
+   "name": "tarkov.dev 标注数据（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/maps",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "a3d0049a8515592a79d3cd04bf6b2524e3a6be292faaa4a0a6ef956b52b2694a",
+   "bytes": 8755228
+  },
+  {
+   "name": "tarkov.dev 中文翻译（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/maps_zh",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "61f94a06aceb689c0fcfa3b6de91f8510bf693d0e4866f6b85a7d19c1d20b7d2",
+   "bytes": 22741
+  },
+  {
+   "name": "底图 SVG（the-hideout/tarkov-dev-svg-maps）",
+   "url": "https://assets.tarkov.dev/maps/svg/",
+   "license": "CC BY-NC-SA 4.0（署名 + 非商业 + 同许可）",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  }
+ ],
+ "counts": {
+  "maps": 10,
+  "extracts": 137,
+  "transits": 28,
+  "spawns": 2345,
+  "labels": 272
+ }
+}
