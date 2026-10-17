@@ -62,8 +62,8 @@ def data_status(root: str) -> dict[str, Any]:
         return {"ready": False, "maps": 0, "error": "缺少 data/maps.json"}
 
     cached = getattr(data_status, "_cache", None)
-    if cached and cached[0] == mtime:
-        return cached[1]
+    if cached and cached[0] == path and cached[1] == mtime:
+        return cached[2]
 
     try:
         with open(path, "r", encoding="utf-8") as fh:
@@ -73,7 +73,7 @@ def data_status(root: str) -> dict[str, Any]:
     except (OSError, ValueError) as exc:
         status = {"ready": False, "maps": 0, "error": "data/maps.json 无法解析：%s" % exc}
 
-    data_status._cache = (mtime, status)  # type: ignore[attr-defined]
+    data_status._cache = (path, mtime, status)  # type: ignore[attr-defined]
     return status
 
 
