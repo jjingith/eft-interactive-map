@@ -104,12 +104,26 @@ eft-interactive-map/
 
 ### 5.2 `tools/fetch_data.py`（构建期，联网一次）
 
-- 从 tarkov.dev 拉取：
-  - 地图清单与元数据（名称、id、有序的楼层信息）。
-  - 每张图的地图 SVG（或瓦片）与标注点（撤离/过境/出生点等），含世界坐标 (x, z)。
-- 规范化输出到 `data/maps.json` 与 `assets/maps/*.svg`，并写 `data/meta.json` 记录来源与拉取时间。
-- 幂等：已存在且未过期的资源可跳过；支持 `--force` 重新拉取。
-- 失败处理：网络失败时**不破坏已有数据**，退出码非 0 并给出明确提示。
+**实测确认的数据源（2026-10-17）**：
+
+| 数据 | 地址 | 许可 |
+| --- | --- | --- |
+| 标注点（撤离/过境/出生点/BOSS…） | `https://json.tarkov.dev/{mode}/maps`（`mode` ∈ `regular`/`pve`/`season`，约 8.7 MB） | tarkov.dev 公开数据 |
+| 中文名（图名 / `ex_*` 撤离点名 / `tr_*` 过境说明） | `https://json.tarkov.dev/{mode}/maps_zh`（约 22 KB） | 同上 |
+| 每图配置（`transform`/`coordinateRotation`/`bounds`/`svgPath`/`svgLayer`/`labels`） | `https://raw.githubusercontent.com/the-hideout/tarkov-dev/main/src/data/maps.json` | MIT |
+| 底图 SVG | `https://assets.tarkov.dev/maps/svg/<Name>.svg` | 源仓库 `the-hideout/tarkov-dev-svg-maps` 为 **CC BY-NC-SA 4.0** |
+
+**访问约束（实测踩坑，必须照做）**：
+- `assets.tarkov.dev` 必须带**浏览器式 `User-Agent`**，否则 Cloudflare 返回 403；`json.tarkov.dev` 反之（默认头更稳）。
+- 一律**不要用 `HEAD` 探测**；单个大文件超时留 ≥ 60s。
+- `https://api.tarkov.dev/graphql` 实测返回 `{"errors":["GraphQL server unavailable..."]}`（服务端不可用），**不作为主源**；仅在 `--refresh-markers` 时作为可选补充。
+- 纯 Python 标准库在部分网络下会被 Cloudflare 拦（error 1010），脚本需内置 `curl.exe` 兜底（Windows 自带）。
+
+**行为**：
+- 拉取后规范化输出到 `data/maps.json` 与 `assets/maps/*.svg`，写 `data/meta.json`（来源、许可、模式、拉取时间、上游版本）。
+- 只保留 M1 需要的字段（撤离/过境/出生点 + labels），原始 8.7 MB 大文件落在 gitignore 的 `build-cache/`。
+- 幂等：已有数据且未 `--force` 时跳过；失败**不破坏已有数据**，退出码非 0 并给出明确提示。
+- `--maps a,b,c` 只拉指定图；默认集合为**有 SVG 底图的 10 张常用图**。
 
 ### 5.3 `tools/serve.py`（运行期，Python 标准库）
 
@@ -141,38 +155,65 @@ eft-interactive-map/
 
 ```jsonc
 {
+  "schema": 1,
+  "gameMode": "regular",
+  "generatedAt": "2026-10-17T…Z",
+  "sources": [ { "name": "…", "url": "…", "license": "MIT / CC BY-NC-SA 4.0" } ],
   "maps": [
     {
-      "id": "customs",
+      "key": "customs",
+      "id": "56f40101d2720b2a4d8b45d6",   // 上游 BSG 场景 id
       "name": "海关",
-      "svg": "assets/maps/customs.svg",
-      "viewBox": "0 0 1000 1000",        // 底图坐标系
-      "worldToMap": {                     // 游戏世界坐标 → 地图坐标
-        "scale": 1.0,
-        "offsetX": 0.0,
-        "offsetY": 0.0
+      "svg": "assets/maps/Customs.svg",
+      "svgViewBox": [0, 0, 1062.4827, 535.17401],
+      "svgLayer": "Ground_Level",        // 底图显示的 <g> 图层 id
+      "worldToSvg": {                    // svgX = a*x + b*z + c ; svgY = d*x + e*z + f
+        "a": -0.99299, "b": 0, "c": 693.10,
+        "d": 0, "e": 0.98374, "f": 301.99
       },
+      "labels": [ { "text": "Big Red", "x": -215, "z": -119 } ],
       "layers": {
-        "extracts": [ { "name": "…", "x": 123.4, "z": -56.7, "note": "" } ],
-        "transits": [ … ],
-        "spawns":   [ … ]
+        "extracts": [ { "id": "…", "name": "十字路口", "faction": "pmc", "x": 200.98, "z": -153.09 } ],
+        "transits": [ { "id": "9", "name": "前往储备站", "x": 650.64, "z": 124.94 } ],
+        "spawns":   [ { "x": 569.05, "z": -54.53, "sides": ["scav"], "categories": ["player","bot"] } ]
       }
     }
   ]
 }
 ```
 
-- 标注点存**游戏世界坐标** `(x, z)`；渲染时经 `worldToMap` 变换到地图像素。
-- `worldToMap` 的具体取值在实现时依据 tarkov.dev 数据的坐标系推导（见 §7），并由单元测试锁定。
+- 标注点存**游戏世界坐标** `(x, z)`；`worldToSvg` 是构建期算好的仿射系数，前端只做一次乘法即可落到 SVG `viewBox` 坐标系。
+- 系数由 `transform` + `coordinateRotation` + `bounds` + SVG 的 `viewBox` 推导（见 §7），并由单元测试锁定（含"所有标注点必须落在 viewBox 内"的自动校验）。
 
 ---
 
 ## 7. 坐标变换
 
-- tarkov.dev 的标记与底图 SVG 使用同一套游戏世界坐标系；截图文件名亦给出玩家的世界坐标，取其中的水平坐标 `(x, z)` 用于平面定位（y 为高度，本项目不使用）。
-- 变换：`mapX = x * scale + offsetX`，`mapY = z * scale + offsetY`；对每张图独立配置 `scale/offset`。
-- 若某图坐标系与截图坐标系存在已知偏差，则为该图提供校正项，并在 `data/meta.json` 记录校正来源。
-- **单元测试**覆盖：若干已知 (x, z) → 期望地图坐标（用 tarkov.dev 数据中的既有标注做往返校验）。
+tarkov.dev 用 Leaflet `CRS.Simple` + 自定义 `transformation` 渲染，语义已从其源码读出（`src/pages/map/index.jsx`）：
+
+```
+# 输入：transform = [t0, t1, t2, t3]，rotation = coordinateRotation（度），bounds = [[xMax, zMin], [xMin, zMax]]，SVG viewBox = (0, 0, W, H)
+c = cos(rotation), s = sin(rotation)
+X' = x*c - z*s
+Z' = x*s + z*c
+pixelX = t0 * X' + t1
+pixelY = -t2 * Z' + t3          # Leaflet 的 scaleY = -t2
+
+# SVG 铺满由 bounds 两个角点在 pixel 空间构成的矩形，SVG 左上角 = 该矩形的最小 x / 最小 y
+kx = W / (max(pixelX) - min(pixelX))      # 两个角点（xMax,zMin）与（xMin,zMax）之间取 min/max
+ky = H / (max(pixelY) - min(pixelY))
+svgX = (pixelX - min(pixelX)) * kx
+svgY = (pixelY - min(pixelY)) * ky
+```
+
+构建期把上式展开成 `worldToSvg` 的 6 个系数（纯线性，前端只做 2 次乘法 + 2 次加法）。
+
+- `coordinateRotation` 逐图不同（海关 180°、工厂 90°、实验室 270°、部分图无旋转），上述公式统一处理，不写特例。
+- 截图文件名给的是同一套世界坐标 `(x, z)`（y 为高度，本项目不用），与标注点共用 `worldToSvg`，因此**定位点天然与标注对齐**。
+- **单元测试**覆盖：
+  1. 两个 `bounds` 角点经 `worldToSvg` 必须落在 `(0,0)` / `(W,H)`（容差 1e-6）；
+  2. 每张图**全部**撤离/过境/出生点/label 必须落在 `[-1%, 101%] × viewBox`（超出即说明朝向推导错了，测试直接失败）；
+  3. 同一 `(x, z)` 在构建期与运行期（JS/阶段函数）算出的结果一致（黄金样本对照）。
 
 ---
 
@@ -209,9 +250,16 @@ eft-interactive-map/
 
 - 前端：**零第三方依赖**（原生 JS/CSS）。
 - 助手：**Python 3 标准库**（`http.server`、`json`、`os`、`threading`、`pathlib`、`tkinter` 等），零第三方。
-- **打包（仅构建期）**：用 **PyInstaller** 将 `launcher.py` 打成 `eft-map.exe`（含 tkinter）；运行期不依赖 PyInstaller。
-- 数据：`the-hideout/tarkov-dev`（**MIT**）。分发时在 `README.md` 与 `data/meta.json` 注明来源与许可。
-- EFT 商标/原始美术：归 Battlestate Games；本项目个人免费使用。
+- **打包（仅构建期）**：用 **PyInstaller** 将 `launcher.py` 打成 `EFTMap.exe`（含 tkinter）；运行期不依赖 PyInstaller。若打包不可行，退路是 `python tools/launcher.py` + 一个 `.cmd` 双击脚本（同样满足"双击启动 + 进度框"）。
+- 数据许可（**分发时必须逐条署名**，写入 `README.md`、`data/meta.json` 与界面「关于」）：
+
+| 来源 | 许可 | 义务 |
+| --- | --- | --- |
+| `the-hideout/tarkov-dev`（地图配置、翻译、API 数据） | **MIT** | 保留版权与许可声明 |
+| 标注数据 `json.tarkov.dev` | 源自 tarkov.dev 社区数据 | 署名 tarkov.dev |
+| 底图 SVG `the-hideout/tarkov-dev-svg-maps` | **CC BY-NC-SA 4.0** | 署名 + **非商业** + 同许可再分发（因此本项目的 SVG 底图部分不得商用，且需保持同许可） |
+
+- EFT 商标/原始美术：归 Battlestate Games；本项目个人免费使用、不含任何游戏资源文件。
 
 ---
 
@@ -240,10 +288,12 @@ eft-interactive-map/
 
 | 风险 | 缓解 |
 | --- | --- |
-| tarkov.dev 坐标系与截图坐标系不一致 | 为每图提供可校准的 `worldToMap`；用现有标注做往返测试 |
+| **上游 API 长时间不可用**（`api.tarkov.dev/graphql` 实测已挂） | 改用 `json.tarkov.dev` 静态镜像（实测可用）；原始大文件落 `build-cache/`，打包只需精简后的 `data/maps.json` |
+| 资源站 Cloudflare 拦截（403 / error 1010） | 按 §5.2 的头部规则请求；Python 失败自动回退 `curl.exe` |
+| tarkov.dev 坐标系与截图坐标系不一致 | 统一用同一套 `worldToSvg`；"全部标注点必须落在 viewBox 内"的测试会在推导错误时立即失败 |
 | EFT 截图文件名格式随版本变化 | 解析器宽容降级、不误报；以真实样本补测试 |
-| 底图素材版权（BSG） | 仅个人免费使用 + 明确署名/免责；不商业分发 |
-| 地图资源体积较大 | 按需选择地图集合；M1 先内置常用几张图 |
+| 底图素材版权（BSG + CC BY-NC-SA） | 明确署名；**本项目非商业**；README 声明底图部分沿用 CC BY-NC-SA 4.0 |
+| 地图资源体积较大 | 默认只内置 10 张有 SVG 的常用图（约 1.6 MB）；瓦片图（实验室/迷宫/破冰船）留待后续 |
 | 端口/防火墙影响本地服务 | 仅监听 127.0.0.1；提供 `--port` 与 `--no-browser` |
 | PyInstaller 打包 exe 被杀软误报或启动慢 | 优先 `onedir`（更稳、启动快）；必要时说明可源码运行；不加载任何可疑动态代码 |
 
