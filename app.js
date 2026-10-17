@@ -16,6 +16,7 @@
   var SVG_NS = "http://www.w3.org/2000/svg";
   var LS_MAP = "eftmap.map";
   var LS_LAYERS = "eftmap.layers";
+  var LS_FOLLOW = "eftmap.follow";
   var ZOOM_MIN = 0.5;
   var ZOOM_MAX = 20;
   // 底图矩形最多向外扩这么多比例，用来容纳紧贴边缘的标注点
@@ -26,12 +27,20 @@
     meta: null,          // data/meta.json
     map: null,           // 当前地图条目
     layers: { extracts: true, transits: true, spawns: false, labels: true },
-    k: 1, tx: 0, ty: 0,  // 平移缩放
-    vb: [0, 0, 1, 1],    // 当前实际使用的 viewBox（含外边距）
-    pxPerUnit: 1,        // k=1 时每用户单位对应多少屏幕像素
+    // 相机：z 是相对「整图适配」的放大倍数，cx/cy 是屏幕中心所在的地图坐标。
+    // 缩放走 viewBox 而不是 CSS transform —— 后者会把 SVG 栅格化再放大，越放越糊。
+    z: 1, cx: 0, cy: 0,
+    baseVb: [0, 0, 1, 1],// z=1 时的 viewBox（底图矩形 + 外边距）
+    fit: 1,              // z=1 时每用户单位对应多少屏幕像素
+    vb: [0, 0, 1, 1],    // 当前实际使用的 viewBox（随相机变化）
     svgCache: {},        // 每张图的 SVG 文本缓存
     markerScaleNodes: [],// 需要随缩放反向补偿的节点
-    selected: null
+    selected: null,
+    player: null,        // 实时定位：最新解析到的玩家位置 {x, z, yaw, name, mtime}
+    positionInfo: { available: false, reason: null },
+    follow: true,        // 是否自动居中到玩家
+    playerNode: null,    // 玩家标记节点（renderOverlay 清空时会一并丢掉）
+    events: null         // EventSource
   };
 
   var el = {};
@@ -69,6 +78,8 @@
     el.detailBlock = $("detail-block");
     el.statusMap = $("status-map");
     el.statusCursor = $("status-cursor");
+    el.statusPosition = $("status-position");
+    el.followBtn = $("follow");
     el.error = $("error");
     el.svg = $("map-svg");
     el.viewport = $("viewport");
@@ -76,7 +87,9 @@
     el.stage = $("stage");
 
     restoreLayers();
+    restoreFollow();
     bindUI();
+    initRealtime();
 
     Promise.all([
       loadJSON("data/maps.json"),
@@ -162,6 +175,9 @@
     $("zoom-in").addEventListener("click", function () { zoomAt(centerX(), centerY(), 1.25); });
     $("zoom-out").addEventListener("click", function () { zoomAt(centerX(), centerY(), 1 / 1.25); });
     $("reset").addEventListener("click", function () { resetView(); });
+    if (el.followBtn) {
+      el.followBtn.addEventListener("click", function () { setFollow(!state.follow); });
+    }
 
     el.search.addEventListener("input", renderSearchResults);
     el.search.addEventListener("keydown", function (ev) {
@@ -175,24 +191,28 @@
     });
 
     // 平移
-    var dragging = false, startX = 0, startY = 0, baseTx = 0, baseTy = 0;
+    var dragging = false, startX = 0, startY = 0;
     var dragMoved = false;
     el.viewport.addEventListener("mousedown", function (ev) {
       if (ev.button !== 0) { return; }
       dragging = true;
       dragMoved = false;
       startX = ev.clientX; startY = ev.clientY;
-      baseTx = state.tx; baseTy = state.ty;
       el.viewport.style.cursor = "grabbing";
       ev.preventDefault();
     });
     window.addEventListener("mousemove", function (ev) {
       if (!dragging) { return; }
       var dx = ev.clientX - startX, dy = ev.clientY - startY;
-      if (Math.abs(dx) + Math.abs(dy) > 3) { dragMoved = true; }
-      state.tx = baseTx + dx;
-      state.ty = baseTy + dy;
-      applyTransform();
+      if (Math.abs(dx) + Math.abs(dy) > 3 && !dragMoved) {
+        dragMoved = true;
+        setFollow(false);                      // 用户接管视角
+        startX = ev.clientX; startY = ev.clientY;   // 以当前点为平移起点，避免首次跳变
+      }
+      if (dragMoved) {
+        panBy(ev.clientX - startX, ev.clientY - startY);
+        startX = ev.clientX; startY = ev.clientY;
+      }
     });
     window.addEventListener("mouseup", function () {
       if (!dragging) { return; }
@@ -204,11 +224,16 @@
       if (dragMoved) { dragMoved = false; ev.stopPropagation(); }
     }, true);
 
-    // 光标锚点缩放
+    // 光标锚点缩放；跟随模式下改为以屏幕中心（也就是玩家所在处）为锚点，避免把玩家甩出视野
     el.viewport.addEventListener("wheel", function (ev) {
       ev.preventDefault();
       var rect = el.stage.getBoundingClientRect();
-      zoomAt(ev.clientX - rect.left, ev.clientY - rect.top, ev.deltaY < 0 ? 1.15 : 1 / 1.15);
+      var factor = ev.deltaY < 0 ? 1.15 : 1 / 1.15;
+      if (state.follow && state.player) {
+        zoomAt(rect.width / 2, rect.height / 2, factor);
+      } else {
+        zoomAt(ev.clientX - rect.left, ev.clientY - rect.top, factor);
+      }
     }, { passive: false });
 
     // 鼠标位置读数
@@ -220,7 +245,7 @@
 
     window.addEventListener("resize", function () {
       updateMetrics();
-      applyTransform();
+      applyView();
       renderOverlay();
     });
     renderMapList();
@@ -264,8 +289,8 @@
     var srcRoot = parsed.documentElement;
 
     while (el.svg.firstChild) { el.svg.removeChild(el.svg.firstChild); }
-    el.svg.setAttribute("viewBox", map.viewBox.join(" "));
-    el.svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+    // 相机按 #stage 的宽高比构造 viewBox，两轴比例天然一致，用 none 保证精确铺满无信箱边
+    el.svg.setAttribute("preserveAspectRatio", "none");
 
     var base = svgEl("g", { id: "emk-base" });
     var children = Array.prototype.slice.call(srcRoot.childNodes);
@@ -355,20 +380,26 @@
   function updateMetrics() {
     if (!state.map) { return; }
     var size = stageSize();
-    state.vb = computeViewBox(state.map);
-    // preserveAspectRatio="meet"：实际比例取两个方向的较小值
-    var sx = size.w / state.vb[2], sy = size.h / state.vb[3];
-    state.pxPerUnit = Math.min(sx, sy) || 1;
+    state.baseVb = computeViewBox(state.map);
+    // preserveAspectRatio=none 时两轴各自铺满；适配比例取较小值即为「整图可见」
+    var sx = size.w / state.baseVb[2], sy = size.h / state.baseVb[3];
+    state.fit = Math.min(sx, sy) || 1;
   }
 
-  function applyTransform() {
-    el.viewport.style.transform = "translate(" + state.tx + "px," + state.ty + "px) scale(" + state.k + ")";
+  /** 相机 → viewBox（缩放走 viewBox，SVG 每次都是矢量重绘，不会越放越糊） */
+  function applyView() {
+    if (!state.map) { return; }
+    var size = stageSize();
+    var p = state.fit * state.z;             // 每用户单位对应多少屏幕像素
+    var vw = size.w / p, vh = size.h / p;
+    state.vb = [state.cx - vw / 2, state.cy - vh / 2, vw, vh];
+    el.svg.setAttribute("viewBox", state.vb.join(" "));
     updateCounterScale();
   }
 
-  /** 标注点在屏幕上大小恒定：内部再乘 1/k 反向补偿 */
+  /** 标注点在屏幕上大小恒定：内部再乘 1/z 反向补偿 */
   function updateCounterScale() {
-    var inv = 1 / state.k;
+    var inv = 1 / state.z;
     for (var i = 0; i < state.markerScaleNodes.length; i++) {
       var node = state.markerScaleNodes[i];
       var base = node.__emkBase;
@@ -379,48 +410,63 @@
   }
 
   function resetView() {
-    state.k = 1;
-    state.tx = 0;
-    state.ty = 0;
-    applyTransform();
+    var vb = state.baseVb;
+    state.z = 1;
+    state.cx = vb[0] + vb[2] / 2;
+    state.cy = vb[1] + vb[3] / 2;
+    applyView();
   }
 
   function zoomAt(px, py, factor) {
-    var k2 = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, state.k * factor));
-    if (Math.abs(k2 - state.k) < 1e-6) { return; }
-    var ratio = k2 / state.k;
-    state.tx = px - (px - state.tx) * ratio;
-    state.ty = py - (py - state.ty) * ratio;
-    state.k = k2;
-    applyTransform();
+    var z2 = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, state.z * factor));
+    if (Math.abs(z2 - state.z) < 1e-6) { return; }
+    var anchor = screenToUser(px, py);       // 缩放前光标下的地图点
+    state.z = z2;
+    var size = stageSize();
+    var p2 = state.fit * z2;
+    // 让这个点缩放后仍落在 (px, py)
+    state.cx = anchor.x + (size.w / 2 - px) / p2;
+    state.cy = anchor.y + (size.h / 2 - py) / p2;
+    applyView();
+  }
+
+  /** 屏幕坐标（相对 #stage 左上角）→ 地图用户坐标 */
+  function screenToUser(px, py) {
+    var p = state.fit * state.z;
+    return { x: state.vb[0] + px / p, y: state.vb[1] + py / p };
+  }
+
+  /** 拖动平移：位移量按当前比例换算成地图坐标 */
+  function panBy(dxPx, dyPx) {
+    var p = state.fit * state.z;
+    state.cx -= dxPx / p;
+    state.cy -= dyPx / p;
+    applyView();
   }
 
   /** 屏幕坐标（相对 #viewport 左上角）→ 世界坐标 */
   function screenToWorld(px, py) {
     var map = state.map;
-    var ux = (px - state.tx) / (state.pxPerUnit * state.k) + state.vb[0];
-    var uy = (py - state.ty) / (state.pxPerUnit * state.k) + state.vb[1];
+    var u = screenToUser(px, py);
     var c = map.worldToSvg;
     // 反解线性方程组 [a b; d e] · [x; z] = [ux - c; uy - f]
     var det = c.a * c.e - c.b * c.d;
     if (Math.abs(det) < 1e-12) { return { x: NaN, z: NaN }; }
-    var rx = ux - c.c, ry = uy - c.f;
+    var rx = u.x - c.c, ry = u.y - c.f;
     return { x: (c.e * rx - c.b * ry) / det, z: (-c.d * rx + c.a * ry) / det };
   }
 
   function centerOnPoint(sx, sy) {
-    var size = stageSize();
-    var scale = state.pxPerUnit * state.k;
-    state.tx = size.w / 2 - (sx - state.vb[0]) * scale;
-    state.ty = size.h / 2 - (sy - state.vb[1]) * scale;
-    applyTransform();
+    state.cx = sx;
+    state.cy = sy;
+    applyView();
   }
 
   // ---------------------------------------------------------------- 覆盖层
   function renderOverlay() {
     if (!el.overlay || !state.map) { return; }
     var map = state.map;
-    var unit = 1 / state.pxPerUnit;   // 目标屏幕像素 → 用户单位
+    var unit = 1 / state.fit;         // 目标屏幕像素 → 用户单位（1/z 的反向补偿在节点 transform 里）
 
     while (el.overlay.firstChild) { el.overlay.removeChild(el.overlay.firstChild); }
     state.markerScaleNodes = [];
@@ -470,6 +516,8 @@
     });
 
     updateCounterScale();
+    renderPlayer();            // 覆盖层被重建，玩家标记要跟着回来
+    updatePositionStatus();
   }
 
   function makeMarker(map, kind, item, radius) {
@@ -595,6 +643,142 @@
       if (Math.abs(b.sx - sx) < 0.01 && Math.abs(b.sy - sy) < 0.01) { return nodes[i]; }
     }
     return null;
+  }
+
+  // ---------------------------------------------------------------- 实时定位
+  /** 朝向角 → SVG 里的箭头旋转角（度）：必须过仿射的线性部分 */
+  function svgAngle(map, yaw) {
+    var c = map.worldToSvg;
+    var rad = yaw * Math.PI / 180;
+    var dx = Math.sin(rad), dz = Math.cos(rad);
+    return Math.atan2(c.d * dx + c.e * dz, c.a * dx + c.b * dz) * 180 / Math.PI;
+  }
+
+  function restoreFollow() {
+    state.follow = localStorage.getItem(LS_FOLLOW) !== "0";
+    syncFollowButton();
+  }
+
+  function setFollow(on) {
+    if (state.follow === on) { return; }
+    state.follow = on;
+    localStorage.setItem(LS_FOLLOW, on ? "1" : "0");
+    syncFollowButton();
+    if (on) { centerOnPlayer(); }
+  }
+
+  function syncFollowButton() {
+    if (!el.followBtn) { return; }
+    el.followBtn.classList.toggle("on", state.follow);
+    el.followBtn.textContent = state.follow ? "跟随中" : "已锁定";
+    el.followBtn.title = state.follow
+      ? "实时定位自动居中（拖动地图会切到「已锁定」按手动视角）"
+      : "已手动锁定视角，点击恢复自动跟随玩家";
+  }
+
+  function centerOnPlayer() {
+    if (!state.map || !state.player) { return; }
+    centerOnPoint(svgX(state.map, state.player.x, state.player.z),
+                  svgY(state.map, state.player.x, state.player.z));
+  }
+
+  /** 首屏先直接问一次，再订阅 SSE：不必等连接建立才看到定位状态 */
+  function initRealtime() {
+    fetch("api/position", { cache: "no-store" }).then(function (res) {
+      return res.ok ? res.json() : null;
+    }).then(function (payload) {
+      if (payload && !state.player) { applyPosition(payload); }
+    }).catch(function () { /* 无服务时静默：地图本体不受影响 */ });
+
+    if (typeof EventSource === "undefined") {
+      setPositionStatus(false, "此浏览器不支持实时定位（EventSource）");
+      return;
+    }
+    var source = new EventSource("events");
+    state.events = source;
+    source.onmessage = function (ev) {
+      var payload;
+      try { payload = JSON.parse(ev.data); } catch (e) { return; }
+      applyPosition(payload);
+    };
+    source.onerror = function () {
+      // EventSource 会自动重连，这里只反映状态
+      setPositionStatus(false, "定位：连接中断，正在重连…");
+    };
+  }
+
+  function applyPosition(payload) {
+    state.positionInfo = { available: !!payload.available, reason: payload.reason || null };
+    var pos = payload.position || null;
+    var moved = !!pos && (!state.player || state.player.name !== pos.name ||
+                          state.player.x !== pos.x || state.player.z !== pos.z);
+    state.player = pos;
+    if (state.map) { renderPlayer(); }
+    updatePositionStatus();
+    if (pos && state.follow && moved) { centerOnPlayer(); }
+  }
+
+  function insideMap(map, pos) {
+    var vb = map.viewBox;
+    var sx = svgX(map, pos.x, pos.z), sy = svgY(map, pos.x, pos.z);
+    return sx >= vb[0] && sx <= vb[0] + vb[2] && sy >= vb[1] && sy <= vb[1] + vb[3];
+  }
+
+  function positionStatusText() {
+    var pos = state.player;
+    if (!pos) { return "定位：" + (state.positionInfo.reason || "不可用"); }
+    var text = "定位：x " + Math.round(pos.x) + " / z " + Math.round(pos.z);
+    if (state.map && !insideMap(state.map, pos)) { text += " · 可能不在当前地图"; }
+    return text;
+  }
+
+  function setPositionStatus(available, text) {
+    if (!el.statusPosition) { return; }
+    el.statusPosition.textContent = text;
+    el.statusPosition.classList.toggle("pos-on", !!available);
+    el.statusPosition.classList.toggle("pos-off", !available);
+    el.statusPosition.title = available
+      ? "来源：EFT 截图文件名里的坐标（只读文件名与时间戳，不读图片、不碰游戏进程）"
+      : text;
+  }
+
+  function updatePositionStatus() {
+    setPositionStatus(!!state.player, positionStatusText());
+  }
+
+  /** 玩家标记：光点 + 朝向箭头（两者都随缩放保持屏幕大小恒定） */
+  function renderPlayer() {
+    if (!el.overlay) { return; }
+    if (state.playerNode && state.playerNode.parentNode) {
+      state.playerNode.parentNode.removeChild(state.playerNode);
+    }
+    state.playerNode = null;
+    var map = state.map, pos = state.player;
+    if (!map || !pos) { return; }
+
+    var unit = 1 / state.fit;
+    var sx = svgX(map, pos.x, pos.z), sy = svgY(map, pos.x, pos.z);
+    var g = svgEl("g", { id: "emk-player", class: "emk-player" });
+    g.__emkBase = { sx: sx, sy: sy };
+    g.setAttribute("transform", "translate(" + sx + " " + sy + ") scale(" + (1 / state.z) + ")");
+    g.appendChild(svgEl("circle", { class: "emk-player-halo", r: 13 * unit }));
+    g.appendChild(svgEl("circle", { class: "emk-player-dot", r: 4.4 * unit }));
+
+    // 箭头本体指向 SVG 的 +x，再整体旋转到真实朝向对应的屏幕角
+    var arrow = svgEl("g", { class: "emk-player-arrow", transform: "rotate(" + svgAngle(map, pos.yaw).toFixed(2) + ")" });
+    arrow.appendChild(svgEl("polygon", {
+      points: (function () {
+        var pts = [[19, 0], [8.5, -6.6], [8.5, 6.6]];
+        return pts.map(function (p) {
+          return (p[0] * unit).toFixed(4) + "," + (p[1] * unit).toFixed(4);
+        }).join(" ");
+      })()
+    }));
+    g.appendChild(arrow);
+
+    el.overlay.appendChild(g);
+    state.playerNode = g;
+    state.markerScaleNodes.push(g);
   }
 
   if (document.readyState === "loading") {

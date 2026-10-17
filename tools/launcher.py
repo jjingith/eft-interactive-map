@@ -116,6 +116,7 @@ class Startup:
         self.thread: threading.Thread | None = None
         self.url = ""
         self.health_payload: dict[str, Any] | None = None
+        self.screenshots_resolved: str | None = None
 
     # ------------------------------------------------------------ 内部
     def _emit(self, step: str, state: str, detail: str = ""):
@@ -139,8 +140,14 @@ class Startup:
 
     def step_start_server(self):
         self._emit(STEP_SERVER, "running")
+        # 未显式指定截图目录时自动探测默认位置；目录不存在就不启动监听（不报错）
+        screenshots = self.screenshots
+        if screenshots is None:
+            default = serve.default_screenshots_dir()
+            screenshots = default if os.path.isdir(default) else None
+        self.screenshots_resolved = screenshots
         try:
-            self.server = self.create_server(self.port, self.host, self.root)
+            self.server = self.create_server(self.port, self.host, self.root, screenshots=screenshots)
         except serve.PortInUseError as exc:
             self._emit(STEP_SERVER, "failed", str(exc))
             raise StartupError(STEP_SERVER, str(exc), "换个端口重启，例如 --port 8788。") from exc
@@ -160,7 +167,14 @@ class Startup:
         except Exception as exc:
             self._emit(STEP_SELFCHECK, "failed", str(exc))
             raise StartupError(STEP_SELFCHECK, "服务自检未通过：%s" % exc, "请查看是否有安全软件拦截本机端口。") from exc
-        self._emit(STEP_SELFCHECK, "done", "版本 %s" % self.health_payload.get("version", VERSION))
+        # health 的 position 表示「监听是否已开启」，positionAvailable 表示「已解析到位置」
+        if not self.health_payload.get("position"):
+            position = "实时定位未开启（未找到截图目录）"
+        elif self.health_payload.get("positionAvailable"):
+            position = "实时定位已开启"
+        else:
+            position = "实时定位已开启，等待首张截图"
+        self._emit(STEP_SELFCHECK, "done", "版本 %s · %s" % (self.health_payload.get("version", VERSION), position))
 
     def step_open_browser(self):
         self._emit(STEP_BROWSER, "running")

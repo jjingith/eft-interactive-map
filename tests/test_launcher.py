@@ -45,8 +45,9 @@ def make_startup(root=ROOT, on_step=None, open_browser=None, health=None, create
     """装好桩件的 Startup；返回 (startup, 记录容器)。"""
     rec = {"servers": [], "opened": [], "create_args": []}
 
-    def _create(p, h, r):
+    def _create(p, h, r, screenshots=None):
         rec["create_args"].append((p, h, r))
+        rec["screenshots"] = screenshots
         srv = FakeServer(port)
         rec["servers"].append(srv)
         return srv
@@ -117,7 +118,7 @@ def test_missing_data_fails_before_touching_server(tmp_path):
 
 
 def test_port_in_use_becomes_actionable_error():
-    def _boom(port, host, root):
+    def _boom(port, host, root, screenshots=None):
         raise serve.PortInUseError("端口 %d 已被占用。" % port)
 
     startup, rec = make_startup(create_server=_boom)
@@ -180,6 +181,60 @@ def test_retry_after_failure_resets_and_reruns(tmp_path):
     assert seen[-1] == (launcher.STEP_BROWSER, "done")
     assert (launcher.STEP_CHECK, "pending") in seen[-12:]   # 重试会先把四步刷回 pending
     assert len(rec["opened"]) == 1
+
+
+# --------------------------------------------------------------- 截图目录解析
+
+def test_screenshots_passed_through_when_explicitly_given(tmp_path):
+    """显式给了截图目录：必须原样交给 create_server（实时定位才会开）。"""
+    startup, rec = make_startup(root=ROOT, port=0, create_server=serve.create_server)
+    startup.screenshots = str(tmp_path)
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        assert startup.screenshots_resolved == str(tmp_path)
+        assert startup.server.tracker.enabled() is True
+    finally:
+        startup.stop()
+
+
+def test_default_screenshot_dir_used_only_when_it_exists(tmp_path, monkeypatch):
+    """没给参数时自动探测默认目录：目录存在才开监听，不存在就静默关闭（不报错）。"""
+    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(tmp_path))
+    startup, rec = make_startup(root=ROOT, port=0, create_server=serve.create_server)
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        assert startup.screenshots_resolved == str(tmp_path)
+        assert startup.server.tracker.enabled() is True
+    finally:
+        startup.stop()
+
+    missing = tmp_path / "nope"
+    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(missing))
+    startup2, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server)
+    startup2.step_check_data()
+    startup2.step_start_server()
+    try:
+        assert startup2.screenshots_resolved is None
+        assert startup2.server.tracker.enabled() is False
+    finally:
+        startup2.stop()
+
+
+def test_self_check_reports_position_state(tmp_path):
+    """自检那一步要把「实时定位有没有开」讲清楚，用户才知道要不要设截图目录。"""
+    seen = []
+    startup, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server,
+                              health=launcher.check_health,
+                              on_step=lambda step, state, detail: seen.append((step, state, detail)))
+    startup.screenshots = str(tmp_path)
+    startup.run()
+    try:
+        detail = [d for s, st, d in seen if s == launcher.STEP_SELFCHECK and st == "done"][0]
+        assert "实时定位已开启" in detail
+    finally:
+        startup.stop()
 
 
 # --------------------------------------------------------------- 真实服务端到端

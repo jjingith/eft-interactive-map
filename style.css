@@ -139,8 +139,6 @@ body { display: flex; }
 #viewport {
   position: absolute;
   inset: 0;
-  transform-origin: 0 0;
-  will-change: transform;
 }
 #map-svg { width: 100%; height: 100%; display: block; }
 
@@ -157,6 +155,10 @@ body { display: flex; }
   cursor: pointer;
 }
 .hud button:hover { border-color: var(--accent); color: var(--accent); }
+.hud button.on {
+  border-color: var(--player);
+  color: var(--player);
+}
 
 /* 状态条 */
 .statusbar {
@@ -231,6 +233,27 @@ body { display: flex; }
 @keyframes emkRing {
   from { transform: scale(.35); opacity: 1; }
   to { transform: scale(2.8); opacity: 0; }
+}
+
+/* 玩家实时位置：光晕 + 光点 + 朝向箭头 */
+.emk-player { pointer-events: none; }
+.emk-player-halo {
+  fill: rgba(79, 216, 224, .14);
+  stroke: rgba(79, 216, 224, .45);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.emk-player-dot {
+  fill: var(--player);
+  stroke: rgba(8, 10, 12, .9);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+}
+.emk-player-arrow polygon {
+  fill: rgba(79, 216, 224, .9);
+  stroke: rgba(8, 10, 12, .85);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
 }
 
 @media (max-width: 780px) {

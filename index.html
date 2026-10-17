@@ -51,6 +51,7 @@
   <div id="viewport"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
 
   <div class="hud" id="hud">
+    <button id="follow" title="实时定位自动居中">跟随中</button>
     <button id="zoom-in" title="放大（滚轮向上）">+</button>
     <button id="zoom-out" title="缩小（滚轮向下）">−</button>
     <button id="reset" title="复位视图（回到整图适配）">复位</button>
@@ -61,7 +62,7 @@
     <span class="sep">|</span>
     <span id="status-cursor" class="muted">世界坐标：—</span>
     <span class="grow"></span>
-    <span id="status-position" class="pos-off" title="实时定位需要监听截图目录，M2 接入">定位：未接入</span>
+    <span id="status-position" class="pos-off" title="实时定位连接中">定位：连接中…</span>
   </div>
 
   <div id="error" class="error" hidden></div>
