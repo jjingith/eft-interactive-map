@@ -81,7 +81,7 @@ eft-interactive-map/
 ├── build/build.ps1         PyInstaller onedir 打包脚本 → dist/EFTMap/（**每次整体删旧目录**）
 ├── build/build_release.ps1 发布三件套 → release/（Portable zip / AppWindow zip / Setup exe；先跑一遍 build.ps1）
 ├── release/                ⚠️ 发布产物（**已 gitignore，不进仓库**）
-├── tests/                  501 条测试，全离线
+├── tests/                  515 条测试，全离线
 ├── build-cache/            ⚠️ 构建期原始缓存，**已 gitignore，不进仓库**
 └── docs/superpowers/       设计规格（specs）与计划（plans）
 ```
