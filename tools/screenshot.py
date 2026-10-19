@@ -146,3 +146,54 @@ def latest_position(directory: str) -> dict[str, Any] | None:
             parsed["mtime"] = mtime
             return parsed
     return None
+
+
+# ---------------------------------------------------------------- 清理（自动删除截图）
+def select_deletable(directory: str, cutoff: float | None = None, keep_newest: int = 1) -> list[str]:
+    """挑出「位置已经读过、可以删掉」的截图文件名（**只挑不删**，便于单测）。
+
+    规则：
+
+    1. 只考虑**能解析出位置**的截图——没读到位置的文件不碰（用户手动拍的菜单截图等照旧留着）；
+    2. **保留最新 `keep_newest` 个**：实时定位就靠最新那一张，删了会没位置（见 `latest_position`）；
+    3. `cutoff` 是「开关打开的时刻」，**只删它之后产生的**（mtime >= cutoff），
+       这样历史截图与开关关闭期间攒下的截图都不会被误删。
+
+    返回按 mtime 升序（先旧的先删），顺序稳定便于测试与日志。
+    """
+    parsed: list[tuple[float, str]] = []
+    for mtime, name in list_screenshot_files(directory):
+        if parse_screenshot_name(name):
+            parsed.append((mtime, name))
+
+    keep = max(0, keep_newest)
+    protected = {name for _, name in parsed[len(parsed) - keep:]} if keep else set()
+
+    chosen = []
+    for mtime, name in parsed:
+        if name in protected:
+            continue
+        if cutoff is not None and mtime < cutoff:
+            continue
+        chosen.append(name)
+    return chosen
+
+
+def delete_files(directory: str, names: list[str]) -> list[str]:
+    """删除给定文件名，返回**真正删掉**的那些（失败静默跳过，不抛异常）。
+
+    删不掉通常是因为文件正被游戏占用或已被别的程序删走，跳过即可，下一轮还会再挑到。
+    """
+    deleted = []
+    for name in names:
+        try:
+            os.remove(os.path.join(directory, name))
+        except OSError:
+            continue
+        deleted.append(name)
+    return deleted
+
+
+def prune(directory: str, cutoff: float | None = None, keep_newest: int = 1) -> list[str]:
+    """读取过位置后清掉多余截图，返回被删除的文件名。"""
+    return delete_files(directory, select_deletable(directory, cutoff, keep_newest))
