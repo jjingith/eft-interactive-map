@@ -814,7 +814,7 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `b59e721` | 构建期：`tools/roadnet.py` 底图栅格化成静态路网（`_first_ground` 背景海面特判）+ `fetch_data.py` 接入 `[5/5]` 步 |
 | `5bed4d0` | 数据：10 张矢量图的静态路网（35 个位图 779 KB + 索引 11 KB） |
 | `52e26d3` | 前端：导航沿道路走（同层加权 A\* + 视线简化；修折线点序与面板文案不刷新两个 bug）+ `index.html` 文案 |
-| （见下条） | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
+| `409e63f` | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
