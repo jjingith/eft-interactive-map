@@ -668,7 +668,7 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | --- | --- |
 | `3a6d17b` | 数据+前端：高资子类修正（私酒不再串钥匙点、LEDX 优先于除颤器）+ 新增「显卡」子类（schema 7）+ 上锁的门合并为单一固定浮窗 + 地名与地图绑死 + 位置仅在新截图时定位 |
 | `81e990a` | 启动器：声音提示每行加「试听」按钮（不选音频时现场合成内置提示音）+ 5 条单测 |
-| （本提交） | 文档：README / `docs/USAGE.md` / 本手册同步第十一轮（含 `solidvents.com` 评估结论：不引入，见 §11） |
+| `7806323` | 文档：README / `docs/USAGE.md` / 本手册同步第十一轮（含 `solidvents.com` 评估结论：不引入，见 §11） |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
