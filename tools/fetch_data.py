@@ -523,6 +523,18 @@ EXTRACT_EXCLUDE = {
     ("interchange", "Hole Exfill"),   # 围栏破洞：游戏里已移除
 }
 
+# 上游把位置 / 轮廓画错的危险区：键是 (图 key, 上游给的 x, z)，值是修正后的完整条目。
+# 塔科夫街区那片狙击区（不打绿色信号弹进去就会被打）实际盖在街区西北角，上游却标在
+# x -40～-103 / z -34～35 一带；这里连中心点一起按游戏内实际轮廓修正。
+# 狙击区是整片「垂直到底」的区域，没有高度含义，所以修正值里**不给 y**（前端据此不做
+# 楼层过滤，详情里也不会显示 y）。
+HAZARD_FIXES = {
+    ("streets-of-tarkov", -71.9, 0.6): {
+        "x": -232.49, "z": 38.8, "type": "sniper",
+        "outline": [[-203.0, 0.0], [-273.0, 12.0], [-262.0, 79.0], [-192.0, 67.0]],
+    },
+}
+
 # 上游没给高度波段、但底图里确实有该层、且必须能单独判定的补充波段。
 # 否则该层的标记会落到主层，界面上切到那一层会空无一物（点了没反应）。
 # 键是图 key，值是若干 {svgLayer, label, minY, maxY, areas}。
@@ -542,6 +554,22 @@ def container_slugs(markers_data):
     """从上游标注数据里取出「容器 id → slug」，容器类别要在 build_map 里按 slug 判定。"""
     defs = markers_data.get("lootContainers") or {}
     return {cid: (info or {}).get("normalizedName") for cid, info in defs.items()}
+
+
+def apply_hazard_fix(map_key, point):
+    """把上游画错的危险区换成 ``HAZARD_FIXES`` 里的修正值；匹配不上就原样返回。
+
+    按 ``(图 key, 上游 x, 上游 z)`` 精确匹配（坐标已在 ``point_3d`` 里取整到 3 位小数）。
+    """
+    fix = HAZARD_FIXES.get((map_key, round(point["x"], 3), round(point["z"], 3)))
+    if not fix:
+        return point
+    out = {"x": fix["x"], "z": fix["z"], "type": fix.get("type") or point.get("type")}
+    if "y" in fix:
+        out["y"] = fix["y"]
+    if fix.get("outline"):
+        out["outline"] = [[float(px), float(pz)] for px, pz in fix["outline"]]
+    return out
 
 
 def build_map(entry, markers_by_name, translations, svg_viewbox, svg_layers=None, mobs=None,
@@ -610,7 +638,7 @@ def build_map(entry, markers_by_name, translations, svg_viewbox, svg_layers=None
         outline = outline_2d(item.get("outline"))
         if outline:
             point["outline"] = outline
-        hazards.append(point)
+        hazards.append(apply_hazard_fix(key, point))
 
     # 钥匙门 / 后备箱：上游只给钥匙的物品 id，用物品中文名表换成钥匙名（拿不到就退回 id）
     locks = []

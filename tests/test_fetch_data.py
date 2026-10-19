@@ -238,6 +238,23 @@ def test_build_map_layer_hazards_keeps_outline_and_type():
     assert "outline" not in hazards[2], "顶点不足三个也算不上多边形"
 
 
+def test_hazard_fix_replaces_wrong_sniper_zone():
+    """街区那片狙击区上游画在 x -40～-103 一带，实际在街区西北角：连中心点一起换成修正值。"""
+    upstream = {"x": -71.9, "z": 0.6, "y": 8.5, "type": "sniper",
+                "outline": [[-103.42, -24.8], [-92.71, 35.32], [-40.38, 26.0], [-51.09, -34.12]]}
+    fixed = fd.apply_hazard_fix("streets-of-tarkov", upstream)
+    assert fixed["type"] == "sniper"
+    assert fixed["outline"] == [[-203.0, 0.0], [-273.0, 12.0], [-262.0, 79.0], [-192.0, 67.0]]
+    assert (fixed["x"], fixed["z"]) == (-232.49, 38.8), "中心点要跟着新轮廓走"
+    assert "y" not in fixed, "狙击区是整片垂直区域，没有高度含义"
+
+
+def test_hazard_fix_leaves_other_hazards_untouched():
+    point = {"x": 1.0, "z": 2.0, "y": 3.0, "type": "minefield"}
+    assert fd.apply_hazard_fix("streets-of-tarkov", point) is point, "没登记的坐标原样返回"
+    assert fd.apply_hazard_fix("customs", {"x": -71.9, "z": 0.6})["x"] == -71.9, "别的图不受影响"
+
+
 def test_build_map_layer_valuables_only_keeps_high_value_pools():
     """高级资源点 = 散落刷点里物品池含 BTC / 私酒 / LEDX… 的那些点；其余留给「散落物资」层。"""
     items = {"btc Name": "实体比特币", "booze Name": "“凶狠跑刀崽”私酒",
@@ -803,6 +820,16 @@ def test_real_data_hazard_outlines_are_polygons():
                 assert len(hazard["outline"]) >= 3, "%s 的轮廓顶点不足 3 个" % item["key"]
                 for point in hazard["outline"]:
                     assert len(point) == 2 and all(isinstance(v, (int, float)) for v in point)
+
+
+def test_real_data_streets_sniper_zone_is_corrected():
+    """产出里要留着修正后的街区狙击区：轮廓、中心点、以及「没有 y」都要对得上。"""
+    data = _real_data()
+    streets = [m for m in data["maps"] if m["key"] == "streets-of-tarkov"][0]
+    fixed = [h for h in streets["layers"]["hazards"] if h.get("x") == -232.49]
+    assert len(fixed) == 1, "修正后的狙击区没落进产出（是不是又跑了没带修正表的 fetch_data？）"
+    assert fixed[0]["outline"] == [[-203.0, 0.0], [-273.0, 12.0], [-262.0, 79.0], [-192.0, 67.0]]
+    assert "y" not in fixed[0]
 
 
 def test_real_data_bosses_carry_chance_and_name():
