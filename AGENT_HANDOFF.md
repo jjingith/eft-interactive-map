@@ -1,6 +1,6 @@
 # EFT 互动地图 · Agent 交接手册
 
-> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 路网 schema `1` · 测试 `555 passed`
+> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `8` · 路网 schema `1` · 测试 `571 passed`
 
 ---
 
@@ -9,16 +9,16 @@
 | 项 | 状态 |
 | --- | --- |
 | 源码可运行 | ✅ `python tools/launcher.py` 或 `python tools/serve.py` |
-| 测试 | ✅ `python -m pytest tests -q` → **555 passed, 1 skipped**（约 36s） |
-| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**13 张图**（含实验室 / 迷宫 / 破冰船三张瓦片图，见 §6.13 / §6.18） |
+| 测试 | ✅ `python -m pytest tests -q` → **571 passed, 1 skipped**（约 36s） |
+| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **8**（第十五轮：`HIGH_VALUE_ITEMS` 加「情报文件夹」，并把「其他高价值」子类拆成「情报」+「蓝色文件夹」，见 §6.20），**13 张图**（含实验室 / 迷宫 / 破冰船三张瓦片图，见 §6.13 / §6.18） |
 | 路网 | ✅ `data/roadnet.json` + `assets/roadnet/<图>/<层>.bin`（10 张矢量图的静态路网，供前端同层沿道路寻路，见 §6.19） |
-| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已按第十四轮代码**重打包并上传 GitHub Release v0.1.0**（包内含 `assets/roadnet/` 35 个位图与 `data/roadnet.json`），见 §6.14 / §6.19 |
+| 发布包 | ⚠️ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）当前仍是**第十四轮代码**的产物（含 `assets/roadnet/` 35 个位图与 `data/roadnet.json`，见 §6.14 / §6.19）；**第十五轮的前端 / 数据改动尚未重打包**，待用户确认后重出三件套并更新 GitHub Release v0.1.0。 |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ✅ 第十三轮 5 个提交 + 第十四轮 5 个提交**已推送** `origin/main`，工作区干净（仅余本状态行的更新提交），见 §9 |
+| **Git** | ⚠️ 第十三轮 5 个提交 + 第十四轮 5 个提交**已推送** `origin/main`；**第十五轮改动（app.js / index.html / style.css / tools/config.py / tests / fetch_data.py / data/maps.json / 文档）尚未提交**，见 §9 |
 | 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
 
-最近一次实质改动（2026-10-19，第十四轮）：**导航沿道路走**——构建期把 10 张矢量底图的通行区域栅格化成静态路网（`tools/roadnet.py`，纯离线），前端对**同层**相邻途经点做加权 A\*（道路优先）+ 视线简化，见 §6.19。
-上一轮（第十三轮）是收录破冰船（icebreaker），见 §6.18；再上一轮是海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍（§6.17）。
+最近一次实质改动（2026-10-19，第十五轮）：**高资子类拆「其他高价值」为「情报」+「蓝色文件夹」（共 9 类）+ 显卡换实拍图；地名缩放 / 地名透明度滑条；顶栏「保存配置」按钮；标记浮窗常驻（右上角关闭按钮 + 底部「加入导航途径点」）；途经点拖动排序；钉选常驻搜索栏下方**，见 §6.20。
+上一轮（第十四轮）是导航沿道路走（§6.19）；再上一轮是收录破冰船（icebreaker，§6.18）。
 
 ---
 
@@ -144,7 +144,7 @@ python tools/serve.py --no-browser --port 8787     # 只跑静态站点（调前
 
 ---
 
-## 6. 历次已完成的改动（6.1 – 6.19；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17、第十三轮 §6.18、第十四轮 §6.19）
+## 6. 历次已完成的改动（6.1 – 6.20；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17、第十三轮 §6.18、第十四轮 §6.19、第十五轮 §6.20）
 
 ### 6.1 修复「地图名字全变成物品名」的 bug ★
 
@@ -676,19 +676,67 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 
 ---
 
+### 6.20 第十五轮：高资子类拆分 + 地名滑条 + 保存配置 + 浮窗常驻 + 途径点拖动排序 + 钉选常驻 ★（第十五轮）
+
+用户本轮提出 5 项（前后多次提交，部分需求之前那次丢了、其实没做完，这轮一并补齐）：
+
+**① 新增两个地名滑条**：在右上角「图标」滑条下方加「地名」滑条（50%–300%）与「地名透明度」滑条（0%–100%）。
+- 铁律不变：地名节点**不在 `state.markerScaleNodes` 里**、不带 `__emkBase`，其 `transform` 只写 `translate(sx sy)`，随地图 viewBox 等比缩放；
+  所以**不能**给地名加 CSS transform（会栅格化变糊）。`renderLabels()` 把每个 `<text>` 记进 `state.labelNodes = [{node, size, stroke}]`
+  （`size = 12*unit`、`stroke = 2.4*unit` 是**基准值**，不含缩放）；`applyLabelStyle()` 就地改 attribute
+  （`font-size = size*labelScale`、`stroke-width = stroke*labelScale`、`opacity = labelAlpha`），**不重跑 `renderOverlay`**（拖动才不卡、也不会把地名重排到路线之上）。
+- 新增 `LS_LABEL_SCALE`/`LS_LABEL_ALPHA`、`LABEL_SCALE_MIN/MAX`、`LABEL_ALPHA_MIN/MAX`、`state.labelScale/labelAlpha`、
+  `labelScale()/labelAlpha()/setLabelScale()/setLabelAlpha()`；`uiPatch()` 增 `label_scale`/`label_alpha`，`restorePrefs()`/`applyUiPrefs()` 同步读写。
+
+**② 顶栏「保存配置」按钮**：`index.html` 的 `.menubar` 里「导航与路线」之后加 `#save-config`；`bindUI()` 绑 click →
+`savePrefsNow()`（**清掉 400ms 防抖 timer 后立即 `flushPrefs()`**）→ 按钮变「已保存 ✓」并 disabled，1200ms 后复原。
+
+**③ 标记浮窗常驻 + 关闭按钮 + 加入途径点 + 途径点拖动排序**：
+- 浮窗**不再自动消失**：删掉原来的 8 秒 `markerPopTimer`，`hideMarkerPopup()` 也不再清 timer；
+  只有「点别的标记（`showMarkerPopup` 开头先 `hideMarkerPopup()` 切过去）」或「点浮窗右上角 `.marker-pop-close`（×）」才收起。
+- 浮窗结构重写：`.marker-pop-head`（`.marker-pop-title` 标题 + `.marker-pop-close`）× 若干 `.marker-pop-row` + 底部 `.marker-pop-actions` 里的 `.marker-pop-add`「加入导航途径点」→ 点击调 `addRoutePoint(kind, name, item)`，
+  name 取 `item.name || item.items[0] || KIND_LABEL[kind] || kind`（高资点没有 name，用第一个物品名当途经点名）。
+- 途径点**拖动排序**：`makeRouteItemDraggable(li, routeIdx)` 用 HTML5 drag（`draggable="true"` + dragstart/dragend/dragover/drop），
+  按指针落在目标行的**上半 / 下半**决定 `drop-before`/`drop-after`；`moveRoutePoint(from,to)` 里 `if (to > from) to -= 1;` 再 splice（**先扣自身位移**，否则拖动元素被重建会中断 drag）。
+  **实时定位起始行不设 draggable**（它由 `routeFromPlayer` 决定，不能手动挪）。
+
+**④ 钉选常驻搜索栏下方**：`index.html` 在 `#search` 与 `#search-results` 之间加 `#pinned-list`；`renderPins()` 用 `searchIndex(map)` 建 `byId`
+  渲染「已钉选（N）」+ 每条 `.pinned-item`（`.pinned-hit` 定位按钮调 `focusEntry` / `.pinned-off`「取消钉选」调 `togglePin`）；无钉选或地图未就绪时整块 `hidden`。
+  调用点：`togglePin()` 末尾、`applyUiPrefs` 的 `pins` 分支、`selectMap()` 里 `renderSearchResults()` 之后。
+
+**⑤ 高资子类拆「其他高价值」为「情报」+「蓝色文件夹」（共 9 类）+ 显卡换实拍图**：
+- `VALUABLE_CATS` 去掉 `other`，改成 `intel`（`/情报/`）与 `folder`（`/文件夹|材料/`），共 9 类。
+  **顺序敏感**：物品名「情报文件夹」同时含「情报」和「文件夹」，`valuableCatsOf()` 对**每个物品名只取第一条命中的类**，所以 `/情报/` 必须排在 `/文件夹|材料/` 前。
+- `valuableCatsOf()` 未命中不再补 `other`，返回空数组；兜底放在 `valuableUnionSpec().where`：`if (!cats.length) { return on.length > 0; }`
+  （**未命中任何子类的点在任一子类开启时照样画**，避免上游新增物品名后凭空消失）。
+- 图标：`iconize.py` 新增 3 条 JOBS（源图在 `D:\personal\trae\02-塔科夫\ui图标`）：`val-gpu.png`（显卡实拍，替换原手画 SVG）、
+  `val-intel.png`（情报）、`val-folder.png`（覆盖旧蓝色文件夹图）；删掉 `SIGN_ICONS`/`SIGN_COLORS` 里的手画 `valuable_gpu`。
+  `ICON_PNG` 加 `valuable_gpu` / `valuable_intel`；`VALUABLE_ICON_RULES` 在 `/文件夹|材料/` 前插 `[/情报/, "valuable_intel"]`。
+- 数据：`tools/fetch_data.py` 的 `HIGH_VALUE_ITEMS` 加「情报文件夹」，`SCHEMA` **7 → 8**，离线重跑（`data/maps.json` len = 2051107，schema = 8）。
+  校验：73 个不同高资物品名**全部能被 9 类规则命中**（unmatched = 0）。
+
+**默认开关**：高资默认仍只开 **比特币 / 私酒 / 显卡 / 钥匙卡类**（4 个），其余 5 个子类默认关。
+**配置白名单**：`tools/config.py` 的 `_normalize_ui()` / `merge_ui()` 加 `label_scale`（钳 0.5–3.0）/ `label_alpha`（钳 0.0–1.0），新增 `clamp_label_scale()`/`clamp_label_alpha()`；
+`tests/test_config.py` 补 4 条测试 → 全量 **571 passed, 1 skipped**。
+**文档**：`README.md`（9 子类 / 常驻钉选 / 浮窗常驻 + 关闭 + 加入途径点 / 地名滑条 + 保存配置 / schema 8 / 图标 220 / 测试 571）、`docs/USAGE.md`（子类「情报 / 蓝色文件夹」、浮窗不再自动收起、钉选常驻、途经点拖动排序、导航段纠正为「同层沿道路」）。
+
+**本轮没做的**：重新打包三件套 / 推送提交（用户本轮未要求，待确认）。
+
+---
+
 ## 7. 前端要点（改 `app.js` 前必读）
 
-- **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 显卡 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
-- **高级资源点子类**（第七轮建、第十一轮扩到 **8 类**）：`VALUABLE_CATS`（8 类，各带 `match` 正则，**`/钥匙卡/` 必须排在 `/钥匙/` 前**）+ `valuableCatsOf(item)` 判归属（有物品名一件都不命中就补 `other`）。「物资」组第一行是 `master:true` 的总开关 `valuables`，后跟 8 个 `sub:true` 的 `valuable_<cat>`。总开关状态由 `syncValuableMaster()` 从子类**推导**（半勾 = 只开了一部分），`syncLegendState()` 里**半勾也算「开」**。
+- **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 显卡 / 钥匙卡类**（其余 5 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
+- **高级资源点子类**（第七轮建、第十一轮扩到 8 类、第十五轮拆「其他高价值」为「情报」+「蓝色文件夹」共 **9 类**）：`VALUABLE_CATS`（9 类，各带 `match` 正则，**`/钥匙卡/` 必须排在 `/钥匙/` 前**、**`/情报/` 必须排在 `/文件夹|材料/` 前**）+ `valuableCatsOf(item)` 判归属（**每个物品名只取第一条命中的类**；整体未命中任何子类时返回空数组，渲染兜底见 `valuableUnionSpec`）。「物资」组第一行是 `master:true` 的总开关 `valuables`，后跟 9 个 `sub:true` 的 `valuable_<cat>`。总开关状态由 `syncValuableMaster()` 从子类**推导**（半勾 = 只开了一部分），`syncLegendState()` 里**半勾也算「开」**。
   **渲染不能按开关逐个画**：`renderOverlay()` 里所有 `kind === "valuables"` 的 spec 都跳过，改用 `valuableUnionSpec()`（「所属类别 ∩ 已开启类别 ≠ 空」）整体画一次，否则同一点会在两行开关下叠两层。`enableLayersFor()` 必须过滤 `spec.master`（总开关不参与「打开某图层」）。
   **改子类划分只动 `VALUABLE_CATS` 一处**，`LAYER_SPEC` / `DEFAULT_ON` / 渲染都会跟着走（`DEFAULT_ON` 里记得同步 `valuable_<cat>` 的默认）。
 - **图层开关的 change 监听必须挂在容器 `#layer-toggles` 上用事件委托**。图例 DOM 会整体重建，逐个 checkbox 绑定会丢监听 → 会出现「取消勾选后标记仍然显示」的 bug（已踩过，见 §8）。
-- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。**地名不在 `markerScaleNodes` 里**（第十一轮起）——它要**跟地图绑死**，随 viewBox 缩放等比变大变小，滑条管不着它（见 `renderLabels`）。
+- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。**地名不在 `markerScaleNodes` 里**（第十一轮起）——它要**跟地图绑死**，随 viewBox 缩放等比变大变小，图标滑条管不着它（见 `renderLabels`）。第十五轮另加「地名」/「地名透明度」两个滑条：`renderLabels()` 把每个 `<text>` 记进 `state.labelNodes`（含基准 `size`/`stroke`，不含缩放），`applyLabelStyle()` **就地改 attribute**（`font-size`/`stroke-width`/`opacity`），**不重跑 `renderOverlay`**、也**绝不给地名加 CSS transform**。
 - **选中高亮环**：对画图标的图层（`ICON_KINDS = ["containers","valuables","spawns","bosses","locks","btr"]`）统一按 ±10 屏幕像素外接；撤离点 / 转移点是 ±12（第十一轮 11 → 第十二轮 12，跟着放大的徽章走）。高亮环**必须是静态描边**，不能是动画。
 - 物资图标：`LOOT_ICONS`（每类由 `body` / `mark` / `hole` / `thin` 等部件组成）、`lootIcon(group, unit)` 画地图上的、`lootIconSvg(group)` 画图例的（`viewBox="-8-8 16 16"`）。
 - **图标素材（`ICON_PNG`）**：key → `assets/icons/*.png` 的贴图表。四个工厂函数（`lootIcon` / `lootIconSvg` / `signIcon` / `signIconSvg`）**开头都判断 `if (ICON_PNG[key]) { return pngIcon(key, unit) /* 或 pngIconSvg(key) */; }`**——命中就用 `<image>` 贴图，未命中仍走手画 SVG。**换图标只需往 `ICON_PNG` 加一行 + 放一张 64×64 透明 PNG 到 `assets/icons/`**；新 PNG 必须透明、居中、内容约占画布 86%（照 `tools/iconize.py` 的输出规格）。源图是**竖排图例**（一张图里多行）时，要在 `tools/iconize.py` 的 `JOBS` 里加 `band` 指定那一段，不能整图直接抠（`strip` 只取最左侧那一簇，会把上下行连起来）。
 - **具体物品名 → 专属图标**：`KEY_ICONS`（中文名 → icon key 的**精确表**）。`valuableIconKey(names)` **按价值分层遍历 `VALUABLE_ICON_RULES`**（外层规则、内层扫物品名，命中即止；同层里该名字在 `KEY_ICONS` 里有专属实拍图就贴真图，否则用该层通用图标），末尾再兜底扫一遍 `KEY_ICONS`。**规则数组的相对顺序就是价值顺序**（`BTC → 私酒 → 显卡 → LEDX → 除颤 → 钥匙卡 → 钥匙 → 文件夹`），`/钥匙卡/` 在 `/钥匙/` 前——顺序错了就会出现「LEDX 点画成除颤器」「私酒点画成钥匙」这类图不对位的 bug（§6.16）。上锁的门「需要钥匙」行用同一个函数取图标（`inlineIcon()` 把图标塞进 HTML 文案）。**给某件钥匙配专属图 = 往 `ICON_PNG` 加一行 + 往 `KEY_ICONS` 加一行**，两者 key 名一致（`key_<物品id前8位>`）。
-- **标记小浮窗**：`showMarkerPopup(map, kind, item)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），**定位在地图区左上角往里 12px**（`el.stage.getBoundingClientRect()`，不跟图标跑），8 秒消失；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**（`locks` 也在同一个浮窗里显示「需要钥匙」+ 对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
+- **标记小浮窗**：`showMarkerPopup(map, kind, item)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），**定位在地图区左上角往里 12px**（`el.stage.getBoundingClientRect()`，不跟图标跑）；结构是 `.marker-pop-head`（`.marker-pop-title` + `.marker-pop-close`「×」）+ 若干 `.marker-pop-row` + `.marker-pop-actions`（`.marker-pop-add`「加入导航途径点」→ `addRoutePoint()`）。**第十五轮起不再自动消失**（删掉原来的 8 秒 `markerPopTimer`），只在点别的标记（`showMarkerPopup` 开头先 `hideMarkerPopup()` 切换）或点右上角关闭按钮时收起；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**（`locks` 也在同一个浮窗里显示「需要钥匙」+ 对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
   **「HTML 元素」这点是关键**：正因为它是 `<div>` 而不是 SVG 图元，才能安全地用 CSS `opacity` transition 做淡入淡出（§6.15）。淡入 = 建好后 `requestAnimationFrame` 再加 `.show`；淡出 = 摘掉 `.show` 后**延后 `POP_FADE_MS` 再 `remove()`**（旧的 `markerPopNode` 与新浮窗可短暂共存）。行渲染统一走 `inlineIconAny(value)`（字符串走 `inlineIcon`、SVG 元素包 `.inline-ico`），`detailRows()` 的物资行自带图标元素（容器给 `lootIconSvg`、高资点给 `signIconSvg`），所以浮窗和「标记详情」都能显示物资小图标。
 - 撤离点 / 转移点徽章：`BADGE_SHAPE`（盾牌路径）+ `BADGE_RUNNER`（奔跑小人）+ `badgeIcon(variant, unit)` / `badgeIconSvg(variant)` / `badgeLabel(text, variant, unit)`，颜色由 CSS `.emk-badge-<variant> .badge-bg { fill: var(--extract-*) }` 给。**第十二轮起整体乘 `BADGE_SCALE = 1.5`**（徽章与名字都放大，实测 11×13.5 → 16.5×20.3 屏幕像素）；图例那枚 `badgeIconSvg` **不放大**（图例本身尺寸合适）。
 - **顶部菜单栏**：`bindMenu()` 管 `#menu-raid` 与 `#raid-block` 的开合（点按钮 toggle / 点面板外收起 / `Esc` 收起）。「战局与任务」整块（含 `#quest-log` 等原 id）都从侧栏搬进了这个面板；**要加新菜单项就往 `.menubar` 里再塞一个 `.menu-wrap`**，别把东西塞回侧栏。
@@ -702,7 +750,9 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 - **钉选**：状态是 `state.pins = [{kind,name}]`，唯一键 `kind + name`（同名不同类型算两条）。标记侧判定走 `isPinnedItem(kind,item)`（比 `name` / `keyName` / `text` / `items`）。
   高亮环是 marker 的 **firstChild**（`circle.emk-pin-ring`，`prepend` 保证在图标底下）——所以 `showDetail()` 里取「选中环」时**必须先跳过它**。
   CSS 必须写 `.emk-marker circle.emk-pin-ring`（既要盖住 `.emk-marker circle` 的深色描边，又要 `vector-effect: non-scaling-stroke` + px 线宽）。持久化同图层：`localStorage` + `ui.pins`。
+  **第十五轮起钉选项常驻搜索栏下方**：`index.html` 的 `#search` 与 `#search-results` 之间加 `#pinned-list`，`renderPins()` 用 `searchIndex(map)` 建 `byId` 后渲染「已钉选（N）」+ 每条 `.pinned-item`（`.pinned-hit` 定位 / `.pinned-off` 取消钉选）；无钉选或地图未就绪时 `hidden`。重绘触发点：`togglePin()` 末尾、`applyUiPrefs` 的 `pins` 分支、`selectMap()` 里 `renderSearchResults()` 之后。
 - **导航路线**：`state.route`（`{kind,name,x,z,y}` ≤60）+ `state.routeFromPlayer`。`routePoints()` 在勾了「从实时定位出发」且 `state.player` 存在时把玩家位置插到最前。
+  **第十五轮起途经点可拖动排序**：`renderRoutePanel()` 里每个带删除按钮的途经点行调 `makeRouteItemDraggable(li, routeIdx)`（HTML5 drag，按落点上半 / 下半决定 `drop-before`/`drop-after`），`moveRoutePoint(from,to)` **`if (to>from) to-=1;` 后再 splice**（先扣自身位移，避免拖动元素被重建中断 drag）；**实时定位起始行不设 `draggable`**。标记浮窗底部的「加入导航途径点」按钮也走 `addRoutePoint()`。
   折线 `polyline.emk-route-line` 必须带 `vector-effect="non-scaling-stroke"`（覆盖层直系子元素没有 `scale(1/z)` 补偿，不加会被缩放拉粗）；
   编号节点 `g.emk-route-node` 要 push 进 `state.markerScaleNodes` 并设 `__emkBase`，否则缩放时不会随标记保持屏幕大小。`renderRoute()` 在 `renderLabels` 之后、`updateCounterScale()` 之前调用。
 - **沿道路寻路**（第十四轮）：`data/roadnet.json` 是**可选**的（`boot()` 里 `.catch(() => null)`），缺了导航照样能用、全走直线。位图按 `<图 key>/<层 id>` 懒加载进 `state.roadnetCache`（`null` = 该层没有位图，别再重试）。**只要动 `routeGeometry()` / `routeDistance()` / `renderRoutePanel()`，务必让「折线点数」与「面板文案」同源**——它们都吃 `routeGeometry()` 的返回值；位图是**异步**到位的，`roadnetNet()` 载完要同时调 `renderOverlay()` **和** `renderRoutePanel()`（前者只管折线，不管 `#route-summary`，漏了就会一直显示上一次的「（直线）」）。
@@ -757,7 +807,7 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 
 ---
 
-## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交、第十三轮分 3 批、第十四轮分 4 批 + 提交表补录）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交、第十三轮分 3 批、第十四轮分 4 批 + 提交表补录；**第十五轮改动尚未提交**）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -817,12 +867,24 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `409e63f` | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
 | `161d7e0` | 文档：补第十四轮提交表 hash |
 
+第十五轮（2026-10-19，**尚未提交**，工作区改动）：
+
+| 文件 | 内容 |
+| --- | --- |
+| `tools/iconize.py` | 新增 3 条 JOBS：`val-gpu.png`（显卡实拍）/ `val-intel.png`（情报）/ `val-folder.png`（覆盖蓝色文件夹） |
+| `tools/fetch_data.py` | `HIGH_VALUE_ITEMS` 加「情报文件夹」，`SCHEMA` 7 → 8 |
+| `data/maps.json` | 离线重跑（schema 8，len 2051107；`情报文件夹` 245 处 / `蓝色文件夹` 45 处） |
+| `app.js` | 子类拆「情报」+「蓝色文件夹」（共 9 类）+ 显卡换实拍图；地名缩放 / 透明度滑条；`savePrefsNow()`；浮窗常驻 + 关闭 + 加入途径点；途径点拖动排序；`renderPins()` 钉选常驻 |
+| `index.html` / `style.css` | `#save-config`「保存配置」按钮；`#label-scale` / `#label-alpha` 两个滑条；`#pinned-list`；浮窗 head / actions 与拖动排序样式 |
+| `tools/config.py` / `tests/test_config.py` | `label_scale` / `label_alpha` 白名单 + `clamp_*`；补 4 条测试（全量 571 passed, 1 skipped） |
+| `README.md` / `docs/USAGE.md` / 本手册 | 同步第十五轮（9 子类 / 常驻钉选 / 浮窗常驻 / 地名滑条 + 保存配置 / schema 8 / 图标 220 / 测试 571） |
+
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
 > $env:GIT_COMMITTER_NAME='jjingith'; $env:GIT_COMMITTER_EMAIL='imzjj1996@gmail.com'`（或临时设置身份），否则 `git commit` 直接报 `Author identity unknown`。
 > 另：PowerShell **不支持** `$(cat <<'EOF' …)` heredoc 写多行提交信息，要改用多个 `-m`。
 
-**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/roadnet/`（35 个路网位图）、`assets/icons/*.png`（217 个）、
+**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/roadnet/`（35 个路网位图）、`assets/icons/*.png`（220 个）、
 `tools/`、`tests/`、`build/`、根目录 `index.html` / `style.css` / `app.js`、`AGENT_HANDOFF.md`、`docs/`。
 **不入库**（`.gitignore` 已排除）：`dist/`、`release/`、`build-cache/`、`build/_work*/`、`eftmap.config.json`、`sounds/`、`*.spec`。
 
