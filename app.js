@@ -2460,6 +2460,9 @@
    * 再靠父级 transform 的 scale(1/z) 保证放大缩小都在屏幕上一样大。
    * 颜色由 CSS 的 `.emk-badge-<阵营>` 给，这里只画形状。
    */
+  // 撤离点 / 转移点的徽章比别的图层小一圈（玩家反馈），整体放大一档：
+  // 徽章与它下面的名字一起乘这个系数，屏幕尺寸恒定的机制不变。
+  var BADGE_SCALE = 1.5;
   var BADGE_SHAPE = "M-4.4-6.7h8.8c.6 0 1.1.5 1.1 1.1v3.4c0 3.9-2.3 7.1-5.5 9-3.2-1.9-5.5-5.1-5.5-9v-3.4c0-.6.5-1.1 1.1-1.1z";
   // 小人朝右奔跑：躯干前倾 + 一前一后的手臂与腿（多段子路径，用描边画）
   var BADGE_RUNNER = "M1-1.95L-0.35 0.1M0.95-1.85L2.5-1.2M1-1.9L-1.4-1.05M-0.35 0.1L1.5 1.3L2.35 2.05M-0.35 0.1L-1.25 1.3L-2.1 1.95";
@@ -2474,7 +2477,8 @@
 
   /** 地图上的徽章（unit 是「1 屏幕像素」对应的用户单位） */
   function badgeIcon(variant, unit) {
-    var g = svgEl("g", { class: "emk-badge emk-badge-" + variant, transform: "scale(" + unit + ")" });
+    var scale = unit * BADGE_SCALE;
+    var g = svgEl("g", { class: "emk-badge emk-badge-" + variant, transform: "scale(" + scale + ")" });
     badgeChildren().forEach(function (node) { g.appendChild(node); });
     return g;
   }
@@ -2492,11 +2496,12 @@
 
   /** 徽章下面的名字：和参考站一样按阵营着色，字号 / 描边都按 unit 换算，屏幕上恒定 */
   function badgeLabel(text, variant, unit) {
+    var size = unit * BADGE_SCALE;
     var tag = svgEl("text", {
       class: "emk-tag emk-tag-" + variant,
-      x: 0, y: 9.6 * unit,
-      "font-size": 11 * unit,
-      "stroke-width": 2.6 * unit,
+      x: 0, y: 9.6 * size,
+      "font-size": 11 * size,
+      "stroke-width": 2.6 * size,
       "text-anchor": "middle",
       "dominant-baseline": "hanging"
     });
@@ -2576,7 +2581,8 @@
   /** 钉选高亮环的半径（用户单位）：图标类按外接尺寸，纯圆点按点半径放大 */
   function pinRingRadius(kind, radius) {
     var unit = 1 / state.fit;
-    if (kind === "extracts" || kind === "transits") { return 11 * unit * iconScale(); }
+    // 撤离 / 转移点的徽章放大后外接半径约 12 屏幕像素
+    if (kind === "extracts" || kind === "transits") { return 12 * unit * iconScale(); }
     if (ICON_KINDS.indexOf(kind) !== -1) { return 10 * unit * iconScale(); }
     return radius * 2.6;   // radius 已是「点半径 × unit」，再放大一档
   }
@@ -2664,7 +2670,7 @@
     while (first && first.classList && first.classList.contains("emk-pin-ring")) { first = first.nextSibling; }
     var ringR = first && first.getAttribute("r");
     if (first && !ringR) {
-      if (kind === "extracts" || kind === "transits") { ringR = 11 * iconScale() / state.fit; }
+      if (kind === "extracts" || kind === "transits") { ringR = 12 * iconScale() / state.fit; }
       else if (ICON_KINDS.indexOf(kind) !== -1) { ringR = 10 * iconScale() / state.fit; }
     }
     if (first && ringR) {
