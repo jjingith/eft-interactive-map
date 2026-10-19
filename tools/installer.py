@@ -48,6 +48,9 @@ $sc.IconLocation = $Icon
 $sc.Save()
 """
 
+# 建 .lnk 用的临时名：必须**纯 ASCII**（见 create_shortcut 注释）
+_TMP_LNK_NAME = "_eftmap_shortcut_tmp.lnk"
+
 
 # ---------------------------------------------------------------- 路径
 def bundle_root() -> str:
@@ -88,13 +91,30 @@ def shortcut_paths() -> tuple[str, str]:
 
 # ---------------------------------------------------------------- 快捷方式 / 注册表
 def create_shortcut(lnk: str, target: str, work_dir: str, icon: str) -> None:
-    os.makedirs(os.path.dirname(lnk), exist_ok=True)
+    """建一个 .lnk。
+
+    ⚠ 不能把中文名直接交给 `WScript.Shell`：它内部会按**系统 ANSI 代码页**
+    （简体中文机器上常见是英文的 1252）转换路径，`互动地图` 会变成 `????`，
+    `Save()` 随即 `FileNotFoundException`，快捷方式根本建不出来。
+    所以先建到同目录的**纯 ASCII 临时名**，再用 `os.replace` 改成真正的名字
+    —— Python 的文件名 API 走宽字符，中文名是安全的。
+    （内容里的安装目录同理：默认目录是 ASCII，正常；若用户装到含中文的目录，
+    WSH 仍会破坏该路径，属已知限制。）
+    """
+    directory = os.path.dirname(lnk)
+    os.makedirs(directory, exist_ok=True)
+    tmp = os.path.join(directory, _TMP_LNK_NAME)
+    for stale in (tmp,):
+        try:
+            os.remove(stale)
+        except OSError:
+            pass
     handle = tempfile.NamedTemporaryFile("w", suffix=".ps1", delete=False, encoding="utf-8")
     try:
         handle.write(_SHORTCUT_SCRIPT)
         handle.close()
         subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
-                        "-File", handle.name, "-Lnk", lnk, "-Target", target,
+                        "-File", handle.name, "-Lnk", tmp, "-Target", target,
                         "-WorkDir", work_dir, "-Icon", icon],
                        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     finally:
@@ -102,6 +122,7 @@ def create_shortcut(lnk: str, target: str, work_dir: str, icon: str) -> None:
             os.remove(handle.name)
         except OSError:
             pass
+    os.replace(tmp, lnk)
 
 
 def dir_size_kb(path: str) -> int:

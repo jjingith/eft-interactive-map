@@ -84,3 +84,28 @@ def test_install_into_skips_desktop_shortcut_when_unchecked(tmp_path, monkeypatc
 
     installer.install_into(str(tmp_path / "installed"), desktop=False)
     assert len(shortcuts) == 1
+
+
+def test_create_shortcut_builds_ascii_tmp_then_renames(tmp_path, monkeypatch):
+    """WScript.Shell 会按系统 ANSI 代码页破坏中文名（`互动地图` → `????`），
+    所以必须先建到纯 ASCII 临时名，再用 os.replace 改成真正的中文名。"""
+    lnk = tmp_path / "EFT 互动地图.lnk"
+    seen: dict = {}
+
+    def fake_run(cmd, **kwargs):
+        seen["cmd"] = cmd
+        idx = cmd.index("-Lnk")
+        passage = Path(cmd[idx + 1])
+        assert passage.name.isascii(), "临时名必须是纯 ASCII，否则 WSH 仍会失败"
+        passage.write_bytes(b"lnk-bytes")
+
+        class _R:
+            returncode = 0
+
+        return _R()
+
+    monkeypatch.setattr(installer.subprocess, "run", fake_run)
+    installer.create_shortcut(str(lnk), r"C:\app\EFTMap.exe", r"C:\app", r"C:\app\EFTMap.exe")
+
+    assert lnk.read_bytes() == b"lnk-bytes"                       # 已改名到中文名
+    assert not (tmp_path / installer._TMP_LNK_NAME).exists()       # 临时名不残留
