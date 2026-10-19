@@ -101,7 +101,8 @@ python tools/serve.py --no-browser --port 8790
 - **声音提示**：战局开始 / 开始加载战局 / 开始匹配三个环节可各自选用自定义音频，不选则用内置。
 - **图例 / 图层**：左侧按 6 组分类开关，每行显示该标记在当前地图上的数量；高级资源点另有独立分组。
 - **搜索 / 钉选 / 路线**：按名称子串聚合搜索，可把结果「钉选」到地图，或按直线连成「导航路线」。
-- **楼层切换 / 标记浮窗 / 状态条**：多层图可切层；点任意标记弹出简略浮窗、左侧「标记详情」给完整信息；底部状态条显示当前地图、光标世界坐标与实时定位状态。
+- **楼层切换 / 标记浮窗 / 状态条**：多层图可切层；点任意标记弹出简略浮窗（淡入淡出，物资类标记会带对应物资小图标）、左侧「标记详情」给完整信息；底部状态条显示当前地图、光标世界坐标与实时定位状态。
+- **图标整体缩放**：右上角「图标」滑条（50%–300%）统一调整地图上全部图标与地名的大小——4K 屏图标偏小就往右拖（本地保存，下次启动沿用）。
 
 > 逐项细节见 [docs/USAGE.md](docs/USAGE.md)。
 
@@ -188,7 +189,7 @@ eft-interactive-map/
 │   └── installer.py                  # 构建期：一键安装器（装到 %LOCALAPPDATA%\EFTMap + 快捷方式 + 卸载项），由 build_release.ps1 打成单文件 exe
 ├── build/build.ps1                   # PyInstaller 打包脚本（onedir）
 ├── build/build_release.ps1           # 发布三件套：Portable zip / AppWindow zip / Setup exe
-├── tests/                            # pytest 单测（501 条，全离线）
+├── tests/                            # pytest 单测（515 条，全离线）
 ├── docs/USAGE.md                     # 详细用法与全部数据（逐项详解 / 各图计数 / 容器分类）
 ├── docs/superpowers/                 # 设计规格与实施计划
 └── release/                          # 发布产物（已 gitignore，不进仓库）
@@ -199,7 +200,7 @@ eft-interactive-map/
 ## 自测
 
 ```bash
-python -m pytest tests -q     # 全量单测 → 501 passed, 1 skipped
+python -m pytest tests -q     # 全量单测 → 515 passed, 1 skipped
 node --check app.js           # 前端语法检查
 ```
 

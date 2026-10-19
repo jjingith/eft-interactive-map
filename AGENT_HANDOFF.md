@@ -1,6 +1,6 @@
 # EFT 互动地图 · Agent 交接手册
 
-> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `6` · 测试 `501 passed`
+> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `6` · 测试 `515 passed`
 
 ---
 
@@ -9,19 +9,18 @@
 | 项 | 状态 |
 | --- | --- |
 | 源码可运行 | ✅ `python tools/launcher.py` 或 `python tools/serve.py` |
-| 测试 | ✅ `python -m pytest tests -q` → **501 passed, 1 skipped**（约 35s） |
+| 测试 | ✅ `python -m pytest tests -q` → **515 passed, 1 skipped**（约 35s） |
 | 数据 | ✅ `data/maps.json` + `data/meta.json`，schema 6，**12 张图**（新增实验室 / 迷宫，见 §6.13） |
 | 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14 |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ⚠️ **未提交**。工作树已跟踪文件被改 + 未跟踪新文件（见 §9） |
+| **Git** | ✅ 工作树干净，第十轮改动已提交（`5f8e65c` 数据修正 / `f67ee43` 前端四项 / 文档），见 §9 |
 | 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做） |
 
-最近一次实质改动（2026-10-19，第九轮）：**发布三件套 + 上 GitHub**——把项目整理成三个发布版本
-（`EFTMap-Setup-*.exe` 一键安装 / `EFTMap-Portable-*.zip` 解压即用 / `EFTMap-AppWindow-*.zip` 加壳版，
-界面开在 Edge/Chrome 的**独立应用窗口**、无地址栏），新增 `build/build_release.ps1` 与 `tools/installer.py`
-（纯标准库自建安装器：装到 `%LOCALAPPDATA%\EFTMap` + 快捷方式 + 卸载项），见 §6.14。
-上一轮（第八轮）是**收录实验室 / 迷宫**（构建期拼瓦片成合成 SVG，前端零改动，§6.13）；
-再上一轮是**把「高级资源点」拆成「1 个总开关 + 7 个子类」**（§6.12）。
+最近一次实质改动（2026-10-19，第十轮）：**街区狙击区坐标修正 + 前端四项体验改动**——修正塔科夫街区那条画错位置的「狙击区」危险区
+（用户给定 4 顶点、去掉 `y`），BTR 停靠点图标放大一倍，标记小浮窗加淡入淡出并像「上锁的门」一样显示物资小图标，
+新增右上角「图标」整体缩放滑条（4K 屏图标偏小），见 §6.15。
+上一轮（第九轮）是**发布三件套 + 上 GitHub**（§6.14）；
+再上一轮是**收录实验室 / 迷宫**（构建期拼瓦片成合成 SVG，§6.13）。
 
 ---
 
@@ -142,7 +141,7 @@ python tools/serve.py --no-browser --port 8787     # 只跑静态站点（调前
 
 ---
 
-## 6. 历次已完成的改动（6.1 – 6.14，第九轮见 §6.14）
+## 6. 历次已完成的改动（6.1 – 6.15，第十轮见 §6.15）
 
 ### 6.1 修复「地图名字全变成物品名」的 bug ★
 
@@ -483,6 +482,45 @@ PyInstaller `--add-data "<目录>;<dest>"` 是**把该目录的「内容」复�
 
 ---
 
+### 6.15 第十轮：街区狙击区坐标修正 + 前端四项体验改动 ★（第十轮）
+
+用户口径：「街区的这个危险区位置错了 实际上应该在 x-203/z0 x-273/z12 x-192/z67 x-262/z79 另外这是狙击区域 …
+所以没有 y 轴；btr 的站图标在地图上有点小了 可以从现有大小放大一倍；点击地图上的小图标后显示的小浮窗可以增加一个淡入淡出的效果
+… 和上锁的门一样 也会显示物资的小图标；再增加一个整体地图上的图标缩放的滑动按钮（4k 屏幕上这些图标太小了，1080p 又差不多）」。
+共 5 项：① 修数据 ② BTR 图标 ×2 ③ 浮窗淡入淡出 ④ 浮窗带物资小图标 ⑤ 图标整体缩放滑条。
+
+1. **① 狙击区坐标修正（唯一动数据的一项，schema 不变仍为 6）**：原记录画在 x -40～-103 一带（`x:-71.9 z:0.6 y:8.5`，带高度），
+   实际在街区西北角。用户给 4 个顶点，但**按原顺序连会自交（蝴蝶结）**——A(-203,0)→B(-273,12)→C(-192,67)→D(-262,79) 的叉积符号翻转；
+   改成 A→B→D→C 后 4 个叉积同号（凸多边形），最终写入 `outline = [[-203,0],[-273,12],[-262,79],[-192,67]]`；
+   **`position` 是所有上游危险区共有的约定：等于 `outline` 的面积质心**，所以改轮廓必须同时改中心点 → `x:-232.49 z:38.8`；
+   狙击区无高度含义 → **删掉 `y` 字段**。改动落在 `data/maps.json`（数据是入库的，直接改）**并**在 `tools/fetch_data.py` 加覆盖表
+   `HAZARD_FIXES` + `apply_hazard_fix(map_key, point)`（键是 `(地图 key, 原 x, 原 z)`，在 `build_map` 的 hazards 循环末行调用），
+   否则哪天真跑 `--force` 会被上游数据冲回去。
+2. **② BTR 停靠点图标放大一倍**：`makeMarker()` 里 BTR 分支改成 `signIcon(iconKey, unit * 2)`（其它图标仍用 `unit`）。
+   实测 DOM：`g.emk-sign-btr` 的 `transform="scale(3.046…)"` = 2 × 其它标记徽章的 `1.523…`。
+3. **③ 浮窗淡入淡出**：`#marker-pop` 是 **HTML `<div>`**（不是 SVG 图元，所以能安全用 CSS `opacity` transition——老坑「给 SVG 加动画会整张栅格化」不适用）。
+   新增 `POP_FADE_MS = 180` + `markerPopNode`：`hideMarkerPopup()` 不再立刻 `remove()`，而是摘掉 `.show` 类后**延时 `POP_FADE_MS` 再摘除节点**；
+   `showMarkerPopup()` 建好用 `requestAnimationFrame` 再加 `.show`（否则同帧加类不会触发过渡）。样式：`.marker-pop { opacity:0; transition: opacity .18s ease-out }` + `.marker-pop.show { opacity:1 }`。
+4. **④ 浮窗带物资小图标**：新增 `inlineIconAny(value)`（字符串走 `inlineIcon`、SVG 元素直接包一层 `.inline-ico`），
+   浮窗行渲染改为「有图标就先 append 图标再 append 文字」；`detailRows()` 的容器行给 `lootIconSvg(item.group)`、
+   高资点行给 `signIconSvg(valuableIconKey(item.items))`，`showDetail()` 同步改用 `inlineIconAny`。
+   实测：容器浮窗 `hasSvg=true`、文本「技术物资箱 / 类型 物资容器 / 容器类别 物资箱」；高资浮窗同样 `hasSvg=true`。
+5. **⑤ 图标整体缩放滑条**：HUD 里加 `<input id="icon-scale" min=.5 max=3 step=.05>` + 百分比标签。
+   **机制：只能乘进 `updateCounterScale()` 的系数**（`var inv = iconScale() / state.z;`）——**绝不能**给 SVG 元素加 CSS `transform`/`animation`（§2 铁律）；
+   `state.iconScale` + `iconScale()` + `setIconScale(value, persist)`（钳 0.5–3）；`pinRingRadius()` 与 `showDetail()` 的图标高亮环半径也要乘 `iconScale()`（纯圆点分支不乘，圆点本身随组缩放）。
+   持久化走既有链路：`localStorage['eftmap.icon.scale']` + `uiPatch()` 的 `ui.icon_scale` → `tools/config.py` 的 `merge_ui` / `_normalize_ui`（`clamp_icon_scale`，只认真数字、bool 不算）→ SSE `config` → `applyUiPrefs()`。
+   实测：滑条设 2.6 → 标记 `scale(1.478) = 2.6/1.759(z)`、标签「260%」、`localStorage` 写入；重载后滑条回到存值。
+
+**验证**：`python -m pytest tests -q` → **515 passed, 1 skipped**（501 原有 + 9 `test_clamp_icon_scale` 参数化 + 2 `_normalize_ui`/`merge_ui` + 3 hazard fix 数据级）；
+`node --check app.js` 通过。运行时（本地服务 8899 + Chrome DevTools MCP，街区图）：
+修正后的多边形 bbox 81.3×79.4 px 与 4 个顶点的世界跨度（81×79 单位、≈1.004 px/单位）逐边吻合，点开详情显示「世界坐标 x -232.49 / z 38.8」且**无 `y` 与「所在层」行**；
+BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition: opacity .18s ease-out`、300ms 后 `opacity=1`，
+连点两点时**同时存在 2 个 `.marker-pop`**（旧的 0.47 正在淡出）→ 400ms 后回到 1 个。
+
+**新增踩坑**（已进 §8）：改危险区轮廓必须同步改 `position`（面积质心）；用户给的顶点顺序可能是自交的，要按叉积同号重排；浮窗淡出必须延时摘除节点。
+
+---
+
 ## 7. 前端要点（改 `app.js` 前必读）
 
 - **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
@@ -490,12 +528,13 @@ PyInstaller `--add-data "<目录>;<dest>"` 是**把该目录的「内容」复�
   **渲染不能按开关逐个画**：`renderOverlay()` 里所有 `kind === "valuables"` 的 spec 都跳过，改用 `valuableUnionSpec()`（「所属类别 ∩ 已开启类别 ≠ 空」）整体画一次，否则同一点会在两行开关下叠两层。`enableLayersFor()` 必须过滤 `spec.master`（总开关不参与「打开某图层」）。
   **改子类划分只动 `VALUABLE_CATS` 一处**，`LAYER_SPEC` / `DEFAULT_ON` / 渲染都会跟着走（`DEFAULT_ON` 里记得同步 `valuable_<cat>` 的默认）。
 - **图层开关的 change 监听必须挂在容器 `#layer-toggles` 上用事件委托**。图例 DOM 会整体重建，逐个 checkbox 绑定会丢监听 → 会出现「取消勾选后标记仍然显示」的 bug（已踩过，见 §8）。
-- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。
+- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。
 - **选中高亮环**：对画图标的图层（`ICON_KINDS = ["containers","valuables","spawns","bosses","locks","btr"]`）统一按 ±10 屏幕像素外接；撤离点 / 转移点是 ±11。高亮环**必须是静态描边**，不能是动画。
 - 物资图标：`LOOT_ICONS`（每类由 `body` / `mark` / `hole` / `thin` 等部件组成）、`lootIcon(group, unit)` 画地图上的、`lootIconSvg(group)` 画图例的（`viewBox="-8-8 16 16"`）。
 - **图标素材（`ICON_PNG`）**：key → `assets/icons/*.png` 的贴图表。四个工厂函数（`lootIcon` / `lootIconSvg` / `signIcon` / `signIconSvg`）**开头都判断 `if (ICON_PNG[key]) { return pngIcon(key, unit) /* 或 pngIconSvg(key) */; }`**——命中就用 `<image>` 贴图，未命中仍走手画 SVG。**换图标只需往 `ICON_PNG` 加一行 + 放一张 64×64 透明 PNG 到 `assets/icons/`**；新 PNG 必须透明、居中、内容约占画布 86%（照 `tools/iconize.py` 的输出规格）。源图是**竖排图例**（一张图里多行）时，要在 `tools/iconize.py` 的 `JOBS` 里加 `band` 指定那一段，不能整图直接抠（`strip` 只取最左侧那一簇，会把上下行连起来）。
 - **具体物品名 → 专属图标**：`KEY_ICONS`（中文名 → icon key 的**精确表**）。`valuableIconKey(names)` **先查 KEY_ICONS 再走 `VALUABLE_ICON_RULES` 正则**；上锁的门「需要钥匙」行用同一个函数取图标（`inlineIcon()` 把图标塞进 HTML 文案）。**给某件钥匙配专属图 = 往 `ICON_PNG` 加一行 + 往 `KEY_ICONS` 加一行**，两者 key 名一致（`key_<物品id前8位>`）。`VALUABLE_ICON_RULES` 里的通用规则（`/钥匙卡/` 在 `/钥匙/` 之前等）**相对顺序不能乱**。
 - **标记小浮窗**：`showMarkerPopup(map, kind, item, node)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），定位用 `node.getBoundingClientRect()`，8 秒消失；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**，`locks` 额外调 `showLockKeyHint`（浮窗「需要钥匙」行贴对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
+  **「HTML 元素」这点是关键**：正因为它是 `<div>` 而不是 SVG 图元，才能安全地用 CSS `opacity` transition 做淡入淡出（§6.15）。淡入 = 建好后 `requestAnimationFrame` 再加 `.show`；淡出 = 摘掉 `.show` 后**延后 `POP_FADE_MS` 再 `remove()`**（旧的 `markerPopNode` 与新浮窗可短暂共存）。行渲染统一走 `inlineIconAny(value)`（字符串走 `inlineIcon`、SVG 元素包 `.inline-ico`），`detailRows()` 的物资行自带图标元素（容器给 `lootIconSvg`、高资点给 `signIconSvg`），所以浮窗和「标记详情」都能显示物资小图标。
 - 撤离点 / 转移点徽章：`BADGE_SHAPE`（盾牌路径）+ `BADGE_RUNNER`（奔跑小人）+ `badgeIcon(variant, unit)` / `badgeIconSvg(variant)` / `badgeLabel(text, variant, unit)`，颜色由 CSS `.emk-badge-<variant> .badge-bg { fill: var(--extract-*) }` 给。
 - **顶部菜单栏**：`bindMenu()` 管 `#menu-raid` 与 `#raid-block` 的开合（点按钮 toggle / 点面板外收起 / `Esc` 收起）。「战局与任务」整块（含 `#quest-log` 等原 id）都从侧栏搬进了这个面板；**要加新菜单项就往 `.menubar` 里再塞一个 `.menu-wrap`**，别把东西塞回侧栏。
 - **界面偏好写回**：`uiPatch()` → `queuePrefs()`（400ms 防抖，`prefPending` 合并同一批键）→ `flushPrefs()` `POST api/prefs`，失败静默（`localStorage` 兜底）。`applyUiPrefs(ui)` 会拿服务端 `ui` 覆盖本地，但**值没变就跳过 `renderLayerToggles()` / `renderOverlay()`**——否则每次 `config` 广播都闪一下。`mergeLayers()` 只认 `state.layers` 里已有的键，服务端塞进来的野键会被忽略。
@@ -545,10 +584,14 @@ PyInstaller `--add-data "<目录>;<dest>"` 是**把该目录的「内容」复�
 | 瓦片对齐的单测断言写成「某角点 → (0,0)」失败 | 旋转为 90° 整数倍时，世界矩形的四个角点映到 viewBox 的**另外两个对角**（270° 时 `pixelX` 只依赖 `z`） | 断言取**四个世界角点映射后的 min/max** 恰好等于 `0 / W / 0 / H`（§6.13） |
 | 新写的 `.ps1` 一跑就报 `Unexpected token` / `The string is missing the terminator`，中文全是乱码 | PowerShell 5.1 读**无 BOM 的 UTF-8 `.ps1`** 时按 ANSI（GBK）解码，中文变乱码 + 引号错乱 | 新脚本一律加**UTF-8 BOM**：`[System.IO.File]::WriteAllText($p,$text,(New-Object System.Text.UTF8Encoding($true)))`；对比 `build.ps1` 首 3 字节 `EF BB BF` 佐证（§6.14） |
 | 安装器里 `payload_root()` 找不到资源 | 误以为 `--add-data "<目录>;<dest>"` 会再套一层目录名 | 它是把该目录的**内容**复制进 dest：`--add-data "$Target;payload"` → `<bundle>/payload/EFTMap.exe`，故 `payload_root()` = `<bundle>/payload`（§6.14） |
+| 改了危险区轮廓，地图上多边形对了但点开的详情/居中位置还是老地方 | 上游所有危险区的 `position` **就是 `outline` 的面积质心**，只改轮廓不改中心点就对不上 | 改轮廓必须同步算质心改 `position`（或让 `position` 留空由轮廓推）；狙击类危险区**无高度含义，不要写 `y`**（§6.15） |
+| 按用户给的 4 个顶点连线，画出来是**蝴蝶结（自交）** | 顶点顺序不保证是凸多边形环序，A→B→C→D 的相邻叉积会变号 | 按「相邻三点叉积全部同号」重排环序（如 A→B→D→C），再入数据（§6.15） |
+| 浮窗淡出看不见效果（旧的直接消失）或淡入没过渡 | `hideMarkerPopup()` 立刻 `remove()` 节点；建好后同帧加 `.show` 类不会触发 transition | 淡出要**延后 `POP_FADE_MS` 再摘除**；淡入用 `requestAnimationFrame` 再加 `.show`（§6.15） |
+| 想给地图图标加「整体缩放」时手感发糊 | 若用 CSS `transform` / `animation` 去缩 SVG 里的标记 → 整张 `<svg>` 被栅格化（§2 铁律） | 缩放只能**乘进 `updateCounterScale()` 的系数**（`iconScale()/state.z`），并同步乘进高亮环半径（§6.15） |
 
 ---
 
-## 9. Git 状态（第九轮：已发布 GitHub v0.1.0）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮改动按功能分 2 批提交）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -565,6 +608,19 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `060204a` | 文档：README 与交接手册（发布三版本、踩坑、Git 状态） |
 | `a07e565` | 测试：补齐截图按键输入的单元测试 |
 | `0312a47` | 文档：README 按作者其他项目的统一风格重写（目录 / 免费声明 / 发布包表格 / 目录结构 / 自测 / 打赏） |
+| `a0db682` | 文档：主页精简为概览（功能每条一句、收录地图只列名），细表与逐项详解移入 `docs/USAGE.md` |
+
+第十轮（2026-10-19）新增：
+
+| 提交 | 内容 |
+| --- | --- |
+| `5f8e65c` | 数据：街区狙击区危险区坐标修正（4 顶点凸环序 + 质心 + 去 `y`）+ `HAZARD_FIXES` 覆盖表 |
+| `f67ee43` | 前端：图标整体缩放滑条 / BTR 图标 ×2 / 浮窗淡入淡出 + 物资小图标（含 `config.py` 的 `icon_scale` 与 14 条测试） |
+
+> **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
+> `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
+> $env:GIT_COMMITTER_NAME='jjingith'; $env:GIT_COMMITTER_EMAIL='imzjj1996@gmail.com'`（或临时设置身份），否则 `git commit` 直接报 `Author identity unknown`。
+> 另：PowerShell **不支持** `$(cat <<'EOF' …)` heredoc 写多行提交信息，要改用多个 `-m`。
 
 **入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/icons/*.png`（217 个）、
 `tools/`、`tests/`、`build/`、根目录 `index.html` / `style.css` / `app.js`、`AGENT_HANDOFF.md`、`docs/`。
