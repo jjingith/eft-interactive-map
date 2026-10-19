@@ -41,6 +41,8 @@
       <p class="muted route-note">同楼层的相邻途经点之间按底图栅格化出来的路网（道路优先）寻路，距离为沿线距离；跨楼层、以及只有瓦片底图的实验室 / 迷宫 / 破冰船仍是直线连接（会「穿墙」，需自行判断）。</p>
     </div>
   </div>
+  <button type="button" class="menu-btn" id="save-config"
+          title="把当前界面偏好（图层开关 / 楼层 / 钉选 / 图标与地名缩放 / 地名透明度）立刻写回配置文件">保存配置</button>
 </div>
 
 <div class="workspace">
@@ -78,6 +80,7 @@
   <section class="block">
     <h2>搜索</h2>
     <input id="search" class="search" type="search" placeholder="输入名称（撤离点 / 物资 / Boss…）" autocomplete="off">
+    <div id="pinned-list" class="pinned-list" hidden></div>
     <div id="search-results" class="search-results" hidden></div>
   </section>
 
@@ -110,6 +113,20 @@
              aria-label="地图图标整体缩放">
       <span id="icon-scale-value" class="hud-scale-value">100%</span>
     </label>
+    <div class="hud-scales">
+      <label class="hud-scale" title="地图上地名的整体大小（地名与地图绑定，不受图标滑条影响；本地保存，下次启动沿用）">
+        地名
+        <input type="range" id="label-scale" min="0.5" max="3" step="0.05" value="1"
+               aria-label="地名整体缩放">
+        <span id="label-scale-value" class="hud-scale-value">100%</span>
+      </label>
+      <label class="hud-scale" title="地名的透明度：往左拖可以压淡地名，避免挡住底图（本地保存，下次启动沿用）">
+        地名透明
+        <input type="range" id="label-alpha" min="0" max="1" step="0.05" value="1"
+               aria-label="地名透明度">
+        <span id="label-alpha-value" class="hud-scale-value">100%</span>
+      </label>
+    </div>
   </div>
 
   <div class="statusbar">

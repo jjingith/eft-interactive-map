@@ -26,6 +26,8 @@
   var LS_ROUTE = "eftmap.route";            // 导航路线的途经点
   var LS_ROUTE_PLAYER = "eftmap.route.fromPlayer";
   var LS_ICON_SCALE = "eftmap.icon.scale";  // 地图图标的整体缩放（与服务端 ui.icon_scale 同构）
+  var LS_LABEL_SCALE = "eftmap.label.scale"; // 地名的整体缩放（与服务端 ui.label_scale 同构）
+  var LS_LABEL_ALPHA = "eftmap.label.alpha"; // 地名的透明度（与服务端 ui.label_alpha 同构）
   var PIN_MAX = 300;                        // 钉选上限（与 tools/config.py 的 PIN_MAX 对齐）
   var ROUTE_MAX = 60;                       // 途经点上限
   // 底层寻路：构建期已把矢量底图栅格化成 assets/roadnet/<图 key>/<层>.bin（每格 2 bit 通行码），
@@ -39,6 +41,11 @@
   // 图标整体缩放的滑条区间（0.5×～3×；4K 屏上图标偏小，往右拖即可整体放大）
   var ICON_SCALE_MIN = 0.5;
   var ICON_SCALE_MAX = 3;
+  // 地名缩放（0.5×～3×）与地名透明度（0～1）的滑条区间
+  var LABEL_SCALE_MIN = 0.5;
+  var LABEL_SCALE_MAX = 3;
+  var LABEL_ALPHA_MIN = 0;
+  var LABEL_ALPHA_MAX = 1;
   var DEFAULT_AUTO_ZOOM = 4;                // 自动缩放首次使用的倍数
   // 底图矩形最多向外扩这么多比例，用来容纳紧贴边缘的标注点
   var PAD_RATIO = 0.12;
@@ -132,9 +139,11 @@
     return function (item) { return (item.group || CONTAINER_FALLBACK.key) === group; };
   }
 
-  // 高级资源点的子类（2026-10-19 第七轮）：原来「高级资源点」是一个大开关，一开几百个点糊在一起。
-  // 现在按物品名拆成 8 类分别开关；一个刷点可能同时命中多类（渲染时按「启用的子类并集」各点只画一次）。
-  // 判定顺序有讲究：「钥匙卡」必须排在「钥匙」前面，否则钥匙卡会被「钥匙」那条正则先吃掉。
+  // 高级资源点的子类（2026-10-19 第七轮，第十五轮把「其他高价值」拆成「情报」+「蓝色文件夹」共 9 类）：
+  // 原来「高级资源点」是一个大开关，一开几百个点糊在一起。现在按物品名拆成 9 类分别开关；
+  // 一个刷点可能同时命中多类（渲染时按「启用的子类并集」各点只画一次）。
+  // 判定顺序有讲究：「钥匙卡」必须排在「钥匙」前面；「情报」必须排在「蓝色文件夹」前面
+  // ——「情报文件夹」这个名字同时含「文件夹」，顺序反了会被蓝色文件夹的条件先吃掉。
   var VALUABLE_CATS = [
     { key: "btc", label: "比特币", icon: "valuable_btc", match: /比特币|BTC/i },
     { key: "moonshine", label: "私酒", icon: "valuable_bottle", match: /私酒|酒/ },
@@ -143,28 +152,26 @@
     { key: "key", label: "钥匙类", icon: "valuable_key", match: /钥匙/ },
     { key: "ledx", label: "LEDX", icon: "valuable_med", match: /LEDX|透照/i },
     { key: "defib", label: "除颤器", icon: "valuable_defib", match: /除颤/ },
-    { key: "other", label: "其他高价值", icon: "valuable", match: null }
+    { key: "intel", label: "情报", icon: "valuable_intel", match: /情报/ },
+    { key: "folder", label: "蓝色文件夹", icon: "valuable_folder", match: /文件夹|材料/ }
   ];
 
   /** 子类开关的 state.layers 键名 */
   function valuableCatKey(cat) { return "valuable_" + cat; }
 
-  /** 一个高级资源点属于哪几类：按物品名判定；一件都对不上的（如蓝色文件夹）归「其他高价值」 */
+  /** 一个高级资源点属于哪几类：按物品名判定；一件都对不上的返回空数组
+   *  （兜底见 valuableUnionSpec：任一子类开着时照样画出来，免得上游新增物品名后凭空消失） */
   function valuableCatsOf(item) {
     var names = (item && item.items) || [];
-    var out = [], unmatched = false;
+    var out = [];
     names.forEach(function (n) {
       for (var i = 0; i < VALUABLE_CATS.length; i++) {
         var cat = VALUABLE_CATS[i];
-        if (!cat.match) { continue; }
-        if (cat.match.test(n)) {
-          if (out.indexOf(cat.key) === -1) { out.push(cat.key); }
-          return;
-        }
+        if (!cat.match.test(n)) { continue; }
+        if (out.indexOf(cat.key) === -1) { out.push(cat.key); }
+        return;
       }
-      unmatched = true;
     });
-    if (unmatched) { out.push("other"); }
     return out;
   }
 
@@ -182,8 +189,8 @@
       { key: "transits", label: "转移点（去别的图）", kind: "transits", dot: "dot-transit", badge: "transit" }
     ] },
     { group: "物资", items: [
-      // 高级资源点：只在固定刷点上「有概率」刷出的高价值物品（BTC / 显卡 / 私酒 / LEDX / 除颤器 / 钥匙卡…）。
-      // 第一行是「总开关」（master，一键全开 / 全关），下面按物品分成 8 个子类各自开关。
+      // 高级资源点：只在固定刷点上「有概率」刷出的高价值物品（BTC / 显卡 / 私酒 / LEDX / 除颤器 / 钥匙卡 / 情报…）。
+      // 第一行是「总开关」（master，一键全开 / 全关），下面按物品分成 9 个子类各自开关。
       { key: "valuables", label: "高级资源点（全部）", kind: "valuables", master: true, dot: "dot-valuable" }
     ].concat(VALUABLE_CATS.map(function (cat) {
       return { key: valuableCatKey(cat.key), label: cat.label, kind: "valuables", sub: true,
@@ -234,7 +241,7 @@
     LAYER_SPEC.forEach(function (group) {
       group.items.forEach(function (item) { out[item.key] = !!DEFAULT_ON[item.key]; });
     });
-    // 高级资源点总开关：状态由 7 个子类推出来（全开才算开），这里按子类先算一次
+    // 高级资源点总开关：状态由 9 个子类推出来（全开才算开），这里按子类先算一次
     out.valuables = VALUABLE_CATS.every(function (c) { return out[valuableCatKey(c.key)]; });
     // 物资容器按参考站口径默认全部开启：否则打开地图看不到物资点（曾因此被当成「物资点丢了」）
     CONTAINER_GROUPS.forEach(function (c) { out["container_" + c.key] = true; });
@@ -364,6 +371,9 @@
     autoZoom: false,     // 定位自动缩放：拿到位置后按「最近一次手动比例」缩放
     autoCenter: true,    // 点位自动居中：拿到位置后把地图平移到该点
     iconScale: 1,        // 地图图标的整体缩放（滑条调节；1 = 原始大小）
+    labelScale: 1,       // 地名的整体缩放（滑条调节；1 = 原始大小）
+    labelAlpha: 1,       // 地名的透明度（滑条调节；1 = 不透明）
+    labelNodes: [],      // 已画出的地名文本节点：{node, size, stroke}（供滑条就地改字号 / 透明度）
     cfgAutoCenter: null, // 服务端配置里的 auto_center 上一次的值（只在其真的变化时才覆盖本地视角）
     logs: null,          // 日志监控状态 {available, reason, session, gameDir, logDir}
     raid: null,          // 最近一次战局事件 {phase, mapId, mapKey, raidId, ts}
@@ -445,6 +455,12 @@
     el.routeAddCurrent = $("detail-add-route");
     el.iconScale = $("icon-scale");
     el.iconScaleValue = $("icon-scale-value");
+    el.labelScale = $("label-scale");
+    el.labelScaleValue = $("label-scale-value");
+    el.labelAlpha = $("label-alpha");
+    el.labelAlphaValue = $("label-alpha-value");
+    el.saveConfig = $("save-config");
+    el.pinnedList = $("pinned-list");
 
     restorePrefs();
     bindUI();
@@ -546,7 +562,7 @@
       group.items.forEach(function (item) {
         if (item.key === "container_" + CONTAINER_FALLBACK.key && !hasUnknownContainers()) { return; }
         var label = document.createElement("label");
-        // 高级资源点的 7 个子类推到总开关下面（缩进），一眼看出从属关系
+        // 高级资源点的 9 个子类推到总开关下面（缩进），一眼看出从属关系
         label.className = "toggle legend-item" + (item.sub ? " legend-sub" : "");
         label.title = item.label;
         var box = document.createElement("input");
@@ -616,6 +632,12 @@
     var iconScaleSaved = parseFloat(localStorage.getItem(LS_ICON_SCALE));
     setIconScale(isFinite(iconScaleSaved) ? iconScaleSaved : 1, false);
 
+    // 地名缩放 / 透明度：同样本地兜底恢复
+    var labelScaleSaved = parseFloat(localStorage.getItem(LS_LABEL_SCALE));
+    setLabelScale(isFinite(labelScaleSaved) ? labelScaleSaved : 1, false);
+    var labelAlphaSaved = parseFloat(localStorage.getItem(LS_LABEL_ALPHA));
+    setLabelAlpha(isFinite(labelAlphaSaved) ? labelAlphaSaved : 1, false);
+
     // 钉选与导航路线：本地兜底恢复，服务端配置到达后再合并一次
     var pins = null, route = null;
     try { pins = JSON.parse(localStorage.getItem(LS_PINS) || "null"); } catch (e) { /* 忽略 */ }
@@ -636,7 +658,9 @@
       floor_auto: !!state.floorAuto,
       floor_filter: !!state.floorFilter,
       pins: state.pins,
-      icon_scale: state.iconScale
+      icon_scale: state.iconScale,
+      label_scale: state.labelScale,
+      label_alpha: state.labelAlpha
     };
   }
 
@@ -660,10 +684,57 @@
     queuePrefs({ ui: uiPatch() });
   }
 
+  /** 地名整体缩放系数（只作用于地名文本的字号与描边；图标不受它影响） */
+  function labelScale() { return state.labelScale || 1; }
+
+  /** 地名透明度（0 = 全透明，1 = 不透明） */
+  function labelAlpha() {
+    var a = Number(state.labelAlpha);
+    return isFinite(a) ? a : 1;
+  }
+
+  /**
+   * 就地更新已画出的地名：字号 / 描边按系数同步放大，透明度直接写 opacity 属性。
+   * 只改属性、不加 CSS transform / 动画——动画会让 SVG 被栅格化（见项目铁律）。
+   */
+  function applyLabelStyle() {
+    var s = labelScale(), a = labelAlpha();
+    state.labelNodes.forEach(function (it) {
+      it.node.setAttribute("font-size", it.size * s);
+      it.node.setAttribute("stroke-width", it.stroke * s);
+      it.node.setAttribute("opacity", a);
+    });
+  }
+
+  /** 应用地名整体缩放：滑条位置、百分比标签与已画出的地名一起更新 */
+  function setLabelScale(value, persist) {
+    var number = Number(value);
+    var v = Math.max(LABEL_SCALE_MIN, Math.min(LABEL_SCALE_MAX, isFinite(number) ? number : 1));
+    state.labelScale = v;
+    if (el.labelScale) { el.labelScale.value = String(v); }
+    if (el.labelScaleValue) { el.labelScaleValue.textContent = Math.round(v * 100) + "%"; }
+    applyLabelStyle();
+    if (!persist) { return; }
+    try { localStorage.setItem(LS_LABEL_SCALE, String(v)); } catch (e) { /* 隐私模式忽略 */ }
+    queuePrefs({ ui: uiPatch() });
+  }
+
+  /** 应用地名透明度：滑条位置、百分比标签与已画出的地名一起更新 */
+  function setLabelAlpha(value, persist) {
+    var number = Number(value);
+    var v = Math.max(LABEL_ALPHA_MIN, Math.min(LABEL_ALPHA_MAX, isFinite(number) ? number : 1));
+    state.labelAlpha = v;
+    if (el.labelAlpha) { el.labelAlpha.value = String(v); }
+    if (el.labelAlphaValue) { el.labelAlphaValue.textContent = Math.round(v * 100) + "%"; }
+    applyLabelStyle();
+    if (!persist) { return; }
+    try { localStorage.setItem(LS_LABEL_ALPHA, String(v)); } catch (e) { /* 隐私模式忽略 */ }
+    queuePrefs({ ui: uiPatch() });
+  }
+
   var PREF_DEBOUNCE = 400;     // 连续改动合并成一次写盘，避免勾一串开关就发一串请求
   var prefTimer = null;
   var prefPending = null;
-
   /** 把偏好改动排队写回配置文件；同一批里的键自动合并（失败静默，本地存储已兜底） */
   function queuePrefs(patch) {
     prefPending = prefPending || {};
@@ -682,6 +753,13 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
     }).catch(function () { /* 没起本地服务时静默失败，下次仍从本地存储恢复 */ });
+  }
+
+  /** 立刻把当前界面偏好写回配置文件（顶栏「保存配置」按钮用）：跳过防抖，也不等下一次改动 */
+  function savePrefsNow() {
+    if (prefTimer) { window.clearTimeout(prefTimer); prefTimer = null; }
+    prefPending = { ui: uiPatch() };
+    flushPrefs();
   }
 
   /** 本地图层偏好 与 服务端保存的合并：服务端只覆盖它确实给了的键 */
@@ -732,10 +810,17 @@
         try { localStorage.setItem(LS_PINS, JSON.stringify(state.pins)); } catch (e) { /* 忽略 */ }
         renderOverlay();
         renderSearchResults();
+        renderPins();
       }
     }
     if (typeof ui.icon_scale === "number" && ui.icon_scale !== state.iconScale) {
       setIconScale(ui.icon_scale, true);
+    }
+    if (typeof ui.label_scale === "number" && ui.label_scale !== state.labelScale) {
+      setLabelScale(ui.label_scale, true);
+    }
+    if (typeof ui.label_alpha === "number" && ui.label_alpha !== state.labelAlpha) {
+      setLabelAlpha(ui.label_alpha, true);
     }
   }
 
@@ -892,7 +977,7 @@
       if (!box || box.type !== "checkbox" || !box.dataset.layer) { return; }
       var key = box.dataset.layer;
       var isMaster = (key === "valuables");
-      // 「高级资源点（全部）」是总开关：一键把下面 7 个子类全开 / 全关
+      // 「高级资源点（全部）」是总开关：一键把下面 9 个子类全开 / 全关
       if (isMaster) {
         VALUABLE_CATS.forEach(function (c) { state.layers[valuableCatKey(c.key)] = box.checked; });
       }
@@ -928,6 +1013,24 @@
     // 图标整体缩放滑条：拖动时立刻改变已画标记的大小，松手后由防抖写回配置文件
     if (el.iconScale) {
       el.iconScale.addEventListener("input", function () { setIconScale(el.iconScale.value, true); });
+    }
+    // 地名缩放 / 透明度滑条：就地改已画出的地名文本属性
+    if (el.labelScale) {
+      el.labelScale.addEventListener("input", function () { setLabelScale(el.labelScale.value, true); });
+    }
+    if (el.labelAlpha) {
+      el.labelAlpha.addEventListener("input", function () { setLabelAlpha(el.labelAlpha.value, true); });
+    }
+
+    // 顶栏「保存配置」：立刻把当前偏好写回配置文件，按钮短暂变成「已保存 ✓」作反馈
+    if (el.saveConfig) {
+      el.saveConfig.addEventListener("click", function () {
+        savePrefsNow();
+        var btn = el.saveConfig;
+        btn.textContent = "已保存 ✓";
+        btn.disabled = true;
+        window.setTimeout(function () { btn.textContent = "保存配置"; btn.disabled = false; }, 1200);
+      });
     }
 
     el.search.addEventListener("input", renderSearchResults);
@@ -1030,6 +1133,7 @@
       else if (state.autoCenter && state.player) { centerOnPlayer(); }
       el.search.value = "";
       renderSearchResults();
+      renderPins();            // 换图后按新图的索引重画常驻钉选列表
       el.statusMap.textContent = map.name + " · " + map.viewBox[2].toFixed(0) + "×" + map.viewBox[3].toFixed(0) + " 世界单位";
     }).catch(function (err) {
       showError("<strong>无法载入底图</strong>：" + map.svg + "<br>" + String(err.message || err));
@@ -1092,13 +1196,13 @@
   // 弹一个小浮窗，显示简略信息（与左侧详情面板同源的 detailRows）；固定位置 = 不跟图标跑，不会随平移缩放乱动。
   // 淡入淡出走 CSS opacity 过渡：浮窗本身是 HTML <div>，不是 SVG 图元，
   // 不碰「SVG 加动画会被栅格化」的老坑。
-  var markerPopTimer = null;
+  // 第十五轮：不再定时自动消失（原来 8 秒），只在点别的标记（切换到对应浮窗）或点浮窗右上角的关闭按钮时收起；
+  // 浮窗底部另加「加入导航途径点」按钮。
   var markerPopNode = null;          // 当前那个浮窗（用变量记着，淡出期间旧的还能留在 DOM 里）
   var POP_FADE_MS = 180;             // 与 style.css 里 .marker-pop 的过渡时长对齐
 
-  /** 关掉标记小浮窗（换图、换选另一个标记、超时都会用到）：先淡出再从 DOM 摘掉 */
+  /** 关掉标记小浮窗（换图、换选另一个标记、点关闭按钮都会用到）：先淡出再从 DOM 摘掉 */
   function hideMarkerPopup() {
-    if (markerPopTimer) { window.clearTimeout(markerPopTimer); markerPopTimer = null; }
     var host = markerPopNode;
     markerPopNode = null;
     if (!host) { return; }
@@ -1112,10 +1216,21 @@
     host.id = "marker-pop";
     host.className = "marker-pop";
 
+    // 标题行：标题 + 右上角关闭按钮（浮窗不再自动消失，靠它手动收起）
+    var head = document.createElement("div");
+    head.className = "marker-pop-head";
     var title = document.createElement("div");
     title.className = "marker-pop-title";
     title.textContent = item.name || KIND_LABEL[kind] || kind;
-    host.appendChild(title);
+    var close = document.createElement("button");
+    close.type = "button";
+    close.className = "marker-pop-close";
+    close.textContent = "\u00d7";
+    close.title = "关闭浮窗";
+    close.addEventListener("click", function (ev) { ev.stopPropagation(); hideMarkerPopup(); });
+    head.appendChild(title);
+    head.appendChild(close);
+    host.appendChild(head);
 
     detailRows(map, kind, item).forEach(function (row) {
       if (row[0] === "名称") { return; }      // 名称已作标题，不重复
@@ -1134,6 +1249,22 @@
       host.appendChild(line);
     });
 
+    // 底部：把该点加入导航路线（高级资源点没有 name，就用第一个物品名当途经点名字）
+    var actions = document.createElement("div");
+    actions.className = "marker-pop-actions";
+    var addBtn = document.createElement("button");
+    addBtn.type = "button";
+    addBtn.className = "marker-pop-add";
+    addBtn.textContent = "加入导航途径点";
+    addBtn.title = "把该点加入导航路线";
+    addBtn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      var name = item.name || (item.items && item.items.length ? item.items[0] : "") || KIND_LABEL[kind] || kind;
+      addRoutePoint(kind, name, item);
+    });
+    actions.appendChild(addBtn);
+    host.appendChild(actions);
+
     markerPopNode = host;
     document.body.appendChild(host);
 
@@ -1144,8 +1275,6 @@
 
     // 下一帧再上 .show：先让浏览器算完 opacity:0 的初始态，过渡才会真的跑起来
     window.requestAnimationFrame(function () { host.classList.add("show"); });
-
-    markerPopTimer = window.setTimeout(hideMarkerPopup, 8000);
   }
 
   // ---------------------------------------------------------------- 视图
@@ -1350,6 +1479,7 @@
     persistPins();
     renderOverlay();          // 覆盖层重建时会一并重画路线
     renderSearchResults();
+    renderPins();             // 钉选项常驻在搜索栏下方（清空搜索框也留着）
     return now;
   }
 
@@ -1373,6 +1503,63 @@
       if (pinId(a[i].kind, a[i].name) !== pinId(b[i].kind, b[i].name)) { return false; }
     }
     return true;
+  }
+
+  /**
+   * 常驻的「已钉选」列表（第十五轮新增）：钉选后即使清空搜索框，也一直留在搜索栏下方。
+   * 每条可点主体定位到该点、右侧「取消钉选」把它从列表里去掉。
+   */
+  function renderPins() {
+    if (!el.pinnedList) { return; }
+    el.pinnedList.innerHTML = "";
+    var map = state.map;
+    if (!map || !state.pins.length) { el.pinnedList.hidden = true; return; }
+
+    // 当前地图的搜索索引：拿钉选项对应的条目（用于定位与副标题）
+    var byId = {};
+    searchIndex(map).forEach(function (e) { byId[pinId(e.kind, e.name)] = e; });
+
+    var head = document.createElement("div");
+    head.className = "pinned-head";
+    head.textContent = "已钉选（" + state.pins.length + "）";
+    el.pinnedList.appendChild(head);
+
+    state.pins.forEach(function (pin) {
+      var entry = byId[pinId(pin.kind, pin.name)];
+      var row = document.createElement("div");
+      row.className = "pinned-item";
+
+      var hit = document.createElement("button");
+      hit.type = "button";
+      hit.className = "pinned-hit";
+      var nm = document.createElement("span");
+      nm.className = "s-name";
+      nm.textContent = pin.name;
+      var kd = document.createElement("span");
+      kd.className = "kind";
+      kd.textContent = entry ? entrySubtitle(entry) : ((KIND_LABEL[pin.kind] || pin.kind) + " · 当前地图没有这一项");
+      hit.appendChild(nm);
+      hit.appendChild(kd);
+      if (entry) {
+        hit.title = "定位到该点";
+        hit.addEventListener("click", function () { focusEntry(entry); });
+      } else {
+        hit.title = "当前地图上没有这一项";
+        hit.disabled = true;
+      }
+      row.appendChild(hit);
+
+      var off = document.createElement("button");
+      off.type = "button";
+      off.className = "pinned-off";
+      off.textContent = "取消钉选";
+      off.title = "取消钉选：地图上不再高亮该类型";
+      off.addEventListener("click", function (ev) { ev.stopPropagation(); togglePin(pin.kind, pin.name); });
+      row.appendChild(off);
+
+      el.pinnedList.appendChild(row);
+    });
+    el.pinnedList.hidden = false;
   }
 
   // ---------------------------------------------------------------- 导航路线
@@ -1654,6 +1841,66 @@
     renderRoutePanel();
   }
 
+  // ---------------------------------------------------------------- 途经点拖动排序
+  var routeDragFrom = null;    // 正在拖动的途经点下标（state.route 里的下标）；没在拖时是 null
+
+  /** 把途经点从 from 移到「插到 to 之前」的位置（拖动排序用） */
+  function moveRoutePoint(from, to) {
+    var n = state.route.length;
+    if (from === null || from < 0 || from >= n) { return; }
+    if (to > from) { to -= 1; }               // to 是「插到第 to 项之前」，往后移时先把自己摘掉
+    to = Math.max(0, Math.min(n - 1, to));
+    if (to === from) { return; }
+    var moved = state.route.splice(from, 1)[0];
+    state.route.splice(to, 0, moved);
+    persistRoute();
+    renderOverlay();
+    renderRoutePanel();
+  }
+
+  /** 清掉所有行上的「插入位置」提示线 */
+  function clearRouteDropMarks() {
+    if (!el.routeList) { return; }
+    var rows = el.routeList.querySelectorAll(".route-item");
+    for (var i = 0; i < rows.length; i++) { rows[i].classList.remove("drop-before", "drop-after"); }
+  }
+
+  /** 给一行途经点挂上拖放排序：拖到某行的上半 = 插到它前面，下半 = 插到它后面 */
+  function makeRouteItemDraggable(li, routeIdx) {
+    li.draggable = true;
+    li.addEventListener("dragstart", function (ev) {
+      routeDragFrom = routeIdx;
+      li.classList.add("dragging");
+      if (ev.dataTransfer) {
+        ev.dataTransfer.effectAllowed = "move";
+        try { ev.dataTransfer.setData("text/plain", String(routeIdx)); } catch (e) { /* 某些环境禁写，忽略 */ }
+      }
+    });
+    li.addEventListener("dragend", function () {
+      routeDragFrom = null;
+      li.classList.remove("dragging");
+      clearRouteDropMarks();
+    });
+    li.addEventListener("dragover", function (ev) {
+      if (routeDragFrom === null) { return; }
+      ev.preventDefault();
+      if (ev.dataTransfer) { ev.dataTransfer.dropEffect = "move"; }
+      var rect = li.getBoundingClientRect();
+      var before = (ev.clientY - rect.top) < rect.height / 2;
+      clearRouteDropMarks();
+      li.classList.add(before ? "drop-before" : "drop-after");
+    });
+    li.addEventListener("drop", function (ev) {
+      if (routeDragFrom === null) { return; }
+      ev.preventDefault();
+      var rect = li.getBoundingClientRect();
+      var before = (ev.clientY - rect.top) < rect.height / 2;
+      var from = routeDragFrom;
+      routeDragFrom = null;
+      moveRoutePoint(from, routeIdx + (before ? 0 : 1));
+    });
+  }
+
   /** 路线折线 + 编号圆点（编号用 1 起；起点若是实时定位也算 1 号） */
   function renderRoute() {
     if (!el.overlay || !state.map) { return; }
@@ -1729,6 +1976,8 @@
           });
         })(i - offset);
         li.appendChild(del);
+        // 途经点可拖动排序（实时定位那行不可拖，它固定当 1 号起点）
+        makeRouteItemDraggable(li, i - offset);
       }
       el.routeList.appendChild(li);
     });
@@ -1801,7 +2050,8 @@
   // 上游的高度（y）常落在建筑物的某一层，按楼层过滤会把同名的另一阵营点藏起来。
   var FLOOR_AGNOSTIC_KINDS = ["artillery", "extracts", "transits"];
 
-  /** 高级资源点的合并渲染规格：只要该点属于任一「已开启」的子类就画（各点只画一次，不重复） */
+  /** 高级资源点的合并渲染规格：只要该点属于任一「已开启」的子类就画（各点只画一次，不重复）；
+   *  一件子类都对不上的（上游将来新增的物品名）在任一子类开启时也照画，免得凭空消失 */
   function valuableUnionSpec() {
     var on = VALUABLE_CATS.filter(function (c) { return state.layers[valuableCatKey(c.key)]; })
                           .map(function (c) { return c.key; });
@@ -1809,6 +2059,7 @@
       key: "valuables", kind: "valuables",
       where: function (item) {
         var cats = valuableCatsOf(item);
+        if (!cats.length) { return on.length > 0; }
         for (var i = 0; i < cats.length; i++) { if (on.indexOf(cats[i]) !== -1) { return true; } }
         return false;
       }
@@ -1830,7 +2081,7 @@
     var drewValuables = false;
     LAYER_SPEC.forEach(function (group) {
       group.items.forEach(function (spec) {
-        // 高级资源点：7 个子类的筛选条件会互相重叠，不能按开关逐个画（同一点会叠两层图标），
+        // 高级资源点：9 个子类的筛选条件会互相重叠，不能按开关逐个画（同一点会叠两层图标），
         // 改成「启用的子类并集」整体画一次——走到第一个（总开关）那行时画。
         if (spec.kind === "valuables") {
           if (!drewValuables) { drewValuables = true; renderMarkerKind(map, valuableUnionSpec(), unit); }
@@ -1908,18 +2159,22 @@
 
   function renderLabels(map, unit) {
     var labels = svgEl("g", { id: "emk-labels" });
+    state.labelNodes = [];
+    var lscale = labelScale(), lalpha = labelAlpha();
     (map.labels || []).forEach(function (label) {
       var sx = svgX(map, label.x, label.z);
       var sy = svgY(map, label.x, label.z);
       // 地名**跟地图绑死**（2026-10-19 第十一轮改）：不做 1/z 反向补偿，缩放多少字号就跟着缩放多少，
-      // 与底图比例一致；也因此不受「图标滑条」影响——滑条只调图标。字号仍乘 unit：z=1 时约 12 屏幕像素。
+      // 与底图比例一致；也因此不受「图标滑条」影响——图标、地名各有各的滑条。
+      // 字号 / 描边再乘地名缩放系数（第十五轮新增），整层再乘地名透明度。
       var g = svgEl("g", { "pointer-events": "none" });
       g.setAttribute("transform", "translate(" + sx + " " + sy + ")");
       var text = svgEl("text", {
         class: "emk-label",
-        "font-size": 12 * unit,
-        // 描边宽度同样乘 unit：写死在 CSS 里的话，小图（fit 大）会把描边放大成黑块
-        "stroke-width": 2.4 * unit,
+        "font-size": 12 * unit * lscale,
+        // 描边宽度同样乘 unit 与缩放系数：写死在 CSS 里的话，小图（fit 大）会把描边放大成黑块
+        "stroke-width": 2.4 * unit * lscale,
+        opacity: lalpha,
         "paint-order": "stroke",
         "text-anchor": "middle",
         "dominant-baseline": "central",
@@ -1929,6 +2184,8 @@
       text.textContent = label.text;
       g.appendChild(text);
       labels.appendChild(g);
+      // 记下基准字号 / 描边，滑条拖动时就地改属性（重新整层渲染太贵）
+      state.labelNodes.push({ node: text, size: 12 * unit, stroke: 2.4 * unit });
     });
     el.overlay.appendChild(labels);
   }
@@ -1956,6 +2213,7 @@
     valuable_btc: "assets/icons/val-btc.png",
     valuable_bottle: "assets/icons/val-bottle.png",
     valuable_defib: "assets/icons/val-defib.png",
+    valuable_gpu: "assets/icons/val-gpu.png",
     valuable_key: "assets/icons/val-key.png",
     valuable_med: "assets/icons/val-ledx.png",
     valuable_keycard: "assets/icons/val-keycard-yellow.png",
@@ -2161,6 +2419,7 @@
     key_6939948d: "assets/icons/key-6939948d.png",
     key_59381445: "assets/icons/key-59381445.png",
     key_61a6446f: "assets/icons/key-61a6446f.png",
+    valuable_intel: "assets/icons/val-intel.png",
     valuable_folder: "assets/icons/val-folder.png"
   };
 
@@ -2399,15 +2658,6 @@
       { t: "rect", x: -5.6, y: -4.8, w: 11.2, h: 9.6, r: 1.4, c: "solid" },
       { t: "path", d: "M-1.1-2.9h2.2v2.2h2.2v2.2h-2.2v2.2h-2.2V1.5h-2.2V-0.7h2.2z", c: "dark" }
     ],
-    // 显卡（2026-10-19 第十一轮新增，无实拍素材，照实物手画）：卡身 + 大风扇 + 散热片 + 金手指
-    valuable_gpu: [
-      { t: "rect", x: -6.6, y: -4.6, w: 13.2, h: 8.4, r: 0.8, c: "solid" },
-      { t: "circle", cx: -1.6, cy: -0.4, r: 3.4, c: "dark" },
-      { t: "circle", cx: -1.6, cy: -0.4, r: 0.9, c: "solid" },
-      { t: "path", d: "M-1.6-3.8v3.4M1.2-1.3l-2.8 1.4M-4.4-1.3l2.8 1.4", c: "solid" },
-      { t: "rect", x: 3.4, y: -2.6, w: 1.8, h: 5.2, r: 0.3, c: "dark" },
-      { t: "rect", x: -6.6, y: 3.8, w: 9.4, h: 1.4, r: 0.3, c: "light" }
-    ],
     // 兜底：宝石（原来的高级资源点图标）
     valuable: [
       { t: "path", d: "M0-7.2L6.2-1.8L0 7.2L-6.2-1.8Z", c: "solid" },
@@ -2421,7 +2671,6 @@
     valuable_keycard: "#7fb6e8",
     valuable_key: "#d8c05a",
     valuable_bottle: "#c98f3c",
-    valuable_gpu: "#8ab6a0",
     valuable_med: "#d4788a",
     valuable: "var(--loot-valuable)"
   };
@@ -2655,6 +2904,8 @@
     // 剩下的钥匙卡（无专属素材的）统一用黄色卡兜底
     [/钥匙卡/, "valuable_keycard"],
     [/钥匙/, "valuable_key"],
+    // 情报必须排在「蓝色文件夹 / 材料」前面：「情报文件夹」这个名字同时含「文件夹」
+    [/情报/, "valuable_intel"],
     [/文件夹|材料/, "valuable_folder"]
   ];
 
