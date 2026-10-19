@@ -944,14 +944,26 @@ def data_ready(selected_keys):
     return all((ROOT / m.get("svg", "")).exists() for m in maps)
 
 
+def _build_roadnet(selected_keys):
+    """第 5 步：把矢量底图栅格化成前端寻路用的静态路网（纯离线，不联网）。
+
+    ``import`` 放在函数里是有意的：``roadnet`` 反过来要用本模块的 ``write_atomic``，
+    在模块顶层互相 import 会撞上「半初始化模块」。
+    """
+    print("[5/5] 栅格化底图路网（离线）…")
+    import roadnet  # noqa: PLC0415
+    roadnet.build_all(selected_keys)
+
+
 def run(args):
     requested = [k.strip() for k in (args.maps or "").split(",") if k.strip()]
 
     if not args.force and data_ready(requested):
         print("[跳过] data/maps.json 与底图已就绪。要重新拉取请加 --force")
+        _build_roadnet(requested)
         return 0
 
-    print("[1/4] 读取上游配置与翻译 …")
+    print("[1/5] 读取上游配置与翻译 …")
     config, config_raw = load_json_cached(
         MAP_CONFIG_URL, "tarkovdev-maps-config.json", force=args.force,
         timeout=TIMEOUT_SMALL, browser_ua=True,
@@ -988,7 +1000,7 @@ def run(args):
     markers_by_name = {m.get("normalizedName"): m for m in markers_map.values()}
     print("      配置文件 %s，标注 %s 张图，选中 %s 张" % (len(config), len(markers_map), len(selected)))
 
-    print("[2/4] 准备底图（SVG 下载 / 瓦片拼接）…")
+    print("[2/5] 准备底图（SVG 下载 / 瓦片拼接）…")
     viewboxes = {}
     svg_tops = {}
     svg_names = {}
@@ -1022,7 +1034,7 @@ def run(args):
         svg_bytes += target.stat().st_size if target.exists() else 0
         print("      %-18s %-38s 图层=%s" % (key, svg_name, svg_tops[key]))
 
-    print("[3/4] 规范化标注数据 …")
+    print("[3/5] 规范化标注数据 …")
     markers_data = markers.get("data", markers)
     mobs = markers_data.get("mobs") or {}
     slug_map = container_slugs(markers_data)
@@ -1042,7 +1054,7 @@ def run(args):
                len(item["floors"]["switchable"]), len(item["floors"]["bands"]))
         )
 
-    print("[4/4] 写入 data/maps.json 与 data/meta.json …")
+    print("[4/5] 写入 data/maps.json 与 data/meta.json …")
     sources = [
         source_entry("tarkov.dev 地图配置（the-hideout/tarkov-dev）", MAP_CONFIG_URL, "MIT", config_raw),
         source_entry("tarkov.dev 标注数据（json.tarkov.dev）", MARKERS_URL.format(mode=args.mode),
@@ -1097,6 +1109,8 @@ def run(args):
     }
     write_atomic(DATA_DIR / "maps.json", json.dumps(payload, ensure_ascii=False, indent=1).encode("utf-8"))
     write_atomic(DATA_DIR / "meta.json", json.dumps(meta, ensure_ascii=False, indent=1).encode("utf-8"))
+
+    _build_roadnet(requested)
 
     print(
         "完成：%d 张图 / 底图 %.1f MB / 索引 %.0f KB（%s）"
