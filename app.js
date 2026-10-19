@@ -28,6 +28,12 @@
   var LS_ICON_SCALE = "eftmap.icon.scale";  // 地图图标的整体缩放（与服务端 ui.icon_scale 同构）
   var PIN_MAX = 300;                        // 钉选上限（与 tools/config.py 的 PIN_MAX 对齐）
   var ROUTE_MAX = 60;                       // 途经点上限
+  // 底层寻路：构建期已把矢量底图栅格化成 assets/roadnet/<图 key>/<层>.bin（每格 2 bit 通行码），
+  // 这里只做「同层」的加权 A*；跨层、瓦片底图（实验室/迷宫/破冰船）没有路网，自然回落成直线。
+  var ROADNET_INDEX = "data/roadnet.json";
+  var ROAD_COST = [Infinity, 1.0, 1.6, 3.0];  // 码 0 禁行 / 1 道路 / 2 地形 / 3 难走
+  var ROAD_SNAP_RADIUS = 14;                  // 起终点落在禁行格时，向外找可通行格的环数上限
+  var ROAD_LOS_STEP = 0.25;                   // 视线简化：沿线段每 0.25 格采样一次
   var ZOOM_MIN = 0.5;
   var ZOOM_MAX = 20;
   // 图标整体缩放的滑条区间（0.5×～3×；4K 屏上图标偏小，往右拖即可整体放大）
@@ -348,6 +354,8 @@
     pins: [],            // 钉选的「类型」：{kind, name} —— 命中的标记在地图上高亮描边
     route: [],           // 导航路线途经点：{kind, name, x, z, y?}
     routeFromPlayer: false,   // 路线是否从实时定位当前位置出发
+    roadnetIndex: null,  // data/roadnet.json：每张图的格子边长、原点与各层位图登记
+    roadnetCache: {},    // "<图 key>/<层 id>" → Uint8Array 通行码（null = 该层没有位图）
     searchCache: null,   // {mapKey, entries} 当前地图的搜索索引缓存
     player: null,        // 实时定位：最新解析到的玩家位置 {x, y, z, yaw, name, mtime}
     positionInfo: { available: false, reason: null },
@@ -451,10 +459,13 @@
 
     Promise.all([
       loadJSON("data/maps.json"),
-      loadJSON("data/meta.json").catch(function () { return null; })
+      loadJSON("data/meta.json").catch(function () { return null; }),
+      // 路网索引是可选的：缺失时导航照样能用，只是全部走直线
+      loadJSON(ROADNET_INDEX).catch(function () { return null; })
     ]).then(function (results) {
       var data = results[0];
       state.meta = results[1];
+      state.roadnetIndex = results[2];
       state.maps = data.maps || [];
       if (!state.maps.length) { throw new Error("data/maps.json 里没有任何地图"); }
       state.mapsLoaded = true;
@@ -1365,10 +1376,10 @@
   }
 
   // ---------------------------------------------------------------- 导航路线
-  // 本工具没有导航网格（NavMesh），路线按各途经点的世界坐标直线连接：
-  // 距离是直线距离，仅供方向参考；跨楼层的点直接相连会「穿墙」，需自行判断。
+  // 每一段单独决定怎么走：起终点在同一层、且该层有构建期路网位图时，走加权 A* 沿道路；
+  // 其余情况（跨层、瓦片底图、该层没有位图、寻路失败）回落成直线段，并在面板里如实标注。
 
-  /** 路线的实际点序列（可能带上实时定位作为起点） */
+  /** 路线的途经点序列（可能带上实时定位作为起点） */
   function routePoints() {
     var pts = [];
     if (state.routeFromPlayer && state.player) {
@@ -1378,13 +1389,239 @@
     return pts;
   }
 
-  function routeDistance() {
-    var pts = routePoints(), total = 0;
+  /** 展开后的整条路线：``{pts, marks, road, straight}``。
+   *
+   * ``pts`` 是实际折线点（含 A* 出来的中间拐点，世界坐标），``marks`` 与之一一对应，
+   * 标出哪些点是用户加的途经点（编号圆点只画这些）。
+   */
+  function routeGeometry() {
+    var wps = routePoints();
+    // 折线必须**按段顺序**拼出来：先放首个途经点，再逐段接上「中间的拐点 → 本段末端点」。
+    // 不能先把所有途经点铺成一排再接拐点，那样第一段会画成「起点 → 终点 → 绕回终点」的星形。
+    var geom = { pts: [], marks: [], road: 0, straight: 0 };
+    if (wps.length) {
+      geom.pts.push({ x: wps[0].x, z: wps[0].z, y: wps[0].y });
+      geom.marks.push(true);
+    }
+    for (var i = 1; i < wps.length; i++) {
+      var seg = roadSegment(wps[i - 1], wps[i]);
+      if (seg) {
+        geom.road++;
+        // 段的起点就是上一段的末点（就是途经点本身），只接中间的拐点
+        for (var k = 1; k < seg.length; k++) {
+          geom.pts.push(seg[k]);
+          geom.marks.push(false);
+        }
+      } else {
+        geom.straight++;
+      }
+      geom.pts.push({ x: wps[i].x, z: wps[i].z, y: wps[i].y });   // 末点用途经点的精确坐标，别停在格心
+      geom.marks.push(true);
+    }
+    return geom;
+  }
+
+  function routeDistance(geom) {
+    var pts = (geom || routeGeometry()).pts, total = 0;
     for (var i = 1; i < pts.length; i++) {
       var dx = pts[i].x - pts[i - 1].x, dz = pts[i].z - pts[i - 1].z;
       total += Math.sqrt(dx * dx + dz * dz);
     }
     return total;
+  }
+
+  // ---------------------------------------------------------------- 同层路网寻路
+  // 位图是构建期栅格化的产物（tools/roadnet.py）：每格 2 bit 通行码，4 格一字节、低位在前。
+  // 前端只做一次加权 A*（8 邻域，对角要两侧正交格都通才能斜穿），再用视线简化成尽量少的拐点。
+
+  var ROAD_NEI = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+  var roadnetPending = {};   // 正在下载的层；同一层的并发请求不会重复发
+
+  /** 取某图某层的路网位图 ``{w,h,codes,cell,ox,oy}``；没有就返回 null。
+   *
+   * 第一次调用会发起下载并返回 null（下载完自己重画一次覆盖层），
+   * 失败时记成 null 落到缓存里，免得每次重绘都重试一遍。
+   */
+  function roadnetNet(mapKey, floorId) {
+    var item = (state.roadnetIndex && state.roadnetIndex.maps) ? state.roadnetIndex.maps[mapKey] : null;
+    if (!item) { return null; }
+    var cacheKey = mapKey + "/" + floorId;
+    if (cacheKey in state.roadnetCache) { return state.roadnetCache[cacheKey]; }
+    var layer = (item.layers || {})[floorId];
+    if (!layer || roadnetPending[cacheKey]) { return null; }
+    roadnetPending[cacheKey] = true;
+    fetch(layer.file).then(function (res) {
+      if (!res.ok) { throw new Error(layer.file + " → HTTP " + res.status); }
+      return res.arrayBuffer();
+    }).then(function (buf) {
+      var bytes = new Uint8Array(buf), codes = new Uint8Array(layer.w * layer.h);
+      for (var idx = 0; idx < codes.length; idx++) {
+        codes[idx] = (bytes[idx >> 2] >> ((idx & 3) * 2)) & 3;
+      }
+      state.roadnetCache[cacheKey] = {
+        w: layer.w, h: layer.h, codes: codes, cell: item.cell,
+        ox: item.origin[0], oy: item.origin[1]
+      };
+      delete roadnetPending[cacheKey];
+      // 位图到位了，把这一段从直线换成沿道路；摘要文案也要跟着刷新（renderOverlay 不管面板）
+      renderOverlay();
+      renderRoutePanel();
+    }).catch(function () {
+      state.roadnetCache[cacheKey] = null;
+      delete roadnetPending[cacheKey];
+    });
+    return null;
+  }
+
+  /** 世界坐标 → 格号（越界返回 null） */
+  function cellOfPoint(net, x, z) {
+    var map = state.map;
+    var i = Math.floor((svgX(map, x, z) - net.ox) / net.cell);
+    var j = Math.floor((svgY(map, x, z) - net.oy) / net.cell);
+    if (!(i >= 0 && j >= 0 && i < net.w && j < net.h)) { return null; }
+    return { i: i, j: j };
+  }
+
+  /** 格心 → 世界坐标（worldToSvg 是仿射，取逆阵；带旋转的图（工厂）也成立） */
+  function pointOfCell(net, i, j) {
+    var sx = net.ox + (i + 0.5) * net.cell, sy = net.oy + (j + 0.5) * net.cell;
+    var c = state.map.worldToSvg;
+    var det = c.a * c.e - c.b * c.d;
+    if (!det) { return { x: sx, z: sy }; }
+    var dx = sx - c.c, dy = sy - c.f;
+    return { x: (c.e * dx - c.b * dy) / det, z: (c.a * dy - c.d * dx) / det };
+  }
+
+  /** 起点/终点落在禁行格时，向外一圈圈找最近的可通行格；找不到返回 null */
+  function snapCell(net, cell) {
+    if (!cell) { return null; }
+    function free(i, j) {
+      return i >= 0 && j >= 0 && i < net.w && j < net.h && net.codes[j * net.w + i] !== 0;
+    }
+    if (free(cell.i, cell.j)) { return cell; }
+    for (var r = 1; r <= ROAD_SNAP_RADIUS; r++) {
+      for (var dj = -r; dj <= r; dj++) {
+        for (var di = -r; di <= r; di++) {
+          if (Math.max(Math.abs(di), Math.abs(dj)) !== r) { continue; }
+          if (free(cell.i + di, cell.j + dj)) { return { i: cell.i + di, j: cell.j + dj }; }
+        }
+      }
+    }
+    return null;
+  }
+
+  /** 加权 A*：返回格号序列（含两端），失败返回 null */
+  function astar(net, from, to) {
+    var w = net.w, codes = net.codes, total = w * net.h;
+    var start = from.j * w + from.i, goal = to.j * w + to.i;
+    var gScore = new Float64Array(total), fScore = new Float64Array(total);
+    var came = new Int32Array(total), closed = new Uint8Array(total);
+    for (var k = 0; k < total; k++) { gScore[k] = Infinity; fScore[k] = Infinity; came[k] = -1; }
+    var hx = to.i, hy = to.j;
+    function heur(i, j) {
+      var dx = Math.abs(i - hx), dy = Math.abs(j - hy);
+      return Math.max(dx, dy) + (Math.SQRT2 - 1) * Math.min(dx, dy);   // 最小单格代价是 1，可采纳
+    }
+    var heap = [start];
+    gScore[start] = 0;
+    fScore[start] = heur(from.i, from.j);
+    while (heap.length) {
+      var cur = heap[0], last = heap.pop();
+      if (heap.length) {
+        heap[0] = last;
+        var n = 0, len = heap.length;
+        for (;;) {
+          var l = n * 2 + 1, r = l + 1, m = n;
+          if (l < len && fScore[heap[l]] < fScore[heap[m]]) { m = l; }
+          if (r < len && fScore[heap[r]] < fScore[heap[m]]) { m = r; }
+          if (m === n) { break; }
+          var sw = heap[m]; heap[m] = heap[n]; heap[n] = sw;
+          n = m;
+        }
+      }
+      if (cur === goal) { break; }
+      if (closed[cur]) { continue; }
+      closed[cur] = 1;
+      var cj = Math.floor(cur / w), ci = cur - cj * w;
+      for (var d = 0; d < 8; d++) {
+        var ni = ci + ROAD_NEI[d][0], nj = cj + ROAD_NEI[d][1];
+        if (ni < 0 || nj < 0 || ni >= w || nj >= net.h) { continue; }
+        var nidx = nj * w + ni;
+        var cost = ROAD_COST[codes[nidx]];
+        if (!cost || closed[nidx]) { continue; }
+        var diag = d >= 4;
+        if (diag && (!ROAD_COST[codes[cj * w + ni]] || !ROAD_COST[codes[nj * w + ci]])) { continue; }
+        var tentative = gScore[cur] + cost * (diag ? Math.SQRT2 : 1);
+        if (tentative >= gScore[nidx]) { continue; }
+        gScore[nidx] = tentative;
+        came[nidx] = cur;
+        fScore[nidx] = tentative + heur(ni, nj);
+        heap.push(nidx);
+        var up = heap.length - 1;
+        while (up > 0) {
+          var p = (up - 1) >> 1;
+          if (fScore[heap[p]] <= fScore[heap[up]]) { break; }
+          var tmp = heap[p]; heap[p] = heap[up]; heap[up] = tmp;
+          up = p;
+        }
+      }
+    }
+    if (came[goal] < 0 && start !== goal) { return null; }
+    var out = [], node = goal;
+    while (node !== -1) { out.push(node); node = came[node]; }
+    out.reverse();
+    return out;
+  }
+
+  /** 线段沿途的每一格都能走才算「看得见」；采样步长 0.25 格，不会整格跳过 */
+  function lineClear(net, i0, j0, i1, j1) {
+    var dx = i1 - i0, dy = j1 - j0;
+    var steps = Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)) / ROAD_LOS_STEP);
+    for (var s = 0; s <= steps; s++) {
+      var t = steps ? s / steps : 0;
+      var i = Math.floor(i0 + dx * t), j = Math.floor(j0 + dy * t);
+      if (i < 0 || j < 0 || i >= net.w || j >= net.h) { return false; }
+      if (!net.codes[j * net.w + i]) { return false; }
+    }
+    return true;
+  }
+
+  /** 视线简化：从锚点尽量往远伸，把 A* 的锯齿折线拉成尽量少的拐点 */
+  function smoothCells(net, cells) {
+    var out = [cells[0]], n = 0;
+    while (n < cells.length - 1) {
+      var ai = cells[n] % net.w, aj = Math.floor(cells[n] / net.w);
+      var best = n + 1;
+      for (var m = n + 2; m < cells.length; m++) {
+        var mi = cells[m] % net.w, mj = Math.floor(cells[m] / net.w);
+        if (!lineClear(net, ai, aj, mi, mj)) { break; }
+        best = m;
+      }
+      out.push(cells[best]);
+      n = best;
+    }
+    return out;
+  }
+
+  /** 一段沿道路的折线（世界坐标，含精确两端）；拿不到路网 / 走不通 / 同层判定失败时返回 null */
+  function roadSegment(a, b) {
+    var map = state.map;
+    if (!map || a.x === undefined || b.x === undefined) { return null; }
+    var floorA = floorOfPosition(map, a), floorB = floorOfPosition(map, b);
+    if (!floorA || floorA !== floorB) { return null; }   // 跨层不硬凑，交给调用方走直线
+    var net = roadnetNet(map.key, floorA);
+    if (!net) { return null; }
+    var ca = snapCell(net, cellOfPoint(net, a.x, a.z));
+    var cb = snapCell(net, cellOfPoint(net, b.x, b.z));
+    if (!ca || !cb || (ca.i === cb.i && ca.j === cb.j)) { return null; }
+    var raw = astar(net, ca, cb);
+    if (!raw || raw.length < 3) { return null; }         // 只隔一格，直线不差
+    var pts = smoothCells(net, raw).map(function (idx) {
+      var j = Math.floor(idx / net.w), i = idx - j * net.w;
+      return pointOfCell(net, i, j);
+    });
+    pts[0] = { x: a.x, z: a.z, y: a.y };                 // 起点回到精确坐标，别停在格心
+    return pts;
   }
 
   function persistRoute() {
@@ -1420,7 +1657,8 @@
   /** 路线折线 + 编号圆点（编号用 1 起；起点若是实时定位也算 1 号） */
   function renderRoute() {
     if (!el.overlay || !state.map) { return; }
-    var pts = routePoints();
+    var geom = routeGeometry();
+    var pts = geom.pts;
     if (pts.length < 2) { return; }
     var map = state.map;
     var unit = 1 / state.fit;
@@ -1432,18 +1670,21 @@
         return svgX(map, p.x, p.z).toFixed(2) + "," + svgY(map, p.x, p.z).toFixed(2);
       }).join(" ")
     }));
+    var num = 0;
     pts.forEach(function (p, i) {
+      if (!geom.marks[i]) { return; }             // 只有途经点画编号圆点，A* 的中间拐点不画
+      num++;
       var sx = svgX(map, p.x, p.z), sy = svgY(map, p.x, p.z);
       var node = svgEl("g", { class: "emk-route-node" });
       node.__emkBase = { sx: sx, sy: sy };
       node.setAttribute("transform", "translate(" + sx + " " + sy + ") scale(1)");
       node.appendChild(svgEl("circle", { r: 9 * unit, "vector-effect": "non-scaling-stroke" }));
-      var num = svgEl("text", {
+      var label = svgEl("text", {
         class: "emk-route-num", "font-size": 11 * unit,
         "text-anchor": "middle", "dominant-baseline": "central", x: 0, y: 0
       });
-      num.textContent = String(i + 1);
-      node.appendChild(num);
+      label.textContent = String(num);
+      node.appendChild(label);
       g.appendChild(node);
       state.markerScaleNodes.push(node);   // 随缩放反向补偿，屏幕上大小恒定
     });
@@ -1492,9 +1733,15 @@
       el.routeList.appendChild(li);
     });
     if (el.routeSummary) {
-      el.routeSummary.textContent = pts.length
-        ? "共 " + pts.length + " 个点 · 直线距离约 " + Math.round(routeDistance()) + " 米"
-        : "路线为空：在搜索结果或标记详情里点「路线」加入途经点";
+      if (!pts.length) {
+        el.routeSummary.textContent = "路线为空：在搜索结果或标记详情里点「路线」加入途经点";
+      } else {
+        var geom = routeGeometry();
+        var how = geom.road && geom.straight ? "（" + geom.road + " 段沿道路 / " + geom.straight + " 段直线）"
+          : (geom.road ? "（沿道路）" : "（直线）");
+        el.routeSummary.textContent = "共 " + pts.length + " 个点 · 路程约 " +
+          Math.round(routeDistance(geom)) + " 米" + how;
+      }
     }
     if (el.routeFromPlayerBox) { el.routeFromPlayerBox.checked = !!state.routeFromPlayer; }
   }

@@ -38,7 +38,7 @@
           <input type="checkbox" id="route-from-player"><span class="dot dot-route"></span>从实时定位出发
         </label>
       </div>
-      <p class="muted route-note">未接入导航网格（NavMesh），路线按各途经点的世界坐标直线连接，距离为直线距离，仅供方向参考；跨楼层的点直接相连会「穿墙」，需自行判断。</p>
+      <p class="muted route-note">同楼层的相邻途经点之间按底图栅格化出来的路网（道路优先）寻路，距离为沿线距离；跨楼层、以及只有瓦片底图的实验室 / 迷宫 / 破冰船仍是直线连接（会「穿墙」，需自行判断）。</p>
     </div>
   </div>
 </div>
