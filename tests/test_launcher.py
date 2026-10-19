@@ -10,11 +10,13 @@ from __future__ import annotations
 import json
 import threading
 import time
+import types
 import urllib.request
 from pathlib import Path
 
 import pytest
 
+import config
 import launcher
 import serve
 
@@ -43,11 +45,11 @@ class FakeServer:
 
 def make_startup(root=ROOT, on_step=None, open_browser=None, health=None, create_server=None, port=serve.DEFAULT_PORT):
     """装好桩件的 Startup；返回 (startup, 记录容器)。"""
-    rec = {"servers": [], "opened": [], "create_args": []}
+    rec = {"servers": [], "opened": [], "create_args": [], "create_kwargs": []}
 
-    def _create(p, h, r, screenshots=None):
+    def _create(p, h, r, screenshots=None, **kwargs):
         rec["create_args"].append((p, h, r))
-        rec["screenshots"] = screenshots
+        rec["create_kwargs"].append(dict(kwargs, screenshots=screenshots))
         srv = FakeServer(port)
         rec["servers"].append(srv)
         return srv
@@ -280,3 +282,278 @@ def test_parse_args_defaults_and_flags():
     assert (args.host, args.port, args.no_browser, args.screenshots) == (serve.DEFAULT_HOST, serve.DEFAULT_PORT, False, None)
     args = launcher.parse_args(["--port", "9100", "--no-browser", "--screenshots", "C:/shots"])
     assert (args.port, args.no_browser, args.screenshots) == (9100, True, "C:/shots")
+
+
+# --------------------------------------------------------------- 加壳版（独立应用窗口）
+
+def test_parse_args_app_window_flag_defaults_off():
+    assert launcher.parse_args([]).app_window is False
+    assert launcher.parse_args(["--app-window"]).app_window is True
+
+
+def test_app_mode_enabled_reads_flag_in_resource_dir(tmp_path, monkeypatch):
+    """资源目录里出现 appmode.flag 才算加壳版；没有就是普通版。"""
+    monkeypatch.setattr(launcher, "app_root", lambda: str(tmp_path))
+    assert launcher.app_mode_enabled() is False
+    (tmp_path / launcher.APP_MODE_FLAG).write_text("1", encoding="utf-8")
+    assert launcher.app_mode_enabled() is True
+
+
+def test_find_app_browser_returns_first_existing(tmp_path, monkeypatch):
+    missing = tmp_path / "no-such-browser.exe"
+    found = tmp_path / "msedge.exe"
+    found.write_bytes(b"")
+    monkeypatch.setattr(launcher, "_APP_WINDOW_BROWSERS", (str(missing), str(found)))
+    assert launcher.find_app_browser() == str(found)
+
+
+def test_find_app_browser_none_when_absent(tmp_path, monkeypatch):
+    monkeypatch.setattr(launcher, "_APP_WINDOW_BROWSERS", (str(tmp_path / "nope.exe"),))
+    assert launcher.find_app_browser() is None
+
+
+def test_open_app_window_launches_app_mode_and_returns_true(monkeypatch):
+    calls = []
+    monkeypatch.setattr(launcher, "find_app_browser", lambda: "C:/edge.exe")
+    monkeypatch.setattr(launcher.subprocess, "Popen", lambda argv, **kw: calls.append(argv))
+    assert launcher.open_app_window("http://127.0.0.1:8787/") is True
+    assert calls == [["C:/edge.exe", "--app=http://127.0.0.1:8787/"]]
+
+
+def test_open_app_window_falls_back_to_default_browser(monkeypatch):
+    monkeypatch.setattr(launcher, "find_app_browser", lambda: None)
+    seen = []
+    monkeypatch.setattr(launcher.webbrowser, "open", lambda url: seen.append(url) or True)
+    assert launcher.open_app_window("http://x/") is True
+    assert seen == ["http://x/"]
+
+
+def test_open_app_window_falls_back_when_launch_fails(monkeypatch):
+    """内核在、但起不来（被杀软拦等）→ 退回默认浏览器，不能打不开。"""
+    monkeypatch.setattr(launcher, "find_app_browser", lambda: "C:/edge.exe")
+
+    def boom(argv, **kw):
+        raise OSError("blocked")
+
+    monkeypatch.setattr(launcher.subprocess, "Popen", boom)
+    seen = []
+    monkeypatch.setattr(launcher.webbrowser, "open", lambda url: seen.append(url) or True)
+    assert launcher.open_app_window("http://x/") is True
+    assert seen == ["http://x/"]
+
+
+# --------------------------------------------------------------- 目录与配置的纯函数
+
+def test_resolve_dirs_prefers_explicit_then_config_then_auto(tmp_path, monkeypatch):
+    explicit = tmp_path / "explicit"
+    explicit.mkdir()
+    remembered = tmp_path / "remembered"
+    remembered.mkdir()
+    auto = tmp_path / "auto"
+    auto.mkdir()
+    monkeypatch.setattr(serve, "default_game_dir", lambda: str(auto))
+    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(auto))
+
+    cfg = {"game_dir": str(remembered), "screenshots_dir": str(remembered)}
+    assert launcher.resolve_dirs(cfg, str(explicit)) == (str(explicit), str(remembered))
+    assert launcher.resolve_dirs(cfg) == (str(remembered), str(remembered))
+    assert launcher.resolve_dirs({}) == (str(auto), str(auto))
+
+
+def test_resolve_dirs_drops_nonexistent_paths(tmp_path):
+    """配置里记着的目录被删了：不能把一个用不了的路径显示在界面上。"""
+    cfg = {"game_dir": str(tmp_path / "gone"), "screenshots_dir": str(tmp_path / "gone2")}
+    assert launcher.resolve_dirs(cfg) == ("", "")
+
+
+def test_build_config_shape_and_bool_coercion(tmp_path):
+    cfg = launcher.build_config(
+        game_dir=str(tmp_path), screenshots_dir="", auto_zoom=True,
+        auto_center=False, auto_start=True, sound_enabled=True,
+        sound_on={"raid_start": False}, sound_files={"matching": "bell.mp3"},
+    )
+    assert cfg["game_dir"] == str(tmp_path)
+    assert cfg["screenshots_dir"] is None              # 空串不写进配置
+    assert cfg["auto_zoom"] is True and cfg["auto_center"] is False and cfg["auto_start"] is True
+    assert cfg["sound"]["enabled"] is True
+    assert cfg["sound"]["raid_start"] == {"on": False, "file": None}
+    assert cfg["sound"]["matching"] == {"on": True, "file": "bell.mp3"}
+    assert cfg["sound"]["location_loading"] == {"on": True, "file": None}
+
+
+def test_build_config_round_trips_through_config_module(tmp_path):
+    """build_config 的产物必须能被 config.normalize 原样收下（两个模块的契约）。"""
+    cfg = launcher.build_config(game_dir="E:\\EFT", auto_zoom=True, sound_enabled=True,
+                                sound_files={"raid_start": "bell.wav"})
+    (tmp_path / config.CONFIG_NAME).write_text(json.dumps(cfg), encoding="utf-8")
+    assert config.normalize(cfg) == config.load(str(tmp_path))
+
+
+# --------------------------------------------------------------- 自动截图配置
+
+def test_build_config_auto_screenshot_defaults_to_off():
+    cfg = launcher.build_config()
+    assert cfg["auto_screenshot"] == {"enabled": False, "interval_ms": config.SHOT_INTERVAL_DEFAULT,
+                                      "key": None}
+
+
+def test_build_config_auto_screenshot_passes_values():
+    cfg = launcher.build_config(auto_screenshot=True, shot_interval_ms=2500, shot_key="  V  ")
+    assert cfg["auto_screenshot"] == {"enabled": True, "interval_ms": 2500, "key": "V"}
+
+
+def test_build_config_auto_screenshot_blank_key_is_none():
+    cfg = launcher.build_config(shot_key="   ")
+    assert cfg["auto_screenshot"]["key"] is None
+
+
+@pytest.mark.parametrize("raw,expect", [
+    (50, config.SHOT_INTERVAL_MIN),
+    (10_000_000, config.SHOT_INTERVAL_MAX),
+    ("abc", config.SHOT_INTERVAL_DEFAULT),
+])
+def test_build_config_clamps_interval(raw, expect):
+    """界面上的间隔输入必须被钳死，否则用户手滑输入 50 会让截图目录瞬间爆炸。"""
+    cfg = launcher.build_config(auto_screenshot=True, shot_interval_ms=raw)
+    assert cfg["auto_screenshot"]["interval_ms"] == expect
+
+
+def test_build_config_auto_screenshot_round_trips(tmp_path):
+    cfg = launcher.build_config(auto_screenshot=True, shot_interval_ms=1500, shot_key="V")
+    (tmp_path / config.CONFIG_NAME).write_text(json.dumps(cfg), encoding="utf-8")
+    loaded = config.load(str(tmp_path))
+    assert loaded["auto_screenshot"] == cfg["auto_screenshot"]
+
+
+# --------------------------------------------------------------- 自动删除截图配置
+
+def test_build_config_auto_delete_defaults_to_off():
+    cfg = launcher.build_config()
+    assert cfg["auto_delete"] == {"enabled": False, "since": None}
+
+
+def test_build_config_auto_delete_passes_since():
+    cfg = launcher.build_config(auto_delete=True, delete_since=1700000000.0)
+    assert cfg["auto_delete"] == {"enabled": True, "since": 1700000000.0}
+
+
+def test_build_config_auto_delete_off_clears_since():
+    """开关关着时 `since` 必须归 None，否则下次开启会沿用旧时间闸、把新截图也扫进清理范围。"""
+    cfg = launcher.build_config(auto_delete=False, delete_since=1700000000.0)
+    assert cfg["auto_delete"] == {"enabled": False, "since": None}
+
+
+def test_build_config_auto_delete_round_trips(tmp_path):
+    cfg = launcher.build_config(auto_delete=True, delete_since=1700000000.0)
+    (tmp_path / config.CONFIG_NAME).write_text(json.dumps(cfg), encoding="utf-8")
+    loaded = config.load(str(tmp_path))
+    assert loaded["auto_delete"] == cfg["auto_delete"]
+
+
+# --------------------------------------------------------------- 游戏目录透传
+
+def test_game_dir_and_config_dir_are_passed_to_server(tmp_path):
+    """界面里填的游戏目录要真的交给 serve，日志监控/自动切图才会开。"""
+    game = tmp_path / "EFT"
+    (game / "Logs").mkdir(parents=True)
+    startup, rec = make_startup(root=ROOT, port=0)
+    startup.game_dir = str(game)
+    startup.config_dir = str(tmp_path)
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        assert rec["create_kwargs"][0]["game_dir"] == str(game)
+        assert rec["create_kwargs"][0]["config_dir"] == str(tmp_path)
+        assert startup.game_dir_resolved == str(game)
+    finally:
+        startup.stop()
+
+
+def test_no_game_dir_means_no_log_monitoring(tmp_path):
+    """没填游戏目录就不启用日志监控（清空目录 = 关掉自动切图，不该被自动定位顶回来）。"""
+    startup, rec = make_startup(root=ROOT, port=0)
+    startup.game_dir = None
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        assert "game_dir" not in rec["create_kwargs"][0]
+        assert startup.game_dir_resolved is None
+    finally:
+        startup.stop()
+
+
+def test_self_check_reports_log_monitoring(tmp_path):
+    seen = []
+    startup, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server,
+                              health=launcher.check_health,
+                              on_step=lambda step, state, detail: seen.append((step, state, detail)))
+    startup.screenshots = str(tmp_path / "no-shots")     # 指一个不存在的目录，避免依赖本机环境
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        startup.step_self_check()
+        detail = [d for s, st, d in seen if s == launcher.STEP_SELFCHECK and st == "done"][0]
+        assert "日志监控未开启" in detail
+    finally:
+        startup.stop()
+
+
+def test_self_check_reports_log_monitoring_enabled(tmp_path):
+    game = tmp_path / "EFT"
+    (game / "Logs").mkdir(parents=True)
+    seen = []
+    startup, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server,
+                              health=launcher.check_health,
+                              on_step=lambda step, state, detail: seen.append((step, state, detail)))
+    startup.game_dir = str(game)
+    startup.screenshots = str(tmp_path / "no-shots")
+    startup.step_check_data()
+    startup.step_start_server()
+    try:
+        startup.step_self_check()
+        detail = [d for s, st, d in seen if s == launcher.STEP_SELFCHECK and st == "done"][0]
+        assert "日志监控已开启（自动切图 / 任务事件）" in detail
+    finally:
+        startup.stop()
+
+
+# --------------------------------------------------------------- 落盘时的界面偏好
+
+def _stub_window(tmp_path, **overrides):
+    """不弹窗地拿到一个「够用」的启动器窗口替身：只补 `_save` 会碰到的属性。"""
+    fields = dict(
+        app_dir=str(tmp_path),
+        current_config=lambda: launcher.build_config(auto_zoom=True),
+        message=types.SimpleNamespace(configure=lambda **kw: None),
+    )
+    fields.update(overrides)
+    return types.SimpleNamespace(**fields)
+
+
+def test_save_keeps_page_ui_prefs(tmp_path):
+    """启动器落盘必须带上磁盘上的 ui 块。
+
+    `build_config()` 的产物里没有 ui 键，`config.normalize()` 会把它归成 `{}`；
+    不补回来的话，表单每失焦一次就把 WebUI 刚保存的图层勾选抹掉一次。
+    """
+    config.save({"ui": {"layers": {"extract_scav": False}, "floor_auto": False}}, str(tmp_path))
+    assert launcher.LaunchWindow._save(_stub_window(tmp_path)) is True
+
+    loaded = config.load(str(tmp_path))
+    assert loaded["ui"] == {"layers": {"extract_scav": False}, "floor_auto": False}
+    assert loaded["auto_zoom"] is True          # 启动器自己那几项照常写进去
+
+
+def test_save_survives_missing_ui_block(tmp_path):
+    """磁盘上还没有 ui 块（用户从没在页面上点过）时，落盘不能报错。"""
+    assert launcher.LaunchWindow._save(_stub_window(tmp_path)) is True
+    assert config.load(str(tmp_path))["ui"] == {}
+
+
+def test_save_reports_failure_without_raising(tmp_path, monkeypatch):
+    """落盘失败（磁盘满 / 没权限）只能提示，不能把启动流程炸掉。"""
+    def _boom(*a, **kw):
+        raise OSError("disk full")
+
+    monkeypatch.setattr(config, "save", _boom)
+    assert launcher.LaunchWindow._save(_stub_window(tmp_path)) is False
