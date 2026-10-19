@@ -61,8 +61,11 @@ JOBS = [
     ("e510a141-b24e-444a-bff5-8161b1714327.png",    "val-keycard-black.png",    "strip", {"T": 30, "band": [0.00, 0.075]}),
     ("dc31b82e-b043-465f-bf61-62391db88f18.png",    "val-card-11sr.png",        "strip", {"T": 30, "band": [0.00, 0.40], "fill": True}),
     ("dc31b82e-b043-465f-bf61-62391db88f18.png",    "val-card-21ws.png",        "strip", {"T": 30, "band": [0.40, 0.88], "fill": True}),
-    # 2026-10-18 追加：TerraGroup「蓝色文件夹」材料（用户口径：只加这一件非钥匙的高级物品）
-    ("cb95b76e-2ef5-4d5c-9d35-ca4094910c3f.png",    "val-folder.png",           "item",  {"T": 45, "band": [0.18, 0.53]}),
+    # 2026-10-19 第十五轮：显卡换成实拍截图（原「其他高价值」子类撤销，改为「情报」+「蓝色文件夹」两子类）
+    #   val-folder.png = TerraGroup「蓝色文件夹」材料，改用本轮新截图的干净卡片渲染（替换旧 cb95b76e 那张）
+    ("441cb534-42c9-4ea2-9278-cce72d4a28b6.png",    "val-gpu.png",              "item",  {"T": 30, "band": [0.18, 0.53], "fill": True}),
+    ("f28c1aba-d1eb-416b-abad-2d0c7f384de8.png",    "val-intel.png",            "strip", {"T": 30}),
+    ("c7e682a9-5122-4298-bfb0-f2ed5c83b73b.png",    "val-folder.png",           "strip", {"T": 30}),
     # 2026-10-18 第四批：上锁的门所需钥匙（含本轮新增的固定刷新钥匙）——wiki 截图逐行抠图
     #   源图里每行 = [图标][中文名][地图名]；band 按行切开，ring=0 让图标贴住 band 上下边界。
     ("449458ca-2663-44e8-a923-2913f669f7a8.png",      "key-64ce5723.png", "strip", {"T": 30, "ring": 0, "band": [0.2656, 0.3266]}),
