@@ -548,23 +548,33 @@ PyInstaller `--add-data "<目录>;<dest>"` 是**把该目录的「内容」复�
 
 ---
 
-## 9. Git 状态（第九轮：发布前三批提交）
+## 9. Git 状态（第九轮：已发布 GitHub v0.1.0）
 
-基线提交：`a335b81 T13/T14：前端实时定位层 + 启动器接入截图目录`。**此后（第四～九轮）全部改动尚未提交**，本轮统一按功能**分批提交**并推 GitHub。
+**仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
+topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
 
-**已跟踪文件被改（15）**：`.gitignore`、`README.md`、`app.js`、`style.css`、`index.html`、`data/maps.json`、`data/meta.json`、`tools/{fetch_data,serve,launcher,screenshot}.py`、`tests/{test_fetch_data,test_launcher,test_serve}.py`、`docs/superpowers/specs/2026-10-17-eft-interactive-map-design.md`
-（第四～九轮累计改动；`tools/launcher.py` 第九轮又加了「应用窗口模式」，`tools/fetch_data.py` 第八轮加了瓦片逻辑、schema 5→6。）
+基线提交 `a335b81`，第四～九轮改动按功能分 8 批提交，本轮新增/收尾：
 
-**未跟踪新文件（22+）**：`AGENT_HANDOFF.md`、`build/build_release.ps1`、`tools/{config,eftlog,floors,iconize,installer,keyinput}.py`、
-`assets/icons/*.png`（**217 个图标素材**，第四轮由 26 扩到 172、第五轮补到 217）、
-`assets/maps/TheLab.svg` + `assets/maps/TheLabyrinth.svg`（**第八轮构建期拼的合成底图**）、`assets/maps/tiles/**`（**第八轮 120 张瓦片 PNG，约 6.2 MB**）、
-`tests/{test_autoshot,test_config,test_eftlog,test_floors,test_installer,test_keyinput,test_screenshot_prune}.py`
-（`tools/_debug_sheet.png` 这类 `iconize.py --sheet` 自检拼图不入库，需要时重跑即得。）
+| 提交 | 内容 |
+| --- | --- |
+| `1dcc559` | 用户级配置模块：配置与提示音改存 `%APPDATA%\EFTMap`，重打包不再丢设置 |
+| `7ede857` | 游戏日志监控 + 自动截图 / 自动删图 / 按键输入（进图自动切图、本局任务统计） |
+| `fee8da5` | 收录实验室与迷宫：构建期按上游 `transform`/`bounds` 拼瓦片成合成 SVG，schema → 6 |
+| `1b9f16b` | XP(Luna) 浅色框架 + 图层图标 / 高资子类 / 搜索聚合与钉选 / 导航路线（217 图标素材） |
+| `5aa2b3f` | 启动器加「应用窗口模式」+ 自建安装器 + `build_release.ps1`（Setup / 解压即用 / 加壳版） |
+| `060204a` | 文档：README 与交接手册（发布三版本、踩坑、Git 状态） |
+| `a07e565` | 测试：补齐截图按键输入的单元测试 |
+| `0312a47` | 文档：README 按作者其他项目的统一风格重写（目录 / 免费声明 / 发布包表格 / 目录结构 / 自测 / 打赏） |
 
-> 图标源图目录 `D:\personal\trae\02-塔科夫\ui图标` 在**仓库之外**，不属于本仓库；已整理成 `clean/`（**217 个**抠好的成品，中文名）+ `src/`（**63 张** iconize 源截图）两个子目录，其余截图已删。
+**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/icons/*.png`（217 个）、
+`tools/`、`tests/`、`build/`、根目录 `index.html` / `style.css` / `app.js`、`AGENT_HANDOFF.md`、`docs/`。
+**不入库**（`.gitignore` 已排除）：`dist/`、`release/`、`build-cache/`、`build/_work*/`、`eftmap.config.json`、`sounds/`、`*.spec`。
 
-> 建议接手后第一件事：跑一遍测试确认 **501 passed, 1 skipped**，然后按功能分批提交（日志监控 / 自动截图 / 图层与图标 / 配置持久化与 XP 界面 / 实验室与迷宫瓦片底图 / 发布三件套）。
-> `.gitignore` 已排除 `dist/`、`release/`、`build-cache/`、`build/_work*/`、`eftmap.config.json`、`sounds/`、`*.spec`——**`data/` 和 `assets/maps/`（含 `assets/maps/tiles/`）是入库的**。
+> 图标源图目录 `D:\personal\trae\02-塔科夫\ui图标` 在**仓库之外**，不属于本仓库；已整理成 `clean/`（217 个抠好的成品）+ `src/`（63 张 iconize 源截图）。
+
+> **发布后注意**：`release/` 是产物目录、不入库，所以**重打包后要重新上传 Release 资产**：
+> `gh release upload v0.1.0 --clobber release\*`（`gh` 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`；
+> 命令前要先 `$env:GH_TOKEN=$null`，否则环境变量里那个无写权限的 GitHub App 令牌会抢占授权）。
 
 ---
 
@@ -609,8 +619,9 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
   上游对它们同样只有瓦片；若将来要做，复用 §6.13 的 `TILE_MAPS` + `build_tile_svg` 机制，加上 `tilePath` 与层 id 即可。
   （第六轮的旧结论「不收录」已被第八轮推翻：当时判定社区 `Labs.svg` 宽高比与上游差约 10%、迷宫连 SVG 都没有 → 改走**构建期拼瓦片**这条路，见 §6.11 / §6.13。）
 - 上游仍有无 SVG 底图且未收录的图（破冰船等，见 §8）。
-- **GitHub 发布**（第九轮）：本地已备好三件套与 `gh` CLI（`C:\Users\Administrator\gh-cli\bin\gh.exe`）。
-  待办 = 用户 `gh auth login` → 建仓库 → 推代码 → 发 Release（附 Portable zip / AppWindow zip / Setup exe）。**仓库名与公开性发布前要先定。**
+- **GitHub 发布**：**已于第九轮完成**——仓库 <https://github.com/jjingith/eft-interactive-map>（Public），Release `v0.1.0` 附三件套。
+  `gh` CLI 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`（设备码授权登录，token 含 `gist, read:org, repo`）；用 `gh` 前记得先 `$env:GH_TOKEN=$null`。
+- **三件套实机验证**（第九轮遗留）：加壳版 zip 解压后能否真的开独立应用窗口、Setup 能否装到 `%LOCALAPPDATA%\EFTMap` 并建好开始菜单 / 桌面快捷方式与卸载项，**尚未在用户机器上实测**。
 
 **设计上的既有局限（README 里已如实写明，不要当成 bug 去"修"）**
 
