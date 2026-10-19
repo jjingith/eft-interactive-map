@@ -21,6 +21,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import shutil
@@ -160,6 +161,24 @@ def clamp_interval(value) -> int:
     return max(SHOT_INTERVAL_MIN, min(SHOT_INTERVAL_MAX, number))
 
 
+# 地图图标的整体缩放（页面右上角滑条）：区间与前端 app.js 的 ICON_SCALE_MIN/MAX 对齐。
+# 4K 屏上图标偏小，用户可以整体放大；默认 1.0 = 原始大小。
+ICON_SCALE_DEFAULT = 1.0
+ICON_SCALE_MIN = 0.5
+ICON_SCALE_MAX = 3.0
+
+
+def clamp_icon_scale(value) -> float:
+    """把图标缩放钳到 [ICON_SCALE_MIN, ICON_SCALE_MAX]；脏值（含 NaN）回落 1.0。"""
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return ICON_SCALE_DEFAULT
+    if not math.isfinite(number) or number <= 0:
+        return ICON_SCALE_DEFAULT
+    return round(max(ICON_SCALE_MIN, min(ICON_SCALE_MAX, number)), 3)
+
+
 # ---------------------------------------------------------------- 类型收敛
 def _as_bool(value, default: bool = False) -> bool:
     if isinstance(value, bool):
@@ -215,7 +234,7 @@ def _normalize_pins(raw) -> list[dict]:
 
 
 def _normalize_ui(raw) -> dict:
-    """页面偏好（图层开关 / 楼层开关 / 钉选）：只保留真给过来的键，没给就留空。
+    """页面偏好（图层开关 / 楼层开关 / 钉选 / 图标缩放）：只保留真给过来的键，没给就留空。
 
     不做默认值是有意的——空 `ui` 表示「还没保存过」，
     前端据此回退到本地偏好或内置默认，而不是被一份空偏好覆盖掉。
@@ -228,6 +247,9 @@ def _normalize_ui(raw) -> dict:
         out["layers"] = {str(key): _as_bool(value, True) for key, value in layers.items()}
     if isinstance(raw.get("map"), str) and raw["map"].strip():
         out["map"] = raw["map"].strip()
+    _scale = raw.get("icon_scale")
+    if isinstance(_scale, (int, float)) and not isinstance(_scale, bool):
+        out["icon_scale"] = clamp_icon_scale(_scale)
     for key in ("floor_auto", "floor_filter"):
         if isinstance(raw.get(key), bool):
             out[key] = raw[key]
@@ -253,7 +275,7 @@ def merge_ui(cfg, prefs) -> dict:
         layers = dict(ui.get("layers") or {})
         layers.update(incoming["layers"])
         ui["layers"] = layers
-    for key in ("map", "floor_auto", "floor_filter", "pins"):
+    for key in ("map", "floor_auto", "floor_filter", "pins", "icon_scale"):
         if key in incoming:
             ui[key] = incoming[key]
     merged["ui"] = ui

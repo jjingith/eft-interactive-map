@@ -25,10 +25,14 @@
   var LS_PINS = "eftmap.pins";              // 钉选的「类型」集合（与服务端 ui.pins 同构）
   var LS_ROUTE = "eftmap.route";            // 导航路线的途经点
   var LS_ROUTE_PLAYER = "eftmap.route.fromPlayer";
+  var LS_ICON_SCALE = "eftmap.icon.scale";  // 地图图标的整体缩放（与服务端 ui.icon_scale 同构）
   var PIN_MAX = 300;                        // 钉选上限（与 tools/config.py 的 PIN_MAX 对齐）
   var ROUTE_MAX = 60;                       // 途经点上限
   var ZOOM_MIN = 0.5;
   var ZOOM_MAX = 20;
+  // 图标整体缩放的滑条区间（0.5×～3×；4K 屏上图标偏小，往右拖即可整体放大）
+  var ICON_SCALE_MIN = 0.5;
+  var ICON_SCALE_MAX = 3;
   var DEFAULT_AUTO_ZOOM = 4;                // 自动缩放首次使用的倍数
   // 底图矩形最多向外扩这么多比例，用来容纳紧贴边缘的标注点
   var PAD_RATIO = 0.12;
@@ -350,6 +354,7 @@
     cfg: null,           // 启动器里的运行期配置（/api/config）
     autoZoom: false,     // 定位自动缩放：拿到位置后按「最近一次手动比例」缩放
     autoCenter: true,    // 点位自动居中：拿到位置后把地图平移到该点
+    iconScale: 1,        // 地图图标的整体缩放（滑条调节；1 = 原始大小）
     cfgAutoCenter: null, // 服务端配置里的 auto_center 上一次的值（只在其真的变化时才覆盖本地视角）
     logs: null,          // 日志监控状态 {available, reason, session, gameDir, logDir}
     raid: null,          // 最近一次战局事件 {phase, mapId, mapKey, raidId, ts}
@@ -429,6 +434,8 @@
     el.routeReverse = $("route-reverse");
     el.routeFromPlayerBox = $("route-from-player");
     el.routeAddCurrent = $("detail-add-route");
+    el.iconScale = $("icon-scale");
+    el.iconScaleValue = $("icon-scale-value");
 
     restorePrefs();
     bindUI();
@@ -593,6 +600,10 @@
     state.autoCenter = localStorage.getItem(LS_FOLLOW) !== "0";
     syncCenterButton();
 
+    // 图标整体缩放：本地兜底恢复（服务端配置到达后再覆盖一次），这里不写回，免得多发一次请求
+    var iconScaleSaved = parseFloat(localStorage.getItem(LS_ICON_SCALE));
+    setIconScale(isFinite(iconScaleSaved) ? iconScaleSaved : 1, false);
+
     // 钉选与导航路线：本地兜底恢复，服务端配置到达后再合并一次
     var pins = null, route = null;
     try { pins = JSON.parse(localStorage.getItem(LS_PINS) || "null"); } catch (e) { /* 忽略 */ }
@@ -612,8 +623,29 @@
       layers: state.layers,
       floor_auto: !!state.floorAuto,
       floor_filter: !!state.floorFilter,
-      pins: state.pins
+      pins: state.pins,
+      icon_scale: state.iconScale
     };
+  }
+
+  /** 图标整体缩放系数（所有标记/地名都乘它；滑条改的就是它） */
+  function iconScale() { return state.iconScale || 1; }
+
+  /**
+   * 应用地图图标整体缩放：滑条位置、百分比标签与已画在底图上的标记一起更新。
+   * 只乘进 `updateCounterScale()` 的补偿系数，**不给 SVG 元素添 CSS transform/animation**
+   * ——那会让整张 svg 被栅格化，放大就糊（见项目铁律）。
+   */
+  function setIconScale(value, persist) {
+    var number = Number(value);
+    var v = Math.max(ICON_SCALE_MIN, Math.min(ICON_SCALE_MAX, isFinite(number) ? number : 1));
+    state.iconScale = v;
+    if (el.iconScale) { el.iconScale.value = String(v); }
+    if (el.iconScaleValue) { el.iconScaleValue.textContent = Math.round(v * 100) + "%"; }
+    updateCounterScale();
+    if (!persist) { return; }
+    try { localStorage.setItem(LS_ICON_SCALE, String(v)); } catch (e) { /* 隐私模式忽略 */ }
+    queuePrefs({ ui: uiPatch() });
   }
 
   var PREF_DEBOUNCE = 400;     // 连续改动合并成一次写盘，避免勾一串开关就发一串请求
@@ -689,6 +721,9 @@
         renderOverlay();
         renderSearchResults();
       }
+    }
+    if (typeof ui.icon_scale === "number" && ui.icon_scale !== state.iconScale) {
+      setIconScale(ui.icon_scale, true);
     }
   }
 
@@ -877,6 +912,11 @@
       renderOverlay();
       queuePrefs({ ui: uiPatch() });
     });
+
+    // 图标整体缩放滑条：拖动时立刻改变已画标记的大小，松手后由防抖写回配置文件
+    if (el.iconScale) {
+      el.iconScale.addEventListener("input", function () { setIconScale(el.iconScale.value, true); });
+    }
 
     el.search.addEventListener("input", renderSearchResults);
     el.search.addEventListener("keydown", function (ev) {
@@ -1103,13 +1143,20 @@
   // ---------------------------------------------------------------- 标记小浮窗
   // 点地图上的任意标记（物资点 / 出生点 / Boss / 撤离点…）时，在标记旁边弹一个小浮窗，
   // 显示简略信息（和「上锁的门」那个钥匙浮窗同款）；左侧详情面板仍保留完整信息。
+  // 淡入淡出走 CSS opacity 过渡：浮窗本身是 HTML <div>，不是 SVG 图元，
+  // 不碰「SVG 加动画会被栅格化」的老坑。
   var markerPopTimer = null;
+  var markerPopNode = null;          // 当前那个浮窗（用变量记着，淡出期间旧的还能留在 DOM 里）
+  var POP_FADE_MS = 180;             // 与 style.css 里 .marker-pop 的过渡时长对齐
 
-  /** 关掉标记小浮窗（换图、换选另一个标记、超时都会用到） */
+  /** 关掉标记小浮窗（换图、换选另一个标记、超时都会用到）：先淡出再从 DOM 摘掉 */
   function hideMarkerPopup() {
-    var host = $("marker-pop");
-    if (host) { host.remove(); }
     if (markerPopTimer) { window.clearTimeout(markerPopTimer); markerPopTimer = null; }
+    var host = markerPopNode;
+    markerPopNode = null;
+    if (!host) { return; }
+    host.classList.remove("show");
+    window.setTimeout(function () { if (host.parentNode) { host.remove(); } }, POP_FADE_MS);
   }
 
   function showMarkerPopup(map, kind, item, node) {
@@ -1132,12 +1179,15 @@
       k.textContent = row[0];
       var v = document.createElement("span");
       v.className = "marker-pop-v";
-      v.textContent = row[1];
+      // 像「上锁的门」浮窗那样带上小图标：物资容器贴该类别的图标、高级资源点贴物品图标
+      if (row[2]) { v.appendChild(inlineIconAny(row[2])); }
+      v.appendChild(document.createTextNode(row[1]));
       line.appendChild(k);
       line.appendChild(v);
       host.appendChild(line);
     });
 
+    markerPopNode = host;
     document.body.appendChild(host);
 
     // 定位：贴在被点标记右边；右边放不下就翻到左边；上下夹在视口内
@@ -1150,6 +1200,9 @@
     top = Math.max(8, Math.min(top, window.innerHeight - h - 8));
     host.style.left = Math.round(left) + "px";
     host.style.top = Math.round(top) + "px";
+
+    // 下一帧再上 .show：先让浏览器算完 opacity:0 的初始态，过渡才会真的跑起来
+    window.requestAnimationFrame(function () { host.classList.add("show"); });
 
     markerPopTimer = window.setTimeout(hideMarkerPopup, 8000);
   }
@@ -1228,9 +1281,9 @@
     updateCounterScale();
   }
 
-  /** 标注点在屏幕上大小恒定：内部再乘 1/z 反向补偿 */
+  /** 标注点在屏幕上大小恒定：内部再乘 1/z 反向补偿，另外乘上滑条给的「整体图标缩放」 */
   function updateCounterScale() {
-    var inv = 1 / state.z;
+    var inv = iconScale() / state.z;
     for (var i = 0; i < state.markerScaleNodes.length; i++) {
       var node = state.markerScaleNodes[i];
       var base = node.__emkBase;
@@ -1968,6 +2021,18 @@
     return span;
   }
 
+  /**
+   * 详情行 / 浮窗行前面的内联图标：字符串按图标表取贴图（钥匙那种），
+   * 已经画好的 SVG 元素（物资容器 / 高级资源点那套手画图标）直接塞进去。
+   */
+  function inlineIconAny(value) {
+    if (typeof value === "string") { return inlineIcon(value); }
+    var span = document.createElement("span");
+    span.className = "inline-ico";
+    if (value) { span.appendChild(value); }
+    return span;
+  }
+
   // ---------------------------------------------------------------- 物资图标
   /**
    * 物资点的小图标：形状贴近实物（保险箱有转盘、工具箱有提手、尸体是骷髅…）。
@@ -2545,7 +2610,8 @@
       g.appendChild(signIcon(valuableIconKey(item.items), unit));
     } else if (iconKey) {
       // 出生点 / Boss / 狙击手 / 上锁的门 / BTR：位置类图标
-      g.appendChild(signIcon(iconKey, unit));
+      // BTR 停靠点是停车标志，实测偏小，按玩家反馈放大一倍
+      g.appendChild(signIcon(iconKey, kind === "btr" ? unit * 2 : unit));
     } else {
       g.appendChild(svgEl("circle", { r: radius }));
     }
@@ -2561,8 +2627,8 @@
   /** 钉选高亮环的半径（用户单位）：图标类按外接尺寸，纯圆点按点半径放大 */
   function pinRingRadius(kind, radius) {
     var unit = 1 / state.fit;
-    if (kind === "extracts" || kind === "transits") { return 11 * unit; }
-    if (ICON_KINDS.indexOf(kind) !== -1) { return 10 * unit; }
+    if (kind === "extracts" || kind === "transits") { return 11 * unit * iconScale(); }
+    if (ICON_KINDS.indexOf(kind) !== -1) { return 10 * unit * iconScale(); }
     return radius * 2.6;   // radius 已是「点半径 × unit」，再放大一档
   }
 
@@ -2599,9 +2665,12 @@
       }
       else if (item.key) { rows.push(["钥匙 id", item.key]); }
     } else if (kind === "containers") {
-      rows.push(["容器类别", containerLabel(item.group)]);
+      rows.push(["容器类别", containerLabel(item.group), lootIconSvg(item.group)]);
     } else if (kind === "valuables") {
-      if (item.items && item.items.length) { rows.push(["可能刷出", item.items.join(" / ")]); }
+      if (item.items && item.items.length) {
+        // 行首贴该点在地图上用的那颗图标（BTC / 钥匙卡 / 私酒…），浮窗里一眼对得上地图
+        rows.push(["可能刷出", item.items.join(" / "), signIconSvg(valuableIconKey(item.items))]);
+      }
     } else if (kind === "bosses") {
       if (item.where) { rows.push(["刷新位置", item.where]); }
       if (item.chance !== undefined && item.chance !== null) {
@@ -2632,8 +2701,8 @@
       var dt = document.createElement("dt");
       dt.textContent = row[0];
       var dd = document.createElement("dd");
-      // row[2] 是可选的内联图标 key（如「需要钥匙」那一行贴对应的钥匙图）
-      if (row[2]) { dd.appendChild(inlineIcon(row[2])); }
+      // row[2] 是可选的内联图标（字符串=贴图 key，SVG 元素=手画的物资/资源点图标）
+      if (row[2]) { dd.appendChild(inlineIconAny(row[2])); }
       dd.appendChild(document.createTextNode(row[1]));
       el.detail.appendChild(dt);
       el.detail.appendChild(dd);
@@ -2646,8 +2715,8 @@
     while (first && first.classList && first.classList.contains("emk-pin-ring")) { first = first.nextSibling; }
     var ringR = first && first.getAttribute("r");
     if (first && !ringR) {
-      if (kind === "extracts" || kind === "transits") { ringR = 11 / state.fit; }
-      else if (ICON_KINDS.indexOf(kind) !== -1) { ringR = 10 / state.fit; }
+      if (kind === "extracts" || kind === "transits") { ringR = 11 * iconScale() / state.fit; }
+      else if (ICON_KINDS.indexOf(kind) !== -1) { ringR = 10 * iconScale() / state.fit; }
     }
     if (first && ringR) {
       node.querySelectorAll(".emk-ring").forEach(function (ring) { ring.remove(); });

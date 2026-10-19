@@ -104,6 +104,12 @@
     <button id="zoom-in" title="放大（滚轮向上）">+</button>
     <button id="zoom-out" title="缩小（滚轮向下）">−</button>
     <button id="reset" title="复位视图（回到整图适配）">复位</button>
+    <label class="hud-scale" title="地图上图标与地名的整体大小：4K 屏上图标偏小就往右拖（本地保存，下次启动沿用）">
+      图标
+      <input type="range" id="icon-scale" min="0.5" max="3" step="0.05" value="1"
+             aria-label="地图图标整体缩放">
+      <span id="icon-scale-value" class="hud-scale-value">100%</span>
+    </label>
   </div>
 
   <div class="statusbar">

@@ -296,7 +296,8 @@ body { display: flex; flex-direction: column; }
 .inline-ico .ico-dot { width: 18px; height: 18px; }
 .lock-hint-key .inline-ico { margin-right: 0; }
 
-/* 标记小浮窗：点地图上任意标记时在标记旁弹出的简略信息（与钥匙浮窗同款样式） */
+/* 标记小浮窗：点地图上任意标记时在标记旁弹出的简略信息（与钥匙浮窗同款样式）。
+   浮窗是 HTML 元素，所以可以放心用 opacity 过渡做淡入淡出（SVG 图元不能加动画）。 */
 .marker-pop {
   position: fixed;
   z-index: 61;
@@ -309,11 +310,16 @@ body { display: flex; flex-direction: column; }
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
   pointer-events: none;
   color: var(--xp-text);
+  opacity: 0;
+  transition: opacity .18s ease-out;
 }
+.marker-pop.show { opacity: 1; }
 .marker-pop-title { font-size: 12px; font-weight: 700; color: var(--xp-text); }
 .marker-pop-row { margin-top: 3px; font-size: 12px; }
 .marker-pop-k { margin-right: 5px; color: #6b6656; }
 .marker-pop-v { color: var(--xp-text); }
+/* 浮窗行里的小图标（物资容器 / 高级资源点 / 钥匙）：跟详情面板里那颗一样大 */
+.marker-pop-v .inline-ico .ico-dot { width: 16px; height: 16px; }
 
 /* 楼层列表 */
 .floor-list { display: flex; flex-wrap: wrap; gap: 3px; }
@@ -521,6 +527,28 @@ body { display: flex; flex-direction: column; }
 .hud button.on {
   border-color: var(--player);
   color: var(--player);
+}
+
+/* 图标整体缩放滑条：跟 HUD 按钮同高同款，压在地图右上角 */
+.hud-scale {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--txt);
+  font: 13px/1 "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+.hud-scale input[type="range"] { width: 84px; margin: 0; accent-color: var(--accent); cursor: pointer; }
+.hud-scale-value {
+  min-width: 34px;
+  text-align: right;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
 }
 
 /* 状态条 */

@@ -370,3 +370,33 @@ def test_merge_ui_can_set_auto_center():
 def test_merge_ui_ignores_junk_prefs(junk):
     assert config.merge_ui({"auto_zoom": True}, junk)["auto_zoom"] is True
 
+
+# --------------------------------------------------------------- 图标整体缩放
+
+@pytest.mark.parametrize("raw,expect", [
+    (None, config.ICON_SCALE_DEFAULT),
+    ("abc", config.ICON_SCALE_DEFAULT),
+    (float("nan"), config.ICON_SCALE_DEFAULT),      # json 里可以出现裸 NaN，别让它污染缩放系数
+    (0, config.ICON_SCALE_DEFAULT),                 # 0 或负数没法当缩放系数
+    (-2, config.ICON_SCALE_DEFAULT),
+    (0.1, config.ICON_SCALE_MIN),                   # 下钳到滑条左端
+    (9, config.ICON_SCALE_MAX),                     # 上钳到滑条右端
+    (1, 1.0),
+    ("1.6", 1.6),                                   # 手改配置文件写了字符串也认
+])
+def test_clamp_icon_scale(raw, expect):
+    assert config.clamp_icon_scale(raw) == expect
+
+
+def test_normalize_ui_keeps_icon_scale_only_as_a_number():
+    cfg = config.normalize({"ui": {"icon_scale": 1.5, "junk": 1}})
+    assert cfg["ui"] == {"icon_scale": 1.5}
+    assert config.normalize({"ui": {"icon_scale": "big"}})["ui"] == {}
+    assert config.normalize({"ui": {"icon_scale": True}})["ui"] == {}   # 布尔不算数字
+
+
+def test_merge_ui_writes_icon_scale_without_touching_other_keys():
+    base = {"ui": {"layers": {"loose": True}, "floor_auto": True}}
+    merged = config.merge_ui(base, {"ui": {"icon_scale": 2.5}})
+    assert merged["ui"] == {"layers": {"loose": True}, "floor_auto": True, "icon_scale": 2.5}
+
