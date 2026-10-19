@@ -1,6 +1,6 @@
 {
- "schema": 7,
- "generatedAt": "2026-10-19T07:05:28Z",
+ "schema": 8,
+ "generatedAt": "2026-10-19T09:35:30Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -54,7 +54,7 @@
   "spawns": 2554,
   "containers": 6408,
   "loose": 4699,
-  "valuables": 1231,
+  "valuables": 1323,
   "hazards": 330,
   "locks": 261,
   "bosses": 643,
