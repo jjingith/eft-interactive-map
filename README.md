@@ -176,7 +176,7 @@ eft-interactive-map/
 ├── data/                             # maps.json（schema 8：图层 + 楼层波段 + 容器分类 + 钥匙名 + 高级资源点（含情报 / 蓝色文件夹）+ 瓦片图）+ roadnet.json（路网索引，供同层沿道路寻路）+ meta.json
 ├── assets/maps/                      # 13 张底图 SVG（其中实验室 / 迷宫 / 破冰船是构建期用 tiles/ 下的瓦片拼出的合成 SVG）
 ├── assets/roadnet/                   # 10 张矢量图的静态路网位图（每格 2 bit 通行码，构建期 tools/roadnet.py 出品，约 779 KB）
-├── assets/icons/                     # 220 个图标素材（64×64 透明 PNG，由 tools/iconize.py 从 wiki 截图抠图导出）
+├── assets/icons/                     # 219 个图标素材（64×64 透明 PNG，由 tools/iconize.py 从 wiki 截图抠图导出）
 ├── tools/
 │   ├── fetch_data.py                 # 构建期：拉数据与底图（联网一次），第 5 步顺带离线重建路网
 │   ├── roadnet.py                    # 构建期：把底图 SVG 的通行区域栅格化成静态路网（纯离线）

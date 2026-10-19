@@ -718,7 +718,7 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 **默认开关**：高资默认仍只开 **比特币 / 私酒 / 显卡 / 钥匙卡类**（4 个），其余 5 个子类默认关。
 **配置白名单**：`tools/config.py` 的 `_normalize_ui()` / `merge_ui()` 加 `label_scale`（钳 0.5–3.0）/ `label_alpha`（钳 0.0–1.0），新增 `clamp_label_scale()`/`clamp_label_alpha()`；
 `tests/test_config.py` 补 4 条测试 → 全量 **571 passed, 1 skipped**。
-**文档**：`README.md`（9 子类 / 常驻钉选 / 浮窗常驻 + 关闭 + 加入途径点 / 地名滑条 + 保存配置 / schema 8 / 图标 220 / 测试 571）、`docs/USAGE.md`（子类「情报 / 蓝色文件夹」、浮窗不再自动收起、钉选常驻、途经点拖动排序、导航段纠正为「同层沿道路」）。
+**文档**：`README.md`（9 子类 / 常驻钉选 / 浮窗常驻 + 关闭 + 加入途径点 / 地名滑条 + 保存配置 / schema 8 / 图标 219 / 测试 571）、`docs/USAGE.md`（子类「情报 / 蓝色文件夹」、浮窗不再自动收起、钉选常驻、途经点拖动排序、导航段纠正为「同层沿道路」）。
 
 **本轮没做的**：重新打包三件套 / 推送提交（用户本轮未要求，待确认）。
 
@@ -877,18 +877,18 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `app.js` | 子类拆「情报」+「蓝色文件夹」（共 9 类）+ 显卡换实拍图；地名缩放 / 透明度滑条；`savePrefsNow()`；浮窗常驻 + 关闭 + 加入途径点；途径点拖动排序；`renderPins()` 钉选常驻 |
 | `index.html` / `style.css` | `#save-config`「保存配置」按钮；`#label-scale` / `#label-alpha` 两个滑条；`#pinned-list`；浮窗 head / actions 与拖动排序样式 |
 | `tools/config.py` / `tests/test_config.py` | `label_scale` / `label_alpha` 白名单 + `clamp_*`；补 4 条测试（全量 571 passed, 1 skipped） |
-| `README.md` / `docs/USAGE.md` / 本手册 | 同步第十五轮（9 子类 / 常驻钉选 / 浮窗常驻 / 地名滑条 + 保存配置 / schema 8 / 图标 220 / 测试 571） |
+| `README.md` / `docs/USAGE.md` / 本手册 | 同步第十五轮（9 子类 / 常驻钉选 / 浮窗常驻 / 地名滑条 + 保存配置 / schema 8 / 图标 219 / 测试 571） |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
 > $env:GIT_COMMITTER_NAME='jjingith'; $env:GIT_COMMITTER_EMAIL='imzjj1996@gmail.com'`（或临时设置身份），否则 `git commit` 直接报 `Author identity unknown`。
 > 另：PowerShell **不支持** `$(cat <<'EOF' …)` heredoc 写多行提交信息，要改用多个 `-m`。
 
-**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/roadnet/`（35 个路网位图）、`assets/icons/*.png`（220 个）、
+**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/roadnet/`（35 个路网位图）、`assets/icons/*.png`（219 个）、
 `tools/`、`tests/`、`build/`、根目录 `index.html` / `style.css` / `app.js`、`AGENT_HANDOFF.md`、`docs/`。
 **不入库**（`.gitignore` 已排除）：`dist/`、`release/`、`build-cache/`、`build/_work*/`、`eftmap.config.json`、`sounds/`、`*.spec`。
 
-> 图标源图目录 `D:\personal\trae\02-塔科夫\ui图标` 在**仓库之外**，不属于本仓库；已整理成 `clean/`（217 个抠好的成品）+ `src/`（63 张 iconize 源截图）。
+> 图标源图目录 `D:\personal\trae\02-塔科夫\ui图标` 在**仓库之外**，不属于本仓库；已整理成 `clean/`（218 个抠好的成品）+ `src/`（63 张 iconize 源截图）。
 
 > **发布后注意**：`release/` 是产物目录、不入库，所以**重打包后要重新上传 Release 资产**：
 > `gh release upload v0.1.0 --clobber release\*`（`gh` 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`；
