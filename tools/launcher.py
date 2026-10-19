@@ -5,7 +5,7 @@
 
     ┌ 游戏目录 / 截图目录   ← 自动定位 + 手填 + 浏览
     ├ 地图显示开关         ← 定位自动缩放 / 点位自动居中
-    ├ 声音提示开关 + 3 个子开关（战局开始 / 开始加载战局 / 开始匹配）+「选取音频…」
+    ├ 声音提示开关 + 3 个子开关（战局开始 / 开始加载战局 / 开始匹配）+「选取音频…」+「试听」
     ├ 自动截图开关 + 间隔(ms) / 按键 +「从日志同步」（默认关闭，见下方反作弊提醒）
     └ 状态                ← 四步进度（检查数据 → 启动本地服务 → 载入资源 → 打开浏览器）
     [启动 WebUI]  ☑ 自动启动 WebUI   [保存配置] [退出]
@@ -359,6 +359,82 @@ SUNKEN_LIGHT = "#FFFFFF"
 MUTED = "#4A4A4A"
 
 
+# ---------------------------------------------------------------- 提示音试听
+# 自定义音频直接播用户选的文件；**没选音频时游戏里响的是「内置提示音」——那是页面用 Web Audio
+# 现场合成的**（见 app.js 的 DEFAULT_TONES），所以这里把同一组频率 / 时长在本地合成成 WAV 再播，
+# 让「试听听到的」和「游戏里听到的」是同一个音。两边的数值改动要同步（下表与 app.js 一一对应）。
+DEFAULT_TONES = {
+    "raid_start": ((523.0, 0.00, 0.13), (784.0, 0.14, 0.22)),
+    "location_loading": ((430.0, 0.00, 0.16), (430.0, 0.19, 0.16)),
+    "matching": ((620.0, 0.00, 0.11), (830.0, 0.12, 0.11)),
+}
+PREVIEW_RATE = 22050      # 试听用采样率（比 CD 低一档，够听清且文件更小）
+PREVIEW_GAIN = 0.22       # 峰值音量，与页面里 gain 的目标值一致
+
+
+def render_tone_wav(path: str, key: str) -> str:
+    """把某个内置提示音合成成 16 位单声道 WAV（三角波 + 快起软收的包络，照页面那套写）。"""
+    import math
+    import wave
+
+    tones = DEFAULT_TONES.get(key) or ()
+    total = max([at + dur for _, at, dur in tones] + [0.0]) + 0.05
+    frames = bytearray()
+    for index in range(int(total * PREVIEW_RATE)):
+        now = index / float(PREVIEW_RATE)
+        sample = 0.0
+        for freq, at, dur in tones:
+            if now < at or now > at + dur:
+                continue
+            local = now - at
+            if local < 0.015:            # 起音：15ms 内线性升到峰值（避免爆音）
+                amp = PREVIEW_GAIN * local / 0.015
+            else:                        # 收尾：按指数衰减到几乎听不见（同页面里的 ramp）
+                amp = PREVIEW_GAIN * math.exp(
+                    math.log(0.0001 / PREVIEW_GAIN) * (local - 0.015) / max(dur - 0.015, 1e-6))
+            phase = (local * freq) % 1.0                 # 三角波
+            sample += amp * (4.0 * abs(phase - 0.5) - 1.0)
+        value = max(-1.0, min(1.0, sample))
+        frames += int(value * 32000).to_bytes(2, "little", signed=True)
+    with wave.open(path, "wb") as fh:
+        fh.setnchannels(1)
+        fh.setsampwidth(2)
+        fh.setframerate(PREVIEW_RATE)
+        fh.writeframes(bytes(frames))
+    return path
+
+
+def preview_wav(key: str) -> str:
+    """内置提示音的试听 WAV 落在临时目录里（同一 key 只合成一次）。"""
+    import tempfile
+
+    path = os.path.join(tempfile.gettempdir(), "eftmap-preview-%s.wav" % key)
+    if not os.path.isfile(path):
+        render_tone_wav(path, key)
+    return path
+
+
+def play_audio(path: str) -> bool:
+    """尽量把音频放出来：WAV 走 winsound（异步、不挡窗口），其它格式交给系统默认播放器。
+
+    试听是辅助功能，播不出来也不算错误（返回 False），调用方据此提示用户。
+    """
+    try:
+        import winsound
+    except ImportError:              # 非 Windows：没有 winsound
+        winsound = None
+    if winsound is not None and path.lower().endswith(".wav"):
+        winsound.PlaySound(path, winsound.SND_FILENAME | winsound.SND_ASYNC)
+        return True
+    try:
+        if hasattr(os, "startfile"):
+            os.startfile(path)       # noqa: S606 - 播的是用户自己选 / 本项目生成的音频
+            return True
+    except OSError:
+        return False
+    return False
+
+
 class LaunchWindow:
     """tkinter 壳：设置表单 + 启动按钮 + 四步进度。"""
 
@@ -579,12 +655,15 @@ class LaunchWindow:
         cb.pack(side="left")
         btn = tk.Button(row, text="选取音频…", font=("Tahoma", 8), bd=1, padx=6, pady=1,
                         command=lambda k=key: self._pick_sound(k))
-        btn.pack(side="left", padx=(6, 4))
+        btn.pack(side="left", padx=(6, 2))
+        pv = tk.Button(row, text="试听", font=("Tahoma", 8), bd=1, padx=6, pady=1,
+                       command=lambda k=key: self._preview_sound(k))
+        pv.pack(side="left", padx=(2, 4))
         label = tk.Label(row, text="（默认提示音）", bg=FACE, fg=MUTED, font=("Tahoma", 8), anchor="w")
         label.pack(side="left", fill="x", expand=True)
         self.sound_vars[key] = var
         self.sound_labels[key] = label
-        self.sound_children.extend([cb, btn])
+        self.sound_children.extend([cb, btn, pv])
 
     def _build_buttons(self):
         tk = self.tk
@@ -735,6 +814,22 @@ class LaunchWindow:
         self._sync_sound_enabled()
         self._refresh_sound_labels()
         self._save()
+
+    def _preview_sound(self, key):
+        """试听：选了自定义音频就播它，没选就播**现场合成**的内置提示音（与游戏里响的是同一个音）。"""
+        name = self.sound_files.get(key) or ""
+        path = config.resolve_sound(name, self.app_dir) if name else None
+        if name and not path:
+            self._error("试听提示音", "音频文件已丢失：\n%s\n请重新点「选取音频…」导入。" % name)
+            return
+        if not path:
+            try:
+                path = preview_wav(key)
+            except (OSError, ValueError) as exc:
+                self._error("试听提示音", "内置提示音合成失败：%s" % exc)
+                return
+        if not play_audio(path):
+            self._error("试听提示音", "无法播放这段音频：\n%s\n（可先确认该文件本身能用系统播放器打开）" % path)
 
     def _refresh_sound_labels(self):
         for key in config.SOUND_KEYS:

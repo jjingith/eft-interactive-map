@@ -557,3 +557,63 @@ def test_save_reports_failure_without_raising(tmp_path, monkeypatch):
 
     monkeypatch.setattr(config, "save", _boom)
     assert launcher.LaunchWindow._save(_stub_window(tmp_path)) is False
+
+
+# --------------------------------------------------------------- 提示音试听
+
+def test_every_sound_key_has_builtin_tone():
+    """每个提示音都得有内置音；漏一个，那个「试听」就会合成出一个空 WAV。"""
+    assert set(launcher.DEFAULT_TONES) == set(config.SOUND_KEYS)
+
+
+def test_render_tone_wav_is_valid_and_matches_table(tmp_path):
+    """合成出来的 WAV 得是能播的单声道 16 位，且时长与表里的数值对得上。"""
+    import wave
+
+    path = tmp_path / "tone.wav"
+    launcher.render_tone_wav(str(path), "raid_start")
+    with wave.open(str(path), "rb") as fh:
+        assert (fh.getnchannels(), fh.getsampwidth()) == (1, 2)
+        assert fh.getframerate() == launcher.PREVIEW_RATE
+        duration = fh.getnframes() / float(fh.getframerate())
+    expected = max(at + dur for _, at, dur in launcher.DEFAULT_TONES["raid_start"])
+    assert duration == pytest.approx(expected + 0.05, abs=0.02)
+
+
+def test_preview_wav_synthesizes_once_and_reuses(tmp_path, monkeypatch):
+    """同一提示音只合成一次，重复点「试听」不该反复写盘。"""
+    monkeypatch.setattr("tempfile.gettempdir", lambda: str(tmp_path))
+    calls = []
+
+    def fake_render(p, k):
+        calls.append(k)
+        with open(p, "wb") as fh:      # 真身会把 WAV 写出来，缓存判定看的就是这个文件在不在
+            fh.write(b"RIFF")
+        return p
+
+    monkeypatch.setattr(launcher, "render_tone_wav", fake_render)
+    first = launcher.preview_wav("matching")
+    again = launcher.preview_wav("matching")
+    assert first == again
+    assert calls == ["matching"]
+
+
+def test_preview_sound_plays_builtin_when_no_custom_file(tmp_path, monkeypatch):
+    """没选自定义音频时试听的是内置音（与游戏里响的同一个音）。"""
+    played = []
+    monkeypatch.setattr(launcher, "preview_wav", lambda key: "builtin-%s.wav" % key)
+    monkeypatch.setattr(launcher, "play_audio", lambda p: played.append(p) or True)
+    window = types.SimpleNamespace(app_dir=str(tmp_path), sound_files={},
+                                   _error=lambda title, text: pytest.fail(text))
+    launcher.LaunchWindow._preview_sound(window, "matching")
+    assert played == ["builtin-matching.wav"]
+
+
+def test_preview_sound_reports_lost_custom_file(tmp_path, monkeypatch):
+    """自定义音频被删了要给出可操作提示，而不是静默播不出来。"""
+    errors = []
+    monkeypatch.setattr(launcher, "play_audio", lambda p: pytest.fail("不该去播一个已丢失的文件"))
+    window = types.SimpleNamespace(app_dir=str(tmp_path), sound_files={"raid_start": "gone.wav"},
+                                   _error=lambda title, text: errors.append((title, text)))
+    launcher.LaunchWindow._preview_sound(window, "raid_start")
+    assert errors and "gone.wav" in errors[0][1]
