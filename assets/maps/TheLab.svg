@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163.3" height="119.025" viewBox="0 0 163.3 119.025">
+<g id="First_Floor">
+<image x="-6.925" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_0_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_0_2.png"/>
+<image x="-6.925" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_0_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_0_3.png"/>
+<image x="14.95" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_1_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_1_2.png"/>
+<image x="14.95" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_1_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_1_3.png"/>
+<image x="14.95" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_1_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_1_4.png"/>
+<image x="14.95" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_1_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_1_5.png"/>
+<image x="14.95" y="102.575" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_1_6.png" href="assets/maps/tiles/the-lab/First_Floor_3_1_6.png"/>
+<image x="36.825" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_2_1.png" href="assets/maps/tiles/the-lab/First_Floor_3_2_1.png"/>
+<image x="36.825" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_2_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_2_2.png"/>
+<image x="36.825" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_2_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_2_3.png"/>
+<image x="36.825" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_2_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_2_4.png"/>
+<image x="36.825" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_2_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_2_5.png"/>
+<image x="58.7" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_1.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_1.png"/>
+<image x="58.7" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_2.png"/>
+<image x="58.7" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_3.png"/>
+<image x="58.7" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_4.png"/>
+<image x="58.7" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_5.png"/>
+<image x="58.7" y="102.575" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_3_6.png" href="assets/maps/tiles/the-lab/First_Floor_3_3_6.png"/>
+<image x="80.575" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_1.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_1.png"/>
+<image x="80.575" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_2.png"/>
+<image x="80.575" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_3.png"/>
+<image x="80.575" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_4.png"/>
+<image x="80.575" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_5.png"/>
+<image x="80.575" y="102.575" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_4_6.png" href="assets/maps/tiles/the-lab/First_Floor_3_4_6.png"/>
+<image x="102.45" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_5_1.png" href="assets/maps/tiles/the-lab/First_Floor_3_5_1.png"/>
+<image x="102.45" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_5_2.png" href="assets/maps/tiles/the-lab/First_Floor_3_5_2.png"/>
+<image x="102.45" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_5_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_5_3.png"/>
+<image x="102.45" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_5_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_5_4.png"/>
+<image x="102.45" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_5_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_5_5.png"/>
+<image x="124.325" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_6_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_6_3.png"/>
+<image x="124.325" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_6_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_6_4.png"/>
+<image x="124.325" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_6_5.png" href="assets/maps/tiles/the-lab/First_Floor_3_6_5.png"/>
+<image x="146.2" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_7_3.png" href="assets/maps/tiles/the-lab/First_Floor_3_7_3.png"/>
+<image x="146.2" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/First_Floor_3_7_4.png" href="assets/maps/tiles/the-lab/First_Floor_3_7_4.png"/>
+</g>
+<g id="Second_Floor">
+<image x="14.95" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_1_3.png" href="assets/maps/tiles/the-lab/Second_Floor_3_1_3.png"/>
+<image x="14.95" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_1_4.png" href="assets/maps/tiles/the-lab/Second_Floor_3_1_4.png"/>
+<image x="14.95" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_1_5.png" href="assets/maps/tiles/the-lab/Second_Floor_3_1_5.png"/>
+<image x="14.95" y="102.575" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_1_6.png" href="assets/maps/tiles/the-lab/Second_Floor_3_1_6.png"/>
+<image x="36.825" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_2_2.png" href="assets/maps/tiles/the-lab/Second_Floor_3_2_2.png"/>
+<image x="36.825" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_2_3.png" href="assets/maps/tiles/the-lab/Second_Floor_3_2_3.png"/>
+<image x="36.825" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_2_4.png" href="assets/maps/tiles/the-lab/Second_Floor_3_2_4.png"/>
+<image x="36.825" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_2_5.png" href="assets/maps/tiles/the-lab/Second_Floor_3_2_5.png"/>
+<image x="58.7" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_3_1.png" href="assets/maps/tiles/the-lab/Second_Floor_3_3_1.png"/>
+<image x="58.7" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_3_2.png" href="assets/maps/tiles/the-lab/Second_Floor_3_3_2.png"/>
+<image x="58.7" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_3_3.png" href="assets/maps/tiles/the-lab/Second_Floor_3_3_3.png"/>
+<image x="58.7" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_3_4.png" href="assets/maps/tiles/the-lab/Second_Floor_3_3_4.png"/>
+<image x="58.7" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_3_5.png" href="assets/maps/tiles/the-lab/Second_Floor_3_3_5.png"/>
+<image x="80.575" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_4_1.png" href="assets/maps/tiles/the-lab/Second_Floor_3_4_1.png"/>
+<image x="80.575" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_4_2.png" href="assets/maps/tiles/the-lab/Second_Floor_3_4_2.png"/>
+<image x="80.575" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_4_3.png" href="assets/maps/tiles/the-lab/Second_Floor_3_4_3.png"/>
+<image x="80.575" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_4_4.png" href="assets/maps/tiles/the-lab/Second_Floor_3_4_4.png"/>
+<image x="80.575" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_4_5.png" href="assets/maps/tiles/the-lab/Second_Floor_3_4_5.png"/>
+<image x="102.45" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_5_1.png" href="assets/maps/tiles/the-lab/Second_Floor_3_5_1.png"/>
+<image x="102.45" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_5_2.png" href="assets/maps/tiles/the-lab/Second_Floor_3_5_2.png"/>
+<image x="102.45" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_5_3.png" href="assets/maps/tiles/the-lab/Second_Floor_3_5_3.png"/>
+<image x="102.45" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_5_4.png" href="assets/maps/tiles/the-lab/Second_Floor_3_5_4.png"/>
+<image x="102.45" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Second_Floor_3_5_5.png" href="assets/maps/tiles/the-lab/Second_Floor_3_5_5.png"/>
+</g>
+<g id="Technical_Floor">
+<image x="14.95" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_1_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_1_2.png"/>
+<image x="14.95" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_1_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_1_5.png"/>
+<image x="14.95" y="102.575" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_1_6.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_1_6.png"/>
+<image x="36.825" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_2_1.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_2_1.png"/>
+<image x="36.825" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_2_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_2_2.png"/>
+<image x="36.825" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_2_3.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_2_3.png"/>
+<image x="36.825" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_2_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_2_5.png"/>
+<image x="58.7" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_3_1.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_3_1.png"/>
+<image x="58.7" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_3_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_3_2.png"/>
+<image x="58.7" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_3_3.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_3_3.png"/>
+<image x="58.7" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_3_4.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_3_4.png"/>
+<image x="58.7" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_3_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_3_5.png"/>
+<image x="80.575" y="-6.8" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_4_1.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_4_1.png"/>
+<image x="80.575" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_4_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_4_2.png"/>
+<image x="80.575" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_4_3.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_4_3.png"/>
+<image x="80.575" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_4_4.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_4_4.png"/>
+<image x="80.575" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_4_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_4_5.png"/>
+<image x="102.45" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_5_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_5_2.png"/>
+<image x="102.45" y="36.95" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_5_3.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_5_3.png"/>
+<image x="102.45" y="58.825" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_5_4.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_5_4.png"/>
+<image x="102.45" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_5_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_5_5.png"/>
+<image x="124.325" y="15.075" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_6_2.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_6_2.png"/>
+<image x="124.325" y="80.7" width="21.875" height="21.875" preserveAspectRatio="none" xlink:href="assets/maps/tiles/the-lab/Technical_Floor_3_6_5.png" href="assets/maps/tiles/the-lab/Technical_Floor_3_6_5.png"/>
+</g>
+</svg>

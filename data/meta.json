@@ -1,6 +1,6 @@
 {
- "schema": 1,
- "generatedAt": "2026-10-17T04:59:54Z",
+ "schema": 6,
+ "generatedAt": "2026-10-18T16:56:34Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -15,8 +15,8 @@
    "name": "tarkov.dev 标注数据（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/maps",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "7b4ec25cfd15ec0250f087ca52ef9763c6fc46b27fbb28561dfb661990a9bb71",
-   "bytes": 8729868
+   "sha256": "a7e29db6450297e7c1575f51abad27b6e28456cb3e999ad2f0d38c4ed8deac9a",
+   "bytes": 8762996
   },
   {
    "name": "tarkov.dev 中文翻译（json.tarkov.dev）",
@@ -26,18 +26,60 @@
    "bytes": 22741
   },
   {
+   "name": "tarkov.dev 中文物品名（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/items_zh",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "04b1d3f51979aae2f46487728b8b1b6836875a376a343506bd814ac48dde7fdf",
+   "bytes": 1661747
+  },
+  {
    "name": "底图 SVG（the-hideout/tarkov-dev-svg-maps）",
    "url": "https://assets.tarkov.dev/maps/svg/",
    "license": "CC BY-NC-SA 4.0（署名 + 非商业 + 同许可）",
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "bytes": 0
+  },
+  {
+   "name": "瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫）",
+   "url": "https://assets.tarkov.dev/maps/",
+   "license": "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
   }
  ],
  "counts": {
-  "maps": 10,
-  "extracts": 137,
-  "transits": 28,
-  "spawns": 2345,
-  "labels": 272
+  "maps": 12,
+  "extracts": 145,
+  "transits": 29,
+  "spawns": 2498,
+  "containers": 6408,
+  "loose": 4621,
+  "valuables": 1114,
+  "hazards": 330,
+  "locks": 250,
+  "bosses": 491,
+  "artillery": 18,
+  "btr": 14,
+  "stationary": 39,
+  "locksNamed": 250,
+  "labels": 303,
+  "tileMaps": 2,
+  "tileBytes": 6474168,
+  "containerGroups": {
+   "safe": 51,
+   "jacket": 286,
+   "pcblock": 257,
+   "scavbody": 295,
+   "drawer": 1025,
+   "duffle": 1234,
+   "cache": 319,
+   "med": 259,
+   "supply": 132,
+   "suitcase": 63,
+   "toolbox": 699,
+   "register": 230,
+   "grenade": 200,
+   "weapon": 1358
+  }
  }
 }
