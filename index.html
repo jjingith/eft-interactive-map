@@ -8,6 +8,43 @@
 </head>
 <body>
 
+<div class="menubar" id="menubar">
+  <div class="menu-wrap">
+    <button type="button" class="menu-btn" id="menu-raid"
+            aria-haspopup="true" aria-expanded="false" aria-controls="raid-block">战局与任务</button>
+    <div class="menu-panel" id="raid-block" hidden>
+      <p id="raid-status" class="muted">正在读取日志监控状态…</p>
+      <p id="raid-note" class="muted raid-note"></p>
+      <p id="shot-status" class="muted shot-status">自动截图：未开启（在启动器里开启）</p>
+      <p id="clean-status" class="muted shot-status">自动删除截图：未开启（在启动器里开启）</p>
+      <div class="quest-counts">
+        <span>本局完成 <strong id="quest-done">0</strong></span>
+        <span>本局接取 <strong id="quest-started">0</strong></span>
+      </div>
+      <ul id="quest-log" class="quest-log"></ul>
+      <p class="muted quest-hint" id="quest-hint">任务事件来自游戏日志的推送通知（只有任务开始 / 完成 / 失败，没有条件级进度）。</p>
+    </div>
+  </div>
+  <div class="menu-wrap">
+    <button type="button" class="menu-btn" id="menu-nav"
+            aria-haspopup="true" aria-expanded="false" aria-controls="nav-block">导航与路线</button>
+    <div class="menu-panel" id="nav-block" hidden>
+      <p id="route-summary" class="muted">路线为空：在搜索结果或标记详情里点「路线」加入途经点</p>
+      <ol id="route-list" class="route-list"></ol>
+      <div class="route-actions">
+        <button type="button" id="route-clear">清空</button>
+        <button type="button" id="route-reverse">反转</button>
+        <label class="toggle route-opt" title="把实时定位的当前位置作为路线起点（1 号点）">
+          <input type="checkbox" id="route-from-player"><span class="dot dot-route"></span>从实时定位出发
+        </label>
+      </div>
+      <p class="muted route-note">未接入导航网格（NavMesh），路线按各途经点的世界坐标直线连接，距离为直线距离，仅供方向参考；跨楼层的点直接相连会「穿墙」，需自行判断。</p>
+    </div>
+  </div>
+</div>
+
+<div class="workspace">
+
 <aside class="panel" id="sidebar">
   <header class="brand">
     <h1>EFT 互动地图</h1>
@@ -19,25 +56,37 @@
     <div id="map-list" class="map-list" role="listbox" aria-label="地图列表"></div>
   </section>
 
+  <section class="block" id="floor-block" hidden>
+    <h2>楼层</h2>
+    <div id="floor-list" class="floor-list"></div>
+    <div class="toggles floor-opts">
+      <label class="toggle" title="按截图文件名里的高度 y 自动切到对应楼层">
+        <input type="checkbox" id="floor-auto" checked><span class="dot dot-floor"></span>跟随截图自动切层
+      </label>
+      <label class="toggle" title="只显示当前楼层的标记（标记的高度 y 落在别的层就隐藏）">
+        <input type="checkbox" id="floor-filter" checked><span class="dot dot-floor"></span>按楼层过滤标记
+      </label>
+    </div>
+    <p id="floor-note" class="muted"></p>
+  </section>
+
   <section class="block">
     <h2>图层</h2>
-    <div id="layer-toggles" class="toggles">
-      <label class="toggle"><input type="checkbox" data-layer="extracts" checked><span class="dot dot-extract"></span>撤离点</label>
-      <label class="toggle"><input type="checkbox" data-layer="transits" checked><span class="dot dot-transit"></span>过境点</label>
-      <label class="toggle"><input type="checkbox" data-layer="spawns"><span class="dot dot-spawn"></span>出生点</label>
-      <label class="toggle"><input type="checkbox" data-layer="labels" checked><span class="dot dot-label"></span>地名标注</label>
-    </div>
+    <div id="layer-toggles" class="toggles"></div>
   </section>
 
   <section class="block">
     <h2>搜索</h2>
-    <input id="search" class="search" type="search" placeholder="输入撤离点 / 过境点 / 地名…" autocomplete="off">
+    <input id="search" class="search" type="search" placeholder="输入名称（撤离点 / 物资 / Boss…）" autocomplete="off">
     <div id="search-results" class="search-results" hidden></div>
   </section>
 
   <section class="block" id="detail-block" hidden>
     <h2>标记详情</h2>
     <dl id="detail" class="detail"></dl>
+    <div class="detail-actions">
+      <button type="button" id="detail-add-route" title="把当前标记加入导航路线">加入路线</button>
+    </div>
   </section>
 
   <footer class="credits">
@@ -51,7 +100,7 @@
   <div id="viewport"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
 
   <div class="hud" id="hud">
-    <button id="follow" title="实时定位自动居中">跟随中</button>
+    <button id="follow" title="点位自动居中：实时定位到位后把地图平移到该位置">自动居中</button>
     <button id="zoom-in" title="放大（滚轮向上）">+</button>
     <button id="zoom-out" title="缩小（滚轮向下）">−</button>
     <button id="reset" title="复位视图（回到整图适配）">复位</button>
@@ -67,6 +116,8 @@
 
   <div id="error" class="error" hidden></div>
 </main>
+
+</div>
 
 <script src="app.js"></script>
 </body>

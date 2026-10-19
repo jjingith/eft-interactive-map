@@ -1,7 +1,10 @@
-/* EFT 互动地图 · 深色战术风
-   注意：底图 SVG 注入后会带来自己的 .cls-* 样式，故本项目类名统一用 emk- 前缀避免冲突 */
+/* EFT 互动地图 · Windows XP (Luna) 风框架 + 深色地图区
+   注意：底图 SVG 注入后会带来自己的 .cls-* 样式，故本项目类名统一用 emk- 前缀避免冲突。
+   配色分两套：--xp-* 给窗口框架（浅色 Luna），下面原有的一组深色变量留给地图区与标注——地图上
+   叠着底图与彩色标注，改成浅底反而看不清，所以只换框架、不动地图。 */
 
 :root {
+  /* —— 地图区与标注用的一组深色变量（保持原样） —— */
   --bg: #0e1013;
   --panel: #161a1f;
   --panel-2: #1d222a;
@@ -9,14 +12,59 @@
   --txt: #d9dee5;
   --muted: #8b93a1;
   --accent: #8fae4b;
-  --extract-pmc: #6ec06e;
-  --extract-scav: #d9a441;
-  --extract-shared: #6ea8d9;
-  --transit: #a97bd6;
-  --spawn: #7a869a;
+  --extract-pmc: #37c46a;
+  --extract-scav: #e5a72c;
+  --extract-shared: #4a9fe8;
+  --transit: #e2513c;
+  --spawn: #8b93a1;
+  --spawn-player: #37c46a;
+  --spawn-scav: #e58b2c;
+  --spawn-pmc: #4a9fe8;
+  --spawn-sniper: #d0553f;
+  /* 物资容器按 14 类配色（类别 key 见 tools/fetch_data.py 的 CONTAINER_GROUPS） */
+  --loot-safe: #d8b23f;
+  --loot-jacket: #a8794f;
+  --loot-pcblock: #7ba3cc;
+  --loot-scavbody: #9c8f84;
+  --loot-drawer: #b08e5e;
+  --loot-duffle: #c8a45c;
+  --loot-cache: #9aa06a;
+  --loot-med: #d4788a;
+  --loot-supply: #c98f3c;
+  --loot-suitcase: #d9b877;
+  --loot-toolbox: #7f9aa8;
+  --loot-register: #d8c05a;
+  --loot-grenade: #8fae4b;
+  --loot-weapon: #c08a4e;
+  --loot-misc: #8f9aa6;
+  --loot-loose: #8f9463;
+  --loot-valuable: #e3c14b;
+  --hazard: #e06c6c;
+  --artillery: #b1543f;
+  --lock: #e5b02c;
+  --boss: #d8534a;
+  --btr: #e2513c;
+  --stationary: #b98a5e;
+  --floor: #c6d18a;
   --label: #b9c0cb;
   --player: #4fd8e0;
   --danger: #e06c6c;
+
+  /* —— Windows XP (Luna) 框架配色（与启动器窗口同一套） —— */
+  --xp-face: #ece9d8;        /* 对话框底色 */
+  --xp-face-2: #f7f5ee;      /* 面板里的浅色块 */
+  --xp-line: #d6d2c2;        /* 块之间的分隔线 */
+  --xp-border: #aca899;      /* 3D 边框的暗色 */
+  --xp-light: #ffffff;       /* 3D 边框的亮色 */
+  --xp-text: #000000;
+  --xp-muted: #4a4a4a;
+  --xp-title: #204070;       /* 分组标题蓝 */
+  --xp-sel: #316ac5;         /* 选中高亮蓝 */
+  --xp-input: #7f9db9;       /* 输入框边框 */
+  --xp-hot-a: #fffefe;       /* 按钮悬停渐变（上） */
+  --xp-hot-b: #dff0ff;       /* 按钮悬停渐变（下） */
+  --xp-tip: #ffffe1;         /* XP 提示气泡底色 */
+  --xp-link: #1e63c8;
 }
 
 * { box-sizing: border-box; }
@@ -24,114 +72,421 @@
 html, body {
   margin: 0;
   height: 100%;
-  background: var(--bg);
-  color: var(--txt);
-  font: 13px/1.5 "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif;
+  background: var(--xp-face);
+  color: var(--xp-text);
+  font: 12px/1.5 Tahoma, "Microsoft YaHei", "Microsoft YaHei UI", sans-serif;
   overflow: hidden;
 }
 
-body { display: flex; }
+/* 框架是「菜单栏在上、工作区在下」的垂直结构 */
+body { display: flex; flex-direction: column; }
 
-/* ---------- 侧栏 ---------- */
+/* 任意带 hidden 的元素一律不显示（含菜单面板、楼层块、详情块） */
+[hidden] { display: none !important; }
+
+/* 次要文字：框架是浅色底，所以默认用深灰；深色的状态条自己在下面改回浅灰 */
+.muted { color: var(--xp-muted); }
+
+/* ---------- 顶部菜单栏 ---------- */
+.menubar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  background: linear-gradient(#f8f7f1, var(--xp-face));
+  border-bottom: 1px solid var(--xp-border);
+  user-select: none;
+}
+.menu-wrap { position: relative; }
+.menu-btn {
+  padding: 3px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--xp-text);
+  font: inherit;
+  cursor: pointer;
+}
+.menu-btn:hover, .menu-btn.open {
+  background: var(--xp-sel);
+  border-color: #2a5cc4;
+  color: #fff;
+}
+.menu-panel {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 40;
+  width: 330px;
+  max-height: 72vh;
+  overflow-y: auto;
+  margin-top: 1px;
+  padding: 8px 10px;
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, .35);
+  color: var(--xp-text);
+}
+
+/* ---------- 工作区：左侧栏 + 右地图 ---------- */
+.workspace {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+}
+
+/* ---------- 侧栏（Luna 浅色面） ---------- */
 .panel#sidebar {
   width: 300px;
   flex: 0 0 300px;
-  height: 100vh;
-  background: var(--panel);
-  border-right: 1px solid var(--line);
+  height: 100%;
+  background: var(--xp-face);
+  border-right: 1px solid var(--xp-border);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
 
-.brand { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); }
-.brand h1 { margin: 0; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
-.brand-sub { margin: 4px 0 0; font-size: 11px; color: var(--muted); }
+/* 品牌条照 XP 标题栏做：蓝渐变 + 白字，一眼认出是哪个窗口 */
+.brand {
+  padding: 8px 14px 9px;
+  background: linear-gradient(#0058ee, #3d9cf5);
+  border-bottom: 1px solid #003c74;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+}
+.brand-sub { margin: 2px 0 0; font-size: 11px; color: #dcebff; }
 
-.block { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.block { padding: 10px 13px; border-bottom: 1px solid var(--xp-line); }
 .block h2 {
-  margin: 0 0 8px;
-  font-size: 11px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
+  margin: 0 0 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--xp-title);
 }
 
 /* 地图列表 */
 .map-list { display: flex; flex-direction: column; gap: 2px; }
 .map-item {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
-  padding: 7px 10px;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  color: var(--txt);
+  padding: 5px 8px;
+  background: #fff;
+  border: 1px solid var(--xp-input);
+  color: var(--xp-text);
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
-.map-item:hover { background: var(--panel-2); }
+.map-item:hover { background: #eaf3ff; border-color: #2a5cc4; }
 .map-item[aria-selected="true"] {
-  background: rgba(143, 174, 75, .14);
-  border-color: rgba(143, 174, 75, .55);
+  background: var(--xp-sel);
+  border-color: #2a5cc4;
+  color: #fff;
 }
-.map-item .count { font-size: 11px; color: var(--muted); }
+.map-item .count { font-size: 11px; color: var(--xp-muted); }
+.map-item[aria-selected="true"] .count { color: #dce7fb; }
 
 /* 图层开关 */
-.toggles { display: flex; flex-direction: column; gap: 6px; }
-.toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
-.toggle input { accent-color: var(--accent); margin: 0; }
-.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.dot-extract { background: var(--extract-pmc); }
+.toggles { display: flex; flex-direction: column; gap: 5px; }
+.toggle { display: flex; align-items: center; gap: 7px; cursor: pointer; user-select: none; }
+.toggle input { accent-color: #2a5cc4; margin: 0; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: 0 0 auto; }
+.dot-extract, .dot-extract-pmc { background: var(--extract-pmc); }
+.dot-extract-scav { background: var(--extract-scav); }
+.dot-extract-shared { background: var(--extract-shared); }
 .dot-transit { background: var(--transit); }
-.dot-spawn { background: var(--spawn); }
+.dot-spawn, .dot-spawn-scav { background: var(--spawn-scav); }
+.dot-spawn-player { background: var(--spawn-player); }
+.dot-spawn-pmc { background: var(--spawn-pmc); }
+.dot-spawn-sniper { background: var(--spawn-sniper); }
+.dot-loot-loose { background: var(--loot-loose); border-radius: 2px; }
+.dot-valuable { background: var(--loot-valuable); }
+.dot-hazard { background: var(--hazard); border-radius: 2px; }
+.dot-artillery { background: var(--artillery); border-radius: 2px; }
+.dot-lock { background: var(--lock); }
+.dot-boss { background: var(--boss); }
+.dot-btr { background: var(--btr); }
+.dot-stationary { background: var(--stationary); border-radius: 2px; }
+.dot-floor { background: var(--floor); border-radius: 2px; }
 .dot-label { background: var(--label); border-radius: 2px; }
+
+/* 物资小图标：形状贴近实物，body/mark/hole 分别对应主体、高光与暗部 */
+.ico-dot { width: 15px; height: 15px; flex: 0 0 auto; display: block; }
+.emk-ico .body { fill: var(--c, var(--loot-misc)); }
+.emk-ico .mark { fill: rgba(14, 16, 20, .8); }
+.emk-ico .hole { fill: rgba(14, 16, 20, .55); }
+.emk-ico .thin {
+  fill: none;
+  stroke: rgba(226, 232, 240, .6);
+  stroke-width: .9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* 开关分组标题 */
+.toggle-group {
+  margin: 9px 0 0;
+  padding: 5px 0 4px;
+  border-top: 1px solid var(--xp-line);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--xp-title);
+}
+.toggle-group:first-child { margin-top: 0; border-top: 0; }
+
+/* 图例（排版对齐参考站）：分组标题 + 彩色小图标 + 名称 + 右侧计数 */
+#layer-toggles { gap: 0; }
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 1px;
+  border-bottom: 1px solid #e4e0cf;
+  cursor: pointer;
+  user-select: none;
+}
+.legend-item:hover { background: #eaf3ff; }
+.legend-item input { flex: 0 0 auto; }
+/* 高级资源点的 7 个子类：缩进到总开关下面，一眼看出从属关系 */
+.legend-sub { padding-left: 22px; }
+.legend-ico { flex: 0 0 auto; }
+.legend-name { flex: 1 1 auto; font-size: 12px; color: var(--xp-text); }
+.legend-count {
+  flex: 0 0 auto;
+  font-size: 11px;
+  color: var(--xp-muted);
+  font-variant-numeric: tabular-nums;
+}
+/* 关掉的图层整行压暗：一眼能看出地图上为什么没有它 */
+.legend-item[data-on="false"] .legend-name { color: #9b9686; }
+.legend-item[data-on="false"] .legend-count { color: #aca899; }
+.legend-item[data-on="false"] .legend-ico,
+.legend-item[data-on="false"] .ico-dot { opacity: .35; }
+
+/* 上锁的门 · 钥匙小浮窗：贴在侧栏右边、与对应图例行同高（用 XP 提示气泡的淡黄底） */
+.lock-hint {
+  position: fixed;
+  z-index: 60;
+  max-width: 260px;
+  padding: 6px 9px;
+  background: var(--xp-tip);
+  border: 1px solid var(--xp-border);
+  border-left: 3px solid var(--lock);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+  pointer-events: none;
+  color: var(--xp-text);
+}
+.lock-hint-title { font-size: 11px; color: #6b6656; }
+.lock-hint-key {
+  margin-top: 3px; font-size: 12px; color: var(--xp-text);
+  display: flex; align-items: center; gap: 6px;   /* 钥匙图标 + 文案 横向对齐 */
+}
+.lock-hint-key-text { min-width: 0; }
+.lock-hint-sub { margin-top: 2px; font-size: 11px; color: #c00000; }
+
+/* 「需要钥匙」这类文案前面贴的内联小图标（钥匙图同图例同款） */
+.inline-ico { display: inline-block; vertical-align: -3px; margin-right: 4px; }
+.inline-ico .ico-dot { width: 18px; height: 18px; }
+.lock-hint-key .inline-ico { margin-right: 0; }
+
+/* 标记小浮窗：点地图上任意标记时在标记旁弹出的简略信息（与钥匙浮窗同款样式） */
+.marker-pop {
+  position: fixed;
+  z-index: 61;
+  min-width: 120px;
+  max-width: 260px;
+  padding: 6px 9px;
+  background: var(--xp-tip);
+  border: 1px solid var(--xp-border);
+  border-left: 3px solid var(--xp-link);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+  pointer-events: none;
+  color: var(--xp-text);
+}
+.marker-pop-title { font-size: 12px; font-weight: 700; color: var(--xp-text); }
+.marker-pop-row { margin-top: 3px; font-size: 12px; }
+.marker-pop-k { margin-right: 5px; color: #6b6656; }
+.marker-pop-v { color: var(--xp-text); }
+
+/* 楼层列表 */
+.floor-list { display: flex; flex-wrap: wrap; gap: 3px; }
+.floor-item {
+  padding: 3px 9px;
+  background: linear-gradient(#fdfdfd, #e3e0d6);
+  border: 1px solid var(--xp-border);
+  box-shadow: inset 1px 1px 0 var(--xp-light);
+  color: var(--xp-text);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.floor-item:hover { border-color: #2a5cc4; background: linear-gradient(var(--xp-hot-a), var(--xp-hot-b)); }
+.floor-item[data-on="true"] {
+  background: linear-gradient(#cfe3fa, #a9c8ee);
+  border-color: #2a5cc4;
+  color: #10233f;
+  box-shadow: inset 1px 1px 0 #eaf3ff;
+}
+.floor-opts { margin-top: 7px; }
+#floor-note { margin: 5px 0 0; font-size: 11px; line-height: 1.5; }
+
+/* 战局与任务：现在挂在顶部菜单面板里（数据来自游戏日志，见 tools/eftlog.py） */
+#raid-status { margin: 0 0 4px; font-size: 11px; line-height: 1.5; }
+#raid-status.raid-on { color: #0a7d0a; }
+#raid-status.raid-off { color: var(--xp-muted); }
+.raid-note { margin: 0 0 6px; font-size: 11px; line-height: 1.5; color: #a35c00; }
+/* 自动截图状态（原理与风险见 tools/keyinput.py 与 README） */
+.shot-status { margin: 0 0 6px; font-size: 11px; line-height: 1.5; }
+.shot-status.shot-on { color: #0a7d0a; }
+.shot-status.shot-warn { color: #b4560a; }
+.quest-counts {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--xp-muted);
+}
+.quest-counts strong { color: var(--xp-text); font-size: 14px; margin-left: 3px; }
+.quest-log {
+  margin: 0;
+  padding: 3px 5px;
+  list-style: none;
+  max-height: 190px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--xp-input);
+}
+.quest-empty { font-size: 11px; color: var(--xp-muted); line-height: 1.5; }
+.quest-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 2px 0;
+  font-size: 11px;
+  line-height: 1.5;
+  border-bottom: 1px solid #eeeade;
+}
+.quest-item:last-child { border-bottom: 0; }
+.quest-time { color: var(--xp-muted); flex: 0 0 auto; }
+.quest-what { flex: 0 0 auto; }
+.quest-started .quest-what { color: #1e63c8; }
+.quest-completed .quest-what { color: #0a7d0a; }
+.quest-failed .quest-what { color: #c00000; }
+.quest-id {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #6b6656;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 10px;
+}
+.quest-rewards { flex: 0 0 auto; color: #9a7b1b; font-size: 10px; }
+.quest-hint { margin: 6px 0 0; font-size: 10px; line-height: 1.5; }
 
 /* 搜索 */
 .search {
   width: 100%;
-  padding: 7px 9px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  color: var(--txt);
+  padding: 5px 8px;
+  background: #fff;
+  border: 1px solid var(--xp-input);
+  color: var(--xp-text);
   font: inherit;
 }
-.search:focus { outline: none; border-color: var(--accent); }
-.search-results { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; max-height: 190px; overflow-y: auto; }
+.search:focus { outline: none; border-color: #2a5cc4; }
+.search-results { margin-top: 5px; display: flex; flex-direction: column; gap: 3px; max-height: 210px; overflow-y: auto; }
+
+/* 一条搜索结果 = 主按钮（定位）+ 钉选 + 加入路线；主按钮占满剩余宽度 */
 .search-item {
-  display: flex; justify-content: space-between; gap: 8px;
-  padding: 6px 9px;
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  color: var(--txt);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
+  display: flex; align-items: stretch; gap: 3px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--xp-input);
 }
-.search-item:hover { border-color: var(--accent); }
-.search-item .kind { font-size: 11px; color: var(--muted); flex: 0 0 auto; }
-.search-empty { padding: 6px 2px; font-size: 12px; color: var(--muted); }
+.search-hit {
+  flex: 1 1 auto; min-width: 0;
+  display: flex; flex-direction: column; gap: 1px; align-items: flex-start;
+  padding: 5px 8px;
+  background: transparent; border: 0;
+  color: var(--xp-text); font: inherit; text-align: left; cursor: pointer;
+}
+.search-hit .s-name { font-weight: 700; word-break: break-all; }
+.search-hit .kind { font-size: 11px; color: var(--xp-muted); }
+.search-item:hover { border-color: #2a5cc4; }
+.search-item:hover .search-hit { background: var(--xp-sel); color: #fff; }
+.search-item:hover .kind { color: #dce7fb; }
+
+/* 行尾的小按钮：钉选 / 路线 */
+.search-act {
+  flex: 0 0 auto;
+  padding: 0 8px;
+  background: linear-gradient(#fff, var(--xp-face));
+  border: 1px solid var(--xp-border); border-top: 0; border-bottom: 0; border-right: 0;
+  color: var(--xp-text); font: inherit; font-size: 11px; cursor: pointer;
+}
+.search-act:hover { background: linear-gradient(var(--xp-hot-a), var(--xp-hot-b)); border-color: #2a5cc4; }
+.search-pin.on { background: var(--xp-tip); border-color: var(--lock); color: #7a5a00; font-weight: 700; }
+.search-empty { padding: 6px 2px; font-size: 12px; color: var(--xp-muted); }
 
 /* 标记详情 */
 .detail { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 12px; }
-.detail dt { color: var(--muted); }
-.detail dd { margin: 0; word-break: break-all; }
+.detail dt { color: var(--xp-muted); }
+.detail dd { margin: 0; word-break: break-all; color: var(--xp-text); }
+.detail-actions { margin-top: 8px; display: flex; gap: 6px; }
+.detail-actions button {
+  padding: 3px 12px;
+  background: linear-gradient(#fff, var(--xp-face));
+  border: 1px solid var(--xp-border);
+  color: var(--xp-text); font: inherit; cursor: pointer;
+}
+.detail-actions button:hover { background: linear-gradient(var(--xp-hot-a), var(--xp-hot-b)); border-color: #2a5cc4; }
+
+/* 导航面板：途经点列表 + 操作按钮 */
+.route-list { margin: 6px 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 2px; max-height: 40vh; overflow-y: auto; }
+.route-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 3px 5px; background: #fff; border: 1px solid var(--xp-line);
+}
+.route-index {
+  flex: 0 0 auto; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--xp-sel); color: #fff; font-size: 11px; line-height: 18px; text-align: center;
+}
+.route-name { flex: 1 1 auto; min-width: 0; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.route-tag { flex: 0 0 auto; font-size: 10px; color: var(--xp-muted); border: 1px solid var(--xp-line); padding: 0 4px; }
+.route-del {
+  flex: 0 0 auto; width: 18px; height: 18px; padding: 0; line-height: 1;
+  background: #fff; border: 1px solid var(--xp-border); color: var(--xp-text); cursor: pointer;
+}
+.route-del:hover { background: #ffe3e3; border-color: #c00000; color: #c00000; }
+.route-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0 2px; }
+.route-actions button {
+  padding: 3px 10px; background: linear-gradient(#fff, var(--xp-face));
+  border: 1px solid var(--xp-border); color: var(--xp-text); font: inherit; cursor: pointer;
+}
+.route-actions button:hover { background: linear-gradient(var(--xp-hot-a), var(--xp-hot-b)); border-color: #2a5cc4; }
+.route-opt { font-size: 11px; }
+.route-note { margin: 8px 0 0; font-size: 10px; line-height: 1.5; }
+.dot-route { background: var(--xp-sel); }
 
 /* 署名 */
-.credits { margin-top: auto; padding: 12px 16px 16px; font-size: 11px; color: var(--muted); }
+.credits { margin-top: auto; padding: 10px 13px 14px; font-size: 11px; color: var(--xp-muted); }
 .credits p { margin: 0 0 6px; }
-.credits a { color: var(--accent); text-decoration: none; }
+.credits a { color: var(--xp-link); text-decoration: none; }
 .credits a:hover { text-decoration: underline; }
-.muted { color: var(--muted); }
 
-/* ---------- 地图区 ---------- */
+/* ---------- 地图区（保持深色：底图与彩色标注压在上面，浅底反而看不清） ---------- */
 #stage {
   position: relative;
   flex: 1 1 auto;
-  height: 100vh;
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 40%, #171b21 0%, var(--bg) 72%);
@@ -140,7 +495,15 @@ body { display: flex; }
   position: absolute;
   inset: 0;
 }
-#map-svg { width: 100%; height: 100%; display: block; }
+#map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* 底图与覆盖层都是矢量：强制按几何精度渲染，避免浏览器按「速度优先」降精度画
+     放大后的字形与线条（这是「放大后原本清楚的字变糊」的常见成因之一）。 */
+  text-rendering: geometricPrecision;
+  shape-rendering: geometricPrecision;
+}
 
 /* HUD */
 .hud { position: absolute; right: 12px; top: 12px; display: flex; gap: 6px; }
@@ -173,6 +536,7 @@ body { display: flex; }
 }
 .statusbar .grow { flex: 1 1 auto; }
 .statusbar .sep { opacity: .4; }
+.statusbar .muted { color: var(--muted); }   /* 状态条压在深色地图上，仍用浅灰 */
 .pos-off { color: var(--muted); }
 .pos-on { color: var(--player); }
 
@@ -202,9 +566,10 @@ body { display: flex; }
   fill: var(--label);
   paint-order: stroke;
   stroke: rgba(8, 10, 12, .85);
-  stroke-width: 2.4px;
+  /* 描边宽度由 app.js 按缩放内联写入（随 unit 缩放），此处不要写死，否则小图上会糊成黑块 */
   font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
   pointer-events: none;
+  text-rendering: geometricPrecision;
 }
 
 .emk-marker { cursor: pointer; }
@@ -213,26 +578,167 @@ body { display: flex; }
   stroke-width: 1.1px;
   vector-effect: non-scaling-stroke;
 }
-.emk-extract-pmc circle { fill: var(--extract-pmc); }
-.emk-extract-scav circle { fill: var(--extract-scav); }
-.emk-extract-shared circle { fill: var(--extract-shared); }
-.emk-transit circle { fill: var(--transit); }
-.emk-spawn { pointer-events: none; }
-.emk-spawn circle { fill: var(--spawn); opacity: .75; }
 
-/* 高亮脉冲环：用 CSS transform 动画（不使用 SVG2 的 r 动画，兼容性更稳） */
+/* 撤离点 / 转移点：彩色盾牌 + 奔跑小人（照参考站款式），名字在徽章下面 */
+.emk-badge .badge-bg {
+  stroke: #e9eef5;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.emk-badge .badge-man {
+  fill: none;
+  stroke: #131719;
+  stroke-width: 1.3;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.emk-badge .badge-head { fill: #131719; }
+.emk-badge-pmc .badge-bg { fill: var(--extract-pmc); }
+.emk-badge-scav .badge-bg { fill: var(--extract-scav); }
+.emk-badge-shared .badge-bg { fill: var(--extract-shared); }
+.emk-badge-transit .badge-bg { fill: var(--transit); }
+
+/* 徽章下面的名字：同阵营配色 + 深色描边，压在底图上也能看清 */
+.emk-tag {
+  font-weight: 600;
+  font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  paint-order: stroke;
+  stroke: rgba(6, 8, 10, .88);
+  stroke-linejoin: round;
+  pointer-events: none;
+  text-rendering: geometricPrecision;
+}
+.emk-tag-pmc { fill: var(--extract-pmc); }
+.emk-tag-scav { fill: var(--extract-scav); }
+.emk-tag-shared { fill: var(--extract-shared); }
+.emk-tag-transit { fill: var(--transit); }
+
+/* 出生点 / Boss / 狙击手 / 上锁的门 / BTR / 高级资源点：形状照参考站的款式画，
+   颜色由 --c 给（高级资源点是内联 --c，其余按下面各图层的规则取值） */
+.emk-sign .solid {
+  fill: var(--c, #9aa4b2);
+  stroke: rgba(6, 8, 10, .85);
+  stroke-width: 1.4px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.emk-sign .light {
+  fill: #e9eef5;
+  stroke: rgba(6, 8, 10, .85);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.emk-sign .dark { fill: #14181d; }
+.emk-sign .disc {
+  fill: rgba(8, 10, 12, .72);
+  stroke: var(--c, #9aa4b2);
+  stroke-width: 1.6px;
+  vector-effect: non-scaling-stroke;
+}
+.emk-sign .cross {
+  fill: none;
+  stroke: var(--c, #9aa4b2);
+  stroke-width: 1.8px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.emk-sign .bar {
+  fill: none;
+  stroke: #39404a;
+  stroke-width: 2.3px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.emk-sign .lockbody {
+  fill: var(--lock);
+  stroke: rgba(6, 8, 10, .85);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+.emk-sign .stroke {
+  fill: none;
+  stroke: var(--c, #9aa4b2);
+  stroke-width: 1.7px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.emk-sign .line {
+  fill: none;
+  stroke: #14181d;
+  stroke-width: 1.5px;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* 出生点：按图层（data-layer）上色 —— 玩家绿 / AI Scav 橙 / AI PMC 蓝 / 狙击手暗红 */
+.emk-layer[data-layer="spawn_player"] .emk-sign { --c: var(--spawn-player); opacity: .85; }
+.emk-layer[data-layer="spawn_scav"] .emk-sign { --c: var(--spawn-scav); opacity: .8; }
+.emk-layer[data-layer="spawn_pmc"] .emk-sign { --c: var(--spawn-pmc); opacity: .85; }
+.emk-layer[data-layer="spawn_sniper"] .emk-sign { --c: var(--spawn-sniper); opacity: .9; }
+.emk-bosses .emk-sign { --c: var(--boss); }
+.emk-btr .emk-sign { --c: var(--btr); }
+
+/* 物资容器：按类别配色的实物小图标（配色由 JS 注入的 --c 决定），散落物资仍是圆点 */
+.emk-loose circle { fill: var(--loot-loose); opacity: .8; }
+
+/* 危险区 / 炮击区：面状多边形 + 兜底的点 */
+.emk-area {
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+.emk-area-hazards { fill: rgba(224, 108, 108, .2); stroke: rgba(224, 108, 108, .75); }
+.emk-area-artillery { fill: rgba(177, 84, 63, .22); stroke: rgba(177, 84, 63, .8); }
+.emk-hazards circle { fill: var(--hazard); }
+.emk-artillery circle { fill: var(--artillery); }
+
+/* 选中高亮：静态描边环。
+   注意不要用 CSS transform / animation 给 SVG 元素做动效——那样浏览器会把整个
+   <svg> 提升成合成分层并按 1x 栅格化，之后改用 viewBox 缩放时内容会被合成分器
+   放大，整张图（连地名文字）就糊了。 */
 .emk-ring {
   fill: none;
   stroke: var(--accent);
   stroke-width: 2px;
   vector-effect: non-scaling-stroke;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: emkRing 1.6s ease-out 2;
 }
-@keyframes emkRing {
-  from { transform: scale(.35); opacity: 1; }
-  to { transform: scale(2.8); opacity: 0; }
+
+/* 钉选高亮：被钉选的「类型」在地图上高亮描边。
+   选择器要比 `.emk-marker circle` 更具体才能盖掉它的描边色；同样保持静态、不动效。 */
+.emk-marker circle.emk-pin-ring {
+  fill: none;
+  stroke: #ffd84d;
+  stroke-width: 2.2px;
+  vector-effect: non-scaling-stroke;
+}
+
+/* 导航路线：折线 + 编号圆点（编号 / 半径都在脚本里按 unit 换算，屏幕上大小恒定） */
+.emk-route-line {
+  fill: none;
+  stroke: #ffd84d;
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: .9;
+}
+.emk-route-node circle {
+  fill: #1b1d20;
+  stroke: #ffd84d;
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+.emk-route-num {
+  fill: #ffd84d;
+  font-weight: 700;
+  font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  pointer-events: none;
 }
 
 /* 玩家实时位置：光晕 + 光点 + 朝向箭头 */
@@ -257,7 +763,7 @@ body { display: flex; }
 }
 
 @media (max-width: 780px) {
-  body { flex-direction: column; }
+  .workspace { flex-direction: column; }
   .panel#sidebar { width: 100%; flex: 0 0 auto; height: auto; max-height: 46vh; }
   #stage { height: 54vh; }
 }
