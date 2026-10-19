@@ -6,11 +6,18 @@ __pycache__/
 
 # 打包产物
 dist/
+release/
 build/_work/
+build/_work_installer/
+build/_release/
 *.spec
 
 # 构建期原始缓存（上游大体积原始数据，不进仓库）
 build-cache/
+
+# 运行期配置与用户导入的提示音（由启动器写入软件目录）
+eftmap.config.json
+sounds/
 
 # 编辑器/系统
 .vscode/
