@@ -706,7 +706,7 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | --- | --- |
 | `537c541` | 数据：海岸线三狗（Knight）刷新点改锚定「气象站」地名（新增 `BOSS_ZONE_FORCE` 覆盖表，离线重跑，海岸线 boss 36 → 27 点） |
 | `4e6eff3` | 前端：撤离点 / 转移点徽章整体放大 1.5 倍（`BADGE_SCALE` + 名字 + 高亮环半径 11 → 12） |
-| （本轮文档提交） | 文档：本手册 §6.17 / §7 / §8 / §9 / §11 同步第十二轮（含「高级子弹刷新点」评估结论：不采用） |
+| `5b26d9a` | 文档：本手册 §6.17 / §7 / §8 / §9 / §11 同步第十二轮（含「高级子弹刷新点」评估结论：不采用） |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
