@@ -755,11 +755,10 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 
 | 提交 | 内容 |
 | --- | --- |
-| `（待填）` | 数据：收录破冰船（`TILE_MAPS["icebreaker"]` + 人工反推投影 `_ICEBREAKER_*` / `apply_tile_projection`，13 张图 / 底图 10.0 MB） |
-| `（待填）` | 启动器：安装器快捷方式改「先建 ASCII 临时名再 `os.replace` 成中文名」修中文 .lnk 被破坏 |
-| `（待填）` | 文档：README 收录范围同步（13 张图 / 3 张瓦片图 / 破冰船 16 层）+ 本手册 §6.18 / §9 / §11 |
-
-> 提交后请把上表 `（待填）` 换成真实 hash（照前几轮的惯例补一个「文档：补提交自身 hash」的收尾提交）。
+| `2a59c2d` | 数据：收录破冰船（`TILE_MAPS["icebreaker"]` + 人工反推投影 `_ICEBREAKER_*` / `apply_tile_projection`，13 张图 / 底图 10.0 MB） |
+| `0e003ea` | 启动器：安装器快捷方式改「先建 ASCII 临时名再 `os.replace` 成中文名」修中文 .lnk 被破坏 |
+| `1dff576` | 文档：README 收录范围同步（13 张图 / 3 张瓦片图 / 破冰船 16 层）+ 本手册 §6.18 / §9 / §11 |
+| `（待填：本条提交自身）` | 文档：补第十三轮提交表 hash |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
