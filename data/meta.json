@@ -1,6 +1,6 @@
 {
  "schema": 7,
- "generatedAt": "2026-10-19T03:55:07Z",
+ "generatedAt": "2026-10-19T05:24:23Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -57,7 +57,7 @@
   "valuables": 1208,
   "hazards": 330,
   "locks": 250,
-  "bosses": 491,
+  "bosses": 482,
   "artillery": 18,
   "btr": 14,
   "stationary": 39,

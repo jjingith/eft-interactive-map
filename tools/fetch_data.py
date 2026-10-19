@@ -521,6 +521,16 @@ BOSS_SPOT_EXTRA = {
     ],
 }
 
+# 上游坐标标错的刷新区：这些区域**上游是给了 positions 的**，但坐标落在别处，必须整段换掉。
+# 优先级高于 BOSS_ZONE_ANCHOR（后者只兜「positions 为空」）。键是 (图 key, 上游区域名)，
+# 值是 (图例显示名, 地名文本)。
+# 海岸线：ZoneMeteoStation（气象站）上游给了 10 个坐标，实测却分散在村庄（8 个）与无线电塔
+# 一带（2 个）；游戏里三狗（Knight / Big Pipe / Bird Eye）现在只在气象站刷新，按玩家反馈
+# 改为锚定地图地名「Weather Station」（护卫与 Knight 共用同一刷新区，跟着一起挪）。
+BOSS_ZONE_FORCE = {
+    ("shoreline", "ZoneMeteoStation"): ("气象站", "Weather Station"),
+}
+
 # 已经过期的撤离点（游戏里删了、上游还留着）：键是 (图 key, 上游原始名)，精确剔除。
 EXTRACT_EXCLUDE = {
     ("interchange", "Hole Exfill"),   # 围栏破洞：游戏里已移除
@@ -699,7 +709,8 @@ def build_map(entry, markers_by_name, translations, svg_viewbox, svg_layers=None
 
     # Boss 刷新点：把 spawnLocations[].positions[] 摊平成一个个点，带上 Boss 名与刷新概率。
     # 上游有部分刷新区只给区域名不给坐标（positions 为空），用 BOSS_ZONE_ANCHOR 借地名的世界
-    # 坐标补一个点；上游整条记录都缺的（BOSS_SPOT_EXTRA）再手工追加。
+    # 坐标补一个点；坐标标错的（BOSS_ZONE_FORCE）整段换掉；上游整条记录都缺的
+    # （BOSS_SPOT_EXTRA）再手工追加。
     labels = []
     label_by_text = {}
     for item in entry.get("labels") or []:
@@ -717,14 +728,19 @@ def build_map(entry, markers_by_name, translations, svg_viewbox, svg_layers=None
         chance = entry_item.get("spawnChance")
         for location in entry_item.get("spawnLocations") or []:
             positions = location.get("positions") or []
-            if not positions and location.get("name"):
+            zone_name = location.get("name")
+            anchor = None
+            if zone_name and (key, zone_name) in BOSS_ZONE_FORCE:
+                # 上游给了坐标但标错了：无条件换成人工校正表里的地名锚点
+                anchor = BOSS_ZONE_FORCE[(key, zone_name)]
+            elif not positions and zone_name:
                 # 只有区域名、没有坐标：用人工校正表的锚点地名补一个点
-                anchor = BOSS_ZONE_ANCHOR.get((key, location["name"]))
-                if anchor:
-                    spot_x, spot_z = label_by_text.get(anchor[1], (None, None))
-                    if spot_x is not None and spot_z is not None:
-                        positions = [{"x": spot_x, "z": spot_z}]
-                        location = {"name": anchor[0], "positions": positions}
+                anchor = BOSS_ZONE_ANCHOR.get((key, zone_name))
+            if anchor:
+                spot_x, spot_z = label_by_text.get(anchor[1], (None, None))
+                if spot_x is not None and spot_z is not None:
+                    positions = [{"x": spot_x, "z": spot_z}]
+                    location = {"name": anchor[0], "positions": positions}
             for position in positions:
                 point = point_3d(position, {"name": mob_name})
                 if point is None:

@@ -1,7 +1,7 @@
 {
  "schema": 7,
  "gameMode": "regular",
- "generatedAt": "2026-10-19T03:55:07Z",
+ "generatedAt": "2026-10-19T05:24:23Z",
  "sources": [
   {
    "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
@@ -112971,83 +112971,10 @@
       "chance": 0.6
      },
      {
-      "x": 459.31,
-      "z": 55.792,
-      "y": -54.146,
+      "x": -496.0,
+      "z": 257.0,
       "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 373.22,
-      "z": 75.93,
-      "y": -54.048,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 458.95,
-      "z": 159.47,
-      "y": -54.555,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 459.89,
-      "z": 92.49,
-      "y": -54.557,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 446.61,
-      "z": 235.08,
-      "y": -48.451,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": -581.52,
-      "z": 109.78,
-      "y": -43.549,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 328.21,
-      "z": 110.88,
-      "y": -56.385,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": -574.95,
-      "z": 129.46,
-      "y": -44.021,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 459.38,
-      "z": 181.86,
-      "y": -54.629,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
-      "chance": 0.2
-     },
-     {
-      "x": 462.4,
-      "z": 119.56,
-      "y": -54.462,
-      "name": "Knight",
-      "where": "ZoneMeteoStation",
+      "where": "气象站",
       "chance": 0.2
      },
      {
