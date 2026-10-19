@@ -1,7 +1,7 @@
 {
  "schema": 7,
  "gameMode": "regular",
- "generatedAt": "2026-10-19T05:24:23Z",
+ "generatedAt": "2026-10-19T07:05:28Z",
  "sources": [
   {
    "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
@@ -39,7 +39,7 @@
    "bytes": 0
   },
   {
-   "name": "瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫）",
+   "name": "瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫 / 破冰船）",
    "url": "https://assets.tarkov.dev/maps/",
    "license": "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）",
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -45156,6 +45156,2985 @@
       "name": "Tagilla",
       "where": "BotZone",
       "chance": 0.35
+     }
+    ],
+    "artillery": [],
+    "btr": [],
+    "stationary": []
+   }
+  },
+  {
+   "key": "icebreaker",
+   "id": "69af492a4819ea4ba10a69c5",
+   "name": "破冰船",
+   "svg": "assets/maps/Icebreaker.svg",
+   "viewBox": [
+    0.0,
+    0.0,
+    72.0,
+    264.0
+   ],
+   "svgBounds": [
+    [
+     23.086250000000003,
+     -80.80937499999999
+    ],
+    [
+     -22.082499999999992,
+     84.809375
+    ]
+   ],
+   "svgLayer": "Deck_06_Infirmary",
+   "svgLayers": [
+    "Deck_00_Control_Room",
+    "Deck_01_Engine_Room",
+    "Deck_02_Engine_Room_Upper",
+    "Deck_03_Fuel_Pumps_Lower",
+    "Deck_04_Fuel_Pumps",
+    "Deck_05_Storage_Security",
+    "Deck_06_Infirmary",
+    "Deck_07_Helipad",
+    "Deck_08_Gym_Canteen",
+    "Deck_09_Accommodation_Lower",
+    "Deck_10_Accommodation_Mid",
+    "Deck_11_Accommodation_Upper",
+    "Deck_12_Officers_Deck",
+    "Deck_13_Stairs_Blocked",
+    "Deck_14_Bridge",
+    "Deck_15_Bridge_Roof"
+   ],
+   "floors": {
+    "root": {
+     "svgLayer": "Deck_06_Infirmary",
+     "label": "医务室",
+     "minY": null,
+     "maxY": null,
+     "areas": [],
+     "isRoot": true
+    },
+    "bands": [
+     {
+      "svgLayer": "Deck_06_Infirmary",
+      "label": "医务室",
+      "minY": 18.92,
+      "maxY": 19.56,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_07_Helipad",
+      "label": "直升机甲板",
+      "minY": 19.57,
+      "maxY": 22.1,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_08_Gym_Canteen",
+      "label": "健身房/食堂",
+      "minY": 22.2,
+      "maxY": 25.2,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_09_Accommodation_Lower",
+      "label": "住舱下层",
+      "minY": 25.3,
+      "maxY": 28.2,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_10_Accommodation_Mid",
+      "label": "住舱中层",
+      "minY": 28.3,
+      "maxY": 31.3,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_11_Accommodation_Upper",
+      "label": "住舱上层",
+      "minY": 31.4,
+      "maxY": 34.4,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_12_Officers_Deck",
+      "label": "军官甲板",
+      "minY": 34.5,
+      "maxY": 37.5,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_13_Stairs_Blocked",
+      "label": "封锁楼梯间",
+      "minY": 37.6,
+      "maxY": 40.6,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_14_Bridge",
+      "label": "舰桥",
+      "minY": 40.7,
+      "maxY": 43.7,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_15_Bridge_Roof",
+      "label": "舰桥顶",
+      "minY": 43.8,
+      "maxY": 10000.0,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_00_Control_Room",
+      "label": "控制室",
+      "minY": -10000.0,
+      "maxY": 3.5,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_01_Engine_Room",
+      "label": "主机舱",
+      "minY": 3.6,
+      "maxY": 5.6,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_02_Engine_Room_Upper",
+      "label": "主机舱上层",
+      "minY": 5.7,
+      "maxY": 8.7,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_03_Fuel_Pumps_Lower",
+      "label": "燃油泵下层",
+      "minY": 8.8,
+      "maxY": 11.8,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_04_Fuel_Pumps",
+      "label": "燃油泵层",
+      "minY": 11.9,
+      "maxY": 14.9,
+      "areas": []
+     },
+     {
+      "svgLayer": "Deck_05_Storage_Security",
+      "label": "仓储/安保层",
+      "minY": 15.0,
+      "maxY": 18.93,
+      "areas": []
+     }
+    ],
+    "switchable": [
+     {
+      "svgLayer": "Deck_07_Helipad",
+      "label": "直升机甲板"
+     },
+     {
+      "svgLayer": "Deck_08_Gym_Canteen",
+      "label": "健身房/食堂"
+     },
+     {
+      "svgLayer": "Deck_09_Accommodation_Lower",
+      "label": "住舱下层"
+     },
+     {
+      "svgLayer": "Deck_10_Accommodation_Mid",
+      "label": "住舱中层"
+     },
+     {
+      "svgLayer": "Deck_11_Accommodation_Upper",
+      "label": "住舱上层"
+     },
+     {
+      "svgLayer": "Deck_12_Officers_Deck",
+      "label": "军官甲板"
+     },
+     {
+      "svgLayer": "Deck_13_Stairs_Blocked",
+      "label": "封锁楼梯间"
+     },
+     {
+      "svgLayer": "Deck_14_Bridge",
+      "label": "舰桥"
+     },
+     {
+      "svgLayer": "Deck_15_Bridge_Roof",
+      "label": "舰桥顶"
+     },
+     {
+      "svgLayer": "Deck_00_Control_Room",
+      "label": "控制室"
+     },
+     {
+      "svgLayer": "Deck_01_Engine_Room",
+      "label": "主机舱"
+     },
+     {
+      "svgLayer": "Deck_02_Engine_Room_Upper",
+      "label": "主机舱上层"
+     },
+     {
+      "svgLayer": "Deck_03_Fuel_Pumps_Lower",
+      "label": "燃油泵下层"
+     },
+     {
+      "svgLayer": "Deck_04_Fuel_Pumps",
+      "label": "燃油泵层"
+     },
+     {
+      "svgLayer": "Deck_05_Storage_Security",
+      "label": "仓储/安保层"
+     }
+    ],
+    "selectable": [
+     {
+      "svgLayer": "Deck_00_Control_Room",
+      "label": "控制室",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_01_Engine_Room",
+      "label": "主机舱",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_02_Engine_Room_Upper",
+      "label": "主机舱上层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_03_Fuel_Pumps_Lower",
+      "label": "燃油泵下层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_04_Fuel_Pumps",
+      "label": "燃油泵层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_05_Storage_Security",
+      "label": "仓储/安保层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_06_Infirmary",
+      "label": "医务室",
+      "isRoot": true
+     },
+     {
+      "svgLayer": "Deck_07_Helipad",
+      "label": "直升机甲板",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_08_Gym_Canteen",
+      "label": "健身房/食堂",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_09_Accommodation_Lower",
+      "label": "住舱下层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_10_Accommodation_Mid",
+      "label": "住舱中层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_11_Accommodation_Upper",
+      "label": "住舱上层",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_12_Officers_Deck",
+      "label": "军官甲板",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_13_Stairs_Blocked",
+      "label": "封锁楼梯间",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_14_Bridge",
+      "label": "舰桥",
+      "isRoot": false
+     },
+     {
+      "svgLayer": "Deck_15_Bridge_Roof",
+      "label": "舰桥顶",
+      "isRoot": false
+     }
+    ],
+    "default": [
+     "Deck_06_Infirmary"
+    ]
+   },
+   "worldToSvg": {
+    "a": -1.5940224159402243,
+    "b": -0.0,
+    "c": 36.80000000000001,
+    "d": -0.0,
+    "e": 1.5940224159402243,
+    "f": 128.81195516811954
+   },
+   "labels": [],
+   "layers": {
+    "extracts": [
+     {
+      "x": 0.28,
+      "z": -66.03,
+      "y": 22.56,
+      "name": "直升机",
+      "faction": "pmc"
+     }
+    ],
+    "transits": [],
+    "spawns": [
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.41,
+      "z": 37.047,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": 11.63,
+      "z": -65.58,
+      "y": 21.091,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -3.65,
+      "z": 37.14,
+      "y": 26.471,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -2.525,
+      "z": 39.045,
+      "y": 18.371,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.86,
+      "z": 43.09,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -11.697,
+      "z": 44.672,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -6.7,
+      "z": 31.2,
+      "y": 26.535,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 0.912,
+      "z": 29.047,
+      "y": 18.384,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.623,
+      "z": 37.14,
+      "y": 26.471,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.857,
+      "z": 48.769,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": 5.53,
+      "z": -6.05,
+      "y": 10.321,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -8.34,
+      "z": 5.176,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": 2.018,
+      "z": 43.387,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -2.02,
+      "z": 42.95,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -0.169,
+      "z": 27.321,
+      "y": 18.371,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -11.611,
+      "z": 43.346,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 0.433,
+      "z": 26.77,
+      "y": 15.671,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.354,
+      "z": 81.658,
+      "y": 19.478,
+      "sides": [
+       "pmc"
+      ],
+      "categories": [
+       "player"
+      ]
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 6.27,
+      "z": 29.836,
+      "y": 34.571,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -0.598,
+      "z": 38.703,
+      "y": 15.671,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.628,
+      "z": 26.435,
+      "y": 15.671,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 2.767,
+      "z": 37.432,
+      "y": 15.671,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 6.43,
+      "z": 45.21,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -10.558,
+      "z": 16.848,
+      "y": 21.071,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -3.987,
+      "z": 47.583,
+      "y": 15.671,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.756,
+      "z": 37.197,
+      "y": 34.676,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -2.695,
+      "z": 26.93,
+      "y": 23.775,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": -11.172,
+      "z": 13.697,
+      "y": 21.073,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 8.523,
+      "z": 31.459,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -6.147,
+      "z": 36.22,
+      "y": 34.577,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 6.768,
+      "z": 32.749,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -2.695,
+      "z": 37.047,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -4.469,
+      "z": 36.782,
+      "y": 18.371,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -7.67,
+      "z": -68.16,
+      "y": 21.115,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.48,
+      "z": 48.26,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     },
+     {
+      "x": 3.445,
+      "z": 36.763,
+      "y": 34.571,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.13,
+      "z": 43.55,
+      "y": 15.775,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": 3.21,
+      "z": 26.93,
+      "y": 23.771,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "boss",
+       "bot"
+      ]
+     },
+     {
+      "x": -0.354,
+      "z": 82.339,
+      "y": 19.478,
+      "sides": [
+       "pmc"
+      ],
+      "categories": [
+       "player"
+      ]
+     },
+     {
+      "x": -5.6,
+      "z": -6.05,
+      "y": 10.319,
+      "sides": [
+       "scav"
+      ],
+      "categories": [
+       "bot"
+      ]
+     }
+    ],
+    "hazards": [],
+    "locks": [
+     {
+      "x": -7.67,
+      "z": 42.43,
+      "y": 27.54,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": 7.67,
+      "z": 23.62,
+      "y": 27.54,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": 7.67,
+      "z": 32.24,
+      "y": 24.84,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": -5.25,
+      "z": 28.39,
+      "y": 35.64,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3f278af9f360ee010a7a",
+      "keyName": "C-1 舱室钥匙卡",
+      "keyShort": "С-1"
+     },
+     {
+      "x": 7.67,
+      "z": 37.82,
+      "y": 30.24,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": -7.66,
+      "z": 25.98,
+      "y": 30.24,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": 7.67,
+      "z": 24.08,
+      "y": 24.84,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": -7.67,
+      "z": 32.63,
+      "y": 27.54,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": -7.67,
+      "z": 33.13,
+      "y": 24.83,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3ec9f609db77390b0e1a",
+      "keyName": "Boreas 破冰船载员舱钥匙卡",
+      "keyShort": "载员"
+     },
+     {
+      "x": 10.5,
+      "z": 25.59,
+      "y": 16.76,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3e54d6c67f6265004ab9",
+      "keyName": "Boreas 破冰船轮机舱钥匙卡",
+      "keyShort": "轮机"
+     },
+     {
+      "x": 11.43,
+      "z": 41.63,
+      "y": 19.46,
+      "type": "door",
+      "needsPower": false,
+      "key": "69bb3f7df94327bc0f0230c9",
+      "keyName": "C-3 舱室钥匙卡",
+      "keyShort": "C-3"
+     }
+    ],
+    "containers": [],
+    "loose": [
+     {
+      "x": -11.461,
+      "z": 42.294,
+      "y": 32.696
+     },
+     {
+      "x": 10.794,
+      "z": 38.224,
+      "y": 32.677
+     },
+     {
+      "x": 11.098,
+      "z": 25.484,
+      "y": 32.619
+     },
+     {
+      "x": -0.404,
+      "z": 32.864,
+      "y": 30.388
+     },
+     {
+      "x": -3.901,
+      "z": 31.47,
+      "y": 30.462
+     },
+     {
+      "x": 4.084,
+      "z": 47.358,
+      "y": 27.554
+     },
+     {
+      "x": -11.702,
+      "z": 23.234,
+      "y": 32.749
+     },
+     {
+      "x": -11.4,
+      "z": 36.008,
+      "y": 32.514
+     },
+     {
+      "x": 1.994,
+      "z": 36.251,
+      "y": 40.185
+     },
+     {
+      "x": 4.854,
+      "z": 36.019,
+      "y": 40.163
+     },
+     {
+      "x": 13.565,
+      "z": 42.164,
+      "y": 40.979
+     },
+     {
+      "x": 2.021,
+      "z": 36.582,
+      "y": 34.715
+     },
+     {
+      "x": -3.229,
+      "z": 25.684,
+      "y": 15.995
+     },
+     {
+      "x": -0.925,
+      "z": 29.119,
+      "y": 35.664
+     },
+     {
+      "x": -3.098,
+      "z": 27.385,
+      "y": 16.57
+     },
+     {
+      "x": -3.99,
+      "z": 29.969,
+      "y": 35.441
+     },
+     {
+      "x": 0.037,
+      "z": 36.455,
+      "y": 40.716
+     },
+     {
+      "x": -9.625,
+      "z": 47.622,
+      "y": 24.324
+     },
+     {
+      "x": 9.618,
+      "z": 47.667,
+      "y": 24.326
+     },
+     {
+      "x": 5.626,
+      "z": 20.542,
+      "y": 16.372
+     },
+     {
+      "x": -10.594,
+      "z": 29.689,
+      "y": 32.6
+     },
+     {
+      "x": -2.347,
+      "z": 44.979,
+      "y": 16.839
+     },
+     {
+      "x": 4.462,
+      "z": 42.825,
+      "y": 27.495
+     },
+     {
+      "x": 9.73,
+      "z": 44.09,
+      "y": 36.084
+     },
+     {
+      "x": 8.857,
+      "z": 44.22,
+      "y": 36.084
+     },
+     {
+      "x": -11.372,
+      "z": 38.713,
+      "y": 27.671
+     },
+     {
+      "x": 3.607,
+      "z": 28.353,
+      "y": 24.743
+     },
+     {
+      "x": -3.149,
+      "z": 48.887,
+      "y": 24.659
+     },
+     {
+      "x": 7.226,
+      "z": 46.245,
+      "y": 24.252
+     },
+     {
+      "x": -3.121,
+      "z": 41.292,
+      "y": 24.691
+     },
+     {
+      "x": 2.611,
+      "z": 41.292,
+      "y": 24.698
+     },
+     {
+      "x": 3.125,
+      "z": 43.726,
+      "y": 24.692
+     },
+     {
+      "x": 0.416,
+      "z": 47.49,
+      "y": 24.396
+     },
+     {
+      "x": 5.548,
+      "z": 36.328,
+      "y": 40.118
+     },
+     {
+      "x": -1.172,
+      "z": 46.998,
+      "y": 27.474
+     },
+     {
+      "x": 4.924,
+      "z": 44.072,
+      "y": 35.083
+     },
+     {
+      "x": 1.154,
+      "z": 43.94,
+      "y": 35.342
+     },
+     {
+      "x": 11.259,
+      "z": 23.324,
+      "y": 27.203
+     },
+     {
+      "x": -11.033,
+      "z": 38.065,
+      "y": 32.679
+     },
+     {
+      "x": 10.63,
+      "z": 40.59,
+      "y": 32.498
+     },
+     {
+      "x": 0.655,
+      "z": 35.275,
+      "y": 29.893
+     },
+     {
+      "x": -1.664,
+      "z": 34.71,
+      "y": 29.571
+     },
+     {
+      "x": -10.572,
+      "z": 35.296,
+      "y": 27.558
+     },
+     {
+      "x": 11.252,
+      "z": 38.938,
+      "y": 29.629
+     },
+     {
+      "x": 2.171,
+      "z": 26.53,
+      "y": 15.813
+     },
+     {
+      "x": 4.367,
+      "z": 22.795,
+      "y": 19.412
+     },
+     {
+      "x": -10.46,
+      "z": 31.956,
+      "y": 19.145
+     },
+     {
+      "x": -0.861,
+      "z": 24.878,
+      "y": 18.722
+     },
+     {
+      "x": -3.408,
+      "z": 29.401,
+      "y": 18.841
+     },
+     {
+      "x": 10.537,
+      "z": 32.426,
+      "y": 18.963
+     },
+     {
+      "x": -0.828,
+      "z": 36.215,
+      "y": 18.854
+     },
+     {
+      "x": -11.287,
+      "z": 25.095,
+      "y": 18.65
+     },
+     {
+      "x": -9.042,
+      "z": 25.462,
+      "y": 19.136
+     },
+     {
+      "x": -11.463,
+      "z": 27.852,
+      "y": 19.323
+     },
+     {
+      "x": 5.248,
+      "z": 48.94,
+      "y": 19.177
+     },
+     {
+      "x": 7.646,
+      "z": 49.269,
+      "y": 19.349
+     },
+     {
+      "x": 4.063,
+      "z": 42.132,
+      "y": 19.31
+     },
+     {
+      "x": 5.753,
+      "z": 25.057,
+      "y": 16.55
+     },
+     {
+      "x": 9.148,
+      "z": 23.345,
+      "y": 24.541
+     },
+     {
+      "x": 4.453,
+      "z": 25.49,
+      "y": 23.945
+     },
+     {
+      "x": -11.204,
+      "z": 28.364,
+      "y": 32.928
+     },
+     {
+      "x": 11.951,
+      "z": 42.134,
+      "y": 19.27
+     },
+     {
+      "x": 4.379,
+      "z": 41.352,
+      "y": 40.312
+     },
+     {
+      "x": 7.318,
+      "z": -15.786,
+      "y": 11.325
+     },
+     {
+      "x": 0.469,
+      "z": 31.982,
+      "y": 16.597
+     },
+     {
+      "x": 11.25,
+      "z": 35.564,
+      "y": 24.31
+     },
+     {
+      "x": 4.575,
+      "z": 26.194,
+      "y": 19.269
+     },
+     {
+      "x": -11.372,
+      "z": 41.895,
+      "y": 27.671
+     },
+     {
+      "x": -3.621,
+      "z": 39.057,
+      "y": 40.086
+     },
+     {
+      "x": 10.493,
+      "z": 47.074,
+      "y": 19.227
+     },
+     {
+      "x": -7.883,
+      "z": 29.133,
+      "y": 19.601
+     },
+     {
+      "x": -0.298,
+      "z": 30.164,
+      "y": 19.309
+     },
+     {
+      "x": 2.816,
+      "z": 30.062,
+      "y": 19.186
+     },
+     {
+      "x": 11.399,
+      "z": 30.878,
+      "y": 19.169
+     },
+     {
+      "x": 9.08,
+      "z": 31.505,
+      "y": 18.617
+     },
+     {
+      "x": 3.387,
+      "z": 46.664,
+      "y": 19.438
+     },
+     {
+      "x": 7.303,
+      "z": 44.895,
+      "y": 19.309
+     },
+     {
+      "x": 0.41,
+      "z": -62.646,
+      "y": 16.6
+     }
+    ],
+    "valuables": [
+     {
+      "x": -11.461,
+      "z": 42.294,
+      "y": 32.696,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 10.794,
+      "z": 38.224,
+      "y": 32.677,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 11.098,
+      "z": 25.484,
+      "y": 32.619,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -0.404,
+      "z": 32.864,
+      "y": 30.388,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -3.901,
+      "z": 31.47,
+      "y": 30.462,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 4.084,
+      "z": 47.358,
+      "y": 27.554,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -11.702,
+      "z": 23.234,
+      "y": 32.749,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -11.4,
+      "z": 36.008,
+      "y": 32.514,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 13.565,
+      "z": 42.164,
+      "y": 40.979,
+      "items": [
+       "显示卡",
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 5.626,
+      "z": 20.542,
+      "y": 16.372,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -10.594,
+      "z": 29.689,
+      "y": 32.6,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -2.347,
+      "z": 44.979,
+      "y": 16.839,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": 3.607,
+      "z": 28.353,
+      "y": 24.743,
+      "items": [
+       "Boreas 破冰船载员舱钥匙卡"
+      ]
+     },
+     {
+      "x": -3.149,
+      "z": 48.887,
+      "y": 24.659,
+      "items": [
+       "Boreas 破冰船载员舱钥匙卡"
+      ]
+     },
+     {
+      "x": 7.226,
+      "z": 46.245,
+      "y": 24.252,
+      "items": [
+       "Boreas 破冰船载员舱钥匙卡"
+      ]
+     },
+     {
+      "x": 2.171,
+      "z": 26.53,
+      "y": 15.813,
+      "items": [
+       "便携式除颤器"
+      ]
+     },
+     {
+      "x": -0.861,
+      "z": 24.878,
+      "y": 18.722,
+      "items": [
+       "Boreas 破冰船轮机舱钥匙卡"
+      ]
+     },
+     {
+      "x": 10.537,
+      "z": 32.426,
+      "y": 18.963,
+      "items": [
+       "便携式除颤器"
+      ]
+     },
+     {
+      "x": -11.204,
+      "z": 28.364,
+      "y": 32.928,
+      "items": [
+       "LEDX皮肤透照仪"
+      ]
+     },
+     {
+      "x": 11.951,
+      "z": 42.134,
+      "y": 19.27,
+      "items": [
+       "便携式除颤器"
+      ]
+     },
+     {
+      "x": 4.575,
+      "z": 26.194,
+      "y": 19.269,
+      "items": [
+       "“凶狠跑刀崽”私酒"
+      ]
+     },
+     {
+      "x": -3.621,
+      "z": 39.057,
+      "y": 40.086,
+      "items": [
+       "C-1 舱室钥匙卡"
+      ]
+     },
+     {
+      "x": 10.493,
+      "z": 47.074,
+      "y": 19.227,
+      "items": [
+       "LEDX皮肤透照仪"
+      ]
+     }
+    ],
+    "bosses": [
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 11.63,
+      "z": -65.58,
+      "y": 21.091,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": -7.67,
+      "z": -68.16,
+      "y": 21.115,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": 11.63,
+      "z": -65.58,
+      "y": 21.091,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": -7.67,
+      "z": -68.16,
+      "y": 21.115,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": 11.63,
+      "z": -65.58,
+      "y": 21.091,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": -7.67,
+      "z": -68.16,
+      "y": 21.115,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 0.7
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 0.7
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 0.7
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 0.7
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 0.7
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -10.558,
+      "z": 16.848,
+      "y": 21.071,
+      "name": "黑色军团",
+      "where": "BotZoneOutside_t3",
+      "chance": 1.0
+     },
+     {
+      "x": -11.172,
+      "z": 13.697,
+      "y": 21.073,
+      "name": "黑色军团",
+      "where": "BotZoneOutside_t3",
+      "chance": 1.0
+     },
+     {
+      "x": 6.27,
+      "z": 29.836,
+      "y": 34.571,
+      "name": "黑色军团",
+      "where": "BotZoneInside_t4",
+      "chance": 1.0
+     },
+     {
+      "x": -1.756,
+      "z": 37.197,
+      "y": 34.676,
+      "name": "黑色军团",
+      "where": "BotZoneInside_t4",
+      "chance": 1.0
+     },
+     {
+      "x": -6.147,
+      "z": 36.22,
+      "y": 34.577,
+      "name": "黑色军团",
+      "where": "BotZoneInside_t4",
+      "chance": 1.0
+     },
+     {
+      "x": 3.445,
+      "z": 36.763,
+      "y": 34.571,
+      "name": "黑色军团",
+      "where": "BotZoneInside_t4",
+      "chance": 1.0
+     },
+     {
+      "x": -3.65,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -6.7,
+      "z": 31.2,
+      "y": 26.535,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.623,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.21,
+      "z": 26.93,
+      "y": 23.771,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -3.65,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -6.7,
+      "z": 31.2,
+      "y": 26.535,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.623,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.21,
+      "z": 26.93,
+      "y": 23.771,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -3.65,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -6.7,
+      "z": 31.2,
+      "y": 26.535,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.623,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.21,
+      "z": 26.93,
+      "y": 23.771,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -3.65,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -6.7,
+      "z": 31.2,
+      "y": 26.535,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.623,
+      "z": 37.14,
+      "y": 26.471,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": 3.21,
+      "z": 26.93,
+      "y": 23.771,
+      "name": "The Wedge",
+      "where": "BotZoneRoomsFour",
+      "chance": 1.0
+     },
+     {
+      "x": -0.14,
+      "z": -75.23,
+      "y": 16.15,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 2.34,
+      "z": -69.37,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 6.092,
+      "z": -72.379,
+      "y": 15.971,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 0.68,
+      "z": -78.33,
+      "y": 16.09,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": -1.53,
+      "z": -69.02,
+      "y": 15.979,
+      "name": "黑色军团",
+      "where": "BotZoneStern",
+      "chance": 1.0
+     },
+     {
+      "x": 11.63,
+      "z": -65.58,
+      "y": 21.091,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": -7.67,
+      "z": -68.16,
+      "y": 21.115,
+      "name": "黑色军团",
+      "where": "BotZoneSternTop",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 2.168,
+      "z": -22.101,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -14.7,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.235,
+      "z": -21.542,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -9.818,
+      "z": -19.052,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -0.388,
+      "z": -21.36,
+      "y": 17.041,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -1.826,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 9.405,
+      "z": -19.359,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -6.99,
+      "z": -16.65,
+      "y": 10.271,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.269,
+      "z": -21.36,
+      "y": 18.421,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -3.219,
+      "z": -22.577,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": 3.145,
+      "z": -21.79,
+      "y": 15.721,
+      "name": "黑色军团",
+      "where": "BotZoneEngineHide",
+      "chance": 1.0
+     },
+     {
+      "x": -11.697,
+      "z": 44.672,
+      "y": 15.721,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": -11.611,
+      "z": 43.346,
+      "y": 15.721,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": 2.767,
+      "z": 37.432,
+      "y": 15.671,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": -3.987,
+      "z": 47.583,
+      "y": 15.671,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": 8.523,
+      "z": 31.459,
+      "y": 18.421,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": 6.768,
+      "z": 32.749,
+      "y": 18.421,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": 3.13,
+      "z": 43.55,
+      "y": 15.775,
+      "name": "游荡者",
+      "where": "BotZoneKorrDown1",
+      "chance": 0.5
+     },
+     {
+      "x": 0.912,
+      "z": 29.047,
+      "y": 18.384,
+      "name": "游荡者",
+      "where": "BotZoneRoom_Eng",
+      "chance": 0.5
+     },
+     {
+      "x": -0.169,
+      "z": 27.321,
+      "y": 18.371,
+      "name": "游荡者",
+      "where": "BotZoneRoom_Eng",
+      "chance": 0.5
+     },
+     {
+      "x": 0.433,
+      "z": 26.77,
+      "y": 15.671,
+      "name": "游荡者",
+      "where": "BotZoneRoom_Eng",
+      "chance": 0.5
+     },
+     {
+      "x": -1.628,
+      "z": 26.435,
+      "y": 15.671,
+      "name": "游荡者",
+      "where": "BotZoneRoom_Eng",
+      "chance": 0.5
+     },
+     {
+      "x": -2.525,
+      "z": 39.045,
+      "y": 18.371,
+      "name": "游荡者",
+      "where": "BotZoneFront2",
+      "chance": 0.5
+     },
+     {
+      "x": -0.598,
+      "z": 38.703,
+      "y": 15.671,
+      "name": "游荡者",
+      "where": "BotZoneFront2",
+      "chance": 0.5
+     },
+     {
+      "x": -4.469,
+      "z": 36.782,
+      "y": 18.371,
+      "name": "游荡者",
+      "where": "BotZoneFront2",
+      "chance": 0.5
      }
     ],
     "artillery": [],

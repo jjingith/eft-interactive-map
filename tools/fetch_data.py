@@ -242,6 +242,35 @@ def svg_basename(entry):
 TILE_ZOOM = 3
 TILE_WORKERS = 8
 
+# 破冰船的投影必须人工覆盖：上游这套 transform + bounds 不能直接用。
+#   · transform [2.0, 125, 3.5, 91] 是**各向异性**的（x 缩放 2.0、z 缩放 3.5），
+#     而其余 12 张图的 transform 全是各向同性；
+#   · bounds [[77, -64.5], [-65.5, 67.4]] 与 factory 一字不差，明显是复制来的。
+# 照它算，标记有 15.8% 掉在船体之外（出生点/「直升机」撤离被甩到船艏、船艉以外），
+# 因为瓦片里的船图与标记的世界坐标根本不是一个口径。
+#
+# 自洽投影按「船体瓦片内容的像素跨度 ↔ 实体（出生/撤离/战利品）的世界跨度」反推：
+#   · 船体内容在瓦片像素空间占 y[0, 256]（zoom3 的第 0..7 行，每行 32 px）；
+#   · 实体 z 跨度 -78.3 ~ 82.3（跨度 160.6）→ 各向同性缩放 S = 256 / 160.6 ≈ 1.594 px/世界单位；
+# x 取同一个 S（船体内容宽 64 px ÷ 1.594 ≈ 40 世界单位，与船长 160 的比例符合船型比例），
+#   船体内容在像素上居中于 x=128 → 船中线世界 x ≈ 0.5（t1 = 128 + S * 0.5）。
+# 验证：按这套投影把全部标记画到船图上叠加比对，出生点沿甲板合理分布、
+# 「直升机」撤离点正落在船艏停机坪上（脚本与结论见 AGENT_HANDOFF.md §6.18）。
+#
+# 注意：瓦片下标仍按**上游画布**取（上面的数字只覆盖「世界 → 底图」映射与取景框），
+# 由这套 transform + bounds 反推出的像素矩形是上游画布的子集，下标范围不会越界。
+# bounds 由取景框精确反推（不手写四舍五入的常量），底图 viewBox 才能与索引逐位对齐。
+_ICEBREAKER_SCALE = 256.0 / (82.3 + 78.3)
+_ICEBREAKER_T1 = 128.8
+_ICEBREAKER_T3 = _ICEBREAKER_SCALE * 78.3
+_ICEBREAKER_TRANSFORM = [_ICEBREAKER_SCALE, _ICEBREAKER_T1, _ICEBREAKER_SCALE, _ICEBREAKER_T3]
+# 取景框（瓦片像素）：船体内容 x[96,160] y[0,256] 四周各留 4 px，免得贴边的出生点被切
+_FRAME_LEFT, _FRAME_TOP, _FRAME_RIGHT, _FRAME_BOTTOM = 92.0, -4.0, 164.0, 260.0
+_ICEBREAKER_BOUNDS = [
+    [(_ICEBREAKER_T1 - _FRAME_LEFT) / _ICEBREAKER_SCALE, (_FRAME_TOP - _ICEBREAKER_T3) / _ICEBREAKER_SCALE],
+    [(_ICEBREAKER_T1 - _FRAME_RIGHT) / _ICEBREAKER_SCALE, (_FRAME_BOTTOM - _ICEBREAKER_T3) / _ICEBREAKER_SCALE],
+]
+
 TILE_MAPS = {
     "the-lab": {
         "file": "TheLab.svg",
@@ -253,6 +282,35 @@ TILE_MAPS = {
     "the-labyrinth": {
         "file": "TheLabyrinth.svg",
         "layerIds": [(None, "Ground_Level")],
+    },
+    # 破冰船 16 层，每层一格瓦片目录、各自带高度带（可判定层）。
+    # 与实验室不同：上游把「主层」entry.tilePath 直接指向了 show=true 的 Infirmary，
+    # 若照搬 ``(None, …)`` 会与 Infirmary 那一层重复出两个内容相同的顶层组，
+    # 所以这里**不用 None**，改用 rootLayer 显式指定主层。
+    # 组 id 用 `Deck_序号` 前缀，让楼层列表按字符串排序就能得到自下而上的正确顺序。
+    "icebreaker": {
+        "file": "Icebreaker.svg",
+        "rootLayer": "Deck_06_Infirmary",
+        # 上游那套 transform / bounds 与船图对不上，改用上面反推的自洽投影
+        "projection": {"transform": _ICEBREAKER_TRANSFORM, "bounds": _ICEBREAKER_BOUNDS},
+        "layerIds": [
+            ("Control Room", "Deck_00_Control_Room"),
+            ("Engine Room", "Deck_01_Engine_Room"),
+            ("Engine Room (upper)", "Deck_02_Engine_Room_Upper"),
+            ("Fuel Pumps (lower)", "Deck_03_Fuel_Pumps_Lower"),
+            ("Fuel Pumps", "Deck_04_Fuel_Pumps"),
+            ("Storage/Security", "Deck_05_Storage_Security"),
+            ("Infirmary", "Deck_06_Infirmary"),
+            ("Helipad", "Deck_07_Helipad"),
+            ("Gym/Canteen", "Deck_08_Gym_Canteen"),
+            ("Accommodation (lower)", "Deck_09_Accommodation_Lower"),
+            ("Accommodation (mid)", "Deck_10_Accommodation_Mid"),
+            ("Accommodation (upper)", "Deck_11_Accommodation_Upper"),
+            ("Officers' Deck", "Deck_12_Officers_Deck"),
+            ("Stairs (blocked)", "Deck_13_Stairs_Blocked"),
+            ("Bridge", "Deck_14_Bridge"),
+            ("Bridge Roof", "Deck_15_Bridge_Roof"),
+        ],
     },
 }
 
@@ -307,6 +365,25 @@ def apply_tile_layer_ids(entry, key):
             entry["svgLayer"] = layer_id
         elif name in by_name:
             by_name[name]["svgLayer"] = layer_id
+    root_layer = TILE_MAPS[key].get("rootLayer")
+    if root_layer:
+        # 上游把「主层」tilePath 指向了某个具名层时（破冰船 → Infirmary），显式指定主层，
+        # 免得 layerIds 里再写一条 (None, …) 拼出两个内容重复的顶层组
+        entry["svgLayer"] = root_layer
+
+
+def apply_tile_projection(entry, key):
+    """把 TILE_MAPS 里的人工投影覆盖到 entry 上（上游 transform / bounds 自相矛盾时用）。
+
+    只覆盖「世界 → 底图」映射与取景框：瓦片下标由这套投影反推出的像素矩形决定，
+    实测落在上游画布已有的下标范围内，不会多问不存在的格子（见 _ICEBREAKER_* 注释）。
+    """
+    projection = TILE_MAPS[key].get("projection")
+    if not projection:
+        return
+    entry["transform"] = list(projection["transform"])
+    entry["bounds"] = [list(pair) for pair in projection["bounds"]]
+    entry.pop("svgBounds", None)     # 上游若补了 svgBounds，会盖掉我们刚覆盖的 bounds
 
 
 def tile_svg_document(viewbox, groups):
@@ -921,6 +998,7 @@ def run(args):
     for key, entry in selected.items():
         if key in TILE_MAPS:
             apply_tile_layer_ids(entry, key)          # 上游这些层没有 svgLayer，得先补上
+            apply_tile_projection(entry, key)         # 上游 transform/bounds 不可信的图换成人工投影
             viewbox, tops, tile_bytes = build_tile_svg(key, entry, args.force)
             viewboxes[key] = viewbox
             svg_tops[key] = tops
@@ -975,8 +1053,8 @@ def run(args):
                      "tarkov.dev 社区公开数据", items_raw),
         source_entry("底图 SVG（the-hideout/tarkov-dev-svg-maps）", "https://assets.tarkov.dev/maps/svg/",
                      "CC BY-NC-SA 4.0（署名 + 非商业 + 同许可）", b""),
-        # 实验室 / 迷宫上游只有瓦片：构建期按上游 transform + bounds 把瓦片拼成合成 SVG 底图
-        source_entry("瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫）", "https://assets.tarkov.dev/maps/",
+        # 实验室 / 迷宫 / 破冰船上游只有瓦片：构建期按上游 transform + bounds 把瓦片拼成合成 SVG 底图
+        source_entry("瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫 / 破冰船）", "https://assets.tarkov.dev/maps/",
                      "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）", b""),
     ]
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")

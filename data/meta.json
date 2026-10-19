@@ -1,6 +1,6 @@
 {
  "schema": 7,
- "generatedAt": "2026-10-19T05:24:23Z",
+ "generatedAt": "2026-10-19T07:05:28Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -40,7 +40,7 @@
    "bytes": 0
   },
   {
-   "name": "瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫）",
+   "name": "瓦片底图（tarkov.dev 地图瓦片，实验室 / 迷宫 / 破冰船）",
    "url": "https://assets.tarkov.dev/maps/",
    "license": "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）",
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -48,23 +48,23 @@
   }
  ],
  "counts": {
-  "maps": 12,
-  "extracts": 145,
+  "maps": 13,
+  "extracts": 146,
   "transits": 29,
-  "spawns": 2498,
+  "spawns": 2554,
   "containers": 6408,
-  "loose": 4621,
-  "valuables": 1208,
+  "loose": 4699,
+  "valuables": 1231,
   "hazards": 330,
-  "locks": 250,
-  "bosses": 482,
+  "locks": 261,
+  "bosses": 643,
   "artillery": 18,
   "btr": 14,
   "stationary": 39,
-  "locksNamed": 250,
+  "locksNamed": 261,
   "labels": 303,
-  "tileMaps": 2,
-  "tileBytes": 6474168,
+  "tileMaps": 3,
+  "tileBytes": 9057018,
   "containerGroups": {
    "safe": 51,
    "jacket": 286,

@@ -35,6 +35,23 @@ FLOOR_LABELS = {
     "Basement": "地下室",
     "Underground_Level": "地下层",
     "Bunkers": "地堡",
+    # 破冰船（瓦片图）：16 层甲板，组 id 由 tools/fetch_data.py 的 TILE_MAPS 指定
+    "Deck_00_Control_Room": "控制室",
+    "Deck_01_Engine_Room": "主机舱",
+    "Deck_02_Engine_Room_Upper": "主机舱上层",
+    "Deck_03_Fuel_Pumps_Lower": "燃油泵下层",
+    "Deck_04_Fuel_Pumps": "燃油泵层",
+    "Deck_05_Storage_Security": "仓储/安保层",
+    "Deck_06_Infirmary": "医务室",
+    "Deck_07_Helipad": "直升机甲板",
+    "Deck_08_Gym_Canteen": "健身房/食堂",
+    "Deck_09_Accommodation_Lower": "住舱下层",
+    "Deck_10_Accommodation_Mid": "住舱中层",
+    "Deck_11_Accommodation_Upper": "住舱上层",
+    "Deck_12_Officers_Deck": "军官甲板",
+    "Deck_13_Stairs_Blocked": "封锁楼梯间",
+    "Deck_14_Bridge": "舰桥",
+    "Deck_15_Bridge_Roof": "舰桥顶",
 }
 
 # 楼层的上下顺序（越小越靠下）：列表按钮按这个顺序从上往下排

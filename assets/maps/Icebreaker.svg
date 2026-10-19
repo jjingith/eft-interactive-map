@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72" height="264" viewBox="0 0 72 264">
+<g id="Deck_00_Control_Room">
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_00_Control_Room_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_00_Control_Room_3_3_3.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_00_Control_Room_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_00_Control_Room_3_4_3.png"/>
+</g>
+<g id="Deck_01_Engine_Room">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_3_4.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_01_Engine_Room_3_4_4.png"/>
+</g>
+<g id="Deck_02_Engine_Room_Upper">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_3_4.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_02_Engine_Room_Upper_3_4_4.png"/>
+</g>
+<g id="Deck_03_Fuel_Pumps_Lower">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_3_4.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_03_Fuel_Pumps_Lower_3_4_4.png"/>
+</g>
+<g id="Deck_04_Fuel_Pumps">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_3_4.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_04_Fuel_Pumps_3_4_4.png"/>
+</g>
+<g id="Deck_05_Storage_Security">
+<image x="4" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_0.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_0.png"/>
+<image x="4" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_1.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_1.png"/>
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_3_7.png"/>
+<image x="36" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_0.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_0.png"/>
+<image x="36" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_1.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_1.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_6.png"/>
+<image x="36" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_7.png" href="assets/maps/tiles/icebreaker/Deck_05_Storage_Security_3_4_7.png"/>
+</g>
+<g id="Deck_06_Infirmary">
+<image x="4" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_0.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_0.png"/>
+<image x="4" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_1.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_1.png"/>
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_3_7.png"/>
+<image x="36" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_0.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_0.png"/>
+<image x="36" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_1.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_1.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_6.png"/>
+<image x="36" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_7.png" href="assets/maps/tiles/icebreaker/Deck_06_Infirmary_3_4_7.png"/>
+</g>
+<g id="Deck_07_Helipad">
+<image x="4" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_0.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_0.png"/>
+<image x="4" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_1.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_1.png"/>
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_3_7.png"/>
+<image x="36" y="4" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_0.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_0.png"/>
+<image x="36" y="36" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_1.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_1.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_6.png"/>
+<image x="36" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_7.png" href="assets/maps/tiles/icebreaker/Deck_07_Helipad_3_4_7.png"/>
+</g>
+<g id="Deck_08_Gym_Canteen">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_3_7.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_6.png"/>
+<image x="36" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_7.png" href="assets/maps/tiles/icebreaker/Deck_08_Gym_Canteen_3_4_7.png"/>
+</g>
+<g id="Deck_09_Accommodation_Lower">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_3_7.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_6.png"/>
+<image x="36" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_7.png" href="assets/maps/tiles/icebreaker/Deck_09_Accommodation_Lower_3_4_7.png"/>
+</g>
+<g id="Deck_10_Accommodation_Mid">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_3_7.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_10_Accommodation_Mid_3_4_6.png"/>
+</g>
+<g id="Deck_11_Accommodation_Upper">
+<image x="4" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_2.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_2.png"/>
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_6.png"/>
+<image x="4" y="228" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_7.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_3_7.png"/>
+<image x="36" y="68" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_2.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_2.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_11_Accommodation_Upper_3_4_6.png"/>
+</g>
+<g id="Deck_12_Officers_Deck">
+<image x="4" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_3.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_3.png"/>
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_3_6.png"/>
+<image x="36" y="100" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_3.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_3.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_12_Officers_Deck_3_4_6.png"/>
+</g>
+<g id="Deck_13_Stairs_Blocked">
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_3_6.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_13_Stairs_Blocked_3_4_6.png"/>
+</g>
+<g id="Deck_14_Bridge">
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_3_6.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_14_Bridge_3_4_6.png"/>
+</g>
+<g id="Deck_15_Bridge_Roof">
+<image x="4" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_4.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_4.png"/>
+<image x="4" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_5.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_5.png"/>
+<image x="4" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_6.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_3_6.png"/>
+<image x="36" y="132" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_4.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_4.png"/>
+<image x="36" y="164" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_5.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_5.png"/>
+<image x="36" y="196" width="32" height="32" preserveAspectRatio="none" xlink:href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_6.png" href="assets/maps/tiles/icebreaker/Deck_15_Bridge_Roof_3_4_6.png"/>
+</g>
+</svg>

@@ -10,6 +10,7 @@ import pytest
 
 import fetch_data as fd
 import coord
+import floors
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -626,10 +627,61 @@ def test_build_tile_svg_requires_tile_path():
 
 def test_tile_maps_only_lists_maps_without_svg_path():
     """TILE_MAPS 是「上游没有矢量底图、只能拼瓦片」的白名单；别把有 SVG 的图也塞进来。"""
-    assert set(fd.TILE_MAPS) == {"the-lab", "the-labyrinth"}
+    assert set(fd.TILE_MAPS) == {"the-lab", "the-labyrinth", "icebreaker"}
     for cfg in fd.TILE_MAPS.values():
         assert cfg["file"].endswith(".svg")
-        assert cfg["layerIds"] and cfg["layerIds"][0][0] is None
+        assert cfg["layerIds"]
+        if cfg.get("rootLayer"):
+            # 显式指定主层的图（破冰船）：上游主层 tilePath 与某个具名层重复，不能再写 (None, …)
+            assert all(name is not None for name, _layer_id in cfg["layerIds"])
+        else:
+            assert cfg["layerIds"][0][0] is None
+
+
+def test_apply_tile_layer_ids_honours_explicit_root_layer():
+    """破冰船：主层 tilePath 指向具名层 Infirmary，用 rootLayer 指定主层，避免拼出重复组。"""
+    entry = {"layers": [{"name": "Infirmary"}, {"name": "Bridge"}]}
+    fd.apply_tile_layer_ids(entry, "icebreaker")
+    assert entry["svgLayer"] == "Deck_06_Infirmary"
+    assert entry["layers"][0]["svgLayer"] == "Deck_06_Infirmary"
+    assert entry["layers"][1]["svgLayer"] == "Deck_14_Bridge"
+
+
+def test_apply_tile_projection_replaces_broken_upstream_geometry():
+    """破冰船：上游 transform 各向异性、bounds 与 factory 雷同，必须整体换成人工投影。"""
+    entry = {"transform": [2.0, 125.0, 3.5, 91.0], "bounds": [[77, -64.5], [-65.5, 67.4]],
+             "svgBounds": [[1, 2], [3, 4]]}
+    fd.apply_tile_projection(entry, "icebreaker")
+    assert entry["transform"] == list(fd._ICEBREAKER_TRANSFORM)
+    assert entry["bounds"] == [list(pair) for pair in fd._ICEBREAKER_BOUNDS]
+    assert "svgBounds" not in entry          # 上游若补了它，会盖掉刚覆盖的 bounds
+    assert entry["transform"][0] == entry["transform"][2], "反推的投影必须各向同性"
+
+
+def test_apply_tile_projection_keeps_upstream_for_other_tile_maps():
+    """没写 projection 的瓦片图（实验室 / 迷宫）保持上游 transform / bounds 不动。"""
+    entry = {"transform": [0.575, 281.2, 0.575, 193.7], "bounds": [[1, 2], [3, 4]]}
+    fd.apply_tile_projection(entry, "the-lab")
+    assert entry["transform"] == [0.575, 281.2, 0.575, 193.7]
+    assert entry["bounds"] == [[1, 2], [3, 4]]
+
+
+def test_icebreaker_projection_maps_frame_to_expected_pixels():
+    """反推的投影必须把取景框映射回瓦片像素矩形（内容四周各留 4 px）。
+
+    瓦片下标就是按这个像素矩形取的，改 _ICEBREAKER_* 之前先看这条回归锁。
+    """
+    rect = fd.tile_pixel_rect(fd._ICEBREAKER_TRANSFORM, 180, fd._ICEBREAKER_BOUNDS)
+    expected = (fd._FRAME_LEFT, fd._FRAME_TOP, fd._FRAME_RIGHT, fd._FRAME_BOTTOM)
+    for got, want in zip(rect, expected):
+        assert abs(got - want) < 1e-6, "取景框映射到 %s，期望 %s" % (rect, expected)
+
+
+def test_tile_map_layer_ids_all_have_floor_labels():
+    """瓦片图的组 id 必须有中文层名，否则楼层列表会整排显示成「主层」。"""
+    for cfg in fd.TILE_MAPS.values():
+        for _name, layer_id in cfg["layerIds"]:
+            assert layer_id in floors.FLOOR_LABELS, "%s 没有中文层名" % layer_id
 
 
 # --------------------------------------------------------------------------- #
