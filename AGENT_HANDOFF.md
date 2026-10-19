@@ -13,12 +13,12 @@
 | 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**12 张图**（含实验室 / 迷宫，见 §6.13） |
 | 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14 |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ✅ 工作树干净，第十一轮改动已提交，见 §9 |
-| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（用户已确认暂保持直线，见 §6.16 备注） |
+| **Git** | ✅ 工作树干净，第十二轮改动已提交，见 §9 |
+| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（用户已确认暂保持直线，见 §6.16 备注）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
 
-最近一次实质改动（2026-10-19，第十一轮）：**高资子类修正（私酒串图 / LEDX 优先 / 新增显卡）+ 上锁的门只留一个固定浮窗 + 地名与地图绑死 + 启动器「试听」+ 位置只在有新截图时定位**，见 §6.16。
-上一轮（第十轮）是街区狙击区坐标修正 + 图标缩放滑条等前端四项（§6.15）；
-再上一轮是**发布三件套 + 上 GitHub**（§6.14）。
+最近一次实质改动（2026-10-19，第十二轮）：**海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍**，见 §6.17。
+上一轮（第十一轮）是高资子类修正 + 单一固定浮窗 + 地名绑地图 + 启动器试听 + 位置按截图差分（§6.16）；
+再上一轮是街区狙击区坐标修正 + 图标缩放滑条等前端四项（§6.15）。
 
 ---
 
@@ -139,7 +139,7 @@ python tools/serve.py --no-browser --port 8787     # 只跑静态站点（调前
 
 ---
 
-## 6. 历次已完成的改动（6.1 – 6.15，第十轮见 §6.15）
+## 6. 历次已完成的改动（6.1 – 6.17；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17）
 
 ### 6.1 修复「地图名字全变成物品名」的 bug ★
 
@@ -563,6 +563,34 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 
 ---
 
+### 6.17 第十二轮：海岸线三狗锚定气象站 + 撤离 / 转移点徽章放大 ★（第十二轮）
+
+用户口径：「另外区别于高资刷新点，再增加一个**高级子弹刷新点**；dev 的上游物资点是否有这些信息？还有各个**撤离点转移点**我希望也是**再大一点**，现在太小了；
+然后海岸线，海岸线现在 sanitar 不会刷新在疗养院了，把疗养院的刷新点去除；然后是三狗，三狗现在**只会刷新在海岸线的气象站**，你现在的标点错了」。
+经两轮澄清定稿：**Sanitar 不动**（用户口径「只有加油站、码头和豪宅会刷」→ 现数据 8 点全在码头 / 加油站 / ZoneGreenHouses 两簇，**没有一点落在疗养院轮廓内**，用户选择「两簇都保留」）；
+**三狗只改海岸线**；**高级子弹不做**。共 2 项落地。
+
+1. **① 海岸线三狗（Knight）改锚定「气象站」**：上游 `bossKnight` 的 `spawnLocations[ZoneMeteoStation].positions` **给了 10 个坐标，但实测全错位**——
+   8 个落在村庄一带（世界 `x ≈ 328~462 / z ≈ 55~235`，即 svg 左侧 Village 附近）、2 个落在无线电塔一带（`x ≈ -575/-581`，svg 右侧），没有一个是气象站；
+   地图地名 `Weather Station` 在世界 `(-496.0, 257.0)`（svg `999.7, 671.7`）。`tools/fetch_data.py` 新增 **`BOSS_ZONE_FORCE`** 覆盖表
+   （键 `(图 key, 上游区域名)`，值 `(图例显示名, 地名文本)`），语义是「**上游给了坐标也照样整段换掉**」，优先级高于只兜 `positions` 为空的 `BOSS_ZONE_ANCHOR`。
+   对应 `("shoreline", "ZoneMeteoStation") → ("气象站", "Weather Station")`，于是 Knight 与它的两个护卫（`followerBigPipe` / `followerBirdEye` 与 Knight 共用刷新区）只剩 1 个点、就落在气象站上。
+   **实测**（本地服务 8787 + Chrome DevTools MCP）：海岸线 `.emk-marker.emk-bosses` 里有一点 `translate(999.725 671.671)` = 地名的 svg 坐标；搜索「Knight」只剩 1 条（`1 处`）。
+2. **② 撤离点 / 转移点徽章放大 1.5 倍**：`app.js` 新增 `BADGE_SCALE = 1.5`，`badgeIcon(variant, unit)` 与 `badgeLabel(text, variant, unit)` 都乘它
+   （**徽章 + 名字一起放大**，仍是「屏幕尺寸恒定」那套机制：外层 `scale(iconScale()/z)` 不变）；钉选环 / 选中环半径 11 → **12 屏幕像素**，罩得住变大的徽章。
+   **实测**：地图徽章 `getBoundingClientRect()` 由 11 × 13.5 px → **16.5 × 20.3 px**（`scale` 由 2.203 变 3.304 = 1/fit × 1.5）。
+
+**未做 / 评估结论**：**高级子弹刷新点**——见 §11「评估过但不采用（第十二轮）」，上游 `lootLoose` 的 5441 个散落刷点里**一件子弹都没有**（只有「弹药箱」「弹匣箱」这类容器），
+与「高级资源点」同原理做不出来，用户据此决定不做。**Sanitar** 无需改动（见上）。
+
+**验证**：`python -m pytest tests -q` → **520 passed, 1 skipped**；`node --check app.js` 通过。
+数据是**离线重跑**的（先移走 `data/maps.json` + `data/meta.json` 让 `data_ready()` 判未就绪，走 `build-cache/` 与既有底图，全程不联网）；
+重跑前后逐图层比对：**只有 `shoreline.bosses` 变（36 → 27 点）**，其余 11 张图、其余图层与 schema（仍 7）完全一致，`generatedAt` 也随之更新。
+
+**新增踩坑**（已进 §8）：「上游有坐标」不等于「坐标是对的」——人工校正表要能**覆盖非空 positions**；徽章放大要连名字与高亮环半径一起改，否则选中环会罩不住。
+
+---
+
 ## 7. 前端要点（改 `app.js` 前必读）
 
 - **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 显卡 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
@@ -571,13 +599,13 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
   **改子类划分只动 `VALUABLE_CATS` 一处**，`LAYER_SPEC` / `DEFAULT_ON` / 渲染都会跟着走（`DEFAULT_ON` 里记得同步 `valuable_<cat>` 的默认）。
 - **图层开关的 change 监听必须挂在容器 `#layer-toggles` 上用事件委托**。图例 DOM 会整体重建，逐个 checkbox 绑定会丢监听 → 会出现「取消勾选后标记仍然显示」的 bug（已踩过，见 §8）。
 - **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。**地名不在 `markerScaleNodes` 里**（第十一轮起）——它要**跟地图绑死**，随 viewBox 缩放等比变大变小，滑条管不着它（见 `renderLabels`）。
-- **选中高亮环**：对画图标的图层（`ICON_KINDS = ["containers","valuables","spawns","bosses","locks","btr"]`）统一按 ±10 屏幕像素外接；撤离点 / 转移点是 ±11。高亮环**必须是静态描边**，不能是动画。
+- **选中高亮环**：对画图标的图层（`ICON_KINDS = ["containers","valuables","spawns","bosses","locks","btr"]`）统一按 ±10 屏幕像素外接；撤离点 / 转移点是 ±12（第十一轮 11 → 第十二轮 12，跟着放大的徽章走）。高亮环**必须是静态描边**，不能是动画。
 - 物资图标：`LOOT_ICONS`（每类由 `body` / `mark` / `hole` / `thin` 等部件组成）、`lootIcon(group, unit)` 画地图上的、`lootIconSvg(group)` 画图例的（`viewBox="-8-8 16 16"`）。
 - **图标素材（`ICON_PNG`）**：key → `assets/icons/*.png` 的贴图表。四个工厂函数（`lootIcon` / `lootIconSvg` / `signIcon` / `signIconSvg`）**开头都判断 `if (ICON_PNG[key]) { return pngIcon(key, unit) /* 或 pngIconSvg(key) */; }`**——命中就用 `<image>` 贴图，未命中仍走手画 SVG。**换图标只需往 `ICON_PNG` 加一行 + 放一张 64×64 透明 PNG 到 `assets/icons/`**；新 PNG 必须透明、居中、内容约占画布 86%（照 `tools/iconize.py` 的输出规格）。源图是**竖排图例**（一张图里多行）时，要在 `tools/iconize.py` 的 `JOBS` 里加 `band` 指定那一段，不能整图直接抠（`strip` 只取最左侧那一簇，会把上下行连起来）。
 - **具体物品名 → 专属图标**：`KEY_ICONS`（中文名 → icon key 的**精确表**）。`valuableIconKey(names)` **按价值分层遍历 `VALUABLE_ICON_RULES`**（外层规则、内层扫物品名，命中即止；同层里该名字在 `KEY_ICONS` 里有专属实拍图就贴真图，否则用该层通用图标），末尾再兜底扫一遍 `KEY_ICONS`。**规则数组的相对顺序就是价值顺序**（`BTC → 私酒 → 显卡 → LEDX → 除颤 → 钥匙卡 → 钥匙 → 文件夹`），`/钥匙卡/` 在 `/钥匙/` 前——顺序错了就会出现「LEDX 点画成除颤器」「私酒点画成钥匙」这类图不对位的 bug（§6.16）。上锁的门「需要钥匙」行用同一个函数取图标（`inlineIcon()` 把图标塞进 HTML 文案）。**给某件钥匙配专属图 = 往 `ICON_PNG` 加一行 + 往 `KEY_ICONS` 加一行**，两者 key 名一致（`key_<物品id前8位>`）。
 - **标记小浮窗**：`showMarkerPopup(map, kind, item)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），**定位在地图区左上角往里 12px**（`el.stage.getBoundingClientRect()`，不跟图标跑），8 秒消失；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**（`locks` 也在同一个浮窗里显示「需要钥匙」+ 对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
   **「HTML 元素」这点是关键**：正因为它是 `<div>` 而不是 SVG 图元，才能安全地用 CSS `opacity` transition 做淡入淡出（§6.15）。淡入 = 建好后 `requestAnimationFrame` 再加 `.show`；淡出 = 摘掉 `.show` 后**延后 `POP_FADE_MS` 再 `remove()`**（旧的 `markerPopNode` 与新浮窗可短暂共存）。行渲染统一走 `inlineIconAny(value)`（字符串走 `inlineIcon`、SVG 元素包 `.inline-ico`），`detailRows()` 的物资行自带图标元素（容器给 `lootIconSvg`、高资点给 `signIconSvg`），所以浮窗和「标记详情」都能显示物资小图标。
-- 撤离点 / 转移点徽章：`BADGE_SHAPE`（盾牌路径）+ `BADGE_RUNNER`（奔跑小人）+ `badgeIcon(variant, unit)` / `badgeIconSvg(variant)` / `badgeLabel(text, variant, unit)`，颜色由 CSS `.emk-badge-<variant> .badge-bg { fill: var(--extract-*) }` 给。
+- 撤离点 / 转移点徽章：`BADGE_SHAPE`（盾牌路径）+ `BADGE_RUNNER`（奔跑小人）+ `badgeIcon(variant, unit)` / `badgeIconSvg(variant)` / `badgeLabel(text, variant, unit)`，颜色由 CSS `.emk-badge-<variant> .badge-bg { fill: var(--extract-*) }` 给。**第十二轮起整体乘 `BADGE_SCALE = 1.5`**（徽章与名字都放大，实测 11×13.5 → 16.5×20.3 屏幕像素）；图例那枚 `badgeIconSvg` **不放大**（图例本身尺寸合适）。
 - **顶部菜单栏**：`bindMenu()` 管 `#menu-raid` 与 `#raid-block` 的开合（点按钮 toggle / 点面板外收起 / `Esc` 收起）。「战局与任务」整块（含 `#quest-log` 等原 id）都从侧栏搬进了这个面板；**要加新菜单项就往 `.menubar` 里再塞一个 `.menu-wrap`**，别把东西塞回侧栏。
 - **界面偏好写回**：`uiPatch()` → `queuePrefs()`（400ms 防抖，`prefPending` 合并同一批键）→ `flushPrefs()` `POST api/prefs`，失败静默（`localStorage` 兜底）。`applyUiPrefs(ui)` 会拿服务端 `ui` 覆盖本地，但**值没变就跳过 `renderLayerToggles()` / `renderOverlay()`**——否则每次 `config` 广播都闪一下。`mergeLayers()` 只认 `state.layers` 里已有的键，服务端塞进来的野键会被忽略。
 - **`auto_center` 的单一真源**：`state.cfgAutoCenter` 记住服务端上一次的值，`applyConfig` **只在它真的变化时**才 `setAutoCenter()`。拖动地图会 `setAutoCenter(false)`，那个是**不持久化**的（`setAutoCenter(on, persist)` 的 `persist` 只给 HUD 按钮传 `true`）；不这么做的话，页面每上报一次偏好就触发 `config` 广播，把用户锁定的视角顶回玩家位置。
@@ -633,10 +661,12 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 | 同一刷点同时刷「私酒 + 钥匙」时图标画成钥匙 / 「LEDX + 除颤器」画成除颤器（图不对位） | `valuableIconKey()` 旧逻辑**先全局查 `KEY_ICONS` 精确表**再走 rule-major 的正则首命中 → 价值低的物品抢到图标 | 改成**按价值分层**遍历规则（外层规则、内层扫物品名，命中即止，同层优先专属实拍图），规则数组顺序即价值顺序（§6.16） |
 | 改「整体图标缩放」滑条时地名跟着一起变大变小（用户要的是地名跟地图走） | 地名节点也被 push 进了 `state.markerScaleNodes`，于是被乘上 `iconScale()/state.z` | 地名**不进** `markerScaleNodes`、不带 `__emkBase`，transform 只写 `translate(sx sy)` —— 随 map `viewBox` 等比缩放（§6.16） |
 | 拖好视角后每次勾图层 / 改偏好，画面又被弹回玩家位置 | `applyConfig()` 里无条件 `applyAutoZoom()`；而页面每写回一次偏好都会广播一次 `config` | **与截图无关的事件绝不能触发自动定位**：`applyConfig()` 不调 `applyAutoZoom()`；`applyPosition()` 只在 `name`/`mtime` 变了（真有新截图）时才定位一次（§6.16） |
+| 以为「上游 `positions` 非空」就等于「坐标是对的」（海岸线三狗标在村庄上） | 上游 `ZoneMeteoStation` 的 10 个坐标整段错位，却仍是合法数据 | 人工校正表要能**覆盖非空 `positions`**：`BOSS_ZONE_FORCE`（整段换掉，优先于只兜空的 `BOSS_ZONE_ANCHOR`）——「有坐标」≠「坐标对」（§6.17） |
+| 放大徽章后钉选 / 选中高亮环罩不住图标 | 环半径写死 11 屏幕像素，而徽章已放大 1.5 倍 | 放大徽章要**连名字与高亮环半径一起改**（`BADGE_SCALE` + 环 11 → 12）（§6.17） |
 
 ---
 
-## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批提交）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -669,6 +699,14 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `3a6d17b` | 数据+前端：高资子类修正（私酒不再串钥匙点、LEDX 优先于除颤器）+ 新增「显卡」子类（schema 7）+ 上锁的门合并为单一固定浮窗 + 地名与地图绑死 + 位置仅在新截图时定位 |
 | `81e990a` | 启动器：声音提示每行加「试听」按钮（不选音频时现场合成内置提示音）+ 5 条单测 |
 | `7806323` | 文档：README / `docs/USAGE.md` / 本手册同步第十一轮（含 `solidvents.com` 评估结论：不引入，见 §11） |
+
+第十二轮（2026-10-19）新增：
+
+| 提交 | 内容 |
+| --- | --- |
+| `537c541` | 数据：海岸线三狗（Knight）刷新点改锚定「气象站」地名（新增 `BOSS_ZONE_FORCE` 覆盖表，离线重跑，海岸线 boss 36 → 27 点） |
+| `4e6eff3` | 前端：撤离点 / 转移点徽章整体放大 1.5 倍（`BADGE_SCALE` + 名字 + 高亮环半径 11 → 12） |
+| （本轮文档提交） | 文档：本手册 §6.17 / §7 / §8 / §9 / §11 同步第十二轮（含「高级子弹刷新点」评估结论：不采用） |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
@@ -734,6 +772,13 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
 - **GitHub 发布**：**已于第九轮完成**——仓库 <https://github.com/jjingith/eft-interactive-map>（Public），Release `v0.1.0` 附三件套。
   `gh` CLI 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`（设备码授权登录，token 含 `gist, read:org, repo`）；用 `gh` 前记得先 `$env:GH_TOKEN=$null`。
 - **三件套实机验证**（第九轮遗留）：加壳版 zip 解压后能否真的开独立应用窗口、Setup 能否装到 `%LOCALAPPDATA%\EFTMap` 并建好开始菜单 / 桌面快捷方式与卸载项，**尚未在用户机器上实测**。
+
+**评估过但不采用（第十二轮）**
+
+- **「高级子弹刷新点」图层**：用户希望像高级资源点那样单列一层。**上游没有这个信息**——把 12 张图（含未收录图的原始数据）的
+  `lootLoose` 散落刷点全部本地化后逐条查（**5441 个刷点**，涉及 350 个物品 id，全部解析成功），**没有任何一个点刷子弹**；
+  弹药类只以**容器**形式出现（「弹药箱」16 处 /「弹匣箱」17 处），已有物资容器图层覆盖。既然拿不到「哪个点刷哪种子弹」，
+  做出来只能是假的，用户据此决定**不做**（其它互动地图也没有这个分类，与结论一致）。
 
 **评估过但不采用（第十一轮）**
 
