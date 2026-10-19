@@ -400,3 +400,45 @@ def test_merge_ui_writes_icon_scale_without_touching_other_keys():
     merged = config.merge_ui(base, {"ui": {"icon_scale": 2.5}})
     assert merged["ui"] == {"layers": {"loose": True}, "floor_auto": True, "icon_scale": 2.5}
 
+
+# --------------------------------------------------------------- 地名缩放 / 透明度
+
+@pytest.mark.parametrize("raw,expect", [
+    (None, config.LABEL_SCALE_DEFAULT),
+    ("abc", config.LABEL_SCALE_DEFAULT),
+    (float("nan"), config.LABEL_SCALE_DEFAULT),
+    (0, config.LABEL_SCALE_DEFAULT),                # 0 或负数没法当缩放系数
+    (0.1, config.LABEL_SCALE_MIN),
+    (9, config.LABEL_SCALE_MAX),
+    ("1.6", 1.6),
+])
+def test_clamp_label_scale(raw, expect):
+    assert config.clamp_label_scale(raw) == expect
+
+
+@pytest.mark.parametrize("raw,expect", [
+    (None, config.LABEL_ALPHA_DEFAULT),
+    ("abc", config.LABEL_ALPHA_DEFAULT),
+    (float("nan"), config.LABEL_ALPHA_DEFAULT),
+    (-1, config.LABEL_ALPHA_MIN),                   # 负的透明度钳到 0
+    (2, config.LABEL_ALPHA_MAX),                    # 超过 1 钳到 1
+    (0, 0.0),                                       # 0 = 全透明是合法值，不能当脏值丢掉
+    (0.35, 0.35),
+])
+def test_clamp_label_alpha(raw, expect):
+    assert config.clamp_label_alpha(raw) == expect
+
+
+def test_normalize_ui_keeps_label_scale_and_alpha_only_as_numbers():
+    cfg = config.normalize({"ui": {"label_scale": 1.5, "label_alpha": 0.4, "junk": 1}})
+    assert cfg["ui"] == {"label_scale": 1.5, "label_alpha": 0.4}
+    assert config.normalize({"ui": {"label_scale": "big"}})["ui"] == {}
+    assert config.normalize({"ui": {"label_alpha": False}})["ui"] == {}   # 布尔不算数字
+
+
+def test_merge_ui_writes_label_prefs_without_touching_other_keys():
+    base = {"ui": {"layers": {"loose": True}, "icon_scale": 1.2}}
+    merged = config.merge_ui(base, {"ui": {"label_scale": 2.0, "label_alpha": 0.0}})
+    assert merged["ui"] == {"layers": {"loose": True}, "icon_scale": 1.2,
+                            "label_scale": 2.0, "label_alpha": 0.0}
+

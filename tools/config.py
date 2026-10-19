@@ -179,6 +179,38 @@ def clamp_icon_scale(value) -> float:
     return round(max(ICON_SCALE_MIN, min(ICON_SCALE_MAX, number)), 3)
 
 
+# 地名的整体缩放与透明度（页面右上角滑条）：区间与前端 app.js 的 LABEL_SCALE_MIN/MAX 对齐。
+# 地名不受「图标缩放」影响（跟地图绑定），所以单独给它一条缩放滑条，外加一条透明度滑条。
+LABEL_SCALE_DEFAULT = 1.0
+LABEL_SCALE_MIN = 0.5
+LABEL_SCALE_MAX = 3.0
+LABEL_ALPHA_DEFAULT = 1.0
+LABEL_ALPHA_MIN = 0.0
+LABEL_ALPHA_MAX = 1.0
+
+
+def clamp_label_scale(value) -> float:
+    """把地名缩放钳到 [LABEL_SCALE_MIN, LABEL_SCALE_MAX]；脏值（含 NaN）回落 1.0。"""
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return LABEL_SCALE_DEFAULT
+    if not math.isfinite(number) or number <= 0:
+        return LABEL_SCALE_DEFAULT
+    return round(max(LABEL_SCALE_MIN, min(LABEL_SCALE_MAX, number)), 3)
+
+
+def clamp_label_alpha(value) -> float:
+    """把地名透明度钳到 [LABEL_ALPHA_MIN, LABEL_ALPHA_MAX]（0 = 全透明）；脏值回落 1.0。"""
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return LABEL_ALPHA_DEFAULT
+    if not math.isfinite(number):
+        return LABEL_ALPHA_DEFAULT
+    return round(max(LABEL_ALPHA_MIN, min(LABEL_ALPHA_MAX, number)), 3)
+
+
 # ---------------------------------------------------------------- 类型收敛
 def _as_bool(value, default: bool = False) -> bool:
     if isinstance(value, bool):
@@ -234,7 +266,7 @@ def _normalize_pins(raw) -> list[dict]:
 
 
 def _normalize_ui(raw) -> dict:
-    """页面偏好（图层开关 / 楼层开关 / 钉选 / 图标缩放）：只保留真给过来的键，没给就留空。
+    """页面偏好（图层开关 / 楼层开关 / 钉选 / 图标缩放 / 地名缩放与透明度）：只保留真给过来的键，没给就留空。
 
     不做默认值是有意的——空 `ui` 表示「还没保存过」，
     前端据此回退到本地偏好或内置默认，而不是被一份空偏好覆盖掉。
@@ -250,6 +282,10 @@ def _normalize_ui(raw) -> dict:
     _scale = raw.get("icon_scale")
     if isinstance(_scale, (int, float)) and not isinstance(_scale, bool):
         out["icon_scale"] = clamp_icon_scale(_scale)
+    for key, clamp in (("label_scale", clamp_label_scale), ("label_alpha", clamp_label_alpha)):
+        _value = raw.get(key)
+        if isinstance(_value, (int, float)) and not isinstance(_value, bool):
+            out[key] = clamp(_value)
     for key in ("floor_auto", "floor_filter"):
         if isinstance(raw.get(key), bool):
             out[key] = raw[key]
@@ -275,7 +311,7 @@ def merge_ui(cfg, prefs) -> dict:
         layers = dict(ui.get("layers") or {})
         layers.update(incoming["layers"])
         ui["layers"] = layers
-    for key in ("map", "floor_auto", "floor_filter", "pins", "icon_scale"):
+    for key in ("map", "floor_auto", "floor_filter", "pins", "icon_scale", "label_scale", "label_alpha"):
         if key in incoming:
             ui[key] = incoming[key]
     merged["ui"] = ui
