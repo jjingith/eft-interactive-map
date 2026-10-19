@@ -1,6 +1,6 @@
 # EFT 互动地图 · Agent 交接手册
 
-> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 测试 `526 passed`
+> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 路网 schema `1` · 测试 `555 passed`
 
 ---
 
@@ -9,16 +9,16 @@
 | 项 | 状态 |
 | --- | --- |
 | 源码可运行 | ✅ `python tools/launcher.py` 或 `python tools/serve.py` |
-| 测试 | ✅ `python -m pytest tests -q` → **526 passed, 1 skipped**（约 33s） |
+| 测试 | ✅ `python -m pytest tests -q` → **555 passed, 1 skipped**（约 36s） |
 | 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**13 张图**（含实验室 / 迷宫 / 破冰船三张瓦片图，见 §6.13 / §6.18） |
-| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14；第十三轮改完**需重打包**再传 Release |
+| 路网 | ✅ `data/roadnet.json` + `assets/roadnet/<图>/<层>.bin`（10 张矢量图的静态路网，供前端同层沿道路寻路，见 §6.19） |
+| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14；第十三 / 十四轮改完**需重打包**再传 Release |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ⚠️ 第十三轮改动**尚未提交**（工作树有 `README.md` / `data/*.json` / `tools/*.py` / `tests/*.py` / 新增 `assets/maps/Icebreaker.svg` 与 `assets/maps/tiles/icebreaker/`），见 §9 |
-| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（暂保持直线，见 §11）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
+| **Git** | ⚠️ **第十三轮的 5 个提交已本地落地但尚未推送**（`main` 领先 `origin/main` 5）；第十四轮的改动（`app.js` / `index.html` / `tools/roadnet.py` / `tools/fetch_data.py` / `tests/test_roadnet.py` / 新增 `assets/roadnet/` 与 `data/roadnet.json` / 文档）**尚未提交**，见 §9 |
+| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
 
-最近一次实质改动（2026-10-19，第十三轮）：**收录破冰船（icebreaker）**——复用第八轮「构建期拼瓦片」机制，另加人工反推投影覆盖上游那套对不上的 `transform` / `bounds`，见 §6.18。
-上一轮（第十二轮）是海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍（§6.17）；
-再上一轮是街区狙击区坐标修正 + 图标缩放滑条等前端四项（§6.15）。
+最近一次实质改动（2026-10-19，第十四轮）：**导航沿道路走**——构建期把 10 张矢量底图的通行区域栅格化成静态路网（`tools/roadnet.py`，纯离线），前端对**同层**相邻途经点做加权 A\*（道路优先）+ 视线简化，见 §6.19。
+上一轮（第十三轮）是收录破冰船（icebreaker），见 §6.18；再上一轮是海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍（§6.17）。
 
 ---
 
@@ -60,12 +60,15 @@ eft-interactive-map/
 ├── README.md         30 KB  面向用户的完整文档（改功能必须同步改这里）
 ├── data/
 │   ├── maps.json           构建期产出（13 张图的底图引用 + 全部标注）；schema 7
+│   ├── roadnet.json        路网索引（10 张矢量图各层的格子边长 / 尺寸 / 字节数与各类格子计数）；schema 1
 │   └── meta.json           数据溯源（各接口 url/license/sha256 + 计数，含瓦片 `tileMaps` / `tileBytes`）
 ├── assets/maps/*.svg       13 张底图（10 张上游矢量 SVG + 实验室 / 迷宫 / 破冰船 3 张构建期用瓦片拼的合成 SVG，约 10.0 MB，已入库）
 ├── assets/maps/tiles/      瓦片 PNG（实验室 / 迷宫 / 破冰船用，每张图一层一组，已入库；合成 SVG 里的 `<image>` 引用的就是它们）
+├── assets/roadnet/<图>/<层>.bin  各层路网位图（每格 2 bit 通行码，10 张矢量图共 35 个位图约 779 KB，已入库）
 ├── assets/icons/*.png      217 个图标素材（64×64 透明 PNG，用户提供源图 + tools/iconize.py 抠图导出，已入库）
 ├── tools/
-│   ├── fetch_data.py       构建期数据管道（唯一联网点）
+│   ├── fetch_data.py       构建期数据管道（唯一联网点；第 5 步会顺带重建路网）
+│   ├── roadnet.py          底图 → 静态路网（纯离线栅格化；见 §6.19）
 │   ├── iconize.py          抠图工具（把用户提供的 ui图标 抠成 assets/icons 的 64×64 透明 PNG，可复现；竖排图例用 `band` 按行切）
 │   ├── serve.py            本地 HTTP 服务 + SSE + 后台线程（VERSION 定义在此）
 │   ├── launcher.py         「设置与启动」小窗（tkinter）；加壳版：资源目录有 `appmode.flag` 就在独立应用窗口开界面
@@ -79,7 +82,7 @@ eft-interactive-map/
 ├── build/build.ps1         PyInstaller onedir 打包脚本 → dist/EFTMap/（**每次整体删旧目录**）
 ├── build/build_release.ps1 发布三件套 → release/（Portable zip / AppWindow zip / Setup exe；先跑一遍 build.ps1）
 ├── release/                ⚠️ 发布产物（**已 gitignore，不进仓库**）
-├── tests/                  526 条测试，全离线
+├── tests/                  555 条测试，全离线（含 `test_roadnet.py`）
 ├── build-cache/            ⚠️ 构建期原始缓存，**已 gitignore，不进仓库**
 └── docs/superpowers/       设计规格（specs）与计划（plans）
 ```
@@ -96,6 +99,8 @@ eft-interactive-map/
 2. `select_maps()` 只保留**有底图可用**的图：上游给了 `svgPath` 的 10 张，外加 `TILE_MAPS` 里的实验室 / 迷宫 / 破冰船（上游只给 `tilePath`）
 3. 拉底面 SVG 存到 `assets/maps/`；**实验室 / 迷宫 / 破冰船的瓦片按上游 `transform` / `bounds` 拼成合成 SVG**（破冰船改用人工反推投影覆盖，见 §6.18；瓦片原样存 `assets/maps/tiles/`）；拉中文翻译 `maps_zh` 与中文物品名 `items_zh`
 4. 逐图规范化成 `data/maps.json`，写 `data/meta.json`（含每份原始数据的 sha256 与许可）
+5. **`[5/5]` 栅格化底图路网**（`tools/roadnet.py`，**纯离线**，只读 `assets/maps/*.svg`）→ `assets/roadnet/<图>/<层>.bin` + `data/roadnet.json`，供前端同层沿道路寻路（见 §6.19）。
+   这一步在「已就绪跳过」分支里**也会执行**，所以缺路网不会触发联网重拉；而 `data_ready()` 不检查路网，正是为了让老的缓存态也能补建。
 
 **关键机制：`build-cache/`**。所有原始响应都会先落盘到 `build-cache/`，重跑时优先读缓存 → **改逻辑后可离线重跑**。但该目录**已被 gitignore**，所以：
 
@@ -139,7 +144,7 @@ python tools/serve.py --no-browser --port 8787     # 只跑静态站点（调前
 
 ---
 
-## 6. 历次已完成的改动（6.1 – 6.18；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17、第十三轮 §6.18）
+## 6. 历次已完成的改动（6.1 – 6.19；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17、第十三轮 §6.18、第十四轮 §6.19）
 
 ### 6.1 修复「地图名字全变成物品名」的 bug ★
 
@@ -630,6 +635,45 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 本图恰恰不是——要用「瓦片内容像素跨度 ↔ 实体世界跨度」反推各向同性投影，且 `bounds` 必须由取景框**精确反推**（手写两位小数会让
 `viewBox` 与索引在 4 位小数写出后差 7e-6，`test_shipped_svg_viewbox_matches_index` 会挂）。
 
+### 6.19 第十四轮：导航沿道路走（构建期静态路网 + 前端同层 A*）★（第十四轮）
+
+用户上轮勾的第三项：导航要**像高德一样沿道路走**，而不是把途经点用直线连起来。约束没变——**运行期零联网、零第三方库**，
+所以路网必须**构建期**算好随包分发。
+
+**分工**：`tools/roadnet.py`（新增）在构建期把底图矢量 `assets/maps/*.svg` 栅格化；`app.js` 只在浏览器里做一次加权 A\*。
+`tools/fetch_data.py` 加了 `[5/5]` 步调用它（跳过分支也调），`data_ready()` **不检查路网**（缺了也不会触发联网重拉）。
+
+**产物**：`assets/roadnet/<图 key>/<层 id>.bin`（每格 2 bit：0 不可通行 / 1 道路 / 2 可通行地形 / 3 难走，行优先 `idx = j*w+i`，4 格一字节、**低位在前**）
++ `data/roadnet.json`（每图的 `cell` / `origin` / 各层 `w`/`h`/`bytes`/`cells`）。10 张矢量图共 35 个位图、779 KB，索引 11 KB。
+
+**为什么按 CSS 类分类、而不是按组名**：底图里 `<g class="road_tarmac road_small">` 的类名出自 tarkov.dev 的统一图纸规范，
+10 张图完全一致；而组名（`Roads` / `road` / `Highways` / `Dirt_Roads`…）各图不统一，不可靠。`resolve_classes()` 取**最近的非空类**
+（不能把祖先链并集——海关某层的 `Buildings-1` 是 `floor`，里面嵌的 `XX-1f-locked` 是 `locked`，并集会混成一个语义）。
+
+**绘制顺序：语义优先级 + 一条文档顺序特判**。各图的**文档顺序并不统一**（灯塔的 `water` 画在 `land` 之前当海面底色，
+海关的 `water` 却画在 `land` 之后当河塘挖洞），照文档顺序栅格化必然有一类图出错。所以 `PASSES` 按语义排
+（地形填 → 道路填 → 道路线 → 难走填 → 难走线 → **水填** → 边界线）。唯一要看文档顺序的是水：
+**画在第一个地面图元之前的水面 = 背景海面**（灯塔那个 7 顶点大三角），它在真实底图里被后画的陆地盖住，
+而默认码 0 本来就已经是「禁行」，所以直接跳过，别让它在最后一趟把陆地反盖成海 → `_first_ground()`。
+
+**栅格化细节**：填充用扫描线 + 活动边表 + **奇偶规则**（所以多边形里的孔会被挖掉）；描边用 DDA 采样 + 方形膨胀（Chebyshev 半径 = 类别半宽，
+`road_small/medium/large` = 5/8/12）；曲线按两端距离定步数展平（4~32 步）；格子边长 `clamp(min(vbw,vbh)/250, 0.5, 4.0)` 再按 `MAX_CELLS=400000` 放大。
+
+**前端 A\***（`app.js` 的「同层路网寻路」段）：懒加载位图（`roadnetNet(mapKey, floorId)`，第一次调用返回 null 并异步下载，
+载完/失败都写进 `state.roadnetCache`）、`cellOfPoint`/`pointOfCell`（用 `worldToSvg` 的**逆阵**，带旋转的图（工厂）也成立）、
+`snapCell`（起终点落在禁行格时环形外扩，半径 14）、`astar`（数组二叉堆 + lazy deletion、8 邻域、**对角要求两侧正交格都可通行**、
+代价表 `[∞,1.0,1.6,3.0]`、octile 启发）、`smoothCells`（LOS 视线简化，0.25 格采样贪心拉直）。
+`routeGeometry()` 逐段拼折线：**同层**走 `roadSegment()`（拿不到路网 / 跨层 / 走不通 / 只隔一格 → 返回 null 回落直线），跨层与瓦片图（实验室 / 迷宫 / 破冰船）自然全是直线。
+
+**验证**（Chrome DevTools 实机）：
+- 海关「狙击手路障 → 行政区大门」：A\* 原始路径 **313 格中 309 格是道路码**（98.7%），面板显示「（沿道路）」。
+- 海关「通往港口的铁路 → 物资埋藏桶」（直线被水域挡住）：折线 7 点、弯曲比 1.18，面板「路程约 418 米（沿道路）」。
+- 三个途经点：折线 9 点、无重复坐标、`nodes=3`，面板「共 3 个点 · 路程约 615 米（沿道路）」。
+- 灯塔修 `_first_ground` 前后：禁行 51.7% → **4.4%**，其余 9 张图数值**一字未变**（无回归）；全量 `pytest` **555 passed, 1 skipped**。
+
+**本轮踩的两个前端坑（已进 §8）**：① `routeGeometry()` 不能先把所有途经点铺成一排再接拐点，否则第一段画成「起点 → 终点 → 绕回终点」的星形；
+② 位图异步到位后要**连面板一起刷新**（`renderOverlay()` 只管折线、不管 `#route-summary`）。
+
 ---
 
 ## 7. 前端要点（改 `app.js` 前必读）
@@ -661,6 +705,7 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 - **导航路线**：`state.route`（`{kind,name,x,z,y}` ≤60）+ `state.routeFromPlayer`。`routePoints()` 在勾了「从实时定位出发」且 `state.player` 存在时把玩家位置插到最前。
   折线 `polyline.emk-route-line` 必须带 `vector-effect="non-scaling-stroke"`（覆盖层直系子元素没有 `scale(1/z)` 补偿，不加会被缩放拉粗）；
   编号节点 `g.emk-route-node` 要 push 进 `state.markerScaleNodes` 并设 `__emkBase`，否则缩放时不会随标记保持屏幕大小。`renderRoute()` 在 `renderLabels` 之后、`updateCounterScale()` 之前调用。
+- **沿道路寻路**（第十四轮）：`data/roadnet.json` 是**可选**的（`boot()` 里 `.catch(() => null)`），缺了导航照样能用、全走直线。位图按 `<图 key>/<层 id>` 懒加载进 `state.roadnetCache`（`null` = 该层没有位图，别再重试）。**只要动 `routeGeometry()` / `routeDistance()` / `renderRoutePanel()`，务必让「折线点数」与「面板文案」同源**——它们都吃 `routeGeometry()` 的返回值；位图是**异步**到位的，`roadnetNet()` 载完要同时调 `renderOverlay()` **和** `renderRoutePanel()`（前者只管折线，不管 `#route-summary`，漏了就会一直显示上一次的「（直线）」）。
 - **`[hidden]` 强制 `display:none !important`**（写在样式顶部）：菜单面板、`#floor-block`、`#detail-block`、`#search-results` 都靠它；`.menubar` / `.block` 的 `display` 规则别写 `!important` 去盖它。
 - **底图（含瓦片合成的 SVG）**：`buildSvg()` 把 SVG 根的全部 children `document.importNode` 进 `#emk-base`；`applyFloorVisibility()` 按**顶层 `<g id>`** 切 `display` / `opacity`（`GHOST_OPACITY = 0.25`，只选一层时下层 ghost），`mapFloorTops(map).length < 2` 时隐藏楼层块。实验室 / 迷宫的底图是构建期拼的**合成 SVG**——组内是 `<image href="assets/maps/tiles/…">`（相对文档路径），**前端不需要为瓦片做任何特殊处理**，走的就是同一套 `importNode` + 顶层组切层逻辑。`<image>` 也**绝不能**加 CSS `animation` / `transform`（同样会触发整张 SVG 栅格化变糊，见 §8）。
 
@@ -706,10 +751,13 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 | 放大徽章后钉选 / 选中高亮环罩不住图标 | 环半径写死 11 屏幕像素，而徽章已放大 1.5 倍 | 放大徽章要**连名字与高亮环半径一起改**（`BADGE_SCALE` + 环 11 → 12）（§6.17） |
 | 破冰船收录后标记大半被甩到船体之外（内点率只有 84.2%） | 上游 `transform` **各向异性**（x 2.0 / z 3.5，其余图全各向同性），`bounds` 又与 **factory 一字不差**（明显复制）——瓦片船图与标记世界坐标不是一个口径 | 别信这套投影：用「瓦片内容像素跨度 ↔ 实体世界跨度」反推**各向同性**投影，走 `TILE_MAPS[...]["projection"]` + `apply_tile_projection()` 覆盖；`bounds` 由取景框**精确反推**（§6.18） |
 | 反推投影后 `viewBox` 与瓦片索引差 7e-6，`test_shipped_svg_viewbox_matches_index` 挂 | `bounds` 手写成两位小数 → 像素矩形是 72.00199 而 SVG 文档按 4 位小数写出 "72.002" | `bounds` 必须由取景框常量**精确反推**（不做四舍五入），`right-left`/`bottom-top` 才能与索引逐位一致（§6.18） |
+| 灯塔这张图 51.7% 的标记落进「禁行格」、76% 的栅格被判禁行 | 它的 `<g class="water">` 是个 7 顶点**背景海面**，文档顺序里画在 `land` **之前**；而栅格化按语义把水排到**最后**一趟 → 水面反盖陆地 | 水面要分两类：**画在第一个地面图元之前的水 = 背景海面**（默认码 0 已经表示禁行，直接跳过），之后的才是要从陆地挖掉的池塘 → `_first_ground()`（§6.19） |
+| 沿道路寻路时折线画成「起点 → 终点 → 绕回终点」的星形，路程也虚高 | `routeGeometry()` 先把**所有**途经点铺成一排（`wps.slice()`）再逐段接 A\* 拐点 → 段内点跑到了段首末点**后面** | 折线必须**按段顺序**拼：先放首个途经点，再逐段接「中间拐点 → 本段末端点」（§6.19） |
+| 位图异步载入后折线变沿道路了，`#route-summary` 却还写着「（直线）」 | `roadnetNet()` 载完只调了 `renderOverlay()`，而它只重画折线、**不管导航面板** | 载完要同时调 `renderOverlay()` + `renderRoutePanel()`；「折线」与「面板文案」必须同源（都吃 `routeGeometry()`）（§6.19） |
 
 ---
 
-## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交、第十三轮分 3 批）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交、第十三轮分 3 批、第十四轮分 4 批 + 提交表补录）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -759,12 +807,21 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `0e003ea` | 启动器：安装器快捷方式改「先建 ASCII 临时名再 `os.replace` 成中文名」修中文 .lnk 被破坏 |
 | `1dff576` | 文档：README 收录范围同步（13 张图 / 3 张瓦片图 / 破冰船 16 层）+ 本手册 §6.18 / §9 / §11 |
 
+第十四轮（2026-10-19）新增（**导航沿道路走 = 第十四轮**）：
+
+| 提交 | 内容 |
+| --- | --- |
+| `b59e721` | 构建期：`tools/roadnet.py` 底图栅格化成静态路网（`_first_ground` 背景海面特判）+ `fetch_data.py` 接入 `[5/5]` 步 |
+| `5bed4d0` | 数据：10 张矢量图的静态路网（35 个位图 779 KB + 索引 11 KB） |
+| `52e26d3` | 前端：导航沿道路走（同层加权 A\* + 视线简化；修折线点序与面板文案不刷新两个 bug）+ `index.html` 文案 |
+| （见下条） | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
+
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
 > $env:GIT_COMMITTER_NAME='jjingith'; $env:GIT_COMMITTER_EMAIL='imzjj1996@gmail.com'`（或临时设置身份），否则 `git commit` 直接报 `Author identity unknown`。
 > 另：PowerShell **不支持** `$(cat <<'EOF' …)` heredoc 写多行提交信息，要改用多个 `-m`。
 
-**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/icons/*.png`（217 个）、
+**入库范围**：`data/`、`assets/maps/`（含 `assets/maps/tiles/` 120 张瓦片 PNG 约 6.2 MB）、`assets/roadnet/`（35 个路网位图）、`assets/icons/*.png`（217 个）、
 `tools/`、`tests/`、`build/`、根目录 `index.html` / `style.css` / `app.js`、`AGENT_HANDOFF.md`、`docs/`。
 **不入库**（`.gitignore` 已排除）：`dist/`、`release/`、`build-cache/`、`build/_work*/`、`eftmap.config.json`、`sounds/`、`*.spec`。
 
@@ -787,7 +844,13 @@ node --check app.js
 
 # 重跑数据（有 build-cache 时离线；改过 fetch_data.py 必须重跑并核对 data/maps.json）
 # 实验室 / 迷宫会顺带重拼瓦片底图：瓦片缓存在 build-cache/tiles/，成品 PNG 落 assets/maps/tiles/
+# 第 5 步会顺带重建路网（纯离线，只读 assets/maps/*.svg）
 python tools/fetch_data.py
+
+# 只重建路网（改过 tools/roadnet.py 或底图 SVG 后跑这个；全程离线）
+python tools/roadnet.py                    # 读 data/maps.json，重建全部路网
+python tools/roadnet.py --maps customs,woods
+python tools/roadnet.py --check            # 只校验已有产物（存在 + 大小对得上 + 有连通块），不重建
 
 # 本地调试前端
 python tools/serve.py --no-browser --port 8787     # 然后浏览器开 http://127.0.0.1:8787/
@@ -811,9 +874,9 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
 
 **未实现（有意或待做）**
 
-- **导航沿道路走（类高德）**：未实现，第十一轮评估后**先保持直线**。要做得有「路网 / 可行走区域」数据——上游只给点位、不给路径图，
-  自建路网需要人工标注 12 张图，且不能引入运行期联网的路径服务（§2 铁律）。要做的话，可行方向是**构建期**用底图 SVG 的通行区域生成栅格 + A\*，
-  产出**静态路网文件**随包分发（仍是离线）。
+- **导航沿道路走（类高德）**：**已于第十四轮实现**——构建期 `tools/roadnet.py` 把 10 张矢量底图栅格化成静态路网
+  （`assets/roadnet/<图>/<层>.bin` + `data/roadnet.json`，纯离线），前端对**同层**相邻途经点做加权 A\*（道路优先）+ 视线简化，见 §6.19。
+  留在直线的情形是有意的：**跨楼层**、以及**只有瓦片底图的实验室 / 迷宫 / 破冰船**（它们没有 `<path>`，栅格化不出路网）。
 - **快门声音替换**：未实现；在它实现前**版本号不许升到 1.0**。
 - **账号级任务统计**（已完成 / 未完成 / 进行中 / 未解锁）：核查过本地日志与磁盘，该信息不在本地存储、需要联网拉取，与本项目「运行期不联网」冲突，**刻意不做**。别去加。
 - **瓦片图**：**实验室 / 迷宫已于第八轮收录**（构建期把上游瓦片按 `transform` / `bounds` 拼成合成 SVG，见 §6.13）；

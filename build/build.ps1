@@ -59,7 +59,9 @@ $MustHave = @(
     (Join-Path $Internal "style.css"),
     (Join-Path $Internal "app.js"),
     (Join-Path $Internal "data\maps.json"),
-    (Join-Path $Internal "assets\maps")
+    (Join-Path $Internal "data\roadnet.json"),
+    (Join-Path $Internal "assets\maps"),
+    (Join-Path $Internal "assets\roadnet")
 )
 foreach ($p in $MustHave) {
     if (-not (Test-Path $p)) { throw "打包产物缺少必需文件：$p" }
