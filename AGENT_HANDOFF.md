@@ -12,9 +12,9 @@
 | 测试 | ✅ `python -m pytest tests -q` → **555 passed, 1 skipped**（约 36s） |
 | 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**13 张图**（含实验室 / 迷宫 / 破冰船三张瓦片图，见 §6.13 / §6.18） |
 | 路网 | ✅ `data/roadnet.json` + `assets/roadnet/<图>/<层>.bin`（10 张矢量图的静态路网，供前端同层沿道路寻路，见 §6.19） |
-| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14；第十三 / 十四轮改完**需重打包**再传 Release |
+| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已按第十四轮代码**重打包并上传 GitHub Release v0.1.0**（包内含 `assets/roadnet/` 35 个位图与 `data/roadnet.json`），见 §6.14 / §6.19 |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ⚠️ **第十三轮的 5 个提交已本地落地但尚未推送**（`main` 领先 `origin/main` 5）；第十四轮的改动（`app.js` / `index.html` / `tools/roadnet.py` / `tools/fetch_data.py` / `tests/test_roadnet.py` / 新增 `assets/roadnet/` 与 `data/roadnet.json` / 文档）**尚未提交**，见 §9 |
+| **Git** | ✅ 第十三轮 5 个提交 + 第十四轮 5 个提交**已推送** `origin/main`，工作区干净（仅余本状态行的更新提交），见 §9 |
 | 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
 
 最近一次实质改动（2026-10-19，第十四轮）：**导航沿道路走**——构建期把 10 张矢量底图的通行区域栅格化成静态路网（`tools/roadnet.py`，纯离线），前端对**同层**相邻途经点做加权 A\*（道路优先）+ 视线简化，见 §6.19。
@@ -815,6 +815,7 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `5bed4d0` | 数据：10 张矢量图的静态路网（35 个位图 779 KB + 索引 11 KB） |
 | `52e26d3` | 前端：导航沿道路走（同层加权 A\* + 视线简化；修折线点序与面板文案不刷新两个 bug）+ `index.html` 文案 |
 | `409e63f` | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
+| `161d7e0` | 文档：补第十四轮提交表 hash |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
