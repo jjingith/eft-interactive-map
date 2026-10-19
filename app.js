@@ -127,11 +127,12 @@
   }
 
   // 高级资源点的子类（2026-10-19 第七轮）：原来「高级资源点」是一个大开关，一开几百个点糊在一起。
-  // 现在按物品名拆成 7 类分别开关；一个刷点可能同时命中多类（渲染时按「启用的子类并集」各点只画一次）。
+  // 现在按物品名拆成 8 类分别开关；一个刷点可能同时命中多类（渲染时按「启用的子类并集」各点只画一次）。
   // 判定顺序有讲究：「钥匙卡」必须排在「钥匙」前面，否则钥匙卡会被「钥匙」那条正则先吃掉。
   var VALUABLE_CATS = [
     { key: "btc", label: "比特币", icon: "valuable_btc", match: /比特币|BTC/i },
     { key: "moonshine", label: "私酒", icon: "valuable_bottle", match: /私酒|酒/ },
+    { key: "gpu", label: "显卡", icon: "valuable_gpu", match: /显卡|显示卡/ },
     { key: "keycard", label: "钥匙卡类", icon: "valuable_keycard", match: /钥匙卡/ },
     { key: "key", label: "钥匙类", icon: "valuable_key", match: /钥匙/ },
     { key: "ledx", label: "LEDX", icon: "valuable_med", match: /LEDX|透照/i },
@@ -175,8 +176,8 @@
       { key: "transits", label: "转移点（去别的图）", kind: "transits", dot: "dot-transit", badge: "transit" }
     ] },
     { group: "物资", items: [
-      // 高级资源点：只在固定刷点上「有概率」刷出的高价值物品（BTC / 私酒 / LEDX / 除颤器 / 钥匙卡…）。
-      // 第一行是「总开关」（master，一键全开 / 全关），下面按物品分成 7 个子类各自开关。
+      // 高级资源点：只在固定刷点上「有概率」刷出的高价值物品（BTC / 显卡 / 私酒 / LEDX / 除颤器 / 钥匙卡…）。
+      // 第一行是「总开关」（master，一键全开 / 全关），下面按物品分成 8 个子类各自开关。
       { key: "valuables", label: "高级资源点（全部）", kind: "valuables", master: true, dot: "dot-valuable" }
     ].concat(VALUABLE_CATS.map(function (cat) {
       return { key: valuableCatKey(cat.key), label: cat.label, kind: "valuables", sub: true,
@@ -215,10 +216,10 @@
 
   /** 各开关的默认状态（只列非默认关闭的；其余一律默认关） */
   // 默认开启的开关。物资容器在 defaultLayers() 里单独全开，不在这个表里逐个列。
-  // 高级资源点默认只开「比特币 / 私酒 / 钥匙卡类」这三个最值钱的子类（钥匙类有 48 种、点位密，默认关，免得一开糊一片）。
+  // 高级资源点默认只开「比特币 / 私酒 / 显卡 / 钥匙卡类」这四个最值钱的子类（钥匙类有 48 种、点位密，默认关，免得一开糊一片）。
   var DEFAULT_ON = {
     extract_shared: true, extract_pmc: true, extract_scav: true, transits: true,
-    valuable_btc: true, valuable_moonshine: true, valuable_keycard: true,
+    valuable_btc: true, valuable_moonshine: true, valuable_gpu: true, valuable_keycard: true,
     hazards: true, bosses: true, labels: true, stationary: true
   };
 
@@ -628,7 +629,7 @@
     };
   }
 
-  /** 图标整体缩放系数（所有标记/地名都乘它；滑条改的就是它） */
+  /** 图标整体缩放系数（只作用于标记/路线编号/玩家标记；地名不乘它，见 renderLabels） */
   function iconScale() { return state.iconScale || 1; }
 
   /**
@@ -1002,8 +1003,7 @@
     el.detailBlock.hidden = true;
     localStorage.setItem(LS_MAP, key);
     markSelectedMap();
-    hideLockKeyHint();       // 换图了，上一张图的门钥匙浮窗不该留着
-    hideMarkerPopup();       // 标记小浮窗同理
+    hideMarkerPopup();       // 换图了，上一张图的标记浮窗不该留着
     renderLayerToggles();    // 图例计数按当前地图刷新
     el.statusMap.textContent = "正在载入 " + map.name + " …";
 
@@ -1070,79 +1070,15 @@
     if (!node || !node.__emkHit || !state.map) { return; }
     ev.stopPropagation();
     showDetail(state.map, node.__emkHit.kind, node.__emkHit.item, node);
-    // 任何标记都在旁边弹一个小浮窗（简略信息），上锁的门再额外弹钥匙浮窗
-    showMarkerPopup(state.map, node.__emkHit.kind, node.__emkHit.item, node);
-    if (node.__emkHit.kind === "locks") { showLockKeyHint(node.__emkHit.item); }
-    else { hideLockKeyHint(); }
-  }
-
-  // ---------------------------------------------------------------- 钥匙小浮窗
-  var lockHintTimer = null;
-
-  /** 关掉钥匙浮窗（换图、点别处、超时都会用到） */
-  function hideLockKeyHint() {
-    var host = $("lock-hint");
-    if (host) { host.remove(); }
-    if (lockHintTimer) { window.clearTimeout(lockHintTimer); lockHintTimer = null; }
-  }
-
-  /** 在图例「上锁的门 / 汽车后备箱」那一行右侧弹一个小浮窗，写清楚要哪把钥匙 */
-  function showLockKeyHint(item) {
-    hideLockKeyHint();
-    var isTrunk = item.type === "trunk";
-    var host = document.createElement("div");
-    host.id = "lock-hint";
-    host.className = "lock-hint";
-
-    var title = document.createElement("div");
-    title.className = "lock-hint-title";
-    title.textContent = isTrunk ? "汽车后备箱" : "上锁的门";
-
-    var key = document.createElement("div");
-    key.className = "lock-hint-key";
-    if (item.keyName) {
-      // 有对应图标就贴上（2026-10-18 起，wiki 抠图里的钥匙都有专属图；没有就退回通用钥匙图）
-      key.appendChild(inlineIcon(valuableIconKey([item.keyName])));
-      var keyText = document.createElement("span");
-      keyText.className = "lock-hint-key-text";
-      keyText.textContent = "需要钥匙：" + item.keyName;
-      if (item.keyShort && item.keyShort !== item.keyName) {
-        keyText.textContent += "（" + item.keyShort + "）";
-      }
-      key.appendChild(keyText);
-    } else if (item.key) {
-      key.textContent = "未登记钥匙名（id " + item.key + "）";
-    } else {
-      key.textContent = "无需钥匙：可直接开启或另有条件";
-    }
-    host.appendChild(title);
-    host.appendChild(key);
-    if (item.needsPower) {
-      var power = document.createElement("div");
-      power.className = "lock-hint-sub";
-      power.textContent = "该门需要通电";
-      host.appendChild(power);
-    }
-
-    // 定位：贴在侧栏右边、和对应图例行同一高度（图例行找不到就退回图例块顶部）
-    var rowKey = isTrunk ? "locks_trunk" : "locks_door";
-    var box = el.layerToggles.querySelector('input[data-layer="' + rowKey + '"]');
-    var row = box ? box.closest(".legend-item") : null;
-    var panel = document.getElementById("sidebar");
-    document.body.appendChild(host);
-    var panelRect = (panel || document.body).getBoundingClientRect();
-    var rowRect = row ? row.getBoundingClientRect() : el.layerToggles.getBoundingClientRect();
-    var top = rowRect.top + rowRect.height / 2 - host.offsetHeight / 2;
-    top = Math.max(8, Math.min(top, window.innerHeight - host.offsetHeight - 8));
-    host.style.left = Math.round(panelRect.right + 10) + "px";
-    host.style.top = Math.round(top) + "px";
-
-    lockHintTimer = window.setTimeout(hideLockKeyHint, 8000);
+    // 点任意标记都在**地图区左上角的固定位置**弹一个小浮窗（淡入淡出）；左侧详情面板仍给完整信息。
+    // 上锁的门要哪把钥匙也在同一个浮窗里（见 detailRows 的「需要钥匙」行），不再另弹一个跟随图标的浮窗
+    // （2026-10-19 第十一轮：以前门会同时冒出两个浮窗，用户反馈容易看乱）。
+    showMarkerPopup(state.map, node.__emkHit.kind, node.__emkHit.item);
   }
 
   // ---------------------------------------------------------------- 标记小浮窗
-  // 点地图上的任意标记（物资点 / 出生点 / Boss / 撤离点…）时，在标记旁边弹一个小浮窗，
-  // 显示简略信息（和「上锁的门」那个钥匙浮窗同款）；左侧详情面板仍保留完整信息。
+  // 点地图上的任意标记（物资点 / 出生点 / Boss / 撤离点 / 上锁的门…）时，在**地图区左上角的固定位置**
+  // 弹一个小浮窗，显示简略信息（与左侧详情面板同源的 detailRows）；固定位置 = 不跟图标跑，不会随平移缩放乱动。
   // 淡入淡出走 CSS opacity 过渡：浮窗本身是 HTML <div>，不是 SVG 图元，
   // 不碰「SVG 加动画会被栅格化」的老坑。
   var markerPopTimer = null;
@@ -1159,7 +1095,7 @@
     window.setTimeout(function () { if (host.parentNode) { host.remove(); } }, POP_FADE_MS);
   }
 
-  function showMarkerPopup(map, kind, item, node) {
+  function showMarkerPopup(map, kind, item) {
     hideMarkerPopup();
     var host = document.createElement("div");
     host.id = "marker-pop";
@@ -1179,7 +1115,7 @@
       k.textContent = row[0];
       var v = document.createElement("span");
       v.className = "marker-pop-v";
-      // 像「上锁的门」浮窗那样带上小图标：物资容器贴该类别的图标、高级资源点贴物品图标
+      // 像「上锁的门」浮窗那样带上小图标：物资容器贴该类别的图标、高级资源点贴物品图标、钥匙贴钥匙图标
       if (row[2]) { v.appendChild(inlineIconAny(row[2])); }
       v.appendChild(document.createTextNode(row[1]));
       line.appendChild(k);
@@ -1190,16 +1126,10 @@
     markerPopNode = host;
     document.body.appendChild(host);
 
-    // 定位：贴在被点标记右边；右边放不下就翻到左边；上下夹在视口内
-    var rect = node.getBoundingClientRect();
-    var w = host.offsetWidth, h = host.offsetHeight;
-    var left = rect.right + 10;
-    if (left + w > window.innerWidth - 8) { left = rect.left - w - 10; }
-    left = Math.max(8, Math.min(left, window.innerWidth - w - 8));
-    var top = rect.top + rect.height / 2 - h / 2;
-    top = Math.max(8, Math.min(top, window.innerHeight - h - 8));
-    host.style.left = Math.round(left) + "px";
-    host.style.top = Math.round(top) + "px";
+    // 固定位置：地图区左上角往里 12px（position:fixed，不随地图平移 / 缩放移动）
+    var stage = el.stage.getBoundingClientRect();
+    host.style.left = Math.round(stage.left + 12) + "px";
+    host.style.top = Math.round(stage.top + 12) + "px";
 
     // 下一帧再上 .show：先让浏览器算完 opacity:0 的初始态，过渡才会真的跑起来
     window.requestAnimationFrame(function () { host.classList.add("show"); });
@@ -1734,10 +1664,10 @@
     (map.labels || []).forEach(function (label) {
       var sx = svgX(map, label.x, label.z);
       var sy = svgY(map, label.x, label.z);
-      // 地名同样做 1/k 反向缩放：屏幕上字号恒定，放大后不会把图糊住
+      // 地名**跟地图绑死**（2026-10-19 第十一轮改）：不做 1/z 反向补偿，缩放多少字号就跟着缩放多少，
+      // 与底图比例一致；也因此不受「图标滑条」影响——滑条只调图标。字号仍乘 unit：z=1 时约 12 屏幕像素。
       var g = svgEl("g", { "pointer-events": "none" });
-      g.__emkBase = { sx: sx, sy: sy, isLabel: true };
-      g.setAttribute("transform", "translate(" + sx + " " + sy + ") scale(1)");
+      g.setAttribute("transform", "translate(" + sx + " " + sy + ")");
       var text = svgEl("text", {
         class: "emk-label",
         "font-size": 12 * unit,
@@ -1752,7 +1682,6 @@
       text.textContent = label.text;
       g.appendChild(text);
       labels.appendChild(g);
-      state.markerScaleNodes.push(g);
     });
     el.overlay.appendChild(labels);
   }
@@ -2223,6 +2152,15 @@
       { t: "rect", x: -5.6, y: -4.8, w: 11.2, h: 9.6, r: 1.4, c: "solid" },
       { t: "path", d: "M-1.1-2.9h2.2v2.2h2.2v2.2h-2.2v2.2h-2.2V1.5h-2.2V-0.7h2.2z", c: "dark" }
     ],
+    // 显卡（2026-10-19 第十一轮新增，无实拍素材，照实物手画）：卡身 + 大风扇 + 散热片 + 金手指
+    valuable_gpu: [
+      { t: "rect", x: -6.6, y: -4.6, w: 13.2, h: 8.4, r: 0.8, c: "solid" },
+      { t: "circle", cx: -1.6, cy: -0.4, r: 3.4, c: "dark" },
+      { t: "circle", cx: -1.6, cy: -0.4, r: 0.9, c: "solid" },
+      { t: "path", d: "M-1.6-3.8v3.4M1.2-1.3l-2.8 1.4M-4.4-1.3l2.8 1.4", c: "solid" },
+      { t: "rect", x: 3.4, y: -2.6, w: 1.8, h: 5.2, r: 0.3, c: "dark" },
+      { t: "rect", x: -6.6, y: 3.8, w: 9.4, h: 1.4, r: 0.3, c: "light" }
+    ],
     // 兜底：宝石（原来的高级资源点图标）
     valuable: [
       { t: "path", d: "M0-7.2L6.2-1.8L0 7.2L-6.2-1.8Z", c: "solid" },
@@ -2236,12 +2174,13 @@
     valuable_keycard: "#7fb6e8",
     valuable_key: "#d8c05a",
     valuable_bottle: "#c98f3c",
+    valuable_gpu: "#8ab6a0",
     valuable_med: "#d4788a",
     valuable: "var(--loot-valuable)"
   };
 
   // 具体钥匙名 → 专属图标（中文物品名精确匹配，2026-10-18 从 wiki 截图逐行抠出）。
-  // 命中时优先于下面的 VALUABLE_ICON_RULES（通用正则），让「公寓管理员钥匙」这类有实物图的
+  // 在 VALUABLE_ICON_RULES 的同一价值层里优先命中，让「公寓管理员钥匙」这类有实物图的
   // 直接贴真图，而不是退化成通用钥匙。key 名 = "key_" + 物品 id 前 8 位（见 ICON_PNG）。
   var KEY_ICONS = {
     "工厂紧急出口钥匙": "key_5448ba0b",
@@ -2443,9 +2382,19 @@
     "冷库钥匙": "key_61a6446f"
   };
 
-  // 高级资源点的物品名 → 图标。按优先级从上到下取第一个命中的（BTC 最惹眼放最前）
+  // 高级资源点的物品名 → 图标。**按价值从高到低分层匹配**（2026-10-19 第十一轮改）：
+  // 同一个刷点常常同时刷几种物品（如「私酒 + 某把钥匙」「LEDX + 除颤器」），旧逻辑「先查钥匙精确表、
+  // 再按正则首命中」会让价值低的物品抢到图标——私酒点画成钥匙点、LEDX 点画成除颤器。
+  // 现在改成：外层按价值从高到低遍历规则，内层扫物品名，命中即止；同层里若有该物品的专属素材图
+  // （KEY_ICONS）就贴真图，否则用该层的通用图标。
   var VALUABLE_ICON_RULES = [
+    // 硬通货 / 单件高价值（最值钱的放最前）
     [/比特币|BTC/i, "valuable_btc"],
+    [/私酒|酒/, "valuable_bottle"],
+    [/显卡|显示卡/, "valuable_gpu"],
+    // 医疗类：LEDX 比除颤器值钱，必须排在除颤器前面
+    [/LEDX|透照|注射/, "valuable_med"],
+    [/除颤/, "valuable_defib"],
     // 六色钥匙卡 + 黑卡 + 生活区 + Object 两张卡，各自用对应颜色的素材图标
     [/实验室钥匙卡·黄/, "valuable_card_yellow"],
     [/实验室钥匙卡·红/, "valuable_card_red"],
@@ -2459,21 +2408,21 @@
     // 剩下的钥匙卡（无专属素材的）统一用黄色卡兜底
     [/钥匙卡/, "valuable_keycard"],
     [/钥匙/, "valuable_key"],
-    [/酒/, "valuable_bottle"],
-    [/除颤/, "valuable_defib"],
-    [/LEDX|透照|注射|医疗/i, "valuable_med"]
+    [/文件夹|材料/, "valuable_folder"]
   ];
 
   function valuableIconKey(names) {
     var list = names || [];
-    // 先按「具体物品名 → 专属图标」精确查表（KEY_ICONS），命中就贴真图；否则走下面的通用正则
-    for (var e = 0; e < list.length; e++) {
-      if (KEY_ICONS[list[e]]) { return KEY_ICONS[list[e]]; }
-    }
     for (var r = 0; r < VALUABLE_ICON_RULES.length; r++) {
       for (var i = 0; i < list.length; i++) {
-        if (VALUABLE_ICON_RULES[r][0].test(list[i])) { return VALUABLE_ICON_RULES[r][1]; }
+        if (!VALUABLE_ICON_RULES[r][0].test(list[i])) { continue; }
+        // 有专属实拍图（KEY_ICONS 精确表）就贴真图，否则用这一层的通用图标
+        return KEY_ICONS[list[i]] || VALUABLE_ICON_RULES[r][1];
       }
+    }
+    // 兜底：物品名对不上任何规则、但有专属素材图的，仍贴真图（如「灯塔便利店储藏室」）
+    for (var e = 0; e < list.length; e++) {
+      if (KEY_ICONS[list[e]]) { return KEY_ICONS[list[e]]; }
     }
     return "valuable";
   }
@@ -2998,7 +2947,8 @@
     }
     state.sound = cfg.sound || null;
     applyUiPrefs(cfg.ui);          // 页面保存的图层 / 楼层偏好
-    if (state.autoZoom && state.player) { applyAutoZoom(); }
+    // 注意：这里**不能**再调 applyAutoZoom()。配置事件（含页面自己写回图层偏好）与截图无关，
+    // 一调就会把用户刚拖好的视角弹回玩家位置（2026-10-19 第十一轮修）。定位只由「新截图」触发，见 applyPosition。
   }
 
   // ---------------------------------------------------------------- 日志监控
@@ -3351,16 +3301,19 @@
   function applyPosition(payload) {
     state.positionInfo = { available: !!payload.available, reason: payload.reason || null };
     var pos = payload.position || null;
-    var moved = !!pos && (!state.player || state.player.name !== pos.name ||
-                          state.player.x !== pos.x || state.player.z !== pos.z);
+    // 只有**真的出现了一张新截图**（文件名或 mtime 变了）才算「新」，才自动定位一次；
+    // 服务端本来也只在截图变化时才推位置帧，这里是双保险，别的来源（如换图 / 配置事件）不会再触发定位。
+    var fresh = !!pos && (!state.player || state.player.name !== pos.name ||
+                          state.player.mtime !== pos.mtime);
     state.player = pos;
     if (state.map) {
       maybeAutoFloor(pos);       // 截图里的高度 y → 自动切到对应楼层
       renderPlayer();
     }
     updatePositionStatus();
-    if (pos && state.autoZoom) { applyAutoZoom(); }        // 自动缩放（内部会顺带居中）
-    else if (pos && state.autoCenter && moved) { centerOnPlayer(); }
+    if (!fresh) { return; }
+    if (state.autoZoom) { applyAutoZoom(); }        // 自动缩放（内部会顺带居中）
+    else if (state.autoCenter) { centerOnPlayer(); }
   }
 
   function insideMap(map, pos) {

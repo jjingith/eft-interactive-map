@@ -270,33 +270,11 @@ body { display: flex; flex-direction: column; }
 .legend-item[data-on="false"] .legend-ico,
 .legend-item[data-on="false"] .ico-dot { opacity: .35; }
 
-/* 上锁的门 · 钥匙小浮窗：贴在侧栏右边、与对应图例行同高（用 XP 提示气泡的淡黄底） */
-.lock-hint {
-  position: fixed;
-  z-index: 60;
-  max-width: 260px;
-  padding: 6px 9px;
-  background: var(--xp-tip);
-  border: 1px solid var(--xp-border);
-  border-left: 3px solid var(--lock);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
-  pointer-events: none;
-  color: var(--xp-text);
-}
-.lock-hint-title { font-size: 11px; color: #6b6656; }
-.lock-hint-key {
-  margin-top: 3px; font-size: 12px; color: var(--xp-text);
-  display: flex; align-items: center; gap: 6px;   /* 钥匙图标 + 文案 横向对齐 */
-}
-.lock-hint-key-text { min-width: 0; }
-.lock-hint-sub { margin-top: 2px; font-size: 11px; color: #c00000; }
-
 /* 「需要钥匙」这类文案前面贴的内联小图标（钥匙图同图例同款） */
 .inline-ico { display: inline-block; vertical-align: -3px; margin-right: 4px; }
 .inline-ico .ico-dot { width: 18px; height: 18px; }
-.lock-hint-key .inline-ico { margin-right: 0; }
 
-/* 标记小浮窗：点地图上任意标记时在标记旁弹出的简略信息（与钥匙浮窗同款样式）。
+/* 标记小浮窗：点地图上任意标记时在**地图区左上角的固定位置**弹出的简略信息（上锁的门的钥匙也在里面）。
    浮窗是 HTML 元素，所以可以放心用 opacity 过渡做淡入淡出（SVG 图元不能加动画）。 */
 .marker-pop {
   position: fixed;

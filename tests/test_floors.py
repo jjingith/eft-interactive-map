@@ -198,8 +198,11 @@ def data():
     return json.loads(DATA.read_text(encoding="utf-8"))
 
 
-def test_data_is_schema_6(data):
-    assert data.get("schema") == 6, "schema 变了就说明前端要么该升级、要么产出过期"
+def test_data_schema_matches_generator(data):
+    """产出里的 schema 必须与生成器当前声明的一致（写死数字会让每次升版都得改测试）。"""
+    import fetch_data as fd
+
+    assert data.get("schema") == fd.SCHEMA, "schema 变了就说明前端要么该升级、要么产出过期"
 
 
 def test_data_floor_structure_is_consistent(data):
