@@ -720,7 +720,7 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 `tests/test_config.py` 补 4 条测试 → 全量 **571 passed, 1 skipped**。
 **文档**：`README.md`（9 子类 / 常驻钉选 / 浮窗常驻 + 关闭 + 加入途径点 / 地名滑条 + 保存配置 / schema 8 / 图标 219 / 测试 571）、`docs/USAGE.md`（子类「情报 / 蓝色文件夹」、浮窗不再自动收起、钉选常驻、途经点拖动排序、导航段纠正为「同层沿道路」）。
 
-**本轮没做的**：重新打包三件套 / 推送提交（用户本轮未要求，待确认）。
+**发布**：本轮改动已按功能分 5 批提交并推送（`3582839` → `1bc9b7c`），三件套已重新打包并替换 GitHub Release v0.1.0 的资产（详见 §9）。
 
 ---
 
@@ -867,17 +867,18 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `409e63f` | 文档 / 打包：README + 本手册同步第十四轮，`build.ps1` 打包校验加路网产物 |
 | `161d7e0` | 文档：补第十四轮提交表 hash |
 
-第十五轮（2026-10-19，**尚未提交**，工作区改动）：
+第十五轮（2026-10-19，**已提交并推送**）：
 
-| 文件 | 内容 |
+| 提交 | 内容 |
 | --- | --- |
-| `tools/iconize.py` | 新增 3 条 JOBS：`val-gpu.png`（显卡实拍）/ `val-intel.png`（情报）/ `val-folder.png`（覆盖蓝色文件夹） |
-| `tools/fetch_data.py` | `HIGH_VALUE_ITEMS` 加「情报文件夹」，`SCHEMA` 7 → 8 |
-| `data/maps.json` | 离线重跑（schema 8，len 2051107；`情报文件夹` 245 处 / `蓝色文件夹` 45 处） |
-| `app.js` | 子类拆「情报」+「蓝色文件夹」（共 9 类）+ 显卡换实拍图；地名缩放 / 透明度滑条；`savePrefsNow()`；浮窗常驻 + 关闭 + 加入途径点；途径点拖动排序；`renderPins()` 钉选常驻 |
-| `index.html` / `style.css` | `#save-config`「保存配置」按钮；`#label-scale` / `#label-alpha` 两个滑条；`#pinned-list`；浮窗 head / actions 与拖动排序样式 |
-| `tools/config.py` / `tests/test_config.py` | `label_scale` / `label_alpha` 白名单 + `clamp_*`；补 4 条测试（全量 571 passed, 1 skipped） |
-| `README.md` / `docs/USAGE.md` / 本手册 | 同步第十五轮（9 子类 / 常驻钉选 / 浮窗常驻 / 地名滑条 + 保存配置 / schema 8 / 图标 219 / 测试 571） |
+| `3582839` | 图标：新增显卡实拍图 + 情报 / 蓝色文件夹图（`iconize.py` 3 条 JOBS） |
+| `4f1ac2a` | 数据：高资物品池加「情报文件夹」并离线重跑（schema 7 → 8） |
+| `1f186fd` | 前端：高资子类拆「情报」+「蓝色文件夹」+ 地名滑条 + 保存配置 + 浮窗常驻 + 途径点拖动排序 + 钉选常驻 |
+| `ed45390` | 配置 / 测试：`label_scale` / `label_alpha` 白名单 + 钳制函数（补 4 条单测） |
+| `ee8fae0` | 文档：README / `docs/USAGE.md` / 本手册同步第十五轮 |
+| `1bc9b7c` | 文档：修正图标素材计数（220 → 219，本轮净增 2 个 PNG，`ui图标/clean/` 同步为 218） |
+
+**发布状态**：`release\EFTMap-Portable-0.1.0.zip`（22.8 MB，SHA256 `1483c027…cd512`）/ `EFTMap-AppWindow-0.1.0.zip`（22.8 MB，`b9f57ea3…49766`）/ `EFTMap-Setup-0.1.0.exe`（34.4 MB，`2560415f…b08470`）三件套已重建并用 `gh release upload v0.1.0 --clobber` 替换 GitHub Release v0.1.0 的三个资产，Release 正文同步第十五轮与新的 SHA-256。
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
