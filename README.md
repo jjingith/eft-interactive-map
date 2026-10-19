@@ -110,8 +110,8 @@ python tools/serve.py --no-browser --port 8790
 
 ## 收录地图
 
-内置 12 张常用图：塔科夫街区、中心区、海关、工厂、立交桥、实验室、迷宫、灯塔、储备站、海岸线、码头、森林
-（各类标注合计约 1.2 万条；其中 10 张为上游矢量 SVG 底图，实验室 / 迷宫由构建期按上游瓦片拼成合成 SVG）。
+内置 13 张常用图：塔科夫街区、中心区、海关、工厂、破冰船、立交桥、实验室、迷宫、灯塔、储备站、海岸线、码头、森林
+（各类标注合计约 1.2 万条；其中 10 张为上游矢量 SVG 底图，实验室 / 迷宫 / 破冰船由构建期按上游瓦片拼成合成 SVG）。
 
 > 各图标注数量、容器分类与全部数据细节见 [docs/USAGE.md](docs/USAGE.md)。
 
@@ -173,7 +173,7 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1
 eft-interactive-map/
 ├── index.html / style.css / app.js   # 前端（原生 JS/CSS，零依赖，无构建）
 ├── data/                             # maps.json（schema 7：图层 + 楼层波段 + 容器分类 + 钥匙名 + 高级资源点（含显卡）+ 瓦片图）+ meta.json
-├── assets/maps/                      # 12 张底图 SVG（其中实验室 / 迷宫是构建期用 tiles/ 下的瓦片拼出的合成 SVG）
+├── assets/maps/                      # 13 张底图 SVG（其中实验室 / 迷宫 / 破冰船是构建期用 tiles/ 下的瓦片拼出的合成 SVG）
 ├── assets/icons/                     # 217 个图标素材（64×64 透明 PNG，由 tools/iconize.py 从 wiki 截图抠图导出）
 ├── tools/
 │   ├── fetch_data.py                 # 构建期：拉数据与底图（联网一次）
@@ -189,7 +189,7 @@ eft-interactive-map/
 │   └── installer.py                  # 构建期：一键安装器（装到 %LOCALAPPDATA%\EFTMap + 快捷方式 + 卸载项），由 build_release.ps1 打成单文件 exe
 ├── build/build.ps1                   # PyInstaller 打包脚本（onedir）
 ├── build/build_release.ps1           # 发布三件套：Portable zip / AppWindow zip / Setup exe
-├── tests/                            # pytest 单测（520 条，全离线）
+├── tests/                            # pytest 单测（526 条，全离线）
 ├── docs/USAGE.md                     # 详细用法与全部数据（逐项详解 / 各图计数 / 容器分类）
 ├── docs/superpowers/                 # 设计规格与实施计划
 └── release/                          # 发布产物（已 gitignore，不进仓库）
@@ -200,7 +200,7 @@ eft-interactive-map/
 ## 自测
 
 ```bash
-python -m pytest tests -q     # 全量单测 → 520 passed, 1 skipped
+python -m pytest tests -q     # 全量单测 → 526 passed, 1 skipped
 node --check app.js           # 前端语法检查
 ```
 
@@ -218,9 +218,9 @@ node --check app.js           # 前端语法检查
 - **不是外挂，但模拟按键有误判风险**：自动截图会向游戏发送模拟输入，可能与 BattlEye 产生误判；本工具不读内存、不注入进程、不改游戏文件，但**不保证**不被误判。
 - **导航只是方向参考**：本工具没有导航网格（NavMesh），路线是直线，跨楼层会「穿墙」。
 - **自动截图需游戏窗口在前台**：游戏不在前台时不发键（否则按键会打到别的窗口），更适合「游戏全屏、地图放副屏 / 手机上看」。
-- **灯塔 / 森林 / 迷宫是单层图**：不显示楼层列表；其余 9 张为多层图。
+- **灯塔 / 森林 / 迷宫是单层图**：不显示楼层列表；其余 10 张为多层图（破冰船最细，16 层甲板）。
 - **码头**在上游数据里没有撤离点与地名，只有出生点（默认关闭）、散落物资、危险区、上锁与 Boss 刷新点。
-- **实验室 / 迷宫没有矢量底图**：上游只给瓦片，本项目在构建期拼成合成 SVG；破冰船等其余瓦片图不收录。
+- **实验室 / 迷宫 / 破冰船没有矢量底图**：上游只给瓦片，本项目在构建期拼成合成 SVG。破冰船的投影是构建期按瓦片内容反推出来的（上游 `transform` 各向异性、`bounds` 与工厂图雷同，照用会把标记甩到船体之外），见 AGENT_HANDOFF.md §6.18。
 
 ---
 
@@ -244,7 +244,7 @@ node --check app.js           # 前端语法检查
 | [json.tarkov.dev](https://json.tarkov.dev/) | 标注数据（撤离 / 转移 / 出生点 / 物资 / 危险区 / 上锁 / Boss / BTR）与楼层波段 | tarkov.dev 社区公开数据 | 署名 tarkov.dev |
 | [json.tarkov.dev](https://json.tarkov.dev/) | 物品中文名（`/{mode}/items_zh`）：把上锁的门里的钥匙物品 id 解析成中文钥匙名，并筛出「高级资源点」的物品池 | tarkov.dev 社区公开数据 | 署名 tarkov.dev |
 | [the-hideout/tarkov-dev-svg-maps](https://github.com/the-hideout/tarkov-dev-svg-maps) | 底图 SVG | **CC BY-NC-SA 4.0** | 署名 + **非商业** + 同许可再分发 |
-| [assets.tarkov.dev](https://assets.tarkov.dev/) | 实验室 / 迷宫的**瓦片底图**（构建期按上游 `transform` / `bounds` 拼成合成 SVG，原样再分发） | tarkov.dev 社区公开数据 | 署名 tarkov.dev + **非商业** |
+| [assets.tarkov.dev](https://assets.tarkov.dev/) | 实验室 / 迷宫 / 破冰船的**瓦片底图**（构建期按上游 `transform` / `bounds` 拼成合成 SVG，原样再分发） | tarkov.dev 社区公开数据 | 署名 tarkov.dev + **非商业** |
 
 - 每个来源的 URL、sha256 与许可都记在 `data/meta.json` 里。
 - `assets/maps/` 下的底图沿用 **CC BY-NC-SA 4.0**，因此**本项目的底图部分不得商用**，

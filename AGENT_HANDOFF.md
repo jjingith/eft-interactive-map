@@ -1,6 +1,6 @@
 # EFT 互动地图 · Agent 交接手册
 
-> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 测试 `520 passed`
+> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 测试 `526 passed`
 
 ---
 
@@ -9,15 +9,15 @@
 | 项 | 状态 |
 | --- | --- |
 | 源码可运行 | ✅ `python tools/launcher.py` 或 `python tools/serve.py` |
-| 测试 | ✅ `python -m pytest tests -q` → **520 passed, 1 skipped**（约 35s） |
-| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**12 张图**（含实验室 / 迷宫，见 §6.13） |
-| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14 |
+| 测试 | ✅ `python -m pytest tests -q` → **526 passed, 1 skipped**（约 33s） |
+| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**13 张图**（含实验室 / 迷宫 / 破冰船三张瓦片图，见 §6.13 / §6.18） |
+| 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14；第十三轮改完**需重打包**再传 Release |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ✅ 工作树干净，第十二轮改动已提交，见 §9 |
-| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（用户已确认暂保持直线，见 §6.16 备注）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
+| **Git** | ⚠️ 第十三轮改动**尚未提交**（工作树有 `README.md` / `data/*.json` / `tools/*.py` / `tests/*.py` / 新增 `assets/maps/Icebreaker.svg` 与 `assets/maps/tiles/icebreaker/`），见 §9 |
+| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（暂保持直线，见 §11）、**高级子弹刷新点**图层（上游物资点里没有子弹信息，见 §11） |
 
-最近一次实质改动（2026-10-19，第十二轮）：**海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍**，见 §6.17。
-上一轮（第十一轮）是高资子类修正 + 单一固定浮窗 + 地名绑地图 + 启动器试听 + 位置按截图差分（§6.16）；
+最近一次实质改动（2026-10-19，第十三轮）：**收录破冰船（icebreaker）**——复用第八轮「构建期拼瓦片」机制，另加人工反推投影覆盖上游那套对不上的 `transform` / `bounds`，见 §6.18。
+上一轮（第十二轮）是海岸线三狗改锚定气象站 + 撤离点 / 转移点徽章放大 1.5 倍（§6.17）；
 再上一轮是街区狙击区坐标修正 + 图标缩放滑条等前端四项（§6.15）。
 
 ---
@@ -59,10 +59,10 @@ eft-interactive-map/
 ├── style.css         21 KB  框架 = Windows XP (Luna) 浅色；地图区与标记仍用深色「卡带未来主义」配色
 ├── README.md         30 KB  面向用户的完整文档（改功能必须同步改这里）
 ├── data/
-│   ├── maps.json           构建期产出（12 张图的底图引用 + 全部标注）；schema 7
+│   ├── maps.json           构建期产出（13 张图的底图引用 + 全部标注）；schema 7
 │   └── meta.json           数据溯源（各接口 url/license/sha256 + 计数，含瓦片 `tileMaps` / `tileBytes`）
-├── assets/maps/*.svg       12 张底图（10 张上游矢量 SVG + 实验室 / 迷宫 2 张构建期用瓦片拼的合成 SVG，约 7.6 MB，已入库）
-├── assets/maps/tiles/      120 张瓦片 PNG（实验室 / 迷宫用，约 6.2 MB，已入库；合成 SVG 里的 `<image>` 引用的就是它们）
+├── assets/maps/*.svg       13 张底图（10 张上游矢量 SVG + 实验室 / 迷宫 / 破冰船 3 张构建期用瓦片拼的合成 SVG，约 10.0 MB，已入库）
+├── assets/maps/tiles/      瓦片 PNG（实验室 / 迷宫 / 破冰船用，每张图一层一组，已入库；合成 SVG 里的 `<image>` 引用的就是它们）
 ├── assets/icons/*.png      217 个图标素材（64×64 透明 PNG，用户提供源图 + tools/iconize.py 抠图导出，已入库）
 ├── tools/
 │   ├── fetch_data.py       构建期数据管道（唯一联网点）
@@ -79,7 +79,7 @@ eft-interactive-map/
 ├── build/build.ps1         PyInstaller onedir 打包脚本 → dist/EFTMap/（**每次整体删旧目录**）
 ├── build/build_release.ps1 发布三件套 → release/（Portable zip / AppWindow zip / Setup exe；先跑一遍 build.ps1）
 ├── release/                ⚠️ 发布产物（**已 gitignore，不进仓库**）
-├── tests/                  520 条测试，全离线
+├── tests/                  526 条测试，全离线
 ├── build-cache/            ⚠️ 构建期原始缓存，**已 gitignore，不进仓库**
 └── docs/superpowers/       设计规格（specs）与计划（plans）
 ```
@@ -93,8 +93,8 @@ eft-interactive-map/
 `python tools/fetch_data.py` 的流程：
 
 1. 拉 `the-hideout/tarkov-dev` 的地图配置（MIT）与 `json.tarkov.dev/{mode}/maps` 标注数据
-2. `select_maps()` 只保留**有底图可用**的图：上游给了 `svgPath` 的 10 张，外加 `TILE_MAPS` 里的实验室 / 迷宫（上游只给 `tilePath`）
-3. 拉底面 SVG 存到 `assets/maps/`；**实验室 / 迷宫的瓦片按上游 `transform` / `bounds` 拼成合成 SVG**（瓦片原样存 `assets/maps/tiles/`）；拉中文翻译 `maps_zh` 与中文物品名 `items_zh`
+2. `select_maps()` 只保留**有底图可用**的图：上游给了 `svgPath` 的 10 张，外加 `TILE_MAPS` 里的实验室 / 迷宫 / 破冰船（上游只给 `tilePath`）
+3. 拉底面 SVG 存到 `assets/maps/`；**实验室 / 迷宫 / 破冰船的瓦片按上游 `transform` / `bounds` 拼成合成 SVG**（破冰船改用人工反推投影覆盖，见 §6.18；瓦片原样存 `assets/maps/tiles/`）；拉中文翻译 `maps_zh` 与中文物品名 `items_zh`
 4. 逐图规范化成 `data/maps.json`，写 `data/meta.json`（含每份原始数据的 sha256 与许可）
 
 **关键机制：`build-cache/`**。所有原始响应都会先落盘到 `build-cache/`，重跑时优先读缓存 → **改逻辑后可离线重跑**。但该目录**已被 gitignore**，所以：
@@ -104,7 +104,7 @@ eft-interactive-map/
 常用参数：
 
 ```bash
-python tools/fetch_data.py                  # 全量 10 张图
+python tools/fetch_data.py                  # 全量 13 张图
 python tools/fetch_data.py --maps customs,woods   # 只拉指定图
 python tools/fetch_data.py --mode pve       # 换数据模式（默认 regular）
 python tools/fetch_data.py --force          # 忽略缓存强制重新拉
@@ -139,7 +139,7 @@ python tools/serve.py --no-browser --port 8787     # 只跑静态站点（调前
 
 ---
 
-## 6. 历次已完成的改动（6.1 – 6.17；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17）
+## 6. 历次已完成的改动（6.1 – 6.18；第九轮见 §6.14、第十轮 §6.15、第十一轮 §6.16、第十二轮 §6.17、第十三轮 §6.18）
 
 ### 6.1 修复「地图名字全变成物品名」的 bug ★
 
@@ -591,6 +591,47 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 
 ---
 
+### 6.18 第十三轮：收录破冰船（人工反推投影）★（第十三轮）
+
+用户在上轮收尾时勾了三项：收录破冰船等剩余地图、三件套实机验证、导航沿道路走。本轮先做第一项——**破冰船（icebreaker）收录**，
+复用第八轮的 `TILE_MAPS` + `build_tile_svg` 机制（§6.13，前端一行未改），但**多了一步「人工投影覆盖」**：上游这套 `transform` / `bounds` 照用会把标记甩到船体之外。
+
+**上游数字与实体对不上**（证据链）：
+
+1. 上游 `icebreaker` 配置：`tileSize=256`、`transform=[2.0,125.0,3.5,91.0]`、`coordinateRotation=180`、
+   `bounds=[[77,-64.5],[-65.5,67.4]]`、16 个具名层（`00_control_room` … `15_bridge_roof`，主层 `tilePath` 指向 `06_infirmary`）。
+2. **两处硬伤**：`transform` 是**各向异性**的（x 缩放 2.0、z 缩放 3.5），而其余 12 张图的 `transform` **全是各向同性**；
+   `bounds` 与 **factory 一字不差**，明显是复制来的。
+3. 照它算，船体瓦片内容在像素空间只占 `x[96,160] × y[0,256]`，对应世界 `x[-17.5,14.5]、z[-26.0,47.1]`；
+   而 icebreaker 实体（56 出生点、1 撤离、78 散落战利品、161 boss）世界跨度是 `x[-11.7,13.6]、z[-78.3,82.3]`
+   → 14 个实体的 z 远超船图 → `test_markers_mostly_inside_viewbox` 只有 **84.2%**（9/57 越界）。
+4. 直连上游瓦片服务器扫 174 格：**非空仅 `x∈{3,4}, y∈{0..7}` 共 16 格，其余 126 格 404**（不是漏取，是船图与标记口径不一致）。
+5. 把瓦片拼起来目视：船体完整（船艏八角形停机坪在上、船艉在下），没被裁切。
+
+**反推自洽投影**（`tools/fetch_data.py` 的 `_ICEBREAKER_*` 常量）：按「船体瓦片内容的像素跨度 ↔ 实体的世界跨度」反推——
+船体内容在像素空间占 `y[0,256]`（zoom3 的第 0..7 行，每行 32px），实体 z 跨度 `-78.3 ~ 82.3`（跨度 160.6）
+→ **各向同性** `S = 256 / 160.6 ≈ 1.594` px/世界单位；x 取同一个 S（船体内容宽 64px ÷ 1.594 ≈ 40 世界单位，与船长 160 的船型比例相符），
+船体内容在像素上居中于 `x=128` → 船中线世界 x ≈ 0.5（`t1 = 128.8`）；`t3 = S × 78.3`。
+取景框 = 内容 `x[96,160] y[0,256]` 四周各留 4px（`92, -4, 164, 260`），`bounds` 由取景框**精确反推**（不手写四舍五入的常量）。
+`TILE_MAPS["icebreaker"]` 因此多了 `projection` 键，新增函数 `apply_tile_projection(entry, key)` 在构建主循环里把它覆盖到 `entry` 上
+（并 `pop("svgBounds")`，免得上游若补了它再盖回 `bounds`），跟在 `apply_tile_layer_ids` 之后调用。
+
+**关键取舍：瓦片下标仍按上游画布取**。人工投影 + 取景框反推出的像素矩形（`92,-4,164,260`）恰好是上游画布
+（`-29,-134.75,256,326.9`）的**子集**，所以 `tile_grid` 算出的 `x∈2..5, y∈-1..8`（40 格/层）全部命中已缓存/已存在的瓦片，不会 404；
+同时 `image x = x*step - left` 与上游 `index*step` 约定一致，摆放不错位。**前端一行没改**。
+
+**验证**：`ib_overlay.png` 叠图目视通过——出生点沿甲板合理分布、「直升机」撤离点正落在船艏停机坪上、地名也在船艏；
+`test_markers_mostly_inside_viewbox` 三张瓦片图全 **100.0%（0 越界）**；全量 `python -m pytest tests -q` → **526 passed, 1 skipped**；
+`tools/floors.py` 的 `FLOOR_LABELS` 加 16 条 `Deck_*` 中文名；数据**离线重跑**（移走 `data/*.json` 绕开幂等跳过，走 `build-cache/` 与既有底图），
+构建输出「13 张图 / 底图 10.0 MB / 索引 2064 KB」，icebreaker 各层 40 格/层（非空 2~16），`floors.selectable` 16 项、`default = ["Deck_06_Infirmary"]`。
+`data/maps.json` 的 icebreaker `viewBox = [0, 0, 72.0, 264.0]`、`worldToSvg` 各向同性（`a == e`）。
+
+**新增踩坑**（已进 §8）：上游 `bounds` 与别的图一字不差就是**复制粘贴的信号**，别信；`transform` 各向异性只在「两个世界轴像素口径不同」时才合法，
+本图恰恰不是——要用「瓦片内容像素跨度 ↔ 实体世界跨度」反推各向同性投影，且 `bounds` 必须由取景框**精确反推**（手写两位小数会让
+`viewBox` 与索引在 4 位小数写出后差 7e-6，`test_shipped_svg_viewbox_matches_index` 会挂）。
+
+---
+
 ## 7. 前端要点（改 `app.js` 前必读）
 
 - **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 显卡 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
@@ -663,10 +704,12 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 | 拖好视角后每次勾图层 / 改偏好，画面又被弹回玩家位置 | `applyConfig()` 里无条件 `applyAutoZoom()`；而页面每写回一次偏好都会广播一次 `config` | **与截图无关的事件绝不能触发自动定位**：`applyConfig()` 不调 `applyAutoZoom()`；`applyPosition()` 只在 `name`/`mtime` 变了（真有新截图）时才定位一次（§6.16） |
 | 以为「上游 `positions` 非空」就等于「坐标是对的」（海岸线三狗标在村庄上） | 上游 `ZoneMeteoStation` 的 10 个坐标整段错位，却仍是合法数据 | 人工校正表要能**覆盖非空 `positions`**：`BOSS_ZONE_FORCE`（整段换掉，优先于只兜空的 `BOSS_ZONE_ANCHOR`）——「有坐标」≠「坐标对」（§6.17） |
 | 放大徽章后钉选 / 选中高亮环罩不住图标 | 环半径写死 11 屏幕像素，而徽章已放大 1.5 倍 | 放大徽章要**连名字与高亮环半径一起改**（`BADGE_SCALE` + 环 11 → 12）（§6.17） |
+| 破冰船收录后标记大半被甩到船体之外（内点率只有 84.2%） | 上游 `transform` **各向异性**（x 2.0 / z 3.5，其余图全各向同性），`bounds` 又与 **factory 一字不差**（明显复制）——瓦片船图与标记世界坐标不是一个口径 | 别信这套投影：用「瓦片内容像素跨度 ↔ 实体世界跨度」反推**各向同性**投影，走 `TILE_MAPS[...]["projection"]` + `apply_tile_projection()` 覆盖；`bounds` 由取景框**精确反推**（§6.18） |
+| 反推投影后 `viewBox` 与瓦片索引差 7e-6，`test_shipped_svg_viewbox_matches_index` 挂 | `bounds` 手写成两位小数 → 像素矩形是 72.00199 而 SVG 文档按 4 位小数写出 "72.002" | `bounds` 必须由取景框常量**精确反推**（不做四舍五入），`right-left`/`bottom-top` 才能与索引逐位一致（§6.18） |
 
 ---
 
-## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批、第十二轮分 2 批 + 文档提交、第十三轮分 3 批）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -707,6 +750,16 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | `537c541` | 数据：海岸线三狗（Knight）刷新点改锚定「气象站」地名（新增 `BOSS_ZONE_FORCE` 覆盖表，离线重跑，海岸线 boss 36 → 27 点） |
 | `4e6eff3` | 前端：撤离点 / 转移点徽章整体放大 1.5 倍（`BADGE_SCALE` + 名字 + 高亮环半径 11 → 12） |
 | `5b26d9a` | 文档：本手册 §6.17 / §7 / §8 / §9 / §11 同步第十二轮（含「高级子弹刷新点」评估结论：不采用） |
+
+第十三轮（2026-10-19）新增（**破冰船收录 = 第十三轮**）：
+
+| 提交 | 内容 |
+| --- | --- |
+| `（待填）` | 数据：收录破冰船（`TILE_MAPS["icebreaker"]` + 人工反推投影 `_ICEBREAKER_*` / `apply_tile_projection`，13 张图 / 底图 10.0 MB） |
+| `（待填）` | 启动器：安装器快捷方式改「先建 ASCII 临时名再 `os.replace` 成中文名」修中文 .lnk 被破坏 |
+| `（待填）` | 文档：README 收录范围同步（13 张图 / 3 张瓦片图 / 破冰船 16 层）+ 本手册 §6.18 / §9 / §11 |
+
+> 提交后请把上表 `（待填）` 换成真实 hash（照前几轮的惯例补一个「文档：补提交自身 hash」的收尾提交）。
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
@@ -765,10 +818,11 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
   产出**静态路网文件**随包分发（仍是离线）。
 - **快门声音替换**：未实现；在它实现前**版本号不许升到 1.0**。
 - **账号级任务统计**（已完成 / 未完成 / 进行中 / 未解锁）：核查过本地日志与磁盘，该信息不在本地存储、需要联网拉取，与本项目「运行期不联网」冲突，**刻意不做**。别去加。
-- **瓦片图**：**实验室 / 迷宫已于第八轮收录**（构建期把上游瓦片按 `transform` / `bounds` 拼成合成 SVG，见 §6.13）。**破冰船（icebreaker）等仍未收录**——
-  上游对它们同样只有瓦片；若将来要做，复用 §6.13 的 `TILE_MAPS` + `build_tile_svg` 机制，加上 `tilePath` 与层 id 即可。
+- **瓦片图**：**实验室 / 迷宫已于第八轮收录**（构建期把上游瓦片按 `transform` / `bounds` 拼成合成 SVG，见 §6.13）；
+  **破冰船（icebreaker）已于第十三轮收录**（复用同一机制，另加 `projection` 人工投影覆盖上游那套对不上的 `transform` / `bounds`，见 §6.18）。
+  至此上游**已无「只有瓦片却未收录」的图**（其余 10 张都是上游矢量 SVG）——若上游将来新增瓦片图，复用 §6.13 的 `TILE_MAPS` + `build_tile_svg` 机制，
+  必要时照 §6.18 加 `projection` 覆盖表即可。
   （第六轮的旧结论「不收录」已被第八轮推翻：当时判定社区 `Labs.svg` 宽高比与上游差约 10%、迷宫连 SVG 都没有 → 改走**构建期拼瓦片**这条路，见 §6.11 / §6.13。）
-- 上游仍有无 SVG 底图且未收录的图（破冰船等，见 §8）。
 - **GitHub 发布**：**已于第九轮完成**——仓库 <https://github.com/jjingith/eft-interactive-map>（Public），Release `v0.1.0` 附三件套。
   `gh` CLI 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`（设备码授权登录，token 含 `gist, read:org, repo`）；用 `gh` 前记得先 `$env:GH_TOKEN=$null`。
 - **三件套实机验证**（第九轮遗留）：加壳版 zip 解压后能否真的开独立应用窗口、Setup 能否装到 `%LOCALAPPDATA%\EFTMap` 并建好开始菜单 / 桌面快捷方式与卸载项，**尚未在用户机器上实测**。
