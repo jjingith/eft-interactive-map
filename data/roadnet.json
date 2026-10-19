@@ -1,0 +1,588 @@
+{
+ "schema": 1,
+ "tool": "tools/roadnet.py",
+ "generatedAt": "2026-10-19T08:27:24Z",
+ "cellNote": "格子码 0 不可通行 / 1 道路 / 2 地形 / 3 难走，每格 2 bit 低位在前",
+ "maps": {
+  "streets-of-tarkov": {
+   "cell": 2.4213,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Underground_Level": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Underground_Level.bin",
+     "cells": {
+      "blocked": 84922,
+      "road": 0,
+      "terrain": 1078,
+      "rough": 0,
+      "components": 3,
+      "largest": 887
+     }
+    },
+    "Ground_Level": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Ground_Level.bin",
+     "cells": {
+      "blocked": 39183,
+      "road": 14758,
+      "terrain": 6916,
+      "rough": 25143,
+      "components": 176,
+      "largest": 29157
+     }
+    },
+    "First_Floor": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/First_Floor.bin",
+     "cells": {
+      "blocked": 79544,
+      "road": 291,
+      "terrain": 6154,
+      "rough": 11,
+      "components": 148,
+      "largest": 531
+     }
+    },
+    "Second_Floor": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Second_Floor.bin",
+     "cells": {
+      "blocked": 83156,
+      "road": 0,
+      "terrain": 2844,
+      "rough": 0,
+      "components": 67,
+      "largest": 761
+     }
+    },
+    "Third_Floor": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Third_Floor.bin",
+     "cells": {
+      "blocked": 84689,
+      "road": 0,
+      "terrain": 1311,
+      "rough": 0,
+      "components": 31,
+      "largest": 291
+     }
+    },
+    "Fourth_Floor": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Fourth_Floor.bin",
+     "cells": {
+      "blocked": 85780,
+      "road": 0,
+      "terrain": 220,
+      "rough": 0,
+      "components": 9,
+      "largest": 54
+     }
+    },
+    "Fifth_Floor": {
+     "w": 250,
+     "h": 344,
+     "bytes": 21500,
+     "file": "assets/roadnet/streets-of-tarkov/Fifth_Floor.bin",
+     "cells": {
+      "blocked": 85986,
+      "road": 0,
+      "terrain": 14,
+      "rough": 0,
+      "components": 4,
+      "largest": 9
+     }
+    }
+   }
+  },
+  "ground-zero": {
+   "cell": 1.3957,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Underground_Level": {
+     "w": 251,
+     "h": 350,
+     "bytes": 21963,
+     "file": "assets/roadnet/ground-zero/Underground_Level.bin",
+     "cells": {
+      "blocked": 82895,
+      "road": 2321,
+      "terrain": 2634,
+      "rough": 0,
+      "components": 1,
+      "largest": 4955
+     }
+    },
+    "Ground_Level": {
+     "w": 251,
+     "h": 350,
+     "bytes": 21963,
+     "file": "assets/roadnet/ground-zero/Ground_Level.bin",
+     "cells": {
+      "blocked": 17952,
+      "road": 13390,
+      "terrain": 16701,
+      "rough": 39807,
+      "components": 17,
+      "largest": 68668
+     }
+    },
+    "First_Floor": {
+     "w": 251,
+     "h": 350,
+     "bytes": 21963,
+     "file": "assets/roadnet/ground-zero/First_Floor.bin",
+     "cells": {
+      "blocked": 82172,
+      "road": 0,
+      "terrain": 5678,
+      "rough": 0,
+      "components": 9,
+      "largest": 1936
+     }
+    },
+    "Second_Floor": {
+     "w": 251,
+     "h": 350,
+     "bytes": 21963,
+     "file": "assets/roadnet/ground-zero/Second_Floor.bin",
+     "cells": {
+      "blocked": 85651,
+      "road": 0,
+      "terrain": 2199,
+      "rough": 0,
+      "components": 8,
+      "largest": 654
+     }
+    },
+    "Third_Floor": {
+     "w": 251,
+     "h": 350,
+     "bytes": 21963,
+     "file": "assets/roadnet/ground-zero/Third_Floor.bin",
+     "cells": {
+      "blocked": 87461,
+      "road": 0,
+      "terrain": 389,
+      "rough": 0,
+      "components": 1,
+      "largest": 389
+     }
+    }
+   }
+  },
+  "customs": {
+   "cell": 2.1407,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Underground_Level": {
+     "w": 497,
+     "h": 250,
+     "bytes": 31063,
+     "file": "assets/roadnet/customs/Underground_Level.bin",
+     "cells": {
+      "blocked": 123979,
+      "road": 0,
+      "terrain": 271,
+      "rough": 0,
+      "components": 6,
+      "largest": 191
+     }
+    },
+    "Ground_Level": {
+     "w": 497,
+     "h": 250,
+     "bytes": 31063,
+     "file": "assets/roadnet/customs/Ground_Level.bin",
+     "cells": {
+      "blocked": 54756,
+      "road": 13898,
+      "terrain": 42275,
+      "rough": 13321,
+      "components": 13,
+      "largest": 69388
+     }
+    },
+    "First_Floor": {
+     "w": 497,
+     "h": 250,
+     "bytes": 31063,
+     "file": "assets/roadnet/customs/First_Floor.bin",
+     "cells": {
+      "blocked": 121604,
+      "road": 0,
+      "terrain": 2570,
+      "rough": 76,
+      "components": 57,
+      "largest": 385
+     }
+    },
+    "Second_Floor": {
+     "w": 497,
+     "h": 250,
+     "bytes": 31063,
+     "file": "assets/roadnet/customs/Second_Floor.bin",
+     "cells": {
+      "blocked": 123198,
+      "road": 0,
+      "terrain": 1018,
+      "rough": 34,
+      "components": 31,
+      "largest": 221
+     }
+    },
+    "Third_Floor": {
+     "w": 497,
+     "h": 250,
+     "bytes": 31063,
+     "file": "assets/roadnet/customs/Third_Floor.bin",
+     "cells": {
+      "blocked": 124080,
+      "road": 0,
+      "terrain": 150,
+      "rough": 20,
+      "components": 1,
+      "largest": 170
+     }
+    }
+   }
+  },
+  "factory": {
+   "cell": 0.5233,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Basement": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/factory/Basement.bin",
+     "cells": {
+      "blocked": 54898,
+      "road": 0,
+      "terrain": 12013,
+      "rough": 589,
+      "components": 3,
+      "largest": 12524
+     }
+    },
+    "Ground_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/factory/Ground_Floor.bin",
+     "cells": {
+      "blocked": 27006,
+      "road": 0,
+      "terrain": 36876,
+      "rough": 3618,
+      "components": 2,
+      "largest": 40493
+     }
+    },
+    "Second_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/factory/Second_Floor.bin",
+     "cells": {
+      "blocked": 63931,
+      "road": 0,
+      "terrain": 3411,
+      "rough": 158,
+      "components": 5,
+      "largest": 1740
+     }
+    },
+    "Third_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/factory/Third_Floor.bin",
+     "cells": {
+      "blocked": 60433,
+      "road": 0,
+      "terrain": 7034,
+      "rough": 33,
+      "components": 2,
+      "largest": 6518
+     }
+    }
+   }
+  },
+  "interchange": {
+   "cell": 3.7881,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Ground_Level": {
+     "w": 298,
+     "h": 250,
+     "bytes": 18625,
+     "file": "assets/roadnet/interchange/Ground_Level.bin",
+     "cells": {
+      "blocked": 11922,
+      "road": 11482,
+      "terrain": 32527,
+      "rough": 18569,
+      "components": 2,
+      "largest": 62576
+     }
+    },
+    "First_Floor": {
+     "w": 298,
+     "h": 250,
+     "bytes": 18625,
+     "file": "assets/roadnet/interchange/First_Floor.bin",
+     "cells": {
+      "blocked": 62803,
+      "road": 3,
+      "terrain": 15,
+      "rough": 11679,
+      "components": 1,
+      "largest": 11697
+     }
+    },
+    "Second_Floor": {
+     "w": 298,
+     "h": 250,
+     "bytes": 18625,
+     "file": "assets/roadnet/interchange/Second_Floor.bin",
+     "cells": {
+      "blocked": 64036,
+      "road": 63,
+      "terrain": 21,
+      "rough": 10380,
+      "components": 1,
+      "largest": 10464
+     }
+    }
+   }
+  },
+  "lighthouse": {
+   "cell": 4.0,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Ground_Level": {
+     "w": 265,
+     "h": 431,
+     "bytes": 28554,
+     "file": "assets/roadnet/lighthouse/Ground_Level.bin",
+     "cells": {
+      "blocked": 66495,
+      "road": 4233,
+      "terrain": 22922,
+      "rough": 20565,
+      "components": 39,
+      "largest": 46166
+     }
+    }
+   }
+  },
+  "reserve": {
+   "cell": 3.0447,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Bunkers": {
+     "w": 272,
+     "h": 250,
+     "bytes": 17000,
+     "file": "assets/roadnet/reserve/Bunkers.bin",
+     "cells": {
+      "blocked": 64203,
+      "road": 0,
+      "terrain": 3797,
+      "rough": 0,
+      "components": 2,
+      "largest": 2279
+     }
+    },
+    "Ground_Level": {
+     "w": 272,
+     "h": 250,
+     "bytes": 17000,
+     "file": "assets/roadnet/reserve/Ground_Level.bin",
+     "cells": {
+      "blocked": 27086,
+      "road": 5218,
+      "terrain": 22885,
+      "rough": 12811,
+      "components": 8,
+      "largest": 38864
+     }
+    }
+   }
+  },
+  "shoreline": {
+   "cell": 4.0,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Underground_Level": {
+     "w": 390,
+     "h": 259,
+     "bytes": 25253,
+     "file": "assets/roadnet/shoreline/Underground_Level.bin",
+     "cells": {
+      "blocked": 100899,
+      "road": 0,
+      "terrain": 111,
+      "rough": 0,
+      "components": 4,
+      "largest": 84
+     }
+    },
+    "Ground_Level": {
+     "w": 390,
+     "h": 259,
+     "bytes": 25253,
+     "file": "assets/roadnet/shoreline/Ground_Level.bin",
+     "cells": {
+      "blocked": 30357,
+      "road": 6736,
+      "terrain": 46807,
+      "rough": 17110,
+      "components": 15,
+      "largest": 66386
+     }
+    },
+    "First_Floor": {
+     "w": 390,
+     "h": 259,
+     "bytes": 25253,
+     "file": "assets/roadnet/shoreline/First_Floor.bin",
+     "cells": {
+      "blocked": 100767,
+      "road": 0,
+      "terrain": 239,
+      "rough": 4,
+      "components": 2,
+      "largest": 241
+     }
+    },
+    "Second_Floor": {
+     "w": 390,
+     "h": 259,
+     "bytes": 25253,
+     "file": "assets/roadnet/shoreline/Second_Floor.bin",
+     "cells": {
+      "blocked": 100797,
+      "road": 0,
+      "terrain": 169,
+      "rough": 44,
+      "components": 11,
+      "largest": 93
+     }
+    },
+    "Third_Floor": {
+     "w": 390,
+     "h": 259,
+     "bytes": 25253,
+     "file": "assets/roadnet/shoreline/Third_Floor.bin",
+     "cells": {
+      "blocked": 100852,
+      "road": 0,
+      "terrain": 127,
+      "rough": 31,
+      "components": 11,
+      "largest": 44
+     }
+    }
+   }
+  },
+  "terminal": {
+   "cell": 3.5508,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Ground_Level": {
+     "w": 250,
+     "h": 295,
+     "bytes": 18438,
+     "file": "assets/roadnet/terminal/Ground_Level.bin",
+     "cells": {
+      "blocked": 44568,
+      "road": 5369,
+      "terrain": 11578,
+      "rough": 12235,
+      "components": 2,
+      "largest": 24937
+     }
+    },
+    "First_Floor": {
+     "w": 250,
+     "h": 295,
+     "bytes": 18438,
+     "file": "assets/roadnet/terminal/First_Floor.bin",
+     "cells": {
+      "blocked": 73632,
+      "road": 0,
+      "terrain": 118,
+      "rough": 0,
+      "components": 12,
+      "largest": 50
+     }
+    }
+   }
+  },
+  "woods": {
+   "cell": 4.0,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Ground_Level": {
+     "w": 369,
+     "h": 356,
+     "bytes": 32841,
+     "file": "assets/roadnet/woods/Ground_Level.bin",
+     "cells": {
+      "blocked": 46052,
+      "road": 6946,
+      "terrain": 61523,
+      "rough": 16843,
+      "components": 8,
+      "largest": 85235
+     }
+    }
+   }
+  }
+ }
+}
