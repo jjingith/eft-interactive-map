@@ -1,6 +1,6 @@
 # EFT 互动地图 · Agent 交接手册
 
-> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `6` · 测试 `515 passed`
+> 交接时间：2026-10-19 · 版本 `0.1.0` · 数据 schema `7` · 测试 `520 passed`
 
 ---
 
@@ -9,18 +9,16 @@
 | 项 | 状态 |
 | --- | --- |
 | 源码可运行 | ✅ `python tools/launcher.py` 或 `python tools/serve.py` |
-| 测试 | ✅ `python -m pytest tests -q` → **515 passed, 1 skipped**（约 35s） |
-| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema 6，**12 张图**（新增实验室 / 迷宫，见 §6.13） |
+| 测试 | ✅ `python -m pytest tests -q` → **520 passed, 1 skipped**（约 35s） |
+| 数据 | ✅ `data/maps.json` + `data/meta.json`，schema **7**（新增「显卡」高资子类，见 §6.16），**12 张图**（含实验室 / 迷宫，见 §6.13） |
 | 发布包 | ✅ `release\` 下**三件套**（Portable zip / AppWindow zip / Setup exe）已构建，见 §6.14 |
 | **配置位置** | ⚠️ **已改为用户级目录** `%APPDATA%\EFTMap\`（不再放软件目录）——重新打包不再丢设置，见 §6.7 |
-| **Git** | ✅ 工作树干净，第十轮改动已提交（`5f8e65c` 数据修正 / `f67ee43` 前端四项 / 文档），见 §9 |
-| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做） |
+| **Git** | ✅ 工作树干净，第十一轮改动已提交，见 §9 |
+| 已知未实现 | ❌ 快门声音替换（见 §3 版本号铁律）、账号级任务统计（刻意不做）、导航**沿道路走**（用户已确认暂保持直线，见 §6.16 备注） |
 
-最近一次实质改动（2026-10-19，第十轮）：**街区狙击区坐标修正 + 前端四项体验改动**——修正塔科夫街区那条画错位置的「狙击区」危险区
-（用户给定 4 顶点、去掉 `y`），BTR 停靠点图标放大一倍，标记小浮窗加淡入淡出并像「上锁的门」一样显示物资小图标，
-新增右上角「图标」整体缩放滑条（4K 屏图标偏小），见 §6.15。
-上一轮（第九轮）是**发布三件套 + 上 GitHub**（§6.14）；
-再上一轮是**收录实验室 / 迷宫**（构建期拼瓦片成合成 SVG，§6.13）。
+最近一次实质改动（2026-10-19，第十一轮）：**高资子类修正（私酒串图 / LEDX 优先 / 新增显卡）+ 上锁的门只留一个固定浮窗 + 地名与地图绑死 + 启动器「试听」+ 位置只在有新截图时定位**，见 §6.16。
+上一轮（第十轮）是街区狙击区坐标修正 + 图标缩放滑条等前端四项（§6.15）；
+再上一轮是**发布三件套 + 上 GitHub**（§6.14）。
 
 ---
 
@@ -61,7 +59,7 @@ eft-interactive-map/
 ├── style.css         21 KB  框架 = Windows XP (Luna) 浅色；地图区与标记仍用深色「卡带未来主义」配色
 ├── README.md         30 KB  面向用户的完整文档（改功能必须同步改这里）
 ├── data/
-│   ├── maps.json           构建期产出（12 张图的底图引用 + 全部标注）；schema 6
+│   ├── maps.json           构建期产出（12 张图的底图引用 + 全部标注）；schema 7
 │   └── meta.json           数据溯源（各接口 url/license/sha256 + 计数，含瓦片 `tileMaps` / `tileBytes`）
 ├── assets/maps/*.svg       12 张底图（10 张上游矢量 SVG + 实验室 / 迷宫 2 张构建期用瓦片拼的合成 SVG，约 7.6 MB，已入库）
 ├── assets/maps/tiles/      120 张瓦片 PNG（实验室 / 迷宫用，约 6.2 MB，已入库；合成 SVG 里的 `<image>` 引用的就是它们）
@@ -81,7 +79,7 @@ eft-interactive-map/
 ├── build/build.ps1         PyInstaller onedir 打包脚本 → dist/EFTMap/（**每次整体删旧目录**）
 ├── build/build_release.ps1 发布三件套 → release/（Portable zip / AppWindow zip / Setup exe；先跑一遍 build.ps1）
 ├── release/                ⚠️ 发布产物（**已 gitignore，不进仓库**）
-├── tests/                  515 条测试，全离线
+├── tests/                  520 条测试，全离线
 ├── build-cache/            ⚠️ 构建期原始缓存，**已 gitignore，不进仓库**
 └── docs/superpowers/       设计规格（specs）与计划（plans）
 ```
@@ -521,19 +519,63 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 
 ---
 
+### 6.16 第十一轮：高资子类修正 + 单一固定浮窗 + 地名绑地图 + 启动器试听 + 位置按截图差分 ★（第十一轮）
+
+用户口径：「点了上锁的门怎么会显示两个浮窗 … 点击后在图标位置显示的浮窗描述最好，但**固定在左上角**那种我比较喜欢；图标缩放我希望**只对图标生效、不对地名生效**，
+地名应该**随地图缩放、和地图绑死**；导航现在拉直线，能不能像高德一样沿道路走；启动器里的声音提示后面再加一个**预览提示音**；
+检测到有**新的截图**了再自动定位一次，没新截图就不要定位；勾选**私酒**地图上会出现一部分的**钥匙刷新点**；**LEDX** 刷新点有几个图标是**除颤器**（同时刷就用 LEDX 图标，价值高）；
+还有个**显卡**也要单独分开加进高资里；`https://solidvents.com/zh-CN/` 可以免费生成矢量图，看看对这个项目有没有用」。
+共 8 项（含上一轮的 3 项纠正）。
+
+1. **① 上锁的门只留一个浮窗（固定左上角）**：删掉整段「钥匙小浮窗」（`lockHintTimer` / `hideLockKeyHint()` / `showLockKeyHint()`）与 `style.css` 里全部
+   `.lock-hint*` 规则；`onOverlayClick` 只调 `showDetail()` + `showMarkerPopup(state.map, kind, item)`（**去掉 `node` 参数**）。
+   `showMarkerPopup()` 的定位改成 `el.stage` 的 `getBoundingClientRect()` + 12px（`position: fixed`，不跟图标跑），内容仍是 `detailRows()` 全部行（含「需要钥匙」+ 该钥匙的专属图标）。
+   `selectMap()` 里只留 `hideMarkerPopup()`。**实测**：点锁 → `#marker-pop` 恰 1 个、`.lock-hint` 0 个、`left/top` = `stage.left+12 / stage.top+12`（312px/43px），文本「锁类型 上锁的门 / 需要钥匙 酒店215房间钥匙（酒店215）」+ 1 个 `.inline-ico`；320ms 后仍只有 1 个（旧的已淡出摘除）。
+2. **② 地名与地图绑死（不再受图标滑条影响）**：`renderLabels()` 里地名节点**不再 push 进 `state.markerScaleNodes`**、不再带 `__emkBase`，transform 改成纯 `translate(sx sy)`（去 `scale`）；
+   字号仍 `12*unit`、描边 `2.4*unit` → 缩放地图时跟着底图等比放大缩小。**实测**：滑条 1→2 时地名屏幕宽度比 **1.000**、标记比 **2.000**；地图滚轮放大时地名比 **1.149**、标记比 **1.000**。
+3. **③ 导航沿道路走**：**本轮不做**（用户已确认先保持直线）。要做得引入路网数据（上游没有现成路径图），与「不联网 / 只用本地素材」冲突，留作后续待办。
+4. **④(⑤) 高资子类修正**：根因是 `valuableIconKey()` 的**校验顺序**——旧逻辑先全局查 `KEY_ICONS` 精确表、再按 `VALUABLE_ICON_RULES` 的 rule-major 顺序首命中，
+   于是「私酒 + 某把钥匙」的点被钥匙图抢走（看起来像钥匙刷新点）、「LEDX + 除颤器」的点被 `/除颤/` 抢走。
+   改成**按价值分层遍历规则（外层 rule）、内层扫物品名，命中即止**：`BTC → 私酒 → 显卡 → LEDX(透照/注射) → 除颤 → 六色钥匙卡 / 生活区 / Object 卡 → 钥匙卡 → 钥匙 → 文件夹`，
+   同层里若该物品名在 `KEY_ICONS` 里有专属实拍图就贴真图，否则用该层通用图标；末尾再兜底扫一遍 `KEY_ICONS`（如「灯塔便利店储藏室」）。
+   **实测**：私酒点 → `emk-png-valuable_bottle`（`val-bottle.png`）；LEDX+除颤器点 → `emk-png-valuable_med`（`val-ledx.png`）。
+5. **⑥ 新增「显卡」高资子类（schema 6 → 7）**：上游物品**中文名是「显示卡」**（ShortName 才是「显卡」），
+   `tools/fetch_data.py` 的 `HIGH_VALUE_ITEMS` 加 `"显示卡"` + `SCHEMA = 7`；`app.js` 的 `VALUABLE_CATS` 加 `{ key:"gpu", label:"显卡", icon:"valuable_gpu", match:/显卡|显示卡/ }`
+   （排在 moonshine 后、keycard 前），`DEFAULT_ON` 加 `valuable_gpu: true`（默认只开 BTC / 私酒 / 显卡 / 钥匙卡类）。
+   **显卡没有实拍素材**（`assets/icons/` 与源图 `ui图标\clean\` 里都没有）→ 按实物**手画 SVG**（`SIGN_ICONS.valuable_gpu`：卡身 + 大风扇 + 散热片 + 金手指），`SIGN_COLORS.valuable_gpu = "#8ab6a0"`。
+   数据**离线重跑**（走 `build-cache/`，不联网）：12 张图重建完成，valuables 由约 1118 → **1208** 点（其中**仅显卡** 94 点）。
+6. **⑦ 启动器「试听」提示音**：`tools/launcher.py` 新增模块级 `DEFAULT_TONES`（与 `app.js` 的 `DEFAULT_TONES` **数值一一对应**）、
+   `render_tone_wav()`（三角波 + 15ms 线性起音 + 指数收尾，`wave` 写 16 位单声道）、`preview_wav()`（落临时目录，同 key 只合成一次）、
+   `play_audio()`（`.wav` 走 `winsound SND_ASYNC`，其它格式 `os.startfile`）；`_sound_row()` 每个提示音那行加「试听」按钮（一并进 `sound_children`，跟随总开关禁用），
+   `_preview_sound(key)`：选了自定义音频就播它、**文件丢了就报错**，没选就播现场合成的内置音——**保证「试听听到的」= 「游戏里响的」**。
+7. **⑧ 位置只在有新截图时定位**：`serve.py` 的 `PositionTracker` 本来只在 `name`/`mtime` 变化时才推帧，问题在前端两处**与截图无关**的定位：
+   `applyConfig()` 里无条件 `applyAutoZoom()`（页面每次写回图层偏好都会广播 `config` → 视角被弹回玩家位置）、`applyPosition()` 不区分新截图。
+   现在 `applyConfig()` 删掉那次调用；`applyPosition()` 算出 `fresh = pos && (name 或 mtime 变了)`，`!fresh` 时只更新状态/玩家标记就 `return`。
+8. **⑨ 评估 `solidvents.com`**：那是**参数化图纹生成器**（喇叭网孔 / 散热孔 / 渐变网点 / 半色调，导出 SVG·DXF·STEP），**不是通用矢量插画 / 图标生成器**——
+   与本项目的需求（物品图标来自用户实拍素材、底图来自上游瓦片）对不上，且导出物的授权条款未在站点声明，与「只分发 MIT / CC BY-NC-SA」的铁律有冲突风险 → **不引入**。
+   若将来要给危险区做半色调网点纹理，可当**一次性离线生成静态素材**的工具用（生成后入库，不引入运行期联网）。
+
+**验证**：`python -m pytest tests -q` → **520 passed, 1 skipped**（515 + 5 条试听相关：`DEFAULT_TONES` 与 `SOUND_KEYS` 对齐、WAV 时长与表一致、`preview_wav` 只合成一次、没选音频播内置音、自定义文件丢失要报错；
+另把写死 schema 的 `test_data_is_schema_6` 改成与 `fetch_data.SCHEMA` 对比，免得以后每次升版都要改测试）；`node --check app.js` / `python -m py_compile tools/launcher.py` 通过。
+运行时（本地服务 8899 + Chrome DevTools MCP，街区图）：见上面各项「实测」。
+
+**新增踩坑**（已进 §8）：`valuableIconKey` 的校验顺序必须**按价值分层**（旧的「全局先查 KEY_ICONS + rule-major」会让低价值物品抢图）；地名与图标要分开处理（地名不进 `markerScaleNodes`）；与截图无关的事件（配置广播）绝不能触发自动定位。
+
+---
+
 ## 7. 前端要点（改 `app.js` 前必读）
 
-- **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
-- **高级资源点子类**（第七轮）：`VALUABLE_CATS`（7 类，各带 `match` 正则，**`/钥匙卡/` 必须排在 `/钥匙/` 前**）+ `valuableCatsOf(item)` 判归属（有物品名一件都不命中就补 `other`）。「物资」组第一行是 `master:true` 的总开关 `valuables`，后跟 7 个 `sub:true` 的 `valuable_<cat>`。总开关状态由 `syncValuableMaster()` 从子类**推导**（半勾 = 只开了一部分），`syncLegendState()` 里**半勾也算「开」**。
+- **图层开关表** `LAYER_SPEC`：按 6 组组织（撤离点 / 转移点、物资、出生点、钥匙与门、危险区域、其他），每项 `{ key, label, kind, where, dot, icon?, badge?, master?, sub? }`。`DEFAULT_ON` 控制默认开哪几个；**14 类物资容器默认全开**；**高级资源点默认只开 比特币 / 私酒 / 显卡 / 钥匙卡类**（其余 4 个子类默认关）；其余只有撤离点、转移点、危险区、Boss、地名、固定武器默认开。
+- **高级资源点子类**（第七轮建、第十一轮扩到 **8 类**）：`VALUABLE_CATS`（8 类，各带 `match` 正则，**`/钥匙卡/` 必须排在 `/钥匙/` 前**）+ `valuableCatsOf(item)` 判归属（有物品名一件都不命中就补 `other`）。「物资」组第一行是 `master:true` 的总开关 `valuables`，后跟 8 个 `sub:true` 的 `valuable_<cat>`。总开关状态由 `syncValuableMaster()` 从子类**推导**（半勾 = 只开了一部分），`syncLegendState()` 里**半勾也算「开」**。
   **渲染不能按开关逐个画**：`renderOverlay()` 里所有 `kind === "valuables"` 的 spec 都跳过，改用 `valuableUnionSpec()`（「所属类别 ∩ 已开启类别 ≠ 空」）整体画一次，否则同一点会在两行开关下叠两层。`enableLayersFor()` 必须过滤 `spec.master`（总开关不参与「打开某图层」）。
   **改子类划分只动 `VALUABLE_CATS` 一处**，`LAYER_SPEC` / `DEFAULT_ON` / 渲染都会跟着走（`DEFAULT_ON` 里记得同步 `valuable_<cat>` 的默认）。
 - **图层开关的 change 监听必须挂在容器 `#layer-toggles` 上用事件委托**。图例 DOM 会整体重建，逐个 checkbox 绑定会丢监听 → 会出现「取消勾选后标记仍然显示」的 bug（已踩过，见 §8）。
-- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。
+- **图标尺寸在屏幕上恒定的机制**：底图缩放走 SVG `viewBox`（不用 CSS transform）；标记挂在 `g[transform=translate(...) scale(...)]` 上，图标内容再乘 `unit = 1/state.fit`（1 屏幕像素对应的用户单位）；同时把标记节点收进 `state.markerScaleNodes`，靠父级的 `scale(1/z)` 抵消，保证不随缩放变大变小。**新图标必须走同一套机制**。**「图标」滑条（§6.15）改的是这个恒定尺寸的倍数**：`updateCounterScale()` 里用 `iconScale()/state.z`，**绝不能**给 SVG 元素加 CSS `transform` / `animation`（会被栅格化）。**地名不在 `markerScaleNodes` 里**（第十一轮起）——它要**跟地图绑死**，随 viewBox 缩放等比变大变小，滑条管不着它（见 `renderLabels`）。
 - **选中高亮环**：对画图标的图层（`ICON_KINDS = ["containers","valuables","spawns","bosses","locks","btr"]`）统一按 ±10 屏幕像素外接；撤离点 / 转移点是 ±11。高亮环**必须是静态描边**，不能是动画。
 - 物资图标：`LOOT_ICONS`（每类由 `body` / `mark` / `hole` / `thin` 等部件组成）、`lootIcon(group, unit)` 画地图上的、`lootIconSvg(group)` 画图例的（`viewBox="-8-8 16 16"`）。
 - **图标素材（`ICON_PNG`）**：key → `assets/icons/*.png` 的贴图表。四个工厂函数（`lootIcon` / `lootIconSvg` / `signIcon` / `signIconSvg`）**开头都判断 `if (ICON_PNG[key]) { return pngIcon(key, unit) /* 或 pngIconSvg(key) */; }`**——命中就用 `<image>` 贴图，未命中仍走手画 SVG。**换图标只需往 `ICON_PNG` 加一行 + 放一张 64×64 透明 PNG 到 `assets/icons/`**；新 PNG 必须透明、居中、内容约占画布 86%（照 `tools/iconize.py` 的输出规格）。源图是**竖排图例**（一张图里多行）时，要在 `tools/iconize.py` 的 `JOBS` 里加 `band` 指定那一段，不能整图直接抠（`strip` 只取最左侧那一簇，会把上下行连起来）。
-- **具体物品名 → 专属图标**：`KEY_ICONS`（中文名 → icon key 的**精确表**）。`valuableIconKey(names)` **先查 KEY_ICONS 再走 `VALUABLE_ICON_RULES` 正则**；上锁的门「需要钥匙」行用同一个函数取图标（`inlineIcon()` 把图标塞进 HTML 文案）。**给某件钥匙配专属图 = 往 `ICON_PNG` 加一行 + 往 `KEY_ICONS` 加一行**，两者 key 名一致（`key_<物品id前8位>`）。`VALUABLE_ICON_RULES` 里的通用规则（`/钥匙卡/` 在 `/钥匙/` 之前等）**相对顺序不能乱**。
-- **标记小浮窗**：`showMarkerPopup(map, kind, item, node)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），定位用 `node.getBoundingClientRect()`，8 秒消失；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**，`locks` 额外调 `showLockKeyHint`（浮窗「需要钥匙」行贴对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
+- **具体物品名 → 专属图标**：`KEY_ICONS`（中文名 → icon key 的**精确表**）。`valuableIconKey(names)` **按价值分层遍历 `VALUABLE_ICON_RULES`**（外层规则、内层扫物品名，命中即止；同层里该名字在 `KEY_ICONS` 里有专属实拍图就贴真图，否则用该层通用图标），末尾再兜底扫一遍 `KEY_ICONS`。**规则数组的相对顺序就是价值顺序**（`BTC → 私酒 → 显卡 → LEDX → 除颤 → 钥匙卡 → 钥匙 → 文件夹`），`/钥匙卡/` 在 `/钥匙/` 前——顺序错了就会出现「LEDX 点画成除颤器」「私酒点画成钥匙」这类图不对位的 bug（§6.16）。上锁的门「需要钥匙」行用同一个函数取图标（`inlineIcon()` 把图标塞进 HTML 文案）。**给某件钥匙配专属图 = 往 `ICON_PNG` 加一行 + 往 `KEY_ICONS` 加一行**，两者 key 名一致（`key_<物品id前8位>`）。
+- **标记小浮窗**：`showMarkerPopup(map, kind, item)` / `hideMarkerPopup()` 建 `div#marker-pop`（HTML 元素，append 到 body、`position: fixed`），**定位在地图区左上角往里 12px**（`el.stage.getBoundingClientRect()`，不跟图标跑），8 秒消失；`detailRows()` 是浮窗与左侧面板共用的信息行来源。`onOverlayClick` 里**所有标记都调它**（`locks` 也在同一个浮窗里显示「需要钥匙」+ 对应钥匙图标，见 §6.9）。**别把它改成 SVG 元素**（会触发栅格化变糊的老坑，见 §8）。
   **「HTML 元素」这点是关键**：正因为它是 `<div>` 而不是 SVG 图元，才能安全地用 CSS `opacity` transition 做淡入淡出（§6.15）。淡入 = 建好后 `requestAnimationFrame` 再加 `.show`；淡出 = 摘掉 `.show` 后**延后 `POP_FADE_MS` 再 `remove()`**（旧的 `markerPopNode` 与新浮窗可短暂共存）。行渲染统一走 `inlineIconAny(value)`（字符串走 `inlineIcon`、SVG 元素包 `.inline-ico`），`detailRows()` 的物资行自带图标元素（容器给 `lootIconSvg`、高资点给 `signIconSvg`），所以浮窗和「标记详情」都能显示物资小图标。
 - 撤离点 / 转移点徽章：`BADGE_SHAPE`（盾牌路径）+ `BADGE_RUNNER`（奔跑小人）+ `badgeIcon(variant, unit)` / `badgeIconSvg(variant)` / `badgeLabel(text, variant, unit)`，颜色由 CSS `.emk-badge-<variant> .badge-bg { fill: var(--extract-*) }` 给。
 - **顶部菜单栏**：`bindMenu()` 管 `#menu-raid` 与 `#raid-block` 的开合（点按钮 toggle / 点面板外收起 / `Esc` 收起）。「战局与任务」整块（含 `#quest-log` 等原 id）都从侧栏搬进了这个面板；**要加新菜单项就往 `.menubar` 里再塞一个 `.menu-wrap`**，别把东西塞回侧栏。
@@ -588,10 +630,13 @@ BTR 图标 `scale(3.046)` = 2×；浮窗 `class="marker-pop show"`、`transition
 | 按用户给的 4 个顶点连线，画出来是**蝴蝶结（自交）** | 顶点顺序不保证是凸多边形环序，A→B→C→D 的相邻叉积会变号 | 按「相邻三点叉积全部同号」重排环序（如 A→B→D→C），再入数据（§6.15） |
 | 浮窗淡出看不见效果（旧的直接消失）或淡入没过渡 | `hideMarkerPopup()` 立刻 `remove()` 节点；建好后同帧加 `.show` 类不会触发 transition | 淡出要**延后 `POP_FADE_MS` 再摘除**；淡入用 `requestAnimationFrame` 再加 `.show`（§6.15） |
 | 想给地图图标加「整体缩放」时手感发糊 | 若用 CSS `transform` / `animation` 去缩 SVG 里的标记 → 整张 `<svg>` 被栅格化（§2 铁律） | 缩放只能**乘进 `updateCounterScale()` 的系数**（`iconScale()/state.z`），并同步乘进高亮环半径（§6.15） |
+| 同一刷点同时刷「私酒 + 钥匙」时图标画成钥匙 / 「LEDX + 除颤器」画成除颤器（图不对位） | `valuableIconKey()` 旧逻辑**先全局查 `KEY_ICONS` 精确表**再走 rule-major 的正则首命中 → 价值低的物品抢到图标 | 改成**按价值分层**遍历规则（外层规则、内层扫物品名，命中即止，同层优先专属实拍图），规则数组顺序即价值顺序（§6.16） |
+| 改「整体图标缩放」滑条时地名跟着一起变大变小（用户要的是地名跟地图走） | 地名节点也被 push 进了 `state.markerScaleNodes`，于是被乘上 `iconScale()/state.z` | 地名**不进** `markerScaleNodes`、不带 `__emkBase`，transform 只写 `translate(sx sy)` —— 随 map `viewBox` 等比缩放（§6.16） |
+| 拖好视角后每次勾图层 / 改偏好，画面又被弹回玩家位置 | `applyConfig()` 里无条件 `applyAutoZoom()`；而页面每写回一次偏好都会广播一次 `config` | **与截图无关的事件绝不能触发自动定位**：`applyConfig()` 不调 `applyAutoZoom()`；`applyPosition()` 只在 `name`/`mtime` 变了（真有新截图）时才定位一次（§6.16） |
 
 ---
 
-## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮改动按功能分 2 批提交）
+## 9. Git 状态（第九轮已发布 GitHub v0.1.0；第十轮分 2 批、第十一轮分 3 批提交）
 
 **仓库已建立并发布**：<https://github.com/jjingith/eft-interactive-map>（Public）· Release `v0.1.0` 附三件套 ·
 topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python`。分支 `main`（原 `master` 已改名）。
@@ -616,6 +661,14 @@ topics：`escape-from-tarkov / tarkov / interactive-map / offline / eft / python
 | --- | --- |
 | `5f8e65c` | 数据：街区狙击区危险区坐标修正（4 顶点凸环序 + 质心 + 去 `y`）+ `HAZARD_FIXES` 覆盖表 |
 | `f67ee43` | 前端：图标整体缩放滑条 / BTR 图标 ×2 / 浮窗淡入淡出 + 物资小图标（含 `config.py` 的 `icon_scale` 与 14 条测试） |
+
+第十一轮（2026-10-19）新增：
+
+| 提交 | 内容 |
+| --- | --- |
+| `3a6d17b` | 数据+前端：高资子类修正（私酒不再串钥匙点、LEDX 优先于除颤器）+ 新增「显卡」子类（schema 7）+ 上锁的门合并为单一固定浮窗 + 地名与地图绑死 + 位置仅在新截图时定位 |
+| `81e990a` | 启动器：声音提示每行加「试听」按钮（不选音频时现场合成内置提示音）+ 5 条单测 |
+| （本提交） | 文档：README / `docs/USAGE.md` / 本手册同步第十一轮（含 `solidvents.com` 评估结论：不引入，见 §11） |
 
 > **提交作者**：仓库里**没有** `user.name` / `user.email` 配置（既非 local 也非 global），历史提交靠环境变量写的
 > `jjingith <imzjj1996@gmail.com>`。裸环境提交时要先 `$env:GIT_AUTHOR_NAME='jjingith'; $env:GIT_AUTHOR_EMAIL='imzjj1996@gmail.com';
@@ -669,6 +722,9 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
 
 **未实现（有意或待做）**
 
+- **导航沿道路走（类高德）**：未实现，第十一轮评估后**先保持直线**。要做得有「路网 / 可行走区域」数据——上游只给点位、不给路径图，
+  自建路网需要人工标注 12 张图，且不能引入运行期联网的路径服务（§2 铁律）。要做的话，可行方向是**构建期**用底图 SVG 的通行区域生成栅格 + A\*，
+  产出**静态路网文件**随包分发（仍是离线）。
 - **快门声音替换**：未实现；在它实现前**版本号不许升到 1.0**。
 - **账号级任务统计**（已完成 / 未完成 / 进行中 / 未解锁）：核查过本地日志与磁盘，该信息不在本地存储、需要联网拉取，与本项目「运行期不联网」冲突，**刻意不做**。别去加。
 - **瓦片图**：**实验室 / 迷宫已于第八轮收录**（构建期把上游瓦片按 `transform` / `bounds` 拼成合成 SVG，见 §6.13）。**破冰船（icebreaker）等仍未收录**——
@@ -679,6 +735,13 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
   `gh` CLI 在 `C:\Users\Administrator\gh-cli\bin\gh.exe`（设备码授权登录，token 含 `gist, read:org, repo`）；用 `gh` 前记得先 `$env:GH_TOKEN=$null`。
 - **三件套实机验证**（第九轮遗留）：加壳版 zip 解压后能否真的开独立应用窗口、Setup 能否装到 `%LOCALAPPDATA%\EFTMap` 并建好开始菜单 / 桌面快捷方式与卸载项，**尚未在用户机器上实测**。
 
+**评估过但不采用（第十一轮）**
+
+- **`https://solidvents.com/zh-CN/`（免费矢量图生成）**：它是**参数化图纹生成器**（喇叭网孔 / 散热孔 / 渐变网点 / 半色调，导出 SVG·DXF·STEP），
+  **不是通用矢量插画 / 图标生成器**。本项目图标来自用户实拍素材（`tools/iconize.py` 抠图）、底图来自上游瓦片与社区 SVG，
+  与该站能力不匹配；其导出物的授权条款也未声明，与「只分发 MIT / CC BY-NC-SA」的铁律有冲突风险 → **不引入**。
+  若将来要做危险区的半色调纹理，可把它当**一次性离线生成静态素材**的工具用（产出物入库并标许可），绝不放进运行期流程。
+
 **设计上的既有局限（README 里已如实写明，不要当成 bug 去"修"）**
 
 - 任务进度只能统计本局、无视条件级进度、不跨会话累计
@@ -686,7 +749,7 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase   # �
 - 灯塔 / 森林 / 迷宫是单层图，不显示楼层列表；码头没有撤离点与地名
 - 多层图默认只显示主楼层；少数越界的点会被视图外扩最多 12% 容纳，越界过多的会被裁掉
 - **配置是「按机器（用户目录）」共享的一份**：同时开多个浏览器窗口时，界面偏好（`ui.layers` 等）**后写覆盖先写**；页面本地还有 `localStorage` 兜底，所以离线勾选不会丢，但联网窗口之间不保证实时一致。前端只在**值真的变化**时才上报，日常用不出问题。
-- **钥匙图标已补齐**：第五轮后上锁的门 187 个钥匙名**全部有专属图**（§6.9 遗留的 43 个退回项已清零）。高级资源点 62 个物品名中仍有 10 个走 `VALUABLE_ICON_RULES` 通用正则（BTC / 私酒 / LEDX / 除颤器 / 六色实验室钥匙卡——这 10 个本来就有规则且已贴素材图，不是缺失）。若以后 wiki 长图例又有新增钥匙，按 §6.9 / §6.10 的流程加：**严格整名匹配**算缺口 → 量 `band` → `tools/iconize.py` 抠图 → 登记 `ICON_PNG` + `KEY_ICONS`。
+- **钥匙图标已补齐**：第五轮后上锁的门 187 个钥匙名**全部有专属图**（§6.9 遗留的 43 个退回项已清零）。高级资源点物品名中仍有 11 个走 `VALUABLE_ICON_RULES` 通用正则（BTC / 私酒 / **显卡（显示卡）** / LEDX / 除颤器 / 六色实验室钥匙卡——这些本来就有规则且已贴素材图 / 手画图，不是缺失；其中**显卡是唯一没有实拍素材、手画 SVG 的子类**，见 §6.16）。若以后 wiki 长图例又有新增钥匙，按 §6.9 / §6.10 的流程加：**严格整名匹配**算缺口 → 量 `band` → `tools/iconize.py` 抠图 → 登记 `ICON_PNG` + `KEY_ICONS`。
 
 **当前工作树干净度**：`build-cache/` 里有若干本轮诊断用的 `inspect_*.py` 临时脚本，属于中间产物，可随时删（不入库）。`tools/_debug_sheet*.png`（`iconize.py --sheet` 的自检拼图）本轮已删。
 
