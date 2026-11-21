@@ -1,0 +1,61 @@
+{
+ "schema": "r19.20-data-fix/1",
+ "subSlotRestored": [
+  {
+   "source": "items.json",
+   "itemId": "59d650cf86f7741b846413a4"
+  }
+ ],
+ "allowReverted": [
+  {
+   "source": "items.json",
+   "gun": "AKM",
+   "gunId": "59d6088586f774275f37482f"
+  },
+  {
+   "source": "items.json",
+   "gun": "AKMS",
+   "gunId": "59ff346386f77477562ff5e2"
+  },
+  {
+   "source": "items.json",
+   "gun": "AKMN",
+   "gunId": "5a0ec13bfcdbcb00165aa685"
+  },
+  {
+   "source": "items.json",
+   "gun": "AKMSN",
+   "gunId": "5abcbc27d8ce8700182eceeb"
+  },
+  {
+   "source": "items.json",
+   "gun": "VPO-136",
+   "gunId": "59e6152586f77473dc057aa1"
+  },
+  {
+   "source": "gunslots.json",
+   "gun": "AKM",
+   "gunId": "59d6088586f774275f37482f"
+  },
+  {
+   "source": "gunslots.json",
+   "gun": "AKMS",
+   "gunId": "59ff346386f77477562ff5e2"
+  },
+  {
+   "source": "gunslots.json",
+   "gun": "AKMN",
+   "gunId": "5a0ec13bfcdbcb00165aa685"
+  },
+  {
+   "source": "gunslots.json",
+   "gun": "AKMSN",
+   "gunId": "5abcbc27d8ce8700182eceeb"
+  },
+  {
+   "source": "gunslots.json",
+   "gun": "VPO-136",
+   "gunId": "59e6152586f77473dc057aa1"
+  }
+ ]
+}

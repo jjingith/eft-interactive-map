@@ -1,0 +1,68 @@
+{
+ "p2_before": {
+  "cards": {
+   "primary1": "on",
+   "primary2": "focus",
+   "holster": "empty",
+   "glasses": "empty"
+  },
+  "weight": "3.06 KG",
+  "loadout": {
+   "primary1": "@wp:wp_1a15a11c25dd6edba74",
+   "primary2": "@wp:wp_1a15a11c25dd6edba74"
+  },
+  "tips": 0,
+  "tipAll": 0,
+  "tipText": null
+ },
+ "p2_after": {
+  "cards": {
+   "primary1": "on",
+   "primary2": "focus",
+   "holster": "empty",
+   "glasses": "empty"
+  },
+  "weight": "1.53 KG",
+  "loadout": {
+   "primary1": "@wp:wp_1a15a11c25dd6edba74",
+   "primary2": null
+  },
+  "tips": 0,
+  "tipAll": 1,
+  "tipText": "R6 自动验收 M4A1"
+ },
+ "tip_before": {
+  "cards": {
+   "primary1": "on",
+   "primary2": "empty",
+   "holster": "empty",
+   "glasses": "focus"
+  },
+  "weight": "1.65 KG",
+  "loadout": {
+   "primary1": "@wp:wp_1a15a11c25dd6edba74",
+   "primary2": null,
+   "glasses": "5b432be65acfc433000ed01f"
+  },
+  "tips": 1,
+  "tipAll": 1,
+  "tipText": "6B34防破片护目镜"
+ },
+ "tip_after": {
+  "cards": {
+   "primary1": "on",
+   "primary2": "empty",
+   "holster": "empty",
+   "glasses": "focus"
+  },
+  "weight": "1.53 KG",
+  "loadout": {
+   "primary1": "@wp:wp_1a15a11c25dd6edba74",
+   "primary2": null,
+   "glasses": null
+  },
+  "tips": 0,
+  "tipAll": 1,
+  "tipText": "6B34防破片护目镜"
+ }
+}

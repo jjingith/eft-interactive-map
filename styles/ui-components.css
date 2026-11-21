@@ -1,0 +1,694 @@
+/* ============================================================================
+ * ui-components.css —— 项目通用组件样式（R19.24）
+ * ----------------------------------------------------------------------------
+ * 规范：docs/ui-system/design-spec.md §4
+ * 规则：
+ *   · 只允许使用 --ui-* 令牌，不写裸十六进制色 / 裸字号 / 裸 z-index；
+ *   · 所有可交互元素必须有 :hover / :active / :focus-visible / [disabled] 四态；
+ *   · 立体感只用 --ui-shadow-raised / --ui-shadow-sunken 两档；
+ *   · 组件类名一律 ui- 前缀，业务模块通过 className 追加钩子类，但不得改视觉。
+ * ==========================================================================*/
+
+/* ------------------------------------------------------------------ 基础 */
+.ui-scope,
+.ui-root {
+  font-family: var(--ui-font);
+  font-size: var(--ui-fs-compact);
+  color: var(--ui-color-text);
+  line-height: var(--ui-lh-normal);
+}
+
+.ui-visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* 键盘焦点：任何 ui-* 可交互元素统一 1px 蓝环，不改变布局 */
+.ui-btn:focus-visible,
+.ui-input:focus-visible,
+.ui-select:focus-visible,
+.ui-check input:focus-visible + .ui-check__box,
+.ui-tab:focus-visible,
+.ui-menu__item:focus-visible,
+.ui-panel__head:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-shadow-focus);
+}
+
+/* ------------------------------------------------------------------ 按钮 */
+.ui-btn {
+  --ui-btn-face-a: var(--ui-grad-face-a);
+  --ui-btn-face-b: var(--ui-grad-face-c);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-1);
+  min-height: var(--ui-control-h-md);
+  padding: 0 var(--ui-btn-pad-x);
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-btn);
+  background: linear-gradient(180deg, var(--ui-btn-face-a), var(--ui-btn-face-b));
+  box-shadow: var(--ui-shadow-raised);
+  color: var(--ui-color-text);
+  font: var(--ui-fw-normal) var(--ui-fs-compact) / 1 var(--ui-font);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--ui-dur-fast) var(--ui-ease),
+              border-color var(--ui-dur-fast) var(--ui-ease);
+  user-select: none;
+}
+.ui-btn:hover {
+  background: linear-gradient(180deg, var(--ui-color-surface-raised), var(--ui-color-hover-soft));
+  border-color: var(--ui-color-hover-border);
+}
+.ui-btn:active {
+  background: linear-gradient(180deg, var(--ui-color-hover-soft), var(--ui-grad-face-c));
+  box-shadow: var(--ui-shadow-pressed);
+  transform: translateY(1px);
+}
+.ui-btn[disabled],
+.ui-btn[aria-disabled="true"] {
+  background: var(--ui-color-surface-inset);
+  border-color: var(--ui-color-border-soft);
+  box-shadow: none;
+  color: var(--ui-color-text-disabled);
+  cursor: not-allowed;
+  transform: none;
+}
+.ui-btn[disabled]:hover,
+.ui-btn[aria-disabled="true"]:hover { border-color: var(--ui-color-border-soft); }
+
+/* 变体 */
+.ui-btn--primary {
+  background: linear-gradient(180deg, var(--ui-color-primary-hi), var(--ui-color-primary));
+  border-color: var(--ui-color-primary);
+  color: var(--ui-color-text-inverse);
+  font-weight: var(--ui-fw-bold);
+}
+.ui-btn--primary:hover {
+  background: linear-gradient(180deg, var(--ui-color-primary-lo), var(--ui-color-primary-hi));
+  border-color: var(--ui-color-primary);
+}
+.ui-btn--primary:active {
+  background: linear-gradient(180deg, var(--ui-color-primary), var(--ui-color-primary-hi));
+}
+.ui-btn--danger {
+  border-color: var(--ui-color-danger);
+  color: var(--ui-color-danger);
+  background: linear-gradient(180deg, var(--ui-color-surface-raised), var(--ui-color-danger-bg));
+}
+.ui-btn--danger:hover {
+  background: linear-gradient(180deg, var(--ui-color-danger-bg), var(--ui-color-danger-bg));
+  border-color: var(--ui-color-danger);
+}
+.ui-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.ui-btn--ghost:hover {
+  background: var(--ui-color-hover-soft);
+  border-color: var(--ui-color-hover-border);
+  box-shadow: var(--ui-shadow-raised);
+}
+.ui-btn--link {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0 var(--ui-space-1);
+  color: var(--ui-color-link);
+  text-decoration: underline;
+}
+.ui-btn--link:hover { background: none; color: var(--ui-color-primary); }
+
+/* 尺寸 */
+.ui-btn--sm { min-height: var(--ui-control-h-sm); padding: 0 var(--ui-btn-pad-x-sm); font-size: var(--ui-fs-micro); }
+.ui-btn--lg { min-height: var(--ui-control-h-lg); padding: 0 var(--ui-space-4); font-size: var(--ui-fs-body); }
+
+/* 选中/开关型按钮：用按下态（琥珀 + 内凹），与"选区蓝"区分 */
+.ui-btn[aria-pressed="true"] {
+  background: linear-gradient(180deg, var(--ui-color-hover-soft), var(--ui-color-hover));
+  border-color: var(--ui-color-hover-border);
+  box-shadow: var(--ui-shadow-pressed);
+  font-weight: var(--ui-fw-bold);
+}
+
+/* 图标 */
+.ui-btn__icon { display: inline-flex; width: var(--ui-icon-md); height: var(--ui-icon-md); }
+.ui-btn__icon svg { width: 100%; height: 100%; }
+
+/* 加载态：左侧转圈 + 禁止重复点击 */
+.ui-btn[aria-busy="true"] { pointer-events: none; color: var(--ui-color-text-muted); }
+.ui-btn[aria-busy="true"]::before {
+  content: "";
+  width: var(--ui-icon-sm);
+  height: var(--ui-icon-sm);
+  margin-right: var(--ui-space-1);
+  border: 2px solid var(--ui-color-border);
+  border-top-color: var(--ui-color-primary);
+  border-radius: var(--ui-radius-circle);
+  animation: ui-spin 700ms linear infinite;
+}
+@keyframes ui-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .ui-btn[aria-busy="true"]::before { animation: none; border-top-color: var(--ui-color-border); }
+}
+
+/* ------------------------------------------------------------------ 输入 */
+.ui-field { display: flex; flex-direction: column; gap: var(--ui-space-1); }
+.ui-field__label { color: var(--ui-color-text); font-size: var(--ui-fs-micro); }
+.ui-field__hint { color: var(--ui-color-text-muted); font-size: var(--ui-fs-micro); }
+.ui-field__error { color: var(--ui-color-danger); font-size: var(--ui-fs-micro); }
+.ui-field.is-error .ui-input,
+.ui-field.is-error .ui-select { border-color: var(--ui-color-danger); }
+
+.ui-input,
+.ui-select {
+  min-height: var(--ui-control-h-md);
+  padding: 2px var(--ui-space-2);
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-raised);
+  box-shadow: var(--ui-shadow-sunken);
+  color: var(--ui-color-text);
+  font: var(--ui-fw-normal) var(--ui-fs-compact) / var(--ui-lh-normal) var(--ui-font);
+}
+.ui-input::placeholder { color: var(--ui-color-text-disabled); }
+.ui-input:focus,
+.ui-select:focus {
+  outline: none;
+  border-color: var(--ui-color-focus);
+  box-shadow: var(--ui-shadow-focus);
+}
+.ui-input[disabled],
+.ui-select[disabled] {
+  background: var(--ui-color-surface-inset);
+  color: var(--ui-color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.ui-input[aria-invalid="true"] { border-color: var(--ui-color-danger); }
+.ui-input--num { text-align: right; font-family: var(--ui-font-mono); }
+.ui-input--sm { min-height: var(--ui-control-h-sm); font-size: var(--ui-fs-micro); }
+
+/* 原生 select 保留系统下拉：加自绘箭头 */
+.ui-select {
+  appearance: none;
+  padding-right: var(--ui-space-6);
+  background-image: linear-gradient(45deg, transparent 50%, var(--ui-color-text) 50%),
+                    linear-gradient(135deg, var(--ui-color-text) 50%, transparent 50%);
+  background-position: calc(100% - 12px) calc(50% + 1px), calc(100% - 8px) calc(50% + 1px);
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+}
+
+/* 复选 / 单选 */
+.ui-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  min-height: var(--ui-control-h-sm);
+  cursor: pointer;
+  user-select: none;
+}
+.ui-check input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+}
+.ui-check__box {
+  position: relative;
+  width: 13px; height: 13px;
+  flex: 0 0 13px;
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-raised);
+  box-shadow: var(--ui-shadow-sunken);
+}
+.ui-check--radio .ui-check__box { border-radius: var(--ui-radius-circle); }
+.ui-check input:checked + .ui-check__box {
+  background: var(--ui-color-selected);
+  border-color: var(--ui-color-primary);
+}
+.ui-check input:checked + .ui-check__box::after {
+  content: "";
+  position: absolute;
+  left: 3px; top: 0px;
+  width: 4px; height: 7px;
+  border: solid var(--ui-color-text-inverse);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.ui-check--radio input:checked + .ui-check__box::after {
+  left: 3px; top: 3px;
+  width: 5px; height: 5px;
+  border: 0;
+  border-radius: var(--ui-radius-circle);
+  background: var(--ui-color-text-inverse);
+  transform: none;
+}
+.ui-check input:focus-visible + .ui-check__box { box-shadow: var(--ui-shadow-focus); }
+.ui-check input[disabled] + .ui-check__box {
+  background: var(--ui-color-surface-inset);
+  border-color: var(--ui-color-border-soft);
+  box-shadow: none;
+}
+.ui-check input[disabled] ~ .ui-check__label { color: var(--ui-color-text-disabled); }
+.ui-check:has(input[disabled]) { cursor: not-allowed; }
+.ui-check__label { font-size: var(--ui-fs-compact); }
+
+/* ------------------------------------------------------------------ 标签页 */
+.ui-tabs {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  border-bottom: var(--ui-border-w) solid var(--ui-color-border);
+}
+.ui-tabs--segmented {
+  gap: 2px;
+  padding: 2px;
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-inset);
+}
+.ui-tab {
+  min-height: var(--ui-control-h-sm);
+  padding: 2px var(--ui-space-3);
+  border: var(--ui-border-w) solid transparent;
+  border-bottom: 0;
+  border-radius: var(--ui-radius-btn) var(--ui-radius-btn) 0 0;
+  background: transparent;
+  color: var(--ui-color-text);
+  font: var(--ui-fw-normal) var(--ui-fs-compact) / var(--ui-lh-normal) var(--ui-font);
+  cursor: pointer;
+}
+.ui-tabs--segmented .ui-tab { border-radius: var(--ui-radius-control); border-bottom: var(--ui-border-w) solid transparent; }
+.ui-tab:hover { background: var(--ui-color-hover-soft); border-color: var(--ui-color-hover-border); }
+.ui-tab[aria-selected="true"] {
+  background: linear-gradient(180deg, var(--ui-color-surface-raised), var(--ui-color-hover-soft));
+  border-color: var(--ui-color-hover-border);
+  border-bottom-color: transparent;
+  box-shadow: inset 0 1px 0 var(--ui-color-border-light);
+  font-weight: var(--ui-fw-bold);
+}
+.ui-tabs--segmented .ui-tab[aria-selected="true"] {
+  background: linear-gradient(180deg, var(--ui-color-hover-soft), var(--ui-color-hover));
+  box-shadow: var(--ui-shadow-pressed);
+}
+.ui-tab[disabled] { color: var(--ui-color-text-disabled); cursor: not-allowed; background: none; }
+
+/* ------------------------------------------------------------------ 面板 */
+.ui-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  border-radius: var(--ui-radius-panel);
+  background: var(--ui-color-surface-alt);
+}
+.ui-panel__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  min-height: var(--ui-control-h-md);
+  padding: var(--ui-space-1) var(--ui-space-3);
+  border-bottom: var(--ui-border-w) solid var(--ui-color-border);
+  background: linear-gradient(180deg, var(--ui-grad-head-a), var(--ui-grad-head-b));
+  color: var(--ui-color-primary);
+  font-size: var(--ui-fs-panel);
+  font-weight: var(--ui-fw-bold);
+}
+.ui-panel__title { margin: 0; font: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ui-panel__sub { color: var(--ui-color-text-muted); font-size: var(--ui-fs-micro); font-weight: var(--ui-fw-normal); }
+.ui-panel__actions { margin-left: auto; display: inline-flex; gap: var(--ui-space-1); }
+.ui-panel__body { padding: var(--ui-space-3); min-height: 0; }
+.ui-panel__foot {
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-top: var(--ui-border-w) solid var(--ui-color-border-soft);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+}
+.ui-panel--plain > .ui-panel__head { background: var(--ui-color-surface-alt); }
+.ui-panel--inset { background: var(--ui-color-surface); }
+.ui-panel--floating { box-shadow: var(--ui-shadow-dialog); }
+
+/* XP 分组框：标题压在边框上 */
+/* 分组框：面板与标题条共用同一个面，标题条才能"压住"边框线 */
+.ui-panel--group {
+  position: relative;
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  background: var(--ui-color-surface-alt);
+  padding-top: var(--ui-space-2);
+}
+.ui-panel--group > .ui-panel__head {
+  position: absolute;
+  top: -8px; left: var(--ui-space-2);
+  min-height: 0;
+  padding: 0 var(--ui-space-1);
+  border: 0;
+  background: var(--ui-color-surface-alt);
+  font-size: var(--ui-fs-micro);
+}
+.ui-panel--group > .ui-panel__body { padding: var(--ui-space-3); }
+
+/* 可折叠：标题条本身是按钮 */
+.ui-panel--collapsible > .ui-panel__head { cursor: pointer; user-select: none; }
+.ui-panel--collapsible > .ui-panel__head::after {
+  content: "▾";
+  margin-left: var(--ui-space-1);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+}
+.ui-panel--collapsible[aria-expanded="false"] > .ui-panel__head::after { content: "▸"; }
+.ui-panel--collapsible[aria-expanded="false"] > .ui-panel__body { display: none; }
+
+/* ------------------------------------------------------------------ 工具条 / 标题栏 / 状态栏 */
+.ui-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  min-height: var(--ui-control-h-lg);
+  padding: var(--ui-space-1) var(--ui-space-2);
+  border: var(--ui-border-w) solid var(--ui-color-border-soft);
+  background: linear-gradient(180deg, var(--ui-color-surface-raised), var(--ui-color-surface));
+}
+.ui-toolbar--flat { border: 0; background: transparent; padding: 0; }
+.ui-toolbar__group { display: inline-flex; align-items: center; gap: var(--ui-space-1); }
+.ui-toolbar__sep {
+  width: var(--ui-border-w);
+  height: var(--ui-icon-md);
+  margin: 0 var(--ui-space-1);
+  background: var(--ui-color-border);
+}
+.ui-toolbar__grow { flex: 1 1 auto; }
+
+.ui-titlebar {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  min-height: 26px;
+  padding: 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-btn) var(--ui-radius-btn) 0 0;
+  background: linear-gradient(180deg, var(--ui-color-primary-hi) 0%, var(--ui-color-primary) 55%, var(--ui-color-primary) 100%);
+  box-shadow: inset 0 1px 0 var(--ui-color-primary-lo), inset 0 -1px 0 var(--ui-color-primary);
+  color: var(--ui-color-text-inverse);
+}
+.ui-titlebar__icon { width: var(--ui-icon-md); height: var(--ui-icon-md); flex: 0 0 auto; }
+.ui-titlebar__title {
+  margin: 0;
+  font-size: var(--ui-fs-compact);
+  font-weight: var(--ui-fw-bold);
+  letter-spacing: .2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-titlebar__actions { margin-left: auto; display: inline-flex; gap: var(--ui-space-1); }
+.ui-titlebar__btn {
+  width: 18px; height: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: var(--ui-border-w) solid var(--ui-color-primary-lo);
+  border-radius: var(--ui-radius-control);
+  background: linear-gradient(180deg, var(--ui-color-primary-lo), var(--ui-color-primary-hi));
+  color: var(--ui-color-text-inverse);
+  font-size: var(--ui-fs-micro);
+  line-height: 1;
+  cursor: pointer;
+}
+.ui-titlebar__btn:hover { background: linear-gradient(180deg, var(--ui-color-surface-raised), var(--ui-color-hover-soft)); color: var(--ui-color-text); }
+
+.ui-statusbar {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  min-height: 24px;
+  padding: 0 var(--ui-space-3);
+  border-top: var(--ui-border-w) solid var(--ui-color-border);
+  background: var(--ui-color-surface);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+}
+.ui-statusbar__grow { flex: 1 1 auto; }
+
+/* ------------------------------------------------------------------ 表格 */
+.ui-table {
+  --ui-table-cols: 1fr;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  background: var(--ui-color-surface-raised);
+  font-size: var(--ui-fs-compact);
+}
+.ui-table__head,
+.ui-table__row {
+  display: grid;
+  grid-template-columns: var(--ui-table-cols);
+  align-items: center;
+}
+.ui-table__head {
+  position: sticky;
+  top: 0;
+  z-index: var(--ui-z-raised);
+  background: linear-gradient(180deg, var(--ui-grad-head-a), var(--ui-grad-head-b));
+  border-bottom: var(--ui-border-w) solid var(--ui-color-border);
+  font-weight: var(--ui-fw-bold);
+}
+.ui-table__row { border-bottom: 1px solid var(--ui-color-border-soft); }
+.ui-table__row:last-child { border-bottom: 0; }
+.ui-table__row:nth-child(even) { background: var(--ui-color-surface-alt); }
+.ui-table__row:hover { background: var(--ui-color-hover-soft); }
+.ui-table__row.is-selected,
+.ui-table__row[aria-selected="true"] {
+  background: var(--ui-color-selected);
+  color: var(--ui-color-selected-text);
+}
+.ui-table__row.is-selected .ui-table__cell,
+.ui-table__row[aria-selected="true"] .ui-table__cell { color: inherit; }
+.ui-table__row.is-disabled { color: var(--ui-color-text-disabled); background: var(--ui-color-surface-inset); }
+.ui-table__row.is-conflict {
+  color: var(--ui-color-conflict);
+  background: var(--ui-color-danger-bg);
+  border-left: 3px solid var(--ui-color-danger);
+  border-top: 1px dashed var(--ui-color-danger);
+  border-bottom: 1px dashed var(--ui-color-danger);
+}
+.ui-table__cell {
+  padding: var(--ui-space-1) var(--ui-space-2);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-table__cell--num { text-align: right; font-family: var(--ui-font-mono); }
+.ui-table__cell--wrap { white-space: normal; line-height: var(--ui-lh-normal); }
+.ui-table__empty {
+  padding: var(--ui-space-5);
+  text-align: center;
+  color: var(--ui-color-text-muted);
+}
+
+/* ------------------------------------------------------------------ 徽标 */
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+  padding: 0 var(--ui-space-2);
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-color-surface-alt);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+  line-height: 1;
+  white-space: nowrap;
+}
+.ui-badge--ok { border-color: var(--ui-color-success); background: var(--ui-color-success-bg); color: var(--ui-color-success); }
+.ui-badge--warn { border-color: var(--ui-color-warning); background: var(--ui-color-warning-bg); color: var(--ui-color-warning); }
+.ui-badge--danger { border-color: var(--ui-color-danger); background: var(--ui-color-danger-bg); color: var(--ui-color-danger); }
+.ui-badge--info { border-color: var(--ui-color-info); background: var(--ui-color-info-bg); color: var(--ui-color-info); }
+.ui-badge--primary { border-color: var(--ui-color-primary); background: var(--ui-color-selected-bg); color: var(--ui-color-primary); }
+.ui-badge--muted { color: var(--ui-color-text-muted); }
+
+/* ------------------------------------------------------------------ 弹窗 */
+.ui-dialog__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: var(--ui-z-overlay);
+  background: var(--ui-color-scrim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ui-space-5);
+}
+.ui-dialog__box {
+  position: relative;
+  z-index: var(--ui-z-dialog);
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 92vw);
+  max-height: min(80vh, 720px);
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-btn);
+  background: var(--ui-color-surface);
+  box-shadow: var(--ui-shadow-dialog);
+}
+.ui-dialog__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  min-height: 26px;
+  padding: 0 var(--ui-space-1) 0 var(--ui-space-2);
+  border-radius: var(--ui-radius-btn) var(--ui-radius-btn) 0 0;
+  background: linear-gradient(180deg, var(--ui-color-primary-hi), var(--ui-color-primary));
+  color: var(--ui-color-text-inverse);
+}
+.ui-dialog__title {
+  margin: 0;
+  font-size: var(--ui-fs-compact);
+  font-weight: var(--ui-fw-bold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-dialog__close {
+  margin-left: auto;
+  width: 20px; height: 18px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: var(--ui-border-w) solid var(--ui-color-primary-lo);
+  border-radius: var(--ui-radius-control);
+  background: linear-gradient(180deg, var(--ui-color-primary-lo), var(--ui-color-primary-hi));
+  color: var(--ui-color-text-inverse);
+  font-size: var(--ui-fs-micro);
+  cursor: pointer;
+}
+.ui-dialog__close:hover { background: var(--ui-color-danger); border-color: var(--ui-color-danger); }
+.ui-dialog__body {
+  padding: var(--ui-space-4);
+  overflow: auto;
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-normal);
+}
+.ui-dialog__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ui-space-2);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-top: var(--ui-border-w) solid var(--ui-color-border-soft);
+  background: var(--ui-color-surface-alt);
+}
+.ui-dialog--danger .ui-dialog__head { background: linear-gradient(180deg, var(--ui-color-danger), var(--ui-color-danger)); }
+.ui-dialog--wide .ui-dialog__box { width: min(760px, 94vw); }
+/* R73：窄屏（860 及以下）弹窗必须留边，宽版也不顶到屏幕两侧；按钮过多时换行 */
+@media (max-width: 900px) {
+  .ui-dialog__scrim { padding: 12px; }
+  .ui-dialog__box,
+  .ui-dialog--wide .ui-dialog__box { width: calc(100vw - 24px); max-height: calc(100vh - 24px); }
+  .ui-dialog__foot { flex-wrap: wrap; }
+}
+
+/* ------------------------------------------------------------------ 菜单 */
+.ui-menu {
+  position: fixed;
+  z-index: var(--ui-z-menu);
+  min-width: 160px;
+  max-width: 320px;
+  padding: 2px;
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-alt);
+  box-shadow: var(--ui-shadow-dialog);
+  font-size: var(--ui-fs-compact);
+}
+.ui-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  width: 100%;
+  min-height: var(--ui-control-h-sm);
+  padding: 0 var(--ui-space-2);
+  border: 0;
+  background: transparent;
+  color: var(--ui-color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.ui-menu__item:hover,
+.ui-menu__item:focus-visible {
+  background: var(--ui-color-selected);
+  color: var(--ui-color-selected-text);
+  outline: none;
+}
+.ui-menu__item[aria-checked="true"]::before { content: "✓"; font-size: var(--ui-fs-micro); }
+.ui-menu__item[disabled] { color: var(--ui-color-text-disabled); cursor: not-allowed; background: transparent; }
+.ui-menu__sep { height: 1px; margin: 3px var(--ui-space-1); background: var(--ui-color-border-soft); }
+.ui-menu__label {
+  padding: 2px var(--ui-space-2);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+}
+
+/* ------------------------------------------------------------------ 提示 */
+.ui-tooltip {
+  position: fixed;
+  z-index: var(--ui-z-tooltip);
+  max-width: 320px;
+  padding: var(--ui-space-1) var(--ui-space-2);
+  border: var(--ui-border-w) solid var(--ui-color-tip-border);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-tip-bg);
+  color: var(--ui-color-text);
+  font-size: var(--ui-fs-micro);
+  line-height: var(--ui-lh-normal);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+  pointer-events: none;
+}
+.ui-tooltip__title { font-weight: var(--ui-fw-bold); }
+.ui-tooltip__en { color: var(--ui-color-text-muted); font-family: var(--ui-font-mono); }
+.ui-tooltip[data-side="top"]::after,
+.ui-tooltip[data-side="bottom"]::after { content: ""; position: absolute; left: 12px; border: 4px solid transparent; }
+.ui-tooltip[data-side="bottom"]::after { top: -9px; border-bottom-color: var(--ui-color-tip-border); }
+.ui-tooltip[data-side="top"]::after { bottom: -9px; border-top-color: var(--ui-color-tip-border); }
+
+/* ------------------------------------------------------------------ 轻提示 */
+.ui-toast-stack {
+  position: fixed;
+  right: var(--ui-space-5);
+  bottom: var(--ui-space-5);
+  z-index: var(--ui-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+}
+.ui-toast {
+  min-width: 180px;
+  max-width: 360px;
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-raised);
+  box-shadow: var(--ui-shadow-dialog);
+  font-size: var(--ui-fs-compact);
+}
+.ui-toast--ok { border-left: 3px solid var(--ui-color-success); }
+.ui-toast--warn { border-left: 3px solid var(--ui-color-warning); }
+.ui-toast--danger { border-left: 3px solid var(--ui-color-danger); }
+
+/* ------------------------------------------------------------------ 长文 */
+.ui-code {
+  padding: 1px 4px;
+  border: var(--ui-border-w) solid var(--ui-color-border-soft);
+  border-radius: var(--ui-radius-control);
+  background: var(--ui-color-surface-inset);
+  font-family: var(--ui-font-mono);
+  font-size: var(--ui-fs-micro);
+}
+.ui-prose { max-width: 760px; font-size: var(--ui-fs-body); line-height: var(--ui-lh-loose); }
+.ui-prose h4 { margin: var(--ui-space-4) 0 var(--ui-space-1); font-size: var(--ui-fs-strong); }
+.ui-prose p { margin: 0 0 var(--ui-space-2); }
+.ui-prose ul { margin: 0 0 var(--ui-space-2); padding-left: var(--ui-space-5); }

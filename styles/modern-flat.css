@@ -1,0 +1,347 @@
+/* ============================================================================
+ * modern-flat.css —— 全站「现代扁平」视觉覆盖层（R300）
+ * ----------------------------------------------------------------------------
+ * 用户诉求：像素位图按钮 / 整体 XP 位图 UI 不好看；market.css 那套纯 CSS
+ * 扁平控件更顺眼，全项目统一成那样。
+ *
+ * 做法：本文件**最后加载**，不改 style.css / theme-windows-xp.css /
+ * assets/xp-ui/*.css 一行。把控件位图（border-image / 位图背景）统一覆盖成
+ * 纯 CSS 扁平样式，配色走 design-tokens 的 --ui-*（与 market.css / ui-components 同源）。
+ *
+ * 保留内容位图：导航图标 icon-*.png、空状态插图 empty-*.png、badge / brand —— 图形素材。
+ * 保留地图区：底图 SVG 与彩色标注（深色，不属 XP 皮肤）。
+ * ==========================================================================*/
+
+/* ---------------------------------------------------------------- 1. 通用：去 border-image
+   xp-ui-app.css 用 `html body <sel>` 挂位图；这里用同前缀 + border-image:none!important
+   一次性把所有控件位图边框摘掉，再逐个给纯 CSS 背景。 */
+html body button,
+html body input,
+html body select,
+html body .xp-btn,
+html body .xp-input,
+html body .xp-select__field,
+/* 下面这条用 :is() 提权，压过 xp-ui-app.css 里的 html body .view-toolbar .view-btn 等 3 类选择器 */
+html body :is(.view-toolbar .view-btn, .game-mode-bar .gm-btn, .app-menubar .gm-btn,
+  .menu-btn, .app-menu-btn, .cb-tool, .floor-item, .gw-btn, .am-btn,
+  .tk-mode, .tk-tab, .task-floor, .layer-chip, .am-seg-btn, .am-chip,
+  .xp-tab, .am-tab, .gw-mode, .xp-btn, .app-account-btn, .app-app-navbtn,
+  .live-btn, .lw-sortbtn, .lw-srcbtn, .gw-srcbtn, .task-switch-track,
+  .task-switch-knob, .menu-panel, .app-menu-panel, .groupbox, .xp-groupbox,
+  .xp-winbtn, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-button) {
+  border-image: none !important;
+}
+
+/* ---------------------------------------------------------------- 2. 按钮（含各工作台私有按钮类） */
+html body button:not(.vt-ico):not(.lw-cell):not(.lw-node),
+html body .xp-btn,
+html body .menu-btn,
+html body .view-toolbar .view-btn,
+html body .app-menu-btn,
+html body .app-account-btn,
+html body .app-app-navbtn,
+html body .app-menubar .game-mode-bar .gm-btn,
+html body .cb-tool,
+html body .floor-item,
+html body .gun-workbench .gw-btn:not(.gw-card):not(.gw-hit),
+html body .am-btn,
+html body .loadout-workbench .lw-sortbtn,
+html body .loadout-workbench .lw-srcbtn,
+html body .tk-mode,
+html body .tk-tab,
+html body .task-floor,
+html body .layer-chip,
+html body .am-workbench .am-seg-btn,
+html body .am-workbench .am-chip,
+html body .live-btn {
+  border: 1px solid var(--ui-color-border-dark, #7f9db9) !important;
+  border-radius: var(--ui-radius-btn, 3px) !important;
+  background: linear-gradient(180deg,
+    var(--ui-grad-face-a, #fdfdfd), var(--ui-grad-face-c, #e2dfcf)) !important;
+  box-shadow: var(--ui-shadow-raised);
+  color: var(--ui-color-text, #23231b) !important;
+  font-family: var(--ui-font, Tahoma, "Microsoft YaHei", sans-serif);
+  text-shadow: none !important;
+  transition: background var(--ui-dur-fast) var(--ui-ease),
+              border-color var(--ui-dur-fast) var(--ui-ease),
+              transform var(--ui-dur-fast) var(--ui-ease);
+}
+html body button:not(.vt-ico):not(.lw-cell):not(.lw-node):hover,
+html body .xp-btn:hover,
+html body .menu-btn:hover,
+html body .view-toolbar .view-btn:hover,
+html body .app-menu-btn:hover,
+html body .app-account-btn:hover,
+html body .app-app-navbtn:hover,
+html body .app-menubar .game-mode-bar .gm-btn:hover,
+html body .cb-tool:hover,
+html body .floor-item:hover,
+html body .gun-workbench .gw-btn:not(.gw-card):not(.gw-hit):hover,
+html body .am-btn:hover,
+html body .tk-mode:hover,
+html body .tk-tab:hover,
+html body .task-floor:hover,
+html body .layer-chip:hover {
+  background: linear-gradient(180deg,
+    var(--ui-color-surface-raised, #fff), var(--ui-color-hover-soft, #ffd98a)) !important;
+  border-color: var(--ui-color-hover-border, #c97a10) !important;
+  color: var(--ui-color-text, #23231b) !important;
+}
+html body button:not(.vt-ico):not(.lw-cell):not(.lw-node):active,
+html body .xp-btn:active,
+html body .menu-btn:active,
+html body .app-menu-btn:active,
+html body .gun-workbench .gw-btn:not(.gw-card):not(.gw-hit):active {
+  background: linear-gradient(180deg,
+    var(--ui-color-hover-soft, #ffd98a), var(--ui-grad-face-c, #e2dfcf)) !important;
+  box-shadow: var(--ui-shadow-pressed);
+  transform: translateY(1px);
+}
+html body button:disabled,
+html body .xp-btn:disabled {
+  background: var(--ui-color-surface-inset, #f2f0e6) !important;
+  color: var(--ui-color-text-disabled, #69675b) !important;
+  border-color: var(--ui-color-border-soft, #d6d2c2) !important;
+  box-shadow: none;
+  cursor: default;
+  transform: none;
+}
+/* 选中态：与 ui-components 一致，用主色而非位图 */
+html body .view-toolbar .view-btn[aria-selected="true"],
+html body .app-app-navbtn.is-active,
+html body .app-app-navbtn[aria-selected="true"],
+html body .app-menu-btn.open,
+html body .app-menubar .game-mode-bar .gm-btn.is-on,
+html body .app-menubar .game-mode-bar .gm-btn[aria-selected="true"],
+html body .tk-mode[aria-selected="true"],
+html body .tk-tab[aria-selected="true"],
+html body .layer-chip[aria-pressed="true"],
+html body .cb-tool.is-open,
+html body .floor-item[data-on="true"] {
+  background: linear-gradient(180deg,
+    var(--ui-color-primary-hi, #1466e0), var(--ui-color-primary, #0a3f9e)) !important;
+  border-color: var(--ui-color-primary, #0a3f9e) !important;
+  color: #fff !important;
+  box-shadow: var(--ui-shadow-pressed);
+}
+/* 统一焦点环：去掉 xp-ui 的点线 ::after，改用 1px 蓝环 */
+html body button:focus-visible,
+html body .xp-btn:focus-visible,
+html body .app-menu-btn:focus-visible,
+html body .app-menubar .game-mode-bar .gm-btn:focus-visible {
+  outline: none !important;
+  box-shadow: var(--ui-shadow-focus) !important;
+}
+html body .xp-btn:focus-visible::after { display: none !important; }
+
+/* ---------------------------------------------------------------- 3. 输入 / 下拉 / 复选 / 单选 */
+html body input[type="text"],
+html body input[type="search"],
+html body input[type="number"],
+html body input:not([type]),
+html body select,
+html body .xp-input,
+html body .xp-select__field,
+html body .lw-search,
+html body .am-search,
+html body .gw-forge-search,
+html body .wiki-search,
+html body .task-search-wrap input {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: var(--ui-radius-control, 2px) !important;
+  background: var(--ui-color-surface-raised, #fff) !important;
+  box-shadow: var(--ui-shadow-sunken);
+  color: var(--ui-color-text, #000) !important;
+}
+html body .xp-select__arrow {
+  background: var(--ui-color-surface, #ece9d8) !important;
+  border: 1px solid var(--ui-color-border, #aca899);
+  border-left: 0;
+  border-radius: 0 var(--ui-radius-control, 2px) var(--ui-radius-control, 2px) 0;
+}
+html body .xp-select__arrow::after {
+  content: "";
+  display: block;
+  width: 0; height: 0;
+  margin: 13px auto 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--ui-color-text, #23231b);
+}
+/* 复选 / 单选：纯 CSS 画勾与圆点（保留原生 input，仅换外观） */
+html body input[type="checkbox"],
+html body input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border: 1px solid var(--ui-color-border-dark, #7f9db9) !important;
+  border-radius: var(--ui-radius-control, 2px);
+  background: var(--ui-color-surface-raised, #fff) !important;
+  box-shadow: var(--ui-shadow-sunken);
+  cursor: pointer;
+  vertical-align: middle;
+}
+html body input[type="radio"] { border-radius: 50%; }
+html body input[type="checkbox"]:checked {
+  background: var(--ui-color-primary, #0a3f9e) !important;
+  position: relative;
+}
+html body input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px; top: 1px;
+  width: 3px; height: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+html body input[type="radio"]:checked {
+  background: var(--ui-color-primary, #0a3f9e) !important;
+  position: relative;
+}
+html body input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+html body input[type="checkbox"]:focus-visible,
+html body input[type="radio"]:focus-visible {
+  outline: none !important;
+  box-shadow: var(--ui-shadow-focus) !important;
+}
+
+/* ---------------------------------------------------------------- 4. 开关 / 滑块 / 进度 / 滚动条 */
+html body .task-switch-track {
+  border: 1px solid var(--ui-color-border-dark, #7f9db9) !important;
+  border-radius: 10px !important;
+  background: var(--ui-color-surface-inset, #f2f0e6) !important;
+  box-shadow: var(--ui-shadow-sunken);
+}
+html body .task-switch-knob {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: 50% !important;
+  background: linear-gradient(180deg, var(--ui-grad-face-a, #fdfdfd), var(--ui-grad-face-c, #e2dfcf)) !important;
+  box-shadow: var(--ui-shadow-raised);
+}
+html body .task-switch input:checked + .task-switch-track {
+  background: var(--ui-color-primary, #0a3f9e) !important;
+}
+html body input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+html body input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  border: 1px solid var(--ui-color-border, #aca899);
+  border-radius: 3px;
+  background: var(--ui-color-surface-inset, #f2f0e6);
+}
+html body input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  margin-top: -5px;
+  border: 1px solid var(--ui-color-border-dark, #7f9db9);
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--ui-grad-face-a, #fdfdfd), var(--ui-grad-face-c, #e2dfcf));
+  border-image: none !important;
+}
+html body ::-webkit-scrollbar-track,
+html body ::-webkit-scrollbar-track:horizontal {
+  background: var(--ui-color-surface, #ece9d8) !important;
+  border-image: none !important;
+}
+html body ::-webkit-scrollbar-thumb,
+html body ::-webkit-scrollbar-thumb:horizontal {
+  background: var(--ui-color-border, #aca899) !important;
+  border: 2px solid var(--ui-color-surface, #ece9d8) !important;
+  border-radius: 6px !important;
+  border-image: none !important;
+}
+html body ::-webkit-scrollbar-thumb:hover { background: var(--ui-color-border-dark, #7f9db9) !important; }
+html body ::-webkit-scrollbar-button,
+html body ::-webkit-scrollbar-button:horizontal {
+  background: var(--ui-color-surface, #ece9d8) !important;
+  border-image: none !important;
+}
+/* 进度条：去位图框与位图填充，改纯 CSS 槽 + 主色填充 */
+html body .xp-progress,
+html body .progress-frame,
+html body progress {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: 3px !important;
+  background: var(--ui-color-surface-inset, #f2f0e6) !important;
+  box-shadow: var(--ui-shadow-sunken);
+  border-image: none !important;
+  overflow: hidden;
+}
+html body .xp-progress__fill,
+html body .progress-fill,
+html body progress::-webkit-progress-value {
+  background: var(--ui-color-primary, #0a3f9e) !important;
+  border-image: none !important;
+}
+html body progress::-webkit-progress-bar {
+  background: var(--ui-color-surface-inset, #f2f0e6);
+}
+
+/* ---------------------------------------------------------------- 5. 面板底 / 菜单 / 标题栏窗控 */
+html body .menu-panel,
+html body .app-menu-panel,
+html body .context-menu,
+html body .menu-panel-bg {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: var(--ui-radius-panel, 2px) !important;
+  background: var(--ui-color-surface, #ece9d8) !important;
+  box-shadow: var(--ui-shadow-dialog);
+  border-image: none !important;
+}
+html body .xp-winbtn,
+html body .app-winbtn,
+html body .dialog-box__close {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border-image: none !important;
+}
+html body .xp-winbtn::before,
+html body .app-winbtn::before {
+  /* 用简单几何符号替代位图窗控 glyph */
+  content: "─";
+  display: block;
+  text-align: center;
+  line-height: 1;
+  color: var(--ui-color-text, #23231b);
+}
+html body .groupbox,
+html body .xp-groupbox {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: var(--ui-radius-panel, 2px) !important;
+  border-image: none !important;
+}
+
+/* ---------------------------------------------------------------- 6. tab 页签 */
+html body .xp-tab,
+html body .ui-tab,
+html body .am-workbench .am-tab,
+html body .gun-workbench .gw-modes-tabs .gw-mode {
+  border: 1px solid var(--ui-color-border, #aca899) !important;
+  border-radius: var(--ui-radius-control, 2px) !important;
+  background: var(--ui-color-surface, #ece9d8) !important;
+  border-image: none !important;
+}
+html body .am-tab[aria-selected="true"],
+html body .gw-mode[data-on="1"],
+html body .xp-tab[aria-selected="true"] {
+  background: var(--ui-color-selected, #316ac5) !important;
+  color: #fff !important;
+}
+
+/* ---------------------------------------------------------------- 7. 尊重减少动态 */
+@media (prefers-reduced-motion: reduce) {
+  html body button, html body .xp-btn { transition: none !important; }
+}

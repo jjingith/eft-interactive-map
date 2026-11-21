@@ -23,11 +23,79 @@ def test_default_config_shape_and_defaults():
     assert cfg["auto_center"] is True          # 点位自动居中默认开
     assert cfg["auto_zoom"] is False
     assert cfg["auto_start"] is False
-    assert cfg["auto_screenshot"] == {"enabled": False, "interval_ms": 1000, "key": None}
+    # R32：默认间隔从 1000 提到 5000（1 秒一张 = 每小时约 2 GB），断言改为盯常量
+    # R108：默认是非会员，间隔落锁定值 10000ms
+    assert cfg["auto_screenshot"] == {"enabled": False,
+                                      "interval_ms": config.SHOT_INTERVAL_LOCKED_MS,
+                                      "key": None, "cleanup_on_raid_end": False}
+    assert cfg["account"] == {"member": False}   # R108：默认非会员
     assert cfg["auto_delete"] == {"enabled": False, "since": None}
     assert cfg["sound"]["enabled"] is False
     for key in config.SOUND_KEYS:
         assert cfg["sound"][key] == {"on": True, "file": None}
+    assert cfg["host"] == config.HOST_DEFAULT       # 默认只监听本机回环
+
+
+def test_clamp_host_whitelists_values():
+    """监听地址只认白名单：0.0.0.0（局域网）/ 127.0.0.1（本机）；怪值一律回落回环。"""
+    assert config.clamp_host("0.0.0.0") == "0.0.0.0"
+    assert config.clamp_host("127.0.0.1") == config.HOST_DEFAULT
+    assert config.clamp_host(" 0.0.0.0 ") == "0.0.0.0"      # 去掉首尾空白后仍走白名单
+    for junk in (None, "", "192.168.1.5", "::", 42, True):
+        assert config.clamp_host(junk) == config.HOST_DEFAULT
+
+
+def test_normalize_keeps_only_whitelisted_host():
+    assert config.normalize({"host": "0.0.0.0"})["host"] == "0.0.0.0"
+    assert config.normalize({"host": "evil.example.com"})["host"] == config.HOST_DEFAULT
+
+
+# --------------------------------------------------------------- 配装视图偏好
+
+def test_clamp_sens_treats_zero_as_valid():
+    """0 是合法的游戏内灵敏度，不能被当成「没填」丢掉。"""
+    assert config.clamp_sens(0) == 0.0
+    assert config.clamp_sens("0") == 0.0
+    assert config.clamp_sens(0.4321) == 0.432
+    assert config.clamp_sens(2) == 1.0
+    assert config.clamp_sens(-1) == 0.0
+
+
+@pytest.mark.parametrize("junk", [None, "", "abc", [], {}, True, False, float("nan"), float("inf")])
+def test_clamp_sens_rejects_junk(junk):
+    assert config.clamp_sens(junk) is None
+
+
+def test_normalize_gear_keeps_only_given_slots():
+    gear = config._normalize_gear({"helmet": "  h1  ", "armor": "", "rig": 42, "bogus": "x"})
+    assert gear == {"helmet": "h1", "armor": None, "rig": None}
+    assert config._normalize_gear(None) == {}
+    for slot in config.GEAR_SLOTS:
+        assert slot in ("helmet", "headphones", "glasses", "face", "armband", "dogtag",
+                        "armor", "rig", "backpack",
+                        "primary1", "primary2", "holster", "melee")
+
+
+def test_normalize_ui_keeps_view_loadout_sens():
+    ui = config.normalize({"ui": {"view": "loadout", "loadout": {"helmet": "h1"}, "sens": 0}})["ui"]
+    assert ui["view"] == "loadout"
+    assert ui["loadout"] == {"helmet": "h1"}
+    assert ui["sens"] == 0.0
+    assert "view" not in config.normalize({"ui": {"view": "nope"}})["ui"], "白名单外的视图名丢掉"
+
+
+def test_normalize_ui_leaves_new_keys_absent_when_unset():
+    ui = config.normalize({"ui": {"floor_auto": True}})["ui"]
+    for key in ("view", "loadout", "sens"):
+        assert key not in ui
+
+
+def test_merge_ui_merges_loadout_per_slot_and_takes_view_sens():
+    cfg = config.normalize({"ui": {"loadout": {"helmet": "h1", "armor": "a1"}, "view": "map"}})
+    merged = config.merge_ui(cfg, {"ui": {"view": "gun", "loadout": {"armor": "a2"}, "sens": 0.25}})
+    assert merged["ui"]["view"] == "gun"
+    assert merged["ui"]["loadout"] == {"helmet": "h1", "armor": "a2"}, "未提到的槽位要保留"
+    assert merged["ui"]["sens"] == 0.25
 
 
 def test_normalize_fills_defaults_for_partial_input():
@@ -36,7 +104,7 @@ def test_normalize_fills_defaults_for_partial_input():
     assert cfg["screenshots_dir"] is None
     assert cfg["auto_center"] is True
     assert cfg["auto_screenshot"]["enabled"] is False
-    assert cfg["auto_screenshot"]["interval_ms"] == config.SHOT_INTERVAL_DEFAULT
+    assert cfg["auto_screenshot"]["interval_ms"] == config.SHOT_INTERVAL_LOCKED_MS
     assert cfg["sound"]["enabled"] is False
     assert cfg["sound"]["matching"] == {"on": True, "file": None}
 
@@ -75,16 +143,24 @@ def test_normalize_ignores_wrong_typed_sound_block():
 # --------------------------------------------------------------- 自动截图配置
 
 def test_normalize_auto_screenshot_block():
+    config.set_member_state({"member": True, "member_status": "permanent"})
     cfg = config.normalize({
+        # R108：会员才保留 200–60000 的任意值；配置里的 account.member 已不再生效，
+        # 会员态只来自服务端下发（见 test_member_gate）
+        "account": {"member": True},
         "auto_screenshot": {"enabled": "yes", "interval_ms": 1500, "key": "  V  "},
     })
-    assert cfg["auto_screenshot"] == {"enabled": True, "interval_ms": 1500, "key": "V"}
+    assert cfg["auto_screenshot"] == {"enabled": True, "interval_ms": 1500, "key": "V",
+                                      "cleanup_on_raid_end": False}
 
 
 def test_normalize_auto_screenshot_defaults_when_absent_or_wrong_type():
     for junk in (None, "on", 42, []):
         cfg = config.normalize({"auto_screenshot": junk})
-        assert cfg["auto_screenshot"] == {"enabled": False, "interval_ms": 1000, "key": None}, junk
+        assert cfg["auto_screenshot"] == {"enabled": False,
+                                          "interval_ms": config.SHOT_INTERVAL_LOCKED_MS,
+                                          "key": None,
+                                          "cleanup_on_raid_end": False}, junk
 
 
 def test_normalize_empty_key_becomes_none():
@@ -371,6 +447,61 @@ def test_merge_ui_ignores_junk_prefs(junk):
     assert config.merge_ui({"auto_zoom": True}, junk)["auto_zoom"] is True
 
 
+def test_merge_ui_can_toggle_auto_screenshot_without_touching_interval_or_key():
+    """R106：左侧栏「自动截图」只写 enabled，间隔与截图键仍归启动器管。"""
+    config.set_member_state({"member": True, "member_status": "permanent"})
+    base = {"auto_screenshot": {"enabled": False, "interval_ms": 2500, "key": "F10"}}
+    merged = config.merge_ui(base, {"auto_screenshot": {"enabled": True}})
+    assert merged["auto_screenshot"] == {"enabled": True, "interval_ms": 2500, "key": "F10",
+                                         "cleanup_on_raid_end": False}
+    # 非布尔值不算「用户意图」，不要误开 / 误关
+    assert config.merge_ui(base, {"auto_screenshot": {"enabled": "yes"}})["auto_screenshot"]["enabled"] is False
+
+
+# --------------------------------------------------------------- 小地图五档米制半径（R106）
+
+def test_default_mini_radius_is_the_middle_tier():
+    assert config.default_config()["overlay"]["mini_radius_m"] == 100
+    assert config.OVERLAY_MINI_RADIUS_CHOICES == (25, 50, 100, 200, 300)
+
+
+@pytest.mark.parametrize("raw,expect", [
+    (None, 100), ("abc", 100), (float("nan"), 100),
+    (0, 25), (10, 25), (24, 25), (25, 25),
+    (49, 50), (75, 100), (99, 100),     # 两档正中 → 取更大档（视野更宽）
+    (150, 200), (260, 300), (999, 300),
+    ("200", 200),
+])
+def test_nearest_mini_radius_snaps_to_five_tiers(raw, expect):
+    assert config.nearest_mini_radius_m(raw) == expect
+
+
+@pytest.mark.parametrize("map_scale,expect", [
+    (1.0, 100),    # 旧默认：150 米视野高 = 半径 75 → 吸附到 100
+    (3.0, 25),     # 旧最放大：半径 25
+    (2.0, 50),     # 37.5 → 50
+    (1.5, 50),
+    (0.5, 200),    # 150 → 正中，取更大档
+])
+def test_old_map_scale_migrates_to_radius(map_scale, expect):
+    cfg = config.normalize({"overlay": {"map_scale": map_scale}})
+    assert cfg["overlay"]["mini_radius_m"] == expect
+
+
+def test_explicit_mini_radius_wins_over_legacy_map_scale():
+    """新键存在时不再看旧 map_scale（升级后的配置两份都在，不能被旧值拽回去）。"""
+    cfg = config.normalize({"overlay": {"map_scale": 3.0, "mini_radius_m": 200}})
+    assert cfg["overlay"]["mini_radius_m"] == 200
+
+
+def test_merge_ui_accepts_mini_radius_and_migrates_legacy_map_scale():
+    assert config.merge_ui({}, {"overlay": {"mini_radius_m": 300}})["overlay"]["mini_radius_m"] == 300
+    # 旧客户端只发 map_scale 时也要生效（1.0 → 100，3.0 → 25）
+    assert config.merge_ui({}, {"overlay": {"map_scale": 3.0}})["overlay"]["mini_radius_m"] == 25
+    # 非档位值吸附，而不是原样落盘
+    assert config.merge_ui({}, {"overlay": {"mini_radius_m": 123}})["overlay"]["mini_radius_m"] == 100
+
+
 # --------------------------------------------------------------- 图标整体缩放
 
 @pytest.mark.parametrize("raw,expect", [
@@ -395,6 +526,42 @@ def test_normalize_ui_keeps_icon_scale_only_as_a_number():
     assert config.normalize({"ui": {"icon_scale": True}})["ui"] == {}   # 布尔不算数字
 
 
+@pytest.mark.parametrize("raw,expect", [
+    (0, 0.0),                                      # 新刻度允许 0%（迁移旧 0 / 负值的落点）
+    (-1, 0.0),
+    (5, 5.0),
+    (9, config.ICON_SCALE_V2_MAX),                 # 上钳到新刻度右端
+])
+def test_clamp_icon_scale_v2_range(raw, expect):
+    assert config.clamp_icon_scale(raw, v2=True) == expect
+
+
+def test_normalize_ui_keeps_icon_scale_v2_flag():
+    cfg = config.normalize({"ui": {"icon_scale": 5, "icon_scale_v2": True}})
+    assert cfg["ui"] == {"icon_scale": 5.0, "icon_scale_v2": True}
+    # 没有新刻度标记时仍按旧区间收敛，避免旧配置被误存成新刻度
+    assert config.normalize({"ui": {"icon_scale": 9}})["ui"] == {"icon_scale": config.ICON_SCALE_MAX}
+
+
+@pytest.mark.parametrize("raw,expect", [
+    (0, 0.1),                                      # R98：低于 10% 钳到 10%
+    (0.1, 0.1),
+    (1.727, 1.727),                                # 旧百分比直接沿用，渲染尺寸不变
+    (1.9, 1.9),
+    (5.45, config.ICON_SCALE_V3_MAX),              # 超出 190% 钳到 190%
+])
+def test_clamp_icon_scale_v3_range(raw, expect):
+    assert config.clamp_icon_scale(raw, v3=True) == expect
+
+
+def test_normalize_ui_keeps_icon_scale_v3_flag():
+    cfg = config.normalize({"ui": {"icon_scale": 1.727, "icon_scale_v3": True}})
+    assert cfg["ui"] == {"icon_scale": 1.727, "icon_scale_v3": True}
+    # v3 优先于 v2：同时带两个标记时按新刻度收敛，只保留 v3
+    cfg = config.normalize({"ui": {"icon_scale": 2.5, "icon_scale_v2": True, "icon_scale_v3": True}})
+    assert cfg["ui"] == {"icon_scale": 1.9, "icon_scale_v3": True}
+
+
 def test_merge_ui_writes_icon_scale_without_touching_other_keys():
     base = {"ui": {"layers": {"loose": True}, "floor_auto": True}}
     merged = config.merge_ui(base, {"ui": {"icon_scale": 2.5}})
@@ -407,7 +574,7 @@ def test_merge_ui_writes_icon_scale_without_touching_other_keys():
     (None, config.LABEL_SCALE_DEFAULT),
     ("abc", config.LABEL_SCALE_DEFAULT),
     (float("nan"), config.LABEL_SCALE_DEFAULT),
-    (0, config.LABEL_SCALE_DEFAULT),                # 0 或负数没法当缩放系数
+    (0, config.LABEL_SCALE_MIN),                    # R98：0 / 负数钳到 10%，不再回落 100%
     (0.1, config.LABEL_SCALE_MIN),
     (9, config.LABEL_SCALE_MAX),
     ("1.6", 1.6),
@@ -440,5 +607,45 @@ def test_merge_ui_writes_label_prefs_without_touching_other_keys():
     base = {"ui": {"layers": {"loose": True}, "icon_scale": 1.2}}
     merged = config.merge_ui(base, {"ui": {"label_scale": 2.0, "label_alpha": 0.0}})
     assert merged["ui"] == {"layers": {"loose": True}, "icon_scale": 1.2,
-                            "label_scale": 2.0, "label_alpha": 0.0}
+                            "label_scale": config.LABEL_SCALE_MAX, "label_alpha": 0.0}
+
+
+# --------------------------------------------------------------- R107 自动探测 / 清理
+def test_normalize_keeps_log_dir_and_cleanup_flag():
+    cfg = config.normalize({"log_dir": "  D:\\EFT\\Logs  ",
+                            "auto_screenshot": {"cleanup_on_raid_end": True}})
+    assert cfg["log_dir"] == "D:\\EFT\\Logs"
+    assert cfg["auto_screenshot"]["cleanup_on_raid_end"] is True
+    # 缺省必须是关：清理会删文件，不能默认开
+    assert config.normalize({})["auto_screenshot"]["cleanup_on_raid_end"] is False
+
+
+def test_merge_ui_accepts_interval_cleanup_and_manual_dirs():
+    config.set_member_state({"member": True, "member_status": "permanent"})
+    merged = config.merge_ui({}, {
+        "auto_screenshot": {"interval_ms": 1234, "cleanup_on_raid_end": True},
+        "log_dir": "  D:\\logs  ",
+        "screenshots_dir": "D:\\shots",
+    })
+    assert merged["auto_screenshot"]["interval_ms"] == 1234
+    assert merged["auto_screenshot"]["cleanup_on_raid_end"] is True
+    assert merged["log_dir"] == "D:\\logs"
+    assert merged["screenshots_dir"] == "D:\\shots"
+
+
+def test_merge_ui_clamps_interval_from_page():
+    # R108：会员态下才按 200–60000 钳；非会员一律 10000（见 test_member_gate）
+    config.set_member_state({"member": True, "member_status": "permanent"})
+    merged = config.merge_ui({}, {"auto_screenshot": {"interval_ms": 10}})
+    assert merged["auto_screenshot"]["interval_ms"] == config.SHOT_INTERVAL_MIN
+    merged = config.merge_ui({}, {"auto_screenshot": {"interval_ms": 999999}})
+    assert merged["auto_screenshot"]["interval_ms"] == config.SHOT_INTERVAL_MAX
+
+
+def test_merge_ui_clearing_dir_returns_to_auto_detect():
+    """留空 = null，服务端下次探测回到自动识别。"""
+    merged = config.merge_ui({"log_dir": "D:\\logs", "screenshots_dir": "D:\\shots"},
+                             {"log_dir": None, "screenshots_dir": "   "})
+    assert merged["log_dir"] is None
+    assert merged["screenshots_dir"] is None
 

@@ -1,0 +1,4 @@
+﻿clamp evidence: requested offset=(800,800) scale=2.0 shape=square
+effectiveSize=416 bounds=(1504,624,416,416)
+workArea=(0,0,1920,1040)
+clamped inside work area: True

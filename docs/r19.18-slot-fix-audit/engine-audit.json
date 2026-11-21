@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2026-11-21T05:40:45",
+  "schema": "r19.18-engine-audit/1",
+  "corpus": {
+    "totalRecords": 397,
+    "applied": 388,
+    "unmatched": 9,
+    "fallback": 0,
+    "stale": 8,
+    "suppressed": 1
+  },
+  "checks": {
+    "svds_dovetail_exists": true,
+    "svds_dovetail_at_r2c7": true,
+    "svds_no_duplicate": true,
+    "svds_other_guns_unaffected": true,
+    "ak_45_56_akmp_only_via_parent_subslot": true,
+    "akm_family_no_akmp_rs": true,
+    "akm_no_ak74_rs": true,
+    "ak_legal_rear_sight_kept": true,
+    "ak_akmp_child_restored_on_leaf_parent": true,
+    "akm_akmp_child_slot_gone": true,
+    "akm_single_rear_sight_slot_59d6088586f774275f37482f": true,
+    "akm_akmp_not_in_gun_allow_59d6088586f774275f37482f": true,
+    "akm_no_akmp_anywhere_59d6088586f774275f37482f": true,
+    "akm_single_rear_sight_slot_59ff346386f77477562ff5e2": true,
+    "akm_akmp_not_in_gun_allow_59ff346386f77477562ff5e2": true,
+    "akm_no_akmp_anywhere_59ff346386f77477562ff5e2": true,
+    "akm_single_rear_sight_slot_5a0ec13bfcdbcb00165aa685": true,
+    "akm_akmp_not_in_gun_allow_5a0ec13bfcdbcb00165aa685": true,
+    "akm_no_akmp_anywhere_5a0ec13bfcdbcb00165aa685": true,
+    "akm_single_rear_sight_slot_5abcbc27d8ce8700182eceeb": true,
+    "akm_akmp_not_in_gun_allow_5abcbc27d8ce8700182eceeb": true,
+    "akm_no_akmp_anywhere_5abcbc27d8ce8700182eceeb": true,
+    "akm_single_rear_sight_slot_59e6152586f77473dc057aa1": true,
+    "akm_akmp_not_in_gun_allow_59e6152586f77473dc057aa1": true,
+    "akm_no_akmp_anywhere_59e6152586f77473dc057aa1": true,
+    "rows_6176aca650224f204c1da3fb_7": true,
+    "row7_slots_exist_6176aca650224f204c1da3fb": true,
+    "rows_6981d72ed009ad83920da43a_7": true,
+    "row7_slots_exist_6981d72ed009ad83920da43a": true,
+    "t5000_tactical_count_2": true,
+    "t5000_rail_count_2": true,
+    "t5000_no_duplicate_rail": true,
+    "sks_socom_slot_574d967124597745970e7c94": true,
+    "sks_socom_at_r4c3_574d967124597745970e7c94": true,
+    "sks_socom_scope_r2c3_574d967124597745970e7c94": true,
+    "sks_socom_tactical_r5c3_574d967124597745970e7c94": true,
+    "sks_socom_children_gone_574d967124597745970e7c94": true,
+    "sks_socom_slot_587e02ff24597743df3deaeb": true,
+    "sks_socom_at_r4c3_587e02ff24597743df3deaeb": true,
+    "sks_socom_scope_r2c3_587e02ff24597743df3deaeb": true,
+    "sks_socom_tactical_r5c3_587e02ff24597743df3deaeb": true,
+    "sks_socom_children_gone_587e02ff24597743df3deaeb": true,
+    "gp25_all_supported_guns_show_slot": true,
+    "gp25_no_slot_on_unsupported": true,
+    "gp25_below_gas_block": true,
+    "vsk94_no_b3_ring_slot": true,
+    "vss_val_keep_b3_ring": true,
+    "asvalmod4_dovetail_visible_without_cover": true,
+    "asvalmod4_single_35in_rail": true,
+    "asvalmod4_default_has_top_cover": true,
+    "asvalmod4_dovetail_hidden_with_cover": true,
+    "asvalmod4_cover_scope_present": true,
+    "asvalmod4_single_35in_rail_with_cover": true,
+    "asvalmod4_dovetail_restored_after_remove": true,
+    "asvalmod4_cover_children_gone_after_remove": true,
+    "asval_unaffected": true,
+    "tkpd_tactical_count_1": true,
+    "tkpd_two_dovetail_slots": true,
+    "tkpd_dovetail_accepts_real_items": true,
+    "calib_records_intact": true,
+    "calib_mostly_applied": true
+  },
+  "detail": {
+    "svds_dovetail_at_r2c7": "r2c7",
+    "svds": {
+      "cells": [
+        "mod_barrel/mod_muzzle@r3c1",
+        "mod_barrel/mod_gas_block@r3c2",
+        "mod_barrel@r3c3",
+        "mod_mount_001/mod_handguard@r3c4",
+        "mod_reciever@r3c5",
+        "mod_mount_000@r2c7",
+        "mod_mount_002@r2c2",
+        "mod_stock@r3c9",
+        "mod_magazine@r4c7",
+        "mod_pistol_grip@r4c8",
+        "mod_barrel/mod_muzzle/mod_sight_front@r2c1",
+        "mod_mount_001/mod_sight_rear@r2c6",
+        "mod_mount_001@r2c5",
+        "mod_barrel/mod_muzzle/mod_muzzle@r4c1",
+        "mod_barrel/mod_mount@r4c3"
+      ]
+    },
+    "ak_45_56_akmp_only_via_parent_subslot": [],
+    "akm_family_no_akmp_rs": [],
+    "akm_no_ak74_rs": [],
+    "akm_single_rear_sight_slot_59d6088586f774275f37482f": [
+      "mod_sight_rear"
+    ],
+    "akm_single_rear_sight_slot_59ff346386f77477562ff5e2": [
+      "mod_sight_rear"
+    ],
+    "akm_single_rear_sight_slot_5a0ec13bfcdbcb00165aa685": [
+      "mod_sight_rear"
+    ],
+    "akm_single_rear_sight_slot_5abcbc27d8ce8700182eceeb": [
+      "mod_sight_rear"
+    ],
+    "akm_single_rear_sight_slot_59e6152586f77473dc057aa1": [
+      "mod_sight_rear"
+    ],
+    "ak_sights": {
+      "5.45/5.56 带 AKMP RS 的枪": [],
+      "7.62/.366 保留 AKMP RS 的枪": []
+    },
+    "rows_6176aca650224f204c1da3fb_7": 7,
+    "row7_slots_exist_6176aca650224f204c1da3fb": [
+      "mod_reciever/mod_handguard/mod_tactical_000@r7c1",
+      "mod_reciever/mod_handguard/mod_tactical_001@r7c2",
+      "mod_reciever/mod_handguard/mod_tactical_002@r7c3",
+      "mod_reciever/mod_handguard/mod_bipod@r7c4"
+    ],
+    "rows_6981d72ed009ad83920da43a_7": 7,
+    "row7_slots_exist_6981d72ed009ad83920da43a": [
+      "mod_stock/mod_stock/mod_stock_003@r7c9",
+      "mod_handguard/mod_mount_000@r7c1",
+      "mod_handguard/mod_mount_001@r7c2",
+      "mod_handguard/mod_mount_002@r7c3"
+    ],
+    "t5000_tactical_count_2": [
+      "mod_stock/mod_handguard/mod_mount_000/mod_tactical",
+      "mod_stock/mod_handguard/mod_mount_003/mod_tactical"
+    ],
+    "t5000_rail_count_2": [
+      "mod_stock/mod_handguard/mod_mount_000",
+      "mod_stock/mod_handguard/mod_mount_003"
+    ],
+    "t5000": {
+      "tactical": [
+        "mod_stock/mod_handguard/mod_mount_000/mod_tactical@r6c2",
+        "mod_stock/mod_handguard/mod_mount_003/mod_tactical@r6c4"
+      ]
+    },
+    "sks_socom_slot_574d967124597745970e7c94": "r4c3",
+    "sks_socom_scope_r2c3_574d967124597745970e7c94": "r2c3",
+    "sks_socom_tactical_r5c3_574d967124597745970e7c94": "r5c3",
+    "sks_574d967124597745970e7c94": {
+      "socom": "r4c3",
+      "scope": "r2c3",
+      "tactical": "r5c3"
+    },
+    "sks_socom_slot_587e02ff24597743df3deaeb": "r4c3",
+    "sks_socom_scope_r2c3_587e02ff24597743df3deaeb": "r2c3",
+    "sks_socom_tactical_r5c3_587e02ff24597743df3deaeb": "r5c3",
+    "sks_587e02ff24597743df3deaeb": {
+      "socom": "r4c3",
+      "scope": "r2c3",
+      "tactical": "r5c3"
+    },
+    "gp25_all_supported_guns_show_slot": [],
+    "gp25_no_slot_on_unsupported": [],
+    "gp25_below_gas_block": [
+      {
+        "gun": "AK-74N 5.45x39 突击步枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      },
+      {
+        "gun": "AKM 7.62x39 突击步枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      },
+      {
+        "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      },
+      {
+        "gun": "VPO-209 .366TKM 卡宾枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      },
+      {
+        "gun": "AKMS 7.62x39 突击步枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      },
+      {
+        "gun": "AKMN 7.62x39 突击步枪",
+        "at": "r4c3",
+        "gas": "r3c3"
+      }
+    ],
+    "gp25": {
+      "guns": 18,
+      "list": [
+        {
+          "gun": "AK-74N 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKM 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "VPO-209 .366TKM 卡宾枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKMS 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKMN 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKS-74N 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKMSN 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-74M 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-101 5.56x45 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-102 5.56x45 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-103 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-104 7.62x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-105 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-74 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AKS-74 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-12 5.45x39 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        },
+        {
+          "gun": "AK-308 7.62x51 突击步枪",
+          "at": "r4c3",
+          "gas": "r3c3"
+        }
+      ]
+    },
+    "asvalmod4_single_35in_rail": [
+      "mod_handguard/mod_mount_000"
+    ],
+    "asvalmod4_default_has_top_cover": "68712bd4251b8d4c6c04ec19",
+    "asvalmod4_single_35in_rail_with_cover": [
+      "mod_handguard/mod_mount_000"
+    ],
+    "tkpd_tactical_count_1": [
+      "mod_mount_001/mod_handguard/mod_tactical"
+    ],
+    "tkpd_two_dovetail_slots": [
+      "mod_mount_000@r2c8",
+      "mod_mount_002@r2c2"
+    ],
+    "tkpd_dovetail_accepts_real_items": [
+      "mod_mount_000 allow=6",
+      "mod_mount_002 allow=4"
+    ],
+    "tkpd": {
+      "dovetail": [
+        "mod_mount_000@r2c8",
+        "mod_mount_002@r2c2"
+      ]
+    },
+    "calib": {
+      "total": 397,
+      "applied": 388,
+      "unmatched": 9,
+      "fallback": 0,
+      "stale": 8,
+      "suppressed": 1,
+      "affected": [
+        {
+          "gun": "AKM 7.62x39 突击步枪",
+          "unmatched": [
+            "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "AKMN 7.62x39 突击步枪",
+          "unmatched": [
+            "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "AKMS 7.62x39 突击步枪",
+          "unmatched": [
+            "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "AKMSN 7.62x39 突击步枪",
+          "unmatched": [
+            "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+          "unmatched": [
+            "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "KBP VSK-94 9x39步枪",
+          "unmatched": [
+            "mod_barrel/mod_muzzle/mod_mount|mod_mount|64527a3a7da7133e5a09ca99"
+          ],
+          "fallback": []
+        },
+        {
+          "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+          "unmatched": [
+            "mod_handguard/mod_mount_001/mod_tactical|mod_tactical|68712b57a1be89347f0d8179",
+            "mod_handguard/mod_mount_001|mod_mount_001|687128c4505fed5f370b1625",
+            "mod_mount_004|mod_mount_004|"
+          ],
+          "fallback": []
+        }
+      ]
+    },
+    "calib_records_intact": 397,
+    "calib_mostly_applied": 388
+  }
+}

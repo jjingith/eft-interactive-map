@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "name": "BMP 帧上传",
+      "ok": true,
+      "detail": "{\"ok\": true, \"id\": \"1794389696421\", \"bytes\": 4800054}"
+    },
+    {
+      "name": "BMP 取回 Content-Type=image/bmp 且字节一致",
+      "ok": true,
+      "detail": "ct=image/bmp len=4800054"
+    },
+    {
+      "name": "元信息端点（页面轮询源）",
+      "ok": true,
+      "detail": "{\"ok\": true, \"id\": \"1794389696421\", \"fmt\": \"bmp\"}"
+    },
+    {
+      "name": "交接态带 ts（宿主防竞态）",
+      "ok": true,
+      "detail": "{\"ok\": true, \"ts\": 1794389696.5028653}"
+    },
+    {
+      "name": "页面自动轮询拉帧（无 frame 参数）",
+      "ok": true,
+      "detail": "首帧就绪 287 ms"
+    },
+    {
+      "name": "首帧就绪 < 5s（轮询 150ms 档）",
+      "ok": true,
+      "detail": "287 ms"
+    },
+    {
+      "name": "第一轮交接完成（≥3 件）",
+      "ok": true,
+      "detail": "stateMatches=3"
+    },
+    {
+      "name": "同页轮询发现新帧（不重载）",
+      "ok": true,
+      "detail": "换帧延迟 253 ms"
+    },
+    {
+      "name": "换帧延迟 < 3s（可见页 150ms 档）",
+      "ok": true,
+      "detail": "253 ms"
+    },
+    {
+      "name": "第二轮交接完成（保温复用同页 + 新交接）",
+      "ok": true,
+      "detail": "warmMark=True stateMatches=3 ts2>ts1=True"
+    },
+    {
+      "name": "交接区域仍与框选一致（图像坐标）",
+      "ok": true,
+      "detail": "{\"x\": 30, \"y\": 22, \"w\": 566, \"h\": 331}"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ]
+}

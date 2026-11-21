@@ -1,0 +1,12 @@
+| AK-74 5.45x39 突击步枪 | 5bf3e03b0db834001d2c4a9c | assets/guns-full/5bf3e03b0db834001d2c4a9c.png | 5c0c1ce886f7（AK-74 5.45x39 突击步枪） | 是（预设整枪渲染 364x112，宽高比 3.25） | 否 | 通过 |
+| 柯尔特 M4A1 5.56x45 卡宾枪 | 5447a9cd4bdc2dbd208b4567 | assets/guns-full/5447a9cd4bdc2dbd208b4567.png | 5af08cf886f7（柯尔特 M4A1 5.56x45 卡） | 是（预设整枪渲染 290x112，宽高比 2.59） | 否 | 通过 |
+| HK MP5 9x19 冲锋枪（海军三发点射） | 5926bb2186f7744b1c6c6e60 | assets/guns-full/5926bb2186f7744b1c6c6e60.png | 59411aa786f7（HK MP5 9x19 冲锋枪（海军） | 是（预设整枪渲染 241x112，宽高比 2.15） | 否 | 通过 |
+| 莫辛-纳甘 7.62x54R 栓动式步枪（狙击型） | 5ae08f0a5acfc408fb1398a1 | assets/guns-full/5ae08f0a5acfc408fb1398a1.png | 5b8683a486f7（莫辛-纳甘 7.62x54R 栓动式） | 是（预设整枪渲染 400x68，宽高比 5.88） | 否 | 通过 |
+| MP-133 12 铅径泵动式霰弹枪 | 54491c4f4bdc2db1078b4568 | assets/guns-full/54491c4f4bdc2db1078b4568.png | 584148f22459（MP-133 12 铅径泵动式霰弹枪） | 是（预设整枪渲染 400x79，宽高比 5.06） | 否 | 通过 |
+| 马卡洛夫9x18PM 手枪 | 5448bd6b4bdc2dfc2f8b4569 | assets/guns-full/5448bd6b4bdc2dfc2f8b4569.png | 584149672459（马卡洛夫9x18PM 手枪 默认） | 是（预设整枪渲染 139x112，宽高比 1.24） | 否 | 通过 |
+| 德拉贡诺夫 SVDS 7.62x54R 半自动狙击步 | 5c46fbd72e2216398b5a8c9c | assets/guns-full/5c46fbd72e2216398b5a8c9c.png | 5c98be1e86f7（德拉贡诺夫 SVDS 7.62x54） | 是（预设整枪渲染 400x69，宽高比 5.80） | 否 | 通过 |
+| SV-98 7.62x54R 栓动式狙击步枪 | 55801eed4bdc2d89578b4588 | assets/guns-full/55801eed4bdc2d89578b4588.png | 58414a162459（SV-98 7.62x54R 栓动式） | 是（预设整枪渲染 400x72，宽高比 5.56） | 否 | 通过 |
+| RPK-16 5.45x39 轻机枪 | 5beed0f50db834001c062b12 | assets/guns-full/5beed0f50db834001c062b12.png | 5c0d1ec986f7（RPK-16 5.45x39 轻机枪） | 是（预设整枪渲染 400x106，宽高比 3.77） | 否 | 通过 |
+| AS VAL“巨浪” 9x39 特种突击步枪 | 57c44b372459772d2b39b8ce | assets/guns-full/57c44b372459772d2b39b8ce.png | 5841482e2459（AS VAL“巨浪” 9x39 特种） | 是（预设整枪渲染 400x101，宽高比 3.96） | 否 | 通过 |
+| 雷明顿 Model 870 12铅径泵动式霰弹枪 | 5a7828548dc32e5a9c28b516 | assets/guns-full/5a7828548dc32e5a9c28b516.png | 5ac4ad7586f7（雷明顿 Model 870 12铅径） | 是（预设整枪渲染 400x84，宽高比 4.76） | 否 | 通过 |
+| Glock 17 9x19 手枪 | 5a7ae0c351dfba0017554310 | assets/guns-full/5a7ae0c351dfba0017554310.png | 5a88acfb86f7（Glock 17 9x19 手枪 默） | 是（预设整枪渲染 158x112，宽高比 1.41） | 否 | 通过 |

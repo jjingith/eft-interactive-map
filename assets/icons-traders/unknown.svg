@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+  <!-- 来源未确认：本地自绘（项目内自制）。
+       虚线圈 + 问号，语义是「数据没给」，不是「不可获得」（后者用 ✗ 字形）。 -->
+  <circle cx="12" cy="12" r="9.2" stroke="#c9a227" stroke-width="1.5" stroke-dasharray="2.6 2.4"/>
+  <path d="M9.4 9.3a2.7 2.7 0 1 1 3.4 2.9c-.6.2-.9.7-.9 1.3v.5"
+        stroke="#c9a227" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="17.1" r="1.05" fill="#c9a227"/>
+</svg>

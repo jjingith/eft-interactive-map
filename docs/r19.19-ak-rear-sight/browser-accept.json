@@ -1,0 +1,148 @@
+{
+ "A1": [
+  {
+   "gun": "AK-105",
+   "cards": 13,
+   "rear": [
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6
+    }
+   ],
+   "calibApplied": "2",
+   "at_r2c6": true
+  },
+  {
+   "gun": "AK-74",
+   "cards": 12,
+   "rear": [
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6
+    }
+   ],
+   "calibApplied": "1",
+   "at_r2c6": true
+  },
+  {
+   "gun": "AK-74N",
+   "cards": 13,
+   "rear": [
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6
+    }
+   ],
+   "calibApplied": "2",
+   "at_r2c6": true
+  },
+  {
+   "gun": "AKS-74",
+   "cards": 12,
+   "rear": [
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6
+    }
+   ],
+   "calibApplied": "1",
+   "at_r2c6": true
+  },
+  {
+   "gun": "AKS-74N",
+   "cards": 13,
+   "rear": [
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6
+    }
+   ],
+   "calibApplied": "2",
+   "at_r2c6": true
+  }
+ ],
+ "A2": [
+  {
+   "gun": "AKM",
+   "defaultSlots": 1,
+   "akmpInCandidates": true,
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "afterInstallSlots": 1,
+   "installedAkmp": true,
+   "afterRemoveSlots": 1,
+   "emptied": true
+  },
+  {
+   "gun": "AKMS",
+   "defaultSlots": 1,
+   "akmpInCandidates": true,
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "afterInstallSlots": 1,
+   "installedAkmp": true,
+   "afterRemoveSlots": 1,
+   "emptied": true
+  },
+  {
+   "gun": "AKMN",
+   "defaultSlots": 1,
+   "akmpInCandidates": true,
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "afterInstallSlots": 1,
+   "installedAkmp": true,
+   "afterRemoveSlots": 1,
+   "emptied": true
+  },
+  {
+   "gun": "AKMSN",
+   "defaultSlots": 1,
+   "akmpInCandidates": true,
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "afterInstallSlots": 1,
+   "installedAkmp": true,
+   "afterRemoveSlots": 1,
+   "emptied": true
+  },
+  {
+   "gun": "VPO-136",
+   "defaultSlots": 1,
+   "akmpInCandidates": true,
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "afterInstallSlots": 1,
+   "installedAkmp": true,
+   "afterRemoveSlots": 1,
+   "emptied": true
+  }
+ ],
+ "consistency": {
+  "calibrator_mod_sight_rear": {
+   "row": 2,
+   "col": 6,
+   "gun": ""
+  }
+ },
+ "reload": {
+  "ak74n_r2c6": true
+ },
+ "failed": [],
+ "pass": true
+}

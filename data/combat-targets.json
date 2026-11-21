@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "source": {
+    "pages": [
+      "escapefromtarkov.fandom.com/wiki/Health_system（HealthOverview.png：PMC/玩家）",
+      "escapefromtarkov.fandom.com/wiki/Scavs（Scav-HP-Pool1/2/3.png：Scav 三种血池）",
+      "escapefromtarkov.fandom.com/wiki/Scourge（Scourge_Health_Overview.png：Boss；Scourge_Follower_Health_Overview.png：护卫）"
+    ],
+    "method": "2026-10-22 经代理 Chrome 实访页面，canvas 导出原图后逐张人工读数；证据图存 docs/r14-combat/targets/",
+    "note": "视频《塔科夫护甲》[03:00] 记录双腿各 60 与其总数 440 矛盾（35+85+70+60×4=430）；wiki 图示双腿各 65，合计 440 与图内总数一致，以 wiki 图为准。引擎部位键名映射：THORAX→chest，ARM/LEG 合并镜像键。"
+  },
+  "partsOrder": ["head", "chest", "stomach", "leftArm", "rightArm", "leftLeg", "rightLeg"],
+  "presets": [
+    {
+      "k": "pmc", "n": "PMC", "zh": "PMC（玩家）", "total": 440,
+      "parts": { "head": 35, "chest": 85, "stomach": 70, "leftArm": 60, "rightArm": 60, "leftLeg": 65, "rightLeg": 65 }
+    },
+    {
+      "k": "scav1", "n": "Scav pool 1", "zh": "Scav 血池 1（弱）", "total": 420,
+      "parts": { "head": 30, "chest": 80, "stomach": 70, "leftArm": 60, "rightArm": 60, "leftLeg": 60, "rightLeg": 60 }
+    },
+    {
+      "k": "scav2", "n": "Scav pool 2", "zh": "Scav 血池 2（中）", "total": 435,
+      "parts": { "head": 30, "chest": 85, "stomach": 70, "leftArm": 60, "rightArm": 60, "leftLeg": 65, "rightLeg": 65 }
+    },
+    {
+      "k": "scav3", "n": "Scav pool 3", "zh": "Scav 血池 3（强）", "total": 530,
+      "parts": { "head": 30, "chest": 100, "stomach": 100, "leftArm": 70, "rightArm": 70, "leftLeg": 80, "rightLeg": 80 }
+    },
+    {
+      "k": "boss", "n": "Boss (Scourge)", "zh": "Boss（Scourge）", "total": 750,
+      "parts": { "head": 60, "chest": 150, "stomach": 120, "leftArm": 100, "rightArm": 100, "leftLeg": 110, "rightLeg": 110 }
+    },
+    {
+      "k": "follower", "n": "Follower (Scourge)", "zh": "护卫（Scourge 护卫）", "total": 570,
+      "parts": { "head": 50, "chest": 100, "stomach": 80, "leftArm": 80, "rightArm": 80, "leftLeg": 90, "rightLeg": 90 }
+    }
+  ]
+}

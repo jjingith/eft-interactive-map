@@ -1,0 +1,234 @@
+[
+  {
+    "item": "页面加载（打包后端）",
+    "pass": true,
+    "detail": "http://127.0.0.1:8792/"
+  },
+  {
+    "item": "四层结构·menubar",
+    "pass": true,
+    "detail": {
+      "h": 34,
+      "w": 1424,
+      "vis": true
+    }
+  },
+  {
+    "item": "四层结构·toolbar",
+    "pass": true,
+    "detail": {
+      "h": 33,
+      "w": 346,
+      "vis": true
+    }
+  },
+  {
+    "item": "四层结构·contextbar",
+    "pass": true,
+    "detail": {
+      "h": 36,
+      "w": 1424,
+      "vis": true
+    }
+  },
+  {
+    "item": "四层结构·statusbar",
+    "pass": true,
+    "detail": {
+      "h": 24,
+      "w": 1424,
+      "vis": true
+    }
+  },
+  {
+    "item": "菜单栏高度 34",
+    "pass": true,
+    "detail": {
+      "h": 34,
+      "w": 1424,
+      "vis": true
+    }
+  },
+  {
+    "item": "右上角显示 游戏版本 1.3.0.48484",
+    "pass": true,
+    "detail": "'游戏版本 1.3.0.48484'"
+  },
+  {
+    "item": "右上角悬停 title 含来源（回退 ammo_ballistic.json）",
+    "pass": true,
+    "detail": "游戏版本 1.3.0.48484 · 来源 data/game-truth/ammo_ballistic.json（source.exe_version，本地 EFT 客户端文件版本） · 数据日期 2026-11-04 12:57:38"
+  },
+  {
+    "item": "状态栏游戏版本同步",
+    "pass": true,
+    "detail": "'游戏版本 1.3.0.48484'"
+  },
+  {
+    "item": "关于页 构建版本行",
+    "pass": true,
+    "detail": "构建版本：R19.35-be7a3762（仅用于排查；右上角与状态栏显示游戏版本）"
+  },
+  {
+    "item": "菜单「文件」能打开",
+    "pass": true,
+    "detail": {
+      "hidden": false,
+      "items": 2,
+      "expanded": "true"
+    }
+  },
+  {
+    "item": "视图切换 → 任务",
+    "pass": true,
+    "detail": {
+      "sb": "视图：任务",
+      "sel": "true",
+      "mapSvg": true,
+      "ctxVis": true
+    }
+  },
+  {
+    "item": "视图切换 → 弹药",
+    "pass": true,
+    "detail": {
+      "sb": "视图：弹药",
+      "sel": "true",
+      "mapSvg": true,
+      "ctxVis": true
+    }
+  },
+  {
+    "item": "视图切换 → 配装",
+    "pass": true,
+    "detail": {
+      "sb": "视图：配装",
+      "sel": "true",
+      "mapSvg": true,
+      "ctxVis": true
+    }
+  },
+  {
+    "item": "视图切换 → 地图",
+    "pass": true,
+    "detail": {
+      "sb": "视图：地图",
+      "sel": "true",
+      "mapSvg": true,
+      "ctxVis": true
+    }
+  },
+  {
+    "item": "小地图页入口 __tkMiniZoom",
+    "pass": true,
+    "detail": {
+      "mini": true,
+      "badge": "",
+      "svg": true
+    }
+  },
+  {
+    "item": "小地图滚轮缩放（解锁态）",
+    "pass": true,
+    "detail": {
+      "before": "",
+      "after": "210%"
+    }
+  },
+  {
+    "item": "小地图热键入口缩放（锁定态）",
+    "pass": true,
+    "detail": {
+      "wheel": "210%",
+      "hookReturn": 2.2,
+      "badge": "220%"
+    }
+  },
+  {
+    "item": "回到主页面",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "item": "任务栏有行且可见",
+    "pass": true,
+    "detail": {
+      "n": 54,
+      "w": 313,
+      "h": 70.34375
+    }
+  },
+  {
+    "item": "任务单条开关",
+    "pass": true,
+    "detail": {
+      "before": true,
+      "after": {
+        "checked": false,
+        "rowOff": true
+      }
+    }
+  },
+  {
+    "item": "任务四档筛选（全部/未完成/已完成/可并行）",
+    "pass": true,
+    "detail": {
+      "all": {
+        "n": 54,
+        "count": "54"
+      },
+      "todo": {
+        "n": 54,
+        "count": "54"
+      },
+      "done": {
+        "n": 0,
+        "count": "0"
+      },
+      "parallel": {
+        "n": 44,
+        "count": "44"
+      }
+    }
+  },
+  {
+    "item": "右键菜单出现「任务详细」",
+    "pass": true,
+    "detail": {
+      "hidden": false,
+      "text": "任务详细",
+      "disabled": false
+    }
+  },
+  {
+    "item": "右键「任务详细」跳转",
+    "pass": true,
+    "detail": {
+      "hash": "#tasks:6391359b9444fb141f4e6ee6",
+      "sb": "视图：任务"
+    }
+  },
+  {
+    "item": "配装 6B34 显示「眼部」防护区域",
+    "pass": true,
+    "detail": {
+      "rows": 1,
+      "hits": 1,
+      "found": [
+        {
+          "row": 0,
+          "alts": [
+            "",
+            "眼部"
+          ],
+          "hasEye": true
+        }
+      ]
+    }
+  },
+  {
+    "item": "运行期无 console error",
+    "pass": true,
+    "detail": []
+  }
+]

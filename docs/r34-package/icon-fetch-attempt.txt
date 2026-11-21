@@ -1,0 +1,31 @@
+# host=HOMONAS user=MASTERJJ at=2026-11-03T10:51:52+08:00 round=R34-package-2
+# 补图尝试：HK 416A5 RAL 8000 / FN P90 灾厄
+proxy=http://127.0.0.1:7896
+proxy_probe=https://assets.tarkov.dev/5447a9cd4bdc2dbd208b4567-icon.webp -> 200 image/webp 1928
+tls_verify=on（curl 未使用 -k）
+
+urls:
+  https://assets.tarkov.dev/6a2a77cae232fdab260b484a-base-image.webp -> 404 text/html 375
+  https://assets.tarkov.dev/6a799f200b38edb61b0aca7b-base-image.webp -> 404 text/html 375
+  https://assets.tarkov.dev/6a15ae2ae5267ba21c07f98f-base-image.webp -> 404 text/html 375
+  https://assets.tarkov.dev/6a15ae2ae5267ba21c07f98f-icon.webp -> 404 text/html 369
+  https://assets.tarkov.dev/6a15ae2ae5267ba21c07f98f-512.webp -> 404
+  https://assets.tarkov.dev/6a15ae2ae5267ba21c07f98f-grid-image.webp -> 404
+  https://assets.tarkov.dev/6a78b7f8c2016eb33e0027cd-base-image.webp -> 404
+  https://assets.tarkov.dev/6a78b7f8c2016eb33e0027cd-icon.webp -> 404
+  https://assets.tarkov.dev/6a78b7f8c2016eb33e0027cd-512.webp -> 404
+  https://assets.tarkov.dev/6a78b7f8c2016eb33e0027cd-grid-image.webp -> 404
+
+tarkovdev_json:
+  https://json.tarkov.dev/regular/items -> 200 application/json 17344045
+  item 6a15ae2ae5267ba21c07f98f: iconLink/gridImageLink/baseImageLink 全部指向 unknown-item-* 占位图
+  item 6a78b7f8c2016eb33e0027cd: 同上
+  已知物品 5447a9cd4bdc2dbd208b4567 的 CDN 图 200，说明 CDN 与代理正常，缺失仅限新 ID。
+
+local_search:
+  build-cache / assets / 逆向参考(db4tarkov-local, tarkov.kaedeori, build-re-gunsmith) 均未找到这两个 ID 的图像。
+  Python GraphQL api.tarkov.dev 返回 422 "GraphQL server unavailable. Try again later."（未作为唯一依据）。
+
+decision:
+  按用户规则「不要伪造占位图充数（可以用同名占位则不接受，宁可报缺）」，
+  未写入任何资产文件；verify/build/release 未继续。

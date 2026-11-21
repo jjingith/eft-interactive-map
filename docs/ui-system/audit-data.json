@@ -1,0 +1,1196 @@
+{
+ "schema": 1,
+ "tool": "tools/ui_audit.py",
+ "css": [
+  {
+   "file": "style.css",
+   "bytes": 201122,
+   "rules": 1410,
+   "declarations": 4975,
+   "important": 4,
+   "hexOccurrences": 740,
+   "hexDistinct": 302,
+   "topColors": [
+    [
+     "#ffffff",
+     69
+    ],
+    [
+     "#4a4a4a",
+     14
+    ],
+    [
+     "#2a5cc4",
+     14
+    ],
+    [
+     "#9aa4b2",
+     11
+    ],
+    [
+     "#4a9eff",
+     11
+    ],
+    [
+     "#e06c6c",
+     10
+    ],
+    [
+     "#101010",
+     9
+    ],
+    [
+     "#8a8a8a",
+     9
+    ],
+    [
+     "#151515",
+     9
+    ],
+    [
+     "#171717",
+     8
+    ],
+    [
+     "#333c49",
+     8
+    ],
+    [
+     "#7b8593",
+     8
+    ]
+   ],
+   "nearDuplicateColorGroups": [
+    {
+     "colors": [
+      "#161a1f",
+      "#171b21",
+      "#131719",
+      "#14181d",
+      "#1b1d20",
+      "#151a21",
+      "#191e25",
+      "#1b1b1b",
+      "#141a22",
+      "#1b1f1d",
+      "#1b201e",
+      "#1a1a1a",
+      "#171b22",
+      "#12161d",
+      "#151a22",
+      "#131720"
+     ],
+     "total": 27
+    },
+    {
+     "colors": [
+      "#0e1013",
+      "#121212",
+      "#101010",
+      "#0d0d0d",
+      "#0e1116",
+      "#141414",
+      "#0b0e13",
+      "#101418",
+      "#0f0f0f",
+      "#0d1117",
+      "#121514",
+      "#0a1410"
+     ],
+     "total": 32
+    },
+    {
+     "colors": [
+      "#1d222a",
+      "#1b2227",
+      "#1b2327",
+      "#1c222b",
+      "#1b212a",
+      "#1d232c",
+      "#1a212b",
+      "#1a2029"
+     ],
+     "total": 14
+    },
+    {
+     "colors": [
+      "#202020",
+      "#1e1e1e",
+      "#232323",
+      "#1f1f1f",
+      "#262626",
+      "#222222",
+      "#242424"
+     ],
+     "total": 15
+    },
+    {
+     "colors": [
+      "#39404a",
+      "#343c48",
+      "#333c49",
+      "#38414e",
+      "#3a4150",
+      "#333c4a"
+     ],
+     "total": 16
+    },
+    {
+     "colors": [
+      "#2b323c",
+      "#262d38",
+      "#262e39",
+      "#2a303c",
+      "#2c3442"
+     ],
+     "total": 11
+    },
+    {
+     "colors": [
+      "#2e2e2e",
+      "#292929",
+      "#333333",
+      "#2b2b2b"
+     ],
+     "total": 14
+    },
+    {
+     "colors": [
+      "#d6d6d6",
+      "#dcdcdc",
+      "#d8d8d8",
+      "#d6dcd6"
+     ],
+     "total": 10
+    },
+    {
+     "colors": [
+      "#3a3a3a",
+      "#373737",
+      "#404040",
+      "#3b3b3b"
+     ],
+     "total": 9
+    },
+    {
+     "colors": [
+      "#e9eef5",
+      "#efefef",
+      "#e7edf5",
+      "#e6ebf2"
+     ],
+     "total": 6
+    },
+    {
+     "colors": [
+      "#6a6a6a",
+      "#6d6d6d",
+      "#6b6b6b",
+      "#6f6f6f"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#ffffff",
+      "#fffefe",
+      "#fdfdfd"
+     ],
+     "total": 73
+    },
+    {
+     "colors": [
+      "#171717",
+      "#181818",
+      "#151515"
+     ],
+     "total": 21
+    },
+    {
+     "colors": [
+      "#d9dee5",
+      "#d8dde5",
+      "#d7dee8"
+     ],
+     "total": 10
+    }
+   ],
+   "varDecls": 780,
+   "varAdoption": 15.7,
+   "colorDecls": 1179,
+   "colorVarAdoption": 52.2,
+   "fontSizes": [
+    [
+     "11px",
+     113
+    ],
+    [
+     "10px",
+     85
+    ],
+    [
+     "9px",
+     53
+    ],
+    [
+     "12px",
+     33
+    ],
+    [
+     "8px",
+     17
+    ],
+    [
+     "13px",
+     10
+    ],
+    [
+     "7px",
+     5
+    ],
+    [
+     "calc(11 * var(--lw-u))",
+     3
+    ],
+    [
+     "calc(13 * var(--lw-u))",
+     3
+    ],
+    [
+     "14px",
+     2
+    ],
+    [
+     "calc(8 * var(--lw-u))",
+     2
+    ],
+    [
+     "calc(9 * var(--lw-u))",
+     2
+    ],
+    [
+     "22px",
+     2
+    ],
+    [
+     "calc(7 * var(--lw-u))",
+     1
+    ]
+   ],
+   "fontSizeDistinct": 21,
+   "radii": [
+    [
+     "2px",
+     21
+    ],
+    [
+     "3px",
+     8
+    ],
+    [
+     "4px",
+     6
+    ],
+    [
+     "50%",
+     4
+    ],
+    [
+     "6px",
+     4
+    ],
+    [
+     "8px",
+     2
+    ],
+    [
+     "1px",
+     1
+    ],
+    [
+     "0 4px 0 0",
+     1
+    ]
+   ],
+   "radiusDistinct": 8,
+   "paddingDistinct": 111
+  },
+  {
+   "file": "theme-windows-xp.css",
+   "bytes": 66571,
+   "rules": 428,
+   "declarations": 790,
+   "important": 1,
+   "hexOccurrences": 678,
+   "hexDistinct": 110,
+   "topColors": [
+    [
+     "#ffffff",
+     79
+    ],
+    [
+     "#aca899",
+     77
+    ],
+    [
+     "#f7f5ee",
+     67
+    ],
+    [
+     "#232323",
+     61
+    ],
+    [
+     "#000000",
+     59
+    ],
+    [
+     "#ece9d8",
+     47
+    ],
+    [
+     "#4a4a4a",
+     30
+    ],
+    [
+     "#0a3f9e",
+     21
+    ],
+    [
+     "#a11b1b",
+     17
+    ],
+    [
+     "#3a3a3a",
+     13
+    ],
+    [
+     "#d6d2c2",
+     11
+    ],
+    [
+     "#0b6b3a",
+     6
+    ]
+   ],
+   "nearDuplicateColorGroups": [
+    {
+     "colors": [
+      "#ece9d8",
+      "#e6e3d5",
+      "#ebe7d8",
+      "#e8e4d6"
+     ],
+     "total": 54
+    },
+    {
+     "colors": [
+      "#dbe7f7",
+      "#dce7fb",
+      "#dbe7fb"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#ffffff",
+      "#fdfdfd"
+     ],
+     "total": 81
+    },
+    {
+     "colors": [
+      "#aca899",
+      "#a9a595"
+     ],
+     "total": 79
+    },
+    {
+     "colors": [
+      "#f7f5ee",
+      "#f4f2e8"
+     ],
+     "total": 70
+    },
+    {
+     "colors": [
+      "#d6d2c2",
+      "#d5d0c0"
+     ],
+     "total": 12
+    },
+    {
+     "colors": [
+      "#f1efe4",
+      "#f2f0e6"
+     ],
+     "total": 7
+    },
+    {
+     "colors": [
+      "#fffdf3",
+      "#fffdf5"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#ffeec6",
+      "#fff3c4"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#eaf3ff",
+      "#eef4ff"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#e2dfcf",
+      "#e3e0d0"
+     ],
+     "total": 4
+    },
+    {
+     "colors": [
+      "#c9c5b6",
+      "#cfcabb"
+     ],
+     "total": 3
+    },
+    {
+     "colors": [
+      "#ffd9d9",
+      "#ffdcdc"
+     ],
+     "total": 2
+    },
+    {
+     "colors": [
+      "#ffecec",
+      "#ffe9e9"
+     ],
+     "total": 2
+    }
+   ],
+   "varDecls": 171,
+   "varAdoption": 21.6,
+   "colorDecls": 500,
+   "colorVarAdoption": 23.8,
+   "fontSizes": [
+    [
+     "var(--xp-fs-compact)",
+     5
+    ],
+    [
+     "var(--xp-fs-body)",
+     1
+    ],
+    [
+     "var(--xp-fs-panel)",
+     1
+    ],
+    [
+     "var(--xp-fs-title)",
+     1
+    ],
+    [
+     "var(--xp-fs-micro)",
+     1
+    ]
+   ],
+   "fontSizeDistinct": 5,
+   "radii": [
+    [
+     "3px",
+     9
+    ],
+    [
+     "3px 3px 0 0",
+     4
+    ],
+    [
+     "2px",
+     4
+    ],
+    [
+     "0",
+     2
+    ],
+    [
+     "4px",
+     2
+    ],
+    [
+     "var(--xp-radius-panel)",
+     2
+    ],
+    [
+     "var(--xp-radius-control)",
+     1
+    ],
+    [
+     "var(--xp-radius-btn)",
+     1
+    ]
+   ],
+   "radiusDistinct": 8,
+   "paddingDistinct": 5
+  },
+  {
+   "file": "tasks.css",
+   "bytes": 21481,
+   "rules": 223,
+   "declarations": 638,
+   "important": 0,
+   "hexOccurrences": 217,
+   "hexDistinct": 62,
+   "topColors": [
+    [
+     "#4a4a4a",
+     23
+    ],
+    [
+     "#aca899",
+     21
+    ],
+    [
+     "#ffffff",
+     13
+    ],
+    [
+     "#316ac5",
+     12
+    ],
+    [
+     "#a31d1d",
+     11
+    ],
+    [
+     "#fdfdfd",
+     10
+    ],
+    [
+     "#7f9db9",
+     9
+    ],
+    [
+     "#e8a33d",
+     9
+    ],
+    [
+     "#0b6b3a",
+     9
+    ],
+    [
+     "#ffd98a",
+     6
+    ],
+    [
+     "#ece9d8",
+     5
+    ],
+    [
+     "#fffdf3",
+     5
+    ]
+   ],
+   "nearDuplicateColorGroups": [
+    {
+     "colors": [
+      "#f7f5ee",
+      "#fbf9ef",
+      "#fbfaf4"
+     ],
+     "total": 7
+    },
+    {
+     "colors": [
+      "#f2f0e6",
+      "#f1efe4",
+      "#eceae0"
+     ],
+     "total": 4
+    },
+    {
+     "colors": [
+      "#fdfdfd",
+      "#ffffff"
+     ],
+     "total": 23
+    },
+    {
+     "colors": [
+      "#ece9d8",
+      "#e6e3d8"
+     ],
+     "total": 6
+    },
+    {
+     "colors": [
+      "#fdf7e3",
+      "#fff5e8"
+     ],
+     "total": 4
+    },
+    {
+     "colors": [
+      "#e2dfcf",
+      "#e4e0d2"
+     ],
+     "total": 3
+    },
+    {
+     "colors": [
+      "#eaf3ff",
+      "#eef4fd"
+     ],
+     "total": 3
+    },
+    {
+     "colors": [
+      "#6b5300",
+      "#6b4f00"
+     ],
+     "total": 3
+    }
+   ],
+   "varDecls": 70,
+   "varAdoption": 11.0,
+   "colorDecls": 185,
+   "colorVarAdoption": 30.8,
+   "fontSizes": [
+    [
+     "11px",
+     20
+    ],
+    [
+     "10.5px",
+     3
+    ],
+    [
+     "12px",
+     3
+    ],
+    [
+     "13.5px",
+     2
+    ],
+    [
+     "12.5px",
+     2
+    ],
+    [
+     "15px",
+     1
+    ],
+    [
+     "8px",
+     1
+    ],
+    [
+     "13px",
+     1
+    ],
+    [
+     "17px",
+     1
+    ],
+    [
+     "20px",
+     1
+    ],
+    [
+     "11.5px",
+     1
+    ]
+   ],
+   "fontSizeDistinct": 11,
+   "radii": [
+    [
+     "2px",
+     14
+    ]
+   ],
+   "radiusDistinct": 1,
+   "paddingDistinct": 30
+  },
+  {
+   "file": "calibrator.css",
+   "bytes": 8437,
+   "rules": 67,
+   "declarations": 235,
+   "important": 0,
+   "hexOccurrences": 96,
+   "hexDistinct": 35,
+   "topColors": [
+    [
+     "#aca899",
+     11
+    ],
+    [
+     "#c97a10",
+     7
+    ],
+    [
+     "#000000",
+     4
+    ],
+    [
+     "#245edb",
+     4
+    ],
+    [
+     "#ffffff",
+     4
+    ],
+    [
+     "#ffcc00",
+     4
+    ],
+    [
+     "#ff9933",
+     4
+    ],
+    [
+     "#7f9db9",
+     4
+    ],
+    [
+     "#0b6b3a",
+     4
+    ],
+    [
+     "#666666",
+     4
+    ],
+    [
+     "#a11b1b",
+     4
+    ],
+    [
+     "#fdfdfd",
+     3
+    ]
+   ],
+   "nearDuplicateColorGroups": [
+    {
+     "colors": [
+      "#ffffff",
+      "#fdfdfd"
+     ],
+     "total": 7
+    },
+    {
+     "colors": [
+      "#f5f2ea",
+      "#f6f4ea"
+     ],
+     "total": 6
+    },
+    {
+     "colors": [
+      "#d8d0c4",
+      "#d5d0c0"
+     ],
+     "total": 5
+    },
+    {
+     "colors": [
+      "#ecebe5",
+      "#f0eee4"
+     ],
+     "total": 4
+    },
+    {
+     "colors": [
+      "#ece9d8",
+      "#e7e3d6"
+     ],
+     "total": 2
+    }
+   ],
+   "varDecls": 50,
+   "varAdoption": 21.3,
+   "colorDecls": 65,
+   "colorVarAdoption": 44.6,
+   "fontSizes": [
+    [
+     "var(--xp-fs-micro, 11px)",
+     4
+    ],
+    [
+     "var(--xp-fs-compact, 12px)",
+     3
+    ],
+    [
+     "var(--xp-fs-strong, 14px)",
+     1
+    ],
+    [
+     "var(--xp-fs-panel, 15px)",
+     1
+    ],
+    [
+     "10px",
+     1
+    ],
+    [
+     "11px",
+     1
+    ],
+    [
+     "9px",
+     1
+    ]
+   ],
+   "fontSizeDistinct": 7,
+   "radii": [
+    [
+     "2px",
+     5
+    ],
+    [
+     "var(--xp-radius-btn, 3px)",
+     2
+    ],
+    [
+     "3px",
+     2
+    ]
+   ],
+   "radiusDistinct": 3,
+   "paddingDistinct": 14
+  }
+ ],
+ "js": [
+  {
+   "file": "app.js",
+   "bytes": 889412,
+   "lines": 19231,
+   "inlineStyleAssign": 51,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 501,
+   "innerHTML": 90,
+   "classList": 36,
+   "windowConfirm": 1,
+   "windowAlert": 0,
+   "hexColorLiterals": 24
+  },
+  {
+   "file": "tasks.js",
+   "bytes": 102223,
+   "lines": 2413,
+   "inlineStyleAssign": 1,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 2,
+   "innerHTML": 5,
+   "classList": 12,
+   "windowConfirm": 1,
+   "windowAlert": 0,
+   "hexColorLiterals": 0
+  },
+  {
+   "file": "calibrator.js",
+   "bytes": 36910,
+   "lines": 901,
+   "inlineStyleAssign": 9,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 3,
+   "innerHTML": 10,
+   "classList": 3,
+   "windowConfirm": 0,
+   "windowAlert": 0,
+   "hexColorLiterals": 1
+  },
+  {
+   "file": "gun_builder.js",
+   "bytes": 68480,
+   "lines": 1404,
+   "inlineStyleAssign": 0,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 0,
+   "innerHTML": 0,
+   "classList": 0,
+   "windowConfirm": 0,
+   "windowAlert": 0,
+   "hexColorLiterals": 0
+  },
+  {
+   "file": "combat_sim.js",
+   "bytes": 33961,
+   "lines": 680,
+   "inlineStyleAssign": 0,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 0,
+   "innerHTML": 0,
+   "classList": 0,
+   "windowConfirm": 0,
+   "windowAlert": 0,
+   "hexColorLiterals": 0
+  },
+  {
+   "file": "i18n.js",
+   "bytes": 15031,
+   "lines": 377,
+   "inlineStyleAssign": 0,
+   "setAttributeStyle": 0,
+   "cssText": 0,
+   "createElement": 0,
+   "innerHTML": 0,
+   "classList": 0,
+   "windowConfirm": 0,
+   "windowAlert": 0,
+   "hexColorLiterals": 0
+  }
+ ],
+ "components": {
+  "Button": {
+   "app.js": 318,
+   "theme-windows-xp.css": 82,
+   "tasks.js": 59,
+   "calibrator.js": 33,
+   "style.css": 31,
+   "tasks.css": 20,
+   "calibrator.css": 10
+  },
+  "Input": {
+   "app.js": 127,
+   "tasks.js": 48,
+   "style.css": 43,
+   "theme-windows-xp.css": 31,
+   "calibrator.js": 19,
+   "tasks.css": 3,
+   "calibrator.css": 2
+  },
+  "Select": {
+   "style.css": 25,
+   "theme-windows-xp.css": 18,
+   "app.js": 16,
+   "tasks.css": 2,
+   "calibrator.css": 2,
+   "tasks.js": 2,
+   "calibrator.js": 1
+  },
+  "Checkbox/Radio": {
+   "tasks.js": 12,
+   "app.js": 11,
+   "style.css": 7,
+   "tasks.css": 2
+  },
+  "Tabs": {
+   "app.js": 44,
+   "theme-windows-xp.css": 22,
+   "tasks.js": 12,
+   "style.css": 9,
+   "tasks.css": 4
+  },
+  "Menu": {
+   "style.css": 9,
+   "app.js": 3,
+   "gun_builder.js": 3
+  },
+  "Dialog/Modal": {
+   "theme-windows-xp.css": 62,
+   "app.js": 59,
+   "style.css": 26,
+   "calibrator.js": 8,
+   "calibrator.css": 7
+  },
+  "Tooltip": {
+   "app.js": 99,
+   "theme-windows-xp.css": 37,
+   "style.css": 26,
+   "tasks.js": 3,
+   "tasks.css": 1,
+   "i18n.js": 1
+  },
+  "Table": {
+   "app.js": 851,
+   "style.css": 203,
+   "theme-windows-xp.css": 108,
+   "tasks.js": 85,
+   "gun_builder.js": 44,
+   "calibrator.js": 39,
+   "tasks.css": 24,
+   "i18n.js": 10
+  },
+  "Badge/Status": {
+   "app.js": 156,
+   "tasks.js": 87,
+   "style.css": 63,
+   "theme-windows-xp.css": 17,
+   "tasks.css": 12,
+   "calibrator.js": 7,
+   "i18n.js": 7,
+   "calibrator.css": 2
+  },
+  "Panel/Group": {
+   "app.js": 291,
+   "style.css": 174,
+   "theme-windows-xp.css": 89,
+   "tasks.js": 53,
+   "calibrator.js": 50,
+   "calibrator.css": 16,
+   "tasks.css": 15,
+   "gun_builder.js": 1
+  },
+  "Toolbar": {
+   "app.js": 12,
+   "style.css": 8,
+   "tasks.js": 8,
+   "theme-windows-xp.css": 6,
+   "tasks.css": 1
+  }
+ },
+ "dialogs": [
+  {
+   "kind": "modal",
+   "selectors": [
+    "calibrator.css:cal-modal",
+    "calibrator.css:cal-modal-btns",
+    "calibrator.css:cal-modal-text",
+    "style.css:am-modal",
+    "style.css:am-modal-body",
+    "style.css:am-modal-box",
+    "style.css:am-modal-head",
+    "style.css:am-modal-title",
+    "style.css:am-modal-x",
+    "style.css:gw-prof-modal",
+    "style.css:lw-modal",
+    "style.css:lw-modal-body",
+    "style.css:lw-modal-box",
+    "style.css:lw-modal-btn",
+    "style.css:lw-modal-foot",
+    "style.css:lw-modal-head",
+    "style.css:lw-modal-note",
+    "style.css:lw-modal-state",
+    "style.css:lw-modal-title",
+    "style.css:lw-modal-x",
+    "theme-windows-xp.css:am-modal",
+    "theme-windows-xp.css:am-modal-body",
+    "theme-windows-xp.css:am-modal-box",
+    "theme-windows-xp.css:am-modal-head",
+    "theme-windows-xp.css:am-modal-title",
+    "theme-windows-xp.css:am-modal-x",
+    "theme-windows-xp.css:lw-modal-body",
+    "theme-windows-xp.css:lw-modal-box",
+    "theme-windows-xp.css:lw-modal-btn",
+    "theme-windows-xp.css:lw-modal-foot",
+    "theme-windows-xp.css:lw-modal-head",
+    "theme-windows-xp.css:lw-modal-note",
+    "theme-windows-xp.css:lw-modal-state",
+    "theme-windows-xp.css:lw-modal-title",
+    "theme-windows-xp.css:lw-modal-x"
+   ]
+  },
+  {
+   "kind": "overlay/mask",
+   "selectors": [
+    "calibrator.css:('cal-overlay', 'overlay')",
+    "style.css:('gw-gun-overlay', 'overlay')"
+   ]
+  },
+  {
+   "kind": "menu/popup",
+   "selectors": [
+    "style.css:('menu-btn', 'menu')",
+    "style.css:('menu-btn-profile', 'menu')",
+    "style.css:('menu-panel', 'menu')",
+    "style.css:('menu-spacer', 'menu')",
+    "style.css:('menu-wrap', 'menu')",
+    "style.css:('menubar', 'menu')"
+   ]
+  },
+  {
+   "kind": "tooltip/tip",
+   "selectors": [
+    "style.css:('am-graph-tip', 'tip')",
+    "style.css:('am-graph-tip-meta', 'tip')",
+    "style.css:('am-graph-tip-more', 'tip')",
+    "style.css:('am-graph-tip-name', 'tip')",
+    "style.css:('am-graph-tip-row', 'tip')",
+    "style.css:('gw-tip', 'tip')",
+    "style.css:('lw-tip', 'tip')",
+    "style.css:('lw-tip-head', 'tip')",
+    "style.css:('lw-tip-line', 'tip')",
+    "theme-windows-xp.css:('am-graph-tip', 'tip')",
+    "theme-windows-xp.css:('am-graph-tip-meta', 'tip')",
+    "theme-windows-xp.css:('am-graph-tip-more', 'tip')",
+    "theme-windows-xp.css:('am-graph-tip-name', 'tip')",
+    "theme-windows-xp.css:('am-graph-tip-row', 'tip')",
+    "theme-windows-xp.css:('lw-tip', 'tip')",
+    "theme-windows-xp.css:('lw-tip-head', 'tip')",
+    "theme-windows-xp.css:('lw-tip-line', 'tip')"
+   ]
+  }
+ ],
+ "summary": {
+  "cssBytes": 297611,
+  "cssFiles": 4,
+  "rules": 2128,
+  "important": 5,
+  "hexOccurrences": 1731,
+  "hexDistinctMax": 302,
+  "varAdoptionAvg": 17.4,
+  "colorVarAdoptionAvg": 37.9,
+  "inlineStyleAssign": 61,
+  "windowConfirm": 2,
+  "distinctFontSizes": [
+   "10.5px",
+   "10px",
+   "11.5px",
+   "11px",
+   "12.5px",
+   "12px",
+   "13.5px",
+   "13px",
+   "14px",
+   "15px",
+   "17px",
+   "20px",
+   "22px",
+   "7px",
+   "8px",
+   "9px",
+   "calc(11 * var(--lw-u))",
+   "calc(13 * var(--lw-u))",
+   "calc(7 * var(--lw-u))",
+   "calc(8 * var(--lw-u))",
+   "calc(9 * var(--lw-u))",
+   "var(--xp-fs-body)",
+   "var(--xp-fs-compact)",
+   "var(--xp-fs-compact, 12px)",
+   "var(--xp-fs-micro)",
+   "var(--xp-fs-micro, 11px)",
+   "var(--xp-fs-panel)",
+   "var(--xp-fs-panel, 15px)",
+   "var(--xp-fs-strong, 14px)",
+   "var(--xp-fs-title)"
+  ],
+  "distinctRadii": [
+   "0",
+   "0 4px 0 0",
+   "1px",
+   "2px",
+   "3px",
+   "3px 3px 0 0",
+   "4px",
+   "50%",
+   "6px",
+   "8px",
+   "var(--xp-radius-btn)",
+   "var(--xp-radius-btn, 3px)",
+   "var(--xp-radius-control)",
+   "var(--xp-radius-panel)"
+  ]
+ }
+}

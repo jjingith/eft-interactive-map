@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EFT 互动地图 · 第七轮视觉复刻验收报告</title>
+<style>
+  :root {
+    --bg: #0e1318; --panel: #151b21; --panel2: #1b2229; --line: #2a323a;
+    --fg: #dfe6ec; --dim: #93a0ad; --accent: #00a2ff; --price: #ffd100;
+    --green: #63c98a; --amber: #e0b341; --red: #e06c6c;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 14px/1.68 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+  main { max-width: 1240px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .4px; }
+  h2 { font-size: 18px; margin: 42px 0 12px; padding-left: 10px; border-left: 3px solid var(--accent); }
+  h3 { font-size: 15px; margin: 24px 0 8px; color: #c4d2de; }
+  p, li { color: #ccd6df; }
+  .sub { color: var(--dim); margin: 0 0 26px; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; }
+  .summary b { color: var(--accent); }
+  .verdict { font-size: 13px; margin: 18px 0 26px; padding: 10px 14px; border-radius: 0 6px 6px 0;
+             background: #171d21; border-left: 3px solid var(--accent); color: #d8e2ea; }
+  .verdict.warnbox { border-left-color: var(--amber); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .card .k { color: var(--dim); font-size: 12px; }
+  .card .v { font: 600 19px/1.3 var(--mono); color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: #c4d2de; font-weight: 600; white-space: nowrap; }
+  td code, p code, li code { font-family: var(--mono); font-size: 12px; color: #9fd4f5;
+                             background: #182029; padding: 1px 4px; border-radius: 3px; }
+  .ok { color: var(--green); font-weight: 600; }
+  .warn { color: var(--amber); font-weight: 600; }
+  .no { color: var(--red); font-weight: 600; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 14px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  figcaption { padding: 8px 11px; font-size: 12px; color: var(--dim); line-height: 1.5; }
+  figcaption b { color: #cfdae4; font-weight: 600; }
+  .wide { grid-column: 1 / -1; }
+  .note { background: #1a2024; border-left: 3px solid var(--amber); padding: 10px 14px;
+          border-radius: 0 6px 6px 0; color: #d6dee5; font-size: 13px; }
+  footer { margin-top: 46px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--dim); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>EFT 互动地图 · 第七轮视觉复刻验收报告</h1>
+<p class="sub">
+  项目：<code>D:\personal\trae\02-塔科夫\eft-interactive-map</code> ｜ 参考站：<code>db4tarkov.com/preset</code> ｜
+  参考素材：<code>D:\personal\trae\02-塔科夫\ui图标</code> ｜ 日期：2026-10-21 ｜
+  视口：1920×1080 / dpr=1（真实 Chrome + <code>Emulation.setDeviceMetricsOverride</code>，CDP 截图）
+</p>
+
+<div class="summary">
+  <p style="margin:0 0 8px"><b>结论：</b>第七轮按「先量截图、再改代码」执行。左侧装备区 7 项结构问题（常驻名称、附件槽位置与形状、
+  固定内衬 / 护甲板独立子卡、手枪与近战卡片间距等）、右侧表格（字号 / 行高 / 逐类别列宽 / 全列左对齐 / 真实可拖动横向滚动条 /
+  选中行细蓝边）与四部位局部减益均已落地。全量测试 <b>673 passed / 1 skipped</b>，
+  断网重启后图标、浮窗、数据、表格、插板弹窗、预设、枪械与地图视图全部正常。</p>
+  <p style="margin:0 0 8px"><b>2026-10-21 第三轮（视觉差距修复）：</b>上一版把「参考 40px 行高 / 12px 字号」与「本地 28px / 10px」
+  当作主动取舍保留，本轮已作废该结论。按相同视口、相同裁切、尽量相同装备状态重新校准后，右侧护甲表已改为
+  <b>表头 32px、行高 40px、正文 12px、表头 11px、图标 30px、插板四列各 40px</b>，插板格恢复「剪影 + 11px 数据条」两行结构；
+  经过 <b>两轮「截图 → 比较 → 修改 → 再截图」</b>闭环（r8 → r9），并在交付前用同一脚本复测一轮（r11，
+  与 r9 逐像素差异为 0）。实测值见第 5 节，仍未解决项见第 10 节。</p>
+  <p style="margin:0;color:var(--dim)">所有对照图、叠加图、数值与测试结果均来自实际运行页面与真实截图；
+  参考图中无法确认的项已明确标为「推断值」或「待校准」，未用近似值冒充像素级对齐。
+  本轮未重写 <code>app.js</code>，未改动地图渲染器 / 底图 / 路线 / 定位 / 原有地图图标。</p>
+</div>
+
+<div class="verdict">
+  <b>验收口径：</b>「功能完成」不等于「视觉验收通过」。本报告把两类证据分开：
+  功能类以 <code>pytest</code> + 浏览器动态操作为准；视觉类以同尺寸对照图、50% 叠加图与实测像素值为准。
+  未能对齐的差异写在第 9 节，不写成「已完全复刻」。
+</div>
+
+<h2>1. 开工前的截图审计</h2>
+<p>递归扫描 <code>ui图标</code>，共 10 张 PNG（1 张原站整体、1 张布局参考、1 张附件范例、7 张分类表格样式），
+与本地界面建立一一配对；同时记录「无法严格对齐」的原因。完整清单见
+<a href="r7-visual-diff/audit-inventory.md">audit-inventory.md</a>。</p>
+<table>
+  <tr><th>参考图</th><th>尺寸</th><th>配对本地界面</th><th>可对齐性</th></tr>
+  <tr><td><code>httpsdb4tarkov.compreset截图.png</code></td><td>1920×1080</td><td>配装工作台整体（<code>r7-06-four-debuff.png</code>）</td><td>可（缩放对齐，状态需注明）</td></tr>
+  <tr><td><code>配装参考布局.png</code></td><td>504×448</td><td>左栏卡片板（<code>r7-07-left-side.png</code>）</td><td>可（左栏 504px 同宽）</td></tr>
+  <tr><td><code>头盔配件栏位范例.png</code></td><td>508×518</td><td>头盔 + 左侧附件槽（<code>r7-01-helmet.png</code>）</td><td>可</td></tr>
+  <tr><td>右侧表格样式 ×7（护甲/头盔/弹挂/背包/耳机/眼部/面部）</td><td>护甲 1308×607 等</td><td><code>r7-10…r7-16</code> 同类别表格</td><td>可（护甲表同尺寸 1308 宽）</td></tr>
+</table>
+<p class="note">审计发现 5 类无法严格对齐的情况：原站为静态列表而本地是「四部位已装备」状态；
+原站护甲表有插板两行 mini-box 撑高行距（本轮已按该结构实现 40px 行高）；
+原站无「按部位局部减益」这一视觉元素；
+原站选中/悬停/冲突行的样式在给定素材中缺失；原站左栏实测约 500px 与本地 504px 设计基准差 4px。均已在下文标注。</p>
+
+<h2>2. 视觉参数表（实测，节选）</h2>
+<p>完整表见 <a href="r7-visual-diff/visual-params.md">visual-params.md</a>；此处只列本轮直接依据的关键项。</p>
+<table>
+  <tr><th>项目</th><th>参考图观测</th><th>本地实现</th><th>判定</th></tr>
+  <tr><td>页面 / 面板底色</td><td><code>#171717</code> / <code>#121212</code></td><td><code>--lw-panel #171717</code> / <code>--lw-bg #121212</code></td><td class="ok">一致</td></tr>
+  <tr><td>表头底色</td><td><code>#0a0a0a</code></td><td><code>#0d0d0d</code></td><td class="ok">差 3/255</td></tr>
+  <tr><td>数据行 / 交替行</td><td>各行一律 <code>#121212</code>（实测 18,18,18，无交替）</td><td><code>#101010</code> / 偶数行 <code>#181818</code></td><td class="warn">本地仍有斑马纹，见第 10 节</td></tr>
+  <tr><td>行分隔线 / 列分隔线</td><td><code>#202020~#2a2a2a</code> / <code>#2e2e2e</code></td><td><code>#262626</code> / <code>#2e2e2e</code></td><td class="ok">一致</td></tr>
+  <tr><td>价格 / 成本</td><td>黄 <code>#ffd100</code></td><td><code>--lw-price #ffd100</code></td><td class="ok">一致</td></tr>
+  <tr><td>已选卡片底 / 描边</td><td><code>#12373c</code> / <code>#3a3a3a</code></td><td><code>--lw-select #12373c</code> / <code>--lw-line-2 #3a3a3a</code></td><td class="ok">一致</td></tr>
+  <tr><td>选中强调色</td><td>素材中无清晰选中态（仅整体图首行微亮）</td><td><code>--lw-accent #00a2ff</code></td><td class="warn">推断值</td></tr>
+  <tr><td>表头高 / 行高</td><td><b>32px / 40px</b>（行顶 y=46、86、126…，间隔 40）</td><td><b>32px / 40px</b>（r9 实测）</td><td class="ok">一致</td></tr>
+  <tr><td>表头字号 / 数据字号</td><td>≈11px / <b>≈12px</b>（名称墨高 12–14px）</td><td><b>11px / 12px</b>（名称墨高 12px）</td><td class="ok">字号一致（字宽受字体族影响）</td></tr>
+  <tr><td>左栏总宽</td><td>≈500px</td><td><b>504px</b>（504u 设计基准）</td><td class="ok">+0.8%</td></tr>
+  <tr><td>头盔 / 眼镜 / 护面卡</td><td>78×78 / 65×65 / —</td><td><b>78×78 / 65×65 / 60×60</b></td><td class="ok">正方形</td></tr>
+  <tr><td>附件槽</td><td>方形、位于头盔左侧</td><td><b>40×40</b>，两列 grid，gap 3u</td><td class="ok">符合</td></tr>
+  <tr><td>防弹衣 / 胸挂 / 背包卡</td><td>108×108</td><td><b>108×107 / 108×107 / 108×108</b></td><td class="ok">一致</td></tr>
+  <tr><td>主武器 / 手枪 / 近战</td><td>262×108</td><td><b>262×108 / 117×108 / 108×108</b>，间距 22u</td><td class="ok">独立卡片</td></tr>
+</table>
+
+<h2>3. 实际修改的文件清单</h2>
+<table>
+  <tr><th>文件</th><th>本轮改动</th></tr>
+  <tr><td><code>app.js</code></td><td>已装卡片去掉常驻名称 → <code>bindCellTip</code> 悬停浮窗（保留 <code>aria-label</code>）；固定内衬 / 护甲板子卡不再渲染；
+    附件槽仅对可拆卸件生成且渲染在父装备左侧；<code>LW_DEBUFF_KEYS</code> + <code>slotLocalPen</code> 生成四部位两行局部减益；
+    <code>LW_COL_DEFAULTS</code> + <code>applyColDefaults</code> 逐类别默认列宽；<code>forceLeft</code> 全列左对齐；
+    <code>renderNameCell</code> 图标 + <code>title</code> 截断提示；冲突列改为紧凑 chip + 悬停原因</td></tr>
+  <tr><td><code>style.css</code></td><td>仅在 <code>.loadout-workbench</code> 作用域内：表格字体 / 行高 / 表头高变量、<code>--lw-u</code> 栅格、
+    <code>.tbl-scroll{min-width:0;overflow:auto}</code> + 12px 自定义滚动条（<code>#5a5a5a</code> 滑块、<code>min-width:48px</code>）、
+    选中 / 悬停 / 冲突行、附件正方槽、局部减益条、顶部统计条 <code>repeat(3,max-content)</code> + <code>column-gap</code>（修复斜杠压字）</td></tr>
+  <tr><td><code>index.html</code></td><td>工作台容器结构（左栏 / 统计条 / 费用区 / 右侧表格滚动容器）；
+    未改动地图视图与其它模块骨架</td></tr>
+  <tr><td><code>tests/test_loadout_workbench.py</code></td><td>新增 T13（<code>forceLeft</code> 连数值列也左对齐）、T23（四部位局部减益只统计本体 + 可拆卸件，内衬不重复计）、
+    T24（逐类别默认列宽存在且用户值优先）、<code>test_r7_visual_replication_rules</code>（字号 / 行高 / 滚动条 / 选中边 / 悬停名称 / 左对齐）</td></tr>
+  <tr><td><code>docs/r7-visual-diff/</code></td><td><code>ref/</code>（10 张参考）、<code>baseline/</code>、<code>after/</code>（25 张实测）、<code>compare/</code>（9 张对照）、
+    <code>diff/</code>（2 张 50% 叠加）、<code>audit-inventory.md</code>、<code>visual-params.md</code>、3 份离线实测 JSON、本报告</td></tr>
+</table>
+<p class="note">未修改：<code>tools/serve.py</code> 的数据管道、<code>data/*.json</code> 内容、地图渲染与路线算法、地图标注与原有图标。
+未执行 <code>git reset --hard</code> / <code>git clean</code>，未推送远程，未覆盖正式 Release。</p>
+
+<h2>4. 左侧装备工作区</h2>
+<h3>4.1 顶部属性栏</h3>
+<p>标签行与数值行共用同一栅格列（<code>grid-template-columns: repeat(3,max-content)</code>，<code>column-gap:6u</code>），
+斜杠固定落在两列之间。实测渲染文本：<code>移动 / 转身 / 人机</code> → <code>-1.0% / -12.0% / -13.0%</code>，
+右侧 <code>7.02 KG</code>。修复前固定 36u/48u 列宽会让 <code>-12.0%</code> 溢出压住斜杠。</p>
+<h3>4.2 装备卡片</h3>
+<table>
+  <tr><th>要求</th><th>实现</th><th>证据</th></tr>
+  <tr><td>已装不常驻显示名称</td><td>卡片只保留图标；名称走 <code>bindCellTip</code> 悬停浮窗</td><td><a href="r7-visual-diff/after/r7-02-helmet-tip.png">r7-02-helmet-tip.png</a></td></tr>
+  <tr><td>头盔附件槽在左侧、正方形</td><td><code>40×40</code>，<code>grid</code> 两列，gap 3u</td><td><a href="r7-visual-diff/compare/08-helmet-attach-left.png">compare/08</a></td></tr>
+  <tr><td>眼镜 / 护面正方形</td><td><code>65×65</code> / <code>60×60</code></td><td><a href="r7-visual-diff/after/r7-05-glasses.png">r7-05-glasses.png</a></td></tr>
+  <tr><td>固定内衬 / 护甲板不再独立子卡</td><td>槽位树保留节点，渲染层跳过；属性只在右侧信息区展示</td><td>T6 / T23 断言</td></tr>
+  <tr><td>手枪与近战独立卡片</td><td><code>117×108</code> 与 <code>108×108</code>，间距 22u</td><td><a href="r7-visual-diff/after/r7-00-empty.png">r7-00-empty.png</a></td></tr>
+</table>
+<h3>4.3 四部位局部减益</h3>
+<p>格式固定两行：标签 <code>移动 / 转身 / 人机</code>，数值 <code>x / y / z</code>。统计范围 = 该部位根装备 + 已装且可拆卸的组件；
+固定内衬不在 <code>loadout</code> 中，因此不会重复计入。全身统计继续保留在左上，两者口径独立。</p>
+<table>
+  <tr><th>部位</th><th>实测文本（Altyn + 面罩 / Slick / Alpha 胸挂 / 6B34）</th></tr>
+  <tr><td>头盔</td><td><code>移动 / 转身 / 人机</code> → <code>-1 / -12 / -11</code></td></tr>
+  <tr><td>眼镜</td><td><code>0 / 0 / -2</code></td></tr>
+  <tr><td>防弹衣</td><td><code>0 / 0 / 0</code>（无插板）；装上前插板后 <code>-2 / -1 / -1</code></td></tr>
+  <tr><td>装甲胸挂</td><td><code>0 / 0 / 0</code></td></tr>
+  <tr><td>全身统计</td><td><code>-1.0% / -12.0% / -13.0%</code>，<code>7.02 KG</code>（无插板）；
+    装板后 <code>-3.0% / -13.0% / -14.0%</code>，<code>10.87 KG</code></td></tr>
+</table>
+<p class="note">校验：头盔本体 −1/−4/−3 + 面罩 0/−8/−8 = −1/−12/−11；全身人机 = 头盔 −11 + 眼镜 −2 = −13。数值可复算。</p>
+<h3>4.4 费用区</h3>
+<p>Final Cost 使用价格强调色 <code>#ffd100</code>；Buy / Sell 为等高页签，选中态用蓝色下划线；
+缺价物品显示 <code>—</code> 并在列内注明缺价件数，不按 0 元计入。</p>
+
+<h2>5. 右侧物品列表（本轮重点）</h2>
+<h3>5.1 字号、行高与对齐（运行时测量，2026-10-21 第三次校准）</h3>
+<table>
+  <tr><th>项目</th><th>实测量</th><th>参考图</th><th>来源</th></tr>
+  <tr><td>表头高</td><td><b>32px</b></td><td>32px</td><td><code>getBoundingClientRect().height</code></td></tr>
+  <tr><td>数据行高</td><td><b>40px</b>（4 行均 40）</td><td>40px（pitch 40）</td><td>同上；截图像素间距 39px 背景 + 1px 分隔线</td></tr>
+  <tr><td>表头字号 / 数据字号</td><td><b>11px / 12px</b></td><td>≈11px / ≈12px</td><td><code>getComputedStyle().fontSize</code></td></tr>
+  <tr><td>名称列内边距</td><td><code>2px 6px</code></td><td>—</td><td>同上</td></tr>
+  <tr><td>行内图标</td><td><b>30×30</b></td><td>≈30×30</td><td>DOM 尺寸</td></tr>
+  <tr><td>插板格</td><td>宽 <b>39px</b>（列 40 − 1px 线），上排剪影 <b>28px</b> + 下排数据条 <b>11px</b>；4 格 <code>VT60/VT60/VIC20/VIC20</code> 完整无裁切</td><td>列 40px，剪影 ≈27px + 条 11px</td><td>DOM 尺寸 + 6 倍截图</td></tr>
+  <tr><td>数据条底色</td><td><code>#404040</code>（实测像素 64,64,64）</td><td><code>#404040</code></td><td>截图像素采样</td></tr>
+  <tr><td>表头文字 / 正文</td><td><code>#7f7f7f</code>（峰值 127）/ <code>#dcdcdc</code>（峰值 220）</td><td>峰值 117–127 / 224–242</td><td>截图像素采样</td></tr>
+  <tr><td>对齐</td><td>表头 / 数据 / 空状态全部 <code>text-align:left</code>；数值、价格、重量、等级、耐久、系数同样左对齐</td><td>数据左对齐（表头居中）</td><td>逐单元格 <code>getComputedStyle</code></td></tr>
+</table>
+<p>40px 行高不是靠加内边距硬撑：<code>.lw-plate-cell</code> 由「剪影 28px + 11px 数据条」两排组成，
+39px + 1px 行分隔线正好 40px，与参考图的插板格结构同源。</p>
+<p>左对齐不是靠默认 CSS 碰巧决定：<code>createTable</code> 以 <code>forceLeft: true</code> 显式传入
+（配装表与插板弹窗两处），<code>alignOf()</code> 在 <code>forceLeft</code> 下除显式 <code>center</code> 外一律返回 <code>left</code>。</p>
+<h3>5.2 逐类别列宽（实测 px）</h3>
+<table>
+  <tr><th>类别</th><th>名称列</th><th>内容总宽 scrollWidth</th><th>容器 clientWidth</th><th>横向溢出</th><th>行高 / 表头</th></tr>
+  <tr><td>护甲（18 列）</td><td>300</td><td><b>1626</b></td><td>1392</td><td class="ok">是（max 234）</td><td>40 / 32</td></tr>
+  <tr><td>头盔</td><td>332</td><td>1392</td><td>1392</td><td>否</td><td>40 / 32</td></tr>
+  <tr><td>胸挂</td><td>224</td><td>1702</td><td>1392</td><td class="ok">是（max 310）</td><td>40 / 32</td></tr>
+  <tr><td>背包</td><td>514</td><td>1392</td><td>1392</td><td>否</td><td>40 / 32</td></tr>
+  <tr><td>耳机</td><td>624</td><td>1392</td><td>1392</td><td>否</td><td>40 / 32</td></tr>
+  <tr><td>眼镜</td><td>796</td><td>1392</td><td>1392</td><td>否</td><td>40 / 32</td></tr>
+  <tr><td>护面</td><td>852</td><td>1392</td><td>1392</td><td>否</td><td>40 / 32</td></tr>
+  <tr><td>插板弹窗</td><td>248</td><td>—（独立一格）</td><td>—</td><td>按需</td><td>40 / 32</td></tr>
+</table>
+<p>护甲 18 列默认宽：名称 300、冲突 64、移动/转身/人机 104、前/后/左/右插板各 <b>40</b>、护甲等级 66、基础耐久 78、重量 60、
+FLEA 价 94、装甲材质 88、毁损系数 90、有效耐久 82、防护区域 136、钝击穿透 72、槽位 62、获取方式 126。
+每类别各自一套（<code>LW_COL_DEFAULTS</code>），用户拖动后的宽度按类别键持久化，切换类别不会覆盖。</p>
+<p class="note">参考图到插板列为止的宽度是 Icon 40 + Name 305 + 减益 125 = 470px；本地为「名称 300 + 冲突 64 + 减益 104」= 468px，
+插板列起点误差 ±1px。本地多一个业务列「冲突」，因此名称列比参考窄 5px，未用隐藏冲突列去凑数值。</p>
+<h3>5.3 横向滚动条（根因修复 + 本轮实测）</h3>
+<table>
+  <tr><th>项目</th><th>结果</th></tr>
+  <tr><td>根因</td><td>滚动容器原本是 flex 子项，未设 <code>min-width:0</code>，被内容撑宽 → 容器自身不溢出，只剩装饰性轨道</td></tr>
+  <tr><td>修复</td><td><code>.tbl-scroll{min-width:0;overflow:auto}</code> + 表格 <code>min-width:max-content</code> + 12px 自定义滚动条</td></tr>
+  <tr><td>滑块</td><td>轨道 <code>#151515</code>、滑块 <code>#5a5a5a</code>（hover <code>#7a7a7a</code>）、<code>min-width:48px</code>、长度随可视比变化</td></tr>
+  <tr><td>实测（插板列收窄后）</td><td>护甲 <code>scrollWidth 1626 / clientWidth 1392</code>，最大 <code>scrollLeft 234</code>；3 倍放大截图中滑块真实可见，宽约 1165px</td></tr>
+  <tr><td>滑块联动</td><td><code>scrollLeft</code> 0→234 时滑块左端相对容器由 15.7px → 212.7px（右移约 197px）</td></tr>
+  <tr><td>最右列可达</td><td><code>scrollLeft=234</code> 时「获取方式」列 <code>x=1733, right=1859</code>，容器右边界 1914，完整可见</td></tr>
+  <tr><td>合成输入的限制</td><td>CDP 合成的滚轮/鼠标拖拽对 Chromium <b>原生滚动条</b>无效（超时或 <code>scrollLeft</code> 不变），因此未用合成事件冒充人工拖动；可用性以「滑块真实渲染 + 位置联动」为证据</td></tr>
+  <tr><td>无溢出</td><td>其余类别 <code>scrollWidth = clientWidth = 1392</code>，不显示滚动条</td></tr>
+  <tr><td>同步</td><td><code>setColumns()</code> / 切类别 / 拖列宽 / 搜索过滤后由原生滚动条自动重算（无隐藏原生条的手绘假轨道）</td></tr>
+</table>
+<h3>5.4 行状态</h3>
+<table>
+  <tr><th>状态</th><th>实测</th></tr>
+  <tr><td>选中</td><td><code>background: transparent</code> + <code>box-shadow: inset 2px 0 0 #00a2ff</code>（实测 <code>rgba(0,0,0,0)</code>），<b>不铺高亮底色</b></td></tr>
+  <tr><td>悬停</td><td><code>background:#1b2327</code>（低对比，参考图无悬停态）</td></tr>
+  <tr><td>冲突</td><td><code>background:#2a1a1c</code> + <code>inset 2px 0 0 #e06c6c</code>，文字 <code>#f0b3b3</code></td></tr>
+  <tr><td>冲突 + 选中</td><td>蓝色 2px 描边优先，底色仍为冲突红 <code>#2a1a1c</code></td></tr>
+</table>
+<h3>5.5 本轮「截图 → 比较 → 修改 → 再截图」闭环</h3>
+<table>
+  <tr><th>轮次</th><th>截图</th><th>比较结论</th><th>本轮修改</th></tr>
+  <tr><td>r8</td><td><code>cal2/r8-cmp-overlay.png</code>、<code>r8-cmp-diff.png</code>、<code>r8-cmp-row.png</code></td>
+    <td>行高 40 / 字号 12 / 表头 32 / 图标 30 / 插板列 40 均已到位；剩余差异集中在插板格内部（x 469–646）：数据条未铺满格宽、等级/徽标/耐久未居中、格内边界与参考差 1–2px</td>
+    <td>重写 <code>.lw-plate-cell</code>：上排剪影 + 整格宽 11px 数据条，条内「罗马等级 / 紫底徽标 / 耐久」居中，数字改用 <code>tabular-nums</code></td></tr>
+  <tr><td>r9</td><td><code>cal2/r9-table.png</code>、<code>r9-cmp-row.png</code>、<code>r9-cmp-head.png</code>、<code>r9-cmp-plates-6x.png</code></td>
+    <td>插板列边界 469/509/549/589/629 vs 参考 470/510/550/590/630（±1px）；数据条实测 64,64,64 与参考一致；表头文字峰值 127 与参考一致；4 块板 <code>VT60/VT60/VIC20/VIC20</code> 完整无裁切</td>
+    <td>尺寸不再改；补验横向滚动与最右列（<code>r9-scroll-right.png</code>），并做滑块像素测量（<code>r10-*</code>）</td></tr>
+  <tr><td>r11<br>（交付复测）</td><td><code>cal2/r11-table.png</code>、<code>r11-measure.json</code></td>
+    <td>用同一脚本、同一装备状态（FORT Redut-T5 + 四块板）重新截图测量：JSON 全部字段与 r9 一致；1308×607 裁切与 <code>r9-table.png</code> 逐像素差异 <b>0</b>（changed px = 0）</td>
+    <td>无（仅复测，确认文档更新期间渲染未漂移）</td></tr>
+</table>
+
+<h2>6. 同尺寸对照图</h2>
+<div class="shots">
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/01-overall-side.png" alt="整体对照">
+    <figcaption><b>① 整体工作台对照</b>（左原站 / 右本地，均缩放到 1500 宽）。状态不同：原站为静态列表，本地为四部位已装备。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/after/r7-06-four-debuff.png" alt="本地整体工作台">
+    <figcaption><b>② 本地整体配装工作台</b>（1920×909 原始截图，dpr=1）。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/02-left-side.png" alt="左侧对照">
+    <figcaption><b>③ 左侧装备区对照</b>。参考图仅覆盖卡片板区域（504×448），本地为 504×909 全栏（含统计条、局部减益、费用区），高度差异已注明。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/03-armor-table.png" alt="护甲表同尺寸对照">
+    <figcaption><b>④ 右侧护甲表同尺寸对照</b>（1308×607 同尺寸裁切）。列集与排序不同，逐列按各自列宽配置。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/cal2/r9-cmp-row.png" alt="字号行高对照（本轮）">
+    <figcaption><b>⑤ 行 1:1 对照（本轮 r9）</b>。上参考 / 下本地，均为 40px 行高、12px 正文、30px 图标；插板格内部结构已对齐。早期 28px/10px 版本的对照见 <code>compare/04-font-row-zoom.png</code>，已被本图取代。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/cal2/r9-cmp-plates-6x.png" alt="插板格 6 倍对照">
+    <figcaption><b>⑤b 插板四列 6 倍放大</b>。上参考 / 下本地：上排插板剪影，下排 11px 数据条（罗马等级 / 紫底分数徽标 / 基础耐久），条底色实测均为 <code>#404040</code>。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/05-scroll-right-far-col.png" alt="滚动与最右列">
+    <figcaption><b>⑥ 横向滚动条与最右侧获取方式列</b>。本轮滚到最右为 <code>scrollLeft 234</code>（旧图标注 311 已被 <code>cal2/r9-scroll-right.png</code> 取代）。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/06-row-states.png" alt="行状态">
+    <figcaption><b>⑦ 选中行 / 悬停行 / 冲突行</b>（本地实际运行截图裁切，参考素材缺少这三态，已标为推断值）。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/07-categories.png" alt="各类别表格">
+    <figcaption><b>⑧ 各类别专属表格对照</b>（左原站 / 右本地，缩放比例相同）。护甲、头盔、胸挂、背包、耳机、眼镜、护面逐类比对。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/08-helmet-attach-left.png" alt="头盔附件左置">
+    <figcaption><b>⑨ 头盔附件左置 / 固定内衬不再作为独立子卡</b>。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/compare/09-local-debuff.png" alt="四部位局部减益">
+    <figcaption><b>⑩ 四部位局部减益</b>。原站无对应视觉元素，此处仅验证本地的格式、位置与统计口径。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/cal2/r9-table.png" alt="本轮护甲表">
+    <figcaption><b>⑪ 本轮护甲表（r9）</b>。1308×607 与参考图同尺寸裁切；FORT Redut-T5 装四块板（VT60 / VT60 / VIC20 / VIC20），
+    行高 40px、表头 32px、正文 12px、插板四列各 40px。</figcaption>
+  </figure>
+  <figure>
+    <img src="r7-visual-diff/cal2/r10-scrollbar-left.png" alt="滚动条滑块左端">
+    <figcaption><b>⑫ 滑块在左端</b>（3 倍放大，<code>scrollLeft=0</code>）。轨道与滑块真实渲染。</figcaption>
+  </figure>
+  <figure>
+    <img src="r7-visual-diff/cal2/r10-scrollbar-right.png" alt="滚动条滑块右端">
+    <figcaption><b>⑬ 滑块在右端</b>（3 倍放大，<code>scrollLeft=234</code>），左端由 15.7px 移至 212.7px。</figcaption>
+  </figure>
+</div>
+
+<h2>7. 半透明叠加 / 差异检查</h2>
+<div class="shots">
+  <figure class="wide">
+    <img src="r7-visual-diff/diff/armor-overlay-50.png" alt="护甲表 50% 叠加">
+    <figcaption><b>护甲表 50% 叠加</b>。容器左边界与表头基色基本重合；列边界错位处来自列集不同（原站无板位四列），
+    不代表容器偏移。</figcaption>
+  </figure>
+  <figure class="wide">
+    <img src="r7-visual-diff/diff/left-overlay-50.png" alt="左栏 50% 叠加">
+    <figcaption><b>左栏 50% 叠加</b>（参考 504×448 与本地同区域）。头盔、护甲、胸挂、背包卡位重合；
+    本地在卡片下方追加局部减益条，故下半部分不重合，属预期差异。</figcaption>
+  </figure>
+</div>
+<p class="note">叠加图只用于「可重合区域」：整体图与左栏高度不同、状态不同，未做整体叠加，避免把无效叠加当成通过证明。</p>
+
+<h2>8. 功能回归</h2>
+<table>
+  <tr><th>#</th><th>验证项</th><th>结果</th><th>证据</th></tr>
+  <tr><td>1</td><td>点击装备槽 → 右侧显示真实合法候选</td><td class="ok">通过</td><td>浏览器操作 + T19（按上游 slot 判定）</td></tr>
+  <tr><td>2</td><td>不兼容装备红色且不可安装</td><td class="ok">通过</td><td><a href="r7-visual-diff/after/r7-20-row-conflict.png">r7-20</a>；T13 统一安装前校验</td></tr>
+  <tr><td>3</td><td>护甲四个板位与安装弹窗</td><td class="ok">通过</td><td><a href="r7-visual-diff/after/r7-04-plate-modal.png">r7-04</a>；离线弹窗 19 件合法插板</td></tr>
+  <tr><td>4</td><td>头盔附件左置并随父装备变化</td><td class="ok">通过</td><td><a href="r7-visual-diff/compare/08-helmet-attach-left.png">compare/08</a>；换装备后子槽重算</td></tr>
+  <tr><td>5</td><td>装备名称由悬停浮窗查看</td><td class="ok">通过</td><td><a href="r7-visual-diff/after/r7-02-helmet-tip.png">r7-02</a>；离线浮窗文本实测</td></tr>
+  <tr><td>6</td><td>四部位局部减益正确更新</td><td class="ok">通过</td><td>T23 + 装板前后实测（0/0/0 → -2/-1/-1）</td></tr>
+  <tr><td>7</td><td>全身减益与总重量正确</td><td class="ok">通过</td><td>7.02 KG / 10.87 KG 两态实测</td></tr>
+  <tr><td>8</td><td>人物装备预设保存 / 恢复</td><td class="ok">通过</td><td><a href="r7-visual-diff/after/r7-24-offline-preset.png">r7-24</a>；<code>%APPDATA%\EFTMap\loadout-presets.json</code></td></tr>
+  <tr><td>9</td><td>枪械预设与人物方案联动</td><td class="ok">通过</td><td><code>test_presets.py</code> / <code>test_r6_gun_workbench.py</code></td></tr>
+  <tr><td>10</td><td>各类别表格搜索 / 排序 / 过滤 / 横向滚动</td><td class="ok">通过</td><td><a href="r7-visual-diff/compare/07-categories.png">compare/07</a>；scrollWidth 实测</td></tr>
+  <tr><td>11</td><td>自定义列宽持久化</td><td class="ok">通过</td><td>T24 / <code>test_app_js_col_width_persisted_per_category</code></td></tr>
+  <tr><td>12</td><td>断网启动后全部正常</td><td class="ok">通过</td><td>第 9 节离线实测</td></tr>
+  <tr><td>13</td><td>地图 / 路线 / 定位 / 搜索 / 任务 / 设置保持原样</td><td class="ok">通过</td><td>离线地图截图；地图相关测试全部通过</td></tr>
+</table>
+
+<h2>9. 全量测试与断网重启</h2>
+<div class="grid">
+  <div class="card"><div class="k">全量测试（本轮最后代码）</div><div class="v">673 passed / 1 skipped</div>
+    <div class="k">39.81s · <code>python -m pytest tests -q</code></div></div>
+  <div class="card"><div class="k">离线外部请求</div><div class="v">BLOCKED</div>
+    <div class="k">仅 1 条主动探测（<code>db4tarkov.com</code>），被 <code>--host-resolver-rules</code> 拦截</div></div>
+  <div class="card"><div class="k">离线资源</div><div class="v">158 条</div>
+    <div class="k">除探测外全部为 <code>127.0.0.1:8787</code> 本地路径</div></div>
+  <div class="card"><div class="k">离线图标</div><div class="v">150 / 0 损坏</div>
+    <div class="k">左栏 12 + 表格 138，<code>naturalWidth</code> 全部有效</div></div>
+</div>
+<div class="verdict">
+  <b>断网条件：</b><code>--host-resolver-rules=MAP * 0.0.0.0, EXCLUDE 127.0.0.1, EXCLUDE localhost</code> 重启 Chrome。
+  实测：外部 fetch 返回 <code>Failed to fetch</code>；插板弹窗可用（19 件合法插板）；预设弹窗读取
+  <code>C:\Users\Administrator\AppData\Roaming\EFTMap\loadout-presets.json</code> 正常；
+  枪械工作台与地图视图均可打开；四部位局部减益与全身统计照常计算。
+</div>
+<div class="shots">
+  <figure><img src="r7-visual-diff/after/r7-21-offline.png" alt="离线配装">
+    <figcaption><b>离线：头盔 + 附件 + 浮窗</b></figcaption></figure>
+  <figure><img src="r7-visual-diff/after/r7-22-offline-scroll.png" alt="离线滚动">
+    <figcaption><b>离线：表格滚动到最右</b>（<code>scrollLeft 311</code>）</figcaption></figure>
+  <figure><img src="r7-visual-diff/after/r7-23-offline-four.png" alt="离线四部位">
+    <figcaption><b>离线：四部位 + 插板</b>（10.87 KG）</figcaption></figure>
+  <figure><img src="r7-visual-diff/after/r7-24-offline-preset.png" alt="离线预设">
+    <figcaption><b>离线：预设弹窗</b></figcaption></figure>
+  <figure><img src="r7-visual-diff/after/r7-25-offline-gun.png" alt="离线枪械">
+    <figcaption><b>离线：枪械工作台</b></figcaption></figure>
+  <figure><img src="r7-visual-diff/after/r7-26-offline-map.png" alt="离线地图">
+    <figcaption><b>离线：地图视图</b></figcaption></figure>
+</div>
+
+<h2>10. 尚未解决的差距及原因（2026-10-21 第三轮后）</h2>
+<p class="note">上一版第 10 节把「行高 28 / 字号 10」「表头 24」「图标 18」写成主动取舍，本轮已全部推翻并修复：
+表头 32px、行高 40px、正文 12px、表头 11px、图标 30px，均为实测值。以下只保留本轮仍未消除、或无法从素材核实的差异。</p>
+<table>
+  <tr><th>差距</th><th>实测 / 原因</th><th>处理</th></tr>
+  <tr><td>表头下 14px 分组带（「Armor Class 6」）未实现</td><td>参考图 y≈32–45 有 <code>#565656</code> 通栏灰带，本地没有；其文案与数据语义（分组名？表头副标题？）无法从素材核实，也没有对应字段</td><td class="warn">不凭猜测实现，记录为未解决</td></tr>
+  <tr><td>名称列比参考窄 5px</td><td>参考 Icon 40 + Name 305 + 减益 125 = 470px；本地 300 + 冲突 64 + 104 = 468px，插板列起点误差 ±1px</td><td class="warn">本地多一个业务列「冲突」，不为凑数隐藏它</td></tr>
+  <tr><td>表头对齐</td><td>参考图表头居中，本地按第七轮第 5.6 条硬性要求全部左对齐</td><td class="warn">两条要求互斥，保留用户指定的左对齐</td></tr>
+  <tr><td>插板数据条紫徽标字母</td><td>参考图恒为「H」，语义无法核实；本地显示材质首字母（T / C），徽标 9×10 vs 参考 9×9，字母亮度参考约 150–176、本地纯白</td><td class="warn">不编造「H」的含义，未为此调整字号</td></tr>
+  <tr><td>字体族 / 抗锯齿</td><td>字号已一致，但参考站为窄体（12 字符约 42px），本机系统字体更宽；本地为 Chromium 次像素抗锯齿（文字有彩边），参考图为灰度抗锯齿</td><td class="warn">离线约束下不引入外部字体，抗锯齿由浏览器控制</td></tr>
+  <tr><td>数据行斑马纹</td><td>参考图各行一律 <code>#121212</code>（实测 18,18,18），本地偶数行 <code>#181818</code></td><td class="warn">斑马纹属全类别公共样式，超出「仅改护甲表」范围，待确认后再动</td></tr>
+  <tr><td>正文亮度峰值 220 vs 224–242</td><td>再提亮会与表头 / 次要文字失去层级</td><td class="warn">保留一档差</td></tr>
+  <tr><td>选中 / 悬停 / 冲突行样式</td><td>参考素材没有这三态截图</td><td class="warn">选中态已满足「只有细蓝边、无大面积高亮」，其余仍为推断值</td></tr>
+  <tr><td>左栏 504px vs 实测 ≈500px</td><td>504u 是既有设计基准，整体截图左栏边界受缩放影响，误差约 ±4px</td><td class="warn">不为 0.8% 改动整栏</td></tr>
+  <tr><td>局部减益在原站无对应元素</td><td>需求来自用户明确要求，参考图只有全身统计</td><td class="ok">按需求实现，不与原站比对</td></tr>
+</table>
+
+<h2>11. 交付物</h2>
+<ul>
+  <li>视觉参数表：<a href="r7-visual-diff/visual-params.md">r7-visual-diff/visual-params.md</a></li>
+  <li>本轮校准截图与原始测量：<code>r7-visual-diff/cal2/</code>（<code>r9-table.png</code>、<code>r9-cmp-row.png</code>、<code>r9-cmp-head.png</code>、<code>r9-cmp-plates-6x.png</code>、<code>r9-scroll-right.png</code>、<code>r8-cmp-overlay.png</code>、<code>r8-cmp-diff.png</code>、<code>r10-scrollbar-*</code>、<code>r9-measure.json</code>、<code>r10-scrollbar.json</code>、<code>r11-table.png</code>、<code>r11-measure.json</code>）</li>
+  <li>截图审计与配对：<a href="r7-visual-diff/audit-inventory.md">r7-visual-diff/audit-inventory.md</a></li>
+  <li>参考图：<code>r7-visual-diff/ref/</code>（10 张）</li>
+  <li>本地实测截图：<code>r7-visual-diff/after/</code>（25 张，含 6 张离线）</li>
+  <li>同尺寸对照图：<code>r7-visual-diff/compare/</code>（9 张）</li>
+  <li>50% 叠加图：<code>r7-visual-diff/diff/</code>（2 张）</li>
+  <li>测试记录：<code>pytest tests -q</code> → 673 passed / 1 skipped</li>
+  <li>离线验证：<code>r7-visual-diff/offline-audit.json</code>、<code>offline-preset-gun-map.json</code>、<code>offline-plate-debuff.json</code>（运行期外部请求被拦截的实测记录）</li>
+</ul>
+
+<footer>
+  本轮到此停止改动。工作区、截图、测试记录与本报告保持原样；未推送远程仓库，未覆盖正式发布版本。
+  报告中的每个数值均可由对应截图或运行时测量复核；无法确认的项已标注为推断或待校准。
+</footer>
+
+</main>
+</body>
+</html>

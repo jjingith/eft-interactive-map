@@ -1,0 +1,113 @@
+/* ============================================================================
+ * market-dark.css —— 市场大盘暗色主题（R302）
+ * ----------------------------------------------------------------------------
+ * 用户诉求：市场大盘一部分 UI 是亮色调，希望整个市场大盘都是暗色调。
+ *
+ * 做法：market.css 的配色**全部**走 --ui-* 令牌（design-tokens 是 XP 浅色桥接值），
+ * 所以在 #market-view 作用域内重定义这套令牌为暗色，即可整体转暗，
+ * 不改 market.css 一行、不影响其它视图（其它视图仍用 XP 浅色）。
+ * 另补几条 market.css 里的裸色值（rgba 斑马纹 / 少数 fallback）。
+ *
+ * 配色基准：Tarkov 深色系，与地图区一致 —— 深蓝灰底 + 稍亮卡片 + 浅灰文字 + 金色强调。
+ * 回滚：删 index.html 里本文件那行即可。
+ * ==========================================================================*/
+
+#market-view {
+  /* ---- 面（由深到浅） ---- */
+  --ui-color-surface:          #1b2129;   /* 主面：深蓝灰 */
+  --ui-color-surface-alt:      #141920;   /* 交替面：更深 */
+  --ui-color-surface-raised:   #232b35;   /* 抬起面：卡片/输入框 */
+  --ui-color-surface-inset:    #0e1319;   /* 凹陷面：禁用/进度槽 */
+
+  /* ---- 文字 ---- */
+  --ui-color-text:             #dfe5ec;   /* 主文字：浅灰，暗底可读 */
+  --ui-color-text-muted:       #9aa6b4;
+  --ui-color-text-dim:         #7d8896;
+  --ui-color-text-disabled:    #5d6672;
+  --ui-color-text-inverse:     #12161c;
+  --ui-color-link:             #6aa8ff;
+
+  /* ---- 边框 ---- */
+  --ui-color-border:           #3a4552;
+  --ui-color-border-soft:      #2c3540;
+  --ui-color-border-dark:      #4e5b6b;
+  --ui-color-border-light:     #39434f;   /* 令牌原本给 raised 高光用，暗底下改为稍亮边 */
+
+  /* ---- 主色 / 选中 / 焦点 ---- */
+  --ui-color-primary:          #4a8fe0;
+  --ui-color-primary-hi:       #6aa8ff;
+  --ui-color-primary-lo:       #2f6cb0;
+  --ui-color-selected:         #2f6cb0;
+  --ui-color-selected-bg:      #263a52;
+  --ui-color-selected-text:    #ffffff;
+  --ui-color-focus:            #6aa8ff;
+
+  /* ---- 状态色（暗底下加亮以保对比） ---- */
+  --ui-color-success:          #5fd08a;
+  --ui-color-success-bg:       #1d3327;
+  --ui-color-warning:          #e0b050;
+  --ui-color-warning-bg:       #3a3018;
+  --ui-color-danger:           #e06a5a;
+  --ui-color-danger-bg:        #3a1f1c;
+  --ui-color-info:             #6aa8ff;
+  --ui-color-info-bg:          #1c2e44;
+  --ui-color-conflict:         #e08a4a;
+
+  /* ---- 提示框 ---- */
+  --ui-color-tip-bg:           #232b35;
+  --ui-color-tip-border:       #4a5563;
+
+  /* ---- 渐变端点（按钮/表头凸起） ---- */
+  --ui-grad-face-a:            #2c3540;
+  --ui-grad-face-b:            #232b35;
+  --ui-grad-face-c:            #1b2129;
+  --ui-grad-head-a:            #2f3945;
+  --ui-grad-head-b:            #232b35;
+
+  /* ---- 立体：暗底下高光/阴影方向保持，但用低对比，避免亮边 ---- */
+  --ui-shadow-raised:          inset 0 1px 0 rgba(255,255,255,.06),
+                               inset 0 -1px 0 rgba(0,0,0,.4);
+  --ui-shadow-sunken:          inset 0 1px 0 rgba(0,0,0,.5),
+                               inset 0 -1px 0 rgba(255,255,255,.04);
+  --ui-shadow-pressed:         inset 0 1px 0 rgba(0,0,0,.5);
+  --ui-shadow-dialog:          0 4px 16px rgba(0,0,0,.55);
+  --ui-shadow-focus:           0 0 0 1px var(--ui-color-focus);
+
+  /* 强调色（市场热度条等 inline style 会用 --mb-accent）保持原样 */
+}
+
+/* ---- 裸色值覆盖：market.css 里少数不走令牌的浅色 ---- */
+/* 表格斑马纹：原 rgba(255,255,255,.55) 在暗底上是一条亮带 */
+#market-view .mk-table tbody tr:nth-child(even) { background: rgba(255, 255, 255, .03); }
+/* 行悬停 / 选中：用令牌但确保暗色口径 */
+#market-view .mk-table tbody tr:hover,
+#market-view .mk-row.is-selected,
+#market-view .mk-row.is-selected:hover { background: var(--ui-color-selected-bg); }
+
+/* 少数 fallback 裸色：状态条、空态、OCR 面板等 */
+#market-view .mk-empty,
+#market-view .mk-no-data,
+#market-view .mk-ocr-row,
+#market-view .mk-cache-panel {
+  color: var(--ui-color-text);
+  background: var(--ui-color-surface);
+}
+/* 危险/警告提示块：暗色底 */
+#market-view [class*="warn"],
+#market-view [class*="danger"],
+#market-view [class*="error"] {
+  background: var(--ui-color-warning-bg);
+  color: var(--ui-color-warning);
+}
+/* 下拉原生面板在系统层，无法用 CSS 改暗；只改市场内 select 本身 */
+#market-view select {
+  color-scheme: dark;
+  background: var(--ui-color-surface-raised);
+  color: var(--ui-color-text);
+}
+/* 滚动条跟随暗色（WebKit） */
+#market-view ::-webkit-scrollbar-track { background: var(--ui-color-surface-alt); }
+#market-view ::-webkit-scrollbar-thumb {
+  background: var(--ui-color-border);
+  border-color: var(--ui-color-surface-alt);
+}

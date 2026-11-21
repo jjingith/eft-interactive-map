@@ -1,0 +1,282 @@
+{
+ "schema": "r19.21-calibration-migration/1",
+ "note": "顶层 updatedAt 保留用户导出时刻；逐条 updatedAt 更新为迁移时刻",
+ "recordsBefore": 397,
+ "recordsAfter": 397,
+ "recordsDeleted": 0,
+ "revivedRecomputed": 10,
+ "markedStale": 5,
+ "skipped": 0,
+ "changes": [
+  {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5649b0544bdc2d1b2b8b458a",
+   "status": "revived-recomputed",
+   "owner": "6P1 Sb.2（AK-74 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 8,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "gunId": "5ac66d9b5acfc4001633997a",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac733a45acfc400192630e2",
+   "status": "revived-recomputed",
+   "owner": "6P44 Sb.1-30（AK-105 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AK-74 5.45x39 突击步枪",
+   "gunId": "5bf3e03b0db834001d2c4a9c",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5649b0544bdc2d1b2b8b458a",
+   "status": "revived-recomputed",
+   "owner": "6P1 Sb.2（AK-74 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "gunId": "5ac4cd105acfc40016339859",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac72e475acfc400180ae6fe",
+   "status": "revived-recomputed",
+   "owner": "6P20 Sb.2（AK-74M 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "auto"
+   }
+  },
+  {
+   "gun": "AKS-74 5.45x39 突击步枪",
+   "gunId": "5bf3e0490db83400196199af",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5649b0544bdc2d1b2b8b458a",
+   "status": "revived-recomputed",
+   "owner": "6P1 Sb.2（AK-74 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "gunId": "5ab8e9fcd8ce870019439434",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5649b0544bdc2d1b2b8b458a",
+   "status": "revived-recomputed",
+   "owner": "6P1 Sb.2（AK-74 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "gunId": "5ac66d2e5acfc43b321d4b53",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac72e475acfc400180ae6fe",
+   "status": "revived-recomputed",
+   "owner": "6P20 Sb.2（AK-74M 照门）",
+   "before": {
+    "logicalRow": 0,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 0,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 1,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "gunId": "5ac66d725acfc43b321d4b60",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac733a45acfc400192630e2",
+   "status": "revived-recomputed",
+   "owner": "6P44 Sb.1-30（AK-105 照门）",
+   "before": {
+    "logicalRow": 0,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 0,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 1,
+    "col": 6,
+    "source": "record"
+   }
+  },
+  {
+   "gun": "AKM 7.62x39 突击步枪",
+   "gunId": "59d6088586f774275f37482f",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale-parallel-era",
+   "before": {
+    "logicalRow": 2,
+    "col": 7,
+    "note": "R19.21：AKM 照门 6P1 Sb.2-1 上的 AK"
+   },
+   "coordsPreserved": true
+  },
+  {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale-parallel-era",
+   "before": {
+    "logicalRow": 1,
+    "col": 7,
+    "note": "R19.21：AKM 照门 6P1 Sb.2-1 上的 AK"
+   },
+   "coordsPreserved": true
+  },
+  {
+   "gun": "AKMS 7.62x39 突击步枪",
+   "gunId": "59ff346386f77477562ff5e2",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale-parallel-era",
+   "before": {
+    "logicalRow": 2,
+    "col": 7,
+    "note": "R19.21：AKM 照门 6P1 Sb.2-1 上的 AK"
+   },
+   "coordsPreserved": true
+  },
+  {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale-parallel-era",
+   "before": {
+    "logicalRow": 1,
+    "col": 7,
+    "note": "R19.21：AKM 照门 6P1 Sb.2-1 上的 AK"
+   },
+   "coordsPreserved": true
+  },
+  {
+   "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "gunId": "59e6152586f77473dc057aa1",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale-parallel-era",
+   "before": {
+    "logicalRow": 1,
+    "col": 7,
+    "note": "R19.21：AKM 照门 6P1 Sb.2-1 上的 AK"
+   },
+   "coordsPreserved": true
+  },
+  {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "gunId": "5ac66cb05acfc40198510a10",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac72e475acfc400180ae6fe",
+   "status": "revived-recomputed",
+   "owner": "6P20 Sb.2（AK-74M 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "auto"
+   }
+  },
+  {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "gunId": "5ac66d015acfc400180ae6e4",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5ac733a45acfc400192630e2",
+   "status": "revived-recomputed",
+   "owner": "6P44 Sb.1-30（AK-105 照门）",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "note": "R19.21：AKMP 子槽按父照门正上方同列重算（原坐标 "
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 6
+   },
+   "parentFinal": {
+    "row": 2,
+    "col": 6,
+    "source": "auto"
+   }
+  }
+ ]
+}

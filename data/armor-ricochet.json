@@ -1,0 +1,1128 @@
+{
+ "schema": "eftmap.armor-ricochet/1",
+ "source": {
+  "site": "https://tarkovgunsmith.com/",
+  "apis": [
+   "https://api.tarkovgunsmith.com/GetHelmetsDataSheetData",
+   "https://api.tarkovgunsmith.com/GetArmorModulesData"
+  ],
+  "fetched_at": "2026-11-02",
+  "rule": "x = Max Ricochet Chance at 90 deg, y = Min Ricochet Chance at min angle z; chance interpolated linearly between (z, y) and (90, x)",
+  "confidence": "estimated / game-derived; not an official published formula"
+ },
+ "helmets": {
+  "5645bc214bdc2d363b8b4571": {
+   "n": "FORT Kiver-M bulletproof helmet",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 70,
+   "cls": 3
+  },
+  "5a154d5cfcdbcb001a3b00da": {
+   "n": "Ops-Core FAST MT Super High Cut helmet (Black)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "59e7711e86f7746cae05fbe1": {
+   "n": "Kolpak-1S riot helmet",
+   "x": 0.2,
+   "y": 0.01,
+   "z": 90,
+   "cls": 2
+  },
+  "5a7c4850e899ef00150be885": {
+   "n": "6B47 Ratnik-BSh helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 3
+  },
+  "5aa7cfc0e5b5b00015693143": {
+   "n": "6B47 Ratnik-BSh helmet (EMR cover)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 3
+  },
+  "5aa7d03ae5b5b00016327db5": {
+   "n": "UNTAR helmet",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 3
+  },
+  "5aa7d193e5b5b000171d063f": {
+   "n": "SSSh-94 SFERA-S helmet",
+   "x": 0.7,
+   "y": 0.2,
+   "z": 70,
+   "cls": 3
+  },
+  "5aa7e276e5b5b000171d0647": {
+   "n": "Altyn bulletproof helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 5
+  },
+  "5ac8d6885acfc400180ae7b0": {
+   "n": "Ops-Core FAST MT Super High Cut helmet (Urban Tan)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "5b432d215acfc4771e1c6624": {
+   "n": "LShZ lightweight helmet (Olive Drab)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 75,
+   "cls": 3
+  },
+  "5aa7e454e5b5b0214e506fa2": {
+   "n": "ZSh-1-2M helmet (Olive Drab)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 75,
+   "cls": 4
+  },
+  "5aa7e4a4e5b5b000137b76f2": {
+   "n": "ZSh-1-2M helmet (Black cover)",
+   "x": 0.7,
+   "y": 0.3,
+   "z": 75,
+   "cls": 4
+  },
+  "5c06c6a80db834001b735491": {
+   "n": "SSh-68 steel helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 3
+  },
+  "5c0e874186f7745dc7616606": {
+   "n": "Maska-1SCh bulletproof helmet (Killa Edition)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "5c08f87c0db8340019124324": {
+   "n": "ShPM Firefighter helmet",
+   "x": 0.2,
+   "y": 0.01,
+   "z": 65,
+   "cls": 2
+  },
+  "5c091a4e0db834001d5addc8": {
+   "n": "Maska-1SCh bulletproof helmet (Olive Drab)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "5c0d2727d174af02a012cf58": {
+   "n": "PSh-97 DJETA riot helmet",
+   "x": 0.2,
+   "y": 0.01,
+   "z": 60,
+   "cls": 2
+  },
+  "5c17a7ed2e2216152142459c": {
+   "n": "Crye Precision AirFrame helmet (Tan)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 75,
+   "cls": 4
+  },
+  "5ca20ee186f774799474abc2": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "5b40e1525acfc4771e1c6611": {
+   "n": "HighCom Striker ULACH IIIA helmet (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "5b40e2bc5acfc40016388216": {
+   "n": "HighCom Striker ULACH IIIA helmet (Desert Tan)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "5b40e3f35acfc40016388218": {
+   "n": "HighCom Striker ACHHC IIIA helmet (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "5b40e4035acfc47a87740943": {
+   "n": "HighCom Striker ACHHC IIIA helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "5e4bfc1586f774264f7582d3": {
+   "n": "MSA Gallet TC 800 High Cut combat helmet (Black)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "5df8a58286f77412631087ed": {
+   "n": "TSh-4M-L soft tank crew helmet",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 1
+  },
+  "5d5e7d28a4b936645d161203": {
+   "n": "MSA ACH TC-2001 MICH Series helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "5d5e9c74a4b9364855191c40": {
+   "n": "MSA ACH TC-2002 MICH Series helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "5d6d3716a4b9361bc8618872": {
+   "n": "BNTI LShZ-2DTM helmet (Black)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "61bca7cda0eae612383adf57": {
+   "n": "NFM HJELM helmet (Hellhound Grey)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 75,
+   "cls": 3
+  },
+  "5f60b34a41e30a4ab12a6947": {
+   "n": "Galvion Caiman Hybrid helmet (Grey)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 75,
+   "cls": 3
+  },
+  "5f60c74e3b85f6263c145586": {
+   "n": "Rys-T bulletproof helmet (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 65,
+   "cls": 5
+  },
+  "5ea05cf85ad9772e6624305d": {
+   "n": "Tac-Kek FAST MT helmet (Replica)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 40,
+   "cls": 1
+  },
+  "5ea17ca01412a1425304d1c0": {
+   "n": "Diamond Age Bastion helmet (Black)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "65719f0775149d62ce0a670b": {
+   "n": "NPP KlASS Tor-2 helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 3
+  },
+  "66bdc28a0b603c26902b2011": {
+   "n": "DevTac Ronin ballistic helmet",
+   "x": 0,
+   "y": 0,
+   "z": 75,
+   "cls": 3
+  },
+  "66b5f65ca7f72d197e70bcd6": {
+   "n": "Ballistic Armor Co. Bastion helmet (Armor Black)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "66b5f661af44ca0014063c05": {
+   "n": "Ballistic Armor Co. Bastion helmet (OD Green)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "66b5f666cad6f002ab7214c2": {
+   "n": "Ballistic Armor Co. Bastion helmet (MultiCam)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 70,
+   "cls": 4
+  },
+  "6745895717824b1ec20570a6": {
+   "n": "6B47 Ratnik-BSh helmet (EMR Arctic cover)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 3
+  },
+  "675956062f6ddfe8ff0e2806": {
+   "n": "MTEK FLUX Ballistic helmet (MultiCam Alpine)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 40,
+   "cls": 4
+  },
+  "6759655674aa5e0825040d62": {
+   "n": "MTEK FLUX Ballistic helmet (Olive Drab)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 40,
+   "cls": 4
+  },
+  "67597ceea35600b4c10cea86": {
+   "n": "MTEK STRIKE Ballistic helmet (Coyote)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "67597d241d5a44f2f605df06": {
+   "n": "MTEK STRIKE Ballistic helmet (Coyote/MultiCam Arid)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "6759af0f9c8a538dd70bfae6": {
+   "n": "Maska-1SCh bulletproof helmet (Christmas Edition)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "68a9be93f260f4e1c2038686": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Orange Stains)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 4
+  },
+  "68a9beecbba00932ed0bc256": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Aces)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 4
+  },
+  "68a986ca5c0073fa2d0d8cb8": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Eight-ball)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "68bee28f79c8186398098e6f": {
+   "n": "Champion's helmet",
+   "x": 0.1,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "68bee2ccd6da72c13f03db95": {
+   "n": "HighCom Striker ULACH IIIA helmet (Sand)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "68bee2d9af253218c00ebbb4": {
+   "n": "HighCom Striker ULACH IIIA helmet (Green Stripes)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "68bee2e0ede5c8489f08e1b5": {
+   "n": "HighCom Striker ULACH IIIA helmet (Mesh Spray)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "68bee2e876e02b9e340ef113": {
+   "n": "HighCom Striker ULACH IIIA helmet (Coyote Stripes)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 75,
+   "cls": 4
+  },
+  "68a98762609a5cb2120ebd26": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Flame)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "68a987a1609a5cb2120ebd2f": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Camouflage)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "68a9b3ca0a9c4f9398032c46": {
+   "n": "Galvion Caiman Hybrid helmet (MultiCam)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 75,
+   "cls": 3
+  },
+  "68a9b5a5863d2a71fa0494a6": {
+   "n": "Galvion Caiman Hybrid helmet (Mutualist)",
+   "x": 0.9,
+   "y": 0.5,
+   "z": 75,
+   "cls": 3
+  },
+  "65709d2d21b9f815e208ff95": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 4
+  },
+  "654a4a964b446df1ad03f192": {
+   "n": "Granit 4RS ballistic plates (Back)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "64afc71497cf3a403c01ff38": {
+   "n": "Granit Br5 ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "64afd81707e2cf40e903a316": {
+   "n": "Granit ballistic plate (Side)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "64afdb577bb3bfe8fe03fd1d": {
+   "n": "ESBI level IV ballistic plate (Side)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "64afdcb83efdfea28601d041": {
+   "n": "ESAPI level IV ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656fa0fb498d1b7e3e071d9c": {
+   "n": "Global Armor’s Steel ballistic plate",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "656fa25e94b480b8a500c0e0": {
+   "n": "Kiba Arms Titan ballistic plate",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "656fa53d94b480b8a500c0e4": {
+   "n": "TallCom Guardian ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "656fa61e94b480b8a500c0e8": {
+   "n": "NESCO 4400-SA-MC ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656fa76500d62bcd2e024080": {
+   "n": "Kiba Arms Steel ballistic plate",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 6
+  },
+  "656fa8d700d62bcd2e024084": {
+   "n": "Cult Locust ballistic plate",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 5
+  },
+  "656fa99800d62bcd2e024088": {
+   "n": "Cult Termite ballistic plate",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 6
+  },
+  "656fac30c6baea13cd07e10c": {
+   "n": "PRTCTR Lightweight ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 3
+  },
+  "656fad8c498d1b7e3e071da0": {
+   "n": "Monoclete level III PE ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 4
+  },
+  "656fae5f7c2d57afe200c0d7": {
+   "n": "GAC 3s15m ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "656faf0ca0dce000a2020f77": {
+   "n": "GAC 4sss2 ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656fafe3498d1b7e3e071da4": {
+   "n": "KITECO SC-IV SA ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656fb0bd7c2d57afe200c0dc": {
+   "n": "SPRTN Elaphros ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 4
+  },
+  "656fb21fa0dce000a2020f7c": {
+   "n": "NewSphereTech level III ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 4
+  },
+  "657b22485f444d6dff0c6c2f": {
+   "n": "6B23-2 ballistic plate (Back)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "657b2797c3dbcb01d60c35ea": {
+   "n": "Korund-VM ballistic plate (Back)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 5
+  },
+  "657b28d25f444d6dff0c6c77": {
+   "n": "Korund-VM-K ballistic plate (Back)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "654a4dea7c17dec2f50cc86a": {
+   "n": "6B12 ballistic plates (Front)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 3
+  },
+  "654a4f8bc721968a4404ef18": {
+   "n": "Korund-VM ballistic plate (Side)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 5
+  },
+  "65573fa5655447403702a816": {
+   "n": "Granit Br4 ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "6557458f83942d705f0c4962": {
+   "n": "SSAPI level III+ ballistic plate (Side)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "655746010177119f4a097ff7": {
+   "n": "SAPI level III+ ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "656efaf54772930db4031ff5": {
+   "n": "Granit 4 ballistic plates (Back)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "656efd66034e8e01c407f35c": {
+   "n": "6B13 custom ballistic plates (Back)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "656f57dc27aed95beb08f628": {
+   "n": "Zhuk-3 ballistic plate (Front)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 3
+  },
+  "656f603f94b480b8a500c0d6": {
+   "n": "6B33 ballistic plate (Front)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 4
+  },
+  "656f611f94b480b8a500c0db": {
+   "n": "Granit 4 ballistic plate (Front)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 5
+  },
+  "656f63c027aed95beb08f62c": {
+   "n": "Granit 4RS ballistic plate (Front)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656f664200d62bcd2e024077": {
+   "n": "Korund-VM ballistic plates (Front)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 80,
+   "cls": 5
+  },
+  "656f66b5c6baea13cd07e108": {
+   "n": "Korund-VM-K ballistic plates (Front)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 6
+  },
+  "656f9d5900d62bcd2e02407c": {
+   "n": "AR500 Legacy Plate ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 3
+  },
+  "656f9fa0498d1b7e3e071d98": {
+   "n": "SPRTN Omega ballistic plate",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 4
+  },
+  "59ef13ca86f77445fd0e2483": {
+   "n": "Jack-o'-lantern tactical pumpkin helmet",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5b432b2f5acfc4771e1c6622": {
+   "n": "Shattered lightweight armored mask",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 1
+  },
+  "5ac4c50d5acfc40019262e87": {
+   "n": "Kolpak-1S face shield",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5a16b672fcdbcb001912fa83": {
+   "n": "Ops-Core FAST Visor",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5a16b7e1fcdbcb00165aa6c9": {
+   "n": "Ops-Core FAST multi-hit ballistic face shield",
+   "x": 0.7,
+   "y": 0.3,
+   "z": 55,
+   "cls": 3
+  },
+  "5a16ba61fcdbcb098008728a": {
+   "n": "Ops-Core FAST Gunsight Mandible",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5a16badafcdbcb001865f72d": {
+   "n": "Ops-Core FAST Side Armor",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "5aa7e373e5b5b000137b76f0": {
+   "n": "Altyn helmet face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 70,
+   "cls": 5
+  },
+  "5aa7e3abe5b5b000171d064d": {
+   "n": "ZSh-1-2M face shield",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 55,
+   "cls": 3
+  },
+  "5b46238386f7741a693bcf9c": {
+   "n": "Kiver-M face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 55,
+   "cls": 3
+  },
+  "5c178a942e22164bef5ceca3": {
+   "n": "Crye Precision AirFrame Chops",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "5c1793902e221602b21d3de2": {
+   "n": "Crye Precision AirFrame Ears",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "5c0e842486f77443a74d2976": {
+   "n": "Maska-1SCh face shield (Killa Edition)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 70,
+   "cls": 6
+  },
+  "5c0919b50db834001b7ce3b9": {
+   "n": "Maska-1SCh face shield (Olive Drab)",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 70,
+   "cls": 6
+  },
+  "5ca2113f86f7740b2547e1d2": {
+   "n": "Vulkan-5 helmet face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 55,
+   "cls": 4
+  },
+  "5c0e66e2d174af02a96252f4": {
+   "n": "Ops-Core SLAAP armor helmet plate (Tan)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "5e00cdd986f7747473332240": {
+   "n": "Team Wendy EXFIL Ballistic face shield (Black)",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 55,
+   "cls": 3
+  },
+  "5e00cfa786f77469dc6e5685": {
+   "n": "Team Wendy EXFIL Ear Covers (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "5e01f31d86f77465cf261343": {
+   "n": "Team Wendy EXFIL Ear Covers (Coyote Brown)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "5e01f37686f774773c6f6c15": {
+   "n": "Team Wendy EXFIL Ballistic face shield (Coyote Brown)",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 55,
+   "cls": 3
+  },
+  "5d6d3829a4b9361bc8618943": {
+   "n": "LShZ-2DTM face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 70,
+   "cls": 4
+  },
+  "5d6d3be5a4b9361bc73bc763": {
+   "n": "LShZ-2DTM aventail",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 5
+  },
+  "603409c80ca681766b6a0fb2": {
+   "n": "NPP KlASS Condor glasses",
+   "x": 0.7,
+   "y": 0.3,
+   "z": 55,
+   "cls": 1
+  },
+  "60a7ad2a2198820d95707a2e": {
+   "n": "Tagilla's welding mask \"UBEY\"",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 5
+  },
+  "60a7ad3a0c5cb24b0134664a": {
+   "n": "Tagilla's welding mask \"Gorilla\"",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 5
+  },
+  "60bf74184a63fc79b60c57f6": {
+   "n": "Bomber beanie",
+   "x": 0,
+   "y": 0,
+   "z": 1,
+   "cls": 1
+  },
+  "5f60b85bbdb8e27dee3dc985": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 45,
+   "cls": 4
+  },
+  "5f60bf4558eff926626a60f2": {
+   "n": "Galvion Caiman Fixed Arm Visor",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5f60c076f2bcbb675b00dac2": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "5f60c85b58eff926626a60f7": {
+   "n": "Rys-T face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 70,
+   "cls": 5
+  },
+  "5ea058e01dbce517f324b3e2": {
+   "n": "Tac-Kek Heavy Trooper mask for Ops-Core-type helmets",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 2
+  },
+  "5ea18c84ecf1982c7712d9a2": {
+   "n": "Diamond Age Bastion helmet armor plate",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 50,
+   "cls": 6
+  },
+  "62963c18dbc8ab5f0d382d0b": {
+   "n": "Death Knight mask",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 1
+  },
+  "62a09e08de7ac81993580532": {
+   "n": "Glorious E lightweight armored mask",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 1
+  },
+  "62a61c988ec41a51b34758d5": {
+   "n": "Oakley SI Batwolf glasses",
+   "x": 0.7,
+   "y": 0.3,
+   "z": 55,
+   "cls": 1
+  },
+  "657089638db3adca1009f4ca": {
+   "n": "Atomic Defense CQCM up armored ballistic mask (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 4
+  },
+  "65719f9ef392ad76c50a2ec8": {
+   "n": "NPP KlASS Tor-2 helmet face shield",
+   "x": 0.7,
+   "y": 0.4,
+   "z": 55,
+   "cls": 3
+  },
+  "67a4b71ad3228756b6088ee2": {
+   "n": "Atomic Defense CQCM ballistic mask (Smile)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c5b6dfdf568c9009af66": {
+   "n": "Atomic Defense CQCM ballistic mask (Stop Me)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c5df782ce4655104db14": {
+   "n": "Atomic Defense CQCM ballistic mask (Scars)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c5f37f52620c5b05b4d6": {
+   "n": "Atomic Defense CQCM ballistic mask (Target)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c6068fcd9fb73f0752cf": {
+   "n": "Atomic Defense CQCM ballistic mask (Skull)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c61c7f52620c5b05b4d8": {
+   "n": "Atomic Defense CQCM ballistic mask (Demon)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "67a5c657782ce4655104db16": {
+   "n": "Atomic Defense CQCM ballistic mask (El Día de Muertos)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "678f84bb9e85556ca60f0362": {
+   "n": "Tagilla's welding mask \"ZABEY\"",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 6
+  },
+  "688b3bfa1ed594eccd0c45ee": {
+   "n": "Atomic Defense CQCM ballistic mask (Ping)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "68a9b873a4b28d56c80a1818": {
+   "n": "Death Shadow lightweight armored mask (White)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68a9bf7d9f4c45817b0d83b6": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible (Black)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 3
+  },
+  "68a9c0ed6d47c49b700faaf9": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible (Aces)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 3
+  },
+  "68bee22e79c8186398098e6d": {
+   "n": "DevTaс Samurai Menpo Mask",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68bee238a48c3c320808abc4": {
+   "n": "DevTaс Samurai Menpo Mask (Gold)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68bee246ede5c8489f08e1b3": {
+   "n": "DevTaс Samurai Menpo Mask (White)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68a9a04373d52d47830759c7": {
+   "n": "Atomic Defense CQCM ballistic mask (Loui Peeton)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "68a9a0b01696fb8c1e0ee9cc": {
+   "n": "Atomic Defense CQCM ballistic mask (Toxic)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "68a9a1223e1ee5a70504c126": {
+   "n": "Atomic Defense CQCM ballistic mask (Crash Tested)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "68a9a15d73d52d47830759c9": {
+   "n": "Atomic Defense CQCM ballistic mask (Demonic Face)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 3
+  },
+  "68a9b601863d2a71fa0494ae": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique (MultiCam)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 45,
+   "cls": 4
+  },
+  "68a9b669fa39b6976e07de96": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique (Mutualist)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 45,
+   "cls": 4
+  },
+  "68a9b6c8d3a061d8b6058346": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard (MultiCam)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "68a9b73bd3a061d8b6058348": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard (Mutualist)",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "cls": 2
+  },
+  "68a9b821cdf661cc5a0626c6": {
+   "n": "Death Shadow lightweight armored mask (Gold)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68a9b852cdf661cc5a0626c9": {
+   "n": "Death Shadow lightweight armored mask (Gray)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  },
+  "68d54d0525ac8590a8075ac3": {
+   "n": "Atomic Defense CQCM ballistic mask (Loui Peeton)",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 4
+  },
+  "6570a88c8f221f3b210353b7": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 60,
+   "cls": 3
+  },
+  "6570aead4d84f81fd002a033": {
+   "n": "Death Shadow lightweight armored mask",
+   "x": 0.9,
+   "y": 0.4,
+   "z": 70,
+   "cls": 2
+  }
+ }
+}

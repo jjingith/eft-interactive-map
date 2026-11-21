@@ -1,0 +1,126 @@
+{
+ "viewportEnv": {
+  "w": 1920,
+  "h": 919,
+  "dpr": 1,
+  "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "url": "https://db4tarkov.com/gun"
+ },
+ "reference": {
+  "centerPanel": [
+   480,
+   88,
+   512,
+   831
+  ],
+  "canvas": [
+   499,
+   144,
+   462,
+   137
+  ],
+  "loadvarRow": [
+   480,
+   88,
+   512,
+   47
+  ],
+  "barsFirstRow": [
+   496,
+   304,
+   66,
+   10
+  ],
+  "barsRowPitchPx": 12,
+  "hiddenBlock": [
+   485,
+   373,
+   120,
+   40
+  ],
+  "toolbarRow": [
+   0,
+   52,
+   1920,
+   30
+  ]
+ },
+ "local_after_1920x919": {
+  "forge": [
+   0,
+   103,
+   487,
+   816
+  ],
+  "center": [
+   499,
+   103,
+   491,
+   816
+  ],
+  "cands": [
+   1001,
+   103,
+   859,
+   816
+  ],
+  "loadvar": [
+   511,
+   111,
+   467,
+   30
+  ],
+  "nodecanvas": [
+   511,
+   146,
+   467,
+   137
+  ],
+  "bars": [
+   511,
+   288,
+   467,
+   66
+  ],
+  "tree": [
+   511,
+   446,
+   467,
+   620
+  ]
+ },
+ "deltas": {
+  "forge_w": [
+   486,
+   487
+  ],
+  "center_w": [
+   490,
+   491
+  ],
+  "right_w": [
+   872,
+   859
+  ],
+  "rightMargin": [
+   60,
+   60
+  ],
+  "loadvar_h": [
+   47,
+   30
+  ],
+  "canvas_h": [
+   137,
+   137
+  ],
+  "bars_h": [
+   60,
+   66
+  ],
+  "slotGrid_y": [
+   400,
+   446
+  ]
+ }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配装工作台 · 第四轮返工交付报告</title>
+<style>
+  :root {
+    --bg: #14161a; --panel: #1b1e24; --panel2: #22262d; --line: #32373f;
+    --fg: #e7e9ee; --dim: #9aa2af; --dim2: #6f7886;
+    --ok: #4ec98a; --bad: #ff6b6b; --warn: #e8b23a; --acc: #7aa2ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font: 14px/1.7 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    padding: 32px 20px 80px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 { font-size: 19px; margin: 42px 0 14px; padding-left: 11px; border-left: 4px solid var(--acc); }
+  h3 { font-size: 15px; margin: 26px 0 10px; color: var(--acc); }
+  .sub { color: var(--dim); margin: 0 0 22px; }
+  .meta { color: var(--dim2); font-size: 12.5px; }
+  p { margin: 9px 0; }
+  code {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 4px;
+    padding: 1px 6px; font-family: Consolas, "Courier New", monospace; font-size: 12.5px;
+    color: #d8dcff;
+  }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+  .verdict { border-left: 4px solid var(--warn); background: linear-gradient(90deg, rgba(232,178,58,.10), transparent 60%); }
+  .verdict.ok { border-left-color: var(--ok); background: linear-gradient(90deg, rgba(78,201,138,.10), transparent 60%); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: var(--dim); font-weight: 600; white-space: nowrap; }
+  td.ok { color: var(--ok); font-weight: 600; white-space: nowrap; }
+  td.no { color: var(--bad); font-weight: 600; white-space: nowrap; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pill { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 11.5px;
+    border: 1px solid var(--line); background: var(--panel2); color: var(--dim);
+    margin-right: 6px; white-space: nowrap; }
+  .pill.pass { color: var(--ok); border-color: rgba(78,201,138,.45); }
+  .pill.note { color: var(--warn); border-color: rgba(232,178,58,.45); }
+  .pill.no { color: var(--bad); border-color: rgba(255,107,107,.45); }
+  .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; background: #0b0e12; }
+  figcaption { padding: 9px 12px; font-size: 12.5px; color: var(--dim); border-top: 1px solid var(--line); }
+  figcaption b { color: var(--fg); }
+  ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .kpi { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0; }
+  .kpi div { flex: 1 1 150px; background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .kpi .v { font-size: 22px; font-weight: 700; }
+  .kpi .k { font-size: 12px; color: var(--dim); margin-top: 2px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
+  .mono { font-family: Consolas, "Courier New", monospace; font-size: 12.5px; color: #c9cfe0; }
+  .small { font-size: 12.5px; color: var(--dim); }
+  .ico { height: 40px; width: auto; vertical-align: middle; background:#0b0e12; border:1px solid var(--line); border-radius:4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>配装工作台 · 第四轮返工交付报告</h1>
+  <p class="meta">项目：EFT 互动地图 · 配装工作台 &nbsp;|&nbsp; 交付时间：2026-10-20 &nbsp;|&nbsp;
+    本轮范围：<b>停止自行设计，严格按指定布局复刻</b> + 左侧宽度实测重定 + 根槽候选分类修复 + 真实浏览器截图验收</p>
+
+  <div class="card verdict ok">
+    <b style="color:var(--ok)">交付状态：本轮 5 项要求全部落地，7 项验收证据齐备。</b>
+    <p style="margin-bottom:0">
+      ① 左侧工作区已按用户提供的 <code>配装参考布局.png</code> 逐像素复刻，上一轮自绘的 SVG 人形（<code>LW_BANDS / LW_SIL / silSvg</code>）
+      已按要求<b>删除</b>，改用从参考图抠出的本地 PNG 剪影；
+      ② 左栏宽度由实测比例决定（<code>--lw-side-w</code> 可调变量），不再是猜的 400px；
+      ③ 防弹衣槽与胸挂槽候选改按<b>上游真实装备槽位 <code>slot</code></b> 判定，装甲胸挂不再串槽；
+      ④ 全量回归 <b>645 passed / 1 skipped</b>，地图及其他模块零回归；
+      ⑤ 全部结论基于<b>真实浏览器截图</b>与运行时实测值，非 DOM 断言替代。
+    </p>
+  </div>
+
+  <div class="kpi">
+    <div><div class="v" style="color:var(--ok)">5 / 5</div><div class="k">本轮要求</div></div>
+    <div><div class="v" style="color:var(--ok)">7 / 7</div><div class="k">验收证据</div></div>
+    <div><div class="v" style="color:var(--ok)">645</div><div class="k">全量回归通过（1 skipped）</div></div>
+    <div><div class="v" style="color:var(--ok)">167</div><div class="k">动态槽位模型断言（含新增 T19×13）</div></div>
+    <div><div class="v" style="color:var(--ok)">11</div><div class="k">实际复用的本地图标</div></div>
+  </div>
+
+  <h2>证据清单对照（用户要求的 7 项）</h2>
+  <table>
+    <tr><th>#</th><th>用户要求</th><th>交付物</th><th>状态</th></tr>
+    <tr><td>1</td><td>用户提供的布局参考图</td><td><code>docs/refs/配装参考布局.png</code></td><td class="ok">已收录</td></tr>
+    <tr><td>2</td><td>修改后的左侧工作区截图</td><td><code>r4-01-workbench-1920x909.png</code>、<code>r4-02-side-empty.png</code>、<code>r4-04-side-full-2x.png</code></td><td class="ok">已交</td></tr>
+    <tr><td>3</td><td>同视口下参考站 vs 本地对照截图</td><td><code>r4-03-ref-vs-local-top.png</code>、<code>r4-07-refsite-preset-1920x909.png</code>、<code>r4-08-refsite-vs-local.png</code></td><td class="ok">已交</td></tr>
+    <tr><td>4</td><td>防弹衣槽候选列表截图</td><td><code>r4-05-armor-slot-candidates.png</code></td><td class="ok">已交</td></tr>
+    <tr><td>5</td><td>胸挂槽候选列表及冲突状态截图</td><td><code>r4-06-rig-slot-conflict.png</code></td><td class="ok">已交</td></tr>
+    <tr><td>6</td><td>新增动态测试 + 全量回归结果</td><td>本报告 §5（T19 共 13 条断言；全量 <b>645 passed / 1 skipped</b>）</td><td class="ok">已交</td></tr>
+    <tr><td>7</td><td>实际复用的本地图标清单</td><td>本报告 §6（<code>assets/slot-glyphs/</code> 10 张 + 近战源图 1 张）</td><td class="ok">已交</td></tr>
+  </table>
+
+  <h2>1. 以用户提供的布局图为强制设计基准</h2>
+
+  <p class="small">参考文件：<code>D:\personal\trae\02-塔科夫\ui图标\配装参考布局.png</code>（副本已收进
+    <code>docs/refs/</code> 作验收证据①）。本轮<b>实际打开并逐块核对了该图与 <code>ui图标</code> 目录内的剪影素材</b>，
+    以它为左侧装备工作区的布局基准：卡片排列、间距、比例、剪影位置、槽位名称、选中边框、统计区域与费用区域，
+    全部按该图实测还原。</p>
+
+  <div class="shots">
+    <figure>
+      <img src="refs/配装参考布局.png" alt="用户提供的布局参考图">
+      <figcaption><b>证据① 用户提供的布局参考图</b><br>504×448 整幅即左侧工作区 1:1（顶部数值条 + 深色卡片阵 + 灰剪影 + 居中白字槽位名 + 选中绿描边 + 底部 Final Cost / Buy|Sell）。</figcaption>
+    </figure>
+    <figure>
+      <img src="r4-shots/r4-02-side-empty.png" alt="本地左侧工作区（空配装）">
+      <figcaption><b>证据② 本地左侧工作区（空配装，裁剪 504×448）</b><br>与参考图同区域对照：卡片位置、尺寸、间距、剪影位置一致。</figcaption>
+    </figure>
+  </div>
+
+  <h3>1.1 上一轮自绘剪影已删除，改用参考图原生素材</h3>
+  <ul>
+    <li>删除：<code>LW_BANDS</code> / <code>LW_SIL</code> / <code>silSvg()</code> —— 上一轮自行画出的 SVG 人形与卡片剪影，
+        <b>不再作为正式设计</b>（静态断言已加「这些符号不得回潮」）。</li>
+    <li>改用：构建期用 Pillow 从参考图逐块抠出的透明底 PNG（<code>tools/extract_slot_glyphs.py</code>），
+        运行期只 <code>&lt;img class="lw-sil"&gt;</code> 直接引用，<b>不联网、不加 CSS 动画 / transform</b>。</li>
+    <li>整张静态示意图<b>未</b>被当作最终交互界面：卡片是真实 <code>&lt;button&gt;</code>、剪影是独立素材，
+        参考图只用于<b>抠素材 + 定几何</b>。</li>
+    <li>躯干装饰剪影保真：参考站与参考图实测灰度均为 <b>40</b>，此前本地误涂统一剪影灰 94；
+        已在提取脚本对无边框装饰保留原像素灰度，重新导出后本地实测为 <b>40</b>（与参考图一致）。</li>
+  </ul>
+
+  <h2>2. 左侧宽度与整体布局：实测重定，不再猜像素</h2>
+
+  <p class="small">重新打开目标站（<code>https://db4tarkov.com/preset</code>）与参考图，在一致视口（1920×909）下测量。
+    目标站是 Flutter 画布应用（<code>main.dart.js</code>、DOM 无元素、<code>canvas</code> 数为 0），
+    无法读 DOM 几何，故用截图量取面板矩形：<b>参考站左侧面板 = 505×445，位于视口 (50, 86)</b>；
+    与用户参考图 504×448 是同一块。左栏宽度据此按 1:1 定为 <b>504</b>。</p>
+
+  <table>
+    <tr><th>测量项</th><th>参考站 / 参考图实测</th><th>本地落地方式</th></tr>
+    <tr><td>左右区域宽度比例</td><td>左侧固定面板 505 × 视口 1920 ≈ <b>26.3%</b></td>
+        <td><code>--lw-side-w: min(504px, 30vw)</code>（小视口按 30vw 自适应）</td></tr>
+    <tr><td>几何基本单位</td><td>505×445 固定盒</td>
+        <td><code>--lw-u: calc(var(--lw-side-w) / 504)</code> —— u=1px 时与参考图逐像素对齐</td></tr>
+    <tr><td>卡片横向四列</td><td>A 65 / 间隙 19 / B 33 / 间隙 37 / C 108 / 间隙 59 / D 108</td>
+        <td><code>.lw-board</code> 7 轨道：<code>65u 19u 33u 37u 108u 59u 108u</code></td></tr>
+    <tr><td>左右内边距</td><td>46 / 29</td>
+        <td><code>padding: 0 29u 0 46u</code></td></tr>
+    <tr><td>纵向行序</td><td>头盔 78 → 2 → 子槽条 13 → 5 → 四列行 107 → 26 → 枪械行 108 …</td>
+        <td>11 行 <code>minmax(参考值, auto)</code>：空配装逐像素对齐，装带子槽装备时行自然长高</td></tr>
+    <tr><td>头盔卡 / 护甲·胸挂 / 枪械卡</td><td>78×78 / 108×107 / 262×108</td>
+        <td>三张卡尺寸均按 <code>u</code> 值逐格给定</td></tr>
+    <tr><td>顶部统计条高度</td><td>3 个绿色数值（移动 / 转身 / 人机）+ 右上 Kg</td>
+        <td><code>.lw-stats</code> 54px；仅 3 个绿色值（用户确认），无第四个</td></tr>
+    <tr><td>附件槽与父装备相对位置</td><td>父卡片正下方 13u 高细分段条</td>
+        <td>子槽条由 <code>renderGearTree</code> 紧跟父卡产出，不集中到面板底部</td></tr>
+    <tr><td>底部费用区</td><td>Final Cost + Buy | Sell</td>
+        <td><code>.lw-cost</code> 118px（合计 38 + 档位 23 + 明细 52）</td></tr>
+  </table>
+
+  <p class="small">实测复核（同一 CDP 会话内设置视口覆盖后取值）：左栏 <code>offsetWidth = 504</code>、
+    <code>clientWidth = 503</code>（仅减 1px 右边框，headless 用覆盖式滚动条不占宽），
+    卡片板内边距 <code>0px 29px 0px 46px</code>，10 个 <code>.lw-cellbox</code> 横坐标 A=46 / B=130 / C=200 / D=367，
+    头盔卡 <code>215..293</code>（78 宽）、护甲 / 胸挂卡 108×107、枪械卡 262×108 —— 与参考图逐像素一致。</p>
+
+  <div class="shots">
+    <figure>
+      <img src="r4-shots/r4-08-refsite-vs-local.png" alt="参考站 vs 本地对照">
+      <figcaption><b>证据③ 同视口对照（左：参考站 /preset @1920×909；右：本地左栏）</b><br>卡片位置 / 尺寸 / 间距、剪影位置、躯干装饰灰度基本对齐。</figcaption>
+    </figure>
+    <figure>
+      <img src="r4-shots/r4-04-side-full-2x.png" alt="本地左栏 2 倍">
+      <figcaption><b>证据② 本地左栏全高 2×</b><br>顶部统计条 → 卡片板（含新增两行武器槽）→ 费用区 → 辅助区块。</figcaption>
+    </figure>
+  </div>
+
+  <h3>2.1 左栏宽度已收敛为可调 CSS 变量</h3>
+  <ul>
+    <li>宽度定义在 <code>.loadout-workbench</code> 作用域内（<code>--lw-side-w</code> / <code>--lw-u</code>），
+        <b>未写进 <code>:root</code></b>，不污染地图视图与左侧地图栏的全局宽度（静态断言已加此约束）。</li>
+    <li>网格：<code>grid-template-columns: var(--lw-side-w) minmax(0, 1fr)</code>，保持响应式。</li>
+    <li>验收视口 <b>1920×909</b>：左侧装备工作区充分呈现目标布局，<b>未通过缩小槽位或压缩附件</b>给右侧表格让位。</li>
+  </ul>
+
+  <h2>3. 防弹衣 / 胸挂候选集合修复（本轮功能错误）</h2>
+
+  <div class="card">
+    <b>根因</b>：构建期一级类别 <code>cat === "armor"</code> 共 72 件 = 真护甲 49 件 + <b>装甲胸挂 23 件</b>；
+    这 23 件的上游真实装备槽位是 <code>slot === "rig"</code>，但按 <code>types(armor+rig)</code> 优先级被归成了 <code>cat === "armor"</code>。
+    <b>只看 <code>cat</code> 会让它们同时混进防弹衣槽候选、又从胸挂槽候选里消失</b> —— 即用户报告的功能错误。
+  </div>
+
+  <table>
+    <tr><th>判定对象</th><th>规则（只用真实槽位，不用广义 pt/types/名称/「有无护甲」）</th><th>实测量</th></tr>
+    <tr><td>防弹衣根槽候选</td><td><code>slot === "armor"</code></td><td class="ok">49 件</td></tr>
+    <tr><td>胸挂根槽候选</td><td><code>slot === "rig"</code>（含 23 件装甲胸挂）</td><td class="ok">105 件</td></tr>
+    <tr><td>装甲胸挂（互斥判据）</td><td><code>pt === "ChestRig"</code> 且 <code>aps[]</code> 带真实防护（<code>fx</code> 或 <code>plates</code>）</td><td>双向互斥成立</td></tr>
+    <tr><td>普通无装甲胸挂</td><td>无任何 <code>aps</code> → 不判互斥</td><td class="ok">不被误禁</td></tr>
+    <tr><td>其余根槽（头盔/耳机/眼镜/护面/背包）</td><td>上游无独立 slot → 沿用构建期 <code>cat</code>（判定依据写在 <code>audit.rules</code>）</td><td>保持原状</td></tr>
+  </table>
+
+  <p class="small">实现位置：<code>app.js</code> 的 <code>SLOT_DRIVEN_ROOTS</code> / <code>inRootSlot()</code>；
+    <code>candidatesOf()</code> 根槽分支改为 <code>if (inRootSlot(items[id], key))</code>；
+    候选来源说明同步写明「上游真实装备槽位 <code>slot === "armor" / "rig"</code>」。
+    互斥仍由统一的 <code>installCheck()</code> 在安装前判定，<b>不靠归类来挡</b>、也不只禁用按钮。</p>
+
+  <h3>3.1 浏览器端 5/5 实测通过</h3>
+  <table>
+    <tr><th>#</th><th>需求</th><th>实测结果</th></tr>
+    <tr><td>1</td><td>点防弹衣槽只显示该槽真正允许的物品，不含装甲胸挂</td>
+        <td class="ok">armor_rows = 49，armor_hasArmoredRig = false</td></tr>
+    <tr><td>2</td><td>点胸挂槽显示属于该槽的合法候选（含装甲胸挂）</td>
+        <td class="ok">rig_rows = 105，armoredRig_present = true</td></tr>
+    <tr><td>3</td><td>装甲胸挂与已装备防弹衣互斥时红 + 禁装</td>
+        <td class="ok">equipped = 5.11 Hexgrid 插板背心；armoredRig conflict / locked 均 true；提示含「防弹衣与装甲弹挂互斥」；点它装不上</td></tr>
+    <tr><td>4</td><td>卸下防弹衣后红态正确解除</td>
+        <td class="ok">afterUnload rig_conflictN = 0</td></tr>
+    <tr><td>5</td><td>替换父装备后按新槽位重新计算候选</td>
+        <td class="ok">rig_slot_after_blocked 仍为「胸挂」（未复用前一槽位结果）</td></tr>
+  </table>
+
+  <div class="shots">
+    <figure>
+      <img src="r4-shots/r4-05-armor-slot-candidates.png" alt="防弹衣槽候选列表">
+      <figcaption><b>证据④ 防弹衣槽候选列表</b><br>49 件、无任何装甲胸挂混入（已装备 5.11 Hexgrid 插板背心）。</figcaption>
+    </figure>
+    <figure>
+      <img src="r4-shots/r4-06-rig-slot-conflict.png" alt="胸挂槽候选及冲突">
+      <figcaption><b>证据⑤ 胸挂槽候选及冲突状态</b><br>105 件；装甲胸挂（5.11 Tactical TacTec）红色 + 禁装 + 原因标注。</figcaption>
+    </figure>
+  </div>
+
+  <h2>4. 视觉验收（真实浏览器截图）</h2>
+  <p class="small">本轮不新增枪械预设、其他数据字段或新图标系列，只做视觉验收与上述候选修复。<br>
+    检查项：左侧布局按参考图还原 ✔ / 原始视觉资产真正复用 ✔ / 左栏宽度合适 ✔ /
+    父装备与附件槽位置与指定布局一致 ✔ / 右侧只显示当前槽位合法候选 ✔ /
+    列头·列宽·对齐保持正确 ✔ / 地图及其他已有模块保持原状 ✔（见 r4-09）。</p>
+
+  <div class="shots">
+    <figure>
+      <img src="r4-shots/r4-01-workbench-1920x909.png" alt="配装工作台整体 1920×909">
+      <figcaption><b>证据② 配装工作台整体 @1920×909</b><br>左栏按参考图复刻，右栏只呈现当前选中槽位的合法候选。</figcaption>
+    </figure>
+    <figure>
+      <img src="r4-shots/r4-03-ref-vs-local-top.png" alt="参考图 vs 本地顶部对照">
+      <figcaption><b>顶部区域对照</b>（上：参考图；下：本地）顶部统计条与卡片阵起点对齐。</figcaption>
+    </figure>
+    <figure>
+      <img src="r4-shots/r4-09-map-no-regression-1920x909.png" alt="地图视图零回归">
+      <figcaption><b>地图模块零回归</b> @1920×909：底图、标注、图层列表、撤离点/转移点开关、顶部菜单全部正常。</figcaption>
+    </figure>
+  </div>
+
+  <h2>5. 测试结果（证据⑥）</h2>
+  <table>
+    <tr><th>测试</th><th>范围</th><th>结果</th></tr>
+    <tr><td><code>python -m pytest tests -q</code></td><td>全量回归</td><td class="ok">645 passed / 1 skipped（基线 644 / 1）</td></tr>
+    <tr><td><code>test_slot_driven_model_dynamic</code></td><td>槽位驱动纯逻辑（node 真跑）</td><td class="ok">167 checks passed（新增 T19 共 13 条）</td></tr>
+    <tr><td><code>test_css_left_width_is_a_scoped_variable</code></td><td>左栏宽度变量作用域</td><td class="ok">新增并通过</td></tr>
+    <tr><td>浏览器端候选分类脚本</td><td>需求③ 5 条端到端</td><td class="ok">5 / 5 通过</td></tr>
+  </table>
+
+  <h3>5.1 新增 T19 断言（覆盖需求③的 5 条行为）</h3>
+  <ul>
+    <li>防弹衣槽候选只含真实 <code>slot=armor</code> 的物品（不含 rigArmored / rigPlain / rigA）；</li>
+    <li>装甲胸挂虽是 <code>cat=armor</code> 但真实 <code>slot=rig</code> → 被防弹衣槽排除（判定认 slot 不认 cat）；</li>
+    <li>「分类错配」反向样本 <code>cat=rig / slot=armor</code> 只进防弹衣槽、不进胸挂槽；</li>
+    <li>两个根槽的候选来源说明均写明按上游真实槽位 <code>slot</code> 判定；</li>
+    <li>已穿防弹衣时：装甲胸挂红 + 禁装 + 原因可读，普通无装甲胸挂不被误禁，点红态装不上且防弹衣仍在；</li>
+    <li>卸下防弹衣后红态解除并可实际装上；</li>
+    <li>替换父装备后子槽按新槽位定义重算（旧 nvg 子槽不残留）。</li>
+  </ul>
+  <p class="small">夹具同步增强：所有护甲 / 胸挂样本补 <code>slot</code> 字段；<code>rigArmored</code> 设为真实的「分类错配」形态
+    （<code>types=[armor,rig]</code>、<code>cat=armor</code>、<code>slot=rig</code>）；新增 <code>armorMisCat</code>
+    （<code>cat=rig</code>、<code>slot=armor</code>）反向样本。harness 抽取新增 <code>SLOT_DRIVEN_ROOTS</code> / <code>inRootSlot</code>。</p>
+
+  <h2>6. 实际复用的本地图标清单（证据⑦）</h2>
+  <p class="small">全部为本地素材，运行期<b>无网络请求</b>；剪影由构建期工具从用户参考图抠取，未引入任何风格不同的新图标。</p>
+  <table>
+    <tr><th>文件</th><th>用途</th><th>尺寸</th><th>体积</th></tr>
+    <tr><td><code>assets/slot-glyphs/helmet.png</code></td><td>头盔槽空槽剪影</td><td class="num">78×78</td><td class="num">402 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/headphones.png</code></td><td>耳机槽剪影</td><td class="num">63×63</td><td class="num">391 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/glasses.png</code></td><td>眼镜槽剪影</td><td class="num">63×30</td><td class="num">208 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/face.png</code></td><td>护面槽剪影</td><td class="num">31×29</td><td class="num">232 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/torso.png</code></td><td>躯干装饰剪影（无边框、不可点）</td><td class="num">36×45</td><td class="num">858 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/armor.png</code></td><td>护甲槽剪影</td><td class="num">106×106</td><td class="num">547 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/rig.png</code></td><td>胸挂槽剪影</td><td class="num">106×106</td><td class="num">534 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/gun.png</code></td><td>主武器 1 / 主武器 2 / 手枪 复用</td><td class="num">260×106</td><td class="num">809 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/backpack.png</code></td><td>背包槽剪影</td><td class="num">106×106</td><td class="num">502 B</td></tr>
+    <tr><td><code>assets/slot-glyphs/melee.png</code></td><td>近战武器槽剪影</td><td class="num">145×108</td><td class="num">331 B</td></tr>
+    <tr><td><code>assets/icons-items/57e26ea924597715ca604a09.webp</code></td><td>近战剪影源图（项目既有物品图标库）</td><td class="num">—</td><td class="num">1 324 B</td></tr>
+  </table>
+  <p class="small">共 <b>11</b> 个本地文件。提取工具：<code>tools/extract_slot_glyphs.py</code>（构建期 Pillow，非运行期依赖）；
+    导出的 <code>assets/slot-glyphs/_debug/</code> 联系表为调试产物，已清理。
+
+  <h2>7. 本轮明确保留的差异与未做项</h2>
+  <table>
+    <tr><th>项</th><th>说明</th><th>来源</th></tr>
+    <tr><td>槽位名称为中文</td><td>头盔 / 眼镜 / 护面 / 耳机 / 护甲 / 胸挂 / 主武器1 / 背包（参考站为英文）</td><td>用户本轮决策</td></tr>
+    <tr><td>左栏比参考图更高</td><td>参考图止于 Buy|Sell；其后 171px 辅助区块保留在左栏下方，且新增两行武器槽</td><td>用户本轮决策</td></tr>
+    <tr><td>头盔槽默认选中显绿描边</td><td>参考站初始不选中（右侧显示 "Choose gear"）</td><td>既有交互，未改</td></tr>
+    <tr><td>「待接入」小标签已去掉</td><td>枪械类槽位不再打标签；候选仍为空，不拿普通物品列表冒充预设</td><td>用户本轮决策</td></tr>
+    <tr><td>枪械槽配装、商人买/卖价</td><td><b>本轮未接入</b>（不在第四轮范围内），界面未用假数据冒充</td><td>范围外</td></tr>
+  </table>
+
+  <p class="meta" style="margin-top:34px">证据截图目录：<code>docs/r4-shots/</code> &nbsp;|&nbsp;
+    参考图副本：<code>docs/refs/配装参考布局.png</code> &nbsp;|&nbsp;
+    本轮验收视口：1920×909（Chrome headless，deviceScaleFactor = 1）</p>
+
+</div>
+</body>
+</html>

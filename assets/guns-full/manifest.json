@@ -1,0 +1,2934 @@
+{
+ "schema": 1,
+ "round": "R19.3",
+ "source": "https://assets.tarkov.dev/{id}-base-image.webp",
+ "note": "完整枪械图 = 官方预设渲染（含枪托/握把/弹匣等完整装配），不是本体机匣图，也不是把配件图标叠出来的合成图。",
+ "counts": {
+  "guns": 163,
+  "withDefaultPreset": 163,
+  "presetsRendered": 368,
+  "missing": 5
+ },
+ "items": [
+  {
+   "gunId": "5447a9cd4bdc2dbd208b4567",
+   "gunName": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "presetId": "5af08cf886f774223c269184",
+   "presetName": "柯尔特 M4A1 5.56x45 卡宾枪 Carbine",
+   "file": "assets/guns-full/5447a9cd4bdc2dbd208b4567.png",
+   "source": "https://assets.tarkov.dev/5af08cf886f774223c269184-base-image.webp",
+   "size": [
+    290,
+    112
+   ],
+   "aspect": 2.59,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 15
+  },
+  {
+   "gunId": "5448bd6b4bdc2dfc2f8b4569",
+   "gunName": "马卡洛夫9x18PM 手枪",
+   "presetId": "58414967245977598f1ad391",
+   "presetName": "马卡洛夫9x18PM 手枪 默认",
+   "file": "assets/guns-full/5448bd6b4bdc2dfc2f8b4569.png",
+   "source": "https://assets.tarkov.dev/58414967245977598f1ad391-base-image.webp",
+   "size": [
+    139,
+    112
+   ],
+   "aspect": 1.24,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "54491c4f4bdc2db1078b4568",
+   "gunName": "MP-133 12 铅径泵动式霰弹枪",
+   "presetId": "584148f2245977598f1ad387",
+   "presetName": "MP-133 12 铅径泵动式霰弹枪 默认",
+   "file": "assets/guns-full/54491c4f4bdc2db1078b4568.png",
+   "source": "https://assets.tarkov.dev/584148f2245977598f1ad387-base-image.webp",
+   "size": [
+    400,
+    79
+   ],
+   "aspect": 5.06,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "55801eed4bdc2d89578b4588",
+   "gunName": "SV-98 7.62x54R 栓动式狙击步枪",
+   "presetId": "58414a16245977599247970a",
+   "presetName": "SV-98 7.62x54R 栓动式狙击步枪 默认",
+   "file": "assets/guns-full/55801eed4bdc2d89578b4588.png",
+   "source": "https://assets.tarkov.dev/58414a16245977599247970a-base-image.webp",
+   "size": [
+    400,
+    72
+   ],
+   "aspect": 5.56,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5580223e4bdc2d1c128b457f",
+   "gunName": "MP-43-1C 12 铅径双管霰弹枪",
+   "presetId": "6197d1f3585c515a052ad88f",
+   "presetName": "MP-43-1C 12 铅径双管霰弹枪 默认",
+   "file": "assets/guns-full/5580223e4bdc2d1c128b457f.png",
+   "source": "https://assets.tarkov.dev/6197d1f3585c515a052ad88f-base-image.webp",
+   "size": [
+    400,
+    69
+   ],
+   "aspect": 5.8,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "gunName": "AK-74N 5.45x39 突击步枪",
+   "presetId": "5841474424597759ba49be91",
+   "presetName": "AK-74N 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5644bd2b4bdc2d3b4c8b4572.png",
+   "source": "https://assets.tarkov.dev/5841474424597759ba49be91-base-image.webp",
+   "size": [
+    364,
+    112
+   ],
+   "aspect": 3.25,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "56d59856d2720bd8418b456a",
+   "gunName": "SIG P226R 9x19 手枪",
+   "presetId": "584149242459775a7726350a",
+   "presetName": "SIG P226R 9x19 手枪 默认",
+   "file": "assets/guns-full/56d59856d2720bd8418b456a.png",
+   "source": "https://assets.tarkov.dev/584149242459775a7726350a-base-image.webp",
+   "size": [
+    151,
+    112
+   ],
+   "aspect": 1.35,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "56dee2bdd2720bc8328b4567",
+   "gunName": "MP-153 12铅径半自动霰弹枪",
+   "presetId": "58414907245977598f1ad38d",
+   "presetName": "MP-153 12铅径半自动霰弹枪 默认",
+   "file": "assets/guns-full/56dee2bdd2720bc8328b4567.png",
+   "source": "https://assets.tarkov.dev/58414907245977598f1ad38d-base-image.webp",
+   "size": [
+    400,
+    65
+   ],
+   "aspect": 6.15,
+   "origSize": [
+    442,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "56e0598dd2720bb5668b45a6",
+   "gunName": "PB 9x18PM消音手枪",
+   "presetId": "584149452459775992479702",
+   "presetName": "PB 9x18PM消音手枪 默认",
+   "file": "assets/guns-full/56e0598dd2720bb5668b45a6.png",
+   "source": "https://assets.tarkov.dev/584149452459775992479702-base-image.webp",
+   "size": [
+    245,
+    112
+   ],
+   "aspect": 2.19,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "571a12c42459771f627b58a0",
+   "gunName": "托卡列夫 TT-33 7.62x25 手枪",
+   "presetId": "58414a2724597759b344da4d",
+   "presetName": "托卡列夫 TT-33 7.62x25 手枪 默认",
+   "file": "assets/guns-full/571a12c42459771f627b58a0.png",
+   "source": "https://assets.tarkov.dev/58414a2724597759b344da4d-base-image.webp",
+   "size": [
+    160,
+    112
+   ],
+   "aspect": 1.43,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "574d967124597745970e7c94",
+   "gunName": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+   "presetId": "58dffce486f77409f40f8162",
+   "presetName": "西蒙诺夫 SKS 7.62x39 卡宾枪 默认",
+   "file": "assets/guns-full/574d967124597745970e7c94.png",
+   "source": "https://assets.tarkov.dev/58dffce486f77409f40f8162-base-image.webp",
+   "size": [
+    400,
+    76
+   ],
+   "aspect": 5.26,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "576165642459773c7a400233",
+   "gunName": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "presetId": "58414a052459775a2b6d9f1e",
+   "presetName": "Saiga-12K ver.10 12铅径半自动霰弹枪 默认",
+   "file": "assets/guns-full/576165642459773c7a400233.png",
+   "source": "https://assets.tarkov.dev/58414a052459775a2b6d9f1e-base-image.webp",
+   "size": [
+    400,
+    106
+   ],
+   "aspect": 3.77,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "576a581d2459771e7b1bc4f1",
+   "gunName": "雅利金 MP-443 “乌鸦” 9x19 手枪",
+   "presetId": "584148a524597759eb357a44",
+   "presetName": "雅利金 MP-443 “乌鸦” 9x19 手枪 默认",
+   "file": "assets/guns-full/576a581d2459771e7b1bc4f1.png",
+   "source": "https://assets.tarkov.dev/584148a524597759eb357a44-base-image.webp",
+   "size": [
+    145,
+    112
+   ],
+   "aspect": 1.29,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "57838ad32459774a17445cd2",
+   "gunName": "VSS “绞丝机”9x39 特种狙击步枪",
+   "presetId": "58414a3f2459775a77263531",
+   "presetName": "VSS “绞丝机”9x39 特种狙击步枪  默认",
+   "file": "assets/guns-full/57838ad32459774a17445cd2.png",
+   "source": "https://assets.tarkov.dev/58414a3f2459775a77263531-base-image.webp",
+   "size": [
+    400,
+    81
+   ],
+   "aspect": 4.94,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "579204f224597773d619e051",
+   "gunName": "马卡洛夫 PM(t) 9x18PM 手枪",
+   "presetId": "5841499024597759f825ff3e",
+   "presetName": "马卡洛夫 PM(t) 9x18PM 手枪 默认",
+   "file": "assets/guns-full/579204f224597773d619e051.png",
+   "source": "https://assets.tarkov.dev/5841499024597759f825ff3e-base-image.webp",
+   "size": [
+    151,
+    112
+   ],
+   "aspect": 1.35,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "57c44b372459772d2b39b8ce",
+   "gunName": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "presetId": "5841482e2459775a050cdda9",
+   "presetName": "AS VAL“巨浪” 9x39 特种突击步枪 默认",
+   "file": "assets/guns-full/57c44b372459772d2b39b8ce.png",
+   "source": "https://assets.tarkov.dev/5841482e2459775a050cdda9-base-image.webp",
+   "size": [
+    400,
+    101
+   ],
+   "aspect": 3.96,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "57d14d2524597714373db789",
+   "gunName": "PP-91 雪松 9x18PM冲锋枪",
+   "presetId": "584149c42459775a77263510",
+   "presetName": "PP-91 雪松 9x18PM冲锋枪 默认",
+   "file": "assets/guns-full/57d14d2524597714373db789.png",
+   "source": "https://assets.tarkov.dev/584149c42459775a77263510-base-image.webp",
+   "size": [
+    238,
+    112
+   ],
+   "aspect": 2.12,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "57dc2fa62459775949412633",
+   "gunName": "AKS-74U 5.45x39 短突击步枪",
+   "presetId": "584147732459775a2b6d9f12",
+   "presetName": "AKS-74U 5.45x39 短突击步枪 默认",
+   "file": "assets/guns-full/57dc2fa62459775949412633.png",
+   "source": "https://assets.tarkov.dev/584147732459775a2b6d9f12-base-image.webp",
+   "size": [
+    278,
+    112
+   ],
+   "aspect": 2.48,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "57f3c6bd24597738e730fa2f",
+   "gunName": "PP-91-01 雪松-B 9x18PM 冲锋枪",
+   "presetId": "584149ea2459775a6c55e940",
+   "presetName": "PP-91-01 雪松-B 9x18PM 冲锋枪 默认",
+   "file": "assets/guns-full/57f3c6bd24597738e730fa2f.png",
+   "source": "https://assets.tarkov.dev/584149ea2459775a6c55e940-base-image.webp",
+   "size": [
+    292,
+    112
+   ],
+   "aspect": 2.61,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "57f4c844245977379d5c14d1",
+   "gunName": "PP-9 楔子 9x18PMM 冲锋枪",
+   "presetId": "584149ad2459775a7726350e",
+   "presetName": "PP-9 楔子 9x18PMM 冲锋枪 默认",
+   "file": "assets/guns-full/57f4c844245977379d5c14d1.png",
+   "source": "https://assets.tarkov.dev/584149ad2459775a7726350e-base-image.webp",
+   "size": [
+    238,
+    112
+   ],
+   "aspect": 2.12,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "583990e32459771419544dd2",
+   "gunName": "AKS-74UN 5.45x39 短突击步枪",
+   "presetId": "584147ed2459775a77263501",
+   "presetName": "AKS-74UN 5.45x39 短突击步枪 默认",
+   "file": "assets/guns-full/583990e32459771419544dd2.png",
+   "source": "https://assets.tarkov.dev/584147ed2459775a77263501-base-image.webp",
+   "size": [
+    278,
+    112
+   ],
+   "aspect": 2.48,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5839a40f24597726f856b511",
+   "gunName": "AKS-74UB 5.45x39 短突击步枪",
+   "presetId": "584147982459775a6c55e931",
+   "presetName": "AKS-74UB 5.45x39 短突击步枪 默认",
+   "file": "assets/guns-full/5839a40f24597726f856b511.png",
+   "source": "https://assets.tarkov.dev/584147982459775a6c55e931-base-image.webp",
+   "size": [
+    336,
+    112
+   ],
+   "aspect": 3.0,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "587e02ff24597743df3deaeb",
+   "gunName": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+   "presetId": "59dcdbb386f77417b03f350d",
+   "presetName": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪 默认",
+   "file": "assets/guns-full/587e02ff24597743df3deaeb.png",
+   "source": "https://assets.tarkov.dev/59dcdbb386f77417b03f350d-base-image.webp",
+   "size": [
+    400,
+    76
+   ],
+   "aspect": 5.26,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "588892092459774ac91d4b11",
+   "gunName": "DVL-10 7.62x51 栓动式狙击步枪",
+   "presetId": "58dffc5d86f77407c744a847",
+   "presetName": "DVL-10 7.62x51 栓动式狙击步枪 Urbana",
+   "file": "assets/guns-full/588892092459774ac91d4b11.png",
+   "source": "https://assets.tarkov.dev/58dffc5d86f77407c744a847-base-image.webp",
+   "size": [
+    400,
+    67
+   ],
+   "aspect": 5.97,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "58948c8e86f77409493f7266",
+   "gunName": "SIG MPX 9x19 冲锋枪",
+   "presetId": "58dffca786f774083a256ab1",
+   "presetName": "SIG MPX 9x19 冲锋枪 默认",
+   "file": "assets/guns-full/58948c8e86f77409493f7266.png",
+   "source": "https://assets.tarkov.dev/58dffca786f774083a256ab1-base-image.webp",
+   "size": [
+    224,
+    112
+   ],
+   "aspect": 2.0,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 6
+  },
+  {
+   "gunId": "5926bb2186f7744b1c6c6e60",
+   "gunName": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "presetId": "59411aa786f7747aeb37f9a5",
+   "presetName": "HK MP5 9x19 冲锋枪（海军三发点射） 默认",
+   "file": "assets/guns-full/5926bb2186f7744b1c6c6e60.png",
+   "source": "https://assets.tarkov.dev/59411aa786f7747aeb37f9a5-base-image.webp",
+   "size": [
+    241,
+    112
+   ],
+   "aspect": 2.15,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 6
+  },
+  {
+   "gunId": "59984ab886f7743e98271174",
+   "gunName": "PP-19-01 勇士 9x19 冲锋枪",
+   "presetId": "59b81f7386f77421ac688a0a",
+   "presetName": "PP-19-01 勇士 9x19 冲锋枪 默认",
+   "file": "assets/guns-full/59984ab886f7743e98271174.png",
+   "source": "https://assets.tarkov.dev/59b81f7386f77421ac688a0a-base-image.webp",
+   "size": [
+    267,
+    112
+   ],
+   "aspect": 2.38,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "59d6088586f774275f37482f",
+   "gunName": "AKM 7.62x39 突击步枪",
+   "presetId": "59e8d2ab86f77407f03fc9c2",
+   "presetName": "AKM 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/59d6088586f774275f37482f.png",
+   "source": "https://assets.tarkov.dev/59e8d2ab86f77407f03fc9c2-base-image.webp",
+   "size": [
+    348,
+    112
+   ],
+   "aspect": 3.11,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "59e6152586f77473dc057aa1",
+   "gunName": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "presetId": "59ef24b986f77439987b8762",
+   "presetName": "VPO-136 野猪-KM 7.62x39 卡宾枪 默认",
+   "file": "assets/guns-full/59e6152586f77473dc057aa1.png",
+   "source": "https://assets.tarkov.dev/59ef24b986f77439987b8762-base-image.webp",
+   "size": [
+    348,
+    112
+   ],
+   "aspect": 3.11,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "59e6687d86f77411d949b251",
+   "gunName": "VPO-209 .366TKM 卡宾枪",
+   "presetId": "59ef247086f77439967a900a",
+   "presetName": "VPO-209 .366TKM 卡宾枪 默认",
+   "file": "assets/guns-full/59e6687d86f77411d949b251.png",
+   "source": "https://assets.tarkov.dev/59ef247086f77439967a900a-base-image.webp",
+   "size": [
+    340,
+    112
+   ],
+   "aspect": 3.04,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "59f98b4986f7746f546d2cef",
+   "gunName": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪",
+   "presetId": "5a327f6386f77479010da870",
+   "presetName": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪 默认",
+   "file": "assets/guns-full/59f98b4986f7746f546d2cef.png",
+   "source": "https://assets.tarkov.dev/5a327f6386f77479010da870-base-image.webp",
+   "size": [
+    149,
+    112
+   ],
+   "aspect": 1.33,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "59f9cabd86f7743a10721f46",
+   "gunName": "Saiga-9 9x19卡宾枪",
+   "presetId": "5a13df5286f774032f5454a0",
+   "presetName": "Saiga-9 9x19卡宾枪 默认",
+   "file": "assets/guns-full/59f9cabd86f7743a10721f46.png",
+   "source": "https://assets.tarkov.dev/5a13df5286f774032f5454a0-base-image.webp",
+   "size": [
+    305,
+    112
+   ],
+   "aspect": 2.72,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "59ff346386f77477562ff5e2",
+   "gunName": "AKMS 7.62x39 突击步枪",
+   "presetId": "5a327f4a86f774766866140b",
+   "presetName": "AKMS 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/59ff346386f77477562ff5e2.png",
+   "source": "https://assets.tarkov.dev/5a327f4a86f774766866140b-base-image.webp",
+   "size": [
+    356,
+    112
+   ],
+   "aspect": 3.18,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "gunName": "AKMN 7.62x39 突击步枪",
+   "presetId": "5a325c3686f7744273716c5b",
+   "presetName": "AKMN 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/5a0ec13bfcdbcb00165aa685.png",
+   "source": "https://assets.tarkov.dev/5a325c3686f7744273716c5b-base-image.webp",
+   "size": [
+    341,
+    112
+   ],
+   "aspect": 3.04,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5a17f98cfcdbcb0980087290",
+   "gunName": "斯捷奇金 APS 9x18PM 冲锋手枪",
+   "presetId": "5ac4accf86f774181345c3d7",
+   "presetName": "斯捷奇金 APS 9x18PM 冲锋手枪 默认",
+   "file": "assets/guns-full/5a17f98cfcdbcb0980087290.png",
+   "source": "https://assets.tarkov.dev/5ac4accf86f774181345c3d7-base-image.webp",
+   "size": [
+    162,
+    112
+   ],
+   "aspect": 1.45,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5a367e5dc4a282000e49738f",
+   "gunName": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+   "presetId": "5a3a85af86f774745637d46c",
+   "presetName": "雷明顿 R11 RSASS 7.62x51 精确射手步枪 默认",
+   "file": "assets/guns-full/5a367e5dc4a282000e49738f.png",
+   "source": "https://assets.tarkov.dev/5a3a85af86f774745637d46c-base-image.webp",
+   "size": [
+    400,
+    86
+   ],
+   "aspect": 4.65,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5a38e6bac4a2826c6e06d79b",
+   "gunName": "TOZ-106 20铅径栓动式霰弹枪",
+   "presetId": "5a3a859786f7747e2305e8bf",
+   "presetName": "TOZ-106 20铅径栓动式霰弹枪 默认",
+   "file": "assets/guns-full/5a38e6bac4a2826c6e06d79b.png",
+   "source": "https://assets.tarkov.dev/5a3a859786f7747e2305e8bf-base-image.webp",
+   "size": [
+    400,
+    98
+   ],
+   "aspect": 4.08,
+   "origSize": [
+    253,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5a7828548dc32e5a9c28b516",
+   "gunName": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+   "presetId": "5ac4ad7586f7747d14551da3",
+   "presetName": "雷明顿 Model 870 12铅径泵动式霰弹枪 默认",
+   "file": "assets/guns-full/5a7828548dc32e5a9c28b516.png",
+   "source": "https://assets.tarkov.dev/5ac4ad7586f7747d14551da3-base-image.webp",
+   "size": [
+    400,
+    84
+   ],
+   "aspect": 4.76,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5a7ae0c351dfba0017554310",
+   "gunName": "Glock 17 9x19 手枪",
+   "presetId": "5a88acfb86f77457fd2c0d8f",
+   "presetName": "Glock 17 9x19 手枪 默认",
+   "file": "assets/guns-full/5a7ae0c351dfba0017554310.png",
+   "source": "https://assets.tarkov.dev/5a88acfb86f77457fd2c0d8f-base-image.webp",
+   "size": [
+    158,
+    112
+   ],
+   "aspect": 1.41,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 10
+  },
+  {
+   "gunId": "5aafa857e5b5b00018480968",
+   "gunName": "春田 M1A 7.62x51 步枪",
+   "presetId": "5ac4ad3686f774181345c3da",
+   "presetName": "春田 M1A 7.62x51 步枪 默认",
+   "file": "assets/guns-full/5aafa857e5b5b00018480968.png",
+   "source": "https://assets.tarkov.dev/5ac4ad3686f774181345c3da-base-image.webp",
+   "size": [
+    400,
+    94
+   ],
+   "aspect": 4.26,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "5ab8e9fcd8ce870019439434",
+   "gunName": "AKS-74N 5.45x39 突击步枪",
+   "presetId": "5ac4abf986f7747d117c67aa",
+   "presetName": "AKS-74N 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5ab8e9fcd8ce870019439434.png",
+   "source": "https://assets.tarkov.dev/5ac4abf986f7747d117c67aa-base-image.webp",
+   "size": [
+    362,
+    112
+   ],
+   "aspect": 3.23,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "gunName": "AKMSN 7.62x39 突击步枪",
+   "presetId": "5ac4ab8886f7747d0f66429a",
+   "presetName": "AKMSN 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/5abcbc27d8ce8700182eceeb.png",
+   "source": "https://assets.tarkov.dev/5ac4ab8886f7747d0f66429a-base-image.webp",
+   "size": [
+    356,
+    112
+   ],
+   "aspect": 3.18,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5abccb7dd8ce87001773e277",
+   "gunName": "斯捷奇金 APB 9x18PM 消音型自动手枪",
+   "presetId": "5ac4ac9486f774181345c3d2",
+   "presetName": "斯捷奇金 APB 9x18PM 消音型自动手枪 默认",
+   "file": "assets/guns-full/5abccb7dd8ce87001773e277.png",
+   "source": "https://assets.tarkov.dev/5ac4ac9486f774181345c3d2-base-image.webp",
+   "size": [
+    400,
+    87
+   ],
+   "aspect": 4.6,
+   "origSize": [
+    253,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ac4cd105acfc40016339859",
+   "gunName": "AK-74M 5.45x39 突击步枪",
+   "presetId": "5acf7db286f7743a9c7092e3",
+   "presetName": "AK-74M 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5ac4cd105acfc40016339859.png",
+   "source": "https://assets.tarkov.dev/5acf7db286f7743a9c7092e3-base-image.webp",
+   "size": [
+    363,
+    112
+   ],
+   "aspect": 3.24,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5ac66cb05acfc40198510a10",
+   "gunName": "AK-101 5.56x45 突击步枪",
+   "presetId": "5acf7dd986f774486e1281bf",
+   "presetName": "AK-101 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/5ac66cb05acfc40198510a10.png",
+   "source": "https://assets.tarkov.dev/5acf7dd986f774486e1281bf-base-image.webp",
+   "size": [
+    372,
+    112
+   ],
+   "aspect": 3.32,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ac66d015acfc400180ae6e4",
+   "gunName": "AK-102 5.56x45 突击步枪",
+   "presetId": "5acf7dfc86f774401e19c390",
+   "presetName": "AK-102 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/5ac66d015acfc400180ae6e4.png",
+   "source": "https://assets.tarkov.dev/5acf7dfc86f774401e19c390-base-image.webp",
+   "size": [
+    329,
+    112
+   ],
+   "aspect": 2.94,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ac66d2e5acfc43b321d4b53",
+   "gunName": "AK-103 7.62x39 突击步枪",
+   "presetId": "5acf7e2b86f7740874790e20",
+   "presetName": "AK-103 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/5ac66d2e5acfc43b321d4b53.png",
+   "source": "https://assets.tarkov.dev/5acf7e2b86f7740874790e20-base-image.webp",
+   "size": [
+    367,
+    112
+   ],
+   "aspect": 3.28,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ac66d725acfc43b321d4b60",
+   "gunName": "AK-104 7.62x39 突击步枪",
+   "presetId": "5acf7e4c86f774499a3f3bdd",
+   "presetName": "AK-104 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/5ac66d725acfc43b321d4b60.png",
+   "source": "https://assets.tarkov.dev/5acf7e4c86f774499a3f3bdd-base-image.webp",
+   "size": [
+    320,
+    112
+   ],
+   "aspect": 2.86,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5ac66d9b5acfc4001633997a",
+   "gunName": "AK-105 5.45x39 突击步枪",
+   "presetId": "5acf7e7986f774401e19c3a0",
+   "presetName": "AK-105 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5ac66d9b5acfc4001633997a.png",
+   "source": "https://assets.tarkov.dev/5acf7e7986f774401e19c3a0-base-image.webp",
+   "size": [
+    320,
+    112
+   ],
+   "aspect": 2.86,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5ae08f0a5acfc408fb1398a1",
+   "gunName": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型）",
+   "presetId": "5b8683a486f77467f2423114",
+   "presetName": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型） 默认",
+   "file": "assets/guns-full/5ae08f0a5acfc408fb1398a1.png",
+   "source": "https://assets.tarkov.dev/5b8683a486f77467f2423114-base-image.webp",
+   "size": [
+    400,
+    68
+   ],
+   "aspect": 5.88,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 6
+  },
+  {
+   "gunId": "5b0bbe4e5acfc40dc528a72d",
+   "gunName": "DS Arms SA-58 7.62x51 突击步枪",
+   "presetId": "5b439b5686f77428bd137424",
+   "presetName": "DS Arms SA-58 7.62x51 突击步枪 默认",
+   "file": "assets/guns-full/5b0bbe4e5acfc40dc528a72d.png",
+   "source": "https://assets.tarkov.dev/5b439b5686f77428bd137424-base-image.webp",
+   "size": [
+    400,
+    110
+   ],
+   "aspect": 3.64,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 8
+  },
+  {
+   "gunId": "5b1fa9b25acfc40018633c01",
+   "gunName": "GLOCK 18C 9x19 冲锋手枪",
+   "presetId": "5b439b1f86f7744fd8059cbe",
+   "presetName": "GLOCK 18C 9x19 冲锋手枪 默认",
+   "file": "assets/guns-full/5b1fa9b25acfc40018633c01.png",
+   "source": "https://assets.tarkov.dev/5b439b1f86f7744fd8059cbe-base-image.webp",
+   "size": [
+    158,
+    112
+   ],
+   "aspect": 1.41,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5b3b713c5acfc4330140bd8d",
+   "gunName": "托卡列夫 TT-33 7.62x25 黄金手枪",
+   "presetId": "5b44abe986f774283e2e3512",
+   "presetName": "托卡列夫 TT-33 7.62x25 黄金手枪 默认",
+   "file": "assets/guns-full/5b3b713c5acfc4330140bd8d.png",
+   "source": "https://assets.tarkov.dev/5b44abe986f774283e2e3512-base-image.webp",
+   "size": [
+    160,
+    112
+   ],
+   "aspect": 1.43,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ba26383d4351e00334c93d9",
+   "gunName": "HK MP7A1 4.6x30 冲锋枪",
+   "presetId": "5bd056fa86f7743aba7658cd",
+   "presetName": "HK MP7A1 4.6x30 冲锋枪 默认",
+   "file": "assets/guns-full/5ba26383d4351e00334c93d9.png",
+   "source": "https://assets.tarkov.dev/5bd056fa86f7743aba7658cd-base-image.webp",
+   "size": [
+    311,
+    112
+   ],
+   "aspect": 2.78,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5bb2475ed4351e00853264e3",
+   "gunName": "HK 416A5 5.56x45 突击步枪",
+   "presetId": "5c0d1e9386f77440120288b7",
+   "presetName": "HK 416A5 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/5bb2475ed4351e00853264e3.png",
+   "source": "https://assets.tarkov.dev/5c0d1e9386f77440120288b7-base-image.webp",
+   "size": [
+    304,
+    112
+   ],
+   "aspect": 2.71,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5bd70322209c4d00d7167b8f",
+   "gunName": "HK MP7A2 4.6x30 冲锋枪",
+   "presetId": "5bdb3ac186f77405f232ad22",
+   "presetName": "HK MP7A2 4.6x30 冲锋枪 默认",
+   "file": "assets/guns-full/5bd70322209c4d00d7167b8f.png",
+   "source": "https://assets.tarkov.dev/5bdb3ac186f77405f232ad22-base-image.webp",
+   "size": [
+    317,
+    112
+   ],
+   "aspect": 2.83,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5beed0f50db834001c062b12",
+   "gunName": "RPK-16 5.45x39 轻机枪",
+   "presetId": "5c0d1ec986f77439512a1a72",
+   "presetName": "RPK-16 5.45x39 轻机枪 默认",
+   "file": "assets/guns-full/5beed0f50db834001c062b12.png",
+   "source": "https://assets.tarkov.dev/5c0d1ec986f77439512a1a72-base-image.webp",
+   "size": [
+    400,
+    106
+   ],
+   "aspect": 3.77,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5bf3e03b0db834001d2c4a9c",
+   "gunName": "AK-74 5.45x39 突击步枪",
+   "presetId": "5c0c1ce886f77401c119d014",
+   "presetName": "AK-74 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5bf3e03b0db834001d2c4a9c.png",
+   "source": "https://assets.tarkov.dev/5c0c1ce886f77401c119d014-base-image.webp",
+   "size": [
+    364,
+    112
+   ],
+   "aspect": 3.25,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5bf3e0490db83400196199af",
+   "gunName": "AKS-74 5.45x39 突击步枪",
+   "presetId": "5c0c1d2b86f77401c119d01f",
+   "presetName": "AKS-74 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/5bf3e0490db83400196199af.png",
+   "source": "https://assets.tarkov.dev/5c0c1d2b86f77401c119d01f-base-image.webp",
+   "size": [
+    362,
+    112
+   ],
+   "aspect": 3.23,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5bfd297f0db834001a669119",
+   "gunName": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型）",
+   "presetId": "5c0c1e7486f7744dba7a289b",
+   "presetName": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型） 默认",
+   "file": "assets/guns-full/5bfd297f0db834001a669119.png",
+   "source": "https://assets.tarkov.dev/5c0c1e7486f7744dba7a289b-base-image.webp",
+   "size": [
+    400,
+    68
+   ],
+   "aspect": 5.88,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5bfea6e90db834001b7347f3",
+   "gunName": "雷明顿Model 700 7.62x51 狙击步枪",
+   "presetId": "5c0c1d6586f7743e5335d264",
+   "presetName": "雷明顿Model 700 7.62x51 狙击步枪 默认",
+   "file": "assets/guns-full/5bfea6e90db834001b7347f3.png",
+   "source": "https://assets.tarkov.dev/5c0c1d6586f7743e5335d264-base-image.webp",
+   "size": [
+    400,
+    76
+   ],
+   "aspect": 5.26,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 8
+  },
+  {
+   "gunId": "5c07c60e0db834002330051f",
+   "gunName": "ADAR 2-15 .223 卡宾枪",
+   "presetId": "5c10fcb186f774533e5529ab",
+   "presetName": "ADAR 2-15 .223 卡宾枪 默认",
+   "file": "assets/guns-full/5c07c60e0db834002330051f.png",
+   "source": "https://assets.tarkov.dev/5c10fcb186f774533e5529ab-base-image.webp",
+   "size": [
+    400,
+    111
+   ],
+   "aspect": 3.6,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5c46fbd72e2216398b5a8c9c",
+   "gunName": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "presetId": "5c98be1e86f7741cc96ffd79",
+   "presetName": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪 默认",
+   "file": "assets/guns-full/5c46fbd72e2216398b5a8c9c.png",
+   "source": "https://assets.tarkov.dev/5c98be1e86f7741cc96ffd79-base-image.webp",
+   "size": [
+    400,
+    69
+   ],
+   "aspect": 5.8,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5c488a752e221602b412af63",
+   "gunName": "沙漠科技 MDR 5.56x45 突击步枪",
+   "presetId": "5c98bd7386f7740cfb15654e",
+   "presetName": "沙漠科技 MDR 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/5c488a752e221602b412af63.png",
+   "source": "https://assets.tarkov.dev/5c98bd7386f7740cfb15654e-base-image.webp",
+   "size": [
+    300,
+    112
+   ],
+   "aspect": 2.68,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5c501a4d2e221602b412b540",
+   "gunName": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "presetId": "5c98bf9186f7740cf708c509",
+   "presetName": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪 默认",
+   "file": "assets/guns-full/5c501a4d2e221602b412b540.png",
+   "source": "https://assets.tarkov.dev/5c98bf9186f7740cf708c509-base-image.webp",
+   "size": [
+    400,
+    78
+   ],
+   "aspect": 5.13,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5cadc190ae921500103bb3b6",
+   "gunName": "伯莱塔 M9A3 9x19 手枪",
+   "presetId": "5d3f0bc986f7743cb332abdc",
+   "presetName": "伯莱塔 M9A3 9x19 手枪 默认",
+   "file": "assets/guns-full/5cadc190ae921500103bb3b6.png",
+   "source": "https://assets.tarkov.dev/5d3f0bc986f7743cb332abdc-base-image.webp",
+   "size": [
+    162,
+    112
+   ],
+   "aspect": 1.45,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5cadfbf7ae92152ac412eeef",
+   "gunName": "ASh-12 12.7x55 突击步枪",
+   "presetId": "5d23467086f77443f37fc602",
+   "presetName": "ASh-12 12.7x55 突击步枪 默认",
+   "file": "assets/guns-full/5cadfbf7ae92152ac412eeef.png",
+   "source": "https://assets.tarkov.dev/5d23467086f77443f37fc602-base-image.webp",
+   "size": [
+    282,
+    112
+   ],
+   "aspect": 2.52,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5cc82d76e24e8d00134b4b83",
+   "gunName": "FN P90 5.7x28 冲锋枪",
+   "presetId": "5d23376786f77459bb77d838",
+   "presetName": "FN P90 5.7x28 冲锋枪 默认",
+   "file": "assets/guns-full/5cc82d76e24e8d00134b4b83.png",
+   "source": "https://assets.tarkov.dev/5d23376786f77459bb77d838-base-image.webp",
+   "size": [
+    255,
+    112
+   ],
+   "aspect": 2.28,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "5d2f0d8048f0356c925bc3b0",
+   "gunName": "HK MP5K 9x19 微型冲锋枪",
+   "presetId": "5d3f06c886f7743bb5318c6a",
+   "presetName": "HK MP5K 9x19 微型冲锋枪 默认",
+   "file": "assets/guns-full/5d2f0d8048f0356c925bc3b0.png",
+   "source": "https://assets.tarkov.dev/5d3f06c886f7743bb5318c6a-base-image.webp",
+   "size": [
+    139,
+    112
+   ],
+   "aspect": 1.24,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5d3eb3b0a4b93615055e84d2",
+   "gunName": "FN Five-seveN MK2 5.7x28 手枪",
+   "presetId": "5d51290186f77419093e7c24",
+   "presetName": "FN Five-seveN MK2 5.7x28 手枪 默认",
+   "file": "assets/guns-full/5d3eb3b0a4b93615055e84d2.png",
+   "source": "https://assets.tarkov.dev/5d51290186f77419093e7c24-base-image.webp",
+   "size": [
+    154,
+    112
+   ],
+   "aspect": 1.38,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5d43021ca4b9362eab4b5e25",
+   "gunName": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "presetId": "5d4d617f86f77449c463d107",
+   "presetName": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪 默认",
+   "file": "assets/guns-full/5d43021ca4b9362eab4b5e25.png",
+   "source": "https://assets.tarkov.dev/5d4d617f86f77449c463d107-base-image.webp",
+   "size": [
+    400,
+    95
+   ],
+   "aspect": 4.21,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5d67abc1a4b93614ec50137f",
+   "gunName": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+   "presetId": "5d7b845786f7743c1e531da7",
+   "presetName": "FN Five-seveN MK2 5.7x28 手枪 (FDE) 默认",
+   "file": "assets/guns-full/5d67abc1a4b93614ec50137f.png",
+   "source": "https://assets.tarkov.dev/5d7b845786f7743c1e531da7-base-image.webp",
+   "size": [
+    265,
+    112
+   ],
+   "aspect": 2.37,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5dcbd56fdbd3d91b3e5468d5",
+   "gunName": "沙漠科技 MDR 7.62x51 突击步枪",
+   "presetId": "5e035eb586f774756048ec12",
+   "presetName": "沙漠科技 MDR 7.62x51 突击步枪 默认",
+   "file": "assets/guns-full/5dcbd56fdbd3d91b3e5468d5.png",
+   "source": "https://assets.tarkov.dev/5e035eb586f774756048ec12-base-image.webp",
+   "size": [
+    327,
+    112
+   ],
+   "aspect": 2.92,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "5de652c31b7e3716273428be",
+   "gunName": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+   "presetId": "5e0359bd86f7746b243db876",
+   "presetName": "VPO-215 雪貂 .366 TKM 栓动式步枪 默认",
+   "file": "assets/guns-full/5de652c31b7e3716273428be.png",
+   "source": "https://assets.tarkov.dev/5e0359bd86f7746b243db876-base-image.webp",
+   "size": [
+    400,
+    73
+   ],
+   "aspect": 5.48,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5de7bd7bfd6b4e6e2276dc25",
+   "gunName": "B&T MP9-N 9x19 冲锋枪",
+   "presetId": "5e03410186f77469041348ea",
+   "presetName": "B&T MP9-N 9x19 冲锋枪 默认",
+   "file": "assets/guns-full/5de7bd7bfd6b4e6e2276dc25.png",
+   "source": "https://assets.tarkov.dev/5e03410186f77469041348ea-base-image.webp",
+   "size": [
+    221,
+    112
+   ],
+   "aspect": 1.97,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5df24cf80dee1b22f862e9bc",
+   "gunName": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+   "presetId": "5e0354f786f77425b53eb6c5",
+   "presetName": "ORSIS T-5000M 7.62x51 栓动式狙击步枪 默认",
+   "file": "assets/guns-full/5df24cf80dee1b22f862e9bc.png",
+   "source": "https://assets.tarkov.dev/5e0354f786f77425b53eb6c5-base-image.webp",
+   "size": [
+    400,
+    65
+   ],
+   "aspect": 6.15,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5df8ce05b11454561e39243b",
+   "gunName": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+   "presetId": "5e03511086f7744ccb1fb6cf",
+   "presetName": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪 默认",
+   "file": "assets/guns-full/5df8ce05b11454561e39243b.png",
+   "source": "https://assets.tarkov.dev/5e03511086f7744ccb1fb6cf-base-image.webp",
+   "size": [
+    400,
+    106
+   ],
+   "aspect": 3.77,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "5e00903ae9dc277128008b87",
+   "gunName": "B&T MP9 9x19 冲锋枪",
+   "presetId": "5e0340ab86f7745bb7339235",
+   "presetName": "B&T MP9 9x19 冲锋枪 默认",
+   "file": "assets/guns-full/5e00903ae9dc277128008b87.png",
+   "source": "https://assets.tarkov.dev/5e0340ab86f7745bb7339235-base-image.webp",
+   "size": [
+    221,
+    112
+   ],
+   "aspect": 1.97,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5e81c3cbac2bb513793cdc75",
+   "gunName": "柯尔特 M1911A1 .45 ACP 手枪",
+   "presetId": "5eb2968186f7746d1f1a4fd5",
+   "presetName": "柯尔特 M1911A1 .45 ACP 手枪 默认",
+   "file": "assets/guns-full/5e81c3cbac2bb513793cdc75.png",
+   "source": "https://assets.tarkov.dev/5eb2968186f7746d1f1a4fd5-base-image.webp",
+   "size": [
+    164,
+    112
+   ],
+   "aspect": 1.46,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5e81ebcd8e146c7080625e15",
+   "gunName": "FN GL-40 Mk.2 榴弹发射器",
+   "presetId": "5f06d6e1475d472556679d16",
+   "presetName": "FN GL-40 Mk.2 榴弹发射器 默认",
+   "file": "assets/guns-full/5e81ebcd8e146c7080625e15.png",
+   "source": "https://assets.tarkov.dev/5f06d6e1475d472556679d16-base-image.webp",
+   "size": [
+    383,
+    112
+   ],
+   "aspect": 3.42,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5e848cc2988a8701445df1e8",
+   "gunName": "TOZ KS-23M 23x75 毫米泵动式霰弹枪",
+   "presetId": "5f6771214ef1ca4f4e1b8a06",
+   "presetName": "TOZ KS-23M 23x75 毫米泵动式霰弹枪 默认",
+   "file": "assets/guns-full/5e848cc2988a8701445df1e8.png",
+   "source": "https://assets.tarkov.dev/5f6771214ef1ca4f4e1b8a06-base-image.webp",
+   "size": [
+    400,
+    89
+   ],
+   "aspect": 4.49,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5e870397991fd70db46995c8",
+   "gunName": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "presetId": "5f06d6bb4010601e3232cd22",
+   "presetName": "Mossberg 590A1 12铅径泵动式霰弹枪 默认",
+   "file": "assets/guns-full/5e870397991fd70db46995c8.png",
+   "source": "https://assets.tarkov.dev/5f06d6bb4010601e3232cd22-base-image.webp",
+   "size": [
+    400,
+    91
+   ],
+   "aspect": 4.4,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5ea03f7400685063ec28bfa8",
+   "gunName": "PPSh-41 7.62x25 冲锋枪",
+   "presetId": "5eb2963686f7742d3f5ab0f8",
+   "presetName": "PPSh-41 7.62x25 冲锋枪 默认",
+   "file": "assets/guns-full/5ea03f7400685063ec28bfa8.png",
+   "source": "https://assets.tarkov.dev/5eb2963686f7742d3f5ab0f8-base-image.webp",
+   "size": [
+    306,
+    112
+   ],
+   "aspect": 2.73,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5f2a9575926fd9352339381f",
+   "gunName": "Kel-Tec RFB 7.62x51",
+   "presetId": "5f676b779ab5ec19f028eaf3",
+   "presetName": "Kel-Tec RFB 7.62x51 默认",
+   "file": "assets/guns-full/5f2a9575926fd9352339381f.png",
+   "source": "https://assets.tarkov.dev/5f676b779ab5ec19f028eaf3-base-image.webp",
+   "size": [
+    278,
+    112
+   ],
+   "aspect": 2.48,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5f36a0e5fbf956000b716b65",
+   "gunName": "柯尔特 M45A1 .45 ACP 手枪",
+   "presetId": "5f6762e964af6a2aa319deeb",
+   "presetName": "柯尔特 M45A1 .45 ACP 手枪 默认",
+   "file": "assets/guns-full/5f36a0e5fbf956000b716b65.png",
+   "source": "https://assets.tarkov.dev/5f6762e964af6a2aa319deeb-base-image.webp",
+   "size": [
+    156,
+    112
+   ],
+   "aspect": 1.39,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5fb64bc92b1b027b1f50bcf2",
+   "gunName": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+   "presetId": "5fd251ee16cac650092f5d02",
+   "presetName": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪 默认",
+   "file": "assets/guns-full/5fb64bc92b1b027b1f50bcf2.png",
+   "source": "https://assets.tarkov.dev/5fd251ee16cac650092f5d02-base-image.webp",
+   "size": [
+    293,
+    112
+   ],
+   "aspect": 2.62,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5fbcc1d9016cce60e8341ab3",
+   "gunName": "SIG MCX .300 Blackout 突击步枪",
+   "presetId": "5fd251a31189a17bcc172662",
+   "presetName": "SIG MCX .300 Blackout 突击步枪 默认",
+   "file": "assets/guns-full/5fbcc1d9016cce60e8341ab3.png",
+   "source": "https://assets.tarkov.dev/5fd251a31189a17bcc172662-base-image.webp",
+   "size": [
+    251,
+    112
+   ],
+   "aspect": 2.24,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "5fc22d7c187fea44d52eda44",
+   "gunName": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "presetId": "5fd25119dd870108a754a163",
+   "presetName": "SWORD International Mk-18 .338 LM 精确射手步枪 默认",
+   "file": "assets/guns-full/5fc22d7c187fea44d52eda44.png",
+   "source": "https://assets.tarkov.dev/5fd25119dd870108a754a163-base-image.webp",
+   "size": [
+    400,
+    74
+   ],
+   "aspect": 5.41,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "5fc3e272f8b6a877a729eac5",
+   "gunName": "HK UMP .45 ACP冲锋枪",
+   "presetId": "5fd2517dbdd50d684f73a474",
+   "presetName": "HK UMP .45 ACP冲锋枪 默认",
+   "file": "assets/guns-full/5fc3e272f8b6a877a729eac5.png",
+   "source": "https://assets.tarkov.dev/5fd2517dbdd50d684f73a474-base-image.webp",
+   "size": [
+    213,
+    112
+   ],
+   "aspect": 1.9,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "5fc3f2d5900b1d5091531e57",
+   "gunName": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+   "presetId": "5fd251c90d9c95034825edb5",
+   "presetName": "TDI KRISS Vector Gen.2 9x19 冲锋枪 默认",
+   "file": "assets/guns-full/5fc3f2d5900b1d5091531e57.png",
+   "source": "https://assets.tarkov.dev/5fd251c90d9c95034825edb5-base-image.webp",
+   "size": [
+    293,
+    112
+   ],
+   "aspect": 2.62,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "602a9740da11d6478d5a06dc",
+   "gunName": "列别杰夫 PL-15 9x19 手枪",
+   "presetId": "60479fb29c15b12b9a480fb0",
+   "presetName": "列别杰夫 PL-15 9x19 手枪 默认",
+   "file": "assets/guns-full/602a9740da11d6478d5a06dc.png",
+   "source": "https://assets.tarkov.dev/60479fb29c15b12b9a480fb0-base-image.webp",
+   "size": [
+    154,
+    112
+   ],
+   "aspect": 1.38,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "60339954d62c9b14ed777c06",
+   "gunName": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+   "presetId": "60479c3f420fac5ebc199f86",
+   "presetName": "联盟-TM STM-9 Gen.2 9x19 卡宾枪 默认",
+   "file": "assets/guns-full/60339954d62c9b14ed777c06.png",
+   "source": "https://assets.tarkov.dev/60479c3f420fac5ebc199f86-base-image.webp",
+   "size": [
+    314,
+    112
+   ],
+   "aspect": 2.8,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "606587252535c57a13424cfd",
+   "gunName": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+   "presetId": "60b7d76e2a3c79100f1979de",
+   "presetName": "CMMG Mk47 Mutant 7.62x39 突击步枪 默认",
+   "file": "assets/guns-full/606587252535c57a13424cfd.png",
+   "source": "https://assets.tarkov.dev/60b7d76e2a3c79100f1979de-base-image.webp",
+   "size": [
+    254,
+    112
+   ],
+   "aspect": 2.27,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "606dae0ab0e443224b421bb7",
+   "gunName": "MP-155 12铅径半自动霰弹枪",
+   "presetId": "60b7c28ee53e4c5c8945dd73",
+   "presetName": "MP-155 12铅径半自动霰弹枪 默认",
+   "file": "assets/guns-full/606dae0ab0e443224b421bb7.png",
+   "source": "https://assets.tarkov.dev/60b7c28ee53e4c5c8945dd73-base-image.webp",
+   "size": [
+    400,
+    71
+   ],
+   "aspect": 5.63,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "60db29ce99594040e04c4a27",
+   "gunName": "MTs-255-12 12铅径转轮霰弹枪",
+   "presetId": "6198e2ddef80673cae5d1c87",
+   "presetName": "MTs-255-12 12铅径转轮霰弹枪 默认",
+   "file": "assets/guns-full/60db29ce99594040e04c4a27.png",
+   "source": "https://assets.tarkov.dev/6198e2ddef80673cae5d1c87-base-image.webp",
+   "size": [
+    400,
+    83
+   ],
+   "aspect": 4.82,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6165ac306ef05c2ce828ef74",
+   "gunName": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+   "presetId": "6193e4fae693542ea37d11c6",
+   "presetName": "FN SCAR-H 7.62x51 突击步枪 (FDE) 默认",
+   "file": "assets/guns-full/6165ac306ef05c2ce828ef74.png",
+   "source": "https://assets.tarkov.dev/6193e4fae693542ea37d11c6-base-image.webp",
+   "size": [
+    364,
+    112
+   ],
+   "aspect": 3.25,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6176aca650224f204c1da3fb",
+   "gunName": "HK G28 7.62x51 精确射手步枪",
+   "presetId": "6193e590069d61205d490dd8",
+   "presetName": "HK G28 7.62x51 精确射手步枪 默认",
+   "file": "assets/guns-full/6176aca650224f204c1da3fb.png",
+   "source": "https://assets.tarkov.dev/6193e590069d61205d490dd8-base-image.webp",
+   "size": [
+    341,
+    112
+   ],
+   "aspect": 3.04,
+   "origSize": [
+    379,
+    190
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "6183afd850224f204c1da514",
+   "gunName": "FN SCAR-H 7.62x51突击步枪",
+   "presetId": "6193e4a46bb904059c382295",
+   "presetName": "FN SCAR-H 7.62x51突击步枪 LB",
+   "file": "assets/guns-full/6183afd850224f204c1da514.png",
+   "source": "https://assets.tarkov.dev/6193e4a46bb904059c382295-base-image.webp",
+   "size": [
+    400,
+    110
+   ],
+   "aspect": 3.64,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6184055050224f204c1da540",
+   "gunName": "FN SCAR-L 5.56x45突击步枪",
+   "presetId": "6193e18de693542ea37d11b3",
+   "presetName": "FN SCAR-L 5.56x45突击步枪 LB",
+   "file": "assets/guns-full/6184055050224f204c1da540.png",
+   "source": "https://assets.tarkov.dev/6193e18de693542ea37d11b3-base-image.webp",
+   "size": [
+    350,
+    112
+   ],
+   "aspect": 3.12,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "618428466ef05c2ce828f218",
+   "gunName": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+   "presetId": "6193e226449ec003d9127fa6",
+   "presetName": "FN SCAR-L 5.56x45突击步枪 （FDE） 默认",
+   "file": "assets/guns-full/618428466ef05c2ce828f218.png",
+   "source": "https://assets.tarkov.dev/6193e226449ec003d9127fa6-base-image.webp",
+   "size": [
+    316,
+    112
+   ],
+   "aspect": 2.82,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6193a720f8ee7e52e42109ed",
+   "gunName": "HK USP .45 ACP手枪",
+   "presetId": "619d267f36b5be1f3236f9ba",
+   "presetName": "HK USP .45 ACP手枪 默认",
+   "file": "assets/guns-full/6193a720f8ee7e52e42109ed.png",
+   "source": "https://assets.tarkov.dev/619d267f36b5be1f3236f9ba-base-image.webp",
+   "size": [
+    158,
+    112
+   ],
+   "aspect": 1.41,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "61a4c8884f95bc3b2c5dc96f",
+   "gunName": "Chiappa 犀牛 50DS .357 左轮手枪",
+   "presetId": "624d7a3691f0160c7324c3f4",
+   "presetName": "Chiappa 犀牛 50DS .357 左轮手枪 默认",
+   "file": "assets/guns-full/61a4c8884f95bc3b2c5dc96f.png",
+   "source": "https://assets.tarkov.dev/624d7a3691f0160c7324c3f4-base-image.webp",
+   "size": [
+    191,
+    112
+   ],
+   "aspect": 1.71,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "61f7c9e189e6fb1a5e3ea78d",
+   "gunName": "MP-18 7.62x54R单发步枪",
+   "presetId": "629792f0fd6eda47d6466fe8",
+   "presetName": "MP-18 7.62x54R单发步枪 默认",
+   "file": "assets/guns-full/61f7c9e189e6fb1a5e3ea78d.png",
+   "source": "https://assets.tarkov.dev/629792f0fd6eda47d6466fe8-base-image.webp",
+   "size": [
+    400,
+    81
+   ],
+   "aspect": 4.94,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "623063e994fc3f7b302a9696",
+   "gunName": "HK G36 5.56x45 突击步枪",
+   "presetId": "6297738b9f1b474e440c45b5",
+   "presetName": "HK G36 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/623063e994fc3f7b302a9696.png",
+   "source": "https://assets.tarkov.dev/6297738b9f1b474e440c45b5-base-image.webp",
+   "size": [
+    330,
+    112
+   ],
+   "aspect": 2.95,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 8
+  },
+  {
+   "gunId": "624c2e8614da335f1e034d8c",
+   "gunName": "Chiappa 犀牛 200DS 9x19 左轮手枪",
+   "presetId": "624d7b2881a57812413b7954",
+   "presetName": "Chiappa 犀牛 200DS 9x19 左轮手枪 默认",
+   "file": "assets/guns-full/624c2e8614da335f1e034d8c.png",
+   "source": "https://assets.tarkov.dev/624d7b2881a57812413b7954-base-image.webp",
+   "size": [
+    131,
+    112
+   ],
+   "aspect": 1.17,
+   "origSize": [
+    64,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6259b864ebedf17603599e88",
+   "gunName": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+   "presetId": "62975de85c32d414f8797433",
+   "presetName": "Benelli M3 Super 90 12铅径双模式霰弹枪 默认",
+   "file": "assets/guns-full/6259b864ebedf17603599e88.png",
+   "source": "https://assets.tarkov.dev/62975de85c32d414f8797433-base-image.webp",
+   "size": [
+    400,
+    83
+   ],
+   "aspect": 4.82,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "6275303a9f372d6ea97f9ec7",
+   "gunName": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+   "presetId": "629744d002667c48a467e9f9",
+   "presetName": "Milkor M32A1 MSGL 40 毫米榴弹发射器 默认",
+   "file": "assets/guns-full/6275303a9f372d6ea97f9ec7.png",
+   "source": "https://assets.tarkov.dev/629744d002667c48a467e9f9-base-image.webp",
+   "size": [
+    228,
+    112
+   ],
+   "aspect": 2.04,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "627e14b21713922ded6f2c15",
+   "gunName": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "presetId": "62973e474bb5ab23071c2a70",
+   "presetName": "Accuracy International AXMC .338 LM 栓动式狙击步枪 默认",
+   "file": "assets/guns-full/627e14b21713922ded6f2c15.png",
+   "source": "https://assets.tarkov.dev/62973e474bb5ab23071c2a70-base-image.webp",
+   "size": [
+    400,
+    65
+   ],
+   "aspect": 6.15,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "628a60ae6b1d481ff772e9c8",
+   "gunName": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "presetId": "62972a7d91492d1a34152fbe",
+   "presetName": "Rifle Dynamics RD-704 7.62x39突击步枪 默认",
+   "file": "assets/guns-full/628a60ae6b1d481ff772e9c8.png",
+   "source": "https://assets.tarkov.dev/62972a7d91492d1a34152fbe-base-image.webp",
+   "size": [
+    299,
+    112
+   ],
+   "aspect": 2.67,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "628b5638ad252a16da6dd245",
+   "gunName": "SAG AK-545 5.45x39卡宾枪",
+   "presetId": "62971cf67af74c3ff577954b",
+   "presetName": "SAG AK-545 5.45x39卡宾枪 默认",
+   "file": "assets/guns-full/628b5638ad252a16da6dd245.png",
+   "source": "https://assets.tarkov.dev/62971cf67af74c3ff577954b-base-image.webp",
+   "size": [
+    350,
+    112
+   ],
+   "aspect": 3.12,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "628b9c37a733087d0d7fe84b",
+   "gunName": "SAG AK-545 5.45x39截短卡宾枪",
+   "presetId": "629711787af74c3ff577951d",
+   "presetName": "SAG AK-545 5.45x39截短卡宾枪 默认",
+   "file": "assets/guns-full/628b9c37a733087d0d7fe84b.png",
+   "source": "https://assets.tarkov.dev/629711787af74c3ff577951d-base-image.webp",
+   "size": [
+    299,
+    112
+   ],
+   "aspect": 2.67,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "62e14904c2699c0ec93adc47",
+   "gunName": "SR-2M 石楠 9x21 冲锋枪",
+   "presetId": "63986a38608a960125446db5",
+   "presetName": "SR-2M 石楠 9x21 冲锋枪 默认",
+   "file": "assets/guns-full/62e14904c2699c0ec93adc47.png",
+   "source": "https://assets.tarkov.dev/63986a38608a960125446db5-base-image.webp",
+   "size": [
+    327,
+    112
+   ],
+   "aspect": 2.92,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "62e7c4fba689e8c9c50dfc38",
+   "gunName": "Steyr AUG A1 5.56x45突击步枪",
+   "presetId": "6398636bb483a550805be5e5",
+   "presetName": "Steyr AUG A1 5.56x45突击步枪 默认",
+   "file": "assets/guns-full/62e7c4fba689e8c9c50dfc38.png",
+   "source": "https://assets.tarkov.dev/6398636bb483a550805be5e5-base-image.webp",
+   "size": [
+    302,
+    112
+   ],
+   "aspect": 2.7,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "63088377b5cd696784087147",
+   "gunName": "Glock 19X 9x19 手枪",
+   "presetId": "6398685ee678457197138035",
+   "presetName": "Glock 19X 9x19 手枪 默认",
+   "file": "assets/guns-full/63088377b5cd696784087147.png",
+   "source": "https://assets.tarkov.dev/6398685ee678457197138035-base-image.webp",
+   "size": [
+    131,
+    112
+   ],
+   "aspect": 1.17,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "63171672192e68c5460cebc5",
+   "gunName": "Steyr AUG A3 5.56x45突击步枪",
+   "presetId": "63986752a28b76105a33c095",
+   "presetName": "Steyr AUG A3 5.56x45突击步枪 默认",
+   "file": "assets/guns-full/63171672192e68c5460cebc5.png",
+   "source": "https://assets.tarkov.dev/63986752a28b76105a33c095-base-image.webp",
+   "size": [
+    296,
+    112
+   ],
+   "aspect": 2.64,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "633ec7c2a6918cb895019c6c",
+   "gunName": "RSh-12 12.7x55转轮手枪",
+   "presetId": "639868a207a3eb0207197bb5",
+   "presetName": "RSh-12 12.7x55转轮手枪 默认",
+   "file": "assets/guns-full/633ec7c2a6918cb895019c6c.png",
+   "source": "https://assets.tarkov.dev/639868a207a3eb0207197bb5-base-image.webp",
+   "size": [
+    216,
+    112
+   ],
+   "aspect": 1.93,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "6410733d5dd49d77bd07847e",
+   "gunName": "托卡列夫 AVT-40 7.62x54R 自动步枪",
+   "presetId": "64c1525e3319a1cf380c4e09",
+   "presetName": "托卡列夫 AVT-40 7.62x54R 自动步枪 默认",
+   "file": "assets/guns-full/6410733d5dd49d77bd07847e.png",
+   "source": "https://assets.tarkov.dev/64c1525e3319a1cf380c4e09-base-image.webp",
+   "size": [
+    400,
+    84
+   ],
+   "aspect": 4.76,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "643ea5b23db6f9f57107d9fd",
+   "gunName": "托卡列夫 SVT-40 7.62x54R 步枪",
+   "presetId": "64c151f83319a1cf380c4df7",
+   "presetName": "托卡列夫 SVT-40 7.62x54R 步枪 默认",
+   "file": "assets/guns-full/643ea5b23db6f9f57107d9fd.png",
+   "source": "https://assets.tarkov.dev/64c151f83319a1cf380c4df7-base-image.webp",
+   "size": [
+    400,
+    65
+   ],
+   "aspect": 6.15,
+   "origSize": [
+    379,
+    64
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "644674a13d52156624001fbc",
+   "gunName": "KBP 9A-91 9x39紧凑型突击步枪",
+   "presetId": "657eb19b7ba4217c5e65b689",
+   "presetName": "KBP 9A-91 9x39紧凑型突击步枪 默认",
+   "file": "assets/guns-full/644674a13d52156624001fbc.png",
+   "source": "https://assets.tarkov.dev/657eb19b7ba4217c5e65b689-base-image.webp",
+   "size": [
+    322,
+    112
+   ],
+   "aspect": 2.88,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "645e0c6b3b381ede770e1cc9",
+   "gunName": "KBP VSK-94 9x39步枪",
+   "presetId": "657eb1fa2ce80354b8259889",
+   "presetName": "KBP VSK-94 9x39步枪 默认",
+   "file": "assets/guns-full/645e0c6b3b381ede770e1cc9.png",
+   "source": "https://assets.tarkov.dev/657eb1fa2ce80354b8259889-base-image.webp",
+   "size": [
+    400,
+    91
+   ],
+   "aspect": 4.4,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "64637076203536ad5600c990",
+   "gunName": "PKM 7.62x54R 机枪",
+   "presetId": "64cbdff43ccb85468628d5fc",
+   "presetName": "PKM 7.62x54R 机枪 默认",
+   "file": "assets/guns-full/64637076203536ad5600c990.png",
+   "source": "https://assets.tarkov.dev/64cbdff43ccb85468628d5fc-base-image.webp",
+   "size": [
+    400,
+    101
+   ],
+   "aspect": 3.96,
+   "origSize": [
+    379,
+    190
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "64748cb8de82c85eaf0a273a",
+   "gunName": "MP-43 12铅径截短双管霰弹枪",
+   "presetId": "64c152953319a1cf380c4e1b",
+   "presetName": "MP-43 12铅径截短双管霰弹枪 默认",
+   "file": "assets/guns-full/64748cb8de82c85eaf0a273a.png",
+   "source": "https://assets.tarkov.dev/64c152953319a1cf380c4e1b-base-image.webp",
+   "size": [
+    397,
+    112
+   ],
+   "aspect": 3.54,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6499849fc93611967b034949",
+   "gunName": "AK-12 5.45x39 突击步枪",
+   "presetId": "64c1510bda0f6d156000cc17",
+   "presetName": "AK-12 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/6499849fc93611967b034949.png",
+   "source": "https://assets.tarkov.dev/64c1510bda0f6d156000cc17-base-image.webp",
+   "size": [
+    356,
+    112
+   ],
+   "aspect": 3.18,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "64ca3d3954fc657e230529cc",
+   "gunName": "PKP 7.62x54R 步兵机枪",
+   "presetId": "64cf7b2d033b747d625b7666",
+   "presetName": "PKP 7.62x54R 步兵机枪 Pecheneg",
+   "file": "assets/guns-full/64ca3d3954fc657e230529cc.png",
+   "source": "https://assets.tarkov.dev/64cf7b2d033b747d625b7666-base-image.webp",
+   "size": [
+    400,
+    104
+   ],
+   "aspect": 3.85,
+   "origSize": [
+    379,
+    190
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6513ef33e06849f06c0957ca",
+   "gunName": "RPD 7.62x39 轻机枪",
+   "presetId": "657eb281b0bc0f28b178311e",
+   "presetName": "RPD 7.62x39 轻机枪 默认",
+   "file": "assets/guns-full/6513ef33e06849f06c0957ca.png",
+   "source": "https://assets.tarkov.dev/657eb281b0bc0f28b178311e-base-image.webp",
+   "size": [
+    380,
+    112
+   ],
+   "aspect": 3.39,
+   "origSize": [
+    379,
+    190
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "651450ce0e00edc794068371",
+   "gunName": "SR-3M 9x39紧凑型突击步枪",
+   "presetId": "66b09282ae030a24a5663815",
+   "presetName": "SR-3M 9x39紧凑型突击步枪 默认",
+   "file": "assets/guns-full/651450ce0e00edc794068371.png",
+   "source": "https://assets.tarkov.dev/66b09282ae030a24a5663815-base-image.webp",
+   "size": [
+    258,
+    112
+   ],
+   "aspect": 2.3,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "65268d8ecb944ff1e90ea385",
+   "gunName": "RPDN 7.62x39 轻机枪",
+   "presetId": "657eb30326f0eb0718056204",
+   "presetName": "RPDN 7.62x39 轻机枪 默认",
+   "file": "assets/guns-full/65268d8ecb944ff1e90ea385.png",
+   "source": "https://assets.tarkov.dev/657eb30326f0eb0718056204-base-image.webp",
+   "size": [
+    380,
+    112
+   ],
+   "aspect": 3.39,
+   "origSize": [
+    379,
+    190
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "65290f395ae2ae97b80fdf2d",
+   "gunName": "SIG MCX SPEAR 6.8x51突击步枪",
+   "presetId": "657eb3773271d8578610fe28",
+   "presetName": "SIG MCX SPEAR 6.8x51突击步枪 默认",
+   "file": "assets/guns-full/65290f395ae2ae97b80fdf2d.png",
+   "source": "https://assets.tarkov.dev/657eb3773271d8578610fe28-base-image.webp",
+   "size": [
+    344,
+    112
+   ],
+   "aspect": 3.07,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "65fb023261d5829b2d090755",
+   "gunName": "U.S Ordnance M60E4 7.62x51 轻机枪",
+   "presetId": "66b091a1d7a3ce164221e2cf",
+   "presetName": "U.S Ordnance M60E4 7.62x51 轻机枪 默认",
+   "file": "assets/guns-full/65fb023261d5829b2d090755.png",
+   "source": "https://assets.tarkov.dev/66b091a1d7a3ce164221e2cf-base-image.webp",
+   "size": [
+    359,
+    112
+   ],
+   "aspect": 3.21,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "66015072e9f84d5680039678",
+   "gunName": "20x1毫米玩具枪",
+   "presetId": "6606af2cc690b729e20beb56",
+   "presetName": "20x1毫米玩具枪 默认",
+   "file": "assets/guns-full/66015072e9f84d5680039678.png",
+   "source": "https://assets.tarkov.dev/6606af2cc690b729e20beb56-base-image.webp",
+   "size": [
+    178,
+    112
+   ],
+   "aspect": 1.59,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "661ceb1b9311543c7104149b",
+   "gunName": "U.S Ordnance M60E6 7.62x51 轻机枪",
+   "presetId": "66b09220ae030a24a5663808",
+   "presetName": "U.S Ordnance M60E6 7.62x51 轻机枪 默认",
+   "file": "assets/guns-full/661ceb1b9311543c7104149b.png",
+   "source": "https://assets.tarkov.dev/66b09220ae030a24a5663808-base-image.webp",
+   "size": [
+    359,
+    112
+   ],
+   "aspect": 3.21,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "661cec09b2c6356b4d0c7a36",
+   "gunName": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+   "presetId": "66b09209c84cc7141324eeeb",
+   "presetName": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE） 默认",
+   "file": "assets/guns-full/661cec09b2c6356b4d0c7a36.png",
+   "source": "https://assets.tarkov.dev/66b09209c84cc7141324eeeb-base-image.webp",
+   "size": [
+    336,
+    112
+   ],
+   "aspect": 3.0,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6680304edadb7aa61d00cef0",
+   "gunName": "IWI UZI PRO Pistol 9x19冲锋枪",
+   "presetId": "66b091116f11600e4e48badd",
+   "presetName": "IWI UZI PRO Pistol 9x19冲锋枪 默认",
+   "file": "assets/guns-full/6680304edadb7aa61d00cef0.png",
+   "source": "https://assets.tarkov.dev/66b091116f11600e4e48badd-base-image.webp",
+   "size": [
+    141,
+    112
+   ],
+   "aspect": 1.26,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "668e71a8dadf42204c032ce1",
+   "gunName": "IWI UZI PRO SMG 9x19冲锋枪",
+   "presetId": "66b0916b1516622c22700a30",
+   "presetName": "IWI UZI PRO SMG 9x19冲锋枪 默认",
+   "file": "assets/guns-full/668e71a8dadf42204c032ce1.png",
+   "source": "https://assets.tarkov.dev/66b0916b1516622c22700a30-base-image.webp",
+   "size": [
+    170,
+    112
+   ],
+   "aspect": 1.52,
+   "origSize": [
+    190,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "668fe5a998b5ad715703ddd6",
+   "gunName": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+   "presetId": "66b093bfae030a24a566381f",
+   "presetName": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪 默认",
+   "file": "assets/guns-full/668fe5a998b5ad715703ddd6.png",
+   "source": "https://assets.tarkov.dev/66b093bfae030a24a566381f-base-image.webp",
+   "size": [
+    182,
+    112
+   ],
+   "aspect": 1.62,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "66992b349950f5f4cd06029f",
+   "gunName": "IWI UZI 9x19冲锋枪",
+   "presetId": "66b090946f11600e4e48bad5",
+   "presetName": "IWI UZI 9x19冲锋枪 默认",
+   "file": "assets/guns-full/66992b349950f5f4cd06029f.png",
+   "source": "https://assets.tarkov.dev/66b090946f11600e4e48bad5-base-image.webp",
+   "size": [
+    262,
+    112
+   ],
+   "aspect": 2.34,
+   "origSize": [
+    190,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "669fa39b48fc9f8db6035a0c",
+   "gunName": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+   "presetId": "66b0935ad11b1e4a1e1c9c04",
+   "presetName": "Magnum Research “沙漠之鹰”L6 .50 AE手枪 默认",
+   "file": "assets/guns-full/669fa39b48fc9f8db6035a0c.png",
+   "source": "https://assets.tarkov.dev/66b0935ad11b1e4a1e1c9c04-base-image.webp",
+   "size": [
+    182,
+    112
+   ],
+   "aspect": 1.62,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "669fa3d876116c89840b1217",
+   "gunName": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+   "presetId": "66b09380ed57696ce626c08b",
+   "presetName": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹） 默认",
+   "file": "assets/guns-full/669fa3d876116c89840b1217.png",
+   "source": "https://assets.tarkov.dev/66b09380ed57696ce626c08b-base-image.webp",
+   "size": [
+    182,
+    112
+   ],
+   "aspect": 1.62,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "669fa3f88abd2662d80eee77",
+   "gunName": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+   "presetId": "66b09315c5987b623d6e0ea1",
+   "presetName": "Magnum Research “沙漠之鹰”L5 .50 AE手枪 默认",
+   "file": "assets/guns-full/669fa3f88abd2662d80eee77.png",
+   "source": "https://assets.tarkov.dev/66b09315c5987b623d6e0ea1-base-image.webp",
+   "size": [
+    166,
+    112
+   ],
+   "aspect": 1.48,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "669fa409933e898cce0c2166",
+   "gunName": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+   "presetId": "66b092dcd7a3ce164221e2dc",
+   "presetName": "Magnum Research “沙漠之鹰”L5 .357 手枪 默认",
+   "file": "assets/guns-full/669fa409933e898cce0c2166.png",
+   "source": "https://assets.tarkov.dev/66b092dcd7a3ce164221e2dc-base-image.webp",
+   "size": [
+    164,
+    112
+   ],
+   "aspect": 1.46,
+   "origSize": [
+    127,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "66ffa9b66e19cc902401c5e8",
+   "gunName": "MPS Auto Assault-12 Gen 1 12铅径自动霰弹枪",
+   "presetId": "671a3d97939f4b37710e00f7",
+   "presetName": "MPS Auto Assault-12 Gen 1 12铅径自动霰弹枪 默认",
+   "file": "assets/guns-full/66ffa9b66e19cc902401c5e8.png",
+   "source": "https://assets.tarkov.dev/671a3d97939f4b37710e00f7-base-image.webp",
+   "size": [
+    250,
+    112
+   ],
+   "aspect": 2.23,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "67124dcfa3541f2a1f0e788b",
+   "gunName": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+   "presetId": "671a3daf0d3ec0f0fe04fad5",
+   "presetName": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪 默认",
+   "file": "assets/guns-full/67124dcfa3541f2a1f0e788b.png",
+   "source": "https://assets.tarkov.dev/671a3daf0d3ec0f0fe04fad5-base-image.webp",
+   "size": [
+    288,
+    112
+   ],
+   "aspect": 2.57,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6718817435e3cfd9550d2c27",
+   "gunName": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "presetId": "671b89f03d4217059b0c6a26",
+   "presetName": "Steyr AUG A3 5.56x45 突击步枪（黑色） 默认",
+   "file": "assets/guns-full/6718817435e3cfd9550d2c27.png",
+   "source": "https://assets.tarkov.dev/671b89f03d4217059b0c6a26-base-image.webp",
+   "size": [
+    261,
+    112
+   ],
+   "aspect": 2.33,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "673cab3e03c6a20581028bc1",
+   "gunName": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "presetId": "67618651ac5e57c15709a417",
+   "presetName": "Sako TRG M10 .338 LM 栓动狙击步枪 默认",
+   "file": "assets/guns-full/673cab3e03c6a20581028bc1.png",
+   "source": "https://assets.tarkov.dev/67618651ac5e57c15709a417-base-image.webp",
+   "size": [
+    400,
+    69
+   ],
+   "aspect": 5.8,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "674d6121c09f69dfb201a888",
+   "gunName": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "presetId": "675ff11da6335de2280d492a",
+   "presetName": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪 默认",
+   "file": "assets/guns-full/674d6121c09f69dfb201a888.png",
+   "source": "https://assets.tarkov.dev/675ff11da6335de2280d492a-base-image.webp",
+   "size": [
+    289,
+    112
+   ],
+   "aspect": 2.58,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "674fe9a75e51f1c47c04ec23",
+   "gunName": "Saiga-12K 12 铅径自动霰弹枪",
+   "presetId": "6764089eba9ecbb20a0052f4",
+   "presetName": "Saiga-12K 12 铅径自动霰弹枪 默认",
+   "file": "assets/guns-full/674fe9a75e51f1c47c04ec23.png",
+   "source": "https://assets.tarkov.dev/6764089eba9ecbb20a0052f4-base-image.webp",
+   "size": [
+    306,
+    112
+   ],
+   "aspect": 2.73,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "676176d362e0497044079f4c",
+   "gunName": "FN SCAR-H X-17 7.62x51突击步枪",
+   "presetId": "707265736574000000000002",
+   "presetName": "FN SCAR-H X-17 7.62x51突击步枪 默认",
+   "file": "assets/guns-full/676176d362e0497044079f4c.png",
+   "source": "https://assets.tarkov.dev/707265736574000000000002-base-image.webp",
+   "size": [
+    357,
+    112
+   ],
+   "aspect": 3.19,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "67c6de3ce39861860909e8e5",
+   "gunName": "马林 MXLR .308 ME 杠杆步枪",
+   "presetId": "68d67d0affacb2bc8b07e468",
+   "presetName": "马林 MXLR .308 ME 杠杆步枪 默认",
+   "file": "assets/guns-full/67c6de3ce39861860909e8e5.png",
+   "source": "https://assets.tarkov.dev/68d67d0affacb2bc8b07e468-base-image.webp",
+   "size": [
+    400,
+    79
+   ],
+   "aspect": 5.06,
+   "origSize": [
+    316,
+    64
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "67d0576f29f580ebc10efd08",
+   "gunName": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+   "presetId": "707265736574000000000000",
+   "presetName": "TheAKGuy AK-50 .50 BMG 反器材步枪 默认",
+   "file": "assets/guns-full/67d0576f29f580ebc10efd08.png",
+   "source": "https://assets.tarkov.dev/707265736574000000000000-base-image.webp",
+   "size": [
+    400,
+    77
+   ],
+   "aspect": 5.19,
+   "origSize": [
+    442,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6871284e9a353bb50606f3ed",
+   "gunName": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "presetId": "68d502e016a16a91e200bbbc",
+   "presetName": "AS“巨浪”MOD.4 9x39 特种突击步枪 默认",
+   "file": "assets/guns-full/6871284e9a353bb50606f3ed.png",
+   "source": "https://assets.tarkov.dev/68d502e016a16a91e200bbbc-base-image.webp",
+   "size": [
+    257,
+    112
+   ],
+   "aspect": 2.29,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "689166b6c2d6fa42e7044756",
+   "gunName": "AK-308 7.62x51 突击步枪",
+   "presetId": "68d6788b2704678f29096b85",
+   "presetName": "AK-308 7.62x51 突击步枪 默认",
+   "file": "assets/guns-full/689166b6c2d6fa42e7044756.png",
+   "source": "https://assets.tarkov.dev/68d6788b2704678f29096b85-base-image.webp",
+   "size": [
+    382,
+    112
+   ],
+   "aspect": 3.41,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 4
+  },
+  {
+   "gunId": "6895bb82c4519957df062f82",
+   "gunName": "雷电 Model 1 FA 5.56x45 突击步枪",
+   "presetId": "68d3db3e0c47fe28c2067ab9",
+   "presetName": "雷电 Model 1 FA 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/6895bb82c4519957df062f82.png",
+   "source": "https://assets.tarkov.dev/68d3db3e0c47fe28c2067ab9-base-image.webp",
+   "size": [
+    316,
+    112
+   ],
+   "aspect": 2.82,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "68a639748e1fe612970728e9",
+   "gunName": "柯尔特 M16A1 5.56x45 突击步枪",
+   "presetId": "68d6697620029562570c586c",
+   "presetName": "柯尔特 M16A1 5.56x45 突击步枪 M16A1E1",
+   "file": "assets/guns-full/68a639748e1fe612970728e9.png",
+   "source": "https://assets.tarkov.dev/68d6697620029562570c586c-base-image.webp",
+   "size": [
+    400,
+    98
+   ],
+   "aspect": 4.08,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 6
+  },
+  {
+   "gunId": "68a6399922b1e0bd360afe56",
+   "gunName": "柯尔特 M16A2 5.56x45 突击步枪",
+   "presetId": "68d669b220029562570c587a",
+   "presetName": "柯尔特 M16A2 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/68a6399922b1e0bd360afe56.png",
+   "source": "https://assets.tarkov.dev/68d669b220029562570c587a-base-image.webp",
+   "size": [
+    376,
+    112
+   ],
+   "aspect": 3.36,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "68aee763130c00663d08aea8",
+   "gunName": "TKPD 9.3x64 突击卡宾枪",
+   "presetId": "68d6bd436be0692f9d08b6eb",
+   "presetName": "TKPD 9.3x64 突击卡宾枪 默认",
+   "file": "assets/guns-full/68aee763130c00663d08aea8.png",
+   "source": "https://assets.tarkov.dev/68d6bd436be0692f9d08b6eb-base-image.webp",
+   "size": [
+    400,
+    85
+   ],
+   "aspect": 4.71,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 5
+  },
+  {
+   "gunId": "68c16b9ab6b75a8a480520a6",
+   "gunName": "NL545 (DI) 5.45x39 突击步枪",
+   "presetId": "68d66850cc802b243f0627a9",
+   "presetName": "NL545 (DI) 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/68c16b9ab6b75a8a480520a6.png",
+   "source": "https://assets.tarkov.dev/68d66850cc802b243f0627a9-base-image.webp",
+   "size": [
+    327,
+    112
+   ],
+   "aspect": 2.92,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "68c2940aecc41cc5490bd40e",
+   "gunName": "NL545 (GP) 5.45x39 突击步枪",
+   "presetId": "68d6662644990caf770b8a2e",
+   "presetName": "NL545 (GP) 5.45x39 突击步枪 默认",
+   "file": "assets/guns-full/68c2940aecc41cc5490bd40e.png",
+   "source": "https://assets.tarkov.dev/68d6662644990caf770b8a2e-base-image.webp",
+   "size": [
+    316,
+    112
+   ],
+   "aspect": 2.82,
+   "origSize": [
+    316,
+    127
+   ],
+   "otherPresets": 3
+  },
+  {
+   "gunId": "6932abeb5403890d0c09c926",
+   "gunName": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+   "presetId": "693ae5b60a32abe2210c69d6",
+   "presetName": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色） 默认",
+   "file": "assets/guns-full/6932abeb5403890d0c09c926.png",
+   "source": "https://assets.tarkov.dev/693ae5b60a32abe2210c69d6-base-image.webp",
+   "size": [
+    400,
+    95
+   ],
+   "aspect": 4.21,
+   "origSize": [
+    379,
+    127
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "6981d72ed009ad83920da43a",
+   "gunName": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "presetId": "69a6bdfa896d77866e096752",
+   "presetName": "Saiga-12K 12 铅径自动霰弹枪（红线） 默认",
+   "file": "assets/guns-full/6981d72ed009ad83920da43a.png",
+   "source": "https://assets.tarkov.dev/69a6bdfa896d77866e096752-base-image.webp",
+   "size": [
+    289,
+    112
+   ],
+   "aspect": 2.58,
+   "origSize": [
+    316,
+    190
+   ],
+   "otherPresets": 1
+  },
+  {
+   "gunId": "69f9ebbcaae020b0db02f65d",
+   "gunName": "北方工业 QBZ-191 5.8x42 突击步枪",
+   "presetId": "6a3a73f7e7aba1d34a094a57",
+   "presetName": "北方工业 QBZ-191 5.8x42 突击步枪 QBZ-192",
+   "file": "assets/guns-full/69f9ebbcaae020b0db02f65d.png",
+   "source": "https://assets.tarkov.dev/6a3a73f7e7aba1d34a094a57-base-image.webp",
+   "size": [
+    269,
+    112
+   ],
+   "aspect": 2.4,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 2
+  },
+  {
+   "gunId": "6a3bffbebc377285900b85cf",
+   "gunName": "丰和 20 式 5.56x45 突击步枪",
+   "presetId": "6a5f8182948bfbabc30b0659",
+   "presetName": "丰和 20 式 5.56x45 突击步枪 默认",
+   "file": "assets/guns-full/6a3bffbebc377285900b85cf.png",
+   "source": "https://assets.tarkov.dev/6a5f8182948bfbabc30b0659-base-image.webp",
+   "size": [
+    300,
+    112
+   ],
+   "aspect": 2.68,
+   "origSize": [
+    253,
+    127
+   ],
+   "otherPresets": 1
+  }
+ ],
+ "missing": [
+  {
+   "presetId": "6a2a77cae232fdab260b484a",
+   "reason": "源图缺失（下载失败）"
+  },
+  {
+   "presetId": "6a799f200b38edb61b0aca7b",
+   "reason": "源图缺失（下载失败）"
+  },
+  {
+   "presetId": "707265736574000000000015",
+   "reason": "源图缺失（下载失败）"
+  },
+  {
+   "presetId": "707265736574000000000017",
+   "reason": "源图缺失（下载失败）"
+  },
+  {
+   "presetId": "707265736574000000000018",
+   "reason": "源图缺失（下载失败）"
+  }
+ ]
+}

@@ -1,0 +1,868 @@
+{
+ "round": "R54b",
+ "checkedAt": "2026-11-04T09:27:42+0800",
+ "proxy": "http://127.0.0.1:7896",
+ "field": "properties.armorSlots[].bluntThroughput",
+ "graphql": {
+  "endpoint": "https://api.tarkov.dev/graphql",
+  "status": 422,
+  "ok": false,
+  "errors": [
+   "{\"errors\":[\"GraphQL server unavailable. Try again later.\"]}"
+  ]
+ },
+ "source": {
+  "kind": "json.tarkov.dev",
+  "endpoint": "https://json.tarkov.dev/regular/items",
+  "status": 200,
+  "bytes": 17345521,
+  "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+  "checkedAt": "2026-11-04T09:27:42+0800"
+ },
+ "targets": {
+  "69cbfe44897389c1870b2337": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "crye-precision-airframe-helmet-morbus-incorsio",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 48,
+   "rootMaterial": "Combined",
+   "propertiesType": "ItemPropertiesHelmet",
+   "armorSlots": [
+    {
+     "nameId": "Helmet_top",
+     "bluntThroughput": 0.1314,
+     "class": 4,
+     "durability": 24,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type ParietalHead"
+     ]
+    },
+    {
+     "nameId": "Helmet_back",
+     "bluntThroughput": 0.1314,
+     "class": 4,
+     "durability": 24,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type BackHead"
+     ]
+    }
+   ],
+   "effectiveBt": 0.1314,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 48,
+    "rootMaterial": "Combined",
+    "slotBts": [
+     0.1314
+    ],
+    "slotRows": [
+     {
+      "zone": "Helmet_top",
+      "bt": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "material": "Combined"
+     },
+     {
+      "zone": "Helmet_back",
+      "bt": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "material": "Combined"
+     }
+    ]
+   }
+  },
+  "6a567ae55cbe811cbe0136a8": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "crye-precision-airframe-helmet-botched",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 48,
+   "rootMaterial": "Combined",
+   "propertiesType": "ItemPropertiesHelmet",
+   "armorSlots": [
+    {
+     "nameId": "Helmet_top",
+     "bluntThroughput": 0.1314,
+     "class": 4,
+     "durability": 24,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type ParietalHead"
+     ]
+    },
+    {
+     "nameId": "Helmet_back",
+     "bluntThroughput": 0.1314,
+     "class": 4,
+     "durability": 24,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type BackHead"
+     ]
+    }
+   ],
+   "effectiveBt": 0.1314,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 48,
+    "rootMaterial": "Combined",
+    "slotBts": [
+     0.1314
+    ],
+    "slotRows": [
+     {
+      "zone": "Helmet_top",
+      "bt": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "material": "Combined"
+     },
+     {
+      "zone": "Helmet_back",
+      "bt": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "material": "Combined"
+     }
+    ]
+   }
+  },
+  "6a568dda1d89fcfb35010389": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "mtek-strike-ballistic-helmet-carbon-fiber",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 40,
+   "rootMaterial": "Combined",
+   "propertiesType": "ItemPropertiesHelmet",
+   "armorSlots": [
+    {
+     "nameId": "Helmet_top",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 20,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type ParietalHead"
+     ]
+    },
+    {
+     "nameId": "Helmet_back",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 20,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type BackHead"
+     ]
+    }
+   ],
+   "effectiveBt": 0.1548,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 40,
+    "rootMaterial": "Combined",
+    "slotBts": [
+     0.1548
+    ],
+    "slotRows": [
+     {
+      "zone": "Helmet_top",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 20,
+      "material": "Combined"
+     },
+     {
+      "zone": "Helmet_back",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 20,
+      "material": "Combined"
+     }
+    ]
+   }
+  },
+  "6a576f2105af50743903b74c": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "ana-tactical-m1-plate-carrier-emr",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 194,
+   "rootMaterial": "Aramid",
+   "propertiesType": "ItemPropertiesChestRig",
+   "armorSlots": [
+    {
+     "nameId": "Soft_armor_front",
+     "bluntThroughput": 0.33,
+     "class": 2,
+     "durability": 40,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RibcageLow",
+      "Collider Type RibcageUp"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_back",
+     "bluntThroughput": 0.33,
+     "class": 2,
+     "durability": 40,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type SpineDown",
+      "Collider Type SpineTop"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_left",
+     "bluntThroughput": 0.33,
+     "class": 2,
+     "durability": 12,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type LeftSideChestDown"
+     ]
+    },
+    {
+     "nameId": "soft_armor_right",
+     "bluntThroughput": 0.33,
+     "class": 2,
+     "durability": 12,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RightSideChestDown"
+     ]
+    }
+   ],
+   "effectiveBt": 0.33,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 194,
+    "rootMaterial": "Aramid",
+    "slotBts": [
+     0.33
+    ],
+    "slotRows": [
+     {
+      "zone": "Soft_armor_front",
+      "bt": 0.33,
+      "class": 2,
+      "durability": 40,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_back",
+      "bt": 0.33,
+      "class": 2,
+      "durability": 40,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_left",
+      "bt": 0.33,
+      "class": 2,
+      "durability": 12,
+      "material": "Aramid"
+     },
+     {
+      "zone": "soft_armor_right",
+      "bt": 0.33,
+      "class": 2,
+      "durability": 12,
+      "material": "Aramid"
+     }
+    ]
+   }
+  },
+  "6a670ae11ab6ac490a0b9a99": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "devtac-ronin-respirator-labs-security",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 180,
+   "rootMaterial": "Combined",
+   "propertiesType": "ItemPropertiesHelmet",
+   "armorSlots": [
+    {
+     "nameId": "Helmet_top",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 36,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type ParietalHead"
+     ]
+    },
+    {
+     "nameId": "Helmet_back",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 36,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type BackHead"
+     ]
+    },
+    {
+     "nameId": "helmet_eyes",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 36,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type Eyes"
+     ]
+    },
+    {
+     "nameId": "helmet_jaw",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 36,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type Jaw",
+      "Collider Type HeadCommon"
+     ]
+    },
+    {
+     "nameId": "Helmet_ears",
+     "bluntThroughput": 0.1548,
+     "class": 4,
+     "durability": 36,
+     "armorMaterial": "Combined",
+     "zones": [
+      "Collider Type Ears"
+     ]
+    }
+   ],
+   "effectiveBt": 0.1548,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 180,
+    "rootMaterial": "Combined",
+    "slotBts": [
+     0.1548
+    ],
+    "slotRows": [
+     {
+      "zone": "Helmet_top",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "material": "Combined"
+     },
+     {
+      "zone": "Helmet_back",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "material": "Combined"
+     },
+     {
+      "zone": "helmet_eyes",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "material": "Combined"
+     },
+     {
+      "zone": "helmet_jaw",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Helmet_ears",
+      "bt": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "material": "Combined"
+     }
+    ]
+   }
+  }
+ },
+ "crossCheck": {
+  "5fd4c474dd870108a754b241": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "511-tactical-hexgrid-plate-carrier",
+   "rootBluntThroughput": 0,
+   "rootClass": 6,
+   "rootDurability": 100,
+   "rootMaterial": "UHMWPE",
+   "propertiesType": "ItemPropertiesArmor",
+   "armorSlots": [],
+   "effectiveBt": null,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 6,
+    "rootDurability": 100,
+    "rootMaterial": "UHMWPE",
+    "slotBts": [],
+    "slotRows": []
+   },
+   "publishedInDb": 0.26,
+   "dbSource": "gunsmith-inverted",
+   "verdict": "no-upstream-slot-bt",
+   "delta": null
+  },
+  "609e8540d5c319764c2bc2e9": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "nfm-thor-concealable-reinforced-vest-body-armor",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 170,
+   "rootMaterial": "UHMWPE",
+   "propertiesType": "ItemPropertiesArmor",
+   "armorSlots": [
+    {
+     "nameId": "Soft_armor_front",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 25,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RibcageUp",
+      "Collider Type RibcageLow"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_back",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 25,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type SpineDown",
+      "Collider Type SpineTop"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_left",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 10,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type LeftSideChestDown"
+     ]
+    },
+    {
+     "nameId": "soft_armor_right",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 10,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RightSideChestDown"
+     ]
+    }
+   ],
+   "effectiveBt": 0.33,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 170,
+    "rootMaterial": "UHMWPE",
+    "slotBts": [
+     0.33
+    ],
+    "slotRows": [
+     {
+      "zone": "Soft_armor_front",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 25,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_back",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 25,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_left",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 10,
+      "material": "Aramid"
+     },
+     {
+      "zone": "soft_armor_right",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 10,
+      "material": "Aramid"
+     }
+    ]
+   },
+   "publishedInDb": 0.33,
+   "dbSource": "gunsmith-inverted",
+   "delta": 0.0,
+   "verdict": "match"
+  },
+  "60a283193cb70855c43a381d": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "nfm-thor-integrated-carrier-body-armor",
+   "rootBluntThroughput": 0,
+   "rootClass": 6,
+   "rootDurability": 466,
+   "rootMaterial": "UHMWPE",
+   "propertiesType": "ItemPropertiesArmor",
+   "armorSlots": [
+    {
+     "nameId": "Soft_armor_front",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 70,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RibcageLow",
+      "Collider Type RibcageUp"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_back",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 70,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type SpineDown",
+      "Collider Type SpineTop"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_left",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 30,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type LeftSideChestDown"
+     ]
+    },
+    {
+     "nameId": "soft_armor_right",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 30,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RightSideChestDown"
+     ]
+    },
+    {
+     "nameId": "Collar",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 28,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type NeckFront",
+      "Collider Type NeckBack"
+     ]
+    },
+    {
+     "nameId": "Shoulder_l",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 24,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type LeftUpperArm"
+     ]
+    },
+    {
+     "nameId": "Shoulder_r",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 24,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RightUpperArm"
+     ]
+    },
+    {
+     "nameId": "Groin",
+     "bluntThroughput": 0.36,
+     "class": 3,
+     "durability": 34,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type Pelvis"
+     ]
+    }
+   ],
+   "effectiveBt": 0.36,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 6,
+    "rootDurability": 466,
+    "rootMaterial": "UHMWPE",
+    "slotBts": [
+     0.36
+    ],
+    "slotRows": [
+     {
+      "zone": "Soft_armor_front",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 70,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_back",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 70,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_left",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 30,
+      "material": "Aramid"
+     },
+     {
+      "zone": "soft_armor_right",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 30,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Collar",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 28,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Shoulder_l",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 24,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Shoulder_r",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 24,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Groin",
+      "bt": 0.36,
+      "class": 3,
+      "durability": 34,
+      "material": "Aramid"
+     }
+    ]
+   },
+   "publishedInDb": 0.36,
+   "dbSource": "gunsmith-inverted",
+   "delta": 0.0,
+   "verdict": "match"
+  },
+  "68a89146212dbbeead0d5636": {
+   "found": true,
+   "source": "json.tarkov.dev",
+   "normalizedName": "nfm-thor-concealable-reinforced-vest-body-armor-head-eyes",
+   "rootBluntThroughput": 0,
+   "rootClass": 4,
+   "rootDurability": 170,
+   "rootMaterial": "UHMWPE",
+   "propertiesType": "ItemPropertiesArmor",
+   "armorSlots": [
+    {
+     "nameId": "Soft_armor_front",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 25,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RibcageUp",
+      "Collider Type RibcageLow"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_back",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 25,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type SpineDown",
+      "Collider Type SpineTop"
+     ]
+    },
+    {
+     "nameId": "Soft_armor_left",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 10,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type LeftSideChestDown"
+     ]
+    },
+    {
+     "nameId": "soft_armor_right",
+     "bluntThroughput": 0.33,
+     "class": 3,
+     "durability": 10,
+     "armorMaterial": "Aramid",
+     "zones": [
+      "Collider Type RightSideChestDown"
+     ]
+    }
+   ],
+   "effectiveBt": 0.33,
+   "localItemsJson": {
+    "found": true,
+    "rootBt": null,
+    "rootClass": 4,
+    "rootDurability": 170,
+    "rootMaterial": "UHMWPE",
+    "slotBts": [
+     0.33
+    ],
+    "slotRows": [
+     {
+      "zone": "Soft_armor_front",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 25,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_back",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 25,
+      "material": "Aramid"
+     },
+     {
+      "zone": "Soft_armor_left",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 10,
+      "material": "Aramid"
+     },
+     {
+      "zone": "soft_armor_right",
+      "bt": 0.33,
+      "class": 3,
+      "durability": 10,
+      "material": "Aramid"
+     }
+    ]
+   },
+   "publishedInDb": 0.33,
+   "dbSource": "gunsmith-inverted",
+   "delta": 0.0,
+   "verdict": "match"
+  }
+ },
+ "notes": {
+  "rootField": "properties.bluntThroughput 在 armor 条目上恒为 0，不可直接当 BT 使用",
+  "slotField": "逐部位 BT 在 armorSlots[]；头盔各槽同值，软甲软层同值，纯插板槽无此字段"
+ },
+ "planned": [
+  {
+   "id": "69cbfe44897389c1870b2337",
+   "from": 0.18,
+   "to": 0.1314,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a567ae55cbe811cbe0136a8",
+   "from": 0.18,
+   "to": 0.1314,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a568dda1d89fcfb35010389",
+   "from": 0.18,
+   "to": 0.1548,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a576f2105af50743903b74c",
+   "from": 0.18,
+   "to": 0.33,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a670ae11ab6ac490a0b9a99",
+   "from": 0.18,
+   "to": 0.1548,
+   "source": "json.tarkov.dev"
+  }
+ ],
+ "written": [
+  {
+   "id": "69cbfe44897389c1870b2337",
+   "from": 0.18,
+   "to": 0.1314,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a567ae55cbe811cbe0136a8",
+   "from": 0.18,
+   "to": 0.1314,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a568dda1d89fcfb35010389",
+   "from": 0.18,
+   "to": 0.1548,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a576f2105af50743903b74c",
+   "from": 0.18,
+   "to": 0.33,
+   "source": "json.tarkov.dev"
+  },
+  {
+   "id": "6a670ae11ab6ac490a0b9a99",
+   "from": 0.18,
+   "to": 0.1548,
+   "source": "json.tarkov.dev"
+  }
+ ]
+}

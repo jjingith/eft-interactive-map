@@ -1,0 +1,98 @@
+{
+ "generatedFor": "R19.15.1",
+ "buildMarker": "R19.15.1",
+ "testSuite": {
+  "command": "C:/Python314/python.exe -m pytest tests/ -q",
+  "passed": 1056,
+  "skipped": 1,
+  "failed": 0,
+  "newSuite": "tests/test_r19_15_1_round.py（14 项，全部通过）"
+ },
+ "allGunAudit": {
+  "scanned": 163,
+  "anomalies": 0,
+  "summary": {
+   "domTreeMismatch": 0,
+   "domCoordMismatch": 0,
+   "duplicatePath": 0,
+   "overlapCell": 0,
+   "outOfGrid": 0,
+   "zeroRow": 0,
+   "rowsChanged": 0,
+   "mainRowViolation": 0,
+   "opticBelowBody": 0,
+   "stockOffCol9": 0,
+   "receiverPairViolation": 0,
+   "hammerChainViolation": 0,
+   "triggerViolation": 0,
+   "phantomCard": 0,
+   "dovetailNotAboveBody": 0,
+   "dovetailOrdinalNot3": 31
+  }
+ },
+ "browserScan": {
+  "guns": 163,
+  "failed": 0,
+  "viewport": "1920×919 与 1384×805（关键枪另拍 1384）",
+  "source": "真实 UI 选枪 + 官方默认装配，禁缓存"
+ },
+ "roleRules": [
+  {
+   "id": "receiverUpper / receiverLower",
+   "count": 1
+  },
+  {
+   "id": "stock / stockOnGrip / stockUnderParent",
+   "count": 3
+  },
+  {
+   "id": "hammer / hammerCap（杠杆步枪）",
+   "count": 1
+  },
+  {
+   "id": "trigger",
+   "count": 2
+  },
+  {
+   "id": "lever",
+   "count": 1
+  },
+  {
+   "id": "topOptic（镜座/瞄具上置链）",
+   "count": 41
+  },
+  {
+   "id": "dovetailMount（AK 燕尾槽基座）",
+   "count": 28
+  },
+  {
+   "id": "mainRowCompaction",
+   "count": null
+  },
+  {
+   "id": "bodyRowExclusive",
+   "count": null
+  },
+  {
+   "id": "topChildUpward",
+   "count": null
+  }
+ ],
+ "knownDeviations": [
+  {
+   "id": "dovetailOrdinal",
+   "desc": "AK 燕尾槽基座要求为第 2 行从左第 3 个真实槽位；",
+   "measured": 31,
+   "of": 32,
+   "reason": "这些 AK 的第 2 行真实槽位不足 4 个（通常只有基座/照门/照门/拉机柄），基座只能是第 1 或第 2 位；规则明令不得为凑位新建虚假槽位，故保留在机匣正上方的光学带（r2c5/c6）并逐枪记录序号。",
+   "status": "按规则约束下的最优排列，需产品确认"
+  },
+  {
+   "id": "nonReceiverOpticMounts",
+   "desc": "枪管/导气箍/枪口/护木/枪托上的导轨与顶盖（子树无瞄具槽）",
+   "measured": 12,
+   "reason": "它们不是机匣顶部镜座，物理上装在枪管侧或护木上；上移到第 2 行会与真实位置冲突。",
+   "status": "保留原车道，列入待核实"
+  }
+ ]
+}

@@ -1,0 +1,2338 @@
+{
+ "viewport": {
+  "1384": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "已装 柯尔特 AR-15 卡宾枪缓冲管",
+    "kind": "slot",
+    "slot": "mod_stock",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 17,
+    "bad": 0
+   },
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 55
+      }
+     ],
+     "baseLeft": 55,
+     "text": "基线 55.0|改装 55.0|技能 55.0",
+     "trackW": 340,
+     "valW": 156,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18.2
+      }
+     ],
+     "baseLeft": 18.2,
+     "text": "基线 1.8|改装 1.8|技能 1.8",
+     "trackW": 340,
+     "valW": 156,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 11.2
+      }
+     ],
+     "baseLeft": 11.2,
+     "text": "基线 78.1|改装 78.1|技能 78.1",
+     "trackW": 340,
+     "valW": 156,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18
+      }
+     ],
+     "baseLeft": 18,
+     "text": "基线 224.4|改装 224.4|技能 224.4",
+     "trackW": 340,
+     "valW": 156,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 70.7
+      }
+     ],
+     "baseLeft": 70.7,
+     "text": "基线 922.0|改装 922.0|技能 922.0",
+     "trackW": 340,
+     "valW": 156,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ],
+   "sw": 1384,
+   "w": 1384
+  },
+  "1920": {
+   "sw": 1920,
+   "w": 1920
+  }
+ },
+ "console": [],
+ "build": "rev R19.11-931081d0",
+ "capacity": {
+  "capChip": true,
+  "m4": [
+   {
+    "text": "低后坐力人机 44.0 · 后坐 26.5 · 1,015,577 ₽应用",
+    "bad": false
+   },
+   {
+    "text": "高人机工效人机 111.0 · 后坐 46.2 · 835,883 ₽应用",
+    "bad": false
+   },
+   {
+    "text": "轻量化人机 98.5 · 后坐 40.8 · 597,525 ₽应用",
+    "bad": false
+   },
+   {
+    "text": "性价比人机 103.5 · 后坐 41.4 · 792,467 ₽应用",
+    "bad": false
+   }
+  ],
+  "m4Note": "",
+  "m4Info": "生成 4 个有效方案 · 评估 3585 次",
+  "m4Applied": true,
+  "m4Mag": [
+   {
+    "slot": "mod_magazine",
+    "item": "SureFire MAG5-100 AR-15 5.56x45 STANAG 100发弹匣",
+    "id": "5c6592372e221600133e47d7"
+   }
+  ],
+  "m4Bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "solid-bad",
+      "left": 0,
+      "width": 44
+     },
+     {
+      "cls": "stripe-bad",
+      "left": 44,
+      "width": 11
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 44.0|技能 44.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 11
+     },
+     {
+      "cls": "stripe-good",
+      "left": 11,
+      "width": 7.2
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 1.1|技能 1.1",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 3.8
+     },
+     {
+      "cls": "stripe-good",
+      "left": 3.8,
+      "width": 7.4
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 26.5|技能 26.5",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 6.1
+     },
+     {
+      "cls": "stripe-good",
+      "left": 6.1,
+      "width": 11.8
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 76.3|技能 76.3",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 70.7
+     },
+     {
+      "cls": "stripe-good",
+      "left": 70.7,
+      "width": 4.8
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 968.0|技能 968.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ],
+  "akMissingChip": {
+   "text": "100 发",
+   "title": "当前枪械没有 100 发弹匣/弹鼓；该约束仍然生效（生成结果会是无解）"
+  },
+  "akNote": "没有满足当前约束的可行方案：当前枪械没有满足 100 发容量约束的弹匣或弹鼓（该枪可选容量：10 / 20 / 30 / 45 / 60 / 95 发）。可以放宽容量 / 必需配件约束后重试——不会用 30 发之类的弹匣凑数。",
+  "akRows": 0,
+  "akInfo": "生成 0 个有效方案 · 评估 951 次 · 已排除 4 个不满足约束的方案"
+ },
+ "bars": {
+  "default": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 55
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 55.0|技能 55.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18.2
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 1.8|技能 1.8",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 11.2
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 78.1|技能 78.1",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 224.4|技能 224.4",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 70.7
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 922.0|技能 922.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ],
+  "buildErgos": [
+   {
+    "i": 0,
+    "ergo": 44,
+    "name": "低后坐力"
+   },
+   {
+    "i": 1,
+    "ergo": 111,
+    "name": "高人机工效"
+   },
+   {
+    "i": 2,
+    "ergo": 98.5,
+    "name": "轻量化"
+   },
+   {
+    "i": 3,
+    "ergo": 103.5,
+    "name": "性价比"
+   }
+  ],
+  "high": {
+   "build": {
+    "i": 1,
+    "ergo": 111,
+    "name": "高人机工效"
+   },
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 55
+      },
+      {
+       "cls": "stripe-good",
+       "left": 55,
+       "width": 45
+      }
+     ],
+     "baseLeft": 55,
+     "text": "基线 55.0|改装 111.0|技能 111.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "solid-bad",
+       "left": 0,
+       "width": 18.2
+      },
+      {
+       "cls": "stripe-bad",
+       "left": 18.2,
+       "width": 5.9
+      }
+     ],
+     "baseLeft": 18.2,
+     "text": "基线 1.8|改装 2.4|技能 2.4",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 6.6
+      },
+      {
+       "cls": "stripe-good",
+       "left": 6.6,
+       "width": 4.6
+      }
+     ],
+     "baseLeft": 11.2,
+     "text": "基线 78.1|改装 46.2|技能 46.2",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 10.6
+      },
+      {
+       "cls": "stripe-good",
+       "left": 10.6,
+       "width": 7.3
+      }
+     ],
+     "baseLeft": 18,
+     "text": "基线 224.4|改装 132.7|技能 132.7",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "solid-bad",
+       "left": 0,
+       "width": 60.1
+      },
+      {
+       "cls": "stripe-bad",
+       "left": 60.1,
+       "width": 10.6
+      }
+     ],
+     "baseLeft": 70.7,
+     "text": "基线 922.0|改装 821.0|技能 821.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ]
+  },
+  "low": {
+   "build": {
+    "i": 0,
+    "ergo": 44,
+    "name": "低后坐力"
+   },
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "solid-bad",
+       "left": 0,
+       "width": 44
+      },
+      {
+       "cls": "stripe-bad",
+       "left": 44,
+       "width": 11
+      }
+     ],
+     "baseLeft": 55,
+     "text": "基线 55.0|改装 44.0|技能 44.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 11
+      },
+      {
+       "cls": "stripe-good",
+       "left": 11,
+       "width": 7.2
+      }
+     ],
+     "baseLeft": 18.2,
+     "text": "基线 1.8|改装 1.1|技能 1.1",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 3.8
+      },
+      {
+       "cls": "stripe-good",
+       "left": 3.8,
+       "width": 7.4
+      }
+     ],
+     "baseLeft": 11.2,
+     "text": "基线 78.1|改装 26.5|技能 26.5",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 6.1
+      },
+      {
+       "cls": "stripe-good",
+       "left": 6.1,
+       "width": 11.8
+      }
+     ],
+     "baseLeft": 18,
+     "text": "基线 224.4|改装 76.3|技能 76.3",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "solid-good",
+       "left": 0,
+       "width": 70.7
+      },
+      {
+       "cls": "stripe-good",
+       "left": 70.7,
+       "width": 4.8
+      }
+     ],
+     "baseLeft": 70.7,
+     "text": "基线 922.0|改装 968.0|技能 968.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ]
+  },
+  "restored": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 55
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 55.0|技能 55.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18.2
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 1.8|技能 1.8",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 11.2
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 78.1|技能 78.1",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 224.4|技能 224.4",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 70.7
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 922.0|技能 922.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ]
+ },
+ "profile": {
+  "before": {
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 55
+      }
+     ],
+     "baseLeft": 55,
+     "text": "基线 55.0|改装 55.0|技能 55.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18.2
+      }
+     ],
+     "baseLeft": 18.2,
+     "text": "基线 1.8|改装 1.8|技能 1.8",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 11.2
+      }
+     ],
+     "baseLeft": 11.2,
+     "text": "基线 78.1|改装 78.1|技能 78.1",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18
+      }
+     ],
+     "baseLeft": 18,
+     "text": "基线 224.4|改装 224.4|技能 224.4",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 70.7
+      }
+     ],
+     "baseLeft": 70.7,
+     "text": "基线 922.0|改装 922.0|技能 922.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ],
+   "stats": "整枪属性人机工效55.0垂直后坐力78.1水平后坐力224.4重量2.85 kg精度 MOA1.82 MOA射速800 rpm瞄准距离100 m弹匣容量30 发初速922 m/s整枪成本（含原厂件）308,475 ₽其中改装件216,054"
+  },
+  "modalOpen": true,
+  "invalid": {
+   "shown": true,
+   "text": "⚠ 力量等级 超出合法等级范围（0–51）",
+   "stored": null
+  },
+  "afterSave": {
+   "hidden": true,
+   "stored": {
+    "v": 1,
+    "strength": 40,
+    "endurance": 25,
+    "weaponSkillDefault": 30,
+    "skillByClass": {
+     "pistol": 45
+    },
+    "equipErgo": 0,
+    "mastery": 0
+   },
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 55
+      }
+     ],
+     "baseLeft": 55,
+     "text": "基线 55.0|改装 55.0|技能 58.3",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18.2
+      }
+     ],
+     "baseLeft": 18.2,
+     "text": "基线 1.8|改装 1.8|技能 1.8",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 11.2
+      }
+     ],
+     "baseLeft": 11.2,
+     "text": "基线 78.1|改装 78.1|技能 71.1",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 18
+      }
+     ],
+     "baseLeft": 18,
+     "text": "基线 224.4|改装 224.4|技能 204.2",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 70.7
+      }
+     ],
+     "baseLeft": 70.7,
+     "text": "基线 922.0|改装 922.0|技能 922.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ],
+   "toast": "个人属性已保存：力量 40 · 耐力 25 · 默认枪械技能 30 级（全局生效）　｜　已载入官方默认装配：柯尔特 M4A1 5.56x45 卡宾枪 Carbine　｜　价格档 FLEA：构建期快照，非实时行情",
+   "stats": "整枪属性人机工效58.3+3.3垂直后坐力71.1-7.03水平后坐力204.2-20.2重量2.85 kg精度 MOA1.82 MOA射速800 rpm瞄准距离100 m弹匣容量30 发初速922 m/s整枪成本（含原厂件）308,475"
+  },
+  "pistol": {
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 91
+      }
+     ],
+     "baseLeft": 91,
+     "text": "基线 91.0|改装 91.0|技能 99.2",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 100
+      }
+     ],
+     "baseLeft": 100,
+     "text": "基线 11.7|改装 11.7|技能 11.7",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 43.1
+      }
+     ],
+     "baseLeft": 43.1,
+     "text": "基线 302.0|改装 302.0|技能 261.2",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 20.2
+      }
+     ],
+     "baseLeft": 20.2,
+     "text": "基线 252.5|改装 252.5|技能 218.4",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 13.4
+      }
+     ],
+     "baseLeft": 13.4,
+     "text": "基线 377.0|改装 377.0|技能 377.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ],
+   "skillNote": "技能后数值：手枪 技能 45 级 · 后坐力 −13.5% · 人机 +9.0%"
+  },
+  "afterPageSwitch": {
+   "skillNote": "技能后数值：手枪 技能 45 级 · 后坐力 −13.5% · 人机 +9.0%"
+  },
+  "afterReload": {
+   "stored": {
+    "v": 1,
+    "strength": 40,
+    "endurance": 25,
+    "weaponSkillDefault": 30,
+    "skillByClass": {
+     "pistol": 45
+    },
+    "equipErgo": 0,
+    "mastery": 0
+   },
+   "modalValues": {
+    "strength": "40",
+    "endurance": "25",
+    "skill": "30"
+   }
+  },
+  "zeroSkill": {
+   "bars": [
+    {
+     "key": "ergonomics",
+     "label": "人机工效",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 91
+      }
+     ],
+     "baseLeft": 91,
+     "text": "基线 91.0|改装 91.0|技能 91.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "accuracy",
+     "label": "散布角",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 100
+      }
+     ],
+     "baseLeft": 100,
+     "text": "基线 11.7|改装 11.7|技能 11.7",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilV",
+     "label": "垂直后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 43.1
+      }
+     ],
+     "baseLeft": 43.1,
+     "text": "基线 302.0|改装 302.0|技能 302.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "recoilH",
+     "label": "水平后坐",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 20.2
+      }
+     ],
+     "baseLeft": 20.2,
+     "text": "基线 252.5|改装 252.5|技能 252.5",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    },
+    {
+     "key": "velocity",
+     "label": "初速 m/s",
+     "segs": [
+      {
+       "cls": "neutral",
+       "left": 0,
+       "width": 13.4
+      }
+     ],
+     "baseLeft": 13.4,
+     "text": "基线 377.0|改装 377.0|技能 377.0",
+     "trackW": 314,
+     "valW": 172,
+     "valClipped": false,
+     "clippedKeys": []
+    }
+   ]
+  }
+ },
+ "panel": {
+  "initial": {
+   "exists": true,
+   "title": "当前槽位：握把",
+   "sub": "已装 柯尔特A2 AR-15手枪式握把",
+   "kind": "slot",
+   "slot": "mod_pistol_grip",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "stock": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "已装 柯尔特 AR-15 卡宾枪缓冲管",
+    "kind": "slot",
+    "slot": "mod_stock",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 17,
+    "bad": 0,
+    "rows": [
+     {
+      "name": "柯尔特 A2 AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "柯尔特 AR-15 卡宾枪缓冲管",
+      "conflict": false,
+      "state": "已装",
+      "why": ""
+     },
+     {
+      "name": "联盟-TM AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ADAR缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ERGO F93 PRO AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Phase5 Hexone AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "RTM ATP AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries Viper PDW AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     }
+    ]
+   }
+  },
+  "heraBlockedByTube": {
+   "picked": {
+    "x": 1356.5,
+    "y": 557.3828125,
+    "name": "Hera Arms CQR AR-15 一体化枪托",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「High Standard M4SS AR-15 枪托」互斥（上游 conflictingItems）"
+   },
+   "toast": "⛔ 无法安装 Hera Arms CQR AR-15 一体化枪托：与已安装的「High Standard M4SS AR-15 枪托」互斥（上游 conflictingItems）（未改动改装）　｜　价格档 FLEA：构建期快照，非实时行情",
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：握把",
+    "sub": "已装 柯尔特A2 AR-15手枪式握把",
+    "kind": "slot",
+    "slot": "mod_pistol_grip",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   }
+  },
+  "heraGrip": {
+   "picked": {
+    "x": 1356.5,
+    "y": 557.1875,
+    "name": "Hera Arms CQR AR-15 一体化枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：握把",
+    "sub": "已装 Hera Arms CQR AR-15 一体化枪托",
+    "kind": "slot",
+    "slot": "mod_pistol_grip",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "toast": "已装上 Hera Arms CQR AR-15 一体化枪托（握把）　｜　价格档 FLEA：构建期快照，非实时行情"
+  },
+  "stockWithIntegratedGrip": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "17 个可选型号",
+    "kind": "slot",
+    "slot": "mod_stock",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 17,
+    "bad": 11,
+    "rows": [
+     {
+      "name": "柯尔特 A2 AR-15 缓冲管",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "柯尔特 AR-15 卡宾枪缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "联盟-TM AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ADAR缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "ERGO F93 PRO AR-15 枪托",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "Phase5 Hexone AR-15 缓冲管",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "RTM ATP AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries Viper PDW AR-15 枪托",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+      "conflict": true,
+      "state": "⛔ 不可装",
+      "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+     }
+    ]
+   }
+  },
+  "stripeStyle": {
+   "bgImage": "repeating-linear-gradient(45deg, rgba(178, 28, 28, 0.3) 0px, rgba(178, 28, 28, 0.3) 5px, rgba(178, 28, 28, 0.1) 5px, rgba(178, 28, 28, 0.1) 11px)",
+   "pointer": "none",
+   "zIndex": "2",
+   "coverW": 1005,
+   "coverH": 46,
+   "rowW": 1005,
+   "textColor": "rgb(92, 20, 20)",
+   "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）",
+   "name": "柯尔特 A2 AR-15 缓冲管"
+  },
+  "stripeOnHover": {
+   "bgImage": "repeating-linear-gradient(45deg, rgba(178, 28, 28, 0.34) 0px, rgba(178, 28, 28, 0.34) 5px, rgba(178, 28, 28, 0.12) 5px, rgba(178, 28, 28, 0.12) 11px)",
+   "hoverBg": "rgb(247, 245, 238)"
+  },
+  "blockedInstall": {
+   "candidate": {
+    "x": 1356.5,
+    "y": 242.5859375,
+    "name": "柯尔特 A2 AR-15 缓冲管",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   "unchanged": true,
+   "toast": "⛔ 无法安装 柯尔特 A2 AR-15 缓冲管：与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）（未改动改装）　｜　价格档 FLEA：构建期快照，非实时行情",
+   "installedHas": 0
+  },
+  "hide": {
+   "before": {
+    "total": 17,
+    "bad": 11
+   },
+   "after": {
+    "total": 6,
+    "bad": 0
+   },
+   "count": "已隐藏 11 个",
+   "withSearch": {
+    "cands": {
+     "total": 6,
+     "bad": 0,
+     "rows": [
+      {
+       "name": "柯尔特 AR-15 卡宾枪缓冲管",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      },
+      {
+       "name": "联盟-TM AR-15 缓冲管",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      },
+      {
+       "name": "ADAR缓冲管",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      },
+      {
+       "name": "RTM ATP AR-15 缓冲管",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      },
+      {
+       "name": "Strike Industries 先进机匣延长缓冲管",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      },
+      {
+       "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+       "conflict": false,
+       "state": "可装",
+       "why": ""
+      }
+     ]
+    },
+    "query": "缓冲管"
+   },
+   "emptyState": {
+    "rows": 0,
+    "text": "没有匹配「ubr gen2」的兼容配件（另有 11 个不兼容项已隐藏）。可清空搜索或取消「隐藏不兼容配件」查看全部"
+   }
+  },
+  "unhide": {
+   "total": 17,
+   "bad": 11
+  },
+  "handguard": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：护木",
+    "sub": "父件 机匣 · 已装 柯尔特 M4 卡宾枪长度 AR-15 护木",
+    "kind": "slot",
+    "slot": "mod_reciever/mod_handguard",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 49,
+    "bad": 38
+   }
+  },
+  "scope": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：瞄具",
+    "sub": "父件 照门 · 5 个可选型号",
+    "kind": "slot",
+    "slot": "mod_reciever/mod_sight_rear/mod_scope",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 5,
+    "bad": 0
+   }
+  },
+  "magazine": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：弹匣",
+    "sub": "已装 柯尔特 5.56x45 STANAG 30发弹匣",
+    "kind": "slot",
+    "slot": "mod_magazine",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 24,
+    "bad": 0
+   }
+  },
+  "ammo": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：子弹",
+    "sub": "5.56x45 · 在右侧列表里选择弹药",
+    "kind": "ammo",
+    "slot": "mod_magazine",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 11,
+    "bad": 0
+   }
+  },
+  "foregrip": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：前握把",
+    "sub": "父件 护木 · 42 个可选型号",
+    "kind": "slot",
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 42,
+    "bad": 0
+   }
+  }
+ },
+ "m4stock": {
+  "tubeSlot": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "已装 柯尔特 AR-15 卡宾枪缓冲管",
+    "kind": "slot",
+    "slot": "mod_stock",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 17,
+    "bad": 0,
+    "rows": [
+     {
+      "name": "柯尔特 A2 AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "柯尔特 AR-15 卡宾枪缓冲管",
+      "conflict": false,
+      "state": "已装",
+      "why": ""
+     },
+     {
+      "name": "联盟-TM AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ADAR缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ERGO F93 PRO AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Phase5 Hexone AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "RTM ATP AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries Viper PDW AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     }
+    ]
+   }
+  },
+  "childSlots": [
+   "mod_stock/mod_stock_000"
+  ],
+  "childCands": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "父件 枪托 · 已装 High Standard M4SS AR-15 枪托",
+    "kind": "slot",
+    "slot": "mod_stock/mod_stock_000",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 36,
+    "bad": 0
+   }
+  },
+  "integrated": {
+   "picked": {
+    "x": 1356.5,
+    "y": 517.1875,
+    "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   "installed": [
+    "5ae30bad5acfc400185c2dc4",
+    "55d44fd14bdc2d962f8b456e",
+    "544a38634bdc2d58388b4568",
+    "5ae30e795acfc408fb139a0b",
+    "55d3632e4bdc2d972f8b4569",
+    "5ae30db85acfc408fb139a05",
+    "55d355e64bdc2d962f8b4569",
+    "5947eab886f77475961d96c5",
+    "637f57a68d137b27f70c4968",
+    "55d4887d4bdc2d962f8b4570",
+    "55d4b9964bdc2d1d4e8b456e"
+   ],
+   "childSlotsAfter": [],
+   "stockItems": [
+    {
+     "slot": "mod_stock",
+     "item": "Magpul UBR GEN2 AR-15 枪托 (FDE)"
+    }
+   ],
+   "toast": "已装上 Magpul UBR GEN2 AR-15 枪托 (FDE)（枪托）　｜　⚠ 更换父配件后，其下级附件已自动卸下：High Standard M4SS AR-15 枪托　｜　价格档 FLEA：构建期快照，非实时行情"
+  },
+  "afterIntegrated": {
+   "slot": {
+    "exists": true,
+    "title": "当前槽位：枪托",
+    "sub": "已装 Magpul UBR GEN2 AR-15 枪托 (FDE)",
+    "kind": "slot",
+    "slot": "mod_stock",
+    "topOffset": 0,
+    "beforeSearch": true,
+    "inCenter": false
+   },
+   "cands": {
+    "total": 17,
+    "bad": 0,
+    "rows": [
+     {
+      "name": "柯尔特 A2 AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "柯尔特 AR-15 卡宾枪缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "联盟-TM AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ADAR缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ERGO F93 PRO AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "已装",
+      "why": ""
+     },
+     {
+      "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Phase5 Hexone AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "RTM ATP AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries Viper PDW AR-15 枪托",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     }
+    ]
+   }
+  }
+ },
+ "sim": {
+  "initial": {
+   "gun": "5447a9cd4bdc2dbd208b4567",
+   "gunText": "柯尔特 M4A1 5.56x45 卡宾枪 · 800 rpm",
+   "mags": [
+    {
+     "v": "5aaa5e60e5b5b000140293d6",
+     "t": "Magpul PMAG 10 GEN M3 5.56x45 STANAG 10发弹匣 · 10 发"
+    },
+    {
+     "v": "68a63b73c92ee33ffa01bf57",
+     "t": "柯尔特 AR-15 5.56x45 STANAG 20发弹匣 · 20 发"
+    },
+    {
+     "v": "5448c1d04bdc2dff2f8b4569",
+     "t": "Magpul PMAG 20 GEN M3 5.56x45 STANAG 20发弹匣 · 20 发"
+    },
+    {
+     "v": "55d4887d4bdc2d962f8b4570",
+     "t": "柯尔特 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "61840bedd92c473c77021635",
+     "t": "FN SCAR-L 5.56x45 30发弹匣 · 30 发"
+    },
+    {
+     "v": "61840d85568c120fdd2962a5",
+     "t": "FN SCAR-L 5.56x45 30发弹匣 （FDE） · 30 发"
+    },
+    {
+     "v": "5c6d42cb2e2216000e69d7d1",
+     "t": "HK 30 5.56x45 STANAG 30发聚合物弹匣 · 30 发"
+    },
+    {
+     "v": "5c05413a0db834001c390617",
+     "t": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "5c6d450c2e221600114c997d",
+     "t": "HK PM Gen.2 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "6a1579afcbb8d0c82606c541",
+     "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣 · 30 发"
+    },
+    {
+     "v": "6a1579bfb507e45a68038d7f",
+     "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣（黄褐色） · 30 发"
+    },
+    {
+     "v": "5aaa5dfee5b5b000140293d3",
+     "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "5d1340b3d7ad1a0b52682ed7",
+     "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+    },
+    {
+     "v": "6241c2c2117ad530666a5108",
+     "t": "Magpul PMAG 30 GEN M3 STANAG 30 发 BB 弹弹匣 (FDE) · 30 发"
+    },
+    {
+     "v": "55802d5f4bdc2dac148b458e",
+     "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "5d1340cad7ad1a0b0b249869",
+     "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+    },
+    {
+     "v": "5c6d46132e221601da357d56",
+     "t": "TROY Battlemag 5.56x45 STANAG 30发弹匣 · 30 发"
+    },
+    {
+     "v": "6a16f3a28873771c3704a132",
+     "t": "Daniel Defense 5.56x45 AR-15 32发弹匣 · 32 发"
+    },
+    {
+     "v": "544a378f4bdc2d30388b4567",
+     "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 · 40 发"
+    },
+    {
+     "v": "5d1340bdd7ad1a0e8d245aab",
+     "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 (FDE) · 40 发"
+    },
+    {
+     "v": "59c1383d86f774290a37e0ca",
+     "t": "Magpul PMAG D-60 5.56x45 STANAG 60发弹鼓 · 60 发"
+    },
+    {
+     "v": "544a37c44bdc2d25388b4567",
+     "t": "SureFire MAG5-60 5.56x45 STANAG 60发弹匣 · 60 发"
+    },
+    {
+     "v": "6761765f1f08ed5e8800b7a6",
+     "t": "Beta C-Mag 5.56x45 AR-15 100发弹鼓 · 100 发"
+    },
+    {
+     "v": "5c6592372e221600133e47d7",
+     "t": "SureFire MAG5-100 AR-15 5.56x45 STANAG 100发弹匣 · 100 发"
+    }
+   ],
+   "magDisabled": false,
+   "cap": "已装 0 / 30 发 · 剩余 30",
+   "meta": "AR-15 平台 · 5.56x45 · 突击步枪 · 可用弹药 11 种 · 可用弹匣 24 个"
+  },
+  "spearSelected": "65290f395ae2ae97b80fdf2d",
+  "spear": {
+   "gun": "65290f395ae2ae97b80fdf2d",
+   "gunText": "SIG MCX SPEAR 6.8x51突击步枪 · 800 rpm",
+   "mags": [
+    {
+     "v": "5df8f535bb49d91fb446d6b0",
+     "t": "KAC 7.62x51 AR-10 10发弹匣 · 10 发"
+    },
+    {
+     "v": "5df8f541c41b2312ea3335e3",
+     "t": "KAC 7.62x51 AR-10 20发弹匣 · 20 发"
+    },
+    {
+     "v": "65293c38fc460e50a509cb25",
+     "t": "Lancer L7AWM 7.62x51 AR-10 20发弹匣 · 20 发"
+    },
+    {
+     "v": "5a3501acc4a282000d72293a",
+     "t": "Magpul PMAG 20 SR-LR GEN M3 7.62x51 20发弹匣 · 20 发"
+    },
+    {
+     "v": "65293c7a17e14363030ad308",
+     "t": "Lancer L7AWM 7.62x51 AR-10 25发弹匣 · 25 发"
+    },
+    {
+     "v": "6761770e48fa5c377e06fc3c",
+     "t": "X Products 7.62x51 AR-10 X-25 50发弹鼓 · 50 发"
+    }
+   ],
+   "magDisabled": false,
+   "cap": "已装 0 / 20 发 · 剩余 20",
+   "meta": "AR-15 平台 · 6.8x51 · 突击步枪 · 可用弹药 2 种 · 可用弹匣 6 个"
+  },
+  "magChanged": {
+   "picked": "KAC 7.62x51 AR-10 20发弹匣 · 20 发",
+   "probe": {
+    "gun": "65290f395ae2ae97b80fdf2d",
+    "gunText": "SIG MCX SPEAR 6.8x51突击步枪 · 800 rpm",
+    "mags": [
+     {
+      "v": "5df8f535bb49d91fb446d6b0",
+      "t": "KAC 7.62x51 AR-10 10发弹匣 · 10 发"
+     },
+     {
+      "v": "5df8f541c41b2312ea3335e3",
+      "t": "KAC 7.62x51 AR-10 20发弹匣 · 20 发"
+     },
+     {
+      "v": "65293c38fc460e50a509cb25",
+      "t": "Lancer L7AWM 7.62x51 AR-10 20发弹匣 · 20 发"
+     },
+     {
+      "v": "5a3501acc4a282000d72293a",
+      "t": "Magpul PMAG 20 SR-LR GEN M3 7.62x51 20发弹匣 · 20 发"
+     },
+     {
+      "v": "65293c7a17e14363030ad308",
+      "t": "Lancer L7AWM 7.62x51 AR-10 25发弹匣 · 25 发"
+     },
+     {
+      "v": "6761770e48fa5c377e06fc3c",
+      "t": "X Products 7.62x51 AR-10 X-25 50发弹鼓 · 50 发"
+     }
+    ],
+    "magDisabled": false,
+    "cap": "已装 0 / 20 发 · 剩余 20",
+    "meta": "AR-15 平台 · 6.8x51 · 突击步枪 · 可用弹药 2 种 · 可用弹匣 6 个"
+   }
+  },
+  "m4": {
+   "picked": "柯尔特 M4A1 5.56x45 卡宾枪 · 800 rpm",
+   "probe": {
+    "gun": "5447a9cd4bdc2dbd208b4567",
+    "gunText": "柯尔特 M4A1 5.56x45 卡宾枪 · 800 rpm",
+    "mags": [
+     {
+      "v": "5aaa5e60e5b5b000140293d6",
+      "t": "Magpul PMAG 10 GEN M3 5.56x45 STANAG 10发弹匣 · 10 发"
+     },
+     {
+      "v": "68a63b73c92ee33ffa01bf57",
+      "t": "柯尔特 AR-15 5.56x45 STANAG 20发弹匣 · 20 发"
+     },
+     {
+      "v": "5448c1d04bdc2dff2f8b4569",
+      "t": "Magpul PMAG 20 GEN M3 5.56x45 STANAG 20发弹匣 · 20 发"
+     },
+     {
+      "v": "55d4887d4bdc2d962f8b4570",
+      "t": "柯尔特 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "61840bedd92c473c77021635",
+      "t": "FN SCAR-L 5.56x45 30发弹匣 · 30 发"
+     },
+     {
+      "v": "61840d85568c120fdd2962a5",
+      "t": "FN SCAR-L 5.56x45 30发弹匣 （FDE） · 30 发"
+     },
+     {
+      "v": "5c6d42cb2e2216000e69d7d1",
+      "t": "HK 30 5.56x45 STANAG 30发聚合物弹匣 · 30 发"
+     },
+     {
+      "v": "5c05413a0db834001c390617",
+      "t": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5c6d450c2e221600114c997d",
+      "t": "HK PM Gen.2 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a1579afcbb8d0c82606c541",
+      "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a1579bfb507e45a68038d7f",
+      "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣（黄褐色） · 30 发"
+     },
+     {
+      "v": "5aaa5dfee5b5b000140293d3",
+      "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5d1340b3d7ad1a0b52682ed7",
+      "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "6241c2c2117ad530666a5108",
+      "t": "Magpul PMAG 30 GEN M3 STANAG 30 发 BB 弹弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "55802d5f4bdc2dac148b458e",
+      "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5d1340cad7ad1a0b0b249869",
+      "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "5c6d46132e221601da357d56",
+      "t": "TROY Battlemag 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a16f3a28873771c3704a132",
+      "t": "Daniel Defense 5.56x45 AR-15 32发弹匣 · 32 发"
+     },
+     {
+      "v": "544a378f4bdc2d30388b4567",
+      "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 · 40 发"
+     },
+     {
+      "v": "5d1340bdd7ad1a0e8d245aab",
+      "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 (FDE) · 40 发"
+     },
+     {
+      "v": "59c1383d86f774290a37e0ca",
+      "t": "Magpul PMAG D-60 5.56x45 STANAG 60发弹鼓 · 60 发"
+     },
+     {
+      "v": "544a37c44bdc2d25388b4567",
+      "t": "SureFire MAG5-60 5.56x45 STANAG 60发弹匣 · 60 发"
+     },
+     {
+      "v": "6761765f1f08ed5e8800b7a6",
+      "t": "Beta C-Mag 5.56x45 AR-15 100发弹鼓 · 100 发"
+     },
+     {
+      "v": "5c6592372e221600133e47d7",
+      "t": "SureFire MAG5-100 AR-15 5.56x45 STANAG 100发弹匣 · 100 发"
+     }
+    ],
+    "magDisabled": false,
+    "cap": "已装 0 / 30 发 · 剩余 30",
+    "meta": "AR-15 平台 · 5.56x45 · 突击步枪 · 可用弹药 11 种 · 可用弹匣 24 个"
+   }
+  },
+  "mcx300": {
+   "picked": "SIG MCX .300 Blackout 突击步枪 · 800 rpm",
+   "probe": {
+    "gun": "5fbcc1d9016cce60e8341ab3",
+    "gunText": "SIG MCX .300 Blackout 突击步枪 · 800 rpm",
+    "mags": [
+     {
+      "v": "5aaa5e60e5b5b000140293d6",
+      "t": "Magpul PMAG 10 GEN M3 5.56x45 STANAG 10发弹匣 · 10 发"
+     },
+     {
+      "v": "68a63b73c92ee33ffa01bf57",
+      "t": "柯尔特 AR-15 5.56x45 STANAG 20发弹匣 · 20 发"
+     },
+     {
+      "v": "5448c1d04bdc2dff2f8b4569",
+      "t": "Magpul PMAG 20 GEN M3 5.56x45 STANAG 20发弹匣 · 20 发"
+     },
+     {
+      "v": "55d4887d4bdc2d962f8b4570",
+      "t": "柯尔特 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "61840bedd92c473c77021635",
+      "t": "FN SCAR-L 5.56x45 30发弹匣 · 30 发"
+     },
+     {
+      "v": "61840d85568c120fdd2962a5",
+      "t": "FN SCAR-L 5.56x45 30发弹匣 （FDE） · 30 发"
+     },
+     {
+      "v": "5c6d42cb2e2216000e69d7d1",
+      "t": "HK 30 5.56x45 STANAG 30发聚合物弹匣 · 30 发"
+     },
+     {
+      "v": "5c05413a0db834001c390617",
+      "t": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5c6d450c2e221600114c997d",
+      "t": "HK PM Gen.2 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a1579afcbb8d0c82606c541",
+      "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a1579bfb507e45a68038d7f",
+      "t": "Lancer L5 AWM 5.56x45 AR-15 30发弹匣（黄褐色） · 30 发"
+     },
+     {
+      "v": "5aaa5dfee5b5b000140293d3",
+      "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5d1340b3d7ad1a0b52682ed7",
+      "t": "Magpul PMAG 30 GEN M3 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "6241c2c2117ad530666a5108",
+      "t": "Magpul PMAG 30 GEN M3 STANAG 30 发 BB 弹弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "55802d5f4bdc2dac148b458e",
+      "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "5d1340cad7ad1a0b0b249869",
+      "t": "Magpul PMAG 30 GEN M3 W 5.56x45 STANAG 30发弹匣 (FDE) · 30 发"
+     },
+     {
+      "v": "5c6d46132e221601da357d56",
+      "t": "TROY Battlemag 5.56x45 STANAG 30发弹匣 · 30 发"
+     },
+     {
+      "v": "6a16f3a28873771c3704a132",
+      "t": "Daniel Defense 5.56x45 AR-15 32发弹匣 · 32 发"
+     },
+     {
+      "v": "544a378f4bdc2d30388b4567",
+      "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 · 40 发"
+     },
+     {
+      "v": "5d1340bdd7ad1a0e8d245aab",
+      "t": "Magpul PMAG 40 GEN M3 5.56x45 STANAG 40发弹匣 (FDE) · 40 发"
+     },
+     {
+      "v": "59c1383d86f774290a37e0ca",
+      "t": "Magpul PMAG D-60 5.56x45 STANAG 60发弹鼓 · 60 发"
+     },
+     {
+      "v": "544a37c44bdc2d25388b4567",
+      "t": "SureFire MAG5-60 5.56x45 STANAG 60发弹匣 · 60 发"
+     },
+     {
+      "v": "6761765f1f08ed5e8800b7a6",
+      "t": "Beta C-Mag 5.56x45 AR-15 100发弹鼓 · 100 发"
+     },
+     {
+      "v": "5c6592372e221600133e47d7",
+      "t": "SureFire MAG5-100 AR-15 5.56x45 STANAG 100发弹匣 · 100 发"
+     }
+    ],
+    "magDisabled": false,
+    "cap": "已装 0 / 30 发 · 剩余 30",
+    "meta": "AR-15 平台 · .300 Blk · 突击步枪 · 可用弹药 6 种 · 可用弹匣 24 个"
+   }
+  },
+  "m700": {
+   "picked": "雷明顿Model 700 7.62x51 狙击步枪 · 30 rpm",
+   "probe": {
+    "gun": "5bfea6e90db834001b7347f3",
+    "gunText": "雷明顿Model 700 7.62x51 狙击步枪 · 30 rpm",
+    "mags": [
+     {
+      "v": "5d25a4a98abbc30b917421a4",
+      "t": "M700 7.62x51 AICS 5发容量弹匣 · 5 发"
+     },
+     {
+      "v": "5ce69cbad7f00c00b61c5098",
+      "t": "M700 7.62x51 Magpul PMAG AC 5发容量弹匣 · 5 发"
+     },
+     {
+      "v": "5bfea7ad0db834001c38f1ee",
+      "t": "M700 7.62x51 Wyatt's Outdoor 5发容量弹匣 · 5 发"
+     },
+     {
+      "v": "5d25a6538abbc306c62e630d",
+      "t": "M700 7.62x51 AICS 10发容量弹匣 · 10 发"
+     },
+     {
+      "v": "5d25a7b88abbc3054f3e60bc",
+      "t": "M700 7.62x51 Magpul PMAG AC 10发容量弹匣 · 10 发"
+     },
+     {
+      "v": "5d25af8f8abbc3055079fec5",
+      "t": "M700 7.62x51 ProMag AA-70 10发容量弹匣 · 10 发"
+     },
+     {
+      "v": "5bfeaa0f0db834001b734927",
+      "t": "M700 7.62x51 Wyatt's Outdoor 10发容量弹匣 · 10 发"
+     },
+     {
+      "v": "5d25a6a48abbc306c62e6310",
+      "t": "M700 7.62x51 MDT AICS 12发弹匣 · 12 发"
+     },
+     {
+      "v": "5cf12a15d7f00c05464b293f",
+      "t": "M700 7.62x51 ProMag AA-70 20发容量弹匣 · 20 发"
+     }
+    ],
+    "magDisabled": false,
+    "cap": "已装 0 / 10 发 · 剩余 10",
+    "meta": "7.62 栓动平台 · 7.62x51 · 突击步枪 · 可用弹药 8 种 · 可用弹匣 9 个"
+   }
+  },
+  "calFilter": {
+   "picked": "6.8x51（1 把）",
+   "probe": {
+    "gun": "65290f395ae2ae97b80fdf2d",
+    "gunText": "SIG MCX SPEAR 6.8x51突击步枪 · 800 rpm",
+    "mags": [
+     {
+      "v": "5df8f535bb49d91fb446d6b0",
+      "t": "KAC 7.62x51 AR-10 10发弹匣 · 10 发"
+     },
+     {
+      "v": "5df8f541c41b2312ea3335e3",
+      "t": "KAC 7.62x51 AR-10 20发弹匣 · 20 发"
+     },
+     {
+      "v": "65293c38fc460e50a509cb25",
+      "t": "Lancer L7AWM 7.62x51 AR-10 20发弹匣 · 20 发"
+     },
+     {
+      "v": "5a3501acc4a282000d72293a",
+      "t": "Magpul PMAG 20 SR-LR GEN M3 7.62x51 20发弹匣 · 20 发"
+     },
+     {
+      "v": "65293c7a17e14363030ad308",
+      "t": "Lancer L7AWM 7.62x51 AR-10 25发弹匣 · 25 发"
+     },
+     {
+      "v": "6761770e48fa5c377e06fc3c",
+      "t": "X Products 7.62x51 AR-10 X-25 50发弹鼓 · 50 发"
+     }
+    ],
+    "magDisabled": false,
+    "cap": "已装 0 / 20 发 · 剩余 20",
+    "meta": "AR-15 平台 · 6.8x51 · 突击步枪 · 可用弹药 2 种 · 可用弹匣 6 个"
+   }
+  }
+ },
+ "external": []
+}

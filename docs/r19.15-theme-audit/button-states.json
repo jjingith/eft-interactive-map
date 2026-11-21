@@ -1,0 +1,103 @@
+{
+  "generatedFor": "R19.15",
+  "spec": {
+    "hover": "亮橙黄渐变 #FFCC00 → #FF9933",
+    "persistent": "点击后保持高亮（data-flash / aria-*）",
+    "priority": "禁用 / 冲突红斜纹 / 错误态优先，不被橙黄覆盖"
+  },
+  "measured": {
+    "browserCheck": {
+      "target": {
+        "x": 1141.375,
+        "y": 51.5,
+        "text": "对比"
+      },
+      "normal": {
+        "img": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(127, 157, 185)",
+        "color": "rgb(0, 0, 0)",
+        "attr": null
+      },
+      "hover": {
+        "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 46%, rgb(255, 153, 51) 54%, rgb(255",
+        "border": "rgb(201, 122, 16)"
+      },
+      "clicked": {
+        "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 46%, rgb(255, 153, 51) 54%, rgb(255",
+        "attr": "1"
+      },
+      "afterLeave": {
+        "img": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) 100%)",
+        "attr": "1"
+      }
+    },
+    "styleAuditAfter": {
+      "target": {
+        "x": 27,
+        "y": 15.75,
+        "text": "地图"
+      },
+      "normal": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "img": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "color": "rgb(0, 0, 0)"
+      },
+      "hover": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 50%, rgb(255, 153, 51) 10",
+        "border": "rgb(201, 122, 16)",
+        "color": "rgb(0, 0, 0)"
+      },
+      "click": {
+        "onClick": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "img": "linear-gradient(rgb(255, 210, 77) 0%, rgb(255, 187, 31) 52%, rgb(255, 153, 51) 1",
+          "border": "rgb(178, 106, 13)",
+          "color": "rgb(0, 0, 0)"
+        },
+        "afterMouseLeave": {
+          "bg": "rgba(0, 0, 0, 0)",
+          "img": "linear-gradient(rgb(255, 210, 77) 0%, rgb(255, 187, 31) 52%, rgb(255, 153, 51) 1",
+          "border": "rgb(178, 106, 13)",
+          "color": "rgb(0, 0, 0)"
+        }
+      }
+    },
+    "navSelectedAfter": {
+      "sel": "true",
+      "bg": "rgba(0, 0, 0, 0)",
+      "img": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) ",
+      "color": "rgb(0, 0, 0)",
+      "border": "rgb(201, 122, 16)"
+    },
+    "navSelectedBefore": {
+      "sel": "true",
+      "bg": "rgb(49, 106, 197)",
+      "img": "none",
+      "color": "rgb(255, 255, 255)",
+      "border": "rgb(42, 92, 196)"
+    },
+    "genericHoverAfter": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 50%, rgb(255, 153, 51) 10",
+      "border": "rgb(201, 122, 16)",
+      "color": "rgb(0, 0, 0)"
+    },
+    "genericHoverBefore": {
+      "bg": "rgb(49, 106, 197)",
+      "img": "none",
+      "border": "rgb(42, 92, 196)",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "states": {
+    "normal": "XP 立体凸起（#fdfdfd→#e2dfcf）",
+    "hover": "亮橙黄渐变，边框 #C97A10",
+    "clicked": "同橙色高亮，鼠标离开仍保持（data-flash=1）",
+    "selected": "aria-selected / aria-pressed=true 持续橙黄，切换时转移",
+    "disabled": "灰面 #f2f0e6，文字 #8d8d8d",
+    "conflict": "红斜纹保留，不被橙黄覆盖"
+  }
+}

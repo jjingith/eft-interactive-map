@@ -1,0 +1,194 @@
+{
+  "round": "R85",
+  "url": "http://127.0.0.1:8792/?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1",
+  "noPosition": {
+    "rows": [
+      {
+        "vb": "382.29517710280373 116.00431308295077 297.89234579439255 297.89234579439255",
+        "paths": 506,
+        "badgeText": "50%",
+        "badgeOpacity": "1",
+        "geoText": "等待定位",
+        "geoOpacity": "0",
+        "errorShown": false,
+        "stage": {
+          "w": 208,
+          "h": 208,
+          "x": 0,
+          "y": 0
+        },
+        "zoom": 0.5,
+        "tag": "0.5x"
+      },
+      {
+        "vb": "456.7682635514019 190.4773995315489 148.94617289719628 148.94617289719628",
+        "paths": 506,
+        "badgeText": "100%",
+        "badgeOpacity": "1",
+        "geoText": "等待定位",
+        "geoOpacity": "0",
+        "errorShown": false,
+        "stage": {
+          "w": 208,
+          "h": 208,
+          "x": 0,
+          "y": 0
+        },
+        "zoom": 1,
+        "tag": "1x"
+      },
+      {
+        "vb": "494.00480677570096 227.713942755848 74.47308644859814 74.47308644859814",
+        "paths": 506,
+        "badgeText": "200%",
+        "badgeOpacity": "1",
+        "geoText": "等待定位",
+        "geoOpacity": "0",
+        "errorShown": false,
+        "stage": {
+          "w": 208,
+          "h": 208,
+          "x": 0,
+          "y": 0
+        },
+        "zoom": 2,
+        "tag": "2x"
+      },
+      {
+        "vb": "506.4169878504673 240.12612383061435 49.648724299065435 49.648724299065435",
+        "paths": 506,
+        "badgeText": "300%",
+        "badgeOpacity": "1",
+        "geoText": "等待定位",
+        "geoOpacity": "0",
+        "errorShown": false,
+        "stage": {
+          "w": 208,
+          "h": 208,
+          "x": 0,
+          "y": 0
+        },
+        "zoom": 3,
+        "tag": "3x"
+      }
+    ],
+    "vbChanged": true,
+    "widthShrinks": true,
+    "percentBadgeVisible": true,
+    "waitingHidden": true
+  },
+  "playerAnchor": {
+    "syntheticWorld": {
+      "x": 34.6,
+      "z": -7.8
+    },
+    "rows": [
+      {
+        "found": true,
+        "x": 104,
+        "y": 104,
+        "vb": "509.79310110280375 145.39953260280373 297.89234579439255 297.89234579439255",
+        "zoom": 0.5,
+        "tag": "0.5x"
+      },
+      {
+        "found": true,
+        "x": 104,
+        "y": 104,
+        "vb": "584.2661875514019 219.87261905140187 148.94617289719628 148.94617289719628",
+        "zoom": 1,
+        "tag": "1x"
+      },
+      {
+        "found": true,
+        "x": 104,
+        "y": 104,
+        "vb": "621.5027307757009 257.10916227570095 74.47308644859814 74.47308644859814",
+        "zoom": 2,
+        "tag": "2x"
+      },
+      {
+        "found": true,
+        "x": 104,
+        "y": 104,
+        "vb": "633.9149118504673 269.5213433504673 49.648724299065435 49.648724299065435",
+        "zoom": 3,
+        "tag": "3x"
+      }
+    ],
+    "allFound": true,
+    "xRange": [
+      104,
+      104
+    ],
+    "yRange": [
+      104,
+      104
+    ],
+    "maxJitter": 0
+  },
+  "waiting": {
+    "before": {
+      "vb": null,
+      "paths": 0,
+      "badgeText": "",
+      "badgeOpacity": "0",
+      "geoText": "等待定位",
+      "geoOpacity": "1",
+      "errorShown": true,
+      "stage": {
+        "w": 208,
+        "h": 208,
+        "x": 0,
+        "y": 0
+      }
+    },
+    "after": {
+      "vb": null,
+      "paths": 0,
+      "badgeText": "",
+      "badgeOpacity": "0",
+      "geoText": "等待定位",
+      "geoOpacity": "1",
+      "errorShown": true,
+      "stage": {
+        "w": 208,
+        "h": 208,
+        "x": 0,
+        "y": 0
+      },
+      "zoom": 2
+    },
+    "geoVisible": true,
+    "geoText": "等待定位",
+    "percentHidden": true,
+    "viewBoxUnchanged": true
+  },
+  "shots": [
+    {
+      "file": "r85-nopos-0.5x.png",
+      "bytes": 58938
+    },
+    {
+      "file": "r85-nopos-1x.png",
+      "bytes": 33328
+    },
+    {
+      "file": "r85-nopos-2x.png",
+      "bytes": 9110
+    },
+    {
+      "file": "r85-nopos-3x.png",
+      "bytes": 5047
+    },
+    {
+      "file": "r85-player-anchor.png",
+      "bytes": 13535
+    },
+    {
+      "file": "r85-waiting-no-basemap.png",
+      "bytes": 17582
+    }
+  ],
+  "console": []
+}

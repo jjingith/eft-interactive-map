@@ -66,6 +66,13 @@ KEY_SCAN_BYTES = 8 * 1024 * 1024       # 只扫文件头 ~8 MiB，够覆盖控�
 
 SCREENSHOT_KEY_NAME = "MakeScreenshot"
 
+# R107：游戏设置目录（%APPDATA%\Battlestate Games\Escape from Tarkov\Settings）。
+# Control.ini 是**多个 JSON 对象首尾相接**（不是合法 JSON 文件），截图键字段为
+# keyName="MakeScreenshot" → variants[0].keyCode。实测本机值为 ["SysReq"]，备用 ["F10"]。
+CONTROL_INI_PARTS = ("Battlestate Games", "Escape from Tarkov", "Settings", "Control.ini")
+KEY_CODE_RE = re.compile(r'"keyCode"\s*:\s*\[(.*?)\]', re.S)
+KEY_CODE_ITEM_RE = re.compile(r'"([^"]+)"')
+
 # 会话文件夹名：log_2026.10.17_19-42-17_1.2.5.0.48146
 # 尾巴是「版本.构建」连写（实测既有 1.1.0.1.46777 也有 1.2.5.0.48146），不做更细的拆解。
 SESSION_RE = re.compile(r"^log_\d{4}\.\d{2}\.\d{2}_\d{2}-\d{2}-\d{2}_[\dA-Za-z.]+$")
@@ -91,6 +98,27 @@ def latest_session(logs_dir: str) -> str | None:
     if not candidates:
         return None
     return os.path.join(logs_dir, max(candidates))
+
+
+def latest_session_with_channel(logs_dir: str, channel: str = APPLICATION) -> str | None:
+    """R107 自动探测用：从新到旧找**第一个真的含该通道日志**的会话目录。
+
+    只按目录名取最大不够：目录可能是空壳（游戏刚建目录还没写日志、手工拷了一半），
+    自动探测会把它当成「日志已找到」。`latest_session` 保持原语义不动，避免影响轮询。
+    """
+    try:
+        names = os.listdir(logs_dir)
+    except OSError:
+        return None
+    candidates = sorted(
+        (n for n in names if SESSION_RE.match(n) and os.path.isdir(os.path.join(logs_dir, n))),
+        reverse=True,
+    )
+    for name in candidates:
+        session = os.path.join(logs_dir, name)
+        if os.path.isfile(channel_path(session, channel)):
+            return session
+    return None
 
 
 def session_base(session_dir: str) -> str:
@@ -131,14 +159,23 @@ def merge_raid(prev: dict | None, ev: dict) -> dict:
 
     地图 id 与战局 id 出现在不同的日志行里，而快照只保存「最新一条」，
     所以要自带前文，页面无论何时接入都能知道当前是哪张图、哪一局。
+
+    **旧事件不能覆盖新状态**：application 与 backend 是两条独立的日志流，
+    合并时如果只按到达顺序，回放会出现「15:39 的 start 被 15:35 的 end 盖掉」
+    这种阶段倒流（实测：人已经在战局里，快照却停在上一局的 end，于是自动截图
+    要么该拍不拍、要么在菜单里乱拍）。带时间戳的一律按时间戳判断新旧。
     """
     prev = prev or {}
     phase = ev["phase"]
+    ts = ev.get("ts")
+    prev_ts = prev.get("ts")
+    if prev and ts and prev_ts and ts < prev_ts:
+        return prev
     if phase == "matching":
         prev = {}                       # 新一轮匹配：地图与战局 id 都还没定下来
     return {
         "type": "raid",
-        "ts": ev.get("ts") or prev.get("ts"),
+        "ts": ts or prev.get("ts"),
         "phase": phase,
         "mapId": ev.get("mapId") or prev.get("mapId"),
         "raidId": ev.get("raidId") or (None if phase == "matching" else prev.get("raidId")),
@@ -329,7 +366,14 @@ def read_screenshot_key(game_dir: str | None, head_bytes: int = KEY_SCAN_BYTES) 
     """从最新会话的控制绑定里同步游戏内截图按键；取不到返回 None。"""
     if not game_dir:
         return None
-    session = latest_session(os.path.join(game_dir, "Logs"))
+    return read_screenshot_key_from_logs(os.path.join(game_dir, "Logs"), head_bytes)
+
+
+def read_screenshot_key_from_logs(logs_dir: str | None, head_bytes: int = KEY_SCAN_BYTES) -> str | None:
+    """R107：日志目录已经独立探测时，直接扫该目录最新会话的绑定。"""
+    if not logs_dir:
+        return None
+    session = latest_session(logs_dir)
     if session is None:
         return None
     base = session_base(session)
@@ -338,6 +382,49 @@ def read_screenshot_key(game_dir: str | None, head_bytes: int = KEY_SCAN_BYTES) 
         if key:
             return key
     return None
+
+
+# ---------------------------------------------------------------- Control.ini
+def control_ini_path() -> str | None:
+    """游戏控制设置文件路径（%APPDATA%\\Battlestate Games\\Escape from Tarkov\\Settings\\Control.ini）。"""
+    base = os.environ.get("APPDATA")
+    if not base:
+        return None
+    return os.path.join(base, *CONTROL_INI_PARTS)
+
+
+def screenshot_keys_from_control_ini(path: str | None = None) -> list[str]:
+    """从 Control.ini 读出 `MakeScreenshot` 的所有非空按键（按 variants 顺序）。
+
+    文件不是合法 JSON（多个对象首尾相接），只做局部匹配：先定位 `"MakeScreenshot"`，
+    再在它之后的一小段里取 `keyCode` 数组。取不到返回空列表——**不做任何按键猜测**。
+    """
+    path = path or control_ini_path()
+    if not path:
+        return []
+    try:
+        with open(path, "r", encoding="utf-8-sig", errors="replace") as fh:
+            text = fh.read()
+    except OSError:
+        return []
+    start = text.find('"%s"' % SCREENSHOT_KEY_NAME)
+    if start < 0:
+        return []
+    # 到下一个 keyName 之前都属于这条绑定（实测约 260 字符，留足余量）
+    end = text.find('"keyName"', start + 1)
+    window = text[start:end if end > start else start + 2000]
+    keys = []
+    for block in KEY_CODE_RE.findall(window):
+        for name in KEY_CODE_ITEM_RE.findall(block):
+            if name and name not in keys:
+                keys.append(name)
+    return keys
+
+
+def read_screenshot_key_from_control_ini(path: str | None = None) -> str | None:
+    """Control.ini 里的首个截图键；读不到返回 None。"""
+    keys = screenshot_keys_from_control_ini(path)
+    return keys[0] if keys else None
 
 
 class LineParser:
@@ -381,6 +468,12 @@ class LineParser:
             out.append(_ev("raid", ts, phase="loading"))
         if "PlayerSpawnEvent" in line:
             out.append(_ev("raid", ts, phase="start", raidId=self._raid_id))
+        # 「回到菜单」：CompleteSelectedProfile 只在战局外出现（实测：两局结束后的
+        # 15~20 秒内、以及游戏刚启动时），战局内从不出现。做 end 的第二条信号，
+        # 万一 backend 那行 `client/match/local/end` 没被读到（截断 / 游戏被强退），
+        # 阶段也不会一直卡在 start —— 那会让自动截图在菜单里乱拍。
+        if "CompleteSelectedProfile" in line:
+            out.append(_ev("raid", ts, phase="end"))
         # Transit 行在 PlayerSpawnEvent 之前出现，先把战局 id 记下来，出生时一并给出
         m = RAID_ID_RE.search(line)
         if m:
@@ -413,9 +506,14 @@ class LogFollower:
     INITIAL_TAIL = 1024 * 1024  # 新会话首次接入只回读尾部这么多字节（application 通道通常只有几十 KB）
 
     def __init__(self, game_dir: str | None = None, poll_interval: float = 1.0,
-                 broadcaster: Any = None):
+                 broadcaster: Any = None, logs_dir: str | None = None,
+                 log_dir_getter: Any = None, on_event: Any = None):
         self.game_dir = game_dir
-        self.logs_dir = os.path.join(game_dir, "Logs") if game_dir else None
+        # R107：日志目录可以独立于游戏目录（自动探测 %LOCALAPPDATA% / 文档目录等）。
+        # log_dir_getter 每轮返回「当前应使用的日志目录」；变了就重置会话与偏移量。
+        self.logs_dir = logs_dir or (os.path.join(game_dir, "Logs") if game_dir else None)
+        self.log_dir_getter = log_dir_getter
+        self.on_event = on_event
         self.poll_interval = poll_interval
         self.broadcaster = broadcaster
         self._stop = threading.Event()
@@ -434,16 +532,38 @@ class LogFollower:
         self._key_scanned = False
 
     # ------------------------------------------------------------ 状态
+    def _refresh_dir(self):
+        """按需刷新日志目录；目录变了就丢掉旧会话状态（只保留已累计的任务列表）。"""
+        if self.log_dir_getter is None:
+            return
+        try:
+            new_dir = self.log_dir_getter() or None
+        except Exception:     # 配置读取失败不该让轮询线程死掉
+            return
+        if new_dir == self.logs_dir:
+            return
+        self.logs_dir = new_dir
+        self._session = None
+        self._base = None
+        self._offsets = {}
+        self._parser = LineParser()
+        self._last_raid = None
+        self._screenshot_key = None
+        self._key_session = None
+        self._key_scanned = False
+
     def enabled(self) -> bool:
+        self._refresh_dir()
         return bool(self.logs_dir)
 
     def snapshot(self) -> dict[str, Any]:
         """当前日志跟随状态 + 已累积的战局/任务状态（SSE 首次连接与 `/api/logstate` 用）。"""
+        self._refresh_dir()
         with self._lock:
             reason, session = self._reason, self._session
             raid, quests = self._last_raid, list(self._quests)
         if not self.enabled():
-            return {"available": False, "reason": "未配置游戏目录（无法监控游戏日志）",
+            return {"available": False, "reason": "未配置游戏目录或日志目录（无法监控游戏日志）",
                     "session": None, "logDir": None, "gameDir": None, "raid": None, "quests": []}
         return {
             "available": session is not None,
@@ -462,13 +582,19 @@ class LogFollower:
         与「跟随日志」解耦：即使还没轮询过，也会自己去最新会话里找。按会话缓存，
         换会话（游戏重启）才重扫，避免每轮都去读文件头。
         """
-        if not self.game_dir:
+        if not self.logs_dir:
             return None
         with self._lock:
             session = self._session
         if self._key_scanned and self._key_session == session:
             return self._screenshot_key
-        key = read_screenshot_key(self.game_dir)
+        # 日志目录就是游戏目录下的 Logs 时走老入口 `read_screenshot_key(game_dir)`，
+        # 保持既有调用方（含测试替身）能照常拦截；独立探测到的其它日志目录走新入口。
+        conventional = os.path.join(self.game_dir, "Logs") if self.game_dir else None
+        if conventional and os.path.normcase(os.path.abspath(conventional)) == os.path.normcase(os.path.abspath(self.logs_dir)):
+            key = read_screenshot_key(self.game_dir)
+        else:
+            key = read_screenshot_key_from_logs(self.logs_dir)
         with self._lock:
             self._screenshot_key = key
             self._key_session = session
@@ -497,11 +623,17 @@ class LogFollower:
             self._parser = LineParser()
             with self._lock:
                 self._reason = None
+                # 上一局的战局状态不能带进新会话：游戏崩过 / 被强退时没有 end 行，
+                # 留着它会让阶段一直卡在 start，自动截图在菜单里乱拍。
+                self._last_raid = None
 
         events: list[dict] = []
         for channel in CHANNELS:
             events.extend(self._read_channel(channel, channel_path(session, channel, self._base)))
         if events:
+            # **按时间戳合并两条日志流**：application 与 backend 各读各的，
+            # 直接按通道顺序处理会让 15:35 的 end 覆盖 15:39 的 start（实测踩过）。
+            events.sort(key=lambda e: e.get("ts") or "")
             self._store(events)
             self._broadcast(events)
         return events
@@ -557,15 +689,23 @@ class LogFollower:
                 self._quests = self._quests[-self.MAX_QUESTS:]
 
     def _broadcast(self, events: list[dict]):
-        if self.broadcaster is None:
-            return
         for ev in events:
-            self.broadcaster.publish_event(ev["type"], ev)
+            # R107：战局结束清理挂在这里（on_event 与 broadcaster 无关，没开 SSE 也要触发）
+            if self.on_event is not None:
+                try:
+                    self.on_event(ev)
+                except Exception:  # 清理失败不该影响日志跟随
+                    pass
+            if self.broadcaster is not None:
+                self.broadcaster.publish_event(ev["type"], ev)
 
     # ------------------------------------------------------------ 线程
     def start(self):
-        if not self.enabled() or self._thread is not None:
+        if self._thread is not None:
             return
+        # R-fix：日志目录可能「晚到」——启动器在后端起来后才把 game_dir 写进配置、
+        # 游戏尚未安装、或默认自动探测延迟命中。不再因「此刻没目录」就放弃起线程；
+        # 线程每轮 poll_once 都会经 log_dir_getter 重新探测，目录一出现即自动开始跟随。
         self.poll_once()
         self._thread = threading.Thread(target=self._loop, daemon=True, name="eft-log-watch")
         self._thread.start()

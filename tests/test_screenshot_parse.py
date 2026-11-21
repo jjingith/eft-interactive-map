@@ -230,3 +230,57 @@ def test_never_raises(value):
     """扫描目录时什么怪名字都可能遇到，解析器只能返回 None，绝不能抛异常。"""
     got = screenshot.parse_screenshot_name(value)
     assert got is None or isinstance(got["x"], float)
+
+
+# --------------------------------------------------------------- R32 到货校验用
+# `newest_mtime` 只回答「目录里最新一张图片是什么时候的」，用于判断「发完截图键之后
+# 到底有没有出现新文件」。故意不排序、不解析文件名：这个函数每秒都会被调一次。
+
+def test_newest_mtime_picks_the_latest_image(tmp_path):
+    for i, name in enumerate(["a.png", "b.jpg", "c.jpeg"]):
+        p = tmp_path / name
+        p.write_bytes(b"x")
+        os.utime(p, (1000 + i, 1000 + i))
+    assert screenshot.newest_mtime(str(tmp_path)) == 1002.0
+
+
+def test_newest_mtime_ignores_non_images(tmp_path):
+    (tmp_path / "note.txt").write_text("x", encoding="utf-8")
+    os.utime(str(tmp_path / "note.txt"), (9000.0, 9000.0))
+    p = tmp_path / "a.png"
+    p.write_bytes(b"x")
+    os.utime(p, (1000.0, 1000.0))
+    assert screenshot.newest_mtime(str(tmp_path)) == 1000.0
+
+
+def test_newest_mtime_none_for_empty_or_missing(tmp_path):
+    assert screenshot.newest_mtime(str(tmp_path)) is None
+    assert screenshot.newest_mtime(str(tmp_path / "ghost")) is None
+    assert screenshot.newest_mtime(None) is None
+
+
+# --------------------------------------------------------------- R32 到货校验用
+# `newest_mtime` 只回答「目录里最新一张图片是什么时候的」，用于判断「发完截图键之后
+# 到底有没有出现新文件」。故意不排序、不解析文件名：这个函数每秒都会被调一次。
+
+def test_newest_mtime_picks_the_latest_image(tmp_path):
+    for i, name in enumerate(["a.png", "b.jpg", "c.jpeg"]):
+        p = tmp_path / name
+        p.write_bytes(b"x")
+        os.utime(p, (1000 + i, 1000 + i))
+    assert screenshot.newest_mtime(str(tmp_path)) == 1002.0
+
+
+def test_newest_mtime_ignores_non_images(tmp_path):
+    (tmp_path / "note.txt").write_text("x", encoding="utf-8")
+    os.utime(str(tmp_path / "note.txt"), (9000.0, 9000.0))
+    p = tmp_path / "a.png"
+    p.write_bytes(b"x")
+    os.utime(p, (1000.0, 1000.0))
+    assert screenshot.newest_mtime(str(tmp_path)) == 1000.0
+
+
+def test_newest_mtime_none_for_empty_or_missing(tmp_path):
+    assert screenshot.newest_mtime(str(tmp_path)) is None
+    assert screenshot.newest_mtime(str(tmp_path / "ghost")) is None
+    assert screenshot.newest_mtime(None) is None

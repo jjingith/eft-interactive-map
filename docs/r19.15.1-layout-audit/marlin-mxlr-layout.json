@@ -1,0 +1,249 @@
+{
+ "generatedFor": "R19.15.1",
+ "gun": {
+  "id": "67c6de3ce39861860909e8e5",
+  "name": "马林 MXLR .308 ME 杠杆步枪",
+  "action": "lever-action"
+ },
+ "realTree": {
+  "rootSlots": [
+   {
+    "slot": "mod_magazine",
+    "label": "弹匣",
+    "allow": [
+     {
+      "id": "67c5424826265106dd0697a4",
+      "name": "MXLR .308 ME 5发弹仓",
+      "slots": []
+     }
+    ]
+   },
+   {
+    "slot": "mod_stock",
+    "label": "枪托",
+    "allow": [
+     {
+      "id": "67c541ba5b84f7f36c03e555",
+      "name": "MXLR 标准枪托",
+      "slots": []
+     },
+     {
+      "id": "67c541ca26265106dd0697a0",
+      "name": "M1895/MXLR Ranger Point Precision 铝制枪托",
+      "slots": []
+     },
+     {
+      "id": "67c541d45b84f7f36c03e557",
+      "name": "M1895/MXLR Magpul ELG 枪托",
+      "slots": []
+     },
+     {
+      "id": "67ff1f9f32abb9a4280b5178",
+      "name": "M1895/MXLR Ranger Point Precision 铝制枪托 (FDE)",
+      "slots": []
+     }
+    ]
+   },
+   {
+    "slot": "mod_barrel",
+    "label": "枪管",
+    "allow": [
+     {
+      "id": "67c5425e26265106dd0697a7",
+      "name": "MXLR .308 ME 24 英寸枪管",
+      "slots": [
+       "mod_handguard",
+       "mod_sight_front",
+       "mod_sight_rear"
+      ]
+     }
+    ]
+   },
+   {
+    "slot": "mod_mount",
+    "label": "基座",
+    "allow": [
+     {
+      "id": "67c541fcb032bbdb530201be",
+      "name": "M1895/MXLR Ranger Point Precision RHINO 5 英寸瞄准镜导轨",
+      "slots": [
+       "mod_scope"
+      ]
+     },
+     {
+      "id": "67c54210d0538d12ec036c0e",
+      "name": "M1895/MXLR XS 马林步枪瞄具基座",
+      "slots": [
+       "mod_scope",
+       "mod_sight_rear",
+       "mod_tactical"
+      ]
+     }
+    ]
+   },
+   {
+    "slot": "mod_trigger",
+    "label": "板机",
+    "allow": [
+     {
+      "id": "67c54114d0538d12ec036c0a",
+      "name": "MXLR 扳机",
+      "slots": []
+     },
+     {
+      "id": "67c5411f26265106dd06979a",
+      "name": "M1895/MXLR Ranger Point Precision 扳机",
+      "slots": []
+     },
+     {
+      "id": "67ff1e209d1f778973073376",
+      "name": "M1895/MXLR Ranger Point Precision 扳机 (黑色)",
+      "slots": []
+     },
+     {
+      "id": "67ff1e2b3e43c3abb701c7c6",
+      "name": "M1895/MXLR Ranger Point Precision 扳机 (金色)",
+      "slots": []
+     }
+    ]
+   },
+   {
+    "slot": "mod_hammer",
+    "label": "击锤",
+    "allow": [
+     {
+      "id": "67c5412bb032bbdb530201ba",
+      "name": "MXLR 击锤",
+      "slots": [
+       "mod_tactical"
+      ]
+     }
+    ]
+   },
+   {
+    "slot": "mod_charge",
+    "label": "拉机柄",
+    "allow": [
+     {
+      "id": "67c54183b032bbdb530201bc",
+      "name": "MXLR 环状杠杆",
+      "slots": []
+     },
+     {
+      "id": "67c5418f26265106dd06979e",
+      "name": "M1895/MXLR Ranger Point Precision 中型环状杠杆",
+      "slots": []
+     }
+    ]
+   }
+  ],
+  "hammerChain": "mod_hammer(击锤) → mod_tactical(只允许击锤帽) = 击锤帽层",
+  "triggerSlot": "mod_trigger（allow 全是 MXLR/RPP 扳机）",
+  "leverSlot": "mod_charge（allow 是环状杠杆，不是普通拉机柄）"
+ },
+ "expected": {
+  "hammerCap": "r1c9（击锤正上方）",
+  "hammer": "r2c9（枪托正上方）",
+  "stock": "r3c9",
+  "trigger": "r4c8（本体正下方三格最右格）",
+  "lever": "r4c9（让出击锤链后仍在本体右后侧）"
+ },
+ "before": {
+  "hammer": {
+   "slot": "mod_hammer",
+   "row": 4,
+   "col": 2,
+   "item": "MXLR 击锤"
+  },
+  "hammerCap": {
+   "slot": "mod_hammer/mod_tactical",
+   "row": 5,
+   "col": 2,
+   "item": "MXLR 击锤帽"
+  },
+  "trigger": {
+   "slot": "mod_trigger",
+   "row": 4,
+   "col": 1,
+   "item": "MXLR 扳机"
+  },
+  "stock": {
+   "slot": "mod_stock",
+   "row": 3,
+   "col": 9,
+   "item": "MXLR 标准枪托"
+  },
+  "charge": {
+   "slot": "mod_charge",
+   "row": 2,
+   "col": 9,
+   "item": "MXLR 环状杠杆"
+  },
+  "rows": 6
+ },
+ "after": {
+  "hammer": {
+   "slot": "mod_hammer",
+   "row": 2,
+   "col": 9,
+   "item": "MXLR 击锤"
+  },
+  "hammerCap": {
+   "slot": "mod_hammer/mod_tactical",
+   "row": 1,
+   "col": 9,
+   "item": "MXLR 击锤帽"
+  },
+  "trigger": {
+   "slot": "mod_trigger",
+   "row": 4,
+   "col": 8,
+   "item": "MXLR 扳机"
+  },
+  "stock": {
+   "slot": "mod_stock",
+   "row": 3,
+   "col": 9,
+   "item": "MXLR 标准枪托"
+  },
+  "charge": {
+   "slot": "mod_charge",
+   "row": 4,
+   "col": 9,
+   "item": "MXLR 环状杠杆"
+  },
+  "rows": 6,
+  "rowHeights": [
+   57.7812,
+   57.7812,
+   57.7812,
+   57.7812,
+   57.7812,
+   57.7656
+  ],
+  "roles": {
+   "receiverUpper": null,
+   "receiverLower": null,
+   "stockOnGrip": null,
+   "stockUnderParent": null,
+   "hammer": "mod_hammer",
+   "trigger": "mod_trigger",
+   "topOptic": [
+    "mod_mount"
+   ]
+  }
+ },
+ "checks": {
+  "hammerAboveStock": true,
+  "hammerCapAboveHammer": true,
+  "hammerChainSameColumn": true,
+  "triggerAtR4C8": true,
+  "noPhantomCards": true,
+  "rowsWithinBase": true
+ },
+ "screenshots": [
+  "screenshots/before/marlin-before-1920x919.png",
+  "screenshots/after/marlin-after-1920x919.png"
+ ],
+ "result": "全部达标"
+}

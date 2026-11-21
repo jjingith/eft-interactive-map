@@ -1,0 +1,618 @@
+{
+ "meta": {
+  "target": "https://db4tarkov.com/market",
+  "targetId": "EFBFA45D0E8E7E9A15DAD4C03D333A7F",
+  "durationMs": 75,
+  "doReload": true,
+  "startedAt": "2026-11-08T02:46:27.277Z",
+  "endedAt": "2026-11-08T02:46:27.946Z"
+ },
+ "events": [
+  {
+   "t": 89,
+   "ev": "requestWillBeSent",
+   "requestId": "BB849B47A978E704F2D649B5CC02F1FD",
+   "url": "https://db4tarkov.com/market",
+   "method": "GET",
+   "type": "Document",
+   "initiator": "other",
+   "headers": {
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\""
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 229,
+   "ev": "extraInfo",
+   "requestId": "BB849B47A978E704F2D649B5CC02F1FD",
+   "statusCode": 200,
+   "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a5713f5d7f3f0965-HKG",
+    "content-encoding": "br",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sun, 08 Nov 2026 02:46:28 GMT",
+    "link": "<main.dart.js>; rel=\"preload\"; as=script",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fRYg6WgVRXeNnfQyV%2FFJFPhiQ33OIoVGhKW%2BjB6NvtmU83zY3R2fL0oATDjnL1gDiGK35ZmP06Qy3YEDiKEj4K7P27LNLG5pAZR%2FSgCxfCYrZwOY1E1tj1sinoF3FlIN\"}]}",
+    "server": "cloudflare",
+    "server-timing": "cfCacheStatus;desc=\"DYNAMIC\"\ncfEdge;dur=57,cfOrigin;dur=35",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff"
+   }
+  },
+  {
+   "t": 230,
+   "ev": "responseReceived",
+   "requestId": "BB849B47A978E704F2D649B5CC02F1FD",
+   "url": "https://db4tarkov.com/market",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "text/html",
+   "protocol": "h2",
+   "fromDiskCache": false,
+   "fromServiceWorker": false,
+   "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a5713f5d7f3f0965-HKG",
+    "content-encoding": "br",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sun, 08 Nov 2026 02:46:28 GMT",
+    "link": "<main.dart.js>; rel=\"preload\"; as=script",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fRYg6WgVRXeNnfQyV%2FFJFPhiQ33OIoVGhKW%2BjB6NvtmU83zY3R2fL0oATDjnL1gDiGK35ZmP06Qy3YEDiKEj4K7P27LNLG5pAZR%2FSgCxfCYrZwOY1E1tj1sinoF3FlIN\"}]}",
+    "server": "cloudflare",
+    "server-timing": "cfCacheStatus;desc=\"DYNAMIC\"\ncfEdge;dur=57,cfOrigin;dur=35",
+    "vary": "accept-encoding",
+    "x-content-type-options": "nosniff"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 253,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.47",
+   "url": "https://db4tarkov.com/main.dart.js",
+   "method": "GET",
+   "type": "Script",
+   "initiator": "other",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 253,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.49",
+   "url": "https://db4tarkov.com/flutter.js",
+   "method": "GET",
+   "type": "Script",
+   "initiator": "parser",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.50",
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "method": "GET",
+   "type": "Image",
+   "initiator": "parser",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.51",
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "method": "GET",
+   "type": "Image",
+   "initiator": "parser",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.52",
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "method": "GET",
+   "type": "Script",
+   "initiator": "parser",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.55",
+   "url": "https://db4tarkov.com/version.json?v=1794105987516",
+   "method": "GET",
+   "type": "Fetch",
+   "initiator": "script",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.60",
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "method": "GET",
+   "type": "Script",
+   "initiator": "parser",
+   "headers": {
+    "Origin": "https://db4tarkov.com",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 254,
+   "ev": "loadingFinished",
+   "requestId": "BB849B47A978E704F2D649B5CC02F1FD",
+   "encodedDataLength": 15855
+  },
+  {
+   "t": 255,
+   "ev": "responseReceived",
+   "requestId": "58612.50",
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "image/png",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=120, must-revalidate",
+    "cf-cache-status": "REVALIDATED",
+    "etag": "\"bae3f343178727e2da0a2a6e3d18efff\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=hLUOoJ5uQs7C1yHfk4rnXJbxJ0FRk6pAWk%2FFX%2B2uDmVDSYUT5owE59SeMx62smZOImE4oo48zAyrgaJyw6Ma25ycJGyj6OgOYM7rRZ9%2FD9lrZgY274mO%2B8p6ZsswuNHp\"}]}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "cf-ray": "a5713eaaad605ea6-HKG",
+    "accept-ranges": "bytes",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "content-length": "46211",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "image/png",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 255,
+   "ev": "loadingFinished",
+   "requestId": "58612.50",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 255,
+   "ev": "responseReceived",
+   "requestId": "58612.51",
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "image/png",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=120, must-revalidate",
+    "cf-cache-status": "REVALIDATED",
+    "etag": "\"77d7217f186c638e06bd843a3efc05b0\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=OuiA0Rc7txGIsGfAREbWtnenN2PSh3vRZ3Cf3uG7gv1ZFSs4asftBV0I3ApcTW6MdN1HKoFsTaU%2BCSJI6B7Okd7AIBxtey9NAv0IPnY%2BOK4oKs%2Frcp6sDPUcA%2BxryCNP\"}]}",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cf-ray": "a5713ead596f852a-HKG",
+    "accept-ranges": "bytes",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "content-length": "136431",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "image/png",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 255,
+   "ev": "responseReceived",
+   "requestId": "58612.49",
+   "url": "https://db4tarkov.com/flutter.js",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "application/javascript",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=120, must-revalidate",
+    "content-encoding": "br",
+    "cf-cache-status": "REVALIDATED",
+    "etag": "W/\"95851f43bbb30151bdffc505fd1c9538\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KHtcGSBTF5Stl27pByJWi0o2FJZSwXwpZBVzOFwd%2FOCmwH8j23ASRldFoi%2FaR7YLB37SF782nUg0SfwD%2F7Ah2k35%2FvY2Q1u1nOTbQ0i1ug9gJslmBC188RKZCpFEuv4MF444OSj82Uc0ELv0\"}]}",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cf-ray": "a5713eaaad565ea6-HKG",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "application/javascript",
+    "vary": "accept-encoding",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 256,
+   "ev": "loadingFinished",
+   "requestId": "58612.49",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 256,
+   "ev": "loadingFinished",
+   "requestId": "58612.51",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 256,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.61",
+   "url": "https://db4tarkov.com/manifest.json",
+   "method": "GET",
+   "type": "Manifest",
+   "initiator": "parser",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 256,
+   "ev": "responseReceived",
+   "requestId": "58612.60",
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "text/javascript",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "cache-control": "public, max-age=86400",
+    "content-encoding": "gzip",
+    "etag": "W/\"2026.10.1\"",
+    "cross-origin-resource-policy": "cross-origin",
+    "cf-ray": "a5713ead593a045b-HKG",
+    "access-control-allow-origin": "*",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "text/javascript;charset=UTF-8",
+    "last-modified": "Thu, 15 Oct 2026 18:26:54 GMT",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 256,
+   "ev": "loadingFinished",
+   "requestId": "58612.60",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 256,
+   "ev": "responseBody",
+   "requestId": "58612.49",
+   "url": "https://db4tarkov.com/flutter.js",
+   "size": 9553,
+   "preview": "(()=>{var _={blink:!0,gecko:!1,webkit:!1,unknown:!1},K=()=>navigator.vendor===\"Google Inc.\"||navigator.userAgent.includes(\"Edg/\")?\"blink\":navigator.vendor===\"Apple Computer, Inc.\"?\"webkit\":navigator.vendor===\"\"&&navigator.userAgent.includes(\"Firefox\")?\"gecko\":\"unknown\",C=K(),R=()=>typeof ImageDecoder>\"u\"?!1:C===\"blink\",B=()=>typeof Intl.v8BreakIterator<\"u\"&&typeof Intl.Segmenter<\"u\",z=()=>{let i=[0,97,115,109,1,0,0,0,1,5,1,95,1,120,0];return WebAssembly.validate(new Uint8Array(i))},M=()=>{let i=document.createElement(\"canvas\");return i.width=1,i.height=1,i.getContext(\"webgl2\")!=null?2:i.getContext(\"webgl\")!=null?1:-1},D=()=>window.chrome&&chrome.runtime&&chrome.runtime.id,w={browserEngine:C,hasImageCodecs:R(),hasChromiumBreakIterators:B(),supportsWasmGC:z(),crossOriginIsolated:window.crossOriginIsolated,webGLVersion:M(),isChromeExtension:D()};function c(...i){return new URL(I(...i),document.baseURI).toString()}function I(...i){return i.filter(e=>!!e).map((e,n)=>n===0?S(e):F(S(e))).filter(e=>e.length).join(\"/\")}function F(i){let e=0;for(;e<i.length&&i.charAt(e)===\"/\";)e++;return i.substring(e)}function S(i){let e=i.length;for(;e>0&&i.charAt(e-1)===\"/\";)e--;return i.substring(0,e)}function E(i,e){return i.canvasKitBaseUrl?i.canvasKitBaseUrl:e.engineRevision&&!e.useLocalCanvasKit?I(\"https://www.gstatic.com/flutter-canvaskit\",e.engineRevision):\"canvaskit\"}var v=class{constructor(){this._scriptLoaded=!1}setTrustedTypesPolicy(e){this._ttPolicy=e}async loadEntrypoint(e){let{entrypointUrl:n=c(\"main.dart.js\"),onEntrypointLoaded:t,nonce:r}=e||{};return this._loadJSEntrypoint(n,t,r)}async load(e,n,t,r,a){a??=l=>{l.initializeEngine(t).then(u=>u.runApp())};let{entrypointBaseUrl:s}=t,{entryPointBaseUrl:o}=t;if(!s&&o&&(console.warn(\"[deprecated] `entryPointBaseUrl` is deprecated and will be removed in a future release. Use `entrypointBaseUrl` instead.\"),s=o),e.compileTarget===\"dart2wasm\")return this._loadWasmEntrypoint(e,n,s,a);{let l=e.mainJsPath??\"main.dart.js\",u=c(s,l);return this._loadJSEntrypoint(u,a,r)}}didCreateEngineInitializer(e){typeof this._didCreateEngineInitializerResolve==\"function\"&&(this._didCreateEngineInitializerResolve(e),this._didCreateEngineInitializerResolve=null,delete _flutter.loader.didCreateEngineInitializer),typeof this._onEntrypointLoaded==\"function\"&&this._onEntrypointLoaded(e)}_loadJSEntrypoint(e,n,t){let r=typeof n==\"function\";if(!this._scriptLoaded){this._scriptLoaded=!0;let a=this._createScriptTag(e,t);if(r)console.debug(\"Injecting <script> tag. Using callback.\"),this._onEntrypointLoaded=n,document.head.append(a);else return new Promise((s,o)=>{console.debug(\"Injecting <script> tag. Using Promises. Use the callback approach instead!\"),this._didCreateEngineInitializerResolve=s,a.addEventListener(\"error\",o),document.head.append(a)})}}async _loadWasmEntrypoint(e,n,t,r){if(!this._scriptLoaded){this._scriptLoaded=!0,this._onEntrypointLoaded=r;let{mainWasmPath:a,jsSupportRuntimePath:s}=e,o=c(t,a),l=c(t,s);this._ttPolicy!=null&&(l=this._ttPolicy.createScriptURL(l));let d=(await import(l)).compileStreaming(fetch(o)),p;e.renderer===\"skwasm\"?p=(async()=>{let h=await n.skwasm;return window._flutter_skwasmInstance=h,{skwasm:h.wasmExports,skwasmWrapper:h,ffi:{memory:h.wasmMemory}}})():p=Promise.resolve({}),await(await(await d).instantiate(await p,{loadDynamicModule:async(h,j)=>{let A=fetch(c(t,h)),L=c(t,j);this._ttPolicy!=null&&(L=this._ttPolicy.createScriptURL(L));let x=import(L);return[await A,await x]}})).invokeMain()}}_createScriptTag(e,n){let t=document.createElement(\"script\");t.type=\"application/javascript\",n&&(t.nonce=n);let r=e;return this._ttPolicy!=null&&(r=this._ttPolicy.createScriptURL(e)),t.src=r,t}};async function T(i,e,n){if(e<0)return i;let t,r=new Promise((a,s)=>{t=setTimeout(()=>{s(new Error(`${n} took more than ${e}ms to resolve. Moving on.`,{cause:T}))},e)});return Promise.race([i,r]).finally(()=>{clearTimeout(t)})}var g=class{setTrustedTypesPolicy(e){this._ttPolicy=e}loadServiceWorker(e){if(!e||!(\"serviceWorker\"in navigator))return Promise.resolve();let n=()=>{console.warn(`Loading the service worker using Flutter bootstrap is deprecated and will stop working in a future release.\nFor more details, see: https://github.com/flutter/flutter/issues/156910`)},t=()=>{let{serviceWorkerVersion:r,serviceWorkerUrl:a=c(`flutter_service_worker.js?v=${r}`),timeoutMillis:s=4e3}=e,o=a;this._ttPolicy!=null&&(o=this._ttPolicy.createScriptURL(o));let l=navigator.serviceWorker.register(o).then(u=>this._getNewServiceWorker(u,r)).then(this._waitForServiceWorkerActivation);return T(l,s,\"prepareServiceWorker\")};return e.serviceWorkerUrl!=null?(n(),t()):navigator.serviceWorker.getRegistration().then(r=>r?t():Promise.resolve())}async _getNewServiceWorker(e,n){if(!e.active&&(e.installing||e.waiting))return console.debug(\"Installing/Activating first service worker.\"),e.installing||e.waiting;if(e.active.scriptURL.endsWith(n))return console.debug(\"Loading from existing service worker.\"),e.active;{let t=await e.update();return console.debug(\"Updating service worker.\"),t.installing||t.waiting||t.active}}async _waitForServiceWorkerActivation(e){if(!e||e.state===\"activated\")if(e){console.debug(\"Service worker already active.\");return}else throw new Error(\"Cannot activate a null service worker!\");return new Promise((n,t)=>{e.addEventListener(\"statechange\",()=>{e.state===\"activated\"&&(console.debug(\"Activated new service worker.\"),n())})})}};var y=class{constructor(e,n=\"flutter-js\"){let t=e||[/\\.js$/,/\\.mjs$/];window.trustedTypes&&(this.policy=trustedTypes.createPolicy(n,{createScriptURL:function(r){if(r.startsWith(\"blob:\"))return r;let a=new URL(r,window.location),s=a.pathname.split(\"/\").pop();if(t.some(l=>l.test(s)))return a.toString();console.error(\"URL rejected by TrustedTypes policy\",n,\":\",r,\"(download prevented)\")}}))}};var k=i=>{let e=WebAssembly.compileStreaming(fetch(i));return(n,t)=>((async()=>{let r=await e,a=await WebAssembly.instantiate(r,n);t(a,r)})(),{})};var U=(i,e,n,t)=>(window.fl"
+  },
+  {
+   "t": 256,
+   "ev": "responseBody",
+   "requestId": "58612.60",
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "size": 31853,
+   "preview": "(()=>{\"use strict\";function t(){return\"undefined\"!=typeof globalThis?globalThis:\"undefined\"!=typeof self?self:void 0}var e,n,i,o,r;function a(t,n,i,o=!1,r=null){let a=r||`/cdn-cgi/rum?${t}`,s=!0;if(navigator&&\"string\"==typeof navigator.userAgent)try{const t=navigator.userAgent.match(/Chrome\\/([0-9]+)/);t&&t[0].toLowerCase().indexOf(\"chrome\")>-1&&parseInt(t[1])<81&&(s=!1)}catch(t){}if(navigator&&\"function\"==typeof navigator.sendBeacon&&s&&o){n.st=e.SendBeacon;const t=JSON.stringify(n),i={type:\"application/json\"},o=navigator.sendBeacon&&navigator.sendBeacon.bind(navigator);null==o||o(a,new Blob([t],i))}else{n.st=e.XHR;const t=JSON.stringify(n),o=new XMLHttpRequest;i&&(o.onreadystatechange=function(){4==this.readyState&&204==this.status&&i()}),o.open(\"POST\",a,!0),o.setRequestHeader(\"content-type\",\"application/json\"),o.send(t)}}\"function\"!=typeof Array.prototype.findLast&&Object.defineProperty(Array.prototype,\"findLast\",{value:function(t,e){for(let n=this.length-1;n>=0;n--)if(t.call(e,this[n],n,this))return this[n]},writable:!0,configurable:!0,enumerable:!1}),\"function\"!=typeof Array.prototype.at&&Object.defineProperty(Array.prototype,\"at\",{value:function(t){const e=Math.trunc(t)||0,n=e>=0?e:this.length+e;if(!(n<0||n>=this.length))return this[n]},writable:!0,configurable:!0,enumerable:!1}),\"function\"!=typeof Array.prototype.includes&&Object.defineProperty(Array.prototype,\"includes\",{value:function(t,e=0){let n=Math.trunc(e)||0;for(n<0&&(n=Math.max(this.length+n,0));n<this.length;n++){const e=this[n];if(e===t||e!=e&&t!=t)return!0}return!1},writable:!0,configurable:!0,enumerable:!1}),function(){const e=t();e&&void 0===e.globalThis&&Object.defineProperty(e,\"globalThis\",{value:e,writable:!0,configurable:!0})}(),function(){const e=t();e&&\"function\"!=typeof e.queueMicrotask&&Object.defineProperty(e,\"queueMicrotask\",{value:function(t){Promise.resolve().then(t).catch(t=>{setTimeout(()=>{throw t},0)})},writable:!0,configurable:!0})}(),function(t){t[t.SendBeacon=1]=\"SendBeacon\",t[t.XHR=2]=\"XHR\"}(e||(e={})),function(t){t[t.Load=1]=\"Load\",t[t.Additional=2]=\"Additional\",t[t.WebVitalsV2=3]=\"WebVitalsV2\"}(n||(n={})),function(t){t.High=\"high\",t.Low=\"low\",t.Auto=\"auto\"}(i||(i={})),function(t){t[t.None=0]=\"None\",t[t.HistoryAndNavigationAPI=1]=\"HistoryAndNavigationAPI\",t[t.SoftNavigationHeuristics=2]=\"SoftNavigationHeuristics\"}(o||(o={})),function(t){t.Navigate=\"navigate\",t.Reload=\"reload\",t.BackForward=\"back-forward\",t.BackForwardCache=\"back-forward-cache\",t.Prerender=\"prerender\",t.Restore=\"restore\",t.SoftNavigation=\"soft-navigation\",t.RoutingApis=\"routing-apis\"}(r||(r={}));class s{constructor(){this.o=0,this.i=[]}l(t){var e;if(t.hadRecentInput)return;const n=this.i[0],i=this.i.at(-1);this.o&&n&&i&&t.startTime-i.startTime<1e3&&t.startTime-n.startTime<5e3?(this.o+=t.value,this.i.push(t)):(this.o=t.value,this.i=[t]),null===(e=this.t)||void 0===e||e.call(this,t)}}const c=()=>{const t=performance.getEntriesByType(\"navigation\")[0];if(t&&t.responseStart>0&&t.responseStart<performance.now())return t},l=t=>{if(\"loading\"===document.readyState)return\"loading\";const e=c();if(e){if(t<e.domInteractive)return\"loading\";if(0===e.domContentLoadedEventStart||t<e.domContentLoadedEventStart)return\"dom-interactive\";if(0===e.domComplete||t<e.domComplete)return\"dom-content-loaded\"}return\"complete\"},d=t=>{const e=t.nodeName;return 1===t.nodeType?e.toLowerCase():e.toUpperCase().replace(/^#/,\"\")},u=t=>{var e;let n=\"\";try{for(;9!==(null==t?void 0:t.nodeType);){const i=t,o=i.id?\"#\"+i.id:[d(i),...Array.from(null!==(e=i.classList)&&void 0!==e?e:[]).sort()].join(\".\");if(n.length+o.length>99)return n||o;if(n=n?o+\">\"+n:o,i.id)break;t=i.parentNode}}catch(t){}return n},f=new WeakMap;function v(t,e){let n=f.get(e);return n||(n=new WeakMap,f.set(e,n)),n.get(t)||n.set(t,new e),n.get(t)}let g=-1;const p=()=>g,m=t=>{addEventListener(\"pageshow\",e=>{e.persisted&&(g=e.timeStamp,t(e))},!0)},h=(t,e,n,i)=>{let o,r;return a=>{e.value>=0&&(a||i)&&(r=e.value-(null!=o?o:0),(r||void 0===o)&&(o=e.value,e.delta=r,e.rating=((t,e)=>t>e[1]?\"poor\":t>e[0]?\"needs-improvement\":\"good\")(e.value,n),t(e)))}},y=t=>{requestAnimationFrame(()=>requestAnimationFrame(()=>t()))},w=()=>{var t,e;return null!==(e=null===(t=c())||void 0===t?void 0:t.activationStart)&&void 0!==e?e:0};let T=-1;const b=new Set,S=()=>\"hidden\"!==document.visibilityState||document.prerendering?1/0:0,E=t=>{if(\"hidden\"===document.visibilityState){if(\"visibilitychange\"===t.type)for(const t of b)t();isFinite(T)||(T=\"visibilitychange\"===t.type?t.timeStamp:0,removeEventListener(\"prerenderingchange\",E,!0))}},x=(t=!1)=>{var e;if(t&&(T=1/0),T<0){const t=w(),n=document.prerendering||null===(e=globalThis.performance.getEntriesByType(\"visibility-state\").find(e=>\"hidden\"===e.name&&e.startTime>=t))||void 0===e?void 0:e.startTime;T=null!=n?n:S(),addEventListener(\"visibilitychange\",E,!0),addEventListener(\"prerenderingchange\",E,!0),m(()=>{setTimeout(()=>{T=S()})})}return{get firstHiddenTime(){return T},onHidden(t){b.add(t)}}},_=(t,e=-1,n,i=0,o,r,a)=>{const s=c(),l=(null==s?void 0:s.navigationId)||0;let d=\"navigate\";return n?d=n:p()>=0?d=\"back-forward-cache\":s&&(document.prerendering||w()>0?d=\"prerender\":document.wasDiscarded?d=\"restore\":s.type&&(d=s.type.replace(/_/g,\"-\"))),{name:t,value:e,rating:\"good\",delta:0,entries:[],id:`v6-${Date.now()}-${Math.floor(8999999999999*Math.random())+1e12}`,navigationType:d,navigationId:i||l,navigationInteractionId:o,navigationURL:r||(null==s?void 0:s.name),navigationStartTime:a||0}},I=(t,e,n={})=>{try{const i=t.filter(t=>PerformanceObserver.supportedEntryTypes.includes(t));if(i.length>0){const t=new PerformanceObserver(t=>{queueMicrotask(()=>{const n=t.getEntries();i.length>1&&n.sort((t,e)=>t.startTime+t.duration-(e.startTime+e.duration)),e(n)})});for(const e of i)t.observe(Object.assign({type:e,buffered:!0},n));return t}}catch(t){}},A=t=>{var e,n,i,o;return(null===(n=null===(e=globalThis.PerformanceObserver)||void 0===e?void 0:e.supportedEntryTypes)||void 0===n?void 0:n.includes(\"soft-n"
+  },
+  {
+   "t": 261,
+   "ev": "responseReceived",
+   "requestId": "58612.52",
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "application/javascript",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=120, must-revalidate",
+    "content-encoding": "br",
+    "cf-cache-status": "REVALIDATED",
+    "etag": "W/\"1108df47f158109175eb5e3fff8bf9a0\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RbMLKQ%2FXUP9wYNaujW7SouZAsUGG1Tn3sIvkEUFNp5KqxKKIPwHB8Ek%2BmksCQrK%2Bo%2Bkc266rVrw7EnlJZc6w2TvysB2YnGFeJcNDfoh6ogyy%2BHGeHLjoPVMUped%2FwY80\"}]}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "cf-ray": "a5713eadb99c852a-HKG",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "application/javascript",
+    "vary": "accept-encoding",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 262,
+   "ev": "loadingFinished",
+   "requestId": "58612.52",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 269,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.62",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "method": "GET",
+   "type": "Fetch",
+   "initiator": "script",
+   "headers": {
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/market",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 269,
+   "ev": "requestWillBeSent",
+   "requestId": "58612.63",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "method": "GET",
+   "type": "Script",
+   "initiator": "script",
+   "headers": {
+    "Origin": "https://db4tarkov.com",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "Referer": "https://db4tarkov.com/flutter.js",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "sec-ch-ua": "\"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"156\", \"Google Chrome\";v=\"156\"",
+    "sec-ch-ua-mobile": "?0"
+   },
+   "postDataLen": 0,
+   "postDataPreview": null
+  },
+  {
+   "t": 262,
+   "ev": "responseBody",
+   "requestId": "58612.52",
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "size": 11305,
+   "preview": "(()=>{var _={blink:!0,gecko:!1,webkit:!1,unknown:!1},K=()=>navigator.vendor===\"Google Inc.\"||navigator.userAgent.includes(\"Edg/\")?\"blink\":navigator.vendor===\"Apple Computer, Inc.\"?\"webkit\":navigator.vendor===\"\"&&navigator.userAgent.includes(\"Firefox\")?\"gecko\":\"unknown\",C=K(),R=()=>typeof ImageDecoder>\"u\"?!1:C===\"blink\",B=()=>typeof Intl.v8BreakIterator<\"u\"&&typeof Intl.Segmenter<\"u\",z=()=>{let i=[0,97,115,109,1,0,0,0,1,5,1,95,1,120,0];return WebAssembly.validate(new Uint8Array(i))},M=()=>{let i=document.createElement(\"canvas\");return i.width=1,i.height=1,i.getContext(\"webgl2\")!=null?2:i.getContext(\"webgl\")!=null?1:-1},D=()=>window.chrome&&chrome.runtime&&chrome.runtime.id,w={browserEngine:C,hasImageCodecs:R(),hasChromiumBreakIterators:B(),supportsWasmGC:z(),crossOriginIsolated:window.crossOriginIsolated,webGLVersion:M(),isChromeExtension:D()};function c(...i){return new URL(I(...i),document.baseURI).toString()}function I(...i){return i.filter(e=>!!e).map((e,n)=>n===0?S(e):F(S(e))).filter(e=>e.length).join(\"/\")}function F(i){let e=0;for(;e<i.length&&i.charAt(e)===\"/\";)e++;return i.substring(e)}function S(i){let e=i.length;for(;e>0&&i.charAt(e-1)===\"/\";)e--;return i.substring(0,e)}function E(i,e){return i.canvasKitBaseUrl?i.canvasKitBaseUrl:e.engineRevision&&!e.useLocalCanvasKit?I(\"https://www.gstatic.com/flutter-canvaskit\",e.engineRevision):\"canvaskit\"}var v=class{constructor(){this._scriptLoaded=!1}setTrustedTypesPolicy(e){this._ttPolicy=e}async loadEntrypoint(e){let{entrypointUrl:n=c(\"main.dart.js\"),onEntrypointLoaded:t,nonce:r}=e||{};return this._loadJSEntrypoint(n,t,r)}async load(e,n,t,r,a){a??=l=>{l.initializeEngine(t).then(u=>u.runApp())};let{entrypointBaseUrl:s}=t,{entryPointBaseUrl:o}=t;if(!s&&o&&(console.warn(\"[deprecated] `entryPointBaseUrl` is deprecated and will be removed in a future release. Use `entrypointBaseUrl` instead.\"),s=o),e.compileTarget===\"dart2wasm\")return this._loadWasmEntrypoint(e,n,s,a);{let l=e.mainJsPath??\"main.dart.js\",u=c(s,l);return this._loadJSEntrypoint(u,a,r)}}didCreateEngineInitializer(e){typeof this._didCreateEngineInitializerResolve==\"function\"&&(this._didCreateEngineInitializerResolve(e),this._didCreateEngineInitializerResolve=null,delete _flutter.loader.didCreateEngineInitializer),typeof this._onEntrypointLoaded==\"function\"&&this._onEntrypointLoaded(e)}_loadJSEntrypoint(e,n,t){let r=typeof n==\"function\";if(!this._scriptLoaded){this._scriptLoaded=!0;let a=this._createScriptTag(e,t);if(r)console.debug(\"Injecting <script> tag. Using callback.\"),this._onEntrypointLoaded=n,document.head.append(a);else return new Promise((s,o)=>{console.debug(\"Injecting <script> tag. Using Promises. Use the callback approach instead!\"),this._didCreateEngineInitializerResolve=s,a.addEventListener(\"error\",o),document.head.append(a)})}}async _loadWasmEntrypoint(e,n,t,r){if(!this._scriptLoaded){this._scriptLoaded=!0,this._onEntrypointLoaded=r;let{mainWasmPath:a,jsSupportRuntimePath:s}=e,o=c(t,a),l=c(t,s);this._ttPolicy!=null&&(l=this._ttPolicy.createScriptURL(l));let d=(await import(l)).compileStreaming(fetch(o)),p;e.renderer===\"skwasm\"?p=(async()=>{let h=await n.skwasm;return window._flutter_skwasmInstance=h,{skwasm:h.wasmExports,skwasmWrapper:h,ffi:{memory:h.wasmMemory}}})():p=Promise.resolve({}),await(await(await d).instantiate(await p,{loadDynamicModule:async(h,j)=>{let A=fetch(c(t,h)),L=c(t,j);this._ttPolicy!=null&&(L=this._ttPolicy.createScriptURL(L));let x=import(L);return[await A,await x]}})).invokeMain()}}_createScriptTag(e,n){let t=document.createElement(\"script\");t.type=\"application/javascript\",n&&(t.nonce=n);let r=e;return this._ttPolicy!=null&&(r=this._ttPolicy.createScriptURL(e)),t.src=r,t}};async function T(i,e,n){if(e<0)return i;let t,r=new Promise((a,s)=>{t=setTimeout(()=>{s(new Error(`${n} took more than ${e}ms to resolve. Moving on.`,{cause:T}))},e)});return Promise.race([i,r]).finally(()=>{clearTimeout(t)})}var g=class{setTrustedTypesPolicy(e){this._ttPolicy=e}loadServiceWorker(e){if(!e||!(\"serviceWorker\"in navigator))return Promise.resolve();let n=()=>{console.warn(`Loading the service worker using Flutter bootstrap is deprecated and will stop working in a future release.\nFor more details, see: https://github.com/flutter/flutter/issues/156910`)},t=()=>{let{serviceWorkerVersion:r,serviceWorkerUrl:a=c(`flutter_service_worker.js?v=${r}`),timeoutMillis:s=4e3}=e,o=a;this._ttPolicy!=null&&(o=this._ttPolicy.createScriptURL(o));let l=navigator.serviceWorker.register(o).then(u=>this._getNewServiceWorker(u,r)).then(this._waitForServiceWorkerActivation);return T(l,s,\"prepareServiceWorker\")};return e.serviceWorkerUrl!=null?(n(),t()):navigator.serviceWorker.getRegistration().then(r=>r?t():Promise.resolve())}async _getNewServiceWorker(e,n){if(!e.active&&(e.installing||e.waiting))return console.debug(\"Installing/Activating first service worker.\"),e.installing||e.waiting;if(e.active.scriptURL.endsWith(n))return console.debug(\"Loading from existing service worker.\"),e.active;{let t=await e.update();return console.debug(\"Updating service worker.\"),t.installing||t.waiting||t.active}}async _waitForServiceWorkerActivation(e){if(!e||e.state===\"activated\")if(e){console.debug(\"Service worker already active.\");return}else throw new Error(\"Cannot activate a null service worker!\");return new Promise((n,t)=>{e.addEventListener(\"statechange\",()=>{e.state===\"activated\"&&(console.debug(\"Activated new service worker.\"),n())})})}};var y=class{constructor(e,n=\"flutter-js\"){let t=e||[/\\.js$/,/\\.mjs$/];window.trustedTypes&&(this.policy=trustedTypes.createPolicy(n,{createScriptURL:function(r){if(r.startsWith(\"blob:\"))return r;let a=new URL(r,window.location),s=a.pathname.split(\"/\").pop();if(t.some(l=>l.test(s)))return a.toString();console.error(\"URL rejected by TrustedTypes policy\",n,\":\",r,\"(download prevented)\")}}))}};var k=i=>{let e=WebAssembly.compileStreaming(fetch(i));return(n,t)=>((async()=>{let r=await e,a=await WebAssembly.instantiate(r,n);t(a,r)})(),{})};var U=(i,e,n,t)=>(window.fl"
+  },
+  {
+   "t": 272,
+   "ev": "responseReceived",
+   "requestId": "58612.62",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "application/wasm",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=604800",
+    "content-encoding": "br",
+    "cf-cache-status": "DYNAMIC",
+    "etag": "W/\"633c9b0e890923eb169c37db1c40039f\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=AbnAyzZRKXwbZEkq1KVZLTlbnDpLU6FeOiQCWuUk1Mqcqt1DW2OnsXEfrnv8hbzYkgLNWGvXJi0iZHOKZt0hhGoKqNygOPMUGIVk8iYQEuBDEP0MM9rdJtnYrMPD2fgl\"}]}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "cf-ray": "a5713eaeba20852a-HKG",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "application/wasm",
+    "vary": "accept-encoding",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 280,
+   "ev": "responseReceived",
+   "requestId": "58612.63",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "application/javascript",
+   "protocol": "h2",
+   "fromDiskCache": true,
+   "fromServiceWorker": false,
+   "headers": {
+    "content-encoding": "br",
+    "cf-cache-status": "HIT",
+    "etag": "W/\"2c0ed4face3062e86ef2cf6062cdbb15\"",
+    "age": "445937",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=bY%2F0mKd3WuC842icq5Avd8Wg4FRJt%2FvW7EGNf7KC5hyV0DLTaH3NlQEUd2XxPsOMz1snqnqpsheWxCJBWQSpNqG7hIz57e1oyKcbG9iUc1Txq5qO8T9%2Br59zmAaEmchR\"}]}",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "date": "Sun, 08 Nov 2026 02:46:00 GMT",
+    "content-type": "application/javascript",
+    "vary": "accept-encoding",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=604800",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cf-ray": "a5713eaeba21852a-HKG",
+    "access-control-allow-origin": "*",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  },
+  {
+   "t": 280,
+   "ev": "loadingFinished",
+   "requestId": "58612.63",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 280,
+   "ev": "responseBody",
+   "requestId": "58612.63",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "size": 86496,
+   "preview": "\nvar CanvasKitInit = (() => {\n  var _scriptName = import.meta.url;\n  \n  return (\nfunction(moduleArg = {}) {\n  var moduleRtn;\n\nvar r=moduleArg,ca,da,ea=new Promise((a,b)=>{ca=a;da=b}),fa=\"object\"==typeof window,ia=\"function\"==typeof importScripts;\n(function(a){a.Xd=a.Xd||[];a.Xd.push(function(){a.MakeSWCanvasSurface=function(b){var c=b,e=\"undefined\"!==typeof OffscreenCanvas&&c instanceof OffscreenCanvas;if(!(\"undefined\"!==typeof HTMLCanvasElement&&c instanceof HTMLCanvasElement||e||(c=document.getElementById(b),c)))throw\"Canvas with id \"+b+\" was not found\";if(b=a.MakeSurface(c.width,c.height))b.ue=c;return b};a.MakeCanvasSurface||(a.MakeCanvasSurface=a.MakeSWCanvasSurface);a.MakeSurface=function(b,c){var e={width:b,height:c,colorType:a.ColorType.RGBA_8888,\nalphaType:a.AlphaType.Unpremul,colorSpace:a.ColorSpace.SRGB},f=b*c*4,k=a._malloc(f);if(e=a.Surface._makeRasterDirect(e,k,4*b))e.ue=null,e.Ue=b,e.Re=c,e.Se=f,e.Be=k,e.getCanvas().clear(a.TRANSPARENT);return e};a.MakeRasterDirectSurface=function(b,c,e){return a.Surface._makeRasterDirect(b,c.byteOffset,e)};a.Surface.prototype.flush=function(b){a.Ud(this.Td);this._flush();if(this.ue){var c=new Uint8ClampedArray(a.HEAPU8.buffer,this.Be,this.Se);c=new ImageData(c,this.Ue,this.Re);b?this.ue.getContext(\"2d\").putImageData(c,\n0,0,b[0],b[1],b[2]-b[0],b[3]-b[1]):this.ue.getContext(\"2d\").putImageData(c,0,0)}};a.Surface.prototype.dispose=function(){this.Be&&a._free(this.Be);this.delete()};a.Ud=a.Ud||function(){};a.ve=a.ve||function(){return null}})})(r);\n(function(a){a.Xd=a.Xd||[];a.Xd.push(function(){function b(l,q,v){return l&&l.hasOwnProperty(q)?l[q]:v}function c(l){var q=ja(ka);ka[q]=l;return q}function e(l){return l.naturalHeight||l.videoHeight||l.displayHeight||l.height}function f(l){return l.naturalWidth||l.videoWidth||l.displayWidth||l.width}function k(l,q,v,w){l.bindTexture(l.TEXTURE_2D,q);w||v.alphaType!==a.AlphaType.Premul||l.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!0);return q}function n(l,q,v){v||q.alphaType!==a.AlphaType.Premul||\nl.pixelStorei(l.UNPACK_PREMULTIPLY_ALPHA_WEBGL,!1);l.bindTexture(l.TEXTURE_2D,null)}a.GetWebGLContext=function(l,q){if(!l)throw\"null canvas passed into makeWebGLContext\";var v={alpha:b(q,\"alpha\",1),depth:b(q,\"depth\",1),stencil:b(q,\"stencil\",8),antialias:b(q,\"antialias\",0),premultipliedAlpha:b(q,\"premultipliedAlpha\",1),preserveDrawingBuffer:b(q,\"preserveDrawingBuffer\",0),preferLowPowerToHighPerformance:b(q,\"preferLowPowerToHighPerformance\",0),failIfMajorPerformanceCaveat:b(q,\"failIfMajorPerformanceCaveat\",\n0),enableExtensionsByDefault:b(q,\"enableExtensionsByDefault\",1),explicitSwapControl:b(q,\"explicitSwapControl\",0),renderViaOffscreenBackBuffer:b(q,\"renderViaOffscreenBackBuffer\",0)};v.majorVersion=q&&q.majorVersion?q.majorVersion:\"undefined\"!==typeof WebGL2RenderingContext?2:1;if(v.explicitSwapControl)throw\"explicitSwapControl is not supported\";l=na(l,v);if(!l)return 0;oa(l);z.fe.getExtension(\"WEBGL_debug_renderer_info\");return l};a.deleteContext=function(l){z===pa[l]&&(z=null);\"object\"==typeof JSEvents&&\nJSEvents.uf(pa[l].fe.canvas);pa[l]&&pa[l].fe.canvas&&(pa[l].fe.canvas.Pe=void 0);pa[l]=null};a._setTextureCleanup({deleteTexture:function(l,q){var v=ka[q];v&&pa[l].fe.deleteTexture(v);ka[q]=null}});a.MakeWebGLContext=function(l){if(!this.Ud(l))return null;var q=this._MakeGrContext();if(!q)return null;q.Td=l;var v=q.delete.bind(q);q[\"delete\"]=function(){a.Ud(this.Td);v()}.bind(q);return z.De=q};a.MakeGrContext=a.MakeWebGLContext;a.GrDirectContext.prototype.getResourceCacheLimitBytes=function(){a.Ud(this.Td);\nthis._getResourceCacheLimitBytes()};a.GrDirectContext.prototype.getResourceCacheUsageBytes=function(){a.Ud(this.Td);this._getResourceCacheUsageBytes()};a.GrDirectContext.prototype.releaseResourcesAndAbandonContext=function(){a.Ud(this.Td);this._releaseResourcesAndAbandonContext()};a.GrDirectContext.prototype.setResourceCacheLimitBytes=function(l){a.Ud(this.Td);this._setResourceCacheLimitBytes(l)};a.MakeOnScreenGLSurface=function(l,q,v,w,A,D){if(!this.Ud(l.Td))return null;q=void 0===A||void 0===D?\nthis._MakeOnScreenGLSurface(l,q,v,w):this._MakeOnScreenGLSurface(l,q,v,w,A,D);if(!q)return null;q.Td=l.Td;return q};a.MakeRenderTarget=function(){var l=arguments[0];if(!this.Ud(l.Td))return null;if(3===arguments.length){var q=this._MakeRenderTargetWH(l,arguments[1],arguments[2]);if(!q)return null}else if(2===arguments.length){if(q=this._MakeRenderTargetII(l,arguments[1]),!q)return null}else return null;q.Td=l.Td;return q};a.MakeWebGLCanvasSurface=function(l,q,v){q=q||null;var w=l,A=\"undefined\"!==\ntypeof OffscreenCanvas&&w instanceof OffscreenCanvas;if(!(\"undefined\"!==typeof HTMLCanvasElement&&w instanceof HTMLCanvasElement||A||(w=document.getElementById(l),w)))throw\"Canvas with id \"+l+\" was not found\";l=this.GetWebGLContext(w,v);if(!l||0>l)throw\"failed to create webgl context: err \"+l;l=this.MakeWebGLContext(l);q=this.MakeOnScreenGLSurface(l,w.width,w.height,q);return q?q:(q=w.cloneNode(!0),w.parentNode.replaceChild(q,w),q.classList.add(\"ck-replaced\"),a.MakeSWCanvasSurface(q))};a.MakeCanvasSurface=\na.MakeWebGLCanvasSurface;a.Surface.prototype.makeImageFromTexture=function(l,q){a.Ud(this.Td);l=c(l);if(q=this._makeImageFromTexture(this.Td,l,q))q.oe=l;return q};a.Surface.prototype.makeImageFromTextureSource=function(l,q,v){q||={height:e(l),width:f(l),colorType:a.ColorType.RGBA_8888,alphaType:v?a.AlphaType.Premul:a.AlphaType.Unpremul};q.colorSpace||(q.colorSpace=a.ColorSpace.SRGB);a.Ud(this.Td);var w=z.fe;v=k(w,w.createTexture(),q,v);2===z.version?w.texImage2D(w.TEXTURE_2D,0,w.RGBA,q.width,q.height,\n0,w.RGBA,w.UNSIGNED_BYTE,l):w.texImage2D(w.TEXTURE_2D,0,w.RGBA,w.RGBA,w.UNSIGNED_BYTE,l);n(w,q);this._resetContext();return this.makeImageFromTexture(v,q)};a.Surface.prototype.updateTextureFromSource=function(l,q,v){if(l.oe){a.Ud(this.Td);var w=l.getImageInfo(),A=z.fe,D=k(A,ka[l.oe],w,v);2===z.version?A.texImage2D(A.TEXTURE_2D,0,A.RGBA,f(q),e(q),0,A.RGBA,A.UNSIGNED_BYTE,q):A.texImage2D(A.TEXTURE_2D,0,A.RGBA,A.RGBA,A.UN"
+  },
+  {
+   "t": 322,
+   "ev": "extraInfo",
+   "requestId": "58612.55",
+   "statusCode": 200,
+   "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a5713f5e69490965-HKG",
+    "content-length": "29",
+    "content-type": "application/json",
+    "date": "Sun, 08 Nov 2026 02:46:28 GMT",
+    "etag": "\"d9dd3c5a913425a3e7205ac611ef32c5\"",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uvSLdDm3bha8R4XkSDLHlkrFKGoWDzUAphTeJzvglqneazF0pUjfmfhRID1UFoK2HWWPLrgcI6C9WB71thCNyq9nK5niyPeG3ETiuUWT4OZODSp%2B1EHxtPE321y7gtOa\"}]}",
+    "server": "cloudflare",
+    "x-content-type-options": "nosniff"
+   }
+  },
+  {
+   "t": 323,
+   "ev": "loadingFinished",
+   "requestId": "58612.62",
+   "encodedDataLength": 0
+  },
+  {
+   "t": 338,
+   "ev": "responseReceived",
+   "requestId": "58612.55",
+   "url": "https://db4tarkov.com/version.json?v=1794105987516",
+   "status": 200,
+   "statusText": "",
+   "mimeType": "application/json",
+   "protocol": "h2",
+   "fromDiskCache": false,
+   "fromServiceWorker": false,
+   "headers": {
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cache-control": "public, max-age=0, must-revalidate",
+    "cf-cache-status": "DYNAMIC",
+    "etag": "\"d9dd3c5a913425a3e7205ac611ef32c5\"",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uvSLdDm3bha8R4XkSDLHlkrFKGoWDzUAphTeJzvglqneazF0pUjfmfhRID1UFoK2HWWPLrgcI6C9WB71thCNyq9nK5niyPeG3ETiuUWT4OZODSp%2B1EHxtPE321y7gtOa\"}]}",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cf-ray": "a5713f5e69490965-HKG",
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "content-length": "29",
+    "date": "Sun, 08 Nov 2026 02:46:28 GMT",
+    "content-type": "application/json",
+    "server": "cloudflare"
+   },
+   "securityState": "TLS 1.3"
+  }
+ ],
+ "summary": [
+  {
+   "t": 254,
+   "ev": "requestWillBeSent",
+   "url": "https://db4tarkov.com/version.json?v=1794105987516",
+   "method": "GET"
+  },
+  {
+   "t": 269,
+   "ev": "requestWillBeSent",
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "method": "GET"
+  }
+ ]
+}

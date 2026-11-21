@@ -1,0 +1,434 @@
+{
+ "schema": 2,
+ "build": "R19.23",
+ "modes": {
+  "regular": {
+   "tasks": 503,
+   "objectives": 1416,
+   "edges": 222,
+   "orEdges": 13,
+   "failedEdges": 35,
+   "withPrereq": 203,
+   "withFollowUp": 222,
+   "guideGenerated": 503,
+   "guideCurated": 0,
+   "guideMissing": 0,
+   "unknownTrader": 0,
+   "seasonOnly": 0,
+   "dupNames": [
+    {
+     "name": "猎人之路 - 管理者",
+     "ids": [
+      "639136df4b15ca31f76bc31f",
+      "6a45208043b8d7604d00b8d5"
+     ]
+    },
+    {
+     "name": "塔科夫神射手 - 5",
+     "ids": [
+      "5bc4826c86f774106d22d88b",
+      "5bc4836986f7740c0152911c"
+     ]
+    },
+    {
+     "name": "新起点",
+     "ids": [
+      "6761f28a022f60bb320f3e95",
+      "6761ff17cdc36bd66102e9d0",
+      "6848100b00afffa81f09e365",
+      "68481881f43abfdda2058369"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 1",
+     "ids": [
+      "6613f3007f6666d56807c929",
+      "66151401efb0539ae10875ae"
+     ]
+    },
+    {
+     "name": "纺织业 - 1",
+     "ids": [
+      "5e381b0286f77420e3417a74",
+      "5e383a6386f77465910ce1f3"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 2",
+     "ids": [
+      "6613f307fca4f2f386029409",
+      "6615141bfda04449120269a7"
+     ]
+    },
+    {
+     "name": "纺织业 - 2",
+     "ids": [
+      "5e4d4ac186f774264f758336",
+      "5e4d515e86f77438b2195244"
+     ]
+    },
+    {
+     "name": "电池换新",
+     "ids": [
+      "6744a728352b4da8e003eda9",
+      "6744a9dfef61d56e020b5c4a"
+     ]
+    },
+    {
+     "name": "独立的代价",
+     "ids": [
+      "6744af0969a58fceba101fed",
+      "6745cbee909d2013670a4a55"
+     ]
+    }
+   ],
+   "missingFields": [],
+   "indexCounts": {
+    "label": "PvP（常规）",
+    "upstream": "regular",
+    "tasks": 503,
+    "objectives": 1416,
+    "withPrereq": 203,
+    "edges": 222,
+    "seasonOnly": 0,
+    "onlyHere": 26,
+    "kappa": 13,
+    "faction": 34
+   }
+  },
+  "pve": {
+   "tasks": 499,
+   "objectives": 1384,
+   "edges": 221,
+   "orEdges": 10,
+   "failedEdges": 35,
+   "withPrereq": 202,
+   "withFollowUp": 221,
+   "guideGenerated": 499,
+   "guideCurated": 0,
+   "guideMissing": 0,
+   "unknownTrader": 0,
+   "seasonOnly": 0,
+   "dupNames": [
+    {
+     "name": "平衡之力 - 2（PVE）",
+     "ids": [
+      "68341a0b2f0e2a7eb90b62d4",
+      "68341b407559f4e6d50bc0ce"
+     ]
+    },
+    {
+     "name": "猎人之路 - 管理者",
+     "ids": [
+      "639136df4b15ca31f76bc31f",
+      "6a45208043b8d7604d00b8d5"
+     ]
+    },
+    {
+     "name": "塔科夫神射手 - 5",
+     "ids": [
+      "5bc4826c86f774106d22d88b",
+      "5bc4836986f7740c0152911c"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 1",
+     "ids": [
+      "6613f3007f6666d56807c929",
+      "66151401efb0539ae10875ae"
+     ]
+    },
+    {
+     "name": "纺织业 - 1",
+     "ids": [
+      "5e381b0286f77420e3417a74",
+      "5e383a6386f77465910ce1f3"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 2",
+     "ids": [
+      "6613f307fca4f2f386029409",
+      "6615141bfda04449120269a7"
+     ]
+    },
+    {
+     "name": "纺织业 - 2",
+     "ids": [
+      "5e4d4ac186f774264f758336",
+      "5e4d515e86f77438b2195244"
+     ]
+    },
+    {
+     "name": "电池换新",
+     "ids": [
+      "6744a728352b4da8e003eda9",
+      "6744a9dfef61d56e020b5c4a"
+     ]
+    },
+    {
+     "name": "独立的代价",
+     "ids": [
+      "6744af0969a58fceba101fed",
+      "6745cbee909d2013670a4a55"
+     ]
+    }
+   ],
+   "missingFields": [],
+   "indexCounts": {
+    "label": "PvE",
+    "upstream": "pve",
+    "tasks": 499,
+    "objectives": 1384,
+    "withPrereq": 202,
+    "edges": 221,
+    "seasonOnly": 0,
+    "onlyHere": 23,
+    "kappa": 13,
+    "faction": 34
+   }
+  },
+  "pvps": {
+   "tasks": 462,
+   "objectives": 1304,
+   "edges": 184,
+   "orEdges": 11,
+   "failedEdges": 13,
+   "withPrereq": 169,
+   "withFollowUp": 184,
+   "guideGenerated": 462,
+   "guideCurated": 0,
+   "guideMissing": 0,
+   "unknownTrader": 0,
+   "seasonOnly": 0,
+   "dupNames": [
+    {
+     "name": "猎人之路 - 管理者",
+     "ids": [
+      "6a45208043b8d7604d00b8d5",
+      "639136df4b15ca31f76bc31f"
+     ]
+    },
+    {
+     "name": "塔科夫神射手 - 5",
+     "ids": [
+      "5bc4836986f7740c0152911c",
+      "5bc4826c86f774106d22d88b"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 1",
+     "ids": [
+      "66151401efb0539ae10875ae",
+      "6613f3007f6666d56807c929"
+     ]
+    },
+    {
+     "name": "人靠衣装 - 2",
+     "ids": [
+      "6615141bfda04449120269a7",
+      "6613f307fca4f2f386029409"
+     ]
+    },
+    {
+     "name": "纺织业 - 1",
+     "ids": [
+      "5e383a6386f77465910ce1f3",
+      "5e381b0286f77420e3417a74"
+     ]
+    },
+    {
+     "name": "纺织业 - 2",
+     "ids": [
+      "5e4d515e86f77438b2195244",
+      "5e4d4ac186f774264f758336"
+     ]
+    }
+   ],
+   "missingFields": [],
+   "indexCounts": {
+    "label": "PvPS（赛季服）",
+    "upstream": "pvp-season",
+    "tasks": 462,
+    "objectives": 1304,
+    "withPrereq": 169,
+    "edges": 184,
+    "seasonOnly": 0,
+    "onlyHere": 0,
+    "kappa": 13,
+    "faction": 34
+   }
+  }
+ },
+ "errors": [],
+ "warnings": [],
+ "modeDiff": {
+  "regular|pve": {
+   "leftOnly": [
+    "66058cb22cee99303f1ba067",
+    "66058cb5ae4719735349b9e8",
+    "66058cb7c7f3584787181476",
+    "66058cb9e8e4f17985230805",
+    "66058cbb06ef1d50a60c1f46",
+    "66058cbd9f59e625462acc8e",
+    "66058cbf2f19c31a5a1337ec",
+    "66058cc1da30b620a34e6e86",
+    "66058cc208308761cf390993",
+    "66058cc5bb83da7ba474aba9",
+    "66058cc72cee99303f1ba069",
+    "66058cc9ae4719735349b9ea",
+    "66058ccbc7f3584787181478",
+    "66058ccde8e4f17985230807",
+    "66058ccf06ef1d50a60c1f48",
+    "66058cd19f59e625462acc90",
+    "6761f28a022f60bb320f3e95",
+    "6761ff17cdc36bd66102e9d0",
+    "67e993b1ac26bf29380a320b",
+    "67e993f5ed537409f009da75",
+    "6848100b00afffa81f09e365",
+    "68481881f43abfdda2058369",
+    "697877e0c639962b2e0cf24f",
+    "69788c2bac719606e40b4e77",
+    "69788db3878a4385d10c0718",
+    "69789418b2187365e70bb947",
+    "697895b6c639962b2e0cf268"
+   ],
+   "rightOnly": [
+    "6834145ebc1f443d7603c8a7",
+    "6834158f2f0e2a7eb90b62c8",
+    "68341846186efa3c5b07f989",
+    "68341a0b2f0e2a7eb90b62d4",
+    "68341b407559f4e6d50bc0ce",
+    "68341c4babec72d95d0c1260",
+    "68341d7d7559f4e6d50bc0db",
+    "68341eb25619c8e2a9031501",
+    "68341f6fe2e7ef70a3060a0a",
+    "6834202a186efa3c5b07f9a2",
+    "683421515619c8e2a9031511",
+    "68342265a8d674b5740b31f0",
+    "6834233fecd5cf3a440d855b",
+    "68342446a8d674b5740b31fc",
+    "6834254f2f0e2a7eb90b62ef",
+    "683425dd8f5b18d29a05d9d1",
+    "683427418f5b18d29a05d9e3",
+    "6834287b7559f4e6d50bc0fa",
+    "697878057aa1273126030fb0",
+    "69788d4e963f08d9140bce19",
+    "6978907718bd6d7cbd0e8b8e",
+    "697895277d31587eab080266",
+    "69789660b2187365e70bb94a"
+   ],
+   "shared": 476
+  },
+  "regular|pvps": {
+   "leftOnly": [
+    "61e6e5e0f5b9633f6719ed95",
+    "61e6e60223374d168a4576a6",
+    "61e6e615eea2935bc018a2c5",
+    "61e6e621bfeab00251576265",
+    "66058cb22cee99303f1ba067",
+    "66058cb5ae4719735349b9e8",
+    "66058cb7c7f3584787181476",
+    "66058cb9e8e4f17985230805",
+    "66058cbb06ef1d50a60c1f46",
+    "66058cbd9f59e625462acc8e",
+    "66058cbf2f19c31a5a1337ec",
+    "66058cc1da30b620a34e6e86",
+    "66058cc208308761cf390993",
+    "66058cc5bb83da7ba474aba9",
+    "66058cc72cee99303f1ba069",
+    "66058cc9ae4719735349b9ea",
+    "66058ccbc7f3584787181478",
+    "66058ccde8e4f17985230807",
+    "66058ccf06ef1d50a60c1f48",
+    "66058cd19f59e625462acc90",
+    "674492b6909d2013670a347a",
+    "6744a4717e3818d5bb0680bb",
+    "6744a9dfef61d56e020b5c4a",
+    "6744af0969a58fceba101fed",
+    "6745cbee909d2013670a4a55",
+    "6745fae369a58fceba10343d",
+    "674600a366e6a521aa05eb66",
+    "674602307e3818d5bb069489",
+    "6746053b5b555b53460d9896",
+    "674605df60a98cad1b0ec799",
+    "67460662d0fbbc74ca0f7229",
+    "6761ff17cdc36bd66102e9d0",
+    "67e993b1ac26bf29380a320b",
+    "67e993f5ed537409f009da75",
+    "6848100b00afffa81f09e365",
+    "68481881f43abfdda2058369",
+    "697877e0c639962b2e0cf24f",
+    "69788c2bac719606e40b4e77",
+    "69788db3878a4385d10c0718",
+    "69789418b2187365e70bb947",
+    "697895b6c639962b2e0cf268"
+   ],
+   "rightOnly": [],
+   "shared": 462
+  },
+  "pve|pvps": {
+   "leftOnly": [
+    "61e6e5e0f5b9633f6719ed95",
+    "61e6e60223374d168a4576a6",
+    "61e6e615eea2935bc018a2c5",
+    "61e6e621bfeab00251576265",
+    "674492b6909d2013670a347a",
+    "6744a4717e3818d5bb0680bb",
+    "6744a9dfef61d56e020b5c4a",
+    "6744af0969a58fceba101fed",
+    "6745cbee909d2013670a4a55",
+    "6745fae369a58fceba10343d",
+    "674600a366e6a521aa05eb66",
+    "674602307e3818d5bb069489",
+    "6746053b5b555b53460d9896",
+    "674605df60a98cad1b0ec799",
+    "67460662d0fbbc74ca0f7229",
+    "6834145ebc1f443d7603c8a7",
+    "6834158f2f0e2a7eb90b62c8",
+    "68341846186efa3c5b07f989",
+    "68341a0b2f0e2a7eb90b62d4",
+    "68341b407559f4e6d50bc0ce",
+    "68341c4babec72d95d0c1260",
+    "68341d7d7559f4e6d50bc0db",
+    "68341eb25619c8e2a9031501",
+    "68341f6fe2e7ef70a3060a0a",
+    "6834202a186efa3c5b07f9a2",
+    "683421515619c8e2a9031511",
+    "68342265a8d674b5740b31f0",
+    "6834233fecd5cf3a440d855b",
+    "68342446a8d674b5740b31fc",
+    "6834254f2f0e2a7eb90b62ef",
+    "683425dd8f5b18d29a05d9d1",
+    "683427418f5b18d29a05d9e3",
+    "6834287b7559f4e6d50bc0fa",
+    "697878057aa1273126030fb0",
+    "69788d4e963f08d9140bce19",
+    "6978907718bd6d7cbd0e8b8e",
+    "697895277d31587eab080266",
+    "69789660b2187365e70bb94a"
+   ],
+   "rightOnly": [
+    "6761f28a022f60bb320f3e95"
+   ],
+   "shared": 461
+  }
+ },
+ "season": {
+  "id": "69e232a764dfe95549003f0f",
+  "nameEn": "Kord Breach",
+  "nameZh": "",
+  "startISO": "2026-04-17",
+  "endISO": "2026-12-07",
+  "perks": 40
+ },
+ "notes": [
+  "赛季名上游只提供英文「Kord Breach」，中文表无译名：界面按原样显示并标注，不自动翻译"
+ ],
+ "diffPairs": [
+  "pve|pvps",
+  "regular|pve",
+  "regular|pvps"
+ ],
+ "ok": true
+}

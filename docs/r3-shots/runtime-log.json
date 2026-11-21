@@ -1,0 +1,16 @@
+{
+  "armorRows": 72,
+  "armorInstalled": "5.11 Hexgrid 插板背心",
+  "rigConflictRows": 36,
+  "rigConflictText": "5.11 Tactical TacTec 插板胸挂（风暴灰）⛔ 不可安装：与已装备的 5.11 Hexgrid 插板背心 冲突（防弹衣与装甲弹挂互斥）胸挂以上方式不可获得51702.35—-1.0%——芳纶0.19907＋后背插板区、上背",
+  "rigNodeBefore": "胸挂",
+  "statsBefore": "移动转身人机-1.0%-1.0%-1.0%装备总重量1.02 kg",
+  "rigNodeAfter": "胸挂",
+  "statsAfter": "移动转身人机-1.0%-1.0%-1.0%装备总重量1.02 kg",
+  "hintAfterBlockedClick": "⛔ 无法安装 5.11 Tactical TacTec 插板胸挂（风暴灰）：与已装备的 5.11 Hexgrid 插板背心 冲突（防弹衣与装甲弹挂互斥）（未改动配装）　｜　跳蚤市场 24h 均价（构建期快照，非实时）",
+  "auditIconLine": "防护区域图标映射（全部为本地资源，运行期不联网）：本地图标 17 张；命中 205 件；文字降级 132 件；无防护区域 5143 件；降级主因：上背 23 件、后背插板区 20 件、下背 18 件、后背插板区 3 件。",
+  "primary1Hint": "⛔ 无法安装 5.11 Tactical TacTec 插板胸挂（风暴灰）：与已装备的 5.11 Hexgrid 插板背心 冲突（防弹衣与装甲弹挂互斥）（未改动配装）　｜　跳蚤市场 24h 均价（构建期快照，非实时）",
+  "primary1Rows": 1,
+  "meleeRows": 27,
+  "meleeFirst": "“杀人鲸”推刃匕首Melee跳蚤市场购买0.15—500,000 ₽"
+}

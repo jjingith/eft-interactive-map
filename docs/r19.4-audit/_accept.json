@@ -1,0 +1,138 @@
+{
+ "f1": {
+  "armDefault": "46.7 s",
+  "armAfterChange": "51.0 s",
+  "savedStorage": "{\"strength\":30,\"equipErgo\":0}",
+  "armAfterReload": "51.0 s",
+  "inputAfterReload": "30",
+  "inputAfterGunSwitch": "30",
+  "inputAfterReset": "10",
+  "storageAfterReset": "{\"strength\":30,\"equipErgo\":0}"
+ },
+ "f2": {
+  "capsOffered": [
+   "10 发",
+   "20 发",
+   "30 发",
+   "45 发",
+   "60 发",
+   "95 发"
+  ],
+  "excludedPinned": [
+   "AK-105 5.45x39"
+  ],
+  "caps30": "{\"n\":4,\"allOk\":true,\"anyDisabled\":false}",
+  "applied": "applied",
+  "partsAfterApply": 9,
+  "conflict": "{\"rows\":4,\"badRows\":4,\"why\":\"⛔ 同一个配件同时出现在「必须包含」和「排除」里\"}"
+ },
+ "f3": [
+  {
+   "segs": [
+    {
+     "cls": "solid-bad",
+     "left": "0%",
+     "width": "18%"
+    },
+    {
+     "cls": "stripe-bad",
+     "left": "18%",
+     "width": "21.1667%"
+    }
+   ],
+   "base": "1",
+   "baseVal": "基线 47.0",
+   "dir": "bad"
+  },
+  {
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": "0%",
+     "width": "66.3333%"
+    }
+   ],
+   "base": "1",
+   "baseVal": "基线 2.0"
+  },
+  {
+   "segs": [
+    {
+     "cls": "solid-good",
+     "left": "0%",
+     "width": "5.15%"
+    },
+    {
+     "cls": "stripe-good",
+     "left": "5.15%",
+     "width": "6.68333%"
+    }
+   ],
+   "base": "1",
+   "baseVal": "基线 71.0",
+   "dir": "good"
+  },
+  {
+   "segs": [
+    {
+     "cls": "solid-good",
+     "left": "0%",
+     "width": "8.73333%"
+    },
+    {
+     "cls": "stripe-good",
+     "left": "8.73333%",
+     "width": "11.3333%"
+    }
+   ],
+   "base": "1",
+   "baseVal": "基线 180.6",
+   "dir": "good"
+  }
+ ],
+ "f4": {
+  "statsW": 629,
+  "centerW": 653,
+  "gridCols": 2,
+  "statsW1264": 0
+ },
+ "f5": {
+  "square": "{\"cards\":[{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64}],\"allSquare\":true}",
+  "rightClick": {
+   "slot": "mod_gas_block",
+   "ergoChanged": true,
+   "partsBefore": null,
+   "partsAfter": null
+  },
+  "tooltip": "{\"visible\":false,\"text\":\"导气箍空槽 · 8 个合法配件左键查看候选\"}",
+  "squareSizes": "{\"cards\":[{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64},{\"w\":64,\"h\":64}],\"allSquare\":true}"
+ },
+ "f6": {
+  "diffSummaryGone": true
+ },
+ "f7": {
+  "magSwap": {
+   "magSlot": "mod_magazine",
+   "weight": [
+    "4.87 kg",
+    "4.98 kg"
+   ],
+   "TED": [
+    "-20.4",
+    "-27.2"
+   ],
+   "arm": [
+    "36.9 s",
+    "35.6 s"
+   ]
+  }
+ },
+ "t": {
+  "loadout": "ok",
+  "loadoutIcons": "{\"total\":43,\"transparent\":43}",
+  "ammoIcons": "{\"total\":200,\"transparent\":200}",
+  "hscroll1264": false
+ },
+ "console": [],
+ "external": []
+}

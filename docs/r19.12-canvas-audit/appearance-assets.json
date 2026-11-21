@@ -1,0 +1,102 @@
+{
+ "schema": "eftmap.r19.12.appearance-assets/1",
+ "结论": "本地只有「整枪渲染图 + 配件库存图标（透明底）」，没有任何分件 3D 模型 / 材质 / 安装变换，因此无法实现游戏内实时 3D。本轮实现的是二维示意合成：整枪图 + 按部件类别的图标图层，装配变化时图层随之变化，界面上明确标注「外观合成 · N 层」。",
+ "整枪渲染": {
+  "guns-full": {
+   "count": 161,
+   "样例": [
+    "5447a9cd4bdc2dbd208b4567.png",
+    "5448bd6b4bdc2dfc2f8b4569.png",
+    "54491c4f4bdc2db1078b4568.png"
+   ],
+   "像素样例": [
+    {
+     "w": 290,
+     "h": 112,
+     "mode": "RGBA",
+     "hasAlpha": true
+    },
+    {
+     "w": 139,
+     "h": 112,
+     "mode": "RGBA",
+     "hasAlpha": true
+    },
+    {
+     "w": 400,
+     "h": 79,
+     "mode": "RGBA",
+     "hasAlpha": true
+    }
+   ],
+   "说明": "按枪械物品 id 命名，默认装配整枪图（真实渲染，非分件）"
+  },
+  "presets-full": {
+   "count": 368,
+   "样例": [
+    "5841474424597759ba49be91.png",
+    "584147732459775a2b6d9f12.png",
+    "584147982459775a6c55e931.png"
+   ],
+   "说明": "按官方预设 id 命名的整枪图；仅在装配与该预设完全一致时可用"
+  }
+ },
+ "配件图层资源": {
+  "icons-transparent": {
+   "count": 5356,
+   "样例": [
+    {
+     "w": 64,
+     "h": 64,
+     "mode": "RGBA",
+     "hasAlpha": true
+    },
+    {
+     "w": 64,
+     "h": 64,
+     "mode": "RGBA",
+     "hasAlpha": true
+    },
+    {
+     "w": 64,
+     "h": 64,
+     "mode": "RGBA",
+     "hasAlpha": true
+    }
+   ],
+   "说明": "透明底库存图标，作为外观图层的唯一可用素材"
+  },
+  "icons-items": {
+   "count": 5356,
+   "说明": "物品库存图标（非透明/历史资源）"
+  }
+ },
+ "三维资源": {
+  "modelFiles": [],
+  "modelCount": 0,
+  "modelDirs": [],
+  "结论": "未发现任何 .glb/.gltf/.fbx/.obj/.mtl/.blend 等模型或材质文件"
+ },
+ "已实现的动态图层类别": [
+  "suppressor",
+  "muzzle",
+  "barrel",
+  "handguard",
+  "reciever",
+  "stock",
+  "magazine",
+  "pistol_grip",
+  "scope",
+  "mount",
+  "charge",
+  "tactical",
+  "foregrip",
+  "bipod"
+ ],
+ "未实现": [
+  "游戏内 3D 实时渲染 / 枪身旋转 / 配件安装变换（缺模型与材质）",
+  "配件在真实枪身照片上的像素级对位（库存图标与整枪渲染视角不一致，只能按类别锚点示意）",
+  "材质 / 涂装 / 磨损等外观变化"
+ ],
+ "对齐说明": "库存图标与 guns-full 整枪图的视角、比例并不一致，因此图层采用类别锚点示意，不宣称像素对位，也不宣称等价于游戏内外观。"
+}

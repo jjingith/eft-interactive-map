@@ -1,0 +1,213 @@
+{
+  "cands": [
+    {
+      "gid": "6184055050224f204c1da540",
+      "name": "FN SCAR-L 5.56x45突击步枪",
+      "s1": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "s2": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Kiba Arms 25毫米环形基座(1)",
+        "Daniel Defense 25毫米环形基座(1)",
+        "Zenit KR-2 老款手电基座(1)",
+        "SureFire M600 Scout 手电夹具基座(1)"
+      ]
+    },
+    {
+      "gid": "618428466ef05c2ce828f218",
+      "name": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "s1": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "s2": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Kiba Arms 25毫米环形基座(1)",
+        "Daniel Defense 25毫米环形基座(1)",
+        "Zenit KR-2 老款手电基座(1)",
+        "SureFire M600 Scout 手电夹具基座(1)"
+      ]
+    },
+    {
+      "gid": "6165ac306ef05c2ce828ef74",
+      "name": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "s1": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "s2": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Kiba Arms 25毫米环形基座(1)",
+        "Daniel Defense 25毫米环形基座(1)",
+        "Zenit KR-2 老款手电基座(1)",
+        "SureFire M600 Scout 手电夹具基座(1)"
+      ]
+    },
+    {
+      "gid": "6183afd850224f204c1da514",
+      "name": "FN SCAR-H 7.62x51突击步枪",
+      "s1": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "s2": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Kiba Arms 25毫米环形基座(1)",
+        "Daniel Defense 25毫米环形基座(1)",
+        "Zenit KR-2 老款手电基座(1)",
+        "SureFire M600 Scout 手电夹具基座(1)"
+      ]
+    },
+    {
+      "gid": "676176d362e0497044079f4c",
+      "name": "FN SCAR-H X-17 7.62x51突击步枪",
+      "s1": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "s2": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Kiba Arms 25毫米环形基座(1)",
+        "Daniel Defense 25毫米环形基座(1)",
+        "Zenit KR-2 老款手电基座(1)",
+        "SureFire M600 Scout 手电夹具基座(1)"
+      ]
+    },
+    {
+      "gid": "628a60ae6b1d481ff772e9c8",
+      "name": "Rifle Dynamics RD-704 7.62x39突击步枪",
+      "s1": "mod_gas_block/mod_mount_001",
+      "s2": "mod_gas_block/mod_mount_000",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Magpul M-LOK 2.5英寸导轨(1)",
+        "Magpul M-LOK 0.93英寸导轨(1)"
+      ]
+    },
+    {
+      "gid": "67d0576f29f580ebc10efd08",
+      "name": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+      "s1": "mod_barrel/mod_gas_block/mod_tactical",
+      "s2": "mod_barrel/mod_gas_block/mod_mount_002",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": []
+    },
+    {
+      "gid": "5ba26383d4351e00334c93d9",
+      "name": "HK MP7A1 4.6x30 冲锋枪",
+      "s1": "mod_tactical_000",
+      "s2": "mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": []
+    },
+    {
+      "gid": "5bd70322209c4d00d7167b8f",
+      "name": "HK MP7A2 4.6x30 冲锋枪",
+      "s1": "mod_tactical_000",
+      "s2": "mod_tactical_001",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": []
+    },
+    {
+      "gid": "5e81ebcd8e146c7080625e15",
+      "name": "FN GL-40 Mk.2 榴弹发射器",
+      "s1": "mod_tactical_001",
+      "s2": "mod_tactical_002",
+      "s1empty": true,
+      "s2empty": true,
+      "rails": [
+        "Daniel Defense 25毫米环形基座(1)",
+        "Kiba Arms 25毫米环形基座(1)"
+      ]
+    },
+    {
+      "gid": "6275303a9f372d6ea97f9ec7",
+      "name": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "s1": "mod_scope/mod_tactical_000",
+      "s2": "mod_scope",
+      "s1empty": true,
+      "s2empty": false,
+      "rails": []
+    }
+  ],
+  "repro": [
+    {
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "item": "Kiba Arms 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c4",
+      "kids": [
+        "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "item": "Kiba Arms 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c4",
+      "kids": [
+        "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "item": "Kiba Arms 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c3",
+      "kids": [
+        "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "FN SCAR-H 7.62x51突击步枪",
+      "item": "Kiba Arms 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c3",
+      "kids": [
+        "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+      "item": "Kiba Arms 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c3",
+      "kids": [
+        "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+      "item": "Magpul M-LOK 2.5英寸导轨",
+      "s2before": "r6c2",
+      "s2after": "r6c2",
+      "kids": [
+        "mod_gas_block/mod_mount_001/mod_tactical@r5c1"
+      ],
+      "dup": [],
+      "rows": 6
+    },
+    {
+      "gun": "FN GL-40 Mk.2 榴弹发射器",
+      "item": "Daniel Defense 25毫米环形基座",
+      "s2before": "r6c2",
+      "s2after": "r6c3",
+      "kids": [
+        "mod_tactical_001/mod_flashlight@r6c2"
+      ],
+      "dup": [],
+      "rows": 6
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.28-0 🌕 09:33 🌑 21:33",
+  "x": 367,
+  "y": 24,
+  "w": 733,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 216,
+  "y": 24,
+  "w": 73,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 288,
+  "y": 24,
+  "w": 71,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 355,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 413,
+  "y": 24,
+  "w": 54,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 464,
+  "y": 24,
+  "w": 49,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 523,
+  "y": 24,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 588,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 643,
+  "y": 24,
+  "w": 50,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 701,
+  "y": 24,
+  "w": 65,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 769,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.2.0.0",
+  "x": 840,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 908,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)",
+  "x": 817,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 765,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 817,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (38d)",
+  "x": 868,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 922,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 956,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 990,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 1024,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1058,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "only TraderLvl",
+  "x": 586,
+  "y": 68,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "only FleaLvl",
+  "x": 650,
+  "y": 68,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "picked Plates",
+  "x": 721,
+  "y": 68,
+  "w": 60,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "default Plates",
+  "x": 782,
+  "y": 68,
+  "w": 60,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "priority Plates",
+  "x": 844,
+  "y": 68,
+  "w": 60,
+  "h": 28
+ },
+ {
+  "role": "input",
+  "label": "Type to search item in preset",
+  "x": 905,
+  "y": 71,
+  "w": 40,
+  "h": 33
+ },
+ {
+  "role": "tab",
+  "label": "Both",
+  "x": 943,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "tab",
+  "label": "Armor",
+  "x": 993,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "tab",
+  "label": "Armored Rig",
+  "x": 1043,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "group",
+  "label": "Move/Turn/Ergo -5 / -3 / -3 Kg 4.3 kg 0 / 0 / 0 Final Cost: 114,999",
+  "x": 250,
+  "y": 319,
+  "w": 500,
+  "h": 462
+ },
+ {
+  "role": "button",
+  "label": "Headwear",
+  "x": 250,
+  "y": 172,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "role": "button",
+  "label": "Glasses",
+  "x": 75,
+  "y": 246,
+  "w": 65,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Headset",
+  "x": 75,
+  "y": 306,
+  "w": 65,
+  "h": 65
+ },
+ {
+  "role": "button",
+  "label": "Face Cover",
+  "x": 142,
+  "y": 246,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "6 6B45 -5 / -3 / -3",
+  "x": 250,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Chest Rig",
+  "x": 417,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Gun",
+  "x": 174,
+  "y": 418,
+  "w": 319,
+  "h": 108
+ },
+ {
+  "role": "button",
+  "label": "Backpack",
+  "x": 417,
+  "y": 419,
+  "w": 167,
+  "h": 134
+ },
+ {
+  "role": "button",
+  "label": "Buy (114,999)",
+  "x": 125,
+  "y": 518,
+  "w": 250,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Sell",
+  "x": 375,
+  "y": 518,
+  "w": 250,
+  "h": 24
+ },
+ {
+  "role": "group",
+  "label": "6B45 armored rig (Assault, EMR) 4.3 -5 / -3 / -3 114,999 IV",
+  "x": 250,
+  "y": 537,
+  "w": 492,
+  "h": 14
+ },
+ {
+  "role": "tabpanel",
+  "label": "Icon Zone",
+  "x": 796,
+  "y": 547,
+  "w": 568,
+  "h": 917
+ },
+ {
+  "role": "button",
+  "label": "Mov/Turn/Erg",
+  "x": 607,
+  "y": 102,
+  "w": 110,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Kg",
+  "x": 722,
+  "y": 102,
+  "w": 40,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Price",
+  "x": 802,
+  "y": 102,
+  "w": 120,
+  "h": 27
+ },
+ {
+  "role": "group",
+  "label": "Redut-T5 H 354 -8 / -3 / -5 8.1",
+  "x": 796,
+  "y": 149,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6B43 H 350 -9 / -5.5 / -7 10.8",
+  "x": 796,
+  "y": 189,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "THOR IC 310 -8 / -5 / -6 8.5",
+  "x": 796,
+  "y": 229,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 -5 / -3 / -3 4.3 114,999 IV [2]",
+  "x": 796,
+  "y": 269,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 -5 / -3 / -3 3.6 104,323 III [2] 40 USEC IV [1]",
+  "x": 796,
+  "y": 309,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Zhuk EMR L 165 -1.5 / 0 / 0 3.0",
+  "x": 796,
+  "y": 349,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "SD mod.2 L 130 -3 / -2 / -1 2.7",
+  "x": 796,
+  "y": 389,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "LV-119 L 120 -1 / -1 / 0 3.9",
+  "x": 796,
+  "y": 429,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 0 / 0 / 0 1.3",
+  "x": 796,
+  "y": 469,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 0 / 0 / 0 1.3",
+  "x": 796,
+  "y": 509,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 -5 / -1 / 0 1.3",
+  "x": 796,
+  "y": 549,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "AVS TE H 60 0 / 0 / -2 2.0",
+  "x": 796,
+  "y": 589,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Hexgrid -1 / -1 / -1 1.0",
+  "x": 796,
+  "y": 629,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "TT SK L -1 / 0 / 0 1.5",
+  "x": 796,
+  "y": 669,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Gladiator-S H 330 -7 / -3.5 / -5 7.1",
+  "x": 796,
+  "y": 723,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 -5 / -3 / -3 4.5 109,559 III [2]",
+  "x": 796,
+  "y": 763,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 -5 / -3 / -3 4.4 110,919 III [2]",
+  "x": 796,
+  "y": 803,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 -3 / -3 / -3 7.7",
+  "x": 796,
+  "y": 843,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 -3 / -3 / -3 7.7",
+  "x": 796,
+  "y": 883,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 -3 / -4 / -3 7.7",
+  "x": 796,
+  "y": 923,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 -3 / -4 / -3 7.7",
+  "x": 796,
+  "y": 963,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Gen4 Full H 248 -7 / -4 / -6 9.1",
+  "x": 796,
+  "y": 994,
+  "w": 568,
+  "h": 22
+ },
+ {
+  "role": "group",
+  "label": "Gladiator-S L 235 -3 / -2 / -2 3.3",
+  "x": 796,
+  "y": 1043,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Gladiator-S H 235 -5 / -3.5 / -3 4.8",
+  "x": 796,
+  "y": 1083,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Siege-R L 220 -6 / -3 / -5 10.8",
+  "x": 796,
+  "y": 1123,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Gen4 Assault H 212 -5 / -4 / -5 8.2",
+  "x": 796,
+  "y": 1163,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "360,009 IV [1]",
+  "x": 801,
+  "y": 1163,
+  "w": 118,
+  "h": 13
+ },
+ {
+  "role": "group",
+  "label": "Defender-2 H 210 -1 / -4 / -1 5.7",
+  "x": 796,
+  "y": 1203,
+  "w": 568,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Defender-2 H 210 -1 / -4 / -1 5.7",
+  "x": 796,
+  "y": 1239,
+  "w": 568,
+  "h": 32
+ }
+]

@@ -1,0 +1,2840 @@
+{
+ "name": "eft-hideout",
+ "requested_url": "https://www.eftarkov.com/hideout",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/hideout",
+ "title": "藏身处升级 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 6621,
+ "htmlLen": 1697821,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 809,
+ "input": 2,
+ "table": 1,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "塔科夫藏身处所有模块的升级需求，按模式统计：PVP / PVE / 赛季服",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06779c86f77426e00dd782",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06779c86f77426e00dd782",
+   "text": "电线",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=3",
+   "text": "安保 Lv.3×10",
+   "title": "查看安保 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a205b56502f18c98a06&level=2",
+   "text": "照明 Lv.2×10",
+   "title": "查看照明 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a205b56502f18c98a06&level=3",
+   "text": "照明 Lv.3×12",
+   "title": "查看照明 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=2",
+   "text": "靶场 Lv.2×6",
+   "title": "查看靶场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=3",
+   "text": "靶场 Lv.3×10",
+   "title": "查看靶场 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d388e97081959000a123acf&level=3",
+   "text": "供暖 Lv.3×10",
+   "title": "查看供暖 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=3",
+   "text": "通风 Lv.3×14",
+   "title": "查看通风 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fd6654e76051d3cc791&level=3",
+   "text": "休息区 Lv.3×10",
+   "title": "查看休息区 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=2",
+   "text": "发电机 Lv.2×15",
+   "title": "查看发电机 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=637b39f02e873739ec490215&level=6",
+   "text": "易碎墙 Lv.6×2",
+   "title": "查看易碎墙 Lv.6升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=2",
+   "text": "武器架 Lv.2×10",
+   "title": "查看武器架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=3",
+   "text": "武器架 Lv.3×15",
+   "title": "查看武器架 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590a3cd386f77436f20848cb",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3cd386f77436f20848cb",
+   "text": "节能灯泡",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd6654e76051d3cc791&level=2",
+   "text": "休息区 Lv.2×5",
+   "title": "查看休息区 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=1",
+   "text": "武器架 Lv.1×5",
+   "title": "查看武器架 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=1",
+   "text": "装备架 Lv.1×8",
+   "title": "查看装备架 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=2",
+   "text": "装备架 Lv.2×12",
+   "title": "查看装备架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=3",
+   "text": "装备架 Lv.3×15",
+   "title": "查看装备架 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×10",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=3",
+   "text": "荣耀展柜 Lv.3×15",
+   "title": "查看荣耀展柜 Lv.3升级需求"
+  },
+  {
+   "href": "/item/61bf7b6302b3924be92fa8c3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/61bf7b6302b3924be92fa8c3",
+   "text": "金属零件",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=1",
+   "text": "靶场 Lv.1×1",
+   "title": "查看靶场 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=2",
+   "text": "靶场 Lv.2×8",
+   "title": "查看靶场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=3",
+   "text": "靶场 Lv.3×5",
+   "title": "查看靶场 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=2",
+   "text": "通风 Lv.2×5",
+   "title": "查看通风 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=3",
+   "text": "通风 Lv.3×10",
+   "title": "查看通风 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=3",
+   "text": "发电机 Lv.3×10",
+   "title": "查看发电机 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=637b39f02e873739ec490215&level=6",
+   "text": "易碎墙 Lv.6×5",
+   "title": "查看易碎墙 Lv.6升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a3f5b56502f18c98a0e&level=1",
+   "text": "酿酒处 Lv.1×5",
+   "title": "查看酿酒处 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=3",
+   "text": "武器架 Lv.3×10",
+   "title": "查看武器架 Lv.3升级需求"
+  },
+  {
+   "href": "/item/57347c5b245977448d35f6e1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c5b245977448d35f6e1",
+   "text": "螺栓",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=4",
+   "text": "仓库 Lv.4×10",
+   "title": "查看仓库 Lv.4升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=1",
+   "text": "工作台 Lv.1×2",
+   "title": "查看工作台 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=2",
+   "text": "工作台 Lv.2×10",
+   "title": "查看工作台 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=1",
+   "text": "集水器 Lv.1×5",
+   "title": "查看集水器 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=6377a9b9a93bde8fa30eb79a&level=1",
+   "text": "健身区 Lv.1×5",
+   "title": "查看健身区 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=1",
+   "text": "武器架 Lv.1×15",
+   "title": "查看武器架 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=1",
+   "text": "装备架 Lv.1×15",
+   "title": "查看装备架 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5734779624597737e04bf329",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5734779624597737e04bf329",
+   "text": "CPU风扇",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=1",
+   "text": "比特币矿场 Lv.1×15",
+   "title": "查看比特币矿场 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=2",
+   "text": "比特币矿场 Lv.2×15",
+   "title": "查看比特币矿场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=3",
+   "text": "比特币矿场 Lv.3×25",
+   "title": "查看比特币矿场 Lv.3升级需求"
+  },
+  {
+   "href": "/item/59e35ef086f7741777737012",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e35ef086f7741777737012",
+   "text": "一包螺钉",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=2",
+   "text": "仓库 Lv.2×10",
+   "title": "查看仓库 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=3",
+   "text": "仓库 Lv.3×15",
+   "title": "查看仓库 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=2",
+   "text": "靶场 Lv.2×3",
+   "title": "查看靶场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=2",
+   "text": "卫生间 Lv.2×6",
+   "title": "查看卫生间 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×6",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5d1b313086f77425227d1678",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b313086f77425227d1678",
+   "text": "相位控制继电器",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d388e97081959000a123acf&level=3",
+   "text": "供暖 Lv.3×4",
+   "title": "查看供暖 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fd1654e76006732bf2e&level=1",
+   "text": "营养部 Lv.1×2",
+   "title": "查看营养部 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fd1654e76006732bf2e&level=2",
+   "text": "营养部 Lv.2×3",
+   "title": "查看营养部 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=2",
+   "text": "发电机 Lv.2×10",
+   "title": "查看发电机 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=3",
+   "text": "发电机 Lv.3×12",
+   "title": "查看发电机 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=2",
+   "text": "比特币矿场 Lv.2×10",
+   "title": "查看比特币矿场 Lv.2升级需求"
+  },
+  {
+   "href": "/item/59e35cbb86f7741778269d83",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e35cbb86f7741778269d83",
+   "text": "波纹软管",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd1654e76006732bf2e&level=2",
+   "text": "营养部 Lv.2×4",
+   "title": "查看营养部 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=3",
+   "text": "卫生间 Lv.3×10",
+   "title": "查看卫生间 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=1",
+   "text": "集水器 Lv.1×4",
+   "title": "查看集水器 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=2",
+   "text": "集水器 Lv.2×6",
+   "title": "查看集水器 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a3f5b56502f18c98a0e&level=1",
+   "text": "酿酒处 Lv.1×10",
+   "title": "查看酿酒处 Lv.1升级需求"
+  },
+  {
+   "href": "/item/59e36c6f86f774176c10a2a7",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e36c6f86f774176c10a2a7",
+   "text": "电源线",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd1654e76006732bf2e&level=1",
+   "text": "营养部 Lv.1×1",
+   "title": "查看营养部 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fd6654e76051d3cc791&level=3",
+   "text": "休息区 Lv.3×5",
+   "title": "查看休息区 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=1",
+   "text": "情报中心 Lv.1×1",
+   "title": "查看情报中心 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=2",
+   "text": "情报中心 Lv.2×7",
+   "title": "查看情报中心 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=3",
+   "text": "荣耀展柜 Lv.3×5",
+   "title": "查看荣耀展柜 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590c31c586f774245e3141b2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c31c586f774245e3141b2",
+   "text": "一包钉子",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=2",
+   "text": "仓库 Lv.2×5",
+   "title": "查看仓库 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=3",
+   "text": "仓库 Lv.3×7",
+   "title": "查看仓库 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=2",
+   "text": "装备架 Lv.2×8",
+   "title": "查看装备架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=1",
+   "text": "荣耀展柜 Lv.1×5",
+   "title": "查看荣耀展柜 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c35a486f774273531c822",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c35a486f774273531c822",
+   "text": "Shustrilo发泡密封胶",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=4",
+   "text": "仓库 Lv.4×8",
+   "title": "查看仓库 Lv.4升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=3",
+   "text": "集水器 Lv.3×10",
+   "title": "查看集水器 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=3",
+   "text": "武器架 Lv.3×5",
+   "title": "查看武器架 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=2",
+   "text": "装备架 Lv.2×5",
+   "title": "查看装备架 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5d1b392c86f77425243e98fe",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b392c86f77425243e98fe",
+   "text": "电灯泡",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a205b56502f18c98a06&level=2",
+   "text": "照明 Lv.2×14",
+   "title": "查看照明 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=667298e75ea6b4493c08f266&level=1",
+   "text": "仪式圈 Lv.1×5",
+   "title": "查看仪式圈 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5e2af29386f7746d4159f077",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af29386f7746d4159f077",
+   "text": "KEKTAPE管道胶带",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=2",
+   "text": "卫生间 Lv.2×3",
+   "title": "查看卫生间 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=2",
+   "text": "集水器 Lv.2×5",
+   "title": "查看集水器 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=3",
+   "text": "装备架 Lv.3×10",
+   "title": "查看装备架 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=3",
+   "text": "荣耀展柜 Lv.3×3",
+   "title": "查看荣耀展柜 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590a3b0486f7743954552bdb",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3b0486f7743954552bdb",
+   "text": "印制电路板",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=3",
+   "text": "通风 Lv.3×5",
+   "title": "查看通风 Lv.3升级需求"
+  },
+  {
+   "href": "/item/57347c2e24597744902c94a1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c2e24597744902c94a1",
+   "text": "供电单元",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=3",
+   "text": "发电机 Lv.3×5",
+   "title": "查看发电机 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=1",
+   "text": "比特币矿场 Lv.1×10",
+   "title": "查看比特币矿场 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5d1b39a386f774252339976f",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b39a386f774252339976f",
+   "text": "硅胶管",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=3",
+   "text": "比特币矿场 Lv.3×15",
+   "title": "查看比特币矿场 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5d1b2fa286f77425227d1674",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b2fa286f77425227d1674",
+   "text": "电动马达",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=2",
+   "text": "通风 Lv.2×1",
+   "title": "查看通风 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d473c1e081959000e530190&level=3",
+   "text": "通风 Lv.3×4",
+   "title": "查看通风 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=2",
+   "text": "发电机 Lv.2×1",
+   "title": "查看发电机 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=3",
+   "text": "发电机 Lv.3×3",
+   "title": "查看发电机 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=2",
+   "text": "集水器 Lv.2×2",
+   "title": "查看集水器 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=3",
+   "text": "比特币矿场 Lv.3×10",
+   "title": "查看比特币矿场 Lv.3升级需求"
+  },
+  {
+   "href": "/item/57347c77245977448d35f6e2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c77245977448d35f6e2",
+   "text": "螺母",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c1124597737fb1379e3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c1124597737fb1379e3",
+   "text": "管道胶带",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd6654e76051d3cc791&level=1",
+   "text": "休息区 Lv.1×1",
+   "title": "查看休息区 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=1",
+   "text": "集水器 Lv.1×3",
+   "title": "查看集水器 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=637b39f02e873739ec490215&level=6",
+   "text": "易碎墙 Lv.6×1",
+   "title": "查看易碎墙 Lv.6升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×3",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5d0378d486f77420421a5ff4",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d0378d486f77420421a5ff4",
+   "text": "军用电源滤波器",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=2",
+   "text": "比特币矿场 Lv.2×5",
+   "title": "查看比特币矿场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a385b56502f18c98a0c&level=1",
+   "text": "太阳能 Lv.1×10",
+   "title": "查看太阳能 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a315b56502f18c98a0a&level=1",
+   "text": "空气过滤单元 Lv.1×5",
+   "title": "查看空气过滤单元 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5d0375ff86f774186372f685",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d0375ff86f774186372f685",
+   "text": "军用电缆",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=3",
+   "text": "情报中心 Lv.3×8",
+   "title": "查看情报中心 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5c06782b86f77426df5407d2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06782b86f77426df5407d2",
+   "text": "电容",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a205b56502f18c98a06&level=3",
+   "text": "照明 Lv.3×7",
+   "title": "查看照明 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590c346786f77423e50ed342",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c346786f77423e50ed342",
+   "text": "Xenomorph发泡密封胶",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=3",
+   "text": "卫生间 Lv.3×6",
+   "title": "查看卫生间 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×5",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/item/590a3c0a86f774385a33c450",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3c0a86f774385a33c450",
+   "text": "火花塞",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=1",
+   "text": "发电机 Lv.1×1",
+   "title": "查看发电机 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d3b396e33c48f02b81cd9f3&level=3",
+   "text": "发电机 Lv.3×16",
+   "title": "查看发电机 Lv.3升级需求"
+  },
+  {
+   "href": "/item/59e3606886f77417674759a5",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e3606886f77417674759a5",
+   "text": "盐水溶液",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fcd654e7668ec2ec322&level=2",
+   "text": "医疗站 Lv.2×6",
+   "title": "查看医疗站 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fcd654e7668ec2ec322&level=3",
+   "text": "医疗站 Lv.3×10",
+   "title": "查看医疗站 Lv.3升级需求"
+  },
+  {
+   "href": "/item/57347cd0245977445a2d6ff1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347cd0245977445a2d6ff1",
+   "text": "T形插座",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=3",
+   "text": "荣耀展柜 Lv.3×6",
+   "title": "查看荣耀展柜 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5d1c774f86f7746d6620f8db",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1c774f86f7746d6620f8db",
+   "text": "螺旋散热器",
+   "title": ""
+  },
+  {
+   "href": "/item/5734795124597738002c6176",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5734795124597738002c6176",
+   "text": "绝缘胶带",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af47786f7746d404f3aaa",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af47786f7746d404f3aaa",
+   "text": "绒布布料",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=1",
+   "text": "装备架 Lv.1×10",
+   "title": "查看装备架 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5d1b327086f7742525194449",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b327086f7742525194449",
+   "text": "压力表",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=3",
+   "text": "卫生间 Lv.3×2",
+   "title": "查看卫生间 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a3f5b56502f18c98a0e&level=1",
+   "text": "酿酒处 Lv.1×2",
+   "title": "查看酿酒处 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c639286f774151567fa95",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c639286f774151567fa95",
+   "text": "技术指导文件",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=3",
+   "text": "靶场 Lv.3×3",
+   "title": "查看靶场 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a0e5b56502f18c98a02&level=1",
+   "text": "图书馆 Lv.1×8",
+   "title": "查看图书馆 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=3",
+   "text": "武器架 Lv.3×1",
+   "title": "查看武器架 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×1",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/item/59e35de086f7741778269d84",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e35de086f7741778269d84",
+   "text": "电钻",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=3",
+   "text": "仓库 Lv.3×2",
+   "title": "查看仓库 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=2",
+   "text": "靶场 Lv.2×1",
+   "title": "查看靶场 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=2",
+   "text": "卫生间 Lv.2×1",
+   "title": "查看卫生间 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=2",
+   "text": "工作台 Lv.2×2",
+   "title": "查看工作台 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=6377a9b9a93bde8fa30eb79a&level=1",
+   "text": "健身区 Lv.1×1",
+   "title": "查看健身区 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=2",
+   "text": "武器架 Lv.2×1",
+   "title": "查看武器架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=1",
+   "text": "装备架 Lv.1×1",
+   "title": "查看装备架 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=2",
+   "text": "装备架 Lv.2×1",
+   "title": "查看装备架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=3",
+   "text": "荣耀展柜 Lv.3×1",
+   "title": "查看荣耀展柜 Lv.3升级需求"
+  },
+  {
+   "href": "/item/619cbf476b8a1b37a54eebf8",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/619cbf476b8a1b37a54eebf8",
+   "text": "军用波纹软管",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d388e97081959000a123acf&level=3",
+   "text": "供暖 Lv.3×2",
+   "title": "查看供暖 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a315b56502f18c98a0a&level=1",
+   "text": "空气过滤单元 Lv.1×10",
+   "title": "查看空气过滤单元 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c2e1186f77425357b6124",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c2e1186f77425357b6124",
+   "text": "一套工具",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=3",
+   "text": "卫生间 Lv.3×1",
+   "title": "查看卫生间 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=2",
+   "text": "工作台 Lv.2×3",
+   "title": "查看工作台 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=637b39f02e873739ec490215&level=5",
+   "text": "易碎墙 Lv.5×1",
+   "title": "查看易碎墙 Lv.5升级需求"
+  },
+  {
+   "href": "/item/5e831507ea0a7c419c2f9bd9",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e831507ea0a7c419c2f9bd9",
+   "text": "Esmarch止血带",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fcd654e7668ec2ec322&level=2",
+   "text": "医疗站 Lv.2×10",
+   "title": "查看医疗站 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5e2af4d286f7746d4159f07a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af4d286f7746d4159f07a",
+   "text": "芳纶纤维布料",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=2",
+   "text": "装备架 Lv.2×10",
+   "title": "查看装备架 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5e2af41e86f774755a234b67",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af41e86f774755a234b67",
+   "text": "Cordura聚酰胺面料",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b2ffd86f77425243e8d17",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b2ffd86f77425243e8d17",
+   "text": "NIXXOR镜头",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=3",
+   "text": "安保 Lv.3×8",
+   "title": "查看安保 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5e2af22086f7746d3f3c33fa",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af22086f7746d3f3c33fa",
+   "text": "Poxeram冷焊膏",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=2",
+   "text": "武器架 Lv.2×3",
+   "title": "查看武器架 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a295b56502f18c98a08&level=2",
+   "text": "荣耀展柜 Lv.2×2",
+   "title": "查看荣耀展柜 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5d1c819a86f774771b0acd6c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1c819a86f774771b0acd6c",
+   "text": "武器零件",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=2",
+   "text": "武器架 Lv.2×5",
+   "title": "查看武器架 Lv.2升级需求"
+  },
+  {
+   "href": "/item/590a386e86f77429692b27ab",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a386e86f77429692b27ab",
+   "text": "损坏的硬盘",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=2",
+   "text": "情报中心 Lv.2×8",
+   "title": "查看情报中心 Lv.2升级需求"
+  },
+  {
+   "href": "/item/62a0a16d0b9d3c46de5b6e97",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/62a0a16d0b9d3c46de5b6e97",
+   "text": "军用闪存装置",
+   "title": ""
+  },
+  {
+   "href": "/item/5734758f24597738025ee253",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5734758f24597738025ee253",
+   "text": "金项链",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a175b56502f18c98a04&level=1",
+   "text": "Scav宝箱 Lv.1×8",
+   "title": "查看Scav宝箱 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c5bbd86f774785762df04",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5bbd86f774785762df04",
+   "text": "100毫升WD-40",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=2",
+   "text": "仓库 Lv.2×4",
+   "title": "查看仓库 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=2",
+   "text": "安保 Lv.2×2",
+   "title": "查看安保 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5af04b6486f774195a3ebb49",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5af04b6486f774195a3ebb49",
+   "text": "Elite钳子",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=2",
+   "text": "安保 Lv.2×1",
+   "title": "查看安保 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=3",
+   "text": "工作台 Lv.3×2",
+   "title": "查看工作台 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=3",
+   "text": "集水器 Lv.3×2",
+   "title": "查看集水器 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5d1b304286f774253763a528",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b304286f774253763a528",
+   "text": "完好的液晶显示屏",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=3",
+   "text": "安保 Lv.3×2",
+   "title": "查看安保 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a385b56502f18c98a0c&level=1",
+   "text": "太阳能 Lv.1×3",
+   "title": "查看太阳能 Lv.1升级需求"
+  },
+  {
+   "href": "/item/56742c284bdc2d98058b456d",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/56742c284bdc2d98058b456d",
+   "text": "Crickent打火机",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a205b56502f18c98a06&level=1",
+   "text": "照明 Lv.1×1",
+   "title": "查看照明 Lv.1升级需求"
+  },
+  {
+   "href": "/hideout?module=5d388e97081959000a123acf&level=2",
+   "text": "供暖 Lv.2×5",
+   "title": "查看供暖 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5d03775b86f774203e7e0c4b",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d03775b86f774203e7e0c4b",
+   "text": "相控阵单元",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a385b56502f18c98a0c&level=1",
+   "text": "太阳能 Lv.1×6",
+   "title": "查看太阳能 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5d235a5986f77443f6329bc6",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d235a5986f77443f6329bc6",
+   "text": "黄金骷髅指环",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a175b56502f18c98a04&level=1",
+   "text": "Scav宝箱 Lv.1×6",
+   "title": "查看Scav宝箱 Lv.1升级需求"
+  },
+  {
+   "href": "/item/62a0a0bb621468534a797ad5",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/62a0a0bb621468534a797ad5",
+   "text": "\"Master\"锉刀套装",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fe3654e76006657e0ac&level=3",
+   "text": "靶场 Lv.3×1",
+   "title": "查看靶场 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=2",
+   "text": "工作台 Lv.2×1",
+   "title": "查看工作台 Lv.2升级需求"
+  },
+  {
+   "href": "/hideout?module=65e5bb1713227bb7690cea0a&level=3",
+   "text": "装备架 Lv.3×1",
+   "title": "查看装备架 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590a373286f774287540368b",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a373286f774287540368b",
+   "text": "固体燃料",
+   "title": ""
+  },
+  {
+   "href": "/item/5733279d245977289b77ec24",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5733279d245977289b77ec24",
+   "text": "汽车蓄电池",
+   "title": ""
+  },
+  {
+   "href": "/item/590c311186f77424d1667482",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c311186f77424d1667482",
+   "text": "扳手",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0484c86f7740f02001f7f",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0484c86f7740f02001f7f",
+   "text": "罐装 Majaica 咖啡豆",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd1654e76006732bf2e&level=3",
+   "text": "营养部 Lv.3×5",
+   "title": "查看营养部 Lv.3升级需求"
+  },
+  {
+   "href": "/item/59e35abd86f7741778269d82",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e35abd86f7741778269d82",
+   "text": "碳酸氢钠",
+   "title": ""
+  },
+  {
+   "href": "/item/60391a8b3364dc22b04d0ce5",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/60391a8b3364dc22b04d0ce5",
+   "text": "罐装铝热剂",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=3",
+   "text": "工作台 Lv.3×5",
+   "title": "查看工作台 Lv.3升级需求"
+  },
+  {
+   "href": "/item/590c645c86f77412b01304d9",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c645c86f77412b01304d9",
+   "text": "日记",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a0e5b56502f18c98a02&level=1",
+   "text": "图书馆 Lv.1×5",
+   "title": "查看图书馆 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c651286f7741e566b6461",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c651286f7741e566b6461",
+   "text": "袖珍日记",
+   "title": ""
+  },
+  {
+   "href": "/item/590c595c86f7747884343ad7",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c595c86f7747884343ad7",
+   "text": "防毒面具滤罐",
+   "title": ""
+  },
+  {
+   "href": "/item/60391afc25aff57af81f7085",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/60391afc25aff57af81f7085",
+   "text": "棘轮扳手",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=4",
+   "text": "仓库 Lv.4×2",
+   "title": "查看仓库 Lv.4升级需求"
+  },
+  {
+   "href": "/hideout?module=5d484fc8654e760065037abf&level=3",
+   "text": "集水器 Lv.3×1",
+   "title": "查看集水器 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5b4391a586f7745321235ab2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5b4391a586f7745321235ab2",
+   "text": "WIFI摄像头",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=667298e75ea6b4493c08f266&level=1",
+   "text": "仪式圈 Lv.1×1",
+   "title": "查看仪式圈 Lv.1升级需求"
+  },
+  {
+   "href": "/item/62a09ee4cf4a99369e262453",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/62a09ee4cf4a99369e262453",
+   "text": "罐装白盐",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=667298e75ea6b4493c08f266&level=1",
+   "text": "仪式圈 Lv.1×3",
+   "title": "查看仪式圈 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5e2aedd986f7746d404f3aa4",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2aedd986f7746d404f3aa4",
+   "text": "GreenBat锂电池",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fd6654e76051d3cc791&level=3",
+   "text": "休息区 Lv.3×4",
+   "title": "查看休息区 Lv.3升级需求"
+  },
+  {
+   "href": "/item/5c12613b86f7743bbe2c3f76",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c12613b86f7743bbe2c3f76",
+   "text": "情报文件夹",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=2",
+   "text": "情报中心 Lv.2×3",
+   "title": "查看情报中心 Lv.2升级需求"
+  },
+  {
+   "href": "/item/5c05300686f7746dce784e5d",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c05300686f7746dce784e5d",
+   "text": "VPX闪存模块",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fdf654e7600691aadf8&level=3",
+   "text": "情报中心 Lv.3×2",
+   "title": "查看情报中心 Lv.3升级需求"
+  },
+  {
+   "href": "/hideout?module=5d494a445b56502f18c98a10&level=1",
+   "text": "比特币矿场 Lv.1×2",
+   "title": "查看比特币矿场 Lv.1升级需求"
+  },
+  {
+   "href": "/item/59e3639286f7741777737013",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e3639286f7741777737013",
+   "text": "青铜狮雕",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a175b56502f18c98a04&level=1",
+   "text": "Scav宝箱 Lv.1×3",
+   "title": "查看Scav宝箱 Lv.1升级需求"
+  },
+  {
+   "href": "/item/59faf7ca86f7740dbe19f6c2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59faf7ca86f7740dbe19f6c2",
+   "text": "劳力土潜水金腕表",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d494a175b56502f18c98a04&level=1",
+   "text": "Scav宝箱 Lv.1×4",
+   "title": "查看Scav宝箱 Lv.1升级需求"
+  },
+  {
+   "href": "/item/590c2c9c86f774245b1f03f2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c2c9c86f774245b1f03f2",
+   "text": "施工用测量卷尺",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fb3654e7600681d9314&level=1",
+   "text": "安保 Lv.1×1",
+   "title": "查看安保 Lv.1升级需求"
+  },
+  {
+   "href": "/item/544fb5454bdc2df8738b456a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/544fb5454bdc2df8738b456a",
+   "text": "Leatherman多功能工具钳",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fda654e7600681d9315&level=1",
+   "text": "工作台 Lv.1×1",
+   "title": "查看工作台 Lv.1升级需求"
+  },
+  {
+   "href": "/item/57347b8b24597737dd42e192",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347b8b24597737dd42e192",
+   "text": "经典火柴",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d388e97081959000a123acf&level=1",
+   "text": "供暖 Lv.1×2",
+   "title": "查看供暖 Lv.1升级需求"
+  },
+  {
+   "href": "/item/61bf83814088ec1a363d7097",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/61bf83814088ec1a363d7097",
+   "text": "针线盒",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fba654e7600691aadf7&level=2",
+   "text": "卫生间 Lv.2×2",
+   "title": "查看卫生间 Lv.2升级需求"
+  },
+  {
+   "href": "/item/619cc01e0a7c3a1a2731940c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/619cc01e0a7c3a1a2731940c",
+   "text": "医疗工具",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fcd654e7668ec2ec322&level=2",
+   "text": "医疗站 Lv.2×3",
+   "title": "查看医疗站 Lv.2升级需求"
+  },
+  {
+   "href": "/item/590c621186f774138d11ea29",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c621186f774138d11ea29",
+   "text": "加密U盘",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40419286f774318526545f",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40419286f774318526545f",
+   "text": "金属切割剪刀",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=63db64cbf9963741dc0d741f&level=1",
+   "text": "武器架 Lv.1×1",
+   "title": "查看武器架 Lv.1升级需求"
+  },
+  {
+   "href": "/item/5d1b376e86f774252519444e",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b376e86f774252519444e",
+   "text": "“凶狠跑刀崽”私酒",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b317c86f7742523398392",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b317c86f7742523398392",
+   "text": "手摇钻",
+   "title": ""
+  },
+  {
+   "href": "/hideout?module=5d484fc0654e76006657e0ab&level=2",
+   "text": "仓库 Lv.2×1",
+   "title": "查看仓库 Lv.2升级需求"
+  },
+  {
+   "href": "/item/60391b0fb847c71012789415",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/60391b0fb847c71012789415",
+   "text": "TP-200 砖型TNT",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af2bc86f7746d3f3c33fc",
+   "text": "",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "a",
+   "label": "电线"
+  },
+  {
+   "role": "a",
+   "label": "节能灯泡"
+  },
+  {
+   "role": "a",
+   "label": "金属零件"
+  },
+  {
+   "role": "a",
+   "label": "螺栓"
+  },
+  {
+   "role": "a",
+   "label": "CPU风扇"
+  },
+  {
+   "role": "a",
+   "label": "一包螺钉"
+  },
+  {
+   "role": "a",
+   "label": "相位控制继电器"
+  },
+  {
+   "role": "a",
+   "label": "波纹软管"
+  },
+  {
+   "role": "a",
+   "label": "电源线"
+  },
+  {
+   "role": "a",
+   "label": "一包钉子"
+  },
+  {
+   "role": "a",
+   "label": "Shustrilo发泡密封胶"
+  },
+  {
+   "role": "a",
+   "label": "电灯泡"
+  },
+  {
+   "role": "a",
+   "label": "KEKTAPE管道胶带"
+  },
+  {
+   "role": "a",
+   "label": "印制电路板"
+  },
+  {
+   "role": "a",
+   "label": "供电单元"
+  },
+  {
+   "role": "a",
+   "label": "硅胶管"
+  },
+  {
+   "role": "a",
+   "label": "电动马达"
+  },
+  {
+   "role": "a",
+   "label": "螺母"
+  },
+  {
+   "role": "a",
+   "label": "管道胶带"
+  },
+  {
+   "role": "a",
+   "label": "军用电源滤波器"
+  },
+  {
+   "role": "a",
+   "label": "军用电缆"
+  },
+  {
+   "role": "a",
+   "label": "电容"
+  },
+  {
+   "role": "a",
+   "label": "Xenomorph发泡密封胶"
+  },
+  {
+   "role": "a",
+   "label": "火花塞"
+  },
+  {
+   "role": "a",
+   "label": "盐水溶液"
+  },
+  {
+   "role": "a",
+   "label": "T形插座"
+  },
+  {
+   "role": "a",
+   "label": "螺旋散热器"
+  },
+  {
+   "role": "a",
+   "label": "绝缘胶带"
+  },
+  {
+   "role": "a",
+   "label": "绒布布料"
+  },
+  {
+   "role": "a",
+   "label": "压力表"
+  },
+  {
+   "role": "a",
+   "label": "技术指导文件"
+  },
+  {
+   "role": "a",
+   "label": "电钻"
+  },
+  {
+   "role": "a",
+   "label": "军用波纹软管"
+  },
+  {
+   "role": "a",
+   "label": "一套工具"
+  },
+  {
+   "role": "a",
+   "label": "Esmarch止血带"
+  },
+  {
+   "role": "a",
+   "label": "芳纶纤维布料"
+  },
+  {
+   "role": "a",
+   "label": "Cordura聚酰胺面料"
+  },
+  {
+   "role": "a",
+   "label": "NIXXOR镜头"
+  },
+  {
+   "role": "a",
+   "label": "Poxeram冷焊膏"
+  },
+  {
+   "role": "a",
+   "label": "武器零件"
+  },
+  {
+   "role": "a",
+   "label": "损坏的硬盘"
+  },
+  {
+   "role": "a",
+   "label": "军用闪存装置"
+  },
+  {
+   "role": "a",
+   "label": "金项链"
+  },
+  {
+   "role": "a",
+   "label": "100毫升WD-40"
+  },
+  {
+   "role": "a",
+   "label": "Elite钳子"
+  },
+  {
+   "role": "a",
+   "label": "完好的液晶显示屏"
+  },
+  {
+   "role": "a",
+   "label": "Crickent打火机"
+  },
+  {
+   "role": "a",
+   "label": "相控阵单元"
+  },
+  {
+   "role": "a",
+   "label": "黄金骷髅指环"
+  },
+  {
+   "role": "a",
+   "label": "\"Master\"锉刀套装"
+  },
+  {
+   "role": "a",
+   "label": "固体燃料"
+  },
+  {
+   "role": "a",
+   "label": "汽车蓄电池"
+  },
+  {
+   "role": "a",
+   "label": "扳手"
+  },
+  {
+   "role": "a",
+   "label": "罐装 Majaica 咖啡豆"
+  },
+  {
+   "role": "a",
+   "label": "碳酸氢钠"
+  },
+  {
+   "role": "a",
+   "label": "罐装铝热剂"
+  },
+  {
+   "role": "a",
+   "label": "日记"
+  },
+  {
+   "role": "a",
+   "label": "袖珍日记"
+  },
+  {
+   "role": "a",
+   "label": "防毒面具滤罐"
+  },
+  {
+   "role": "a",
+   "label": "棘轮扳手"
+  },
+  {
+   "role": "a",
+   "label": "WIFI摄像头"
+  },
+  {
+   "role": "a",
+   "label": "罐装白盐"
+  },
+  {
+   "role": "a",
+   "label": "GreenBat锂电池"
+  },
+  {
+   "role": "a",
+   "label": "情报文件夹"
+  },
+  {
+   "role": "a",
+   "label": "VPX闪存模块"
+  },
+  {
+   "role": "a",
+   "label": "青铜狮雕"
+  },
+  {
+   "role": "a",
+   "label": "劳力土潜水金腕表"
+  },
+  {
+   "role": "a",
+   "label": "施工用测量卷尺"
+  },
+  {
+   "role": "a",
+   "label": "Leatherman多功能工具钳"
+  },
+  {
+   "role": "a",
+   "label": "经典火柴"
+  },
+  {
+   "role": "a",
+   "label": "针线盒"
+  },
+  {
+   "role": "a",
+   "label": "医疗工具"
+  },
+  {
+   "role": "a",
+   "label": "加密U盘"
+  },
+  {
+   "role": "a",
+   "label": "金属切割剪刀"
+  },
+  {
+   "role": "a",
+   "label": "“凶狠跑刀崽”私酒"
+  },
+  {
+   "role": "a",
+   "label": "手摇钻"
+  },
+  {
+   "role": "a",
+   "label": "TP-200 砖型TNT"
+  },
+  {
+   "role": "a",
+   "label": "Hunter火柴"
+  },
+  {
+   "role": "a",
+   "label": "碱性换热器表面洗涤剂"
+  },
+  {
+   "role": "a",
+   "label": "Smoked Chimney下水道清洁剂"
+  },
+  {
+   "role": "a",
+   "label": "缝纫锥"
+  },
+  {
+   "role": "a",
+   "label": "无菌绷带"
+  },
+  {
+   "role": "a",
+   "label": "医用输血工具"
+  },
+  {
+   "role": "a",
+   "label": "#FireKlean牌枪润滑油"
+  },
+  {
+   "role": "a",
+   "label": "加密磁带盒"
+  },
+  {
+   "role": "a",
+   "label": "军用COFDM无线信号发射器"
+  },
+  {
+   "role": "a",
+   "label": "6-STEN-140-M军用电池"
+  },
+  {
+   "role": "a",
+   "label": "模拟温度计"
+  },
+  {
+   "role": "a",
+   "label": "项链"
+  },
+  {
+   "role": "a",
+   "label": "金公鸡塑像"
+  },
+  {
+   "role": "a",
+   "label": "固态硬盘"
+  },
+  {
+   "role": "a",
+   "label": "卫生纸"
+  },
+  {
+   "role": "a",
+   "label": "牙膏"
+  },
+  {
+   "role": "a",
+   "label": "肥皂"
+  },
+  {
+   "role": "a",
+   "label": "DVD光驱"
+  },
+  {
+   "role": "a",
+   "label": "电磁铁"
+  },
+  {
+   "role": "a",
+   "label": "一次性注射器"
+  },
+  {
+   "role": "a",
+   "label": "一堆药"
+  },
+  {
+   "role": "a",
+   "label": "OLOLO瓶装复合维生素"
+  },
+  {
+   "role": "a",
+   "label": "LEDX皮肤透照仪"
+  },
+  {
+   "role": "a",
+   "label": "检眼镜"
+  },
+  {
+   "role": "a",
+   "label": "Bulbex剪线器"
+  },
+  {
+   "role": "a",
+   "label": "地形调查地图"
+  },
+  {
+   "role": "a",
+   "label": "工厂地图"
+  },
+  {
+   "role": "a",
+   "label": "GPS信号放大单元"
+  },
+  {
+   "role": "a",
+   "label": "Fierce Blow重击锤"
+  },
+  {
+   "role": "a",
+   "label": "管道扳手"
+  },
+  {
+   "role": "a",
+   "label": "马雕像"
+  },
+  {
+   "role": "a",
+   "label": "BakeEzy烹饪书"
+  },
+  {
+   "role": "a",
+   "label": "直流变压器"
+  },
+  {
+   "role": "a",
+   "label": "防弹衣维修套件"
+  },
+  {
+   "role": "a",
+   "label": "圆嘴钳"
+  },
+  {
+   "role": "a",
+   "label": "猫雕像"
+  },
+  {
+   "role": "a",
+   "label": "幸运Scav垃圾箱"
+  },
+  {
+   "role": "a",
+   "label": "SurvL幸存者打火机"
+  },
+  {
+   "role": "a",
+   "label": "Paid杀蟑剂"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/hideout",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/hideout.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fc0654e76006657e0ab.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fb3654e7600681d9314.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a205b56502f18c98a06.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fe3654e76006657e0ac.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d388e97081959000a123acf.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d473c1e081959000e530190.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fd1654e76006732bf2e.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fba654e7600691aadf7.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fd6654e76051d3cc791.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fcd654e7668ec2ec322.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d3b396e33c48f02b81cd9f3.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fda654e7600681d9315.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fc8654e760065037abf.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d484fdf654e7600691aadf8.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/637b39f02e873739ec490215.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/6377a9b9a93bde8fa30eb79a.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a445b56502f18c98a10.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a3f5b56502f18c98a0e.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a0e5b56502f18c98a02.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a385b56502f18c98a0c.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/63db64cbf9963741dc0d741f.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/65e5bb1713227bb7690cea0a.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a295b56502f18c98a08.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a315b56502f18c98a0a.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/5d494a175b56502f18c98a04.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/hideout/667298e75ea6b4493c08f266.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c06779c86f77426e00dd782-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590a3cd386f77436f20848cb-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/61bf7b6302b3924be92fa8c3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347c5b245977448d35f6e1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5734779624597737e04bf329-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e35ef086f7741777737012-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b313086f77425227d1678-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e35cbb86f7741778269d83-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e36c6f86f774176c10a2a7-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c31c586f774245e3141b2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c35a486f774273531c822-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b392c86f77425243e98fe-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e2af29386f7746d4159f077-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590a3b0486f7743954552bdb-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347c2e24597744902c94a1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b39a386f774252339976f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b2fa286f77425227d1674-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347c77245977448d35f6e2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347c1124597737fb1379e3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d0378d486f77420421a5ff4-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d0375ff86f774186372f685-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c06782b86f77426df5407d2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c346786f77423e50ed342-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590a3c0a86f774385a33c450-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e3606886f77417674759a5-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347cd0245977445a2d6ff1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1c774f86f7746d6620f8db-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5734795124597738002c6176-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e2af47786f7746d404f3aaa-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b327086f7742525194449-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c639286f774151567fa95-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e35de086f7741778269d84-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/619cbf476b8a1b37a54eebf8-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c2e1186f77425357b6124-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252652055",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-hideout.png",
+ "screenshot_bytes": 239084
+}

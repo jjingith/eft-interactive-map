@@ -1,0 +1,380 @@
+{
+  "gunId": "5bd70322209c4d00d7167b8f",
+  "tag": "mp7a2",
+  "viewport": {
+    "w": 1920,
+    "h": 919
+  },
+  "picked": {
+    "ok": true,
+    "label": "4.6x3010HK MP7A2 4.6x30 冲锋枪"
+  },
+  "resetOk": true,
+  "rev": "rev R19.7-04f4d52f",
+  "version": "",
+  "buildpage": {
+    "x": 0,
+    "y": 103,
+    "w": 1920,
+    "h": 816
+  },
+  "gridCols": "236px 600px 1008px",
+  "forge": {
+    "x": 0,
+    "y": 103,
+    "w": 236,
+    "h": 816
+  },
+  "center": {
+    "x": 244,
+    "y": 103,
+    "w": 600,
+    "h": 816
+  },
+  "cands": {
+    "x": 852,
+    "y": 103,
+    "w": 1008,
+    "h": 816
+  },
+  "canvas": {
+    "x": 256,
+    "y": 169,
+    "w": 561,
+    "h": 444
+  },
+  "canvasCols": "74.7031px 74.7188px 74.7188px 74.7031px 74.7188px 74.7188px 74.7188px",
+  "meta": "基础枪械 | HK MP7A2 4.6x30 冲锋枪 | 改装槽位 | 11 | 已装配件 | 5",
+  "presetState": "预设：未改动",
+  "statsText": "整枪属性 | 人机工效 | 72.5 | 垂直后坐力 | 41.0 | 水平后坐力 | 146.0 | 重量 | 2.23 kg | 精度 MOA | 8.59 MOA | 射速 | 950 rpm | 瞄准距离 | 100 m | 弹匣容量 | 20 发 | 初速 | — | 整枪成本（含原厂件） | 222,192 ₽ | 其中改装件 | 138,217 ₽",
+  "hiddenText": "隐藏属性ADS 时间0.32 sTrueErgoDelta72.5OverSwing否Aim Sway 摆动强度0.0 %ArmStamina62.5 s爆头有效距离16 m相机后坐3.5散布偏差上限11.0后坐散布11.0后坐角90.0",
+  "focusText": "当前槽位：弹匣",
+  "bottomText": "改装件 138,217 ₽含枪 222,192 ₽回收 3,863 ₽Final Cost: 222,192 ₽HK MP7 4.6x30 20发弹匣+50.0%defaultHK MP7A1 4.6x30 消焰器-0.5-6.0%defaultHK MP7 折叠式准星00.0%defaultHK MP7 折叠式照门00.0%defaultHK MP7A2标准枪托+3-12.0%default",
+  "overlay": "950 RPMDPS —",
+  "overlayPos": {
+    "x": 428,
+    "y": 305,
+    "w": 31,
+    "h": 18
+  },
+  "shot": {
+    "x": 424,
+    "y": 265,
+    "w": 224,
+    "h": 62
+  },
+  "gunImg": {
+    "x": 424,
+    "y": 265,
+    "w": 224,
+    "h": 62
+  },
+  "heroText": "",
+  "hasPartX": false,
+  "cells": [
+    {
+      "slot": "mod_sight_front",
+      "lane": "top2",
+      "row": 1,
+      "col": 1,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "00.0%",
+      "parent": null,
+      "r": {
+        "x": 263,
+        "y": 178,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_scope",
+      "lane": "top2",
+      "row": 1,
+      "col": 3,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "SCOPE",
+      "parent": null,
+      "r": {
+        "x": 420,
+        "y": 178,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_sight_rear",
+      "lane": "top2",
+      "row": 1,
+      "col": 5,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "00.0%",
+      "parent": null,
+      "r": {
+        "x": 578,
+        "y": 178,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_muzzle",
+      "lane": "main",
+      "row": 2,
+      "col": 1,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "-0.5-6.0%",
+      "parent": null,
+      "r": {
+        "x": 263,
+        "y": 268,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_stock",
+      "lane": "main",
+      "row": 2,
+      "col": 2,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "+3-12.0%",
+      "parent": null,
+      "r": {
+        "x": 342,
+        "y": 268,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_muzzle/mod_muzzle",
+      "lane": "lower",
+      "row": 3,
+      "col": 1,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MUZZLE",
+      "parent": "mod_muzzle",
+      "r": {
+        "x": 263,
+        "y": 358,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_magazine",
+      "lane": "lower",
+      "row": 3,
+      "col": 4,
+      "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+      "label": "+50.0%",
+      "parent": null,
+      "r": {
+        "x": 499,
+        "y": 358,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_foregrip",
+      "lane": "lower",
+      "row": 3,
+      "col": 7,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "FOREGRIP",
+      "parent": null,
+      "r": {
+        "x": 735,
+        "y": 358,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_tactical_000",
+      "lane": "tactical",
+      "row": 5,
+      "col": 1,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "TACTICAL_000",
+      "parent": null,
+      "r": {
+        "x": 263,
+        "y": 528,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_tactical_001",
+      "lane": "tactical",
+      "row": 5,
+      "col": 2,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "TACTICAL_001",
+      "parent": null,
+      "r": {
+        "x": 342,
+        "y": 528,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "slot": "mod_tactical_002",
+      "lane": "tactical",
+      "row": 5,
+      "col": 3,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "TACTICAL_002",
+      "parent": null,
+      "r": {
+        "x": 420,
+        "y": 528,
+        "w": 75,
+        "h": 75
+      }
+    },
+    {
+      "lane": "ammo",
+      "row": 4,
+      "col": 4,
+      "cls": "gw-part gw-part-ammo gw-part-empty",
+      "label": "AMMO",
+      "parent": null,
+      "r": {
+        "x": 499,
+        "y": 443,
+        "w": 75,
+        "h": 75
+      }
+    }
+  ],
+  "body": {
+    "row": 2,
+    "col": 3,
+    "r": {
+      "x": 420,
+      "y": 263,
+      "w": 232,
+      "h": 86
+    }
+  },
+  "ammoCell": {
+    "text": "AMMO",
+    "cls": "gw-part gw-part-ammo gw-part-empty",
+    "r": {
+      "x": 499,
+      "y": 443,
+      "w": 75,
+      "h": 75
+    }
+  },
+  "candHeaders": [
+    "配件▲",
+    "Ergo",
+    "下级槽",
+    "Kg",
+    "FLEA价",
+    "后坐",
+    "状态"
+  ],
+  "candRows": 3,
+  "loadvar": {
+    "x": 256,
+    "y": 111,
+    "w": 561,
+    "h": 30
+  },
+  "loadvarFit": {
+    "w": 561,
+    "h": 30,
+    "scrollW": 559,
+    "clientW": 559,
+    "kids": [
+      {
+        "cls": "gw-loadvar-t",
+        "x": 265,
+        "w": 101,
+        "right": 366,
+        "over": -451,
+        "clipped": false
+      },
+      {
+        "cls": "gw-ref",
+        "x": 374,
+        "w": 177,
+        "right": 551,
+        "over": -266,
+        "clipped": false
+      },
+      {
+        "cls": "gw-btn",
+        "x": 559,
+        "w": 70,
+        "right": 629,
+        "over": -188,
+        "clipped": false
+      },
+      {
+        "cls": "gw-preset-state",
+        "x": 637,
+        "w": 54,
+        "right": 691,
+        "over": -126,
+        "clipped": false
+      },
+      {
+        "cls": "lw-grow",
+        "x": 699,
+        "w": 109,
+        "right": 808,
+        "over": -9,
+        "clipped": false
+      },
+      {
+        "cls": "gw-visual gw-visual-slim",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "over": -817,
+        "clipped": false
+      }
+    ],
+    "overflowX": "hidden"
+  },
+  "refSel": {
+    "w": 150,
+    "clipped": false,
+    "text": "（手动配置）"
+  },
+  "presetClipped": false,
+  "nameTooltip": "HK MP7 4.6x30 20发弹匣（Magazine）",
+  "candNamesMissing": [],
+  "candNameSample": [
+    {
+      "text": "HK MP7 4.6x30 20发弹匣",
+      "w": 458,
+      "visible": true
+    },
+    {
+      "text": "HK MP7 4.6x30 30发弹匣",
+      "w": 458,
+      "visible": true
+    },
+    {
+      "text": "HK MP7 4.6x30 40发弹匣",
+      "w": 458,
+      "visible": true
+    }
+  ],
+  "scrollbar": {
+    "sh": 783,
+    "ch": 783,
+    "sw": 1005,
+    "cw": 1005,
+    "overflowY": "auto"
+  }
+}

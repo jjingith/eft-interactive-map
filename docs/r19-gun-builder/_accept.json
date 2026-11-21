@@ -1,0 +1,131 @@
+{
+ "console": [],
+ "views": [
+  {
+   "mode": "caliber",
+   "got": "caliber",
+   "cards": 163,
+   "groups": [
+    ".300 Blk · 2",
+    ".308 ME · 1",
+    ".338 · 3",
+    ".357 · 2",
+    ".366 TKM · 2",
+    ".45 ACP · 5",
+    ".50 AE · 4",
+    ".50 BMG · 1",
+    "12.7x55 · 2",
+    "12g · 14",
+    "20g · 1",
+    "20x1mm · 1",
+    "23x75 · 1",
+    "4.6x30 · 2",
+    "40x46 · 2",
+    "5.45x39 · 15",
+    "5.56x45 · 18",
+    "5.7x28 · 4",
+    "5.8x42 · 1",
+    "6.8x51 · 1"
+   ],
+   "hscroll": false,
+   "shot": "1920-01-caliber.png"
+  },
+  {
+   "mode": "class",
+   "got": "class",
+   "cards": 163,
+   "groups": [
+    "突击步枪 · 53",
+    "卡宾枪 · 10",
+    "冲锋枪 · 23",
+    "精确射手步枪 · 11",
+    "栓动狙击步枪 · 10",
+    "机枪 · 8",
+    "霰弹枪 · 16",
+    "手枪 · 26",
+    "左轮 · 5",
+    "榴弹发射器 · 1"
+   ],
+   "hscroll": false,
+   "shot": "1920-02-class.png"
+  },
+  {
+   "mode": "table",
+   "got": "table",
+   "cards": 163,
+   "groups": [
+    ".300 Blk · 2",
+    ".308 ME · 1",
+    ".338 · 3",
+    ".357 · 2",
+    ".366 TKM · 2",
+    ".45 ACP · 5",
+    ".50 AE · 4",
+    ".50 BMG · 1",
+    "12.7x55 · 2",
+    "12g · 14",
+    "20g · 1",
+    "20x1mm · 1",
+    "23x75 · 1",
+    "4.6x30 · 2",
+    "40x46 · 2",
+    "5.45x39 · 15",
+    "5.56x45 · 18",
+    "5.7x28 · 4",
+    "5.8x42 · 1",
+    "6.8x51 · 1"
+   ],
+   "hscroll": false,
+   "shot": "1920-03-table.png"
+  }
+ ],
+ "external": [],
+ "filters": {
+  "all": 163,
+  "singleOnly": 156,
+  "primaryOnly": 132
+ },
+ "picked": "AK-74 5.45x39 突击步枪",
+ "modeAfterPick": "build",
+ "parts": 13,
+ "bars": 5,
+ "barsText": "人机工效47.0 | 散布角0.1 | 垂直后坐71.0 | 水平后坐180.6 | 初速 m/s890.0",
+ "candRows": 8,
+ "ammoText": "弹药（5.45x39）5.45x39毫米 7N39“针刺” · 1,240 ₽5.45x39毫米 BS · 780 ₽5.45x39毫米 BP · 630 ₽5.45x39毫米 7N40 · —5.45x39毫米 BT · —5.45x39毫米 PP · 220 ₽5.45x39毫米 PS · —5.45x39毫米 FMJ · —5.45x39毫米 T · —5.45x39毫米 US · —5.4",
+ "bottomText": "Final Cost: 84,112 ₽AK-74导气管00.0%defaultAK-74 木制护木+110.0%defaultAK-74 5.45x39 膛口制退器-0.5-5.0%defaultAKS-74U 胶木手枪式握把+20.0%defaultAK-74 防尘盖+30.0%defaultAK-74 照门00.0%defaultAK-74 木制枪托+3-21.0%default6L20 5.45x39 AK-74 30发弹匣-1.50.0%default",
+ "hscrollBuild": false,
+ "candSearch": {
+  "query": "消音",
+  "rows": 1,
+  "first": "当前槽位没有合法配件（或该槽位没有 allow 数据 → 数据缺口，候选为空）"
+ },
+ "emptySlotPicked": "mod_launcher",
+ "equip": {
+  "slot": "mod_launcher",
+  "candRows": 1,
+  "equipped": "GP-25“篝火”40 毫米下挂式榴弹发射器配件-35.0—1.40—-8.0%",
+  "partsAfter": 13
+ },
+ "remove": "removed",
+ "partsAfterRemove": 13,
+ "forge": {
+  "results": 4,
+  "note": "生成 4 个方案（全部通过兼容校验）· 评估 1204 次"
+ },
+ "forgeApplied": "applied",
+ "partsAfterForge": 15,
+ "table": {
+  "rows": 163,
+  "modeAfterRowClick": "build"
+ },
+ "small": {
+  "mode": "caliber",
+  "cards": 163,
+  "hscroll": false,
+  "shot": "1264-01-caliber.png",
+  "classShot": "1264-02-class.png",
+  "tableShot": "1264-03-table.png",
+  "buildShot": "1264-04-builder.png",
+  "hscrollBuild": false
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "schema": "r19.20-calibration-migration/1",
+ "recordsBefore": 397,
+ "recordsAfter": 397,
+ "recordsDeleted": 0,
+ "changes": [
+  {
+   "gun": "AKM",
+   "status": "moved-to-parallel",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "before": {
+    "logicalRow": 2,
+    "col": 6,
+    "note": "R19.19 A2：AKM 照门的 AK"
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 7
+   },
+   "sightRecordAt": {
+    "logicalRow": 1,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMS",
+   "status": "moved-to-parallel",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "before": {
+    "logicalRow": 2,
+    "col": 6,
+    "note": "R19.19 A2：AKM 照门的 AK"
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 7
+   },
+   "sightRecordAt": {
+    "logicalRow": 1,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMN",
+   "status": "moved-to-parallel",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "before": {
+    "logicalRow": 2,
+    "col": 6,
+    "note": "R19.19 A2：AKM 照门的 AK"
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 7
+   },
+   "sightRecordAt": {
+    "logicalRow": 1,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMSN",
+   "status": "moved-to-parallel",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "before": {
+    "logicalRow": 2,
+    "col": 6,
+    "note": "R19.19 A2：AKM 照门的 AK"
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 7
+   },
+   "sightRecordAt": {
+    "logicalRow": 1,
+    "col": 6
+   }
+  },
+  {
+   "gun": "VPO-136",
+   "status": "moved-to-parallel",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "before": {
+    "logicalRow": 2,
+    "col": 6,
+    "note": "R19.19 A2：AKM 照门的 AK"
+   },
+   "after": {
+    "logicalRow": 1,
+    "col": 7
+   },
+   "sightRecordAt": {
+    "logicalRow": 1,
+    "col": 6
+   }
+  }
+ ]
+}

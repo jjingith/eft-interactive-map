@@ -1,0 +1,24 @@
+﻿probe at 2026-11-03T22:55:17.1094803+08:00
+1) changes.json UA only:
+   HTTP=403
+2) changes.json Referer only (curl UA):
+   HTTP=403
+3) burst 8x realtime dev_pvp (no auth, curl UA):
+   codes=200,200,200,200,200,200,200,200
+4) rate-limit headers present?
+   
+done
+5) UA+Origin=200  6) UA+Referer=403
+7) CORS with Origin http://127.0.0.1:8000:
+   HTTP/1.1 200 Connection established
+   HTTP/1.1 200 OK
+   Access-Control-Allow-Origin: http://127.0.0.1:8000
+   Access-Control-Expose-Headers: ETag
+8) OPTIONS preflight:
+   HTTP/1.1 200 Connection established
+   HTTP/1.1 204 No Content
+   Access-Control-Allow-Origin: http://127.0.0.1:8000
+   Access-Control-Allow-Headers: x-app-token, user-agent, if-none-match, content-type
+   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+   Access-Control-Max-Age: 86400
+9) changes UA+Origin(localhost)=403   10) changes UA+Origin+random x-app-token=200

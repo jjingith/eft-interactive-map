@@ -1,0 +1,275 @@
+{
+ "generatedAt": "2026-10-27T12:39:15",
+ "schema": "r19.20-engine-audit/1",
+ "checks": {
+  "r1920_AKM_two_sight_slots": true,
+  "r1920_AKM_left_allow_no_akmp": true,
+  "r1920_AKM_right_allow_akmp_only": true,
+  "r1920_AKM_pair_predicate": true,
+  "r1920_AKM_auto_parallel_right": true,
+  "r1920_AKM_auto_not_below": true,
+  "r1920_AKM_final_parallel": true,
+  "r1920_AKM_install_akmp_no_dup": true,
+  "r1920_AKM_install_keeps_parallel": true,
+  "r1920_AKMS_two_sight_slots": true,
+  "r1920_AKMS_left_allow_no_akmp": true,
+  "r1920_AKMS_right_allow_akmp_only": true,
+  "r1920_AKMS_pair_predicate": true,
+  "r1920_AKMS_auto_parallel_right": true,
+  "r1920_AKMS_auto_not_below": true,
+  "r1920_AKMS_final_parallel": true,
+  "r1920_AKMS_install_akmp_no_dup": true,
+  "r1920_AKMS_install_keeps_parallel": true,
+  "r1920_AKMN_two_sight_slots": true,
+  "r1920_AKMN_left_allow_no_akmp": true,
+  "r1920_AKMN_right_allow_akmp_only": true,
+  "r1920_AKMN_pair_predicate": true,
+  "r1920_AKMN_auto_parallel_right": true,
+  "r1920_AKMN_auto_not_below": true,
+  "r1920_AKMN_final_parallel": true,
+  "r1920_AKMN_install_akmp_no_dup": true,
+  "r1920_AKMN_install_keeps_parallel": true,
+  "r1920_AKMSN_two_sight_slots": true,
+  "r1920_AKMSN_left_allow_no_akmp": true,
+  "r1920_AKMSN_right_allow_akmp_only": true,
+  "r1920_AKMSN_pair_predicate": true,
+  "r1920_AKMSN_auto_parallel_right": true,
+  "r1920_AKMSN_auto_not_below": true,
+  "r1920_AKMSN_final_parallel": true,
+  "r1920_AKMSN_install_akmp_no_dup": true,
+  "r1920_AKMSN_install_keeps_parallel": true,
+  "r1920_VPO-136_two_sight_slots": true,
+  "r1920_VPO-136_left_allow_no_akmp": true,
+  "r1920_VPO-136_right_allow_akmp_only": true,
+  "r1920_VPO-136_pair_predicate": true,
+  "r1920_VPO-136_auto_parallel_right": true,
+  "r1920_VPO-136_auto_not_below": true,
+  "r1920_VPO-136_final_parallel": true,
+  "r1920_VPO-136_install_akmp_no_dup": true,
+  "r1920_VPO-136_install_keeps_parallel": true,
+  "r1920_data_akmp_subslot_restored": true,
+  "r1920_data_allow_items_AKM": true,
+  "r1920_data_allow_gunslots_AKM": true,
+  "r1920_data_allow_items_AKMS": true,
+  "r1920_data_allow_gunslots_AKMS": true,
+  "r1920_data_allow_items_AKMN": true,
+  "r1920_data_allow_gunslots_AKMN": true,
+  "r1920_data_allow_items_AKMSN": true,
+  "r1920_data_allow_gunslots_AKMSN": true,
+  "r1920_data_allow_items_VPO-136": true,
+  "r1920_data_allow_gunslots_VPO-136": true,
+  "r1920_vpo209_pair_predicate_false": true,
+  "r1920_vpo209_unchanged_below": true,
+  "r1920_ak74n_single_sight_unchanged": true,
+  "r1920_ak74n_no_akmp": true,
+  "r1920_ak10x_single_sight_5ac66d2e5acfc43b321d4b53": true,
+  "r1920_ak10x_single_sight_5ac66d725acfc43b321d4b60": true,
+  "r1920_calib_total_397": true,
+  "r1920_calib_no_fallback": true,
+  "r1920_calib_parallel_record_AKM": true,
+  "r1920_calib_parallel_record_AKMS": true,
+  "r1920_calib_parallel_record_AKMN": true,
+  "r1920_calib_parallel_record_AKMSN": true,
+  "r1920_calib_parallel_record_VPO-136": true
+ },
+ "detail": {
+  "guns": {
+   "AKM": {
+    "gunId": "59d6088586f774275f37482f",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 7,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 2,
+      "col": 8,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 1,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "leftAllow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "rightAllow": [
+     "AKMP系统照门装置"
+    ],
+    "parentOfAkmp": "mod_sight_rear",
+    "parentItem": "59d650cf86f7741b846413a4"
+   },
+   "AKMS": {
+    "gunId": "59ff346386f77477562ff5e2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 7,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 2,
+      "col": 8,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 1,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "leftAllow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "rightAllow": [
+     "AKMP系统照门装置"
+    ],
+    "parentOfAkmp": "mod_sight_rear",
+    "parentItem": "59d650cf86f7741b846413a4"
+   },
+   "AKMN": {
+    "gunId": "5a0ec13bfcdbcb00165aa685",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 2,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 1,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "leftAllow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "rightAllow": [
+     "AKMP系统照门装置"
+    ],
+    "parentOfAkmp": "mod_sight_rear",
+    "parentItem": "59d650cf86f7741b846413a4"
+   },
+   "AKMSN": {
+    "gunId": "5abcbc27d8ce8700182eceeb",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 2,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 1,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "leftAllow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "rightAllow": [
+     "AKMP系统照门装置"
+    ],
+    "parentOfAkmp": "mod_sight_rear",
+    "parentItem": "59d650cf86f7741b846413a4"
+   },
+   "VPO-136": {
+    "gunId": "59e6152586f77473dc057aa1",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 7,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 2,
+      "col": 8,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "akmp": {
+      "row": 1,
+      "col": 7,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "leftAllow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨"
+    ],
+    "rightAllow": [
+     "AKMP系统照门装置"
+    ],
+    "parentOfAkmp": "mod_sight_rear",
+    "parentItem": "59d650cf86f7741b846413a4"
+   }
+  },
+  "calib": {
+   "totalRecords": 397,
+   "applied": 383,
+   "unmatched": 14,
+   "fallback": 0
+  }
+ },
+ "failed": []
+}

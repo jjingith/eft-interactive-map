@@ -1,0 +1,416 @@
+{
+ "schema": "eftmap.r19.11.bars/1",
+ "rule": "实心=[0,min(B,C)]；斜纹=[min(B,C),max(B,C)]；基线竖线固定在 f(B)",
+ "default": [
+  {
+   "key": "ergonomics",
+   "label": "人机工效",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 55
+    }
+   ],
+   "baseLeft": 55,
+   "text": "基线 55.0|改装 55.0|技能 55.0",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "accuracy",
+   "label": "散布角",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 18.2
+    }
+   ],
+   "baseLeft": 18.2,
+   "text": "基线 1.8|改装 1.8|技能 1.8",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "recoilV",
+   "label": "垂直后坐",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 11.2
+    }
+   ],
+   "baseLeft": 11.2,
+   "text": "基线 78.1|改装 78.1|技能 78.1",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "recoilH",
+   "label": "水平后坐",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 18
+    }
+   ],
+   "baseLeft": 18,
+   "text": "基线 224.4|改装 224.4|技能 224.4",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "velocity",
+   "label": "初速 m/s",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 70.7
+    }
+   ],
+   "baseLeft": 70.7,
+   "text": "基线 922.0|改装 922.0|技能 922.0",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  }
+ ],
+ "ergoUp": {
+  "build": {
+   "i": 1,
+   "ergo": 111,
+   "name": "高人机工效"
+  },
+  "bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 55
+     },
+     {
+      "cls": "stripe-good",
+      "left": 55,
+      "width": 45
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 111.0|技能 111.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "solid-bad",
+      "left": 0,
+      "width": 18.2
+     },
+     {
+      "cls": "stripe-bad",
+      "left": 18.2,
+      "width": 5.9
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 2.4|技能 2.4",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 6.6
+     },
+     {
+      "cls": "stripe-good",
+      "left": 6.6,
+      "width": 4.6
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 46.2|技能 46.2",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 10.6
+     },
+     {
+      "cls": "stripe-good",
+      "left": 10.6,
+      "width": 7.3
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 132.7|技能 132.7",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "solid-bad",
+      "left": 0,
+      "width": 60.1
+     },
+     {
+      "cls": "stripe-bad",
+      "left": 60.1,
+      "width": 10.6
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 821.0|技能 821.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ]
+ },
+ "ergoDown": {
+  "build": {
+   "i": 0,
+   "ergo": 44,
+   "name": "低后坐力"
+  },
+  "bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "solid-bad",
+      "left": 0,
+      "width": 44
+     },
+     {
+      "cls": "stripe-bad",
+      "left": 44,
+      "width": 11
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 44.0|技能 44.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 11
+     },
+     {
+      "cls": "stripe-good",
+      "left": 11,
+      "width": 7.2
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 1.1|技能 1.1",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 3.8
+     },
+     {
+      "cls": "stripe-good",
+      "left": 3.8,
+      "width": 7.4
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 26.5|技能 26.5",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 6.1
+     },
+     {
+      "cls": "stripe-good",
+      "left": 6.1,
+      "width": 11.8
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 76.3|技能 76.3",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "solid-good",
+      "left": 0,
+      "width": 70.7
+     },
+     {
+      "cls": "stripe-good",
+      "left": 70.7,
+      "width": 4.8
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 968.0|技能 968.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ]
+ },
+ "restored": [
+  {
+   "key": "ergonomics",
+   "label": "人机工效",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 55
+    }
+   ],
+   "baseLeft": 55,
+   "text": "基线 55.0|改装 55.0|技能 55.0",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "accuracy",
+   "label": "散布角",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 18.2
+    }
+   ],
+   "baseLeft": 18.2,
+   "text": "基线 1.8|改装 1.8|技能 1.8",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "recoilV",
+   "label": "垂直后坐",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 11.2
+    }
+   ],
+   "baseLeft": 11.2,
+   "text": "基线 78.1|改装 78.1|技能 78.1",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "recoilH",
+   "label": "水平后坐",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 18
+    }
+   ],
+   "baseLeft": 18,
+   "text": "基线 224.4|改装 224.4|技能 224.4",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  },
+  {
+   "key": "velocity",
+   "label": "初速 m/s",
+   "segs": [
+    {
+     "cls": "neutral",
+     "left": 0,
+     "width": 70.7
+    }
+   ],
+   "baseLeft": 70.7,
+   "text": "基线 922.0|改装 922.0|技能 922.0",
+   "trackW": 314,
+   "valW": 172,
+   "valClipped": false,
+   "clippedKeys": []
+  }
+ ]
+}

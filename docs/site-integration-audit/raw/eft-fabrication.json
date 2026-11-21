@@ -1,0 +1,1401 @@
+{
+ "name": "eft-fabrication",
+ "requested_url": "https://www.eftarkov.com/fabrication",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/fabrication",
+ "title": "藏身处制作配方利润 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 5247,
+ "htmlLen": 93338,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 76,
+ "input": 5,
+ "table": 2,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "查询藏身处制作配方、材料成本与利润",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pve",
+   "text": "PVE",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp",
+   "text": "PVP",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=season",
+   "text": "赛季",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp",
+   "text": "重置",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp",
+   "text": "全部等级",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp&level=1",
+   "text": "LV1",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp&level=2",
+   "text": "LV2",
+   "title": ""
+  },
+  {
+   "href": "/fabrication?mode=pvp&level=3",
+   "text": "LV3",
+   "title": ""
+  },
+  {
+   "href": "/item/6389c7750ef44505c87f5996",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6389c7750ef44505c87f5996",
+   "text": "微控制器电路板 × 4",
+   "title": ""
+  },
+  {
+   "href": "/task/6396700fea19ac7ed845db32",
+   "text": "🔒观察员",
+   "title": ""
+  },
+  {
+   "href": "/item/6389c7f115805221fb410466",
+   "text": "GPS信号放大单元 × 11 × 61,200 ₽ = 61,200 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af04b6486f774195a3ebb49",
+   "text": "Elite钳子 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5d4042a986f7743185265463",
+   "text": "长平头螺丝刀 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/6389c8fb46b54c634724d847",
+   "text": "硅基光电集成电路教材 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5751496424597720a27126da",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5751496424597720a27126da",
+   "text": "罐装热棒能量饮料 × 20",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b33a686f7742523398398",
+   "text": "纯净水 × 11 × 88,888 ₽ = 88,888 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e3577886f774176a362503",
+   "text": "一包糖 × 11 × 72,000 ₽ = 72,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0484c86f7740f02001f7f",
+   "text": "罐装 Majaica 咖啡豆 × 11 × 15,000 ₽ = 15,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5bc9be8fd4351e00334cae6e",
+   "text": "42 Signature Blend英式茶 × 11 × 20,000 ₽ = 20,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b385e86f774252167b98a",
+   "text": "滤水器 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/62a09e73af34e73a266d932a",
+   "text": "BakeEzy烹饪书 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06779c86f77426e00dd782",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06779c86f77426e00dd782",
+   "text": "电线 × 8",
+   "title": ""
+  },
+  {
+   "href": "/item/59e36c6f86f774176c10a2a7",
+   "text": "电源线 × 22 × 38,666 ₽ = 77,332 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c94bbff86f7747ee735c08f",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c94bbff86f7747ee735c08f",
+   "text": "TerraGroup实验室访问钥匙卡 × 3",
+   "title": ""
+  },
+  {
+   "href": "/item/5c052fb986f7746b2101e909",
+   "text": "UHF RFID固定式读取器 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5c12613b86f7743bbe2c3f76",
+   "text": "情报文件夹 × 11 × 211,111 ₽ = 211,111 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6fc87386f77449db3db94e",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6fc87386f77449db3db94e",
+   "text": "“Hawk”火药 × 3",
+   "title": ""
+  },
+  {
+   "href": "/item/5d0379a886f77420407aa271",
+   "text": "OFZ 30x165毫米炮弹 × 11 × 32,000 ₽ = 32,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5a7286f7747884343aea",
+   "text": "“Kite”火药 × 22 × 20,999 ₽ = 41,998 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/60391afc25aff57af81f7085",
+   "text": "棘轮扳手 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06782b86f77426df5407d2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06782b86f77426df5407d2",
+   "text": "电容 × 6",
+   "title": ""
+  },
+  {
+   "href": "/item/57347c2e24597744902c94a1",
+   "text": "供电单元 × 11 × 35,900 ₽ = 35,900 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590c2d8786f774245b1f03f3",
+   "text": "螺丝刀 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1c819a86f774771b0acd6c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1c819a86f774771b0acd6c",
+   "text": "武器零件 × 5",
+   "title": ""
+  },
+  {
+   "href": "/item/59d6088586f774275f37482f",
+   "text": "AKM 7.62x39 突击步枪 × 11 × 40,000 ₽ = 40,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/544fb5454bdc2df8738b456a",
+   "text": "Leatherman多功能工具钳 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/57347b8b24597737dd42e192",
+   "text": "经典火柴 × 11 × 16,000 ₽ = 16,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6fc78386f77449d825f9dc",
+   "text": "“Eagle”火药 × 11 × 66,666 ₽ = 66,666 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6fc78386f77449d825f9dc",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6fc78386f77449d825f9dc",
+   "text": "“Eagle”火药 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/58d3db5386f77426186285a0",
+   "text": "M67手榴弹 × 22 × 30,000 ₽ = 60,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/617aa4dd8166f034d57de9c5",
+   "text": "M18烟雾弹 （绿色） × 11 × 14,000 ₽ = 14,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e32f56fcb6d5863cc5e5ee4",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e32f56fcb6d5863cc5e5ee4",
+   "text": "VOG-17 Khattabka 简易手榴弹 × 8",
+   "title": ""
+  },
+  {
+   "href": "/item/62a0a098de7ac8199358053b",
+   "text": "缝纫锥 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af51086f7746d3f3c3402",
+   "text": "UZRGM手榴弹引信 × 55 × 27,666 ₽ = 138,330 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/60391b0fb847c71012789415",
+   "text": "TP-200 砖型TNT × 11 × 32,222 ₽ = 32,222 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5448fee04bdc2dbc018b4567",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5448fee04bdc2dbc018b4567",
+   "text": "600 毫升瓶装水 × 10",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b39a386f774252339976f",
+   "text": "硅胶管 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0e531d86f7747fa23f4d42",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0e531d86f7747fa23f4d42",
+   "text": "SJ6 TGLabs 战斗兴奋剂注射器 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0e531286f7747fa54205c2",
+   "text": "SJ1 TGLabs 战斗兴奋剂注射器 × 11 × 35,000 ₽ = 35,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b3a5d86f774252167ba22",
+   "text": "一堆药 × 22 × 18,776 ₽ = 37,552 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e3606886f77417674759a5",
+   "text": "盐水溶液 × 11 × 41,111 ₽ = 41,111 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/62a0a043cf4a99369e2624a5",
+   "text": "OLOLO瓶装复合维生素 × 11 × 23,333 ₽ = 23,333 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/62a09f32621468534a797acb",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/62a09f32621468534a797acb",
+   "text": "瓶装 Pevko 淡啤酒 × 10",
+   "title": ""
+  },
+  {
+   "href": "/item/57347d3d245977448f7b7f61",
+   "text": "黑麦面包块 × 55 × 39,900 ₽ = 199,500 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e8f3423fd7471236e6e3b64",
+   "text": "“诺文斯基核动力”金牌格瓦斯600毫升装 × 33 × 25,000 ₽ = 75,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e366c186f7741778269d85",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e366c186f7741778269d85",
+   "text": "有机玻璃片 × 4",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b309586f77425227d1676",
+   "text": "损坏的液晶显示屏 × 22 × 39,880 ₽ = 79,760 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af22086f7746d3f3c33fa",
+   "text": "Poxeram冷焊膏 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/590c657e86f77412b013051d",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c657e86f77412b013051d",
+   "text": "Grizzly急救包 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b3a5d86f774252167ba22",
+   "text": "一堆药 × 44 × 18,776 ₽ = 75,104 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/60098af40accd37ef2175f27",
+   "text": "CAT止血带 × 22 × 9,999 ₽ = 19,998 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0454c86f7746bf20992e8",
+   "text": "铝固定夹板 × 11 × 15,000 ₽ = 15,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5a7286f7747884343aea",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5a7286f7747884343aea",
+   "text": "“Kite”火药 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff216d2720bbd668b4568",
+   "text": "5.45x39毫米 HP × 120120 × 66 ₽ = 7,920 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590c2b4386f77425357b6123",
+   "text": "钳子 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3b0486f7743954552bdb",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3b0486f7743954552bdb",
+   "text": "印制电路板 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5734781f24597737e04bf32a",
+   "text": "DVD光驱 × 11 × 23,991 ₽ = 23,991 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d63d33b86f7746ea9275524",
+   "text": "平头螺丝刀 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b33a686f7742523398398",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b33a686f7742523398398",
+   "text": "纯净水 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b385e86f774252167b98a",
+   "text": "滤水器 × 11 × 55,555 ₽ = 55,555 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3efd86f77437d351a25b",
+   "text": "气体分析仪 × 11 × 25,000 ₽ = 25,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c13cef886f774072e618e82",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c13cef886f774072e618e82",
+   "text": "卫生纸 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/577e1c9d2459773cd707c525",
+   "text": "打印纸 × 11 × 40,000 ₽ = 40,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af4a786f7746d3f3c3400",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af4a786f7746d3f3c3400",
+   "text": "防撕布料 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/572b7adb24597762ae139821",
+   "text": "Scav背心 × 11 × 19,000 ₽ = 19,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/61bf83814088ec1a363d7097",
+   "text": "针线盒 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5bbd86f774785762df04",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5bbd86f774785762df04",
+   "text": "100毫升WD-40 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/590c5c9f86f77477c91c36e7",
+   "text": "400毫升WD-40 × 11 × 17,420 ₽ = 17,420 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40419286f774318526545f",
+   "text": "金属切割剪刀 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b3f2d86f774253763b735",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b3f2d86f774253763b735",
+   "text": "一次性注射器 × 4",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af37686f774755a234b65",
+   "text": "SurvL幸存者打火机 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/619cc01e0a7c3a1a2731940c",
+   "text": "医疗工具 × 1工具 · 不计入成本",
+   "title": ""
+  },
+  {
+   "href": "/item/5755356824597772cb798962",
+   "text": "AI-2急救组合 × 44 × 6,665 ₽ = 26,660 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40407c86f774318526545a",
+   "text": "Tarkovskaya瓶装伏特加 × 11 × 33,333 ₽ = 33,333 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e361e886f774176c10a2a5",
+   "text": "过氧化氢溶液（双氧水） × 11 × 9,999 ₽ = 9,999 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/57347cd0245977445a2d6ff1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/57347cd0245977445a2d6ff1",
+   "text": "T形插座 × 3",
+   "title": ""
+  },
+  {
+   "href": "/item/590c31c586f774245e3141b2",
+   "text": "一包钉子 × 11 × 15,947 ₽ = 15,947 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e36c6f86f774176c10a2a7",
+   "text": "电源线 × 11 × 38,666 ₽ = 38,666 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af4d286f7746d4159f07a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af4d286f7746d4159f07a",
+   "text": "芳纶纤维布料 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5648a7494bdc2d9d488b4583",
+   "text": "PACA 软质防弹背心 × 11 × 37,550 ₽ = 37,550 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/544fb6cc4bdc2d34748b456e",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/544fb6cc4bdc2d34748b456e",
+   "text": "士腻架能量棒 × 5",
+   "title": ""
+  },
+  {
+   "href": "/item/57505f6224597709a92585a9",
+   "text": "Alyonka 巧克力 × 11 × 31,000 ₽ = 31,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5448ff904bdc2d6f028b456e",
+   "text": "军用饼干 × 11 × 23,000 ₽ = 23,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/60098b1705871270cd5352a1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/60098b1705871270cd5352a1",
+   "text": "应急用水 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5448fee04bdc2dbc018b4567",
+   "text": "600 毫升瓶装水 × 11 × 15,444 ₽ = 15,444 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e2af29386f7746d4159f077",
+   "text": "KEKTAPE管道胶带 × 11 × 27,000 ₽ = 27,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40407c86f774318526545a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5d40407c86f774318526545a",
+   "text": "Tarkovskaya瓶装伏特加 × 10",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b376e86f774252519444e",
+   "text": "“凶狠跑刀崽”私酒 × 11 × 216,000 ₽ = 216,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5448fee04bdc2dbc018b4567",
+   "text": "600 毫升瓶装水 × 55 × 15,444 ₽ = 77,220 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590c678286f77426c9660122",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/590c678286f77426c9660122",
+   "text": "IFAK单兵急救包 × 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5751a25924597722c463c472",
+   "text": "军用绷带 × 22 × 2,278 ₽ = 4,556 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5e831507ea0a7c419c2f9bd9",
+   "text": "Esmarch止血带 × 11 × 3,900 ₽ = 3,900 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59e8d2ab86f77407f03fc9c2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59e8d2ab86f77407f03fc9c2",
+   "text": "AKM 7.62x39 突击步枪 默认 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6152586f77473dc057aa1",
+   "text": "VPO-136 野猪-KM 7.62x39 卡宾枪 × 11 × 29,000 ₽ = 29,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "https://space.bilibili.com/393480563",
+   "text": "© 2022-2026 逃离塔科夫中文Wiki · Powered by 大傻",
+   "title": ""
+  },
+  {
+   "href": "https://beian.miit.gov.cn",
+   "text": "皖ICP备2023025241号-1",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/fabrication",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6389c7750ef44505c87f5996-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6389c7f115805221fb410466-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5af04b6486f774195a3ebb49-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d4042a986f7743185265463-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6389c8fb46b54c634724d847-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5751496424597720a27126da-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b33a686f7742523398398-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e3577886f774176a362503-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5af0484c86f7740f02001f7f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5bc9be8fd4351e00334cae6e-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b385e86f774252167b98a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62a09e73af34e73a266d932a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c06779c86f77426e00dd782-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e36c6f86f774176c10a2a7-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c94bbff86f7747ee735c08f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c052fb986f7746b2101e909-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c12613b86f7743bbe2c3f76-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d6fc87386f77449db3db94e-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d0379a886f77420407aa271-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c5a7286f7747884343aea-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/60391afc25aff57af81f7085-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c06782b86f77426df5407d2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347c2e24597744902c94a1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/590c2d8786f774245b1f03f3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1c819a86f774771b0acd6c-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59d6088586f774275f37482f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/544fb5454bdc2df8738b456a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/57347b8b24597737dd42e192-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d6fc78386f77449d825f9dc-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/58d3db5386f77426186285a0-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/617aa4dd8166f034d57de9c5-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e32f56fcb6d5863cc5e5ee4-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62a0a098de7ac8199358053b-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e2af51086f7746d3f3c3402-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/60391b0fb847c71012789415-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5448fee04bdc2dbc018b4567-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b39a386f774252339976f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0e531d86f7747fa23f4d42-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0e531286f7747fa54205c2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b3a5d86f774252167ba22-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e3606886f77417674759a5-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/fabrication?mode=pvp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/fabrication?mode=pvp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/fabrication?mode=pvp&level=1",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/fabrication?mode=pvp&level=2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/fabrication?mode=pvp&level=3",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252691776",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-fabrication.png",
+ "screenshot_bytes": 156923
+}

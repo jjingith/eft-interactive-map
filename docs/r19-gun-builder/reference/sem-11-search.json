@@ -1,0 +1,632 @@
+[
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 48
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 48
+ },
+ {
+  "t": "DB4Tarkov v2026.10.22-2 🌑 01:21 🌕 13:21",
+  "role": "",
+  "tag": "HEADER",
+  "x": 0,
+  "y": 0,
+  "w": 1253,
+  "h": 48
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 333,
+  "y": 0,
+  "w": 763,
+  "h": 48
+ },
+ {
+  "t": "MARKET",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 337,
+  "y": 0,
+  "w": 73,
+  "h": 48
+ },
+ {
+  "t": "SEASON Kord",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 409,
+  "y": 0,
+  "w": 71,
+  "h": 48
+ },
+ {
+  "t": "QUEST",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 481,
+  "y": 0,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "t": "KEEP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 543,
+  "y": 0,
+  "w": 54,
+  "h": 48
+ },
+ {
+  "t": "GUN",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 597,
+  "y": 0,
+  "w": 49,
+  "h": 48
+ },
+ {
+  "t": "PRESET",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 646,
+  "y": 0,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "t": "AMMO",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 715,
+  "y": 0,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "t": "MAP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 776,
+  "y": 0,
+  "w": 50,
+  "h": 48
+ },
+ {
+  "t": "BARTER",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 826,
+  "y": 0,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "t": "CRAFT",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 895,
+  "y": 0,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "t": "CHANGES 1.2.0.0",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 957,
+  "y": 0,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "t": "LOGS",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1038,
+  "y": 0,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "t": "Game Mode Kord Breach (Season 1) ends in 43 day(s)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1259,
+  "y": 8,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "t": "PvE",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1260,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "PvP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1312,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "SS (43d)",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1363,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "Change Site Resolution",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1426,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Change Language",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1460,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "About Me",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1494,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Discord Server",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1528,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Login to save your progress",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1562,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Caliber",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Class",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 44,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Table",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 88,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Gun",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 132,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "",
+  "role": "",
+  "tag": "INPUT",
+  "x": 185,
+  "y": 55,
+  "w": 317,
+  "h": 33
+ },
+ {
+  "t": "Gunsmith",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 870,
+  "y": 52,
+  "w": 60,
+  "h": 32
+ },
+ {
+  "t": "NEW",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 921,
+  "y": 53,
+  "w": 18,
+  "h": 9
+ },
+ {
+  "t": "TierMaker",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 936,
+  "y": 52,
+  "w": 87,
+  "h": 32
+ },
+ {
+  "t": "Streamers builds that they will manually update their builds",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 1023,
+  "y": 52,
+  "w": 81,
+  "h": 32
+ },
+ {
+  "t": "Streamer",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1023,
+  "y": 52,
+  "w": 81,
+  "h": 32
+ },
+ {
+  "t": "All Variants from the gun include buy from Trader / Barter",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1104,
+  "y": 52,
+  "w": 68,
+  "h": 32
+ },
+ {
+  "t": "Variant",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1104,
+  "y": 52,
+  "w": 68,
+  "h": 32
+ },
+ {
+  "t": "Your saved guns",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1172,
+  "y": 52,
+  "w": 62,
+  "h": 32
+ },
+ {
+  "t": "Saved",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1172,
+  "y": 52,
+  "w": 62,
+  "h": 32
+ },
+ {
+  "t": "lastPrice",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1238,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "avg24h",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1304,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "avg7d",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1370,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "only FleaLvl",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1436,
+  "y": 53,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "t": "only TraderLvl",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1496,
+  "y": 53,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "t": "Trader level / PMC Setting",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1560,
+  "y": 48,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "t": "PrimaryHandgunClass FilterCaliber FilterAutoSingleBurstSilen",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "PrimaryHandgunClass FilterCaliber FilterAutoSingleBurstSilen",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "PrimaryHandgunClass FilterCaliber FilterAutoSingleBurstSilen",
+  "role": "tabpanel",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "Primary",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 5,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Handgun",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 52,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Class Filter",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 103,
+  "y": 93,
+  "w": 120,
+  "h": 28
+ },
+ {
+  "t": "Class Filter",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 103,
+  "y": 93,
+  "w": 120,
+  "h": 28
+ },
+ {
+  "t": "Caliber Filter",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 223,
+  "y": 93,
+  "w": 120,
+  "h": 28
+ },
+ {
+  "t": "Caliber Filter",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 223,
+  "y": 93,
+  "w": 120,
+  "h": 28
+ },
+ {
+  "t": "Auto",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 348,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Single",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 395,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Burst",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 443,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Silent",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 495,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "Loud",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 542,
+  "y": 93,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "5.45x39",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 4,
+  "y": 126,
+  "w": 1592,
+  "h": 78
+ },
+ {
+  "t": "4",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 78,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ },
+ {
+  "t": "650 3.32 AK-74",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 78,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ },
+ {
+  "t": "4",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 150,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ },
+ {
+  "t": "650 3.42 AK-74N",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 150,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ },
+ {
+  "t": "5",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 222,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ },
+ {
+  "t": "650 3.61 AK-74M",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 222,
+  "y": 129,
+  "w": 72,
+  "h": 72
+ }
+]

@@ -1,0 +1,246 @@
+{
+ "B_helmet_attachments": {
+  "B1_helmet_only": {
+   "chips": [
+    {
+     "slot": "helmet/5aa7e325e5b5b0214e506fa1",
+     "state": "empty",
+     "tag": "BUTTON",
+     "icon": null,
+     "name": null,
+     "x": 142,
+     "y": 144,
+     "w": 40,
+     "h": 40
+    },
+    {
+     "slot": "helmet/6a82dddd0c9ab3e3de988e8c",
+     "state": "empty",
+     "tag": "BUTTON",
+     "icon": null,
+     "name": null,
+     "x": 185,
+     "y": 144,
+     "w": 40,
+     "h": 40
+    }
+   ],
+   "helmet": {
+    "x": 230,
+    "y": 125,
+    "w": 78,
+    "h": 78
+   },
+   "helmetSlotEls": [
+    "BUTTON.lw-cat",
+    "DIV.lw-side-row",
+    "BUTTON.lw-cell",
+    "DIV.lw-cell-debuff"
+   ],
+   "hint": "已装上 Altyn 突击头盔（橄榄绿）（头盔）　｜　跳蚤市场 24h 均价（构建期快照，非实时）"
+  },
+  "B2_install_att1": {
+   "click": "clicked:helmet/5aa7e325e5b5b0214e506fa1",
+   "rows": "n=2 first=Altyn 头盔防弹面罩（防弹验证）护甲附件1.40-8.0%—✗",
+   "pick": "Altyn 头盔防弹面罩（防弹验证）护甲附件1.40-8",
+   "scan": {
+    "chips": [
+     {
+      "slot": "helmet/5aa7e325e5b5b0214e506fa1",
+      "state": "focus",
+      "tag": "BUTTON",
+      "icon": "6a82dbbf0ccd0eb28d02f240.webp",
+      "name": "Altyn 头盔防弹面罩（防弹验",
+      "x": 142,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     },
+     {
+      "slot": "helmet/6a82dddd0c9ab3e3de988e8c",
+      "state": "empty",
+      "tag": "BUTTON",
+      "icon": null,
+      "name": null,
+      "x": 185,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     }
+    ],
+    "helmet": {
+     "x": 230,
+     "y": 125,
+     "w": 78,
+     "h": 78
+    },
+    "helmetSlotEls": [
+     "BUTTON.lw-cat",
+     "DIV.lw-side-row",
+     "BUTTON.lw-cell",
+     "DIV.lw-cell-debuff"
+    ],
+    "hint": "已装上 Altyn 头盔防弹面罩（防弹验证）（头盔 › 装备座）　｜　跳蚤市场 24h 均价（构建期快照，非实时）"
+   }
+  },
+  "B3_install_att2": {
+   "click": "clicked:helmet/6a82dddd0c9ab3e3de988e8c",
+   "pick": "Altyn 盔罩（白桦迷彩）—0.07——I",
+   "scan": {
+    "chips": [
+     {
+      "slot": "helmet/5aa7e325e5b5b0214e506fa1",
+      "state": "on",
+      "tag": "BUTTON",
+      "icon": "6a82dbbf0ccd0eb28d02f240.webp",
+      "name": "Altyn 头盔防弹面罩（防弹验",
+      "x": 142,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     },
+     {
+      "slot": "helmet/6a82dddd0c9ab3e3de988e8c",
+      "state": "focus",
+      "tag": "BUTTON",
+      "icon": "6a82dce1a750a094fd02923e.webp",
+      "name": "Altyn 盔罩（白桦迷彩）",
+      "x": 185,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     }
+    ],
+    "helmet": {
+     "x": 230,
+     "y": 125,
+     "w": 78,
+     "h": 78
+    },
+    "helmetSlotEls": [
+     "BUTTON.lw-cat",
+     "DIV.lw-side-row",
+     "BUTTON.lw-cell",
+     "DIV.lw-cell-debuff"
+    ],
+    "hint": "已装上 Altyn 盔罩（白桦迷彩）（头盔 › 装备座 2）　｜　跳蚤市场 24h 均价（构建期快照，非实时）"
+   }
+  },
+  "B4_overlap": {
+   "helmet": {
+    "x": 230,
+    "y": 125,
+    "w": 78,
+    "h": 78
+   },
+   "chips": [
+    {
+     "slot": "helmet/5aa7e325e5b5b0214e506fa1",
+     "state": "on",
+     "x": 142,
+     "y": 144,
+     "w": 40,
+     "h": 40
+    },
+    {
+     "slot": "helmet/6a82dddd0c9ab3e3de988e8c",
+     "state": "focus",
+     "x": 185,
+     "y": 144,
+     "w": 40,
+     "h": 40
+    }
+   ],
+   "overlapping": []
+  },
+  "B5_after_ctx_unequip": {
+   "dispatch": "dispatch:helmet/5aa7e325e5b5b0214e506fa1 prevented=true",
+   "scan": {
+    "chips": [
+     {
+      "slot": "helmet/5aa7e325e5b5b0214e506fa1",
+      "state": "empty",
+      "tag": "BUTTON",
+      "icon": null,
+      "name": null,
+      "x": 142,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     },
+     {
+      "slot": "helmet/6a82dddd0c9ab3e3de988e8c",
+      "state": "focus",
+      "tag": "BUTTON",
+      "icon": "6a82dce1a750a094fd02923e.webp",
+      "name": "Altyn 盔罩（白桦迷彩）",
+      "x": 185,
+      "y": 144,
+      "w": 40,
+      "h": 40
+     }
+    ],
+    "helmet": {
+     "x": 230,
+     "y": 125,
+     "w": 78,
+     "h": 78
+    },
+    "helmetSlotEls": [
+     "BUTTON.lw-cat",
+     "DIV.lw-side-row",
+     "BUTTON.lw-cell",
+     "DIV.lw-cell-debuff"
+    ],
+    "hint": "已卸下 Altyn 头盔防弹面罩（防弹验证）　｜　跳蚤市场 24h 均价（构建期快照，非实时）"
+   }
+  }
+ },
+ "D_backpack": {
+  "D_p1_paratus": {
+   "pick": "3V Gear Paratus 3 日干",
+   "st": {
+    "state": "focus",
+    "icon": "5c0e805e86f774683f3dd637.webp",
+    "debuff": "-3 / -1 / -5",
+    "hint": "已装上 3V Gear Paratus 3 日干员战术背包（林地灰）（背包）　｜　跳蚤市场 24h 均价（构建期快照，非实时）"
+   }
+  },
+  "D_p2_rush_swap": {
+   "pick": "5.11 Tactical RUSH 1",
+   "st": {
+    "state": "focus",
+    "icon": "67458730df3c1da90b0b052b.webp",
+    "debuff": "-5 / -3 / -7",
+    "hint": "已装上 5.11 Tactical RUSH 100 背包（黑色）（背包）　｜　跳蚤市场 24h 均价（构建期快照，非实时）",
+    "retry": "5.11 Tactical RUSH 1"
+   }
+  },
+  "D_after_unequip": {
+   "state": "focus",
+   "icon": null,
+   "debuff": null,
+   "dispatch": "dispatched, prevented=true"
+  }
+ },
+ "F_preset_flow": {
+  "open": "ok",
+  "save": "clicked:另存为",
+  "saved": {
+   "msg": "已保存「R9验收预设」（C:\\Users\\Administrator\\AppData\\Roaming\\EFTMap\\loadout-presets.json）",
+   "rows": 3
+  },
+  "cleared": {
+   "state": "empty",
+   "icon": null,
+   "debuff": null
+  },
+  "select": "selected",
+  "load": "clicked:加载",
+  "restored": {
+   "state": "on",
+   "icon": "67458730df3c1da90b0b052b.webp",
+   "debuff": "-5 / -3 / -7"
+  }
+ }
+}

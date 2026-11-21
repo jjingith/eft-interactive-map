@@ -1,0 +1,1802 @@
+[
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 1000
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 48
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 0,
+  "w": 1600,
+  "h": 48
+ },
+ {
+  "t": "DB4Tarkov v2026.10.22-2 🌑 01:39 🌕 13:39",
+  "role": "",
+  "tag": "HEADER",
+  "x": 0,
+  "y": 0,
+  "w": 1253,
+  "h": 48
+ },
+ {
+  "t": "MARKETSEASON KordQUESTKEEPGUNPRESETAMMOMAPBARTERCRAFTCHANGES",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 333,
+  "y": 0,
+  "w": 763,
+  "h": 48
+ },
+ {
+  "t": "MARKET",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 337,
+  "y": 0,
+  "w": 73,
+  "h": 48
+ },
+ {
+  "t": "SEASON Kord",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 409,
+  "y": 0,
+  "w": 71,
+  "h": 48
+ },
+ {
+  "t": "QUEST",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 481,
+  "y": 0,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "t": "KEEP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 543,
+  "y": 0,
+  "w": 54,
+  "h": 48
+ },
+ {
+  "t": "GUN",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 597,
+  "y": 0,
+  "w": 49,
+  "h": 48
+ },
+ {
+  "t": "PRESET",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 646,
+  "y": 0,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "t": "AMMO",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 715,
+  "y": 0,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "t": "MAP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 776,
+  "y": 0,
+  "w": 50,
+  "h": 48
+ },
+ {
+  "t": "BARTER",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 826,
+  "y": 0,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "t": "CRAFT",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 895,
+  "y": 0,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "t": "CHANGES 1.2.0.0",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 957,
+  "y": 0,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "t": "LOGS",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1038,
+  "y": 0,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "t": "Game Mode Kord Breach (Season 1) ends in 43 day(s)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1259,
+  "y": 8,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "t": "PvE",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1260,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "PvP",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1312,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "SS (43d)",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1363,
+  "y": 9,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "t": "Change Site Resolution",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1426,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Change Language",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1460,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "About Me",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1494,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Discord Server",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1528,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Login to save your progress",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1562,
+  "y": 8,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Caliber",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Class",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 44,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Table",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 88,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Gun",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 132,
+  "y": 52,
+  "w": 44,
+  "h": 30
+ },
+ {
+  "t": "Save Gun",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 176,
+  "y": 48,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "t": "Remove all attachment on Gun 1",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 296,
+  "y": 48,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "t": "Rollback Gun 1",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 336,
+  "y": 48,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "t": "Show production FORGE optimization panel to the left of the ",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 384,
+  "y": 53,
+  "w": 62,
+  "h": 30
+ },
+ {
+  "t": "Compare 2 guns side by side. Useful when checking different ",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 450,
+  "y": 53,
+  "w": 72,
+  "h": 30
+ },
+ {
+  "t": "Show the old stats of each attachment before the active patc",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 522,
+  "y": 53,
+  "w": 94,
+  "h": 30
+ },
+ {
+  "t": "Changes",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 522,
+  "y": 53,
+  "w": 70,
+  "h": 30
+ },
+ {
+  "t": "EXPORT BUILD URL",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 620,
+  "y": 53,
+  "w": 32,
+  "h": 30
+ },
+ {
+  "t": "IMPORT BUILD",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 656,
+  "y": 53,
+  "w": 32,
+  "h": 30
+ },
+ {
+  "t": "SHARE SCREENSHOT",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 692,
+  "y": 53,
+  "w": 32,
+  "h": 30
+ },
+ {
+  "t": "Gunsmith",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 957,
+  "y": 52,
+  "w": 60,
+  "h": 32
+ },
+ {
+  "t": "NEW",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1008,
+  "y": 53,
+  "w": 18,
+  "h": 9
+ },
+ {
+  "t": "Streamers builds that they will manually update their builds",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 1023,
+  "y": 52,
+  "w": 81,
+  "h": 32
+ },
+ {
+  "t": "Streamer",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1023,
+  "y": 52,
+  "w": 81,
+  "h": 32
+ },
+ {
+  "t": "All Variants from the gun include buy from Trader / Barter 4",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 1104,
+  "y": 52,
+  "w": 68,
+  "h": 32
+ },
+ {
+  "t": "Variant",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1104,
+  "y": 52,
+  "w": 68,
+  "h": 32
+ },
+ {
+  "t": "Your saved guns",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1172,
+  "y": 52,
+  "w": 62,
+  "h": 32
+ },
+ {
+  "t": "Saved",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1172,
+  "y": 52,
+  "w": 62,
+  "h": 32
+ },
+ {
+  "t": "lastPrice",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1238,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "avg24h",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1304,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "avg7d",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1370,
+  "y": 53,
+  "w": 66,
+  "h": 30
+ },
+ {
+  "t": "only FleaLvl",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1436,
+  "y": 53,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "t": "only TraderLvl",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1496,
+  "y": 53,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "t": "Trader level / PMC Setting",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 1560,
+  "y": 48,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "t": "FORGEBETABASIC/Coming soon ADVANCED soonABOUTFirearm Optimiz",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "FORGEBETABASIC/Coming soon ADVANCED soonABOUTFirearm Optimiz",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "chart",
+  "role": "tabpanel",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 1600,
+  "h": 912
+ },
+ {
+  "t": "FORGEBETABASIC/Coming soon ADVANCED soonABOUTFirearm Optimiz",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 0,
+  "y": 88,
+  "w": 412,
+  "h": 452
+ },
+ {
+  "t": "FORGE",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 12,
+  "y": 107,
+  "w": 79,
+  "h": 24
+ },
+ {
+  "t": "BETA",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 60,
+  "y": 100,
+  "w": 28,
+  "h": 9
+ },
+ {
+  "t": "BASIC",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 101,
+  "y": 115,
+  "w": 44,
+  "h": 14
+ },
+ {
+  "t": "/",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 149,
+  "y": 115,
+  "w": 7,
+  "h": 14
+ },
+ {
+  "t": "Coming soon ADVANCED soon",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 159,
+  "y": 115,
+  "w": 109,
+  "h": 14
+ },
+ {
+  "t": "ABOUT",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 324,
+  "y": 98,
+  "w": 64,
+  "h": 18
+ },
+ {
+  "t": "Firearm Optimization, Ranking & Generation Engine",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 12,
+  "y": 137,
+  "w": 289,
+  "h": 11
+ },
+ {
+  "t": "GENERATOR SETTINGS",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 177,
+  "w": 126,
+  "h": 9
+ },
+ {
+  "t": "SUPPRESSED: OFF",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 194,
+  "w": 160,
+  "h": 28
+ },
+ {
+  "t": "Toggle on to remove every attachment that you cannot buy wit",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 187,
+  "y": 194,
+  "w": 160,
+  "h": 28
+ },
+ {
+  "t": "MAGS",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 242,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "10",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 100,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "20",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 147,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "30",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 194,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "45",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 241,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "60",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 288,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "95",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 335,
+  "y": 233,
+  "w": 46,
+  "h": 28
+ },
+ {
+  "t": "SCOPE",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 283,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "CLOSE",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 100,
+  "y": 274,
+  "w": 50,
+  "h": 28
+ },
+ {
+  "t": "MID",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 151,
+  "y": 274,
+  "w": 50,
+  "h": 28
+ },
+ {
+  "t": "RANGE",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 203,
+  "y": 274,
+  "w": 50,
+  "h": 28
+ },
+ {
+  "t": "PRIMARY — choose scope",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 261,
+  "y": 272,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Mount 1 — choose primary first",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 297,
+  "y": 272,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Mount 2 — choose mount 1 first",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 333,
+  "y": 272,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "TACTICAL",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 325,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "OFF",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 99,
+  "y": 315,
+  "w": 62,
+  "h": 30
+ },
+ {
+  "t": "TACTICAL — choose device",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 169,
+  "y": 314,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "t": "Toggle on to force one tactical device into every build.",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 209,
+  "y": 325,
+  "w": 172,
+  "h": 9
+ },
+ {
+  "t": "BLOCKED (0)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 365,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "Search an item to blacklist",
+  "role": "",
+  "tag": "INPUT",
+  "x": 99,
+  "y": 356,
+  "w": 209,
+  "h": 33
+ },
+ {
+  "t": "CLEAR",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 329,
+  "y": 365,
+  "w": 33,
+  "h": 9
+ },
+ {
+  "t": "FORCED (0)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 407,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "Search an item to force-include",
+  "role": "",
+  "tag": "INPUT",
+  "x": 99,
+  "y": 398,
+  "w": 209,
+  "h": 33
+ },
+ {
+  "t": "CLEAR",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 329,
+  "y": 407,
+  "w": 33,
+  "h": 9
+ },
+ {
+  "t": "GENERATION",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 455,
+  "w": 72,
+  "h": 9
+ },
+ {
+  "t": "GENERATE BUILDS",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 472,
+  "w": 160,
+  "h": 30
+ },
+ {
+  "t": "Press GENERATE BUILDS to compute the 3D Pareto frontier.",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 19,
+  "y": 510,
+  "w": 330,
+  "h": 11
+ },
+ {
+  "t": "Undo editRedo editJump to best-value build in historyLOAD VA",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 88,
+  "w": 512,
+  "h": 912
+ },
+ {
+  "t": "Undo edit",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 427,
+  "y": 101,
+  "w": 24,
+  "h": 24
+ },
+ {
+  "t": "Redo edit",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 455,
+  "y": 101,
+  "w": 24,
+  "h": 24
+ },
+ {
+  "t": "Jump to best-value build in history",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 483,
+  "y": 101,
+  "w": 24,
+  "h": 24
+ },
+ {
+  "t": "LOAD VARIANT",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 532,
+  "y": 108,
+  "w": 314,
+  "h": 9
+ },
+ {
+  "t": "Toggle legend",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 846,
+  "y": 101,
+  "w": 24,
+  "h": 24
+ },
+ {
+  "t": "Collapse timeline",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 874,
+  "y": 101,
+  "w": 24,
+  "h": 24
+ },
+ {
+  "t": "Ergonomics",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 428,
+  "y": 304,
+  "w": 66,
+  "h": 10
+ },
+ {
+  "t": "47",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 862,
+  "y": 304,
+  "w": 38,
+  "h": 9
+ },
+ {
+  "t": "Accuracy",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 443,
+  "y": 316,
+  "w": 51,
+  "h": 10
+ },
+ {
+  "t": "1.99",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 862,
+  "y": 316,
+  "w": 38,
+  "h": 9
+ },
+ {
+  "t": "Ver Recoil",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 439,
+  "y": 328,
+  "w": 56,
+  "h": 10
+ },
+ {
+  "t": "(71)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 812,
+  "y": 328,
+  "w": 50,
+  "h": 9
+ },
+ {
+  "t": "71",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 862,
+  "y": 328,
+  "w": 38,
+  "h": 9
+ },
+ {
+  "t": "Hor Recoil",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 437,
+  "y": 340,
+  "w": 58,
+  "h": 10
+ },
+ {
+  "t": "(180.6)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 812,
+  "y": 340,
+  "w": 50,
+  "h": 9
+ },
+ {
+  "t": "181",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 862,
+  "y": 340,
+  "w": 38,
+  "h": 9
+ },
+ {
+  "t": "Velocity",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 450,
+  "y": 352,
+  "w": 44,
+  "h": 10
+ },
+ {
+  "t": "890",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 862,
+  "y": 352,
+  "w": 38,
+  "h": 9
+ },
+ {
+  "t": "OverSwing:",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 431,
+  "y": 373,
+  "w": 73,
+  "h": 14
+ },
+ {
+  "t": "NO",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 526,
+  "y": 373,
+  "w": 31,
+  "h": 14
+ },
+ {
+  "t": "EvoErgoDelta (-0):",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 420,
+  "y": 387,
+  "w": 94,
+  "h": 12
+ },
+ {
+  "t": "33.8",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 526,
+  "y": 387,
+  "w": 24,
+  "h": 12
+ },
+ {
+  "t": "ArmStamina 10:",
+  "role": "img",
+  "tag": "FLT-SEMANTICS",
+  "x": 417,
+  "y": 399,
+  "w": 100,
+  "h": 14
+ },
+ {
+  "t": "32.0s",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 526,
+  "y": 399,
+  "w": 45,
+  "h": 14
+ },
+ {
+  "t": "100% Headshot acc:",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 415,
+  "y": 413,
+  "w": 105,
+  "h": 12
+ },
+ {
+  "t": "141m",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 526,
+  "y": 413,
+  "w": 32,
+  "h": 12
+ },
+ {
+  "t": "ADS Time (beta):",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 420,
+  "y": 425,
+  "w": 94,
+  "h": 12
+ },
+ {
+  "t": "0.56s",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 526,
+  "y": 425,
+  "w": 31,
+  "h": 12
+ },
+ {
+  "t": "AK-74 rear sight AK-74 RS",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 691,
+  "y": 441,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74 5.45x39 muzzle brake -5 -0.5 AK-74",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 473,
+  "y": 508,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74 gas tube AK-74 gas",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 528,
+  "y": 508,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74 wooden handguard +11 AK-74 wood",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 582,
+  "y": 508,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74 dust cover +3 AK-74 DC",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 637,
+  "y": 508,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 761,
+  "y": 509,
+  "w": 21,
+  "h": 9
+ },
+ {
+  "t": "3.32 / 3.62 kg dps 606",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 691,
+  "y": 520,
+  "w": 161,
+  "h": 52
+ },
+ {
+  "t": "AK-74 wooden stock -21 +3 AK-74 wood",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 855,
+  "y": 508,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AK-74 5.45x39 6L20 30-round magazine -1.5 6L20",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 746,
+  "y": 574,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "AKS-74U bakelite pistol grip +2 AKS-74U bak.",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 800,
+  "y": 574,
+  "w": 52,
+  "h": 64
+ },
+ {
+  "t": "rail attachments",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 523,
+  "y": 705,
+  "w": 64,
+  "h": 10
+ },
+ {
+  "t": "PS 28 56",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 744,
+  "y": 639,
+  "w": 55,
+  "h": 67
+ },
+ {
+  "t": "db4tarkov.com",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 781,
+  "y": 739,
+  "w": 93,
+  "h": 13
+ },
+ {
+  "t": "4",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 782,
+  "y": 755,
+  "w": 7,
+  "h": 12
+ },
+ {
+  "t": "4",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 806,
+  "y": 755,
+  "w": 7,
+  "h": 12
+ },
+ {
+  "t": "4",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 830,
+  "y": 755,
+  "w": 7,
+  "h": 12
+ },
+ {
+  "t": "4",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 854,
+  "y": 755,
+  "w": 7,
+  "h": 12
+ },
+ {
+  "t": "4",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 878,
+  "y": 755,
+  "w": 7,
+  "h": 12
+ },
+ {
+  "t": "Final Cost:",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 778,
+  "y": 769,
+  "w": 66,
+  "h": 11
+ },
+ {
+  "t": "42,864",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 844,
+  "y": 769,
+  "w": 34,
+  "h": 11
+ },
+ {
+  "t": "Buy (42,864)",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 786,
+  "w": 167,
+  "h": 24
+ },
+ {
+  "t": "Ammo Drop",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 579,
+  "y": 786,
+  "w": 167,
+  "h": 24
+ },
+ {
+  "t": "Sell ()",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 745,
+  "y": 786,
+  "w": 167,
+  "h": 24
+ },
+ {
+  "t": "ITEMS",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 413,
+  "y": 815,
+  "w": 64,
+  "h": 22
+ },
+ {
+  "t": "BREAK",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 478,
+  "y": 815,
+  "w": 64,
+  "h": 22
+ },
+ {
+  "t": "AK-74 wooden stock -21 +3 defaultAK-74 5.45x39 muzzle brake ",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 844,
+  "w": 500,
+  "h": 135
+ },
+ {
+  "t": "AK-74 wooden stock -21 +3 defaultAK-74 5.45x39 muzzle brake ",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 844,
+  "w": 500,
+  "h": 135
+ },
+ {
+  "t": "AK-74 wooden stock -21 +3 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 844,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 5.45x39 muzzle brake -5 -0.5 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 861,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 wooden handguard +11 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 878,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 dust cover +3 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 895,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AKS-74U bakelite pistol grip +2 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 912,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 rear sight default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 929,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 gas tube default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 946,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "AK-74 5.45x39 6L20 30-round magazine -1.5 default",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 963,
+  "w": 500,
+  "h": 16
+ },
+ {
+  "t": "Kalashnikov AK-74 5.45x39 assault rifle 42,864 II",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 412,
+  "y": 979,
+  "w": 500,
+  "h": 14
+ },
+ {
+  "t": "5.45x39mm PS gs",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 434,
+  "y": 998,
+  "w": 314,
+  "h": 2
+ },
+ {
+  "t": "(30r)",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 748,
+  "y": 998,
+  "w": 48,
+  "h": 2
+ },
+ {
+  "t": "5,730 II",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 800,
+  "y": 997,
+  "w": 108,
+  "h": 3
+ },
+ {
+  "t": "Muzzle",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 88,
+  "w": 211,
+  "h": 30
+ },
+ {
+  "t": "Combo (all)",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 1137,
+  "y": 88,
+  "w": 211,
+  "h": 30
+ },
+ {
+  "t": "Combo (optimized)",
+  "role": "tab",
+  "tag": "FLT-SEMANTICS",
+  "x": 1348,
+  "y": 88,
+  "w": 211,
+  "h": 30
+ },
+ {
+  "t": "ExpandRecoilErgoAccVelLoudSizeKgR+E/3Price",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 120,
+  "w": 674,
+  "h": 880
+ },
+ {
+  "t": "ExpandRecoilErgoAccVelLoudSizeKgR+E/3Price",
+  "role": "",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 120,
+  "w": 674,
+  "h": 880
+ },
+ {
+  "t": "ExpandRecoilErgoAccVelLoudSizeKgR+E/3Price",
+  "role": "tabpanel",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 120,
+  "w": 674,
+  "h": 880
+ },
+ {
+  "t": "Type to search — ESC to clear",
+  "role": "",
+  "tag": "INPUT",
+  "x": 927,
+  "y": 121,
+  "w": 207,
+  "h": 27
+ },
+ {
+  "t": "Expand",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1126,
+  "y": 120,
+  "w": 60,
+  "h": 22
+ },
+ {
+  "t": "Recoil",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1186,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Ergo",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1223,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Acc",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1260,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Vel",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1298,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Loud",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1335,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Size",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1372,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Kg",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1409,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "R+E/3",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1446,
+  "y": 120,
+  "w": 37,
+  "h": 22
+ },
+ {
+  "t": "Price",
+  "role": "button",
+  "tag": "FLT-SEMANTICS",
+  "x": 1483,
+  "y": 120,
+  "w": 105,
+  "h": 22
+ },
+ {
+  "t": "RRD-4C AK-74 thread type JMac Customs RRD-4C multi-caliber m",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 142,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "SRVV AK74 AK-74 SRVV MBR Jet 5.45x39 muzzle brake -12.5 -3.5",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 193,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "DTK-1 AK Zenit DTK-1 7.62x39/5.45x39 muzzle brake -11.5 -2.5",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 243,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "LAF-24 AK-74 thread type JMac Customs LAF-24 multi-caliber m",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 294,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "PWS CQB 74 AK-74 PWS CQB 74 5.45x39 muzzle brake -10.5 -3.5 ",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 344,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "Reactor AK Hexagon Reactor 5.45x39 muzzle brake -8 -4 1x1 0.",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 395,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "ARS 4P AK 7.62x39 Arsenal 4 Piece Flash Hider -7 +5 1x1 0.19",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 445,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "TGP-A AK-74 TGP-A 5.45x39 sound suppressor -7 -18 +0.8 -25 2",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 496,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "AK-105 AK-105 5.45x39 muzzle brake -5.5 -1 -5 1x1 0.10 5.2 6",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 546,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "AK-74 AK-74 5.45x39 muzzle brake -5 -0.5 -5 1x1 0.10 4.8 def",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 597,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "AK-74M AK-74M 5.45x39 muzzle brake -5 -0.5 -5 1x1 0.10 4.8 2",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 647,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "AKS-74U AKS-74U 5.45x39 muzzle brake -5 -1 1x1 0.10 4.7 1,00",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 698,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "PBS-4 AKS-74U PBS-4 5.45x39 sound suppressor -2 -18 -3% +0.5",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 748,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "Hexagon AK-74 AK-74 Hexagon 5.45x39 sound suppressor -1 -5 +",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 799,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "113,392 I [5]",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 1483,
+  "y": 824,
+  "w": 105,
+  "h": 13
+ },
+ {
+  "t": "DT Hybrid SilencerCo Hybrid 46 Direct Thread Mount adapter 1",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 849,
+  "w": 674,
+  "h": 50
+ },
+ {
+  "t": "CNC War. AK CNC Warrior 5.56x45 muzzle device adapter -1 1x1",
+  "role": "group",
+  "tag": "FLT-SEMANTICS",
+  "x": 926,
+  "y": 900,
+  "w": 674,
+  "h": 50
+ }
+]

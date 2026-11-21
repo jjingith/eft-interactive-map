@@ -1,0 +1,248 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-23",
+  "project": "02-塔科夫/eft-interactive-map",
+  "round": "R15",
+  "confidenceLegend": {
+    "verified": "有明确字段 / 原始页面或一手数据支持",
+    "estimated": "基于有限证据、社区讨论或近似模型，不是游戏原始公式",
+    "missing": "无依据，本轮不实现或明确不提供"
+  },
+  "networkAccess": {
+    "proxy": "http://127.0.0.1:7896",
+    "noProxy": "127.0.0.1,localhost,::1",
+    "method": "终端请求失败时改用真实 Chrome（代理 7896）+ CDP 读取页面；fandom 会拦截 curl 指纹，必须走浏览器",
+    "accessed": [
+      {
+        "url": "https://json.tarkov.dev/regular/items",
+        "usedFor": "枪械 properties.fireRate / properties.fireModes（构建期）",
+        "result": "成功（2026-10-22，生成 data/gun-rates.json）",
+        "confidence": "verified"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Ballistics",
+        "usedFor": "材质毁损系数表、逐层穿透损失定性、穿透弹对护甲耐久损伤更低",
+        "result": "成功（经 Chrome + 代理）",
+        "confidence": "verified（表格数值）/ estimated（层间衰减语义）"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Killa",
+        "usedFor": "Killa 血量表与装备列表",
+        "result": "成功，生成 data/bosses.json",
+        "confidence": "verified（血量）/ estimated（组合）"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Reshala",
+        "usedFor": "Reshala 与护卫血量/装备",
+        "result": "成功",
+        "confidence": "verified（血量）/ estimated（组合）"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Shturman",
+        "usedFor": "Shturman 与护卫血量/装备",
+        "result": "成功",
+        "confidence": "verified（血量）/ estimated（组合）"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Tagilla",
+        "usedFor": "Tagilla 血量/装备（含装甲胸挂）",
+        "result": "成功",
+        "confidence": "verified（血量）/ estimated（组合）"
+      },
+      {
+        "url": "https://pve.tarkov-changes.com/view/218",
+        "usedFor": "版本 1.0.6.5.46221（2026-08-01）数据挖掘：弹药含 PenetrationChanceObstacle 与 RicochetChance 字段",
+        "result": "成功",
+        "confidence": "verified（字段存在）/ missing（材质×厚度参数表）"
+      },
+      {
+        "url": "https://www.reddit.com/r/EscapeFromTarkov/comments/1j053oy/what_is_the_point_of_the_aramid_layers_which/",
+        "usedFor": "软内衬（芳纶层）在硬板后是否仍起作用",
+        "result": "成功（RSS 读取正文）",
+        "confidence": "estimated（社区讨论，非官方）"
+      },
+      {
+        "url": "https://www.reddit.com/r/EscapeFromTarkov/comments/1gdl784/do_soft_armor_areas_matter_for_as_long_as_plates/",
+        "usedFor": "插板存在时软护甲区域的钝伤作用",
+        "result": "成功（RSS 读取正文）",
+        "confidence": "estimated"
+      },
+      {
+        "url": "https://www.reddit.com/r/EscapeFromTarkov/comments/1akc487/",
+        "usedFor": "Killa 前后插板与内衬的耐久关系",
+        "result": "成功（RSS 读取正文）",
+        "confidence": "estimated"
+      },
+      {
+        "url": "https://www.reddit.com/r/EscapeFromTarkov/comments/jn9cxx/material_penetration/",
+        "usedFor": "掩体/材料穿透的玩家实测讨论（2020，旧版本）",
+        "result": "成功（RSS 读取正文）",
+        "confidence": "estimated（旧版本，仅作线索）"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=CZwZMV4lqqk",
+        "usedFor": "穿透测试视频（R14 已抽帧，得到抵抗系数与钝伤定性）",
+        "result": "R14 已读取；本轮沿用其结论，未重新抽帧",
+        "confidence": "estimated（视频测试，版本早于当前）"
+      }
+    ],
+    "failed": [
+      {
+        "url": "https://json.tarkov.dev/regular/bosses",
+        "error": "404（该端点不存在）",
+        "impact": "改用 fandom 页面逐一读取 Boss 血量与装备"
+      },
+      {
+        "url": "https://escapefromtarkov.fandom.com/wiki/Ballistics（curl 直连）",
+        "error": "CDN 返回约 5.9KB 错误页（拦截 curl 指纹）",
+        "impact": "改用真实 Chrome + CDP 读取，成功"
+      }
+    ],
+    "runtimeOffline": "页面运行期全部请求均为 http://127.0.0.1:8787/，无外部请求（见 test-report.md 的网络审计）"
+  },
+  "guns": {
+    "file": "data/gun-rates.json",
+    "count": 163,
+    "missingCount": 0,
+    "source": "https://json.tarkov.dev/regular/items 的 properties.fireRate / properties.fireModes（构建期提取）",
+    "confidence": "verified",
+    "fields": {
+      "rpm": { "unit": "rounds/min", "confidence": "verified", "note": "游戏数据字段直接读取，未做换算" },
+      "modes": { "confidence": "verified", "note": "properties.fireModes 的枚举，含单发/连发/三连发；射击模式本身不改变 rpm，游戏内该枪的 fireRate 是唯一射速值" },
+      "intervalMs": { "formula": "60000 / rpm", "confidence": "verified", "note": "名义间隔；半自动模式实际节奏受扳机次数限制，本轮以名义间隔为准并在报告标注" }
+    },
+    "samples": [
+      { "gun": "M4A1 5.56x45 卡宾枪", "rpm": 800, "intervalMs": 75.0 },
+      { "gun": "AKS-74N 5.45x39 卡宾枪", "rpm": 650, "intervalMs": 92.3 },
+      { "gun": "PKM 7.62x54R 机枪", "rpm": 650, "intervalMs": 92.3 }
+    ],
+    "modeDistribution": { "single": 73, "double": 84, "triple": 6 }
+  },
+  "armor": {
+    "source": "data/items.json（5480 件）中的 cl / dur / mat / bt / z / aps 字段；字段语义在 R10–R13 已核实并与配装工作台共用",
+    "countWithClass": 343,
+    "materials": {
+      "Aramid": 141,
+      "Combined": 60,
+      "UHMWPE": 47,
+      "ArmoredSteel": 40,
+      "Glass": 17,
+      "Aluminium": 17,
+      "Ceramic": 15,
+      "Titan": 6
+    },
+    "materialDestructibility": {
+      "source": "fandom Ballistics 的 materialDestructibility 表（combatSimParams）",
+      "confidence": "verified",
+      "values": {
+        "aramid": 0.1875,
+        "uhmwpe": 0.3375,
+        "combined": 0.375,
+        "titan": 0.4125,
+        "aluminium": 0.45,
+        "armorSteel": 0.525,
+        "ceramic": 0.6,
+        "glass": 0.6
+      }
+    },
+    "layerModel": {
+      "kinds": ["plate（硬插板，来自 aps 中 fx=0 的插板位）", "helmet（头盔本体）", "liner（软内衬，来自 aps 中 fx=1 的固定软甲）"],
+      "order": "plate → helmet → liner（同 kind 保持用户配置顺序；依据见 armor-layer-research.md）",
+      "perLayerState": ["durMax", "dur", "cls", "material", "bluntThroughput"],
+      "confidence": "estimated",
+      "note": "层间顺序与钝伤削减在社区有一致定性，但无官方公式；游戏版本无法从页面确认"
+    },
+    "softLiner": {
+      "bluntThroughputField": "bt（物品字段，verified）",
+      "plateBackingBluntMul": 0.8,
+      "source": "Arena 0.2.1.0 社区测试口径（软内衬对钝伤约 -20%）",
+      "confidence": "estimated"
+    },
+    "missing": [
+      "0 耐久护甲的精确行为（当前实现为“无减伤全穿透”，未获官方确认）",
+      "同一部位多层软护甲叠加的精确公式"
+    ]
+  },
+  "bosses": {
+    "file": "data/bosses.json",
+    "source": "fandom 各 Boss 页面 Health / Equipment 表（经代理 Chrome 实访）",
+    "confidence": "血量 verified；装备组合 estimated",
+    "entries": [
+      {
+        "k": "killa",
+        "n": "Killa",
+        "total": 890,
+        "health": { "head": 70, "chest": 210, "stomach": 170, "leftArm": 100, "rightArm": 100, "leftLeg": 120, "rightLeg": 120 },
+        "equipment": { "armor": 1, "helmets": 1, "faces": 1, "platesPolicy": "armor-socket", "confidence": "verified" },
+        "follower": { "health": null, "confidence": "missing", "note": "wiki 未提供护卫独立 Health 表" }
+      },
+      {
+        "k": "reshala",
+        "n": "Reshala",
+        "total": 752,
+        "equipment": { "armor": 7, "helmets": 9, "faces": 5, "platesPolicy": "armor-socket", "confidence": "verified" },
+        "follower": { "health": "verified（head 50 / chest 140 / stomach 110 / arms 80 / legs 85）", "equipment": "verified 列表" }
+      },
+      {
+        "k": "shturman",
+        "n": "Shturman",
+        "total": 812,
+        "equipment": { "armor": 0, "helmets": 0, "faces": 0, "platesPolicy": "none", "confidence": "verified" },
+        "follower": { "health": "verified（head 62 / chest 138 / stomach 120 / arms 100 / legs 110）", "equipment": "verified 列表" }
+      },
+      {
+        "k": "tagilla",
+        "n": "Tagilla",
+        "total": 1220,
+        "health": { "head": 100, "chest": 320, "stomach": 260, "leftArm": 130, "rightArm": 130, "leftLeg": 140, "rightLeg": 140 },
+        "equipment": { "armor": 2, "helmets": 2, "faces": 1, "platesPolicy": "armor-socket", "confidence": "verified" },
+        "follower": { "health": null, "confidence": "missing" }
+      }
+    ],
+    "genericPools": {
+      "pmc": { "enforced": false, "confidence": "estimated", "note": "PMC 无固定装备池，示例集合不构成强制限制" },
+      "scav": { "enforced": false, "confidence": "estimated", "note": "同上" }
+    },
+    "missing": [
+      "Killa / Tagilla 护卫的独立血量与装备池（wiki 未单列）",
+      "各 Boss 单局随机装备组合的实际概率分布"
+    ]
+  },
+  "barriers": {
+    "file": "data/barriers.json",
+    "count": 9,
+    "confidence": "estimated（全部）",
+    "baseChanceField": "弹药 pch（PenetrationChanceObstacle）——本地 data/ammo.json 200/200 覆盖，字段本身 verified，含义按数据挖掘解释",
+    "entries": ["wood_plank", "wood_crate", "metal_sheet", "car_body", "brick_wall", "concrete_wall", "glass", "sandbag", "bush"],
+    "missing": [
+      "各材质 × 厚度的真实穿透参数表（游戏未公开）",
+      "障碍物导致的跳弹角/偏转（当前仅按概率终止，不计算方向）",
+      "多层障碍叠加时的真实累积规律（当前按逐层独立相乘估算）"
+    ]
+  },
+  "engineConstants": {
+    "verified": {
+      "MATERIAL_DESTRUCTIBILITY": "fandom 表（见 armor.materialDestructibility）",
+      "penChance": "Desmos 模型 m8cmsfokkl（R14 保留，输入为耐久百分比 0–100）",
+      "overflow": { "LIMB_OVERFLOW": 0.49, "STOMACH_OVERFLOW": 1.05 }
+    },
+    "estimated": {
+      "EST_RESIST_BASE": 12.5,
+      "EST_THROUGH_MIN": 0.6,
+      "EST_PEN_DUR_FACTOR": 0.85,
+      "EST_PEN_LEVEL_CLAMP": [0.5, 2],
+      "EST_BLUNT_DUR_SLOPE": 0.5,
+      "EST_LAYER_PEN_LOSS": 1,
+      "EST_LAYER_DMG_KEEP": 0.9,
+      "EST_SOFT_BACKING_BLUNT": 0.8,
+      "EST_BARRIER_CHANCE": 0.5,
+      "EST_BARRIER_DMG_KEEP": 0.8,
+      "EST_BARRIER_PEN_KEEP": 0.85
+    },
+    "missing": {
+      "penLossPerArmorLayerExact": "逐层穿透力损失的精确值（当前为固定 1，未按材质/厚度缩放）",
+      "penDamageDecayExact": "穿甲后伤害衰减的官方公式（当前用 pen/resist 夹持 0.6–1.0 估算）",
+      "durabilityZeroBehavior": "0 耐久护甲的服务器行为"
+    }
+  }
+}

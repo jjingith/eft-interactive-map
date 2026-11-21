@@ -1,0 +1,2727 @@
+{
+  "metrics": [
+    {
+      "hidden": false,
+      "rows": 120,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件 ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        }
+      ],
+      "firstRows": [
+        "Norotos钛合金高级战术支架 Norotos · 更新 37 分钟前 0 500 000 ₽ 积累中 7 647 ₽ 500 000 ₽ +492 353",
+        "13 英寸 FN SCAR-H 枪管 7.62x51 13 · 更新 27 分钟前 0 350 000 ₽ 积累中 79 038 ₽ 350 000 ₽ +270 962",
+        "防弹插板箱 更新 27 分钟前 25 1 166 666 ₽ 积累中 937 500 ₽ 1 166 666 ₽ +229 166",
+        "柯尔特 M4A1 5.56x45 卡宾枪 T.O 2K24 M4A1 5.56x45 · 更新 27 分钟前 25 740 000 ₽ 积累中 541 620 ₽ 740 000 ₽ +198 380",
+        "AI AXMC手枪式握把 AI AXMC · 更新 27 分钟前 20 199 999 ₽ 积累中 4 520 ₽ 199 999 ₽ +195 479"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "",
+      "emptyDetail": "",
+      "emptyBtn": "",
+      "priceHeader": "价格\n最新 · Last",
+      "footer": "已显示 120 / 3540 条",
+      "bodyView": "market",
+      "label": "default"
+    },
+    {
+      "hidden": false,
+      "rows": 1,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件 ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        }
+      ],
+      "firstRows": [
+        "LEDX皮肤透照仪 LEDX · 更新 1 小时前 35 577 777 ₽ 积累中 — 577 777 ₽ —"
+      ],
+      "count": "筛选结果 1 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "",
+      "emptyDetail": "",
+      "emptyBtn": "",
+      "priceHeader": "价格\n最新 · Last",
+      "footer": "已显示 1 / 1 条",
+      "bodyView": "market",
+      "label": "search-ledx"
+    },
+    {
+      "hidden": false,
+      "rows": 0,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件 ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        }
+      ],
+      "firstRows": [],
+      "count": "筛选结果 0 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": true,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格 最新 · Last",
+      "footer": "0 条",
+      "bodyView": "market",
+      "label": "search-empty"
+    },
+    {
+      "hidden": false,
+      "rows": 120,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 7 日均价 · Avg 7d",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件 ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        }
+      ],
+      "firstRows": [
+        "Norotos钛合金高级战术支架 Norotos · 更新 37 分钟前 0 积累中 积累中 7 647 ₽ 500 000 ₽ +492 353",
+        "13 英寸 FN SCAR-H 枪管 7.62x51 13 · 更新 27 分钟前 0 积累中 积累中 79 038 ₽ 350 000 ₽ +270 962",
+        "防弹插板箱 更新 27 分钟前 25 积累中 积累中 937 500 ₽ 1 166 666 ₽ +229 166",
+        "柯尔特 M4A1 5.56x45 卡宾枪 T.O 2K24 M4A1 5.56x45 · 更新 27 分钟前 25 积累中 积累中 541 620 ₽ 740 000 ₽ +198 380",
+        "AI AXMC手枪式握把 AI AXMC · 更新 27 分钟前 20 积累中 积累中 4 520 ₽ 199 999 ₽ +195 479"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n7 日均价 · Avg 7d",
+      "footer": "已显示 120 / 3540 条",
+      "bodyView": "market",
+      "label": "price-avg7d"
+    },
+    {
+      "hidden": false,
+      "rows": 120,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件 ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        }
+      ],
+      "firstRows": [
+        "马卡洛夫 PM(t) 9x18PM 手枪 PM · 更新 27 分钟前 0 60 000 ₽ 积累中 6 897 ₽ 60 000 ₽ +53 103",
+        "ADAR 2-15 .223 卡宾枪 ADAR 2-15 · 更新 27 分钟前 0 70 000 ₽ 积累中 18 144 ₽ 70 000 ₽ +51 856",
+        "AKMN 7.62x39 突击步枪 AKMN 7.62x39 · 更新 27 分钟前 25 88 888 ₽ 积累中 42 504 ₽ 88 888 ₽ +46 384",
+        "FN SCAR-L 5.56x45突击步枪 （FDE） FN SCAR-L 5.56x45 · 更新 27 分钟前 25 59 999 ₽ 积累中 22 500 ₽ 59 999 ₽ +37 499",
+        "VPO-209 .366TKM 卡宾枪 VPO-209 · 更新 27 分钟前 0 55 555 ₽ 积累中 26 982 ₽ 55 555 ₽ +28 573"
+      ],
+      "count": "筛选结果 147 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n最新 · Last",
+      "footer": "已显示 120 / 147 条",
+      "bodyView": "market",
+      "label": "type-gun"
+    },
+    {
+      "hidden": false,
+      "rows": 120,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件",
+          "display": "table-cell",
+          "sort": "none"
+        }
+      ],
+      "firstRows": [
+        "T7 热成像目镜（附夜视仪基座） T7 · 更新 57 分钟前 25 16 000 000 ₽ 积累中 21 693 600 ₽ 16 000 000 ₽ -5 693 600",
+        "C-3 舱室钥匙卡 C-3 · 更新 2 小时前 30 15 000 000 ₽ 积累中 — 15 000 000 ₽ —",
+        "TerraGroup 仓库钥匙卡 TerraGroup · 更新 2 小时前 30 3 111 111 ₽ 积累中 — 3 111 111 ₽ —",
+        "Concordia 64号公寓钥匙 Concordia 64 · 更新 2 小时前 25 2 000 000 ₽ 积累中 — 2 000 000 ₽ —",
+        "Killa 与 Tagilla 海报 Killa · 更新 2 小时前 25 1 444 443 ₽ 积累中 — 1 444 443 ₽ —"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n最新 · Last\n▼",
+      "footer": "已显示 120 / 3540 条",
+      "bodyView": "market",
+      "label": "sort-price"
+    },
+    {
+      "hidden": false,
+      "rows": 240,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        },
+        {
+          "text": "历史 72h",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件",
+          "display": "table-cell",
+          "sort": "none"
+        }
+      ],
+      "firstRows": [
+        "T7 热成像目镜（附夜视仪基座） T7 · 更新 57 分钟前 25 16 000 000 ₽ 积累中 21 693 600 ₽ 16 000 000 ₽ -5 693 600",
+        "C-3 舱室钥匙卡 C-3 · 更新 2 小时前 30 15 000 000 ₽ 积累中 — 15 000 000 ₽ —",
+        "TerraGroup 仓库钥匙卡 TerraGroup · 更新 2 小时前 30 3 111 111 ₽ 积累中 — 3 111 111 ₽ —",
+        "Concordia 64号公寓钥匙 Concordia 64 · 更新 2 小时前 25 2 000 000 ₽ 积累中 — 2 000 000 ₽ —",
+        "Killa 与 Tagilla 海报 Killa · 更新 2 小时前 25 1 444 443 ₽ 积累中 — 1 444 443 ₽ —"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n最新 · Last\n▼",
+      "footer": "已显示 240 / 3540 条",
+      "bodyView": "market",
+      "label": "scroll-bottom"
+    },
+    {
+      "hidden": false,
+      "rows": 240,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        },
+        {
+          "text": "历史 72h",
+          "display": "none",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "none",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "none",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件",
+          "display": "none",
+          "sort": "none"
+        }
+      ],
+      "firstRows": [
+        "T7 热成像目镜（附夜视仪基座） T7 · 更新 57 分钟前 25 16 000 000 ₽",
+        "C-3 舱室钥匙卡 C-3 · 更新 2 小时前 30 15 000 000 ₽",
+        "TerraGroup 仓库钥匙卡 TerraGroup · 更新 2 小时前 30 3 111 111 ₽",
+        "Concordia 64号公寓钥匙 Concordia 64 · 更新 2 小时前 25 2 000 000 ₽",
+        "Killa 与 Tagilla 海报 Killa · 更新 2 小时前 25 1 444 443 ₽"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n最新 · Last\n▼",
+      "footer": "已显示 240 / 3540 条",
+      "bodyView": "market",
+      "label": "width-640"
+    },
+    {
+      "hidden": false,
+      "rows": 240,
+      "headers": [
+        {
+          "text": "",
+          "display": "table-cell",
+          "sort": null
+        },
+        {
+          "text": "物品",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "Lv",
+          "display": "table-cell",
+          "sort": "none"
+        },
+        {
+          "text": "价格 最新 · Last ▼",
+          "display": "table-cell",
+          "sort": "descending"
+        },
+        {
+          "text": "历史 72h",
+          "display": "none",
+          "sort": null
+        },
+        {
+          "text": "买价",
+          "display": "none",
+          "sort": "none"
+        },
+        {
+          "text": "卖价",
+          "display": "none",
+          "sort": "none"
+        },
+        {
+          "text": "价差 / 件",
+          "display": "none",
+          "sort": "none"
+        }
+      ],
+      "firstRows": [
+        "T7 热成像目镜（附夜视仪基座） T7 · 更新 57 分钟前 25 16 000 000 ₽",
+        "C-3 舱室钥匙卡 C-3 · 更新 2 小时前 30 15 000 000 ₽",
+        "TerraGroup 仓库钥匙卡 TerraGroup · 更新 2 小时前 30 3 111 111 ₽",
+        "Concordia 64号公寓钥匙 Concordia 64 · 更新 2 小时前 25 2 000 000 ₽",
+        "Killa 与 Tagilla 海报 Killa · 更新 2 小时前 25 1 444 443 ₽"
+      ],
+      "count": "筛选结果 3540 条 / 有行情 3540 条",
+      "cutoff": "数据截止 14:38（27 分钟前）",
+      "cutoffStale": false,
+      "emptyVisible": false,
+      "emptyTitle": "没有匹配的物品",
+      "emptyDetail": "当前搜索 / Lv / 类型的组合结果是 0 条。可以清空条件后重新筛选。",
+      "emptyBtn": "清空搜索与筛选",
+      "priceHeader": "价格\n最新 · Last\n▼",
+      "footer": "已显示 240 / 3540 条",
+      "bodyView": "market",
+      "label": "width-420"
+    }
+  ],
+  "console": [],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8809/index.html?view=market"
+    },
+    {
+      "url": "http://127.0.0.1:8809/style.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/theme-windows-xp.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/calibrator.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/tasks.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/market.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/styles/design-tokens.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/styles/ui-components.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/xp-ui.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/xp-ui-app.css?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/gun-presets.js"
+    },
+    {
+      "url": "http://127.0.0.1:8809/combat_sim.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/gun_builder.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/i18n.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/js/ui-components.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/js/game-mode.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/js/task-graph-layout.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/app.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/calibrator.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/tasks.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/js/market.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/js/app-menubar.js?v=r19.45"
+    },
+    {
+      "url": "http://127.0.0.1:8809/api/build?ts=1794121504910"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/i18n/ui-zh.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/i18n/names.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/i18n/items-zh.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/i18n/poi-zh.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/items.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/titlebar.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/brand-plate.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/btn-normal.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/sep-vertical.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/icon-map.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/icon-tasks.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/icon-ammo.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/icon-gun.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/icon-loadout.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/btn-pressed.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/menu-panel-bg.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/version-plate.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/range-track.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/range-thumb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/check-off.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/statusbar-bg.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/xp-ui/statusbar-cell.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/editions.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/api/position"
+    },
+    {
+      "url": "http://127.0.0.1:8809/api/config"
+    },
+    {
+      "url": "http://127.0.0.1:8809/api/logstate"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/maps.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/meta.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/roadnet.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/flea-prices.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/flea-levels.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/season-documents.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/search-index.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/task-points.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/stories.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/extract_shared.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/extract_pmc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/extract_scav.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/valuable_btc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/valuable_bottle.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/valuable_gpu.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/valuable_keycard.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/valuable_key.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/valuable_med.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/valuable_defib.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/val-intel.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/val-folder.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/safe.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/jacket.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/pcblock.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/scavbody.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/drawer.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/duffle.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/cache.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/med.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/supply.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/suitcase.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/toolbox.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/register.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/grenade.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/weapon.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/loose.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_blueprint.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_pmc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_medical.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_financial.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_project.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_employee.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_test.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-hd/doc_technical.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/map-task-point.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/map-story-point.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/spawn_pmc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/spawn_scav.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/sniper.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/boss.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/lock.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/wiki-icons/stationarygun.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/tasks.regular.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/guides.regular.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/traders.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/index.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/season.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/meta.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/game-truth/meta.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/events"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/item-extra.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/tasks/tasks.regular.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/maps/StreetsOfTarkov.svg"
+    },
+    {
+      "url": "http://127.0.0.1:8809/data/task-images.json"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/54cb50c76803fa8b248b4571.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/54cb57776803fa99248b456e.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/579dc571d53a0658a154fbec.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/58330581ace78e27b8b10cee.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/5935c25fb3acc3127c3d8cd9.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/5a7c2eca46aef81a7ca2145d.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/5ac3b934156ae10c4430e83c.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/5c0647fdd443bc2504c2d371.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/638f541a29ffd1183d187f57.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/68fe15910f29ba3fdbba9d54.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/68fe15990f29ba3fdbba9d55.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/656f0f98d80a697f855d34b1.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/6617beeaa9cfa777ca915b7c.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/688246518448b05efd61d461.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/688246958448b05efd61d462.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-traders/portraits/69e0d6cc77b63940375b9173.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a16b8a9fcdbcb00165aa6ca.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618168b350224f204c1da4d8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67600929bd0a0549d70993f6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/66b0e484c84cc7141324fd6c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62811e2510e26c1f344e6554.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68bb2a3831ee03fbc00931e6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/681236df5cbf0518e00557a0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/60479c3f420fac5ebc199f86.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cde7b43d7f00c000d36b93e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a3a859786f7747e2305e8bf.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62973e474bb5ab23071c2a70.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6492c8bba6e68e06fb0bae87.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/577d128124597739d65d0e56.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a34f7f1c4a2826c6e06d75d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6183b0711cb55961fa0fdcad.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68d159d46c606e46b605094d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/560837154bdc2da74d8b4568.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/651bf5617b3b552ef6712cb7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6076c1b9f2cb2e02a42acedc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6492e3a97df7d749100e29ee.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68caacc7933990601c07f479.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/661e52e29c8b4dadef008577.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5de8e67c4a9f347bc92edbd7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d00ef6dd7ad1a0940739b16.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fbcbd02900b1d5091531dd3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a157e31b507e45a68038d88.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/617155ee50224f204c1da3cd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63fc449f5bd61c6cf3784a88.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b84038986f774774913b0c1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618405198004cc50514c3594.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6698c8ab29e062525d0ad8ab.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/65293c7a17e14363030ad308.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c9a25172e2216000f20314e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/607ea812232e5a31c233d53c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b4736a986f774040571e998.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a157fa8af9c1c57b700778f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/65329ebcc0d50d0c9204ace1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/55d355e64bdc2d962f8b4569.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6491c6f6ef312a876705191b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b7be1ca5acfc400170e2d2f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62ebba1fb658e07ef9082b5a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bd704e7209c4d00d7167c31.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/622b397c9a3d4327e41843b6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cbdc23eae9215001136a407.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a182c39b913af92800d8b5d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6492ef63cfcf7c89e701abf1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c471bfc2e221602b21d4e17.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a156ac407619a15b1023bf0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64c152953319a1cf380c4e1b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/646371faf2404ab67905c8e9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fbcc3e4d6fa9c00c571bb58.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67112695fe5c8bf33f02476d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/61713cc4d8e3106d9806c109.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/579204f224597773d619e051.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d6d3943a4b9360dbc46d0cc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6568a6bf2c5fb7afc70bc424.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c07c60e0db834002330051f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d1b36a186f7742523398433.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a01ad4786f77450561fda02.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/544fb5454bdc2df8738b456a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/56ea8180d2720bf2698b456a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62811f461d5df4475f46a332.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6388c4ac8d895f557a0c6515.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/622f16a1a5958f63c67f1737.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cdaa99dd7f00c002412d0b2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bb20e49d4351e3bac1212de.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/622f02437762f55aaa68ac85.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a6b5f868dc32e000a311389.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c0111ab0db834001966914d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/669fa47da0bab4e8510d9526.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618b9671d14d6d5ab879c5ea.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bb20dcad4351e3bac1212da.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/625ff2eb9f5537057932257d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a0ec13bfcdbcb00165aa685.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bfe86a20db834001d23e8f7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68948a95d8f2b85fb705e2a6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b099bb25acfc400186331e8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5dcbd6b46ec07c0c4347a564.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6194efe07c6c7b169525f11b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ae09bff5acfc4001562219d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5beec8b20db834001961942a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/680f87118c5d2ff9020005cd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bfd36ad0db834001c38ef66.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cf50fc5d7f00c056c53f83c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c4eec9b2e2216398b5aaba2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628120c21d5df4475f46a337.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/640b20359ab20e15ee445fa9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fce16961f152d4312622bc9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a1567e0af9c1c57b700776f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5aafbde786f774389d0cbc0f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/588200c224597743990da9ed.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6194eff92d2c397d6600348b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/649ec87d8007560a9001ab36.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a68a56b0c3b4e47d502bede.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d6d3829a4b9361bc8618943.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fb653962b1b027b1f50bd03.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/625ff31daaaa8c1130599f64.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bb20dadd4351e00367faeff.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cc70102e4a949035e43ba74.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67111094d1758189fc0bd223.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/634f06262e5def262d0b30ca.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b7be2345acfc400196d524a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68caad70269e10396503ad00.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/630e39c3bd357927e4007c15.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fbbaa86f9986c4cff3fe5f6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69a0174087a75d2cbd0842e8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68c294800f5ebd68290d6c20.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67c5429fac40c364490664f8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/664301213dd83ddae20dda18.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618428466ef05c2ce828f218.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59d64ec286f774171d1e0a42.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/617153016c780c1e710c9a2f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/66b0e7f8c5987b623d6e2e81.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5aa66a9be5b5b0214e506e89.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/619cf0335771dd3c390269ae.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6761777a1f08ed5e8800b7ac.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/66ffc20ba73a7bce3d0b45ab.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cc700d4e4a949000f0f0f28.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/606eef46232e5a31c233d500.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5926d3c686f77410de68ebc8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-6582dbf0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-64d4b23d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-64ccc246.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-6582dc57.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/val-keycard-yellow.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-63a39e1d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons/key-63a39f08.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d0378d486f77420421a5ff4.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d03784a86f774203e7e0c4d.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d0377ce86f774186372f689.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d0375ff86f774186372f685.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0126f40db834002a125382.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5448be9a4bdc2dfd2f8b456a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5e32f56fcb6d5863cc5e5ee4.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5e340dcdcb6d5863cc5e5efb.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5710c24ad2720bc3458b45a3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/699f09de81a6c812900a77b7.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/55d482194bdc2d1d4e8b456b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5b4391a586f7745321235ab2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5644bd2b4bdc2d3b4c8b4572.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ac4cd105acfc40016339859.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8e9fcd8ce870019439434.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5bf3e03b0db834001d2c4a9c.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d03794386f77420415576f5.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/544fb45d4bdc2dee738b4568.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5733279d245977289b77ec24.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ed515ece452db0eb56fc028.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d1b3f2d86f774253763b735.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/69bb435ff609db77390b0e25.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590a3efd86f77437d351a25b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57347d7224597744596b4e72.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/69bb43df99f3fda8f1072483.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/593aa4be86f77457f56379f8.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c10c8fd86f7743d7d706df3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5449016a4bdc2d6f028b456f.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5af0534a86f7743b6f354284.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c052e6986f7746b207bc3c9.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d403f9186f7743cac3f229b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5447a9cd4bdc2dbd208b4567.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59f32bb586f774757e1e8442.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/655c67ab0d37ca5135388f4b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5fc64ea372b0dd78d51159dc.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5bc9c1e2d4351e00367fbcf0.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59db794186f77448bc595262.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5991b51486f77447b112d44f.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e7715586f7742ee5789605.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e7635f86f7742cbf2c1095.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6389c8fb46b54c634724d847.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6389c92d52123d5dd17f8876.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6389c8c5dbfd5e4b95197e6b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c392f86f77444754deb29.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/648983d6b5a2df1c815a04ec.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/657025ebc5d7d4cb4d078588.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c1262a286f7743f8a69aab2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6570900858b315e8b70a8a98.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c05308086f7746b2101e90b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c621186f774138d11ea29.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5734758f24597738025ee253.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59fafb5d86f774067a6f2084.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5696686a4bdc2da3298b456a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/675a0288c3102563bd01c9c3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5bc9bc53d4351e00367fbcee.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/627e14b21713922ded6f2c15.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/569668774bdc2da2298b4568.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0e625a86f7742d77340f62.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57347ca924597744596b4e71.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d40407c86f774318526545a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5bb2475ed4351e00853264e3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5a1eaa87fcdbcb001865f75e.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0e531d86f7747fa23f4d42.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e35cbb86f7741778269d83.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c2e1186f77425357b6124.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/577e1c9d2459773cd707c525.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59faf98186f774067b6be103.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e3596386f774176c10a2a2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e3556c86f7741776641ac2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c05300686f7746dce784e5d.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/675dc9d37ae1a8792107ca96.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/675dcb0545b1a2d108011b2b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/684180bc51bf8645f7067bc8.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/684181208d035f60230f63f9.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ed51652f6c34d2cc26336a1.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/573476d324597737da2adc13.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5734770f24597738025ee254.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/573476f124597737e04bf328.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c06779c86f77426e00dd782.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c052fb986f7746b2101e909.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/573477e124597737dd42e191.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e36c6f86f774176c10a2a7.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ad7247386f7747487619dc3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8f85d86f7745cd93a1cf5.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d1b376e86f774252519444e.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5645bcc04bdc2d363b8b4572.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/572b7f1624597762ae139822.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8f39486f7745cd93a1cca.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8f4ff86f77431c60d91ba.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/63626d904aa74b8fe30ab426.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8f20c86f7745cdb629fb2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e7643b86f7742cbf2c109a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0e655586f774045612eeb2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/545cdb794bdc2d3a198b456a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e3639286f7741777737013.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5aa2b9ede5b5b000137b758b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/68947a4be4bf255d1b0ca746.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/689479eb30cc5ba7be00f5ff.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/689479cb47e5acd1e10be986.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/689479a4a733b1602007e2eb.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/588892092459774ac91d4b11.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5b43575a86f77424f443fe62.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5e2af4d286f7746d4159f07a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5e2af47786f7746d404f3aaa.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590de71386f774347051a052.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5df8a4d786f77412672a1e3b.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5ab8f04f86f774585f4237d8.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59e763f286f7742ee57895da.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/61b9e1aaef9a1b5d6a79899a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/59faff1d86f7746c51718c9c.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5e997f0b86f7741ac73993e2.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c661e86f7741e566b646a.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5755356824597772cb798962.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c678286f77426c9660122.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d08d21286f774736e7c94c3.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0e874186f7745dc7616606.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6759af0f9c8a538dd70bfae6.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/590c5d4b86f774784e1b9c45.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5448ff904bdc2d6f028b456e.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57505f6224597709a92585a9.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57347da92459774491567cf5.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c94bbff86f7747ee735c08f.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5d1b36a186f7742523398433.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/656f664200d62bcd2e024077.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/64afdb577bb3bfe8fe03fd1d.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/656efaf54772930db4031ff5.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/656f611f94b480b8a500c0db.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/60391b0fb847c71012789415.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/5c0fa877d174af02a012e1cf.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/575062b524597720a31c09a1.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57513f07245977207e26a311.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/57513f9324597720a7128161.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6656560053eaaa7a23349c86.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/api/prefs"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c0530ee86f774697952d952.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59e6687d86f77411d949b251.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bb2475ed4351e00853264e3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5aafa857e5b5b00018480968.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/56d59856d2720bd8418b456a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5644bd2b4bdc2d3b4c8b4572.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/624c0b3340357b5f566e8766.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5447a9cd4bdc2dbd208b4567.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a7ae0c351dfba0017554310.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac4cd105acfc40016339859.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b0bbe4e5acfc40dc528a72d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fbcc1d9016cce60e8341ab3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6217726288ed9f0845317459.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57dc2fa62459775949412633.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/676176d362e0497044079f4c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5448bd6b4bdc2dfc2f8b4569.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/54491c4f4bdc2db1078b4568.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/55801eed4bdc2d89578b4588.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5580223e4bdc2d1c128b457f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/56dee2bdd2720bc8328b4567.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/56e0598dd2720bb5668b45a6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/571a12c42459771f627b58a0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/574d967124597745970e7c94.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/576165642459773c7a400233.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/576a581d2459771e7b1bc4f1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57c44b372459772d2b39b8ce.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57d14d2524597714373db789.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57f3c6bd24597738e730fa2f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57f4c844245977379d5c14d1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/583990e32459771419544dd2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5839a40f24597726f856b511.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/587e02ff24597743df3deaeb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/588892092459774ac91d4b11.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/58948c8e86f77409493f7266.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5926bb2186f7744b1c6c6e60.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59984ab886f7743e98271174.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59d6088586f774275f37482f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59e6152586f77473dc057aa1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59f98b4986f7746f546d2cef.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59f9cabd86f7743a10721f46.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59ff346386f77477562ff5e2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a17f98cfcdbcb0980087290.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a367e5dc4a282000e49738f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a38e6bac4a2826c6e06d79b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a7828548dc32e5a9c28b516.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ab8e9fcd8ce870019439434.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5abcbc27d8ce8700182eceeb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5abccb7dd8ce87001773e277.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac66cb05acfc40198510a10.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac66d015acfc400180ae6e4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac66d2e5acfc43b321d4b53.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac66d725acfc43b321d4b60.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ac66d9b5acfc4001633997a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ae08f0a5acfc408fb1398a1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b1fa9b25acfc40018633c01.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b3b713c5acfc4330140bd8d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ba26383d4351e00334c93d9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bd70322209c4d00d7167b8f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5beed0f50db834001c062b12.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bf3e03b0db834001d2c4a9c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bf3e0490db83400196199af.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bfd297f0db834001a669119.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bfea6e90db834001b7347f3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c46fbd72e2216398b5a8c9c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c488a752e221602b412af63.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c501a4d2e221602b412b540.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cadc190ae921500103bb3b6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cadfbf7ae92152ac412eeef.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5cc82d76e24e8d00134b4b83.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d2f0d8048f0356c925bc3b0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d3eb3b0a4b93615055e84d2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d43021ca4b9362eab4b5e25.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d67abc1a4b93614ec50137f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5de652c31b7e3716273428be.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5de7bd7bfd6b4e6e2276dc25.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5df24cf80dee1b22f862e9bc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5df8ce05b11454561e39243b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e00903ae9dc277128008b87.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e81c3cbac2bb513793cdc75.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e870397991fd70db46995c8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ea03f7400685063ec28bfa8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5f2a9575926fd9352339381f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5f36a0e5fbf956000b716b65.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fb64bc92b1b027b1f50bcf2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fc22d7c187fea44d52eda44.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fc3e272f8b6a877a729eac5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fc3f2d5900b1d5091531e57.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/602a9740da11d6478d5a06dc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/60339954d62c9b14ed777c06.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/606587252535c57a13424cfd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/606dae0ab0e443224b421bb7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/60db29ce99594040e04c4a27.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6176aca650224f204c1da3fb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6184055050224f204c1da540.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6193a720f8ee7e52e42109ed.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/61a4c8884f95bc3b2c5dc96f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/61f7c9e189e6fb1a5e3ea78d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62178be9d0050232da3485d9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/623063e994fc3f7b302a9696.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/624c2e8614da335f1e034d8c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6259b864ebedf17603599e88.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/627e14b21713922ded6f2c15.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628a60ae6b1d481ff772e9c8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628b5638ad252a16da6dd245.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628b9c37a733087d0d7fe84b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62e14904c2699c0ec93adc47.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62e7c4fba689e8c9c50dfc38.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63088377b5cd696784087147.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63171672192e68c5460cebc5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/633ec7c2a6918cb895019c6c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/643ea5b23db6f9f57107d9fd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/644674a13d52156624001fbc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/645e0c6b3b381ede770e1cc9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64637076203536ad5600c990.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64748cb8de82c85eaf0a273a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6499849fc93611967b034949.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6513ef33e06849f06c0957ca.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c110624d174af029e69734c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb3f7df94327bc0f0230c9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/66acd6702b17692df20144c0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a71e922b25f7513905ca20.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/675a04fdb8913ff13e0496bb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5780cf7f2459777de4559322.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a3a93f8a56922e82001f5d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59fb042886f7746c5005a7b2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59fb023c86f7746d0d4b423c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63920105a83e15700a00f168.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64ccc25f95763a1ae376e447.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d80c60f86f77440373c4ece.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bffe7930db834001b734a39.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bffdd7e0db834001b734a1a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c093db286f7740a1b2617e3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d80c62a86f7744036212b3f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ede7a8229445733cb4c18e2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a39fc0af870e651d58e6ae.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/675aae1c26dc64e17800fee6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67602a0f97f19b78f00a0199.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a71e86b7f4570d3a293169.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/674d91ce6e862d5a95059ed6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ad5d7d286f77450166e0a89.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb435ff609db77390b0e25.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1d0dc586f7744baf2e7b79.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1d0efb86f7744baf2e7b7b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d235bb686f77443f4331278.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6aa948d1a7cdc313b50cdd11.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c0126f40db834002a125382.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62987dfc402c7f69bf010923.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb3f278af9f360ee010a7a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a8ae43686f774377b73cfb3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1f79a086f7746ed066fb8f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ad7217186f7746744498875.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68e9654d72488961110dbf69.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a397d3af870e651d58e65b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d80ccac86f77470841ff452.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68e95d71a3d110355b03e529.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/675aadf3003bb2e826030996.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6819f8df28294ec0730db6b4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a9980872a87c16fef04789f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/601948682627df266209af05.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6759e91d8367ee2b0c0f4b94.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a845e60d68fc921f9023983.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1d0f4986f7744bb01837fa.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/674d90b55704568fe60bc8f5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67f924adb45d94a2600a8cc8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a39f6e64283b5e9c56b289.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1d0c5f86f7744bb2683cf0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6937ed118715e9fd1b0f286d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ad7247386f7747487619dc3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63626d904aa74b8fe30ab426.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6570a88c8f221f3b210353b7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6759af0f9c8a538dd70bfae6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6895bb82c4519957df062f82.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68d3db3e0c47fe28c2067ab9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67f924a9154a04c33b0a3c57.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/655c669103999d3c810c025b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59fafd4b86f7745ca07e1232.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fd25119dd870108a754a163.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/679b992329acd1f2f60985a5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ca20ee186f774799474abc2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1e495a86f7743109743dfb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6389c8c5dbfd5e4b95197e6b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/655c67ab0d37ca5135388f4b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5448ba0b4bdc2d02308b456c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67c031b79320f644db06f456.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a8ae73886f7747b2e6e1416.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628753bba4a8431af4739d3b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6638a5474e92f038531e210e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/675a20c83fb2de89670113b4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59fb016586f7746d0d4b423a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/591094e086f7747caa7bb2ef.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/619cbf7d23893217ec30b689.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/591382d986f774465a6413a7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5913915886f774123603c392.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64ccc206793ca11c8f450a38.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6582dbf0b8d7830efc45016f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fc64ea372b0dd78d51159dc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/65702558cfc010a0f5006a25.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6719023b612cc94b9008e78c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/65702652cfc010a0f5006a53.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6570900858b315e8b70a8a98.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68e96180901b9b10270f1eed.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64ccc2111779ad6ba200a139.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e2af55f86f7746d4159f07c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ad7242b86f7740a6a3abd43.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/57347ca924597744596b4e71.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ebbff0841a637322117a5fb.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67d3ed3271c17ff82e0a5b0b.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb4203f94327bc0f0230cd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a71ed21031ac76fe773c7f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/619cbf9e0a7c3a1a2731940a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e42c71586f7747f245e1343.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6582dc5740562727a654ebb1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c12613b86f7743bbe2c3f76.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/636270263f2495c26f00b007.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb424e99f3fda8f107247d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5bd05f1186f774572f181678.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d1b376e86f774252519444e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5dd8013ff4c3af18c507b10a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c471cb32e221602b177afaa.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6895becad55f0ebf6a0c0311.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d1b2f3f86f774252167a52c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb3e54d6c67f6265004ab9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64ccc24de61ea448b507d34d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6aa948d1a7cdc313b50cdd11.webp"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/676176a162e0497044079f46.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6895bf08e2d16810ba0bf43e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/64cbdff43ccb85468628d5fc.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/567143bf4bdc2d1a0f8b4567.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a144dfd86f77445cb5a0982.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/66a9f98f3bd5a41b162030f4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67f924b1b07831a6ef0ce317.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68c16b9ab6b75a8a480520a6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68d66850cc802b243f0627a9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69413241b1ce1e5fbb09ed0a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62875070bbbd995f3c41b225.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1d0d6d86f7744bb2683e1f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68c2940aecc41cc5490bd40e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68d6662644990caf770b8a2e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/656e0436d44a1bb4220303a0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c093e3486f77430cb02e593.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ede7b0c6d23e5473e6e8c66.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b83f29886f7746d956305a1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e4ac41886f77406a511c9a8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d03794386f77420415576f5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e2aedd986f7746d404f3aa4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618ba27d9008e4636a67f61d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628d0618d1ba6e4fa07ce5a4.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/591afe0186f77431bd616a11.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6193e5f3aa34a3034236bdb3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/693fd0e9deee848f70054999.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b4329f05acfc47a86086aa1.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c0e625a86f7742d77340f62.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5780cda02459777b272ede61.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c123fe086f7742a60324263.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5e4abc6786f77406812bd572.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5f5f41476bdad616ad46d631.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/619bdef8c9546643a67df6f6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68c165f1903341d88b092b2a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a834d1f992762b7bf08ffd2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/675a0b8d4ff23436160d8031.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67b49e7335dec48e3e05e057.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c127c4486f7745625356c13.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/545cdae64bdc2d39198b4568.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59e8d2b386f77445830dd299.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c178a942e22164bef5ceca3.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5ebbfe23ba87a5065a00a563.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69bb3ec9f609db77390b0e1a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b83f23a86f7746d3d190a73.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/689166b6c2d6fa42e7044756.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68d6788b2704678f29096b85.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c066e3a0db834001b7353f0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/628755c60c9eb3366b521908.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/664d4b0103ef2c61246afb56.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/676bf44c5539167c3603e869.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67a328326e3613a197068d05.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68e95f4fa4a577e907015787.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b83f22086f77464e15a1d5f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c052e6986f7746b207bc3c9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b44c6ae86f7742d1627baea.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5addbfbb5acfc400194dbcf7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68948aebd8f2b85fb705e2b0.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5b3b99475acfc432ff4dcbee.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d80cd1a86f77402aa362f42.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62987c658081af308d7558c6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/593aa4be86f77457f56379f8.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/65702656c5d7d4cb4d078591.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/67405d760098dcb5940ea1a6.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/619e61e70459e93c12392ba7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59e35de086f7741778269d84.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6895bd19d55f0ebf6a0c0306.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618aaeb931ddad66c15eb7e9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6570265bcfc010a0f5006a56.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/544a5caa4bdc2d1a388b4568.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5841482e2459775a050cdda9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59430b9b86f77403c27945fd.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a13eebd86f7746fd639aa93.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d80ccdd86f77474f7575e02.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d947d3886f774447b415893.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/618aafe23c1dcf601e0327db.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a39f08cd6db0635c197600.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/657024e3c5d7d4cb4d07856a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/693fd1200ec97e98040bd3f9.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6a3ceab8194a2625b40c8641.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c0e746986f7741453628fe5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6ac4d528d8aa0d51df01995c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59411abb86f77478f702b5d2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/699f09de81a6c812900a77b7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/6761a6ccd9bbb27ad703c48a.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5af08cc686f77424a61595f2.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c1267ee86f77416ec610f72.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5af08c4486f774223b094223.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/59387a4986f77401cc236e62.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/62875256bbbd995f3c41b253.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c78f2492e221600114c9f04.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5aa66be6e5b5b0214e506e97.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68948b118c57a8a52301d7ae.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5a1ead28fcdbcb001912fa9f.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c12620d86f7743f8b198b72.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d1b33a686f7742523398398.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5d4d617f86f77449c463d107.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/63a0b208f444d32d6f03ea1e.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68a5ac69b55a6b93c20a2bc7.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/69cbd33bc293038df7002951.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5c05300686f7746dce784e5d.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fbe7618d6fa9c00c571bb6c.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/68bf405779c8186398099017.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-transparent/5fd251c90d9c95034825edb5.png"
+    },
+    {
+      "url": "http://127.0.0.1:8809/assets/icons-items/6ac4d528d8aa0d51df01995c.webp"
+    }
+  ]
+}

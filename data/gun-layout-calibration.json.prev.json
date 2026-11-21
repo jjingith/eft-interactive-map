@@ -1,0 +1,29 @@
+{
+ "schemaVersion": 1,
+ "toolVersion": "R19.16",
+ "updatedAt": "2026-10-27T11:08:11",
+ "guns": {
+  "5644bd2b4bdc2d3b4c8b4572": {
+   "name": "",
+   "updatedAt": "2026-10-27T11:08:11",
+   "slots": {
+    "mod_mount_000|mod_mount_000|": {
+     "slotId": "mod_mount_000",
+     "slotPath": "mod_mount_000",
+     "ownerItemId": "",
+     "logicalRow": 2,
+     "col": 8,
+     "topPad": 0,
+     "displayRow": null,
+     "role": "",
+     "source": "manual",
+     "note": "",
+     "updatedAt": "2026-10-27T11:08:11",
+     "autoRow": null,
+     "autoCol": null
+    }
+   },
+   "history": []
+  }
+ }
+}

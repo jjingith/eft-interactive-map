@@ -1,0 +1,1999 @@
+{
+  "generatedFor": "R19.15",
+  "confirmedByGameplay": [
+    {
+      "itemId": "5aa66c72e5b5b00016327c93",
+      "name": "Nightforce MagMount Multimount 34毫米一体式导轨基座",
+      "directSlots": 2,
+      "slots": [
+        {
+          "sid": "mod_scope_000",
+          "purpose": "34mm 光学瞄准镜槽"
+        },
+        {
+          "sid": "mod_scope_001",
+          "purpose": "单倍瞄具 / 单倍瞄具底座槽"
+        }
+      ],
+      "evidence": "in-game-confirmed（用户 2026-10-26 实测）",
+      "dataCheck": [
+        "mod_scope_000",
+        "mod_scope_001"
+      ]
+    }
+  ],
+  "pendingVerification": {
+    "note": "其余瞄具/底座仅有上游快照单一来源，未做游戏内实测，本轮不改其槽位数量或用途。",
+    "count": 524,
+    "items": [
+      {
+        "id": "544a3a774bdc2d3a388b4567",
+        "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "55d355e64bdc2d962f8b4569",
+        "name": "柯尔特M4A1 5.56x45突击步枪上机匣",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "55d459824bdc2d892f8b4573",
+        "name": "KAC RIS AR-15 护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_tactical",
+          "mod_tactical_2",
+          "mod_mount",
+          "mod_tactical_003",
+          "mod_handguard"
+        ]
+      },
+      {
+        "id": "55d48a634bdc2d8b2f8b456a",
+        "name": "Kiba Arms International泵动式霰弹枪SPRM导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "55f84c3c4bdc2d5f408b4576",
+        "name": "Daniel Defence RIS II 9.5 英寸 AR-15 规格护木（狼棕色）",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_scope",
+          "mod_tactical001",
+          "mod_tactical002",
+          "mod_sight_front",
+          "mod_tactical",
+          "mod_handguard"
+        ]
+      },
+      {
+        "id": "56083a334bdc2dc8488b4571",
+        "name": "MP-133/153塑料手枪式握把",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5648ae314bdc2d3d1c8b457f",
+        "name": "CAA RS47 AK 护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical_001",
+          "mod_tactical_002"
+        ]
+      },
+      {
+        "id": "5648b4534bdc2d3d1c8b4580",
+        "name": "Zenit B-10M 导轨护木+ B-19 上导轨组合",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical_002"
+        ]
+      },
+      {
+        "id": "5649a2464bdc2d91118b45a8",
+        "name": "NcStar MPR45备用导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5649af094bdc2df8348b4586",
+        "name": "AK-74 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5649af884bdc2d1b2b8b4589",
+        "name": "Zenit B-33 AK 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5649b0544bdc2d1b2b8b458a",
+        "name": "AK-74 照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5649d9a14bdc2d79388b4580",
+        "name": "Taktika Tula TT01 照门导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "56d5a407d2720bb3418b456b",
+        "name": "西格-绍尔 P226R MK25 手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "56ea7293d2720b8d4b8b45ba",
+        "name": "西格220-239照门式导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "56ea8d2fd2720b7c698b4570",
+        "name": "Windham Weaponry AR-15 导轨导气箍",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "577d128124597739d65d0e56",
+        "name": "Burris FastFire韦弗式基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "57838c962459774a1651ec63",
+        "name": "VSS 9x39 一体式消音枪管",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57ac965c24597706be5f975c",
+        "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "57aca93d2459771f2c7e26db",
+        "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "57acb6222459771ec34b5cb0",
+        "name": "VOMZ Pilad 043-02 燕尾槽基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "57adff4f24597737f373b6e6",
+        "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "57c44dd02459772d2e0ae249",
+        "name": "AS VAL 9x39 一体式消音枪管",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57c69dd424597774c03b7bbc",
+        "name": "Lobar Arms 30毫米瞄准镜基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "57cff947245977638e6f2a19",
+        "name": "Magpul MOE AKM 护木（黑色）",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount_003",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57cffd8224597763b03fc609",
+        "name": "Magpul MOE AKM 护木 (FDE)",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount_003",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57cffddc24597763133760c6",
+        "name": "Magpul MOE AKM 护木（橄榄绿）",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount_003",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57cffe0024597763b03fc60b",
+        "name": "Magpul MOE AKM 护木（黑红色）",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount_003",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57cffe20245977632f391a9d",
+        "name": "Magpul MOE AKM 护木（哑光灰）",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount_003",
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57dc334d245977597164366f",
+        "name": "AKS-74U 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "57ee59b42459771c7b045da5",
+        "name": "Rotor 43 RIS PP-91 导轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "57ffaea724597779f52b3a4d",
+        "name": "Zenit B-12 导轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "57ffb0062459777a045af529",
+        "name": "Zenit AKS-74U B-18 导轨基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5827272a24597748c74bdeea",
+        "name": "SOK-12 MTU002长顶型铝制护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_foregrip",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002"
+        ]
+      },
+      {
+        "id": "58272b392459774b4c7b3ccd",
+        "name": "SOK-12 MTU002短顶型铝制护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_foregrip",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002"
+        ]
+      },
+      {
+        "id": "58272b842459774abc128d50",
+        "name": "SOK-12 CSS SIGHT RAIL MOUNT照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "587e08ee245977446b4410cf",
+        "name": "OP-SKS燕尾槽基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "588b56d02459771481110ae2",
+        "name": "Daniel Defence RIS II 9.5 英寸 AR-15 规格下护木（黑色）",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_scope",
+          "mod_tactical001",
+          "mod_tactical002",
+          "mod_sight_front",
+          "mod_tactical",
+          "mod_handguard"
+        ]
+      },
+      {
+        "id": "5894a42086f77426d2590762",
+        "name": "SIG MPX Gen. 1 MPX护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_sight_front",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002"
+        ]
+      },
+      {
+        "id": "5894a5b586f77426d2590767",
+        "name": "SIG MPX一代上机匣",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear",
+          "mod_tactical_000"
+        ]
+      },
+      {
+        "id": "58d2664f86f7747fec5834f6",
+        "name": "Cross Slot DeltaPoint 瞄具基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "58d39b0386f77443380bf13c",
+        "name": "Aimpoint Micro瞄具垫高器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "58d39d3d86f77445bb794ae7",
+        "name": "Aimpoint Micro瞄具基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "591ee00d86f774592f7b841e",
+        "name": "Axion Kobra 燕尾槽适配导轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5926c0df86f77462f647f764",
+        "name": "HK MP5上机匣",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_handguard",
+          "mod_sight_rear",
+          "mod_stock",
+          "mod_muzzle",
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5926d33d86f77410de68ebc0",
+        "name": "HK MP5SD 9x19消音器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5926dad986f7741f82604363",
+        "name": "MFI MP5 通用低基线瞄具导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5926f2e086f7745aae644231",
+        "name": "HK MP5SD 9x19上机匣",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_handguard",
+          "mod_sight_rear",
+          "mod_stock",
+          "mod_muzzle",
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "593d1fa786f7746da62d61ac",
+        "name": "UTG SKS SOCOM导轨基座",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "595cf16b86f77427440c32e2",
+        "name": "War Sport LVOA-S AR-15 护木（黑色）",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_scope",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "595cfa8b86f77427437e845b",
+        "name": "War Sport LVOA-C AR-15 护木（黑色）",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_scope",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "59985a6c86f77414ec448d17",
+        "name": "PP-19-01 Vityaz-SN 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "59bfe68886f7746004266202",
+        "name": "Vltor MUR-1S 5.56x45 AR-15 上机匣",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "59ccfdba86f7747f2109a587",
+        "name": "UltiMAK M1-B AK 护木导气管套件",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical_000"
+        ]
+      },
+      {
+        "id": "59d6507c86f7741b846413a2",
+        "name": "AKM 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "59d650cf86f7741b846413a4",
+        "name": "AKM 照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "59db7e1086f77448be30ddf3",
+        "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "59db7eed86f77461f8380365",
+        "name": "TA51瞄具基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "59e6449086f7746c9f75e822",
+        "name": "Molot Arms AKM 样式防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "59e8977386f77415a553c453",
+        "name": "VPO-209 照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "59fb375986f7741b681b81a6",
+        "name": "Krebs Custom UFM KeyMod AK 护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_scope",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003"
+        ]
+      },
+      {
+        "id": "5a1ead28fcdbcb001912fa9f",
+        "name": "UNV DLOC-IRD瞄准镜基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a27b281c4a28200741e1e52",
+        "name": "SR1MP单轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_tactical_000",
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5a27bad7c4a282000b15184b",
+        "name": "SR1MP四导轨基座",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_tactical_000",
+          "mod_mount",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a329052c4a28200741e22d3",
+        "name": "R11 RSASS护木",
+        "declaredDirectSlots": 8,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004"
+        ]
+      },
+      {
+        "id": "5a32aa0cc4a28232996e405f",
+        "name": "Trijicon RMR西格-绍尔手枪基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a33a8ebc4a282000c5a950d",
+        "name": "Alpha Dog Alpha 9 9x19 消音器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a33b2c9c4a282000c5a9511",
+        "name": "Trijicon RMR 低基线基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a33b652c4a28232996e407c",
+        "name": "Trijicon RMR 高基线基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a33bab6c4a28200741e22f8",
+        "name": "Trijicon ACOG 瞄准镜 RMR 基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a34fbadc4a28200741e230a",
+        "name": "JP Enterprises 6 型 AR-10 导气系统",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5a37ca54c4a282000d72296a",
+        "name": "JP 30毫米环形基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope_000",
+          "mod_scope_001"
+        ]
+      },
+      {
+        "id": "5a398b75c4a282000a51a266",
+        "name": "Ops Core皮卡汀尼导轨适配器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5a6f5e048dc32e00094b97da",
+        "name": "Glock 9x19套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a6f5f078dc32e00094b97dd",
+        "name": "Glock 9x19 Viper Cut套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a702d198dc32e000b452fc3",
+        "name": "Glock Lone Wolf AlphaWolf手枪套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a7033908dc32e000a311392",
+        "name": "Glock Lone Wolf AlphaWolf定制手枪套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a71e22f8dc32e00094b97f4",
+        "name": "Zev Tech Hex Gen3套筒",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_scope",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a71e4f48dc32e001207fb26",
+        "name": "Glock Zev Tech Hex Spartan套筒",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_scope",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a788068c5856700137e4c8f",
+        "name": "M870 Magpul MOE 护木",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_foregrip",
+          "mod_mount_000",
+          "mod_mount_001"
+        ]
+      },
+      {
+        "id": "5a7893c1c585673f2b5c374d",
+        "name": "MTU-028SG M870导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a78948ec5856700177b1124",
+        "name": "XS M870鬼环照门短导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a7ad4af51dfba0013379717",
+        "name": "Aimtech Glock基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a7ad55551dfba0015068f42",
+        "name": "Aimtech Tiger Shark基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a7afa25e899ef00135e31b0",
+        "name": "Polymer80 PS9 Glock套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a7b4900e899ef197b331a2a",
+        "name": "UM Tactical UM3瞄具基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5a957c3fa2750c00137fa5f7",
+        "name": "CAA XRSU47SU AKS-74U 战术护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002"
+        ]
+      },
+      {
+        "id": "5a966ec8a2750c00171b3f36",
+        "name": "B&T 三导轨 MP5 机匣基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5a9685b1a2750c0032157104",
+        "name": "Glock 9x19 Moto Cut套筒",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5a9d56c8a2750c0032157146",
+        "name": "Strike Industries TRAX 1 AK 护木",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_scope",
+          "mod_mount_000",
+          "mod_mount_002"
+        ]
+      },
+      {
+        "id": "5a9d6d21a2750c00137fa649",
+        "name": "Strike industries导轨桥",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount",
+          "mod_tactical",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5a9d6d34a2750c00141e07da",
+        "name": "Strike Industries TRAX 2 AK 护木延长组件",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5a9fc7e6a2750c0032157184",
+        "name": "Zenit B-3 VSS/VAL 基座组合",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_tactical",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5aa66a9be5b5b0214e506e89",
+        "name": "Nightforce MagMount一体式基座环",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5aaf8e43e5b5b00015693246",
+        "name": "M1A Socom 16枪托",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5aafa1c2e5b5b00015042a56",
+        "name": "SOCOM 16 7.62x51 M1A 膛口制退器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5ab24ef9e5b5b00fe93c9209",
+        "name": "M1A Socom 16上机匣",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5ab372a310e891001717f0d8",
+        "name": "TROY S.A.S.S M14 枪身套件",
+        "declaredDirectSlots": 11,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_mount",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_003",
+          "mod_pistolgrip",
+          "mod_stock",
+          "mod_sight_front",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5ab3afb2d8ce87001660304d",
+        "name": "Smith Enterprise SOCOM 16 7.62x51 M1A 螺纹膛口制退器 & 导气箍套件",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5ac50da15acfc4001718d287",
+        "name": "AK-74M 防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5ac72e475acfc400180ae6fe",
+        "name": "AK-74M 照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5ac733a45acfc400192630e2",
+        "name": "AK-105 照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5addbb6e5acfc408fb1393fd",
+        "name": "M1A National Match 7.62x51消焰器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5addbb825acfc408fb139400",
+        "name": "M14 JP Enterprises 7.62x51膛口战术制退补偿器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5addbb945acfc4001a5fc44e",
+        "name": "Smith Enterprise Good Iron 7.62x51 M14 膛口制退器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5addbbb25acfc40015621bd9",
+        "name": "M14 Yankee Hill Phantom 7.62x51消焰器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5addbf175acfc408fb13965b",
+        "name": "ProMag Archangel M1A 枪身套件",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_mount",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5addbfbb5acfc400194dbcf7",
+        "name": "UltiMAK M14 M8 Forward 光学瞄具基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5addbfd15acfc40015621bde",
+        "name": "M14 Mini Scout导轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5addbfe15acfc4001a5fc58b",
+        "name": "Arms #18 M14导轨基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5addbfef5acfc400185c2857",
+        "name": "M14 UTG 4点锁定式高级基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5addbffe5acfc4001714dfac",
+        "name": "M14 DCSB",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5addc00b5acfc4001669f144",
+        "name": "CASV 14 M14基座",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope_000",
+          "mod_scope_001",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_001"
+        ]
+      },
+      {
+        "id": "5addc7005acfc4001669f275",
+        "name": "SAGE International M14ALCS 枪身套件",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_stock",
+          "mod_scope",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "5ae30bad5acfc400185c2dc4",
+        "name": "AR-15提把式照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5afd7ded5acfc40017541f5e",
+        "name": "TAPCO Intrafuse SKS 枪身套件",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_stock",
+          "mod_mount",
+          "mod_pistol_grip"
+        ]
+      },
+      {
+        "id": "5b099a9d5acfc47a8607efe7",
+        "name": "DS Arms SA-58四导轨护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_foregrip",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5b099bb25acfc400186331e8",
+        "name": "DS Arms Extreme Duty SA-58防尘盖",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b1faa0f5acfc40dc528aeb5",
+        "name": "Glock 18C 9x19套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5b237e425acfc4771e1be0b6",
+        "name": "TROY AK 全尺寸导轨护木 & 导气管组合",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_tactical",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002"
+        ]
+      },
+      {
+        "id": "5b2389515acfc4771e1be0c0",
+        "name": "Burris AR- P.E.P.R. 30毫米环形基座",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_scope_000",
+          "mod_scope_001",
+          "mod_scope_002"
+        ]
+      },
+      {
+        "id": "5b2cfa535acfc432ff4db7a0",
+        "name": "Alexander Arms MK10 AR-15 步枪全长护木",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002"
+        ]
+      },
+      {
+        "id": "5b31163c5acfc400153b71cb",
+        "name": "SIG Sauer ROMEO 瞄具基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b3a08b25acfc4001754880c",
+        "name": "P226桥轨基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5b3b6dc75acfc47a8773fb1e",
+        "name": "Armasight Vulcan 通用基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b3b6e495acfc4330140bd88",
+        "name": "Armasight Vulcan MG 3.5x Bravo夜视瞄准镜",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5b3b99265acfc4704b4a1afb",
+        "name": "Nightforce 30毫米瞄准镜基座环",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b3f7bf05acfc433000ecf6b",
+        "name": "Kochetov莫辛步枪基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5b3f7c005acfc4704b4a1de8",
+        "name": "PU 3.5x环形基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b7be1ca5acfc400170e2d2f",
+        "name": "DS Arms SA-58全尺寸四导轨护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_foregrip",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_mount",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "5b7be2345acfc400196d524a",
+        "name": "Aim Sport Keymod FAL通用护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_mount_005"
+        ]
+      },
+      {
+        "id": "5b7bebc85acfc43bca706666",
+        "name": "Aim Sport M-LOK FAL通用护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_tactical",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b7bedd75acfc43d825283f9",
+        "name": "Vltor CASV FAL护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_tactical",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b7bee755acfc400196d5383",
+        "name": "Vltor CASV FAS护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5b800e9286f7747a8b04f3ff",
+        "name": "Hexagon AK 管状护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003"
+        ]
+      },
+      {
+        "id": "5b80242286f77429445e0b47",
+        "name": "Hexagon AK 管状护木（电镀红）",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003"
+        ]
+      },
+      {
+        "id": "5bb20d53d4351e4502010a69",
+        "name": "HK 416A5 5.56x45 上机匣",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5bb20de5d4351e0035629e59",
+        "name": "HK 416 四面导轨护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_sight_front",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_bipod"
+        ]
+      },
+      {
+        "id": "5bb20df1d4351e00347787d5",
+        "name": "HK 416 四面导轨折叠准星护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_bipod"
+        ]
+      },
+      {
+        "id": "5bb20dfcd4351e00334c9e24",
+        "name": "HK 416 加长四面导轨护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_sight_front",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_bipod"
+        ]
+      },
+      {
+        "id": "5bbdb811d4351e45020113c7",
+        "name": "Aim Sports “三轨” 莫辛步枪导轨",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_scope",
+          "mod_tactical_000",
+          "mod_tactical_001"
+        ]
+      },
+      {
+        "id": "5bc5a372d4351e44f824d17f",
+        "name": "Aim Sports莫辛步枪MNG导轨",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5beec3e30db8340019619424",
+        "name": "RPK-16 护木",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_tactical_000"
+        ]
+      },
+      {
+        "id": "5beec91a0db834001961942d",
+        "name": "RPK-16 防尘盖",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5beec9450db83400970084fd",
+        "name": "RPK-16 照门基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5bfebc530db834001d23eb65",
+        "name": "M700多插槽拓展Weaver导轨",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5bfebc5e0db834001a6694e5",
+        "name": "M700 30毫米瞄具基座环",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5bffe7c50db834001d23ece1",
+        "name": "P226 Axelson Mk.25战术手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c0009510db834001966907f",
+        "name": "P226 Stainless Elite 手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c010a700db834001d23ef5d",
+        "name": "P226 Sig Emperor Scorpion手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c0125fc0db834001a669aa3",
+        "name": "P226 Sig Legion全尺寸手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c05293e0db83400232fff80",
+        "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5c052a900db834001a66acbd",
+        "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount"
+        ]
+      },
+      {
+        "id": "5c064c400db834001d23f468",
+        "name": "La Rue Tactical QD LT-101皮卡汀尼立管导轨基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c07a8770db8340023300450",
+        "name": "Noveske Gen.3 5.56x45 AR-15 上机匣",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5c0e2f26d174af02a9625114",
+        "name": "ADAR 2-15 5.56x45 2-15突击步枪上机匣",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_scope",
+          "mod_barrel",
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5c17664f2e2216398b5a7e3c",
+        "name": "VLTOR CMRD Keymod AK护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003"
+        ]
+      },
+      {
+        "id": "5c1cdd302e221602b3137250",
+        "name": "Kiba Arms 短基座瞄准镜适配器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c471bfc2e221602b21d4e17",
+        "name": "SVDS 7.62x54R膛口制退器",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_front",
+          "mod_muzzle"
+        ]
+      },
+      {
+        "id": "5c471c2d2e22164bef5d077f",
+        "name": "SVDS照门固定环",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_handguard",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5c48a14f2e2216152006edd7",
+        "name": "MDR护木（FDE）",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c59529a2e221602b177d160",
+        "name": "Lancer OEM M-LOK 14英寸MPX护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c5db5f22e2216000e5e47e8",
+        "name": "Midwest 4.5英寸MPX M-LOK护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c5db5fc2e2216000f1b2842",
+        "name": "Midwest 6.5英寸MPX M-LOK护木",
+        "declaredDirectSlots": 4,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_foregrip",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c5db6302e2216000e5e47f0",
+        "name": "Midwest 10.5英寸MPX M-LOK护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_foregrip",
+          "mod_sight_front",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5c5db63a2e2216000f1b284a",
+        "name": "Midwest 14英寸MPX M-LOK护木",
+        "declaredDirectSlots": 10,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_foregrip",
+          "mod_mount_005",
+          "mod_mount_006",
+          "mod_sight_front",
+          "mod_tactical"
+        ]
+      },
+      {
+        "id": "5c6162682e22160010261a2b",
+        "name": "TOZ-106燕尾槽基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_mount_000"
+        ]
+      },
+      {
+        "id": "5c61627a2e22160012542c55",
+        "name": "TOZ-106瞄准镜基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c61a40d2e2216001403158d",
+        "name": "Zenit B-13 \"Klassika\" 燕尾槽导轨平台",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c6c2c9c2e2216000f2002e4",
+        "name": "TROY M-LOK HK 416 13 英寸护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical",
+          "mod_scope",
+          "mod_sight_front",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c6d10e82e221601da357b07",
+        "name": "HK 416 MRS KeyMod 14 英寸护木",
+        "declaredDirectSlots": 9,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_mount_004",
+          "mod_tactical",
+          "mod_scope",
+          "mod_sight_front",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c6d10fa2e221600106f3f23",
+        "name": "HK 416 Midwest Industries 9 英寸 M-LOK 护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_tactical",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c6d11072e2216000e69d2e4",
+        "name": "HK 416 Midwest Industries 13.5 英寸 M-LOK 护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c6d11152e2216000f2003e7",
+        "name": "HK 416 Strike Industries CRUX 15 英寸 M-LOK 护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical",
+          "mod_scope",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c6d5d8b2e221644fc630b39",
+        "name": "STNGR VYPR 10 英寸 AR-15 M-LOK 护木",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5c78f2492e221600114c9f04",
+        "name": "SAI 14.5 英寸 AR-15 快拆导轨护木",
+        "declaredDirectSlots": 10,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_sight_front",
+          "mod_muzzle",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "5c78f2612e221600114c9f0d",
+        "name": "SAI 10 英寸 AR-15 快拆导轨护木",
+        "declaredDirectSlots": 10,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_scope",
+          "mod_foregrip",
+          "mod_sight_front",
+          "mod_muzzle",
+          "mod_tactical_000",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "5c78f26f2e221601da3581d1",
+        "name": "Magpul MOE SL中等长度M-LOK AR15护木",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c78f2792e221600106f4683",
+        "name": "Magpul MOE SL卡宾枪长度M-LOK AR15护木",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5c7d55f52e221644f31bff6a",
+        "name": "Aimpoint LRP COMP M4瞄具基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c7d560b2e22160bc12c6139",
+        "name": "标准Aimpont瞄具垫高器",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c86592b2e2216000e69e77c",
+        "name": "I-E-A Mil Optics Magmount 34毫米一体式基座环",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c90c3622e221601da359851",
+        "name": "Zenit B-13V \"Klassika\" 燕尾槽导轨平台",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5c9a07572e221644f31c4b32",
+        "name": "Magpul Zhukov-U AK 护木（黑色）",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_foregrip",
+          "mod_mount_000",
+          "mod_mount_001"
+        ]
+      },
+      {
+        "id": "5c9a1c3a2e2216000e69fb6a",
+        "name": "Magpul Zhukov-U AK 护木（FDE）",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_foregrip",
+          "mod_mount_000",
+          "mod_mount_001"
+        ]
+      },
+      {
+        "id": "5c9a1c422e221600106f69f0",
+        "name": "Magpul Zhukov-U AK 护木（黑红色）",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_foregrip",
+          "mod_mount_000",
+          "mod_mount_001"
+        ]
+      },
+      {
+        "id": "5c9a25172e2216000f20314e",
+        "name": "Daniel Defence RIS II 12.25 英寸 AR-15 规格护木（狼棕色）",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_scope",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_sight_front",
+          "mod_tactical_000",
+          "mod_handguard"
+        ]
+      },
+      {
+        "id": "5cadc55cae921500103bb3be",
+        "name": "M9A3 9x19手枪套筒",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_sight_rear",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5cadd954ae921500103bb3c2",
+        "name": "M9照门基座",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5caf1691ae92152ac412efb9",
+        "name": "ASh-12提把式照门",
+        "declaredDirectSlots": 1,
+        "sids": [
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5cc700ede4a949033c734315",
+        "name": "FN P90 EFFEN 90 5.7x28上机匣",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_scope"
+        ]
+      },
+      {
+        "id": "5cc70102e4a949035e43ba74",
+        "name": "FN P90上机匣",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002"
+        ]
+      },
+      {
+        "id": "5cc7015ae4a949001152b4c6",
+        "name": "FN P90上机匣上导轨",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_scope",
+          "mod_sight_front",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5cde7afdd7f00c000d36b89d",
+        "name": "M700 AB Arms MOD*X GEN 3 KeyMod护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_tactical_000",
+          "mod_sight_front",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5cde7b43d7f00c000d36b93e",
+        "name": "M700 AB Arms MOD*X基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_scope",
+          "mod_sight_rear"
+        ]
+      },
+      {
+        "id": "5cdeac22d7f00c000f26168f",
+        "name": "Magpul Pro 700 枪身套件",
+        "declaredDirectSlots": 7,
+        "sids": [
+          "mod_stock",
+          "mod_pistol_grip",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_mount_003",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5cdeaca5d7f00c00b61c4b70",
+        "name": "Magpul Pro 700 枪身轴向基座",
+        "declaredDirectSlots": 2,
+        "sids": [
+          "mod_tactical_000",
+          "mod_sight_front"
+        ]
+      },
+      {
+        "id": "5cf4e3f3d7f00c06595bc7f0",
+        "name": "5.45 Design Aggressor AK 护木",
+        "declaredDirectSlots": 6,
+        "sids": [
+          "mod_foregrip",
+          "mod_scope",
+          "mod_tactical_001",
+          "mod_tactical_002",
+          "mod_tactical_000",
+          "mod_tactical_003"
+        ]
+      },
+      {
+        "id": "5cf656f2d7f00c06585fb6eb",
+        "name": "Strelok VS-24 + VS-33c AK 护木导气管套件",
+        "declaredDirectSlots": 5,
+        "sids": [
+          "mod_scope",
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002",
+          "mod_foregrip"
+        ]
+      },
+      {
+        "id": "5cf7acfcd7f00c1084477cf2",
+        "name": "FN PS90上机匣",
+        "declaredDirectSlots": 3,
+        "sids": [
+          "mod_mount_000",
+          "mod_mount_001",
+          "mod_mount_002"
+        ]
+      }
+    ]
+  }
+}

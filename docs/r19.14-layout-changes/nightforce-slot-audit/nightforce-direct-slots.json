@@ -1,0 +1,108 @@
+{
+  "itemId": "5aa66c72e5b5b00016327c93",
+  "name": "Nightforce MagMount Multimount 34毫米一体式导轨基座",
+  "pt": "WeaponMod",
+  "evidence": {
+    "inGame": "2026-10-26 用户游戏内实测：直接槽位恰好 2 个（34mm 光学瞄准镜 / 单倍瞄具·单倍瞄具底座）",
+    "upstream": "tarkov.dev 快照声明 4 个同名 MOD_SCOPE（其中 _002/_003 allow 完全重复，属重复节点）",
+    "conflict": true,
+    "resolution": "以游戏内实测为准；移除两个重复节点，保留 34mm 与单倍槽"
+  },
+  "directSlotCount": 2,
+  "slots": [
+    {
+      "order": 1,
+      "slotId": "5aa66c90e5b5b00016327c96",
+      "sid": "mod_scope_000",
+      "label": "瞄准镜",
+      "purpose": "34mm 光学瞄准镜槽",
+      "allowCount": 4,
+      "allow": [
+        {
+          "id": "56ea70acd2720b844b8b4594",
+          "name": "Hensoldt FF 4-16x56 34 毫米步枪瞄准镜",
+          "pt": "Scope"
+        },
+        {
+          "id": "5aa66be6e5b5b0214e506e97",
+          "name": "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜",
+          "pt": "Scope"
+        },
+        {
+          "id": "61714eec290d254f5e6b2ffc",
+          "name": "Schmidt & Bender PM II 3-20x50 34 毫米步枪瞄准镜",
+          "pt": "Scope"
+        },
+        {
+          "id": "62850c28da09541f43158cca",
+          "name": "Schmidt & Bender PM II 5-25x56 34 毫米步枪瞄准镜",
+          "pt": "Scope"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "slotId": "5aa66c9ce5b5b00015693125",
+      "sid": "mod_scope_001",
+      "label": "单倍瞄具 / 单倍瞄具底座",
+      "purpose": "单倍瞄具 / 单倍瞄具底座槽",
+      "allowCount": 8,
+      "allow": [
+        {
+          "id": "57ae0171245977343c27bfcf",
+          "name": "BelOMO PK-06 反射式瞄具",
+          "pt": "Scope"
+        },
+        {
+          "id": "61605d88ffa6e502ac5e7eeb",
+          "name": "Wilcox RAPTAR ES 战术测距仪",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "58d39d3d86f77445bb794ae7",
+          "name": "Aimpoint Micro瞄具基座",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "616554fe50224f204c1da2aa",
+          "name": "Aimpoint Micro H-2瞄具基座",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "615d8d878004cc50514c3233",
+          "name": "B&T QD NAR Aimpoint ACRO 准镜基座",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "577d128124597739d65d0e56",
+          "name": "Burris FastFire韦弗式基座",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "58d2664f86f7747fec5834f6",
+          "name": "Cross Slot DeltaPoint 瞄具基座",
+          "pt": "WeaponMod"
+        },
+        {
+          "id": "5a33b2c9c4a282000c5a9511",
+          "name": "Trijicon RMR 低基线基座",
+          "pt": "WeaponMod"
+        }
+      ]
+    }
+  ],
+  "removedSlots": [
+    {
+      "slotId": "5aa66cabe5b5b055d0630d82",
+      "sid": "mod_scope_002",
+      "reason": "与 mod_scope_001 的 allow 子集完全重复；游戏中不存在第三个直接槽位",
+      "sameAs": "5aa66c9ce5b5b00015693125"
+    },
+    {
+      "slotId": "5aa66cb7e5b5b0214e506e99",
+      "sid": "mod_scope_003",
+      "reason": "与 mod_scope_002 完全相同（互相重复）；游戏中不存在第四个直接槽位",
+      "sameAs": "5aa66cabe5b5b055d0630d82"
+    }
+  ]
+}

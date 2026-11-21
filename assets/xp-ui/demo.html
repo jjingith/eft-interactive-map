@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>XP UI 素材验收板</title>
+<link rel="stylesheet" href="xp-ui.css">
+<style>
+  /* 只服务于验收板的排版，不属于组件层 */
+  html, body { margin: 0; padding: 0; background: #d9d6cc; }
+  body {
+    font: 12px/1.6 Tahoma, "Microsoft YaHei", sans-serif;
+    color: #23231b;
+    padding: 18px 20px 60px;
+  }
+  h1 { font-size: 16px; margin: 0 0 4px; }
+  .note { color: #55554a; margin: 0 0 18px; }
+  .case {
+    background: #efede4;
+    border: 1px solid #b7b3a4;
+    padding: 14px 16px 18px;
+    margin: 0 0 14px;
+  }
+  .case > h2 {
+    font-size: 12px; margin: 0 0 12px; padding-bottom: 6px;
+    border-bottom: 1px solid #cbc7b8; color: #4b4b3f;
+  }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .row:last-child { margin-bottom: 0; }
+  .tag { display: inline-block; width: 92px; color: #6b6b5d; }
+  .fringe { background: #1b1b1b; padding: 18px; }
+  .fringe .tag { color: #9c9c90; }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, max-content); gap: 14px 26px; }
+  .mlabel { color: #6b6b5d; margin-right: 10px; }
+</style>
+</head>
+<body>
+<h1>XP 风格 UI 素材验收板</h1>
+<p class="note">全部素材来自 <code>assets/xp-ui/</code>（tools/xp_ui_slice.py 生成，见 manifest.json）。本页无外链，只引用同目录 PNG 与 xp-ui.css。</p>
+
+<!-- A. 按钮五态静态排列：检查高度是否一致 -->
+<section class="case" id="case-btn-states">
+  <h2>A. 按钮五态（静态排列，用于核对高度一致）</h2>
+  <div class="stack" id="btn-states">
+    <div class="row"><span class="tag">normal</span><button class="xp-btn">部署</button></div>
+    <div class="row"><span class="tag">hover</span><button class="xp-btn" data-forced="hover">部署</button></div>
+    <div class="row"><span class="tag">pressed</span><button class="xp-btn" data-forced="pressed">部署</button></div>
+    <div class="row"><span class="tag">focus</span><button class="xp-btn" data-forced="focus">部署</button></div>
+    <div class="row"><span class="tag">disabled</span><button class="xp-btn" disabled>部署</button></div>
+  </div>
+</section>
+
+<!-- B. 真实交互态 -->
+<section class="case" id="case-btn-live">
+  <h2>B. 真实交互态（鼠标悬停 / 按下 / Tab 聚焦 / 禁用）</h2>
+  <div class="row">
+    <button class="xp-btn">悬停我</button>
+    <button class="xp-btn">按下我</button>
+    <button class="xp-btn">Tab 聚焦我</button>
+    <button class="xp-btn" disabled>已禁用</button>
+  </div>
+</section>
+
+<!-- C. 四档宽度 -->
+<section class="case" id="case-widths">
+  <h2>C. 四档宽度（95 / 137 / 175 / 252，验证 9-slice 拉伸）</h2>
+  <div class="row">
+    <button class="xp-btn" style="width:95px">95</button>
+    <button class="xp-btn" style="width:137px">137</button>
+    <button class="xp-btn" style="width:175px">175</button>
+    <button class="xp-btn" style="width:252px">252</button>
+    <button class="xp-btn" style="width:340px">340（超宽）</button>
+  </div>
+</section>
+
+<!-- D. 表单控件 -->
+<section class="case" id="case-form">
+  <h2>D. 表单控件</h2>
+  <div class="row"><span class="tag">输入框</span><input class="xp-input" placeholder="输入关键字"></div>
+  <div class="row"><span class="tag">下拉框</span>
+    <div class="xp-select"><span class="xp-select__field">全部地图</span><button class="xp-select__arrow" aria-label="展开"></button></div>
+  </div>
+  <div class="row"><span class="tag">复选框</span>
+    <label class="xp-check"><span class="xp-check__box"></span>未选</label>
+    <label class="xp-check xp-check--on"><span class="xp-check__box"></span>选中</label>
+    <label class="xp-check xp-check--mixed"><span class="xp-check__box"></span>半选</label>
+  </div>
+  <div class="row"><span class="tag">单选框</span>
+    <label class="xp-radio"><span class="xp-radio__box"></span>未选</label>
+    <label class="xp-radio xp-radio--on"><span class="xp-radio__box"></span>选中</label>
+  </div>
+</section>
+
+<!-- E. 滑轨 / 滚动条 / 进度条 -->
+<section class="case" id="case-bars">
+  <h2>E. 滑轨 / 滚动条 / 进度条</h2>
+  <div class="row"><span class="tag">滑轨</span>
+    <div class="xp-slider" style="width:260px">
+      <div class="xp-slider__track"></div>
+      <div class="xp-slider__thumb" style="left:120px"></div>
+    </div>
+  </div>
+  <div class="row"><span class="tag">横向滚动条</span>
+    <div class="xp-scrollbar-h">
+      <button class="xp-scrollbar-h__btn" aria-label="左"><i class="xp-arrow xp-arrow--left"></i></button>
+      <div class="xp-scrollbar-h__track"><div class="xp-scrollbar-h__thumb"></div></div>
+      <button class="xp-scrollbar-h__btn" aria-label="右"><i class="xp-arrow xp-arrow--right"></i></button>
+    </div>
+  </div>
+  <div class="row"><span class="tag">进度条</span>
+    <div class="xp-progress"><div class="xp-progress__bar"></div></div>
+    <div class="xp-progress"><div class="xp-progress__bar" style="width:78%"></div></div>
+  </div>
+</section>
+
+<!-- F. 分组框 / 标题牌 -->
+<section class="case" id="case-containers">
+  <h2>F. 分组框 / 标题牌</h2>
+  <div class="row" style="align-items:flex-start; gap:26px">
+    <div class="xp-groupbox" style="width:300px">
+      <span class="xp-groupbox__title">撤离点</span>
+      分组框内容区：9-slice 拉伸，标题条为独立标题牌。
+    </div>
+    <div class="xp-groupbox" style="width:420px">
+      <span class="xp-groupbox__title">图层筛选</span>
+      宽度不同时边框不变形。
+    </div>
+  </div>
+  <div class="row" style="margin-top:26px">
+    <span class="mlabel">plaque-1</span><span class="xp-plaque-1">塔科夫互动地图</span>
+  </div>
+  <div class="row"><span class="mlabel">plaque-2</span><span class="xp-plaque-2">区域选择</span></div>
+  <div class="row"><span class="mlabel">plaque-3</span><span class="xp-plaque-3">图例</span></div>
+</section>
+
+<!-- G. 窗口框架 -->
+<section class="case" id="case-window" style="padding:0;border:0;background:transparent">
+  <div class="xp-titlebar" style="width:100%">
+    逃离塔科夫 · 互动地图
+    <span class="xp-titlebar__ctrls">
+      <button class="xp-winbtn xp-winbtn--min" aria-label="最小化"></button>
+      <button class="xp-winbtn xp-winbtn--max" aria-label="最大化"></button>
+      <button class="xp-winbtn xp-winbtn--close" aria-label="关闭"></button>
+    </span>
+  </div>
+  <div style="background:#efede4;border:1px solid #b7b3a4;border-top:0;padding:16px 16px 20px">
+    <div class="xp-tabs">
+      <button class="xp-tab xp-tab--active">地图</button>
+      <button class="xp-tab">任务</button>
+      <button class="xp-tab">藏身处</button>
+    </div>
+    <div style="height:16px"></div>
+    <div class="row"><span class="tag">激活 / 非激活</span>
+      <button class="xp-tab xp-tab--active" style="height:36px">激活页</button>
+      <button class="xp-tab">非激活页</button>
+    </div>
+  </div>
+</section>
+
+<!-- H. 分隔线 / 状态胶囊 -->
+<section class="case" id="case-misc">
+  <h2>H. 分隔线 / 状态徽标（纯 CSS）</h2>
+  <div class="row"><span class="tag">单实线</span><div class="xp-divider xp-divider--single"></div></div>
+  <div class="row"><span class="tag">双线高光</span><div class="xp-divider xp-divider--double"></div></div>
+  <div class="row"><span class="tag">状态徽标</span>
+    <span class="xp-badge xp-badge--blue">已确认</span>
+    <span class="xp-badge xp-badge--amber">待核实</span>
+    <span class="xp-badge xp-badge--green">可用</span>
+    <span class="xp-badge xp-badge--grey">未开放</span>
+  </div>
+</section>
+
+<!-- I. 深底紫边检查 -->
+<section class="case" id="case-fringe" style="padding:0;border:1px solid #000;background:#1b1b1b">
+  <div class="fringe" id="fringe-zone">
+    <h2 style="color:#c9c9bc;border-bottom-color:#3a3a34">I. 深色底紫边检查（#1b1b1b）</h2>
+    <div class="row"><span class="tag">五态</span>
+      <button class="xp-btn">普通</button>
+      <button class="xp-btn" data-forced="hover">悬停</button>
+      <button class="xp-btn" data-forced="pressed">按下</button>
+      <button class="xp-btn" data-forced="focus">焦点</button>
+      <button class="xp-btn" disabled>禁用</button>
+    </div>
+    <div class="row"><span class="tag">输入 / 下拉</span>
+      <input class="xp-input" style="width:180px" placeholder="搜索">
+      <div class="xp-select"><span class="xp-select__field" style="width:120px">选项</span><button class="xp-select__arrow"></button></div>
+    </div>
+    <div class="row"><span class="tag">小件</span>
+      <span class="xp-check__box" style="background-image:url(check-on.png)"></span>
+      <span class="xp-radio__box" style="background-image:url(radio-on.png)"></span>
+      <div class="xp-progress" style="width:160px"><div class="xp-progress__bar"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- J. 竖向滚动条 / 竖向滑轨（第二张合体板，8 倍绘制） -->
+<section class="case" id="case-vscroll">
+  <h2>J. 竖向滚动条（轨道平铺长条 / 滑块三态 / 箭头三态 / 三角图标）</h2>
+  <div class="row" style="align-items:flex-start; gap:72px">
+    <div>
+      <div class="mlabel">320px 长条（看接缝）</div>
+      <div class="xp-vscroll">
+        <button class="xp-vscroll__btn xp-vscroll__btn--up" aria-label="上"><i class="xp-vscroll__glyph xp-vscroll__glyph--up"></i></button>
+        <div class="xp-vscroll__track"><div class="xp-vscroll__thumb"></div></div>
+        <button class="xp-vscroll__btn xp-vscroll__btn--down" aria-label="下"><i class="xp-vscroll__glyph xp-vscroll__glyph--down"></i></button>
+      </div>
+    </div>
+    <div>
+      <div class="mlabel">480px 长条（接缝连续性）</div>
+      <div class="xp-vscroll" style="height:480px">
+        <button class="xp-vscroll__btn xp-vscroll__btn--up" aria-label="上"><i class="xp-vscroll__glyph xp-vscroll__glyph--up"></i></button>
+        <div class="xp-vscroll__track"><div class="xp-vscroll__thumb" style="top:120px"></div></div>
+        <button class="xp-vscroll__btn xp-vscroll__btn--down" aria-label="下"><i class="xp-vscroll__glyph xp-vscroll__glyph--down"></i></button>
+      </div>
+    </div>
+    <div>
+      <div class="mlabel">滑块三态（23x51）</div>
+      <div class="stack" style="gap:8px">
+        <div class="xp-vscroll__thumb" style="position:static;margin:0"></div>
+        <div class="xp-vscroll__thumb xp-vscroll__thumb--hover" style="position:static;margin:0"></div>
+        <div class="xp-vscroll__thumb xp-vscroll__thumb--pressed" style="position:static;margin:0"></div>
+      </div>
+    </div>
+    <div>
+      <div class="mlabel">竖向滑轨 + 滑块三态</div>
+      <div style="display:flex;gap:14px;align-items:flex-start">
+        <div class="xp-vslider"><div class="xp-vslider__track"></div><div class="xp-vslider__thumb"></div></div>
+        <div class="xp-vslider"><div class="xp-vslider__track"></div><div class="xp-vslider__thumb xp-vslider__thumb--hover"></div></div>
+        <div class="xp-vslider"><div class="xp-vslider__track"></div><div class="xp-vslider__thumb xp-vslider__thumb--pressed"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px">
+    <span class="tag">箭头三态</span>
+    <div class="stack" style="gap:8px">
+      <div class="row" style="margin:0">
+        <span class="mlabel" style="width:52px">up</span>
+        <button class="xp-vscroll__btn xp-vscroll__btn--up" aria-label="上"><i class="xp-vscroll__glyph xp-vscroll__glyph--up"></i></button>
+        <button class="xp-vscroll__btn xp-vscroll__btn--up" style="background-image:url(scroll-v-arrow-up-hover.png)" aria-label="上悬停"><i class="xp-vscroll__glyph xp-vscroll__glyph--up"></i></button>
+        <button class="xp-vscroll__btn xp-vscroll__btn--up" style="background-image:url(scroll-v-arrow-up-pressed.png)" aria-label="上按下"><i class="xp-vscroll__glyph xp-vscroll__glyph--up"></i></button>
+      </div>
+      <div class="row" style="margin:0">
+        <span class="mlabel" style="width:52px">down</span>
+        <button class="xp-vscroll__btn xp-vscroll__btn--down" aria-label="下"><i class="xp-vscroll__glyph xp-vscroll__glyph--down"></i></button>
+        <button class="xp-vscroll__btn xp-vscroll__btn--down" style="background-image:url(scroll-v-arrow-down-hover.png)" aria-label="下悬停"><i class="xp-vscroll__glyph xp-vscroll__glyph--down"></i></button>
+        <button class="xp-vscroll__btn xp-vscroll__btn--down" style="background-image:url(scroll-v-arrow-down-pressed.png)" aria-label="下按下"><i class="xp-vscroll__glyph xp-vscroll__glyph--down"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- K. 窗口三键（第二张合体板） -->
+<section class="case" id="case-winbtn2">
+  <h2>K. 窗口三键（三态 + 独立图标叠加）</h2>
+  <div class="row">
+    <span class="tag">底板三态</span>
+    <button class="xp-winbtn2 xp-winbtn2--min" aria-label="最小化"></button>
+    <button class="xp-winbtn2 xp-winbtn2--min" style="background-image:url(win-btn-min-hover.png)" aria-label="最小化悬停"></button>
+    <button class="xp-winbtn2 xp-winbtn2--min" style="background-image:url(win-btn-min-pressed.png)" aria-label="最小化按下"></button>
+    <span style="width:14px"></span>
+    <button class="xp-winbtn2 xp-winbtn2--max" aria-label="最大化"></button>
+    <button class="xp-winbtn2 xp-winbtn2--max" style="background-image:url(win-btn-max-hover.png)" aria-label="最大化悬停"></button>
+    <button class="xp-winbtn2 xp-winbtn2--max" style="background-image:url(win-btn-max-pressed.png)" aria-label="最大化按下"></button>
+    <span style="width:14px"></span>
+    <button class="xp-winbtn2 xp-winbtn2--close" aria-label="关闭"></button>
+    <button class="xp-winbtn2 xp-winbtn2--close" style="background-image:url(win-btn-close-hover.png)" aria-label="关闭悬停"></button>
+    <button class="xp-winbtn2 xp-winbtn2--close" style="background-image:url(win-btn-close-pressed.png)" aria-label="关闭按下"></button>
+  </div>
+  <div class="row">
+    <span class="tag">叠图标</span>
+    <button class="xp-winbtn2 xp-winbtn2--min" aria-label="最小化"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--min"></i></button>
+    <button class="xp-winbtn2 xp-winbtn2--max" aria-label="最大化"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--max"></i></button>
+    <button class="xp-winbtn2 xp-winbtn2--close" aria-label="关闭"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--close"></i></button>
+  </div>
+  <div class="row" style="margin-top:16px">
+    <span class="tag">标题栏实测</span>
+    <div style="display:flex;align-items:center;width:100%;height:30px;background:linear-gradient(180deg,#3f8ce9 0,#245ec4 50%,#1b4aa8 100%);padding-left:10px;box-sizing:border-box">
+      <span style="color:#fff;font:11px/1 Tahoma,sans-serif;flex:1">逃离塔科夫 · 互动地图</span>
+      <button class="xp-winbtn2 xp-winbtn2--min" aria-label="最小化"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--min"></i></button>
+      <button class="xp-winbtn2 xp-winbtn2--max" aria-label="最大化"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--max"></i></button>
+      <button class="xp-winbtn2 xp-winbtn2--close" aria-label="关闭"><i class="xp-winbtn2__glyph xp-winbtn2__glyph--close"></i></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 仅用于"静态展示"某个状态（真实交互态见 B 区）：给按钮挂一个强制态样式
+  (function () {
+    var map = {
+      hover: "url(btn-hover.png)",
+      pressed: "url(btn-pressed.png)",
+      focus: "url(btn-focus.png)"
+    };
+    document.querySelectorAll("[data-forced]").forEach(function (el) {
+      el.style.borderImageSource = map[el.getAttribute("data-forced")];
+      if (el.getAttribute("data-forced") === "focus") el.classList.add("xp-focus-dots");
+    });
+  })();
+</script>
+</body>
+</html>

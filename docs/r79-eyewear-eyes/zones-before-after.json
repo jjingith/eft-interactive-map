@@ -1,0 +1,170 @@
+{
+  "round": "R79",
+  "source": "data/game-truth/armor_items.json → props.armorColliders",
+  "rule": "仅补 data/items.json 里 z 为空的物品，已有值不动",
+  "count": 16,
+  "items": [
+    {
+      "id": "59e770b986f7742cbd762754",
+      "name": "防破片护目镜",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    },
+    {
+      "id": "5b432b2f5acfc4771e1c6622",
+      "name": "破碎面具",
+      "cat": "helmet",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "ParietalHead",
+        "Eyes",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "5b432be65acfc433000ed01f",
+      "name": "6B34防破片护目镜",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    },
+    {
+      "id": "603409c80ca681766b6a0fb2",
+      "name": "NPP KIASS Condor 护目镜",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    },
+    {
+      "id": "62a09e08de7ac81993580532",
+      "name": "Glorious E 面具",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "ParietalHead",
+        "Eyes",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "62a61c988ec41a51b34758d5",
+      "name": "Oakley SI Batwolf 墨镜",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    },
+    {
+      "id": "6570aead4d84f81fd002a033",
+      "name": "Death Shadow（死亡阴影）面具",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "Eyes",
+        "Jaw",
+        "HeadCommon"
+      ]
+    },
+    {
+      "id": "68a9b821cdf661cc5a0626c6",
+      "name": "Death Shadow (死亡阴影) 轻量化防弹面具 (金色)",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "Eyes",
+        "Jaw",
+        "HeadCommon"
+      ]
+    },
+    {
+      "id": "68a9b852cdf661cc5a0626c9",
+      "name": "Death Shadow（死亡阴影）面具（灰色）",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "Eyes",
+        "Jaw",
+        "HeadCommon"
+      ]
+    },
+    {
+      "id": "68a9b873a4b28d56c80a1818",
+      "name": "Death Shadow (死亡阴影) 轻量化防弹面具 (白色)",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "Eyes",
+        "Jaw",
+        "HeadCommon"
+      ]
+    },
+    {
+      "id": "68bee22e79c8186398098e6d",
+      "name": "DevTaс 武士下颊 防弹面具",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "68bee238a48c3c320808abc4",
+      "name": "DevTaс 武士下颊 防弹面具 (金色)",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "68bee23f6b0736bebc012add",
+      "name": "DevTaс 武士下颊 防弹面具 (紫色)",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "68bee246ede5c8489f08e1b3",
+      "name": "DevTaс 武士下颊 防弹面具 (白色)",
+      "cat": "face",
+      "before": null,
+      "after": [
+        "HeadCommon",
+        "Jaw"
+      ]
+    },
+    {
+      "id": "69cfe083ce0df53f230f29b0",
+      "name": "Wiley X SPEAR 防护眼镜（黑色）",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    },
+    {
+      "id": "69cfe095b96c8e8d3e002aa3",
+      "name": "Wiley X SPEAR 防护眼镜（黄褐色）",
+      "cat": "glasses",
+      "before": null,
+      "after": [
+        "Eyes"
+      ]
+    }
+  ]
+}

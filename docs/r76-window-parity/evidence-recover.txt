@@ -1,0 +1,11 @@
+﻿killing msedgewebview2 count=1
+recovery log:
+exit=True
+14:27:49.743  WebView2 进程异常：BrowserProcessExited
+14:27:49.813  小地图 WebView2 进程异常：BrowserProcessExited
+14:29:29.537  WebView2 进程异常：BrowserProcessExited
+14:29:29.612  小地图 WebView2 进程异常：BrowserProcessExited
+14:30:27.825  WebView2 进程异常：BrowserProcessExited
+14:30:27.906  设置 WebView2 边界失败：CoreWebView2Controller members cannot be accessed after the WebView2 control is disposed.
+14:30:27.912  小地图 WebView2 进程异常：BrowserProcessExited
+14:30:29.626  WebView2 已重建并重新导航：http://127.0.0.1:8817/ 次数=1

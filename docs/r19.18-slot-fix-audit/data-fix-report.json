@@ -1,0 +1,464 @@
+{
+  "generatedFor": "R19.18",
+  "dryRun": false,
+  "backup": "data/items.json.r1918.bak.json",
+  "before": {
+    "5649b0544bdc2d1b2b8b458a": {
+      "name": "AK-74 照门",
+      "slots": [
+        [
+          "5a0ee12cfcdbcb001912fa64",
+          "mod_sight_rear",
+          1
+        ]
+      ]
+    },
+    "5ac72e475acfc400180ae6fe": {
+      "name": "AK-74M 照门",
+      "slots": [
+        [
+          "5ac72e475acfc400180ae700",
+          "mod_sight_rear",
+          1
+        ]
+      ]
+    },
+    "5ac733a45acfc400192630e2": {
+      "name": "AK-105 照门",
+      "slots": [
+        [
+          "5ac733a45acfc400192630e4",
+          "mod_sight_rear",
+          1
+        ]
+      ]
+    },
+    "64527a3a7da7133e5a09ca99": {
+      "name": "9A-91 9x39 消音器",
+      "slots": [
+        [
+          "64527a3a7da7133e5a09ca9b",
+          "mod_mount",
+          1
+        ]
+      ]
+    },
+    "687128c4505fed5f370b1625": {
+      "name": "NB AS VAL MOD.4 套件护木",
+      "slots": [
+        [
+          "687128c4505fed5f370b1627",
+          "mod_foregrip",
+          42
+        ],
+        [
+          "687128c4505fed5f370b1628",
+          "mod_tactical",
+          37
+        ],
+        [
+          "687128c4505fed5f370b162b",
+          "mod_bipod",
+          2
+        ],
+        [
+          "68712a1e505fed5f370b162d",
+          "mod_mount_000",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b162e",
+          "mod_mount_001",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b162f",
+          "mod_mount_002",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1630",
+          "mod_mount_003",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1631",
+          "mod_muzzle",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1632",
+          "mod_sight_front",
+          11
+        ]
+      ]
+    },
+    "5df25d3bfd6b4e6e2276dc9a": {
+      "name": "Orsis T-5000护木",
+      "slots": [
+        [
+          "5df25d3bfd6b4e6e2276dc9c",
+          "mod_mount_000",
+          2
+        ],
+        [
+          "5df25d3bfd6b4e6e2276dc9d",
+          "mod_mount_001",
+          2
+        ],
+        [
+          "5df25d3bfd6b4e6e2276dc9e",
+          "mod_mount_002",
+          2
+        ],
+        [
+          "5df25d3bfd6b4e6e2276dc9f",
+          "mod_mount_003",
+          1
+        ],
+        [
+          "5df388648b6c4240ba265202",
+          "mod_foregrip",
+          1
+        ],
+        [
+          "6718519b2e2eeb98d406f3b6",
+          "mod_bipod",
+          1
+        ]
+      ]
+    },
+    "68aee9fe130c00663d08aeb6": {
+      "name": "TKPD 护木 (黑色)",
+      "slots": [
+        [
+          "68aee9fe130c00663d08aeb8",
+          "mod_foregrip",
+          41
+        ],
+        [
+          "68aee9fe130c00663d08aeba",
+          "mod_mount_001",
+          24
+        ],
+        [
+          "68aee9fe130c00663d08aebb",
+          "mod_mount_002",
+          23
+        ],
+        [
+          "68aee9fe130c00663d08aebc",
+          "mod_tactical",
+          10
+        ],
+        [
+          "68aeeb10130c00663d08aebd",
+          "mod_mount_003",
+          18
+        ],
+        [
+          "68aeeb10130c00663d08aebe",
+          "mod_sight_front",
+          10
+        ],
+        [
+          "68b320078152a172050ebd70",
+          "mod_bipod",
+          2
+        ]
+      ]
+    },
+    "68d5676f43adc7372a0c8ae0": {
+      "name": "TKPD 护木 (FDE)",
+      "slots": [
+        [
+          "68d5676f43adc7372a0c8ae2",
+          "mod_foregrip",
+          41
+        ],
+        [
+          "68d5676f43adc7372a0c8ae3",
+          "mod_mount_001",
+          24
+        ],
+        [
+          "68d5676f43adc7372a0c8ae4",
+          "mod_mount_002",
+          23
+        ],
+        [
+          "68d5676f43adc7372a0c8ae5",
+          "mod_tactical",
+          10
+        ],
+        [
+          "68d5676f43adc7372a0c8ae6",
+          "mod_mount_003",
+          18
+        ],
+        [
+          "68d5676f43adc7372a0c8ae7",
+          "mod_sight_front",
+          10
+        ],
+        [
+          "68d5676f43adc7372a0c8ae8",
+          "mod_bipod",
+          2
+        ]
+      ]
+    }
+  },
+  "after": {
+    "5649b0544bdc2d1b2b8b458a": {
+      "name": "AK-74 照门",
+      "slots": []
+    },
+    "5ac72e475acfc400180ae6fe": {
+      "name": "AK-74M 照门",
+      "slots": []
+    },
+    "5ac733a45acfc400192630e2": {
+      "name": "AK-105 照门",
+      "slots": []
+    },
+    "64527a3a7da7133e5a09ca99": {
+      "name": "9A-91 9x39 消音器",
+      "slots": []
+    },
+    "687128c4505fed5f370b1625": {
+      "name": "NB AS VAL MOD.4 套件护木",
+      "slots": [
+        [
+          "687128c4505fed5f370b1627",
+          "mod_foregrip",
+          42
+        ],
+        [
+          "687128c4505fed5f370b1628",
+          "mod_tactical",
+          37
+        ],
+        [
+          "687128c4505fed5f370b162b",
+          "mod_bipod",
+          2
+        ],
+        [
+          "68712a1e505fed5f370b162d",
+          "mod_mount_000",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b162f",
+          "mod_mount_002",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1630",
+          "mod_mount_003",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1631",
+          "mod_muzzle",
+          1
+        ],
+        [
+          "68712a1e505fed5f370b1632",
+          "mod_sight_front",
+          11
+        ]
+      ]
+    },
+    "5df25d3bfd6b4e6e2276dc9a": {
+      "name": "Orsis T-5000护木",
+      "slots": [
+        [
+          "5df25d3bfd6b4e6e2276dc9c",
+          "mod_mount_000",
+          2
+        ],
+        [
+          "5df25d3bfd6b4e6e2276dc9f",
+          "mod_mount_003",
+          1
+        ],
+        [
+          "5df388648b6c4240ba265202",
+          "mod_foregrip",
+          1
+        ],
+        [
+          "6718519b2e2eeb98d406f3b6",
+          "mod_bipod",
+          1
+        ]
+      ]
+    },
+    "68aee9fe130c00663d08aeb6": {
+      "name": "TKPD 护木 (黑色)",
+      "slots": [
+        [
+          "68aee9fe130c00663d08aeb8",
+          "mod_foregrip",
+          41
+        ],
+        [
+          "68aee9fe130c00663d08aebc",
+          "mod_tactical",
+          10
+        ],
+        [
+          "68aeeb10130c00663d08aebd",
+          "mod_mount_003",
+          18
+        ],
+        [
+          "68aeeb10130c00663d08aebe",
+          "mod_sight_front",
+          10
+        ],
+        [
+          "68b320078152a172050ebd70",
+          "mod_bipod",
+          2
+        ]
+      ]
+    },
+    "68d5676f43adc7372a0c8ae0": {
+      "name": "TKPD 护木 (FDE)",
+      "slots": [
+        [
+          "68d5676f43adc7372a0c8ae2",
+          "mod_foregrip",
+          41
+        ],
+        [
+          "68d5676f43adc7372a0c8ae5",
+          "mod_tactical",
+          10
+        ],
+        [
+          "68d5676f43adc7372a0c8ae6",
+          "mod_mount_003",
+          18
+        ],
+        [
+          "68d5676f43adc7372a0c8ae7",
+          "mod_sight_front",
+          10
+        ],
+        [
+          "68d5676f43adc7372a0c8ae8",
+          "mod_bipod",
+          2
+        ]
+      ]
+    }
+  },
+  "report": [
+    {
+      "itemId": "5649b0544bdc2d1b2b8b458a",
+      "name": "AK-74 照门",
+      "status": "fixed",
+      "dropped": [
+        "5a0ee12cfcdbcb001912fa64"
+      ],
+      "droppedSids": [
+        "mod_sight_rear"
+      ],
+      "evidence": "in-game-confirmed: AK-74 叶式照门无 AKMP 侧轨接口（R19.18 问题 2）"
+    },
+    {
+      "itemId": "5ac72e475acfc400180ae6fe",
+      "name": "AK-74M 照门",
+      "status": "fixed",
+      "dropped": [
+        "5ac72e475acfc400180ae700"
+      ],
+      "droppedSids": [
+        "mod_sight_rear"
+      ],
+      "evidence": "in-game-confirmed: AK-74M 叶式照门无 AKMP 侧轨接口（R19.18 问题 2）"
+    },
+    {
+      "itemId": "5ac733a45acfc400192630e2",
+      "name": "AK-105 照门",
+      "status": "fixed",
+      "dropped": [
+        "5ac733a45acfc400192630e4"
+      ],
+      "droppedSids": [
+        "mod_sight_rear"
+      ],
+      "evidence": "in-game-confirmed: AK-105 叶式照门无 AKMP 侧轨接口（R19.18 问题 2）"
+    },
+    {
+      "itemId": "64527a3a7da7133e5a09ca99",
+      "name": "9A-91 9x39 消音器",
+      "status": "fixed",
+      "dropped": [
+        "64527a3a7da7133e5a09ca9b"
+      ],
+      "droppedSids": [
+        "mod_mount"
+      ],
+      "evidence": "in-game-confirmed: 9A-91 消音器无 VSS/VAL B-3 环形基座接口（R19.18 问题 8）"
+    },
+    {
+      "itemId": "687128c4505fed5f370b1625",
+      "name": "NB AS VAL MOD.4 套件护木",
+      "status": "fixed",
+      "dropped": [
+        "68712a1e505fed5f370b162e"
+      ],
+      "droppedSids": [
+        "mod_mount_001"
+      ],
+      "evidence": "in-game-confirmed: 3.5 英寸导轨只有一个安装位（R19.18 问题 9）"
+    },
+    {
+      "itemId": "5df25d3bfd6b4e6e2276dc9a",
+      "name": "Orsis T-5000护木",
+      "status": "fixed",
+      "dropped": [
+        "5df25d3bfd6b4e6e2276dc9d",
+        "5df25d3bfd6b4e6e2276dc9e"
+      ],
+      "droppedSids": [
+        "mod_mount_001",
+        "mod_mount_002"
+      ],
+      "evidence": "in-game-confirmed: T-5000 护木只有两个导轨安装位（R19.18 问题 4）"
+    },
+    {
+      "itemId": "68aee9fe130c00663d08aeb6",
+      "name": "TKPD 护木 (黑色)",
+      "status": "fixed",
+      "dropped": [
+        "68aee9fe130c00663d08aeba",
+        "68aee9fe130c00663d08aebb"
+      ],
+      "droppedSids": [
+        "mod_mount_001",
+        "mod_mount_002"
+      ],
+      "evidence": "in-game-confirmed: TKPD 护木（黑色）只有一个战术接口（R19.18 问题 10）"
+    },
+    {
+      "itemId": "68d5676f43adc7372a0c8ae0",
+      "name": "TKPD 护木 (FDE)",
+      "status": "fixed",
+      "dropped": [
+        "68d5676f43adc7372a0c8ae3",
+        "68d5676f43adc7372a0c8ae4"
+      ],
+      "droppedSids": [
+        "mod_mount_001",
+        "mod_mount_002"
+      ],
+      "evidence": "in-game-confirmed: TKPD 护木（FDE）只有一个战术接口（R19.18 问题 10）"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+ "schema": "eftmap.r19.11.m4stock/1",
+ "tubeSlot": {
+  "exists": true,
+  "title": "当前槽位：枪托",
+  "sub": "已装 柯尔特 AR-15 卡宾枪缓冲管",
+  "kind": "slot",
+  "slot": "mod_stock",
+  "topOffset": 0,
+  "beforeSearch": true,
+  "inCenter": false
+ },
+ "tubeCandidates": {
+  "total": 17,
+  "bad": 0,
+  "rows": [
+   {
+    "name": "柯尔特 A2 AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "柯尔特 AR-15 卡宾枪缓冲管",
+    "conflict": false,
+    "state": "已装",
+    "why": ""
+   },
+   {
+    "name": "联盟-TM AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "ADAR缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "ERGO F93 PRO AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Phase5 Hexone AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "RTM ATP AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries Viper PDW AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   }
+  ]
+ },
+ "childSlots": [
+  "mod_stock/mod_stock_000"
+ ],
+ "childCandidates": {
+  "total": 36,
+  "bad": 0
+ },
+ "integratedPicked": {
+  "x": 1356.5,
+  "y": 517.1875,
+  "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+  "conflict": false,
+  "state": "可装",
+  "why": ""
+ },
+ "afterIntegrated": {
+  "childSlotsAfter": [],
+  "stockItems": [
+   {
+    "slot": "mod_stock",
+    "item": "Magpul UBR GEN2 AR-15 枪托 (FDE)"
+   }
+  ],
+  "toast": "已装上 Magpul UBR GEN2 AR-15 枪托 (FDE)（枪托）　｜　⚠ 更换父配件后，其下级附件已自动卸下：High Standard M4SS AR-15 枪托　｜　价格档 FLEA：构建期快照，非实时行情"
+ },
+ "stockSlotAfter": {
+  "exists": true,
+  "title": "当前槽位：枪托",
+  "sub": "已装 Magpul UBR GEN2 AR-15 枪托 (FDE)",
+  "kind": "slot",
+  "slot": "mod_stock",
+  "topOffset": 0,
+  "beforeSearch": true,
+  "inCenter": false
+ }
+}

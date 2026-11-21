@@ -1,0 +1,743 @@
+{
+ "src": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\..\\ui图标\\xp风格ui\\20261107补充.png",
+ "size": [
+  2880,
+  2880
+ ],
+ "bg": [
+  231.93,
+  21.23,
+  239.03
+ ],
+ "spread": [
+  1.07,
+  1.31,
+  0.63
+ ],
+ "worst_std": 2.05,
+ "tol": 12,
+ "edges": [
+  {
+   "edge": "top",
+   "mean": [
+    231.39,
+    21.12,
+    238.76
+   ],
+   "std": [
+    1.13,
+    1.26,
+    0.87
+   ]
+  },
+  {
+   "edge": "bottom",
+   "mean": [
+    232.46,
+    20.49,
+    238.77
+   ],
+   "std": [
+    1.14,
+    2.05,
+    1.46
+   ]
+  },
+  {
+   "edge": "left",
+   "mean": [
+    231.44,
+    21.53,
+    239.21
+   ],
+   "std": [
+    1.77,
+    1.43,
+    0.97
+   ]
+  },
+  {
+   "edge": "right",
+   "mean": [
+    232.44,
+    21.8,
+    239.39
+   ],
+   "std": [
+    1.17,
+    1.28,
+    0.98
+   ]
+  }
+ ],
+ "comps": [
+  {
+   "box": [
+    1834,
+    321,
+    2031,
+    512,
+    37378
+   ],
+   "w": 197,
+   "h": 191
+  },
+  {
+   "box": [
+    254,
+    343,
+    1549,
+    466,
+    155167
+   ],
+   "w": 1295,
+   "h": 123
+  },
+  {
+   "box": [
+    254,
+    672,
+    1550,
+    983,
+    401609
+   ],
+   "w": 1296,
+   "h": 311
+  },
+  {
+   "box": [
+    1834,
+    713,
+    2401,
+    897,
+    103182
+   ],
+   "w": 567,
+   "h": 184
+  },
+  {
+   "box": [
+    2127,
+    1099,
+    2308,
+    1277,
+    29031
+   ],
+   "w": 181,
+   "h": 178
+  },
+  {
+   "box": [
+    2426,
+    1099,
+    2610,
+    1277,
+    29904
+   ],
+   "w": 184,
+   "h": 178
+  },
+  {
+   "box": [
+    1834,
+    1100,
+    2012,
+    1277,
+    28501
+   ],
+   "w": 178,
+   "h": 177
+  },
+  {
+   "box": [
+    254,
+    1141,
+    1550,
+    1299,
+    202530
+   ],
+   "w": 1296,
+   "h": 158
+  },
+  {
+   "box": [
+    1835,
+    1412,
+    2153,
+    1528,
+    34318
+   ],
+   "w": 318,
+   "h": 116
+  },
+  {
+   "box": [
+    254,
+    1483,
+    1550,
+    1651,
+    215643
+   ],
+   "w": 1296,
+   "h": 168
+  },
+  {
+   "box": [
+    1834,
+    1653,
+    1965,
+    1802,
+    18780
+   ],
+   "w": 131,
+   "h": 149
+  },
+  {
+   "box": [
+    254,
+    1824,
+    1550,
+    1982,
+    201881
+   ],
+   "w": 1296,
+   "h": 158
+  },
+  {
+   "box": [
+    1834,
+    1899,
+    2178,
+    2044,
+    44552
+   ],
+   "w": 344,
+   "h": 145
+  },
+  {
+   "box": [
+    2306,
+    1899,
+    2660,
+    2044,
+    46115
+   ],
+   "w": 354,
+   "h": 145
+  },
+  {
+   "box": [
+    2375,
+    2171,
+    2512,
+    2311,
+    18517
+   ],
+   "w": 137,
+   "h": 140
+  },
+  {
+   "box": [
+    1834,
+    2173,
+    1972,
+    2311,
+    18726
+   ],
+   "w": 138,
+   "h": 138
+  },
+  {
+   "box": [
+    2105,
+    2173,
+    2242,
+    2311,
+    18476
+   ],
+   "w": 137,
+   "h": 138
+  },
+  {
+   "box": [
+    1833,
+    2415,
+    1965,
+    2621,
+    26260
+   ],
+   "w": 132,
+   "h": 206
+  }
+ ],
+ "items": [
+  {
+   "name": "scroll-v-arrow-down-hover",
+   "crop_px": [
+    1834,
+    321,
+    2031,
+    512
+   ],
+   "crop_size": [
+    197,
+    191
+   ],
+   "out_size": [
+    22,
+    27
+   ],
+   "detected": [
+    1834,
+    321,
+    2031,
+    512,
+    37378
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "竖条按钮实际是 22x27，按控件尺寸输出，运行时不再缩放",
+   "aspect_src": 1.031,
+   "aspect_out": 0.815
+  },
+  {
+   "name": "range-track-compact",
+   "crop_px": [
+    254,
+    343,
+    1550,
+    466
+   ],
+   "crop_size": [
+    1296,
+    123
+   ],
+   "out_size": [
+    200,
+    16
+   ],
+   "detected": [
+    254,
+    343,
+    1549,
+    466,
+    155167
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 10.537,
+   "aspect_out": 12.5
+  },
+  {
+   "name": "tip-plate",
+   "crop_px": [
+    254,
+    682,
+    1550,
+    984
+   ],
+   "crop_size": [
+    1296,
+    302
+   ],
+   "out_size": [
+    120,
+    40
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 4.291,
+   "aspect_out": 3.0
+  },
+  {
+   "name": "scroll-h-thumb",
+   "crop_px": [
+    1834,
+    713,
+    2401,
+    897
+   ],
+   "crop_size": [
+    567,
+    184
+   ],
+   "out_size": [
+    44,
+    21
+   ],
+   "detected": [
+    1834,
+    713,
+    2401,
+    897,
+    103182
+   ],
+   "adopt": false,
+   "fringe_px": 0,
+   "note": "横向滑块常态已有 scroll-h-thumb.png 且三态齐全，新件更厚、边框更重，未采用",
+   "aspect_src": 3.082,
+   "aspect_out": 2.095
+  },
+  {
+   "name": "badge-md",
+   "crop_px": [
+    1834,
+    1133,
+    2012,
+    1277
+   ],
+   "crop_size": [
+    178,
+    144
+   ],
+   "out_size": [
+    17,
+    17
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 1.236,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "badge-md-hover",
+   "crop_px": [
+    2127,
+    1119,
+    2308,
+    1277
+   ],
+   "crop_size": [
+    181,
+    158
+   ],
+   "out_size": [
+    17,
+    17
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "蓝调色版",
+   "aspect_src": 1.146,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "badge-md-warn",
+   "crop_px": [
+    2426,
+    1132,
+    2610,
+    1277
+   ],
+   "crop_size": [
+    184,
+    145
+   ],
+   "out_size": [
+    17,
+    17
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "棕调色版",
+   "aspect_src": 1.269,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "tab-active-26",
+   "crop_px": [
+    254,
+    1154,
+    1550,
+    1300
+   ],
+   "crop_size": [
+    1296,
+    146
+   ],
+   "out_size": [
+    120,
+    26
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 8.877,
+   "aspect_out": 4.615
+  },
+  {
+   "name": "tab-inactive-26",
+   "crop_px": [
+    254,
+    1484,
+    1550,
+    1651
+   ],
+   "crop_size": [
+    1296,
+    167
+   ],
+   "out_size": [
+    120,
+    26
+   ],
+   "detected": [
+    254,
+    1483,
+    1550,
+    1651,
+    215643
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 7.76,
+   "aspect_out": 4.615
+  },
+  {
+   "name": "tab-hover-26",
+   "crop_px": [
+    254,
+    1825,
+    1550,
+    1982
+   ],
+   "crop_size": [
+    1296,
+    157
+   ],
+   "out_size": [
+    120,
+    26
+   ],
+   "detected": [
+    254,
+    1824,
+    1550,
+    1982,
+    201881
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 8.255,
+   "aspect_out": 4.615
+  },
+  {
+   "name": "badge-sm",
+   "crop_px": [
+    1834,
+    1442,
+    2153,
+    1528
+   ],
+   "crop_size": [
+    319,
+    86
+   ],
+   "out_size": [
+    26,
+    11
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 3.709,
+   "aspect_out": 2.364
+  },
+  {
+   "name": "badge-micro",
+   "crop_px": [
+    1834,
+    1654,
+    1965,
+    1802
+   ],
+   "crop_size": [
+    131,
+    148
+   ],
+   "out_size": [
+    13,
+    16
+   ],
+   "detected": [
+    1834,
+    1653,
+    1965,
+    1802,
+    18780
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 0.885,
+   "aspect_out": 0.812
+  },
+  {
+   "name": "switch-track-off",
+   "crop_px": [
+    1834,
+    1917,
+    2178,
+    2044
+   ],
+   "crop_size": [
+    344,
+    127
+   ],
+   "out_size": [
+    28,
+    14
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 2.709,
+   "aspect_out": 2.0
+  },
+  {
+   "name": "switch-track-on",
+   "crop_px": [
+    2306,
+    1918,
+    2660,
+    2044
+   ],
+   "crop_size": [
+    354,
+    126
+   ],
+   "out_size": [
+    28,
+    14
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 2.81,
+   "aspect_out": 2.0
+  },
+  {
+   "name": "switch-knob-off",
+   "crop_px": [
+    1834,
+    2173,
+    1972,
+    2311
+   ],
+   "crop_size": [
+    138,
+    138
+   ],
+   "out_size": [
+    10,
+    10
+   ],
+   "detected": [
+    1834,
+    2173,
+    1972,
+    2311,
+    18726
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 1.0,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "switch-knob-on",
+   "crop_px": [
+    2105,
+    2173,
+    2242,
+    2311
+   ],
+   "crop_size": [
+    137,
+    138
+   ],
+   "out_size": [
+    10,
+    10
+   ],
+   "detected": [
+    2105,
+    2173,
+    2242,
+    2311,
+    18476
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 0.993,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "switch-knob-hover",
+   "crop_px": [
+    2375,
+    2171,
+    2512,
+    2311
+   ],
+   "crop_size": [
+    137,
+    140
+   ],
+   "out_size": [
+    10,
+    10
+   ],
+   "detected": [
+    2375,
+    2171,
+    2512,
+    2311,
+    18517
+   ],
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 0.979,
+   "aspect_out": 1.0
+  },
+  {
+   "name": "range-thumb-compact",
+   "crop_px": [
+    1833,
+    2441,
+    1965,
+    2621
+   ],
+   "crop_size": [
+    132,
+    180
+   ],
+   "out_size": [
+    10,
+    16
+   ],
+   "detected": null,
+   "adopt": true,
+   "fringe_px": 0,
+   "note": "",
+   "aspect_src": 0.733,
+   "aspect_out": 0.625
+  }
+ ]
+}

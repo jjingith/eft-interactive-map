@@ -1,0 +1,1225 @@
+{
+ "name": "db4-quest",
+ "requested_url": "https://db4tarkov.com/quest",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "semantics_auto": "clicked",
+ "url": "https://db4tarkov.com/quest",
+ "title": "Quest",
+ "ready": "complete",
+ "textLen": 2836,
+ "htmlLen": 175937,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 92,
+ "input": 1,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0 🌖 18:05 🌓 06:05"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "tab",
+   "label": "IV"
+  },
+  {
+   "role": "tab",
+   "label": "+0"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Trader level / PMC Setting"
+  },
+  {
+   "role": "input",
+   "label": "Type to search — ESC to clear"
+  },
+  {
+   "role": "button",
+   "label": "Click: -1 lvl | Hold: continuous"
+  },
+  {
+   "role": "button",
+   "label": "Lv 65"
+  },
+  {
+   "role": "button",
+   "label": "Click: +1 lvl | Hold: continuous"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Tour +2"
+  },
+  {
+   "role": "img",
+   "label": "to the"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Roubles"
+  },
+  {
+   "role": "img",
+   "label": "RUB 250K"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Dollars"
+  },
+  {
+   "role": "img",
+   "label": "USD 20K"
+  },
+  {
+   "role": "button",
+   "label": "Complete"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Falling Skies +1"
+  },
+  {
+   "role": "img",
+   "label": "the fallen plane"
+  },
+  {
+   "role": "img",
+   "label": "the traders about the fallen plane"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Toolset"
+  },
+  {
+   "role": "img",
+   "label": "2"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Rechargeable battery"
+  },
+  {
+   "role": "img",
+   "label": "3"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Printed circuit board"
+  },
+  {
+   "role": "img",
+   "label": "5"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Boreas or Intel Center 3"
+  },
+  {
+   "role": "button",
+   "label": "Paradigm Shipping poster \"Paradigm\""
+  },
+  {
+   "role": "img",
+   "label": "Toolset to repair the equipment under the cellular tower on"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "AMG-10 hydraulic fluid"
+  },
+  {
+   "role": "img",
+   "label": "1"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "SZ-1 explosive charge"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 The Unheard [1] Note with ramblings about the Purification o"
+  },
+  {
+   "role": "button",
+   "label": "Document on changes in enterprise interactions \"TG contr.\""
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Batya & \"Strelets' amulet\" in Ryabina outpost on Complete"
+  },
+  {
+   "role": "img",
+   "label": "Mattress to start Bogatyr patch on"
+  },
+  {
+   "role": "button",
+   "label": "Hostage evacuation report from Voevoda \"V. report\""
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Blue Fire [1] EMERCOM leaflet on the Emercom station on Mech"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "EMERCOM leaflet"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 They Are Already Here Note about the Eye of the World on [1]"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Cult victim audio tape #2"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Accidental Witness , at dorms 110 on Complete"
+  },
+  {
+   "role": "img",
+   "label": "the paint-sprayed car next to the three-story dorms on"
+  },
+  {
+   "role": "button",
+   "label": "Note for Kozlov \"Debt\""
+  },
+  {
+   "role": "button",
+   "label": "Letter from Kozlov's room \"Kozlov L.\""
+  },
+  {
+   "role": "group",
+   "label": "Loyalty level or Essential status not confirmed yet. Know it? Report it on Disco"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Shooting Cans Exp 3,000 lv1 Complete"
+  },
+  {
+   "role": "img",
+   "label": "the Utyos machine gun on"
+  },
+  {
+   "role": "img",
+   "label": "the AGS grenade launcher on"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 First in Line [3] any medicine items Augmentin Exp 3,000 I"
+  },
+  {
+   "role": "img",
+   "label": "the Emercom station on"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Augmentin antibiotic pills"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Burning Rubber [1] Exp 3,000 I Complete"
+  },
+  {
+   "role": "img",
+   "label": "vehicle extraction on"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Saving the Mole Exp 3,000 I Complete"
+  },
+  {
+   "role": "img",
+   "label": "the lab scientist's office on"
+  },
+  {
+   "role": "img",
+   "label": "the scientist's hard drive HDD"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Debut [5] Exp 3,000 I Complete"
+  },
+  {
+   "role": "img",
+   "label": "Scavs on , , , or"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Luxurious Life Exp 3,000 I"
+  },
+  {
+   "role": "img",
+   "label": "the liquor store on"
+  },
+  {
+   "role": "img",
+   "label": "the wine bottle in the store"
+  },
+  {
+   "role": "button",
+   "label": "Ladder: unlocks once you've completed enough Prapor quests — this ladder's quest"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Shortage [3] the items Salewa Exp 3,000 I"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Salewa first aid kit"
+  },
+  {
+   "role": "button",
+   "label": "Ladder: unlocks once you've completed enough Therapist quests — this ladder's qu"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Background Check Exp 3,000 I"
+  },
+  {
+   "role": "img",
+   "label": "the bronze pocket watch on"
+  },
+  {
+   "role": "img",
+   "label": "the found item Watch"
+  },
+  {
+   "role": "group",
+   "label": "Loyalty Level 1 LL1 Gunsmith - MP-133 an MP-133 to comply with the given specifi"
+  },
+  {
+   "role": "group",
+   "label": "Essential Task — main storyline quest, not gated by any loyalty level. Ess Intro"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Navigation menu"
+  },
+  {
+   "role": "button",
+   "label": "Import from Logs Auto-detect completed quests"
+  },
+  {
+   "role": "button",
+   "label": "Edge of Darkness"
+  },
+  {
+   "role": "button",
+   "label": "BEAR"
+  },
+  {
+   "role": "button",
+   "label": "USEC"
+  },
+  {
+   "role": "group",
+   "label": "pre-quest auto marked as completed"
+  },
+  {
+   "role": "button",
+   "label": "Failed"
+  },
+  {
+   "role": "button",
+   "label": "Banned"
+  },
+  {
+   "role": "button",
+   "label": "Completed"
+  },
+  {
+   "role": "button",
+   "label": "Uncompleted"
+  },
+  {
+   "role": "button",
+   "label": "Only-Season"
+  },
+  {
+   "role": "button",
+   "label": "Only-Kappa"
+  },
+  {
+   "role": "button",
+   "label": "Only-LightKeeper"
+  },
+  {
+   "role": "button",
+   "label": "Only-Available"
+  },
+  {
+   "role": "button",
+   "label": "Only-UnlockItem"
+  },
+  {
+   "role": "button",
+   "label": "Only-Buddy-Available"
+  },
+  {
+   "role": "button",
+   "label": "By Exp"
+  },
+  {
+   "role": "button",
+   "label": "By Map"
+  },
+  {
+   "role": "button",
+   "label": "By Progress"
+  },
+  {
+   "role": "button",
+   "label": "By Objectives Done"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "giveItem"
+  },
+  {
+   "role": "button",
+   "label": "169"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "shoot"
+  },
+  {
+   "role": "button",
+   "label": "148"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "plantItem"
+  },
+  {
+   "role": "button",
+   "label": "74"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "visit"
+  },
+  {
+   "role": "button",
+   "label": "42"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "buildWeapon"
+  },
+  {
+   "role": "button",
+   "label": "27"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "skill, traderLevel, traderStanding"
+  },
+  {
+   "role": "button",
+   "label": "1"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "extract"
+  },
+  {
+   "role": "button",
+   "label": "8"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "sellItem"
+  },
+  {
+   "role": "button",
+   "label": "3"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "useItem"
+  },
+  {
+   "role": "button",
+   "label": "2"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "findQuestItem, task"
+  },
+  {
+   "role": "button",
+   "label": "7"
+  },
+  {
+   "role": "button",
+   "label": "Show first Objective"
+  },
+  {
+   "role": "button",
+   "label": "Show all Objectives"
+  },
+  {
+   "role": "button",
+   "label": "Show Thumbnail"
+  },
+  {
+   "role": "button",
+   "label": "Hide All"
+  },
+  {
+   "role": "button",
+   "label": "Auto filter by the Map choosing on Quest Map (right side) Currently: ground_zero"
+  },
+  {
+   "role": "button",
+   "label": "Show All"
+  },
+  {
+   "role": "button",
+   "label": "Any"
+  },
+  {
+   "role": "button",
+   "label": "Ground Zero"
+  },
+  {
+   "role": "button",
+   "label": "Customs"
+  },
+  {
+   "role": "button",
+   "label": "Factory"
+  },
+  {
+   "role": "button",
+   "label": "Interchange"
+  },
+  {
+   "role": "button",
+   "label": "Lighthouse"
+  },
+  {
+   "role": "button",
+   "label": "Reserve"
+  },
+  {
+   "role": "button",
+   "label": "Shoreline"
+  },
+  {
+   "role": "button",
+   "label": "The Lab"
+  },
+  {
+   "role": "button",
+   "label": "Woods"
+  },
+  {
+   "role": "button",
+   "label": "Streets of Tarkov"
+  },
+  {
+   "role": "button",
+   "label": "The Labyrinth"
+  },
+  {
+   "role": "button",
+   "label": "Icebreaker"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/quest",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793252058274",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/5c94bbff86f7747ee735c08f.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5449016a4bdc2d6f028b456f.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5696686a4bdc2da3298b456a.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590c2e1186f77425357b6124.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590a358486f77429692b2790.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590a3b0486f7743954552bdb.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/699f0b877c23862b4b0ee19c.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/69bb3e54d6c67f6265004ab9.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/699f09de81a6c812900a77b7.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6819f8df28294ec0730db6b4.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6877c87dd66d08f590036126.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/689b50ec127673bbd40706d1.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/66acd6702b17692df20144c0.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/67ee7680562d5057e60ccc3a.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68c14b734a7e0bada00f8fd4.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/68d3037c91c2fa84e2044a0d.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/68e63d4794fb983cb7098d2d.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/64ccc25f95763a1ae376e447.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68e63b56ad8cba49190ea529.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/689b52ff147eeab4410ecd16.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/688893c5a030f9346505e6d5.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68e96180901b9b10270f1eed.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68cc09872bdcc15c010c2668.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/68d2f09fb350a6169f04bea9.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/68d2fd018c12620073059934.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/59136e1e86f774432f15d133.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68e960db934bf7b02d005dab.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/68e95f4fa4a577e907015787.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/657315df034d76585f032e01.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/657315ddab5a49b71f098853.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590c695186f7741e566b64a2.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/657315e270bb0b8dba00cc48.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/657315e4a6af4ab4b50f3459.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/6575a6ca8778e96ded05a802-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/5936d90786f7742b1420ba5b.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/657315e1dccd301f1301416a.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/6582bd252b50c61c565828e2-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/5967733e86f774602332fc84.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/544fb45d4bdc2dee738b4568.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/5936da9e86f7742d65037edf.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/5937fd0086f7742bf33fc198-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/5937ee6486f77408994ba448.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/5ac23c6186f7741247042bad.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/54491c4f4bdc2db1078b4568.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/task/5d2495a886f77425cd51e403.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/5d3ec50586f774183a607442-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notosanssc/v37/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FnYkldv7JjxkkgFsFSSOPMOkySAZ73y9ViAt3acb8NexQ2w.119.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/All.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Story.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Prapor.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Therapist.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Skier.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Peacekeeper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Mechanic.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Ragman.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Ref.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Lightkeeper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/BTR_Driver.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Fence.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/kappa.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/drawer/map.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/giveItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/shoot.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/plantItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/visit.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/buildWeapon.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/skill.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/extract.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/sellItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/useItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/findQuestItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/ground_zero.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/customs.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/factory.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/interchange.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/lighthouse.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/reserve.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/shoreline.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/the_lab.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/woods.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/streets.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/the_labyrinth.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/icebreaker.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Tour.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Falling%2520Skies.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/talk.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Boreas.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/The%2520Unheard.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Batya.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Blue%2520Fire.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/They%2520Are%2520Already%2520Here.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/Accidental%2520Witness.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/story/The%2520Ticket.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/text/found_in_raid.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabsE4tq3luCC7p-aXxcn.7.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-N427SV6H5B",
+   "host": "www.googletagmanager.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1v9117849133za208zd9117849133xf1&_p=1793252089434&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3",
+   "host": "www.google-analytics.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/db4-quest.png",
+ "screenshot_bytes": 505619
+}

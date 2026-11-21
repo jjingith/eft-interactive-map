@@ -1,0 +1,63 @@
+{
+ "generatedFor": "R19.16",
+ "testSuite": {
+  "command": "C:/Python314/python.exe -m pytest tests/ -q",
+  "summaryLine": "1105 passed, 1 skipped in 73.52s (0:01:13)",
+  "passed": 1105,
+  "skipped": 1,
+  "failed": 0,
+  "returncode": 0
+ },
+ "mainApp": {
+  "overlayLeak": false,
+  "debugElementsOnNormalPage": 0,
+  "engineUntouched": true,
+  "connectors": 0,
+  "ghostCells": 0,
+  "gunCanvasPresent": true
+ },
+ "apiValidation": {
+  "unknownGunRejected": true,
+  "badCoordinateRejected": true,
+  "collisionRejected": true,
+  "invalidImportRejected": true
+ },
+ "browserGuns": {
+  "ash12": {
+   "slots": 11,
+   "presets": 3
+  },
+  "axmc": {
+   "slots": 22,
+   "presets": 2
+  },
+  "m10": {
+   "slots": 19,
+   "presets": 3
+  },
+  "marlin": {
+   "slots": 12,
+   "presets": 1
+  },
+  "ak74n": {
+   "slots": 13,
+   "presets": 3
+  },
+  "m4a1": {
+   "slots": 16,
+   "presets": 15
+  },
+  "sa58": {
+   "slots": 17,
+   "presets": 8
+  },
+  "sv98": {
+   "slots": 7,
+   "presets": 2
+  }
+ },
+ "viewports": {
+  "1920x919": true,
+  "1384x805": "screenshots/G-calibrator-1384x805.png"
+ }
+}

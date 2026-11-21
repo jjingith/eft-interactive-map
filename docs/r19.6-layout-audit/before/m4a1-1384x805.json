@@ -1,0 +1,306 @@
+{
+  "tag": "before-m4-small",
+  "url": "http://127.0.0.1:8787/",
+  "clicked": [
+    [
+      "view-gun",
+      true
+    ],
+    [
+      "gun-card",
+      true
+    ],
+    [
+      "mode-build",
+      true
+    ]
+  ],
+  "info": {
+    "viewport": {
+      "w": 1384,
+      "h": 805
+    },
+    "badge": "rev R19.5e-3a2cb94c",
+    "buildRev": "R19.5e-3a2cb94c",
+    "buildpage": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 1384,
+        "h": 702
+      },
+      "cols": "340px 340px 680px",
+      "gap": "8px"
+    },
+    "forge": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 340,
+        "h": 702
+      },
+      "padding": "10px 12px 16px",
+      "fontSize": "12px",
+      "scrollH": 702,
+      "clientH": 702,
+      "head": {
+        "x": 12,
+        "y": 113,
+        "w": 315,
+        "h": 20
+      },
+      "headFont": "13px",
+      "subFont": "10px",
+      "subMargin": "2px 0px 10px",
+      "secMargin": "12px"
+    },
+    "canvas": {
+      "rect": {
+        "x": 360,
+        "y": 453,
+        "w": 301,
+        "h": 762
+      },
+      "display": "flex",
+      "cols": "none",
+      "rowGap": "5px",
+      "colGap": "5px",
+      "cellCount": 0,
+      "rowCount": 0,
+      "rows": {},
+      "parts": [
+        {
+          "slot": "mod_reciever/mod_sight_rear/mod_scope",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 471,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_sight_rear",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 527,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_handguard",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 583,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 639,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_launcher",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 695,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_gas_block",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 751,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 807,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 863,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_barrel",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 919,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_scope",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 975,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever",
+          "row": "auto",
+          "col": "auto",
+          "x": 411,
+          "y": 1031,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_stock",
+          "row": "auto",
+          "col": "auto",
+          "x": 429,
+          "y": 1086,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_stock/mod_stock_000",
+          "row": "auto",
+          "col": "auto",
+          "x": 485,
+          "y": 1086,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_stock/mod_stock_003",
+          "row": "auto",
+          "col": "auto",
+          "x": 541,
+          "y": 1086,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_magazine",
+          "row": "auto",
+          "col": "auto",
+          "x": 398,
+          "y": 1154,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_charge",
+          "row": "auto",
+          "col": "auto",
+          "x": 456,
+          "y": 1154,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_charge_001",
+          "row": "auto",
+          "col": "auto",
+          "x": 514,
+          "y": 1154,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_pistol_grip",
+          "row": "auto",
+          "col": "auto",
+          "x": 572,
+          "y": 1154,
+          "w": 52,
+          "h": 52
+        }
+      ],
+      "overlaps": [],
+      "scrollW": 300,
+      "clientW": 299,
+      "scrollH": 760,
+      "clientH": 760,
+      "gun": {
+        "rect": {
+          "x": 466,
+          "y": 471,
+          "w": 190,
+          "h": 612
+        },
+        "colSpan": "auto"
+      }
+    },
+    "centerOrder": [
+      "gw-cmp",
+      "gw-loadvar",
+      "gw-nodecanvas",
+      "gw-bars",
+      "gw-hidden",
+      "gw-focus",
+      "gw-tree",
+      "gw-stats",
+      "gw-ammo",
+      "gw-bottom"
+    ],
+    "bars": {
+      "x": 360,
+      "y": 284,
+      "w": 301,
+      "h": 66
+    },
+    "stats": {
+      "x": 360,
+      "y": 1221,
+      "w": 301,
+      "h": 82
+    },
+    "hidden": {
+      "x": 360,
+      "y": 353,
+      "w": 301,
+      "h": 78
+    },
+    "focus": {
+      "x": 360,
+      "y": 434,
+      "w": 301,
+      "h": 16
+    },
+    "ammo": {
+      "x": 360,
+      "y": 1313,
+      "w": 301,
+      "h": 119
+    },
+    "bottom": {
+      "x": 360,
+      "y": 1441,
+      "w": 301,
+      "h": 725
+    },
+    "hiddenCells": 11,
+    "statsCells": 16,
+    "centerScroll": {
+      "w": 325,
+      "cw": 325
+    },
+    "consoleErrors": 0
+  }
+}

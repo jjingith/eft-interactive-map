@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI 设计系统 · 组件展示（本地）</title>
+<!--
+  R19.24 设计系统展示页。这是一个**本地静态页面**，不参与业务，不联网。
+  只加载：XP 主题令牌 + 设计令牌 + 组件样式 + 本页布局样式。
+  页面上所有内容都是"示例"，不代表任何真实业务数据。
+-->
+<link rel="stylesheet" href="theme-windows-xp.css?v=r19.24">
+<link rel="stylesheet" href="styles/design-tokens.css?v=r19.24">
+<link rel="stylesheet" href="styles/ui-components.css?v=r19.24">
+<link rel="stylesheet" href="ui-showcase.css?v=r19.24">
+</head>
+<body class="showcase">
+
+<a class="showcase__skip" href="#sc-main">跳到主要内容</a>
+
+<header class="showcase__top">
+  <div class="showcase__brand">
+    <h1 class="showcase__h1">EFT Interactive Map · UI 设计系统</h1>
+    <span>规范 <code class="ui-code">ui-spec 1.0</code> · 构建 <code class="ui-code" id="sc-build">R19.24</code></span>
+  </div>
+  <nav class="showcase__nav" id="sc-nav" aria-label="展示页分节"></nav>
+  <div class="showcase__meta">
+    <span id="sc-state" class="ui-badge ui-badge--info">组件状态：空闲</span>
+    <button type="button" class="ui-btn ui-btn--sm" id="sc-focus-test">键盘焦点自检</button>
+  </div>
+</header>
+
+<main class="showcase__main" id="sc-main" tabindex="-1">
+  <section class="showcase__intro ui-panel">
+    <div class="ui-panel__head"><h1 class="ui-panel__title">这套东西是什么</h1></div>
+    <div class="ui-panel__body ui-prose">
+      <p>这是项目的 UI 设计系统展示页：令牌（<code class="ui-code">styles/design-tokens.css</code>）、
+         组件（<code class="ui-code">styles/ui-components.css</code> + <code class="ui-code">js/ui-components.js</code>）
+         的可交互样板。页面上的元素都是真实组件，可以点、可以按 Tab、可以开弹窗。</p>
+      <p>下面的数据全部是<strong>示例</strong>（例如「示例任务 A」），用来演示状态与排版，不对应任何真实游戏数据，
+         也不代表业务流程已验证。</p>
+    </div>
+  </section>
+
+  <section class="showcase__block" id="sec-panel" data-title="标题栏与面板"></section>
+  <section class="showcase__block" id="sec-button" data-title="按钮"></section>
+  <section class="showcase__block" id="sec-form" data-title="表单控件"></section>
+  <section class="showcase__block" id="sec-tabs" data-title="标签页与工具条"></section>
+  <section class="showcase__block" id="sec-overlay" data-title="菜单与提示"></section>
+  <section class="showcase__block" id="sec-dialog" data-title="对话框"></section>
+  <section class="showcase__block" id="sec-badge" data-title="徽标与状态"></section>
+  <section class="showcase__block" id="sec-table" data-title="表格"></section>
+  <section class="showcase__block" id="sec-type" data-title="文字与间距"></section>
+  <section class="showcase__block" id="sec-contrast" data-title="底色对比与键盘"></section>
+</main>
+
+<footer class="showcase__foot">
+  <span>本地离线页面：没有外部字体 / 图标 / 脚本 / 样式请求。</span>
+  <span id="sc-log" class="showcase__log" role="status" aria-live="polite">交互日志：等待操作…</span>
+</footer>
+
+<script src="js/ui-components.js?v=r19.24"></script>
+<script src="ui-showcase.js?v=r19.24"></script>
+</body>
+</html>

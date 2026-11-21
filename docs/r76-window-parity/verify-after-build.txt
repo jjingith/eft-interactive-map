@@ -1,0 +1,5 @@
+﻿运行文件清单：D:\personal\trae\02-塔科夫\eft-interactive-map\build\package_files.ps1
+站点根目录：D:\personal\trae\02-塔科夫\eft-interactive-map
+完整性校验通过：预期 13312 个文件，staging 实际 13312 个文件，缺失 0，未登记 0。
+staging 路径：D:\personal\trae\02-塔科夫\eft-interactive-map\build\_staging_check
+staging 体积：128.6 MB

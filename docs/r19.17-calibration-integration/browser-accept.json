@@ -1,0 +1,169 @@
+{
+  "generatedFor": "R19.17",
+  "A": {
+    "ak74n": {
+      "gun": "AK-74N 5.45x39 突击步枪",
+      "topPad": 0,
+      "calib": "1",
+      "applied": "3",
+      "fallback": "0",
+      "rows": 6,
+      "records": 3,
+      "match": 3,
+      "mismatch": []
+    },
+    "milkor": {
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "topPad": 0,
+      "calib": "1",
+      "applied": "8",
+      "fallback": "0",
+      "rows": 6,
+      "records": 8,
+      "match": 8,
+      "mismatch": []
+    },
+    "scarl": {
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "topPad": 0,
+      "calib": "1",
+      "applied": "14",
+      "fallback": "0",
+      "rows": 6,
+      "records": 14,
+      "match": 14,
+      "mismatch": []
+    },
+    "m10": {
+      "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+      "topPad": 0,
+      "calib": "1",
+      "applied": "2",
+      "fallback": "0",
+      "rows": 6,
+      "records": 2,
+      "match": 2,
+      "mismatch": []
+    }
+  },
+  "B": {
+    "gun": "马林 MXLR .308 ME 杠杆步枪",
+    "calib": "0",
+    "applied": "0",
+    "cards": 12,
+    "rows": 6,
+    "recordsInFile": 0,
+    "ok": true
+  },
+  "C": {
+    "before": {
+      "mount": {
+        "slot": "mod_mount_000",
+        "row": 2,
+        "col": 7,
+        "parent": "",
+        "item": ""
+      },
+      "cards": 13
+    },
+    "afterInstall": {
+      "clicked": {
+        "id": "591ee00d86f774592f7b841e",
+        "text": "Axion Kobra 燕尾槽适配导轨基座配件-3.020.0414,990 ₽—可装"
+      },
+      "mount": {
+        "slot": "mod_mount_000",
+        "row": 2,
+        "col": 7,
+        "parent": "",
+        "item": "Axion Kobra 燕尾槽适配导轨基座"
+      },
+      "mountKept": true,
+      "installed": true,
+      "childSlots": [
+        {
+          "slot": "mod_mount_000/mod_scope",
+          "row": 1,
+          "col": 8,
+          "parent": "mod_mount_000",
+          "item": ""
+        },
+        {
+          "slot": "mod_mount_000/mod_tactical",
+          "row": 1,
+          "col": 9,
+          "parent": "mod_mount_000",
+          "item": ""
+        }
+      ],
+      "cards": 15,
+      "applied": "3"
+    },
+    "afterReplace": {
+      "clicked": {
+        "id": "6544d4187c5457729210d277",
+        "text": "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）瞄具-3.0—0.2716,216 "
+      },
+      "item": "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）",
+      "changed": true,
+      "mountKept": true
+    },
+    "afterRemove": {
+      "mount": {
+        "slot": "mod_mount_000",
+        "row": 2,
+        "col": 7,
+        "parent": "",
+        "item": ""
+      },
+      "mountKept": true,
+      "emptied": true,
+      "childSlots": [],
+      "cards": 13
+    }
+  },
+  "D": {
+    "savedRecords": [
+      {
+        "key": "mod_stock|mod_stock|",
+        "logicalRow": 6,
+        "col": 2
+      }
+    ],
+    "afterReload": {
+      "calib": "1",
+      "applied": "1",
+      "topPad": 0,
+      "slots": [
+        {
+          "key": "mod_stock|mod_stock|",
+          "want": [
+            6,
+            2
+          ],
+          "got": [
+            6,
+            2
+          ],
+          "ok": true
+        }
+      ]
+    }
+  },
+  "E": {
+    "recordsBefore": 397,
+    "recordsAfter": 397,
+    "gunsBefore": 152,
+    "gunsAfter": 152,
+    "contentUnchanged": true
+  },
+  "F": {
+    "gun": "AK-74N",
+    "compared": 13,
+    "allSame": true,
+    "diffs": []
+  },
+  "console": [],
+  "failures": [],
+  "ok": true
+}

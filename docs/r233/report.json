@@ -1,0 +1,139 @@
+{
+  "checks": [
+    {
+      "name": "提示精确等于新文案",
+      "ok": true,
+      "detail": "免费版预设保存在本地 会员享受云存储"
+    },
+    {
+      "name": "旧本地路径文案不再出现",
+      "ok": true,
+      "detail": "免费版预设保存在本地 会员享受云存储"
+    },
+    {
+      "name": "悬浮说明区分会员 / 免费版",
+      "ok": true,
+      "detail": "会员云存储已开启：预设会随云同步自动上传 / 下载，本地文件仍是第一事实源。"
+    },
+    {
+      "name": "会员态同步按钮可用",
+      "ok": true,
+      "detail": "False"
+    },
+    {
+      "name": "同步前 GET 了两类本地预设",
+      "ok": true,
+      "detail": "['/api/presets?kind=weapon', '/api/presets?kind=loadout', '/api/cloud/sync', '/api/presets']"
+    },
+    {
+      "name": "发出了 /api/cloud/sync",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "name": "同步值里带 preset.weapon / preset.loadout",
+      "ok": true,
+      "detail": "['preset.loadout', 'preset.weapon', 'progress.pve', 'progress.pvps', 'progress.regular']"
+    },
+    {
+      "name": "progress.* 三个键没被弄丢",
+      "ok": true,
+      "detail": "['preset.loadout', 'preset.weapon', 'progress.pve', 'progress.pvps', 'progress.regular']"
+    },
+    {
+      "name": "远端整包写回本地用了 action=replace",
+      "ok": true,
+      "detail": "[{'url': '/api/presets', 'method': 'POST', 'body': {'kind': 'weapon', 'action': 'replace', 'presets': [{'id': 'wp_cloud1', 'name': '云端 AK', 'gunId': 'gun-ak', 'items': {'muzzle': 'mod-1'}, 'createdAt': '2026-11-10T00:00:00Z', 'updatedAt': '2026-11-10T00:00:00Z'}]}}]"
+    },
+    {
+      "name": "写回的预设是远端那条",
+      "ok": true,
+      "detail": "[{'url': '/api/presets', 'method': 'POST', 'body': {'kind': 'weapon', 'action': 'replace', 'presets': [{'id': 'wp_cloud1', 'name': '云端 AK', 'gunId': 'gun-ak', 'items': {'muzzle': 'mod-1'}, 'createdAt': '2026-11-10T00:00:00Z', 'updatedAt': '2026-11-10T00:00:00Z'}]}}]"
+    },
+    {
+      "name": "免费版同步按钮锁住",
+      "ok": true,
+      "detail": "True"
+    },
+    {
+      "name": "免费版派发预设保存后零云端请求",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "免费版本地预设照常可读（不因会员态改变）",
+      "ok": true,
+      "detail": "GET 由 app.js 懒加载，未触发也属正常（缓存命中）"
+    },
+    {
+      "name": "R228 口径按钮 90px 等宽不回归",
+      "ok": true,
+      "detail": "{'n': 32, 'uniq': [90]}"
+    },
+    {
+      "name": "R232 表格滚区仍无位图 / 1px 白底",
+      "ok": true,
+      "detail": "{'img': 'none', 'w': '1px', 'bg': 'rgb(255, 255, 255)'}"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "shots": [
+    {
+      "file": "loadout-note.png",
+      "bytes": 600281
+    }
+  ],
+  "note": "免费版预设保存在本地 会员享受云存储",
+  "title": "会员云存储已开启：预设会随云同步自动上传 / 下载，本地文件仍是第一事实源。",
+  "memberCalls": [
+    {
+      "url": "/api/presets?kind=weapon",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "url": "/api/presets?kind=loadout",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "url": "/api/cloud/sync",
+      "method": "POST",
+      "body": {
+        "values": {
+          "progress.regular": "{}",
+          "progress.pve": "{}",
+          "progress.pvps": "{}",
+          "preset.weapon": "{\"schema\":1,\"presets\":[]}",
+          "preset.loadout": "{\"schema\":1,\"presets\":[]}"
+        },
+        "force": false
+      }
+    },
+    {
+      "url": "/api/presets",
+      "method": "POST",
+      "body": {
+        "kind": "weapon",
+        "action": "replace",
+        "presets": [
+          {
+            "id": "wp_cloud1",
+            "name": "云端 AK",
+            "gunId": "gun-ak",
+            "items": {
+              "muzzle": "mod-1"
+            },
+            "createdAt": "2026-11-10T00:00:00Z",
+            "updatedAt": "2026-11-10T00:00:00Z"
+          }
+        ]
+      }
+    }
+  ],
+  "freeCalls": []
+}

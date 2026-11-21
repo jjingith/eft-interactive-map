@@ -1,0 +1,185 @@
+/* R19.16 武器槽位布局校准器 —— 仅在 ?layoutCalibrator=1 时注入，不影响普通页面 */
+.cal-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: var(--ui-color-surface);
+  color: var(--xp-text, #000);
+  font-family: var(--xp-font-family, Tahoma, "Microsoft YaHei UI", sans-serif);
+  font-size: var(--xp-fs-compact, 12px);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.cal-overlay * { box-sizing: border-box; }
+
+/* ---------- 顶栏 ---------- */
+.cal-head {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 6px 10px;
+  background: linear-gradient(180deg, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #1941a5 100%);
+  color: #fff; border-bottom: 1px solid #1941a5;
+}
+.cal-head .cal-title { font-size: var(--xp-fs-strong, 14px); font-weight: bold; margin-right: 8px; }
+.cal-head .cal-ver { opacity: .85; font-size: var(--xp-fs-micro, 11px); }
+.cal-head .spacer { flex: 1; }
+.cal-head button {
+  background: linear-gradient(180deg, var(--ui-grad-face-a) 0%, #ecebe5 48%, #d8d0c4 52%, #f5f2ea 100%);
+  color: #000; border: 1px solid var(--xp-border, var(--ui-color-border)); border-radius: var(--xp-radius-btn, 3px);
+  padding: 3px 10px; cursor: pointer; font-size: var(--xp-fs-compact, 12px);
+}
+.cal-head button:hover:not([disabled]) {
+  background: linear-gradient(180deg, var(--xp-hover-a, #ffcc00) 0%, var(--xp-hover-b, #ffbb1f) 50%,
+                               var(--xp-hover-c, #ff9933) 100%);
+  border-color: var(--xp-hover-border, #c97a10); color: var(--xp-hover-text, #000);
+}
+.cal-head button[aria-pressed="true"] {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffc93d 52%, #ffb02a 100%);
+  border-color: var(--xp-hover-border, #c97a10);
+}
+.cal-head button[disabled] { opacity: .55; cursor: default; }
+
+/* ---------- 三栏 ---------- */
+.cal-body { flex: 1; display: flex; min-height: 0; }
+.cal-left, .cal-right {
+  width: 268px; min-width: 220px; background: var(--xp-panel, #f6f4ea);
+  border: 1px solid var(--xp-border, var(--ui-color-border));
+  display: flex; flex-direction: column; min-height: 0;
+}
+.cal-left { border-right: none; }
+.cal-right { border-left: none; width: 300px; }
+.cal-center {
+  flex: 1; min-width: 0; display: flex; flex-direction: column;
+  background: var(--xp-panel, #f6f4ea); border: 1px solid var(--xp-border, var(--ui-color-border));
+}
+.cal-h {
+  font-size: var(--xp-fs-panel, 15px); font-weight: bold;
+  padding: 5px 8px; border-bottom: 1px solid var(--xp-border, var(--ui-color-border));
+  background: linear-gradient(180deg, #f8f7f2 0%, #e7e3d6 100%);
+}
+.cal-scroll { overflow: auto; flex: 1; min-height: 0; }
+
+/* 枪械列表 */
+.cal-search {
+  width: calc(100% - 12px); margin: 6px; padding: 3px 5px;
+  border: 1px solid var(--xp-border-dark, var(--ui-color-border-dark)); border-radius: 2px;
+  font-size: var(--xp-fs-compact, 12px);
+}
+.cal-gunlist { list-style: none; margin: 0; padding: 0; }
+.cal-gunlist li {
+  padding: 4px 8px; cursor: pointer; border-bottom: 1px solid var(--xp-divider, #d5d0c0);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cal-gunlist li:hover { background: linear-gradient(180deg, var(--xp-hover-a, #ffcc00) 0%, var(--xp-hover-c, #ff9933) 100%); }
+.cal-gunlist li[data-on="1"] {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffc93d 52%, #ffb02a 100%);
+  font-weight: bold;
+}
+.cal-gunlist li .mark { color: #0b6b3a; }
+
+/* 枪械信息块 */
+.cal-info { padding: 6px 8px; border-top: 1px solid var(--xp-border, var(--ui-color-border)); font-size: var(--xp-fs-micro, 11px); }
+.cal-info dt { float: left; clear: left; width: 74px; color: var(--xp-text-dim, #666); }
+.cal-info dd { margin-left: 78px; word-break: break-all; }
+.cal-info .dirty { color: #a11b1b; font-weight: bold; }
+.cal-info .ok { color: #0b6b3a; }
+
+/* 中央画布 */
+.cal-canvas-wrap { flex: 1; overflow: auto; padding: 22px 10px 10px; min-height: 0; }
+.cal-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, 64px);
+  gap: 4px;
+  margin: 0 auto;
+  width: max-content;
+  /* 网格线只在校准器内部出现，普通画布不受影响 */
+}
+.cal-gcell {
+  border: 1px dashed rgba(120, 132, 148, .38);
+  background: rgba(120, 132, 148, .05);
+  min-height: 58px; border-radius: 2px;
+  pointer-events: none;
+}
+.cal-gcell[data-body="1"] { background: rgba(63, 140, 243, .10); border-color: rgba(63, 140, 243, .45); }
+.cal-gcell[data-drop="1"] {
+  background: rgba(255, 204, 0, .35); border: 2px solid var(--xp-hover-border, #c97a10);
+}
+.cal-gcell[data-drop="bad"] { background: rgba(161, 27, 27, .22); border: 2px solid #a11b1b; }
+
+.cal-rowlab, .cal-collab {
+  position: absolute; color: var(--xp-text-dim, #666); font-size: 10px;
+  pointer-events: none; font-family: Consolas, monospace;
+}
+.cal-collab { top: -16px; }
+.cal-rowlab { left: -26px; width: 22px; text-align: right; }
+
+.cal-card {
+  position: relative;
+  min-height: 58px; border: 1px solid var(--xp-border-dark, var(--ui-color-border-dark));
+  background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
+  border-radius: 3px; padding: 3px 5px;
+  font-size: var(--ui-fs-micro); line-height: var(--ui-lh-tight); cursor: grab; user-select: none;
+  overflow: hidden; z-index: 2;
+}
+.cal-card.sel {
+  outline: 2px solid var(--xp-hover-border, #c97a10);
+  background: linear-gradient(180deg, #ffe08a 0%, #ffc93d 52%, #ffb02a 100%);
+}
+.cal-card.dragging { opacity: .55; cursor: grabbing; }
+.cal-card .sid { font-family: Consolas, monospace; color: #0a4fa8; }
+.cal-card .itm { color: var(--xp-text, #000); }
+.cal-card .tag {
+  display: inline-block; padding: 0 3px; margin-left: 3px;
+  border: 1px solid var(--xp-border, var(--ui-color-border)); background: #f0eee4;
+  font-size: 9px; border-radius: 2px;
+}
+.cal-card .tag.moved { background: #fff0c2; border-color: var(--xp-hover-border, #c97a10); }
+.cal-card .coord { color: var(--xp-text-dim, #666); font-family: Consolas, monospace; }
+.cal-card[data-body="1"] {
+  background: linear-gradient(180deg, #dcebfd 0%, #b7d2f7 100%);
+  cursor: default; border-color: #245edb;
+}
+
+/* 右侧信息 */
+.cal-slots { padding: 6px 8px; }
+.cal-slots .kv dt { float: left; clear: left; width: 86px; color: var(--xp-text-dim, #666); }
+.cal-slots .kv dd { margin-left: 90px; word-break: break-all; margin-bottom: 2px; }
+.cal-slots .coordrow { display: flex; gap: 6px; align-items: center; margin: 8px 0; }
+.cal-slots .coordrow input { width: 56px; padding: 2px 4px; border: 1px solid var(--xp-border-dark, var(--ui-color-border-dark)); border-radius: 2px; }
+.cal-slots button {
+  background: linear-gradient(180deg, var(--ui-grad-face-a) 0%, #ecebe5 48%, #d8d0c4 52%, #f5f2ea 100%);
+  border: 1px solid var(--xp-border, var(--ui-color-border)); border-radius: var(--xp-radius-btn, 3px);
+  padding: 3px 10px; cursor: pointer; margin: 2px 4px 2px 0;
+}
+.cal-slots button:hover:not([disabled]) {
+  background: linear-gradient(180deg, var(--xp-hover-a, #ffcc00) 0%, var(--xp-hover-c, #ff9933) 100%);
+  border-color: var(--xp-hover-border, #c97a10);
+}
+.cal-allow {
+  max-height: 170px; overflow: auto; border: 1px solid var(--xp-divider, #d5d0c0);
+  background: #fff; padding: 3px 5px;
+}
+.cal-allow div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cal-msg { margin: 6px 8px; padding: 5px 7px; border: 1px solid var(--xp-border, var(--ui-color-border)); background: #fff; min-height: 26px; }
+.cal-msg.err { border-color: #a11b1b; background: #ffecec; color: #a11b1b; }
+.cal-msg.ok { border-color: #0b6b3a; background: #eaf7ee; color: #0b6b3a; }
+.cal-diff { margin: 4px 8px; font-size: var(--xp-fs-micro, 11px); }
+.cal-diff .m { color: #7a5200; }
+
+.cal-preset { padding: 5px 8px; border-top: 1px solid var(--xp-border, var(--ui-color-border)); font-size: var(--xp-fs-micro, 11px); }
+.cal-preset select { width: 100%; margin-top: 3px; padding: 2px; border: 1px solid var(--xp-border-dark, var(--ui-color-border-dark)); border-radius: 2px; }
+
+.cal-modal {
+  position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%);
+  background: var(--xp-panel, #f6f4ea); border: 1px solid var(--xp-border, var(--ui-color-border));
+  padding: 12px 16px; min-width: 320px; z-index: 50;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+}
+.cal-modal-text { margin-bottom: 10px; }
+.cal-modal-btns { display: flex; gap: 8px; justify-content: flex-end; }
+.cal-modal-btns button {
+  background: linear-gradient(180deg, var(--ui-grad-face-a) 0%, #ecebe5 48%, #d8d0c4 52%, #f5f2ea 100%);
+  border: 1px solid var(--xp-border, var(--ui-color-border)); border-radius: 3px; padding: 3px 12px; cursor: pointer;
+}
+.cal-modal-btns button:hover {
+  background: linear-gradient(180deg, var(--xp-hover-a, #ffcc00) 0%, var(--xp-hover-c, #ff9933) 100%);
+  border-color: var(--xp-hover-border, #c97a10);
+}

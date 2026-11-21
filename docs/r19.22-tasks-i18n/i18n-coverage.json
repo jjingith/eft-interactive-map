@@ -1,0 +1,1537 @@
+{
+ "schema": 1,
+ "scannedAt": "2026-10-28T00:29:01",
+ "views": [
+  "主程序 · 地图",
+  "主程序 · 配装",
+  "主程序 · 配枪",
+  "主程序 · 弹药",
+  "主程序 · 导航面板",
+  "配枪 · table",
+  "配枪 · build",
+  "配枪 · class",
+  "校准器",
+  "任务 · 全局树",
+  "任务 · traders",
+  "任务 · detail",
+  "任务 · progress"
+ ],
+ "nodes": {
+  "total": 26232,
+  "latinOnly": 1266
+ },
+ "unique": {
+  "text": 167,
+  "attrs": 518
+ },
+ "stats": {
+  "seen": 685,
+  "mapped": 57,
+  "kept": 125,
+  "missing": 0,
+  "originalTooltip": 503
+ },
+ "dict": {
+  "uiEntries": 336,
+  "poiEntries": 281,
+  "patterns": 2,
+  "traders": 37,
+  "tasks": 123,
+  "maps": 30,
+  "items": 43,
+  "slots": 41
+ },
+ "keptReasons": {
+  "caliber": "弹药口径与弹种型号（.45 ACP、.300 Blk、20x1mm、9x18PMM …）—— 翻译会失去辨识度",
+  "weaponModel": "武器型号（Kel-Tec RFB 7.62x51 …）",
+  "romanLevel": "罗马数字等级（II / III / IV，商人忠诚等级与价格档）",
+  "version": "构建版本号（rev R19.xx-xxxxxxxx）",
+  "source": "数据来源标识（tarkov-dev-svg-maps / the-hideout/tarkov-dev）",
+  "slotId": "槽位内部 ID（mod_scope / mod_muzzle …）与物品 ID —— 校准器需要按真实 ID 操作",
+  "brandItem": "物品英文缩写（LEDX）",
+  "mode": "游戏模式专名（PvP / Scav）—— 官方术语，中文界面同样使用",
+  "bossProperName": "Boss 代号（Reshala / Killa / Tagilla …）—— 玩家按代号称呼，翻译反而失去辨识度",
+  "traderName": "任务系统里的商人名称（R19.25 §7 显式例外：直接显示游戏内英文原名，不机翻）"
+ },
+ "rows": [
+  {
+   "text": ".45 ACP",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": ".50 AE",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": ".300 Blk",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": ".366 TKM",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": ".50 BMG",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": "rev R19.22-a979942b",
+   "status": "kept",
+   "reason": "version",
+   "where": [
+    "主程序 · 地图",
+    "主程序 · 配装",
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · build",
+    "配枪 · class",
+    "校准器",
+    "任务 · 全局树",
+    "任务 · traders",
+    "任务 · detail",
+    "任务 · progress"
+   ]
+  },
+  {
+   "text": "Kappa",
+   "status": "mapped",
+   "zh": "Kappa",
+   "where": [
+    "任务 · 全局树"
+   ]
+  },
+  {
+   "text": ".308 ME",
+   "status": "dataName",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": "IV",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 配装"
+   ]
+  },
+  {
+   "text": "II",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 配装"
+   ]
+  },
+  {
+   "text": "20x1mm",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "主程序 · 弹药",
+    "主程序 · 导航面板",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": "III",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 配装"
+   ]
+  },
+  {
+   "text": "Kel-Tec RFB 7.62x51",
+   "status": "dataName",
+   "where": [
+    "主程序 · 配枪",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": "9x18PMM",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪",
+    "配枪 · table",
+    "配枪 · class",
+    "校准器"
+   ]
+  },
+  {
+   "text": "II · 281 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 300 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 94 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 191 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 89 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 96 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "PvE",
+   "status": "mapped",
+   "zh": "PvE",
+   "where": [
+    "任务 · 全局树",
+    "任务 · traders",
+    "任务 · detail",
+    "任务 · progress"
+   ]
+  },
+  {
+   "text": ".300 Blackout AP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".300 Blackout CBJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 545 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".300 Blackout BPZ FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 415 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".300 Blackout V-Max",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 231 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".300 Whisper",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 654 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".308 ME LOKT",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 248 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".338 Lapua Magnum AP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".338 Lapua Magnum FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 2 830 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".338 Lapua Magnum UCW",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 1 088 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".338 Lapua Magnum TAC-X",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 891 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".357 Magnum FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 187 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".357 Magnum JHP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 244 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".357 Magnum Hollow Point",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".357 Magnum Soft Point",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".366 AP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".366 TKM EKO",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".366 TKM FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".366 TKM Geksa",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".45 ACP AP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 631 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".45 ACP FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".45 ACP Lasermatch FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".45 ACP Hydra-Shok",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".45 RIP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 525 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 AE FMJ Bull",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 AE FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 1 030 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 544 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 AE Hawk JSP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 AE JHP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 280 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 BMG M903 SLAP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 BMG M33",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 5 056 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 BMG M21",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 3 933 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": ".50 BMG HP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 3 559 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 592 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 490 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 613 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 524 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 289 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 90 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 108 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 252 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 249 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "12/70 RIP",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 917 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 107 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 236 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 50 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 40 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 349 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 150 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 172 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 4 932 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 718 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 350 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 125 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 27 540 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 52 442 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 224 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 955 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 123 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 036 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 336 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 159 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 243 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 120 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 581 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 505 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 275 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 419 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 274 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 173 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 3 578 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 990 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 400 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 86 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 71 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 256 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 327 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 154 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 315 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 245 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R SNB",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R 7BT1",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 627 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R LPS",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 606 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R FMJ",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 368 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R SP BT",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "7.62x54R HP BT",
+   "status": "dataName",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 2 761 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 1 955 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 228 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 251 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 394 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 78 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 213 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 561 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 528 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 544 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 759 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "III · 372 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "II · 330 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 1 877 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "IV · 599 ₽",
+   "status": "kept",
+   "reason": "romanLevel",
+   "where": [
+    "主程序 · 弹药",
+    "主程序 · 导航面板"
+   ]
+  },
+  {
+   "text": "mod_scope",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "LEDX",
+   "status": "kept",
+   "reason": "brandItem",
+   "where": [
+    "主程序 · 地图"
+   ]
+  },
+  {
+   "text": "the-hideout/tarkov-dev",
+   "status": "kept",
+   "reason": "source",
+   "where": [
+    "主程序 · 地图"
+   ]
+  },
+  {
+   "text": "tarkov-dev-svg-maps",
+   "status": "kept",
+   "reason": "source",
+   "where": [
+    "主程序 · 地图"
+   ]
+  },
+  {
+   "text": "PvP",
+   "status": "mapped",
+   "zh": "PvP",
+   "where": [
+    "主程序 · 配装"
+   ]
+  },
+  {
+   "text": "Scav",
+   "status": "kept",
+   "reason": "brandItem",
+   "where": [
+    "主程序 · 配装"
+   ]
+  },
+  {
+   "text": ".300 Blk · 2",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": ".308 ME · 1",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": ".366 TKM · 2",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": ".45 ACP · 5",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": ".50 AE · 4",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": ".50 BMG · 1",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": "20x1mm · 1",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": "9x18PMM · 1",
+   "status": "kept",
+   "reason": "caliber",
+   "where": [
+    "主程序 · 配枪"
+   ]
+  },
+  {
+   "text": "5cadfbf7ae92152ac412eeef",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_scope r2c5 → r2c6",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_muzzle",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_sight_rear",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_magazine",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_sight_front",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_handguard",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_foregrip",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_tactical_000",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_tactical_001",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  },
+  {
+   "text": "mod_tactical_002",
+   "status": "kept",
+   "reason": "slotId",
+   "where": [
+    "校准器"
+   ]
+  }
+ ]
+}

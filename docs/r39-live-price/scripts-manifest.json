@@ -1,0 +1,38 @@
+{
+  "captured_at": "2026-11-03T15:08:09.373Z",
+  "note": "no site version string found in main.dart.js; version not asserted",
+  "scripts": [
+    {
+      "url": "https://db4tarkov.com/flutter.js",
+      "local_file": "flutter.js",
+      "bytes": 9553,
+      "sha256": "a483fd28f51ed2fadd0da3fade5b672eba56310d549d736ce62eabf624a6a578",
+      "rea_cdp_hash": "a483fd28f51ed2fadd0da3fade5b672eba56310d549d736ce62eabf624a6a578",
+      "rea_hash_match": true
+    },
+    {
+      "url": "https://db4tarkov.com/flutter_bootstrap.js",
+      "local_file": "flutter_bootstrap.js",
+      "bytes": 11510,
+      "sha256": "860b2efce98dab6db29bb962c753adf428479d6b444faba29c383a6b81e4d744",
+      "rea_cdp_hash": "860b2efce98dab6db29bb962c753adf428479d6b444faba29c383a6b81e4d744",
+      "rea_hash_match": true
+    },
+    {
+      "url": "https://db4tarkov.com/main.dart.js",
+      "local_file": "main.dart.js.full",
+      "bytes": 18570596,
+      "sha256": "72e776c4da29e5fd4a0559035eac2a277857e0669c5a273367a04a43cea630f0",
+      "rea_cdp_hash": "72e776c4da29e5fd4a0559035eac2a277857e0669c5a273367a04a43cea630f0",
+      "rea_hash_match": true
+    },
+    {
+      "url": "https://db4tarkov.com/canvaskit/canvaskit.js",
+      "local_file": "canvaskit.js",
+      "bytes": 86859,
+      "sha256": "7361b744487f98262f77ac507006b3eae37830430048ab7811a626b79f34a52c",
+      "rea_cdp_hash": null,
+      "rea_hash_match": null
+    }
+  ]
+}

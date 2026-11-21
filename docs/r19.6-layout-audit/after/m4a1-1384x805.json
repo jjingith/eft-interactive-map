@@ -1,0 +1,316 @@
+{
+  "tag": "after-m4a1-1384",
+  "url": "http://127.0.0.1:8787/",
+  "clicked": [
+    [
+      "view-gun",
+      true
+    ],
+    [
+      "gun-card",
+      true
+    ],
+    [
+      "mode-build",
+      true
+    ]
+  ],
+  "info": {
+    "viewport": {
+      "w": 1384,
+      "h": 805
+    },
+    "badge": "rev R19.6-1d5c707f",
+    "buildRev": "R19.6-1d5c707f",
+    "buildpage": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 1384,
+        "h": 702
+      },
+      "cols": "208px 691.188px 460.797px",
+      "gap": "8px"
+    },
+    "forge": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 208,
+        "h": 702
+      },
+      "padding": "6px 8px 10px",
+      "fontSize": "10px",
+      "scrollH": 702,
+      "clientH": 702,
+      "head": {
+        "x": 8,
+        "y": 109,
+        "w": 191,
+        "h": 12
+      },
+      "headFont": "11px",
+      "subFont": "9px",
+      "subMargin": "1px 0px 6px",
+      "secMargin": "7px"
+    },
+    "canvas": {
+      "rect": {
+        "x": 271,
+        "y": 144,
+        "w": 566,
+        "h": 377
+      },
+      "display": "grid",
+      "cols": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+      "rowGap": "10px",
+      "colGap": "4px",
+      "cellCount": 17,
+      "rowCount": 4,
+      "rows": {
+        "1": 1,
+        "2": 3,
+        "3": 7,
+        "4": 6
+      },
+      "parts": [
+        {
+          "slot": "mod_reciever/mod_sight_rear/mod_scope",
+          "parent": "mod_reciever/mod_sight_rear",
+          "row": "1",
+          "col": "8",
+          "x": 711,
+          "y": 153,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_scope",
+          "parent": "mod_reciever",
+          "row": "2",
+          "col": "5",
+          "x": 525,
+          "y": 221,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_sight_rear",
+          "parent": "mod_reciever",
+          "row": "2",
+          "col": "8",
+          "x": 711,
+          "y": 221,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_charge",
+          "parent": "",
+          "row": "2",
+          "col": "9",
+          "x": 772,
+          "y": 221,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle",
+          "parent": "mod_reciever/mod_barrel",
+          "row": "3",
+          "col": "1",
+          "x": 278,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_gas_block",
+          "parent": "mod_reciever/mod_barrel",
+          "row": "3",
+          "col": "2",
+          "x": 340,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_barrel",
+          "parent": "mod_reciever",
+          "row": "3",
+          "col": "3",
+          "x": 402,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "parent": "mod_reciever",
+          "row": "3",
+          "col": "4",
+          "x": 463,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever",
+          "parent": "",
+          "row": "3",
+          "col": "5",
+          "x": 525,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_stock",
+          "parent": "",
+          "row": "3",
+          "col": "9",
+          "x": 772,
+          "y": 302,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+          "parent": "mod_reciever/mod_barrel/mod_muzzle",
+          "row": "4",
+          "col": "1",
+          "x": 278,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_handguard",
+          "parent": "mod_reciever/mod_handguard",
+          "row": "4",
+          "col": "4",
+          "x": 463,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_charge_001",
+          "parent": "",
+          "row": "4",
+          "col": "6",
+          "x": 587,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_magazine",
+          "parent": "",
+          "row": "4",
+          "col": "7",
+          "x": 649,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_pistol_grip",
+          "parent": "",
+          "row": "4",
+          "col": "8",
+          "x": 711,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "slot": "mod_stock/mod_stock_000",
+          "parent": "mod_stock",
+          "row": "4",
+          "col": "9",
+          "x": 772,
+          "y": 384,
+          "w": 58,
+          "h": 58
+        },
+        {
+          "row": "5",
+          "col": "7",
+          "x": 649,
+          "y": 452,
+          "w": 58,
+          "h": 58
+        }
+      ],
+      "overlaps": [],
+      "scrollW": 565,
+      "clientW": 564,
+      "scrollH": 375,
+      "clientH": 375,
+      "gun": {
+        "rect": {
+          "x": 587,
+          "y": 289,
+          "w": 181,
+          "h": 86
+        },
+        "colSpan": "span 3"
+      }
+    },
+    "centerOrder": [
+      "gw-cmp",
+      "gw-loadvar",
+      "gw-tree",
+      "gw-bars",
+      "gw-stats",
+      "gw-hidden",
+      "gw-focus",
+      "gw-ammo",
+      "gw-bottom"
+    ],
+    "bars": {
+      "x": 228,
+      "y": 521,
+      "w": 652,
+      "h": 66
+    },
+    "stats": {
+      "x": 228,
+      "y": 593,
+      "w": 652,
+      "h": 82
+    },
+    "hidden": {
+      "x": 228,
+      "y": 677,
+      "w": 652,
+      "h": 78
+    },
+    "focus": {
+      "x": 228,
+      "y": 758,
+      "w": 652,
+      "h": 16
+    },
+    "ammo": {
+      "x": 228,
+      "y": 784,
+      "w": 652,
+      "h": 49
+    },
+    "bottom": {
+      "x": 228,
+      "y": 843,
+      "w": 652,
+      "h": 301
+    },
+    "hiddenCells": 11,
+    "statsCells": 16,
+    "centerScroll": {
+      "w": 676,
+      "cw": 676
+    },
+    "consoleErrors": 0
+  }
+}

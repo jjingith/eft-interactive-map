@@ -1,0 +1,2029 @@
+{
+ "schema": "eftmap.r19.13.foregrip-chains/1",
+ "rule": "A 直接安装：护木→前握把；B 上/下护木：上护木→下护木→前握把；C 导轨转接：…→导轨→前握把。全部同列、在父件正下方，不进 r2，不占 r4c6–c9。",
+ "summary": {
+  "direct": 41,
+  "upperLower": 0,
+  "viaRail": 11,
+  "root": 5,
+  "offParent": [],
+  "aboveParent": []
+ },
+ "chains": {
+  "58948c8e86f77409493f7266|mod_reciever/mod_handguard/mod_mount_001/mod_foregrip": {
+   "gun": "SIG MPX 9x19 冲锋枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard/mod_mount_001"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5a367e5dc4a282000e49738f|mod_handguard/mod_foregrip": {
+   "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5b0bbe4e5acfc40dc528a72d|mod_handguard/mod_foregrip": {
+   "gun": "DS Arms SA-58 7.62x51 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5bb2475ed4351e00853264e3|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "HK 416A5 5.56x45 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5bd70322209c4d00d7167b8f|mod_foregrip": {
+   "gun": "HK MP7A2 4.6x30 冲锋枪",
+   "kind": "root",
+   "chain": [
+    {
+     "slot": "mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": null
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5beed0f50db834001c062b12|mod_handguard/mod_foregrip": {
+   "gun": "RPK-16 5.45x39 轻机枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5cadfbf7ae92152ac412eeef|mod_handguard/mod_foregrip": {
+   "gun": "ASh-12 12.7x55 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5d43021ca4b9362eab4b5e25|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5d43021ca4b9362eab4b5e25|mod_reciever/mod_handguard/mod_foregrip/mod_foregrip": {
+   "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard/mod_foregrip"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5de7bd7bfd6b4e6e2276dc25|mod_foregrip": {
+   "gun": "B&T MP9-N 9x19 冲锋枪",
+   "kind": "root",
+   "chain": [
+    {
+     "slot": "mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": null
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5df24cf80dee1b22f862e9bc|mod_stock/mod_handguard/mod_foregrip": {
+   "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "pos": {
+      "row": 3,
+      "col": 9
+     }
+    },
+    {
+     "slot": "mod_stock/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_stock/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_stock/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5df8ce05b11454561e39243b|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5e00903ae9dc277128008b87|mod_mount_000/mod_foregrip": {
+   "gun": "B&T MP9 9x19 冲锋枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5f2a9575926fd9352339381f|mod_handguard/mod_mount_000/mod_foregrip": {
+   "gun": "Kel-Tec RFB 7.62x51",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_handguard/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5fb64bc92b1b027b1f50bcf2|mod_mount/mod_foregrip": {
+   "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_mount",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_mount/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_mount"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5fbcc1d9016cce60e8341ab3|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "SIG MCX .300 Blackout 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5fc22d7c187fea44d52eda44|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5fc3e272f8b6a877a729eac5|mod_mount_000/mod_foregrip": {
+   "gun": "HK UMP .45 ACP冲锋枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "5fc3f2d5900b1d5091531e57|mod_mount/mod_foregrip": {
+   "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_mount",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_mount/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_mount"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "60339954d62c9b14ed777c06|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "606587252535c57a13424cfd|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6165ac306ef05c2ce828ef74|mod_reciever/mod_mount_000/mod_foregrip": {
+   "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_reciever/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6176aca650224f204c1da3fb|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "HK G28 7.62x51 精确射手步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6183afd850224f204c1da514|mod_reciever/mod_mount_000/mod_foregrip": {
+   "gun": "FN SCAR-H 7.62x51突击步枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_reciever/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6184055050224f204c1da540|mod_reciever/mod_mount_000/mod_foregrip": {
+   "gun": "FN SCAR-L 5.56x45突击步枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_reciever/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "618428466ef05c2ce828f218|mod_reciever/mod_mount_000/mod_foregrip": {
+   "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_reciever/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6275303a9f372d6ea97f9ec7|mod_foregrip": {
+   "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+   "kind": "root",
+   "chain": [
+    {
+     "slot": "mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": null
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "627e14b21713922ded6f2c15|mod_pistol_grip/mod_reciever/mod_foregrip": {
+   "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "pos": {
+      "row": 4,
+      "col": 8
+     }
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_pistol_grip/mod_reciever"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "628a60ae6b1d481ff772e9c8|mod_gas_block/mod_foregrip": {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_gas_block",
+     "base": "gas_block",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_gas_block/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_gas_block"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "628b5638ad252a16da6dd245|mod_gas_block/mod_handguard/mod_foregrip": {
+   "gun": "SAG AK-545 5.45x39卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_gas_block",
+     "base": "gas_block",
+     "pos": {
+      "row": 3,
+      "col": 3
+     }
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_gas_block/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "628b9c37a733087d0d7fe84b|mod_gas_block/mod_handguard/mod_foregrip": {
+   "gun": "SAG AK-545 5.45x39截短卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_gas_block",
+     "base": "gas_block",
+     "pos": {
+      "row": 3,
+      "col": 3
+     }
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_gas_block/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "62e7c4fba689e8c9c50dfc38|mod_reciever/mod_barrel/mod_foregrip": {
+   "gun": "Steyr AUG A1 5.56x45突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_barrel"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "63171672192e68c5460cebc5|mod_reciever/mod_barrel/mod_foregrip": {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_barrel"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6499849fc93611967b034949|mod_handguard/mod_foregrip": {
+   "gun": "AK-12 5.45x39 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "651450ce0e00edc794068371|mod_foregrip": {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "kind": "root",
+   "chain": [
+    {
+     "slot": "mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": null
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "65290f395ae2ae97b80fdf2d|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "65fb023261d5829b2d090755|mod_handguard/mod_foregrip": {
+   "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "661ceb1b9311543c7104149b|mod_handguard/mod_foregrip": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "661cec09b2c6356b4d0c7a36|mod_handguard/mod_foregrip": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6680304edadb7aa61d00cef0|mod_foregrip": {
+   "gun": "IWI UZI PRO Pistol 9x19冲锋枪",
+   "kind": "root",
+   "chain": [
+    {
+     "slot": "mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 5,
+    "parent": null
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6718817435e3cfd9550d2c27|mod_reciever/mod_barrel/mod_foregrip": {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_barrel"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "673cab3e03c6a20581028bc1|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "674fe9a75e51f1c47c04ec23|mod_handguard/mod_foregrip": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "676176d362e0497044079f4c|mod_reciever/mod_mount_000/mod_foregrip": {
+   "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+   "kind": "viaRail",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 5
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 5,
+    "parent": "mod_reciever/mod_mount_000"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6871284e9a353bb50606f3ed|mod_handguard/mod_foregrip": {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "689166b6c2d6fa42e7044756|mod_handguard/mod_foregrip": {
+   "gun": "AK-308 7.62x51 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6895bb82c4519957df062f82|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "68aee763130c00663d08aea8|mod_mount_001/mod_handguard/mod_foregrip": {
+   "gun": "TKPD 9.3x64 突击卡宾枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_mount_001",
+     "base": "mount",
+     "pos": {
+      "row": 4,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_mount_001/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_mount_001/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_mount_001/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "68c16b9ab6b75a8a480520a6|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "NL545 (DI) 5.45x39 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "68c2940aecc41cc5490bd40e|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "NL545 (GP) 5.45x39 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6932abeb5403890d0c09c926|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6981d72ed009ad83920da43a|mod_handguard/mod_foregrip": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 4,
+    "parent": "mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "69f9ebbcaae020b0db02f65d|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "北方工业 QBZ-191 5.8x42 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6a15ae2ae5267ba21c07f98f|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6a3bffbebc377285900b85cf|mod_reciever/mod_handguard/mod_foregrip": {
+   "gun": "丰和 20 式 5.56x45 突击步枪",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "pos": {
+      "row": 3,
+      "col": 5
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "pos": {
+      "row": 3,
+      "col": 4
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 4,
+      "col": 4
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 4,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6a78b7f8c2016eb33e0027cd|mod_stock/mod_foregrip": {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "pos": {
+      "row": 3,
+      "col": 9
+     }
+    },
+    {
+     "slot": "mod_stock/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 9
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 5,
+    "col": 9,
+    "parent": "mod_stock"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  },
+  "6a78b7f8c2016eb33e0027cd|mod_stock/mod_foregrip/mod_foregrip": {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "kind": "direct",
+   "chain": [
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "pos": {
+      "row": 3,
+      "col": 9
+     }
+    },
+    {
+     "slot": "mod_stock/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 5,
+      "col": 9
+     }
+    },
+    {
+     "slot": "mod_stock/mod_foregrip/mod_foregrip",
+     "base": "foregrip",
+     "pos": {
+      "row": 6,
+      "col": 9
+     }
+    }
+   ],
+   "foregrip": {
+    "row": 6,
+    "col": 9,
+    "parent": "mod_stock/mod_foregrip"
+   },
+   "sameColumnAsParent": true,
+   "belowParent": true,
+   "forbiddenZone": false,
+   "ok": true
+  }
+ }
+}

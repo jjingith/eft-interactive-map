@@ -1,0 +1,79 @@
+{
+  "checks": [
+    {
+      "name": "交接态端点可用（长驻 BFF 可能残留上次交接，只验响应契约）",
+      "ok": true,
+      "detail": "{\"ok\": true, \"active\": true, \"region\": {\"x\": 20, \"y\": 20, \"w\": 1190, \"h\": 340}, \"matches\": [{\"id\": \"5448ba0b4bdc2d02308b"
+    },
+    {
+      "name": "交接态写入成功",
+      "ok": true,
+      "detail": "{\"ok\": true, \"count\": 1}"
+    },
+    {
+      "name": "往返一致 + 白名单瘦身（junk 被丢）",
+      "ok": true,
+      "detail": "{\"ok\": true, \"active\": true, \"region\": {\"x\": 10, \"y\": 20, \"w\": 400, \"h\": 300}, \"matches\": [{\"name\": \"\\u5408\\u6210\\u7269\\u54c1\", \"x\": 12, \"y\": 24, \"w\": 120, \"h\": 18, \"gw\": 1, \"gh\": 1, \"weight\": 0.5, \"p"
+    },
+    {
+      "name": "缺 region → 400",
+      "ok": true,
+      "detail": "{\"ok\": false, \"error\": \"\\u7f3a\\u5c11 region\"}"
+    },
+    {
+      "name": "冻结帧上传",
+      "ok": true,
+      "detail": "1794387851770"
+    },
+    {
+      "name": "交接标题「EFT截图·完成」",
+      "ok": true,
+      "detail": "title='EFT截图·完成'"
+    },
+    {
+      "name": "识别 ≥3 件",
+      "ok": true,
+      "detail": "matches=3"
+    },
+    {
+      "name": "交接区域与框选一致（图像坐标，允许显示比例换算）",
+      "ok": true,
+      "detail": "{\"x\": 30, \"y\": 22, \"w\": 566, \"h\": 331}"
+    },
+    {
+      "name": "交接匹配含「工厂紧急出口钥匙」",
+      "ok": true,
+      "detail": "['工厂紧急出口钥匙', '马卡洛夫9x18PM 手枪', '宿舍118房间钥匙']"
+    },
+    {
+      "name": "交接匹配含「马卡洛夫9x18PM 手枪」",
+      "ok": true,
+      "detail": "['工厂紧急出口钥匙', '马卡洛夫9x18PM 手枪', '宿舍118房间钥匙']"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "宿主演示运行完成（退出码 0）",
+      "ok": true,
+      "detail": "rc=0 "
+    },
+    {
+      "name": "标签窗全窗点击穿透样式（LAYERED|TRANSPARENT|NOACTIVATE|TOOLWINDOW|TOPMOST）",
+      "ok": true,
+      "detail": "RESULT labels_ex=0x80800A8 control_ex=0x8080088 matches=3 shot=D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\build\\_r239_overlay_demo.png"
+    },
+    {
+      "name": "控制条窗可点（有 LAYERED、无 TRANSPARENT）",
+      "ok": true,
+      "detail": "RESULT labels_ex=0x80800A8 control_ex=0x8080088 matches=3 shot=D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\build\\_r239_overlay_demo.png"
+    },
+    {
+      "name": "浮窗取证截图已生成",
+      "ok": true,
+      "detail": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\build\\_r239_overlay_demo.png"
+    }
+  ]
+}

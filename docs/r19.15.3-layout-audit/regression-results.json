@@ -1,0 +1,232 @@
+{
+ "generatedFor": "R19.15.3",
+ "testSuite": {
+  "command": "C:/Python314/python.exe -m pytest tests/ -q",
+  "summaryLine": "1081 passed, 1 skipped in 85.01s (0:01:25)",
+  "passed": 1081,
+  "skipped": 1,
+  "failed": 0,
+  "returncode": 0,
+  "failures": []
+ },
+ "browserScan": {
+  "source": "真实 UI 选枪 + 应用真实默认装配（localStorage），禁缓存",
+  "guns": 163,
+  "failed": 0,
+  "viewport": "1920×919（全量）+ 1384×805（AK-74N 另拍）"
+ },
+ "layoutAudit": {
+  "scanned": 163,
+  "anomalies": 0,
+  "summary": {
+   "domTreeMismatch": 0,
+   "domCoordMismatch": 0,
+   "duplicatePath": 0,
+   "overlapCell": 0,
+   "outOfGrid": 0,
+   "zeroRow": 0,
+   "rowsChanged": 0,
+   "mainRowViolation": 0,
+   "opticBelowBody": 0,
+   "stockOffCol9": 0,
+   "receiverPairViolation": 0,
+   "hammerChainViolation": 0,
+   "triggerViolation": 0,
+   "phantomCard": 0,
+   "dovetailOffAnchor": 0,
+   "dovetailOpticOffColumn": 0,
+   "dovetailSideMisplaced": 0,
+   "dovetailRearSightBand": 0,
+   "dovetailFrontSightOffMuzzle": 0
+  }
+ },
+ "visual": {
+  "buttonHoverOrange": true,
+  "hoverGradient": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 50%, rgb(255, 153, 51) 10",
+  "hoverBorder": "rgb(201, 122, 16)",
+  "connectorLines": 0,
+  "skinVisible": false,
+  "fontFamily": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+  "panelRadius": {}
+ },
+ "features": {
+  "optimizerConflictFree": true,
+  "optimizerConflictScan": {
+   "buildsChecked": 815,
+   "buildsWithPairs": 0,
+   "samples": []
+  },
+  "optimizerStructural": {
+   "note": "不带用户约束，只看整棵装配树是否成立（结构 + 双向互斥 + 声称件是否还在）",
+   "total": 652,
+   "ok": 652,
+   "badSamples": []
+  },
+  "magCapacity100": true,
+  "magCapacityCases": [
+   "容量约束无解",
+   "必装型号不兼容",
+   "手枪无 100 发弹匣"
+  ],
+  "nightforceTwoSlots": true,
+  "nightforce": {
+   "declared": 2,
+   "tree": 2,
+   "layout": 2,
+   "slots": [
+    {
+     "id": "5aa66c90e5b5b00016327c96",
+     "sid": "mod_scope_000",
+     "label": "瞄准镜",
+     "allowCount": 4,
+     "allowNames": [
+      "Hensoldt FF 4-16x56 34 毫米步枪瞄准镜",
+      "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜",
+      "Schmidt & Bender PM II 3-20x50 34 毫米步枪瞄准镜",
+      "Schmidt & Bender PM II 5-25x56 34 毫米步枪瞄准镜"
+     ],
+     "fix": "in-game-confirmed"
+    },
+    {
+     "id": "5aa66c9ce5b5b00015693125",
+     "sid": "mod_scope_001",
+     "label": "单倍瞄具 / 单倍瞄具底座",
+     "allowCount": 8,
+     "allowNames": [
+      "BelOMO PK-06 反射式瞄具",
+      "Wilcox RAPTAR ES 战术测距仪",
+      "Aimpoint Micro瞄具基座",
+      "Aimpoint Micro H-2瞄具基座",
+      "B&T QD NAR Aimpoint ACRO 准镜基座",
+      "Burris FastFire韦弗式基座",
+      "Cross Slot DeltaPoint 瞄具基座",
+      "Trijicon RMR 低基线基座"
+     ],
+     "fix": "in-game-confirmed"
+    }
+   ]
+  },
+  "defaultAmmo": {
+   "guns": null,
+   "withAmmo": null
+  },
+  "dovetailAnchors": {
+   "guns": 28,
+   "mountSlots": 32,
+   "primaryOnR2C8": 28,
+   "secondaryMounts": 4,
+   "domChecked": 32,
+   "domMatch": 32,
+   "domMismatch": []
+  },
+  "rearSightBand": {
+   "dovetailGuns": 28,
+   "withRearSight": 18,
+   "rearSightAtC6": 18,
+   "secondAtC7": 11,
+   "frontSightChecked": 5,
+   "frontSightAligned": 5,
+   "violations": []
+  }
+ },
+ "browserFlow": {
+  "akBase": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": null,
+   "opticGrandchild": null
+  },
+  "akOpticInstalled": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    57.8,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "Axion Kobra 燕尾槽适配导轨基座",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": {
+    "row": 1,
+    "col": 8,
+    "empty": true,
+    "item": ""
+   },
+   "opticGrandchild": null
+  },
+  "afterOpticInstall": {
+   "bodyRow": 3,
+   "rows": 7,
+   "rowHeights": [
+    57.8,
+    57.8,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 3,
+   "mountCol": 8,
+   "mountItem": "Axion Kobra 燕尾槽适配导轨基座",
+   "rearSightRow": 3,
+   "rearSightCol": 6,
+   "optic": {
+    "row": 2,
+    "col": 8,
+    "empty": false,
+    "item": "北方工业 QMK-171A 瞄具基座"
+   },
+   "opticGrandchild": {
+    "row": 1,
+    "col": 8,
+    "empty": true,
+    "item": ""
+   },
+   "scopeClicked": "北方工业 QMK-171A 瞄具基座",
+   "mountPath": "mod_mount_000/mod_scope"
+  },
+  "akOpticRemoved": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": null,
+   "opticGrandchild": null
+  }
+ }
+}

@@ -1,0 +1,229 @@
+{
+  "base": "http://127.0.0.1:8810",
+  "checks": [
+    {
+      "id": "A1_进入枪械视图",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "A2_浏览卡片总数",
+      "pass": true,
+      "detail": "cards=163"
+    },
+    {
+      "id": "A3_卡片显示价格",
+      "pass": true,
+      "detail": "79,045 ₽"
+    },
+    {
+      "id": "A4_卡片显示重量",
+      "pass": true,
+      "detail": "2.21 kg"
+    },
+    {
+      "id": "A5_搜索有结果",
+      "pass": true,
+      "detail": "AK-74 5.45x39 突击步枪 9 个改装槽 · 3 套内置参考预设 AK-74M 5.45x39 突击步枪 10 个改装槽 · 2 套内置参考预设 AK-74N 5.45x39 突击步枪 10"
+    },
+    {
+      "id": "B1_选择AR系枪(M4A1)",
+      "pass": true,
+      "detail": "5.56x45692,421 ₽0.75 kg柯尔特 M4A1 5.56x45 卡宾枪"
+    },
+    {
+      "id": "B2_装配画布有槽位",
+      "pass": true,
+      "detail": "parts=19"
+    },
+    {
+      "id": "B3_点击槽位出候选",
+      "pass": true,
+      "detail": "rows=79"
+    },
+    {
+      "id": "B4_候选表含商人价列",
+      "pass": true,
+      "detail": "['配件▲', '子槽', '后坐力', '人机', 'R+E/3', '尺寸', '重量', '商人价', '解锁', '跳蚤最新', 'FLEA价', '状态']"
+    },
+    {
+      "id": "B5_候选表含解锁列",
+      "pass": true,
+      "detail": "['配件▲', '子槽', '后坐力', '人机', 'R+E/3', '尺寸', '重量', '商人价', '解锁', '跳蚤最新', 'FLEA价', '状态']"
+    },
+    {
+      "id": "B6_焦点槽位已定位",
+      "pass": true,
+      "detail": "mod_reciever/mod_scope"
+    },
+    {
+      "id": "I1_枪械页价格口径切换",
+      "pass": true,
+      "detail": "['跳蚤', 'LAST', 'PvP(禁用)', 'Scav(禁用)', '基础价']"
+    },
+    {
+      "id": "I2_LAST口径生效",
+      "pass": true,
+      "detail": "['配件▲', '子槽', '后坐力', '人机', 'R+E/3', '尺寸', '重量', '商人价', '解锁', '跳蚤最新', 'LAST价', '状态']"
+    },
+    {
+      "id": "C1_装配普通配件生效",
+      "pass": true,
+      "detail": "槽位 mod_reciever/mod_scope：'' -> 'FALKE LE 反射式瞄具'（人机=-2.0）"
+    },
+    {
+      "id": "C2_属性实时更新",
+      "pass": true,
+      "detail": "bars/meta 发生变化"
+    },
+    {
+      "id": "J1_差额列存在",
+      "pass": true,
+      "detail": "['配件▲', '子槽', '后坐力', '人机', 'R+E/3', '尺寸', '重量', '商人价', '解锁', '跳蚤最新', 'Δ人机', 'Δ重量', 'Δ价', 'FLEA价', '状态']"
+    },
+    {
+      "id": "J1b_Δ后坐隐藏原因=基线缺后坐",
+      "pass": true,
+      "detail": "已装行后坐力单元格='—'（缺数据→整列隐藏）"
+    },
+    {
+      "id": "J2_已装件差额为0",
+      "pass": true,
+      "detail": "已装行 Δ人机 = '0'"
+    },
+    {
+      "id": "C3_装配带子槽配件",
+      "pass": true,
+      "detail": "Aimpoint Micro H-2瞄具基座"
+    },
+    {
+      "id": "C4_子槽位展开",
+      "pass": true,
+      "detail": "父槽 mod_reciever/mod_scope 的子槽卡片数=1"
+    },
+    {
+      "id": "D1_存在不兼容候选并被拒",
+      "pass": true,
+      "detail": "installed 13 -> 13; hint=⛔ 无法安装 北方工业 QMK-171A 瞄具基座：与已安装的「AR-15提把式照门」互斥（上游 conflicting"
+    },
+    {
+      "id": "D2_不兼容提示",
+      "pass": true,
+      "detail": "⛔ 无法安装 北方工业 QMK-171A 瞄具基座：与已安装的「AR-15提把式照门」互斥（上游 conflictingItems）（未改动改装）　｜　价格档 "
+    },
+    {
+      "id": "E1_拆除配件生效",
+      "pass": true,
+      "detail": "槽位 'Aimpoint Micro H-2瞄具基座' -> ''（已装总数 13 -> 12）"
+    },
+    {
+      "id": "F1_仅商人可买过滤生效",
+      "pass": true,
+      "detail": "rows 79 -> 74; 已隐藏 5 个"
+    },
+    {
+      "id": "K1_商人等级门槛生效",
+      "pass": true,
+      "detail": "rows 79 -> 15; 可见行最高解锁等级=1"
+    },
+    {
+      "id": "G1_切换到AK系枪",
+      "pass": true,
+      "detail": "5.45x39944,110 ₽1.99 kgAK-74 5.45x39 突击步枪"
+    },
+    {
+      "id": "G2_换枪后槽位重置",
+      "pass": true,
+      "detail": "installed 12 -> 8, parts=14"
+    },
+    {
+      "id": "H1_无控制台错误",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "H2_无外部网络请求",
+      "pass": true,
+      "detail": "[]"
+    }
+  ],
+  "shots": [
+    "local-browse-price-weight.png",
+    "local-search.png",
+    "local-m4a1-empty.png",
+    "local-m4a1-installed.png",
+    "local-candidates-columns.png",
+    "local-ak74.png"
+  ],
+  "pass": true,
+  "consoleErrors": [],
+  "externalRequests": [],
+  "samples": {
+    "cards": [
+      {
+        "gun": "674d6121c09f69dfb201a888",
+        "text": ".300 Blk879,045 ₽2.21 kgAklys Defense 迅猛龙 .300 Blackout 突击步枪",
+        "price": "79,045 ₽",
+        "wt": "2.21 kg"
+      },
+      {
+        "gun": "5fbcc1d9016cce60e8341ab3",
+        "text": ".300 Blk5120,195 ₽0.40 kgSIG MCX .300 Blackout 突击步枪",
+        "price": "120,195 ₽",
+        "wt": "0.40 kg"
+      },
+      {
+        "gun": "67c6de3ce39861860909e8e5",
+        "text": ".308 ME788,450 ₽0.80 kg马林 MXLR .308 ME 杠杆步枪",
+        "price": "88,450 ₽",
+        "wt": "0.80 kg"
+      },
+      {
+        "gun": "627e14b21713922ded6f2c15",
+        "text": ".3383382,971 ₽0.55 kgAccuracy International AXMC .338 LM 栓动式狙击步枪",
+        "price": "382,971 ₽",
+        "wt": "0.55 kg"
+      },
+      {
+        "gun": "673cab3e03c6a20581028bc1",
+        "text": ".3384价格缺失0.78 kgSako TRG M10 .338 LM 栓动狙击步枪",
+        "price": "价格缺失",
+        "wt": "0.78 kg"
+      },
+      {
+        "gun": "5fc22d7c187fea44d52eda44",
+        "text": ".3384426,955 ₽2.90 kgSWORD International Mk-18 .338 LM 精确射手步枪",
+        "price": "426,955 ₽",
+        "wt": "2.90 kg"
+      }
+    ],
+    "tableHead": [
+      "配件▲",
+      "子槽",
+      "后坐力",
+      "人机",
+      "R+E/3",
+      "尺寸",
+      "重量",
+      "商人价",
+      "解锁",
+      "跳蚤最新",
+      "FLEA价",
+      "状态"
+    ],
+    "m4a1": {
+      "installed": 13,
+      "parts": 20,
+      "subs": 13,
+      "bars": "人机工效\n基线 55.0|改装 55.0|技能 55.0\n散布角\n基线 1.8|改装 1.8|技能 1.8\n垂直后坐\n基线 78.1|改装 78.1|技能 78.1\n水平后坐\n基线 224.4|改装 224.4|技能 224.4\n初速 m/s\n基线 957.0|改装 957.0|技能 957.0\n\n技能后数值 = 改装值（突击步枪 技能 0 级 = 未练习；可在顶部「个人属性」里设置）",
+      "meta": "基础枪械\n柯尔特 M4A1 5.56x45 卡宾枪\n改装槽位\n19\n已装配件\n13"
+    },
+    "ak74": {
+      "installed": 8,
+      "parts": 14,
+      "subs": 4,
+      "bars": "人机工效\n基线 47.0|改装 47.0|技能 47.0\n散布角\n基线 2.0|改装 2.0|技能 2.0\n垂直后坐\n基线 71.0|改装 71.0|技能 71.0\n水平后坐\n基线 180.6|改装 180.6|技能 180.6\n初速 m/s\n基线 884.0|改装 884.0|技能 884.0\n\n技能后数值 = 改装值（突击步枪 技能 0 级 = 未练习；可在顶部「个人属性」里设置）",
+      "meta": "基础枪械\nAK-74 5.45x39 突击步枪\n改装槽位\n13\n已装配件\n8"
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+ "viewport": "{\"w\":1920,\"h\":919,\"dpr\":1,\"url\":\"https://db4tarkov.com/gun\"}",
+ "workbenchLoaded": false,
+ "dom": {
+  "root": {
+   "tag": "BODY",
+   "cls": "",
+   "rect": [
+    0,
+    0,
+    1920,
+    919
+   ]
+  },
+  "viewport": {
+   "w": 1920,
+   "h": 919,
+   "dpr": 1
+  },
+  "nodes": [
+   {
+    "d": 0,
+    "tag": "body",
+    "cls": "",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 919,
+    "txt": ""
+   },
+   {
+    "d": 1,
+    "tag": "p",
+    "cls": "",
+    "x": 0,
+    "y": -19998,
+    "w": 320218,
+    "h": 9999,
+    "txt": "flutter typography measure"
+   },
+   {
+    "d": 1,
+    "tag": "flutter-view",
+    "cls": "",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 919,
+    "txt": ""
+   }
+  ]
+ },
+ "styles": {
+  "loadvar": {
+   "self": null,
+   "parent": null,
+   "gp": null
+  },
+  "forge": {
+   "btn": null,
+   "panel": null,
+   "panel2": null
+  },
+  "bars": {
+   "label": null,
+   "box": null,
+   "box2": null,
+   "box3": null
+  },
+  "hidden": {
+   "label": null,
+   "box": null,
+   "box2": null
+  },
+  "cost": {
+   "label": null,
+   "box": null,
+   "box2": null
+  },
+  "tabs": {
+   "buy": null,
+   "items": null
+  },
+  "cands": {
+   "input": null,
+   "panel": null,
+   "panel2": null
+  },
+  "slotLabel": null
+ },
+ "snap0": {
+  "url": "https://db4tarkov.com/gun",
+  "candidates": {
+   "rowCount": 0,
+   "firstRows": [],
+   "rowsRect": []
+  },
+  "statsText": null,
+  "overSwing": null,
+  "finalCost": null,
+  "gunName": null,
+  "slotCards": []
+ },
+ "slotClicked": "none",
+ "snap1_afterSlot": {
+  "url": "https://db4tarkov.com/gun",
+  "candidates": {
+   "rowCount": 0,
+   "firstRows": [],
+   "rowsRect": []
+  },
+  "statsText": null,
+  "overSwing": null,
+  "finalCost": null,
+  "gunName": null,
+  "slotCards": []
+ },
+ "candidatePicked": "no-rows",
+ "snap2_afterPick": {
+  "url": "https://db4tarkov.com/gun",
+  "candidates": {
+   "rowCount": 0,
+   "firstRows": [],
+   "rowsRect": []
+  },
+  "statsText": null,
+  "overSwing": null,
+  "finalCost": null,
+  "gunName": null,
+  "slotCards": []
+ },
+ "network": {
+  "total": 169,
+  "byType": {
+   "early-hints": 1,
+   "script": 14,
+   "link": 1,
+   "fetch": 40,
+   "img": 107,
+   "xmlhttprequest": 3,
+   "other": 2,
+   "iframe": 1
+  },
+  "js": [
+   {
+    "t": "early-hints",
+    "n": "/main.dart.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/flutter.js",
+    "sz": 4019
+   },
+   {
+    "t": "link",
+    "n": "/manifest.json",
+    "sz": 578
+   },
+   {
+    "t": "fetch",
+    "n": "/version.json?v=1792914339696",
+    "sz": 329
+   },
+   {
+    "t": "script",
+    "n": "/flutter_bootstrap.js",
+    "sz": 5067
+   },
+   {
+    "t": "script",
+    "n": "/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/canvaskit/chromium/canvaskit.js",
+    "sz": 28570
+   },
+   {
+    "t": "fetch",
+    "n": "/assets/FontManifest.json",
+    "sz": 507
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-app.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-analytics.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-app-check.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-database.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/firebasejs/12.15.0/firebase-remote-config.js",
+    "sz": 0
+   },
+   {
+    "t": "script",
+    "n": "/recaptcha/api.js",
+    "sz": 0
+   },
+   {
+    "t": "fetch",
+    "n": "/json/core/changes.json",
+    "sz": 0
+   },
+   {
+    "t": "fetch",
+    "n": "/assets/AssetManifest.bin.json",
+    "sz": 23502
+   },
+   {
+    "t": "script",
+    "n": "/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__zh_cn.js",
+    "sz": 358700
+   },
+   {
+    "t": "xmlhttprequest",
+    "n": "/json/realtime/market_dev_ss.json",
+    "sz": 0
+   },
+   {
+    "t": "xmlhttprequest",
+    "n": "/json/realtime/market_tm_ss.json",
+    "sz": 0
+   }
+  ],
+  "css": [],
+  "api": []
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "generatedFor": "R19.15.1",
+ "caliber": ".338 Lapua Magnum",
+ "guns": [
+  {
+   "id": "5fc22d7c187fea44d52eda44",
+   "name": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "slotsDeclared": 4,
+   "audited": true,
+   "rows": 6,
+   "topPad": 0,
+   "renderedCards": 18,
+   "treeSlots": 19,
+   "roles": {
+    "receiverUpper": null,
+    "receiverLower": null,
+    "stockOnGrip": null,
+    "stockUnderParent": null,
+    "hammer": null,
+    "trigger": null,
+    "topOptic": []
+   },
+   "problems": [],
+   "status": "已修复并实测通过"
+  },
+  {
+   "id": "627e14b21713922ded6f2c15",
+   "name": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "slotsDeclared": 3,
+   "audited": true,
+   "rows": 6,
+   "topPad": 0,
+   "renderedCards": 22,
+   "treeSlots": 22,
+   "roles": {
+    "receiverUpper": "mod_pistol_grip/mod_reciever/mod_reciever",
+    "receiverLower": "mod_pistol_grip/mod_reciever",
+    "stockOnGrip": "mod_pistol_grip/mod_stock",
+    "stockUnderParent": null,
+    "hammer": null,
+    "trigger": null,
+    "topOptic": []
+   },
+   "problems": [],
+   "status": "已修复并实测通过"
+  },
+  {
+   "id": "673cab3e03c6a20581028bc1",
+   "name": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "slotsDeclared": 4,
+   "audited": true,
+   "rows": 6,
+   "topPad": 0,
+   "renderedCards": 19,
+   "treeSlots": 19,
+   "roles": {
+    "receiverUpper": null,
+    "receiverLower": null,
+    "stockOnGrip": null,
+    "stockUnderParent": null,
+    "hammer": null,
+    "trigger": null,
+    "topOptic": [
+     "mod_reciever/mod_mount",
+     "mod_reciever/mod_mount/mod_scope"
+    ]
+   },
+   "problems": [],
+   "status": "已修复并实测通过"
+  }
+ ]
+}

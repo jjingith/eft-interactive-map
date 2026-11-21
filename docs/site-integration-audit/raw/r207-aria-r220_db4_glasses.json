@@ -1,0 +1,490 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.29-1 🌓 05:00 🌕 17:00",
+  "x": 787,
+  "y": 24,
+  "w": 1573,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 499,
+  "y": 24,
+  "w": 84,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 582,
+  "y": 24,
+  "w": 82,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 660,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 726,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 784,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 851,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 926,
+  "y": 24,
+  "w": 70,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 990,
+  "y": 24,
+  "w": 57,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 1058,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 1134,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.3.0.0",
+  "x": 1217,
+  "y": 24,
+  "w": 94,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 1295,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 37 day(s)",
+  "x": 1657,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 1605,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 1657,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (37d)",
+  "x": 1708,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 1762,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 1796,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 1830,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 1864,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1898,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "only TraderLvl",
+  "x": 756,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "only FleaLvl",
+  "x": 840,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "input",
+  "label": "Type to search item in preset",
+  "x": 1379,
+  "y": 71,
+  "w": 957,
+  "h": 39
+ },
+ {
+  "role": "group",
+  "label": "Move/Turn/Ergo 0 / 0 / 0 Kg 0 kg 0 / 0 / 0 Final Cost:",
+  "x": 330,
+  "y": 365,
+  "w": 660,
+  "h": 554
+ },
+ {
+  "role": "button",
+  "label": "Headwear",
+  "x": 330,
+  "y": 204,
+  "w": 112,
+  "h": 112
+ },
+ {
+  "role": "button",
+  "label": "Glasses",
+  "x": 101,
+  "y": 299,
+  "w": 84,
+  "h": 42
+ },
+ {
+  "role": "button",
+  "label": "Headset",
+  "x": 101,
+  "y": 376,
+  "w": 84,
+  "h": 84
+ },
+ {
+  "role": "button",
+  "label": "Face Cover",
+  "x": 189,
+  "y": 299,
+  "w": 42,
+  "h": 42
+ },
+ {
+  "role": "button",
+  "label": "Armor Armored Rig",
+  "x": 330,
+  "y": 355,
+  "w": 220,
+  "h": 154
+ },
+ {
+  "role": "button",
+  "label": "Chest Rig",
+  "x": 550,
+  "y": 355,
+  "w": 220,
+  "h": 154
+ },
+ {
+  "role": "button",
+  "label": "Gun",
+  "x": 227,
+  "y": 514,
+  "w": 426,
+  "h": 140
+ },
+ {
+  "role": "button",
+  "label": "Backpack",
+  "x": 550,
+  "y": 515,
+  "w": 220,
+  "h": 166
+ },
+ {
+  "role": "button",
+  "label": "Buy ()",
+  "x": 165,
+  "y": 630,
+  "w": 330,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Sell",
+  "x": 495,
+  "y": 630,
+  "w": 330,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Name",
+  "x": 1142,
+  "y": 102,
+  "w": 836,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Mov/Turn/Erg",
+  "x": 1634,
+  "y": 102,
+  "w": 148,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Kg",
+  "x": 1728,
+  "y": 102,
+  "w": 40,
+  "h": 27
+ },
+ {
+  "role": "group",
+  "label": "AFGlass 25 Anti-fragmentation glasses 0 / 0 / -2 0.10 0.1 39,700 III [5]",
+  "x": 1296,
+  "y": 157,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "6B34 25 6B34 anti-fragmentation glasses 0 / 0 / -2 0.10 0.1 23,256 III [5]",
+  "x": 1296,
+  "y": 209,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Condor 25 NPP KlASS Condor glasses 0 / 0 / -1 0.10 0.0 21,216 IV [2]",
+  "x": 1296,
+  "y": 261,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Batwolf 20 Oakley SI Batwolf glasses 0 / 0 / -1 0.18 0.1 32,906 IV [3]",
+  "x": 1296,
+  "y": 313,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "SPEAR 25 Wiley X SPEAR ballistic goggles (Black) 0 / 0 / -2 0.15 0.1",
+  "x": 1296,
+  "y": 365,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "SPEAR 25 Wiley X SPEAR ballistic goggles (Tan) 0 / 0 / -2 0.15 0.1",
+  "x": 1296,
+  "y": 417,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "TGlasses Tactical glasses 0 / 0 / 0 0.10 0.1 2,320 I [5]",
+  "x": 1296,
+  "y": 485,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "RGlasses Round frame sunglasses 0 / 0 / 0 0.20 0.0",
+  "x": 1296,
+  "y": 537,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Dundukk Dundukk sport sunglasses 0 / 0 / 0 0.15 0.1 2,819 I [5]",
+  "x": 1296,
+  "y": 589,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "RayBench RayBench Hipster Reserve sunglasses 0 / 0 / 0 0.25 0.1",
+  "x": 1296,
+  "y": 641,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Proximity Pyramex Proximity safety glasses 0 / 0 / 0 0.15 0.0 4,448 III [5]",
+  "x": 1296,
+  "y": 693,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "M Frame Oakley SI M Frame safety glasses 0 / 0 / 0 0.15 0.0 6,533 IV [5]",
+  "x": 1296,
+  "y": 745,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Crossbow ESS Crossbow tactical glasses 0 / 0 / 0 0.30 0.0 4,865 II [5]",
+  "x": 1296,
+  "y": 797,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Gascan Oakley SI Gascan glasses 0 / 0 / 0 0.15 0.0 7,784 III [5]",
+  "x": 1296,
+  "y": 849,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Aviator RayBench Aviator glasses 0 / 0 / 0 0.25 0.0 9,313 IV",
+  "x": 1296,
+  "y": 901,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "Rivals Twitch Rivals 2020 glasses 0 / 0 / 0 0.30 0.0",
+  "x": 1296,
+  "y": 940,
+  "w": 1248,
+  "h": 26
+ },
+ {
+  "role": "button",
+  "label": "Gaswelder Gas welder safety goggles 0 / 0 / -2 0.35 0.1",
+  "x": 1296,
+  "y": 1005,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "JohnB JohnB Liquid DNB glasses 0 / 0 / -1 0.25 0.1",
+  "x": 1296,
+  "y": 1057,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "Dundukk Dundukk sport sunglasses (Orange lenses) 0 / 0 / 0 0.15 0.1",
+  "x": 1296,
+  "y": 1109,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "Aviator RayBench Aviator glasses (Green lenses) 0 / 0 / 0 0.25 0.0",
+  "x": 1296,
+  "y": 1161,
+  "w": 1248,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "M Frame Oakley SI M Frame safety glasses (Orange lenses) 0 / 0 / 0 0.15 0.0",
+  "x": 1296,
+  "y": 1195,
+  "w": 1248,
+  "h": 16
+ },
+ {
+  "role": "button",
+  "label": "Price",
+  "x": 1828,
+  "y": 102,
+  "w": 160,
+  "h": 27
+ }
+]

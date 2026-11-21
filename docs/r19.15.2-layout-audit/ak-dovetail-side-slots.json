@@ -1,0 +1,32 @@
+{
+ "generatedFor": "R19.15.2",
+ "rule": "基座的真实额外配件槽放在瞄具槽右侧（r1c4 起），只在真实存在时显示",
+ "slots": [
+  {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "id": "63171672192e68c5460cebc5",
+   "slotPath": "mod_reciever/mod_mount/mod_tactical",
+   "slotId": "mod_tactical",
+   "base": "tactical",
+   "row": 1,
+   "col": 4,
+   "rightOfOptic": true,
+   "purpose": "基座自带的额外配件槽（真实子槽）"
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "id": "6718817435e3cfd9550d2c27",
+   "slotPath": "mod_reciever/mod_mount/mod_tactical",
+   "slotId": "mod_tactical",
+   "base": "tactical",
+   "row": 1,
+   "col": 4,
+   "rightOfOptic": true,
+   "purpose": "基座自带的额外配件槽（真实子槽）"
+  }
+ ],
+ "summary": {
+  "count": 2,
+  "allRightOfOptic": true
+ }
+}

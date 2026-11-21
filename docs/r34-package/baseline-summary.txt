@@ -1,0 +1,26 @@
+# host=HOMONAS user=MASTERJJ at=2026-11-03T10:11:41+08:00 round=R34-package
+git_branch=main
+git_head=bf438df75a011d9875e6ce71427f2390a7d254de
+git_head_time=2026-10-19T18:17:08+08:00
+git_status_lines=457
+git_status_file=docs/r34-package/git-status-before.txt
+active_build_process=none
+
+dist_baseline:
+  path=dist\EFTMap
+  files=1531
+  bytes=43934568
+  min_mtime=2026-10-19T19:26:16.1399808+08:00
+  max_mtime=2026-10-19T19:26:18.9639716+08:00
+  manifest=docs/r34-package/baseline-dist_EFTMap.csv
+
+release_baseline:
+  path=release
+  files=3
+  bytes=83864415
+  EFTMap-AppWindow-0.1.0.zip=23872795 2026-10-19T18:09:47.2219739+08:00
+  EFTMap-Portable-0.1.0.zip=23872656 2026-10-19T18:09:24.6174300+08:00
+  EFTMap-Setup-0.1.0.exe=36118964 2026-10-19T18:10:06.8323186+08:00
+  manifest=docs/r34-package/baseline-release.csv
+
+version_in_serve_py=0.1.0

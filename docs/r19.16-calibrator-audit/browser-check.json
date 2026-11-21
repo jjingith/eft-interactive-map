@@ -1,0 +1,1093 @@
+{
+ "generatedFor": "R19.16",
+ "guns": {
+  "ash12": {
+   "gunId": "5cadfbf7ae92152ac412eeef",
+   "slotCount": 11,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_front",
+     "row": 2,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard",
+     "row": 3,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_scope",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_scope/mod_scope",
+     "row": 1,
+     "col": 6,
+     "body": false
+    },
+    {
+     "slot": "mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_tactical_002",
+     "row": 6,
+     "col": 3,
+     "body": false
+    }
+   ],
+   "presets": 3
+  },
+  "axmc": {
+   "gunId": "627e14b21713922ded6f2c15",
+   "slotCount": 22,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever",
+     "row": 4,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000/mod_sight_front",
+     "row": 2,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000/mod_tactical",
+     "row": 6,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_001",
+     "row": 6,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_001/mod_tactical_000",
+     "row": 6,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_002",
+     "row": 6,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_002/mod_tactical_000",
+     "row": 6,
+     "col": 6,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_003",
+     "row": 6,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_003/mod_tactical_000",
+     "row": 6,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever",
+     "row": 3,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_scope",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel",
+     "row": 3,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "row": 4,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "body": false
+    }
+   ],
+   "presets": 2
+  },
+  "m10": {
+   "gunId": "673cab3e03c6a20581028bc1",
+   "slotCount": 19,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_mount_000",
+     "row": 4,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "body": true
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_sight_front",
+     "row": 2,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_000",
+     "row": 6,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical",
+     "row": 6,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001",
+     "row": 6,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001/mod_tactical",
+     "row": 6,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+     "row": 6,
+     "col": 6,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "row": 3,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_mount/mod_scope",
+     "row": 1,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_mount/mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    }
+   ],
+   "presets": 3
+  },
+  "marlin": {
+   "gunId": "67c6de3ce39861860909e8e5",
+   "slotCount": 12,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel/mod_handguard",
+     "row": 3,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel/mod_handguard/mod_bipod",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel/mod_sight_front",
+     "row": 2,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel/mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_mount",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_trigger",
+     "row": 4,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_hammer",
+     "row": 2,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_hammer/mod_tactical",
+     "row": 1,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_charge",
+     "row": 4,
+     "col": 9,
+     "body": false
+    }
+   ],
+   "presets": 1
+  },
+  "ak74n": {
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "slotCount": 13,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "body": true
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "body": false
+    }
+   ],
+   "presets": 3
+  },
+  "m4a1": {
+   "gunId": "5447a9cd4bdc2dbd208b4567",
+   "slotCount": 16,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "body": true
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "row": 3,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "row": 4,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "row": 2,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "row": 4,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_charge_001",
+     "row": 4,
+     "col": 6,
+     "body": false
+    }
+   ],
+   "presets": 15
+  },
+  "sa58": {
+   "gunId": "5b0bbe4e5acfc40dc528a72d",
+   "slotCount": 17,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard",
+     "row": 3,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_002",
+     "row": 6,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_handguard/mod_mount",
+     "row": 2,
+     "col": 4,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel",
+     "row": 3,
+     "col": 3,
+     "body": false
+    },
+    {
+     "slot": "mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "body": true
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "row": 4,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000",
+     "row": 5,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000/mod_stock",
+     "row": 6,
+     "col": 9,
+     "body": false
+    }
+   ],
+   "presets": 8
+  },
+  "sv98": {
+   "gunId": "55801eed4bdc2d89578b4588",
+   "slotCount": 7,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "body": false
+    },
+    {
+     "slot": "mod_scope",
+     "row": 2,
+     "col": 5,
+     "body": false
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "body": false
+    },
+    {
+     "slot": "mod_tactical",
+     "row": 2,
+     "col": 1,
+     "body": false
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "body": false
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "body": false
+    },
+    {
+     "slot": "mod_stock/mod_bipod",
+     "row": 4,
+     "col": 1,
+     "body": false
+    }
+   ],
+   "presets": 2
+  }
+ },
+ "flow": {
+  "dragSource": {
+   "key": "mod_mount_000|mod_mount_000|",
+   "slot": "mod_mount_000",
+   "row": 2,
+   "col": 8,
+   "moved": false,
+   "body": false,
+   "text": "mod_mount_000（空槽 · 真实槽位）r2c8",
+   "x": 1116,
+   "y": 181,
+   "w": 64,
+   "h": 60
+  },
+  "afterDrag": {
+   "row": 5,
+   "col": 1,
+   "dirty": true,
+   "msg": "已移动 mod_mount_000 → r5c1（未保存）"
+  },
+  "afterUndo": {
+   "row": 2,
+   "col": 8
+  },
+  "afterRedo": {
+   "row": 5,
+   "col": 1
+  },
+  "bodyReject": {
+   "msg": "无法放置：目标是枪械本体占用区（r3c6–c8），不允许放置",
+   "rejected": true,
+   "chargePos": 2
+  },
+  "swap": {
+   "mount": {
+    "row": 2,
+    "col": 9
+   },
+   "charge": {
+    "row": 2,
+    "col": 8
+   },
+   "msg": "已与 mod_charge 交换位置（未丢失任何槽位）",
+   "allSlotsKept": true
+  },
+  "conditional": {
+   "gun": "SA-58",
+   "presetNames": [
+    "DS Arms SA-58 7.62x51 突击步枪 默认（11 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 AUT（8 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 BEL（8 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 PBR（12 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 OSW（11 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 SPR（9 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 X-FAL（12 件）",
+    "DS Arms SA-58 7.62x51 突击步枪 XPS3-0（13 件）"
+   ],
+   "switchedTo": "DS Arms SA-58 7.62x51 突击步枪 AUT（8 件）",
+   "slotsBefore": 17,
+   "slotsAfter": 8,
+   "changed": true
+  },
+  "coordInput": {
+   "movedTo": {
+    "key": "mod_mount_000|mod_mount_000|",
+    "slot": "mod_mount_000",
+    "row": 5,
+    "col": 2,
+    "moved": false,
+    "body": false,
+    "text": "mod_mount_000（空槽 · 真实槽位）r5c2",
+    "x": 708,
+    "y": 373,
+    "w": 64,
+    "h": 60
+   },
+   "msg": "已移动 mod_mount_000 → r5c2（未保存）"
+  },
+  "afterSave": {
+   "msg": "已保存到 data/gun-layout-calibration.json（1 把枪 / 1 条；上一版已备份为 .bak.json）",
+   "dirty": true
+  },
+  "fileAfterSave": {
+   "ok": true,
+   "summary": {
+    "guns": 1,
+    "slots": 1,
+    "updatedAt": "2026-10-27T11:17:57",
+    "schemaVersion": 1,
+    "toolVersion": "R19.16"
+   },
+   "ak": {
+    "mod_mount_000|mod_mount_000|": {
+     "slotId": "mod_mount_000",
+     "slotPath": "mod_mount_000",
+     "ownerItemId": "",
+     "logicalRow": 5,
+     "col": 2,
+     "topPad": 0,
+     "displayRow": 5,
+     "role": "dovetailMount",
+     "source": "manual",
+     "note": "冒烟",
+     "updatedAt": "2026-10-27T11:17:57",
+     "autoRow": 2,
+     "autoCol": 8
+    }
+   },
+   "backup": {
+    "exists": true,
+    "summary": {
+     "guns": 1,
+     "slots": 1,
+     "updatedAt": "2026-10-27T11:08:10",
+     "schemaVersion": 1,
+     "toolVersion": "R19.16"
+    }
+   }
+  },
+  "afterReload": {
+   "row": 5,
+   "col": 2,
+   "movedTag": true,
+   "msg": "已选择 AK-74N 5.45x39 突击步枪：真实槽位 13 个，已保存校准 1 条"
+  },
+  "importReject": {
+   "ok": false,
+   "err": "schemaVersion 不支持：99（当前只接受 1）"
+  }
+ },
+ "console": [],
+ "build": "构建 R19.16 · 校准数据 data/gun-layout-calibration.json",
+ "overlayVisible": true,
+ "viewports": {
+  "1384x805": {
+   "ok": true,
+   "gun": "已选择 AK-74N 5.45x39 突击步枪：真实槽位 13 个，已保存校准 1 条",
+   "rows": 6,
+   "cards": [
+    {
+     "key": "mod_gas_block|mod_gas_block|",
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "moved": false,
+     "body": false,
+     "text": "mod_gas_blockAK-74导气管r3c3",
+     "x": 508,
+     "y": 276,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_gas_block/mod_handguard|mod_handguard|59c6633186f7740cf0493bb9",
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "moved": false,
+     "body": false,
+     "text": "mod_handguardAK-74 木制护木r3c4",
+     "x": 576,
+     "y": 276,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_muzzle|mod_muzzle|",
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "moved": false,
+     "body": false,
+     "text": "mod_muzzleAK-74 5.45x39 膛口制退器r3c2",
+     "x": 440,
+     "y": 276,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_pistol_grip|mod_pistol_grip|",
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "moved": false,
+     "body": false,
+     "text": "mod_pistol_gripAK-74 胶木手枪式握把r4c8",
+     "x": 848,
+     "y": 340,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_reciever|mod_reciever|",
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "moved": false,
+     "body": true,
+     "text": "mod_recieverAK-74 防尘盖r3c5",
+     "x": 644,
+     "y": 276,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_reciever/mod_mount|mod_mount|5649af094bdc2df8348b4586",
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "moved": false,
+     "body": false,
+     "text": "mod_mount（空槽 · 真实槽位）r2c5",
+     "x": 644,
+     "y": 212,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_sight_rear|mod_sight_rear|",
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "moved": false,
+     "body": false,
+     "text": "mod_sight_rearAK-74 照门r2c6",
+     "x": 712,
+     "y": 212,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|5649b0544bdc2d1b2b8b458a",
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "moved": false,
+     "body": false,
+     "text": "mod_sight_rear（空槽 · 真实槽位）r2c7",
+     "x": 780,
+     "y": 212,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_stock|mod_stock|",
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "moved": false,
+     "body": false,
+     "text": "mod_stockAK-74 木制枪托r3c9",
+     "x": 916,
+     "y": 276,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_stock/mod_stock|mod_stock|5649b1c04bdc2d16268b457c",
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "moved": false,
+     "body": false,
+     "text": "mod_stock（空槽 · 真实槽位）r4c9",
+     "x": 916,
+     "y": 340,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_magazine|mod_magazine|",
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "moved": false,
+     "body": false,
+     "text": "mod_magazine6L20 5.45x39 AK-74 30发弹匣r4c7",
+     "x": 780,
+     "y": 340,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_mount_000|mod_mount_000|",
+     "slot": "mod_mount_000",
+     "row": 5,
+     "col": 2,
+     "moved": true,
+     "body": false,
+     "text": "mod_mount_000（空槽 · 真实槽位）r5c2已校准",
+     "x": 440,
+     "y": 404,
+     "w": 64,
+     "h": 60
+    },
+    {
+     "key": "mod_charge|mod_charge|",
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "moved": false,
+     "body": false,
+     "text": "mod_charge（空槽 · 真实槽位）r2c9",
+     "x": 916,
+     "y": 212,
+     "w": 64,
+     "h": 60
+    }
+   ],
+   "msg": "已选择 AK-74N 5.45x39 突击步枪：真实槽位 13 个，已保存校准 1 条",
+   "dirty": true,
+   "info": "名称AK-74N 5.45x39 突击步枪物品 ID5644bd2b4bdc2d3b4c8b4572内置预设AK-74N 5.45x39 突击步枪 默认（共 3 个）真实槽位13画布行数6 行（含顶部扩展 0）已保存校准1 条未保存修改无"
+  }
+ },
+ "normalPage": {
+  "overlay": false,
+  "calGrid": 0,
+  "gridlines": 0,
+  "gunCanvas": true,
+  "ghost": 0,
+  "connectors": 0
+ }
+}

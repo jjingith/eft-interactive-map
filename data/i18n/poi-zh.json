@@ -1,0 +1,1182 @@
+{
+ "schema": 1,
+ "note": "地图 POI 中文名（显示层）。品牌商铺保留招牌名 + 中文类目；数据本身不改。",
+ "generatedBy": "tools/build_poi_zh.py",
+ "count": 281,
+ "entries": {
+  "Big Red": "大红房",
+  "Bus Station": "公交站",
+  "Crackhouse": "毒窝",
+  "Depot": "货场",
+  "Dorms": "宿舍",
+  "Fortress": "堡垒",
+  "Junk Bridge": "废料桥",
+  "Main Bridge": "主桥",
+  "Military Checkpoint": "军事检查站",
+  "New Gas": "新加油站",
+  "Old Gas": "老加油站",
+  "Old Construction": "旧工地",
+  "Powerline Tower": "电线塔",
+  "Repair Shop": "维修店",
+  "Skeleton": "骨架楼",
+  "Sniper Hill": "狙击山",
+  "Sniper Ridge": "狙击岭",
+  "Storage": "仓储区",
+  "Streamer House": "主播屋",
+  "Trailer Park": "拖车营地",
+  "Warehouse 3": "3 号仓库",
+  "Warehouse 4": "4 号仓库",
+  "Warehouse 7": "7 号仓库",
+  "Warehouse 17": "17 号仓库",
+  "Bus Stop": "公交站",
+  "Checkpoint": "检查站",
+  "Convoy": "车队残骸",
+  "Crash Site": "坠机点",
+  "Cultist Village": "邪教徒村",
+  "Jaeger's Camp": "猎人营地",
+  "Lumber": "木料场",
+  "Military Camp": "军营",
+  "Old Sawmill": "老锯木厂",
+  "Ponds": "池塘",
+  "Sawmill": "锯木厂",
+  "Scav Town": "Scav 镇",
+  "Shack": "小屋",
+  "Sniper Rock": "狙击岩",
+  "USEC Camp": "USEC 营地",
+  "Admin": "行政楼",
+  "Bunker": "地堡",
+  "Cabins": "木屋区",
+  "Construction": "工地",
+  "Cottages": "小屋区",
+  "Crane": "吊车",
+  "East Wing": "东楼",
+  "Gas Station": "加油站",
+  "Pier": "码头",
+  "Power Station": "发电站",
+  "Radio Tower": "无线电塔",
+  "Resort": "疗养院",
+  "Scav Farm": "Scav 农场",
+  "Scav Island": "Scav 岛",
+  "Swamp": "沼泽",
+  "Tank Bridge": "坦克桥",
+  "Village": "村庄",
+  "Weather Station": "气象站",
+  "West Wing": "西楼",
+  "Boathouses": "船屋",
+  "Convenience": "便利店",
+  "Dead Tree": "枯树",
+  "Drug Lab": "制毒厂",
+  "Grand Chalet": "大木屋",
+  "Gunner Nest": "机枪巢",
+  "Hillside": "山坡",
+  "Island": "岛屿",
+  "Lightkeeper Island": "灯塔看守岛",
+  "Pikes Peak Resort": "派克峰度假村",
+  "Pipes": "管道区",
+  "Plant 1": "1 号厂区",
+  "Plant 2": "2 号厂区",
+  "Plant 3": "3 号厂区",
+  "Red Brick": "红砖楼",
+  "Tennis Court": "网球场",
+  "Train Yard": "铁路场",
+  "Water Treatment": "水处理厂",
+  "Barracks": "兵营",
+  "Black Bishop": "黑主教楼",
+  "Black Knight": "黑骑士楼",
+  "Black Pawn": "黑兵楼",
+  "Dome": "圆顶",
+  "E1 Bunkers": "E1 地堡群",
+  "E2 Bunkers": "E2 地堡群",
+  "Garage": "车库",
+  "K Buildings": "K 楼群",
+  "Mechanic": "机修区",
+  "Shipping Yard": "货运场",
+  "Tarmac": "停机坪",
+  "Train Station": "火车站",
+  "White Bishop": "白主教楼",
+  "White King": "白王楼",
+  "White Knight": "白骑士楼",
+  "White Pawn": "白兵楼",
+  "White Queen": "白后楼",
+  "White Rook": "白车楼",
+  "д - Warehouse Bunkers": "仓库地堡区",
+  "Blue Containers": "蓝色集装箱区",
+  "Boilers": "锅炉区",
+  "Breach Room": "破拆房",
+  "Connector": "连接通道",
+  "East Halls": "东侧走廊",
+  "Forklifts": "叉车区",
+  "Glass Hall": "玻璃大厅",
+  "Heli Crash": "直升机残骸",
+  "Hole": "地洞",
+  "Locked Office": "上锁办公室",
+  "Locker Rooms": "更衣室",
+  "Main Office": "主办公室",
+  "Med Tent": "医疗帐篷",
+  "North Stairs": "北楼梯",
+  "Office Building": "办公楼",
+  "Pit": "深坑",
+  "Platform": "站台",
+  "Pumping Station": "泵站",
+  "Rafters": "屋顶桁架",
+  "Scav Bunker": "Scav 地堡",
+  "Servers": "服务器房",
+  "Silos": "筒仓",
+  "Sinks": "水池区",
+  "Sky Bridge": "天桥",
+  "South Stairs": "南楼梯",
+  "Underground Stash": "地下储藏点",
+  "Wood Room": "木料间",
+  "Administrative Office": "行政办公室",
+  "Boiler Room": "锅炉房",
+  "Cafeteria": "自助餐厅",
+  "Conference Room": "会议室",
+  "Control Room": "控制室",
+  "Corridor To Building #2": "通往 2 号楼走廊",
+  "Gym": "健身房",
+  "Infirmary Lvl 1": "1 层医务室",
+  "Infirmary Lvl 2": "2 层医务室",
+  "Lecture Hall": "讲堂",
+  "Main Working Area": "主工作区",
+  "Men's Locker Room": "男更衣室",
+  "Negotiation Room": "谈判室",
+  "Offices #1": "1 号办公室",
+  "Offices #2": "2 号办公室",
+  "Parking": "停车场",
+  "Reception": "前台",
+  "Recreation Area": "休闲区",
+  "Security #1": "1 号安保室",
+  "Security #2": "2 号安保室",
+  "Security Barracks": "安保宿舍",
+  "Security Office": "安保办公室",
+  "Server Room": "服务器机房",
+  "Sterile Laboratory": "无菌实验室",
+  "Test Room": "测试间",
+  "Vestibules #1": "1 号前厅",
+  "Vestibules #2": "2 号前厅",
+  "Warehouse": "仓库",
+  "Warehouse Gate": "仓库大门",
+  "Warehouse Tunnels": "仓库隧道",
+  "Women's Locker Room": "女更衣室",
+  "ADIK": "ADIK 运动店",
+  "Arena": "Arena 场馆",
+  "Avokado": "Avokado 店",
+  "Bizarro": "Bizarro 店",
+  "Book Store": "书店",
+  "Boots 4 Life": "Boots 4 Life 鞋店",
+  "Brutal": "Brutal 店",
+  "Burger House": "汉堡屋",
+  "Burger Spot": "汉堡店",
+  "Cargo Containers": "货运集装箱",
+  "Coffee Joy": "Coffee Joy 咖啡",
+  "Dino Clothes": "Dino 服装店",
+  "Dom": "Dom 商场",
+  "Eastland": "Eastland 商场",
+  "EMERCOM": "紧急情况部",
+  "FCK": "FCK 店",
+  "Fashion Store": "时装店",
+  "Father & Sons": "父子商店",
+  "Figaro": "Figaro 店",
+  "Four Camp": "四营区",
+  "Garage A": "A 车库",
+  "Garage B": "B 车库",
+  "Garage C": "C 车库",
+  "Garage D": "D 车库",
+  "Generic": "Generic 店",
+  "German": "German 店",
+  "Go Kart": "卡丁车场",
+  "Goshan": "Goshan 大卖场",
+  "Highway Construction": "公路施工区",
+  "IDEA": "IDEA 家具城",
+  "Idea Tower": "IDEA 塔楼",
+  "Intourist": "Intourist 酒店",
+  "Jacob & Jacob": "Jacob & Jacob 店",
+  "Kiba": "Kiba 武器店",
+  "Kostin": "Kostin 店",
+  "Mantis": "Mantis 军品店",
+  "McDaniels": "McDaniels 店",
+  "Mode7": "Mode7 店",
+  "Nortex": "Nortex 店",
+  "OLI": "OLI 超市",
+  "Oli Tower": "OLI 塔楼",
+  "Papillon": "Papillon 店",
+  "Philly Cute": "Philly Cute 店",
+  "Pretty Lights": "Pretty Lights 店",
+  "Ramps": "坡道区",
+  "Rasmussen": "Rasmussen 店",
+  "Revis": "Revis 店",
+  "SARA": "SARA 店",
+  "Scav Camp": "Scav 营地",
+  "Shiccos": "Shiccos 店",
+  "Spiel": "Spiel 店",
+  "Sports": "体育用品店",
+  "Sushi Huyushi": "Sushi Huyushi 寿司店",
+  "TECHLIGHT": "TECHLIGHT 电器行",
+  "TRend": "TRend 店",
+  "TTS": "TTS 店",
+  "Tarducks": "Tarducks 店",
+  "Tarkovstar": "Tarkovstar 店",
+  "Telespot": "Telespot 店",
+  "Texho": "Texho 店",
+  "The National": "The National 店",
+  "Top Brand": "Top Brand 店",
+  "Underway": "Underway 店",
+  "Urban Clothes": "Urban 服装店",
+  "Viking": "Viking 店",
+  "Voyage": "Voyage 店",
+  "Wall Break": "破墙通道",
+  "Yushka": "Yushka 店",
+  "ASAP Winery": "ASAP 酒庄",
+  "Capital Insight": "Capital Insight 大楼",
+  "Elemental Global": "Elemental Global 大楼",
+  "Empire": "帝国大厦",
+  "Fusion": "Fusion 大楼",
+  "GAGRIN Hotel": "加加林酒店",
+  "M Showroom": "M 展厅",
+  "Nakatani": "中谷大楼",
+  "Oasis": "绿洲",
+  "Science Office": "科研办公室",
+  "Skyside": "天际大楼",
+  "TerraGroup": "TerraGroup 大楼",
+  "Tarbank": "塔科夫银行",
+  "Abandon Factory": "废弃工厂",
+  "Beluga": "白鲸餐厅",
+  "Bilbo Coffee": "比尔博咖啡",
+  "Cardinal Apartments": "卡迪纳尔公寓",
+  "Cardinal Bank": "卡迪纳尔银行",
+  "Chekannaya St.": "契卡纳娅街",
+  "Cinema": "电影院",
+  "Concordia": "康科迪亚",
+  "Corner Restaurant": "街角餐厅",
+  "Diner": "餐馆",
+  "Family Market": "家庭超市",
+  "Hive": "蜂巢",
+  "Kamchatskaya St.": "堪察加街",
+  "Kilmov Shopping Mall": "基尔莫夫购物中心",
+  "Kilmov St.": "基尔莫夫街",
+  "LERM Expo": "LERM 会展中心",
+  "Lexos": "莱克索斯酒店",
+  "Malevecha St.": "马列维奇街",
+  "Marked Hotel": "标记酒店",
+  "Nikitskaya St.": "尼基茨卡娅街",
+  "Nizhnyaya St.": "下街",
+  "Office": "办公室",
+  "Pharmacy 1": "药店 1",
+  "Pharmacy 2": "药店 2",
+  "Pharmacy 3": "药店 3",
+  "Pinewood Hotel": "松木酒店",
+  "Post Office": "邮局",
+  "Prestigio Cafe": "普雷斯蒂吉奥咖啡馆",
+  "Primorskij 49": "滨海路 49 号",
+  "Primorsky Ave.": "滨海大道",
+  "Razvedchikov St.": "侦察兵街",
+  "School": "学校",
+  "Shestyorochka": "六号便利店",
+  "South Hotel": "南方酒店",
+  "Sparja Express": "斯帕贾快捷店",
+  "Sparja Grocery": "斯帕贾杂货店",
+  "Teppakot / Koener": "特帕科特 / 科纳",
+  "Verhnyaya St.": "上街",
+  "Vet Clinic": "兽医诊所",
+  "Zmejskij Alley": "蛇巷",
+  "ZB-1013": "ZB-1013 撤离点",
+  "ZB-1011": "ZB-1011 撤离点",
+  "ZB-014": "ZB-014 撤离点",
+  "ZB-016": "ZB-016 撤离点",
+  "Crossroads": "十字路口",
+  "Railroad to Reserve": "通往储备站的铁路"
+ },
+ "byMap": {
+  "Primorsky Ave.": [
+   "streets-of-tarkov"
+  ],
+  "Kilmov St.": [
+   "streets-of-tarkov"
+  ],
+  "Nikitskaya St.": [
+   "streets-of-tarkov"
+  ],
+  "Verhnyaya St.": [
+   "streets-of-tarkov"
+  ],
+  "Malevecha St.": [
+   "streets-of-tarkov"
+  ],
+  "Chekannaya St.": [
+   "streets-of-tarkov"
+  ],
+  "Nizhnyaya St.": [
+   "streets-of-tarkov"
+  ],
+  "Razvedchikov St.": [
+   "streets-of-tarkov"
+  ],
+  "Zmejskij Alley": [
+   "streets-of-tarkov"
+  ],
+  "Kamchatskaya St.": [
+   "streets-of-tarkov"
+  ],
+  "Kilmov Shopping Mall": [
+   "streets-of-tarkov"
+  ],
+  "Beluga": [
+   "streets-of-tarkov"
+  ],
+  "Cardinal Apartments": [
+   "streets-of-tarkov"
+  ],
+  "Construction": [
+   "lighthouse",
+   "shoreline",
+   "streets-of-tarkov"
+  ],
+  "Lexos": [
+   "streets-of-tarkov"
+  ],
+  "Sparja Grocery": [
+   "streets-of-tarkov"
+  ],
+  "Cinema": [
+   "streets-of-tarkov"
+  ],
+  "Shestyorochka": [
+   "streets-of-tarkov"
+  ],
+  "Pinewood Hotel": [
+   "streets-of-tarkov"
+  ],
+  "Teppakot / Koener": [
+   "streets-of-tarkov"
+  ],
+  "Concordia": [
+   "streets-of-tarkov"
+  ],
+  "Cardinal Bank": [
+   "streets-of-tarkov"
+  ],
+  "LERM Expo": [
+   "streets-of-tarkov"
+  ],
+  "Sparja Express": [
+   "streets-of-tarkov"
+  ],
+  "Burger Spot": [
+   "interchange",
+   "streets-of-tarkov"
+  ],
+  "Post Office": [
+   "streets-of-tarkov"
+  ],
+  "Pharmacy 1": [
+   "streets-of-tarkov"
+  ],
+  "Office": [
+   "streets-of-tarkov"
+  ],
+  "Corner Restaurant": [
+   "streets-of-tarkov"
+  ],
+  "Pharmacy 2": [
+   "streets-of-tarkov"
+  ],
+  "Pharmacy 3": [
+   "streets-of-tarkov"
+  ],
+  "Tarbank": [
+   "ground-zero",
+   "streets-of-tarkov"
+  ],
+  "School": [
+   "streets-of-tarkov"
+  ],
+  "Vet Clinic": [
+   "streets-of-tarkov"
+  ],
+  "Hive": [
+   "streets-of-tarkov"
+  ],
+  "Family Market": [
+   "streets-of-tarkov"
+  ],
+  "Marked Hotel": [
+   "streets-of-tarkov"
+  ],
+  "South Hotel": [
+   "streets-of-tarkov"
+  ],
+  "Abandon Factory": [
+   "streets-of-tarkov"
+  ],
+  "Diner": [
+   "streets-of-tarkov"
+  ],
+  "Primorskij 49": [
+   "streets-of-tarkov"
+  ],
+  "Prestigio Cafe": [
+   "streets-of-tarkov"
+  ],
+  "Bilbo Coffee": [
+   "streets-of-tarkov"
+  ],
+  "Kaban": [
+   "streets-of-tarkov"
+  ],
+  "Kollontay": [
+   "streets-of-tarkov"
+  ],
+  "TerraGroup": [
+   "ground-zero"
+  ],
+  "Skyside": [
+   "ground-zero"
+  ],
+  "Fusion": [
+   "ground-zero"
+  ],
+  "Empire": [
+   "ground-zero"
+  ],
+  "Capital Insight": [
+   "ground-zero"
+  ],
+  "Nakatani": [
+   "ground-zero"
+  ],
+  "Elemental Global": [
+   "ground-zero"
+  ],
+  "Oasis": [
+   "ground-zero"
+  ],
+  "ASAP Winery": [
+   "ground-zero"
+  ],
+  "GAGRIN Hotel": [
+   "ground-zero"
+  ],
+  "M Showroom": [
+   "ground-zero"
+  ],
+  "Science Office": [
+   "ground-zero"
+  ],
+  "Big Red": [
+   "customs"
+  ],
+  "Dorms": [
+   "customs"
+  ],
+  "New Gas": [
+   "customs"
+  ],
+  "Old Gas": [
+   "customs"
+  ],
+  "Fortress": [
+   "customs"
+  ],
+  "Crackhouse": [
+   "customs"
+  ],
+  "Streamer House": [
+   "customs"
+  ],
+  "Main Bridge": [
+   "customs"
+  ],
+  "Sniper Hill": [
+   "customs"
+  ],
+  "Storage": [
+   "customs"
+  ],
+  "Trailer Park": [
+   "customs"
+  ],
+  "Junk Bridge": [
+   "customs"
+  ],
+  "Repair Shop": [
+   "customs"
+  ],
+  "Sniper Ridge": [
+   "customs"
+  ],
+  "Old Construction": [
+   "customs"
+  ],
+  "Skeleton": [
+   "customs"
+  ],
+  "Warehouse 3": [
+   "customs"
+  ],
+  "Depot": [
+   "customs"
+  ],
+  "Warehouse 7": [
+   "customs"
+  ],
+  "Military Checkpoint": [
+   "customs"
+  ],
+  "Bus Station": [
+   "customs"
+  ],
+  "Warehouse 4": [
+   "customs"
+  ],
+  "Powerline Tower": [
+   "customs"
+  ],
+  "Warehouse 17": [
+   "customs"
+  ],
+  "Railroad to Reserve": [
+   "customs"
+  ],
+  "Crossroads": [
+   "customs"
+  ],
+  "ZB-1013": [
+   "customs"
+  ],
+  "ZB-1011": [
+   "customs"
+  ],
+  "Reshala": [
+   "customs"
+  ],
+  "Knight": [
+   "customs",
+   "lighthouse",
+   "shoreline",
+   "woods"
+  ],
+  "Office Building": [
+   "factory"
+  ],
+  "Main Office": [
+   "factory"
+  ],
+  "Breach Room": [
+   "factory"
+  ],
+  "Locked Office": [
+   "factory"
+  ],
+  "North Stairs": [
+   "factory"
+  ],
+  "South Stairs": [
+   "factory"
+  ],
+  "Sky Bridge": [
+   "factory"
+  ],
+  "Connector": [
+   "factory"
+  ],
+  "Locker Rooms": [
+   "factory"
+  ],
+  "Sinks": [
+   "factory"
+  ],
+  "Hole": [
+   "factory"
+  ],
+  "Platform": [
+   "factory"
+  ],
+  "Servers": [
+   "factory"
+  ],
+  "Med Tent": [
+   "factory"
+  ],
+  "Silos": [
+   "factory"
+  ],
+  "Heli Crash": [
+   "factory"
+  ],
+  "Pit": [
+   "factory"
+  ],
+  "Underground Stash": [
+   "factory"
+  ],
+  "Scav Bunker": [
+   "factory"
+  ],
+  "Blue Containers": [
+   "factory"
+  ],
+  "Wood Room": [
+   "factory"
+  ],
+  "Glass Hall": [
+   "factory"
+  ],
+  "Boilers": [
+   "factory"
+  ],
+  "Pumping Station": [
+   "factory"
+  ],
+  "East Halls": [
+   "factory"
+  ],
+  "Forklifts": [
+   "factory"
+  ],
+  "Rafters": [
+   "factory"
+  ],
+  "Tagilla": [
+   "factory",
+   "interchange"
+  ],
+  "The Wedge": [
+   "icebreaker"
+  ],
+  "Power Station": [
+   "interchange",
+   "shoreline"
+  ],
+  "Go Kart": [
+   "interchange"
+  ],
+  "Four Camp": [
+   "interchange"
+  ],
+  "Cargo Containers": [
+   "interchange"
+  ],
+  "Wall Break": [
+   "interchange"
+  ],
+  "Ramps": [
+   "interchange"
+  ],
+  "Oli Tower": [
+   "interchange"
+  ],
+  "Idea Tower": [
+   "interchange"
+  ],
+  "Scav Camp": [
+   "interchange"
+  ],
+  "Highway Construction": [
+   "interchange"
+  ],
+  "Garage A": [
+   "interchange"
+  ],
+  "Garage B": [
+   "interchange"
+  ],
+  "Garage C": [
+   "interchange"
+  ],
+  "Garage D": [
+   "interchange"
+  ],
+  "IDEA": [
+   "interchange"
+  ],
+  "Goshan": [
+   "interchange"
+  ],
+  "OLI": [
+   "interchange"
+  ],
+  "Nortex": [
+   "interchange"
+  ],
+  "TRend": [
+   "interchange"
+  ],
+  "Mode7": [
+   "interchange"
+  ],
+  "TTS": [
+   "interchange"
+  ],
+  "Book Store": [
+   "interchange"
+  ],
+  "Dino Clothes": [
+   "interchange"
+  ],
+  "EMERCOM": [
+   "interchange"
+  ],
+  "Kostin": [
+   "interchange"
+  ],
+  "Bizarro": [
+   "interchange"
+  ],
+  "Spiel": [
+   "interchange"
+  ],
+  "Voyage": [
+   "interchange"
+  ],
+  "Viking": [
+   "interchange"
+  ],
+  "Mantis": [
+   "interchange"
+  ],
+  "German": [
+   "interchange"
+  ],
+  "The National": [
+   "interchange"
+  ],
+  "Brutal": [
+   "interchange"
+  ],
+  "Kiba": [
+   "interchange"
+  ],
+  "Pretty Lights": [
+   "interchange"
+  ],
+  "Telespot": [
+   "interchange"
+  ],
+  "Revis": [
+   "interchange"
+  ],
+  "ADIK": [
+   "interchange"
+  ],
+  "Generic": [
+   "interchange"
+  ],
+  "Top Brand": [
+   "interchange"
+  ],
+  "Sports": [
+   "interchange"
+  ],
+  "Yushka": [
+   "interchange"
+  ],
+  "Rasmussen": [
+   "interchange"
+  ],
+  "Avokado": [
+   "interchange"
+  ],
+  "Boots 4 Life": [
+   "interchange"
+  ],
+  "Texho": [
+   "interchange"
+  ],
+  "Dom": [
+   "interchange"
+  ],
+  "Father & Sons": [
+   "interchange"
+  ],
+  "Tarkovstar": [
+   "interchange"
+  ],
+  "Eastland": [
+   "interchange"
+  ],
+  "Arena": [
+   "interchange"
+  ],
+  "Intourist": [
+   "interchange"
+  ],
+  "FCK": [
+   "interchange"
+  ],
+  "McDaniels": [
+   "interchange"
+  ],
+  "Tarducks": [
+   "interchange"
+  ],
+  "Coffee Joy": [
+   "interchange"
+  ],
+  "Jacob & Jacob": [
+   "interchange"
+  ],
+  "Sushi Huyushi": [
+   "interchange"
+  ],
+  "Underway": [
+   "interchange"
+  ],
+  "Burger House": [
+   "interchange"
+  ],
+  "Philly Cute": [
+   "interchange"
+  ],
+  "Shiccos": [
+   "interchange"
+  ],
+  "Papillon": [
+   "interchange"
+  ],
+  "Figaro": [
+   "interchange"
+  ],
+  "SARA": [
+   "interchange"
+  ],
+  "Urban Clothes": [
+   "interchange"
+  ],
+  "TECHLIGHT": [
+   "interchange"
+  ],
+  "Fashion Store": [
+   "interchange"
+  ],
+  "Killa": [
+   "interchange"
+  ],
+  "Parking": [
+   "the-lab"
+  ],
+  "Vestibules #1": [
+   "the-lab"
+  ],
+  "Vestibules #2": [
+   "the-lab"
+  ],
+  "Main Working Area": [
+   "the-lab"
+  ],
+  "Negotiation Room": [
+   "the-lab"
+  ],
+  "Infirmary Lvl 1": [
+   "the-lab"
+  ],
+  "Test Room": [
+   "the-lab"
+  ],
+  "Server Room": [
+   "the-lab"
+  ],
+  "Warehouse Tunnels": [
+   "the-lab"
+  ],
+  "Warehouse": [
+   "the-lab"
+  ],
+  "Warehouse Gate": [
+   "the-lab"
+  ],
+  "Lecture Hall": [
+   "the-lab"
+  ],
+  "Recreation Area": [
+   "the-lab"
+  ],
+  "Gym": [
+   "the-lab"
+  ],
+  "Men's Locker Room": [
+   "the-lab"
+  ],
+  "Women's Locker Room": [
+   "the-lab"
+  ],
+  "Boiler Room": [
+   "the-lab"
+  ],
+  "Security Barracks": [
+   "the-lab"
+  ],
+  "Reception": [
+   "the-lab"
+  ],
+  "Administrative Office": [
+   "the-lab"
+  ],
+  "Security Office": [
+   "the-lab"
+  ],
+  "Security #1": [
+   "the-lab"
+  ],
+  "Security #2": [
+   "the-lab"
+  ],
+  "Conference Room": [
+   "the-lab"
+  ],
+  "Cafeteria": [
+   "the-lab"
+  ],
+  "Offices #1": [
+   "the-lab"
+  ],
+  "Offices #2": [
+   "the-lab"
+  ],
+  "Infirmary Lvl 2": [
+   "the-lab"
+  ],
+  "Sterile Laboratory": [
+   "the-lab"
+  ],
+  "Control Room": [
+   "the-lab"
+  ],
+  "Corridor To Building #2": [
+   "the-lab"
+  ],
+  "Scourge": [
+   "the-lab"
+  ],
+  "Train Yard": [
+   "lighthouse"
+  ],
+  "Drug Lab": [
+   "lighthouse"
+  ],
+  "Water Treatment": [
+   "lighthouse"
+  ],
+  "Plant 1": [
+   "lighthouse"
+  ],
+  "Plant 2": [
+   "lighthouse"
+  ],
+  "Plant 3": [
+   "lighthouse"
+  ],
+  "Pipes": [
+   "lighthouse"
+  ],
+  "Gunner Nest": [
+   "lighthouse"
+  ],
+  "Island": [
+   "lighthouse"
+  ],
+  "Cabins": [
+   "lighthouse",
+   "shoreline",
+   "woods"
+  ],
+  "Cottages": [
+   "lighthouse",
+   "shoreline"
+  ],
+  "Convenience": [
+   "lighthouse"
+  ],
+  "Red Brick": [
+   "lighthouse"
+  ],
+  "Hillside": [
+   "lighthouse"
+  ],
+  "Boathouses": [
+   "lighthouse"
+  ],
+  "Dead Tree": [
+   "lighthouse"
+  ],
+  "Pikes Peak Resort": [
+   "lighthouse"
+  ],
+  "Grand Chalet": [
+   "lighthouse"
+  ],
+  "Tennis Court": [
+   "lighthouse"
+  ],
+  "Lightkeeper Island": [
+   "lighthouse"
+  ],
+  "Crash Site": [
+   "lighthouse",
+   "woods"
+  ],
+  "Glukhar": [
+   "lighthouse"
+  ],
+  "K Buildings": [
+   "reserve"
+  ],
+  "White Queen": [
+   "reserve"
+  ],
+  "White Pawn": [
+   "reserve"
+  ],
+  "Black Bishop": [
+   "reserve"
+  ],
+  "White Bishop": [
+   "reserve"
+  ],
+  "White King": [
+   "reserve"
+  ],
+  "Black Knight": [
+   "reserve"
+  ],
+  "White Knight": [
+   "reserve"
+  ],
+  "White Rook": [
+   "reserve"
+  ],
+  "Train Station": [
+   "reserve"
+  ],
+  "Black Pawn": [
+   "reserve"
+  ],
+  "Barracks": [
+   "reserve"
+  ],
+  "E1 Bunkers": [
+   "reserve"
+  ],
+  "E2 Bunkers": [
+   "reserve"
+  ],
+  "д - Warehouse Bunkers": [
+   "reserve"
+  ],
+  "Garage": [
+   "reserve"
+  ],
+  "Mechanic": [
+   "reserve"
+  ],
+  "Gas Station": [
+   "reserve",
+   "shoreline"
+  ],
+  "Shipping Yard": [
+   "reserve"
+  ],
+  "Dome": [
+   "reserve"
+  ],
+  "Tarmac": [
+   "reserve"
+  ],
+  "Resort": [
+   "shoreline"
+  ],
+  "Weather Station": [
+   "shoreline"
+  ],
+  "Radio Tower": [
+   "shoreline"
+  ],
+  "Swamp": [
+   "shoreline"
+  ],
+  "Village": [
+   "shoreline"
+  ],
+  "Tank Bridge": [
+   "shoreline"
+  ],
+  "Pier": [
+   "shoreline"
+  ],
+  "Scav Island": [
+   "shoreline"
+  ],
+  "Bus Stop": [
+   "shoreline",
+   "woods"
+  ],
+  "Bunker": [
+   "shoreline"
+  ],
+  "Crane": [
+   "shoreline"
+  ],
+  "Scav Farm": [
+   "shoreline"
+  ],
+  "West Wing": [
+   "shoreline"
+  ],
+  "East Wing": [
+   "shoreline"
+  ],
+  "Admin": [
+   "shoreline"
+  ],
+  "Sanitar": [
+   "shoreline"
+  ],
+  "Sawmill": [
+   "woods"
+  ],
+  "Scav Town": [
+   "woods"
+  ],
+  "Old Sawmill": [
+   "woods"
+  ],
+  "Cultist Village": [
+   "woods"
+  ],
+  "USEC Camp": [
+   "woods"
+  ],
+  "Military Camp": [
+   "woods"
+  ],
+  "Ponds": [
+   "woods"
+  ],
+  "Checkpoint": [
+   "woods"
+  ],
+  "Shack": [
+   "woods"
+  ],
+  "Lumber": [
+   "woods"
+  ],
+  "Jaeger's Camp": [
+   "woods"
+  ],
+  "Sniper Rock": [
+   "woods"
+  ],
+  "Convoy": [
+   "woods"
+  ],
+  "ZB-016": [
+   "woods"
+  ],
+  "ZB-014": [
+   "woods"
+  ],
+  "Shturman": [
+   "woods"
+  ]
+ }
+}

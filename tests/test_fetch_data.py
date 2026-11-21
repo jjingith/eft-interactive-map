@@ -3,6 +3,7 @@
 全部离线：网络函数用桩件替换，只有 test_data_ready_* 会读真实产出。
 """
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -141,6 +142,63 @@ def test_select_maps_rejects_unknown_key():
     with pytest.raises(ValueError) as exc:
         fd.select_maps(_config_fixture(), ["laboratory"])
     assert "laboratory" in str(exc.value)
+
+
+# --------------------------------------------------------------------------- #
+# 活动地图（1.3.0.0「感染」事件）：上游只有 markers，没有底图配置
+# --------------------------------------------------------------------------- #
+def _event_config_fixture():
+    return [{
+        "normalizedName": "g1",
+        "maps": [
+            {"key": "factory", "svgPath": "https://assets.tarkov.dev/maps/svg/Factory.svg",
+             "transform": [1.629, 119.9, 1.629, 139.3], "coordinateRotation": 90,
+             "bounds": [[77, -64.5], [-65.5, 67.4]]},
+            {"key": "the-lab", "tilePath": "/tiles/labs",
+             "transform": [0.575, 281.2, 0.575, 193.7], "coordinateRotation": 270,
+             "bounds": [[-80, -477], [-287, -193]]},
+        ],
+    }]
+
+
+def test_with_event_maps_injects_two_derived_entries():
+    selected = fd.select_maps(fd.with_event_maps(_event_config_fixture()), [])
+    assert "factory" in selected and "the-lab" in selected
+    assert "infected-lab" in selected and "infected-factory" in selected
+    lab = selected["infected-lab"]
+    assert lab["svgPath"].endswith("InfectedLab.svg")
+    assert "tilePath" not in lab and "altMaps" not in lab
+    # 派生条目必须沿用原图的坐标变换，否则标记会整体错位
+    assert lab["transform"] == [0.575, 281.2, 0.575, 193.7]
+    assert lab["coordinateRotation"] == 270
+    assert selected["infected-factory"]["bounds"] == [[77, -64.5], [-65.5, 67.4]]
+
+
+def test_with_event_maps_is_idempotent():
+    once = fd.with_event_maps(_event_config_fixture())
+    twice = fd.with_event_maps(once)
+    keys = [e["key"] for g in twice for e in g.get("maps", [])]
+    assert keys.count("infected-lab") == 1
+    assert keys.count("infected-factory") == 1
+
+
+def test_with_event_maps_skips_when_base_map_missing():
+    cfg = _config_fixture()
+    assert fd.with_event_maps(cfg) is cfg
+    assert list(fd.select_maps(cfg, [])) == ["customs"]
+
+
+def test_event_svg_copies_exist_and_share_viewbox():
+    assets = ROOT / "assets" / "maps"
+    for new_key, source in fd.EVENT_SVG_SOURCES.items():
+        target_name = next(svg for key, _b, svg, _s in fd.EVENT_MAP_ALIASES if key == new_key)
+        target, base = assets / target_name, assets / source
+        assert target.is_file(), "缺少活动图底图 %s" % target_name
+        assert base.is_file(), "缺少原图底图 %s" % source
+        a, b = target.read_text(encoding="utf-8", errors="replace"), \
+            base.read_text(encoding="utf-8", errors="replace")
+        assert "<svg" in a and fd.parse_svg_viewbox(a) == fd.parse_svg_viewbox(b), \
+            "%s 必须与 %s 使用同一 viewBox，否则坐标会错位" % (target_name, source)
 
 
 # --------------------------------------------------------------------------- #
@@ -903,3 +961,541 @@ def test_real_data_every_container_has_known_group():
             assert point["group"] in known, "%s 里有类别未知的容器：%s" % (item["key"], point)
             seen.add(point["group"])
     assert seen == known, "至少有一类容器在实际产出里从未出现，开关会是空的：%s" % (known - seen)
+
+
+# --------------------------------------------------------------------------- #
+# 物品资料库（配装 / 配枪视图的数据源）
+# --------------------------------------------------------------------------- #
+def _items_fixture():
+    """一份最小上游物品表：头盔 / 胸挂 / 武器 / 配件 / 预设。"""
+    return {"items": {
+        "helmet1": {
+            "shortName": "Altyn", "normalizedName": "altyn",
+            "iconLink": "https://assets.tarkov.dev/helmet1-icon.webp",
+            "width": 2, "height": 2, "weight": 3.5, "basePrice": 100000,
+            "lastLowPrice": 90000, "avg24hPrice": 95000,
+            "categories": ["helmet"], "handbookCategories": ["gear"],
+            "conflictingItems": ["visor1"],
+            "properties": {"propertiesType": "ItemPropertiesHelmet", "class": 5, "durability": 40,
+                           "turnPenalty": -0.02, "speedPenalty": -0.03, "ergoPenalty": -0.05},
+        },
+        "rig1": {
+            "shortName": "TV-110", "width": 3, "height": 3,
+            "properties": {"propertiesType": "ItemPropertiesChestRig", "class": 5},
+        },
+        "gun1": {
+            "shortName": "AK-74N", "types": ["gun"], "width": 5, "height": 2,
+            "properties": {
+                "propertiesType": "ItemPropertiesWeapon", "ergonomics": 45,
+                "recoilVertical": 119, "recoilHorizontal": 342, "centerOfImpact": 0.01,
+                "defaultPreset": "preset1",
+                "slots": [{"id": "mod_muzzle", "name": "MOD_MUZZLE", "nameId": "mod_muzzle",
+                           "required": True,
+                           "filters": {"allowedItems": ["mod1"], "allowedCategories": ["cat1"]}}],
+            },
+        },
+        "gun2": {
+            "shortName": "无槽枪",
+            "properties": {"propertiesType": "ItemPropertiesWeapon", "slots": []},
+        },
+        "preset1": {
+            "shortName": "AK-74N 预设", "types": ["preset"],
+            "properties": {"baseItem": "gun1", "ergonomics": 50, "recoilVertical": 100,
+                           "recoilHorizontal": 350, "moa": 0.08},
+        },
+        "mod1": {
+            "shortName": "消音器",
+            "properties": {"propertiesType": "ItemPropertiesWeaponMod", "ergonomics": -2,
+                           "recoilModifier": -0.05, "accuracyModifier": 1},
+        },
+        "junk": None,          # 上游偶发空条目：必须被跳过而不是炸掉
+    }}
+
+
+def test_zh_name_prefers_translation_then_falls_back():
+    assert fd._zh_name({"a Name": " 阿尔金 "}, "a", {"shortName": "Altyn"}) == "阿尔金"
+    assert fd._zh_name({}, "a", {"shortName": "Altyn"}) == "Altyn"
+    assert fd._zh_name({}, "a", {"normalizedName": "altyn"}) == "altyn"
+    assert fd._zh_name({}, "a", {}) == "a", "全都没有时回落物品 id，不返回空"
+    assert fd._zh_name(None, "a", {"shortName": "Altyn"}) == "Altyn"
+
+
+def test_slot_label_looks_up_uppercase_key():
+    assert fd._slot_label({"MOD_MUZZLE": "枪口"}, {"name": "MOD_MUZZLE"}) == "枪口"
+    assert fd._slot_label({"MOD_MUZZLE": "枪口"}, {"nameId": "mod_muzzle"}) == "枪口"
+    assert fd._slot_label({}, {"name": "MOD_MUZZLE"}) == "MOD_MUZZLE", "查不到就用上游原值"
+
+
+def test_compact_drops_empty_values():
+    assert fd._compact({"a": 0, "b": None, "c": "", "d": [], "e": {}, "f": 1, "g": "x"}) == {"f": 1, "g": "x"}
+
+
+def test_build_items_compacts_and_marks_gear():
+    payload = fd.build_items(_items_fixture(), {"helmet1 Name": "阿尔金"})
+    assert payload["schema"] == fd.ITEMS_SCHEMA
+    assert payload["count"] == 6, "空条目被跳过，count 与 items 条目数一致（junk 不计）"
+
+    helm = payload["items"]["helmet1"]
+    assert helm["n"] == "阿尔金"
+    assert helm["pt"] == "Helmet", "类型名去掉 ItemProperties 前缀"
+    assert helm["slot"] == "helmet"
+    assert helm["ic"] == 1
+    assert (helm["gw"], helm["gh"]) == (2, 2)
+    assert helm["p"] == {"b": 100000, "l": 90000, "a": 95000}
+    assert helm["pen"] == {"t": -0.02, "s": -0.03, "e": -0.05}
+    assert (helm["cl"], helm["dur"]) == (5, 40)
+    assert helm["cats"] == ["helmet"]
+    assert helm["conflict"] == ["visor1"]
+    assert "slots" not in helm, "夹具里的头盔没有槽位定义 → 省略空数组"
+
+    rig = payload["items"]["rig1"]
+    assert rig["slot"] == "rig"
+    assert rig["n"] == "TV-110", "缺翻译时回落短名"
+    assert "ic" not in rig and "p" not in rig, "空缺字段一律省略"
+
+
+def test_build_items_skips_non_dict_entries():
+    items = fd.build_items(_items_fixture(), {})["items"]
+    assert "junk" not in items
+
+
+def test_build_items_attaches_slots_and_mod_stats():
+    items = fd.build_items(_items_fixture(), {"MOD_MUZZLE": "枪口"})["items"]
+    assert items["gun1"]["slots"] == [{"id": "mod_muzzle", "sid": "mod_muzzle", "label": "枪口",
+                                       "required": True, "allow": ["mod1"], "cats": ["cat1"]}]
+    assert "pen" not in items["gun1"], "枪没有减益字段"
+    mod = items["mod1"]
+    assert mod["mod"] == {"e": -2, "r": -0.05, "a": 1}
+    assert "slots" not in mod, "没槽位的配件不带空数组"
+
+
+def test_build_items_records_types_and_armor_slots():
+    """根槽位归属靠 `ts`（上游 types）；护甲槽分「可装插板槽」与「固定内衬」（`fx:1`）。"""
+    fixture = {"items": {
+        "helm": {
+            "shortName": "Altyn", "types": ["helmet", "wearable", "noFlea"],
+            "properties": {"propertiesType": "ItemPropertiesHelmet", "armorSlots": [
+                {"nameId": "Front_plate", "zones": ["Armor Zone Plate_Granit_SAPI_chest"],
+                 "allowedPlates": ["p1", "p2"]},
+                {"nameId": "Helmet_top", "zones": ["Collider Type ParietalHead"],
+                 "armorMaterial": "Aramid", "class": 3, "durability": 42,
+                 "armorType": "Light", "bluntThroughput": 0.34, "baseValue": 21009},
+                "not-a-dict",          # 上游偶发脏数据：跳过而不是炸掉
+            ]},
+        },
+        "rig": {"shortName": "TV-110", "types": ["rig", "wearable"],
+                "properties": {"propertiesType": "ItemPropertiesChestRig"}},
+        "plate": {"shortName": "SAPI", "types": ["armorPlate"],
+                  "properties": {"propertiesType": "ItemPropertiesArmor"}},
+        "notype": {"shortName": "无名", "types": []},
+    }}
+    items = fd.build_items(fixture, {})["items"]
+
+    assert items["helm"]["ts"] == ["helmet", "wearable", "noFlea"], "types 原样保留（顺序不变）"
+    assert items["helm"]["aps"] == [
+        {"zone": "Front_plate", "plates": ["p1", "p2"], "z": ["Plate_Granit_SAPI_chest"]},
+        {"zone": "Helmet_top", "fx": 1, "mat": "Aramid", "cl": 3, "dur": 42,
+         "at": "Light", "z": ["ParietalHead"], "bt": 0.34, "bv": 21009},
+    ], "有 allowedPlates 的是可装板槽；没有的是固定内衬，必须保留真实防护数据（不是「数据缺失」）"
+    assert items["plate"]["ts"] == ["armorPlate"], "护甲板只能靠 types 判定（pt / slot 都不是 armorPlate）"
+    assert "aps" not in items["rig"], "没有 armorSlots 的父装备不带空数组"
+    assert "ts" not in items["notype"], "空 types 省略"
+    assert "slots" not in items["rig"], "没有 slots 定义时不带空数组"
+
+
+def test_has_currency_offer_detects_money_purchases():
+    assert fd._has_currency_offer([{"price": 1}]) is True
+    assert fd._has_currency_offer([{"priceRUB": 1}]) is True
+    assert fd._has_currency_offer([{"trader": "t1"}]) is False, "没有价格字段就不算货币购买"
+    assert fd._has_currency_offer([]) is False
+    assert fd._has_currency_offer(None) is False
+    assert fd._has_currency_offer(["not-a-dict", {"price": 2}]) is True, "脏数据跳过不炸"
+
+
+def test_access_sources_rules_and_coexistence():
+    """获取方式（第六项）：多来源共存；缺失→未确认，不误判成「不可获得」。"""
+    assert fd._access_sources(None, None) == ["unknown"], "types 缺失 → 未确认"
+    assert fd._access_sources([], None) == ["unknown"], "空 types → 未确认"
+    assert fd._access_sources("wearable", None) == ["unknown"], "非 list → 未确认"
+    assert fd._access_sources(["wearable"], None) == ["flea"], "允许上跳蚤"
+    assert fd._access_sources(["noFlea"], None) == ["none"], "来源完整但三种都没有 → 不可获得"
+    assert fd._access_sources(["noFlea"], [{"priceRUB": 9}]) == ["trader"], "noFlea 挡跳蚤，货币报价算商人购买"
+    assert fd._access_sources(["barter"], None) == ["flea", "barter"], "可兑换的物品通常也能上跳蚤"
+    assert fd._access_sources(["noFlea", "barter"], None) == ["barter"], "noFlea 挡住跳蚤后只剩兑换"
+    assert fd._access_sources(["noFlea", "barter"], [{"price": 9}]) == ["trader", "barter"], "顺序稳定：trader 在 barter 前"
+    assert fd._access_sources(["wearable", "barter"], [{"price": 9}]) == ["flea", "trader", "barter"], "三种共存全部保留"
+
+
+def test_build_items_records_access_sources():
+    """`src` 随 items.json 打包；audit 里补覆盖率与规则说明，运行期只查表。"""
+    fixture = {"items": {
+        "multi": {"shortName": "多来源", "types": ["wearable", "barter"],
+                  "buyFromTrader": [{"trader": "t1", "price": 100, "priceRUB": 100}]},
+        "traderOnly": {"shortName": "只商人", "types": ["wearable", "noFlea"],
+                       "buyFromTrader": [{"trader": "t1", "priceRUB": 50}]},
+        "fleaOnly": {"shortName": "只跳蚤", "types": ["wearable"]},
+        "unobtainable": {"shortName": "拿不到", "types": ["wearable", "noFlea"]},
+        "unknownSrc": {"shortName": "来源不明"},
+    }}
+    payload = fd.build_items(fixture, {})
+    items, audit = payload["items"], payload["audit"]
+
+    assert items["multi"]["src"] == ["flea", "trader", "barter"], "多种来源全部保留、顺序稳定"
+    assert items["traderOnly"]["src"] == ["trader"]
+    assert items["fleaOnly"]["src"] == ["flea"]
+    assert items["unobtainable"]["src"] == ["none"], "来源完整且三种都没有 → 不可获得"
+    assert items["unknownSrc"]["src"] == ["unknown"], "缺失 → 未确认，不误判为不可获得"
+
+    cov = audit["coverage"]
+    assert (cov["srcAny"], cov["srcNone"], cov["srcUnknown"]) == (3, 1, 1)
+    assert (cov["srcFlea"], cov["srcTrader"], cov["srcBarter"]) == (2, 2, 1)
+
+    assert audit["sources"]["labels"]["flea"] == "跳蚤市场购买"
+    assert audit["sources"]["labels"]["unknown"] == "数据未确认"
+    assert "不误判" in audit["sources"]["rules"]["unknown"]
+    assert audit["sources"]["multi"].startswith("多种方式可共存")
+
+
+def test_zone_key_strips_upstream_prefix():
+    assert fd._zone_key("Collider Type RibcageUp") == "RibcageUp"
+    assert fd._zone_key("Armor Zone Plate_Granit_SAPI_chest") == "Plate_Granit_SAPI_chest"
+    assert fd._zone_key("NoPrefix") == "NoPrefix"
+    assert fd._zone_key(None) == ""
+
+
+def test_build_items_fixed_liner_keeps_zero_class():
+    """护甲等级 / 毁损系数里的 0 是合法值，不能被当作「无意义」丢掉。"""
+    fixture = {"items": {"helm": {
+        "shortName": "H", "types": ["helmet"],
+        "properties": {"propertiesType": "ItemPropertiesHelmet", "armorSlots": [
+            {"nameId": "Collar", "armorMaterial": "Aramid", "class": 0, "durability": 0}]},
+    }}}
+    liner = fd.build_items(fixture, {})["items"]["helm"]["aps"][0]
+    assert liner == {"zone": "Collar", "fx": 1, "mat": "Aramid", "cl": 0, "dur": 0}
+
+
+def test_build_items_classifies_seven_root_categories():
+    """七个一级类别靠「上游分类 id + types」判定，护甲板不占一级类别名额。"""
+    cats = {"face-cover": "fc", "vis-observ-device": "vod"}
+    fixture = {"itemCategories": {v: {"id": v, "normalizedName": k} for k, v in cats.items()},
+               "items": {
+        "helm": {"types": ["helmet", "wearable"]},
+        "helm_mask": {"types": ["helmet", "wearable"], "categories": ["fc"]},   # 本体即头盔
+        "balaclava": {"types": ["wearable"], "categories": ["fc"]},
+        "glasses": {"types": ["glasses", "wearable"], "categories": ["vod"]},
+        "helmet_visor": {"types": ["glasses", "wearable"]},                       # 挂在父头盔上的面罩
+        "armor": {"types": ["armor", "wearable"]},
+        "armor_rig": {"types": ["armor", "rig", "wearable"]},                      # 归护甲，不重复进胸挂
+        "plate": {"types": ["armorPlate", "wearable"]},
+        "rig": {"types": ["rig", "wearable"]},
+        "pack": {"types": ["backpack", "wearable"]},
+        "phones": {"types": ["headphones", "wearable"]},
+        "chestrig_liners": {"types": ["wearable"], "properties": {  # 无根类别的装备 → 待审核
+            "propertiesType": "ItemPropertiesChestRig"}},
+    }}
+    payload = fd.build_items(fixture, {})
+    items = payload["items"]
+
+    assert items["helm"]["cat"] == "helmet"
+    assert items["helm_mask"]["cat"] == "helmet", "face-cover 分类里的头盔本体归头盔"
+    assert items["balaclava"]["cat"] == "face"
+    assert items["glasses"]["cat"] == "glasses"
+    assert "glasses" not in items["helmet_visor"], "ts 含 glasses 但无 vis-observ-device 的不算眼镜"
+    assert "cat" not in items["helmet_visor"], "判不出一级类别的进待审核清单，不静默混入正式列表"
+    assert items["armor"]["cat"] == "armor"
+    assert items["armor_rig"]["cat"] == "armor", "同时含 armor 与 rig 的归护甲"
+    assert items["plate"]["cat"] == "plate", "护甲板只作插板子槽候选"
+    assert items["rig"]["cat"] == "rig"
+    assert items["pack"]["cat"] == "backpack"
+    assert items["phones"]["cat"] == "headphones"
+
+    audit = payload["audit"]
+    assert audit["counts"]["helmet"] == 2 and audit["counts"]["face"] == 1
+    assert audit["counts"]["glasses"] == 1 and audit["counts"]["rig"] == 1
+    assert audit["counts"]["plate"] == 1, "护甲板单独计数，不占一级类别"
+    assert "plate" not in audit["rootKeys"]
+    assert audit["pending"]["count"] == 1 and audit["pending"]["ids"] == ["chestrig_liners"]
+    assert audit["pending"]["byType"] == {"ItemPropertiesChestRig": 1}
+    assert audit["duplicates"] == [
+        {"id": "helm_mask", "keys": ["helmet", "face"], "resolved": "helmet"},
+        {"id": "armor_rig", "keys": ["armor", "rig"], "resolved": "armor"},
+    ], "重复归类必须逐条记下来（含被谁优先命中），不能静默丢弃"
+    assert audit["labels"]["face"] == "护面"
+    assert audit["materials"] == {}, "夹具没给 armorMaterials → 空表，不编造"
+    assert audit["categoryIds"] == cats, "分类 id 表原样落库（可审计的分类依据）"
+    assert audit["coverage"]["cat"] == 10, "命中一级类别的件数 = 十个（两件进待审核）"
+
+
+def test_build_items_records_armor_materials_and_category_ids():
+    raw = {"items": {}, "armorMaterials": {
+        "Aramid": {"destructibility": 0.1875, "explosionDestructibility": 0.15, "x": 1}},
+        "itemCategories": {
+            "fc1": {"id": "fc1", "normalizedName": "face-cover"},
+            "x1": {"id": "x1"},                       # 没有 normalizedName 的条目跳过
+        }}
+    audit = fd.build_items(raw, {})["audit"]
+    assert audit["materials"] == {"Aramid": {"d": 0.1875, "ed": 0.15}}
+    assert audit["categoryIds"] == {"face-cover": "fc1"}
+
+
+def test_build_items_keeps_slots_for_non_mod_gear():
+    """护甲 / 头盔 / 胸挂 / 背包等父装备的附件槽（如头盔的 mod_nvg 座）必须保留。"""
+    fixture = {"items": {
+        "helm": {
+            "shortName": "Altyn", "types": ["helmet"],
+            "properties": {"propertiesType": "ItemPropertiesHelmet", "slots": [
+                {"id": "nvg-slot", "name": "MOD_NVG", "nameId": "mod_nvg", "required": False,
+                 "filters": {"allowedItems": ["nvg1"]}}]},
+        },
+        "nvg1": {"shortName": "PNV-10T", "types": ["wearable"],
+                 "properties": {"propertiesType": "ItemPropertiesHelmet"}},
+    }}
+    items = fd.build_items(fixture, {"MOD_NVG": "支架"})["items"]
+    assert items["helm"]["slots"] == [{"id": "nvg-slot", "sid": "mod_nvg", "label": "支架",
+                                       "allow": ["nvg1"]}], "sid（nameId）要留着，label 只是翻译结果"
+
+
+def test_build_gunslots_groups_presets_under_base_gun():
+    payload = fd.build_gunslots(_items_fixture(), {})
+    assert payload["schema"] == fd.ITEMS_SCHEMA
+    assert payload["count"] == 1, "没有槽位树的枪不留空壳"
+    assert payload["presetCount"] == 1
+    gun = payload["guns"]["gun1"]
+    assert gun["n"] == "AK-74N"
+    assert gun["default"] == "preset1"
+    assert gun["ergo"] == 45 and gun["rv"] == 119 and gun["rh"] == 342 and gun["moa"] == 0.01
+    assert gun["slots"][0]["id"] == "mod_muzzle"
+    assert gun["presets"] == [{"id": "preset1", "base": "gun1", "n": "AK-74N 预设",
+                               "e": 50, "rv": 100, "rh": 350, "moa": 0.08}]
+
+
+def test_items_ready_requires_all_three_artifacts(monkeypatch, tmp_path):
+    monkeypatch.setattr(fd, "ROOT", tmp_path)
+    monkeypatch.setattr(fd, "DATA_DIR", tmp_path / "data")
+    (tmp_path / "data").mkdir()
+    assert fd.items_ready() is False
+    (tmp_path / "data" / "items.json").write_text(
+        json.dumps({"schema": fd.ITEMS_SCHEMA, "items": {"a": {}}}), encoding="utf-8")
+    assert fd.items_ready() is False, "还缺 gunslots.json 与图标目录"
+    (tmp_path / "data" / "gunslots.json").write_text("{}", encoding="utf-8")
+    assert fd.items_ready() is False, "图标目录不在也不算就绪"
+    (tmp_path / "assets" / "icons-items").mkdir(parents=True)
+    assert fd.items_ready() is True
+    (tmp_path / "data" / "items.json").write_text(
+        json.dumps({"schema": fd.ITEMS_SCHEMA - 1, "items": {"a": {}}}), encoding="utf-8")
+    assert fd.items_ready() is False, "旧结构版本要判未就绪"
+
+
+def test_merge_sources_replaces_same_title_and_appends_new():
+    base = [{"title": "A", "sha256": "1"}, {"title": "B", "sha256": "2"}]
+    extra = [{"title": "B", "sha256": "22"}, {"title": "C", "sha256": "3"}]
+    merged = fd._merge_sources(base, extra)
+    assert [s["title"] for s in merged] == ["A", "B", "C"]
+    assert merged[1]["sha256"] == "22", "同标题就地覆盖，不追加重复行"
+    assert fd._merge_sources(None, extra) == extra
+
+
+def test_download_icons_is_incremental(monkeypatch, tmp_path):
+    monkeypatch.setattr(fd, "ICONS_DIR", tmp_path / "icons")
+    monkeypatch.setattr(fd, "fetch", lambda url, **kwargs: b"webp")
+    (tmp_path / "icons").mkdir()
+    (tmp_path / "icons" / "a.webp").write_bytes(b"old")
+    count, total = fd._download_icons(["a", "b", None, ""])
+    assert count == 2 and total == len(b"old") + len(b"webp")
+    assert (tmp_path / "icons" / "a.webp").read_bytes() == b"old", "已存在的图标不重复下载"
+
+
+def test_items_only_keeps_maps_untouched(monkeypatch, tmp_path):
+    """补齐物品资料库不得碰地图产出：maps.json 与底图原样保留，只更新 meta。"""
+    _prepare_project(tmp_path)
+    _redirect_dirs(monkeypatch, tmp_path)
+    (tmp_path / "data" / "meta.json").write_text(
+        json.dumps({"schema": fd.SCHEMA, "counts": {"maps": 1},
+                    "sources": [{"title": "tarkov.dev 地图配置（the-hideout/tarkov-dev）", "sha256": "x"}]}),
+        encoding="utf-8")
+    before = (tmp_path / "data" / "maps.json").read_bytes()
+    monkeypatch.setattr(fd, "_build_items_stage",
+                        lambda args: ({"items": {"count": 2}}, [{"title": "物品资料库", "sha256": "y"}]))
+
+    assert fd._items_only(fd.parse_args([])) == 0
+
+    assert (tmp_path / "data" / "maps.json").read_bytes() == before
+    meta = json.loads((tmp_path / "data" / "meta.json").read_text(encoding="utf-8"))
+    assert meta["items"] == {"count": 2}
+    assert meta["counts"] == {"maps": 1}, "原有 counts 块必须保留"
+    assert [s["title"] for s in meta["sources"]] == [
+        "tarkov.dev 地图配置（the-hideout/tarkov-dev）", "物品资料库"]
+
+
+def test_real_items_output_is_consistent():
+    """真实产出：items.json / gunslots.json / 图标三者结构自洽（需先跑一次 fetch_data）。"""
+    items_path = ROOT / "data" / "items.json"
+    if not items_path.exists():
+        pytest.skip("尚未生成 data/items.json")
+    payload = json.loads(items_path.read_text(encoding="utf-8"))
+    assert payload["schema"] == fd.ITEMS_SCHEMA
+    assert payload["count"] == len(payload["items"])
+
+    icons = ROOT / "assets" / "icons-items"
+    for item_id, rec in list(payload["items"].items())[:200]:
+        if rec.get("ic"):
+            assert (icons / ("%s.webp" % item_id)).exists(), "%s 标了有图标却没有文件" % item_id
+        assert rec.get("n"), "每件物品都得有名字"
+
+    slots_path = ROOT / "data" / "gunslots.json"
+    if slots_path.exists():
+        guns = json.loads(slots_path.read_text(encoding="utf-8"))
+        assert guns["count"] == len(guns["guns"])
+        for gun_id, gun in guns["guns"].items():
+            assert gun_id in payload["items"], "枪械必须也在物品资料库里"
+            assert gun["slots"], "没槽位树的枪不该留在产出里"
+            for preset in gun["presets"]:
+                assert preset["base"] == gun_id
+
+
+def test_real_items_audit_classifies_seven_categories():
+    """真实产出的分类检查：一级类别件数 / 护面不含护甲板 / 眼镜只含 vis-observ-device /
+    固定内衬带真实防护数据 / 重复归类与待审核清单都在。"""
+    items_path = ROOT / "data" / "items.json"
+    if not items_path.exists():
+        pytest.skip("尚未生成 data/items.json")
+    payload = json.loads(items_path.read_text(encoding="utf-8"))
+    items = payload["items"]
+    audit = payload["audit"]
+    cats = audit["categoryIds"]
+
+    face = [r for r in items.values() if r.get("cat") == "face"]
+    assert face, "护面列表不能是空"
+    assert all(cats["face-cover"] in r["cats"] for r in face), "护面全部来自 face-cover 分类"
+    assert not [r for r in face if "armorPlate" in (r.get("ts") or [])], "护面里不得混入护甲板"
+
+    eye = [r for r in items.values() if r.get("cat") == "glasses"]
+    assert eye, "眼镜列表不能是空"
+    assert all("glasses" in r["ts"] and cats["vis-observ-device"] in r["cats"] for r in eye), \
+        "眼镜必须是 types 含 glasses 且带 vis-observ-device 分类的独立眼部装备"
+
+    armor = [r for r in items.values() if r.get("cat") == "armor"]
+    assert not [r for r in armor if "armorPlate" in (r.get("ts") or [])], \
+        "护甲列表里不得混入护甲板（护甲板只作插板子槽候选）"
+
+    seven = [r for r in items.values() if r.get("cat") in audit["rootKeys"]]
+    assert len(seven) == sum(audit["counts"][k] for k in audit["rootKeys"]), \
+        "七个一级类别件数必须与审计表一致"
+
+    liners = [a for r in items.values() for a in (r.get("aps") or []) if a.get("fx")]
+    assert liners, "固定内衬条目必须落库"
+    assert all(a.get("mat") and a.get("cl") is not None and a.get("dur") for a in liners), \
+        "固定内衬必须带真实材质 / 护甲等级 / 耐久，不能再显示「数据缺失」"
+    assert not [a for r in items.values() for a in (r.get("aps") or [])
+                if not a.get("plates") and not a.get("fx")], "无 allowedPlates 的护甲槽必须标记为固定内衬"
+
+    assert audit["duplicates"], "重复归类必须被记下来（不是静默丢弃）"
+    assert audit["pending"]["count"] > 0 and audit["pending"]["ids"], "待审核清单必须落库"
+    assert set(audit["materials"]) >= {"Aramid", "Ceramic", "ArmoredSteel"}, "护甲材质毁损系数表"
+
+
+def test_real_trader_manifest_records_license_and_hashes():
+    """商人图标：16 位 + 2 个渠道图标全部是**项目内自绘**件。
+
+    许可复核后不再随包分发上游游戏角色美术（MIT 只覆盖 tarkov-dev 的源代码），
+    所以目录里不允许再出现 .webp；manifest 必须写明复核过程、结论与已下线文件留痕。
+    """
+    icon_dir = ROOT / "assets" / "icons-traders"
+    manifest_path = icon_dir / "manifest.json"
+    if not manifest_path.exists():
+        pytest.skip("尚未生成 assets/icons-traders/manifest.json")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+    # 运行期引用的图标全部在 localFiles（自绘件），files（外部下载件）必须为空
+    assert manifest["files"] == {}, "不得再打包来源不明许可的外部图片"
+    local = manifest["localFiles"]
+    traders = [k for k in local if k not in ("flea", "unknown")]
+    assert len(traders) == 16, "16 位商人每位一个自绘图标"
+    assert manifest["count"] == manifest["total"] == 16
+    assert manifest["missing"] == []
+
+    for key, rec in local.items():
+        assert rec["license"] == "项目内自制，无第三方素材与再分发限制", "%s 许可写法不一致" % key
+        assert rec["source"].startswith("项目内自绘"), "%s 必须标记为自绘" % key
+        assert rec["url"] == "", "%s 自绘件不应有外部来源 URL" % key
+        assert not rec["file"].startswith(("/", "http")), "%s 必须用项目内相对路径" % key
+        assert rec["file"].endswith(".svg"), "%s 应为项目内自绘 SVG" % key
+        path = ROOT / rec["file"]
+        assert path.exists(), "%s 图标文件缺失" % key
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == rec["sha256"], \
+            "%s 的 SHA-256 与 manifest 记录不一致" % key
+
+    # 复核过程与结论必须落盘，且说明为什么不能把「可下载」当许可
+    review = manifest["licenseReview"]
+    assert review["checked"] and review["conclusion"]
+    assert "MIT" in " ".join(c["finding"] for c in review["checked"])
+    assert "Battlestate Games" in " ".join(c["finding"] for c in review["checked"])
+    assert review["runtimeIcon"].endswith(".svg")
+
+    # 下线的 16 个下载件必须有留痕（哪个文件、原 URL、原哈希、原因）
+    removed = manifest["removed"]
+    assert len(removed) == 16
+    assert all(r["sha256"] and r["reason"] and r["removedAt"] for r in removed)
+
+    # 目录里不许残留 .webp（已删除、也不许被重新下载进来）
+    assert not list(icon_dir.glob("*.webp")), "商人目录不得残留任何外部图片文件"
+
+
+def test_real_items_trade_entries_are_typed_and_resolvable():
+    """逐笔获取方式：flea / buy / barter 三类各自成条；商人、等级、任务、兑换配方
+    都必须能在本地表里解析，购买与兑换不得混成一条。"""
+    items_path = ROOT / "data" / "items.json"
+    if not items_path.exists():
+        pytest.skip("尚未生成 data/items.json")
+    payload = json.loads(items_path.read_text(encoding="utf-8"))
+    items = payload["items"]
+    traders = payload["traders"]
+    tasks = payload["tasks"]
+
+    assert len(traders) == 16, "商人表应覆盖上游 16 位商人"
+    assert all(rec.get("n") for rec in traders.values()), "每位商人必须有显示名"
+    assert all(rec.get("img", "").startswith("assets/icons-traders/")
+               for rec in traders.values() if rec.get("img")), "商人头像必须指向本地目录"
+
+    kinds = {"flea": 0, "buy": 0, "barter": 0}
+    with_trade = 0
+    barter_with_recipe = 0
+    barter_unconfirmed = 0
+    task_refs = 0
+    for item_id, rec in items.items():
+        trades = rec.get("trade")
+        if not trades:
+            continue
+        with_trade += 1
+        for t in trades:
+            kind = t["k"]
+            assert kind in kinds, "%s 出现未知来源类型 %s" % (item_id, kind)
+            kinds[kind] += 1
+            # 购买（货币价）与兑换（配方）是不同交易类型，一条里不得两者都有
+            assert not (t.get("p") and t.get("r")), "%s 把购买与兑换混成了一条" % item_id
+            if kind in ("buy", "barter"):
+                assert t.get("t") in traders or (kind == "barter" and t.get("x")), \
+                    "%s 的 %s 来源商人不在本地商人表里" % (item_id, kind)
+            if t.get("l") is not None:
+                assert 1 <= t["l"] <= 4, "%s 商人等级越界：%s" % (item_id, t["l"])
+            if t.get("u"):
+                assert t["u"] in tasks, "%s 引用了未落库的任务 %s" % (item_id, t["u"])
+                task_refs += 1
+            if kind == "barter":
+                if t.get("x"):
+                    barter_unconfirmed += 1
+                else:
+                    barter_with_recipe += 1
+                    assert t.get("r"), "%s 的兑换来源缺少配方" % item_id
+                    for need_id, count in t["r"]:
+                        assert need_id in items, "%s 配方引用了不存在的物品 %s" % (item_id, need_id)
+                        # 上游数量可以是小数（弹药类按堆叠换算，如 18.25），只要为正
+                        assert isinstance(count, (int, float)) and count > 0, \
+                            "%s 配方数量非法" % item_id
+
+    assert with_trade > 4000, "绝大多数物品都应有获取方式（实测 4626）"
+    assert kinds["flea"] > 3000 and kinds["buy"] > 2000 and kinds["barter"] > 1000, \
+        "三类来源都要有真实覆盖：%s" % kinds
+    assert barter_with_recipe > 800 and barter_unconfirmed > 0, \
+        "兑换配方与「明细未确认」两种状态都要保留"
+    assert task_refs > 0 and tasks, "任务解锁引用必须能在 tasks 表里解析"

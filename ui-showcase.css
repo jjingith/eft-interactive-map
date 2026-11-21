@@ -1,0 +1,123 @@
+/* ============================================================================
+ * ui-showcase.css —— 设计系统展示页的**布局**样式（R19.24）
+ * 只允许布局与间距，颜色全部来自 --ui-* 令牌（与业务页面同一套）。
+ * ==========================================================================*/
+
+* { box-sizing: border-box; }
+
+html, body.showcase { height: 100%; }
+
+body.showcase {
+  margin: 0;
+  background: var(--ui-color-surface);
+  color: var(--ui-color-text);
+  font: var(--ui-fw-normal) var(--ui-fs-compact) / var(--ui-lh-normal) var(--ui-font);
+}
+
+.showcase__skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: var(--ui-z-toast);
+  padding: var(--ui-space-1) var(--ui-space-3);
+  background: var(--ui-color-surface-raised);
+  border: var(--ui-border-w) solid var(--ui-color-focus);
+}
+.showcase__skip:focus { left: var(--ui-space-3); top: var(--ui-space-3); }
+
+.showcase__top {
+  position: sticky;
+  top: 0;
+  z-index: var(--ui-z-sticky);
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-bottom: var(--ui-border-w) solid var(--ui-color-border);
+  background: linear-gradient(180deg, var(--ui-grad-head-a), var(--ui-grad-head-b));
+}
+.showcase__brand { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.showcase__h1 { margin: 0; font-size: var(--ui-fs-strong); font-weight: var(--ui-fw-bold); color: var(--ui-color-primary); }
+.showcase__brand span { color: var(--ui-color-text-muted); font-size: var(--ui-fs-micro); }
+
+.showcase__nav { display: flex; flex-wrap: wrap; gap: 2px; margin-left: var(--ui-space-4); }
+.showcase__nav a {
+  padding: 2px var(--ui-space-2);
+  border-radius: var(--ui-radius-control);
+  color: var(--ui-color-link);
+  font-size: var(--ui-fs-micro);
+  text-decoration: none;
+}
+.showcase__nav a:hover { background: var(--ui-color-hover-soft); color: var(--ui-color-text); }
+.showcase__nav a:focus-visible { outline: none; box-shadow: var(--ui-shadow-focus); }
+
+.showcase__meta { margin-left: auto; display: inline-flex; align-items: center; gap: var(--ui-space-2); }
+
+.showcase__main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: var(--ui-space-4) var(--ui-space-4) var(--ui-space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-4);
+}
+.showcase__main:focus-visible { outline: none; }
+
+.showcase__block { display: flex; flex-direction: column; gap: var(--ui-space-2); }
+.showcase__block > .ui-panel__head { border-radius: var(--ui-radius-panel); }
+
+.sc-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ui-space-2);
+}
+.sc-row--tight { gap: var(--ui-space-1); }
+.sc-col { display: flex; flex-direction: column; gap: var(--ui-space-2); min-width: 0; }
+.sc-grid { display: grid; gap: var(--ui-space-3); }
+.sc-grid--2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.sc-grid--3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.sc-label { color: var(--ui-color-text-muted); font-size: var(--ui-fs-micro); min-width: 84px; }
+.sc-note { color: var(--ui-color-text-muted); font-size: var(--ui-fs-micro); margin: 0; }
+.sc-dark {
+  padding: var(--ui-space-3);
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  background: #1d222a;                 /* 展示用：模拟地图画布的深底（规范 §2.5 例外） */
+  color: #f0f0f0;
+}
+.sc-dark .ui-panel { background: var(--ui-color-surface-alt); color: var(--ui-color-text); }
+
+.showcase__foot {
+  display: flex;
+  gap: var(--ui-space-4);
+  flex-wrap: wrap;
+  padding: var(--ui-space-2) var(--ui-space-4);
+  border-top: var(--ui-border-w) solid var(--ui-color-border);
+  background: var(--ui-color-surface-alt);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-micro);
+}
+.showcase__log { margin-left: auto; font-family: var(--ui-font-mono); }
+
+/* 展示页专用的"标尺"（纯展示，不属于组件库） */
+.sc-ruler { display: flex; align-items: flex-end; gap: var(--ui-space-2); }
+.sc-ruler > i {
+  display: block;
+  width: 22px;
+  background: var(--ui-color-selected);
+  opacity: .75;
+}
+.sc-swatch { display: flex; flex-wrap: wrap; gap: var(--ui-space-2); }
+.sc-swatch > span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  padding: 2px var(--ui-space-2);
+  border: var(--ui-border-w) solid var(--ui-color-border);
+  font-size: var(--ui-fs-micro);
+}
+.sc-swatch > span > i {
+  width: 14px; height: 14px;
+  border: var(--ui-border-w) solid var(--ui-color-border-dark);
+  display: inline-block;
+}

@@ -1,0 +1,197 @@
+{
+  "build": "R19.14.2-77dbccba",
+  "mountSlots": {
+    "picked": "Nightforce MagMount Multimount 34毫米一体式导轨基座",
+    "directSlotCount": 2,
+    "slots": [
+      {
+        "slot": "mod_scope/mod_scope_000",
+        "sid": "mod_scope_000",
+        "row": 1,
+        "col": 5,
+        "item": "",
+        "empty": true
+      },
+      {
+        "slot": "mod_scope/mod_scope_001",
+        "sid": "mod_scope_001",
+        "row": 1,
+        "col": 6,
+        "item": "",
+        "empty": true
+      }
+    ],
+    "rows": 6,
+    "rowHeights": [
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      56
+    ],
+    "noLegacy002003": true,
+    "phantomCount": 0
+  },
+  "withBase": {
+    "opticsPicked": "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜",
+    "basePicked": "Aimpoint Micro瞄具基座",
+    "directSlotCount": 2,
+    "slots": [
+      {
+        "slot": "mod_scope/mod_scope_000",
+        "sid": "mod_scope_000",
+        "row": 2,
+        "col": 5,
+        "item": "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜",
+        "empty": false
+      },
+      {
+        "slot": "mod_scope/mod_scope_001",
+        "sid": "mod_scope_001",
+        "row": 2,
+        "col": 6,
+        "item": "Aimpoint Micro瞄具基座",
+        "empty": false
+      }
+    ],
+    "baseCell": {
+      "slot": "mod_scope/mod_scope_001",
+      "sid": "mod_scope_001",
+      "row": 2,
+      "col": 6,
+      "item": "Aimpoint Micro瞄具基座",
+      "empty": false
+    },
+    "baseChild": {
+      "slot": "mod_scope/mod_scope_001/mod_scope",
+      "row": 1,
+      "col": 6,
+      "item": ""
+    },
+    "childAboveBase": true,
+    "opticsAboveMount": true,
+    "onexRightOfOptics": true,
+    "rows": 7,
+    "topPad": 1,
+    "rowHeights": [
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      56
+    ],
+    "phantomCount": 0
+  },
+  "extension": {
+    "picked": "Aimpoint Micro H-2 反射式瞄具",
+    "rows": 7,
+    "topPad": 1,
+    "rowHeights": [
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      57.8,
+      56
+    ],
+    "cells": [
+      {
+        "slot": "mod_scope/mod_scope_001/mod_scope",
+        "row": 1,
+        "col": 6,
+        "item": "Aimpoint Micro H-2 反射式瞄具"
+      },
+      {
+        "slot": "mod_scope/mod_scope_000",
+        "row": 2,
+        "col": 5,
+        "item": "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜"
+      },
+      {
+        "slot": "mod_scope/mod_scope_001",
+        "row": 2,
+        "col": 6,
+        "item": "Aimpoint Micro瞄具基座"
+      },
+      {
+        "slot": "mod_scope",
+        "row": 3,
+        "col": 5,
+        "item": "Nightforce MagMount Multimount 34毫米一体式导轨基座"
+      }
+    ],
+    "phantomCount": 0,
+    "afterRemoveRows": 6,
+    "afterRemoveTopPad": 0
+  },
+  "bad": {
+    "cells": [
+      {
+        "slot": "mod_charge_001",
+        "row": 4,
+        "col": 6
+      }
+    ],
+    "atR4C6": true,
+    "rows": 6,
+    "rowHeights": [
+      56,
+      57.8,
+      85.5,
+      57.8,
+      57.8,
+      57.8
+    ]
+  },
+  "mpr45": {
+    "chain": [
+      {
+        "slot": "mod_handguard/mod_mount/mod_scope/mod_scope",
+        "row": 1,
+        "col": 4
+      },
+      {
+        "slot": "mod_handguard/mod_mount/mod_scope",
+        "row": 2,
+        "col": 4
+      },
+      {
+        "slot": "mod_handguard/mod_mount",
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "allSameCol": true,
+    "rows": 7
+  },
+  "phantom": {
+    "phantomCount": 0,
+    "rows": 6,
+    "emptySlotCount": 4
+  },
+  "flow": {
+    "afterForge": {
+      "generated": true,
+      "slotCount": 9,
+      "treeSlots": 9,
+      "hasLegacy002003": false,
+      "mountChildren": [
+        "mod_scope/mod_scope_000",
+        "mod_scope/mod_scope_001"
+      ],
+      "phantomCount": 0
+    },
+    "afterPreset": {
+      "slotCount": 7,
+      "treeSlots": 7,
+      "hasLegacy002003": false,
+      "phantomCount": 0
+    }
+  },
+  "console": [],
+  "appSrc": "http://127.0.0.1:8787/app.js?v=r19.14.2"
+}

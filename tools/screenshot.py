@@ -148,6 +148,58 @@ def latest_position(directory: str) -> dict[str, Any] | None:
     return None
 
 
+def newest_mtime(directory: str) -> float | None:
+    """目录里最新一张图片的 mtime（**不排序、不解析文件名**）。
+
+    用途是「发完截图键之后，目录里到底有没有出现新文件」——只需要一个单调递增的
+    时间戳做比较，不必把 6000 多张截图排一遍序。目录不存在 / 空 / 只有非图片时返回 None。
+    """
+    try:
+        entries = os.scandir(directory)
+    except OSError:
+        return None
+    newest: float | None = None
+    try:
+        for entry in entries:
+            if os.path.splitext(entry.name)[1].lower() not in IMAGE_EXTS:
+                continue
+            try:
+                stamp = entry.stat().st_mtime
+            except OSError:
+                continue
+            if newest is None or stamp > newest:
+                newest = stamp
+    finally:
+        entries.close()
+    return newest
+
+
+def newest_file(directory: str) -> tuple[float, str] | None:
+    """目录里最新一张图片的 `(mtime, 文件名)`；目录不存在 / 空 / 只有非图片时返回 None。
+
+    R107：自动截图要记住「刚拍出来的是哪个文件」，好在战局结束时只清理本工具产生的图。
+    一次扫描同时拿到时间戳和文件名，避免再排一遍序。
+    """
+    try:
+        entries = os.scandir(directory)
+    except OSError:
+        return None
+    newest: tuple[float, str] | None = None
+    try:
+        for entry in entries:
+            if os.path.splitext(entry.name)[1].lower() not in IMAGE_EXTS:
+                continue
+            try:
+                stamp = entry.stat().st_mtime
+            except OSError:
+                continue
+            if newest is None or stamp > newest[0]:
+                newest = (stamp, entry.name)
+    finally:
+        entries.close()
+    return newest
+
+
 # ---------------------------------------------------------------- 清理（自动删除截图）
 def select_deletable(directory: str, cutoff: float | None = None, keep_newest: int = 1) -> list[str]:
     """挑出「位置已经读过、可以删掉」的截图文件名（**只挑不删**，便于单测）。

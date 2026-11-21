@@ -1,0 +1,75 @@
+{
+  "case": "r14 阶段D 可复现击杀案例：混压弹匣顺序消耗 + 插板耐久退化 + 钝伤/穿透混合 + 击杀终止",
+  "repeatable": "同配置同种子复跑两次，逐发日志与汇总完全一致（页面内已验证 reproducible=true）",
+  "config": {
+    "magazine": [
+      "5.56x45毫米 M856A1 ×2",
+      "5.56x45毫米 M995 ×3"
+    ],
+    "magChips": "5.56x45毫米 M856A1 ×2（第 1–2 发） ; 5.56x45毫米 M995 ×3（第 3–5 发）",
+    "armorPreset": "plate4（4级复合插板：cls 4 / 耐久 40 / 复合材质 / 钝伤系数 0.22 / 防护胸）",
+    "layersText": "4级复合插板 · 插板/护甲 · 胸 · 4级 · 耐久 40/40 · 钝伤 22%×",
+    "target": "PMC（combat-targets.json：头35/胸85/胃70/臂60×2/腿65×2，总440）",
+    "hitMode": "fixed:chest",
+    "rpm": 600,
+    "distM": 50,
+    "seed": 12345,
+    "runs": 1
+  },
+  "summary": "击杀死因：chest destroyed击杀发序：4 / 4总耗时 400 ms剩余弹药 1 发种子 12345头 29/35胸 0/85胃 64/70左臂 54/60右臂 54/60左腿 59/65右腿 59/65总 3574级复合插板 耐久 0/40",
+  "killMark": "4 ⚠400ms5.56x45毫米 M995胸—98.9%0.818穿透37.7220←胸 35→6部位",
+  "shots": [
+    {
+      "n": 1,
+      "timeMs": "100ms",
+      "ammo": "5.56x45毫米 M856A1",
+      "part": "胸",
+      "penChance": "65.2%",
+      "roll": "0.980",
+      "result": "钝伤",
+      "dmgToBody": "11.4",
+      "dmgToArmor": "16",
+      "armorDurAfter": "24",
+      "overflow": ""
+    },
+    {
+      "n": 2,
+      "timeMs": "200ms",
+      "ammo": "5.56x45毫米 M856A1",
+      "part": "胸",
+      "penChance": "92.9%",
+      "roll": "0.307",
+      "result": "穿透",
+      "dmgToBody": "33.7",
+      "dmgToArmor": "13",
+      "armorDurAfter": "11",
+      "overflow": ""
+    },
+    {
+      "n": 3,
+      "timeMs": "300ms",
+      "ammo": "5.56x45毫米 M995",
+      "part": "胸",
+      "penChance": "98.1%",
+      "roll": "0.484",
+      "result": "穿透",
+      "dmgToBody": "37.7",
+      "dmgToArmor": "22",
+      "armorDurAfter": "0",
+      "overflow": ""
+    },
+    {
+      "n": 4,
+      "timeMs": "400ms",
+      "ammo": "5.56x45毫米 M995",
+      "part": "胸",
+      "penChance": "98.9%",
+      "roll": "0.818",
+      "result": "穿透",
+      "dmgToBody": "37.7",
+      "dmgToArmor": "22",
+      "armorDurAfter": "0",
+      "overflow": "←胸 35→6部位"
+    }
+  ]
+}

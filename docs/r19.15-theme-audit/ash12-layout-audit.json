@@ -1,0 +1,130 @@
+{
+  "gun": "ASh-12 12.7x55 突击步枪",
+  "id": "5cadfbf7ae92152ac412eeef",
+  "body": {
+    "row": 3,
+    "col": 6,
+    "span": 3
+  },
+  "rows": 6,
+  "topPad": 0,
+  "mainRow": [
+    {
+      "slot": "mod_muzzle",
+      "base": "muzzle",
+      "row": 3,
+      "col": 4,
+      "item": "ASh-12 12.7x55 膛口制退器"
+    },
+    {
+      "slot": "mod_handguard",
+      "base": "handguard",
+      "row": 3,
+      "col": 5,
+      "item": "ASh-12聚合物护木"
+    }
+  ],
+  "rootTacticalSlots": [
+    {
+      "slot": "mod_tactical_000",
+      "row": 6,
+      "col": 1
+    },
+    {
+      "slot": "mod_tactical_001",
+      "row": 6,
+      "col": 2
+    },
+    {
+      "slot": "mod_tactical_002",
+      "row": 6,
+      "col": 3
+    }
+  ],
+  "exceptions": [
+    {
+      "path": "mod_tactical_000",
+      "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    },
+    {
+      "path": "mod_tactical_001",
+      "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c2）"
+    },
+    {
+      "path": "mod_tactical_002",
+      "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c3）"
+    }
+  ],
+  "before": {
+    "note": "修复前实测（docs/r19.14-layout-changes 时期的布局）：根级 mod_tactical_001/002 被塞进主体行 r3c3/r3c1",
+    "mainRowWas": [
+      {
+        "slot": "mod_tactical_002",
+        "row": 3,
+        "col": 1
+      },
+      {
+        "slot": "mod_muzzle",
+        "row": 3,
+        "col": 2
+      },
+      {
+        "slot": "mod_tactical_001",
+        "row": 3,
+        "col": 3
+      },
+      {
+        "slot": "mod_handguard",
+        "row": 3,
+        "col": 4
+      }
+    ]
+  },
+  "rootSlotData": [
+    {
+      "sid": "mod_muzzle",
+      "label": "膛口",
+      "allowCount": 2
+    },
+    {
+      "sid": "mod_sight_rear",
+      "label": "照门",
+      "allowCount": 10
+    },
+    {
+      "sid": "mod_magazine",
+      "label": "弹匣",
+      "allowCount": 2
+    },
+    {
+      "sid": "mod_sight_front",
+      "label": "准星",
+      "allowCount": 10
+    },
+    {
+      "sid": "mod_handguard",
+      "label": "护木",
+      "allowCount": 42
+    },
+    {
+      "sid": "mod_scope",
+      "label": "瞄准镜",
+      "allowCount": 76
+    },
+    {
+      "sid": "mod_tactical_000",
+      "label": "战术配件",
+      "allowCount": 9
+    },
+    {
+      "sid": "mod_tactical_001",
+      "label": "战术配件",
+      "allowCount": 24
+    },
+    {
+      "sid": "mod_tactical_002",
+      "label": "战术配件",
+      "allowCount": 24
+    }
+  ]
+}

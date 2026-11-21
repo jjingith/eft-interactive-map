@@ -1,0 +1,22 @@
+﻿
+=== 2026-11-05 14:31:21 start pid=56036 ===
+14:31:21.819  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --backend-mode dev --python python --port 8818 --config-dir d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\config --user-data d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\userdata --runtime-dir d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\runtime --log-dir d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\logs --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\logs\desktop.log --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\logs\window-state.json --mini --no-tray --exit-after-ms 12000
+14:31:21.854  启动后端：python -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 8818 --config-dir "d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\config" --runtime-file "d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\runtime\desktop-56036.json" --log-file "d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\logs\backend-56036.log" --parent-pid 56036
+14:31:21.966  后端已加入 Job Object（壳退出即杀）
+14:31:23.081  后端就绪：http://127.0.0.1:8818/ pid=41216
+14:31:23.096  WebView2 Runtime 版本：156.0.4314.58
+14:31:23.405  WebView2 环境就绪：156.0.4314.58 UDF=d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-wda\userdata
+14:31:23.797  主窗口导航：http://127.0.0.1:8818/
+14:31:23.810  HWND 创建：3936720
+14:31:23.814  SetWindowDisplayAffinity(WDA_EXCLUDEFROMCAPTURE)=True
+14:31:23.814  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+14:31:23.824  小地图形状=circle client=208x208
+14:31:23.824  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+14:31:23.877  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:8818/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:31:23.935  WebView2 就绪，导航：http://127.0.0.1:8818/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:31:24.280  主页面加载完成
+14:31:35.297  RequestExit
+14:31:35.302  FormClosing exitRequested=True reason=UserClosing
+14:31:35.322  FormClosed begin
+14:31:35.452  桌面壳退出
+14:31:35.482  已请求后端 shutdown

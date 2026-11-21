@@ -1,0 +1,8 @@
+﻿notepad hwnd=8655166
+conhost children of shell pid=55624: 0
+MainWindowTitle: EFT 互动地图
+children: python.exe#52400, msedgewebview2.exe#50324
+foreground before hotkey: 25693054 notepad=8655166 match=False
+foreground after hide: 25693054 same=True
+foreground after show: 25693054 same=True
+exit=True

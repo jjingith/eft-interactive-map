@@ -1,0 +1,155 @@
+/* ============================================================================
+ * design-tokens.css —— 设计令牌（唯一视觉入口，R19.24）
+ * ----------------------------------------------------------------------------
+ * 规范：docs/ui-system/design-spec.md §2
+ * 原则：
+ *   1) 颜色令牌分两类：
+ *      · 桥接令牌 —— 值等于既有 --xp-*（R18 / R19.15 的 Luna 调色板），
+ *        这样调色板仍然只有一份，不会出现第二套近似色；
+ *      · 新增令牌 —— --xp-* 里确实没有的角色（凹陷面、遮罩、冲突色、焦点环）。
+ *   2) 新代码只允许使用本文件的 --ui-*；禁止裸十六进制色 / 裸字号 / 裸 z-index。
+ *   3) 本文件必须在 theme-windows-xp.css 之后加载（桥接的 --xp-* 才已定义）。
+ *
+ * 不要在这里写布局或组件样式 —— 这里只有变量。
+ * ==========================================================================*/
+
+:root {
+  /* ---------------------------------------------------------------- 颜色 */
+  /* 主色（Luna 蓝） */
+  --ui-color-primary:        var(--xp-luna-1, #0a3f9e);
+  --ui-color-primary-hi:     var(--xp-luna-2, #1466e0);
+  --ui-color-primary-lo:     var(--xp-luna-3, #4a9bff);
+
+  /* 选中（蓝）——"已发生的事情" */
+  --ui-color-selected:       var(--xp-sel, #316ac5);
+  --ui-color-selected-bg:    var(--xp-row-hover, #eaf3ff);
+  --ui-color-selected-text:  var(--xp-sel-text, #ffffff);
+
+  /* 悬停（琥珀）——"指针正在做的事情" */
+  --ui-color-hover:          var(--xp-hover-c, #ff9933);
+  --ui-color-hover-soft:     var(--xp-btn-hover-c, #ffd98a);
+  --ui-color-hover-border:   var(--xp-btn-hover-border, #c97a10);
+
+  /* 焦点 */
+  --ui-color-focus:          var(--xp-link, #1e63c8);
+
+  /* 面 */
+  --ui-color-surface:        var(--xp-face, #ece9d8);
+  --ui-color-surface-alt:    var(--xp-face-2, #f7f5ee);
+  --ui-color-surface-raised: var(--xp-face-3, #ffffff);
+  --ui-color-surface-inset:  #f2f0e6;          /* 新增：禁用/只读/进度槽 */
+
+  /* 文字 */
+  --ui-color-text:           var(--xp-text, #000000);
+  --ui-color-text-muted:     var(--xp-text-dim, #4a4a4a);
+  --ui-color-text-disabled:  var(--xp-btn-disabled-text, #69675b);
+  --ui-color-text-inverse:   #ffffff;
+  --ui-color-link:           var(--xp-link, #1e63c8);
+
+  /* 边框 */
+  --ui-color-border:         var(--xp-border, #aca899);
+  --ui-color-border-soft:    var(--xp-border-soft, #d6d2c2);
+  --ui-color-border-light:   #ffffff;
+  --ui-color-border-dark:    var(--xp-border-dark, #7f9db9);
+
+  /* 状态 */
+  --ui-color-success:        var(--xp-ok, #0b6b3a);
+  --ui-color-success-bg:     #e8f6ec;
+  --ui-color-warning:        var(--xp-warn, #7a5200);
+  --ui-color-warning-bg:     #fdf7e3;
+  --ui-color-danger:         var(--xp-bad, #a11b1b);
+  --ui-color-danger-bg:      #fdeaea;
+  --ui-color-info:           var(--xp-info, #0a4fa8);
+  --ui-color-info-bg:        #eaf3ff;
+  --ui-color-conflict:       #8a2f00;          /* 新增：冲突（配虚线 + 图标，不单靠颜色） */
+  --ui-color-scrim:          rgba(0, 0, 0, .36); /* 新增：弹窗遮罩（XP 是实心遮罩，这里用 36% 黑保证弹窗明显浮起） */
+  --ui-color-tip-bg:         var(--xp-tip-bg, #ffffe1);     /* 提示框：XP 的淡黄便签 */
+  --ui-color-tip-border:     var(--xp-tip-border, #8f8f6f);
+
+  /* 面/边的渐变端点（XP 凸起与表头需要，集中在此，避免各处手写渐变） */
+  --ui-grad-face-a:          var(--xp-btn-face-a, #fdfdfd);
+  --ui-grad-face-b:          var(--xp-btn-face-b, #f1efe4);
+  --ui-grad-face-c:          var(--xp-btn-face-c, #e2dfcf);
+  --ui-grad-head-a:          var(--xp-th-a, #fdfdfd);
+  --ui-grad-head-b:          var(--xp-th-b, #ece9d8);
+
+  /* ---------------------------------------------------------------- 字体 */
+  --ui-font:                 var(--xp-font-family, Tahoma, "Microsoft YaHei UI", "Microsoft YaHei", sans-serif);
+  --ui-font-mono:            var(--xp-font-mono, Consolas, "Courier New", monospace);
+
+  --ui-fs-micro:             var(--xp-fs-micro, 11px);
+  --ui-fs-compact:           var(--xp-fs-compact, 12px);
+  --ui-fs-body:              var(--xp-fs-body, 13px);
+  --ui-fs-strong:            var(--xp-fs-strong, 14px);
+  --ui-fs-panel:             var(--xp-fs-panel, 15px);
+  --ui-fs-title:             var(--xp-fs-title, 18px);
+
+  --ui-fw-normal:            400;
+  --ui-fw-bold:              700;
+  --ui-lh-tight:             1.25;
+  --ui-lh-normal:            1.5;
+  --ui-lh-loose:             1.7;
+
+  /* ---------------------------------------------------------------- 间距 */
+  --ui-space-1:              var(--xp-space-1, 4px);
+  --ui-space-2:              var(--xp-space-2, 6px);
+  --ui-space-3:              var(--xp-space-3, 8px);
+  --ui-space-4:              var(--xp-space-4, 12px);
+  --ui-space-5:              var(--xp-space-5, 16px);
+  --ui-space-6:              var(--xp-space-6, 20px);
+  --ui-space-7:              var(--xp-space-7, 24px);
+
+  /* ---------------------------------------------------------------- 尺寸 */
+  --ui-control-h-sm:         22px;
+  --ui-control-h-md:         26px;
+  --ui-control-h-lg:         30px;
+  --ui-btn-pad-x:            10px;
+  --ui-btn-pad-x-sm:         7px;
+  --ui-icon-sm:              12px;
+  --ui-icon-md:              16px;
+  --ui-icon-lg:              20px;
+  --ui-border-w:             1px;
+  --ui-border-w-strong:      2px;
+
+  --ui-radius-panel:         var(--xp-radius-panel, 0px);
+  --ui-radius-control:       var(--xp-radius-control, 2px);
+  --ui-radius-btn:           var(--xp-radius-btn, 3px);
+  --ui-radius-pill:          10px;
+  --ui-radius-circle:        50%;             /* 圆形：加载指示、单选点 */
+
+  /* ---------------------------------------------------------------- 立体 */
+  --ui-shadow-raised:        inset 1px 1px 0 var(--ui-color-border-light),
+                             inset -1px -1px 0 var(--ui-color-border);
+  --ui-shadow-sunken:        inset 1px 1px 0 var(--ui-color-border),
+                             inset -1px -1px 0 var(--ui-color-border-light);
+  --ui-shadow-pressed:       inset 1px 1px 0 var(--ui-color-border),
+                             inset -1px -1px 0 var(--ui-color-border-light);
+  --ui-shadow-dialog:        2px 2px 8px rgba(0, 0, 0, .35);
+  --ui-shadow-focus:         0 0 0 1px var(--ui-color-focus);
+
+  /* ---------------------------------------------------------------- 层级 */
+  --ui-z-raised:             10;
+  --ui-z-sticky:             90;
+  --ui-z-dropdown:           900;
+  --ui-z-overlay:            9000;
+  --ui-z-dialog:             9100;
+  --ui-z-menu:               9500;
+  --ui-z-tooltip:            9600;
+  --ui-z-toast:              9800;
+
+  /* ---------------------------------------------------------------- 动效 */
+  --ui-dur-fast:             80ms;
+  --ui-dur-normal:           140ms;
+  --ui-ease:                 cubic-bezier(.2, .7, .3, 1);
+}
+
+/* 尊重系统的"减少动态"设置：动效归零，但状态依然可辨（靠颜色/边框，不靠动画） */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ui-dur-fast: 0ms;
+    --ui-dur-normal: 0ms;
+  }
+}
+
+/* 弹窗打开时锁滚动（配合 GWUI.dialog 使用） */
+body.ui-scroll-lock { overflow: hidden; }

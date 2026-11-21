@@ -1,0 +1,318 @@
+{
+ "round": "r11",
+ "date": "2026-10-21",
+ "scope": "Armor / ChestRig(slot=rig) / Headwear(cat=helmet) 防护区域图标覆盖审计",
+ "mapping_entries": 37,
+ "icons_on_disk": [
+  "zone-back.png",
+  "zone-chest-abdomen-groin-neck.png",
+  "zone-chest-abdomen-groin.png",
+  "zone-chest-abdomen-side-groin-neck-shoulder.png",
+  "zone-chest-abdomen-side-groin-neck.png",
+  "zone-chest-abdomen-side-groin.png",
+  "zone-chest-abdomen-side-neck-shoulder.png",
+  "zone-chest-abdomen-side-neck.png",
+  "zone-chest-abdomen-side.png",
+  "zone-chest-abdomen.png",
+  "zone-chest-side.png",
+  "zone-chest.png",
+  "zone-ears.png",
+  "zone-eyes.png",
+  "zone-face-eyes.png",
+  "zone-face-jaw-ears-neck.png",
+  "zone-face-jaw-ears.png",
+  "zone-face-jaw-eyes.png",
+  "zone-face-jaw-neck.png",
+  "zone-face-jaw.png",
+  "zone-jaw-ears.png",
+  "zone-jaw-neck.png",
+  "zone-jaw.png",
+  "zone-neck.png",
+  "zone-side.png",
+  "zone-top-back-ears.png",
+  "zone-top-back-face-eyes-ears.png",
+  "zone-top-back-face-jaw-ears.png",
+  "zone-top-back-face-jaw-eyes-ears-neck.png",
+  "zone-top-back-face-jaw-eyes-ears.png",
+  "zone-top-back-face-jaw-eyes.png",
+  "zone-top-back.png",
+  "zone-top-eyes.png",
+  "zone-top-face-jaw-eyes-ears.png",
+  "zone-top-face-jaw-eyes-neck.png",
+  "zone-top-face-jaw-eyes.png",
+  "zone-top.png"
+ ],
+ "pending_user_icons": [],
+ "note": "R31.4：防护区域图改为手绘重做（ui图标/20261101防弹衣防护部位图），按游戏数据真实 z 自动拼合 35 张组合图（zone-*.png）入库：头 22 + 躯干 13；另有 1 张 zone-base.png（未穿护甲的人形轮廓底图，不计入组合映射）。躯干部位词：上胸/腹部/侧面/裆部/脖颈/肩部；每张躯干组合图以「底图 人物轮廓.png」为人形轮廓底图，再叠防护色块。**不再绘制前插板叠层**（插板图案仅为试做，已从图例移除；插板区仍按覆盖体区计入上胸/侧面）。PACA / BNTI Module-3M / DRD = 上胸+腹部+侧面；Blue Force Gear PLATEminus V2 = 上胸+侧面。无防护区域的护甲/胸挂行显示 zone-base.png 底图（未装备护甲）。护甲/头盔全部 exact 命中，运行期无缺图回退；rig 因运行期无 z 数据（no_zone_data:46）暂不以图标列呈现。R79：上游 tarkov.dev 对眼镜 / 部分面具不返回 zones，已用 data/game-truth/armor_items.json 的 armorColliders 补齐 16 件（含 6B34 护目镜 = Eyes），新增 zone-eyes.png 与 zone-face-jaw.png，映射共 37 张；破碎面具不再是无 z 样本。",
+ "categories": {
+  "armor (slot=armor)": {
+   "total": 49,
+   "with_icon_mapping": 49,
+   "unmapped_combo": 0,
+   "no_zone_data": 0,
+   "no_zone_items": [],
+   "miss_items": [],
+   "distinct_zones": {
+    "RibcageUp": 46,
+    "SpineTop": 46,
+    "RibcageLow": 41,
+    "SpineDown": 41,
+    "LeftSideChestDown": 38,
+    "RightSideChestDown": 38,
+    "Plate_Granit_SAPI_back": 37,
+    "Plate_Granit_SAPI_chest": 31,
+    "NeckFront": 27,
+    "NeckBack": 25,
+    "Pelvis": 19,
+    "Plate_Granit_SSAPI_side_left_high": 17,
+    "Plate_Granit_SSAPI_side_right_high": 17,
+    "Plate_Korund_chest": 11,
+    "PelvisBack": 11,
+    "LeftUpperArm": 5,
+    "RightUpperArm": 5,
+    "Plate_6B13_back": 4,
+    "Plate_Korund_side_right_high": 3,
+    "Plate_Granit_SSAPI_side_left_low": 2,
+    "Plate_Granit_SSAPI_side_right_low": 2,
+    "Plate_Korund_side_left_high": 2
+   },
+   "case_variants": {}
+  },
+  "rig (slot=rig)": {
+   "total": 105,
+   "with_icon_mapping": 59,
+   "unmapped_combo": 0,
+   "no_zone_data": 46,
+   "no_zone_items": [
+    {
+     "id": "5648a69d4bdc2ded0b8b457b",
+     "n": "BlackRock胸挂"
+    },
+    {
+     "id": "572b7adb24597762ae139821",
+     "n": "Scav背心"
+    },
+    {
+     "id": "5929a2a086f7744f4b234d43",
+     "n": "UMTBS 6Sh112 Scout-Sniper胸挂（数码丛林迷彩）"
+    },
+    {
+     "id": "592c2d1a86f7746dbe2af32a",
+     "n": "ANA Tactical Alpha胸挂"
+    },
+    {
+     "id": "59e7643b86f7742cbf2c109a",
+     "n": "WARTECH TV-109 + TV-106 胸挂（A-TACS 橄榄绿迷彩）"
+    },
+    {
+     "id": "5ab8dab586f77441cd04f2a2",
+     "n": "WARTECH MK3 TV-104 胸挂 (复合迷彩)"
+    },
+    {
+     "id": "5b44c8ea86f7742d1627baf1",
+     "n": "Blackhawk! Commando胸挂（Desert Tan）"
+    },
+    {
+     "id": "5c0e6a1586f77404597b4965",
+     "n": "Poyas-A + Poyas-B 复合胸挂"
+    },
+    {
+     "id": "5c0e9f2c86f77432297fe0a3",
+     "n": "Blackhawk! Commando胸挂（黑）"
+    },
+    {
+     "id": "5ca20abf86f77418567a43f2",
+     "n": "Triton M43-A胸挂"
+    },
+    {
+     "id": "5d5d85c586f774279a21cbdb",
+     "n": "Haley Strategic D3CRX 胸挂（丛林绿）"
+    },
+    {
+     "id": "5d5d8ca986f7742798716522",
+     "n": "SOE微型胸挂"
+    },
+    {
+     "id": "5df8a42886f77412640e2e75",
+     "n": "Velocity Systems多用途巡逻背心"
+    },
+    {
+     "id": "5e4abc1f86f774069619fbaa",
+     "n": "Spiritus Systems Bank Robber 胸挂"
+    },
+    {
+     "id": "5e4abfed86f77406a2713cf7",
+     "n": "Splav Tarzan M22 胸挂"
+    },
+    {
+     "id": "5e9db13186f7742f845ee9d3",
+     "n": "LBT-1961A 承重胸挂（MAS 灰色）"
+    },
+    {
+     "id": "5f5f41f56760b4138443b352",
+     "n": "Direct Action Thunderbolt 紧凑型胸挂"
+    },
+    {
+     "id": "5fd4c4fa16cac650092f6771",
+     "n": "IDEA DIY胸挂"
+    },
+    {
+     "id": "5fd4c5477a8d854fa0105061",
+     "n": "保安背心"
+    },
+    {
+     "id": "5fd4c60f875c30179f5d04c2",
+     "n": "Gear Craft GC-BSS-MK1 胸挂 (A-TACS 橄榄绿迷彩)"
+    },
+    {
+     "id": "6034cf5fffd42c541047f72e",
+     "n": "Umka М33-SET1 猎人背心"
+    },
+    {
+     "id": "6034d0230ca681766b6a0fb5",
+     "n": "CSA 胸挂（黑色）"
+    },
+    {
+     "id": "603648ff5a45383c122086ac",
+     "n": "Azimut SS \"Zhuk\"胸挂（黑）"
+    },
+    {
+     "id": "6040dd4ddcf9592f401632d2",
+     "n": "Azimut SS \"Zhuk\"胸挂（SURPAT）"
+    },
+    {
+     "id": "60a621c49c197e4e8c4455e6",
+     "n": "Stich Profi MK2胸挂（突击型，A-TACS FG迷彩）"
+    },
+    {
+     "id": "60a6220e953894617404b00a",
+     "n": "Stich Profi MK2胸挂（侦察型，A-TACS FG迷彩）"
+    },
+    {
+     "id": "628baf0b967de16aab5a4f36",
+     "n": "LBT-1961A 承重胸挂（Goons特别版）"
+    },
+    {
+     "id": "63611865ba5b90db0c0399d1",
+     "n": "Azimut SS \"Khamelion\"胸挂（橄榄色）"
+    },
+    {
+     "id": "64be7095047e826eae02b0c1",
+     "n": "Zulu Nylon Gear M4 低特征胸挂（丛林绿）"
+    },
+    {
+     "id": "64be7110bf597ba84a0a41ea",
+     "n": "56式胸挂"
+    },
+    {
+     "id": "674589d98dd67746010329e6",
+     "n": "Spiritus Systems Bank Robber 胸挂 (高原复合迷彩)"
+    },
+    {
+     "id": "67ab3ea96d7ece17bf0096f6",
+     "n": "ANA Tactical Alpha 胸挂（复合迷彩）"
+    },
+    {
+     "id": "67ab3f146d7ece17bf0096ff",
+     "n": "BlackRock 胸挂（卡其色）"
+    },
+    {
+     "id": "68a85ac615a5769d50029cd9",
+     "n": "ANA Tactical Alpha 胸挂（A-TACS AU）"
+    },
+    {
+     "id": "68a986615db8a4a66404ff9a",
+     "n": "WARTECH MK3 TV-104 胸挂 (苔藓迷彩)"
+    },
+    {
+     "id": "68bee2b431902bb4d90c3a2a",
+     "n": "LBT-1961A 承重胸挂（AOR1）"
+    },
+    {
+     "id": "69b11f46f3783ec37c03a116",
+     "n": "Direct Action Thunderbolt 紧凑型胸挂（丛林绿）"
+    },
+    {
+     "id": "69b124822c6ed131290d921f",
+     "n": "LBT-1961A 承重胸挂（沙漠防夜视迷彩）"
+    },
+    {
+     "id": "69cfbf627eaa38bd240704ad",
+     "n": "Stich Profi MK2胸挂（侦察型，数码丛林迷彩）"
+    },
+    {
+     "id": "69cfc2d7a9102bdca0080070",
+     "n": "LBT-1961A 承重胸挂（复合迷彩）"
+    },
+    {
+     "id": "69d37050705756116e0a9037",
+     "n": "Haley Strategic D3CRX 胸挂（黑色）"
+    },
+    {
+     "id": "6a565aede592c037e10a3c16",
+     "n": "Direct Action Thunderbolt 紧凑型胸挂（劫掠者）"
+    },
+    {
+     "id": "6a565b5f9ec10bc6e30cdf46",
+     "n": "Direct Action Thunderbolt 紧凑型胸挂（PenCott 荒林迷彩）"
+    },
+    {
+     "id": "6a7b44d6609e0bad000de84d",
+     "n": "Blue Force Gear Ten-Speed SF 胸挂（丛林绿）"
+    },
+    {
+     "id": "6a7c84c2bcddc78fbd0f04b6",
+     "n": "Haley Strategic D3CRX 胸挂（狼棕色）"
+    },
+    {
+     "id": "6a7c85022369e59dd307130c",
+     "n": "Haley Strategic D3CRX 胸挂（复合迷彩）"
+    }
+   ],
+   "miss_items": [],
+   "distinct_zones": {
+    "Plate_Granit_SAPI_back": 56,
+    "Plate_Granit_SAPI_chest": 55,
+    "RibcageUp": 50,
+    "SpineTop": 50,
+    "LeftSideChestDown": 37,
+    "RightSideChestDown": 37,
+    "RibcageLow": 32,
+    "Plate_Granit_SSAPI_side_left_high": 31,
+    "Plate_Granit_SSAPI_side_right_high": 31,
+    "SpineDown": 22,
+    "Pelvis": 13,
+    "NeckFront": 9,
+    "NeckBack": 9,
+    "LeftUpperArm": 4,
+    "RightUpperArm": 4,
+    "Plate_Granit_SSAPI_side_left_low": 3,
+    "Plate_Granit_SSAPI_side_right_low": 3,
+    "PelvisBack": 1,
+    "Plate_Korund_chest": 1,
+    "Plate_Korund_side_left_low": 1,
+    "Plate_Korund_side_right_low": 1
+   },
+   "case_variants": {}
+  },
+  "helmet (cat=helmet)": {
+   "total": 40,
+   "with_icon_mapping": 40,
+   "unmapped_combo": 0,
+   "no_zone_data": 0,
+   "no_zone_items": [],
+   "miss_items": [],
+   "distinct_zones": {
+    "ParietalHead": 40,
+    "BackHead": 37,
+    "Ears": 24,
+    "HeadCommon": 7,
+    "Eyes": 7,
+    "Jaw": 6,
+    "NeckFront": 2,
+    "NeckBack": 1
+   },
+   "case_variants": {}
+  }
+ }
+}

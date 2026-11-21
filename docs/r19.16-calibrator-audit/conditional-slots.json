@@ -1,0 +1,32 @@
+{
+ "generatedFor": "R19.16",
+ "method": "校准器内置「装配状态」下拉（读同一套内置预设），切换后重建真实槽位树",
+ "presetSwitch": {
+  "gun": "SA-58",
+  "presetNames": [
+   "DS Arms SA-58 7.62x51 突击步枪 默认（11 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 AUT（8 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 BEL（8 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 PBR（12 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 OSW（11 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 SPR（9 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 X-FAL（12 件）",
+   "DS Arms SA-58 7.62x51 突击步枪 XPS3-0（13 件）"
+  ],
+  "switchedTo": "DS Arms SA-58 7.62x51 突击步枪 AUT（8 件）",
+  "slotsBefore": 17,
+  "slotsAfter": 8,
+  "changed": true,
+  "slotsChanged": true
+ },
+ "identity": {
+  "boundToSlotPathAndOwner": true,
+  "note": "条件子槽位记录绑定 路径+槽位ID+拥有者物品ID，例如 MPR45 子槽身份含 MPR45 物品 ID，切枪/换父件不会串用坐标"
+ },
+ "coveredCases": [
+  "安装瞄具底座后出现光学瞄具槽（AK-74N 装 Kobra 燕尾槽基座）",
+  "SA-58 多预设切换（默认 17 槽 → AUT 8 槽）真实条件槽位增减",
+  "枪托 / 缓冲管子槽、MPR45 子槽随真实装配树出现"
+ ],
+ "notFabricated": "只登记 gwBuildLayout 实际落位的真实槽位，不在基础树里凭空创建接口"
+}

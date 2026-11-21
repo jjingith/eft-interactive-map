@@ -1,0 +1,443 @@
+﻿
+=== 2026-11-05 14:27:40 start pid=41328 ===
+14:27:40.321  桌面壳启动参数：--root D:\personal\trae\02-塔科夫\eft-interactive-map --backend-mode dev --python python --port 8817 --config-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config --user-data D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata --runtime-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime --log-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs --log D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\desktop.log --dump-json D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\window-state.json --capture D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots --mini --no-tray --exit-after-ms 32000
+14:27:40.355  启动后端：python -u "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 8817 --config-dir "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config" --runtime-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime\desktop-41328.json" --log-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\backend-41328.log" --parent-pid 41328
+14:27:40.468  后端已加入 Job Object（壳退出即杀）
+14:27:41.572  后端就绪：http://127.0.0.1:8817/ pid=29760
+14:27:41.580  WebView2 Runtime 版本：156.0.4314.58
+14:27:41.889  WebView2 环境就绪：156.0.4314.58 UDF=D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata
+14:27:42.288  主窗口导航：http://127.0.0.1:8817/
+14:27:42.303  HWND 创建：3280882
+14:27:42.307  SetWindowDisplayAffinity(WDA_NONE)=True
+14:27:42.311  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+14:27:42.311  小地图形状=circle client=208x208
+14:27:42.311  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+14:27:42.369  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:27:42.439  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:27:42.790  主页面加载完成
+14:27:45.329  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":852594,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1552,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:8817/data/flea-levels.json\",163284,40],[\"http://127.0.0.1:8817/data/season-documents.json\",31639,39],[\"http://127.0.0.1:8817/data/search-index.json\",274591,48],[\"http://127.0.0.1:8817/data/task-points.json\",231696,59],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",3253548,295],[\"http://127.0.0.1:8817/data/tasks/guides.regular.json\",1287595,89],[\"http://127.0.0.1:8817/data/tasks/traders.json\",8523,71],[\"http://127.0.0.1:8817/data/tasks/index.json\",6639,71],[\"http://127.0.0.1:8817/data/tasks/season.json\",8229,72],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,244],[\"http://127.0.0.1:8817/assets/maps/StreetsOfTarkov.svg\",0,3],[\"http://127.0.0.1:8817/data/task-images.json\",300,3]]}"
+14:27:45.439  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:27:49.743  [backend:err] ----------------------------------------
+14:27:49.743  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4274)
+14:27:49.743  [backend:err] ----------------------------------------
+14:27:49.743  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4275)
+14:27:49.743  WebView2 进程异常：BrowserProcessExited
+14:27:49.743  [backend:err] --------------------------------------------------------------------------------
+14:27:49.744  [backend:err] Exception occurred during processing of request from 
+14:27:49.744  [backend:err] ('127.0.0.1', 4276)Exception occurred during processing of request from
+14:27:49.744  [backend:err]  ('127.0.0.1', 4277)
+14:27:49.760  [backend:err] Traceback (most recent call last):
+14:27:49.760  [backend:err] Traceback (most recent call last):
+14:27:49.760  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:27:49.760  [backend:err]     self.finish_request(request, client_address)
+14:27:49.760  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.760  [backend:err] Traceback (most recent call last):
+14:27:49.766  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:27:49.766  [backend:err]     self.finish_request(request, client_address)
+14:27:49.766  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.766  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:27:49.768  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:27:49.768  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.768  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:27:49.768  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:27:49.768  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.768  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:27:49.768  [backend:err]     super().__init__(*args, **kwargs)
+14:27:49.768  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:27:49.768  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:27:49.768  [backend:err]     self.handle()
+14:27:49.768  [backend:err]     ~~~~~~~~~~~^^
+14:27:49.768  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:27:49.768  [backend:err]     self.handle_one_request()
+14:27:49.768  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:27:49.768  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:27:49.768  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:27:49.768  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:27:49.768  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:27:49.768  [backend:err]     return self._sock.recv_into(b)
+14:27:49.768  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:27:49.768  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:27:49.768  [backend:err] ----------------------------------------
+14:27:49.774  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:27:49.774  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:27:49.774  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.774  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:27:49.774  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:27:49.775  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.775  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:27:49.775  [backend:err]     super().__init__(*args, **kwargs)
+14:27:49.776  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:27:49.776  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:27:49.776  [backend:err]     self.handle()
+14:27:49.777  [backend:err]     ~~~~~~~~~~~^^
+14:27:49.777  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:27:49.777  [backend:err]     self.handle_one_request()
+14:27:49.777  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:27:49.777  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:27:49.778  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:27:49.778  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:27:49.779  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:27:49.779  [backend:err]     return self._sock.recv_into(b)
+14:27:49.779  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:27:49.779  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:27:49.780  [backend:err] Traceback (most recent call last):
+14:27:49.780  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:27:49.780  [backend:err]     self.finish_request(request, client_address)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:27:49.781  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:27:49.781  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:27:49.781  [backend:err]     super().__init__(*args, **kwargs)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:27:49.781  [backend:err]     self.handle()
+14:27:49.781  [backend:err]     ~~~~~~~~~~~^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:27:49.781  [backend:err]     self.handle_one_request()
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:27:49.781  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:27:49.781  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:27:49.781  [backend:err]     return self._sock.recv_into(b)
+14:27:49.781  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:27:49.781  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:27:49.781  [backend:err] ----------------------------------------
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:27:49.781  [backend:err]     self.finish_request(request, client_address)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:27:49.781  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:27:49.781  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:27:49.781  [backend:err]     super().__init__(*args, **kwargs)
+14:27:49.781  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:27:49.781  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:27:49.781  [backend:err]     self.handle()
+14:27:49.789  [backend:err]     ~~~~~~~~~~~^^
+14:27:49.789  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:27:49.789  [backend:err]     self.handle_one_request()
+14:27:49.789  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:27:49.789  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:27:49.789  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:27:49.791  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:27:49.791  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:27:49.791  [backend:err]     return self._sock.recv_into(b)
+14:27:49.791  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:27:49.791  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:27:49.791  [backend:err] ----------------------------------------
+14:27:49.791  [backend:err] ----------------------------------------
+14:27:49.813  小地图 WebView2 进程异常：BrowserProcessExited
+14:27:49.833  UI 线程异常：System.Runtime.InteropServices.COMException (0x8007139F): 组或资源的状态不是执行请求操作的正确状态。 (异常来自 HRESULT:0x8007139F)
+   在 Microsoft.Web.WebView2.Core.Raw.ICoreWebView2Controller.set_Bounds(tagRECT Bounds)
+   在 Microsoft.Web.WebView2.Core.CoreWebView2Controller.set_Bounds(Rectangle value)
+14:27:50.456  采集页面状态失败：CoreWebView2 members cannot be accessed after the WebView2 control is disposed.
+14:27:50.530  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:27:51.472  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:28:13.778  RequestExit
+14:28:13.782  FormClosing exitRequested=True reason=UserClosing
+14:28:13.782  FormClosed begin
+14:28:13.833  桌面壳退出
+14:28:13.857  已请求后端 shutdown
+
+=== 2026-11-05 14:29:20 start pid=38640 ===
+14:29:20.164  桌面壳启动参数：--root D:\personal\trae\02-塔科夫\eft-interactive-map --backend-mode dev --python python --port 8817 --config-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config --user-data D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata --runtime-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime --log-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs --log D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\desktop.log --dump-json D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\window-state.json --capture D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots --mini --no-tray --exit-after-ms 32000
+14:29:20.199  启动后端：python -u "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 8817 --config-dir "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config" --runtime-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime\desktop-38640.json" --log-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\backend-38640.log" --parent-pid 38640
+14:29:20.320  后端已加入 Job Object（壳退出即杀）
+14:29:21.446  后端就绪：http://127.0.0.1:8817/ pid=54604
+14:29:21.453  WebView2 Runtime 版本：156.0.4314.58
+14:29:21.782  WebView2 环境就绪：156.0.4314.58 UDF=D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata
+14:29:22.163  主窗口导航：http://127.0.0.1:8817/
+14:29:22.176  HWND 创建：3346418
+14:29:22.181  SetWindowDisplayAffinity(WDA_NONE)=True
+14:29:22.184  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+14:29:22.188  小地图形状=circle client=208x208
+14:29:22.189  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+14:29:22.250  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:29:22.315  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:29:22.514  主页面加载完成
+14:29:25.044  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":852594,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1552,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:8817/data/flea-levels.json\",300,51],[\"http://127.0.0.1:8817/data/season-documents.json\",300,49],[\"http://127.0.0.1:8817/data/search-index.json\",274591,51],[\"http://127.0.0.1:8817/data/task-points.json\",300,52],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,190],[\"http://127.0.0.1:8817/data/tasks/guides.regular.json\",300,61],[\"http://127.0.0.1:8817/data/tasks/traders.json\",300,52],[\"http://127.0.0.1:8817/data/tasks/index.json\",300,52],[\"http://127.0.0.1:8817/data/tasks/season.json\",300,52],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,222],[\"http://127.0.0.1:8817/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:8817/data/task-images.json\",300,3]]}"
+14:29:25.123  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:29:29.537  WebView2 进程异常：BrowserProcessExited
+14:29:29.561  [backend:err] --------------------------------------------------------------------------------
+14:29:29.561  [backend:err] Exception occurred during processing of request fromException occurred during processing of request from  ('127.0.0.1', 4437)('127.0.0.1', 4438)
+14:29:29.561  [backend:err] Traceback (most recent call last):
+14:29:29.561  [backend:err] Traceback (most recent call last):
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:29:29.561  [backend:err]     self.finish_request(request, client_address)
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:29:29.561  [backend:err]     self.finish_request(request, client_address)
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:29:29.561  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.561  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:29:29.561  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:29:29.561  [backend:err]     super().__init__(*args, **kwargs)
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:29:29.561  [backend:err]     self.handle()
+14:29:29.561  [backend:err]     ~~~~~~~~~~~^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:29:29.561  [backend:err]     self.handle_one_request()
+14:29:29.561  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:29:29.561  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:29:29.561  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:29:29.561  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:29:29.561  [backend:err]     return self._sock.recv_into(b)
+14:29:29.561  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:29:29.561  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:29:29.561  [backend:err] ----------------------------------------
+14:29:29.571  [backend:err] ----------------------------------------
+14:29:29.571  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4440)
+14:29:29.571  [backend:err] Traceback (most recent call last):
+14:29:29.571  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:29:29.571  [backend:err]     self.finish_request(request, client_address)
+14:29:29.571  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.571  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:29:29.573  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:29:29.573  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.573  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:29:29.573  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:29:29.574  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:29:29.574  [backend:err]     super().__init__(*args, **kwargs)
+14:29:29.574  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:29:29.574  [backend:err]     self.handle()
+14:29:29.574  [backend:err]     ~~~~~~~~~~~^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:29:29.574  [backend:err]     self.handle_one_request()
+14:29:29.574  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:29:29.574  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:29:29.574  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:29:29.574  [backend:err]     return self._sock.recv_into(b)
+14:29:29.574  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:29:29.574  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:29:29.574  [backend:err] ----------------------------------------
+14:29:29.574  [backend:err] ----------------------------------------
+14:29:29.574  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4439)
+14:29:29.574  [backend:err] Traceback (most recent call last):
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:29:29.574  [backend:err]     self.finish_request(request, client_address)
+14:29:29.574  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.574  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:29:29.574  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:29:29.581  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.581  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:29:29.581  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:29:29.581  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.581  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:29:29.582  [backend:err]     super().__init__(*args, **kwargs)
+14:29:29.582  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:29:29.582  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:29:29.582  [backend:err]     self.handle()
+14:29:29.582  [backend:err]     ~~~~~~~~~~~^^
+14:29:29.582  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:29:29.582  [backend:err]     self.handle_one_request()
+14:29:29.582  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:29:29.582  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:29:29.582  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:29:29.582  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:29:29.582  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:29:29.582  [backend:err]     return self._sock.recv_into(b)
+14:29:29.582  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:29:29.582  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:29:29.582  [backend:err] ----------------------------------------
+14:29:29.582  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:29:29.582  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:29:29.587  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.587  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:29:29.587  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:29:29.587  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:29:29.588  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:29:29.588  [backend:err]     super().__init__(*args, **kwargs)
+14:29:29.588  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:29:29.589  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:29:29.589  [backend:err]     self.handle()
+14:29:29.589  [backend:err]     ~~~~~~~~~~~^^
+14:29:29.589  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:29:29.590  [backend:err]     self.handle_one_request()
+14:29:29.590  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:29:29.590  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:29:29.590  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:29:29.591  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:29:29.591  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:29:29.591  [backend:err]     return self._sock.recv_into(b)
+14:29:29.591  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:29:29.592  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:29:29.592  [backend:err] ----------------------------------------
+14:29:29.612  小地图 WebView2 进程异常：BrowserProcessExited
+14:29:29.626  UI 线程异常：System.Runtime.InteropServices.COMException (0x8007139F): 组或资源的状态不是执行请求操作的正确状态。 (异常来自 HRESULT:0x8007139F)
+   在 Microsoft.Web.WebView2.Core.Raw.ICoreWebView2Controller.set_Bounds(tagRECT Bounds)
+   在 Microsoft.Web.WebView2.Core.CoreWebView2Controller.set_Bounds(Rectangle value)
+14:29:30.139  采集页面状态失败：CoreWebView2 members cannot be accessed after the WebView2 control is disposed.
+14:29:30.185  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:29:31.262  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:29:53.655  RequestExit
+14:29:53.655  FormClosing exitRequested=True reason=UserClosing
+14:29:53.666  FormClosed begin
+14:29:53.716  桌面壳退出
+14:29:53.734  已请求后端 shutdown
+
+=== 2026-11-05 14:30:18 start pid=1220 ===
+14:30:18.455  桌面壳启动参数：--root D:\personal\trae\02-塔科夫\eft-interactive-map --backend-mode dev --python python --port 8817 --config-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config --user-data D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata --runtime-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime --log-dir D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs --log D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\desktop.log --dump-json D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\window-state.json --capture D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots --mini --no-tray --exit-after-ms 32000
+14:30:18.496  启动后端：python -u "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 8817 --config-dir "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\config" --runtime-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\runtime\desktop-1220.json" --log-file "D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\logs\backend-1220.log" --parent-pid 1220
+14:30:18.609  后端已加入 Job Object（壳退出即杀）
+14:30:19.728  后端就绪：http://127.0.0.1:8817/ pid=53104
+14:30:19.737  WebView2 Runtime 版本：156.0.4314.58
+14:30:20.045  WebView2 环境就绪：156.0.4314.58 UDF=D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\userdata
+14:30:20.425  主窗口导航：http://127.0.0.1:8817/
+14:30:20.437  HWND 创建：29230500
+14:30:20.440  SetWindowDisplayAffinity(WDA_NONE)=True
+14:30:20.440  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+14:30:20.448  小地图形状=circle client=208x208
+14:30:20.448  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+14:30:20.499  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:30:20.563  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:30:20.794  主页面加载完成
+14:30:23.326  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":852594,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1552,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:8817/data/flea-levels.json\",300,57],[\"http://127.0.0.1:8817/data/season-documents.json\",300,58],[\"http://127.0.0.1:8817/data/search-index.json\",300,60],[\"http://127.0.0.1:8817/data/task-points.json\",231696,61],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,217],[\"http://127.0.0.1:8817/data/tasks/guides.regular.json\",300,72],[\"http://127.0.0.1:8817/data/tasks/traders.json\",300,63],[\"http://127.0.0.1:8817/data/tasks/index.json\",300,63],[\"http://127.0.0.1:8817/data/tasks/season.json\",300,63],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,231],[\"http://127.0.0.1:8817/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:8817/data/task-images.json\",300,2]]}"
+14:30:23.404  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:30:27.825  WebView2 进程异常：BrowserProcessExited
+14:30:27.841  [backend:err] ----------------------------------------
+14:30:27.841  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4585)
+14:30:27.841  [backend:err] Traceback (most recent call last):
+14:30:27.841  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:30:27.841  [backend:err]     self.finish_request(request, client_address)
+14:30:27.841  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.841  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:30:27.841  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:30:27.841  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.841  [backend:err] ----------------------------------------  File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:30:27.841  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:30:27.841  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.841  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:30:27.841  [backend:err]     super().__init__(*args, **kwargs)
+14:30:27.841  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:30:27.841  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:30:27.841  [backend:err]     self.handle()
+14:30:27.841  [backend:err]     ~~~~~~~~~~~^^
+14:30:27.841  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:30:27.841  [backend:err]     self.handle_one_request()
+14:30:27.841  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:30:27.841  [backend:err] Exception occurred during processing of request from  File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:30:27.857  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:30:27.857  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:30:27.857  [backend:err]    File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:30:27.857  [backend:err]     return self._sock.recv_into(b)
+14:30:27.857  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:30:27.857  [backend:err] ('127.0.0.1', 4586)ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:30:27.858  [backend:err] ----------------------------------------
+14:30:27.859  [backend:err] Traceback (most recent call last):
+14:30:27.859  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:30:27.859  [backend:err]     self.finish_request(request, client_address)
+14:30:27.859  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.860  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:30:27.860  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:30:27.860  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.860  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:30:27.861  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:30:27.861  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:30:27.861  [backend:err]     super().__init__(*args, **kwargs)
+14:30:27.861  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:30:27.861  [backend:err]     self.handle()
+14:30:27.861  [backend:err]     ~~~~~~~~~~~^^
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:30:27.861  [backend:err]     self.handle_one_request()
+14:30:27.861  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:30:27.861  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:30:27.861  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:30:27.861  [backend:err]     return self._sock.recv_into(b)
+14:30:27.861  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:30:27.861  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:30:27.861  [backend:err] ----------------------------------------
+14:30:27.861  [backend:err] ----------------------------------------
+14:30:27.861  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4582)
+14:30:27.861  [backend:err] ----------------------------------------
+14:30:27.861  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4584)
+14:30:27.861  [backend:err] Traceback (most recent call last):
+14:30:27.861  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:30:27.861  [backend:err]     self.finish_request(request, client_address)
+14:30:27.861  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.868  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:30:27.868  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:30:27.868  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.868  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:30:27.869  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:30:27.869  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.869  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:30:27.869  [backend:err]     super().__init__(*args, **kwargs)
+14:30:27.869  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:30:27.869  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:30:27.869  [backend:err]     self.handle()
+14:30:27.869  [backend:err]     ~~~~~~~~~~~^^
+14:30:27.869  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:30:27.869  [backend:err]     self.handle_one_request()
+14:30:27.869  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:30:27.869  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:30:27.873  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:30:27.873  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:30:27.873  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:30:27.873  [backend:err]     return self._sock.recv_into(b)
+14:30:27.873  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:30:27.874  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:30:27.874  [backend:err] ----------------------------------------
+14:30:27.874  [backend:err] Traceback (most recent call last):
+14:30:27.874  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+14:30:27.874  [backend:err]     self.finish_request(request, client_address)
+14:30:27.874  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.874  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+14:30:27.874  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+14:30:27.874  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.874  [backend:err]   File "D:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+14:30:27.874  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+14:30:27.874  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14:30:27.874  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+14:30:27.874  [backend:err]     super().__init__(*args, **kwargs)
+14:30:27.874  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+14:30:27.874  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+14:30:27.874  [backend:err]     self.handle()
+14:30:27.874  [backend:err]     ~~~~~~~~~~~^^
+14:30:27.874  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+14:30:27.874  [backend:err]     self.handle_one_request()
+14:30:27.874  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+14:30:27.879  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+14:30:27.879  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+14:30:27.879  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+14:30:27.879  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+14:30:27.879  [backend:err]     return self._sock.recv_into(b)
+14:30:27.879  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+14:30:27.881  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+14:30:27.881  [backend:err] ----------------------------------------
+14:30:27.906  设置 WebView2 边界失败：CoreWebView2Controller members cannot be accessed after the WebView2 control is disposed.
+14:30:27.912  小地图 WebView2 进程异常：BrowserProcessExited
+14:30:28.467  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:30:29.610  WebView2 就绪，导航：http://127.0.0.1:8817/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+14:30:29.626  WebView2 已重建并重新导航：http://127.0.0.1:8817/ 次数=1
+14:30:29.868  主页面加载完成
+14:30:32.387  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":852594,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1552,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:8817/data/flea-levels.json\",300,36],[\"http://127.0.0.1:8817/data/season-documents.json\",300,36],[\"http://127.0.0.1:8817/data/search-index.json\",300,40],[\"http://127.0.0.1:8817/data/task-points.json\",300,39],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,171],[\"http://127.0.0.1:8817/data/tasks/guides.regular.json\",300,44],[\"http://127.0.0.1:8817/data/tasks/traders.json\",300,36],[\"http://127.0.0.1:8817/data/tasks/index.json\",300,36],[\"http://127.0.0.1:8817/data/tasks/season.json\",8229,35],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,235],[\"http://127.0.0.1:8817/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:8817/data/task-images.json\",300,7]]}"
+14:30:32.466  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:30:37.479  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"91.64677906024878 48.56566957249095 345.93625248 346.49063750000005\",\"svgInner\":852297,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"91.64677906024878 48.56566957249095 345.93625248 346.49063750000005\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\",\"svgImages\":1463,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:8817/data/flea-levels.json\",300,36],[\"http://127.0.0.1:8817/data/season-documents.json\",300,36],[\"http://127.0.0.1:8817/data/search-index.json\",300,40],[\"http://127.0.0.1:8817/data/task-points.json\",300,39],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,171],[\"http://127.0.0.1:8817/data/tasks/guides.regular.json\",300,44],[\"http://127.0.0.1:8817/data/tasks/traders.json\",300,36],[\"http://127.0.0.1:8817/data/tasks/index.json\",300,36],[\"http://127.0.0.1:8817/data/tasks/season.json\",8229,35],[\"http://127.0.0.1:8817/data/tasks/tasks.regular.json\",300,235],[\"http://127.0.0.1:8817/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:8817/data/task-images.json\",300,7]]}"
+14:30:37.533  截图已写入：D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-recover\shots
+14:30:51.935  RequestExit
+14:30:51.946  FormClosing exitRequested=True reason=UserClosing
+14:30:51.958  FormClosed begin
+14:30:52.056  桌面壳退出
+14:30:52.086  已请求后端 shutdown

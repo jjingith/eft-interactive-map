@@ -1,0 +1,583 @@
+{
+  "checks": [
+    {
+      "name": "table-frame.png 不再出现在任何 CSS 声明里",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "groupbox.png 通用组里不再含 .tbl-scroll",
+      "ok": true,
+      "detail": "html body #lw-cost,\nhtml body #lw-figure,\nhtml body section.lw-block,\nhtml body #lw-gun-presets,\nhtml body #tk-story-main,\nhtml body #tk-story-list,\nhtml body #"
+    },
+    {
+      "name": "全部 9 个视图的 .tbl-scroll 都没有 fill 位图",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "可见滚区都是 1px 实线",
+      "ok": true,
+      "detail": "[('ammo', '1px'), ('loadout', '1px')]"
+    },
+    {
+      "name": "可见滚区都是不透明纯色底",
+      "ok": true,
+      "detail": "[('ammo', 'rgb(255, 255, 255)'), ('loadout', 'rgb(255, 255, 255)')]"
+    },
+    {
+      "name": "各视图确实都有表格滚区（不是空跑）",
+      "ok": true,
+      "detail": "9"
+    },
+    {
+      "name": "配装页大表格滚区无位图 / 1px 白底",
+      "ok": true,
+      "detail": "[{'i': 0, 'cls': 'tbl-scroll', 'id': '', 'src': '', 'slice': '100%', 'biw': '1', 'borderW': '1px', 'bg': 'rgb(255, 255, 255)', 'w': 1095, 'h': 559, 'visible': True}]"
+    },
+    {
+      "name": "R231 弹药滚区仍无位图 / 1px 白底",
+      "ok": true,
+      "detail": "[{'i': 2, 'cls': 'tbl-scroll', 'id': '', 'src': '', 'slice': '100%', 'biw': '1', 'borderW': '1px', 'bg': 'rgb(255, 255, 255)', 'w': 1282, 'h': 715, 'visible': True}]"
+    },
+    {
+      "name": "R228 等宽 / R230 默认全亮不回归",
+      "ok": true,
+      "detail": "{'n': 32, 'uniq': [90], 'lit': 32}"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "shots": [
+    {
+      "file": "view-map.png",
+      "bytes": 804942
+    },
+    {
+      "file": "view-tasks.png",
+      "bytes": 376114
+    },
+    {
+      "file": "view-ammo.png",
+      "bytes": 422319
+    },
+    {
+      "file": "view-gun.png",
+      "bytes": 460203
+    },
+    {
+      "file": "view-loadout.png",
+      "bytes": 600277
+    },
+    {
+      "file": "view-market.png",
+      "bytes": 328457
+    }
+  ],
+  "perView": {
+    "map": [],
+    "tasks": [],
+    "ammo": [
+      {
+        "i": 0,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 1282,
+        "h": 715,
+        "visible": true
+      }
+    ],
+    "gun": [
+      {
+        "i": 0,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      },
+      {
+        "i": 1,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      }
+    ],
+    "loadout": [
+      {
+        "i": 0,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 1095,
+        "h": 559,
+        "visible": true
+      },
+      {
+        "i": 1,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      },
+      {
+        "i": 2,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      }
+    ],
+    "market": [
+      {
+        "i": 0,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      },
+      {
+        "i": 1,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      },
+      {
+        "i": 2,
+        "cls": "tbl-scroll",
+        "id": "",
+        "src": "",
+        "slice": "100%",
+        "biw": "1",
+        "borderW": "1px",
+        "bg": "rgb(255, 255, 255)",
+        "w": 0,
+        "h": 0,
+        "visible": false
+      }
+    ]
+  },
+  "remainingFillContainers": {
+    "map": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "select.png",
+        "cls": "map-select",
+        "w": 262,
+        "h": 33
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "panel",
+        "w": 300,
+        "h": 757
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "block",
+        "w": 297,
+        "h": 179
+      },
+      {
+        "src": "btn-normal.png",
+        "cls": "legend-group-toggle",
+        "w": 251,
+        "h": 19
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "statusbar",
+        "w": 954,
+        "h": 31
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "task-panel-head",
+        "w": 327,
+        "h": 34
+      },
+      {
+        "src": "input.png",
+        "cls": "",
+        "w": 251,
+        "h": 31
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "task-list",
+        "w": 327,
+        "h": 459
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ],
+    "tasks": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "menu-panel-bg.png",
+        "cls": "tk-shell db4",
+        "w": 1584,
+        "h": 757
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "tk-head",
+        "w": 1582,
+        "h": 75
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "tk-statusbar",
+        "w": 1582,
+        "h": 24
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ],
+    "ammo": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "menu-panel-bg.png",
+        "cls": "am-workbench",
+        "w": 1584,
+        "h": 757
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "am-top",
+        "w": 1582,
+        "h": 40
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "am-tabs",
+        "w": 444,
+        "h": 27
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "am-side",
+        "w": 300,
+        "h": 715
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "am-groups",
+        "w": 278,
+        "h": 559
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "am-range",
+        "w": 278,
+        "h": 86
+      },
+      {
+        "src": "tbl-head.png",
+        "cls": "tbl-head",
+        "w": 1280,
+        "h": 24
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ],
+    "gun": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "menu-panel-bg.png",
+        "cls": "gun-workbench",
+        "w": 1584,
+        "h": 757
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "gw-top",
+        "w": 1582,
+        "h": 48
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "gw-modes",
+        "w": 1582,
+        "h": 41
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "gw-page",
+        "w": 1582,
+        "h": 666
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "gw-browse",
+        "w": 1556,
+        "h": 3541
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ],
+    "loadout": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "menu-panel-bg.png",
+        "cls": "loadout-workbench",
+        "w": 1584,
+        "h": 757
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "lw-top",
+        "w": 1582,
+        "h": 41
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-side",
+        "w": 475,
+        "h": 714
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-board",
+        "w": 472,
+        "h": 585
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-block lw-gunpresets",
+        "w": 457,
+        "h": 98
+      },
+      {
+        "src": "btn-normal.png",
+        "cls": "lw-gp-go",
+        "w": 453,
+        "h": 24
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-cost",
+        "w": 472,
+        "h": 96
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-block",
+        "w": 457,
+        "h": 97
+      },
+      {
+        "src": "input.png",
+        "cls": "lw-sens-input",
+        "w": 453,
+        "h": 31
+      },
+      {
+        "src": "btn-normal.png",
+        "cls": "lw-clear",
+        "w": 457,
+        "h": 30
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-focus",
+        "w": 1095,
+        "h": 56
+      },
+      {
+        "src": "groupbox.png",
+        "cls": "lw-filters",
+        "w": 1095,
+        "h": 77
+      },
+      {
+        "src": "tbl-head.png",
+        "cls": "tbl-head",
+        "w": 1094,
+        "h": 32
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ],
+    "market": [
+      {
+        "src": "titlebar.png",
+        "cls": "app-menubar",
+        "w": 1584,
+        "h": 34
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "menubar",
+        "w": 1584,
+        "h": 35
+      },
+      {
+        "src": "titlebar.png",
+        "cls": "context-bar",
+        "w": 1584,
+        "h": 36
+      },
+      {
+        "src": "statusbar-bg.png",
+        "cls": "app-statusbar",
+        "w": 1584,
+        "h": 24
+      }
+    ]
+  }
+}

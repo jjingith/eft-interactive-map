@@ -1,0 +1,388 @@
+{
+ "console": [],
+ "views": [],
+ "v1920": {
+  "ak74": {
+   "picked": "AK-74 5.45x39 突击步枪",
+   "mode": "build",
+   "current": "AK-74 5.45x39 突击步枪",
+   "canvas": {
+    "w": 437,
+    "h": 495,
+    "links": 9,
+    "rootCards": 9,
+    "subCards": 4,
+    "emptyLabs": 5,
+    "muzzle": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "stock": {
+     "leftOfGun": false,
+     "rightOfGun": true,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "magazine": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 89,
+    "gunW": 232
+   },
+   "slotFlows": [
+    {
+     "slot": "mod_muzzle",
+     "after": {
+      "parts": 13,
+      "focus": "mod_muzzle",
+      "candRows": 16,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    },
+    {
+     "slot": "mod_stock",
+     "after": {
+      "parts": 13,
+      "focus": "mod_stock",
+      "candRows": 15,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    },
+    {
+     "slot": "mod_magazine",
+     "after": {
+      "parts": 13,
+      "focus": "mod_magazine",
+      "candRows": 13,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    }
+   ],
+   "install": {
+    "row": {
+     "x": 1399.5,
+     "y": 175.796875,
+     "name": "6L18 5.45x39 AK-74 45发弹匣Magazine-4.5—0.3"
+    },
+    "iconChanged": true,
+    "iconAfter": "564ca9df4bdc2d35148b4569.png"
+   },
+   "afterRightClick": {
+    "parts": 13,
+    "focus": "mod_magazine",
+    "candRows": 13,
+    "bars": [
+     "人机工效48.5基线 47.0",
+     "散布角2.0基线 2.0",
+     "垂直后坐71.0基线 71.0",
+     "水平后坐180.6基线 180.6",
+     "初速 m/s890.0基线 —"
+    ]
+   },
+   "subCards": 4,
+   "restored": {
+    "tag": "官方预设：AK-74 5.45x39 突击步枪 默认",
+    "parts": 13
+   }
+  },
+  "m4a1": {
+   "picked": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "current": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "canvas": {
+    "w": 437,
+    "h": 707,
+    "links": 6,
+    "rootCards": 6,
+    "subCards": 12,
+    "emptyLabs": 6,
+    "muzzle": null,
+    "stock": {
+     "leftOfGun": false,
+     "rightOfGun": true,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "magazine": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": null,
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": false,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 33,
+    "gunW": 232
+   },
+   "noResidue": "{\"gun\":\"柯尔特 M4A1 5.56x45 卡宾枪\",\"akGasBlockRoot\":false}"
+  },
+  "mp5": {
+   "picked": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "current": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "canvas": {
+    "w": 437,
+    "h": 259,
+    "links": 3,
+    "rootCards": 3,
+    "subCards": 6,
+    "emptyLabs": 2,
+    "muzzle": null,
+    "stock": null,
+    "magazine": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": null,
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": false,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 197,
+    "gunW": 232
+   },
+   "noResidue": "{\"gun\":\"HK MP5 9x19 冲锋枪（海军三发点射）\",\"m4GasBlockRoot\":false}"
+  },
+  "global": "{\"overflowX\":false,\"errors\":0,\"external\":0}"
+ },
+ "v1264": {
+  "ak74": {
+   "picked": "AK-74 5.45x39 突击步枪",
+   "mode": "build",
+   "current": "AK-74 5.45x39 突击步枪",
+   "canvas": {
+    "w": 286,
+    "h": 550,
+    "links": 9,
+    "rootCards": 9,
+    "subCards": 4,
+    "emptyLabs": 5,
+    "muzzle": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "stock": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "magazine": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 91,
+    "gunW": 190
+   },
+   "slotFlows": [
+    {
+     "slot": "mod_muzzle",
+     "after": {
+      "parts": 13,
+      "focus": "mod_muzzle",
+      "candRows": 16,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    },
+    {
+     "slot": "mod_stock",
+     "after": {
+      "parts": 13,
+      "focus": "mod_stock",
+      "candRows": 15,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    },
+    {
+     "slot": "mod_magazine",
+     "after": {
+      "parts": 13,
+      "focus": "mod_magazine",
+      "candRows": 13,
+      "bars": [
+       "人机工效47.0基线 47.0",
+       "散布角2.0基线 2.0",
+       "垂直后坐71.0基线 71.0",
+       "水平后坐180.6基线 180.6",
+       "初速 m/s890.0基线 —"
+      ]
+     }
+    }
+   ],
+   "install": {
+    "row": {
+     "x": 946.5,
+     "y": 175.796875,
+     "name": "6L18 5.45x39 AK-74 45发弹匣Magazine-4.5—0.3"
+    },
+    "iconChanged": true,
+    "iconAfter": "564ca9df4bdc2d35148b4569.png"
+   },
+   "afterRightClick": {
+    "parts": 13,
+    "focus": "mod_magazine",
+    "candRows": 13,
+    "bars": [
+     "人机工效48.5基线 47.0",
+     "散布角2.0基线 2.0",
+     "垂直后坐71.0基线 71.0",
+     "水平后坐180.6基线 180.6",
+     "初速 m/s890.0基线 —"
+    ]
+   },
+   "subCards": 4,
+   "restored": {
+    "tag": "官方预设：AK-74 5.45x39 突击步枪 默认",
+    "parts": 13
+   }
+  },
+  "m4a1": {
+   "picked": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "current": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "canvas": {
+    "w": 286,
+    "h": 762,
+    "links": 6,
+    "rootCards": 6,
+    "subCards": 12,
+    "emptyLabs": 6,
+    "muzzle": null,
+    "stock": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-mid"
+    },
+    "magazine": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": null,
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": false,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 91,
+    "gunW": 190
+   },
+   "noResidue": "{\"gun\":\"柯尔特 M4A1 5.56x45 卡宾枪\",\"akGasBlockRoot\":false}"
+  },
+  "mp5": {
+   "picked": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "current": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "canvas": {
+    "w": 286,
+    "h": 483,
+    "links": 3,
+    "rootCards": 3,
+    "subCards": 6,
+    "emptyLabs": 2,
+    "muzzle": null,
+    "stock": null,
+    "magazine": {
+     "leftOfGun": false,
+     "rightOfGun": false,
+     "belowGun": true,
+     "band": "gw-band-bottom"
+    },
+    "gasBlock": null,
+    "mount": null,
+    "receiver": {
+     "leftOfGun": true,
+     "rightOfGun": false,
+     "belowGun": false,
+     "band": "gw-band-mid"
+    },
+    "overflowX": false,
+    "gunX": 88,
+    "gunW": 190
+   },
+   "noResidue": "{\"gun\":\"HK MP5 9x19 冲锋枪（海军三发点射）\",\"m4GasBlockRoot\":false}"
+  },
+  "global": "{\"overflowX\":false,\"errors\":0,\"external\":0}"
+ }
+}

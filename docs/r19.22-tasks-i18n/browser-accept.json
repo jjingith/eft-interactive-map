@@ -1,0 +1,271 @@
+{
+ "pass": true,
+ "checks": [
+  {
+   "name": "T1 任务树渲染全部任务节点",
+   "ok": true,
+   "detail": {
+    "nodes": 503,
+    "edges": 257
+   }
+  },
+  {
+   "name": "T1b 关系边由真实前置生成",
+   "ok": true,
+   "detail": {
+    "edges": 257
+   }
+  },
+  {
+   "name": "T1c 任务视图选中",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "name": "T1d 状态栏统计含总数",
+   "ok": true,
+   "detail": "共 503 个任务 · 已完成 0 · 进行中 0 · 筛选命中 503"
+  },
+  {
+   "name": "T2 滚轮缩放生效",
+   "ok": true,
+   "detail": {
+    "before": "translate(12,-1.5199999999999996) scale(0.72)",
+    "after": "translate(-69.96000000000004,-51.92240000000004) scale(0.8064)"
+   }
+  },
+  {
+   "name": "T2b 拖拽平移生效",
+   "ok": true,
+   "detail": {
+    "after": "translate(-209.96000000000004,-121.92240000000004) scale(0.8064)"
+   }
+  },
+  {
+   "name": "T3 中文搜索命中",
+   "ok": true,
+   "detail": {
+    "needle": "一臂",
+    "matches": 1
+   }
+  },
+  {
+   "name": "T4 商人筛选弱化非命中节点",
+   "ok": true,
+   "detail": {
+    "trader": "54cb50c76803fa8b248b4571",
+    "dim": 503
+   }
+  },
+  {
+   "name": "T5 点击节点出侧栏摘要",
+   "ok": true,
+   "detail": {
+    "id": "6752f6d83038f7df520c83e8",
+    "title": "一臂之力"
+   }
+  },
+  {
+   "name": "T5b 双击进入详情",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "name": "T6 详情六区块齐全",
+   "ok": true,
+   "detail": [
+    "前置任务（0）",
+    "前置条件（非任务）",
+    "任务目标（3）",
+    "详细攻略",
+    "地图定位（0 个目标区域）",
+    "后续任务（2）",
+    "任务奖励"
+   ]
+  },
+  {
+   "name": "T6b 基本信息字段 ≥ 6",
+   "ok": true,
+   "detail": {
+    "facts": 13
+   }
+  },
+  {
+   "name": "T6c 攻略标明状态",
+   "ok": true,
+   "detail": "攻略由任务数据派生（供参考，待人工复核）来源：tarkov.dev 任务数据（objectives/zones/requirements 字段派生）"
+  },
+  {
+   "name": "T6d 勾选目标进入进行中",
+   "ok": true,
+   "detail": {
+    "status": "active"
+   }
+  },
+  {
+   "name": "T6e 必需目标全勾自动完成",
+   "ok": true,
+   "detail": {
+    "status": "completed"
+   }
+  },
+  {
+   "name": "T7 商人卡片与任务列表",
+   "ok": true,
+   "detail": {
+    "cards": 11,
+    "rows": 504
+   }
+  },
+  {
+   "name": "T7b 任务链渲染",
+   "ok": true,
+   "detail": {
+    "chains": 24
+   }
+  },
+  {
+   "name": "T7c 点商人卡片按商人过滤",
+   "ok": true,
+   "detail": {
+    "rows": 54
+   }
+  },
+  {
+   "name": "T8 进度页卡片与分组",
+   "ok": true,
+   "detail": {
+    "cards": 4,
+    "groups": 7
+   }
+  },
+  {
+   "name": "T8b 导出进度 JSON 合法",
+   "ok": true,
+   "detail": "eftmap-task-progress:3"
+  },
+  {
+   "name": "T8c 非法导入不破坏原进度",
+   "ok": true,
+   "detail": {
+    "msg": "导入失败：文件结构不符合任务进度格式，原进度未改动。",
+    "status": "completed"
+   }
+  },
+  {
+   "name": "T9 刷新后进度保留",
+   "ok": true,
+   "detail": {
+    "status": "completed"
+   }
+  },
+  {
+   "name": "T10 PvE 模式独立数据",
+   "ok": true,
+   "detail": {
+    "nodes": 503
+   }
+  },
+  {
+   "name": "T10b PvE 进度与 PvP 隔离",
+   "ok": true,
+   "detail": {
+    "status": "none"
+   }
+  },
+  {
+   "name": "T11 详情可跳转地图",
+   "ok": true,
+   "detail": {
+    "clicked": "ok",
+    "map": "true"
+   }
+  },
+  {
+   "name": "T11b 地图出现任务目标钉点",
+   "ok": true,
+   "detail": {
+    "pin": true
+   }
+  },
+  {
+   "name": "T12 i18n 未覆盖英文为 0",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "T12b 已有中文字典与名称表",
+   "ok": true,
+   "detail": {
+    "traders": 37,
+    "tasks": 123,
+    "maps": 26,
+    "items": 47
+   }
+  },
+  {
+   "name": "T13 四个既有视图均可打开且无脚本错误",
+   "ok": true,
+   "detail": {
+    "map": {
+     "selected": "true",
+     "errors": 0
+    },
+    "loadout": {
+     "selected": "true",
+     "errors": 0
+    },
+    "gun": {
+     "selected": "true",
+     "errors": 0
+    },
+    "ammo": {
+     "selected": "true",
+     "errors": 0
+    }
+   }
+  },
+  {
+   "name": "T13b 校准器仍可用",
+   "ok": true,
+   "detail": "{\"grid\":true,\"cards\":11}"
+  }
+ ],
+ "detail": {
+  "i18n": {
+   "entries": 336,
+   "poi": 281,
+   "patterns": 2,
+   "names": {
+    "traders": 37,
+    "tasks": 123,
+    "maps": 26,
+    "items": 47
+   },
+   "translated": 442,
+   "nodes": 224,
+   "attrs": 218,
+   "unmappedCount": 0,
+   "unmapped": [],
+   "loadError": null
+  },
+  "regression": {
+   "map": {
+    "selected": "true",
+    "errors": 0
+   },
+   "loadout": {
+    "selected": "true",
+    "errors": 0
+   },
+   "gun": {
+    "selected": "true",
+    "errors": 0
+   },
+   "ammo": {
+    "selected": "true",
+    "errors": 0
+   }
+  }
+ }
+}

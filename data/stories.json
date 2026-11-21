@@ -1,0 +1,2474 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-05T22:00:00+08:00",
+  "source": {
+    "site": "eftarkov.com",
+    "pages": [
+      "https://www.eftarkov.com/storyline/6903d779fdfc4078740a4bd0",
+      "https://www.eftarkov.com/storyline/69052e18e680c2d3e3034d3a",
+      "https://www.eftarkov.com/storyline/6900927ab7d28358f80b9421",
+      "https://www.eftarkov.com/storyline/68e784b7fa3f1fa3770094ba",
+      "https://www.eftarkov.com/storyline/68da33fe00868edcb6025ac4",
+      "https://www.eftarkov.com/storyline/68da36cf7cff54fc6109874a",
+      "https://www.eftarkov.com/storyline/69d38381cea4b428690ea1d9",
+      "https://www.eftarkov.com/storyline/68cbd33676fe74b1e80bfd91",
+      "https://www.eftarkov.com/storyline/68e3a35002661eb2d30ce387",
+      "https://www.eftarkov.com/storyline/68cbcdc4c964ab83cc0c928e"
+    ],
+    "db4tarkov": "main.dart.js（docs/r39-live-price/main.dart.js.full）",
+    "points": "data/task-points.json"
+  },
+  "counts": {
+    "stories": 10,
+    "steps": 266,
+    "choices": 4,
+    "endings": 1
+  },
+  "dataGaps": [
+    {
+      "type": "orphan-points",
+      "message": "data/task-points.json 中有 1 组剧情点无法归属到剧情线（id 形如 story-story-obj），地图上仍会显示，但没有可跳转的剧情详情。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "他们已经来了：21/30 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "意外证人：12/18 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "no-story-key",
+      "message": "无名者（6900927ab7d28358f80b9421）在 db4tarkov 客户端里没有找到 story_* 变量键，分支结局按站点选项展示。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "无名者：15/24 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "神秘蓝焰：2/7 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "门票：22/23 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "Batya：31/38 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "Boreas：54/67 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "塔科夫之旅：21/26 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "探秘“迷宫”：8/14 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    },
+    {
+      "type": "step-without-map",
+      "message": "陨落星辰：12/19 个步骤没有地图点位（属于文本 / 前置条件步骤）。"
+    }
+  ],
+  "stories": [
+    {
+      "id": "6903d779fdfc4078740a4bd0",
+      "slug": "they-are-already-here",
+      "storyKey": "story_they_are_already_here",
+      "nameZh": "他们已经来了",
+      "nameEn": "他们已经来了",
+      "steps": [
+        {
+          "id": "6ab8324d0a5297ec69539b02",
+          "order": 10,
+          "name": "了解在塔科夫四处留下奇特符号的神秘人士",
+          "maps": [
+            "customs",
+            "reserve",
+            "shoreline",
+            "woods"
+          ],
+          "points": 6
+        },
+        {
+          "id": "6ab8324d67dd2b7d57472903",
+          "order": 20,
+          "name": "找到与“世界之眼”有关的地方",
+          "maps": [
+            "lighthouse"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324d9c718e340f9a3504",
+          "order": 30,
+          "name": "在行刑室里寻找邪教徒受害者的更多消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d7e11fd987cd75905",
+          "order": 40,
+          "name": "找到邪教受害者的公寓",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324dab21830706a3ca06",
+          "order": 50,
+          "name": "调查邪教受害者的公寓",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d683fdc188ea29807",
+          "order": 60,
+          "name": "问问 Mechanic 关于“世界之眼”的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d53f291018e8ffc08",
+          "order": 70,
+          "name": "找到并消灭邪教徒祭司 1 名",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d1a6630e431226909",
+          "order": 80,
+          "name": "收集更多有关“世界之眼”的情报",
+          "maps": [
+            "customs",
+            "reserve",
+            "streets-of-tarkov"
+          ],
+          "points": 5
+        },
+        {
+          "id": "6ab8324d14472450b8c4b70a",
+          "order": 90,
+          "name": "在海岸线找到标有“世界之眼”的地方",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324d14d4519d5614b30b",
+          "order": 100,
+          "name": "调查 Sordi 塔楼周围的区域",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324daa6911233b71900c",
+          "order": 110,
+          "name": "修复 Sordi 通讯塔",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d313969d71433960d",
+          "order": 120,
+          "name": "在森林找到标有“世界之眼”的地方",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324d39279ffb563f2c0e",
+          "order": 130,
+          "name": "调查标有“世界之眼”的邪教徒房屋",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab864062dedb687c5e59901",
+          "order": 140,
+          "name": "在灯塔找到标有“世界之眼”的地方",
+          "maps": [
+            "lighthouse"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324dec0757b37811950f",
+          "order": 150,
+          "name": "调查被打砸一空的邪教徒房间",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d647fe062a361f810",
+          "order": 160,
+          "name": "找到受害人笔记中提到的那把钥匙",
+          "maps": [
+            "lighthouse"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324d9404956b96dbe111",
+          "order": 170,
+          "name": "从 Mechanic 处了解更多与 14-4 KORD 站点相关的情报",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d631627c755a57412",
+          "order": 180,
+          "name": "修复 Arshavin 的钥匙卡",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324dd1ab1e914305ee13",
+          "order": 190,
+          "name": "设法进入 NGO Cobalt 的秘密设施",
+          "maps": [
+            "interchange"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8324dafbae3270a29c214",
+          "order": 200,
+          "name": "恢复站点的供电",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d0382811a08aada15",
+          "order": 210,
+          "name": "启动机房内的冷却系统",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324de4b9ecd80df1b716",
+          "order": 220,
+          "name": "插入U盘以下载数据",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324de48ccde5d1bd7d17",
+          "order": 230,
+          "name": "彻底调查代号 14-4 KORD 的 ARRS 站点",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d3e797844f63a9a18",
+          "order": 240,
+          "name": "以幸存状态撤离立交桥",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d9d8bf4c8088f5a19",
+          "order": 250,
+          "name": "想办法断开站点与外部代理之间的连接",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d9305acdd906e331a",
+          "order": 260,
+          "name": "将 ARRS 站点回滚至备用配置",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d4a2b854d5f2b261b",
+          "order": 270,
+          "name": "从 ARRS 站点回收 U 盘",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d2d3223d678ecff1c",
+          "order": 280,
+          "name": "以幸存状态撤离立交桥",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d6af059fe4559ba1d",
+          "order": 290,
+          "name": "将装有数据的U盘交给 Mechanic",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8324d247882bcd4557e1e",
+          "order": 300,
+          "name": "阅读 ARRS 站点规格说明",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [
+        "Boreas"
+      ],
+      "sourcePage": "https://www.eftarkov.com/storyline/6903d779fdfc4078740a4bd0",
+      "maps": [
+        "customs",
+        "interchange",
+        "lighthouse",
+        "reserve",
+        "shoreline",
+        "streets-of-tarkov",
+        "woods"
+      ],
+      "stepCount": 30,
+      "pointCount": 18,
+      "unlockPoints": [],
+      "unlockNote": "",
+      "order": 5
+    },
+    {
+      "id": "69052e18e680c2d3e3034d3a",
+      "slug": "accidental-witness",
+      "storyKey": "story_accidental_witness",
+      "nameZh": "意外证人",
+      "nameEn": "意外证人",
+      "steps": [
+        {
+          "id": "6ab86f5302cf8a3f0bd24901",
+          "order": 10,
+          "name": "找出科兹洛夫的住址",
+          "maps": [
+            "customs"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f5379628da6aaae8502",
+          "order": 20,
+          "name": "搞清楚科兹洛夫到底被卷进什么麻烦里了",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f53c98d0d91a0928003",
+          "order": 30,
+          "name": "询问 Skier 阿纳斯塔西娅的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f5332a3d10ff98ee104",
+          "order": 40,
+          "name": "进入 Skier 犯罪同伙的公寓",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f5312d2817a0f526705",
+          "order": 50,
+          "name": "了解 Skier 这位同伙的更多信息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f533ecd7ee17de05306",
+          "order": 60,
+          "name": "阅读从 Skier 同伙的公寓里找到的文件",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f5372003339a0ed5807",
+          "order": 70,
+          "name": "向 Skier 报告",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f53168dc057b069e008",
+          "order": 80,
+          "name": "和 Ragman 交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f53ac22c5bcfbf37209",
+          "order": 90,
+          "name": "找到阿纳斯塔西娅的公寓",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f53b65754a449562f0a",
+          "order": 100,
+          "name": "调查阿纳斯塔西娅公寓的入口",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f5311164f0140fc480b",
+          "order": 110,
+          "name": "深入了解阿纳斯塔西娅",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f537c0182252db26c0c",
+          "order": 120,
+          "name": "找到信使帕沙",
+          "maps": [
+            "customs"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f532cfce8c452f0690d",
+          "order": 130,
+          "name": "捜索偷袭位置周围",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f53f3228da100c28e0e",
+          "order": 140,
+          "name": "与 Skier 对话",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f530c37fe587e65e30f",
+          "order": 150,
+          "name": "找到 Reshala 的储藏处",
+          "maps": [
+            "customs"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f5349f44353498e7f10",
+          "order": 160,
+          "name": "调查 Reshala 的窝棚",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab86f53fb9897482205a411",
+          "order": 170,
+          "name": "找到科兹洛夫的藏身处",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab86f5309712ceb02a1a112",
+          "order": 180,
+          "name": "找到并获取科兹洛夫的证据",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/69052e18e680c2d3e3034d3a",
+      "maps": [
+        "customs",
+        "shoreline",
+        "streets-of-tarkov"
+      ],
+      "stepCount": 18,
+      "pointCount": 7,
+      "unlockPoints": [
+        "customs"
+      ],
+      "unlockNote": "靠近海关三层宿舍楼下的带血迹的白车即可解锁本剧情",
+      "order": 6
+    },
+    {
+      "id": "6900927ab7d28358f80b9421",
+      "slug": "the-unheard",
+      "storyKey": null,
+      "nameZh": "无名者",
+      "nameEn": "无名者",
+      "steps": [
+        {
+          "id": "6ab76409697273bc82a91301",
+          "order": 10,
+          "name": "了解 TerraGroup 活动的更多消息",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 2
+        },
+        {
+          "id": "6ab78fa5d7629e167cf38c01",
+          "order": 20,
+          "name": "搜集更多有关转运特种催化剂的消息",
+          "maps": [
+            "factory"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa57e00e39f80251d02",
+          "order": 30,
+          "name": "找到勒热夫斯基的配车",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab790907b7fa8061572f901",
+          "order": 40,
+          "name": "获取勒热夫斯基的个人物品",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5ebb73a6bae6c8e03",
+          "order": 50,
+          "name": "从勒热夫斯基的配车里找到的硬盘中提取数据",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa54d57c01e02ecb804",
+          "order": 60,
+          "name": "找到并获取“蓝冰”燃料催化剂的相关研究文件",
+          "maps": [
+            "factory"
+          ],
+          "points": 2
+        },
+        {
+          "id": "6ab78fa591bc873c6e978a05",
+          "order": 70,
+          "name": "在实验室查找与 A.P. 相关的任何消息",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa54dde9d2663120506",
+          "order": 80,
+          "name": "了解A.P.活动的更多消息",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa5e68f7f1633c8f307",
+          "order": 90,
+          "name": "深入了解A.P.的职责",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa59cde102948f6da08",
+          "order": 100,
+          "name": "在疗养院找到A.P.的房间",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa5db1205f8de371609",
+          "order": 110,
+          "name": "获取 A.P. 的个人物品",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5030c688ce5879b0a",
+          "order": 120,
+          "name": "获得 A.P. 的数据存储设备",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa53bc07cf7ff494d0b",
+          "order": 130,
+          "name": "破解A.P.房间里的U盘",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5a3a5b9feb84eb40c",
+          "order": 140,
+          "name": "把现金交给 Mechanic 5,000,000 卢布",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5f0786c295218880d",
+          "order": 150,
+          "name": "把A.P.的U盘交给 Mechanic",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa58c2276426482f80e",
+          "order": 160,
+          "name": "等待 Elektronik 传来消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa56cd4989e6322750f",
+          "order": 170,
+          "name": "将从A.P.的U盘里找到的技术文件写入 TerraGroup 钥匙卡中",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5fc84db541ca59c10",
+          "order": 180,
+          "name": "进入集团分配给A.P.的公寓",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab78fa50183da157485c811",
+          "order": 190,
+          "name": "调查 A.P. 的公寓",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa520b52098973d0112",
+          "order": 200,
+          "name": "进入A.P.公寓里的隐藏房间",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa531c6f18d9c56f613",
+          "order": 210,
+          "name": "研究 A.P.办公室里的 TerraGroup文件",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa582c515bda85ad714",
+          "order": 220,
+          "name": "研究“蓝冰”催化剂在“无名者”的协议中扮演什么角色",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa5f2c3984e9d8af315",
+          "order": 230,
+          "name": "深入了解“无名者”的协议",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab78fa57d07442e9f85a916",
+          "order": 240,
+          "name": "查出“无名者”与塔科夫之间的联系",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/6900927ab7d28358f80b9421",
+      "maps": [
+        "factory",
+        "ground-zero",
+        "shoreline",
+        "streets-of-tarkov",
+        "the-lab"
+      ],
+      "stepCount": 24,
+      "pointCount": 14,
+      "unlockPoints": [
+        "ground-zero",
+        "streets-of-tarkov"
+      ],
+      "unlockNote": "前往塔科夫街区阅读指定纸条解锁本剧情",
+      "order": 3
+    },
+    {
+      "id": "68e784b7fa3f1fa3770094ba",
+      "slug": "blue-fire",
+      "storyKey": "story_blue_fire",
+      "nameZh": "神秘蓝焰",
+      "nameEn": "神秘蓝焰",
+      "steps": [
+        {
+          "id": "6ab826397ec2ce08e43e5d01",
+          "order": 10,
+          "name": "和 Mechanic 谈谈 EMP 冲击的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8263996b4a9d781e80902",
+          "order": 20,
+          "name": "找到并获取设备的碎片",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 2
+        },
+        {
+          "id": "6ab82745cd01a68c334d3801",
+          "order": 30,
+          "name": "将黑客入侵装置安放在实验室的机房内",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8281676be7246f6f27e01",
+          "order": 40,
+          "name": "和 Mechanic 交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8281682f2e1ffa6409702",
+          "order": 50,
+          "name": "寻找 #1156 项目的线索",
+          "maps": [
+            "ground-zero",
+            "lighthouse",
+            "the-lab"
+          ],
+          "points": 3
+        },
+        {
+          "id": "6ab82ae066cd03d6031a8601",
+          "order": 60,
+          "name": "调查俄罗斯邮政办公室",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 3
+        },
+        {
+          "id": "6ab82ae0baf8e913e3c8f702",
+          "order": 70,
+          "name": "获得 #1156 项目的蓝图",
+          "maps": [
+            "streets-of-tarkov"
+          ],
+          "points": 1
+        }
+      ],
+      "choices": [
+        {
+          "key": "case_choice1",
+          "ownerStoryId": "68e784b7fa3f1fa3770094ba",
+          "role": "choice",
+          "title": "选择是否上交碎片",
+          "desc": "选择是否上交碎片，奖励不同",
+          "order": 25,
+          "options": [
+            {
+              "value": "keep1",
+              "rawValue": "keep1",
+              "name": "将 #1156 项目设备的碎片自己留着",
+              "desc": "解锁成就“另有他用”"
+            },
+            {
+              "value": "handover1",
+              "rawValue": "handover1",
+              "name": "将 #1156 项目设备的碎片交给 Mechanic",
+              "desc": "奖励卢布 1,500,000"
+            }
+          ]
+        }
+      ],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/68e784b7fa3f1fa3770094ba",
+      "maps": [
+        "ground-zero",
+        "interchange",
+        "lighthouse",
+        "streets-of-tarkov",
+        "the-lab",
+        "woods"
+      ],
+      "stepCount": 7,
+      "pointCount": 14,
+      "unlockPoints": [
+        "interchange",
+        "woods"
+      ],
+      "unlockNote": "前往立交桥阅读指定海报解锁本剧情",
+      "order": 4
+    },
+    {
+      "id": "68da33fe00868edcb6025ac4",
+      "slug": "the-ticket",
+      "storyKey": "story_the_ticket",
+      "nameZh": "门票",
+      "nameEn": "门票",
+      "steps": [
+        {
+          "id": "6ab925ce1100cc35cd200601",
+          "order": 10,
+          "name": "情报中心 等级1",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab925ce981457527b518702",
+          "order": 20,
+          "name": "和 Kerman 先生交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a0c3a1d588baf2fab301",
+          "order": 150,
+          "name": "开启加固手提箱",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a0c3e8e7d406d8c0bc02",
+          "order": 160,
+          "name": "向 Mechanic 求助",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a0c35b1e8f639d76a603",
+          "order": 170,
+          "name": "获得实验型信号干扰器",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 3
+        },
+        {
+          "id": "6ab9a1caafcb1d39d1745b01",
+          "order": 180,
+          "name": "和 Mechanic 谈话",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a1caa6d874e03235a002",
+          "order": 190,
+          "name": "使用实验型信号干扰器以解锁箱子",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a1cad6274ca8f5e8e003",
+          "order": 200,
+          "name": "取得“门票”",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab9a1ca76b269193c9f1f04",
+          "order": 210,
+          "name": "阅读加固手提箱里找到的提示",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aba0b9e394dfc1d5dac3c02",
+          "order": 360,
+          "name": "抵达港口码头的入口通道",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aba0b9e8f7de6d27c8a7003",
+          "order": 370,
+          "name": "将钥匙卡插入对讲机读卡器",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea5f5be53ca10802b1c002",
+          "order": 960,
+          "name": "奖钥匙卡插入对讲机读卡器",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea5f5b7fc5bcf192780e03",
+          "order": 970,
+          "name": "到达港口终点站",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea5f5b990b5db4dfffe904",
+          "order": 980,
+          "name": "通过安检",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a28fcfae9356c451b02",
+          "order": 990,
+          "name": "找到装有罚没装备的军械库",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a284a281257dc0d6703",
+          "order": 1000,
+          "name": "找到钥匙卡以开启检修通道",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a282426423cc4b22504",
+          "order": 1010,
+          "name": "打开港口大楼内检修通道的门锁",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a282d5d81975fa43505",
+          "order": 1020,
+          "name": "找到进入港口油库的路线",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a28fbc46c5b3c808906",
+          "order": 1030,
+          "name": "设法恢复泵站的供电",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a287a0fa690c1f8f307",
+          "order": 1040,
+          "name": "排干泵站内的积水",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a28881856b90758fd08",
+          "order": 1050,
+          "name": "获得前往码头区域大门的钥匙",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a28b25fdd5a46681909",
+          "order": 1060,
+          "name": "找到通往码头的出口",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6aea6a28cce1ce20ecdff20a",
+          "order": 1070,
+          "name": "逃离塔科夫",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [
+        {
+          "key": "case_choice",
+          "ownerStoryId": "68cbcdc4c964ab83cc0c928e",
+          "role": "prerequisite",
+          "title": "选择是否上交箱子",
+          "desc": "",
+          "order": 0,
+          "options": [
+            {
+              "value": "keep",
+              "rawValue": "keep",
+              "name": "自己留着加固手提箱",
+              "desc": "对话选择：箱子留在我这里\n经验值 80000\nPrapor 好感 -0.7\n解锁成就“在商言商”"
+            },
+            {
+              "value": "handover",
+              "rawValue": "handover",
+              "name": "把加固手提箱交给Prapor",
+              "desc": "对话选择：我找到箱子了\n经验值 80000\n奖励卢布 1,500,000\n解锁成就“一诺千金”"
+            }
+          ]
+        },
+        {
+          "key": "case_choice2",
+          "ownerStoryId": "68da33fe00868edcb6025ac4",
+          "role": "ending",
+          "title": "选择你要做的结局",
+          "desc": "请先在剧情【陨落星辰】中抉择是否上交箱子，然后在本剧情中选择你要做的结局，不然后续显示不完整",
+          "order": 5,
+          "options": [
+            {
+              "value": "savior",
+              "rawValue": "Savior",
+              "name": "救星",
+              "desc": "逃离了塔科夫，同时拯救了全人类。",
+              "endingKey": "savior"
+            },
+            {
+              "value": "survivor",
+              "rawValue": "Debtor",
+              "name": "幸存者",
+              "desc": "逃离塔科夫，不顾一切。",
+              "endingKey": "survivor"
+            },
+            {
+              "value": "fallen",
+              "rawValue": "Survivor",
+              "name": "陨落之人",
+              "desc": "逃离塔科夫，最终堕入黑暗。",
+              "endingKey": "fallen"
+            },
+            {
+              "value": "debtor",
+              "rawValue": "Fallen",
+              "name": "旧债沉疴",
+              "desc": "逃离了塔科夫 ，但永远没法逃离自己。",
+              "endingKey": "debtor"
+            }
+          ],
+          "variableId": "story_the_ticket_ending"
+        }
+      ],
+      "prerequisites": [
+        {
+          "storyId": "68cbcdc4c964ab83cc0c928e",
+          "choiceKey": "case_choice",
+          "options": [
+            "handover",
+            "keep"
+          ]
+        }
+      ],
+      "noteRefs": [
+        "陨落星辰"
+      ],
+      "sourcePage": "https://www.eftarkov.com/storyline/68da33fe00868edcb6025ac4",
+      "maps": [
+        "customs",
+        "ground-zero",
+        "interchange",
+        "lighthouse",
+        "reserve",
+        "streets-of-tarkov",
+        "the-lab",
+        "woods"
+      ],
+      "stepCount": 23,
+      "pointCount": 41,
+      "unlockPoints": [],
+      "unlockNote": "",
+      "order": 10
+    },
+    {
+      "id": "68da36cf7cff54fc6109874a",
+      "slug": "batya",
+      "storyKey": "story_batya",
+      "nameZh": "Batya",
+      "nameEn": "Batya",
+      "steps": [
+        {
+          "id": "6ab8a9c4fdddc708c7cdb101",
+          "order": 10,
+          "name": "找到BEAR特种小队的踪迹",
+          "maps": [
+            "customs",
+            "lighthouse",
+            "reserve",
+            "woods"
+          ],
+          "points": 4
+        },
+        {
+          "id": "6ab8b03ab0ffa7447a7d5901",
+          "order": 20,
+          "name": "从 Jaeger 处了解 Bogatyr 小队的更多消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b03a0339a32a6c98bd02",
+          "order": 30,
+          "name": "找到“鸟巢”前哨站",
+          "maps": [
+            "interchange"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8b193b5974b44a8a24501",
+          "order": 40,
+          "name": "调查 Bogatyr 小队的遭遇",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1935bd9b85bbd6f0102",
+          "order": 50,
+          "name": "收集 Bogatyr 小队的更多消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1933086c0daba301a03",
+          "order": 60,
+          "name": "找到“花楸树”营地",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8b193fdcaf4a35e472904",
+          "order": 70,
+          "name": "找到 Bogatyr 小队的更多消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193a038d3aa808cd505",
+          "order": 80,
+          "name": "找到伏击地点",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8b193bee266a56892bf06",
+          "order": 90,
+          "name": "检查 Moreman 的尸体",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193f6a955f4260db207",
+          "order": 100,
+          "name": "找到“旋转木马”营地",
+          "maps": [
+            "interchange"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8b193fa1e1da5c9df2008",
+          "order": 110,
+          "name": "深入了解 Taran",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1937a9a171afaf7d509",
+          "order": 120,
+          "name": "找到 Bogatyr 小队成员的个人档案",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193aa0f66de6c59a50a",
+          "order": 130,
+          "name": "深入了解 Voevoda",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1934bcbc5c1ce5a170b",
+          "order": 140,
+          "name": "深入了解 Strelets",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193e30ecc3e0986870c",
+          "order": 150,
+          "name": "从 Moreman 的手机里提取关于那场伏击更多的消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193e378d4edb92e900d",
+          "order": 160,
+          "name": "藏身处 情报中心 达到 3 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1937498b5e0add59c0e",
+          "order": 170,
+          "name": "联络 Bogatyr 小队",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b19318107a0fd01a6a0f",
+          "order": 180,
+          "name": "想办法接触 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193bb8dc3fc6b1ae710",
+          "order": 190,
+          "name": "把 Bogatyr 小队的物品交给Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193173151bb3eb83411",
+          "order": 200,
+          "name": "将 Bogatyr 小队臂章交给 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193b9881c9325dfde12",
+          "order": 210,
+          "name": "将 Moreman 的狗牌交给 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1934bb1d76d9bf00113",
+          "order": 220,
+          "name": "将 Strelets 的护身符交给 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193c747f8eb3b9f3214",
+          "order": 230,
+          "name": "将 Taran 的明信片交给 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193a1ec0c0b9282b415",
+          "order": 240,
+          "name": "将 Voevoda 的录音机交给 Lightkeeper",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1936e8959654544b716",
+          "order": 250,
+          "name": "等待 Voevoda 主动联络",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193dc6e32ac33549617",
+          "order": 260,
+          "name": "力量技能达到 15 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193dfa4f703ce3b4018",
+          "order": 270,
+          "name": "抗压技能达到 10 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b19319bc934ebbd25119",
+          "order": 280,
+          "name": "轻机枪技能达到 5 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1936e530a1a0932f51a",
+          "order": 290,
+          "name": "突击步枪技能达到 10 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1939cc4e6cd971ba91b",
+          "order": 300,
+          "name": "一命连续击杀 PMC 4 名",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193f5c49069a49a6d1c",
+          "order": 310,
+          "name": "一命连续击杀任意目标 15 名",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b1935e2d4fe4867bd61d",
+          "order": 320,
+          "name": "联系 Voevoda",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193a69cce946d72231e",
+          "order": 330,
+          "name": "找到叛徒的踪迹",
+          "maps": [
+            "lighthouse"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8b193c8e09d51ff5de01f",
+          "order": 340,
+          "name": "逼问 Prapor",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b19372d2469a1e202020",
+          "order": 350,
+          "name": "找出邪教徒是怎么和军方的将军扯上关系的",
+          "maps": [
+            "shoreline",
+            "woods"
+          ],
+          "points": 2
+        },
+        {
+          "id": "6ab8b193c8beed2e02fc5b21",
+          "order": 360,
+          "name": "和 Lightkeeper 交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193d3783c796bcde222",
+          "order": 370,
+          "name": "等待 Lightkeeper 准备与“无名者”相关的文件",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8b193ceab28412f2cb523",
+          "order": 380,
+          "name": "收集 Lightkeeper 的文件",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/68da36cf7cff54fc6109874a",
+      "maps": [
+        "customs",
+        "interchange",
+        "lighthouse",
+        "reserve",
+        "shoreline",
+        "woods"
+      ],
+      "stepCount": 38,
+      "pointCount": 15,
+      "unlockPoints": [
+        "customs",
+        "reserve",
+        "shoreline",
+        "woods"
+      ],
+      "unlockNote": "前往海关指定区域踩点解锁本剧情",
+      "order": 8
+    },
+    {
+      "id": "69d38381cea4b428690ea1d9",
+      "slug": "boreas",
+      "storyKey": "story_boreas",
+      "nameZh": "Boreas",
+      "nameEn": "Boreas",
+      "steps": [
+        {
+          "id": "6ab8c58e8920371e4cd9a301",
+          "order": 10,
+          "name": "询问 Mechanic 求救信号的来源",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c58e3e241c10fd066202",
+          "order": 20,
+          "name": "在森林找到通讯基站下的设备",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c58ecbb0946790f09f03",
+          "order": 30,
+          "name": "在森林修复通讯基站下的设备",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c58ed3bd5dc80589ab04",
+          "order": 40,
+          "name": "向 Mechanic 汇报情况",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c58e3b2a387d2b35fd05",
+          "order": 50,
+          "name": "找到并获取 Paradigm 航运文件",
+          "maps": [
+            "lighthouse"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c58e2edcf7689d517906",
+          "order": 60,
+          "name": "告诉 Mechanic 关于 Boreas 号的情况",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c58e0732f6ba8b92ea07",
+          "order": 70,
+          "name": "安排登船的交通工具",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5c9a885b5deed2c01",
+          "order": 90,
+          "name": "在储备站击杀 30名 任意目标",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a563b6a06cdb644c02",
+          "order": 100,
+          "name": "在储备站的森林转移点发射一枚黄色信号棒",
+          "maps": [
+            "reserve"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5a8c508edcde72c03",
+          "order": 110,
+          "name": "把 AMG-10 液压油交给 Prapor",
+          "maps": [
+            "reserve"
+          ],
+          "points": 7
+        },
+        {
+          "id": "6ab8c6a5f886b549a26f1e04",
+          "order": 120,
+          "name": "想办法找到其他登船方式",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a531b8311077049905",
+          "order": 130,
+          "name": "返回藏身处",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5e3e48ab1b7eb9706",
+          "order": 140,
+          "name": "上交 7.62x54R 7BT1 弹药给 BTR 司机 200 发",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5efb57b2f51260807",
+          "order": 150,
+          "name": "在海关找到并获取 Skier 的报告",
+          "maps": [
+            "customs"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5671fc60473ffa708",
+          "order": 160,
+          "name": "在海关烧掉 Skier 的报告",
+          "maps": [
+            "customs"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a54c750025a9b92009",
+          "order": 170,
+          "name": "在走私者营地范围内消灭任意目标 15 名",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a50d5ea40142cab80a",
+          "order": 180,
+          "name": "在走私者营地范围内消灭任意目标 10 名",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5788a13e53f050d0b",
+          "order": 190,
+          "name": "返回 BTR 司机处报告进展",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5674eae093939c10c",
+          "order": 200,
+          "name": "告诉 Mechanic 你找到了登船的交通工具",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5c2498a7f4c332a0d",
+          "order": 210,
+          "name": "在海岸线登上走私者的气垫船",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a585be5e65eff9c80e",
+          "order": 220,
+          "name": "登上破冰船",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a53f419611d2d35e0f",
+          "order": 230,
+          "name": "检查破冰船上是否有任何船员幸存",
+          "maps": [
+            "icebreaker"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5c521a4bfe1ceac10",
+          "order": 240,
+          "name": "进入破冰船的轮机舱",
+          "maps": [
+            "icebreaker"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5d7dc301a6776da11",
+          "order": 250,
+          "name": "想办法进入破冰船的上层建筑",
+          "maps": [
+            "icebreaker"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c6a5cb4cb4509517ad12",
+          "order": 260,
+          "name": "向 Mechanic 询问炸药的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a5ba44ce44343b0d13",
+          "order": 270,
+          "name": "向 Prapor 了解炸药的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c6a523b9bcc3ce963214",
+          "order": 280,
+          "name": "在海岸线登上走私者的气垫船",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcdb45c8b5b0210701",
+          "order": 290,
+          "name": "登上破冰船",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc4cb7f9757e93d602",
+          "order": 300,
+          "name": "抵达轮机舱顶部那扇损坏的门",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcac2c68470d2c7703",
+          "order": 310,
+          "name": "使用 SZ-1 炸药破坏轮机舱顶部密闭门的锁链",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcb241bf45d9a34d04",
+          "order": 320,
+          "name": "从轮机舱顶部的门进入破冰船上层舱室",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcf3c27056cc16f605",
+          "order": 330,
+          "name": "想办法进入破冰船上层舱室的上甲板",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcaa04995ff2361006",
+          "order": 340,
+          "name": "询问幸存的科学家如何打开第 6 层的密码锁",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bccff4bc3de1cf7e07",
+          "order": 350,
+          "name": "向 Mechanic 寻求帮助，找到第 6 层上锁大门的密码",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc34ae73b018150308",
+          "order": 360,
+          "name": "将黑客入侵装置安放在实验室的机房内",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab8c7bca8365a2817b94c09",
+          "order": 370,
+          "name": "返回 Mechanic 处",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcc855d97b976f850a",
+          "order": 380,
+          "name": "在海岸线登上走私者的气垫船",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc58ade882f661cb0b",
+          "order": 390,
+          "name": "登上破冰船",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc58a3473e79df520c",
+          "order": 400,
+          "name": "抵达破冰船的轮机舱",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc306ea6f54e3f0b0d",
+          "order": 410,
+          "name": "抵达轮机舱顶部那扇损坏的门",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bce5c5f5e5aa63470e",
+          "order": 420,
+          "name": "使用 SZ-1 炸药破坏轮机舱顶部密闭门的锁链",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc9afb2295ef60d50f",
+          "order": 430,
+          "name": "抵达密码锁旁",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcd357ba187669fc10",
+          "order": 440,
+          "name": "使用正确的密码开锁",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcd606b5cb6d11a711",
+          "order": 450,
+          "name": "进入破冰船上层甲板",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc826d71b0044bbf12",
+          "order": 460,
+          "name": "找到 C-1 舱窒",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc89e7c7bc80f31a13",
+          "order": 470,
+          "name": "抵达上层甲板",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc6fbd8d8a63a50214",
+          "order": 480,
+          "name": "营救破冰船船长",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcc2ae12d410043e15",
+          "order": 490,
+          "name": "解冻舰桥顶部的舱口",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcbcf37d34a924c316",
+          "order": 500,
+          "name": "进入 C-1 舱窒",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc5611b32cdc0c3e17",
+          "order": 510,
+          "name": "在 C-1 舱室的服务器周边寻找有情报价值的东西",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc9e38e011482ccc18",
+          "order": 520,
+          "name": "在 C-1 舱室中的工作台周围寻找有情报价值的东西",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc260ee0a74053f619",
+          "order": 530,
+          "name": "在 C-1 舱室的架子上寻找有情报价值的东西",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc09f76f15f1d6bc1a",
+          "order": 540,
+          "name": "请 Mechanic 帮忙破解破冰船上找回的闪存盘",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc5c503d2ea776961b",
+          "order": 550,
+          "name": "将 Ultralink 卫星通讯模块 交给 Mechanic 3 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc0ffee0c57a1e961c",
+          "order": 560,
+          "name": "将 Memento 服务器内存模块 交给 Mechanic 4 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc6baf0e248782801d",
+          "order": 570,
+          "name": "将 IBX Gigachad 加密处理器 交给 Mechanic 2 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc4959f6326bd68e1e",
+          "order": 580,
+          "name": "分析从破冰船上回收的数据",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcb81a988ebe404c1f",
+          "order": 590,
+          "name": "将船长的死讯通知科学家",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcb60133931c523a20",
+          "order": 600,
+          "name": "询问 BTR 司机能否协助从船上撤离科学家",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc624199d61cdd3d21",
+          "order": 610,
+          "name": "帮助走私者在冲突中对抗游荡者",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc1fba43e22ae69b22",
+          "order": 620,
+          "name": "在破冰船上消灭任意目标 20 名",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc74f2d14e49495223",
+          "order": 630,
+          "name": "上交 Kirasa-N（胸甲-N）防弹衣给 BTR 司机 1 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcf4d3c06786f7d224",
+          "order": 640,
+          "name": "将 5 级及以上的防弹插板上交给 BTR 司机 2 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc62523ebd50043025",
+          "order": 650,
+          "name": "上交呼吸面罩给 BTR 司机 5 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc38be4508c4af5226",
+          "order": 660,
+          "name": "向 BTR 司机询问接下来的行动",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bcecc5c3ed81997627",
+          "order": 670,
+          "name": "通知科学家，救援行动已经一切就绪",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab8c7bc2e275ed40341cd28",
+          "order": 680,
+          "name": "向 BTR 司机询问救援行动的进展",
+          "maps": [],
+          "points": 0
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [
+        "神秘蓝焰"
+      ],
+      "sourcePage": "https://www.eftarkov.com/storyline/69d38381cea4b428690ea1d9",
+      "maps": [
+        "customs",
+        "icebreaker",
+        "lighthouse",
+        "reserve",
+        "shoreline",
+        "the-lab",
+        "woods"
+      ],
+      "stepCount": 67,
+      "pointCount": 19,
+      "unlockPoints": [],
+      "unlockNote": "",
+      "order": 9
+    },
+    {
+      "id": "68cbd33676fe74b1e80bfd91",
+      "slug": "tour",
+      "storyKey": "story_tour",
+      "nameZh": "塔科夫之旅",
+      "nameEn": "塔科夫之旅",
+      "steps": [
+        {
+          "id": "6ab5d3cc1b4d3880e1783101",
+          "order": 10,
+          "name": "逃离中心区",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab5d3cc96035e92eaff3102",
+          "order": 20,
+          "name": "和 Therapist 交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8dc64ffe0eb31c3201",
+          "order": 30,
+          "name": "把现金交给 Therapist 250,000 卢布",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8db3ae56dfdb282802",
+          "order": 40,
+          "name": "和 Ragman 交谈",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d6b80b44161a62503",
+          "order": 50,
+          "name": "告诉 Ragman 侦察行动期间的发现",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d2a7841b09f8d6e04",
+          "order": 60,
+          "name": "幸存并从立交桥撤离或进入立交桥3次",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8db94f243724713d05",
+          "order": 70,
+          "name": "与 Skier 对话",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8dbd7495367fda5d07",
+          "order": 80,
+          "name": "将任意战局中找到的建筑材料上交给 Skier 5 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d5c5a6ff4abfe0c08",
+          "order": 90,
+          "name": "幸存并从海关撤离或进入海关3次",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8ddc2bfdab147d3409",
+          "order": 100,
+          "name": "和 Mechanic 谈话",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d852ba1dcae4d800a",
+          "order": 110,
+          "name": "把任意战局中找到的武器带给 Mechanic 2 把",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d9d953e1e2135450b",
+          "order": 120,
+          "name": "幸存并从工厂撤离或进入工厂3次",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8daebfcebe9864e10c",
+          "order": 130,
+          "name": "与 Skier 对话",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d241a64361d01640d",
+          "order": 140,
+          "name": "在森林击杀任意目标 3 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8dd35fc0f3adb9340e",
+          "order": 150,
+          "name": "幸存并从森林撤离或进入森林3次",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d086f8ac2bb4db30f",
+          "order": 160,
+          "name": "找到港口终点站的入口",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab60f8d7e36d949c1f67610",
+          "order": 170,
+          "name": "想办法与港口终点站的守军联系",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d3d052f84b9885011",
+          "order": 180,
+          "name": "使用对讲机联系港口守军",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab60f8d045699710f491712",
+          "order": 190,
+          "name": "了解逃出塔科夫的方法",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d9b860d9c0ef4b414",
+          "order": 200,
+          "name": "将物品上交给Prapor：PMC 狗牌 5 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d42bf5777ca5aae15",
+          "order": 210,
+          "name": "幸存并从海岸线撤离或进入海岸线3次",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d8fa0995a27d9a416",
+          "order": 220,
+          "name": "把现金交给 Mechanic 8,000 美元",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d89276664fa4f2317",
+          "order": 230,
+          "name": "前往 TerraGroup 秘密设施",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab60f8d57a1e9da28e85218",
+          "order": 240,
+          "name": "在实验室内找到通过排水系统的撤离路线",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab6295c4798e6539452ad01",
+          "order": 250,
+          "name": "搜查实验室机房",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab60f8dde6b106c9704c519",
+          "order": 260,
+          "name": "搜查实验室管理层的办公室",
+          "maps": [
+            "the-lab"
+          ],
+          "points": 1
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/68cbd33676fe74b1e80bfd91",
+      "maps": [
+        "shoreline",
+        "the-lab"
+      ],
+      "stepCount": 26,
+      "pointCount": 5,
+      "unlockPoints": [],
+      "unlockNote": "",
+      "order": 1
+    },
+    {
+      "id": "68e3a35002661eb2d30ce387",
+      "slug": "the-labyrinth",
+      "storyKey": "story_the_labyrinth",
+      "nameZh": "探秘“迷宫”",
+      "nameEn": "探秘“迷宫”",
+      "steps": [
+        {
+          "id": "6ab88f0e513e44b59fc83401",
+          "order": 10,
+          "name": "向 Jaeger 打听地下设施的消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0e454727100f277402",
+          "order": 20,
+          "name": "等待 Jaeger 找来钥匙卡",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0eca4953da69d73f03",
+          "order": 30,
+          "name": "找到疗养院地下设施的入口通道",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0e513b875fb92e0b04",
+          "order": 40,
+          "name": "进入设施",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0ed83887a5a18abc05",
+          "order": 50,
+          "name": "在“迷宫”中找到 BEAR 小队的踪迹",
+          "maps": [
+            "the-labyrinth"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab88f0efcd069bedb125606",
+          "order": 60,
+          "name": "调查 1156 项目周围的 BEAR 小队集结点",
+          "maps": [
+            "the-labyrinth"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab88f0ef3a28e8e056bd907",
+          "order": 70,
+          "name": "找到小队长",
+          "maps": [
+            "the-labyrinth"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab88f0e42e8169093448008",
+          "order": 80,
+          "name": "收集小队的更多消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0efe034d2473ae1f09",
+          "order": 90,
+          "name": "获取观察室钥匙",
+          "maps": [
+            "the-labyrinth"
+          ],
+          "points": 6
+        },
+        {
+          "id": "6ab88f0e3b2393003232030a",
+          "order": 100,
+          "name": "调查科学家的尸体",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0e39ce25826cc0be0b",
+          "order": 110,
+          "name": "进入上锁的办公室",
+          "maps": [
+            "the-labyrinth"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab88f0e506eeeed4b40a80c",
+          "order": 120,
+          "name": "听办公室里的录音带",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0e21b45c1126a52d0d",
+          "order": 130,
+          "name": "将录音带交给 Jaeger",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab88f0edf068bad7913a50e",
+          "order": 140,
+          "name": "阅读迷宫设施研究报告",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        }
+      ],
+      "choices": [],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/68e3a35002661eb2d30ce387",
+      "maps": [
+        "shoreline",
+        "the-labyrinth"
+      ],
+      "stepCount": 14,
+      "pointCount": 12,
+      "unlockPoints": [
+        "shoreline"
+      ],
+      "unlockNote": "前往海岸线西楼地下的迷宫转移点门口即可解锁本剧情",
+      "order": 7
+    },
+    {
+      "id": "68cbcdc4c964ab83cc0c928e",
+      "slug": "falling-skies",
+      "storyKey": "story_falling_skies",
+      "nameZh": "陨落星辰",
+      "nameEn": "陨落星辰",
+      "steps": [
+        {
+          "id": "6ab719d971b30671e7b58701",
+          "order": 10,
+          "name": "在森林找到坠毁的飞机",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d98e5ba122bb4a7b02",
+          "order": 20,
+          "name": "Prapor 信任度达到 2 级",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9c033f51296285e03",
+          "order": 30,
+          "name": "询问 Prapor 有关坠毁飞机的事情",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9870f6e5e987e3804",
+          "order": 40,
+          "name": "找到指定的 G 型越野车，回收 U 盘",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d93930280bf6eed005",
+          "order": 50,
+          "name": "把 U 盘交给 Prapor",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9140524e173e5b706",
+          "order": 60,
+          "name": "等待 Prapor 的消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9436e8cc35bacaf07",
+          "order": 70,
+          "name": "从飞机上回收飞行记录仪",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d91ce69c31b166cf08",
+          "order": 80,
+          "name": "将飞行记录仪留在指定交货位置",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d96a65dd218607c909",
+          "order": 90,
+          "name": "和 Prapor 见面",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d922f5548ae9952d0a",
+          "order": 100,
+          "name": "将战局中找到的物品上交给 Prapor：工具 2 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d90c7f407c07c1820b",
+          "order": 110,
+          "name": "将战局中找到的物品上交给 Prapor：充电电池 3 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d927ab3d59ca09380c",
+          "order": 120,
+          "name": "将战局中找到的物品上交给 Prapor：印刷电路板 5 个",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9f32a865dfde8280d",
+          "order": 130,
+          "name": "等待 Prapor 传来消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d917ac6e0eba11570e",
+          "order": 140,
+          "name": "找到飞行员的通话记录",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d9145b0391537d350f",
+          "order": 150,
+          "name": "找到 Elektronik 的加密 U 盘",
+          "maps": [
+            "shoreline"
+          ],
+          "points": 1
+        },
+        {
+          "id": "6ab719d9c7519ec8b9cfef10",
+          "order": 160,
+          "name": "将飞行员通话记录交给 Prapor",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9a17b163d50a09911",
+          "order": 170,
+          "name": "将 Elektronik 的加密 U 盘交给 Prapor",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d98e28ef4337fbaf12",
+          "order": 180,
+          "name": "等待 Prapor 传来消息",
+          "maps": [],
+          "points": 0
+        },
+        {
+          "id": "6ab719d9c2265474ff91a713",
+          "order": 190,
+          "name": "回收加固手提箱",
+          "maps": [
+            "woods"
+          ],
+          "points": 1
+        }
+      ],
+      "choices": [
+        {
+          "key": "case_choice",
+          "ownerStoryId": "68cbcdc4c964ab83cc0c928e",
+          "role": "choice",
+          "title": "选择是否上交箱子",
+          "desc": "选择是否上交箱子将会影响到【门票】剧情的后续任务",
+          "order": 195,
+          "options": [
+            {
+              "value": "keep",
+              "rawValue": "keep",
+              "name": "自己留着加固手提箱",
+              "desc": "对话选择：箱子留在我这里\n经验值 80000\nPrapor 好感 -0.7\n解锁成就“在商言商”"
+            },
+            {
+              "value": "handover",
+              "rawValue": "handover",
+              "name": "把加固手提箱交给Prapor",
+              "desc": "对话选择：我找到箱子了\n经验值 80000\n奖励卢布 1,500,000\n解锁成就“一诺千金”"
+            }
+          ]
+        }
+      ],
+      "prerequisites": [],
+      "noteRefs": [],
+      "sourcePage": "https://www.eftarkov.com/storyline/68cbcdc4c964ab83cc0c928e",
+      "maps": [
+        "shoreline",
+        "woods"
+      ],
+      "stepCount": 19,
+      "pointCount": 7,
+      "unlockPoints": [],
+      "unlockNote": "",
+      "order": 2
+    }
+  ]
+}

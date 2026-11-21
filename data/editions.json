@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "source": "docs/r43-account-editions.md（官方知识库 KB 529/534/535/536/537/538 + 官方购买页 + Steam 捆绑包页）",
+  "sources": [
+    "https://arena.tarkov.com/support/knowledge/529",
+    "https://arena.tarkov.com/support/knowledge/534",
+    "https://arena.tarkov.com/support/knowledge/535",
+    "https://arena.tarkov.com/support/knowledge/536",
+    "https://arena.tarkov.com/support/knowledge/537",
+    "https://arena.tarkov.com/support/knowledge/538",
+    "https://www.escapefromtarkov.com/purchase",
+    "https://store.steampowered.com/bundle/74190/"
+  ],
+  "fetchedAt": "2026-11-04T02:02:00+08:00",
+  "region": "RU/CIS",
+  "priceBasis": {
+    "checkout-display": "购买页当前结算显示价（RU/CIS，数字非递增，很可能是从 Standard 升级的补差价口径，不是绝对售价）",
+    "not-for-sale": "官方已停售，购买页无此卡，无价格"
+  },
+  "editions": [
+    {
+      "id": "standard",
+      "nameEn": "Standard Edition",
+      "nameZh": "标准版",
+      "aliases": ["白边", "Standard"],
+      "status": "available",
+      "channel": "official-site",
+      "stashCells": [10, 30],
+      "secureContainer": { "name": "Alpha", "w": 2, "h": 2 },
+      "expBonusPct": 0,
+      "traderStanding": { "allTraders": 0, "fenceBonus": 0 },
+      "pveIncluded": false,
+      "seasonPass": false,
+      "arenaRyzhy": false,
+      "extraPerks": [],
+      "price": { "currency": "RUB", "amount": 3100, "basis": "checkout-display", "checkedAt": "2026-11-04", "button": "变更游玩区域" },
+      "taskOverrides": []
+    },
+    {
+      "id": "left-behind",
+      "nameEn": "Left Behind Edition",
+      "nameZh": "留守版",
+      "aliases": ["遗落版", "Left Behind"],
+      "status": "available",
+      "channel": "official-site",
+      "stashCells": [10, 40],
+      "secureContainer": { "name": "Alpha", "w": 2, "h": 2 },
+      "expBonusPct": 7,
+      "traderStanding": { "allTraders": 0, "fenceBonus": 0 },
+      "pveIncluded": false,
+      "seasonPass": false,
+      "arenaRyzhy": false,
+      "extraPerks": [],
+      "price": { "currency": "RUB", "amount": 1100, "basis": "checkout-display", "checkedAt": "2026-11-04", "button": "升级游戏版本" },
+      "taskOverrides": []
+    },
+    {
+      "id": "prepare-for-escape",
+      "nameEn": "Prepare for Escape Edition",
+      "nameZh": "准备逃离版",
+      "aliases": ["PFE", "Prepare for Escape"],
+      "status": "available",
+      "channel": "official-site",
+      "stashCells": [10, 50],
+      "secureContainer": { "name": "Beta", "w": 3, "h": 2 },
+      "expBonusPct": 9,
+      "traderStanding": { "allTraders": 0.2, "fenceBonus": 0 },
+      "pveIncluded": false,
+      "seasonPass": false,
+      "arenaRyzhy": false,
+      "extraPerks": [],
+      "price": { "currency": "RUB", "amount": 2200, "basis": "checkout-display", "checkedAt": "2026-11-04", "button": "升级游戏版本" },
+      "taskOverrides": []
+    },
+    {
+      "id": "unheard",
+      "nameEn": "The Unheard Edition",
+      "nameZh": "未闻者版",
+      "aliases": ["蓝边", "金边", "TUE", "The Unheard"],
+      "status": "available",
+      "channel": "official-site",
+      "channelVariants": [
+        { "channel": "official-site", "label": "官网 / BSG 启动器", "seasonPass": true, "note": "与官网版权益一致，含全部附加权益。" },
+        { "channel": "steam", "label": "Steam 版", "seasonPass": false, "note": "平台规则限制：Steam 捆绑包不含 Season Pass（官方原文）；其余权益与官网版一致。" }
+      ],
+      "stashCells": [10, 72],
+      "secureContainer": { "name": "Gamma TUE", "w": 3, "h": 3 },
+      "expBonusPct": 20,
+      "traderStanding": { "allTraders": 0.2, "fenceBonus": 0.5 },
+      "pveIncluded": true,
+      "seasonPass": true,
+      "arenaRyzhy": true,
+      "extraPerks": [
+        "跳蚤市场额外挂单槽位",
+        "扩大 PMC 口袋（直接给，不走任务）",
+        "PvE Zone / Season Pass / Arena「Ryzhy Edition」",
+        "ETS 早期测试服 + 藏身处 Cultists Circle 模块直给",
+        "Mark of the Unknown 无线电 / 求救信号装置",
+        "独特 ID / 臂章 / 近战 / 战术服装 + 合作训练模式"
+      ],
+      "price": { "currency": "RUB", "amount": 9200, "basis": "checkout-display", "checkedAt": "2026-11-04", "button": "升级游戏版本" },
+      "taskOverrides": []
+    },
+    {
+      "id": "edge-of-darkness",
+      "nameEn": "Edge of Darkness Limited Edition",
+      "nameZh": "黑暗边缘版",
+      "aliases": ["黑边", "EOD", "Edge of Darkness"],
+      "status": "legacy-discontinued",
+      "channel": "official-site",
+      "stashCells": [10, 68],
+      "secureContainer": { "name": "Gamma EOD", "w": 3, "h": 3 },
+      "expBonusPct": 12,
+      "traderStanding": { "allTraders": 0.2, "fenceBonus": 0 },
+      "pveIncluded": true,
+      "seasonPass": true,
+      "arenaRyzhy": true,
+      "extraPerks": [
+        "每位商人个人购买上限 +20%",
+        "加快投保物品返还",
+        "特殊兴奋剂制造权限",
+        "每天免费替换 2 个 operational tasks",
+        "PvE Zone / Season Pass / Arena「Ryzhy Edition」",
+        "扩大 PMC 口袋（需完成怀旧任务链）"
+      ],
+      "price": { "currency": "RUB", "amount": null, "basis": "not-for-sale", "checkedAt": "2026-11-04" },
+      "taskOverrides": [
+        {
+          "taskId": "5d25e4ad86f77443e625e387",
+          "nameZh": "怀旧之情",
+          "nameEn": "Nostalgia",
+          "reason": "EOD 专属 Nostalgia quest chain，可获取 PMC Pockets（KB 538）；其他版本与当前在售版本都没有这条任务链。"
+        }
+      ]
+    }
+  ]
+}

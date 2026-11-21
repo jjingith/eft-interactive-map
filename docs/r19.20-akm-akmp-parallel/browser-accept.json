@@ -1,0 +1,187 @@
+{
+ "pairs": [
+  {
+   "gun": "AKM 7.62x39",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": "AKM 照门"
+   },
+   "akmp": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 7,
+    "item": ""
+   },
+   "parallel": true,
+   "notBelow": true,
+   "slotCount": 2
+  },
+  {
+   "gun": "AKMS",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": "AKM 照门"
+   },
+   "akmp": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 7,
+    "item": ""
+   },
+   "parallel": true,
+   "notBelow": true,
+   "slotCount": 2
+  },
+  {
+   "gun": "AKMN",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": "AKM 照门"
+   },
+   "akmp": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 7,
+    "item": ""
+   },
+   "parallel": true,
+   "notBelow": true,
+   "slotCount": 2
+  },
+  {
+   "gun": "AKMSN",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": "AKM 照门"
+   },
+   "akmp": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 7,
+    "item": ""
+   },
+   "parallel": true,
+   "notBelow": true,
+   "slotCount": 2
+  },
+  {
+   "gun": "VPO-136",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": "AKM 照门"
+   },
+   "akmp": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 7,
+    "item": ""
+   },
+   "parallel": true,
+   "notBelow": true,
+   "slotCount": 2
+  }
+ ],
+ "candidates": [
+  {
+   "left": [
+    "AKM 照门瞄具—10.03122 ₽—已装",
+    "AKMB系统照门瞄具——0.04——可装",
+    "RD Enhanced V2 AK 照门瞄具0.1—0.035,555 ₽—可装",
+    "Taktika Tula TT01 照门导轨瞄具-0.110.098,331 ₽"
+   ],
+   "right": [
+    "AKMP系统照门装置瞄具——0.01——可装"
+   ],
+   "leftHasAkmp": false,
+   "rightOnlyAkmp": true
+  }
+ ],
+ "install": [
+  {
+   "clicked": {
+    "id": "5a0ed824fcdbcb0176308b0d",
+    "t": "AKMP系统照门装置瞄具——0.01——可装"
+   },
+   "akmpInstalled": "AKMP系统照门装置",
+   "leftUntouched": true,
+   "parallelAfterInstall": true,
+   "emptied": true,
+   "parallelAfterRemove": true,
+   "cardsRestored": true
+  }
+ ],
+ "calibrator": {
+  "initial": {
+   "sight": {
+    "row": 1,
+    "col": 6
+   },
+   "akmp": {
+    "row": 1,
+    "col": 7
+   }
+  },
+  "parallel": true,
+  "afterDrag": {
+   "sight": {
+    "row": 1,
+    "col": 6
+   },
+   "akmp": {
+    "row": 1,
+    "col": 8
+   }
+  },
+  "akmpMovedIndependently": true,
+  "sightUntouched": true,
+  "afterUndo": {
+   "row": 1,
+   "col": 7
+  }
+ },
+ "regression": {
+  "ak74n": {
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74 照门"
+   },
+   "ok": true,
+   "mount": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 7,
+    "item": ""
+   }
+  },
+  "vpo209_unchanged": true
+ },
+ "reload": {
+  "parallel": true,
+  "sight": {
+   "slot": "mod_sight_rear",
+   "row": 1,
+   "col": 6,
+   "item": "AKM 照门"
+  },
+  "akmp": {
+   "slot": "mod_sight_rear/mod_sight_rear",
+   "row": 1,
+   "col": 7,
+   "item": ""
+  }
+ },
+ "failures": [],
+ "pass": true
+}

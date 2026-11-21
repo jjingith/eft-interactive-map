@@ -10,6 +10,8 @@ release/
 build/_work/
 build/_work_installer/
 build/_release/
+build/_staging/
+build/_staging_check/
 *.spec
 
 # 构建期原始缓存（上游大体积原始数据，不进仓库）
@@ -24,3 +26,28 @@ sounds/
 .idea/
 Thumbs.db
 desktop.ini
+
+# ---- 2026-11-21 完整入库时的临时/备份排除 ----
+# build/ 下的日志、截图、备份目录、数据快照等构建过程产物。
+# 正经构建脚本（build.ps1 / build_release.ps1 / package_files.ps1 / verify_package_files.ps1）
+# 不以 _ 开头，会保留；其余 _* 全是 staging/backup/probe/screenshot 等临时物。
+build/*.log
+build/*.xml
+build/_*/
+build/_*
+build/price-collector/
+build/data-backup-*/
+build/*.json
+build/release.*/
+# 根目录一次性验证页 / 探针脚本
+_*.html
+_*.png
+probe_sse.py
+# data 构建期备份副本（正式数据是无 .bak 后缀的那些）
+data/*.bak.json
+# 浏览器 profile / 审计备份 / 上游大体积临时快照
+docs/.r96-profile/
+docs/r19.29-audit-backup/
+docs/**/backup/
+docs/**/*.full
+docs/r39-live-price/upstream-json-tarkov-dev-items.json

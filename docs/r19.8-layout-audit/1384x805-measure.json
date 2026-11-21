@@ -1,0 +1,3612 @@
+{
+  "tag": "1384x805",
+  "viewport": {
+    "w": 1384,
+    "h": 805
+  },
+  "steps": [
+    {
+      "name": "LOAD VARIANT 保存预设按钮存在",
+      "ok": true,
+      "detail": "保存预设"
+    },
+    {
+      "name": "LOAD VARIANT 无元素重叠",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "LOAD VARIANT 无裁切",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "页面无横向溢出",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "成本为第三行",
+      "ok": true,
+      "detail": {
+        "rows": [
+          641,
+          656,
+          669,
+          682
+        ],
+        "cost": 682
+      }
+    },
+    {
+      "name": "成本两项并排",
+      "ok": true,
+      "detail": [
+        {
+          "x": 229,
+          "y": 682,
+          "w": 277,
+          "h": 13,
+          "right": 506,
+          "bottom": 695
+        },
+        {
+          "x": 511,
+          "y": 682,
+          "w": 277,
+          "h": 13,
+          "right": 788,
+          "bottom": 695
+        }
+      ]
+    },
+    {
+      "name": "成本标签/金额不省略",
+      "ok": true,
+      "detail": [
+        {
+          "l": "整枪成本（含原厂件）",
+          "v": "308,475 ₽",
+          "lc": false,
+          "nc": false,
+          "f": "8.5px"
+        },
+        {
+          "l": "其中改装件",
+          "v": "216,054 ₽",
+          "lc": false,
+          "nc": false,
+          "f": "8.5px"
+        }
+      ]
+    },
+    {
+      "name": "部件价格表头含商人价/跳蚤价",
+      "ok": true,
+      "detail": [
+        "部件",
+        "人机",
+        "后坐",
+        "默认",
+        "商人价",
+        "跳蚤价"
+      ]
+    },
+    {
+      "name": "部件行左侧有图标",
+      "ok": true,
+      "detail": [
+        {
+          "x": 243,
+          "y": 859,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 875
+        },
+        {
+          "x": 243,
+          "y": 881,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 897
+        },
+        {
+          "x": 243,
+          "y": 903,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 919
+        },
+        {
+          "x": 243,
+          "y": 925,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 941
+        },
+        {
+          "x": 243,
+          "y": 948,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 964
+        },
+        {
+          "x": 243,
+          "y": 970,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 986
+        },
+        {
+          "x": 243,
+          "y": 992,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 1008
+        },
+        {
+          "x": 243,
+          "y": 1014,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 1030
+        }
+      ]
+    },
+    {
+      "name": "价格列右边缘对齐",
+      "ok": true,
+      "detail": [
+        780,
+        780,
+        780,
+        780,
+        780,
+        780,
+        780,
+        780
+      ]
+    },
+    {
+      "name": "R19.7 中栏顺序保持不变",
+      "ok": true,
+      "detail": [
+        "gw-cmp",
+        "gw-loadvar",
+        "gw-meta",
+        "gw-tree",
+        "gw-bars",
+        "gw-stats",
+        "gw-hidden",
+        "gw-focus",
+        "gw-bottom"
+      ]
+    },
+    {
+      "name": "R19.7 枪身无官方预设文字",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "R19.7 配件卡无右上角×",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "R19.7 射速/DPS 角标存在",
+      "ok": true,
+      "detail": {
+        "rpm": "800 RPM",
+        "dps": "DPS —"
+      }
+    },
+    {
+      "name": "弹药表含后坐力/ACC 列",
+      "ok": true,
+      "detail": [
+        "n",
+        "dmg",
+        "pen",
+        "v0",
+        "rec",
+        "acc",
+        "price",
+        "state"
+      ]
+    },
+    {
+      "name": "弹药列表全部行与本地数据一致（含价格档）",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "三种非零后坐力/ACC 弹药可核对",
+      "ok": true,
+      "detail": [
+        {
+          "id": "5c0d5ae286f7741e46554302",
+          "name": "5.56x45毫米 Warmageddon5.56x45",
+          "shown": {
+            "dmg": "88",
+            "pen": "3",
+            "v0": "936",
+            "rec": "+10.0%",
+            "acc": "+10.0%",
+            "price": "243 ₽"
+          },
+          "data": {
+            "dmg": 88,
+            "pen": 3,
+            "v0": 936,
+            "rec": 0.1,
+            "acc": 0.1,
+            "buy": {
+              "t": "5935c25fb3acc3127c3d8cd9",
+              "l": 2,
+              "cur": "USD",
+              "rub": 243
+            },
+            "base": 130
+          }
+        },
+        {
+          "id": "59e690b686f7746c9f75e848",
+          "name": "5.56x45毫米 M9955.56x45",
+          "shown": {
+            "dmg": "42",
+            "pen": "53",
+            "v0": "1013",
+            "rec": "+8.0%",
+            "acc": "-7.0%",
+            "price": "1,230 ₽"
+          },
+          "data": {
+            "dmg": 42,
+            "pen": 53,
+            "v0": 1013,
+            "rec": 0.08,
+            "acc": -0.07,
+            "buy": null,
+            "base": 1230
+          }
+        },
+        {
+          "id": "601949593ae8f707c4608daa",
+          "name": "5.56x45毫米 SSA AP5.56x45",
+          "shown": {
+            "dmg": "38",
+            "pen": "57",
+            "v0": "1013",
+            "rec": "+6.0%",
+            "acc": "-9.0%",
+            "price": "1,525 ₽"
+          },
+          "data": {
+            "dmg": 38,
+            "pen": 57,
+            "v0": 1013,
+            "rec": 0.06,
+            "acc": -0.09,
+            "buy": null,
+            "base": 1525
+          }
+        }
+      ]
+    },
+    {
+      "name": "价格列使用真实卢布报价或基础价",
+      "ok": true,
+      "detail": [
+        {
+          "n": "5.56x45毫米 Warmageddon5.56x45",
+          "p": "243 ₽",
+          "t": "商人买入报价（上游 buyFromTrader 的卢布价）"
+        },
+        {
+          "n": "5.56x45毫米 M9955.56x45",
+          "p": "1,230 ₽",
+          "t": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价"
+        },
+        {
+          "n": "5.56x45毫米 SSA AP5.56x45",
+          "p": "1,525 ₽",
+          "t": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价"
+        }
+      ]
+    },
+    {
+      "name": "弹药面板不横向溢出",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "弹药表头与数值列无裁切",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "弹药态页面不横向溢出",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "选中弹药显示在子弹格且 DPS 更新",
+      "ok": true,
+      "detail": {
+        "short": "5.56x45毫米 Warmageddon",
+        "dps": "DPS ≈ 1173",
+        "hasImg": true
+      }
+    },
+    {
+      "name": "改装后装配发生变化",
+      "ok": true,
+      "detail": {
+        "slot": "mod_reciever/mod_sight_rear",
+        "from": "AR-15提把式照门",
+        "to": "丰和 20 式折叠式照门瞄具"
+      }
+    },
+    {
+      "name": "保存后立即出现在下拉",
+      "ok": true,
+      "detail": {
+        "v": "u:bmvnygnm7",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      }
+    },
+    {
+      "name": "刷新后预设仍在下拉",
+      "ok": true,
+      "detail": {
+        "v": "u:bmvnygnm7",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      }
+    },
+    {
+      "name": "重新加载恢复相同装配",
+      "ok": true,
+      "detail": {
+        "loaded": [
+          [
+            "mod_reciever/mod_sight_rear",
+            "丰和 20 式折叠式照门"
+          ],
+          [
+            "mod_charge",
+            "柯尔特AR-15拉机柄"
+          ],
+          [
+            "mod_reciever/mod_barrel/mod_muzzle",
+            "柯尔特USGI A2 5.56x45 AR-15消焰器"
+          ],
+          [
+            "mod_reciever/mod_barrel/mod_gas_block",
+            "柯尔特 M4准星"
+          ]
+        ],
+        "saved": [
+          [
+            "mod_reciever/mod_sight_rear",
+            "丰和 20 式折叠式照门"
+          ],
+          [
+            "mod_charge",
+            "柯尔特AR-15拉机柄"
+          ],
+          [
+            "mod_reciever/mod_barrel/mod_muzzle",
+            "柯尔特USGI A2 5.56x45 AR-15消焰器"
+          ],
+          [
+            "mod_reciever/mod_barrel/mod_gas_block",
+            "柯尔特 M4准星"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "筛选 caliber 主武器/-",
+      "ok": true,
+      "detail": {
+        "shown": 132,
+        "expect": 132,
+        "active": [
+          "主武器"
+        ],
+        "state": "筛选：主武器 · 132 / 163 把"
+      }
+    },
+    {
+      "name": "筛选 caliber 手枪/-",
+      "ok": true,
+      "detail": {
+        "shown": 31,
+        "expect": 31,
+        "active": [
+          "手枪"
+        ],
+        "state": "筛选：手枪 · 31 / 163 把"
+      }
+    },
+    {
+      "name": "筛选 caliber -/Auto",
+      "ok": true,
+      "detail": {
+        "shown": 89,
+        "expect": 89,
+        "active": [
+          "Auto"
+        ],
+        "state": "筛选：Auto · 89 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 caliber -/Burst",
+      "ok": true,
+      "detail": {
+        "shown": 7,
+        "expect": 7,
+        "active": [
+          "Burst"
+        ],
+        "state": "筛选：Burst · 7 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 caliber -/Single",
+      "ok": true,
+      "detail": {
+        "shown": 156,
+        "expect": 156,
+        "active": [
+          "Single"
+        ],
+        "state": "筛选：Single · 156 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 caliber 主武器/Auto",
+      "ok": true,
+      "detail": {
+        "shown": 86,
+        "expect": 86,
+        "active": [
+          "主武器",
+          "Auto"
+        ],
+        "state": "筛选：主武器 + Auto · 86 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 class 主武器/-",
+      "ok": true,
+      "detail": {
+        "shown": 132,
+        "expect": 132,
+        "active": [
+          "主武器"
+        ],
+        "state": "筛选：主武器 · 132 / 163 把"
+      }
+    },
+    {
+      "name": "筛选 class 手枪/-",
+      "ok": true,
+      "detail": {
+        "shown": 31,
+        "expect": 31,
+        "active": [
+          "手枪"
+        ],
+        "state": "筛选：手枪 · 31 / 163 把"
+      }
+    },
+    {
+      "name": "筛选 class -/Auto",
+      "ok": true,
+      "detail": {
+        "shown": 89,
+        "expect": 89,
+        "active": [
+          "Auto"
+        ],
+        "state": "筛选：Auto · 89 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 class -/Burst",
+      "ok": true,
+      "detail": {
+        "shown": 7,
+        "expect": 7,
+        "active": [
+          "Burst"
+        ],
+        "state": "筛选：Burst · 7 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 class -/Single",
+      "ok": true,
+      "detail": {
+        "shown": 156,
+        "expect": 156,
+        "active": [
+          "Single"
+        ],
+        "state": "筛选：Single · 156 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "筛选 class 主武器/Single",
+      "ok": true,
+      "detail": {
+        "shown": 125,
+        "expect": 125,
+        "active": [
+          "主武器",
+          "Single"
+        ],
+        "state": "筛选：主武器 + Single · 125 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）"
+      }
+    },
+    {
+      "name": "清除筛选恢复全部枪械",
+      "ok": true,
+      "detail": {
+        "ids": 163,
+        "state": "全部枪械 · 163 把",
+        "pressed": 0
+      }
+    },
+    {
+      "name": "FORGE 近 档位列表只含该档瞄具",
+      "ok": true,
+      "detail": {
+        "count": 23,
+        "bad": []
+      }
+    },
+    {
+      "name": "FORGE 中 档位列表只含该档瞄具",
+      "ok": true,
+      "detail": {
+        "count": 17,
+        "bad": []
+      }
+    },
+    {
+      "name": "FORGE 远 档位列表只含该档瞄具",
+      "ok": true,
+      "detail": {
+        "count": 17,
+        "bad": []
+      }
+    },
+    {
+      "name": "选中瞄具后显示档位与名称",
+      "ok": true,
+      "detail": {
+        "sel": "当前：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+        "on": "1",
+        "rows": [
+          {
+            "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+            "mag": "1–4×",
+            "on": "1"
+          },
+          {
+            "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+            "mag": "1–4×",
+            "on": "0"
+          },
+          {
+            "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+            "mag": "1–4×",
+            "on": "0"
+          },
+          {
+            "name": "EOTech HHS-1 复合瞄具",
+            "mag": "1–3×",
+            "on": "0"
+          },
+          {
+            "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+            "mag": "1–3×",
+            "on": "0"
+          },
+          {
+            "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+            "mag": "2×",
+            "on": "0"
+          },
+          {
+            "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+            "mag": "2.5×",
+            "on": "0"
+          },
+          {
+            "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+            "mag": "3×",
+            "on": "0"
+          },
+          {
+            "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+            "mag": "3×",
+            "on": "0"
+          },
+          {
+            "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+            "mag": "3×",
+            "on": "0"
+          },
+          {
+            "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+            "mag": "3.5×",
+            "on": "0"
+          },
+          {
+            "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+            "mag": "4×",
+            "on": "0"
+          },
+          {
+            "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+            "mag": "4×",
+            "on": "0"
+          },
+          {
+            "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+            "mag": "4×",
+            "on": "0"
+          },
+          {
+            "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+            "mag": "4×",
+            "on": "0"
+          },
+          {
+            "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+            "mag": "4×",
+            "on": "0"
+          },
+          {
+            "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+            "mag": "4×",
+            "on": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "优化结果存在且含所选瞄具",
+      "ok": true,
+      "detail": [
+        {
+          "f": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "bad": false,
+          "v": ""
+        }
+      ]
+    },
+    {
+      "name": "优化结果全部通过约束终检",
+      "ok": true,
+      "detail": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "应用方案后画布真的装上了所选瞄具",
+      "ok": true,
+      "detail": [
+        "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜"
+      ]
+    },
+    {
+      "name": "清除瞄具约束后结果不再含瞄具条件",
+      "ok": true,
+      "detail": {
+        "sel": "",
+        "feats": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "name": "手电约束进入优化结果",
+      "ok": true,
+      "detail": [
+        {
+          "f": "手电：Surefire XC1战术手电",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Surefire XC1战术手电",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Surefire XC1战术手电",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Surefire XC1战术手电",
+          "bad": false,
+          "v": ""
+        }
+      ]
+    },
+    {
+      "name": "手电+激光同时满足",
+      "ok": true,
+      "detail": [
+        {
+          "f": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+          "bad": false,
+          "v": ""
+        },
+        {
+          "f": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+          "bad": false,
+          "v": ""
+        }
+      ]
+    },
+    {
+      "name": "无解验收已切换到目标枪械",
+      "ok": true,
+      "detail": {
+        "gun": "5580223e4bdc2d1c128b457f",
+        "name": "MP-43-1C 12 铅径双管霰弹枪",
+        "meta": "基础枪械MP-43-1C 12 铅径双管霰弹枪改装槽位2已装配件2"
+      }
+    },
+    {
+      "name": "无兼容手电时明确提示无可行方案",
+      "ok": true,
+      "detail": [
+        {
+          "bad": true,
+          "v": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）"
+        },
+        {
+          "bad": true,
+          "v": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）"
+        },
+        {
+          "bad": true,
+          "v": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）"
+        },
+        {
+          "bad": true,
+          "v": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）"
+        }
+      ]
+    },
+    {
+      "name": "无可行方案时应用按钮被禁用",
+      "ok": true,
+      "detail": [
+        {
+          "text": "应用",
+          "disabled": true
+        },
+        {
+          "text": "应用",
+          "disabled": true
+        },
+        {
+          "text": "应用",
+          "disabled": true
+        },
+        {
+          "text": "应用",
+          "disabled": true
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "rev": "rev R19.8-9ac753b3",
+  "build": "",
+  "layout": {
+    "loadvar": [
+      {
+        "tag": "b",
+        "id": null,
+        "cls": "gw-loadvar-t",
+        "text": "⤓ LOAD VARIANT",
+        "r": {
+          "x": 237,
+          "y": 142,
+          "w": 101,
+          "h": 17,
+          "right": 338,
+          "bottom": 159
+        }
+      },
+      {
+        "tag": "label",
+        "id": null,
+        "cls": "gw-ref",
+        "text": "预设 （手动配置）柯尔特 M4A1 5.56x45 卡宾枪 Carbine（13",
+        "r": {
+          "x": 346,
+          "y": 139,
+          "w": 177,
+          "h": 23,
+          "right": 523,
+          "bottom": 162
+        }
+      },
+      {
+        "tag": "button",
+        "id": "gw-default",
+        "cls": "gw-btn",
+        "text": "恢复默认",
+        "r": {
+          "x": 531,
+          "y": 139,
+          "w": 70,
+          "h": 24,
+          "right": 601,
+          "bottom": 163
+        }
+      },
+      {
+        "tag": "button",
+        "id": "gw-save",
+        "cls": "gw-btn",
+        "text": "保存预设",
+        "r": {
+          "x": 609,
+          "y": 139,
+          "w": 70,
+          "h": 24,
+          "right": 679,
+          "bottom": 163
+        }
+      },
+      {
+        "tag": "span",
+        "id": "gw-preset-state",
+        "cls": "gw-preset-state",
+        "text": "未改动",
+        "r": {
+          "x": 687,
+          "y": 144,
+          "w": 27,
+          "h": 14,
+          "right": 714,
+          "bottom": 157
+        }
+      },
+      {
+        "tag": "span",
+        "id": null,
+        "cls": "lw-grow",
+        "text": "",
+        "r": {
+          "x": 722,
+          "y": 151,
+          "w": 58,
+          "h": 0,
+          "right": 780,
+          "bottom": 151
+        }
+      },
+      {
+        "tag": "div",
+        "id": "gw-visual",
+        "cls": "gw-visual gw-visual-slim",
+        "text": "",
+        "r": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    ],
+    "overlap": [],
+    "clipped": [],
+    "saveExists": true,
+    "saveText": "保存预设",
+    "presetText": "未改动",
+    "docOverflow": false,
+    "statsRows": [
+      {
+        "y": 641,
+        "items": [
+          "整枪属性"
+        ]
+      },
+      {
+        "y": 656,
+        "items": [
+          "人机工效55.0",
+          "垂直后坐力78.1",
+          "水平后坐力224.4",
+          "重量2.85 kg",
+          "精度 MOA1.82 MOA"
+        ]
+      },
+      {
+        "y": 669,
+        "items": [
+          "射速800 rpm",
+          "瞄准距离100 m",
+          "弹匣容量30 发",
+          "初速—"
+        ]
+      },
+      {
+        "y": 682,
+        "items": [
+          "整枪成本（含原厂件）308,475 ₽其中改装件216,054 ₽"
+        ]
+      }
+    ],
+    "costRowY": 682,
+    "costCells": [
+      {
+        "label": "整枪成本（含原厂件）",
+        "value": "308,475 ₽",
+        "r": {
+          "x": 229,
+          "y": 682,
+          "w": 277,
+          "h": 13,
+          "right": 506,
+          "bottom": 695
+        },
+        "labClip": false,
+        "numClip": false,
+        "numFont": "8.5px"
+      },
+      {
+        "label": "其中改装件",
+        "value": "216,054 ₽",
+        "r": {
+          "x": 511,
+          "y": 682,
+          "w": 277,
+          "h": 13,
+          "right": 788,
+          "bottom": 695
+        },
+        "labClip": false,
+        "numClip": false,
+        "numFont": "8.5px"
+      }
+    ],
+    "timelineHeads": [
+      "部件",
+      "人机",
+      "后坐",
+      "默认",
+      "商人价",
+      "跳蚤价"
+    ],
+    "parts": [
+      {
+        "name": "柯尔特A2 AR-15手枪式握把",
+        "icon": {
+          "x": 243,
+          "y": 859,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 875
+        },
+        "nameR": {
+          "x": 263,
+          "y": 858,
+          "w": 133,
+          "h": 17,
+          "right": 396,
+          "bottom": 875
+        },
+        "nameClip": false,
+        "title": "柯尔特A2 AR-15手枪式握把 · 握把",
+        "cells": [
+          {
+            "t": "柯尔特A2 AR-15手枪式握把",
+            "r": {
+              "x": 237,
+              "y": 855,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 877
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "+3",
+            "r": {
+              "x": 476,
+              "y": 855,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 877
+            },
+            "cls": "num"
+          },
+          {
+            "t": "0.0%",
+            "r": {
+              "x": 532,
+              "y": 855,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 877
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 855,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 877
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "2,341 ₽",
+            "r": {
+              "x": 632,
+              "y": 855,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 877
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "12,000 ₽",
+            "r": {
+              "x": 706,
+              "y": 855,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 877
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特 5.56x45 STANAG 30发弹匣",
+        "icon": {
+          "x": 243,
+          "y": 881,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 897
+        },
+        "nameR": {
+          "x": 263,
+          "y": 881,
+          "w": 167,
+          "h": 17,
+          "right": 430,
+          "bottom": 897
+        },
+        "nameClip": false,
+        "title": "柯尔特 5.56x45 STANAG 30发弹匣 · 弹匣",
+        "cells": [
+          {
+            "t": "柯尔特 5.56x45 STANAG 30发弹匣",
+            "r": {
+              "x": 237,
+              "y": 877,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 900
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "-1.5",
+            "r": {
+              "x": 476,
+              "y": 877,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 900
+            },
+            "cls": "num"
+          },
+          {
+            "t": "0.0%",
+            "r": {
+              "x": 532,
+              "y": 877,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 900
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 877,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 900
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "5,274 ₽",
+            "r": {
+              "x": 632,
+              "y": 877,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 900
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "27,725 ₽",
+            "r": {
+              "x": 706,
+              "y": 877,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 900
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特M4A1 5.56x45突击步枪上机匣",
+        "icon": {
+          "x": 243,
+          "y": 903,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 919
+        },
+        "nameR": {
+          "x": 263,
+          "y": 903,
+          "w": 179,
+          "h": 17,
+          "right": 442,
+          "bottom": 919
+        },
+        "nameClip": false,
+        "title": "柯尔特M4A1 5.56x45突击步枪上机匣 · 机匣",
+        "cells": [
+          {
+            "t": "柯尔特M4A1 5.56x45突击步枪上机匣",
+            "r": {
+              "x": 237,
+              "y": 900,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 922
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "+5",
+            "r": {
+              "x": 476,
+              "y": 900,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 922
+            },
+            "cls": "num"
+          },
+          {
+            "t": "-1.0%",
+            "r": {
+              "x": 532,
+              "y": 900,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 922
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 900,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 922
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "6,498 ₽",
+            "r": {
+              "x": 632,
+              "y": 900,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 922
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "18,888 ₽",
+            "r": {
+              "x": 706,
+              "y": 900,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 922
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "14.5 英寸 AR-15 枪管 5.56x45",
+        "icon": {
+          "x": 243,
+          "y": 925,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 941
+        },
+        "nameR": {
+          "x": 263,
+          "y": 925,
+          "w": 147,
+          "h": 17,
+          "right": 410,
+          "bottom": 942
+        },
+        "nameClip": false,
+        "title": "14.5 英寸 AR-15 枪管 5.56x45 · 枪管",
+        "cells": [
+          {
+            "t": "14.5 英寸 AR-15 枪管 5.56x45",
+            "r": {
+              "x": 237,
+              "y": 922,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 944
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "-12",
+            "r": {
+              "x": 476,
+              "y": 922,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 944
+            },
+            "cls": "num"
+          },
+          {
+            "t": "-7.4%",
+            "r": {
+              "x": 532,
+              "y": 922,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 944
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 922,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 944
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "46,012 ₽",
+            "r": {
+              "x": 632,
+              "y": 922,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 944
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "49,289 ₽",
+            "r": {
+              "x": 706,
+              "y": 922,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 944
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+        "icon": {
+          "x": 243,
+          "y": 948,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 964
+        },
+        "nameR": {
+          "x": 263,
+          "y": 947,
+          "w": 181,
+          "h": 17,
+          "right": 444,
+          "bottom": 964
+        },
+        "nameClip": false,
+        "title": "柯尔特USGI A2 5.56x45 AR-15消焰器 · 枪口装置",
+        "cells": [
+          {
+            "t": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+            "r": {
+              "x": 237,
+              "y": 944,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 966
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "-1",
+            "r": {
+              "x": 476,
+              "y": 944,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 966
+            },
+            "cls": "num"
+          },
+          {
+            "t": "-5.0%",
+            "r": {
+              "x": 532,
+              "y": 944,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 966
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 944,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 966
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "1,675 ₽",
+            "r": {
+              "x": 632,
+              "y": 944,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 966
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "3,703 ₽",
+            "r": {
+              "x": 706,
+              "y": 944,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 966
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特 M4准星",
+        "icon": {
+          "x": 243,
+          "y": 970,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 986
+        },
+        "nameR": {
+          "x": 263,
+          "y": 970,
+          "w": 73,
+          "h": 17,
+          "right": 336,
+          "bottom": 986
+        },
+        "nameClip": false,
+        "title": "柯尔特 M4准星 · 导气箍",
+        "cells": [
+          {
+            "t": "柯尔特 M4准星",
+            "r": {
+              "x": 237,
+              "y": 966,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 989
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "-1",
+            "r": {
+              "x": 476,
+              "y": 966,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 989
+            },
+            "cls": "num"
+          },
+          {
+            "t": "0.0%",
+            "r": {
+              "x": 532,
+              "y": 966,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 989
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 966,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 989
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "4,813 ₽",
+            "r": {
+              "x": 632,
+              "y": 966,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 989
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "14,250 ₽",
+            "r": {
+              "x": 706,
+              "y": 966,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 989
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+        "icon": {
+          "x": 243,
+          "y": 992,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 1008
+        },
+        "nameR": {
+          "x": 263,
+          "y": 992,
+          "w": 167,
+          "h": 17,
+          "right": 430,
+          "bottom": 1008
+        },
+        "nameClip": false,
+        "title": "柯尔特 M4 卡宾枪长度 AR-15 护木 · 护木",
+        "cells": [
+          {
+            "t": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+            "r": {
+              "x": 237,
+              "y": 989,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 1011
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "+4",
+            "r": {
+              "x": 476,
+              "y": 989,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 1011
+            },
+            "cls": "num"
+          },
+          {
+            "t": "0.0%",
+            "r": {
+              "x": 532,
+              "y": 989,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 1011
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 989,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 1011
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "1,780 ₽",
+            "r": {
+              "x": 632,
+              "y": 989,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 1011
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "7,231 ₽",
+            "r": {
+              "x": 706,
+              "y": 989,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 1011
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      },
+      {
+        "name": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+        "icon": {
+          "x": 243,
+          "y": 1014,
+          "w": 16,
+          "h": 16,
+          "right": 259,
+          "bottom": 1030
+        },
+        "nameR": {
+          "x": 263,
+          "y": 1014,
+          "w": 178,
+          "h": 17,
+          "right": 441,
+          "bottom": 1031
+        },
+        "nameClip": false,
+        "title": "柯尔特 M4 卡宾枪长度 AR-15 下护木 · 护木",
+        "cells": [
+          {
+            "t": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+            "r": {
+              "x": 237,
+              "y": 1011,
+              "w": 239,
+              "h": 22,
+              "right": 476,
+              "bottom": 1033
+            },
+            "cls": "gw-tl-name"
+          },
+          {
+            "t": "+7",
+            "r": {
+              "x": 476,
+              "y": 1011,
+              "w": 56,
+              "h": 22,
+              "right": 532,
+              "bottom": 1033
+            },
+            "cls": "num"
+          },
+          {
+            "t": "0.0%",
+            "r": {
+              "x": 532,
+              "y": 1011,
+              "w": 56,
+              "h": 22,
+              "right": 588,
+              "bottom": 1033
+            },
+            "cls": "num"
+          },
+          {
+            "t": "default",
+            "r": {
+              "x": 588,
+              "y": 1011,
+              "w": 44,
+              "h": 22,
+              "right": 632,
+              "bottom": 1033
+            },
+            "cls": "gw-tl-defcol gw-tl-default"
+          },
+          {
+            "t": "1,778 ₽",
+            "r": {
+              "x": 632,
+              "y": 1011,
+              "w": 74,
+              "h": 22,
+              "right": 706,
+              "bottom": 1033
+            },
+            "cls": "num gw-tl-price"
+          },
+          {
+            "t": "2,000 ₽",
+            "r": {
+              "x": 706,
+              "y": 1011,
+              "w": 74,
+              "h": 22,
+              "right": 780,
+              "bottom": 1033
+            },
+            "cls": "num gw-tl-price"
+          }
+        ]
+      }
+    ],
+    "priceRight": [
+      780,
+      780,
+      780,
+      780,
+      780,
+      780,
+      780,
+      780
+    ],
+    "buildOrder": [
+      "|gw-forge",
+      "|gw-center",
+      "|gw-cands"
+    ],
+    "centerOrder": [
+      "gw-cmp",
+      "gw-loadvar",
+      "gw-meta",
+      "gw-tree",
+      "gw-bars",
+      "gw-stats",
+      "gw-hidden",
+      "gw-focus",
+      "gw-bottom"
+    ],
+    "hasPartX": false,
+    "officialText": false,
+    "rpm": "800 RPM",
+    "dps": "DPS —",
+    "rpmColor": "rgb(85, 89, 94)",
+    "dpsColor": "rgb(208, 42, 30)",
+    "hiddenText": "隐藏属性ADS 时间0.81 sTrueErgoDelta55.0OverSwing否Aim Sway 摆动强度0.0 %ArmStamina53.5 s爆头有效距离86 m相机后坐3.5散布偏差上限23.0后坐散布10.0后坐角90.0",
+    "treeItems": [
+      {
+        "slot": "mod_reciever/mod_sight_rear",
+        "item": "AR-15提把式照门"
+      },
+      {
+        "slot": "mod_charge",
+        "item": "柯尔特AR-15拉机柄"
+      },
+      {
+        "slot": "mod_reciever/mod_barrel/mod_muzzle",
+        "item": "柯尔特USGI A2 5.56x45 AR-15消焰器"
+      },
+      {
+        "slot": "mod_reciever/mod_barrel/mod_gas_block",
+        "item": "柯尔特 M4准星"
+      },
+      {
+        "slot": "mod_reciever/mod_barrel",
+        "item": "14.5 英寸 AR-15 枪管 5.56x45"
+      },
+      {
+        "slot": "mod_reciever/mod_handguard",
+        "item": "柯尔特 M4 卡宾枪长度 AR-15 护木"
+      },
+      {
+        "slot": "mod_reciever",
+        "item": "柯尔特M4A1 5.56x45突击步枪上机匣"
+      },
+      {
+        "slot": "mod_stock",
+        "item": "柯尔特 AR-15 卡宾枪缓冲管"
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_handguard",
+        "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木"
+      },
+      {
+        "slot": "mod_magazine",
+        "item": "柯尔特 5.56x45 STANAG 30发弹匣"
+      },
+      {
+        "slot": "mod_pistol_grip",
+        "item": "柯尔特A2 AR-15手枪式握把"
+      },
+      {
+        "slot": "mod_stock/mod_stock_000",
+        "item": "High Standard M4SS AR-15 枪托"
+      }
+    ]
+  },
+  "ammo": {
+    "heads": [
+      {
+        "k": "n",
+        "t": "弹药（5.56x45）",
+        "r": {
+          "x": 826,
+          "y": 160,
+          "w": 143,
+          "h": 22,
+          "right": 969
+        }
+      },
+      {
+        "k": "dmg",
+        "t": "伤害",
+        "r": {
+          "x": 969,
+          "y": 160,
+          "w": 50,
+          "h": 22,
+          "right": 1019
+        }
+      },
+      {
+        "k": "pen",
+        "t": "穿透",
+        "r": {
+          "x": 1019,
+          "y": 160,
+          "w": 50,
+          "h": 22,
+          "right": 1069
+        }
+      },
+      {
+        "k": "v0",
+        "t": "初速",
+        "r": {
+          "x": 1069,
+          "y": 160,
+          "w": 50,
+          "h": 22,
+          "right": 1119
+        }
+      },
+      {
+        "k": "rec",
+        "t": "后坐力▼",
+        "r": {
+          "x": 1119,
+          "y": 160,
+          "w": 62,
+          "h": 22,
+          "right": 1181
+        }
+      },
+      {
+        "k": "acc",
+        "t": "ACC",
+        "r": {
+          "x": 1181,
+          "y": 160,
+          "w": 62,
+          "h": 22,
+          "right": 1243
+        }
+      },
+      {
+        "k": "price",
+        "t": "价格",
+        "r": {
+          "x": 1243,
+          "y": 160,
+          "w": 86,
+          "h": 22,
+          "right": 1329
+        }
+      },
+      {
+        "k": "state",
+        "t": "状态",
+        "r": {
+          "x": 1329,
+          "y": 160,
+          "w": 46,
+          "h": 22,
+          "right": 1375
+        }
+      }
+    ],
+    "rows": [
+      {
+        "id": "5c0d5ae286f7741e46554302",
+        "n": "5.56x45毫米 Warmageddon5.56x45",
+        "t_n": "",
+        "dmg": "88",
+        "t_dmg": "",
+        "pen": "3",
+        "t_pen": "",
+        "v0": "936",
+        "t_v0": "",
+        "rec": "+10.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "+10.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "243 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e690b686f7746c9f75e848",
+        "n": "5.56x45毫米 M9955.56x45",
+        "t_n": "",
+        "dmg": "42",
+        "t_dmg": "",
+        "pen": "53",
+        "t_pen": "",
+        "v0": "1013",
+        "t_v0": "",
+        "rec": "+8.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "-7.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "1,230 ₽",
+        "t_price": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "601949593ae8f707c4608daa",
+        "n": "5.56x45毫米 SSA AP5.56x45",
+        "t_n": "",
+        "dmg": "38",
+        "t_dmg": "",
+        "pen": "57",
+        "t_pen": "",
+        "v0": "1013",
+        "t_v0": "",
+        "rec": "+6.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "-9.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "1,525 ₽",
+        "t_price": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "54527ac44bdc2d36668b4567",
+        "n": "5.56x45毫米 M855A15.56x45",
+        "t_n": "",
+        "dmg": "49",
+        "t_dmg": "",
+        "pen": "44",
+        "t_pen": "",
+        "v0": "945",
+        "t_v0": "",
+        "rec": "+5.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "-5.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "710 ₽",
+        "t_price": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e6906286f7746c9f75e847",
+        "n": "5.56x45毫米 M856A15.56x45",
+        "t_n": "",
+        "dmg": "52",
+        "t_dmg": "",
+        "pen": "38",
+        "t_pen": "",
+        "v0": "940",
+        "t_v0": "",
+        "rec": "+4.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "-4.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "1,036 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "60194943740c5d77f6705eea",
+        "n": "5.56x45毫米 Mk 318 Mod 0 (SOST)5.56x45",
+        "t_n": "",
+        "dmg": "53",
+        "t_dmg": "",
+        "pen": "33",
+        "t_pen": "",
+        "v0": "902",
+        "t_v0": "",
+        "rec": "+3.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "+2.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "296 ₽",
+        "t_price": "本地没有商人买入报价，这里显示上游基础参考价（basePrice），不是跳蚤价",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "54527a984bdc2d4e668b4567",
+        "n": "5.56x45毫米 M8555.56x45",
+        "t_n": "",
+        "dmg": "54",
+        "t_dmg": "",
+        "pen": "31",
+        "t_pen": "",
+        "v0": "922",
+        "t_v0": "",
+        "rec": "0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "336 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e6920f86f77411d82aa167",
+        "n": "5.56x45毫米 FMJ5.56x45",
+        "t_n": "",
+        "dmg": "57",
+        "t_dmg": "",
+        "pen": "23",
+        "t_pen": "",
+        "v0": "957",
+        "t_v0": "",
+        "rec": "0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "159 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e6918f86f7746c9f75e849",
+        "n": "5.56x45毫米 MK 255 Mod 0 (RRLP)5.56x45",
+        "t_n": "",
+        "dmg": "72",
+        "t_dmg": "",
+        "pen": "11",
+        "t_pen": "",
+        "v0": "936",
+        "t_v0": "",
+        "rec": "0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "169 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e6927d86f77411da468256",
+        "n": "5.56x45毫米 HP5.56x45",
+        "t_n": "",
+        "dmg": "79",
+        "t_dmg": "",
+        "pen": "7",
+        "t_pen": "",
+        "v0": "947",
+        "t_v0": "",
+        "rec": "0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "66 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      },
+      {
+        "id": "59e68f6f86f7746c9f75e846",
+        "n": "5.56x45毫米 M8565.56x45",
+        "t_n": "",
+        "dmg": "60",
+        "t_dmg": "",
+        "pen": "18",
+        "t_pen": "",
+        "v0": "874",
+        "t_v0": "",
+        "rec": "-2.0%",
+        "t_rec": "弹药自带的后坐力修正（上游 recoilModifier）：负值降低后坐力，不是枪械本身的后坐力",
+        "acc": "-2.0%",
+        "t_acc": "弹药自带的精度修正（上游 accuracyModifier）：正值 = 散布增加（精度下降）",
+        "price": "206 ₽",
+        "t_price": "商人买入报价（上游 buyFromTrader 的卢布价）",
+        "state": "可选",
+        "t_state": ""
+      }
+    ],
+    "panel": {
+      "x": 824,
+      "y": 128,
+      "w": 552,
+      "h": 678,
+      "right": 1376
+    },
+    "clips": [],
+    "overflow": false,
+    "pageOverflow": false
+  },
+  "ammoAll": {
+    "rows": 11,
+    "mismatches": []
+  },
+  "ammoTriple": [
+    {
+      "id": "5c0d5ae286f7741e46554302",
+      "name": "5.56x45毫米 Warmageddon5.56x45",
+      "shown": {
+        "dmg": "88",
+        "pen": "3",
+        "v0": "936",
+        "rec": "+10.0%",
+        "acc": "+10.0%",
+        "price": "243 ₽"
+      },
+      "data": {
+        "dmg": 88,
+        "pen": 3,
+        "v0": 936,
+        "rec": 0.1,
+        "acc": 0.1,
+        "buy": {
+          "t": "5935c25fb3acc3127c3d8cd9",
+          "l": 2,
+          "cur": "USD",
+          "rub": 243
+        },
+        "base": 130
+      }
+    },
+    {
+      "id": "59e690b686f7746c9f75e848",
+      "name": "5.56x45毫米 M9955.56x45",
+      "shown": {
+        "dmg": "42",
+        "pen": "53",
+        "v0": "1013",
+        "rec": "+8.0%",
+        "acc": "-7.0%",
+        "price": "1,230 ₽"
+      },
+      "data": {
+        "dmg": 42,
+        "pen": 53,
+        "v0": 1013,
+        "rec": 0.08,
+        "acc": -0.07,
+        "buy": null,
+        "base": 1230
+      }
+    },
+    {
+      "id": "601949593ae8f707c4608daa",
+      "name": "5.56x45毫米 SSA AP5.56x45",
+      "shown": {
+        "dmg": "38",
+        "pen": "57",
+        "v0": "1013",
+        "rec": "+6.0%",
+        "acc": "-9.0%",
+        "price": "1,525 ₽"
+      },
+      "data": {
+        "dmg": 38,
+        "pen": 57,
+        "v0": 1013,
+        "rec": 0.06,
+        "acc": -0.09,
+        "buy": null,
+        "base": 1525
+      }
+    }
+  ],
+  "ammoPick": {
+    "id": "5c0d5ae286f7741e46554302",
+    "dom": {
+      "short": "5.56x45毫米 Warmageddon",
+      "dps": "DPS ≈ 1173",
+      "hasImg": true
+    }
+  },
+  "presetMod": {
+    "mod": {
+      "slot": "mod_reciever/mod_sight_rear",
+      "from": "AR-15提把式照门",
+      "to": "丰和 20 式折叠式照门瞄具"
+    },
+    "changed": true
+  },
+  "presetSaved": {
+    "value": "u:bmvnygnm7",
+    "opts": [
+      {
+        "v": "",
+        "t": "（手动配置）"
+      },
+      {
+        "v": "5af08cf886f774223c269184",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 Carbine（13 件）"
+      },
+      {
+        "v": "618aaf656bbeff39ad4acf0c",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 Custom（17 件）"
+      },
+      {
+        "v": "707265736574000000000068",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 EXPS3-0（17 件）"
+      },
+      {
+        "v": "707265736574000000000009",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 KAC RIS（14 件）"
+      },
+      {
+        "v": "5bbf1c5a88a45017bb03d7aa",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 LVOA（14 件）"
+      },
+      {
+        "v": "70726573657400000000000a",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 REAP-IR（20 件）"
+      },
+      {
+        "v": "5dd800eae49222636663133b",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 SAI（18 件）"
+      },
+      {
+        "v": "5af08cc686f77424a61595f2",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 SOPMOD I（13 件）"
+      },
+      {
+        "v": "5a8ae73886f7747b2e6e1416",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 SOPMOD II（20 件）"
+      },
+      {
+        "v": "5a8ae36686f774377d6ce226",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 Space Trooper（19 件）"
+      },
+      {
+        "v": "707265736574000000000082",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 T-1（22 件）"
+      },
+      {
+        "v": "66b0e484c84cc7141324fd6c",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 T.O 2K24（20 件）"
+      },
+      {
+        "v": "5ebbff0841a637322117a5fb",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 USASOC-II（16 件）"
+      },
+      {
+        "v": "707265736574000000000067",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 XPS3-0（19 件）"
+      },
+      {
+        "v": "62875103af0a053a6672c234",
+        "t": "柯尔特 M4A1 5.56x45 卡宾枪 Your-Ex（21 件）"
+      },
+      {
+        "v": "u:bmvnygnm7",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnyfdw1",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxux0r",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxtn0u",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxmkwh",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxlbl9",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxfelq",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnxe6ju",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnwxfm8",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnww4oj",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnwmkto",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnwlds4",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnwh00w",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnwah2b",
+        "t": "R19.8 验收预设 1384x805（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnw9abt",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      },
+      {
+        "v": "u:bmvnw6d88",
+        "t": "R19.8 验收预设 1920x919（本机 · 12 件）"
+      }
+    ],
+    "state": "本机 · 未改动",
+    "stored": 16
+  },
+  "presetLoaded": {
+    "loaded": [
+      [
+        "mod_reciever/mod_sight_rear",
+        "丰和 20 式折叠式照门"
+      ],
+      [
+        "mod_charge",
+        "柯尔特AR-15拉机柄"
+      ],
+      [
+        "mod_reciever/mod_barrel/mod_muzzle",
+        "柯尔特USGI A2 5.56x45 AR-15消焰器"
+      ],
+      [
+        "mod_reciever/mod_barrel/mod_gas_block",
+        "柯尔特 M4准星"
+      ],
+      [
+        "mod_reciever/mod_barrel",
+        "14.5 英寸 AR-15 枪管 5.56x45"
+      ],
+      [
+        "mod_reciever/mod_handguard",
+        "柯尔特 M4 卡宾枪长度 AR-15 护木"
+      ],
+      [
+        "mod_reciever",
+        "柯尔特M4A1 5.56x45突击步枪上机匣"
+      ],
+      [
+        "mod_stock",
+        "柯尔特 AR-15 卡宾枪缓冲管"
+      ],
+      [
+        "mod_reciever/mod_handguard/mod_handguard",
+        "柯尔特 M4 卡宾枪长度 AR-15 下护木"
+      ],
+      [
+        "mod_magazine",
+        "柯尔特 5.56x45 STANAG 30发弹匣"
+      ],
+      [
+        "mod_pistol_grip",
+        "柯尔特A2 AR-15手枪式握把"
+      ],
+      [
+        "mod_stock/mod_stock_000",
+        "High Standard M4SS AR-15 枪托"
+      ]
+    ],
+    "same": true
+  },
+  "filters": [
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "primary",
+        "fire": ""
+      },
+      "shown": 132,
+      "expect": 132,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "主武器"
+      ],
+      "chipsOk": true,
+      "state": "筛选：主武器 · 132 / 163 把",
+      "stateOn": "1"
+    },
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "handgun",
+        "fire": ""
+      },
+      "shown": 31,
+      "expect": 31,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "手枪"
+      ],
+      "chipsOk": true,
+      "state": "筛选：手枪 · 31 / 163 把",
+      "stateOn": "1"
+    },
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "",
+        "fire": "fullauto"
+      },
+      "shown": 89,
+      "expect": 89,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Auto"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Auto · 89 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "",
+        "fire": "burst"
+      },
+      "shown": 7,
+      "expect": 7,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Burst"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Burst · 7 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "",
+        "fire": "single"
+      },
+      "shown": 156,
+      "expect": 156,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Single"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Single · 156 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "caliber",
+      "want": {
+        "kind": "primary",
+        "fire": "fullauto"
+      },
+      "shown": 86,
+      "expect": 86,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "主武器",
+        "Auto"
+      ],
+      "chipsOk": true,
+      "state": "筛选：主武器 + Auto · 86 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "primary",
+        "fire": ""
+      },
+      "shown": 132,
+      "expect": 132,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "主武器"
+      ],
+      "chipsOk": true,
+      "state": "筛选：主武器 · 132 / 163 把",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "handgun",
+        "fire": ""
+      },
+      "shown": 31,
+      "expect": 31,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "手枪"
+      ],
+      "chipsOk": true,
+      "state": "筛选：手枪 · 31 / 163 把",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "",
+        "fire": "fullauto"
+      },
+      "shown": 89,
+      "expect": 89,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Auto"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Auto · 89 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "",
+        "fire": "burst"
+      },
+      "shown": 7,
+      "expect": 7,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Burst",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Burst"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Burst · 7 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "",
+        "fire": "single"
+      },
+      "shown": 156,
+      "expect": 156,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "Single"
+      ],
+      "chipsOk": true,
+      "state": "筛选：Single · 156 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    },
+    {
+      "page": "class",
+      "want": {
+        "kind": "primary",
+        "fire": "single"
+      },
+      "shown": 125,
+      "expect": 125,
+      "idsOk": true,
+      "chips": [
+        {
+          "t": "主武器",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "手枪",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Auto",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Single",
+          "pressed": "true",
+          "on": "1"
+        },
+        {
+          "t": "Burst",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Silent ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        },
+        {
+          "t": "Loud ✕无数据",
+          "pressed": "false",
+          "on": "0"
+        }
+      ],
+      "active": [
+        "主武器",
+        "Single"
+      ],
+      "chipsOk": true,
+      "state": "筛选：主武器 + Single · 125 / 163 把（另有 0 把缺射击模式数据，不参与该筛选）",
+      "stateOn": "1"
+    }
+  ],
+  "filterCleared": {
+    "ids": 163,
+    "state": "全部枪械 · 163 把",
+    "pressed": 0
+  },
+  "forgeTiers": {
+    "near": {
+      "label": "近",
+      "sel": "当前档位：近 · 请选择具体瞄具",
+      "rows": [
+        {
+          "name": "Aimpoint COMP M4反射式瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "Aimpoint PRO反射式瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "Axion Kobra EKP-8-18 反射式瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "ELCAN Specter HCO 全息瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "Eotech 553全息瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech EXPS3-0 全息瞄具（黄褐色）",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech XPS3-0 全息瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech XPS3-2 全息瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "FALKE LE 反射式瞄具",
+          "mag": "1×",
+          "on": "0"
+        },
+        {
+          "name": "Holosun HS401G5反射式瞄具",
+          "mag": "1×",
+          "on": "0"
+        }
+      ],
+      "count": 23,
+      "badTier": []
+    },
+    "mid": {
+      "label": "中",
+      "sel": "当前档位：中 · 请选择具体瞄具",
+      "rows": [
+        {
+          "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "mag": "1–4×",
+          "on": "0"
+        },
+        {
+          "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+          "mag": "1–4×",
+          "on": "0"
+        },
+        {
+          "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+          "mag": "1–4×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech HHS-1 复合瞄具",
+          "mag": "1–3×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+          "mag": "1–3×",
+          "on": "0"
+        },
+        {
+          "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+          "mag": "2×",
+          "on": "0"
+        },
+        {
+          "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+          "mag": "2.5×",
+          "on": "0"
+        },
+        {
+          "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+          "mag": "3×",
+          "on": "0"
+        },
+        {
+          "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+          "mag": "3×",
+          "on": "0"
+        },
+        {
+          "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+          "mag": "3×",
+          "on": "0"
+        }
+      ],
+      "count": 17,
+      "badTier": []
+    },
+    "far": {
+      "label": "远",
+      "sel": "当前档位：远 · 请选择具体瞄具",
+      "rows": [
+        {
+          "name": "DEON March-F 1-8x24 紧凑型 30 毫米步枪瞄准镜",
+          "mag": "1–8×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech Vudu 1-6x24 30 毫米 步枪瞄准镜",
+          "mag": "1–6×",
+          "on": "0"
+        },
+        {
+          "name": "Schmidt & Bender PM II 1-8x24 30 毫米步枪瞄准镜",
+          "mag": "1–8×",
+          "on": "0"
+        },
+        {
+          "name": "SIG Sauer TANGO6T 1-6x24 30 毫米步枪瞄准镜",
+          "mag": "1–6×",
+          "on": "0"
+        },
+        {
+          "name": "Valday PS-320 1x/6x瞄准镜",
+          "mag": "1–6×",
+          "on": "0"
+        },
+        {
+          "name": "Vortex Razor HD Gen.2 1-6x24 30 毫米步枪瞄准镜",
+          "mag": "1–6×",
+          "on": "0"
+        },
+        {
+          "name": "Leupold Mark 4 MR/T TS-30A2 2.5-8x36 30 毫米步枪瞄准镜",
+          "mag": "2.5–8×",
+          "on": "0"
+        },
+        {
+          "name": "KMZ 1P59 3-10x步枪瞄准镜",
+          "mag": "3–10×",
+          "on": "0"
+        },
+        {
+          "name": "KMZ 1P69 3-10x步枪瞄准镜",
+          "mag": "3–10×",
+          "on": "0"
+        },
+        {
+          "name": "March Tactical 3-24x42 FFP 30 毫米步枪瞄准镜",
+          "mag": "3–24×",
+          "on": "0"
+        }
+      ],
+      "count": 17,
+      "badTier": []
+    }
+  },
+  "forgeOptics": {
+    "choose": {
+      "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "mag": "1–4×",
+      "on": "0"
+    },
+    "selected": {
+      "sel": "当前：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "on": "1",
+      "rows": [
+        {
+          "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+          "mag": "1–4×",
+          "on": "1"
+        },
+        {
+          "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+          "mag": "1–4×",
+          "on": "0"
+        },
+        {
+          "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+          "mag": "1–4×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech HHS-1 复合瞄具",
+          "mag": "1–3×",
+          "on": "0"
+        },
+        {
+          "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+          "mag": "1–3×",
+          "on": "0"
+        },
+        {
+          "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+          "mag": "2×",
+          "on": "0"
+        },
+        {
+          "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+          "mag": "2.5×",
+          "on": "0"
+        },
+        {
+          "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+          "mag": "3×",
+          "on": "0"
+        },
+        {
+          "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+          "mag": "3×",
+          "on": "0"
+        },
+        {
+          "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+          "mag": "3×",
+          "on": "0"
+        },
+        {
+          "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+          "mag": "3.5×",
+          "on": "0"
+        },
+        {
+          "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+          "mag": "4×",
+          "on": "0"
+        },
+        {
+          "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+          "mag": "4×",
+          "on": "0"
+        },
+        {
+          "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+          "mag": "4×",
+          "on": "0"
+        },
+        {
+          "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+          "mag": "4×",
+          "on": "0"
+        },
+        {
+          "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+          "mag": "4×",
+          "on": "0"
+        },
+        {
+          "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+          "mag": "4×",
+          "on": "0"
+        }
+      ]
+    },
+    "results": [
+      {
+        "name": "低后坐力",
+        "meta": "人机 65.0 · 后坐 26.5 · 1,004,524 ₽",
+        "feat": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "高人机工效",
+        "meta": "人机 131.0 · 后坐 46.2 · 764,042 ₽",
+        "feat": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "轻量化",
+        "meta": "人机 113.5 · 后坐 38.4 · 589,238 ₽",
+        "feat": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "性价比",
+        "meta": "人机 124.5 · 后坐 41.4 · 781,414 ₽",
+        "feat": "瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      }
+    ]
+  },
+  "forgeApplied": {
+    "optic": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+    "matched": true
+  },
+  "forgeLight": {
+    "results": [
+      {
+        "name": "低后坐力",
+        "meta": "人机 68.5 · 后坐 26.5 · 982,492 ₽",
+        "feat": "手电：Surefire XC1战术手电",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "高人机工效",
+        "meta": "人机 135.0 · 后坐 46.2 · 777,717 ₽",
+        "feat": "手电：Surefire XC1战术手电",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "轻量化",
+        "meta": "人机 115.5 · 后坐 38.4 · 527,958 ₽",
+        "feat": "手电：Surefire XC1战术手电",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "性价比",
+        "meta": "人机 128.0 · 后坐 41.4 · 759,382 ₽",
+        "feat": "手电：Surefire XC1战术手电",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      }
+    ],
+    "devices": [
+      "Armytek Predator Pro v3 XHP35 HI手电",
+      "Glock GTL 21 战术手电激光组合",
+      "Insight WMX200 战术手电",
+      "Olight Baldr Pro 战术手电激光组合",
+      "Olight Baldr Pro 战术手电激光组合（黄褐色）"
+    ]
+  },
+  "forgeBoth": {
+    "results": [
+      {
+        "name": "低后坐力",
+        "meta": "人机 68.0 · 后坐 26.5 · 995,241 ₽",
+        "feat": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "高人机工效",
+        "meta": "人机 135.0 · 后坐 46.2 · 796,096 ₽",
+        "feat": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "轻量化",
+        "meta": "人机 118.0 · 后坐 38.4 · 578,618 ₽",
+        "feat": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      },
+      {
+        "name": "性价比",
+        "meta": "人机 127.5 · 后坐 41.4 · 772,131 ₽",
+        "feat": "手电：Glock GTL 21 战术手电激光组合 · 激光：Glock GTL 21 战术手电激光组合",
+        "featOn": "1",
+        "viol": "",
+        "bad": false,
+        "apply": {
+          "text": "应用",
+          "disabled": false
+        }
+      }
+    ]
+  },
+  "forgeInfeasible": {
+    "gun": "5580223e4bdc2d1c128b457f",
+    "name": "MP-43-1C 12 铅径双管霰弹枪",
+    "results": [
+      {
+        "name": "低后坐力",
+        "meta": "人机 37.0 · 后坐 234.4 · 30,687 ₽",
+        "feat": "手电：未满足",
+        "featOn": "0",
+        "viol": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）",
+        "bad": true,
+        "apply": {
+          "text": "应用",
+          "disabled": true
+        }
+      },
+      {
+        "name": "高人机工效",
+        "meta": "人机 43.0 · 后坐 259.5 · 36,587 ₽",
+        "feat": "手电：未满足",
+        "featOn": "0",
+        "viol": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）",
+        "bad": true,
+        "apply": {
+          "text": "应用",
+          "disabled": true
+        }
+      },
+      {
+        "name": "轻量化",
+        "meta": "人机 37.0 · 后坐 234.4 · 30,687 ₽",
+        "feat": "手电：未满足",
+        "featOn": "0",
+        "viol": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）",
+        "bad": true,
+        "apply": {
+          "text": "应用",
+          "disabled": true
+        }
+      },
+      {
+        "name": "性价比",
+        "meta": "人机 37.0 · 后坐 234.4 · 30,687 ₽",
+        "feat": "手电：未满足",
+        "featOn": "0",
+        "viol": "⛔ 当前枪械没有兼容的手电设备（真实槽位里找不到符合该功能的设备）",
+        "bad": true,
+        "apply": {
+          "text": "应用",
+          "disabled": true
+        }
+      }
+    ]
+  }
+}

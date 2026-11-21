@@ -1,0 +1,114 @@
+{
+ "generatedFor": "R19.15.1",
+ "gun": {
+  "id": "673cab3e03c6a20581028bc1",
+  "name": "Sako TRG M10 .338 LM 栓动狙击步枪"
+ },
+ "realTree": {
+  "rootSlots": [
+   {
+    "slot": "mod_magazine",
+    "label": "弹匣",
+    "allow": [
+     {
+      "id": "673cbdfad0453ba50c0f76d6",
+      "name": "Sako TRG M10 .338 LM 8发弹匣",
+      "pt": "Magazine",
+      "slots": []
+     }
+    ]
+   },
+   {
+    "slot": "mod_charge",
+    "label": "拉机柄",
+    "allow": [
+     {
+      "id": "673cb4054ff4aa8f86076f4a",
+      "name": "Sako TRG M10 .338 LM 枪栓套组",
+      "pt": "WeaponMod",
+      "slots": []
+     }
+    ]
+   },
+   {
+    "slot": "mod_stock",
+    "label": "枪托",
+    "allow": [
+     {
+      "id": "673cb212e695740be0047a46",
+      "name": "Sako TRG M10 枪身",
+      "pt": "WeaponMod",
+      "slots": [
+       "mod_mount_000"
+      ]
+     }
+    ]
+   },
+   {
+    "slot": "mod_reciever",
+    "label": "机匣",
+    "allow": [
+     {
+      "id": "673cb491280680de5e02ff36",
+      "name": "Sako TRG M10 .338 LM 机匣",
+      "pt": "WeaponMod",
+      "slots": [
+       "mod_handguard",
+       "mod_barrel",
+       "mod_mount"
+      ]
+     }
+    ]
+   }
+  ],
+  "chain": "mod_reciever(机匣) → mod_mount(瞄准镜基座) → mod_scope(瞄准镜) / mod_sight_rear(照门)"
+ },
+ "before": {
+  "mount": {
+   "slot": "mod_reciever/mod_mount",
+   "row": 4,
+   "col": 5,
+   "item": "Sako TRG M10 瞄准镜基座"
+  },
+  "scope": {
+   "slot": "mod_reciever/mod_mount/mod_scope",
+   "row": 5,
+   "col": 5,
+   "item": ""
+  },
+  "bodyRow": 6
+ },
+ "after": {
+  "mount": {
+   "slot": "mod_reciever/mod_mount",
+   "row": 2,
+   "col": 5,
+   "item": "Sako TRG M10 瞄准镜基座"
+  },
+  "scope": {
+   "slot": "mod_reciever/mod_mount/mod_scope",
+   "row": 1,
+   "col": 5,
+   "item": ""
+  },
+  "rows": 6,
+  "roles": {
+   "receiverUpper": null,
+   "receiverLower": null,
+   "stockOnGrip": null,
+   "stockUnderParent": null,
+   "hammer": null,
+   "trigger": null,
+   "topOptic": [
+    "mod_reciever/mod_mount",
+    "mod_reciever/mod_mount/mod_scope"
+   ]
+  }
+ },
+ "expectation": {
+  "mount": "本体行正上方（r2，机匣列）",
+  "scope": "镜座正上方同列（r1）"
+ },
+ "result": "全部达成",
+ "note": "修复前镜座落在 r4c5、其瞄具子槽落在 r5c5（都在本体行下方）；现由「上置光学链」阶段严格向上生长。"
+}

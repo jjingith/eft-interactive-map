@@ -1,0 +1,228 @@
+{
+ "schema": 1,
+ "source": "https://assets.tarkov.dev/<itemId>-512.webp（tarkov.dev 开源数据）",
+ "note": "游戏素材版权归 Battlestate Games，仅作学术研究/非商用；构建期下载，运行期离线",
+ "size": 128,
+ "icons": {
+  "valuable_btc": {
+   "itemId": "59faff1d86f7746c51718c9c",
+   "name": "实体比特币",
+   "file": "assets/icons-hd/valuable_btc.png",
+   "source": "https://assets.tarkov.dev/59faff1d86f7746c51718c9c-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_bottle": {
+   "itemId": "5d1b376e86f774252519444e",
+   "name": "“凶狠跑刀崽”私酒",
+   "file": "assets/icons-hd/valuable_bottle.png",
+   "source": "https://assets.tarkov.dev/5d1b376e86f774252519444e-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_gpu": {
+   "itemId": "57347ca924597744596b4e71",
+   "name": "显示卡",
+   "file": "assets/icons-hd/valuable_gpu.png",
+   "source": "https://assets.tarkov.dev/57347ca924597744596b4e71-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_keycard": {
+   "itemId": "5c1d0d6d86f7744bb2683e1f",
+   "name": "实验室钥匙卡·黄",
+   "file": "assets/icons-hd/valuable_keycard.png",
+   "source": "https://assets.tarkov.dev/5c1d0d6d86f7744bb2683e1f-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_key": {
+   "itemId": "5938504186f7740991483f30",
+   "name": "宿舍203房间钥匙",
+   "file": "assets/icons-hd/valuable_key.png",
+   "source": "https://assets.tarkov.dev/5938504186f7740991483f30-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_med": {
+   "itemId": "5c0530ee86f774697952d952",
+   "name": "LEDX 皮肤透照仪",
+   "file": "assets/icons-hd/valuable_med.png",
+   "source": "https://assets.tarkov.dev/5c0530ee86f774697952d952-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_defib": {
+   "itemId": "5c052e6986f7746b207bc3c9",
+   "name": "便携式除颤器",
+   "file": "assets/icons-hd/valuable_defib.png",
+   "source": "https://assets.tarkov.dev/5c052e6986f7746b207bc3c9-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_intel": {
+   "itemId": "5c12613b86f7743bbe2c3f76",
+   "name": "情报文件夹",
+   "file": "assets/icons-hd/valuable_intel.png",
+   "source": "https://assets.tarkov.dev/5c12613b86f7743bbe2c3f76-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "valuable_folder": {
+   "itemId": "6389c8c5dbfd5e4b95197e6b",
+   "name": "TerraGroup“蓝色文件夹”材料",
+   "file": "assets/icons-hd/valuable_folder.png",
+   "source": "https://assets.tarkov.dev/6389c8c5dbfd5e4b95197e6b-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_blueprint": {
+   "itemId": "6a31824878450ec91c0ea1ae",
+   "name": "蓝图与技术文档",
+   "file": "assets/icons-hd/doc_blueprint.png",
+   "source": "https://assets.tarkov.dev/6a31824878450ec91c0ea1ae-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_pmc": {
+   "itemId": "6a317b9692cfdcddcb02a58e",
+   "name": "PMC 个人档案",
+   "file": "assets/icons-hd/doc_pmc.png",
+   "source": "https://assets.tarkov.dev/6a317b9692cfdcddcb02a58e-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_medical": {
+   "itemId": "6a3182dc6cd8de21cf0a3a7d",
+   "name": "医疗文件",
+   "file": "assets/icons-hd/doc_medical.png",
+   "source": "https://assets.tarkov.dev/6a3182dc6cd8de21cf0a3a7d-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_financial": {
+   "itemId": "6a31807f17005505b70d5827",
+   "name": "财务文件",
+   "file": "assets/icons-hd/doc_financial.png",
+   "source": "https://assets.tarkov.dev/6a31807f17005505b70d5827-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_project": {
+   "itemId": "6a3181f178450ec91c0ea1aa",
+   "name": "项目文件",
+   "file": "assets/icons-hd/doc_project.png",
+   "source": "https://assets.tarkov.dev/6a3181f178450ec91c0ea1aa-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_employee": {
+   "itemId": "6a3182b72fd891345e047eef",
+   "name": "员工文档",
+   "file": "assets/icons-hd/doc_employee.png",
+   "source": "https://assets.tarkov.dev/6a3182b72fd891345e047eef-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_test": {
+   "itemId": "6a31828557705071410ca00e",
+   "name": "测试文档",
+   "file": "assets/icons-hd/doc_test.png",
+   "source": "https://assets.tarkov.dev/6a31828557705071410ca00e-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "doc_technical": {
+   "itemId": "6a31830dde69ceafd805afa0",
+   "name": "技术文档",
+   "file": "assets/icons-hd/doc_technical.png",
+   "source": "https://assets.tarkov.dev/6a31830dde69ceafd805afa0-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "duffle": {
+   "itemId": "56e33634d2720bd8058b456b",
+   "name": "旅行包",
+   "file": "assets/icons-hd/duffle.png",
+   "source": "https://assets.tarkov.dev/56e33634d2720bd8058b456b-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "weapon": {
+   "itemId": "59fb023c86f7746d0d4b423c",
+   "name": "武器箱",
+   "file": "assets/icons-hd/weapon.png",
+   "source": "https://assets.tarkov.dev/59fb023c86f7746d0d4b423c-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "grenade": {
+   "itemId": "5e2af55f86f7746d4159f07c",
+   "name": "手榴弹箱",
+   "file": "assets/icons-hd/grenade.png",
+   "source": "https://assets.tarkov.dev/5e2af55f86f7746d4159f07c-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "med": {
+   "itemId": "5aafbcd986f7745e590fff23",
+   "name": "医疗物品箱",
+   "file": "assets/icons-hd/med.png",
+   "source": "https://assets.tarkov.dev/5aafbcd986f7745e590fff23-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  },
+  "supply": {
+   "itemId": "6658892e6e007c6f33662002",
+   "name": "已解锁的物资箱（普通）",
+   "file": "assets/icons-hd/supply.png",
+   "source": "https://assets.tarkov.dev/6658892e6e007c6f33662002-512.webp",
+   "size": [
+    128,
+    128
+   ]
+  }
+ }
+}

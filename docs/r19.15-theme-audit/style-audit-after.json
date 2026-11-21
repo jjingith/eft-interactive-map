@@ -1,0 +1,1891 @@
+{
+  "phase": "after",
+  "build": "R19.15-4571f5d2",
+  "views": {
+    "map": {
+      "body": {
+        "tag": "body",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "19.5px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1920,
+        "h": 919
+      },
+      "pageTitle": {
+        "tag": "h1",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "14px",
+        "weight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(255, 255, 255)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "navBtn": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "panel": {
+        "tag": "div",
+        "cls": "gun-workbench",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableHead": {
+        "tag": "div",
+        "cls": "tbl-head",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(236, 233, 216) 10",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1668,
+        "h": 23
+      },
+      "tableCell": {
+        "tag": "div",
+        "cls": "tbl-cell",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "17.6px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "2px 6px",
+        "margin": "0px",
+        "w": 100,
+        "h": 22
+      },
+      "button": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "input": null,
+      "select": {
+        "tag": "select",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "normal",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "1px solid rgb(172, 168, 153)",
+        "radius": "0px",
+        "pad": "3px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tab": {
+        "tag": "button",
+        "cls": "gw-mode",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46",
+        "border": "1px solid rgb(127, 157, 185)",
+        "radius": "3px",
+        "pad": "2px 9px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "radiusHistogram": {
+        "0.0": 7957,
+        "3.0": 105,
+        "50.0": 1,
+        "2.0": 14,
+        "4.0": 2
+      },
+      "bigRadiusCount": 0,
+      "bigRadiusSample": [],
+      "fontSizeHistogram": {
+        "12px": 332,
+        "13px": 168,
+        "11px": 4133,
+        "14px": 3,
+        "10px": 49,
+        "16.5px": 14,
+        "13.2px": 22,
+        "15px": 4,
+        "9px": 10
+      },
+      "fractionalSizes": [
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        }
+      ],
+      "fontFamilySet": {
+        "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif": 169,
+        "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif": 7815,
+        "Consolas, \"Courier New\", monospace": 1,
+        "\"Segoe UI\", \"Microsoft YaHei UI\", sans-serif": 46,
+        "Tahoma, \"Microsoft YaHei\", sans-serif": 47,
+        "Tahoma, sans-serif": 1
+      },
+      "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+      "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15"
+    },
+    "loadout": {
+      "body": {
+        "tag": "body",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "19.5px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1920,
+        "h": 919
+      },
+      "pageTitle": {
+        "tag": "h1",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "14px",
+        "weight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(255, 255, 255)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "navBtn": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "panel": {
+        "tag": "div",
+        "cls": "tbl",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1404,
+        "h": 777
+      },
+      "tableHead": {
+        "tag": "div",
+        "cls": "tbl-head",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(236, 233, 216) 10",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1402,
+        "h": 32
+      },
+      "tableCell": {
+        "tag": "div",
+        "cls": "tbl-cell",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "15px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "2px 6px",
+        "margin": "0px",
+        "w": 352,
+        "h": 34
+      },
+      "button": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "input": null,
+      "select": {
+        "tag": "select",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "normal",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "1px solid rgb(172, 168, 153)",
+        "radius": "0px",
+        "pad": "3px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tab": {
+        "tag": "button",
+        "cls": "gw-mode",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46",
+        "border": "1px solid rgb(127, 157, 185)",
+        "radius": "3px",
+        "pad": "2px 9px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "radiusHistogram": {
+        "0.0": 9111,
+        "3.0": 127,
+        "50.0": 1,
+        "2.0": 92,
+        "4.0": 2
+      },
+      "bigRadiusCount": 0,
+      "bigRadiusSample": [],
+      "fontSizeHistogram": {
+        "12px": 1190,
+        "13px": 177,
+        "11px": 4173,
+        "14px": 3,
+        "10px": 120,
+        "16.5px": 14,
+        "13.2px": 22,
+        "9px": 12,
+        "15px": 4
+      },
+      "fractionalSizes": [
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        }
+      ],
+      "fontFamilySet": {
+        "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif": 292,
+        "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif": 8946,
+        "Consolas, \"Courier New\", monospace": 1,
+        "\"Segoe UI\", \"Microsoft YaHei UI\", sans-serif": 46,
+        "Tahoma, \"Microsoft YaHei\", sans-serif": 47,
+        "Tahoma, sans-serif": 1
+      },
+      "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+      "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15",
+      "_clicked": true
+    },
+    "gun": {
+      "body": {
+        "tag": "body",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "19.5px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1920,
+        "h": 919
+      },
+      "pageTitle": {
+        "tag": "h1",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "14px",
+        "weight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(255, 255, 255)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "navBtn": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "panel": {
+        "tag": "div",
+        "cls": "tbl",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableHead": {
+        "tag": "div",
+        "cls": "tbl-head",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(236, 233, 216) 10",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableCell": {
+        "tag": "div",
+        "cls": "tbl-cell",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "15px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "2px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "button": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "input": null,
+      "select": {
+        "tag": "select",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "normal",
+        "color": "rgb(92, 101, 112)",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "1px solid rgb(172, 168, 153)",
+        "radius": "0px",
+        "pad": "3px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tab": {
+        "tag": "button",
+        "cls": "gw-mode",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46",
+        "border": "1px solid rgb(127, 157, 185)",
+        "radius": "3px",
+        "pad": "2px 9px",
+        "margin": "0px",
+        "w": 44,
+        "h": 24
+      },
+      "radiusHistogram": {
+        "0.0": 11583,
+        "3.0": 301,
+        "50.0": 1,
+        "2.0": 92,
+        "4.0": 2
+      },
+      "bigRadiusCount": 0,
+      "bigRadiusSample": [],
+      "fontSizeHistogram": {
+        "12px": 1428,
+        "13px": 177,
+        "11px": 5871,
+        "14px": 3,
+        "10px": 305,
+        "16.5px": 14,
+        "13.2px": 22,
+        "9px": 351,
+        "15px": 4
+      },
+      "fractionalSizes": [
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        }
+      ],
+      "fontFamilySet": {
+        "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif": 1251,
+        "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif": 8980,
+        "Consolas, \"Courier New\", monospace": 1,
+        "\"Segoe UI\", \"Microsoft YaHei UI\", sans-serif": 46,
+        "Tahoma, \"Microsoft YaHei\", sans-serif": 1700,
+        "Tahoma, sans-serif": 1
+      },
+      "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+      "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15",
+      "_clicked": true
+    },
+    "ammo": {
+      "body": {
+        "tag": "body",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "19.5px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1920,
+        "h": 919
+      },
+      "pageTitle": {
+        "tag": "h1",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "14px",
+        "weight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(255, 255, 255)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "navBtn": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "panel": {
+        "tag": "div",
+        "cls": "tbl",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableHead": {
+        "tag": "div",
+        "cls": "tbl-head",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(236, 233, 216) 10",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableCell": {
+        "tag": "div",
+        "cls": "tbl-cell",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "15px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "2px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "button": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "input": null,
+      "select": {
+        "tag": "select",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "normal",
+        "color": "rgb(92, 101, 112)",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "1px solid rgb(172, 168, 153)",
+        "radius": "0px",
+        "pad": "3px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tab": {
+        "tag": "button",
+        "cls": "gw-mode",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46",
+        "border": "1px solid rgb(127, 157, 185)",
+        "radius": "3px",
+        "pad": "2px 9px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "radiusHistogram": {
+        "0.0": 11583,
+        "3.0": 301,
+        "50.0": 1,
+        "2.0": 92,
+        "4.0": 2
+      },
+      "bigRadiusCount": 0,
+      "bigRadiusSample": [],
+      "fontSizeHistogram": {
+        "12px": 1428,
+        "13px": 177,
+        "11px": 5871,
+        "14px": 3,
+        "10px": 305,
+        "16.5px": 14,
+        "13.2px": 22,
+        "9px": 351,
+        "15px": 4
+      },
+      "fractionalSizes": [
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        }
+      ],
+      "fontFamilySet": {
+        "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif": 1251,
+        "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif": 8980,
+        "Consolas, \"Courier New\", monospace": 1,
+        "\"Segoe UI\", \"Microsoft YaHei UI\", sans-serif": 46,
+        "Tahoma, \"Microsoft YaHei\", sans-serif": 1700,
+        "Tahoma, sans-serif": 1
+      },
+      "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+      "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15",
+      "_clicked": true
+    },
+    "sim": {
+      "body": {
+        "tag": "body",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "13px",
+        "weight": "400",
+        "lineHeight": "19.5px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgb(236, 233, 216)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 1920,
+        "h": 919
+      },
+      "pageTitle": {
+        "tag": "h1",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "14px",
+        "weight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(255, 255, 255)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "navBtn": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "panel": {
+        "tag": "div",
+        "cls": "tbl",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableHead": {
+        "tag": "div",
+        "cls": "tbl-head",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(236, 233, 216) 10",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "0px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tableCell": {
+        "tag": "div",
+        "cls": "tbl-cell",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "15px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "0px none rgb(0, 0, 0)",
+        "radius": "0px",
+        "pad": "2px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "button": {
+        "tag": "button",
+        "cls": "menu-btn view-btn",
+        "font": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif",
+        "size": "12px",
+        "weight": "700",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "none",
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "radius": "3px",
+        "pad": "3px 10px",
+        "margin": "0px",
+        "w": 46,
+        "h": 26
+      },
+      "input": null,
+      "select": {
+        "tag": "select",
+        "cls": "",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "11px",
+        "weight": "400",
+        "lineHeight": "normal",
+        "color": "rgb(92, 101, 112)",
+        "bg": "rgb(255, 255, 255)",
+        "bgImage": "none",
+        "border": "1px solid rgb(172, 168, 153)",
+        "radius": "0px",
+        "pad": "3px 6px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "tab": {
+        "tag": "button",
+        "cls": "gw-mode",
+        "font": "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif",
+        "size": "12px",
+        "weight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgImage": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46",
+        "border": "1px solid rgb(127, 157, 185)",
+        "radius": "3px",
+        "pad": "2px 9px",
+        "margin": "0px",
+        "w": 0,
+        "h": 0
+      },
+      "radiusHistogram": {
+        "0.0": 11583,
+        "3.0": 301,
+        "50.0": 1,
+        "2.0": 92,
+        "4.0": 2
+      },
+      "bigRadiusCount": 0,
+      "bigRadiusSample": [],
+      "fontSizeHistogram": {
+        "12px": 1428,
+        "13px": 177,
+        "11px": 5871,
+        "14px": 3,
+        "10px": 305,
+        "16.5px": 14,
+        "13.2px": 22,
+        "9px": 351,
+        "15px": 4
+      },
+      "fractionalSizes": [
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "16.5px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        },
+        {
+          "tag": "text",
+          "cls": "[object SVGAnimatedString]",
+          "size": "13.2px"
+        }
+      ],
+      "fontFamilySet": {
+        "Tahoma, \"Microsoft YaHei\", \"Microsoft YaHei UI\", sans-serif": 1251,
+        "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif": 8980,
+        "Consolas, \"Courier New\", monospace": 1,
+        "\"Segoe UI\", \"Microsoft YaHei UI\", sans-serif": 46,
+        "Tahoma, \"Microsoft YaHei\", sans-serif": 1700,
+        "Tahoma, sans-serif": 1
+      },
+      "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+      "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15",
+      "_clicked": false
+    }
+  },
+  "buttons": {
+    "target": {
+      "x": 27,
+      "y": 15.75,
+      "text": "地图"
+    },
+    "normal": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "img": "none",
+      "border": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)"
+    },
+    "hover": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 50%, rgb(255, 153, 51) 10",
+      "border": "rgb(201, 122, 16)",
+      "color": "rgb(0, 0, 0)"
+    },
+    "click": {
+      "onClick": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "img": "linear-gradient(rgb(255, 210, 77) 0%, rgb(255, 187, 31) 52%, rgb(255, 153, 51) 1",
+        "border": "rgb(178, 106, 13)",
+        "color": "rgb(0, 0, 0)"
+      },
+      "afterMouseLeave": {
+        "bg": "rgba(0, 0, 0, 0)",
+        "img": "linear-gradient(rgb(255, 210, 77) 0%, rgb(255, 187, 31) 52%, rgb(255, 153, 51) 1",
+        "border": "rgb(178, 106, 13)",
+        "color": "rgb(0, 0, 0)"
+      }
+    }
+  },
+  "console": [],
+  "navSelected": {
+    "sel": "true",
+    "bg": "rgba(0, 0, 0, 0)",
+    "img": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) ",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(201, 122, 16)"
+  }
+}

@@ -1,0 +1,269 @@
+{
+ "schema": 1,
+ "round": "R30.0",
+ "note": "空槽占位图案：由「该槽位代表装备」的上游 -base-image.webp（透明底、最高分辨率）渲染的石墨素描。**背景全透明**，卡片底板交给 CSS 的 XP 凹陷边框 + 斜纹渐变绘制，因此不会在 XP 浅色面板上出现黑色方块。源图来自 build-cache/gear-icons-src，本工具运行期不联网。",
+ "generator": "tools/build_slot_sketches.py",
+ "render": {
+  "outScale": 2,
+  "supersample": 2,
+  "margin": 0.09,
+  "alphaCut": 10,
+  "bodyAlpha": 1.0,
+  "edgeRadius": 2,
+  "edgeGain": 1.6,
+  "inkRange": [
+   38,
+   205
+  ],
+  "sCurve": 0.45
+ },
+ "source": {
+  "dir": "build-cache/gear-icons-src",
+  "kind": "上游 -base-image.webp（透明底）"
+ },
+ "extract": {
+  "helmet": {
+   "itemId": "5b40e1525acfc4771e1c6611",
+   "sourceId": "5b40e1525acfc4771e1c6611"
+  },
+  "armor": {
+   "itemId": "68948a95d8f2b85fb705e2a6",
+   "sourceId": "68948a95d8f2b85fb705e2a6"
+  },
+  "rig": {
+   "itemId": "603648ff5a45383c122086ac",
+   "sourceId": "603648ff5a45383c122086ac"
+  },
+  "backpack": {
+   "itemId": "59e763f286f7742ee57895da",
+   "sourceId": "59e763f286f7742ee57895da"
+  },
+  "headphones": {
+   "itemId": "66b5f6985891c84aab75ca76",
+   "sourceId": "66b5f6985891c84aab75ca76"
+  },
+  "glasses": {
+   "itemId": "603409c80ca681766b6a0fb2",
+   "sourceId": "603409c80ca681766b6a0fb2"
+  },
+  "face": {
+   "itemId": "572b7f1624597762ae139822",
+   "sourceId": "572b7f1624597762ae139822"
+  },
+  "armband": {
+   "itemId": "5b3f16c486f7747c327f55f7",
+   "sourceId": "5b3f16c486f7747c327f55f7"
+  },
+  "dogtag": {
+   "itemId": "59f32bb586f774757e1e8442",
+   "sourceId": "59f32bb586f774757e1e8442"
+  },
+  "primary": {
+   "itemId": "5bf3e03b0db834001d2c4a9c",
+   "sourceId": "5c0c1ce886f77401c119d014"
+  },
+  "holster": {
+   "itemId": "5a7ae0c351dfba0017554310",
+   "sourceId": "5a88acfb86f77457fd2c0d8f"
+  },
+  "melee": {
+   "itemId": "54491bb74bdc2d09088b4567",
+   "sourceId": "54491bb74bdc2d09088b4567"
+  }
+ },
+ "items": [
+  {
+   "key": "helmet",
+   "file": "assets/ui/placeholders/helmet.png",
+   "card": [
+    77,
+    77
+   ],
+   "canvas": [
+    154,
+    154
+   ],
+   "itemId": "5b40e1525acfc4771e1c6611",
+   "sourceId": "5b40e1525acfc4771e1c6611",
+   "label": "HighCom Striker ULACH IIIA 头盔（黑色）",
+   "bytes": 16053
+  },
+  {
+   "key": "armor",
+   "file": "assets/ui/placeholders/armor.png",
+   "card": [
+    103,
+    103
+   ],
+   "canvas": [
+    206,
+    206
+   ],
+   "itemId": "68948a95d8f2b85fb705e2a6",
+   "sourceId": "68948a95d8f2b85fb705e2a6",
+   "label": "6B45 防弹衣（数码丛林迷彩）",
+   "bytes": 23298
+  },
+  {
+   "key": "rig",
+   "file": "assets/ui/placeholders/rig.png",
+   "card": [
+    103,
+    103
+   ],
+   "canvas": [
+    206,
+    206
+   ],
+   "itemId": "603648ff5a45383c122086ac",
+   "sourceId": "603648ff5a45383c122086ac",
+   "label": "Azimut SS \"Zhuk\" 胸挂（黑）",
+   "bytes": 27739
+  },
+  {
+   "key": "backpack",
+   "file": "assets/ui/placeholders/backpack.png",
+   "card": [
+    103,
+    103
+   ],
+   "canvas": [
+    206,
+    206
+   ],
+   "itemId": "59e763f286f7742ee57895da",
+   "sourceId": "59e763f286f7742ee57895da",
+   "label": "Pilgrim 旅行包",
+   "bytes": 25914
+  },
+  {
+   "key": "headphones",
+   "file": "assets/ui/placeholders/headphones.png",
+   "card": [
+    77,
+    77
+   ],
+   "canvas": [
+    154,
+    154
+   ],
+   "itemId": "66b5f6985891c84aab75ca76",
+   "sourceId": "66b5f6985891c84aab75ca76",
+   "label": "Peltor ComTac VI 耳机（狼棕色）",
+   "bytes": 17633
+  },
+  {
+   "key": "glasses",
+   "file": "assets/ui/placeholders/glasses.png",
+   "card": [
+    77,
+    34
+   ],
+   "canvas": [
+    154,
+    68
+   ],
+   "itemId": "603409c80ca681766b6a0fb2",
+   "sourceId": "603409c80ca681766b6a0fb2",
+   "label": "NPP KIASS Condor 护目镜",
+   "bytes": 6209
+  },
+  {
+   "key": "face",
+   "file": "assets/ui/placeholders/face.png",
+   "card": [
+    39,
+    39
+   ],
+   "canvas": [
+    78,
+    78
+   ],
+   "itemId": "572b7f1624597762ae139822",
+   "sourceId": "572b7f1624597762ae139822",
+   "label": "巴拉克拉瓦头套",
+   "bytes": 4795
+  },
+  {
+   "key": "armband",
+   "file": "assets/ui/placeholders/armband.png",
+   "card": [
+    36,
+    35
+   ],
+   "canvas": [
+    72,
+    70
+   ],
+   "itemId": "5b3f16c486f7747c327f55f7",
+   "sourceId": "5b3f16c486f7747c327f55f7",
+   "label": "臂带（白）",
+   "bytes": 6703
+  },
+  {
+   "key": "dogtag",
+   "file": "assets/ui/placeholders/dogtag.png",
+   "card": [
+    35,
+    35
+   ],
+   "canvas": [
+    70,
+    70
+   ],
+   "itemId": "59f32bb586f774757e1e8442",
+   "sourceId": "59f32bb586f774757e1e8442",
+   "label": "BEAR 狗牌",
+   "bytes": 5004
+  },
+  {
+   "key": "primary",
+   "file": "assets/ui/placeholders/primary.png",
+   "card": [
+    266,
+    103
+   ],
+   "canvas": [
+    532,
+    206
+   ],
+   "itemId": "5bf3e03b0db834001d2c4a9c",
+   "sourceId": "5c0c1ce886f77401c119d014",
+   "label": "AK-74 5.45x39 突击步枪",
+   "bytes": 32561
+  },
+  {
+   "key": "holster",
+   "file": "assets/ui/placeholders/holster.png",
+   "card": [
+    103,
+    56
+   ],
+   "canvas": [
+    206,
+    112
+   ],
+   "itemId": "5a7ae0c351dfba0017554310",
+   "sourceId": "5a88acfb86f77457fd2c0d8f",
+   "label": "Glock 17 9x19 手枪",
+   "bytes": 9574
+  },
+  {
+   "key": "melee",
+   "file": "assets/ui/placeholders/melee.png",
+   "card": [
+    103,
+    56
+   ],
+   "canvas": [
+    206,
+    112
+   ],
+   "itemId": "54491bb74bdc2d09088b4567",
+   "sourceId": "54491bb74bdc2d09088b4567",
+   "label": "ER「支点」刺刀",
+   "bytes": 7183
+  }
+ ],
+ "missing": []
+}

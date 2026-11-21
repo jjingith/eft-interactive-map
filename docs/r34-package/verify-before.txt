@@ -1,0 +1,11 @@
+# host=HOMONAS user=MASTERJJ at=2026-11-03T10:11:41+08:00 round=R34-package
+# 命令：powershell -ExecutionPolicy Bypass -File build\verify_package_files.ps1
+运行文件清单：D:\personal\trae\02-塔科夫\eft-interactive-map\build\package_files.ps1
+站点根目录：D:\personal\trae\02-塔科夫\eft-interactive-map
+完整性校验通过：预期 13238 个文件，staging 实际 13238 个文件，缺失 0，未登记 0。
+staging 路径：D:\personal\trae\02-塔科夫\eft-interactive-map\build\_staging_check
+staging 体积：126.1 MB
+
+用户给出的基准：13236/13236，缺失 0。
+实际：13238/13238，缺失 0，未登记 0。
+偏差：+2。按用户要求「不符就停下来报，不要继续」，未执行 build.ps1。

@@ -1,0 +1,210 @@
+[
+ {
+  "role": "flt-semantics",
+  "label": "Dialog",
+  "x": 752,
+  "y": 483,
+  "w": 1504,
+  "h": 965
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 580,
+  "y": 20,
+  "w": 52,
+  "h": 40
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 632,
+  "y": 20,
+  "w": 52,
+  "h": 40
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 684,
+  "y": 20,
+  "w": 52,
+  "h": 40
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 736,
+  "y": 20,
+  "w": 52,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "KITECO SC L 45 KITECO SC-IV SA ballistic plate -1.5 / -0.5 / -1.5 UHMWPE 45 - 133 2.5",
+  "x": 752,
+  "y": 82,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "KA Steel H 50 Kiba Arms Steel ballistic plate -3 / -1.5 / -1.5 Armor steel 50 - 95 5.1",
+  "x": 752,
+  "y": 134,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "GAC 4sss2 L 50 GAC 4sss2 ballistic plate -1.5 / -0.5 / -1.5 UHMWPE 50 - 148 2.7",
+  "x": 752,
+  "y": 186,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "ESAPI IV H 55 ESAPI level IV ballistic plate -1.5 / -0.5 / -1.5 Ceramic 55 - 100 3.2",
+  "x": 752,
+  "y": 238,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Granit Br5 H 60 Granit Br5 ballistic plate -2 / -1.5 / -1.5 Ceramic 60 - 109 3.3 default",
+  "x": 752,
+  "y": 290,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "NESCO 4400 H 60 NESCO 4400-SA-MC ballistic plate -2.5 / -1 / -1 Combined materials 60 - 160 3.6",
+  "x": 752,
+  "y": 342,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Cult Termite H 65 Cult Termite ballistic plate -2 / -1.5 / -1 Titanium 65 - 158 3.9",
+  "x": 752,
+  "y": 394,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "GAC 3s15m L 45 GAC 3s15m ballistic plate -1 / 0 / -1 UHMWPE 45 - 133 1.0",
+  "x": 752,
+  "y": 462,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "SAPI III+ H 50 SAPI level III+ ballistic plate -1 / -0.5 / -1.5 Ceramic 50 - 91 1.8 50 IV [2]",
+  "x": 752,
+  "y": 514,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Granit Br4 H 55 Granit Br4 ballistic plate -1.5 / -1 / -1 Ceramic 55 - 100 2.9",
+  "x": 752,
+  "y": 566,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "TC Guardian H 55 TallCom Guardian ballistic plate -2 / -0.5 / -1.5 Combined materials 55 - 147 3.5",
+  "x": 752,
+  "y": 618,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Cult Locust H 60 Cult Locust ballistic plate -1.5 / -1 / -1 Titanium 60 - 145 2.6",
+  "x": 752,
+  "y": 670,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Monoclete PE L 40 Monoclete level III PE ballistic plate -1 / 0 / -1 UHMWPE 40 - 119 1.4 9 III [4]",
+  "x": 752,
+  "y": 738,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "SPRTN Elaphros H 45 SPRTN Elaphros ballistic plate -1 / 0 / -1.5 Ceramic 45 467 ₽ 82 1.6 38,196 III [4]",
+  "x": 752,
+  "y": 790,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "NST level III L 45 NewSphereTech level III ballistic plate -1 / -0.5 / -1 Aluminum 45 363 ₽ 100 2.1 36,336 III [4]",
+  "x": 752,
+  "y": 842,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "GA Steel H 45 Global Armor’s Steel ballistic plate -1.5 / -0.5 / -1 Armor steel 45 270 ₽ 86 3.4 23,154 III [4]",
+  "x": 752,
+  "y": 894,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "SPRTN Omega H 50 SPRTN Omega ballistic plate -1.5 / -0.5 / -0.5 Combined materials 50 197 ₽ 133 4.4 26,268 III [4]",
+  "x": 752,
+  "y": 943,
+  "w": 1440,
+  "h": 45
+ },
+ {
+  "role": "group",
+  "label": "KA Titan H 55 Kiba Arms Titan ballistic plate -1 / -0.5 / -0.5 Titanium 55 - 133 2.3",
+  "x": 752,
+  "y": 998,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "PRTCTR Light L 35 PRTCTR Lightweight ballistic plate -1 / 0 / -1 UHMWPE 35 - 104 0.4",
+  "x": 752,
+  "y": 1066,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "AR500 LP H 45 AR500 Legacy Plate ballistic plate -2 / -1 / -1 Combined materials 45 151 ₽ 120 3.9 18,116 II [2]",
+  "x": 752,
+  "y": 1118,
+  "w": 1440,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "TK SAPI III+ L 90 Tac-Kek SAPI Level III+ ballistic plate (Replica) -0.5 / -0.3 / -0.5 UHMWPE 90 - 267 1.1",
+  "x": 752,
+  "y": 1186,
+  "w": 1440,
+  "h": 52
+ }
+]

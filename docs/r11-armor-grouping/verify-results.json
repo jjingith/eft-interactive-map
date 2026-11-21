@@ -1,0 +1,72 @@
+{
+  "round": "r11",
+  "date": "2026-10-21",
+  "scope": "第十一轮浏览器实测验收：防护区域图标补全（问题 A）+ 基础防弹等级列与分组排序（问题 B）",
+  "environment": {
+    "server": "serve.py @ http://127.0.0.1:8787",
+    "browser": "Chrome（MCP DevTools 页 pageId=9 + CDP 9223/9224/9225 双通道交叉验证）",
+    "method": "真实浏览器操作 + Page.reload(ignoreCache) 强刷 + 列数断言防护（防旧标签页跑旧 JS）"
+  },
+  "tests": {
+    "baseline_at_round_start": { "passed": 681, "skipped": 1, "failed": 0, "note": "与 r10 报告基线一致，实测确认" },
+    "first_full_run_after_changes": { "passed": 688, "skipped": 1, "failed": 3, "note": "3 failed 均为 r11 结构性改动与旧静态断言的预期冲突（图标计数 17→22、harness 缺新函数、zoneIcoCol className 断言），已按语义等价原则更新断言，未删除/放宽任何测试" },
+    "final_full_run": { "passed": 691, "skipped": 1, "failed": 0, "note": "681 基线 + r11 新增 10 项" }
+  },
+  "armor": {
+    "heads": ["ico", "n", "baseCl", "pen", "plate_front", "plate_back", "plate_left", "plate_right", "linerSum", "liner_front", "liner_back", "liner_left", "liner_right", "liner_collar", "liner_shoulder_l", "liner_shoulder_r", "liner_groin", "liner_groin_back", "zoneIco", "w", "srcGroup"],
+    "col_count": 21,
+    "baseCl_position": "索引 2（名称之后、移动/转身/人机之前）",
+    "row_count": 49,
+    "group_order": [6, 5, 4, 3, 2],
+    "group_sizes": { "6": 9, "5": 17, "4": 9, "3": 8, "2": 6 },
+    "sort_within_group": {
+      "click_weight_desc": "组内重量单调降序，组序仍 6→5→4→3→2，表头重量▼",
+      "click_weight_asc": "组内重量单调升序，组序仍 6→5→4→3→2（组序不受排序方向影响）"
+    },
+    "zone_column": { "img_loaded": 40, "img_failed": 0, "distinct_icon_files_loaded": 7, "dash_placeholders": 9, "dash_reason": "9 件装备组合为「胸部|胃部|侧面」→ torso-chest-stomach-side.png 属待补图标，onerror 回退「—」，无裂图" },
+    "spot_check_6B43": { "baseCl": 6, "zone_icon": "torso-neck-shoulder-chest-stomach-side-groin.png 已加载", "hover": "悬停显示完整防护区域说明" }
+  },
+  "rig": {
+    "col_count": 21,
+    "row_count": 105,
+    "group_order": [6, 5, 4, 3, 2, 1, "—"],
+    "no_class_rows": { "count": 46, "position": "全部位于「—」未知组，即列表最后", "cross_check": "与数据审计中 46 件无 cl 弹挂一致" }
+  },
+  "helmet": {
+    "heads": ["n", "conflict", "baseCl", "pen", "matLabel", "destr", "dur", "effDur", "zoneText", "slots", "w", "price", "srcGroup"],
+    "col_count": 13,
+    "note": "原「护甲等级」列被「基础防弹等级」替代（用户裁定豁免），conflictCol 注入后共 13 列",
+    "row_count": 40,
+    "group_order": [5, 4, 3, 2, 1, "—"],
+    "zone_column": { "img_loaded": 34, "text_fallback": 5, "text_fallback_reason": "5 件组合对应待补头盔图标，allowText=true 文字降级", "no_zone_data": 1, "no_zone_item": "破碎面具（无 z 字段，不显示图标，符合任务书第 4 种情况不伪造）" }
+  },
+  "hover": {
+    "baseCl": "仅装备本体防弹等级，不计入已安装插板",
+    "zoneIco_armor_rig": "正常展示只显示图标（不显区域文字），保留悬停区域提示"
+  },
+  "regression": {
+    "glasses_cols": ["n", "conflict", "cl", "pen", "w", "price", "srcGroup"],
+    "glasses_note": "7 列与 r10 完全一致，排序无分组行为",
+    "backpack_note": "11 列与 r10 完全一致",
+    "map_features": "未改动（本轮零提交涉及地图渲染/图标/路线/定位）"
+  },
+  "network_404_audit": {
+    "console_errors": "仅 1 类：Failed to load resource 404 × 8 次",
+    "extracted_404s": [
+      { "url": "/assets/icons/zones/torso-chest-stomach-side.png", "count": 4 },
+      { "url": "/assets/icons/zones/head-top-back-face-jaw-eyes-ears-neck.png", "count": 1 },
+      { "url": "/assets/icons/zones/head-top-back-face-eyes-ears.png", "count": 1 },
+      { "url": "/assets/icons/zones/torso-neck-chest-stomach-groin.png", "count": 1 },
+      { "url": "/assets/icons/zones/head-top-face-jaw-eyes-ears.png", "count": 1 }
+    ],
+    "conclusion": "8 次 404 全部命中审计 pending_user_icons 的 5 张待补图标，无其他缺失资源；运行期 img.onerror 回退正常（armor/rig→「—」、helmet→文字），属设计内行为"
+  },
+  "screenshots": [
+    "verify-armor-21col-grouped.png",
+    "verify-armor-zone-col-scrolled.png",
+    "verify-rig-grouped-top.png",
+    "verify-rig-unknown-group-last.png",
+    "verify-helmet-zone-icons.png",
+    "verify-glasses-regression.png"
+  ]
+}

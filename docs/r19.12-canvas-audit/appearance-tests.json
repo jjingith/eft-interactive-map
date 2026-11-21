@@ -1,0 +1,220 @@
+{
+ "schema": "eftmap.r19.12.appearance-tests/1",
+ "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+ "states": {
+  "default": {
+   "layers": [
+    {
+     "base": "reciever",
+     "slot": "mod_reciever",
+     "title": "护木：柯尔特M4A1 5.56x45突击步枪上机匣"
+    },
+    {
+     "base": "barrel",
+     "slot": "mod_reciever/mod_barrel",
+     "title": "护木：14.5 英寸 AR-15 枪管 5.56x45"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 护木"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 下护木"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock",
+     "title": "护木：柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock/mod_stock_000",
+     "title": "护木：High Standard M4SS AR-15 枪托"
+    },
+    {
+     "base": "muzzle",
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "title": "护木：柯尔特USGI A2 5.56x45 AR-15消焰器"
+    },
+    {
+     "base": "magazine",
+     "slot": "mod_magazine",
+     "title": "护木：柯尔特 5.56x45 STANAG 30发弹匣"
+    },
+    {
+     "base": "pistol_grip",
+     "slot": "mod_pistol_grip",
+     "title": "护木：柯尔特A2 AR-15手枪式握把"
+    },
+    {
+     "base": "charge",
+     "slot": "mod_charge",
+     "title": "护木：柯尔特AR-15拉机柄"
+    }
+   ],
+   "count": 10,
+   "tag": "外观合成 · 10 层",
+   "installedCount": 12
+  },
+  "changedMuzzle": {
+   "layers": [
+    {
+     "base": "reciever",
+     "slot": "mod_reciever",
+     "title": "护木：柯尔特M4A1 5.56x45突击步枪上机匣"
+    },
+    {
+     "base": "barrel",
+     "slot": "mod_reciever/mod_barrel",
+     "title": "护木：14.5 英寸 AR-15 枪管 5.56x45"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 护木"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 下护木"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock",
+     "title": "护木：柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock/mod_stock_000",
+     "title": "护木：High Standard M4SS AR-15 枪托"
+    },
+    {
+     "base": "muzzle",
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "title": "护木：柯尔特 USGI A1 5.56x45 三叉消焰器"
+    },
+    {
+     "base": "magazine",
+     "slot": "mod_magazine",
+     "title": "护木：柯尔特 5.56x45 STANAG 30发弹匣"
+    },
+    {
+     "base": "pistol_grip",
+     "slot": "mod_pistol_grip",
+     "title": "护木：柯尔特A2 AR-15手枪式握把"
+    },
+    {
+     "base": "charge",
+     "slot": "mod_charge",
+     "title": "护木：柯尔特AR-15拉机柄"
+    }
+   ],
+   "count": 10,
+   "picked": {
+    "x": 1356.5,
+    "y": 272.1875,
+    "name": "柯尔特 USGI A1 5.56x45 三叉消焰器",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   "installedCount": 12
+  },
+  "removedMuzzle": {
+   "layers": [
+    {
+     "base": "reciever",
+     "slot": "mod_reciever",
+     "title": "护木：柯尔特M4A1 5.56x45突击步枪上机匣"
+    },
+    {
+     "base": "barrel",
+     "slot": "mod_reciever/mod_barrel",
+     "title": "护木：14.5 英寸 AR-15 枪管 5.56x45"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 护木"
+    },
+    {
+     "base": "handguard",
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "title": "护木：柯尔特 M4 卡宾枪长度 AR-15 下护木"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock",
+     "title": "护木：柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "base": "stock",
+     "slot": "mod_stock/mod_stock_000",
+     "title": "护木：High Standard M4SS AR-15 枪托"
+    },
+    {
+     "base": "magazine",
+     "slot": "mod_magazine",
+     "title": "护木：柯尔特 5.56x45 STANAG 30发弹匣"
+    },
+    {
+     "base": "pistol_grip",
+     "slot": "mod_pistol_grip",
+     "title": "护木：柯尔特A2 AR-15手枪式握把"
+    },
+    {
+     "base": "charge",
+     "slot": "mod_charge",
+     "title": "护木：柯尔特AR-15拉机柄"
+    }
+   ],
+   "count": 9,
+   "installedCount": 11
+  }
+ },
+ "diff": {
+  "defaultBases": [
+   "reciever",
+   "barrel",
+   "handguard",
+   "handguard",
+   "stock",
+   "stock",
+   "muzzle",
+   "magazine",
+   "pistol_grip",
+   "charge"
+  ],
+  "changedBases": [
+   "reciever",
+   "barrel",
+   "handguard",
+   "handguard",
+   "stock",
+   "stock",
+   "muzzle",
+   "magazine",
+   "pistol_grip",
+   "charge"
+  ],
+  "removedBases": [
+   "reciever",
+   "barrel",
+   "handguard",
+   "handguard",
+   "stock",
+   "stock",
+   "magazine",
+   "pistol_grip",
+   "charge"
+  ]
+ },
+ "conclusion": "枪口装置更换后图层里的 muzzle 图标随之改变；卸下后该层消失、总数 -1。图层完全由 g.installed 驱动（只读），装配不变时按签名缓存不重绘。",
+ "limitations": [
+  "无 3D 模型/材质 → 非游戏内 3D",
+  "库存图标与整枪图视角不一致 → 类别锚点示意，不做像素对位"
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "total_ammo": 200,
+ "icon_ok": 199,
+ "icon_missing": 1,
+ "missing_list": [
+  {
+   "id": "6a60f36fb3d057447a095aee",
+   "n": ".50 AE FMJ Bull",
+   "reason": "file missing"
+  }
+ ]
+}

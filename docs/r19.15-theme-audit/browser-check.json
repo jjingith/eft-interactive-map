@@ -1,0 +1,341 @@
+{
+  "build": "R19.15-4571f5d2",
+  "ash12": {
+    "gun": "ASh-12",
+    "body": {
+      "row": 3
+    },
+    "mainRow": [
+      {
+        "slot": "mod_muzzle",
+        "col": 4,
+        "row": 3,
+        "empty": false,
+        "item": "ASh-12 12.7x55 膛口制退器"
+      },
+      {
+        "slot": "mod_handguard",
+        "col": 5,
+        "row": 3,
+        "empty": false,
+        "item": "ASh-12聚合物护木"
+      }
+    ],
+    "mainBases": [
+      "mod_muzzle",
+      "mod_handguard"
+    ],
+    "tactical": [
+      {
+        "slot": "mod_tactical_000",
+        "row": 6,
+        "col": 1
+      },
+      {
+        "slot": "mod_tactical_001",
+        "row": 6,
+        "col": 2
+      },
+      {
+        "slot": "mod_tactical_002",
+        "row": 6,
+        "col": 3
+      }
+    ],
+    "tacticalOnBodyRow": [],
+    "mainContiguous": true,
+    "mainAdjacentToBody": true,
+    "rows": 6,
+    "rowHeights": [
+      57.8,
+      57.8,
+      85.5,
+      57.8,
+      57.8,
+      57.8
+    ],
+    "phantomCount": 0
+  },
+  "spread": {
+    "m4a1": {
+      "gun": "M4A1",
+      "rows": 6,
+      "rowHeights": [
+        56,
+        57.8,
+        85.5,
+        57.8,
+        57.8,
+        57.8
+      ],
+      "mainRow": [
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle",
+          "col": 1
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_gas_block",
+          "col": 2
+        },
+        {
+          "slot": "mod_reciever/mod_barrel",
+          "col": 3
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "col": 4
+        },
+        {
+          "slot": "mod_reciever",
+          "col": 5
+        },
+        {
+          "slot": "mod_stock",
+          "col": 9
+        }
+      ],
+      "mainContiguous": false,
+      "mainAdjacentToBody": false,
+      "phantomCount": 0
+    },
+    "akm": {
+      "gun": "AKM 7.62x39",
+      "rows": 6,
+      "rowHeights": [
+        56,
+        57.8,
+        79.3,
+        57.8,
+        57.8,
+        56
+      ],
+      "mainRow": [
+        {
+          "slot": "mod_muzzle",
+          "col": 2
+        },
+        {
+          "slot": "mod_gas_block",
+          "col": 3
+        },
+        {
+          "slot": "mod_gas_block/mod_handguard",
+          "col": 4
+        },
+        {
+          "slot": "mod_reciever",
+          "col": 5
+        },
+        {
+          "slot": "mod_stock",
+          "col": 9
+        }
+      ],
+      "mainContiguous": false,
+      "mainAdjacentToBody": false,
+      "phantomCount": 0
+    },
+    "hk416": {
+      "gun": "HK 416A5",
+      "rows": 6,
+      "rowHeights": [
+        56,
+        57.8,
+        85.5,
+        57.8,
+        57.8,
+        57.8
+      ],
+      "mainRow": [
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle",
+          "col": 1
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_gas_block",
+          "col": 2
+        },
+        {
+          "slot": "mod_reciever/mod_barrel",
+          "col": 3
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "col": 4
+        },
+        {
+          "slot": "mod_reciever",
+          "col": 5
+        },
+        {
+          "slot": "mod_stock",
+          "col": 9
+        }
+      ],
+      "mainContiguous": false,
+      "mainAdjacentToBody": false,
+      "phantomCount": 0
+    },
+    "spear": {
+      "gun": "SIG MCX SPEAR",
+      "rows": 6,
+      "rowHeights": [
+        57.8,
+        57.8,
+        80,
+        57.8,
+        57.8,
+        57.8
+      ],
+      "mainRow": [
+        {
+          "slot": "mod_reciever/mod_barrel/mod_muzzle",
+          "col": 1
+        },
+        {
+          "slot": "mod_reciever/mod_barrel/mod_gas_block",
+          "col": 2
+        },
+        {
+          "slot": "mod_reciever/mod_barrel",
+          "col": 3
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "col": 4
+        },
+        {
+          "slot": "mod_reciever",
+          "col": 5
+        },
+        {
+          "slot": "mod_stock_000",
+          "col": 9
+        }
+      ],
+      "mainContiguous": false,
+      "mainAdjacentToBody": false,
+      "phantomCount": 0
+    },
+    "p90": {
+      "gun": "FN P90",
+      "rows": 6,
+      "rowHeights": [
+        56,
+        57.8,
+        85.5,
+        57.8,
+        57.8,
+        56
+      ],
+      "mainRow": [
+        {
+          "slot": "mod_barrel/mod_muzzle",
+          "col": 3
+        },
+        {
+          "slot": "mod_barrel",
+          "col": 4
+        },
+        {
+          "slot": "mod_reciever",
+          "col": 5
+        },
+        {
+          "slot": "mod_stock",
+          "col": 9
+        }
+      ],
+      "mainContiguous": false,
+      "mainAdjacentToBody": false,
+      "phantomCount": 0
+    }
+  },
+  "connector": {
+    "svgCount": 0,
+    "linkPaths": 0,
+    "anySvg": 0
+  },
+  "skin": {
+    "skin": 0,
+    "tag": 0,
+    "tagText": null
+  },
+  "emptyCoords": {
+    "phantomCount": 0,
+    "rows": 6,
+    "emptySlots": 4
+  },
+  "nightforce": {
+    "picked": "Nightforce MagMount Multimount 34毫米一体式导轨基座",
+    "directSlotCount": 2,
+    "slots": [
+      {
+        "slot": "mod_scope/mod_scope_000",
+        "row": 1,
+        "col": 5
+      },
+      {
+        "slot": "mod_scope/mod_scope_001",
+        "row": 1,
+        "col": 6
+      }
+    ],
+    "onexRightOfOptics": true,
+    "phantomCount": 0
+  },
+  "buttons": {
+    "target": {
+      "x": 1141.375,
+      "y": 51.5,
+      "text": "对比"
+    },
+    "normal": {
+      "img": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb",
+      "bg": "rgba(0, 0, 0, 0)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "attr": null
+    },
+    "hover": {
+      "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 46%, rgb(255, 153, 51) 54%, rgb(255",
+      "border": "rgb(201, 122, 16)"
+    },
+    "clicked": {
+      "img": "linear-gradient(rgb(255, 204, 0) 0%, rgb(255, 187, 31) 46%, rgb(255, 153, 51) 54%, rgb(255",
+      "attr": "1"
+    },
+    "afterLeave": {
+      "img": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) 100%)",
+      "attr": "1"
+    }
+  },
+  "viewports": {
+    "1384": {
+      "ash12Main": [
+        {
+          "slot": "mod_muzzle",
+          "col": 4
+        },
+        {
+          "slot": "mod_handguard",
+          "col": 5
+        }
+      ],
+      "mainAdjacentToBody": true,
+      "rows": 6,
+      "rowHeights": [
+        57.8,
+        57.8,
+        85.5,
+        57.8,
+        57.8,
+        57.8
+      ],
+      "phantomCount": 0
+    }
+  },
+  "console": [],
+  "appSrc": "http://127.0.0.1:8787/app.js?v=r19.15",
+  "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.15"
+}

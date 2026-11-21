@@ -1,0 +1,1403 @@
+{
+ "schema": "eftmap.r19.12.layout-cases/1",
+ "cases": {
+  "m4a1-standard": {
+   "desc": "标准结构（有独立枪管槽）",
+   "gun": "柯尔特 M4A1",
+   "hasBarrel": true,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "base": "scope",
+     "row": 1,
+     "col": 5,
+     "parent": "mod_reciever/mod_sight_rear",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "AR-15提把式照门"
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特AR-15拉机柄"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "柯尔特USGI A2 5.56x45 AR-15消焰器"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "base": "gas_block",
+     "row": 3,
+     "col": 2,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "柯尔特 M4准星"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "mod_reciever",
+     "item": "14.5 英寸 AR-15 枪管 5.56x45"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_reciever",
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "柯尔特M4A1 5.56x45突击步枪上机匣"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "row": 4,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "base": "handguard",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard",
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "base": "scope",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_charge_001",
+     "base": "charge_001",
+     "row": 4,
+     "col": 6,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "柯尔特 5.56x45 STANAG 30发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "柯尔特A2 AR-15手枪式握把"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "High Standard M4SS AR-15 枪托"
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": [
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "base": "scope",
+     "row": 1,
+     "col": 5,
+     "parent": "mod_reciever/mod_sight_rear",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "AR-15提把式照门"
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特AR-15拉机柄"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "柯尔特USGI A2 5.56x45 AR-15消焰器"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "base": "gas_block",
+     "row": 3,
+     "col": 2,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "柯尔特 M4准星"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "mod_reciever",
+     "item": "14.5 英寸 AR-15 枪管 5.56x45"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_reciever",
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "柯尔特M4A1 5.56x45突击步枪上机匣"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "row": 4,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "base": "handguard",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard",
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "base": "scope",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_charge_001",
+     "base": "charge_001",
+     "row": 4,
+     "col": 6,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "柯尔特 5.56x45 STANAG 30发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "柯尔特A2 AR-15手枪式握把"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "High Standard M4SS AR-15 枪托"
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "body": {
+    "x": 577,
+    "y": 314,
+    "w": 181,
+    "h": 86,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特AR-15拉机柄"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "High Standard M4SS AR-15 枪托"
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  },
+  "ak74-integral": {
+   "desc": "无独立枪管槽（一体式）",
+   "gun": "AK-74 5.45",
+   "hasBarrel": false,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 1,
+     "col": 5,
+     "parent": "mod_sight_rear",
+     "item": ""
+    },
+    {
+     "slot": "mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "",
+     "item": "AK-74 照门"
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 2,
+     "parent": "",
+     "item": "AK-74 5.45x39 膛口制退器"
+    },
+    {
+     "slot": "mod_gas_block",
+     "base": "gas_block",
+     "row": 3,
+     "col": 3,
+     "parent": "",
+     "item": "AK-74导气管"
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_gas_block",
+     "item": "AK-74 木制护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "AK-74 防尘盖"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "AK-74 木制枪托"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "6L20 5.45x39 AK-74 30发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "AKS-74U 胶木手枪式握把"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "base": "stock",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": ""
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": [
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 1,
+     "col": 5,
+     "parent": "mod_sight_rear",
+     "item": ""
+    },
+    {
+     "slot": "mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "",
+     "item": "AK-74 照门"
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 2,
+     "parent": "",
+     "item": "AK-74 5.45x39 膛口制退器"
+    },
+    {
+     "slot": "mod_gas_block",
+     "base": "gas_block",
+     "row": 3,
+     "col": 3,
+     "parent": "",
+     "item": "AK-74导气管"
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_gas_block",
+     "item": "AK-74 木制护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "AK-74 防尘盖"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "AK-74 木制枪托"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "6L20 5.45x39 AK-74 30发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "AKS-74U 胶木手枪式握把"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "base": "stock",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": ""
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "body": {
+    "x": 577,
+    "y": 314,
+    "w": 181,
+    "h": 77,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "AK-74 木制枪托"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "base": "stock",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": ""
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  },
+  "sa58-stockchain": {
+   "desc": "缓冲管/枪托多级链",
+   "gun": "DS Arms SA-58",
+   "hasBarrel": true,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_handguard/mod_tactical_000",
+     "base": "tactical_000",
+     "row": 2,
+     "col": 4,
+     "parent": "mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "",
+     "item": "SA-58 荷兰样式照门"
+    },
+    {
+     "slot": "mod_barrel/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_barrel",
+     "item": "SA-58 3-Prong \"三叉戟\" 7.62x51消焰器"
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_001",
+     "base": "tactical_001",
+     "row": 3,
+     "col": 2,
+     "parent": "mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "",
+     "item": "11 英寸 SA-58 枪管 7.62x51"
+    },
+    {
+     "slot": "mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "",
+     "item": "DS Arms SA-58四导轨护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "DS Arms Extreme Duty SA-58防尘盖"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "SA-58缓冲管转接器"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "base": "scope",
+     "row": 4,
+     "col": 1,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_002",
+     "base": "tactical_002",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_handguard/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 6,
+     "parent": "mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "SA-58/FAL 7.62x51 20发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "SA-58 仿 SAW 手枪式握把（黑）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000",
+     "base": "stock_000",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_000",
+     "item": "Magpul MOE AR-15 卡宾枪托（黑色）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000/mod_stock",
+     "base": "stock",
+     "row": 6,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_000/mod_stock_000",
+     "item": "Magpul MOE 卡宾枪橡胶枪托垫"
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": null,
+   "body": {
+    "x": 577,
+    "y": 256,
+    "w": 181,
+    "h": 71,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "SA-58缓冲管转接器"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "柯尔特 AR-15 卡宾枪缓冲管"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000",
+     "base": "stock_000",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_000",
+     "item": "Magpul MOE AR-15 卡宾枪托（黑色）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000/mod_stock_000/mod_stock",
+     "base": "stock",
+     "row": 6,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_000/mod_stock_000",
+     "item": "Magpul MOE 卡宾枪橡胶枪托垫"
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  },
+  "scar-integrated": {
+   "desc": "一体式枪托 + 转接",
+   "gun": "FN SCAR-H 7.62x51 突击",
+   "hasBarrel": true,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "FN SCAR折叠式照门"
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "FN SCAR拉机柄"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "AAC SCAR-SD 51T 7.62x51 AR-10 消焰器"
+    },
+    {
+     "slot": "mod_reciever/mod_tactical_000",
+     "base": "tactical_000",
+     "row": 3,
+     "col": 2,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "mod_reciever",
+     "item": "16 英寸 FN SCAR-H 枪管 7.62x51"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_front",
+     "base": "sight_front",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "FN SCAR-H 7.62x51 上机匣 (FDE)"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "FN SCAR 折叠式聚合物枪托 （FDE）"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "row": 4,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_mount_001",
+     "base": "mount_001",
+     "row": 4,
+     "col": 2,
+     "parent": "mod_reciever",
+     "item": "FN SCAR侧导轨"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_sight_front",
+     "base": "sight_front",
+     "row": 4,
+     "col": 3,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "FN SCAR折叠式准星"
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_mount_000",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "base": "scope",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000",
+     "base": "mount_000",
+     "row": 4,
+     "col": 6,
+     "parent": "mod_reciever",
+     "item": "FN SCAR底轨"
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "FN SCAR-H 7.62x51 20发弹匣 （FDE）"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "Damage Industries ECS AR-15 手枪式握把 (FDE)"
+    },
+    {
+     "slot": "mod_stock/mod_stock_001",
+     "base": "stock_001",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "FN SCAR 伸缩式聚合物枪托 （FDE）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_002",
+     "base": "stock_002",
+     "row": 5,
+     "col": 1,
+     "parent": "mod_stock",
+     "item": "FN SCAR托腮板 （FDE）"
+    },
+    {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_000",
+     "base": "tactical_000",
+     "row": 5,
+     "col": 2,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+     "base": "tactical_001",
+     "row": 5,
+     "col": 3,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": ""
+    },
+    {
+     "slot": "mod_charge_001",
+     "base": "charge_001",
+     "row": 5,
+     "col": 5,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "base": "foregrip",
+     "row": 5,
+     "col": 6,
+     "parent": "mod_reciever/mod_mount_000",
+     "item": ""
+    },
+    {
+     "slot": "mod_stock/mod_stock_001/mod_stock",
+     "base": "stock",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_001",
+     "item": "FN SCAR橡胶枪托垫"
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": null,
+   "body": {
+    "x": 577,
+    "y": 256,
+    "w": 181,
+    "h": 77,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "FN SCAR拉机柄"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "FN SCAR 折叠式聚合物枪托 （FDE）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_001",
+     "base": "stock_001",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock",
+     "item": "FN SCAR 伸缩式聚合物枪托 （FDE）"
+    },
+    {
+     "slot": "mod_stock/mod_stock_001/mod_stock",
+     "base": "stock",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock/mod_stock_001",
+     "item": "FN SCAR橡胶枪托垫"
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  },
+  "spear-multilayer": {
+   "desc": "多层附件",
+   "gun": "SIG MCX SPEAR",
+   "hasBarrel": true,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001",
+     "base": "mount_001",
+     "row": 2,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 2,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "MCX SPEAR拉机柄"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "MCX SPEAR Clutch-Lok QD 6.8x51消焰器"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "base": "gas_block",
+     "row": 3,
+     "col": 2,
+     "parent": "mod_reciever/mod_barrel",
+     "item": "MCX SPEAR可调节气动活塞"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "mod_reciever",
+     "item": "13 英寸 MCX-SPEAR 枪管 6.8x51"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "base": "handguard",
+     "row": 3,
+     "col": 4,
+     "parent": "mod_reciever",
+     "item": "MCX SPEAR 11英寸 M-LOK护木"
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "MCX SPEAR 6.8x51上机匣"
+    },
+    {
+     "slot": "mod_stock_000",
+     "base": "stock_000",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "SIG Sauer 枪托锁定铰链套件"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "row": 4,
+     "col": 1,
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "item": "MCX SPEAR SLX68-MG-QD 6.8x51消音器"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_002",
+     "base": "mount_002",
+     "row": 4,
+     "col": 3,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "base": "foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "base": "scope",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "SIG Sauer ALPHA4 30 毫米环形瞄准镜基座"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_sight_front",
+     "base": "sight_front",
+     "row": 4,
+     "col": 6,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "Lancer L7AWM 7.62x51 AR-10 20发弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": "SIG M400 小倾角 AR-15 手枪式握把（黄褐色）"
+    },
+    {
+     "slot": "mod_stock_000/mod_stock",
+     "base": "stock",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock_000",
+     "item": "SIG Sauer 低轮廓枪托缓冲管转接器（黄褐色）"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical",
+     "base": "tactical",
+     "row": 5,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_scope/mod_scope",
+     "base": "scope",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_scope",
+     "item": "SIG Sauer TANGO6T 1-6x24 30 毫米步枪瞄准镜"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "base": "mount",
+     "row": 5,
+     "col": 6,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_000",
+     "base": "mount_000",
+     "row": 5,
+     "col": 8,
+     "parent": "mod_reciever/mod_handguard",
+     "item": ""
+    },
+    {
+     "slot": "mod_stock_000/mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock_000/mod_stock",
+     "item": "Magpul MOE SL-K AR-15 枪托（黄褐色）"
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": null,
+   "body": {
+    "x": 577,
+    "y": 256,
+    "w": 181,
+    "h": 80,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_charge",
+     "base": "charge",
+     "row": 2,
+     "col": 9,
+     "parent": "",
+     "item": "MCX SPEAR拉机柄"
+    },
+    {
+     "slot": "mod_stock_000",
+     "base": "stock_000",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": "SIG Sauer 枪托锁定铰链套件"
+    },
+    {
+     "slot": "mod_stock_000/mod_stock",
+     "base": "stock",
+     "row": 4,
+     "col": 9,
+     "parent": "mod_stock_000",
+     "item": "SIG Sauer 低轮廓枪托缓冲管转接器（黄褐色）"
+    },
+    {
+     "slot": "mod_stock_000/mod_stock/mod_stock_000",
+     "base": "stock_000",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock_000/mod_stock",
+     "item": "Magpul MOE SL-K AR-15 枪托（黄褐色）"
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  },
+  "glock-pistol": {
+   "desc": "手枪结构",
+   "gun": "Glock 17",
+   "hasBarrel": true,
+   "cols": 9,
+   "rows": 6,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_sight_front",
+     "base": "sight_front",
+     "row": 2,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "Glock准星"
+    },
+    {
+     "slot": "mod_reciever/mod_muzzle",
+     "base": "muzzle",
+     "row": 3,
+     "col": 1,
+     "parent": "mod_reciever",
+     "item": ""
+    },
+    {
+     "slot": "mod_mount",
+     "base": "mount",
+     "row": 3,
+     "col": 2,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_barrel",
+     "base": "barrel",
+     "row": 3,
+     "col": 3,
+     "parent": "",
+     "item": "Glock 17标准枪管 9x19"
+    },
+    {
+     "slot": "mod_tactical",
+     "base": "tactical",
+     "row": 3,
+     "col": 4,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever",
+     "base": "reciever",
+     "row": 3,
+     "col": 5,
+     "parent": "",
+     "item": "Glock 9x19套筒"
+    },
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "base": "sight_rear",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_reciever",
+     "item": "Glock照门"
+    },
+    {
+     "slot": "mod_magazine",
+     "base": "magazine",
+     "row": 4,
+     "col": 7,
+     "parent": "",
+     "item": "Glock 9x19弹匣"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "base": "pistol_grip",
+     "row": 4,
+     "col": 8,
+     "parent": "",
+     "item": ""
+    },
+    {
+     "slot": "",
+     "base": "",
+     "row": 5,
+     "col": 7,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "cards1384": null,
+   "body": {
+    "x": 577,
+    "y": 256,
+    "w": 181,
+    "h": 86,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "stockChain": [
+    {
+     "slot": "mod_stock",
+     "base": "stock",
+     "row": 3,
+     "col": 9,
+     "parent": "",
+     "item": ""
+    }
+   ],
+   "invariants": {
+    "colsIs9": true,
+    "rowsIs6": true,
+    "noOverflow": true
+   }
+  }
+ }
+}

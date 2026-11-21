@@ -1,0 +1,201 @@
+﻿版本：0.1.0
+仓库根目录：D:\personal\trae\02-塔科夫\eft-interactive-map
+完整性校验通过：预期 13312 个文件，staging 实际 13312 个文件，缺失 0，未登记 0。
+powershell : 264 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.8
+At line:15 char:1157
++ ... M = 'dumb'; powershell -ExecutionPolicy Bypass -File "d:\personal\tra ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (264 INFO: PyIns...b hooks: 2026.8:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+265 INFO: Python: 3.14.3
+305 INFO: Platform: Windows-2022Server-10.0.20348-SP0
+305 INFO: Python environment: C:\Python314
+306 INFO: wrote D:\personal\trae\02-塔科夫\eft-interactive-map\build\EFTMap.spec
+308 INFO: Removing temporary files and cleaning cache in C:\Users\Administrator\AppData\Local\pyinstaller
+317 INFO: Module search paths (PYTHONPATH):
+['D:\\personal\\trae',
+ 'C:\\Python314\\python314.zip',
+ 'C:\\Python314\\DLLs',
+ 'C:\\Python314\\Lib',
+ 'C:\\Python314',
+ 'C:\\Python314\\Lib\\site-packages',
+ 'D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\tools']
+1631 INFO: Appending 'datas' from .spec
+2769 INFO: checking Analysis
+2769 INFO: Building Analysis because Analysis-00.toc is non existent
+2769 INFO: Looking for Python shared library...
+2769 INFO: Using Python shared library: C:\Python314\python314.dll
+2769 INFO: Running Analysis Analysis-00.toc
+2770 INFO: Target bytecode optimization level: 0
+2770 INFO: Initializing module dependency graph...
+2772 INFO: Initializing module graph hook caches...
+2810 INFO: Analyzing modules for base_library.zip ...
+5371 INFO: Processing standard module hook 'hook-encodings.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+6244 INFO: Processing standard module hook 'hook-pickle.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+6691 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+6938 INFO: Processing standard module hook 'hook-difflib.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+6966 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+12863 INFO: Caching module dependency graph...
+12902 INFO: Analyzing D:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py
+13214 INFO: Processing standard module hook 'hook-webbrowser.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+13326 INFO: Processing standard module hook 'hook-sysconfig.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+13353 INFO: Processing standard module hook 'hook-_ctypes.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+14117 INFO: Processing standard module hook 'hook-platform.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+14166 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+14169 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+14781 INFO: Processing standard module hook 'hook-_tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+14897 INFO: Processing module hooks (post-graph stage)...
+14920 INFO: Processing standard module hook 'hook-_tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+15036 INFO: Performing binary vs. data reclassification (14242 entries)
+87291 INFO: Looking for ctypes DLLs
+87377 INFO: Analyzing run-time hooks ...
+87378 INFO: Including run-time hook 'pyi_rth_inspect.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+87390 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+87401 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+87764 INFO: Creating base_library.zip...
+87785 INFO: Looking for dynamic libraries
+87990 INFO: Extra DLL search directories (AddDllDirectory): []
+87990 INFO: Extra DLL search directories (PATH): []
+89823 INFO: Warnings written to D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work\EFTMap\warn-EFTMap.txt
+89845 INFO: Graph cross-reference written to 
+D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work\EFTMap\xref-EFTMap.html
+90741 INFO: checking PYZ
+90742 INFO: Building PYZ because PYZ-00.toc is non existent
+90742 INFO: Building PYZ (ZlibArchive) D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work\EFTMap\PYZ-00.pyz
+90900 INFO: Building PYZ (ZlibArchive) D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work\EFTMap\PYZ-00.pyz 
+completed successfully.
+90906 INFO: checking PKG
+90906 INFO: Building PKG because PKG-00.toc is non existent
+90906 INFO: Building PKG (CArchive) EFTMap.pkg
+90990 INFO: Building PKG (CArchive) EFTMap.pkg completed successfully.
+90992 INFO: Bootloader C:\Python314\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+90992 INFO: checking EXE
+90992 INFO: Building EXE because EXE-00.toc is non existent
+90992 INFO: Building EXE from EXE-00.toc
+90993 INFO: Copying bootloader EXE to D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work\EFTMap\EFTMap.exe
+91083 INFO: Copying icon to EXE
+91133 INFO: Copying 0 resources to EXE
+91133 INFO: Embedding manifest in EXE
+91179 INFO: Appending PKG archive to EXE
+91227 INFO: Fixing EXE headers
+91486 INFO: Building EXE from EXE-00.toc completed successfully.
+91623 INFO: checking COLLECT
+91624 INFO: Building COLLECT because COLLECT-00.toc is non existent
+91624 INFO: Building COLLECT COLLECT-00.toc
+118040 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+118457 INFO: Build complete! The results are available in: D:\personal\trae\02-塔科夫\eft-interactive-map\dist
+产物清单校验通过：13312 个运行期文件全部存在。
+
+打包完成：D:\personal\trae\02-塔科夫\eft-interactive-map\dist\EFTMap\EFTMap.exe
+  底图 SVG：13 张
+  产物体积：156.8 MB
+  双击 D:\personal\trae\02-塔科夫\eft-interactive-map\dist\EFTMap\EFTMap.exe 即可启动（默认打开无边框独立窗口 EFTMapDesktop.exe）。
+并入客户端壳：EFTMapDesktop.exe
+并入客户端壳：Microsoft.Web.WebView2.Core.dll
+并入客户端壳：WebView2Loader.dll
+PE 子系统校验：EFTMap.exe = GUI(2)
+PE 子系统校验：EFTMapDesktop.exe = GUI(2)
+打包 Portable…
+打包 AppWindow…
+打包 Setup…
+285 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.8
+286 INFO: Python: 3.14.3
+321 INFO: Platform: Windows-2022Server-10.0.20348-SP0
+321 INFO: Python environment: C:\Python314
+322 INFO: wrote D:\personal\trae\02-塔科夫\eft-interactive-map\build\EFTMap-Setup-0.1.0.spec
+325 INFO: Removing temporary files and cleaning cache in C:\Users\Administrator\AppData\Local\pyinstaller
+333 INFO: Module search paths (PYTHONPATH):
+['D:\\personal\\trae',
+ 'C:\\Python314\\python314.zip',
+ 'C:\\Python314\\DLLs',
+ 'C:\\Python314\\Lib',
+ 'C:\\Python314',
+ 'C:\\Python314\\Lib\\site-packages',
+ 'D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\tools']
+1370 INFO: Appending 'datas' from .spec
+2725 INFO: checking Analysis
+2725 INFO: Building Analysis because Analysis-00.toc is non existent
+2725 INFO: Looking for Python shared library...
+2725 INFO: Using Python shared library: C:\Python314\python314.dll
+2725 INFO: Running Analysis Analysis-00.toc
+2725 INFO: Target bytecode optimization level: 0
+2726 INFO: Initializing module dependency graph...
+2729 INFO: Initializing module graph hook caches...
+2752 INFO: Analyzing modules for base_library.zip ...
+4893 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+4912 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+5496 INFO: Processing standard module hook 'hook-encodings.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+8820 INFO: Processing standard module hook 'hook-difflib.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+9034 INFO: Processing standard module hook 'hook-pickle.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+11846 INFO: Caching module dependency graph...
+11886 INFO: Analyzing D:\personal\trae\02-塔科夫\eft-interactive-map\tools\installer.py
+11927 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+11929 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+12608 INFO: Processing standard module hook 'hook-_tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+12751 INFO: Processing module hooks (post-graph stage)...
+12755 INFO: Processing standard module hook 'hook-_tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks'
+12890 INFO: Performing binary vs. data reclassification (15237 entries)
+16462 INFO: Looking for ctypes DLLs
+16470 INFO: Analyzing run-time hooks ...
+16472 INFO: Including run-time hook 'pyi_rth_inspect.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+16482 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 
+'C:\\Python314\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+16929 INFO: Creating base_library.zip...
+16955 INFO: Looking for dynamic libraries
+17179 INFO: Extra DLL search directories (AddDllDirectory): []
+17180 INFO: Extra DLL search directories (PATH): []
+19804 INFO: Warnings written to 
+D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work_installer\EFTMap-Setup-0.1.0\warn-EFTMap-Setup-0.1.0.txt
+19829 INFO: Graph cross-reference written to 
+D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work_installer\EFTMap-Setup-0.1.0\xref-EFTMap-Setup-0.1.0.html
+20888 INFO: checking PYZ
+20888 INFO: Building PYZ because PYZ-00.toc is non existent
+20888 INFO: Building PYZ (ZlibArchive) 
+D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work_installer\EFTMap-Setup-0.1.0\PYZ-00.pyz
+21024 INFO: Building PYZ (ZlibArchive) 
+D:\personal\trae\02-塔科夫\eft-interactive-map\build\_work_installer\EFTMap-Setup-0.1.0\PYZ-00.pyz completed successfully.
+21298 INFO: checking PKG
+21299 INFO: Building PKG because PKG-00.toc is non existent
+21299 INFO: Building PKG (CArchive) EFTMap-Setup-0.1.0.pkg
+37890 INFO: Building PKG (CArchive) EFTMap-Setup-0.1.0.pkg completed successfully.
+38399 INFO: Bootloader C:\Python314\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+38399 INFO: checking EXE
+38399 INFO: Building EXE because EXE-00.toc is non existent
+38399 INFO: Building EXE from EXE-00.toc
+38400 INFO: Copying bootloader EXE to D:\personal\trae\02-塔科夫\eft-interactive-map\release\EFTMap-Setup-0.1.0.exe
+38488 INFO: Copying icon to EXE
+38547 INFO: Copying 0 resources to EXE
+38547 INFO: Embedding manifest in EXE
+38599 INFO: Appending PKG archive to EXE
+38706 INFO: Fixing EXE headers
+39296 INFO: Building EXE from EXE-00.toc completed successfully.
+39755 INFO: Build complete! The results are available in: D:\personal\trae\02-塔科夫\eft-interactive-map\release
+PE 子系统校验：EFTMap-Setup-0.1.0.exe = GUI(2)
+产物校验：EFTMap-Portable-0.1.0.zip 含 EFTMapDesktop.exe
+产物校验：EFTMap-AppWindow-0.1.0.zip 含 EFTMapDesktop.exe
+
+发布产物（D:\personal\trae\02-塔科夫\eft-interactive-map\release）：
+  EFTMap-AppWindow-0.1.0.zip  （118.5 MB）
+  EFTMap-Portable-0.1.0.zip  （118.5 MB）
+  EFTMap-Setup-0.1.0.exe  （128.8 MB）

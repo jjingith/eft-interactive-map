@@ -1,0 +1,354 @@
+{
+ "name": "r207-preset-home3",
+ "requested_url": "https://db4tarkov.com/preset",
+ "viewport": [
+  1580,
+  900
+ ],
+ "errors": [],
+ "semantics_click": "clicked",
+ "semantics_auto": "no-placeholder",
+ "url": "https://db4tarkov.com/preset",
+ "title": "Preset",
+ "ready": "complete",
+ "textLen": 292,
+ "htmlLen": 54968,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 33,
+ "input": 0,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "group",
+   "label": "Move/Turn/Ergo 0 / 0 / 0 Kg 0 kg 0 / 0 / 0 Final Cost:"
+  },
+  {
+   "role": "button",
+   "label": "Headwear"
+  },
+  {
+   "role": "button",
+   "label": "Glasses"
+  },
+  {
+   "role": "button",
+   "label": "Headset"
+  },
+  {
+   "role": "button",
+   "label": "Face Cover"
+  },
+  {
+   "role": "button",
+   "label": "Armor Armored Rig"
+  },
+  {
+   "role": "button",
+   "label": "Chest Rig"
+  },
+  {
+   "role": "button",
+   "label": "Gun"
+  },
+  {
+   "role": "button",
+   "label": "Backpack"
+  },
+  {
+   "role": "button",
+   "label": "Buy ()"
+  },
+  {
+   "role": "button",
+   "label": "Sell"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/preset",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793271815940",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/favicon.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/headwear.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/glasses.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/headset.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/facecover.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/penetration/zone.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/armor.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/chestrig.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/gun.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/preset/backpack.png",
+   "host": "db4tarkov.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/r207-preset-home3.png",
+ "screenshot_bytes": 59672
+}

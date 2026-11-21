@@ -1,0 +1,569 @@
+{
+ "schema": "r19.19-layout-rules-audit/1",
+ "cases": [
+  {
+   "title": "案例1 上半部配件子槽：AK-74N TT01 照门导轨 → 瞄具子槽",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "gunName": "AK-74N 5.45x39 突击步枪",
+   "rows": [
+    {
+     "slotPath": "mod_sight_rear",
+     "slotName": "照门",
+     "base": "sight_rear",
+     "parentPath": null,
+     "parentItem": "",
+     "parentItemName": "",
+     "installedItem": {
+      "id": "5649d9a14bdc2d79388b4580",
+      "name": "Taktika Tula TT01 照门导轨"
+     },
+     "autoLogical": {
+      "row": 2,
+      "col": 6,
+      "role": "rearSight"
+     },
+     "finalWithCalib": {
+      "row": 2,
+      "col": 6
+     },
+     "calibKey": "mod_sight_rear|mod_sight_rear|",
+     "calibRecord": {
+      "logicalRow": 2,
+      "col": 6,
+      "note": "R19.19 A1：AK-74 系列照门槽人工校准坐标下移一"
+     }
+    },
+    {
+     "slotPath": "mod_sight_rear/mod_scope",
+     "slotName": "瞄准镜",
+     "base": "scope",
+     "parentPath": "mod_sight_rear",
+     "parentItem": "5649d9a14bdc2d79388b4580",
+     "parentItemName": "Taktika Tula TT01 照门导轨",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 2,
+      "col": 7,
+      "role": "rearSight2"
+     },
+     "finalWithCalib": {
+      "row": 2,
+      "col": 7
+     },
+     "calibKey": "mod_sight_rear/mod_scope|mod_scope|5649d9a14bdc2d79388b4580",
+     "calibRecord": null
+    }
+   ],
+   "ruleExpect": "父槽 r2c6（上半部）→ 子槽应在其正上方 r1c6（规则1）",
+   "codePath": "gwBuildLayout 阶段8 其余槽位：父件 row<=2 时 nearestInRow(parentRow-1) 向上（app.js ~L11492）",
+   "note": ""
+  },
+  {
+   "title": "案例2 下半部配件子槽：SCAR-L 折叠枪托 → 伸缩枪托子槽",
+   "gunId": "6184055050224f204c1da540",
+   "gunName": "FN SCAR-L 5.56x45突击步枪",
+   "rows": [
+    {
+     "slotPath": "mod_stock",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": null,
+     "parentItem": "",
+     "parentItemName": "",
+     "installedItem": {
+      "id": "61816734d8e3106d9806c1f3",
+      "name": "FN SCAR 折叠式聚合物枪托"
+     },
+     "autoLogical": {
+      "row": 3,
+      "col": 9,
+      "role": "stock"
+     },
+     "finalWithCalib": {
+      "row": 3,
+      "col": 9
+     },
+     "calibKey": "mod_stock|mod_stock|",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_stock/mod_stock_001",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": "mod_stock",
+     "parentItem": "61816734d8e3106d9806c1f3",
+     "parentItemName": "FN SCAR 折叠式聚合物枪托",
+     "installedItem": {
+      "id": "618167528004cc50514c34f9",
+      "name": "FN SCAR 伸缩式聚合物枪托"
+     },
+     "autoLogical": {
+      "row": 4,
+      "col": 9,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 4,
+      "col": 9
+     },
+     "calibKey": "mod_stock/mod_stock_001|mod_stock_001|61816734d8e3106d9806c1f3",
+     "calibRecord": null
+    }
+   ],
+   "ruleExpect": "父槽 r3c9（枪托，尾部）→ 子槽正下方 r4c9（规则2）",
+   "codePath": "gwBuildLayout 阶段3 固定锚点：枪托链沿 r4c9→r5c9→r6c9 向下（app.js ~L10860）",
+   "note": ""
+  },
+  {
+   "title": "案例3 枪口链：AK-74N 枪口制退器 → 消音器子槽",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "gunName": "AK-74N 5.45x39 突击步枪",
+   "rows": [
+    {
+     "slotPath": "mod_muzzle",
+     "slotName": "膛口",
+     "base": "muzzle",
+     "parentPath": null,
+     "parentItem": "",
+     "parentItemName": "",
+     "installedItem": {
+      "id": "615d8f5dd92c473c770212ef",
+      "name": "Hexagon Reactor 5.45x39 AK 膛口制退器"
+     },
+     "autoLogical": {
+      "row": 3,
+      "col": 2,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 3,
+      "col": 2
+     },
+     "calibKey": "mod_muzzle|mod_muzzle|",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_muzzle/mod_muzzle",
+     "slotName": "膛口",
+     "base": "muzzle",
+     "parentPath": "mod_muzzle",
+     "parentItem": "615d8f5dd92c473c770212ef",
+     "parentItemName": "Hexagon Reactor 5.45x39 AK 膛口制退器",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 4,
+      "col": 2,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 4,
+      "col": 2
+     },
+     "calibKey": "mod_muzzle/mod_muzzle|mod_muzzle|615d8f5dd92c473c770212ef",
+     "calibRecord": null
+    }
+   ],
+   "ruleExpect": "父槽 r3c1（枪口）→ 沿枪口方向（水平向左）优先延伸；c1 已是网格左缘，无空间 → 回退父件正下方 r4c1（规则3）",
+   "codePath": "gwBuildLayout 阶段5 枪口纵向链：mRow+1+ki 同列向下（app.js ~L11363）",
+   "note": "规则3 的『优先沿枪口方向』在实现中完全缺席——直接使用回退位（同列向下）；对枪口在 c1 的枪结果与回退位一致，对一体式枪（muzzle c2）水平 c1 同行位会被主体行护栏排除"
+  },
+  {
+   "title": "案例4 枪托链：缓冲管 → 枪托 → 枪托垫/托腮板",
+   "gunId": "5447a9cd4bdc2dbd208b4567",
+   "gunName": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "rows": [
+    {
+     "slotPath": "mod_stock",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": null,
+     "parentItem": "",
+     "parentItemName": "",
+     "installedItem": {
+      "id": "5649be884bdc2d79388b4577",
+      "name": "柯尔特 AR-15 卡宾枪缓冲管"
+     },
+     "autoLogical": {
+      "row": 3,
+      "col": 9,
+      "role": "stock"
+     },
+     "finalWithCalib": {
+      "row": 3,
+      "col": 9
+     },
+     "calibKey": "mod_stock|mod_stock|",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_stock/mod_stock_000",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": "mod_stock",
+     "parentItem": "5649be884bdc2d79388b4577",
+     "parentItemName": "柯尔特 AR-15 卡宾枪缓冲管",
+     "installedItem": {
+      "id": "55d4ae6c4bdc2d8b2f8b456e",
+      "name": "High Standard M4SS AR-15 枪托"
+     },
+     "autoLogical": {
+      "row": 4,
+      "col": 9,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 4,
+      "col": 9
+     },
+     "calibKey": "mod_stock/mod_stock_000|mod_stock_000|5649be884bdc2d79388b4577",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_stock/mod_stock_003",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": "mod_stock",
+     "parentItem": "5649be884bdc2d79388b4577",
+     "parentItemName": "柯尔特 AR-15 卡宾枪缓冲管",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 5,
+      "col": 9,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 5,
+      "col": 9
+     },
+     "calibKey": "mod_stock/mod_stock_003|mod_stock_003|5649be884bdc2d79388b4577",
+     "calibRecord": null
+    }
+   ],
+   "ruleExpect": "枪托链优先沿枪托方向（水平向右）延伸，空间不足再向下；c9 已是网格右缘 → 回退 r4c9/r5c9（规则4）",
+   "codePath": "gwBuildLayout 阶段3：只沿枪托链往下排 r4c9→r5c9→r6c9（app.js ~L10860）",
+   "note": "『先判断枪托方向空间是否可用』的优先级逻辑未实现（始终向下）；对枪托在 c9 的枪结果与回退位一致"
+  },
+  {
+   "title": "案例5 托腮板：SCAR-L 折叠枪托 → 托腮板（mod_stock_002）",
+   "gunId": "6184055050224f204c1da540",
+   "gunName": "FN SCAR-L 5.56x45突击步枪",
+   "rows": [
+    {
+     "slotPath": "mod_stock",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": null,
+     "parentItem": "",
+     "parentItemName": "",
+     "installedItem": {
+      "id": "61816734d8e3106d9806c1f3",
+      "name": "FN SCAR 折叠式聚合物枪托"
+     },
+     "autoLogical": {
+      "row": 3,
+      "col": 9,
+      "role": "stock"
+     },
+     "finalWithCalib": {
+      "row": 3,
+      "col": 9
+     },
+     "calibKey": "mod_stock|mod_stock|",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_stock/mod_stock_002",
+     "slotName": "枪托",
+     "base": "stock",
+     "parentPath": "mod_stock",
+     "parentItem": "61816734d8e3106d9806c1f3",
+     "parentItemName": "FN SCAR 折叠式聚合物枪托",
+     "installedItem": {
+      "id": "618167441cb55961fa0fdc71",
+      "name": "FN SCAR托腮板"
+     },
+     "autoLogical": {
+      "row": 6,
+      "col": 9,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 6,
+      "col": 9
+     },
+     "calibKey": "mod_stock/mod_stock_002|mod_stock_002|61816734d8e3106d9806c1f3",
+     "calibRecord": {
+      "logicalRow": 2,
+      "col": 9,
+      "note": ""
+     }
+    }
+   ],
+   "ruleExpect": "托腮板在枪托上方 → 应在父件正上方 r2c9（规则5）",
+   "codePath": "gwBuildLayout 阶段3 枪托链 / 阶段8 其余槽位（具体以 autoLogical 为准）",
+   "note": ""
+  },
+  {
+   "title": "案例6 多层嵌套：SKS SOCOM 导轨座 → 瞄具 + 战术子槽（条件子槽）",
+   "gunId": "574d967124597745970e7c94",
+   "gunName": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+   "rows": [
+    {
+     "slotPath": "mod_barrel/mod_mount_001",
+     "slotName": "基座",
+     "base": "mount",
+     "parentPath": "mod_barrel",
+     "parentItem": "634f02331f9f536910079b51",
+     "parentItemName": "SKS 7.62x39 520毫米枪管",
+     "installedItem": {
+      "id": "593d1fa786f7746da62d61ac",
+      "name": "UTG SKS SOCOM导轨基座"
+     },
+     "autoLogical": {
+      "row": 4,
+      "col": 3,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 4,
+      "col": 3
+     },
+     "calibKey": "mod_barrel/mod_mount_001|mod_mount_001|634f02331f9f536910079b51",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_barrel/mod_mount_001/mod_scope",
+     "slotName": "瞄准镜",
+     "base": "scope",
+     "parentPath": "mod_barrel/mod_mount_001",
+     "parentItem": "593d1fa786f7746da62d61ac",
+     "parentItemName": "UTG SKS SOCOM导轨基座",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 2,
+      "col": 3,
+      "role": "topOptic"
+     },
+     "finalWithCalib": {
+      "row": 2,
+      "col": 3
+     },
+     "calibKey": "mod_barrel/mod_mount_001/mod_scope|mod_scope|593d1fa786f7746da62d61ac",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_barrel/mod_mount_001/mod_tactical_000",
+     "slotName": "战术配件",
+     "base": "tactical",
+     "parentPath": "mod_barrel/mod_mount_001",
+     "parentItem": "593d1fa786f7746da62d61ac",
+     "parentItemName": "UTG SKS SOCOM导轨基座",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 5,
+      "col": 3,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 5,
+      "col": 3
+     },
+     "calibKey": "mod_barrel/mod_mount_001/mod_tactical_000|mod_tactical_000|593d1fa786f7746da62d61ac",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_barrel/mod_mount_001/mod_tactical_001",
+     "slotName": "战术配件",
+     "base": "tactical",
+     "parentPath": "mod_barrel/mod_mount_001",
+     "parentItem": "593d1fa786f7746da62d61ac",
+     "parentItemName": "UTG SKS SOCOM导轨基座",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 5,
+      "col": 4,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 5,
+      "col": 4
+     },
+     "calibKey": "mod_barrel/mod_mount_001/mod_tactical_001|mod_tactical_001|593d1fa786f7746da62d61ac",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_barrel/mod_mount_001/mod_tactical_002",
+     "slotName": "战术配件",
+     "base": "tactical",
+     "parentPath": "mod_barrel/mod_mount_001",
+     "parentItem": "593d1fa786f7746da62d61ac",
+     "parentItemName": "UTG SKS SOCOM导轨基座",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 5,
+      "col": 5,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 5,
+      "col": 5
+     },
+     "calibKey": "mod_barrel/mod_mount_001/mod_tactical_002|mod_tactical_002|593d1fa786f7746da62d61ac",
+     "calibRecord": null
+    },
+    {
+     "slotPath": "mod_barrel/mod_mount_001/mod_tactical_003",
+     "slotName": "战术配件",
+     "base": "tactical",
+     "parentPath": "mod_barrel/mod_mount_001",
+     "parentItem": "593d1fa786f7746da62d61ac",
+     "parentItemName": "UTG SKS SOCOM导轨基座",
+     "installedItem": null,
+     "autoLogical": {
+      "row": 5,
+      "col": 6,
+      "role": ""
+     },
+     "finalWithCalib": {
+      "row": 5,
+      "col": 6
+     },
+     "calibKey": "mod_barrel/mod_mount_001/mod_tactical_003|mod_tactical_003|593d1fa786f7746da62d61ac",
+     "calibRecord": null
+    }
+   ],
+   "ruleExpect": "多子槽应按各自类型/方向分别布局（规则7）；当前：GW_FIXED_SLOT 固定锚点 r4c3/r2c3/r5c3–c6",
+   "codePath": "gwBuildLayout 阶段 2.2) GW_FIXED_SLOT 固定锚点（app.js）+ 阶段8",
+   "note": "SKS 的 SOCOM 链坐标由 R19.18 用户指定锚点硬性规定，属于特例而非通用规则"
+  }
+ ],
+ "notes": [
+  {
+   "topic": "calib-override-sample",
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "overrides": []
+  },
+  {
+   "topic": "child-direction-distribution",
+   "stats": {
+    "above": 113,
+    "below": 232,
+    "sameRow": 225,
+    "other": 341,
+    "samples": {
+     "above": [
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_scope",
+       "r": 2,
+       "pr": 3,
+       "c": 5
+      },
+      {
+       "gun": "AK-74N 5.45x39 突击步枪",
+       "path": "mod_reciever/mod_mount",
+       "r": 2,
+       "pr": 3,
+       "c": 5
+      },
+      {
+       "gun": "AKS-74U 5.45x39 短突击步枪",
+       "path": "mod_reciever/mod_mount_000",
+       "r": 2,
+       "pr": 3,
+       "c": 5
+      },
+      {
+       "gun": "AKS-74UN 5.45x39 短突击步枪",
+       "path": "mod_reciever/mod_mount_000",
+       "r": 2,
+       "pr": 3,
+       "c": 5
+      },
+      {
+       "gun": "SIG MPX 9x19 冲锋枪",
+       "path": "mod_reciever/mod_scope",
+       "r": 2,
+       "pr": 3,
+       "c": 5
+      }
+     ],
+     "below": [
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+       "r": 4,
+       "pr": 3,
+       "c": 1
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_stock/mod_stock_000",
+       "r": 4,
+       "pr": 3,
+       "c": 9
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_stock/mod_stock_003",
+       "r": 5,
+       "pr": 3,
+       "c": 9
+      },
+      {
+       "gun": "AK-74N 5.45x39 突击步枪",
+       "path": "mod_stock/mod_stock",
+       "r": 4,
+       "pr": 3,
+       "c": 9
+      },
+      {
+       "gun": "MP-153 12铅径半自动霰弹枪",
+       "path": "mod_barrel/mod_mount",
+       "r": 4,
+       "pr": 3,
+       "c": 4
+      }
+     ],
+     "sameRow": [
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_barrel",
+       "r": 3,
+       "c": 3,
+       "pc": 5
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_barrel/mod_muzzle",
+       "r": 3,
+       "c": 1,
+       "pc": 3
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_barrel/mod_gas_block",
+       "r": 3,
+       "c": 2,
+       "pc": 3
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_handguard",
+       "r": 3,
+       "c": 4,
+       "pc": 5
+      },
+      {
+       "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+       "path": "mod_reciever/mod_sight_rear/mod_scope",
+       "r": 2,
+       "c": 7,
+       "pc": 8
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

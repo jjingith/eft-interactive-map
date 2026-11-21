@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """EFT 互动地图 · 启动器（运行期入口 → EFTMap.exe）
 
-双击 exe 后显示一个 Windows XP（Luna）风的小窗口：
+R71：**双击 EFTMap.exe（无参数）默认启动无边框桌面壳 `EFTMapDesktop.exe`**，
+不再静默拉起浏览器。浏览器只在两种情况下出现：
+- 显式传 `--browser`（高级用户）；
+- 桌面壳缺失 / 启动失败时，先弹中文提示，用户选「是」才改用浏览器。
+
+`EFTMap.exe --server-only` 仍是无窗口后端，供桌面壳内部调用。
+Tk 启动窗口保留给 `--settings-only`（壳托盘）与 `--browser` 调试路径。
+
+Tk 启动窗口（`--settings-only` / `--browser`）形态：
 
     ┌ 游戏目录 / 截图目录   ← 自动定位 + 手填 + 浏览
     ├ 地图显示开关         ← 定位自动缩放 / 点位自动居中
@@ -30,6 +38,8 @@ import argparse
 import json
 import os
 import queue
+import runpy
+import secrets
 import subprocess
 import sys
 import threading
@@ -40,6 +50,8 @@ from typing import Any, Callable
 
 import config
 import eftlog
+import keyinput
+import screenshot
 import serve
 
 VERSION = serve.VERSION
@@ -134,9 +146,12 @@ def resolve_dirs(cfg: dict | None = None, game_dir: str | None = None,
     game = game_dir or cfg.get("game_dir") or serve.default_game_dir()
     if game and not os.path.isdir(game):
         game = None
-    shots = screenshots or cfg.get("screenshots_dir") or serve.default_screenshots_dir()
+    shots = screenshots or cfg.get("screenshots_dir")
     if shots and not os.path.isdir(shots):
         shots = None
+    if not shots:
+        # R107：配置与默认位置都没有时，按候选目录自动探测（含用户改到 OneDrive/图片目录的情况）
+        shots, _note = serve.detect_screenshots_dir(game)
     return game or "", shots or ""
 
 
@@ -145,12 +160,14 @@ def build_config(game_dir: str = "", screenshots_dir: str = "", auto_zoom: bool 
                  sound_on: dict | None = None, sound_files: dict | None = None,
                  auto_screenshot: bool = False, shot_interval_ms: int = config.SHOT_INTERVAL_DEFAULT,
                  shot_key: str | None = None, auto_delete: bool = False,
-                 delete_since: float | None = None) -> dict:
+                 cleanup_on_raid_end: bool = False,
+                 delete_since: float | None = None, host: str = config.HOST_DEFAULT) -> dict:
     """把界面上的表单值收敛成一份完整配置（交给 config.save 落盘）。
 
     音频只存**文件名**（已复制进软件目录 `sounds/`），所以换机器/清缓存都不会失效。
     自动截图的按键只存键名（如 `V`），间隔钳到合理区间（见 config.clamp_interval）。
     `delete_since` 是「自动删除」开关的开启时刻：只删它之后产生的截图，历史截图不动。
+    `host` 是监听地址（`127.0.0.1` 仅本机 / `0.0.0.0` 允许局域网），见 config.clamp_host。
     """
     sound_on = sound_on or {}
     sound_files = sound_files or {}
@@ -159,8 +176,10 @@ def build_config(game_dir: str = "", screenshots_dir: str = "", auto_zoom: bool 
         sound[key] = {"on": bool(sound_on.get(key, True)), "file": sound_files.get(key) or None}
     return {
         "version": 1,
+        "host": config.clamp_host(host),
         "game_dir": (game_dir or "").strip() or None,
         "screenshots_dir": (screenshots_dir or "").strip() or None,
+        "log_dir": None,          # R107：页面里的「日志目录」手动覆盖，启动器不覆盖它（见 _save）
         "auto_zoom": bool(auto_zoom),
         "auto_center": bool(auto_center),
         "auto_start": bool(auto_start),
@@ -168,6 +187,7 @@ def build_config(game_dir: str = "", screenshots_dir: str = "", auto_zoom: bool 
             "enabled": bool(auto_screenshot),
             "interval_ms": config.clamp_interval(shot_interval_ms),
             "key": (shot_key or "").strip() or None,
+            "cleanup_on_raid_end": bool(cleanup_on_raid_end),
         },
         "auto_delete": {
             "enabled": bool(auto_delete),
@@ -216,6 +236,9 @@ class Startup:
         open_browser: Callable[[str], Any] = webbrowser.open,
         health: Callable[[str], dict] = check_health,
         on_step: Callable[[str, str, str], None] | None = None,
+        shell_mode: bool = False,
+        shutdown_token: str | None = None,
+        shutdown_callback: Callable[[], None] | None = None,
     ):
         self.root = os.path.abspath(root or app_root())
         self.port = port
@@ -227,6 +250,9 @@ class Startup:
         self.open_browser = open_browser
         self.health = health
         self.on_step = on_step
+        self.shell_mode = shell_mode
+        self.shutdown_token = shutdown_token
+        self.shutdown_callback = shutdown_callback
 
         self.server = None
         self.thread: threading.Thread | None = None
@@ -234,6 +260,7 @@ class Startup:
         self.health_payload: dict[str, Any] | None = None
         self.screenshots_resolved: str | None = None
         self.game_dir_resolved: str | None = None
+        self.ocr_host: subprocess.Popen | None = None
 
     # ------------------------------------------------------------ 内部
     def _emit(self, step: str, state: str, detail: str = ""):
@@ -257,21 +284,27 @@ class Startup:
 
     def step_start_server(self):
         self._emit(STEP_SERVER, "running")
-        # 未显式指定截图目录时自动探测默认位置；目录不存在就不启动对应监听（不报错）
+        # R107：没显式给截图目录时按候选目录自动探测（不只默认那一处）；
+        # 探测不到就不启动对应监听（不报错），服务端仍会继续按配置变化重试。
         screenshots = self.screenshots
         if screenshots is None:
-            default = serve.default_screenshots_dir()
-            screenshots = default if os.path.isdir(default) else None
+            screenshots, _note = serve.detect_screenshots_dir(self.game_dir)
         self.screenshots_resolved = screenshots
-        # 游戏目录不做二次探测：界面/命令行已经填过自动定位的结果，
-        # 这里再猜一次会让用户「清空目录以关闭日志监控」的意图失效。
+        # 游戏目录不做二次探测：界面/命令行已经填过自动定位的结果。
+        # 日志目录由服务端独立探测（Game\Logs / %LOCALAPPDATA% / 文档目录），不再强依赖 game_dir。
         self.game_dir_resolved = self.game_dir
 
-        kwargs: dict[str, Any] = {"screenshots": screenshots}
+        kwargs: dict[str, Any] = {"screenshots": screenshots, "detect_paths": True}
         if self.game_dir:
             kwargs["game_dir"] = self.game_dir
         if self.config_dir:
             kwargs["config_dir"] = self.config_dir
+        if self.shell_mode:
+            kwargs["shell_mode"] = True
+        if self.shutdown_token:
+            kwargs["shutdown_token"] = self.shutdown_token
+        if self.shutdown_callback:
+            kwargs["shutdown_callback"] = self.shutdown_callback
         try:
             self.server = self.create_server(self.port, self.host, self.root, **kwargs)
         except serve.PortInUseError as exc:
@@ -319,6 +352,58 @@ class Startup:
         else:
             self._emit(STEP_BROWSER, "done", self.url)
 
+    # ------------------------------------------------------------ 截图识别宿主
+    def start_ocr_host(self):
+        """拉起截图识别宿主（全局热键 → 框选 → 透明浮窗）。
+
+        R278 之前宿主只存在于开发机的登录自启任务里，装好的客户端根本没有这个
+        进程，用户按 Ctrl+Alt+P 自然「没反应」。现在随主程序起，退出时一起收。
+
+        · 宿主自己会先探 /api/health，服务没起就立刻退出，不会留僵尸进程；
+        · 宿主带命名互斥量，用户机器上若真有旧的登录自启，晚到的那个自动退出；
+        · `EFT_OCR_HOST=0` 可整体关掉（排查 / 自动化测试用）。
+        """
+        if (os.environ.get("EFT_OCR_HOST") or "").strip().lower() in {"0", "off", "false", "no"}:
+            return
+        if self.ocr_host is not None and self.ocr_host.poll() is None:
+            return
+        script = os.path.join(self.root, "tools", "scan.py")
+        if not os.path.isfile(script):
+            return
+        if getattr(sys, "frozen", False):
+            # onedir 产物里 sys.executable 是 EFTMap.exe；宿主由 --run-tool 在
+            # 同一套冻结依赖里跑，不要求用户机器上装 Python。
+            cmd = [sys.executable, "--run-tool", script, "--server", self.url]
+        else:
+            cmd = [sys.executable, script, "--server", self.url]
+        kwargs: dict[str, Any] = {"cwd": self.root,
+                                  "stdout": subprocess.DEVNULL,
+                                  "stderr": subprocess.DEVNULL,
+                                  "stdin": subprocess.DEVNULL}
+        if os.name == "nt":
+            kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        try:
+            self.ocr_host = subprocess.Popen(cmd, **kwargs)
+        except OSError:
+            # 宿主起不来不影响主界面：热键失效时用户仍能用「截图识别」面板粘贴图片。
+            # 这里不往四步进度里塞状态，避免「打开浏览器」一步被重复上报。
+            self.ocr_host = None
+
+    def stop_ocr_host(self):
+        host = self.ocr_host
+        self.ocr_host = None
+        if host is None:
+            return
+        try:
+            if host.poll() is None:
+                host.terminate()
+                try:
+                    host.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    host.kill()
+        except OSError:
+            pass
+
     def run(self):
         """依次跑完四步；失败即抛 StartupError，不留下半启动状态。"""
         self.step_check_data()
@@ -329,9 +414,11 @@ class Startup:
             self.stop()          # 自检不过就别留着一个半活的端口
             raise
         self.step_open_browser()
+        self.start_ocr_host()    # 宿主失败不影响主流程：它自己会退出
 
     def stop(self):
         """关闭服务并等待服务线程退出。可重复调用。"""
+        self.stop_ocr_host()
         if self.server is not None:
             self.server.shutdown()
             self.server.server_close()
@@ -477,6 +564,8 @@ class LaunchWindow:
         self._refresh_sound_labels()
         self._sync_shot_enabled()
         self._prefill_shot_key()
+        self._refresh_lan_label()
+        self._refresh_remote_warning()
 
         self.startup.on_step = lambda step, state, detail: self.events.put((step, state, detail))
         self._fit()
@@ -531,6 +620,9 @@ class LaunchWindow:
         self.auto_zoom_var = tk.BooleanVar(value=bool(self.cfg.get("auto_zoom")))
         self.auto_center_var = tk.BooleanVar(value=bool(self.cfg.get("auto_center")))
         self.auto_start_var = tk.BooleanVar(value=bool(self.cfg.get("auto_start")))
+        # 允许局域网访问：配置文件里的 host 或命令行 --host 只要有一个是 0.0.0.0 就默认勾上
+        self.lan_var = tk.BooleanVar(
+            value=self.cfg.get("host") == "0.0.0.0" or startup.host == "0.0.0.0")
         self.sound_enabled_var = tk.BooleanVar(value=bool(self.cfg["sound"]["enabled"]))
         self.sound_on: dict[str, bool] = {k: bool(self.cfg["sound"][k]["on"]) for k in config.SOUND_KEYS}
         self.sound_vars: dict[str, Any] = {}
@@ -557,6 +649,18 @@ class LaunchWindow:
         self._check(maps, "定位自动缩放（沿用最近一次手动缩放比例，首次 4×）", self.auto_zoom_var)
         self._check(maps, "点位自动居中（跟随实时位置平移地图）", self.auto_center_var)
 
+        # ------------------------------- 局域网访问
+        net = self._group(body, "局域网访问（在别的电脑 / 手机上打开本工具）")
+        self._check(net, "允许局域网访问（监听 0.0.0.0，仅同一局域网内可访问）",
+                    self.lan_var, command=self._on_lan_toggle)
+        self.lan_label = tk.Label(net, text="", bg=FACE, fg=MUTED, font=("Tahoma", 8), anchor="w",
+                                  justify="left", wraplength=self.W - 60)
+        self.lan_label.pack(fill="x", padx=(16, 0))
+        tk.Label(net, text="首次开启时 Windows 可能弹出防火墙提示，请选「允许访问」（专用 / 家庭网络）。"
+                           "本工具本身不联网；局域网访问只是让同一路由器下的设备能打开这个页面。",
+                 bg=FACE, fg=MUTED, font=("Tahoma", 8), anchor="w", justify="left",
+                 wraplength=self.W - 60).pack(fill="x", padx=(16, 0), pady=(2, 0))
+
         # ------------------------------- 声音
         sound = self._group(body, "声音提示")
         self._check(sound, "启用声音提示", self.sound_enabled_var, command=self._on_sound_master)
@@ -580,12 +684,20 @@ class LaunchWindow:
         self.shot_key_entry.pack(side="left", padx=(4, 2))
         tk.Button(row, text="从日志同步", font=("Tahoma", 8), bd=1, padx=6, pady=1,
                   command=self._sync_shot_key).pack(side="left", padx=(4, 0))
+        # R32：一键分辨「按键没送到」/「送到了但游戏没截图」/「截图目录配错了」——
+        # 这三种情况以前都只表现为「已发送 N 张」，谁也说不清卡在哪。
+        tk.Button(row, text="试拍一张", font=("Tahoma", 8), bd=1, padx=6, pady=1,
+                  command=self._try_shot).pack(side="left", padx=(4, 0))
         self.shot_sync_label = tk.Label(shot, text="", bg=FACE, fg=MUTED, font=("Tahoma", 8), anchor="w")
         self.shot_sync_label.pack(fill="x", padx=(16, 0))
         tk.Label(shot, text="原理：按游戏内截图键（默认 V，可从日志同步）。注意：EFT 有 BattlEye 反作弊，"
                             "模拟输入可能被判定为异常；截图会按间隔写入截图目录并持续增长，请自行取舍。",
                  bg=FACE, fg="#8A5A00", font=("Tahoma", 8), anchor="w", justify="left",
                  wraplength=self.W - 60).pack(fill="x", padx=(16, 0), pady=(2, 0))
+        # 游戏目录在网络位置时（游戏跑在另一台电脑）模拟按键物理上打不到，这里给一条醒目提示
+        self.shot_remote_label = tk.Label(shot, text="", bg=FACE, fg="#C00000", font=("Tahoma", 8, "bold"),
+                                          anchor="w", justify="left", wraplength=self.W - 60)
+        self.shot_remote_label.pack(fill="x", padx=(16, 0), pady=(2, 0))
         self.shot_children.extend([self.shot_interval_entry, self.shot_key_entry])
         for entry in (self.shot_interval_entry, self.shot_key_entry):
             entry.bind("<FocusOut>", lambda _ev: self._save())
@@ -711,6 +823,7 @@ class LaunchWindow:
             shot_key=self.shot_key_var.get(),
             auto_delete=self.delete_var.get(),
             delete_since=self.delete_since,
+            host=("0.0.0.0" if self.lan_var.get() else config.HOST_DEFAULT),
         )
 
     def _save(self) -> bool:
@@ -721,7 +834,15 @@ class LaunchWindow:
         否则每次表单失焦落盘都会把用户刚在页面上保存的勾选清掉。
         """
         payload = self.current_config()
-        payload["ui"] = config.load(self.app_dir).get("ui") or {}
+        disk = config.load(self.app_dir)
+        payload["ui"] = disk.get("ui") or {}
+        # R107：这两项由页面维护，启动器表单里没有对应控件，落盘时原样保留，
+        # 否则「保存配置」会把页面上刚填的日志目录 / 战局结束清理开关清掉。
+        payload["log_dir"] = disk.get("log_dir")
+        payload["auto_screenshot"]["cleanup_on_raid_end"] = bool(
+            (disk.get("auto_screenshot") or {}).get("cleanup_on_raid_end"))
+        if hasattr(self, "shot_remote_label"):     # 游戏目录可能是刚手填的，顺手刷新跨机提示
+            self._refresh_remote_warning()
         try:
             config.save(payload, self.app_dir)
         except OSError as exc:
@@ -877,6 +998,94 @@ class LaunchWindow:
     def _shot_note(self, text: str, color: str = MUTED):
         self.shot_sync_label.configure(text=text, fg=color)
 
+    # ------------------------------------------------------------ 试拍一张
+    # 判据只有一个：**发完之后截图目录里有没有出现新文件**。
+    #   扫描码成功 → 完事；扫描码没反应 → 自动换虚拟键码再试一次（参考实现走的就是 vk）；
+    #   两种都没反应 → 明确告诉用户去查「游戏内截图键绑定」和「截图目录」。
+    SHOT_PROBE_WAIT = 1200      # 发键后等多久再查目录（毫秒）
+
+    def _shot_dir(self) -> str | None:
+        """当前生效的截图目录：配置里填的优先，否则用游戏默认位置（存在才算）。"""
+        configured = (self.cfg.get("screenshots_dir") or "").strip()
+        if configured and os.path.isdir(configured):
+            return configured
+        fallback = serve.default_screenshots_dir()
+        return fallback if fallback and os.path.isdir(fallback) else None
+
+    def _try_shot(self):
+        """「试拍一张」：真发一次按键，然后盯目录，把结论直接写在这行小字上。"""
+        key = (self.shot_key_var.get() or "").strip()
+        if not key:
+            self._shot_note("先填截图键，或点「从日志同步」——空键发不出去", "#C00000")
+            return
+        if keyinput.parse_combo(key) is None:
+            self._shot_note("这个键名不认识：%s（%s）" % (key, keyinput.unsupported_reason(key)), "#C00000")
+            return
+        directory = self._shot_dir()
+        if not directory:
+            self._shot_note("找不到截图目录：先在下面把「截图目录」设对，否则无法判断有没有拍到", "#C00000")
+            return
+        base = screenshot.newest_mtime(directory)
+        self._shot_note("正在试拍：%s（等 %d ms 看目录）…" % (key, self.SHOT_PROBE_WAIT))
+        self._shot_probe(key, directory, base, keyinput.MODE_SCAN)
+
+    def _shot_probe(self, key: str, directory: str, base, mode: str):
+        """发一次键并安排「稍后查目录」；失败时换成另一种注入方式再试一次。"""
+        try:
+            ok, error = keyinput.send_key(key, mode)
+        except Exception as exc:                      # 注入实现出问题也不能让界面崩
+            ok, error = False, "模拟按键出错：%s" % exc
+        if not ok:
+            self._shot_note("发不出去：%s" % (error or "未知原因"), "#C00000")
+            return
+        self.after(self.SHOT_PROBE_WAIT, lambda: self._shot_verdict(key, directory, base, mode))
+
+    def _shot_verdict(self, key: str, directory: str, base, mode: str):
+        try:
+            newest = screenshot.newest_mtime(directory)
+        except Exception:
+            newest = None
+        if newest is not None and (base is None or newest > base):
+            how = "虚拟键码" if mode == keyinput.MODE_VK else "扫描码"
+            self._shot_note("试拍成功：截图已出现（%s注入可用），定位马上就会跟上" % how, "#1B7F3B")
+            return
+        if mode != keyinput.MODE_VK:
+            self._shot_note("扫描码没触发截图，自动改用虚拟键码再试一次…")
+            self._shot_probe(key, directory, base, keyinput.MODE_VK)
+            return
+        self._shot_note("两种注入方式都没让游戏出图：请确认①游戏内「截图」键就是 %s"
+                        "（设置 → 控制 → 界面）；②截图目录确实是 %s；③游戏窗口在前台且已进战局"
+                        % (key, directory), "#C00000")
+
+    # ------------------------------------------------------------ 局域网访问
+    def _refresh_lan_label(self):
+        """按勾选状态显示「本机地址 / 局域网地址」提示。"""
+        port = self.startup.port or DEFAULT_PORT
+        if self.lan_var.get():
+            url = serve.url_for_lan(port)
+            text = ("同一网络访问地址：%s（本机仍可用 http://127.0.0.1:%d/）" % (url, port)) if url \
+                else "已开启监听所有网卡，但未探测到本机局域网地址（请检查网络连接）。"
+        else:
+            text = "当前仅本机可访问：http://127.0.0.1:%d/" % port
+        self.lan_label.configure(text=text)
+
+    def _on_lan_toggle(self):
+        self._refresh_lan_label()
+        self._save()
+
+    def _refresh_remote_warning(self):
+        """游戏目录在网络位置时提示「跨机器模拟按键无效」——这正是自动截图无效的根因。"""
+        if not hasattr(self, "shot_remote_label"):
+            return
+        game = self.game_var.get().strip()
+        if serve.is_network_path(game):
+            self.shot_remote_label.configure(
+                text="检测到游戏目录在网络位置（%s）：说明游戏跑在另一台电脑上。模拟按键只能打进"
+                     "本机前台窗口，跨机器打不到——自动截图会一直无效。请把本工具放到游戏所在的那台"
+                     "电脑上运行（可在本机勾选「允许局域网访问」，再在别的设备上打开看地图）。" % game)
+        else:
+            self.shot_remote_label.configure(text="")
+
     def _sync_shot_key(self):
         """从最新会话的日志里同步游戏内截图键（控制绑定写在日志开头）。"""
         game = self.game_var.get().strip()
@@ -1005,6 +1214,7 @@ class LaunchWindow:
         self._save()          # 写不进去也照样启动，只是先在界面上提示了
         self.startup.game_dir = self.game_var.get().strip() or None
         self.startup.screenshots = self.shots_var.get().strip() or None
+        self.startup.host = "0.0.0.0" if self.lan_var.get() else config.HOST_DEFAULT
         self.startup.config_dir = self.app_dir
         self.running = True
         self._reset_steps()
@@ -1018,6 +1228,7 @@ class LaunchWindow:
     def retry(self):
         self.startup.game_dir = self.game_var.get().strip() or None
         self.startup.screenshots = self.shots_var.get().strip() or None
+        self.startup.host = "0.0.0.0" if self.lan_var.get() else config.HOST_DEFAULT
         self.startup.config_dir = self.app_dir
         self.running = True
         self._reset_steps()
@@ -1036,7 +1247,14 @@ class LaunchWindow:
     def on_ready(self):
         self._ready = True
         self.running = True
-        self.status.configure(text="服务已就绪：" + self.startup.url)
+        text = "服务已就绪：" + self.startup.url
+        if self.lan_var.get():
+            server = getattr(self.startup, "server", None)
+            port = server.server_address[1] if server is not None else self.startup.port
+            lan = serve.url_for_lan(port)
+            if lan:
+                text += "   · 局域网：" + lan
+        self.status.configure(text=text)
         self.header.itemconfigure(self.title_text, text="EFT 互动地图 · 已就绪")
         self.btn_open.configure(state="normal")
         self.btn_min.configure(state="normal")
@@ -1059,15 +1277,32 @@ class LaunchWindow:
 
 
 def parse_args(argv=None):
-    parser = argparse.ArgumentParser(description="EFT 互动地图启动器")
+    parser = argparse.ArgumentParser(
+        description="EFT 互动地图启动器（默认打开无边框独立窗口；--help 可见全部开关）",
+        epilog="默认路径：EFTMap.exe → EFTMapDesktop.exe（独立窗口）。"
+               "EFTMap.exe --server-only 仅作为桌面壳的后端启动器。")
     parser.add_argument("--host", default=DEFAULT_HOST, help="监听地址，默认 %s" % DEFAULT_HOST)
     parser.add_argument("--port", type=int, default=DEFAULT_PORT, help="监听端口，默认 %d" % DEFAULT_PORT)
     parser.add_argument("--screenshots", default=None, help="EFT 截图目录（实时定位用）")
     parser.add_argument("--game-dir", default=None, help="EFT 游戏目录（含 Logs，日志监控用）")
     parser.add_argument("--config-dir", default=None, help="配置与 sounds/ 的落盘目录，默认软件目录")
     parser.add_argument("--no-browser", action="store_true", help="不自动打开浏览器（调试/自动化）")
+    parser.add_argument("--browser", action="store_true",
+                        help="显式使用浏览器打开（高级用户；默认打开独立窗口）")
     parser.add_argument("--app-window", action="store_true",
-                        help="在独立的无地址栏应用窗口里打开界面（加壳版行为，见 appmode.flag）")
+                        help="浏览器 --app 模式（仅在 --browser 下生效）")
+    parser.add_argument("--server-only", action="store_true",
+                        help="桌面壳模式：只启动本地服务，不创建窗口、不打开浏览器（壳内部调用）")
+    parser.add_argument("--shell-mode", action="store_true",
+                        help="桌面壳模式：/api/overlay 不再拉起 overlay.py，由壳管理小浮窗")
+    parser.add_argument("--runtime-file", default=None,
+                        help="--server-only 就绪后写出的 runtime JSON 路径")
+    parser.add_argument("--log-file", default=None,
+                        help="--server-only 的后端日志路径")
+    parser.add_argument("--parent-pid", type=int, default=None,
+                        help="--server-only 监视的父进程 PID；父进程退出后自动收摊")
+    parser.add_argument("--settings-only", action="store_true",
+                        help="只打开 tkinter 高级设置窗口，不自动启动服务（供桌面壳托盘调用）")
     return parser.parse_args(argv)
 
 
@@ -1077,16 +1312,369 @@ def _say(text: str):
         print(text)
 
 
-def main(argv=None) -> int:
-    args = parse_args(argv)
+def harden_stdio() -> None:
+    """把 stdout/stderr 统一成 UTF-8 + errors="replace"，启动最开始就做。
+
+    windowed 产物没有控制台时这两个流可能是 None，argparse 的 `--help` 会直接
+    往 stdout 写，None 就 AttributeError → PyInstaller 弹窗口版 traceback 对话框
+    并挂住进程。这里先用 os.devnull 兜底（重定向输出时仍是真实的管道流），
+    再统一编码；任何调整失败都不影响主流程。
+    """
+    for name in ("stdout", "stderr"):
+        stream = getattr(sys, name, None)
+        if stream is None:
+            try:
+                setattr(sys, name, open(os.devnull, "w", encoding="utf-8"))
+            except OSError:
+                continue
+            stream = getattr(sys, name, None)
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            try:
+                reconfigure(encoding="utf-8", errors="replace")
+            except (ValueError, OSError):
+                pass
+
+
+def _log_tool_failure(script: str, detail: str) -> None:
+    """把 `--run-tool` 的异常写进 %LOCALAPPDATA%\\EFTMap\\logs\\run-tool.log。
+
+    windowed 产物没有控制台，`_say` 的输出直接进 devnull——截图识别宿主这类
+    「随包脚本」一旦启动失败，用户只会看到「按热键没反应」，排查时没有任何线索。
+    """
+    base = os.environ.get("LOCALAPPDATA") or config.default_storage_dir()
+    path = os.path.join(base, "EFTMap", "logs", "run-tool.log")
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write("[%s] %s\n%s\n\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), script, detail))
+    except OSError:
+        pass
+
+
+def run_tool(argv) -> int:
+    """打包产物内部隐藏入口：用当前（冻结的）解释器执行随包脚本。
+
+    `sys.executable` 在 onedir 产物里是 EFTMap.exe，不能被当成 python 使用；
+    serve.py 的后台抓取（live_prices.py / r20_fetch_prices.py）因此走
+    `EFTMap.exe --run-tool <脚本> <原参数...>`，由这里 runpy 执行，退出码原样返回。
+    不对用户暴露：不带 --run-tool 时行为与之前完全一致。
+    """
+    if not argv:
+        return 2
+    script, rest = argv[0], list(argv[1:])
+    if not os.path.isfile(script):
+        _say("找不到脚本：%s" % script)
+        return 2
+    # 抓取器会打印中文；windowed 产物里 stdout 可能继承到 cp1252 的控制台编码，
+    # 直接 print 会抛 UnicodeEncodeError。这里统一成 UTF-8/replace，且不让
+    # 异常冒泡到 PyInstaller 的“窗口版 traceback 对话框”（那会挂住子进程）。
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            if stream is not None and hasattr(stream, "reconfigure"):
+                stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:  # noqa: BLE001 - 编码调整失败不影响抓取
+            pass
+    sys.argv = [script] + rest
+    try:
+        runpy.run_path(script, run_name="__main__")
+    except SystemExit as exc:
+        code = exc.code
+        if code is None:
+            return 0
+        if isinstance(code, int):
+            if code != 0:
+                _log_tool_failure(script, "SystemExit(%d)" % code)
+            return code
+        _say(str(code))
+        _log_tool_failure(script, "SystemExit: %s" % code)
+        return 1
+    except BaseException as exc:  # noqa: BLE001 - 后台子进程不能弹窗
+        _say("%s: %s" % (type(exc).__name__, exc))
+        import traceback
+        _log_tool_failure(script, traceback.format_exc())
+        return 1
+    return 0
+
+
+# ---------------------------------------------------------------- 桌面壳后端模式
+def default_runtime_file() -> str:
+    """桌面壳握手文件：优先 LOCALAPPDATA，避免写进漫游配置目录。"""
+    local = os.environ.get("LOCALAPPDATA")
+    base = os.path.join(local, "EFTMap") if local else config.default_storage_dir()
+    return os.path.join(base, "run", "server-%d.json" % os.getpid())
+
+
+def default_log_file() -> str:
+    local = os.environ.get("LOCALAPPDATA")
+    base = os.path.join(local, "EFTMap") if local else config.default_storage_dir()
+    return os.path.join(base, "logs", "backend-%d.log" % os.getpid())
+
+
+def _append_log(path: str | None, text: str) -> None:
+    if not path:
+        return
+    try:
+        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write("%s  %s\n" % (time.strftime("%Y-%m-%d %H:%M:%S"), text))
+    except OSError:
+        pass
+
+
+def _atomic_write_json(path: str, payload: dict) -> None:
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
+        fh.flush()
+        os.fsync(fh.fileno())
+    os.replace(tmp, path)
+
+
+def _safe_remove(path: str) -> None:
+    try:
+        os.remove(path)
+    except OSError:
+        pass
+
+
+def _parent_alive(pid: int | None) -> bool:
+    """父进程是否还活着。Job Object 是主保险；这个是壳被强杀时的第二道保险。"""
+    if not pid:
+        return True
+    if os.name != "nt":
+        try:
+            os.kill(int(pid), 0)
+            return True
+        except OSError:
+            return False
+    try:
+        import ctypes
+        kernel32 = ctypes.windll.kernel32
+        handle = kernel32.OpenProcess(0x1000, False, int(pid))  # PROCESS_QUERY_LIMITED_INFORMATION
+        if not handle:
+            return False
+        code = ctypes.c_ulong()
+        ok = kernel32.GetExitCodeProcess(handle, ctypes.byref(code))
+        kernel32.CloseHandle(handle)
+        return bool(ok) and code.value == 259  # STILL_ACTIVE
+    except Exception:  # noqa: BLE001 - 探测失败时宁可继续运行，不误杀后端
+        return True
+
+
+def run_server_only(args) -> int:
+    """`--server-only`：无 Tk、无浏览器；写 runtime JSON，等壳调 shutdown 或父进程退出。"""
+    runtime_path = os.path.abspath(args.runtime_file or default_runtime_file())
+    log_path = os.path.abspath(args.log_file or default_log_file())
+    token = secrets.token_urlsafe(24)
+    stop_event = threading.Event()
+
+    def log(text: str):
+        _append_log(log_path, text)
+
+    def on_step(step: str, state: str, detail: str = ""):
+        log("[%s] %s %s" % (step, state, detail))
+
+    cfg_dir = os.path.abspath(args.config_dir or config.default_storage_dir())
+    if not args.config_dir:
+        config.migrate_legacy(cfg_dir, config.app_dir())
+    cfg = config.load(cfg_dir)
+    game, shots = resolve_dirs(cfg, args.game_dir, args.screenshots)
+
+    startup = Startup(
+        port=args.port, host=args.host,
+        screenshots=shots or None, game_dir=game or None,
+        config_dir=cfg_dir,
+        open_browser=lambda _url: None,
+        on_step=on_step,
+        shell_mode=bool(args.shell_mode),
+        shutdown_token=token,
+        shutdown_callback=stop_event.set,
+    )
+    log("server-only start pid=%d runtime=%s" % (os.getpid(), runtime_path))
+    try:
+        startup.run()
+    except StartupError as exc:
+        log("startup failed: %s %s" % (exc.message, exc.hint))
+        _safe_remove(runtime_path)
+        return 1
+    except Exception as exc:  # noqa: BLE001 - 任何启动异常都必须落到日志里
+        log("startup exception: %s: %s" % (type(exc).__name__, exc))
+        _safe_remove(runtime_path)
+        return 1
+
+    port = startup.server.server_address[1]
+    payload = {
+        "app": serve.APP_ID,
+        "version": serve.VERSION,
+        "pid": os.getpid(),
+        "port": port,
+        "url": startup.url,
+        "token": token,
+        "shellMode": bool(args.shell_mode),
+        "configDir": cfg_dir,
+        "logFile": log_path,
+        "startedAt": time.time(),
+        "startedAtIso": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+    }
+    try:
+        _atomic_write_json(runtime_path, payload)
+    except OSError as exc:
+        log("写 runtime JSON 失败：%s" % exc)
+        startup.stop()
+        return 1
+    log("ready url=%s pid=%d" % (startup.url, os.getpid()))
+
+    try:
+        while not stop_event.wait(0.5):
+            if args.parent_pid and not _parent_alive(args.parent_pid):
+                log("父进程 %s 已退出，后端收摊" % args.parent_pid)
+                break
+            if startup.thread is not None and not startup.thread.is_alive():
+                log("服务线程已退出，后端收摊")
+                break
+    finally:
+        startup.stop()
+        _safe_remove(runtime_path)
+        log("server-only exit pid=%d" % os.getpid())
+    return 0
+
+
+# ---------------------------------------------------------------- 卸载器双击入口
+UNINSTALLER_EXE = "Uninstall.exe"
+# 措辞按 `uninstall()` 的真实行为：整个安装目录被 rd /s /q 删除（默认安装目录里的
+# 缓存也随目录一起没）；个人设置单独放在 %APPDATA%\EFTMap，不在删除范围内。
+_UNINSTALL_QUESTION = (
+    "确定要卸载《逃离塔科夫》互动地图吗？\n\n"
+    "卸载将删除安装目录里的全部程序文件（含默认位置 %LOCALAPPDATA%\\EFTMap 的缓存）、"
+    "开始菜单与桌面快捷方式，并移除「程序和功能」中的卸载项。\n"
+    "个人设置保存在 %APPDATA%\\EFTMap，卸载后会保留。"
+)
+_UNINSTALL_SCRIPT_REL = (os.path.join("_internal", "tools", "installer.py"),
+                         os.path.join("tools", "installer.py"))
+
+
+def launched_as_uninstaller() -> bool:
+    """双击 `Uninstall.exe` 等价调用：它是 EFTMap.exe 的副本，且没有任何参数。"""
+    try:
+        return os.path.basename(sys.executable).lower() == UNINSTALLER_EXE.lower()
+    except (AttributeError, TypeError, ValueError):
+        return False
+
+
+def _message_box(text: str, title: str, flags: int) -> int:
+    """原生消息框；windowed 产物没有控制台也能弹（纯 ctypes，无第三方依赖）。"""
+    import ctypes
+    try:
+        return int(ctypes.windll.user32.MessageBoxW(None, text, title, flags))
+    except (AttributeError, OSError):
+        return 0
+
+
+def uninstall_after_confirm() -> int:
+    """双击 Uninstall.exe：先确认，选“是”才走与 `--uninstall --dir ...` 相同的卸载流程。
+
+    选“否”（或弹框失败）静默返回 0：不打开启动器、不建任何 WebView 窗口。
+    """
+    install_dir = os.path.dirname(os.path.abspath(sys.executable))
+    # MB_YESNO | MB_ICONQUESTION | MB_SETFOREGROUND：确认框置前，别被启动窗口盖住。
+    reply = _message_box(_UNINSTALL_QUESTION, "EFT 互动地图 · 卸载", 0x4 | 0x20 | 0x10000)
+    if reply != 6:  # IDYES=6；IDNO / 关闭 / 无法弹框一律按“取消”处理
+        return 0
+    script = ""
+    for rel in _UNINSTALL_SCRIPT_REL:
+        candidate = os.path.join(install_dir, rel)
+        if os.path.isfile(candidate):
+            script = candidate
+            break
+    if not script:
+        _message_box("找不到卸载脚本，程序文件未删除。\n" + install_dir,
+                     "EFT 互动地图 · 卸载失败", 0x10)
+        return 1
+    # 与「程序和功能」的 UninstallString 同一条路径：
+    # EFTMap.exe --run-tool _internal/tools/installer.py --uninstall --dir <安装目录>
+    return run_tool([script, "--uninstall", "--dir", install_dir])
+
+
+# ---------------------------------------------------------------- 桌面壳优先入口（R71）
+_DESKTOP_SHELL_EXE = "EFTMapDesktop.exe"
+
+
+def desktop_shell_path() -> str:
+    """按「安装目录 → 资源目录 → 开发目录」的顺序找桌面壳。"""
+    exe_dir = os.path.dirname(os.path.abspath(sys.executable))
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    candidates = (
+        os.path.join(exe_dir, _DESKTOP_SHELL_EXE),
+        os.path.join(exe_dir, "_internal", _DESKTOP_SHELL_EXE),
+        os.path.join(repo, "tools", "host", "bin", _DESKTOP_SHELL_EXE),
+    )
+    for path in candidates:
+        if os.path.isfile(path):
+            return path
+    return ""
+
+
+def launch_desktop_shell(args) -> int:
+    """无参数 / 普通参数双击：交给桌面壳，浏览器不参与。
+
+    壳已在跑时由壳自己的单实例 Mutex 激活旧窗口并退出，不会起第二份后端。
+    """
+    shell = desktop_shell_path()
+    reason = ""
+    if shell:
+        cmd = [shell]
+        if args.port is not None:
+            cmd += ["--port", str(args.port)]
+        if args.config_dir:
+            cmd += ["--config-dir", os.path.abspath(args.config_dir)]
+        try:
+            # R75：壳是 winexe，正常不会建控制台；仍显式加 CREATE_NO_WINDOW，
+            # 防止从 cmd / bat 里启动时把控制台句柄传给壳（那会多一个 cmd 窗口）。
+            kwargs = {"cwd": os.path.dirname(shell), "close_fds": True}
+            if os.name == "nt":
+                kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+            subprocess.Popen(cmd, **kwargs)
+            _say("已启动独立窗口：%s" % shell)
+            return 0
+        except OSError as exc:
+            reason = "独立窗口组件启动失败：%s" % exc
+    else:
+        reason = ("缺少独立窗口组件 %s。\n\n"
+                  "它应与 EFTMap.exe 位于同一目录；安装不完整或被杀毒软件隔离时会缺失。\n"
+                  "修复方法：重新运行安装包覆盖安装，或重新解压 Portable 包。") % _DESKTOP_SHELL_EXE
+    _say(reason)
+    # 壳不可用：先弹中文提示，用户明确选「是」才允许浏览器回退（绝不静默拉起浏览器）。
+    # 0x4=是/否，0x20=问号图标，0x100=默认选「否」，0x10000=置顶。
+    reply = _message_box(reason + "\n\n是否改用浏览器打开界面？",
+                         "EFT 互动地图 · 独立窗口不可用", 0x4 | 0x20 | 0x100 | 0x10000)
+    if reply == 6:  # IDYES
+        return run_legacy_ui(args)
+    return 1
+
+
+def run_legacy_ui(args) -> int:
+    """Tk 启动窗口路径：仅 `--settings-only` / `--browser` / 壳不可用回退时使用。"""
     startup = Startup(port=args.port, host=args.host, screenshots=args.screenshots,
-                      game_dir=args.game_dir, config_dir=args.config_dir)
+                      game_dir=args.game_dir, config_dir=args.config_dir,
+                      shell_mode=bool(args.shell_mode))
     if args.no_browser:
         startup.open_browser = lambda _url: None
+    elif args.browser:
+        if args.app_window or app_mode_enabled():
+            startup.open_browser = open_app_window
+        _say("显式 --browser：使用浏览器打开界面。")
     elif args.app_window or app_mode_enabled():
         startup.open_browser = open_app_window
     try:
         window = LaunchWindow(startup)
+        if args.settings_only:
+            window.auto_start_var.set(False)
+            window.status.configure(text="高级设置模式：修改后关闭即可，不会自动启动服务。")
+        elif args.browser:
+            # 显式要浏览器：跳过手动点「启动 WebUI」，直接起服务并打开浏览器。
+            window.auto_start_var.set(True)
     except Exception as exc:  # 没有图形环境时退化为纯控制台启动，避免完全不可用
         _say("无法创建启动窗口（%s），改为无界面启动。" % exc)
         cfg_dir = os.path.abspath(startup.config_dir or config.default_storage_dir())
@@ -1111,6 +1699,22 @@ def main(argv=None) -> int:
             startup.stop()
         return 0
     return window.run()
+
+
+def main(argv=None) -> int:
+    harden_stdio()
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if not argv and launched_as_uninstaller():
+        return uninstall_after_confirm()
+    if argv and argv[0] == "--run-tool":
+        return run_tool(argv[1:])
+    args = parse_args(argv)
+    if args.server_only:
+        return run_server_only(args)
+    # 默认路径：独立窗口。只有显式开关或壳不可用（回退前会弹提示）才走 Tk/浏览器。
+    if args.settings_only or args.browser or args.no_browser or args.app_window:
+        return run_legacy_ui(args)
+    return launch_desktop_shell(args)
 
 
 if __name__ == "__main__":

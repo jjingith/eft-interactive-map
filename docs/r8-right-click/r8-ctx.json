@@ -1,0 +1,597 @@
+{
+ "viewport": {
+  "w": 1920,
+  "h": 1080,
+  "dpr": 1
+ },
+ "A": {
+  "before": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "focus",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "-2.0%",
+    "weight": "0.12 KG"
+   },
+   "weight": "0.12 KG",
+   "focus": "眼镜",
+   "loadout": {
+    "glasses": "5b432be65acfc433000ed01f"
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "after": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "focus",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "眼镜",
+   "loadout": {
+    "glasses": null
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "ctxLog": [
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": true
+   }
+  ]
+ },
+ "A_empty_synthetic": {
+  "prevented": false
+ },
+ "A_table_synthetic": {
+  "prevented": false
+ },
+ "B_child": {
+  "before": {
+   "cards": {
+    "helmet": "on",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-1.0%",
+    "weight": "2.18 KG"
+   },
+   "weight": "2.18 KG",
+   "focus": "头盔 › 夜视仪座",
+   "loadout": {
+    "glasses": null,
+    "helmet": "5a7c4850e899ef00150be885",
+    "helmet/5a7c4850e899ef00150be888": "5c0558060db834001b735271"
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "after": {
+   "cards": {
+    "helmet": "on",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-1.0%",
+    "weight": "1.30 KG"
+   },
+   "weight": "1.30 KG",
+   "focus": "头盔 › 夜视仪座",
+   "loadout": {
+    "glasses": null,
+    "helmet": "5a7c4850e899ef00150be885",
+    "helmet/5a7c4850e899ef00150be888": null
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "ctxLog": [
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": true
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "helmet/5a7c4850e899ef00150be888",
+    "kind": "attach",
+    "prevented": true
+   }
+  ],
+  "child": "helmet/5a7c4850e899ef00150be888"
+ },
+ "B_parent": {
+  "before": {
+   "cards": {
+    "helmet": "on",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-1.0%",
+    "weight": "2.18 KG"
+   },
+   "weight": "2.18 KG",
+   "focus": "头盔 › 夜视仪座",
+   "loadout": {
+    "glasses": null,
+    "helmet": "5a7c4850e899ef00150be885",
+    "helmet/5a7c4850e899ef00150be888": "5c0558060db834001b735271"
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "after": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "头盔",
+   "loadout": {
+    "glasses": null,
+    "helmet": null
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "ctxLog": [
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": true
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "helmet/5a7c4850e899ef00150be888",
+    "kind": "attach",
+    "prevented": true
+   },
+   {
+    "slot": "helmet",
+    "kind": "root",
+    "prevented": true
+   }
+  ]
+ },
+ "C": {
+  "before": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "focus",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "-10.0%",
+    "turn": "-4.0%",
+    "ergo": "-6.0%",
+    "weight": "11.95 KG"
+   },
+   "weight": "11.95 KG",
+   "focus": "护甲",
+   "loadout": {
+    "glasses": null,
+    "helmet": null,
+    "armor": "5ca21c6986f77479963115a7",
+    "armor/Front_plate": "656f9d5900d62bcd2e02407c"
+   },
+   "platesOn": 1,
+   "nodesAll": 0
+  },
+  "after": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "focus",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "护甲",
+   "loadout": {
+    "glasses": null,
+    "helmet": null,
+    "armor": null
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "ctxLog": [
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": true
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "glasses",
+    "kind": "root",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "other",
+    "kind": "",
+    "prevented": false
+   },
+   {
+    "slot": "helmet/5a7c4850e899ef00150be888",
+    "kind": "attach",
+    "prevented": true
+   },
+   {
+    "slot": "helmet",
+    "kind": "root",
+    "prevented": true
+   },
+   {
+    "slot": "armor",
+    "kind": "root",
+    "prevented": true
+   }
+  ]
+ },
+ "D": {
+  "before": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "focus",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "眼镜",
+   "loadout": {
+    "glasses": null,
+    "helmet": null,
+    "armor": null
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "after": {
+   "cards": {
+    "helmet": "empty",
+    "face": "empty",
+    "glasses": "focus",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "眼镜",
+   "loadout": {
+    "glasses": null,
+    "helmet": null,
+    "armor": null
+   },
+   "platesOn": 0,
+   "nodesAll": 0
+  }
+ },
+ "E": {
+  "saved": {
+   "cards": {
+    "helmet": "on",
+    "face": "empty",
+    "glasses": "focus",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-3.0%",
+    "weight": "1.42 KG"
+   },
+   "weight": "1.42 KG",
+   "focus": "眼镜",
+   "loadout": {
+    "helmet": "5a7c4850e899ef00150be885",
+    "glasses": "5b432be65acfc433000ed01f"
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "cleared": {
+   "cards": {
+    "helmet": "focus",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "0%",
+    "ergo": "0%",
+    "weight": "0 KG"
+   },
+   "weight": "0 KG",
+   "focus": "头盔",
+   "loadout": {},
+   "platesOn": 0,
+   "nodesAll": 0
+  },
+  "loaded": {
+   "cards": {
+    "helmet": "focus",
+    "face": "empty",
+    "glasses": "on",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-3.0%",
+    "weight": "1.42 KG"
+   },
+   "weight": "1.42 KG",
+   "focus": "头盔",
+   "loadout": {
+    "helmet": "5a7c4850e899ef00150be885",
+    "glasses": "5b432be65acfc433000ed01f"
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "unequipped": {
+   "cards": {
+    "helmet": "focus",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-1.0%",
+    "weight": "1.30 KG"
+   },
+   "weight": "1.30 KG",
+   "focus": "头盔",
+   "loadout": {
+    "helmet": "5a7c4850e899ef00150be885",
+    "glasses": null
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  },
+  "reloaded": {
+   "cards": {
+    "helmet": "focus",
+    "face": "empty",
+    "glasses": "empty",
+    "headphones": "empty",
+    "armor": "empty",
+    "rig": "empty",
+    "backpack": "empty",
+    "main1": null,
+    "main2": null,
+    "holster": "empty",
+    "melee": "empty"
+   },
+   "nodes": [],
+   "stats": {
+    "speed": "0%",
+    "turn": "-1.0%",
+    "ergo": "-1.0%",
+    "weight": "1.30 KG"
+   },
+   "weight": "1.30 KG",
+   "focus": "头盔",
+   "loadout": {
+    "helmet": "5a7c4850e899ef00150be885",
+    "glasses": null
+   },
+   "platesOn": 0,
+   "nodesAll": 2
+  }
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "side": {
+  "x": 0,
+  "y": 70,
+  "w": 504,
+  "h": 980
+ },
+ "sideScrollH": 980,
+ "board": {
+  "x": 0,
+  "y": 114,
+  "w": 503,
+  "h": 584
+ },
+ "rows": [
+  {
+   "cell": "helmet",
+   "y": 115,
+   "h": 86
+  },
+  {
+   "cell": "left",
+   "y": 204,
+   "h": 133
+  },
+  {
+   "cell": "mid",
+   "y": 204,
+   "h": 133
+  },
+  {
+   "cell": "armor",
+   "y": 204,
+   "h": 133
+  },
+  {
+   "cell": "rig",
+   "y": 204,
+   "h": 133
+  },
+  {
+   "cell": "gun",
+   "y": 349,
+   "h": 108
+  },
+  {
+   "cell": "backpack",
+   "y": 349,
+   "h": 108
+  },
+  {
+   "cell": "primary2",
+   "y": 469,
+   "h": 108
+  },
+  {
+   "cell": "holster",
+   "y": 589,
+   "h": 108
+  },
+  {
+   "cell": "melee",
+   "y": 589,
+   "h": 108
+  }
+ ],
+ "gaps": [
+  {
+   "from": "helmet",
+   "to": "left",
+   "gap": 3
+  },
+  {
+   "from": "left",
+   "to": "mid",
+   "gap": -133
+  },
+  {
+   "from": "mid",
+   "to": "armor",
+   "gap": -133
+  },
+  {
+   "from": "armor",
+   "to": "rig",
+   "gap": -133
+  },
+  {
+   "from": "rig",
+   "to": "gun",
+   "gap": 12
+  },
+  {
+   "from": "gun",
+   "to": "backpack",
+   "gap": -108
+  },
+  {
+   "from": "backpack",
+   "to": "primary2",
+   "gap": 12
+  },
+  {
+   "from": "primary2",
+   "to": "holster",
+   "gap": 12
+  },
+  {
+   "from": "holster",
+   "to": "melee",
+   "gap": -108
+  }
+ ],
+ "lineGaps": [
+  3,
+  12,
+  12,
+  12
+ ],
+ "lineCount": 5,
+ "overlaps": [
+  {
+   "from": "left",
+   "to": "mid",
+   "gap": -133
+  },
+  {
+   "from": "mid",
+   "to": "armor",
+   "gap": -133
+  },
+  {
+   "from": "armor",
+   "to": "rig",
+   "gap": -133
+  },
+  {
+   "from": "gun",
+   "to": "backpack",
+   "gap": -108
+  },
+  {
+   "from": "holster",
+   "to": "melee",
+   "gap": -108
+  }
+ ],
+ "clippedText": [],
+ "tag": "after",
+ "viewport": {
+  "w": 1680,
+  "h": 1050
+ }
+}

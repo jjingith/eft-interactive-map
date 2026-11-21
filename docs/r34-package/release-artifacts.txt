@@ -1,0 +1,30 @@
+﻿host=HOMONAS user=MASTERJJ at=2026-11-03T11:30:48.7378107+08:00 round=R34-package-3
+
+## release 产物清单（版本 0.1.0）
+
+构建命令: powershell -ExecutionPolicy Bypass -File build\build_release.ps1 -SkipBase
+dist 来源: R34-package 已重建的 dist\EFTMap（14,230 文件 / 161,610,109 B）+ 3 个客户端壳文件
+
+EFTMap-AppWindow-0.1.0.zip
+  路径: D:\personal\trae\02-塔科夫\eft-interactive-map\release\EFTMap-AppWindow-0.1.0.zip
+  体积: 122418056 B (116.75 MB)
+  mtime: 2026-11-03T11:18:04.9394239+08:00
+  SHA256: 0742DFF7E589E6B1127631E6DAC2B517AF36C1E68AFA99BA7CF34B611145FE4B
+  FileVersion: ''  ProductVersion: ''
+
+EFTMap-Portable-0.1.0.zip
+  路径: D:\personal\trae\02-塔科夫\eft-interactive-map\release\EFTMap-Portable-0.1.0.zip
+  体积: 122417917 B (116.75 MB)
+  mtime: 2026-11-03T11:14:47.7448337+08:00
+  SHA256: FB3FDFAEAF2AFBE9F5D0C35297BBE68EF7CC2BBB9FAE8E9B81A7C39F58C73DAB
+  FileVersion: ''  ProductVersion: ''
+
+EFTMap-Setup-0.1.0.exe
+  路径: D:\personal\trae\02-塔科夫\eft-interactive-map\release\EFTMap-Setup-0.1.0.exe
+  体积: 133274698 B (127.1 MB)
+  mtime: 2026-11-03T11:18:44.0719046+08:00
+  SHA256: 1BAC950D4CC2A0D25337D6AA3E303131E0FEFD3C84B49B695086647EFCC7C169
+  FileVersion: ''  ProductVersion: ''
+
+版本来源: tools\serve.py VERSION=0.1.0；安装器 VERSION=0.1.0；注册表 DisplayVersion=0.1.0
+Setup exe 未写 FileVersion/ProductVersion 资源，版本以文件名与安装器常量/注册表为准。

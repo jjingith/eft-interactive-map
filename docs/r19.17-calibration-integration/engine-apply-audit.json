@@ -1,0 +1,1383 @@
+{
+  "generatedAt": "2026-11-21T05:40:45",
+  "schema": "r19.17-engine-apply-audit/1",
+  "calibrationFile": "data/gun-layout-calibration.json",
+  "corpus": {
+    "guns": 152,
+    "totalRecords": 397,
+    "applied": 388,
+    "unmatched": 9,
+    "fallback": 0,
+    "stale": 8,
+    "suppressed": 1,
+    "staleRecords": [
+      {
+        "gun": "59d6088586f774275f37482f",
+        "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+        "path": "mod_sight_rear/mod_sight_rear"
+      },
+      {
+        "gun": "5a0ec13bfcdbcb00165aa685",
+        "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+        "path": "mod_sight_rear/mod_sight_rear"
+      },
+      {
+        "gun": "59ff346386f77477562ff5e2",
+        "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+        "path": "mod_sight_rear/mod_sight_rear"
+      },
+      {
+        "gun": "5abcbc27d8ce8700182eceeb",
+        "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+        "path": "mod_sight_rear/mod_sight_rear"
+      },
+      {
+        "gun": "59e6152586f77473dc057aa1",
+        "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+        "path": "mod_sight_rear/mod_sight_rear"
+      },
+      {
+        "gun": "645e0c6b3b381ede770e1cc9",
+        "key": "mod_barrel/mod_muzzle/mod_mount|mod_mount|64527a3a7da7133e5a09ca99",
+        "path": "mod_barrel/mod_muzzle/mod_mount"
+      },
+      {
+        "gun": "6871284e9a353bb50606f3ed",
+        "key": "mod_handguard/mod_mount_001/mod_tactical|mod_tactical|68712b57a1be89347f0d8179",
+        "path": "mod_handguard/mod_mount_001/mod_tactical"
+      },
+      {
+        "gun": "6871284e9a353bb50606f3ed",
+        "key": "mod_handguard/mod_mount_001|mod_mount_001|687128c4505fed5f370b1625",
+        "path": "mod_handguard/mod_mount_001"
+      }
+    ],
+    "suppressedRecords": [
+      {
+        "gun": "6871284e9a353bb50606f3ed",
+        "key": "mod_mount_004|mod_mount_004|",
+        "path": "mod_mount_004"
+      }
+    ],
+    "exactCoords": 388,
+    "mismatched": [],
+    "byGun": {
+      "5644bd2b4bdc2d3b4c8b4572": {
+        "name": "AK-74N 5.45x39 突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5cadc190ae921500103bb3b6": {
+        "name": "伯莱塔 M9A3 9x19 手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5aafa857e5b5b00018480968": {
+        "name": "春田 M1A 7.62x51 步枪",
+        "records": 6,
+        "applied": 6,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 6,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5c46fbd72e2216398b5a8c9c": {
+        "name": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5e81c3cbac2bb513793cdc75": {
+        "name": "柯尔特 M1911A1 .45 ACP 手枪",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5f36a0e5fbf956000b716b65": {
+        "name": "柯尔特 M45A1 .45 ACP 手枪",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "602a9740da11d6478d5a06dc": {
+        "name": "列别杰夫 PL-15 9x19 手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "579204f224597773d619e051": {
+        "name": "马卡洛夫 PM(t) 9x18PM 手枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5448bd6b4bdc2dfc2f8b4569": {
+        "name": "马卡洛夫9x18PM 手枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5abccb7dd8ce87001773e277": {
+        "name": "斯捷奇金 APB 9x18PM 消音型自动手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a17f98cfcdbcb0980087290": {
+        "name": "斯捷奇金 APS 9x18PM 冲锋手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5b3b713c5acfc4330140bd8d": {
+        "name": "托卡列夫 TT-33 7.62x25 黄金手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "571a12c42459771f627b58a0": {
+        "name": "托卡列夫 TT-33 7.62x25 手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59f98b4986f7746f546d2cef": {
+        "name": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "576a581d2459771e7b1bc4f1": {
+        "name": "雅利金 MP-443 “乌鸦” 9x19 手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "624c2e8614da335f1e034d8c": {
+        "name": "Chiappa 犀牛 200DS 9x19 左轮手枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "61a4c8884f95bc3b2c5dc96f": {
+        "name": "Chiappa 犀牛 50DS .357 左轮手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5d3eb3b0a4b93615055e84d2": {
+        "name": "FN Five-seveN MK2 5.7x28 手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5d67abc1a4b93614ec50137f": {
+        "name": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a7ae0c351dfba0017554310": {
+        "name": "Glock 17 9x19 手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5b1fa9b25acfc40018633c01": {
+        "name": "GLOCK 18C 9x19 冲锋手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "63088377b5cd696784087147": {
+        "name": "Glock 19X 9x19 手枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6193a720f8ee7e52e42109ed": {
+        "name": "HK USP .45 ACP手枪",
+        "records": 6,
+        "applied": 6,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 6,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "669fa409933e898cce0c2166": {
+        "name": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "669fa3f88abd2662d80eee77": {
+        "name": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "669fa39b48fc9f8db6035a0c": {
+        "name": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "669fa3d876116c89840b1217": {
+        "name": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "668fe5a998b5ad715703ddd6": {
+        "name": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "56e0598dd2720bb5668b45a6": {
+        "name": "PB 9x18PM消音手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "633ec7c2a6918cb895019c6c": {
+        "name": "RSh-12 12.7x55转轮手枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "56d59856d2720bd8418b456a": {
+        "name": "SIG P226R 9x19 手枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6184055050224f204c1da540": {
+        "name": "FN SCAR-L 5.56x45突击步枪",
+        "records": 14,
+        "applied": 14,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 14,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "618428466ef05c2ce828f218": {
+        "name": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+        "records": 14,
+        "applied": 14,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 14,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "623063e994fc3f7b302a9696": {
+        "name": "HK G36 5.56x45 突击步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5d43021ca4b9362eab4b5e25": {
+        "name": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6718817435e3cfd9550d2c27": {
+        "name": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "63171672192e68c5460cebc5": {
+        "name": "Steyr AUG A3 5.56x45突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ac66d9b5acfc4001633997a": {
+        "name": "AK-105 5.45x39 突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5bf3e03b0db834001d2c4a9c": {
+        "name": "AK-74 5.45x39 突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ac4cd105acfc40016339859": {
+        "name": "AK-74M 5.45x39 突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5bf3e0490db83400196199af": {
+        "name": "AKS-74 5.45x39 突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ab8e9fcd8ce870019439434": {
+        "name": "AKS-74N 5.45x39 突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5839a40f24597726f856b511": {
+        "name": "AKS-74UB 5.45x39 短突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "583990e32459771419544dd2": {
+        "name": "AKS-74UN 5.45x39 短突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5bfd297f0db834001a669119": {
+        "name": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型）",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ae08f0a5acfc408fb1398a1": {
+        "name": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型）",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "643ea5b23db6f9f57107d9fd": {
+        "name": "托卡列夫 SVT-40 7.62x54R 步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "61f7c9e189e6fb1a5e3ea78d": {
+        "name": "MP-18 7.62x54R单发步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "64637076203536ad5600c990": {
+        "name": "PKM 7.62x54R 机枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "64ca3d3954fc657e230529cc": {
+        "name": "PKP 7.62x54R 步兵机枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "55801eed4bdc2d89578b4588": {
+        "name": "SV-98 7.62x54R 栓动式狙击步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a367e5dc4a282000e49738f": {
+        "name": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5bfea6e90db834001b7347f3": {
+        "name": "雷明顿Model 700 7.62x51 狙击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6932abeb5403890d0c09c926": {
+        "name": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5dcbd56fdbd3d91b3e5468d5": {
+        "name": "沙漠科技 MDR 7.62x51 突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "588892092459774ac91d4b11": {
+        "name": "DVL-10 7.62x51 栓动式狙击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6165ac306ef05c2ce828ef74": {
+        "name": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+        "records": 14,
+        "applied": 14,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 14,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6183afd850224f204c1da514": {
+        "name": "FN SCAR-H 7.62x51突击步枪",
+        "records": 14,
+        "applied": 14,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 14,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "676176d362e0497044079f4c": {
+        "name": "FN SCAR-H X-17 7.62x51突击步枪",
+        "records": 14,
+        "applied": 14,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 14,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5f2a9575926fd9352339381f": {
+        "name": "Kel-Tec RFB 7.62x51",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5df24cf80dee1b22f862e9bc": {
+        "name": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "65fb023261d5829b2d090755": {
+        "name": "U.S Ordnance M60E4 7.62x51 轻机枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "661ceb1b9311543c7104149b": {
+        "name": "U.S Ordnance M60E6 7.62x51 轻机枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "661cec09b2c6356b4d0c7a36": {
+        "name": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5c501a4d2e221602b412b540": {
+        "name": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "587e02ff24597743df3deaeb": {
+        "name": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+        "records": 7,
+        "applied": 7,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 7,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "574d967124597745970e7c94": {
+        "name": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+        "records": 6,
+        "applied": 6,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 6,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ac66d2e5acfc43b321d4b53": {
+        "name": "AK-103 7.62x39 突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 1,
+        "ammoRelocated": null
+      },
+      "5ac66d725acfc43b321d4b60": {
+        "name": "AK-104 7.62x39 突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 1,
+        "ammoRelocated": null
+      },
+      "59d6088586f774275f37482f": {
+        "name": "AKM 7.62x39 突击步枪",
+        "records": 2,
+        "applied": 1,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a0ec13bfcdbcb00165aa685": {
+        "name": "AKMN 7.62x39 突击步枪",
+        "records": 3,
+        "applied": 2,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59ff346386f77477562ff5e2": {
+        "name": "AKMS 7.62x39 突击步枪",
+        "records": 3,
+        "applied": 2,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5abcbc27d8ce8700182eceeb": {
+        "name": "AKMSN 7.62x39 突击步枪",
+        "records": 4,
+        "applied": 3,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "628a60ae6b1d481ff772e9c8": {
+        "name": "Rifle Dynamics RD-704 7.62x39突击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6513ef33e06849f06c0957ca": {
+        "name": "RPD 7.62x39 轻机枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "65268d8ecb944ff1e90ea385": {
+        "name": "RPDN 7.62x39 轻机枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59e6152586f77473dc057aa1": {
+        "name": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+        "records": 2,
+        "applied": 1,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "65290f395ae2ae97b80fdf2d": {
+        "name": "SIG MCX SPEAR 6.8x51突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "60339954d62c9b14ed777c06": {
+        "name": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5e00903ae9dc277128008b87": {
+        "name": "B&T MP9 9x19 冲锋枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5de7bd7bfd6b4e6e2276dc25": {
+        "name": "B&T MP9-N 9x19 冲锋枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5d2f0d8048f0356c925bc3b0": {
+        "name": "HK MP5K 9x19 微型冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "66992b349950f5f4cd06029f": {
+        "name": "IWI UZI 9x19冲锋枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6680304edadb7aa61d00cef0": {
+        "name": "IWI UZI PRO Pistol 9x19冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "668e71a8dadf42204c032ce1": {
+        "name": "IWI UZI PRO SMG 9x19冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59984ab886f7743e98271174": {
+        "name": "PP-19-01 勇士 9x19 冲锋枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59f9cabd86f7743a10721f46": {
+        "name": "Saiga-9 9x19卡宾枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5fc3f2d5900b1d5091531e57": {
+        "name": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "57f4c844245977379d5c14d1": {
+        "name": "PP-9 楔子 9x18PMM 冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "57d14d2524597714373db789": {
+        "name": "PP-91 雪松 9x18PM冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "57f3c6bd24597738e730fa2f": {
+        "name": "PP-91-01 雪松-B 9x18PM 冲锋枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ac66cb05acfc40198510a10": {
+        "name": "AK-101 5.56x45 突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ac66d015acfc400180ae6e4": {
+        "name": "AK-102 5.56x45 突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "57c44b372459772d2b39b8ce": {
+        "name": "AS VAL“巨浪” 9x39 特种突击步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "57838ad32459774a17445cd2": {
+        "name": "VSS “绞丝机”9x39 特种狙击步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "651450ce0e00edc794068371": {
+        "name": "SR-3M 9x39紧凑型突击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "645e0c6b3b381ede770e1cc9": {
+        "name": "KBP VSK-94 9x39步枪",
+        "records": 2,
+        "applied": 1,
+        "unmatched": 1,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "644674a13d52156624001fbc": {
+        "name": "KBP 9A-91 9x39紧凑型突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6871284e9a353bb50606f3ed": {
+        "name": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+        "records": 10,
+        "applied": 7,
+        "unmatched": 3,
+        "fallback": 0,
+        "exactMatch": 7,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "68aee763130c00663d08aea8": {
+        "name": "TKPD 9.3x64 突击卡宾枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "67d0576f29f580ebc10efd08": {
+        "name": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "59e6687d86f77411d949b251": {
+        "name": "VPO-209 .366TKM 卡宾枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5de652c31b7e3716273428be": {
+        "name": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5cc82d76e24e8d00134b4b83": {
+        "name": "FN P90 5.7x28 冲锋枪",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6a78b7f8c2016eb33e0027cd": {
+        "name": "FN P90 5.7x28 冲锋枪（灾厄）",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5ba26383d4351e00334c93d9": {
+        "name": "HK MP7A1 4.6x30 冲锋枪",
+        "records": 7,
+        "applied": 7,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 7,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5bd70322209c4d00d7167b8f": {
+        "name": "HK MP7A2 4.6x30 冲锋枪",
+        "records": 8,
+        "applied": 8,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 8,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5fc3e272f8b6a877a729eac5": {
+        "name": "HK UMP .45 ACP冲锋枪",
+        "records": 7,
+        "applied": 7,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 7,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5fb64bc92b1b027b1f50bcf2": {
+        "name": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+        "records": 7,
+        "applied": 7,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 7,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "62e14904c2699c0ec93adc47": {
+        "name": "SR-2M 石楠 9x21 冲锋枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a38e6bac4a2826c6e06d79b": {
+        "name": "TOZ-106 20铅径栓动式霰弹枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5e848cc2988a8701445df1e8": {
+        "name": "TOZ KS-23M 23x75 毫米泵动式霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "576165642459773c7a400233": {
+        "name": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "60db29ce99594040e04c4a27": {
+        "name": "MTs-255-12 12铅径转轮霰弹枪",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": {
+          "row": 5,
+          "col": 6
+        }
+      },
+      "67124dcfa3541f2a1f0e788b": {
+        "name": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "66ffa9b66e19cc902401c5e8": {
+        "name": "MPS Auto Assault-12 Gen 1 12铅径自动霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5580223e4bdc2d1c128b457f": {
+        "name": "MP-43-1C 12 铅径双管霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "64748cb8de82c85eaf0a273a": {
+        "name": "MP-43 12铅径截短双管霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "606dae0ab0e443224b421bb7": {
+        "name": "MP-155 12铅径半自动霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "56dee2bdd2720bc8328b4567": {
+        "name": "MP-153 12铅径半自动霰弹枪",
+        "records": 3,
+        "applied": 3,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 3,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "54491c4f4bdc2db1078b4568": {
+        "name": "MP-133 12 铅径泵动式霰弹枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5e870397991fd70db46995c8": {
+        "name": "Mossberg 590A1 12铅径泵动式霰弹枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6259b864ebedf17603599e88": {
+        "name": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+        "records": 4,
+        "applied": 4,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 4,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5a7828548dc32e5a9c28b516": {
+        "name": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "674d6121c09f69dfb201a888": {
+        "name": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5cadfbf7ae92152ac412eeef": {
+        "name": "ASh-12 12.7x55 突击步枪",
+        "records": 1,
+        "applied": 1,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 1,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "5e81ebcd8e146c7080625e15": {
+        "name": "FN GL-40 Mk.2 榴弹发射器",
+        "records": 5,
+        "applied": 5,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 5,
+        "topPad": 0,
+        "ammoRelocated": null
+      },
+      "6275303a9f372d6ea97f9ec7": {
+        "name": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+        "records": 8,
+        "applied": 8,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 8,
+        "topPad": 0,
+        "ammoRelocated": {
+          "row": 5,
+          "col": 6
+        }
+      },
+      "673cab3e03c6a20581028bc1": {
+        "name": "Sako TRG M10 .338 LM 栓动狙击步枪",
+        "records": 2,
+        "applied": 2,
+        "unmatched": 0,
+        "fallback": 0,
+        "exactMatch": 2,
+        "topPad": 0,
+        "ammoRelocated": null
+      }
+    }
+  },
+  "checks": {
+    "corpusAppliedAll": true,
+    "corpusExactCoords": true,
+    "autoBaseline": true,
+    "akApplied": true,
+    "ownerIsolation": true,
+    "unmatchedFallback": true,
+    "invalidCoordsFallback": true,
+    "bodyReject": true,
+    "cellConflict": true,
+    "swapApplied": true,
+    "displaceKeepsAll": true,
+    "topPadRecomputed": true,
+    "ammoDodged": true,
+    "roleOverride": true,
+    "noCalibBaseline": true,
+    "engineAutoReadsCalib": true,
+    "ownerChangeNoCross": true,
+    "noRecordsNoChange": true
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "tag": "before-mp5",
+  "url": "http://127.0.0.1:8787/",
+  "clicked": [
+    [
+      "view-gun",
+      true
+    ],
+    [
+      "gun-card",
+      true
+    ],
+    [
+      "mode-build",
+      true
+    ]
+  ],
+  "info": {
+    "viewport": {
+      "w": 1920,
+      "h": 919
+    },
+    "badge": "rev R19.5e-3a2cb94c",
+    "buildRev": "R19.5e-3a2cb94c",
+    "buildpage": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 1920,
+        "h": 816
+      },
+      "cols": "461px 461px 922px",
+      "gap": "8px"
+    },
+    "forge": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 461,
+        "h": 816
+      },
+      "padding": "10px 12px 16px",
+      "fontSize": "12px",
+      "scrollH": 816,
+      "clientH": 816,
+      "head": {
+        "x": 12,
+        "y": 113,
+        "w": 436,
+        "h": 20
+      },
+      "headFont": "13px",
+      "subFont": "10px",
+      "subMargin": "2px 0px 10px",
+      "secMargin": "12px"
+    },
+    "canvas": {
+      "rect": {
+        "x": 481,
+        "y": 441,
+        "w": 422,
+        "h": 259
+      },
+      "display": "flex",
+      "cols": "none",
+      "rowGap": "5px",
+      "colGap": "5px",
+      "cellCount": 0,
+      "rowCount": 0,
+      "rows": {},
+      "parts": [
+        {
+          "slot": "mod_reciever/mod_mount",
+          "row": "auto",
+          "col": "auto",
+          "x": 496,
+          "y": 459,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_muzzle/mod_muzzle",
+          "row": "auto",
+          "col": "auto",
+          "x": 552,
+          "y": 459,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_muzzle",
+          "row": "auto",
+          "col": "auto",
+          "x": 608,
+          "y": 459,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_stock",
+          "row": "auto",
+          "col": "auto",
+          "x": 496,
+          "y": 515,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_sight_rear",
+          "row": "auto",
+          "col": "auto",
+          "x": 552,
+          "y": 515,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "row": "auto",
+          "col": "auto",
+          "x": 608,
+          "y": 515,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_reciever",
+          "row": "auto",
+          "col": "auto",
+          "x": 608,
+          "y": 571,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_magazine",
+          "row": "auto",
+          "col": "auto",
+          "x": 637,
+          "y": 639,
+          "w": 52,
+          "h": 52
+        },
+        {
+          "slot": "mod_charge",
+          "row": "auto",
+          "col": "auto",
+          "x": 695,
+          "y": 639,
+          "w": 52,
+          "h": 52
+        }
+      ],
+      "overlaps": [],
+      "scrollW": 420,
+      "clientW": 420,
+      "scrollH": 257,
+      "clientH": 257,
+      "gun": {
+        "rect": {
+          "x": 663,
+          "y": 459,
+          "w": 232,
+          "h": 164
+        },
+        "colSpan": "auto"
+      }
+    },
+    "centerOrder": [
+      "gw-cmp",
+      "gw-loadvar",
+      "gw-nodecanvas",
+      "gw-bars",
+      "gw-hidden",
+      "gw-focus",
+      "gw-tree",
+      "gw-stats",
+      "gw-ammo",
+      "gw-bottom"
+    ],
+    "bars": {
+      "x": 481,
+      "y": 284,
+      "w": 422,
+      "h": 66
+    },
+    "stats": {
+      "x": 481,
+      "y": 706,
+      "w": 422,
+      "h": 69
+    },
+    "hidden": {
+      "x": 481,
+      "y": 353,
+      "w": 422,
+      "h": 66
+    },
+    "focus": {
+      "x": 481,
+      "y": 422,
+      "w": 422,
+      "h": 16
+    },
+    "ammo": {
+      "x": 481,
+      "y": 785,
+      "w": 422,
+      "h": 91
+    },
+    "bottom": {
+      "x": 481,
+      "y": 885,
+      "w": 422,
+      "h": 222
+    },
+    "hiddenCells": 11,
+    "statsCells": 16,
+    "centerScroll": {
+      "w": 446,
+      "cw": 446
+    },
+    "consoleErrors": 0
+  }
+}

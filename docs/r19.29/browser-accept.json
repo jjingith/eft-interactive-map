@@ -1,0 +1,313 @@
+{
+ "build": "R19.29",
+ "pass": true,
+ "checks": [
+  {
+   "name": "build = R19.29",
+   "ok": true,
+   "detail": "R19.29"
+  },
+  {
+   "name": "A1 AKM 后照门在 r2c6",
+   "ok": true,
+   "detail": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "",
+    "item": "AKM 照门"
+   }
+  },
+  {
+   "name": "A2 光学子槽在父件上方同列（G36 / MCX SPEAR）",
+   "ok": true,
+   "detail": [
+    [
+     "G36",
+     [
+      {
+       "child": "mod_scope/mod_scope",
+       "c": [
+        1,
+        7
+       ],
+       "parent": "mod_scope",
+       "p": [
+        2,
+        7
+       ],
+       "aligned": true
+      }
+     ]
+    ],
+    [
+     "MCX SPEAR",
+     [
+      {
+       "child": "mod_reciever/mod_scope/mod_scope",
+       "c": [
+        1,
+        5
+       ],
+       "parent": "mod_reciever/mod_scope",
+       "p": [
+        2,
+        5
+       ],
+       "aligned": true
+      }
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "B 定位 r6c1 战术槽",
+   "ok": true,
+   "detail": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_000",
+    "row": 6,
+    "col": 1,
+    "parent": "mod_reciever/mod_mount_001",
+    "item": ""
+   }
+  },
+  {
+   "name": "B1 子槽占父件同行右邻格 r6c2",
+   "ok": true,
+   "detail": {
+    "parent": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": "Kiba Arms 25毫米环形基座"
+    },
+    "child": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+     "row": 6,
+     "col": 2,
+     "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+     "item": ""
+    }
+   }
+  },
+  {
+   "name": "B2 原 r6c2 槽位右移且不与子槽同格",
+   "ok": true,
+   "detail": {
+    "before": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": ""
+    },
+    "after6c2": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+     "row": 6,
+     "col": 2,
+     "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+     "item": ""
+    },
+    "after6c3": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+     "row": 6,
+     "col": 3,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": ""
+    }
+   }
+  },
+  {
+   "name": "B3 移除后坐标完全恢复",
+   "ok": true,
+   "detail": {
+    "restored": true,
+    "noChild": true,
+    "at6c2": {
+     "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "parent": "mod_reciever/mod_mount_001",
+     "item": ""
+    }
+   }
+  },
+  {
+   "name": "C1 候选表含 R+E/3 列",
+   "ok": true,
+   "detail": [
+    "配件▲",
+    "子槽",
+    "后坐力",
+    "ACC",
+    "人机",
+    "R+E/3",
+    "尺寸",
+    "重量",
+    "FLEA价",
+    "状态"
+   ]
+  },
+  {
+   "name": "C2 R+E/3 计算/显示/符号一致",
+   "ok": true,
+   "detail": {
+    "slot": "mod_muzzle",
+    "rowsChecked": 10,
+    "bad": [],
+    "gainPositive": 10,
+    "gainNegative": 0
+   }
+  },
+  {
+   "name": "C3 存在「减少后坐→增益为正」的真实行",
+   "ok": true,
+   "detail": {
+    "gainPositive": 10
+   }
+  },
+  {
+   "name": "D1 控制台无 JS 异常/报错",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "D2 无外部网络请求",
+   "ok": true,
+   "detail": {}
+  }
+ ],
+ "detail": {
+  "A1": {
+   "gun": "AKM 7.62x39 突击步枪",
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "",
+    "item": "AKM 照门"
+   },
+   "calib": "1"
+  },
+  "A2": [
+   {
+    "gun": "G36",
+    "picked": true,
+    "pairs": [
+     {
+      "child": "mod_scope/mod_scope",
+      "c": [
+       1,
+       7
+      ],
+      "parent": "mod_scope",
+      "p": [
+       2,
+       7
+      ],
+      "aligned": true
+     }
+    ],
+    "allAligned": true
+   },
+   {
+    "gun": "MCX SPEAR",
+    "picked": true,
+    "pairs": [
+     {
+      "child": "mod_reciever/mod_scope/mod_scope",
+      "c": [
+       1,
+       5
+      ],
+      "parent": "mod_reciever/mod_scope",
+      "p": [
+       2,
+       5
+      ],
+      "aligned": true
+     }
+    ],
+    "allAligned": true
+   }
+  ],
+  "B": {
+   "installed": {
+    "id": "57d17e212459775a1179a0f5",
+    "t": "Kiba Arms 25毫米环形基座配件1—-1.0—1×10.093,888 ₽可装",
+    "conflict": false
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_000",
+    "row": 6,
+    "col": 1,
+    "parent": "mod_reciever/mod_mount_001",
+    "item": "Kiba Arms 25毫米环形基座"
+   },
+   "child": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+    "row": 6,
+    "col": 2,
+    "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+    "item": ""
+   },
+   "at6c2Before": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+    "row": 6,
+    "col": 2,
+    "parent": "mod_reciever/mod_mount_001",
+    "item": ""
+   },
+   "at6c2After": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+    "row": 6,
+    "col": 2,
+    "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+    "item": ""
+   },
+   "at6c3After": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+    "row": 6,
+    "col": 3,
+    "parent": "mod_reciever/mod_mount_001",
+    "item": ""
+   },
+   "restored": true,
+   "afterRemove6c2": {
+    "slot": "mod_reciever/mod_mount_001/mod_tactical_001",
+    "row": 6,
+    "col": 2,
+    "parent": "mod_reciever/mod_mount_001",
+    "item": ""
+   }
+  },
+  "C": {
+   "slot": "mod_muzzle",
+   "head": [
+    "配件▲",
+    "子槽",
+    "后坐力",
+    "ACC",
+    "人机",
+    "R+E/3",
+    "尺寸",
+    "重量",
+    "FLEA价",
+    "状态"
+   ],
+   "rowsChecked": 10,
+   "bad": [],
+   "gainPositive": 10,
+   "gainNegative": 0
+  },
+  "D": {
+   "consoleErrors": [],
+   "hosts": {
+    "127.0.0.1": 463
+   },
+   "external": {},
+   "requests": 463
+  }
+ }
+}

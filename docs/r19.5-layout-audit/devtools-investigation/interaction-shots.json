@@ -1,0 +1,20 @@
+{
+ "2-workbench": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.5-layout-audit\\devtools-investigation\\reference-screenshots\\i2-workbench.png",
+ "3-slot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.5-layout-audit\\devtools-investigation\\reference-screenshots\\i3-slot-clicked.png",
+ "4-pick": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.5-layout-audit\\devtools-investigation\\reference-screenshots\\i4-part-installed.png",
+ "rightPanelDiff_workbench_to_slot": {
+  "changedPx": 0,
+  "totalPx": 550400,
+  "ratio": 0.0
+ },
+ "rightPanelDiff_slot_to_pick": {
+  "changedPx": 0,
+  "totalPx": 550400,
+  "ratio": 0.0
+ },
+ "centerDiff_slot_to_pick": {
+  "changedPx": 0,
+  "totalPx": 425472,
+  "ratio": 0.0
+ }
+}

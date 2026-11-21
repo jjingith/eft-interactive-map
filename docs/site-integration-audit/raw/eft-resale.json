@@ -1,0 +1,1013 @@
+{
+ "name": "eft-resale",
+ "requested_url": "https://www.eftarkov.com/resale",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/resale",
+ "title": "倒货排行 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 3296,
+ "htmlLen": 71773,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 76,
+ "input": 4,
+ "table": 2,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "商人物品购买或兑换成本与跳蚤市场售价差价排行",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pve",
+   "text": "PVE",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp",
+   "text": "PVP",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=season",
+   "text": "赛季",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp",
+   "text": "全部等级",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp&level=1",
+   "text": "LL1",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp&level=2",
+   "text": "LL2",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp&level=3",
+   "text": "LL3",
+   "title": ""
+  },
+  {
+   "href": "/resale?mode=pvp&level=4",
+   "text": "LL4",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb023c86f7746d0d4b423c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb023c86f7746d0d4b423c",
+   "text": "武器箱",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb042886f7746c5005a7b2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb042886f7746c5005a7b2",
+   "text": "物品箱",
+   "title": ""
+  },
+  {
+   "href": "/item/5780cf7f2459777de4559322",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5780cf7f2459777de4559322",
+   "text": "宿舍楼 314 房间符号钥匙",
+   "title": ""
+  },
+  {
+   "href": "/task/5eaaaa7c93afa0558f3b5a1c",
+   "text": "🔒生存者之路 - 瘾君子",
+   "title": ""
+  },
+  {
+   "href": "/item/5bffdd7e0db834001b734a1a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5bffdd7e0db834001b734a1a",
+   "text": "Miller Bros. Blades M-2 战术剑",
+   "title": ""
+  },
+  {
+   "href": "/task/5c0bdb5286f774166e38eed4",
+   "text": "🔒坚如燧石",
+   "title": ""
+  },
+  {
+   "href": "/item/6492ef63cfcf7c89e701abf1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6492ef63cfcf7c89e701abf1",
+   "text": "Zenit DTK-1P 7.62x54R PK 膛口制退器",
+   "title": ""
+  },
+  {
+   "href": "/item/618168b350224f204c1da4d8",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/618168b350224f204c1da4d8",
+   "text": "13 英寸 FN SCAR-H 枪管 7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5a8ae73886f7747b2e6e1416",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5a8ae73886f7747b2e6e1416",
+   "text": "柯尔特 M4A1 5.56x45 卡宾枪 SOPMOD II",
+   "title": ""
+  },
+  {
+   "href": "/item/5ab8e79e86f7742d8b372e78",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5ab8e79e86f7742d8b372e78",
+   "text": "BNTI Gzhel-K（彩瓷-K）防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f29886f7746d956305a1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f29886f7746d956305a1",
+   "text": "DS Arms SA-58 7.62x51 突击步枪 PBR",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e5f3aa34a3034236bdb3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e5f3aa34a3034236bdb3",
+   "text": "HK G28 7.62x51 精确射手步枪 Patrol",
+   "title": ""
+  },
+  {
+   "href": "/item/5fd25119dd870108a754a163",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5fd25119dd870108a754a163",
+   "text": "SWORD International Mk-18 .338 LM 精确射手步枪 默认",
+   "title": ""
+  },
+  {
+   "href": "/task/5bc4893c86f774626f5ebf3e",
+   "text": "🔒塔科夫神射手 - 7",
+   "title": ""
+  },
+  {
+   "href": "/item/603409c80ca681766b6a0fb2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/603409c80ca681766b6a0fb2",
+   "text": "NPP KIASS Condor 护目镜",
+   "title": ""
+  },
+  {
+   "href": "/item/55d4491a4bdc2d882f8b456e",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/55d4491a4bdc2d882f8b456e",
+   "text": "MP-133 12 铅径 510 毫米枪管",
+   "title": ""
+  },
+  {
+   "href": "/item/5c9a26332e2216001219ea70",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c9a26332e2216001219ea70",
+   "text": "Daniel Defence RIS II 9.5 英寸 AR-15 规格护木（狼棕色）",
+   "title": ""
+  },
+  {
+   "href": "/item/640b20359ab20e15ee445fa9",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/640b20359ab20e15ee445fa9",
+   "text": "Aeroknox AX-15 15.8英寸 AR-15 M-LOK 护木",
+   "title": ""
+  },
+  {
+   "href": "/item/6183b0711cb55961fa0fdcad",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6183b0711cb55961fa0fdcad",
+   "text": "16 英寸 FN SCAR-H 枪管 7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/67600929bd0a0549d70993f6",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/67600929bd0a0549d70993f6",
+   "text": "防弹插板箱",
+   "title": ""
+  },
+  {
+   "href": "/task/6942b44f891369fc790e385a",
+   "text": "🔒轻重缓急",
+   "title": ""
+  },
+  {
+   "href": "/item/681096b551511048940afed9",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/681096b551511048940afed9",
+   "text": "MDR BLK LBL ALX 20 寸护木 (FDE)",
+   "title": ""
+  },
+  {
+   "href": "/item/637f57c532b66e7e320a6676",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/637f57c532b66e7e320a6676",
+   "text": "KAC URX 3.1 10.75 英寸下护木",
+   "title": ""
+  },
+  {
+   "href": "/item/681236df5cbf0518e00557a0",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/681236df5cbf0518e00557a0",
+   "text": "Lancer MCX 碳纤维 M-LOK 18 英寸护木",
+   "title": ""
+  },
+  {
+   "href": "/item/5c6d85e02e22165df16b81f4",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c6d85e02e22165df16b81f4",
+   "text": "10.6 英寸 HK416 枪管 5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/5a88af5086f77411a871682c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5a88af5086f77411a871682c",
+   "text": "Glock 17 9x19 手枪 Tac 2",
+   "title": ""
+  },
+  {
+   "href": "/item/5de8e67c4a9f347bc92edbd7",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5de8e67c4a9f347bc92edbd7",
+   "text": "B&T MP9-N 9x19 SMG上机匣",
+   "title": ""
+  },
+  {
+   "href": "/item/5c093db286f7740a1b2617e3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c093db286f7740a1b2617e3",
+   "text": "Mr. Holodilnick保温箱",
+   "title": ""
+  },
+  {
+   "href": "/item/6165aeedfaa1272e431521e3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6165aeedfaa1272e431521e3",
+   "text": "FN SCAR-H 7.62x51 上机匣 (FDE)",
+   "title": ""
+  },
+  {
+   "href": "/item/5c05413a0db834001c390617",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c05413a0db834001c390617",
+   "text": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+   "title": ""
+  },
+  {
+   "href": "/item/681245a31eb182c02f0d7f09",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/681245a31eb182c02f0d7f09",
+   "text": "16 英寸 MCX 枪管 .300 BLK",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc701d7e4a94900100ac4e7",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc701d7e4a94900100ac4e7",
+   "text": "16 英寸 P90 枪管 5.7x28",
+   "title": ""
+  },
+  {
+   "href": "https://space.bilibili.com/393480563",
+   "text": "© 2022-2026 逃离塔科夫中文Wiki · Powered by 大傻",
+   "title": ""
+  },
+  {
+   "href": "https://beian.miit.gov.cn",
+   "text": "皖ICP备2023025241号-1",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/resale",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59fb023c86f7746d0d4b423c-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59fb042886f7746c5005a7b2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5780cf7f2459777de4559322-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5bffdd7e0db834001b734a1a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6492ef63cfcf7c89e701abf1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/618168b350224f204c1da4d8-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5a8ae73886f7747b2e6e1416-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5ab8e79e86f7742d8b372e78-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5b83f29886f7746d956305a1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6193e5f3aa34a3034236bdb3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fd25119dd870108a754a163-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/603409c80ca681766b6a0fb2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/55d4491a4bdc2d882f8b456e-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c9a26332e2216001219ea70-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/640b20359ab20e15ee445fa9-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6183b0711cb55961fa0fdcad-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/67600929bd0a0549d70993f6-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/681096b551511048940afed9-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/637f57c532b66e7e320a6676-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/681236df5cbf0518e00557a0-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c6d85e02e22165df16b81f4-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5a88af5086f77411a871682c-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5de8e67c4a9f347bc92edbd7-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c093db286f7740a1b2617e3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/resale?mode=pvp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/resale?mode=pvp&level=1",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/resale?mode=pvp&level=2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/resale?mode=pvp&level=3",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/resale?mode=pvp&level=4",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252683663",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-resale.png",
+ "screenshot_bytes": 171381
+}

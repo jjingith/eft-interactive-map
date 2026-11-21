@@ -1,0 +1,24 @@
+﻿
+=== 2026-11-02 22:21:30 start pid=29676 ===
+22:21:30.160  桌面壳启动参数：--backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --scale 1.25 --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\dpi-1_25\window-state.json --capture d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\dpi-1_25 --exit-after-ms 7000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\dpi-1_25\desktop.log
+22:21:30.195  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-29676.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-29676.log" --parent-pid 29676
+22:21:30.222  后端已加入 Job Object（壳退出即杀）
+22:21:31.511  后端就绪：http://127.0.0.1:14933/ pid=47980
+22:21:31.523  WebView2 Runtime 版本：156.0.4314.58
+22:21:31.815  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+22:21:32.190  主窗口导航：http://127.0.0.1:14933/
+22:21:32.206  HWND 创建：1904422
+22:21:32.213  布局 325x325 @ (1575,695) scale=1.25 full=False
+22:21:32.216  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+22:21:32.269  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:14933/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:21:32.393  托盘已创建
+22:21:32.480  WebView2 就绪，导航：http://127.0.0.1:14933/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:21:33.021  主页面加载完成
+22:21:33.302  资源 HTTP 404：http://127.0.0.1:14933/favicon.ico
+22:21:35.558  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\",\"svgInner\":741530,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 \",\"svgImages\":1153,\"dpr\":1,\"inner\":[1264,761],\"visual\":[1264,761,1],\"viewport\":[634,726],\"stage\":[634,726],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:14933/data/flea-levels.json\",300,49],[\"http://127.0.0.1:14933/data/flea-prices.json\",300,65],[\"http://127.0.0.1:14933/data/season-documents.json\",300,43],[\"http://127.0.0.1:14933/data/search-index.json\",300,55],[\"http://127.0.0.1:14933/data/task-points.json\",300,53],[\"http://127.0.0.1:14933/data/tasks/tasks.regular.json\",300,116],[\"http://127.0.0.1:14933/data/tasks/guides.regular.json\",300,74],[\"http://127.0.0.1:14933/data/tasks/traders.json\",300,40],[\"http://127.0.0.1:14933/data/tasks/index.json\",300,40],[\"http://127.0.0.1:14933/data/tasks/season.json\",300,43],[\"http://127.0.0.1:14933/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:14933/data/satellite.json\",2600,10]]}"
+22:21:35.648  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\dpi-1_25
+22:21:38.711  RequestExit
+22:21:38.717  FormClosing exitRequested=True reason=UserClosing
+22:21:38.723  FormClosed begin
+22:21:38.849  桌面壳退出
+22:21:38.878  已请求后端 shutdown

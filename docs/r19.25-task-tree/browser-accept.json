@@ -1,0 +1,594 @@
+{
+ "build": "R19.25",
+ "pass": true,
+ "checks": [
+  {
+   "name": "A1 任务树渲染全部任务节点",
+   "ok": true,
+   "detail": {
+    "got": 503,
+    "expect": 503
+   }
+  },
+  {
+   "name": "A2 节点无重叠且尺寸正确",
+   "ok": true,
+   "detail": 0
+  },
+  {
+   "name": "A3 连线数量 = 前置边 + 失败分支边",
+   "ok": true,
+   "detail": {
+    "got": 257,
+    "expect": 257
+   }
+  },
+  {
+   "name": "A4 商人分带已渲染且标题为英文原名",
+   "ok": true,
+   "detail": [
+    "Prapor · 67 个任务 · 跨商人线 8",
+    "Therapist · 46 个任务 · 跨商人线 1",
+    "Fence · 13 个任务 · 跨商人线 1",
+    "Skier · 53 个任务 · 跨商人线 4"
+   ]
+  },
+  {
+   "name": "B1 首屏落在第一条商人带（可读）",
+   "ok": true,
+   "detail": {
+    "x": 12,
+    "y": -1.5199999999999996,
+    "k": 0.72
+   }
+  },
+  {
+   "name": "B2 适配全图可用且画布尺寸来自布局",
+   "ok": true,
+   "detail": {
+    "k": 0.1601593625498008,
+    "w": 4118,
+    "h": 5020
+   }
+  },
+  {
+   "name": "B3 复杂任务线（节点最多的分量）可定位放大",
+   "ok": true,
+   "detail": {
+    "comp": "0",
+    "n": 29,
+    "id": "6752f6d83038f7df520c83e8"
+   }
+  },
+  {
+   "name": "C1 搜索定位把目标节点移到视野中心",
+   "ok": true,
+   "detail": {
+    "ok": true,
+    "id": "6752f6d83038f7df520c83e8",
+    "matches": 1,
+    "cx": 695,
+    "cy": 418,
+    "vw": 1389,
+    "vh": 836
+   }
+  },
+  {
+   "name": "D1 选中节点高亮上下游",
+   "ok": true,
+   "detail": {
+    "pre": 1,
+    "post": 1,
+    "sel": 1,
+    "dim": 0,
+    "side": "半满半空"
+   }
+  },
+  {
+   "name": "D2 无关节点的视觉权重被降低（is-dim）",
+   "ok": true,
+   "detail": 0
+  },
+  {
+   "name": "E1 regular 渲染对应任务数",
+   "ok": true,
+   "detail": {
+    "nodes": 503,
+    "bands": 11,
+    "metrics": {
+     "nodes": 503,
+     "edges": 222,
+     "auxEdges": 35,
+     "failEdges": 35,
+     "cycleEdges": 0,
+     "components": 293,
+     "isolated": 246,
+     "bands": 11,
+     "layers": 18,
+     "rows": 7,
+     "dummies": 25,
+     "segments": 598,
+     "bends": 341,
+     "avgBends": 1.33,
+     "segmentCrossings": 353,
+     "segmentOverlaps": 24,
+     "segmentOverlapsLong": 15,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 22,
+     "nodeOverlaps": 0,
+     "longEdges": 11,
+     "crossTraderEdges": 96,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 20672360,
+     "nodeArea": 4249344,
+     "fillRatio": 0.206
+    },
+    "expect": 503
+   }
+  },
+  {
+   "name": "E2 regular 交叉/重叠指标正常",
+   "ok": true,
+   "detail": {
+    "nodes": 503,
+    "edges": 222,
+    "auxEdges": 35,
+    "failEdges": 35,
+    "cycleEdges": 0,
+    "components": 293,
+    "isolated": 246,
+    "bands": 11,
+    "layers": 18,
+    "rows": 7,
+    "dummies": 25,
+    "segments": 598,
+    "bends": 341,
+    "avgBends": 1.33,
+    "segmentCrossings": 353,
+    "segmentOverlaps": 24,
+    "segmentOverlapsLong": 15,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "straightCrossings": 22,
+    "nodeOverlaps": 0,
+    "longEdges": 11,
+    "crossTraderEdges": 96,
+    "dropped": 0,
+    "cycles": 0,
+    "canvasArea": 20672360,
+    "nodeArea": 4249344,
+    "fillRatio": 0.206
+   }
+  },
+  {
+   "name": "E1 pve 渲染对应任务数",
+   "ok": true,
+   "detail": {
+    "nodes": 499,
+    "bands": 11,
+    "metrics": {
+     "nodes": 499,
+     "edges": 221,
+     "auxEdges": 35,
+     "failEdges": 35,
+     "cycleEdges": 0,
+     "components": 290,
+     "isolated": 243,
+     "bands": 11,
+     "layers": 13,
+     "rows": 7,
+     "dummies": 20,
+     "segments": 603,
+     "bends": 347,
+     "avgBends": 1.36,
+     "segmentCrossings": 348,
+     "segmentOverlaps": 26,
+     "segmentOverlapsLong": 15,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 22,
+     "nodeOverlaps": 0,
+     "longEdges": 11,
+     "crossTraderEdges": 96,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 15118992,
+     "nodeArea": 4215552,
+     "fillRatio": 0.279
+    },
+    "expect": 499
+   }
+  },
+  {
+   "name": "E2 pve 交叉/重叠指标正常",
+   "ok": true,
+   "detail": {
+    "nodes": 499,
+    "edges": 221,
+    "auxEdges": 35,
+    "failEdges": 35,
+    "cycleEdges": 0,
+    "components": 290,
+    "isolated": 243,
+    "bands": 11,
+    "layers": 13,
+    "rows": 7,
+    "dummies": 20,
+    "segments": 603,
+    "bends": 347,
+    "avgBends": 1.36,
+    "segmentCrossings": 348,
+    "segmentOverlaps": 26,
+    "segmentOverlapsLong": 15,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "straightCrossings": 22,
+    "nodeOverlaps": 0,
+    "longEdges": 11,
+    "crossTraderEdges": 96,
+    "dropped": 0,
+    "cycles": 0,
+    "canvasArea": 15118992,
+    "nodeArea": 4215552,
+    "fillRatio": 0.279
+   }
+  },
+  {
+   "name": "E1 pvps 渲染对应任务数",
+   "ok": true,
+   "detail": {
+    "nodes": 462,
+    "bands": 11,
+    "metrics": {
+     "nodes": 462,
+     "edges": 184,
+     "auxEdges": 13,
+     "failEdges": 13,
+     "cycleEdges": 0,
+     "components": 286,
+     "isolated": 240,
+     "bands": 11,
+     "layers": 13,
+     "rows": 7,
+     "dummies": 12,
+     "segments": 395,
+     "bends": 198,
+     "avgBends": 1.01,
+     "segmentCrossings": 121,
+     "segmentOverlaps": 9,
+     "segmentOverlapsLong": 0,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 16,
+     "nodeOverlaps": 0,
+     "longEdges": 7,
+     "crossTraderEdges": 62,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 14139552,
+     "nodeArea": 3902976,
+     "fillRatio": 0.276
+    },
+    "expect": 462
+   }
+  },
+  {
+   "name": "E2 pvps 交叉/重叠指标正常",
+   "ok": true,
+   "detail": {
+    "nodes": 462,
+    "edges": 184,
+    "auxEdges": 13,
+    "failEdges": 13,
+    "cycleEdges": 0,
+    "components": 286,
+    "isolated": 240,
+    "bands": 11,
+    "layers": 13,
+    "rows": 7,
+    "dummies": 12,
+    "segments": 395,
+    "bends": 198,
+    "avgBends": 1.01,
+    "segmentCrossings": 121,
+    "segmentOverlaps": 9,
+    "segmentOverlapsLong": 0,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "straightCrossings": 16,
+    "nodeOverlaps": 0,
+    "longEdges": 7,
+    "crossTraderEdges": 62,
+    "dropped": 0,
+    "cycles": 0,
+    "canvasArea": 14139552,
+    "nodeArea": 3902976,
+    "fillRatio": 0.276
+   }
+  },
+  {
+   "name": "E3 三模式节点数彼此不同（数据独立）",
+   "ok": true,
+   "detail": {
+    "regular": 503,
+    "pve": 499,
+    "pvps": 462
+   }
+  },
+  {
+   "name": "G1 滚轮缩放 / 拖拽平移 / 重置视图都生效",
+   "ok": true,
+   "detail": {
+    "c0": "translate(12,-1.5199999999999996) scale(0.72)",
+    "c1": "translate(-69.96000000000004,-50.9024) scale(0.8064)",
+    "c2": "translate(-189.96000000000004,-110.9024) scale(0.8064)",
+    "c3": "translate(12,12) scale(0.16698152812762385)"
+   }
+  },
+  {
+   "name": "H1 布局稳定：选中/搜索/缩放/模式往返后坐标逐点一致",
+   "ok": true,
+   "detail": {
+    "same": true,
+    "len": 17195
+   }
+  },
+  {
+   "name": "H2 正交实测硬门槛：节点重叠 0、连接线穿卡片 0",
+   "ok": true,
+   "detail": {
+    "nodes": 503,
+    "edges": 222,
+    "auxEdges": 35,
+    "failEdges": 35,
+    "cycleEdges": 0,
+    "components": 293,
+    "isolated": 246,
+    "bands": 11,
+    "layers": 18,
+    "rows": 7,
+    "dummies": 25,
+    "segments": 598,
+    "bends": 341,
+    "avgBends": 1.33,
+    "segmentCrossings": 353,
+    "segmentOverlaps": 24,
+    "segmentOverlapsLong": 15,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "straightCrossings": 22,
+    "nodeOverlaps": 0,
+    "longEdges": 11,
+    "crossTraderEdges": 96,
+    "dropped": 0,
+    "cycles": 0,
+    "canvasArea": 20672360,
+    "nodeArea": 4249344,
+    "fillRatio": 0.206
+   }
+  },
+  {
+   "name": "H3 商人名 tooltip 无中文机翻",
+   "ok": true,
+   "detail": {
+    "tips": [],
+    "bad": []
+   }
+  },
+  {
+   "name": "H4 奖励里的商人名用英文原名",
+   "ok": true,
+   "detail": {
+    "sample": "任务物品：5937fd0086f7742bf33fc198 | 需要钥匙：机械钥匙 | 需找到 机械钥匙 ×1 | 在「海关」完成 1 项目标 | 含可选目标（经验值加成），不影响任务完成判定。 | 可选目标 1 项：取得油罐车钥匙 | 上交类目标需回到对应商人处提交（部分任务需在战局内交付）。 | 经验：3000 |",
+    "bad": []
+   }
+  },
+  {
+   "name": "F1 任务树节点副标题 = 商人英文名 + 等级 + 目标数",
+   "ok": true,
+   "detail": [
+    "Mechanic · Lv0 · 目标 3",
+    "Prapor · Lv0 · 目标 1",
+    "BTR Driver · Lv0 · 目标 4"
+   ]
+  },
+  {
+   "name": "F2 商人卡片显示英文原名",
+   "ok": true,
+   "detail": [
+    "Prapor",
+    "Therapist",
+    "Fence",
+    "Skier"
+   ]
+  },
+  {
+   "name": "F3 商人筛选下拉显示英文原名",
+   "ok": true,
+   "detail": [
+    "Prapor（66）",
+    "Therapist（53）",
+    "Fence（16）",
+    "Skier（67）"
+   ]
+  },
+  {
+   "name": "F4 列表标题使用英文商人名",
+   "ok": true,
+   "detail": "PvP（常规） · Therapist · 53 个任务"
+  },
+  {
+   "name": "F5 详情页副标题以英文商人名开头",
+   "ok": true,
+   "detail": "Prapor · 常规任务 · 等级 0 · 状态 未开始"
+  },
+  {
+   "name": "F6 详情页「所属商人」为英文原名",
+   "ok": true,
+   "detail": "任务 ID6740a2c17e3818d5bb0648b6 | 原始英文名Half-Empty | 当前模式PvP（常规） | 模式归属三种模式都有此任务；目标/前置/进度仍按模式各自独立保存 | 所属商人Prapor | 地图— | 阵营"
+  },
+  {
+   "name": "F7 前置/后续摘要以英文商人名开头",
+   "ok": true,
+   "detail": [
+    "Prapor · 需完成",
+    "Prapor"
+   ]
+  },
+  {
+   "name": "F8 进度页条目以英文商人名开头",
+   "ok": true,
+   "detail": [
+    "Prapor · 需完成",
+    "Prapor",
+    "Prapor · 等级 0 · 海关"
+   ]
+  },
+  {
+   "name": "F9 任务系统不再出现中文商人名",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "G2 所有请求同源（离线可跑）",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "G3 布局模块被真实加载",
+   "ok": true,
+   "detail": [
+    "http://127.0.0.1:8791/js/task-graph-layout.js?v=r19.27",
+    "http://127.0.0.1:8791/js/task-graph-layout.js?v=r19.27"
+   ]
+  },
+  {
+   "name": "G4 无 JS 异常 / 控制台错误",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "detail": {
+  "modes": {
+   "regular": {
+    "nodes": 503,
+    "bands": 11,
+    "metrics": {
+     "nodes": 503,
+     "edges": 222,
+     "auxEdges": 35,
+     "failEdges": 35,
+     "cycleEdges": 0,
+     "components": 293,
+     "isolated": 246,
+     "bands": 11,
+     "layers": 18,
+     "rows": 7,
+     "dummies": 25,
+     "segments": 598,
+     "bends": 341,
+     "avgBends": 1.33,
+     "segmentCrossings": 353,
+     "segmentOverlaps": 24,
+     "segmentOverlapsLong": 15,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 22,
+     "nodeOverlaps": 0,
+     "longEdges": 11,
+     "crossTraderEdges": 96,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 20672360,
+     "nodeArea": 4249344,
+     "fillRatio": 0.206
+    },
+    "expect": 503
+   },
+   "pve": {
+    "nodes": 499,
+    "bands": 11,
+    "metrics": {
+     "nodes": 499,
+     "edges": 221,
+     "auxEdges": 35,
+     "failEdges": 35,
+     "cycleEdges": 0,
+     "components": 290,
+     "isolated": 243,
+     "bands": 11,
+     "layers": 13,
+     "rows": 7,
+     "dummies": 20,
+     "segments": 603,
+     "bends": 347,
+     "avgBends": 1.36,
+     "segmentCrossings": 348,
+     "segmentOverlaps": 26,
+     "segmentOverlapsLong": 15,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 22,
+     "nodeOverlaps": 0,
+     "longEdges": 11,
+     "crossTraderEdges": 96,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 15118992,
+     "nodeArea": 4215552,
+     "fillRatio": 0.279
+    },
+    "expect": 499
+   },
+   "pvps": {
+    "nodes": 462,
+    "bands": 11,
+    "metrics": {
+     "nodes": 462,
+     "edges": 184,
+     "auxEdges": 13,
+     "failEdges": 13,
+     "cycleEdges": 0,
+     "components": 286,
+     "isolated": 240,
+     "bands": 11,
+     "layers": 13,
+     "rows": 7,
+     "dummies": 12,
+     "segments": 395,
+     "bends": 198,
+     "avgBends": 1.01,
+     "segmentCrossings": 121,
+     "segmentOverlaps": 9,
+     "segmentOverlapsLong": 0,
+     "edgeNodeHits": 0,
+     "edgeNodeHitEdges": 0,
+     "straightCrossings": 16,
+     "nodeOverlaps": 0,
+     "longEdges": 7,
+     "crossTraderEdges": 62,
+     "dropped": 0,
+     "cycles": 0,
+     "canvasArea": 14139552,
+     "nodeArea": 3902976,
+     "fillRatio": 0.276
+    },
+    "expect": 462
+   }
+  },
+  "orthogonal": {
+   "segmentCrossings": 353,
+   "segmentOverlaps": 24,
+   "segmentOverlapsLong": 15,
+   "edgeNodeHits": 0,
+   "bends": 341,
+   "segments": 598
+  },
+  "requests": {
+   "total": 230,
+   "external": []
+  }
+ }
+}

@@ -1,0 +1,37 @@
+﻿
+=== 2026-11-02 22:29:56 start pid=44892 ===
+22:29:56.738  桌面壳启动参数：--backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --smoke-json d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5\smoke.json --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5\window-state.json --capture d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5 --exit-after-ms 30000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5\desktop.log
+22:29:56.770  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-44892.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-44892.log" --parent-pid 44892
+22:29:56.800  后端已加入 Job Object（壳退出即杀）
+22:29:57.984  后端就绪：http://127.0.0.1:2717/ pid=39856
+22:29:58.028  WebView2 Runtime 版本：156.0.4314.58
+22:29:58.304  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+22:29:58.668  主窗口导航：http://127.0.0.1:2717/
+22:29:58.685  HWND 创建：1904604
+22:29:58.691  布局 260x260 @ (1644,764) scale=1 full=False
+22:29:58.694  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+22:29:58.744  布局 260x260 @ (1644,764) scale=1 full=False
+22:29:58.745  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:2717/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:29:58.880  托盘已创建
+22:29:58.954  WebView2 就绪，导航：http://127.0.0.1:2717/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:29:59.323  主页面加载完成
+22:29:59.664  资源 HTTP 404：http://127.0.0.1:2717/favicon.ico
+22:30:01.850  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\",\"svgInner\":741532,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\\\" preserveAspectRatio=\\\"none\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 \",\"svgImages\":1153,\"dpr\":1,\"inner\":[1264,761],\"visual\":[1264,761,1],\"viewport\":[634,726],\"stage\":[634,726],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:2717/data/flea-levels.json\",162619,14],[\"http://127.0.0.1:2717/data/flea-prices.json\",694332,40],[\"http://127.0.0.1:2717/data/season-documents.json\",31639,22],[\"http://127.0.0.1:2717/data/task-points.json\",231696,27],[\"http://127.0.0.1:2717/data/search-index.json\",274591,29],[\"http://127.0.0.1:2717/data/tasks/tasks.regular.json\",3058248,159],[\"http://127.0.0.1:2717/data/tasks/guides.regular.json\",1287595,65],[\"http://127.0.0.1:2717/data/tasks/traders.json\",7339,31],[\"http://127.0.0.1:2717/data/tasks/index.json\",6639,45],[\"http://127.0.0.1:2717/data/tasks/season.json\",8229,45],[\"http://127.0.0.1:2717/assets/maps/StreetsOfTarkov.svg\",335572,5],[\"http://127.0.0.1:2717/data/satellite.json\",2600,3]]}"
+22:30:01.929  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5
+22:30:06.942  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\",\"svgInner\":741532,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"-359.7073011756815 174.91785880429262 181.54963981404958 207.8943825\\\" preserveAspectRatio=\\\"none\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 \",\"svgImages\":1153,\"dpr\":1,\"inner\":[1264,761],\"visual\":[1264,761,1],\"viewport\":[634,726],\"stage\":[634,726],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:2717/data/flea-levels.json\",162619,14],[\"http://127.0.0.1:2717/data/flea-prices.json\",694332,40],[\"http://127.0.0.1:2717/data/season-documents.json\",31639,22],[\"http://127.0.0.1:2717/data/task-points.json\",231696,27],[\"http://127.0.0.1:2717/data/search-index.json\",274591,29],[\"http://127.0.0.1:2717/data/tasks/tasks.regular.json\",3058248,159],[\"http://127.0.0.1:2717/data/tasks/guides.regular.json\",1287595,65],[\"http://127.0.0.1:2717/data/tasks/traders.json\",7339,31],[\"http://127.0.0.1:2717/data/tasks/index.json\",6639,45],[\"http://127.0.0.1:2717/data/tasks/season.json\",8229,45],[\"http://127.0.0.1:2717/assets/maps/StreetsOfTarkov.svg\",335572,5],[\"http://127.0.0.1:2717/data/satellite.json\",2600,3]]}"
+22:30:07.022  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5
+22:30:07.031  开始冒烟：download / window.open / file chooser / clipboard
+22:30:07.122  下载开始：blob:http://127.0.0.1:2717/feb61ff7-e920-4bde-a5bd-56dfcd337618
+22:30:07.126  smoke 下载保存到：D:\Temp\2\EFTMapSmoke\eftmap-smoke.txt
+22:30:09.616  smoke download hit=True exists=True
+22:30:09.619  window.open 请求：http://127.0.0.1:2717/index.html?mini=1
+22:30:10.623  smoke window.open hit=True uri=http://127.0.0.1:2717/index.html?mini=1
+22:30:12.127  smoke file dialog detected=True title=打开
+22:30:12.709  smoke clipboard focus=false
+22:30:13.535  smoke clipboard=err:NotAllowedError:Failed to execute 'writeText' on 'Clipboard': Document is not focused.
+22:30:13.539  冒烟完成：d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\smoke5\smoke.json
+22:30:28.210  RequestExit
+22:30:28.215  FormClosing exitRequested=True reason=UserClosing
+22:30:28.224  FormClosed begin
+22:30:28.313  桌面壳退出
+22:30:28.329  已请求后端 shutdown

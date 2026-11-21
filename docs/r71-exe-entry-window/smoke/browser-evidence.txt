@@ -1,0 +1,24 @@
+R71 浏览器未打开证据（最终 dist，2026-11-04 23:40 左右）
+方法：PowerShell Get-Process chrome,msedge 计数对比 + EnumWindows 枚举（WS_EX_TOOLWINDOW）
+
+1) 双击 EFTMap.exe（无参数）
+   BROWSER before=62 after=62 new=
+   窗口 hwnd=3543736 1044x720 caption=False toolwindow=True thick=True exstyle=0x00010180
+   后端 pid=54392，端口 8787 监听
+
+2) 双击快捷方式（installer.create_shortcut 生成，Target=EFTMapDesktop.exe）
+   BROWSER before=63 after=63 new=
+   窗口 1044x720 caption=False toolwindow=True exstyle=0x00010180
+
+3) EFTMap.exe --server-only
+   health=200；shell=0；BROWSER before=64 after=64；port8787 随后回收
+
+4) EFTMap.exe --browser（显式开关，保留能力）
+   BROWSER before=62 after=66 new=24016,54456,55352,55912
+
+5) 壳文件改名缺失
+   BROWSER before=63 after=63 new=
+   MessageBox「EFT 互动地图 · 独立窗口不可用」496x243，默认按钮「否」，无服务端口
+
+6) 关闭窗口
+   shell=0 backend=0 port8787=0（Job Object 回收）

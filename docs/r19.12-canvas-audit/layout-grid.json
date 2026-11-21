@@ -1,0 +1,418 @@
+{
+ "schema": "eftmap.r19.12.layout-grid/1",
+ "rule": "固定 6 行 × 9 列 = 54 格；空行轨道保留（height 0），坐标系不随枪械/配件变化",
+ "anchors": {
+  "body": "r3 c6-c8",
+  "stock": "r3 c9",
+  "stockChild": "r4 c9",
+  "stockChild2": "r5 c9",
+  "mag": "r4 c7",
+  "grip": "r4 c8",
+  "ammo": "r5 c7",
+  "charge": "r2 c9"
+ },
+ "mainChain": {
+  "standard": "muzzle c1 · gas c2 · barrel c3 · handguard c4 · receiver c5",
+  "integral(无独立枪管槽)": "c1 空 · muzzle c2 · gas c3 · handguard c4 · receiver c5"
+ },
+ "measured": {
+  "1920x919": {
+   "viewport": [
+    1920,
+    919
+   ],
+   "cols": 9,
+   "rows": 6,
+   "tplCols": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+   "tplRows": "57.7656px 57.7812px 85.5312px 57.7812px 57.7812px 0px",
+   "gap": "10px 4px",
+   "canvas": {
+    "w": 566,
+    "h": 387
+   },
+   "body": {
+    "x": 577,
+    "y": 314,
+    "w": 181,
+    "h": 86,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "scrollW": 1920,
+   "innerW": 1920,
+   "noHorizontalOverflow": true,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "row": 1,
+     "col": 5,
+     "base": "scope",
+     "x": 515,
+     "y": 178,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "row": 2,
+     "col": 5,
+     "base": "sight_rear",
+     "x": 515,
+     "y": 246,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "base": "charge",
+     "x": 762,
+     "y": 246,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 1,
+     "base": "muzzle",
+     "x": 268,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "row": 3,
+     "col": 2,
+     "base": "gas_block",
+     "x": 330,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "row": 3,
+     "col": 3,
+     "base": "barrel",
+     "x": 392,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "base": "handguard",
+     "x": 453,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "base": "reciever",
+     "x": 515,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "base": "stock",
+     "x": 762,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "row": 4,
+     "col": 1,
+     "base": "muzzle",
+     "x": 268,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "row": 4,
+     "col": 4,
+     "base": "handguard",
+     "x": 453,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "row": 4,
+     "col": 5,
+     "base": "scope",
+     "x": 515,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_charge_001",
+     "row": 4,
+     "col": 6,
+     "base": "charge_001",
+     "x": 577,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "base": "magazine",
+     "x": 639,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "base": "pistol_grip",
+     "x": 700,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "row": 4,
+     "col": 9,
+     "base": "stock_000",
+     "x": 762,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "base": "",
+     "x": 639,
+     "y": 477,
+     "w": 58,
+     "h": 58
+    }
+   ]
+  },
+  "1384x805": {
+   "viewport": [
+    1384,
+    805
+   ],
+   "cols": 9,
+   "rows": 6,
+   "tplCols": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+   "tplRows": "57.7656px 57.7812px 85.5312px 57.7812px 57.7812px 0px",
+   "gap": "10px 4px",
+   "canvas": {
+    "w": 566,
+    "h": 387
+   },
+   "body": {
+    "x": 549,
+    "y": 314,
+    "w": 181,
+    "h": 86,
+    "row": "3",
+    "col": "6",
+    "span": "3"
+   },
+   "scrollW": 1384,
+   "innerW": 1384,
+   "noHorizontalOverflow": true,
+   "cards": [
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "row": 1,
+     "col": 5,
+     "base": "scope",
+     "x": 487,
+     "y": 178,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "row": 2,
+     "col": 5,
+     "base": "sight_rear",
+     "x": 487,
+     "y": 246,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "base": "charge",
+     "x": 734,
+     "y": 246,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "row": 3,
+     "col": 1,
+     "base": "muzzle",
+     "x": 240,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "row": 3,
+     "col": 2,
+     "base": "gas_block",
+     "x": 302,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "row": 3,
+     "col": 3,
+     "base": "barrel",
+     "x": 364,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "base": "handguard",
+     "x": 425,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "base": "reciever",
+     "x": 487,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "base": "stock",
+     "x": 734,
+     "y": 327,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "row": 4,
+     "col": 1,
+     "base": "muzzle",
+     "x": 240,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "row": 4,
+     "col": 4,
+     "base": "handguard",
+     "x": 425,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "row": 4,
+     "col": 5,
+     "base": "scope",
+     "x": 487,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_charge_001",
+     "row": 4,
+     "col": 6,
+     "base": "charge_001",
+     "x": 549,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "base": "magazine",
+     "x": 611,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "base": "pistol_grip",
+     "x": 672,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "row": 4,
+     "col": 9,
+     "base": "stock_000",
+     "x": 734,
+     "y": 409,
+     "w": 58,
+     "h": 58
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "base": "",
+     "x": 611,
+     "y": 477,
+     "w": 58,
+     "h": 58
+    }
+   ]
+  }
+ }
+}

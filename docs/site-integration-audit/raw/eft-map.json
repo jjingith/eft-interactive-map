@@ -1,0 +1,758 @@
+{
+ "name": "eft-map",
+ "requested_url": "https://www.eftarkov.com/map/653e6760052c01c1c805532f",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/map/653e6760052c01c1c805532f",
+ "title": "中心区互动地图 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 1040,
+ "htmlLen": 196135,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 186,
+ "input": 18,
+ "table": 0,
+ "ls": [
+  "eft-map-selection:653e6760052c01c1c805532f:pvp",
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "塔科夫的经济中心，也是TerraGroup的总部驻地。这里就是一切开始的地方。",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/storyline/6900927ab7d28358f80b9421#unlock-6ab76356f6b270d1a2b53a01",
+   "text": "详细攻略",
+   "title": "查看解锁方式详细攻略"
+  },
+  {
+   "href": "/storyline/68e784b7fa3f1fa3770094ba#obj-6ab8281682f2e1ffa6409702",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/item/5c94bbff86f7747ee735c08f",
+   "text": "TerraGroup实验室访问钥匙卡",
+   "title": "查看钥匙详情"
+  },
+  {
+   "href": "/storyline/68da33fe00868edcb6025ac4#obj-6aba365aa755905baccddd04",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/657315e270bb0b8dba00cc48",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/item/5449016a4bdc2d6f028b456f",
+   "text": "卢布 ×20000",
+   "title": "查看物品详情"
+  },
+  {
+   "href": "/task/657315e4a6af4ab4b50f3459",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/item/658199aa38c79576a2569e13",
+   "text": "TerraGroup科学家办公室钥匙",
+   "title": "查看钥匙详情"
+  },
+  {
+   "href": "/task/657315ddab5a49b71f098853",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/66b38c7bf85b8bf7250f9cb6",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/657315df034d76585f032e01",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/66d9cbb67b491f9d5304f6e6",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/item/5448ba0b4bdc2d02308b456c",
+   "text": "工厂紧急出口钥匙",
+   "title": "查看钥匙详情"
+  },
+  {
+   "href": "/item/5b4391a586f7745321235ab2",
+   "text": "WIFI摄像头 ×27",
+   "title": "查看物品详情"
+  },
+  {
+   "href": "/task/66aa58245ab22944110db6e9",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/657315e1dccd301f1301416a",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/66058cbd9f59e625462acc8e",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/item/60391b0fb847c71012789415",
+   "text": "TP-200 砖型TNT ×3",
+   "title": "查看物品详情"
+  },
+  {
+   "href": "/task/67a09673972c11a3f507731d",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/67a09636b8725511260bc421",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "/task/67a0964e972c11a3f507731b",
+   "text": "详细攻略",
+   "title": "查看详细攻略"
+  },
+  {
+   "href": "https://www.eftarkov.com/map/live",
+   "text": "https://www.eftarkov.com/map/live",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "select",
+   "label": "切换地图"
+  },
+  {
+   "role": "button",
+   "label": "应用主地图字号"
+  },
+  {
+   "role": "button",
+   "label": "应用悬浮地图字号"
+  },
+  {
+   "role": "button",
+   "label": "应用手机查看字号"
+  },
+  {
+   "role": "div",
+   "label": "地图工具"
+  },
+  {
+   "role": "div",
+   "label": "画笔粗细"
+  },
+  {
+   "role": "button",
+   "label": "隐藏左侧标记栏"
+  },
+  {
+   "role": "button",
+   "label": "隐藏右侧任务栏"
+  },
+  {
+   "role": "div",
+   "label": "地图任务显示筛选"
+  },
+  {
+   "role": "button",
+   "label": "关闭"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/map/653e6760052c01c1c805532f",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/extract_pmc.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/extract_scav.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/extract_transit.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/spawn_pmc.png",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/spawn_cultist-priest.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/spawn_sniper_scav.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/lock.png",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/stationarygun.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/6582dbf0b8d7830efc45016f.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/quest_objective.png",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/6a3182dc6cd8de21cf0a3a7d.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/mapIcon/6a3182b72fd891345e047eef.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/maps/653e6760052c01c1c805532f/1.svg",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/images/map-live-qr.png?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/map-floor-wheel.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/interactive-map.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-regular-400.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252733251",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-map.png",
+ "screenshot_bytes": 236924
+}

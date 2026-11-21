@@ -1,0 +1,55 @@
+{
+  "offlineArg": "--host-resolver-rules=MAP * 0.0.0.0, EXCLUDE 127.0.0.1, EXCLUDE localhost",
+  "externalFetch": "BLOCKED:Failed to fetch",
+  "resources": {
+    "total": 158,
+    "externalCount": 1,
+    "externalSample": [
+      "https://db4tarkov.com/preset"
+    ],
+    "byType": {
+      "link": 1,
+      "script": 2,
+      "fetch": 11,
+      "image": 27,
+      "img": 116,
+      "other": 1
+    }
+  },
+  "icons": {
+    "leftTotal": 12,
+    "leftBroken": 0,
+    "leftBrokenSrc": [],
+    "tableTotal": 138,
+    "tableBroken": 0
+  },
+  "tooltip": {
+    "shown": true,
+    "text": "Altyn 突击头盔（橄榄绿）",
+    "opacity": "1"
+  },
+  "table": {
+    "sw": 1703,
+    "cw": 1392,
+    "sl": 0,
+    "sh": 1396,
+    "ch": 755
+  },
+  "tableRows": 49,
+  "tableCols": 18,
+  "scrollRight": {
+    "sw": 1703,
+    "cw": 1392,
+    "sl": 311,
+    "sh": 1396,
+    "ch": 755
+  },
+  "debuff": [
+    {
+      "slot": "armor",
+      "v": "移动 / 转身 / 人机0 / 0 / 0"
+    }
+  ],
+  "totalStats": "移动转身人机0%0%0%Kg1.30 KG",
+  "viewport": "1920x909 dpr1"
+}

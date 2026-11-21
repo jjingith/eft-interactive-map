@@ -1,6 +1,6 @@
 {
  "schema": 8,
- "generatedAt": "2026-10-19T09:35:30Z",
+ "generatedAt": "2026-11-15T13:01:30Z",
  "gameMode": "regular",
  "tool": "tools/fetch_data.py",
  "sources": [
@@ -8,29 +8,29 @@
    "name": "tarkov.dev 地图配置（the-hideout/tarkov-dev）",
    "url": "https://raw.githubusercontent.com/the-hideout/tarkov-dev/main/src/data/maps.json",
    "license": "MIT",
-   "sha256": "c53a327dcdcff67a49b9fe2d150731edb4c1611dfc2f75db2ce97444dee2ef77",
-   "bytes": 109867
+   "sha256": "cd625177292627ef10b0d11e074185fb44b969f208b8cb7ca0e1b93de58c61c2",
+   "bytes": 109903
   },
   {
    "name": "tarkov.dev 标注数据（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/maps",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "a7e29db6450297e7c1575f51abad27b6e28456cb3e999ad2f0d38c4ed8deac9a",
-   "bytes": 8762996
+   "sha256": "e7ec1d8a82e572695d17099d38d294339bace97b2a1801d78048079fb1481b0a",
+   "bytes": 9010334
   },
   {
    "name": "tarkov.dev 中文翻译（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/maps_zh",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "61f94a06aceb689c0fcfa3b6de91f8510bf693d0e4866f6b85a7d19c1d20b7d2",
-   "bytes": 22741
+   "sha256": "089e1243537b726eace2c32541d58e49524e84509ce4cbba734dacb0329f0d2b",
+   "bytes": 23608
   },
   {
    "name": "tarkov.dev 中文物品名（json.tarkov.dev）",
    "url": "https://json.tarkov.dev/regular/items_zh",
    "license": "tarkov.dev 社区公开数据",
-   "sha256": "04b1d3f51979aae2f46487728b8b1b6836875a376a343506bd814ac48dde7fdf",
-   "bytes": 1661747
+   "sha256": "d1f47bcb3e48258cb3a1fd18568cd1b6063582c138edf2a51eca742632a63815",
+   "bytes": 1666302
   },
   {
    "name": "底图 SVG（the-hideout/tarkov-dev-svg-maps）",
@@ -45,24 +45,73 @@
    "license": "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）",
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "bytes": 0
+  },
+  {
+   "name": "tarkov.dev 物品资料库（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/items",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "eab50e041b754310b811d4cf4759452e9d5ef4c1c881bd22850f1dfb627c0101",
+   "bytes": 6107748
+  },
+  {
+   "name": "tarkov.dev 商人表（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/traders",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "0fa265ef40bf0c5afe36371af97856c570b0130d28c536f75f2e78f83ccbd21c",
+   "bytes": 58898
+  },
+  {
+   "name": "tarkov.dev 商人中文名（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/traders_zh",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "97ee70d26787648c185228822d7cbca266235a1a5e79b68c2f4db9763bdfe908",
+   "bytes": 3260
+  },
+  {
+   "name": "tarkov.dev 兑换配方（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/barters",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "f6c1d771c1040b6e07689d0391be467972ba7ff179d3fd65881e7fa9790c2758",
+   "bytes": 289588
+  },
+  {
+   "name": "tarkov.dev 任务表（json.tarkov.dev）",
+   "url": "https://json.tarkov.dev/regular/tasks",
+   "license": "tarkov.dev 社区公开数据",
+   "sha256": "82b5614ff2474f6f4721087fd9403ba7eee1e9c5b6d773542692e984251d8d1f",
+   "bytes": 2116046
+  },
+  {
+   "name": "物品图标（assets.tarkov.dev）",
+   "url": "https://assets.tarkov.dev/",
+   "license": "tarkov.dev 社区公开数据（署名 tarkov.dev，非商业）",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  {
+   "name": "商人图标（项目内自绘）",
+   "url": "",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
   }
  ],
  "counts": {
-  "maps": 13,
+  "maps": 15,
   "extracts": 146,
   "transits": 29,
-  "spawns": 2554,
+  "spawns": 2778,
   "containers": 6408,
   "loose": 4699,
   "valuables": 1323,
   "hazards": 330,
   "locks": 261,
-  "bosses": 643,
+  "bosses": 2221,
   "artillery": 18,
   "btr": 14,
   "stationary": 39,
   "locksNamed": 261,
-  "labels": 303,
+  "labels": 361,
   "tileMaps": 3,
   "tileBytes": 9057018,
   "containerGroups": {
@@ -81,5 +130,105 @@
    "grenade": 200,
    "weapon": 1358
   }
+ },
+ "items": {
+  "file": "data/items.json",
+  "schema": 6,
+  "count": 5498,
+  "bytes": 6248803,
+  "sha256": "5e2c415eb1dcafa264b70b100e9a460a51dd8fbf79ac4579ef4324c28e97dfe0",
+  "coverage": {
+   "total": 5498,
+   "ts": 5487,
+   "slots": 1327,
+   "aps": 199,
+   "cat": 583,
+   "mat": 377,
+   "z": 337,
+   "at": 337,
+   "bt": 334,
+   "cap": 423,
+   "hp": 28,
+   "gl": 82,
+   "liners": 702,
+   "plateSlots": 306,
+   "sell": 4901,
+   "containsItems": 893,
+   "srcAny": 4270,
+   "srcFlea": 3958,
+   "srcTrader": 2617,
+   "srcBarter": 363,
+   "srcNone": 1217,
+   "srcUnknown": 11,
+   "penT": 244,
+   "penS": 216,
+   "penE": 330,
+   "penAny": 383,
+   "trAny": 4646,
+   "trFlea": 3969,
+   "trBuy": 2617,
+   "trBarter": 1132,
+   "trBuyWithLevel": 2678,
+   "trBuyWithTask": 102,
+   "trBarterWithRecipe": 888,
+   "trBarterWithTask": 66,
+   "trBarterUnconfirmed": 342,
+   "marketOffer": 4160,
+   "marketChange": 3971,
+   "marketVelocity": 2486
+  },
+  "categories": {
+   "helmet": 152,
+   "headphones": 28,
+   "glasses": 40,
+   "face": 124,
+   "armor": 72,
+   "rig": 82,
+   "backpack": 47,
+   "plate": 38
+  },
+  "pending": 79,
+  "trade": {
+   "kinds": [
+    "flea",
+    "buy",
+    "barter"
+   ],
+   "traders": 16,
+   "tasksResolved": 125,
+   "tasksReferenced": 125,
+   "tasksMissing": []
+  }
+ },
+ "gunslots": {
+  "file": "data/gunslots.json",
+  "schema": 6,
+  "count": 163,
+  "presets": 497,
+  "presetsUpstream": 497,
+  "bytes": 390636,
+  "sha256": "29b987b34a931b6ad5ec7587ff70bb36a112688e3303fb6467862fcaf21f8e3e"
+ },
+ "gunPresets": {
+  "file": "data/gun-presets.json",
+  "schema": 1,
+  "count": 373,
+  "unsolved": 25,
+  "bytes": 251064,
+  "sha256": "64e29bb5394bbd4a2d0845845f4ffc8748137fb8a8c216e77bd10e7cb452744b"
+ },
+ "icons": {
+  "dir": "assets/icons-items",
+  "count": 5498,
+  "bytes": 15597537
+ },
+ "traderIcons": {
+  "dir": "assets/icons-traders",
+  "count": 16,
+  "total": 16,
+  "missing": [],
+  "bytes": 40498,
+  "license": "项目内自制，无第三方素材与再分发限制",
+  "manifest": "assets/icons-traders/manifest.json"
  }
 }

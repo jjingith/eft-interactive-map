@@ -1,0 +1,306 @@
+{
+  "validator": "r20_validate_data.py",
+  "checkedAt": "2026-10-29T08:08:34Z",
+  "status": "pass",
+  "summary": {
+    "files_checked": 17,
+    "errors": 0,
+    "warnings": 2
+  },
+  "checks": [
+    {
+      "id": "C1_file_parse",
+      "scope": "data/ammo.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 8 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/barriers.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 6 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/bosses.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 12 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/caliber-groups.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 6 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/combat-targets.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 4 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/forge-constraints.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 5 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-compat.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 5 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-layout-calibration.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 4 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-platforms.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 5 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-presets.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 6 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-rates.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 8 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gun-stats.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 10 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/gunslots.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 4 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/items.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 6 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/maps.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 5 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/meta.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 11 个"
+    },
+    {
+      "id": "C1_file_parse",
+      "scope": "data/roadnet.json",
+      "result": "pass",
+      "detail": "可解析；顶层 dict；顶层键 5 个"
+    },
+    {
+      "id": "C2_coverage",
+      "scope": "data/*.json",
+      "result": "pass",
+      "detail": "白名单 17 个 + 备份文件之外无未归类 JSON"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/ammo.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/barriers.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/bosses.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/caliber-groups.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/combat-targets.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/forge-constraints.json",
+      "result": "pass",
+      "detail": "schema='eftmap.forge-constraints/1' / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-compat.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-layout-calibration.json",
+      "result": "pass",
+      "detail": "schema=None / schemaVersion=1"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-platforms.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-presets.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-rates.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gun-stats.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/gunslots.json",
+      "result": "pass",
+      "detail": "schema=6 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/items.json",
+      "result": "pass",
+      "detail": "schema=6 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/maps.json",
+      "result": "pass",
+      "detail": "schema=8 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/meta.json",
+      "result": "pass",
+      "detail": "schema=8 / schemaVersion=None"
+    },
+    {
+      "id": "C3_schema_field",
+      "scope": "data/roadnet.json",
+      "result": "pass",
+      "detail": "schema=1 / schemaVersion=None"
+    },
+    {
+      "id": "C4_meta_structure",
+      "scope": "data/meta.json",
+      "result": "pass",
+      "detail": "必备键齐备；schema=8; generatedAt='2026-10-20T15:10:05Z'; gameMode='regular'"
+    },
+    {
+      "id": "C5_meta_file_refs",
+      "scope": "meta.items",
+      "result": "warning",
+      "detail": "file=data/items.json; declared_bytes=6094867; actual_bytes=6093854; bytes 漂移 6094867 -> 6093854; sha256 一致"
+    },
+    {
+      "id": "C5_meta_file_refs",
+      "scope": "meta.gunslots",
+      "result": "warning",
+      "detail": "file=data/gunslots.json; declared_bytes=390016; actual_bytes=390636; bytes 漂移 390016 -> 390636; sha256 一致"
+    },
+    {
+      "id": "C5_meta_file_refs",
+      "scope": "meta.gunPresets",
+      "result": "pass",
+      "detail": "file=data/gun-presets.json; declared_bytes=251064; actual_bytes=251064; sha256 一致"
+    },
+    {
+      "id": "C5_meta_file_refs",
+      "scope": "meta.icons",
+      "result": "pass",
+      "detail": "assets 目录存在: assets/icons-items（逐文件审计未执行，超本轮范围）"
+    },
+    {
+      "id": "C6_sources",
+      "scope": "data/meta.json",
+      "result": "pass",
+      "detail": "8 条 sources 格式合法；其中 4 条为无下载物条目(sha256=空串哈希,bytes=0)。注意：其余 sha256 是抓取时上游响应哈希（fetch_data.py:981），离线不可重验，本轮仅格式校验"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "warning",
+      "file": "data/items.json",
+      "check": "C5_meta_file_refs",
+      "message": "meta.items.bytes=6094867 与实际 6093854 不一致（生成后文件发生过修改，属既有契约缺口：本地引用无 sha256，无法定位漂移内容）"
+    },
+    {
+      "severity": "warning",
+      "file": "data/gunslots.json",
+      "check": "C5_meta_file_refs",
+      "message": "meta.gunslots.bytes=390016 与实际 390636 不一致（生成后文件发生过修改，属既有契约缺口：本地引用无 sha256，无法定位漂移内容）"
+    }
+  ],
+  "not_executed": [
+    {
+      "check": "上游快照 sha256 重验",
+      "reason": "sources[].sha256 是抓取时上游响应哈希；重验必须重新下载，本轮禁止联网"
+    },
+    {
+      "check": "业务文件内 count/条目数一致性核对",
+      "reason": "items.count / gunslots.count 等计数的统计口径未逐一定位到生成代码，按任务书 4.3 不猜测规则，列为待人工审查"
+    },
+    {
+      "check": "逐字段枚举值校验（如 pt/_caliber 合法值域）",
+      "reason": "合法值域需以生成器代码为准逐一定位，本轮范围只做结构级校验"
+    },
+    {
+      "check": "assets/icons-items 等图标目录逐文件审计",
+      "reason": "涉及 5000+ 文件的哈希与许可核对，超出本轮只读校验范围"
+    },
+    {
+      "check": "gun-layout-calibration.json 人工校准记录合法性",
+      "reason": "校准语义由应用层（gwApplyCalibToLayout）判定，静态校验器不重复实现业务规则"
+    }
+  ],
+  "statusSemantics": {
+    "pass": "当前检查通过，没有发现该项问题",
+    "warning": "存在非阻断问题，需要人工关注",
+    "fail": "存在硬性错误，或该检查明确无法满足必要条件",
+    "skipped": "因前置条件不满足而未执行",
+    "summaryStatus": "存在硬性错误时为 fail；只有警告而无硬性错误时为 pass（warnings 数保留）"
+  },
+  "notes": [
+    "时间戳仅记录本次校验发生时间，不代表源数据更新时间。",
+    "严重级别契约：error=结构损坏/引用不可达/哈希格式或比对失败；warning=生成后漂移或需人工归类（不阻断）；info 仅存在于检查明细文本中。",
+    "检查项 result 与 issues[].severity 对应：fail↔error、warning↔warning。"
+  ]
+}

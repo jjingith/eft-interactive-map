@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配装工作台 · 第一轮第二次返工交付报告</title>
+<style>
+  :root {
+    --bg: #14161a;
+    --panel: #1b1e24;
+    --panel2: #22262d;
+    --line: #32373f;
+    --fg: #e7e9ee;
+    --dim: #9aa2af;
+    --dim2: #6f7886;
+    --ok: #4ec98a;
+    --bad: #ff6b6b;
+    --warn: #e8b23a;
+    --acc: #7aa2ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 14px/1.7 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    padding: 32px 20px 80px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 {
+    font-size: 19px; margin: 42px 0 14px; padding-left: 11px;
+    border-left: 4px solid var(--acc);
+  }
+  h3 { font-size: 15px; margin: 26px 0 10px; color: var(--acc); }
+  .sub { color: var(--dim); margin: 0 0 22px; }
+  .meta { color: var(--dim2); font-size: 12.5px; }
+  p { margin: 9px 0; }
+  code {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 4px;
+    padding: 1px 6px; font-family: Consolas, "Courier New", monospace; font-size: 12.5px;
+    color: #d8dcff;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; margin: 14px 0;
+  }
+  .verdict {
+    border-left: 4px solid var(--ok);
+    background: linear-gradient(90deg, rgba(78,201,138,.10), transparent 60%);
+  }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: var(--dim); font-weight: 600; white-space: nowrap; }
+  td.ok { color: var(--ok); font-weight: 600; white-space: nowrap; }
+  td.no { color: var(--bad); font-weight: 600; white-space: nowrap; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pill {
+    display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 11.5px;
+    border: 1px solid var(--line); background: var(--panel2); color: var(--dim);
+    margin-right: 6px; white-space: nowrap;
+  }
+  .pill.pass { color: var(--ok); border-color: rgba(78,201,138,.45); }
+  .pill.note { color: var(--warn); border-color: rgba(232,178,58,.45); }
+  .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  figcaption { padding: 9px 12px; font-size: 12.5px; color: var(--dim); border-top: 1px solid var(--line); }
+  figcaption b { color: var(--fg); }
+  ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .kpi { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0; }
+  .kpi div {
+    flex: 1 1 160px; background: var(--panel2); border: 1px solid var(--line);
+    border-radius: 8px; padding: 12px 14px;
+  }
+  .kpi .v { font-size: 22px; font-weight: 700; }
+  .kpi .k { font-size: 12px; color: var(--dim); margin-top: 2px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
+  .mono { font-family: Consolas, "Courier New", monospace; font-size: 12.5px; color: #c9cfe0; }
+  .small { font-size: 12.5px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>配装工作台 · 第一轮第二次返工交付报告</h1>
+  <p class="meta">项目：EFT 互动地图 · 配装工作台 &nbsp;|&nbsp; 交付时间：2026-10-20 &nbsp;|&nbsp; 本轮范围：五项修正 + 六节测试 + 三步验收</p>
+
+  <div class="card verdict">
+    <b style="color:var(--ok)">交付状态：五项修正全部完成，11 项实测用例全部通过，未进入预设存储 / 全量数据扩充阶段。</b>
+    <p style="margin-bottom:0">本轮明确指出的<b>分类错误</b>（FACE COVER 混入护甲板、EYEWEAR 混入头盔面罩）与<b>布局错误</b>（附件槽统一堆在面板底部、内衬被标为「数据缺失」）均已修复，未遗留到后续阶段。全量回归 <span class="pill pass">637 passed / 1 skipped</span>，地图功能零回归。</p>
+  </div>
+
+  <div class="kpi">
+    <div><div class="v" style="color:var(--ok)">5 / 5</div><div class="k">五项修正要求</div></div>
+    <div><div class="v" style="color:var(--ok)">11 / 11</div><div class="k">用户指定实测用例</div></div>
+    <div><div class="v" style="color:var(--ok)">637</div><div class="k">全量回归通过</div></div>
+    <div><div class="v" style="color:var(--ok)">9</div><div class="k">同分辨率截图 1920×909</div></div>
+  </div>
+
+  <h2>一、五项修正要求逐条对照</h2>
+
+  <h3>① 附件槽位显示在对应装备的正下方</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>子槽紧跟父装备，不再集中到面板底部</td>
+      <td>槽位改为嵌套树 <code>#lw-tree</code>，每个根槽一个 <code>.lw-node-group</code>，子槽放其内 <code>.lw-node-kids</code></td>
+      <td>DOM 实测：<code>#lw-tree</code> 下恰好 <b>7</b> 个 <code>.lw-node-group</code>；<code>.lw-node-kids.parentElement === group</code>；人形 SVG 的 7 个槽位框未被改动</td>
+    </tr>
+    <tr>
+      <td>父装备附近形成清晰视觉层级</td>
+      <td>CSS 缩进 + 连接线（<code>.lw-node-kids</code>），固定内衬带 <code>.lw-node-liner</code> + <code>.lw-fixed-badge</code></td>
+      <td>截图 <code>r2-02</code> / <code>r2-03</code>：子槽紧贴父装备行下方缩进显示</td>
+    </tr>
+    <tr>
+      <td>其他部位不因某个装备增加附件而整体错位</td>
+      <td>树为独立滚动容器，不参与人形槽位布局</td>
+      <td>装 Ops-Core FAST MT（8 行槽位树）前后，人形 7 槽位坐标不变</td>
+    </tr>
+    <tr>
+      <td>选中子槽时右侧显示面包屑路径</td>
+      <td><code>nodeLabel(node)</code> → 渲染到 <code>#lw-focus .lw-focus-name</code></td>
+      <td>实测返回「头盔 › 装备座 1」「护甲 › 前插板」；候选来源写作「护甲 的 <code>armorSlots[].allowedPlates</code>（共 4 件）」</td>
+    </tr>
+    <tr>
+      <td>更换父装备时立即重建子槽、清理失效附件</td>
+      <td><code>installItem</code> 后重建 <code>children</code>，递归清理不再被允许的子槽与其已装件</td>
+      <td>测试 T7 / T8 / T9：旧子槽键被清掉、不再被允许的附件自动卸下并给出可见提示</td>
+    </tr>
+  </table>
+
+  <h3>不同头盔的附件槽结构确实彼此不同（验收硬要求：≥2 个头盔 + 1 个插板护甲）</h3>
+  <table>
+    <tr><th>装备</th><th>子槽结构</th><th>行数</th></tr>
+    <tr>
+      <td>Ops-Core FAST MT 头盔</td>
+      <td>装备座 1 / 夜视仪座 / 安装座 / 装备座 2 / 装备座 3 + 2 个固定内衬</td>
+      <td class="num">8</td>
+    </tr>
+    <tr>
+      <td>FORT Kiver-M 头盔</td>
+      <td>装备座 + 3 个固定内衬</td>
+      <td class="num">5</td>
+    </tr>
+    <tr>
+      <td>Altyn 突击头盔</td>
+      <td>装备座 / 装备座 2 + 3 个固定内衬</td>
+      <td class="num">6</td>
+    </tr>
+    <tr>
+      <td>6B13 突击甲（护甲）</td>
+      <td>前插板 / 后插板（<code>kind=plate</code>）+ 6 个固定软甲（<code>kind=liner</code>，<code>data-remove="none"</code>）</td>
+      <td class="num">8</td>
+    </tr>
+  </table>
+  <p class="small">三顶头盔的可装附件槽与内衬数量各不相同，证明子槽由物品真实数据驱动，不是统一模板。</p>
+
+  <h3>② 头盔 / 护甲内衬作为固定结构实现</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr><td>标记固定组件</td><td>节点 <code>def.fixed === true</code> / <code>def.removable === false</code>，节点 <code>kind === "liner"</code></td><td>测试 U1：<code>fixed=true / removable=false</code> 断言通过</td></tr>
+    <tr><td>显示在装备下方并区分固定</td><td>标签后缀「（固定）」+ <code>.lw-fixed-badge</code></td><td><code>nodeLabel(liner)</code> 含「固定」；截图 <code>r2-03</code> 可见「固定」徽标</td></tr>
+    <tr><td>不提供安装 / 卸下 / 替换操作</td><td>对 liner 节点 <code>equipItem</code> 为空操作；<code>data-remove="none"</code>；选中内衬回退到父装备槽位</td><td>测试 U1：候选数 0、equipItem 空操作、<code>state.focus</code> 回退到 <code>helmet</code></td></tr>
+    <tr><td>父装备更换时内衬同步更新</td><td>内衬随父装备 <code>aps[]</code> 重建</td><td>测试 U1：换成无内衬头盔后内衬槽消失；换回后按新结构重建</td></tr>
+    <tr><td>展示上游提供的真实防护数据</td><td>渲染材质 / Class / 耐久 / 防护区</td><td>实测行：「盔顶（固定）固定 · 材质 复合材料 · Class 4 · 耐久 24 · 防护 颅顶」</td></tr>
+    <tr><td><b>不得因无 <code>allowedItems</code> 就标「数据缺失」</b></td><td>来源文案改为「不可单独拆卸 / 更换（候选为空是设计如此，不是数据缺失）」</td><td>测试 U1：文案同时含「不可单独拆卸」与「不是数据缺失」，且<b>不含</b>「数据缺口」</td></tr>
+  </table>
+  <p class="small">区分了两件事：<b>不能单独拆卸 ≠ 没有数据</b>（内衬有完整的材质 / 等级 / 耐久 / 防护区）；<b>固定组件 ≠ 可自由选装的子槽</b>（候选为空是设计，不是缺口）。未伪造新装备，未虚构价格与属性。</p>
+
+  <h3>③ FACE COVER 分类纠正</h3>
+  <table>
+    <tr><th>要求</th><th>结果</th></tr>
+    <tr><td>只展示真正面部穿戴槽物品</td><td class="ok">✅ 124 件，前 12 件均为巴拉克拉瓦头套 / 半面巾等</td></tr>
+    <tr><td>护甲板必须归入 ARMOR 插板结构</td><td class="ok">✅ FACE COVER 中命中护甲板 id 的行 = 0</td></tr>
+    <tr><td><b>禁止再用「ArmorAttachment 且未被 slots[].allow 引用」推断</b></td><td class="ok">✅ 规则已替换为上游真实分类 <code>cats ∩ face-cover</code>；旧近似集合识别出恰好 38 件全为 armorPlate 的错误根因已定位</td></tr>
+    <tr><td>以稳定物品 ID 为依据、附带分类来源的可审计映射</td><td class="ok">✅ 构建期落 <code>cat</code> 字段 + 顶层 <code>audit</code>（含 <code>rules</code> / <code>labels</code> / <code>categoryIds</code> / <code>duplicates</code> / <code>pending</code>）</td></tr>
+    <tr><td>无法确定归属的进入待审核清单</td><td class="ok">✅ <code>audit.pending</code> = 135 件（ArmorAttachment 79 + Helmet 56），未静默混入</td></tr>
+  </table>
+  <p class="small">已区分普通面部头套、装甲面罩、头盔面罩与护甲板：四者不再因名称 / 材质 / <code>ArmorAttachment</code> 大类相同而被视为同类。</p>
+
+  <h3>④ EYEWEAR 分类纠正</h3>
+  <table>
+    <tr><th>要求</th><th>结果</th></tr>
+    <tr><td>只显示独立眼部装备</td><td class="ok">✅ 40 件，前 12 件均为墨镜 / 护目镜</td></tr>
+    <tr><td>头盔面罩 / 面屏 / 夜视仪 / 头盔专用附件进入各自槽位</td><td class="ok">✅ 规则 = <code>ts ∩ {glasses}</code> 且 <code>cats ∩ vis-observ-device</code>；EYEWEAR 中命中「头盔 slots[].allow」的行 = 0</td></tr>
+    <tr><td>不能只靠 <code>pt</code> / 名称关键词 / 泛化类别</td><td class="ok">✅ 改用真实根槽位 + 物品兼容关系</td></tr>
+    <tr><td>四类互斥可核验</td><td class="ok">✅ 七类两两交集全部为 0</td></tr>
+    <tr><td>新增分类检查：数量 / 重复归类 / 无法确认</td><td class="ok">✅ 页面 <code>#lw-audit</code> 面板（截图 <code>r2-05</code>）</td></tr>
+  </table>
+
+  <h3>七类一级分类审计（浏览器实测）</h3>
+  <table>
+    <tr><th>一级类</th><th>件数</th><th>判定依据</th></tr>
+    <tr><td>护甲 ARMOR</td><td class="num">72</td><td class="mono">types ∩ {armor}</td></tr>
+    <tr><td>头盔 HELMET</td><td class="num">40</td><td class="mono">types ∩ {helmet}</td></tr>
+    <tr><td>耳机 HEADPHONES</td><td class="num">28</td><td class="mono">types ∩ {headphones}</td></tr>
+    <tr><td>背包 BACKPACK</td><td class="num">47</td><td class="mono">types ∩ {backpack}</td></tr>
+    <tr><td>胸挂 RIG</td><td class="num">82</td><td class="mono">types ∩ {rig}</td></tr>
+    <tr><td>眼镜 EYEWEAR</td><td class="num">40</td><td class="mono">types ∩ {glasses} 且 categories ∩ vis-observ-device</td></tr>
+    <tr><td>护面 FACE COVER</td><td class="num">124</td><td class="mono">categories ∩ face-cover（扣除被 helmet 优先占用的 3 件）</td></tr>
+  </table>
+  <p><span class="pill pass">互斥</span> 七类两两交集全部为 0 &nbsp;|&nbsp; <span class="pill note">重复归类</span> 26 件，按优先级消解并记录 &nbsp;|&nbsp; <span class="pill note">待审核</span> 135 件（ArmorAttachment 79 + Helmet 56），未静默混入正式列表</p>
+
+  <h2>二、右侧装备列表增强</h2>
+
+  <h3>A. 列宽拖动与持久化</h3>
+  <table>
+    <tr><th>要求</th><th>实测证据（真实 CDP 鼠标事件，非合成 DOM 事件）</th></tr>
+    <tr><td>拖动表头边界调列宽</td><td class="ok">✅ <code>装甲材质</code> 112px → 222px，<code>--tbl-cols</code> 同步为 <code>… 222px …</code></td></tr>
+    <tr><td>每列独立宽度</td><td class="ok">✅ 名称 / 冲突 / 重量 / 价格 / 装甲材质 / 防护部位等各自独立，<code>widths[]</code> 逐列可控</td></tr>
+    <tr><td>每列合理 min / max</td><td class="ok">✅ <code>clampW</code> 优先使用列自身 <code>min/max</code>；<code>装甲材质</code> 实测钳到 <b>80</b>（最小）/ <b>260</b>（最大）；未声明时回落 56 / 520</td></tr>
+    <tr><td>表头与单元格对齐</td><td class="ok">✅ <code>alignOK: true</code>，表头宽度数组 <b>完全等于</b> 数据行宽度数组 <code>[246,190,86,62,86,70,66,66,86,116,222,80,82,100,295]</code></td></tr>
+    <tr><td>切列 / <code>setColumns()</code> 保留宽度、同名同义列复用</td><td class="ok">✅ 护甲（15 列）→ 眼镜（5 列）→ 护甲（15 列）后 222 与 80 均保留；<code>shared</code> 桶使同名同义列跨类别复用</td></tr>
+    <tr><td>搜索 / 排序 / 筛选 / 分页 / 冲突红色不失效</td><td class="ok">✅ 拖动后搜索仍过滤（过滤时 12 行、清空后 72 行）、排序标记保持、选中态保留、200 条分片正常</td></tr>
+    <tr><td>横向滚动正常，不缩字体硬塞</td><td class="ok">✅ <code>.loadout-workbench</code> 内 <code>--tbl-cols</code> 保留像素宽度，<code>.tbl-scroll</code> 横向滚动；无字体缩放</td></tr>
+    <tr><td>按类别持久化、重启后恢复</td><td class="ok">✅ 三重证明见下表</td></tr>
+    <tr><td>样式与交互限定 <code>.loadout-workbench</code></td><td class="ok">✅ CSS 测试断言全部选择器均以 <code>.loadout-workbench</code> 开头；地图视图与原表格未改</td></tr>
+    <tr><td>扩展现有 <code>createTable()</code>，不重复造表</td><td class="ok">✅ 在 <code>createTable</code> 内新增 <code>.tbl-grip</code> 拖柄与 <code>onResize</code> 回调，未新建平行组件</td></tr>
+  </table>
+
+  <h3>列宽持久化 · 三重证明</h3>
+  <table>
+    <tr><th>#</th><th>环节</th><th>证据</th></tr>
+    <tr>
+      <td class="num">1</td><td>即时写入 localStorage</td>
+      <td class="mono">localStorage["eftmap.colw"] = {"byCat":{"face":{...},"armor":{"zoneCls":295,"matLabel":80}},"shared":{...}}</td>
+    </tr>
+    <tr>
+      <td class="num">2</td><td>落盘到用户级配置文件</td>
+      <td class="mono">%APPDATA%\EFTMap\eftmap.config.json → ui.colw 与 localStorage 内容完全一致</td>
+    </tr>
+    <tr>
+      <td class="num">3</td><td><b>真重启恢复</b></td>
+      <td>清空 localStorage 的 <code>eftmap.colw</code> → 结束 serve.py 进程 → 重新启动 serve.py（新 PID，HTTP 200）→ 重新加载页面 → 列宽原样恢复（<code>matLabel:80 / zoneCls:295 / n:246</code>），localStorage 被从配置文件重新回填</td>
+    </tr>
+  </table>
+
+  <h3>B. 护甲属性列（六列语义互不混淆）</h3>
+  <p>6B13 突击甲实测量（同一行同时展示六列，取值各不相同）：</p>
+  <table>
+    <tr><th>列名</th><th>实测值</th><th>语义说明</th></tr>
+    <tr><td>装甲材质</td><td>芳纶（Aramid）</td><td>上游 <code>properties.material</code>，含 8 键统一中文映射</td></tr>
+    <tr><td>材料毁损系数</td><td class="num">0.19</td><td>上游 <code>armorMaterials[mat].destructibility</code></td></tr>
+    <tr><td>有效耐久</td><td class="num">1083</td><td>= <code>dur ÷ destructibility</code> = 203 / 0.1875，按核验公式计算</td></tr>
+    <tr><td>防护部位</td><td>前胸插板区、后背插板区、上胸、下胸、上背、下背、左胸下侧、右胸下侧、前颈、后颈、骨盆</td><td>上游 <code>properties.zones</code>，含 30+ 项中文映射</td></tr>
+    <tr><td>部位有效护甲值</td><td>Class 2：左胸…骨盆、上胸… ｜ 未装板（前插板，可装 3–6 级）：前胸插板区 ｜ 未装板（后插板，可装 4–6 级）：后背插板区</td><td>结合父装备软甲 <code>aps</code> 各区等级 + 已安装插板状态，<b>不把携带具单一 Class 复制到所有区域</b></td></tr>
+    <tr><td>游戏内显示耐久</td><td class="num">203</td><td>游戏内物品信息的基础耐久（<code>properties.durability</code>），与「有效耐久 1083」明显不同</td></tr>
+  </table>
+
+  <h3>「未装板不得冒领等级」· 装板前后对照（最关键验收点）</h3>
+  <table>
+    <tr><th>时点</th><th>部位有效护甲值</th></tr>
+    <tr><td>装板前</td><td class="mono">Class 2：左胸下侧、后颈、前颈、骨盆、下胸、上胸、右胸下侧、下背、上背 ｜ 未装板（前插板，可装 3–6 级）：前胸插板区 ｜ 未装板（后插板，可装 4–6 级）：后背插板区</td></tr>
+    <tr><td>装上 6B33 防弹插板（前部）Class 4 后</td><td class="mono">Class 2：… ｜ <b style="color:var(--ok)">Class 4：前胸插板区</b> ｜ 未装板（后插板，可装 4–6 级）：后背插板区</td></tr>
+  </table>
+  <p class="small">实测节点状态同步变化：<code>armor/Front_plate</code> → <code>on</code>（已装 6B33 防弹插板（前部）），<code>armor/Back_plate</code> → <code>empty</code>（仍标「未装板」）。前插板候选实测 4 件：6B33（Class 4）、Granit 4（5）、Granit 4RS（6）、Zhuk-3（3），等级区间与界面提示「可装 3–6 级」一致。</p>
+  <p class="small">只有真正安装的插板才贡献等级；未安装的槽位明确标注「未装板」并附可装等级范围。未安装插板的携带具<b>不会</b>被显示成已获得该插板的防护等级。</p>
+
+  <h3>字段覆盖率与不适用显示「—」</h3>
+  <table>
+    <tr><th>类别</th><th>件数</th><th>材质</th><th>毁损系数</th><th>有效耐久</th><th>防护部位</th><th>部位护甲值</th></tr>
+    <tr><td>护甲</td><td class="num">72</td><td class="ok">72/72</td><td class="ok">72/72</td><td class="ok">72/72</td><td class="ok">72/72</td><td class="ok">72/72</td></tr>
+    <tr><td>头盔</td><td class="num">40</td><td class="ok">39/40</td><td class="ok">39/40</td><td class="ok">39/40</td><td class="ok">39/40</td><td>36/40（杰克南瓜灯显示「—」）</td></tr>
+    <tr><td>胸挂</td><td class="num">82</td><td>36/82</td><td>36/82</td><td>36/82</td><td>36/82</td><td>36/82</td></tr>
+    <tr><td>护面</td><td class="num">124</td><td>17/124</td><td>17/124</td><td>17/124</td><td>17/124</td><td>0/124（全部「—」）</td></tr>
+    <tr><td>耳机 / 眼镜 / 背包</td><td>—</td><td colspan="5">列集本身不含护甲属性列</td></tr>
+  </table>
+  <p class="small">护甲、护甲板及其他确有对应属性的装甲物品才展示这些列；不适用的字段显示「—」，未用假数据填充。材质、耐久、有效耐久、防护区域与护甲等级在游戏数据中属于不同概念，已分列而非合并。</p>
+
+  <h2>三、测试结果</h2>
+
+  <h3>全量回归</h3>
+  <p class="mono">python -m pytest tests -q &nbsp;→&nbsp; <b style="color:var(--ok)">637 passed, 1 skipped in 36.91s</b></p>
+  <p class="small">地图、搜索、任务、设置、图层等既有模块全部通过，无回归。</p>
+
+  <h3>本轮新增 / 强化的用例</h3>
+  <table>
+    <tr><th>分组</th><th>内容</th><th>用例数</th></tr>
+    <tr><td>静态结构</td><td>工作台骨架、旧三栏布局已移除、其他视图未受影响、旧符号已清、<code>setColumns</code> 已暴露、工具条默认开、CSS 全部限定、横向滚动保留、嵌套槽位树容器</td><td class="num">11</td></tr>
+    <tr><td>T1–T12</td><td>createTable 基础渲染 / 切列 / 排序 / 搜索 / 过滤 / 选中 / 滚动 / 节点复用 / 回调 / 分片 / 板位 / 统计</td><td class="num">12</td></tr>
+    <tr><td>R1–R5</td><td>列宽拖动、持久化接管、切列清理、同名同义列复用、拖动不影响搜索与选中</td><td class="num">5</td></tr>
+    <tr><td>T1–T12（槽位模型）</td><td>七类互斥、槽位驱动候选、冲突双向判定、动态子槽生成、父装备更换后子槽清理、缺口槽、护甲板槽、统计</td><td class="num">12</td></tr>
+    <tr><td>U1–U6</td><td>固定内衬、五种头盔结构互异、护甲插板槽、四概念不混淆、列宽持久化与钳制、父子槽不共享父节点</td><td class="num">6</td></tr>
+  </table>
+
+  <h3>用户指定 11 项实测用例对照</h3>
+  <table>
+    <tr><th>#</th><th>用例</th><th>结果</th></tr>
+    <tr><td class="num">1</td><td>父装备下方显示其附件槽，其他装备的附件不再集中放在左侧面板底部</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">2</td><td>固定内衬正常显示，不提供拆卸操作，不再显示为「数据缺失」</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">3</td><td>FACE COVER 不包含护甲板</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">4</td><td>EYEWEAR 不包含错误归类的头盔专用附件</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">5</td><td>不同头盔的附件槽结构正确且彼此不同</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">6</td><td>不同护甲的插板槽位及安装关系正常</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">7</td><td>拖动列边界可实际调整宽度</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">8</td><td>动态切换表格列后宽度配置按预期保留</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">9</td><td>列宽在重启应用后可恢复</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">10</td><td>护甲基础耐久、材质毁损系数、有效耐久和防护区域显示互不混淆</td><td class="ok">✅ 通过</td></tr>
+    <tr><td class="num">11</td><td>冲突判断、装备替换、统计计算和已有地图功能全部通过回归测试</td><td class="ok">✅ 通过</td></tr>
+  </table>
+  <p class="small">测试方式：动态运行（Node DOM 垫片 + 拔出的纯函数）+ 真实 headless Chrome CDP 交互（真实鼠标事件拖动列边界，<code>Page.captureScreenshot</code>），非静态 HTML 字符串断言。</p>
+
+  <h2>四、同分辨率实测截图</h2>
+  <p class="small">全部 1920×909、8-bit、color type 2（同分辨率同格式）。采集方式：headless Chrome + <code>Emulation.setDeviceMetricsOverride(1920×909)</code> + <code>Page.captureScreenshot</code>。</p>
+  <div class="shots">
+    <figure><img src="shots/r2-00-baseline.png" alt="工作台整体"><figcaption><b>r2-00 基线</b> · 工作台整体（持久化状态恢复后）</figcaption></figure>
+    <figure><img src="shots/r2-02-helmetA-opscore.png" alt="Ops-Core 头盔树"><figcaption><b>r2-02 Ops-Core FAST MT</b> · 嵌套槽位树 + 面包屑「头盔 › 装备座 1」，共 8 行</figcaption></figure>
+    <figure><img src="shots/r2-03-helmetB-kiver.png" alt="Kiver 头盔树"><figcaption><b>r2-03 FORT Kiver-M</b> · 结构不同于 Ops-Core（装备座 + 3 固定内衬），固定徽标可见</figcaption></figure>
+    <figure><img src="shots/r2-04-armor-plates.png" alt="6B13 护甲插板槽"><figcaption><b>r2-04 6B13 护甲</b> · 前 / 后插板槽 + 护甲六属性列</figcaption></figure>
+    <figure><img src="shots/r2-05-audit-panel.png" alt="分类审计面板"><figcaption><b>r2-05 分类审计面板</b> · 7 条判定依据 + 重复归类 26 件 + 待审核 135 件</figcaption></figure>
+    <figure><img src="shots/r2-06-cols-before.png" alt="拖动列宽前"><figcaption><b>r2-06 拖动前</b> · 装甲材质 112px，<code>--tbl-cols</code> 快照</figcaption></figure>
+    <figure><img src="shots/r2-07-cols-after.png" alt="拖动列宽后"><figcaption><b>r2-07 拖动后</b> · 装甲材质 222px，表头与数据行对齐</figcaption></figure>
+    <figure><img src="shots/r2-08-plate-before.png" alt="装板前"><figcaption><b>r2-08 装板前</b> · 6B13 已装备、前 / 后插板均「未装板」，附可装等级范围</figcaption></figure>
+    <figure><img src="shots/r2-09-plate-after.png" alt="装上前插板后"><figcaption><b>r2-09 装上 6B33 防弹插板（前部）Class 4</b> · 前胸插板区获得 Class 4，后插板仍标「未装板」</figcaption></figure>
+  </div>
+
+  <h2>五、数据缺失报告</h2>
+  <table>
+    <tr><th>#</th><th>项目</th><th>实测证据</th><th>处理</th></tr>
+    <tr>
+      <td class="num">1</td><td>待审核分类 <b>135 件</b></td>
+      <td class="mono">audit.pending = {count:135, byType:{ItemPropertiesArmorAttachment:79, ItemPropertiesHelmet:56}}</td>
+      <td>进入待审核清单，<b>未静默混入</b>正式列表</td>
+    </tr>
+    <tr>
+      <td class="num">2</td><td>重复归类 <b>26 件</b></td>
+      <td class="mono">audit.duplicates = [{id, keys, resolved}, …]（list，26 条）</td>
+      <td>按优先级消解并逐条记录 <code>resolved</code></td>
+    </tr>
+    <tr>
+      <td class="num">3</td><td>头盔 <code>armorSlots[]</code> 部分仅有 zone、无 <code>allowedPlates</code></td>
+      <td>FAST MT / Altyn / SSh-68 的 <code>aps</code> 均为 <code>[{zone:…}]</code></td>
+      <td>不虚构；这些头盔的侧甲 / 护颚实际走 <code>slots[]</code>，已能正常安装</td>
+    </tr>
+    <tr>
+      <td class="num">4</td><td>内衬条目无中文本地化</td>
+      <td>内衬 <code>name</code> 在 <code>items_zh.json</code> 中查不到对应键</td>
+      <td>用 zone 名（盔顶 / 盔后 / 前软甲…）作显示名；不计为数据缺口</td>
+    </tr>
+    <tr>
+      <td class="num">5</td><td>胸挂仅 36/82 具备护甲属性</td>
+      <td>如 56 式胸挂各护甲列均为「—」</td>
+      <td>不伪造，不适用的列显示「—」</td>
+    </tr>
+    <tr>
+      <td class="num">6</td><td>跳蚤价覆盖不足 100%</td>
+      <td>部分护甲 / 耳机无 <code>l</code> 字段</td>
+      <td>价格列显示「—」，标注「构建期快照，非实时」</td>
+    </tr>
+  </table>
+
+  <h3>需用户裁定的一项数据观察</h3>
+  <div class="card" style="border-color: rgba(232,178,58,.45)">
+    <p style="margin-top:0"><span class="pill note">待确认</span> <b>无装甲的护面也会显示「游戏内耐久」。</b></p>
+    <p><code>cat=face</code> 的 124 件护面上游<b>均给出</b> <code>dur</code>（取值集合 {25, 30, 35, 40, 55, 100}），但只有 17 件同时具备 <code>mat / cl / z</code>。也就是说，纯布料头套也会在「游戏内耐久」列显示一个数值。</p>
+    <p class="small" style="margin-bottom:0">该值<b>来自上游、非伪造</b>，因此按规则保留展示。但它是否适合《游戏内显示耐久》列的语义（无装甲件是否有耐久概念），建议由您裁定；若认为不合适，可改为「该类物品不显示该列」或「显示 —」。同理，<b>杰克南瓜灯战术南瓜头盔</b>有 <code>mat / dur / zoneText</code> 但无 <code>aps</code> → 部位有效护甲值显示「—」，属正确降级。</p>
+  </div>
+
+  <h2>六、验收顺序执行情况</h2>
+  <table>
+    <tr><th>步骤</th><th>内容</th><th>状态</th></tr>
+    <tr><td>第一步</td><td>父子槽位布局 + 固定内衬 + FACE COVER / EYEWEAR 分类</td><td class="ok">✅ 已完成（截图 r2-02/03/05）</td></tr>
+    <tr><td>第二步</td><td>列宽调整 + 护甲属性列</td><td class="ok">✅ 已完成（截图 r2-04/06/07/08）</td></tr>
+    <tr><td>第三步</td><td>同分辨率截图 + 完整测试结果 + 数据缺失报告 + 列宽持久化证明</td><td class="ok">✅ 本报告</td></tr>
+  </table>
+  <p>本轮未提前实现独立预设存储或其他后续阶段功能；本轮明确指出的分类错误与布局错误<b>已全部修复</b>，未留到后续阶段。等待您确认后再进入正式视觉验收。</p>
+
+  <hr>
+  <p class="meta">配套设计文档：<code>.trae/documents/eft-loadout-slot-model.md</code>（§1–§10）&nbsp;|&nbsp; 测试文件：<code>tests/test_loadout_workbench.py</code>&nbsp;|&nbsp; 数据审计字段：<code>data/items.json → audit</code></p>
+
+</div>
+</body>
+</html>

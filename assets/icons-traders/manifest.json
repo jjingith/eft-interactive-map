@@ -1,0 +1,542 @@
+{
+ "note": "商人头像默认使用**游戏素材**（assets/icons-traders/portraits/{traderId}.webp，构建期从 assets.tarkov.dev 下载，用途为学术研究/非商用，与本项目物品图标同源）；同目录下的 {normalizedName}.svg 为项目内自绘兜底图标，仅在头像文件缺失/加载失败时使用。历史许可复核保留在 licenseReview，本轮改用的决定见 decision。",
+ "license": "游戏素材（BSG 版权），学术研究/非商用；构建期下载，不随仓库再分发",
+ "decision": {
+  "decidedAt": "2026-10-30",
+  "by": "项目所有者（用户）",
+  "content": "商人头像直接使用游戏素材；本项目用于学术研究、不商用。所有互动地图类工具均使用游戏素材，且本项目既有的物品图标与地图瓦片同源。因此不再以「无再分发许可」为由弃用上游头像。",
+  "runtimeIcon": "assets/icons-traders/portraits/{traderId}.webp",
+  "fallbackIcon": "assets/icons-traders/{normalizedName}.svg"
+ },
+ "portraits": {
+  "dir": "assets/icons-traders/portraits",
+  "count": 16,
+  "total": 16,
+  "missing": [],
+  "license": "游戏素材（BSG 版权），学术研究/非商用；构建期下载，不随仓库再分发",
+  "files": {
+   "54cb50c76803fa8b248b4571": {
+    "file": "assets/icons-traders/portraits/54cb50c76803fa8b248b4571.webp",
+    "name": "Prapor",
+    "bytes": 4020,
+    "sha256": "9cbf1e9fbb520afc12ccf85fcde6a29045e206b830155cccedf9707a2ab5dfa0",
+    "url": "https://assets.tarkov.dev/54cb50c76803fa8b248b4571.webp"
+   },
+   "54cb57776803fa99248b456e": {
+    "file": "assets/icons-traders/portraits/54cb57776803fa99248b456e.webp",
+    "name": "Therapist",
+    "bytes": 4270,
+    "sha256": "d8e07f5f097852faf112bd70201565079d68fe64dc4e43be813309a3ebf039b7",
+    "url": "https://assets.tarkov.dev/54cb57776803fa99248b456e.webp"
+   },
+   "579dc571d53a0658a154fbec": {
+    "file": "assets/icons-traders/portraits/579dc571d53a0658a154fbec.webp",
+    "name": "Fence",
+    "bytes": 998,
+    "sha256": "6d76e36c0b82d4328fd9ff0619c4ea98f69ea17e30bfb75946ff300ae40a1c02",
+    "url": "https://assets.tarkov.dev/579dc571d53a0658a154fbec.webp"
+   },
+   "58330581ace78e27b8b10cee": {
+    "file": "assets/icons-traders/portraits/58330581ace78e27b8b10cee.webp",
+    "name": "Skier",
+    "bytes": 4014,
+    "sha256": "006208ca951eae2f7e961ebd7f1f483ce5ac015e0faf53fcb25028e6ca7c3023",
+    "url": "https://assets.tarkov.dev/58330581ace78e27b8b10cee.webp"
+   },
+   "5935c25fb3acc3127c3d8cd9": {
+    "file": "assets/icons-traders/portraits/5935c25fb3acc3127c3d8cd9.webp",
+    "name": "Peacekeeper",
+    "bytes": 3500,
+    "sha256": "b7b3b8cc14fe387c94ddc9fd9027e85f8691abcbcf3ea888bc8137786ca84af3",
+    "url": "https://assets.tarkov.dev/5935c25fb3acc3127c3d8cd9.webp"
+   },
+   "5a7c2eca46aef81a7ca2145d": {
+    "file": "assets/icons-traders/portraits/5a7c2eca46aef81a7ca2145d.webp",
+    "name": "Mechanic",
+    "bytes": 4408,
+    "sha256": "13614b76d742fba23cb99e5cfd08f4bbd7f4c2118e4531cd9823207d35c0551f",
+    "url": "https://assets.tarkov.dev/5a7c2eca46aef81a7ca2145d.webp"
+   },
+   "5ac3b934156ae10c4430e83c": {
+    "file": "assets/icons-traders/portraits/5ac3b934156ae10c4430e83c.webp",
+    "name": "Ragman",
+    "bytes": 4506,
+    "sha256": "45abba143100e0c9c6db0b6100bb43e208728fc31e5d0cd70730344f4b827bce",
+    "url": "https://assets.tarkov.dev/5ac3b934156ae10c4430e83c.webp"
+   },
+   "5c0647fdd443bc2504c2d371": {
+    "file": "assets/icons-traders/portraits/5c0647fdd443bc2504c2d371.webp",
+    "name": "Jaeger",
+    "bytes": 4310,
+    "sha256": "5ce2554f8db99523dc9a77cbd980705e1abb21490f1c0d64528bacf15d5f3595",
+    "url": "https://assets.tarkov.dev/5c0647fdd443bc2504c2d371.webp"
+   },
+   "638f541a29ffd1183d187f57": {
+    "file": "assets/icons-traders/portraits/638f541a29ffd1183d187f57.webp",
+    "name": "Lightkeeper",
+    "bytes": 3242,
+    "sha256": "e3dbd174b6a7813ef1e327164320ee56163671067c0d4c8b997d69f174d7f1ec",
+    "url": "https://assets.tarkov.dev/638f541a29ffd1183d187f57.webp"
+   },
+   "656f0f98d80a697f855d34b1": {
+    "file": "assets/icons-traders/portraits/656f0f98d80a697f855d34b1.webp",
+    "name": "BTR司机",
+    "bytes": 20736,
+    "sha256": "2ab4b04d42c49c82e6e87d5d8e27f93c7f33e3d98059fac1c313d5a266823070",
+    "url": "https://assets.tarkov.dev/656f0f98d80a697f855d34b1.webp"
+   },
+   "6617beeaa9cfa777ca915b7c": {
+    "file": "assets/icons-traders/portraits/6617beeaa9cfa777ca915b7c.webp",
+    "name": "竞技场裁判",
+    "bytes": 22614,
+    "sha256": "d975d39f40452995cedfbbbb3c440753bc279ffbe61db233ce749d7f0b055bbc",
+    "url": "https://assets.tarkov.dev/6617beeaa9cfa777ca915b7c.webp"
+   },
+   "688246518448b05efd61d461": {
+    "file": "assets/icons-traders/portraits/688246518448b05efd61d461.webp",
+    "name": "Kerman",
+    "bytes": 32238,
+    "sha256": "42a89f13bd01860a453636cedd858d79e5509e6a37ab404e6b3c643abcbd27cc",
+    "url": "https://assets.tarkov.dev/688246518448b05efd61d461.webp"
+   },
+   "688246958448b05efd61d462": {
+    "file": "assets/icons-traders/portraits/688246958448b05efd61d462.webp",
+    "name": "Voevoda",
+    "bytes": 18960,
+    "sha256": "2100f216657e2831d20d1db8c0bd0075d9b7520b22774795f6a7b00111cef55c",
+    "url": "https://assets.tarkov.dev/688246958448b05efd61d462.webp"
+   },
+   "68fe15910f29ba3fdbba9d54": {
+    "file": "assets/icons-traders/portraits/68fe15910f29ba3fdbba9d54.webp",
+    "name": "Taran",
+    "bytes": 29236,
+    "sha256": "ab8354c0a3770ca10156566691af0d182d6de8edcd1a516ada048777398de2be",
+    "url": "https://assets.tarkov.dev/68fe15910f29ba3fdbba9d54.webp"
+   },
+   "68fe15990f29ba3fdbba9d55": {
+    "file": "assets/icons-traders/portraits/68fe15990f29ba3fdbba9d55.webp",
+    "name": "无线电台",
+    "bytes": 25380,
+    "sha256": "3cc4dcb1aeecb2310fb186fe52a92f67952e78da919e83c31c77e5d4c8450f35",
+    "url": "https://assets.tarkov.dev/68fe15990f29ba3fdbba9d55.webp"
+   },
+   "69e0d6cc77b63940375b9173": {
+    "file": "assets/icons-traders/portraits/69e0d6cc77b63940375b9173.webp",
+    "name": "幸存者",
+    "bytes": 25600,
+    "sha256": "eb4608e08df73accb29a3ff10cc77777f3495fe465480979afe77a47e7af9b71",
+    "url": "https://assets.tarkov.dev/69e0d6cc77b63940375b9173.webp"
+   }
+  }
+ },
+ "licenseReview": {
+  "reviewedAt": "2026-11-15T13:01:20Z",
+  "scope": "16 位商人的头像（原 assets/icons-traders/*.webp）",
+  "checked": [
+   {
+    "source": "https://github.com/the-hideout/tarkov-dev/blob/main/LICENSE",
+    "finding": "MIT，覆盖的是项目源代码，未提图片素材"
+   },
+   {
+    "source": "https://github.com/the-hideout/tarkov-dev/blob/main/README.md",
+    "finding": "未声明图片素材许可或再分发条件"
+   },
+   {
+    "source": "https://github.com/the-hideout/.github/blob/main/profile/docs/infrastructure.md",
+    "finding": "仅说明图片经 S3 + Cloudflare 分发，未给许可"
+   },
+   {
+    "source": "https://tarkov.dev/ 页面页脚",
+    "finding": "Game content and materials are trademarks and copyrights of Battlestate Games and its licensors. All rights reserved."
+   },
+   {
+    "source": "https://assets.tarkov.dev/",
+    "finding": "纯 CDN，无独立许可页，不构成再分发授权"
+   }
+  ],
+  "conclusion": "未找到允许再分发这些游戏角色美术的许可；不将「公开可下载 / 署名 / 非商业」视为 MIT 或 CC BY-NC-SA。",
+  "status": "superseded",
+  "supersededBy": "decision（2026-10-30 项目所有者决定：学术研究/非商用，改用游戏素材）",
+  "runtimeIcon": "assets/icons-traders/{normalizedName}.svg"
+ },
+ "count": 16,
+ "total": 16,
+ "missing": [],
+ "files": {},
+ "localFiles": {
+  "flea": {
+   "file": "assets/icons-traders/flea.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "跳蚤市场（项目内自绘，无外部素材）",
+   "downloadedAt": "",
+   "sha256": "c9aed85a54e3cd610e82c8606c17c1a988f4ef8995af955826069ab3d7b98ea4",
+   "bytes": 798
+  },
+  "unknown": {
+   "file": "assets/icons-traders/unknown.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "来源未确认回退图（项目内自绘，无外部素材）",
+   "downloadedAt": "",
+   "sha256": "4ed7944855b55060b38d7b19e0605ad514d5b02fb7ca21feefbea1a1e1797dc7",
+   "bytes": 591
+  },
+  "prapor": {
+   "traderId": "54cb50c76803fa8b248b4571",
+   "name": "Prapor",
+   "file": "assets/icons-traders/prapor.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Prapor 的中性缩写图标（PR，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "d2e9ed16ac315dfb8d55826c2ff2bc7f20fadbf595d2108bfe74eebd714797a4",
+   "bytes": 456
+  },
+  "therapist": {
+   "traderId": "54cb57776803fa99248b456e",
+   "name": "Therapist",
+   "file": "assets/icons-traders/therapist.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Therapist 的中性缩写图标（TH，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "00cda9c361a5b5ad2f6079ae9231bc6e9c47126698fccd43388273b921c05a7b",
+   "bytes": 459
+  },
+  "fence": {
+   "traderId": "579dc571d53a0658a154fbec",
+   "name": "Fence",
+   "file": "assets/icons-traders/fence.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Fence 的中性缩写图标（FE，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "20f00f76ebf0a4ea0bd64f5ce844d06449608549f23d4e9251febb0600a66c09",
+   "bytes": 455
+  },
+  "skier": {
+   "traderId": "58330581ace78e27b8b10cee",
+   "name": "Skier",
+   "file": "assets/icons-traders/skier.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Skier 的中性缩写图标（SK，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "160ac597bc44e9b8d223fac847b1789ddc6e8c4c59a92c688ebc829978531135",
+   "bytes": 455
+  },
+  "peacekeeper": {
+   "traderId": "5935c25fb3acc3127c3d8cd9",
+   "name": "Peacekeeper",
+   "file": "assets/icons-traders/peacekeeper.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Peacekeeper 的中性缩写图标（PK，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "57bf3d0e7a58e980c6a18cc427b32d1a15569d032cb6aa1f43eb93762586d35b",
+   "bytes": 461
+  },
+  "mechanic": {
+   "traderId": "5a7c2eca46aef81a7ca2145d",
+   "name": "Mechanic",
+   "file": "assets/icons-traders/mechanic.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Mechanic 的中性缩写图标（ME，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "a56a8dfc51b2bdd9bb4efd31b67658c7722b9d3081b96d20cc2a53fdc69c342a",
+   "bytes": 458
+  },
+  "ragman": {
+   "traderId": "5ac3b934156ae10c4430e83c",
+   "name": "Ragman",
+   "file": "assets/icons-traders/ragman.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Ragman 的中性缩写图标（RA，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "30c0203d86ad4d9b0bdb6f86961bdf0bae195da77ec5ead23f51d6e53750422a",
+   "bytes": 456
+  },
+  "jaeger": {
+   "traderId": "5c0647fdd443bc2504c2d371",
+   "name": "Jaeger",
+   "file": "assets/icons-traders/jaeger.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Jaeger 的中性缩写图标（JA，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "46c6933bc6a99f572e02f5e472ad295448d8f7b77de013177722ed97f66f1f2b",
+   "bytes": 456
+  },
+  "lightkeeper": {
+   "traderId": "638f541a29ffd1183d187f57",
+   "name": "Lightkeeper",
+   "file": "assets/icons-traders/lightkeeper.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Lightkeeper 的中性缩写图标（LK，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "853dfee955c7261cf1adde3e12f35bb01c7dbb6a72e1572b1b20f8abb37bb4d7",
+   "bytes": 461
+  },
+  "btr-driver": {
+   "traderId": "656f0f98d80a697f855d34b1",
+   "name": "BTR司机",
+   "file": "assets/icons-traders/btr-driver.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 BTR司机 的中性缩写图标（BTR，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "9b6d0ee429192ff1a83f9e19c25ac324b44f0ad355dee9d0158a5f8dec6d14e8",
+   "bytes": 460
+  },
+  "ref": {
+   "traderId": "6617beeaa9cfa777ca915b7c",
+   "name": "竞技场裁判",
+   "file": "assets/icons-traders/ref.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 竞技场裁判 的中性缩写图标（REF，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "61454272feab638696e1f9e593028cd588317e8bab0a7795196871f118090845",
+   "bytes": 466
+  },
+  "mr-kerman": {
+   "traderId": "688246518448b05efd61d461",
+   "name": "Kerman",
+   "file": "assets/icons-traders/mr-kerman.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Kerman 的中性缩写图标（KM，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "ce456faef63d209cc0227452d30fdd78c06de6c2c6842e1892ac08276c235d9a",
+   "bytes": 456
+  },
+  "voevoda": {
+   "traderId": "688246958448b05efd61d462",
+   "name": "Voevoda",
+   "file": "assets/icons-traders/voevoda.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Voevoda 的中性缩写图标（VO，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "2aca8ae4bc3abcbb9536025844ead467fa8193b8aaad23c3409e27eef2d358d9",
+   "bytes": 457
+  },
+  "taran": {
+   "traderId": "68fe15910f29ba3fdbba9d54",
+   "name": "Taran",
+   "file": "assets/icons-traders/taran.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 Taran 的中性缩写图标（TA，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "4010b46432aa22d4353dbfc24dca66be664a4a10d5177f8324738f821295ef68",
+   "bytes": 455
+  },
+  "radio-station": {
+   "traderId": "68fe15990f29ba3fdbba9d55",
+   "name": "无线电台",
+   "file": "assets/icons-traders/radio-station.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 无线电台 的中性缩写图标（RS，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "911775b3ff0940c8eb1135c4783711818fabcce36f49faaa7a3b60023eeddfc7",
+   "bytes": 462
+  },
+  "survivor": {
+   "traderId": "69e0d6cc77b63940375b9173",
+   "name": "幸存者",
+   "file": "assets/icons-traders/survivor.svg",
+   "url": "",
+   "source": "项目内自绘（SVG 源码随仓库提交）",
+   "license": "项目内自制，无第三方素材与再分发限制",
+   "description": "商人 幸存者 的中性缩写图标（SV，项目内自绘）",
+   "downloadedAt": "",
+   "sha256": "1ee1e5df5a8a9c4aeaab18806dd50e177139453f5ca69f3d1661c9bcaadef109",
+   "bytes": 459
+  }
+ },
+ "removed": [
+  {
+   "file": "assets/icons-traders/prapor.webp",
+   "traderId": "54cb50c76803fa8b248b4571",
+   "name": "Prapor",
+   "url": "https://assets.tarkov.dev/54cb50c76803fa8b248b4571.webp",
+   "sha256": "9cbf1e9fbb520afc12ccf85fcde6a29045e206b830155cccedf9707a2ab5dfa0",
+   "bytes": 4020,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/therapist.webp",
+   "traderId": "54cb57776803fa99248b456e",
+   "name": "Therapist",
+   "url": "https://assets.tarkov.dev/54cb57776803fa99248b456e.webp",
+   "sha256": "d8e07f5f097852faf112bd70201565079d68fe64dc4e43be813309a3ebf039b7",
+   "bytes": 4270,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/fence.webp",
+   "traderId": "579dc571d53a0658a154fbec",
+   "name": "Fence",
+   "url": "https://assets.tarkov.dev/579dc571d53a0658a154fbec.webp",
+   "sha256": "6d76e36c0b82d4328fd9ff0619c4ea98f69ea17e30bfb75946ff300ae40a1c02",
+   "bytes": 998,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/skier.webp",
+   "traderId": "58330581ace78e27b8b10cee",
+   "name": "Skier",
+   "url": "https://assets.tarkov.dev/58330581ace78e27b8b10cee.webp",
+   "sha256": "006208ca951eae2f7e961ebd7f1f483ce5ac015e0faf53fcb25028e6ca7c3023",
+   "bytes": 4014,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/peacekeeper.webp",
+   "traderId": "5935c25fb3acc3127c3d8cd9",
+   "name": "Peacekeeper",
+   "url": "https://assets.tarkov.dev/5935c25fb3acc3127c3d8cd9.webp",
+   "sha256": "b7b3b8cc14fe387c94ddc9fd9027e85f8691abcbcf3ea888bc8137786ca84af3",
+   "bytes": 3500,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/mechanic.webp",
+   "traderId": "5a7c2eca46aef81a7ca2145d",
+   "name": "Mechanic",
+   "url": "https://assets.tarkov.dev/5a7c2eca46aef81a7ca2145d.webp",
+   "sha256": "13614b76d742fba23cb99e5cfd08f4bbd7f4c2118e4531cd9823207d35c0551f",
+   "bytes": 4408,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/ragman.webp",
+   "traderId": "5ac3b934156ae10c4430e83c",
+   "name": "Ragman",
+   "url": "https://assets.tarkov.dev/5ac3b934156ae10c4430e83c.webp",
+   "sha256": "45abba143100e0c9c6db0b6100bb43e208728fc31e5d0cd70730344f4b827bce",
+   "bytes": 4506,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/jaeger.webp",
+   "traderId": "5c0647fdd443bc2504c2d371",
+   "name": "Jaeger",
+   "url": "https://assets.tarkov.dev/5c0647fdd443bc2504c2d371.webp",
+   "sha256": "5ce2554f8db99523dc9a77cbd980705e1abb21490f1c0d64528bacf15d5f3595",
+   "bytes": 4310,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/lightkeeper.webp",
+   "traderId": "638f541a29ffd1183d187f57",
+   "name": "Lightkeeper",
+   "url": "https://assets.tarkov.dev/638f541a29ffd1183d187f57.webp",
+   "sha256": "e3dbd174b6a7813ef1e327164320ee56163671067c0d4c8b997d69f174d7f1ec",
+   "bytes": 3242,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/btr-driver.webp",
+   "traderId": "656f0f98d80a697f855d34b1",
+   "name": "BTR司机",
+   "url": "https://assets.tarkov.dev/656f0f98d80a697f855d34b1.webp",
+   "sha256": "2ab4b04d42c49c82e6e87d5d8e27f93c7f33e3d98059fac1c313d5a266823070",
+   "bytes": 20736,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/ref.webp",
+   "traderId": "6617beeaa9cfa777ca915b7c",
+   "name": "竞技场裁判",
+   "url": "https://assets.tarkov.dev/6617beeaa9cfa777ca915b7c.webp",
+   "sha256": "d975d39f40452995cedfbbbb3c440753bc279ffbe61db233ce749d7f0b055bbc",
+   "bytes": 22614,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/mr-kerman.webp",
+   "traderId": "688246518448b05efd61d461",
+   "name": "Kerman",
+   "url": "https://assets.tarkov.dev/688246518448b05efd61d461.webp",
+   "sha256": "42a89f13bd01860a453636cedd858d79e5509e6a37ab404e6b3c643abcbd27cc",
+   "bytes": 32238,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/voevoda.webp",
+   "traderId": "688246958448b05efd61d462",
+   "name": "Voevoda",
+   "url": "https://assets.tarkov.dev/688246958448b05efd61d462.webp",
+   "sha256": "2100f216657e2831d20d1db8c0bd0075d9b7520b22774795f6a7b00111cef55c",
+   "bytes": 18960,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/taran.webp",
+   "traderId": "68fe15910f29ba3fdbba9d54",
+   "name": "Taran",
+   "url": "https://assets.tarkov.dev/68fe15910f29ba3fdbba9d54.webp",
+   "sha256": "ab8354c0a3770ca10156566691af0d182d6de8edcd1a516ada048777398de2be",
+   "bytes": 29236,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/radio-station.webp",
+   "traderId": "68fe15990f29ba3fdbba9d55",
+   "name": "无线电台",
+   "url": "https://assets.tarkov.dev/68fe15990f29ba3fdbba9d55.webp",
+   "sha256": "3cc4dcb1aeecb2310fb186fe52a92f67952e78da919e83c31c77e5d4c8450f35",
+   "bytes": 25380,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  },
+  {
+   "file": "assets/icons-traders/survivor.webp",
+   "traderId": "69e0d6cc77b63940375b9173",
+   "name": "幸存者",
+   "url": "https://assets.tarkov.dev/69e0d6cc77b63940375b9173.webp",
+   "sha256": "eb4608e08df73accb29a3ff10cc77777f3495fe465480979afe77a47e7af9b71",
+   "bytes": 25600,
+   "reason": "上游游戏角色美术无可再分发许可（MIT 仅覆盖源代码），已替换为项目内自绘中性图标",
+   "removedAt": "2026-10-20T14:10:16Z"
+  }
+ ]
+}

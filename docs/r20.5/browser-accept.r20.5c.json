@@ -1,0 +1,68 @@
+{
+ "validator": "r205c_accept.py",
+ "base": "http://127.0.0.1:8810",
+ "pass": true,
+ "summary": {
+  "total": 11,
+  "passed": 11
+ },
+ "checks": [
+  {
+   "id": "L1_浏览页有价格口径切换",
+   "pass": true,
+   "detail": "['flea|跳蚤|false', 'last|LAST|false', 'pvp|PvP|true', 'scav|Scav|true', 'base|基础价|false']"
+  },
+  {
+   "id": "L2_每个口径分组都有左侧色块",
+   "pass": true,
+   "detail": "色块数=30"
+  },
+  {
+   "id": "L2b_色块按真实弹药类别着色",
+   "pass": true,
+   "detail": "{'gw-calcat-rifle': 15, 'gw-calcat-pistol_smg': 8, 'gw-calcat-shotgun': 3, 'gw-calcat-grenade': 2, 'gw-calcat-pdw': 2}"
+  },
+  {
+   "id": "L2c_5.56x45标为步枪弹色",
+   "pass": true,
+   "detail": "{'cal': '5.56x45', 'cls': 'gw-calblock gw-calcat-rifle', 'n': '18'}"
+  },
+  {
+   "id": "L3_网格已变密集(列数≥10)",
+   "pass": true,
+   "detail": "{'maxCardsInGroup': 20, 'cols': 14, 'gridW': 1591, 'cardW': 110, 'innerW': 1664}"
+  },
+  {
+   "id": "L4_浏览页切换口径后卡片价格随之变化",
+   "pass": true,
+   "detail": "79,045 ₽ -> 63,453 ₽"
+  },
+  {
+   "id": "L5a_已选枪后有已装配件",
+   "pass": true,
+   "detail": "已装=7"
+  },
+  {
+   "id": "L5b_清空配件生效",
+   "pass": true,
+   "detail": "7 -> 0"
+  },
+  {
+   "id": "L6_回退恢复装配",
+   "pass": true,
+   "detail": "clicked：0 -> 7"
+  },
+  {
+   "id": "L7a_控制台无错误",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "L7b_运行期无外部网络请求",
+   "pass": true,
+   "detail": "[]"
+  }
+ ],
+ "consoleErrors": 0,
+ "externalHosts": []
+}

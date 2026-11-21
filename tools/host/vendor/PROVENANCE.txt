@@ -1,0 +1,22 @@
+WebView2 运行库来源与校验
+==========================
+
+本目录的两个 DLL 是 Microsoft WebView2 SDK 的随应用分发运行库，
+用于 tools/host 的 MiniHost.exe（.NET Framework 4.8 + WebView2 Core 托管 API）。
+
+来源：本机已安装的 XiaoMeowToolbox 1.5.3 应用目录 app/（本地取证副本，
+       d:\personal\trae\02-塔科夫\逆向参考\build-re-xiaomeow\app\）
+用途：仅作为宿主进程内的 WebView2 客户端；运行期只连接 127.0.0.1，不访问外网。
+
+文件与 SHA-256
+--------------
+Microsoft.Web.WebView2.Core.dll  698208 bytes
+  D60E6E94245078CB56E44EBD5F360DC04BF18E460136BE93BFC4CFCA43B98505
+
+WebView2Loader.dll  194912 bytes (x64)
+  3426DCC55FDFB8B5E7AC623CF33B4CCF283FBF68A0C5A65BDDFDB4D749A8ABEE
+
+许可证
+------
+Microsoft WebView2 SDK / WebView2 Runtime 的微软许可条款允许随应用分发这些运行库；
+本仓库不修改它们，也不在运行期下载任何 WebView2 组件。

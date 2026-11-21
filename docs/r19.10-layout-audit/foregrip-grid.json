@@ -1,0 +1,357 @@
+{
+ "schema": "eftmap.r19.10.foregrip-grid/1",
+ "viewports": [
+  "1920x919",
+  "1384x805"
+ ],
+ "guns": {
+  "hk416": {
+   "kind": "direct",
+   "parentSlot": "mod_reciever/mod_handguard",
+   "grid": {
+    "cols": "9",
+    "rows": "6",
+    "body": {
+     "row": 2,
+     "col": 6,
+     "x": 316,
+     "w": 181
+    },
+    "ammo": {
+     "row": 5,
+     "col": 7
+    }
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "HK 416 四面导轨护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "HK Battle Grip“海狸尾”AR-15 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "invariants": {
+    "alignedWithParent": true,
+    "directlyBelowParent": true,
+    "sameRowAsMag": false,
+    "rightOfGrip": false,
+    "linkFromParent": true
+   },
+   "linkPath": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   },
+   "allCells": 20
+  },
+  "scar": {
+   "kind": "rail",
+   "parentSlot": "mod_reciever/mod_mount_000",
+   "grid": {
+    "cols": "9",
+    "rows": "7",
+    "body": {
+     "row": 3,
+     "col": 4,
+     "x": 192,
+     "w": 181
+    },
+    "ammo": {
+     "row": 6,
+     "col": 5
+    }
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+    "parent": "mod_reciever/mod_mount_000",
+    "lane": "lower",
+    "row": 4,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 226,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 284
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_mount_000",
+    "parent": "mod_reciever",
+    "lane": "top2",
+    "row": 2,
+    "col": 4,
+    "item": "FN SCAR底轨",
+    "x": 192,
+    "y": 77,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 135
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 5,
+    "col": 5,
+    "item": "FN SCAR-H 7.62x51 20发弹匣",
+    "x": 254,
+    "y": 294,
+    "w": 58,
+    "h": 58,
+    "cx": 283,
+    "bottom": 351
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 5,
+    "col": 6,
+    "item": "柯尔特A2 AR-15手枪式握把",
+    "x": 316,
+    "y": 294,
+    "w": 58,
+    "h": 58,
+    "cx": 345,
+    "bottom": 351
+   },
+   "invariants": {
+    "alignedWithParent": true,
+    "directlyBelowParent": false,
+    "sameRowAsMag": false,
+    "rightOfGrip": false,
+    "linkFromParent": true
+   },
+   "linkPath": "M221.21875 134.5625 L221.21875 225.75",
+   "install": {
+    "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   },
+   "allCells": 23
+  },
+  "mcx": {
+   "kind": "direct",
+   "parentSlot": "mod_reciever/mod_handguard",
+   "grid": {
+    "cols": "9",
+    "rows": "5",
+    "body": {
+     "row": 2,
+     "col": 6,
+     "x": 316,
+     "w": 181
+    },
+    "ammo": {
+     "row": 5,
+     "col": 7
+    }
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "A3 Tactical MVF001 KeyMod 垂直前握把（黑色）",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "MCX GEN1 KeyMod 8 英寸护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "MCX 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "invariants": {
+    "alignedWithParent": true,
+    "directlyBelowParent": true,
+    "sameRowAsMag": false,
+    "rightOfGrip": false,
+    "linkFromParent": true
+   },
+   "linkPath": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "A3 Tactical MVF001 KeyMod 垂直前握把（黑色）"
+   },
+   "allCells": 18
+  },
+  "hk416_1384": {
+   "kind": null,
+   "parentSlot": "mod_reciever/mod_handguard",
+   "grid": {
+    "cols": "9",
+    "rows": "6",
+    "body": {
+     "row": 2,
+     "col": 6,
+     "x": 316,
+     "w": 181
+    },
+    "ammo": {
+     "row": 5,
+     "col": 7
+    }
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "HK 416 四面导轨护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "HK Battle Grip“海狸尾”AR-15 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "invariants": {
+    "alignedWithParent": true,
+    "directlyBelowParent": true,
+    "sameRowAsMag": false,
+    "rightOfGrip": false,
+    "linkFromParent": true
+   },
+   "linkPath": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   },
+   "allCells": 20
+  }
+ }
+}

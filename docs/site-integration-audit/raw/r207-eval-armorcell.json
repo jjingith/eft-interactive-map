@@ -1,0 +1,9 @@
+{
+ "bg": "rgb(255, 255, 255)",
+ "border": "rgb(172, 168, 153)",
+ "filter": "none",
+ "innerHTML": "<img class=\"lw-sil\" alt=\"\" draggable=\"false\" src=\"assets/ui/placeholders/armor.png\"><span class=\"lw-cell-label\">护甲</span>",
+ "imgSrc": "assets/ui/placeholders/armor.png",
+ "imgFilter": "none",
+ "imgW": 106
+}

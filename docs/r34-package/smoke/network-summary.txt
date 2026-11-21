@@ -1,0 +1,48 @@
+# host=HOMONAS user=MASTERJJ at=2026-11-03T10:38:00+08:00 round=R34-package
+# 冒烟环境：dist\EFTMap\EFTMap.exe --server-only --port 8788（打包产物自带 serve）
+# 浏览器：Chrome（CDP），隔离上下文 r34smoke3
+
+requests_initial=95
+requests_wiki=369
+external_requests=0
+
+required_files:
+  tasks.js=200
+  wiki-map.js=200
+  gun_builder.js=200
+  combat_sim.js=200
+  i18n.js=200
+  calibrator.js=200
+  styles/design-tokens.css=200
+  styles/ui-components.css=200
+  js/ui-components.js=200
+  js/game-mode.js=200
+  js/task-graph-layout.js=200
+
+console_errors:
+  仅 favicon.ico 404（预存、非运行期脚本）
+
+non_200_resources:
+  /favicon.ico 404
+  /assets/guns-full/6a15ae2ae5267ba21c07f98f.png 404
+  /assets/guns-full/6a78b7f8c2016eb33e0027cd.png 404
+  /assets/icons-transparent/6a15ae2ae5267ba21c07f98f.png 404
+  /assets/icons-items/6a15ae2ae5267ba21c07f98f.webp 404
+
+missing_asset_items:
+  6a15ae2ae5267ba21c07f98f = HK 416A5 5.56x45 突击步枪 (RAL 8000)
+  6a78b7f8c2016eb33e0027cd = FN P90 5.7x28 冲锋枪（灾厄）
+
+note:
+  这两个物品由 09:41–09:43 的外部数据刷新新增到 data/items.json，
+  但源目录没有对应的 guns-full / icons-transparent / icons-items 图像；
+  verify_package_files.ps1 只校验已存在文件，因此它们不在清单里。
+  配枪/配装页面可打开，但选中这两把新枪时会出现 404 破图。
+
+screenshots:
+  docs/r34-package/smoke/map.png
+  docs/r34-package/smoke/tasks.png
+  docs/r34-package/smoke/loadout.png
+  docs/r34-package/smoke/gun.png
+  docs/r34-package/smoke/ammo.png
+  docs/r34-package/smoke/wiki.png

@@ -1,0 +1,82 @@
+{
+ "generatedFor": "R19.16",
+ "views": [
+  "auto",
+  "manual"
+ ],
+ "viewSwitchButtons": [
+  "自动布局",
+  "校准预览"
+ ],
+ "autoView": "显示 gwBuildLayout 的原始坐标，忽略人工覆盖",
+ "manualView": "应用人工校准坐标预览，标注「已校准」与差异列表（原坐标 → 新坐标）",
+ "autoLayoutSample": {
+  "mod_gas_block": [
+   3,
+   3
+  ],
+  "mod_gas_block/mod_handguard": [
+   3,
+   4
+  ],
+  "mod_muzzle": [
+   3,
+   2
+  ],
+  "mod_pistol_grip": [
+   4,
+   8
+  ],
+  "mod_reciever": [
+   3,
+   5
+  ],
+  "mod_reciever/mod_mount": [
+   2,
+   5
+  ],
+  "mod_sight_rear": [
+   2,
+   6
+  ],
+  "mod_sight_rear/mod_sight_rear": [
+   2,
+   7
+  ],
+  "mod_stock": [
+   3,
+   9
+  ],
+  "mod_stock/mod_stock": [
+   4,
+   9
+  ],
+  "mod_magazine": [
+   4,
+   7
+  ],
+  "mod_mount_000": [
+   2,
+   8
+  ],
+  "mod_charge": [
+   2,
+   9
+  ]
+ },
+ "manualSample": {
+  "mod_mount_000": {
+   "auto": [
+    2,
+    8
+   ],
+   "calibrated": [
+    5,
+    2
+   ]
+  }
+ },
+ "manualAppliedToMainEngine": false,
+ "mainEngineReadsCalibrationFile": false,
+ "note": "本轮只交付校准工具与数据契约；人工坐标仅在校准器预览生效，主布局引擎 gwBuildLayout 不读取该文件"
+}

@@ -1,0 +1,75 @@
+{
+ "note": "参考站为 Flutter Web（CanvasKit）：不存在可查询的 widget DOM，因此无法导出元素级 computed style。以下记录的是同视口下本地实现的对应值，以及参考站可测得的尺寸约束（来自语义树 rect）。",
+ "referenceCss": "unavailable (Flutter canvas rendering, body 26 nodes, innerText 0)",
+ "referenceRects": {
+  "centerPanel": [
+   480,
+   88,
+   512,
+   831
+  ],
+  "canvas": [
+   499,
+   144,
+   462,
+   137
+  ],
+  "loadvarRow": [
+   480,
+   88,
+   512,
+   47
+  ],
+  "barsFirstRow": [
+   496,
+   304,
+   66,
+   10
+  ],
+  "barsRowPitchPx": 12,
+  "hiddenBlock": [
+   485,
+   373,
+   120,
+   40
+  ],
+  "toolbarRow": [
+   0,
+   52,
+   1920,
+   30
+  ]
+ },
+ "localCss": {
+  "gw-buildpage": {
+   "gridTemplateColumns": "minmax(216px,486fr) minmax(360px,490fr) minmax(320px,858fr)",
+   "columnGap": "12px",
+   "paddingRight": "60px @>=1700px"
+  },
+  "gw-loadvar": {
+   "height": "30px",
+   "flexWrap": "nowrap"
+  },
+  "gw-nodecanvas": {
+   "height": "137px",
+   "backgroundImage": "radial-gradient(dot) 14px"
+  },
+  "gw-bars": {
+   "padding": "2px 8px",
+   "barRowHeight": "12px",
+   "trackHeight": "8px"
+  },
+  "gw-hidden": {
+   "display": "grid",
+   "gridTemplateColumns": "repeat(3,1fr)",
+   "rowHeight": "12px"
+  },
+  "gw-canvas(slot grid)": {
+   "grid z-index": "links svg absolute; bands flex"
+  },
+  "gw-stats": {
+   "gridTemplateColumns": "repeat(5,1fr)",
+   "rowHeight": "13px"
+  }
+ }
+}

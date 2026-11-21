@@ -1,0 +1,225 @@
+{
+ "p1": {
+  "cards": {
+   "total": 163,
+   "fullImg": 161,
+   "fallback": 2
+  },
+  "spot": [
+   {
+    "gun": "AK-74 5",
+    "src": "assets/guns-full/5bf3e03b0db834001d2c4a9c.png",
+    "loaded": true,
+    "nw": 364,
+    "nh": 112
+   },
+   {
+    "gun": "HK MP5",
+    "src": "assets/guns-full/5926bb2186f7744b1c6c6e60.png",
+    "loaded": true,
+    "nw": 241,
+    "nh": 112
+   },
+   {
+    "gun": "莫辛-纳甘",
+    "src": "assets/guns-full/5bfd297f0db834001a669119.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 68
+   },
+   {
+    "gun": "MP-133",
+    "src": "assets/guns-full/54491c4f4bdc2db1078b4568.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 79
+   },
+   {
+    "gun": "马卡洛夫",
+    "src": "assets/guns-full/579204f224597773d619e051.png",
+    "loaded": true,
+    "nw": 151,
+    "nh": 112
+   },
+   {
+    "gun": "柯尔特 M4A1",
+    "src": "assets/guns-full/5447a9cd4bdc2dbd208b4567.png",
+    "loaded": true,
+    "nw": 290,
+    "nh": 112
+   },
+   {
+    "gun": "SVDS",
+    "src": "assets/guns-full/5c46fbd72e2216398b5a8c9c.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 69
+   },
+   {
+    "gun": "雷明顿 Model 870",
+    "src": "assets/guns-full/5a7828548dc32e5a9c28b516.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 84
+   },
+   {
+    "gun": "AS VAL",
+    "src": "assets/guns-full/57c44b372459772d2b39b8ce.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 101
+   },
+   {
+    "gun": "RPK-16",
+    "src": "assets/guns-full/5beed0f50db834001c062b12.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 106
+   },
+   {
+    "gun": "PP-19-01",
+    "src": "assets/guns-full/59984ab886f7743e98271174.png",
+    "loaded": true,
+    "nw": 267,
+    "nh": 112
+   },
+   {
+    "gun": "SV-98",
+    "src": "assets/guns-full/55801eed4bdc2d89578b4588.png",
+    "loaded": true,
+    "nw": 400,
+    "nh": 72
+   }
+  ],
+  "hscroll1264": false
+ },
+ "p2": {
+  "hover": "rgb(255, 243, 196) / rgb(232, 163, 61)",
+  "selected": "{\"bg\":\"rgb(255, 233, 168)\",\"color\":\"rgb(0, 0, 0)\",\"nameColor\":\"rgb(0, 0, 0)\"}",
+  "selectedAfterBack": "rgb(255, 233, 168)",
+  "switched": "{\"now\":\"HK MP5 9x19 冲锋枪（海军三发\",\"bg\":\"rgb(255, 233, 168)\"}"
+ },
+ "p3": {
+  "workbench": [],
+  "build": "R19.3"
+ },
+ "p4": {
+  "ak74": {
+   "initial": {
+    "src": "59411aa786f7747aeb37f9a5.png",
+    "loaded": true,
+    "tag": "完整装配 · 官方预设：HK MP5 9x19 冲锋枪（海军三发点射） 默认"
+   },
+   "mod1": {
+    "src": "59411aa786f7747aeb37f9a5.png",
+    "loaded": true,
+    "tag": "完整装配 · 基准预设（已改动 1 件 ↓）"
+   },
+   "mod2": {
+    "src": "59411aa786f7747aeb37f9a5.png",
+    "loaded": true,
+    "tag": "完整装配 · 官方预设：HK MP5 9x19 冲锋枪（海军三发点射） 默认"
+   },
+   "strip": {
+    "count": 0,
+    "items": []
+   },
+   "reset": {
+    "src": "59411aa786f7747aeb37f9a5.png",
+    "loaded": true,
+    "tag": "完整装配 · 官方预设：HK MP5 9x19 冲锋枪（海军三发点射） 默认"
+   }
+  },
+  "m4a1": {
+   "initial": {
+    "src": "59411aa786f7747aeb37f9a5.png",
+    "loaded": true,
+    "tag": "完整装配 · 官方预设：HK MP5 9x19 冲锋枪（海军三发点射） 默认"
+   }
+  }
+ },
+ "p5": {
+  "m4a1": {
+   "TrueErgoDelta": "72.0",
+   "OverSwing": "否",
+   "Aim Sway 摆动强度": "0.0 %",
+   "ArmStamina": "55.1 s",
+   "精度 MOA": "6.88 MOA",
+   "ADS 时间": "0.33 s",
+   "爆头有效距离": "23 m"
+  },
+  "m4a1_strength30": {
+   "ArmStamina": "60.1 s",
+   "TrueErgoDelta": "72.0"
+  },
+  "glock": {
+   "精度 MOA": "11.69 MOA",
+   "TrueErgoDelta": "91.0",
+   "OverSwing": "否",
+   "ArmStamina": "98.2 s"
+  }
+ },
+ "p6": {
+  "cols": {
+   "forge": {
+    "x": 0,
+    "w": 461,
+    "h": 977
+   },
+   "center": {
+    "x": 461,
+    "w": 653,
+    "h": 977
+   },
+   "cands": {
+    "x": 1114,
+    "w": 806,
+    "h": 977
+   },
+   "modes": {
+    "x": 0,
+    "w": 1920,
+    "h": 33
+   },
+   "top": {
+    "x": 0,
+    "w": 1920,
+    "h": 39
+   },
+   "hero": {
+    "x": 485,
+    "w": 605,
+    "h": 172
+   },
+   "bars": {
+    "x": 473,
+    "w": 629,
+    "h": 117
+   },
+   "tree": {
+    "x": 473,
+    "w": 629,
+    "h": 747
+   },
+   "ammo": {
+    "x": 473,
+    "w": 629,
+    "h": 49
+   },
+   "bottom": {
+    "x": 473,
+    "w": 629,
+    "h": 150
+   },
+   "candSearch": {
+    "x": 1115,
+    "w": 805,
+    "h": 31
+   },
+   "visualName": "rgb(0, 0, 0)"
+  },
+  "hscroll1264Build": false
+ },
+ "console": [],
+ "external": []
+}

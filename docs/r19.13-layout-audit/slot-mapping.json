@@ -1,0 +1,6839 @@
+{
+ "schema": "eftmap.r19.13.slot-mapping/1",
+ "rules": {
+  "frontSight": "r2 · 与实际枪口同列（枪口在 c1 则 r2c1；无独立枪管槽、枪口在 c2 则 r2c2）",
+  "upperRailExtras": "r2c3 起向左（MPR45 备用导轨槽位的左侧）",
+  "mpr45": "r2c4（护木正上方；仅当真实槽位树允许安装 NcStar MPR45 时占用）",
+  "scope": "r2c5（上机匣正上方，不是枪身中间格）",
+  "rearSight": "r2c8（拉机柄左侧）",
+  "charge": "r2c9",
+  "muzzleChain": "枪口正下方同列逐行展开",
+  "foregrip": "护木正下方同列纵向（下护木/导轨转接件依次向下）",
+  "handguardExtras": "第六行空闲格，稳定从左到右"
+ },
+ "summary": {
+  "guns": 163,
+  "frontSightAligned": 56,
+  "frontSightMisaligned": [],
+  "scopeAboveReceiver": 66,
+  "scopeMisplaced": [],
+  "rearSightOk": 88,
+  "rearSightMissing": 50,
+  "mpr45Anchored": 35,
+  "mpr45Guns": 35,
+  "mpr45ExtraLeftOk": 1,
+  "mpr45ExtraMisplaced": [
+   {
+    "gun": "RPK-16 5.45x39 轻机枪",
+    "path": "mod_reciever/mod_sight_rear/mod_sight_rear",
+    "row": 2,
+    "col": 7
+   },
+   {
+    "gun": "AK-12 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_sight_rear/mod_sight_rear",
+    "row": 2,
+    "col": 7
+   },
+   {
+    "gun": "Saiga-12K 12 铅径自动霰弹枪",
+    "path": "mod_sight_rear",
+    "row": 2,
+    "col": 7
+   },
+   {
+    "gun": "AK-308 7.62x51 突击步枪",
+    "path": "mod_reciever/mod_sight_rear/mod_sight_rear",
+    "row": 2,
+    "col": 7
+   }
+  ],
+  "muzzleChains": 129,
+  "muzzleChainSameCol": 129,
+  "muzzleChainBreaks": [],
+  "foregrip": {
+   "direct": 41,
+   "upperLower": 0,
+   "viaRail": 11,
+   "root": 5,
+   "offParent": [],
+   "aboveParent": []
+  },
+  "handguardExtras": {
+   "total": 130,
+   "inRow6": 127,
+   "spills": []
+  },
+  "exceptions": [
+   {
+    "gun": "AK-74N 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+    "path": "mod_mount_004",
+    "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+   },
+   {
+    "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+    "path": "mod_mount_000",
+    "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+   },
+   {
+    "gun": "AKS-74U 5.45x39 短突击步枪",
+    "path": "mod_reciever/mod_mount_000",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKS-74UN 5.45x39 短突击步枪",
+    "path": "mod_reciever/mod_mount_000",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "HK MP5 9x19 冲锋枪（海军三发点射）",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKM 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "VPO-209 .366TKM 卡宾枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKMS 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKMN 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "春田 M1A 7.62x51 步枪",
+    "path": "mod_stock/mod_mount/mod_scope",
+    "why": "r2c4 已被占，MPR45 备用导轨槽位未锚定"
+   },
+   {
+    "gun": "AKS-74N 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKMSN 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-74M 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-101 5.56x45 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-102 5.56x45 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-103 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-104 7.62x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AK-105 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "DS Arms SA-58 7.62x51 突击步枪",
+    "path": "mod_stock/mod_stock_000/mod_stock_003",
+    "why": "枪托子槽超出 r6c9，落到邻近空位（真实子槽保留，不删）"
+   },
+   {
+    "gun": "HK MP7A1 4.6x30 冲锋枪",
+    "path": "mod_tactical_002",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "HK MP7A2 4.6x30 冲锋枪",
+    "path": "mod_tactical_002",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "AK-74 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "AKS-74 5.45x39 突击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+    "path": "mod_mount_002",
+    "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c2"
+   },
+   {
+    "gun": "ASh-12 12.7x55 突击步枪",
+    "path": "mod_tactical_000",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "ASh-12 12.7x55 突击步枪",
+    "path": "mod_tactical_001",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c2）"
+   },
+   {
+    "gun": "ASh-12 12.7x55 突击步枪",
+    "path": "mod_tactical_002",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c3）"
+   },
+   {
+    "gun": "FN P90 5.7x28 冲锋枪",
+    "path": "mod_reciever/mod_mount_001",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "HK MP5K 9x19 微型冲锋枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "FN GL-40 Mk.2 榴弹发射器",
+    "path": "mod_tactical_002",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+    "path": "mod_tactical_000",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+    "path": "mod_tactical_000",
+    "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+   },
+   {
+    "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+    "path": "mod_reciever/mod_sight_front",
+    "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+   },
+   {
+    "gun": "FN SCAR-H 7.62x51突击步枪",
+    "path": "mod_reciever/mod_sight_front",
+    "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+   },
+   {
+    "gun": "FN SCAR-L 5.56x45突击步枪",
+    "path": "mod_reciever/mod_sight_front",
+    "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+   },
+   {
+    "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+    "path": "mod_reciever/mod_sight_front",
+    "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+   },
+   {
+    "gun": "SR-3M 9x39紧凑型突击步枪",
+    "path": "mod_mount_000",
+    "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+   },
+   {
+    "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+    "path": "mod_reciever/mod_mount",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   },
+   {
+    "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+    "path": "mod_reciever/mod_sight_front",
+    "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+   },
+   {
+    "gun": "马林 MXLR .308 ME 杠杆步枪",
+    "path": "mod_charge",
+    "why": "杠杆步枪：击锤链占用本列上方，拉机柄改锚到枪托正下方 r4c9"
+   },
+   {
+    "gun": "TKPD 9.3x64 突击卡宾枪",
+    "path": "mod_mount_002",
+    "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c2"
+   },
+   {
+    "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+    "path": "mod_reciever/mod_mount_001",
+    "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+   }
+  ],
+  "muzzleUnplaced": 0
+ },
+ "guns": {
+  "5447a9cd4bdc2dbd208b4567": {
+   "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_reciever/mod_sight_rear/mod_scope"
+    ]
+   },
+   "exceptions": []
+  },
+  "5448bd6b4bdc2dfc2f8b4569": {
+   "gun": "马卡洛夫9x18PM 手枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "54491c4f4bdc2db1078b4568": {
+   "gun": "MP-133 12 铅径泵动式霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "55801eed4bdc2d89578b4588": {
+   "gun": "SV-98 7.62x54R 栓动式狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5580223e4bdc2d1c128b457f": {
+   "gun": "MP-43-1C 12 铅径双管霰弹枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5644bd2b4bdc2d3b4c8b4572": {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "56d59856d2720bd8418b456a": {
+   "gun": "SIG P226R 9x19 手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "56dee2bdd2720bc8328b4567": {
+   "gun": "MP-153 12铅径半自动霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "56e0598dd2720bb5668b45a6": {
+   "gun": "PB 9x18PM消音手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "571a12c42459771f627b58a0": {
+   "gun": "托卡列夫 TT-33 7.62x25 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "574d967124597745970e7c94": {
+   "gun": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_mount_000/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel/mod_mount_000",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_barrel/mod_mount_000/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "576165642459773c7a400233": {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "576a581d2459771e7b1bc4f1": {
+   "gun": "雅利金 MP-443 “乌鸦” 9x19 手枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "57838ad32459774a17445cd2": {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_muzzle/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_muzzle",
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_muzzle/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_mount_004",
+     "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+    }
+   ]
+  },
+  "579204f224597773d619e051": {
+   "gun": "马卡洛夫 PM(t) 9x18PM 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "57c44b372459772d2b39b8ce": {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_muzzle/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_muzzle",
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_muzzle/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_mount_000",
+     "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+    }
+   ]
+  },
+  "57d14d2524597714373db789": {
+   "gun": "PP-91 雪松 9x18PM冲锋枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "57dc2fa62459775949412633": {
+   "gun": "AKS-74U 5.45x39 短突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount_000",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "57f3c6bd24597738e730fa2f": {
+   "gun": "PP-91-01 雪松-B 9x18PM 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "57f4c844245977379d5c14d1": {
+   "gun": "PP-9 楔子 9x18PMM 冲锋枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "583990e32459771419544dd2": {
+   "gun": "AKS-74UN 5.45x39 短突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount_000",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5839a40f24597726f856b511": {
+   "gun": "AKS-74UB 5.45x39 短突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "587e02ff24597743df3deaeb": {
+   "gun": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_mount_000/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel/mod_mount_000",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_barrel/mod_mount_000/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "588892092459774ac91d4b11": {
+   "gun": "DVL-10 7.62x51 栓动式狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_barrel/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "58948c8e86f77409493f7266": {
+   "gun": "SIG MPX 9x19 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_tactical_000",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001/mod_foregrip",
+     "row": 5,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard/mod_mount_001"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_tactical_000",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5926bb2186f7744b1c6c6e60": {
+   "gun": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "59984ab886f7743e98271174": {
+   "gun": "PP-19-01 勇士 9x19 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "59d6088586f774275f37482f": {
+   "gun": "AKM 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "59e6152586f77473dc057aa1": {
+   "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "59e6687d86f77411d949b251": {
+   "gun": "VPO-209 .366TKM 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "59f98b4986f7746f546d2cef": {
+   "gun": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "59f9cabd86f7743a10721f46": {
+   "gun": "Saiga-9 9x19卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "59ff346386f77477562ff5e2": {
+   "gun": "AKMS 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5a0ec13bfcdbcb00165aa685": {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5a17f98cfcdbcb0980087290": {
+   "gun": "斯捷奇金 APS 9x18PM 冲锋手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5a367e5dc4a282000e49738f": {
+   "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_gas_block/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_barrel/mod_gas_block",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": false
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_barrel/mod_gas_block/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": "mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5a38e6bac4a2826c6e06d79b": {
+   "gun": "TOZ-106 20铅径栓动式霰弹枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5a7828548dc32e5a9c28b516": {
+   "gun": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5a7ae0c351dfba0017554310": {
+   "gun": "Glock 17 9x19 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5aafa857e5b5b00018480968": {
+   "gun": "春田 M1A 7.62x51 步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_muzzle/mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_barrel/mod_muzzle",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_muzzle/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_stock/mod_mount/mod_scope",
+     "why": "r2c4 已被占，MPR45 备用导轨槽位未锚定"
+    }
+   ]
+  },
+  "5ab8e9fcd8ce870019439434": {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5abcbc27d8ce8700182eceeb": {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5abccb7dd8ce87001773e277": {
+   "gun": "斯捷奇金 APB 9x18PM 消音型自动手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5ac4cd105acfc40016339859": {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ac66cb05acfc40198510a10": {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ac66d015acfc400180ae6e4": {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ac66d2e5acfc43b321d4b53": {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ac66d725acfc43b321d4b60": {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ac66d9b5acfc4001633997a": {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5ae08f0a5acfc408fb1398a1": {
+   "gun": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型）",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_barrel/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5b0bbe4e5acfc40dc528a72d": {
+   "gun": "DS Arms SA-58 7.62x51 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_mount",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": "mod_handguard/mod_mount",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_stock/mod_stock_000/mod_stock_003",
+     "why": "枪托子槽超出 r6c9，落到邻近空位（真实子槽保留，不删）"
+    }
+   ]
+  },
+  "5b1fa9b25acfc40018633c01": {
+   "gun": "GLOCK 18C 9x19 冲锋手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5b3b713c5acfc4330140bd8d": {
+   "gun": "托卡列夫 TT-33 7.62x25 黄金手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5ba26383d4351e00334c93d9": {
+   "gun": "HK MP7A1 4.6x30 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical_000",
+     "mod_tactical_001"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_002",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    }
+   ]
+  },
+  "5bb2475ed4351e00853264e3": {
+   "gun": "HK 416A5 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5bd70322209c4d00d7167b8f": {
+   "gun": "HK MP7A2 4.6x30 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": null
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical_000",
+     "mod_tactical_001"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_002",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    }
+   ]
+  },
+  "5beed0f50db834001c062b12": {
+   "gun": "RPK-16 5.45x39 轻机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_handguard/mod_scope",
+    "railExtras": [
+     "mod_reciever/mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": []
+  },
+  "5bf3e03b0db834001d2c4a9c": {
+   "gun": "AK-74 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5bf3e0490db83400196199af": {
+   "gun": "AKS-74 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5bfd297f0db834001a669119": {
+   "gun": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型）",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_barrel/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5bfea6e90db834001b7347f3": {
+   "gun": "雷明顿Model 700 7.62x51 狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5c07c60e0db834002330051f": {
+   "gun": "ADAR 2-15 .223 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5c46fbd72e2216398b5a8c9c": {
+   "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_muzzle/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel/mod_muzzle",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_mount_001/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_mount_001",
+    "leftOfCharge": false
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_mount_001/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_muzzle/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_mount_001/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_mount_002",
+     "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c2"
+    }
+   ]
+  },
+  "5c488a752e221602b412af63": {
+   "gun": "沙漠科技 MDR 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_handguard/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5c501a4d2e221602b412b540": {
+   "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5cadc190ae921500103bb3b6": {
+   "gun": "伯莱塔 M9A3 9x19 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5cadfbf7ae92152ac412eeef": {
+   "gun": "ASh-12 12.7x55 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_000",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    },
+    {
+     "path": "mod_tactical_001",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c2）"
+    },
+    {
+     "path": "mod_tactical_002",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c3）"
+    }
+   ]
+  },
+  "5cc82d76e24e8d00134b4b83": {
+   "gun": "FN P90 5.7x28 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount_001",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5d2f0d8048f0356c925bc3b0": {
+   "gun": "HK MP5K 9x19 微型冲锋枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "5d3eb3b0a4b93615055e84d2": {
+   "gun": "FN Five-seveN MK2 5.7x28 手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5d43021ca4b9362eab4b5e25": {
+   "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip/mod_foregrip",
+     "row": 5,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard/mod_foregrip"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5d67abc1a4b93614ec50137f": {
+   "gun": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "5dcbd56fdbd3d91b3e5468d5": {
+   "gun": "沙漠科技 MDR 7.62x51 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_handguard/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5de652c31b7e3716273428be": {
+   "gun": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5de7bd7bfd6b4e6e2276dc25": {
+   "gun": "B&T MP9-N 9x19 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": null
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5df24cf80dee1b22f862e9bc": {
+   "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_stock/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_stock/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_stock/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5df8ce05b11454561e39243b": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5e00903ae9dc277128008b87": {
+   "gun": "B&T MP9 9x19 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5e81c3cbac2bb513793cdc75": {
+   "gun": "柯尔特 M1911A1 .45 ACP 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5e81ebcd8e146c7080625e15": {
+   "gun": "FN GL-40 Mk.2 榴弹发射器",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": false
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical_000",
+     "mod_tactical_001"
+    ]
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_002",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    }
+   ]
+  },
+  "5e848cc2988a8701445df1e8": {
+   "gun": "TOZ KS-23M 23x75 毫米泵动式霰弹枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5e870397991fd70db46995c8": {
+   "gun": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5ea03f7400685063ec28bfa8": {
+   "gun": "PPSh-41 7.62x25 冲锋枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5f2a9575926fd9352339381f": {
+   "gun": "Kel-Tec RFB 7.62x51",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_mount/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_mount",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_mount/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_mount",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_handguard/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_mount/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_mount/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5f36a0e5fbf956000b716b65": {
+   "gun": "柯尔特 M45A1 .45 ACP 手枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5fb64bc92b1b027b1f50bcf2": {
+   "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_mount/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_mount"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_000",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    }
+   ]
+  },
+  "5fbcc1d9016cce60e8341ab3": {
+   "gun": "SIG MCX .300 Blackout 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5fc22d7c187fea44d52eda44": {
+   "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5fc3e272f8b6a877a729eac5": {
+   "gun": "HK UMP .45 ACP冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "5fc3f2d5900b1d5091531e57": {
+   "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 4,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_mount/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_mount"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_tactical_000",
+     "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+    }
+   ]
+  },
+  "602a9740da11d6478d5a06dc": {
+   "gun": "列别杰夫 PL-15 9x19 手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "60339954d62c9b14ed777c06": {
+   "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_tactical",
+    "railExtras": [
+     "mod_tactical_000"
+    ]
+   },
+   "exceptions": []
+  },
+  "606587252535c57a13424cfd": {
+   "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "606dae0ab0e443224b421bb7": {
+   "gun": "MP-155 12铅径半自动霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "60db29ce99594040e04c4a27": {
+   "gun": "MTs-255-12 12铅径转轮霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6165ac306ef05c2ce828ef74": {
+   "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever/mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount_002",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_barrel/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount_002",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_sight_front",
+     "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+    }
+   ]
+  },
+  "6176aca650224f204c1da3fb": {
+   "gun": "HK G28 7.62x51 精确射手步枪",
+   "muzzle": {
+    "row": 4,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 3,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 3,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 3,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 3,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 4,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 5,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6183afd850224f204c1da514": {
+   "gun": "FN SCAR-H 7.62x51突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever/mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount_002",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_barrel/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount_002",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_sight_front",
+     "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+    }
+   ]
+  },
+  "6184055050224f204c1da540": {
+   "gun": "FN SCAR-L 5.56x45突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever/mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount_002",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_barrel/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount_002",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_sight_front",
+     "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+    }
+   ]
+  },
+  "618428466ef05c2ce828f218": {
+   "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever/mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount_002",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_barrel/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount_002",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_sight_front",
+     "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+    }
+   ]
+  },
+  "6193a720f8ee7e52e42109ed": {
+   "gun": "HK USP .45 ACP手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "61a4c8884f95bc3b2c5dc96f": {
+   "gun": "Chiappa 犀牛 50DS .357 左轮手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "61f7c9e189e6fb1a5e3ea78d": {
+   "gun": "MP-18 7.62x54R单发步枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_barrel/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "623063e994fc3f7b302a9696": {
+   "gun": "HK G36 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "624c2e8614da335f1e034d8c": {
+   "gun": "Chiappa 犀牛 200DS 9x19 左轮手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": null,
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_sight_front",
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6259b864ebedf17603599e88": {
+   "gun": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6275303a9f372d6ea97f9ec7": {
+   "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": null
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical_000",
+     "mod_tactical_001",
+     "mod_tactical_002"
+    ]
+   },
+   "exceptions": []
+  },
+  "627e14b21713922ded6f2c15": {
+   "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_pistol_grip/mod_reciever/mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_pistol_grip/mod_reciever/mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_pistol_grip/mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_pistol_grip/mod_reciever"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_000/mod_sight_front",
+    "scope": "mod_pistol_grip/mod_reciever/mod_reciever/mod_scope",
+    "rearSight": "mod_pistol_grip/mod_reciever/mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "628a60ae6b1d481ff772e9c8": {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_gas_block/mod_tactical_000",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_gas_block",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_gas_block/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_gas_block"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": "mod_gas_block/mod_tactical_000",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "628b5638ad252a16da6dd245": {
+   "gun": "SAG AK-545 5.45x39卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_gas_block/mod_handguard/mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_gas_block/mod_handguard/mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_gas_block/mod_handguard/mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_gas_block/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_gas_block/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_gas_block/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_gas_block/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+    "rearSight": "mod_gas_block/mod_handguard/mod_reciever/mod_sight_rear",
+    "mpr45": "mod_gas_block/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "628b9c37a733087d0d7fe84b": {
+   "gun": "SAG AK-545 5.45x39截短卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_gas_block/mod_handguard/mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_gas_block/mod_handguard/mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_gas_block/mod_handguard/mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_gas_block/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_gas_block/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_gas_block/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_gas_block/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_gas_block/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+    "rearSight": "mod_gas_block/mod_handguard/mod_reciever/mod_sight_rear",
+    "mpr45": "mod_gas_block/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "62e14904c2699c0ec93adc47": {
+   "gun": "SR-2M 石楠 9x21 冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "62e7c4fba689e8c9c50dfc38": {
+   "gun": "Steyr AUG A1 5.56x45突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_barrel"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "63088377b5cd696784087147": {
+   "gun": "Glock 19X 9x19 手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_reciever/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_reciever/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "63171672192e68c5460cebc5": {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_barrel"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "633ec7c2a6918cb895019c6c": {
+   "gun": "RSh-12 12.7x55转轮手枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "6410733d5dd49d77bd07847e": {
+   "gun": "托卡列夫 AVT-40 7.62x54R 自动步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_muzzle/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_barrel/mod_muzzle",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_muzzle/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_barrel/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "643ea5b23db6f9f57107d9fd": {
+   "gun": "托卡列夫 SVT-40 7.62x54R 步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_muzzle/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_barrel/mod_muzzle",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_barrel/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_muzzle/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_barrel/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "644674a13d52156624001fbc": {
+   "gun": "KBP 9A-91 9x39紧凑型突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_barrel/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "645e0c6b3b381ede770e1cc9": {
+   "gun": "KBP VSK-94 9x39步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_barrel/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "64637076203536ad5600c990": {
+   "gun": "PKM 7.62x54R 机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "64748cb8de82c85eaf0a273a": {
+   "gun": "MP-43 12铅径截短双管霰弹枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6499849fc93611967b034949": {
+   "gun": "AK-12 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_handguard/mod_tactical",
+    "railExtras": [
+     "mod_reciever/mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": []
+  },
+  "64ca3d3954fc657e230529cc": {
+   "gun": "PKP 7.62x54R 步兵机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6513ef33e06849f06c0957ca": {
+   "gun": "RPD 7.62x39 轻机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "651450ce0e00edc794068371": {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": null
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_mount_000",
+     "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+    }
+   ]
+  },
+  "65268d8ecb944ff1e90ea385": {
+   "gun": "RPDN 7.62x39 轻机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "65290f395ae2ae97b80fdf2d": {
+   "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "65fb023261d5829b2d090755": {
+   "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "66015072e9f84d5680039678": {
+   "gun": "20x1毫米玩具枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "661ceb1b9311543c7104149b": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "661cec09b2c6356b4d0c7a36": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": null,
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": "mod_scope",
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6680304edadb7aa61d00cef0": {
+   "gun": "IWI UZI PRO Pistol 9x19冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_foregrip",
+     "row": 4,
+     "col": 5,
+     "parent": null
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "668e71a8dadf42204c032ce1": {
+   "gun": "IWI UZI PRO SMG 9x19冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "668fe5a998b5ad715703ddd6": {
+   "gun": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "66992b349950f5f4cd06029f": {
+   "gun": "IWI UZI 9x19冲锋枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "669fa39b48fc9f8db6035a0c": {
+   "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "669fa3d876116c89840b1217": {
+   "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": [
+     "mod_tactical"
+    ]
+   },
+   "exceptions": []
+  },
+  "669fa3f88abd2662d80eee77": {
+   "gun": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "669fa409933e898cce0c2166": {
+   "gun": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "66ffa9b66e19cc902401c5e8": {
+   "gun": "MPS Auto Assault-12 Gen 1 12铅径自动霰弹枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "67124dcfa3541f2a1f0e788b": {
+   "gun": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 4
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6718817435e3cfd9550d2c27": {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_barrel"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "673cab3e03c6a20581028bc1": {
+   "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_reciever/mod_mount/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever/mod_mount",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_reciever/mod_mount/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  },
+  "674d6121c09f69dfb201a888": {
+   "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "muzzle": null,
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": null,
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "674fe9a75e51f1c47c04ec23": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_handguard/mod_mount/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_handguard/mod_mount",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_handguard/mod_mount/mod_mount/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_handguard/mod_mount/mod_mount",
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_mount/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard/mod_mount",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_handguard/mod_mount/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_handguard/mod_mount/mod_mount/mod_sight_rear",
+    "mpr45": "mod_handguard/mod_mount/mod_scope",
+    "railExtras": [
+     "mod_sight_rear"
+    ]
+   },
+   "exceptions": []
+  },
+  "676176d362e0497044079f4c": {
+   "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_reciever/mod_barrel",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount_002",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+     "row": 5,
+     "col": 5,
+     "parent": "mod_reciever/mod_mount_000"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_barrel/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount_002",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_sight_front",
+     "why": "同一把枪有多个前照门槽位，只锚定第一个到枪口正上方"
+    }
+   ]
+  },
+  "67c6de3ce39861860909e8e5": {
+   "gun": "马林 MXLR .308 ME 杠杆步枪",
+   "muzzle": null,
+   "frontSight": {
+    "slot": "mod_barrel/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_barrel",
+    "alignedWithMuzzle": false
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_barrel/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_barrel",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_barrel/mod_handguard",
+    "row": 3,
+    "col": 5
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_barrel/mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_charge",
+     "why": "杠杆步枪：击锤链占用本列上方，拉机柄改锚到枪托正下方 r4c9"
+    }
+   ]
+  },
+  "67d0576f29f580ebc10efd08": {
+   "gun": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": {
+    "slot": "mod_barrel/mod_gas_block/mod_sight_front",
+    "row": 2,
+    "col": 2,
+    "parent": "mod_barrel/mod_gas_block",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [],
+   "row2": {
+    "frontSight": "mod_barrel/mod_gas_block/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_mount",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6871284e9a353bb50606f3ed": {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": {
+    "slot": "mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 3,
+    "parent": "mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_handguard/mod_mount_002/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_handguard/mod_mount_002",
+    "leftOfCharge": false
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_handguard/mod_sight_front",
+    "scope": null,
+    "rearSight": "mod_handguard/mod_mount_002/mod_sight_rear",
+    "mpr45": "mod_handguard/mod_tactical",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "689166b6c2d6fa42e7044756": {
+   "gun": "AK-308 7.62x51 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 2
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_handguard/mod_tactical",
+    "railExtras": [
+     "mod_reciever/mod_sight_rear/mod_sight_rear"
+    ]
+   },
+   "exceptions": []
+  },
+  "6895bb82c4519957df062f82": {
+   "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "68a639748e1fe612970728e9": {
+   "gun": "柯尔特 M16A1 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "68a6399922b1e0bd360afe56": {
+   "gun": "柯尔特 M16A2 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": null,
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "68aee763130c00663d08aea8": {
+   "gun": "TKPD 9.3x64 突击卡宾枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_mount_001/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_mount_001/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "parent": "mod_reciever",
+    "leftOfCharge": false
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_mount_001/mod_handguard/mod_mount_003",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_mount_001/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_mount_001/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_mount_001/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_mount_001/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_mount_001/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_mount_001/mod_handguard/mod_mount_003",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_mount_002",
+     "why": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c2"
+    }
+   ]
+  },
+  "68c16b9ab6b75a8a480520a6": {
+   "gun": "NL545 (DI) 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "68c2940aecc41cc5490bd40e": {
+   "gun": "NL545 (GP) 5.45x39 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_tactical",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6932abeb5403890d0c09c926": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_mount",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_mount",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6981d72ed009ad83920da43a": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "muzzle": {
+    "row": 4,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": {
+    "slot": "mod_sight_rear",
+    "row": 3,
+    "col": 6,
+    "parent": null,
+    "leftOfCharge": false
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 3,
+    "col": 9
+   },
+   "mpr45Slot": null,
+   "handguard": {
+    "slot": "mod_handguard",
+    "row": 4,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 5,
+     "col": 4,
+     "parent": "mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": "mod_sight_rear",
+    "mpr45": null,
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "69f9ebbcaae020b0db02f65d": {
+   "gun": "北方工业 QBZ-191 5.8x42 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": null,
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": null,
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_tactical",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6a15ae2ae5267ba21c07f98f": {
+   "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_scope",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_scope",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6a3bffbebc377285900b85cf": {
+   "gun": "丰和 20 式 5.56x45 突击步枪",
+   "muzzle": {
+    "row": 3,
+    "col": 1
+   },
+   "frontSight": {
+    "slot": "mod_reciever/mod_handguard/mod_sight_front",
+    "row": 2,
+    "col": 1,
+    "parent": "mod_reciever/mod_handguard",
+    "alignedWithMuzzle": true
+   },
+   "scope": {
+    "slot": "mod_reciever/mod_scope",
+    "row": 2,
+    "col": 5,
+    "parent": "mod_reciever",
+    "aboveReceiver": true
+   },
+   "rearSight": {
+    "slot": "mod_reciever/mod_sight_rear",
+    "row": 2,
+    "col": 8,
+    "parent": "mod_reciever",
+    "leftOfCharge": true
+   },
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_reciever/mod_handguard/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_reciever/mod_handguard",
+    "aboveHandguard": true
+   },
+   "handguard": {
+    "slot": "mod_reciever/mod_handguard",
+    "row": 3,
+    "col": 4
+   },
+   "foregrips": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "parent": "mod_reciever/mod_handguard"
+    }
+   ],
+   "row2": {
+    "frontSight": "mod_reciever/mod_handguard/mod_sight_front",
+    "scope": "mod_reciever/mod_scope",
+    "rearSight": "mod_reciever/mod_sight_rear",
+    "mpr45": "mod_reciever/mod_handguard/mod_tactical",
+    "railExtras": []
+   },
+   "exceptions": []
+  },
+  "6a78b7f8c2016eb33e0027cd": {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "muzzle": {
+    "row": 3,
+    "col": 3
+   },
+   "frontSight": null,
+   "scope": null,
+   "rearSight": null,
+   "charge": {
+    "slot": "mod_charge",
+    "row": 2,
+    "col": 9
+   },
+   "mpr45Slot": {
+    "slot": "mod_stock/mod_foregrip/mod_tactical",
+    "row": 2,
+    "col": 4,
+    "parent": "mod_stock/mod_foregrip",
+    "aboveHandguard": false
+   },
+   "handguard": null,
+   "foregrips": [
+    {
+     "slot": "mod_stock/mod_foregrip",
+     "row": 5,
+     "col": 9,
+     "parent": "mod_stock"
+    },
+    {
+     "slot": "mod_stock/mod_foregrip/mod_foregrip",
+     "row": 6,
+     "col": 9,
+     "parent": "mod_stock/mod_foregrip"
+    }
+   ],
+   "row2": {
+    "frontSight": null,
+    "scope": null,
+    "rearSight": null,
+    "mpr45": "mod_stock/mod_foregrip/mod_tactical",
+    "railExtras": []
+   },
+   "exceptions": [
+    {
+     "path": "mod_reciever/mod_mount_001",
+     "why": "机匣顶部导轨锚定到机匣正上方 r2c5"
+    }
+   ]
+  }
+ }
+}

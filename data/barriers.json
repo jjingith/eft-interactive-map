@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-22",
+  "source": {
+    "primary": "弹药静态数据字段 PenetrationChanceObstacle（本地 data/ammo.json 的 pch，构建期取自 https://json.tarkov.dev/regular/items）",
+    "research": [
+      "https://pve.tarkov-changes.com/view/218（1.0.6.5.46221，2026-08-01，数据挖掘：弹药含 PenetrationChanceObstacle 与 RicochetChance，未给出材质×厚度表）",
+      "https://escapefromtarkov.fandom.com/wiki/Ballistics（定性：每穿过一层都会损失穿透与伤害）",
+      "https://www.reddit.com/r/EscapefromTarkov/comments/jn9cxx/material_penetration/（2020-11-03，旧版本讨论，仅作线索）"
+    ],
+    "method": "2026-10-22 经代理（127.0.0.1:7896）实际访问；tarkov-changes 与 fandom 页面成功读取，Reddit 正文经 RSS 成功读取",
+    "note": "游戏没有公开的「材质 × 厚度」穿透参数表；本文件中的材质倍率、穿后伤害/穿透保留比例、跳弹倍率均为估算（estimated），不是游戏原始数据。基础穿透概率来自弹药 pch 字段（verified 字段，含义按社区数据挖掘解释）。"
+  },
+  "confidenceLegend": {
+    "verified": "有明确字段/来源",
+    "estimated": "近似模型，非游戏原始公式",
+    "missing": "无依据，不实现"
+  },
+  "fields": {
+    "penChanceMul": "基础穿透概率 = 弹药 pch × 该倍率，再夹持到 0–0.95（estimated）",
+    "dmgKeep": "穿过该障碍后保留的伤害比例（estimated；社区观测穿后伤害可能低约 10%，数据挖掘有 PenetrationDamageMod≈0.2，语义未公开）",
+    "penKeep": "穿过该障碍后保留的穿透力比例（estimated）",
+    "ricochetMul": "未穿透时发生跳弹的概率 = 弹药 ricochetChance × 该倍率；跳弹与停止都不对人体造成伤害（estimated）",
+    "thickness": "所有条目均无公开厚度数值（missing），因此不能按厚度插值"
+  },
+  "barriers": [
+    {
+      "id": "wood_plank",
+      "n": "木质薄墙 / 木板",
+      "material": "wood",
+      "penChanceMul": 1.0,
+      "dmgKeep": 0.85,
+      "penKeep": 0.9,
+      "ricochetMul": 0.5,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "木材对步枪弹几乎不构成阻挡，仅按穿后折损处理"
+    },
+    {
+      "id": "wood_crate",
+      "n": "木箱 / 木材堆",
+      "material": "wood",
+      "penChanceMul": 0.85,
+      "dmgKeep": 0.8,
+      "penKeep": 0.85,
+      "ricochetMul": 0.5,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "厚度大于薄木板，概率与折损略高"
+    },
+    {
+      "id": "metal_sheet",
+      "n": "金属薄板 / 铁皮",
+      "material": "metal",
+      "penChanceMul": 0.6,
+      "dmgKeep": 0.75,
+      "penKeep": 0.8,
+      "ricochetMul": 1.0,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "金属薄板易跳弹；跳弹概率取弹药 ricochetChance 原值"
+    },
+    {
+      "id": "car_body",
+      "n": "汽车车身",
+      "material": "metal",
+      "penChanceMul": 0.55,
+      "dmgKeep": 0.7,
+      "penKeep": 0.8,
+      "ricochetMul": 0.8,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "车身含多层薄金属与内饰，按单一等效层估算"
+    },
+    {
+      "id": "brick_wall",
+      "n": "砖墙",
+      "material": "masonry",
+      "penChanceMul": 0.35,
+      "dmgKeep": 0.65,
+      "penKeep": 0.7,
+      "ricochetMul": 0.6,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "砌体对高穿弹仍可能被穿透，低穿弹基本停止"
+    },
+    {
+      "id": "concrete_wall",
+      "n": "混凝土墙",
+      "material": "concrete",
+      "penChanceMul": 0.25,
+      "dmgKeep": 0.6,
+      "penKeep": 0.65,
+      "ricochetMul": 0.4,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "最保守的等效层；未按实际墙厚区分"
+    },
+    {
+      "id": "glass",
+      "n": "玻璃 / 窗户",
+      "material": "glass",
+      "penChanceMul": 0.92,
+      "dmgKeep": 0.9,
+      "penKeep": 0.95,
+      "ricochetMul": 0.2,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "玻璃对弹体影响小，但仍按概率判定"
+    },
+    {
+      "id": "sandbag",
+      "n": "沙袋",
+      "material": "sand",
+      "penChanceMul": 0.5,
+      "dmgKeep": 0.6,
+      "penKeep": 0.7,
+      "ricochetMul": 0.1,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "沙袋以吸能为主，跳弹概率低"
+    },
+    {
+      "id": "bush",
+      "n": "灌木 / 植被",
+      "material": "foliage",
+      "penChanceMul": 0.99,
+      "dmgKeep": 0.98,
+      "penKeep": 0.98,
+      "ricochetMul": 0,
+      "thickness": null,
+      "confidence": "estimated",
+      "note": "几乎不影响弹体，仅用于多层顺序演示"
+    }
+  ]
+}

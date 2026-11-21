@@ -1,0 +1,381 @@
+{
+ "console": [],
+ "views": {
+  "1920-p1-caliber": {
+   "page": {
+    "w": 1920,
+    "h": 977,
+    "scrollH": 3911
+   },
+   "browse": {
+    "w": 1896,
+    "h": 3883,
+    "maxH": "none",
+    "scrollH": 3881
+   },
+   "groups": 30,
+   "groupHeights": [
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    97,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    110
+   ],
+   "grids": [
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    }
+   ],
+   "gridCount": 30,
+   "cards": 163,
+   "whiteIcons": 161
+  },
+  "1920-p1-class": {
+   "page": {
+    "w": 1920,
+    "h": 977,
+    "scrollH": 1660
+   },
+   "browse": {
+    "w": 1896,
+    "h": 1632,
+    "maxH": "none",
+    "scrollH": 1630
+   },
+   "groups": 10,
+   "groupHeights": [
+    359,
+    110,
+    193,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    110
+   ],
+   "grids": [
+    {
+     "w": 1894,
+     "h": 330,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 164,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    },
+    {
+     "w": 1894,
+     "h": 81,
+     "cols": 16
+    }
+   ],
+   "gridCount": 10,
+   "cards": 163,
+   "whiteIcons": 161
+  },
+  "1920-p2-table": {
+   "thAligns": "[\"left\",\"left\",\"left\",\"left\",\"left\",\"left\",\"left\",\"left\",\"left\"]",
+   "thCount": 9,
+   "extBar": true
+  },
+  "1920-p2-table-ext": {
+   "thCount": 14,
+   "firstRow": ".300 Blk突击步枪Aklys Defense 迅猛龙 .300 Blackout 突击步枪35101272600879,045 ₽1.37713.59023"
+  },
+  "1920-p3-builder": {
+   "forgeW": 246,
+   "centerW": 1060,
+   "candsW": 614,
+   "costTabs": [
+    "改装件 40,002 ₽",
+    "含枪 84,112 ₽",
+    "回收 4,446 ₽"
+   ]
+  },
+  "1264-p1-caliber": {
+   "page": {
+    "w": 1264,
+    "h": 602,
+    "scrollH": 4160
+   },
+   "browse": {
+    "w": 1240,
+    "h": 4132,
+    "maxH": "none",
+    "scrollH": 4130
+   },
+   "groups": 30,
+   "groupHeights": [
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    97,
+    110,
+    110,
+    110,
+    193,
+    193,
+    110,
+    110,
+    110,
+    110,
+    193,
+    193,
+    110,
+    110,
+    110,
+    110,
+    193,
+    110,
+    110
+   ],
+   "grids": [
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    }
+   ],
+   "gridCount": 30,
+   "cards": 163,
+   "whiteIcons": 163
+  },
+  "1264-p1-class": {
+   "page": {
+    "w": 1264,
+    "h": 602,
+    "scrollH": 2158
+   },
+   "browse": {
+    "w": 1240,
+    "h": 2130,
+    "maxH": "none",
+    "scrollH": 2128
+   },
+   "groups": 10,
+   "groupHeights": [
+    525,
+    110,
+    276,
+    193,
+    110,
+    110,
+    193,
+    276,
+    110,
+    110
+   ],
+   "grids": [
+    {
+     "w": 1238,
+     "h": 496,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 247,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 164,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    },
+    {
+     "w": 1238,
+     "h": 81,
+     "cols": 10
+    }
+   ],
+   "gridCount": 10,
+   "cards": 163,
+   "whiteIcons": 161
+  },
+  "1264-p3-builder": {
+   "hscroll": false
+  }
+ },
+ "hidden": {
+  "AK-74 5.45x39": {
+   "baseAds": "1.03 s",
+   "modAds": "1.34 s",
+   "resetAds": "1.03 s",
+   "baseHead": "79 m",
+   "modHead": "79 m",
+   "resetHead": "79 m",
+   "overSwing": "待验证",
+   "evoErgoDelta": "待验证",
+   "armStamina": "待验证",
+   "cameraSnap": "3.5",
+   "modSlot": "mod_gas_block",
+   "equipped": true,
+   "ergoChange": "47.0 -> 36.0 -> 47.0"
+  },
+  "柯尔特 M4A1": {
+   "baseAds": "0.81 s",
+   "modAds": "0.81 s",
+   "resetAds": "0.81 s",
+   "baseHead": "458 m",
+   "modHead": "458 m",
+   "resetHead": "458 m",
+   "overSwing": "待验证",
+   "evoErgoDelta": "待验证",
+   "armStamina": "待验证",
+   "cameraSnap": "3.5",
+   "modSlot": "mod_pistol_grip",
+   "equipped": true,
+   "ergoChange": "55.0 -> 55.0 -> 55.0"
+  },
+  "Glock 17 9x19": {
+   "baseAds": "0.20 s",
+   "modAds": "0.20 s",
+   "resetAds": "0.20 s",
+   "baseHead": "待验证",
+   "modHead": "待验证",
+   "resetHead": "待验证",
+   "overSwing": "待验证",
+   "evoErgoDelta": "待验证",
+   "armStamina": "待验证",
+   "cameraSnap": "5.0",
+   "modSlot": "mod_barrel",
+   "equipped": true,
+   "ergoChange": "91.0 -> 92.0 -> 91.0"
+  }
+ },
+ "icons": {
+  "browseCard": {
+   "total": 163,
+   "white": 163,
+   "other": []
+  },
+  "candRow": {
+   "total": 5,
+   "white": 5,
+   "other": []
+  },
+  "partCard": {
+   "total": 5,
+   "white": 5,
+   "other": []
+  },
+  "visual": {
+   "total": 1,
+   "white": 1,
+   "other": []
+  }
+ },
+ "external": []
+}

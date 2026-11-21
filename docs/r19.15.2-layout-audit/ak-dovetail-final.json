@@ -1,0 +1,942 @@
+{
+ "generatedFor": "R19.15.2",
+ "rule": "AK 燕尾槽基座固定锚点：基座 r2c3；正上方瞄具槽 r1c3；额外真实配件槽 r1c4（瞄具右侧）",
+ "anchor": {
+  "mount": "r2c3",
+  "optic": "r1c3",
+  "side": "r1c4"
+ },
+ "coordinateNote": "坐标为 6×9 基础网格（topPad=0）。若该枪触发顶部扩展，整体下移 topPad 行，相对关系（基座在本体正上方一行、瞄具在基座正上方同列）不变。",
+ "compatibleGuns": [
+  {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "id": "5644bd2b4bdc2d3b4c8b4572",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "id": "576165642459773c7a400233",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "id": "57838ad32459774a17445cd2",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 6,
+     "allowScopes": 3,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    },
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "item": "",
+     "allowCount": 16,
+     "allowScopes": 7,
+     "target": null,
+     "expectedRow": 2,
+     "expectedCol": null,
+     "actualRow": 2,
+     "actualCol": 4,
+     "domRow": 2,
+     "domCol": 4,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": false,
+     "secondary": true
+    }
+   ]
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "id": "57c44b372459772d2b39b8ce",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "item": "",
+     "allowCount": 16,
+     "allowScopes": 7,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    },
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 6,
+     "allowScopes": 3,
+     "target": null,
+     "expectedRow": 2,
+     "expectedCol": null,
+     "actualRow": 2,
+     "actualCol": 4,
+     "domRow": 2,
+     "domCol": 4,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": false,
+     "secondary": true
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74UN 5.45x39 短突击步枪",
+   "id": "583990e32459771419544dd2",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74UB 5.45x39 短突击步枪",
+   "id": "5839a40f24597726f856b511",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "id": "5a0ec13bfcdbcb00165aa685",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "id": "5ab8e9fcd8ce870019439434",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "id": "5abcbc27d8ce8700182eceeb",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_001",
+     "slotId": "mod_mount_001",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "id": "5ac4cd105acfc40016339859",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "id": "5ac66cb05acfc40198510a10",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "id": "5ac66d015acfc400180ae6e4",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "id": "5ac66d2e5acfc43b321d4b53",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "id": "5ac66d725acfc43b321d4b60",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "id": "5ac66d9b5acfc4001633997a",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "id": "5c501a4d2e221602b412b540",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount",
+     "slotId": "mod_mount",
+     "item": "",
+     "allowCount": 21,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪",
+   "id": "5cc82d76e24e8d00134b4b83",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "FN P90 Ring Sight反射式瞄具",
+     "allowCount": 2,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "id": "5e870397991fd70db46995c8",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount",
+     "slotId": "mod_mount",
+     "item": "M590 鬼环照门",
+     "allowCount": 3,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "id": "628a60ae6b1d481ff772e9c8",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "SR-2M 石楠 9x21 冲锋枪",
+   "id": "62e14904c2699c0ec93adc47",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "item": "",
+     "allowCount": 2,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "id": "63171672192e68c5460cebc5",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "item": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+     "allowCount": 3,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "id": "651450ce0e00edc794068371",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "item": "",
+     "allowCount": 15,
+     "allowScopes": 6,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    },
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 5,
+     "allowScopes": 3,
+     "target": null,
+     "expectedRow": 2,
+     "expectedCol": null,
+     "actualRow": 2,
+     "actualCol": 4,
+     "domRow": 2,
+     "domCol": 4,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": false,
+     "secondary": true
+    }
+   ]
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "id": "6718817435e3cfd9550d2c27",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "item": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+     "allowCount": 3,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "id": "674d6121c09f69dfb201a888",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 16,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "id": "674fe9a75e51f1c47c04ec23",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "id": "6871284e9a353bb50606f3ed",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "item": "",
+     "allowCount": 16,
+     "allowScopes": 7,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    },
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "",
+     "allowCount": 6,
+     "allowScopes": 3,
+     "target": null,
+     "expectedRow": 2,
+     "expectedCol": null,
+     "actualRow": 2,
+     "actualCol": 4,
+     "domRow": 2,
+     "domCol": 4,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": false,
+     "secondary": true
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "id": "6981d72ed009ad83920da43a",
+   "rows": 7,
+   "topPad": 1,
+   "bodyRow": 4,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "SAG Bit 低基线燕尾槽基座",
+     "allowCount": 19,
+     "allowScopes": 10,
+     "target": "r2c3",
+     "expectedRow": 3,
+     "expectedCol": 3,
+     "actualRow": 3,
+     "actualCol": 3,
+     "domRow": 3,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "id": "6a78b7f8c2016eb33e0027cd",
+   "rows": 6,
+   "topPad": 0,
+   "bodyRow": 3,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount_000",
+     "slotId": "mod_mount_000",
+     "item": "FN P90 Ring Sight反射式瞄具",
+     "allowCount": 2,
+     "allowScopes": 1,
+     "target": "r2c3",
+     "expectedRow": 2,
+     "expectedCol": 3,
+     "actualRow": 2,
+     "actualCol": 3,
+     "domRow": 2,
+     "domCol": 3,
+     "domRect": {
+      "w": 58,
+      "h": 58
+     },
+     "domMatchesLayout": true,
+     "onFixedAnchor": true,
+     "secondary": false
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "guns": 28,
+  "mountSlots": 32,
+  "primaryOnR2C3": 28,
+  "domMatchesLayout": true
+ }
+}

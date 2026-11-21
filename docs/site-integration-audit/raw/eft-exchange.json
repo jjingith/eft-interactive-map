@@ -1,0 +1,1297 @@
+{
+ "name": "eft-exchange",
+ "requested_url": "https://www.eftarkov.com/exchange",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/exchange",
+ "title": "商人交换配方利润 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 4913,
+ "htmlLen": 85810,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 76,
+ "input": 5,
+ "table": 2,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "查询商人交换配方、材料成本与利润",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pve",
+   "text": "PVE",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp",
+   "text": "PVP",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=season",
+   "text": "赛季",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp",
+   "text": "重置",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp",
+   "text": "全部等级",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp&level=1",
+   "text": "LL1",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp&level=2",
+   "text": "LL2",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp&level=3",
+   "text": "LL3",
+   "title": ""
+  },
+  {
+   "href": "/exchange?mode=pvp&level=4",
+   "text": "LL4",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb042886f7746c5005a7b2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb042886f7746c5005a7b2",
+   "text": "物品箱 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 8080 × 459 ₽ = 36,720 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5b7c710788a4506dec015957",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5b7c710788a4506dec015957",
+   "text": "幸运Scav垃圾箱 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 4040 × 459 ₽ = 18,360 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb023c86f7746d0d4b423c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/59fb023c86f7746d0d4b423c",
+   "text": "武器箱 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b2fa286f77425227d1674",
+   "text": "电动马达 × 88 × 59,999 ₽ = 479,992 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c06779c86f77426e00dd782",
+   "text": "电线 × 1515 × 19,999 ₽ = 299,985 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b309586f77425227d1676",
+   "text": "损坏的液晶显示屏 × 44 × 39,880 ₽ = 159,520 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d03775b86f774203e7e0c4b",
+   "text": "相控阵单元 × 11 × 89,000 ₽ = 89,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0530ee86f774697952d952",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0530ee86f774697952d952",
+   "text": "LEDX皮肤透照仪 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 2020 × 459 ₽ = 9,180 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/59f32c3b86f77472a31742f0",
+   "text": "USEC 狗牌 × 140140 × 459 ₽ = 64,260 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0534a86f7743b6f354284",
+   "text": "检眼镜 × 1010 × 55,555 ₽ = 555,550 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b3a5d86f774252167ba22",
+   "text": "一堆药 × 2525 × 18,776 ₽ = 469,400 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5780cf7f2459777de4559322",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5780cf7f2459777de4559322",
+   "text": "宿舍楼 314 房间符号钥匙 × 1",
+   "title": ""
+  },
+  {
+   "href": "/task/5eaaaa7c93afa0558f3b5a1c",
+   "text": "🔒生存者之路 - 瘾君子",
+   "title": ""
+  },
+  {
+   "href": "/item/5bc9bdb8d4351e003562b8a1",
+   "text": "银徽章 × 2525 × 42,222 ₽ = 1,055,550 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5bffdd7e0db834001b734a1a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5bffdd7e0db834001b734a1a",
+   "text": "Miller Bros. Blades M-2 战术剑 × 1",
+   "title": ""
+  },
+  {
+   "href": "/task/5c0bdb5286f774166e38eed4",
+   "text": "🔒坚如燧石",
+   "title": ""
+  },
+  {
+   "href": "/item/5c052f6886f7746b1e3db148",
+   "text": "军用COFDM无线信号发射器 × 22 × 83,332 ₽ = 166,664 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5913915886f774123603c392",
+   "text": "军事基地检查站钥匙 × 11 × 145,000 ₽ = 145,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c1267ee86f77416ec610f72",
+   "text": "Prokill带链奖章 × 22 × 79,999 ₽ = 159,998 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d03775b86f774203e7e0c4b",
+   "text": "相控阵单元 × 22 × 89,000 ₽ = 178,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5a8ae73886f7747b2e6e1416",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5a8ae73886f7747b2e6e1416",
+   "text": "柯尔特 M4A1 5.56x45 卡宾枪 SOPMOD II × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5ab8e79e86f7742d8b372e78",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5ab8e79e86f7742d8b372e78",
+   "text": "BNTI Gzhel-K（彩瓷-K）防弹衣 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5734758f24597738025ee253",
+   "text": "金项链 × 11 × 19,999 ₽ = 19,999 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af0484c86f7740f02001f7f",
+   "text": "罐装 Majaica 咖啡豆 × 22 × 15,000 ₽ = 30,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f29886f7746d956305a1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f29886f7746d956305a1",
+   "text": "DS Arms SA-58 7.62x51 突击步枪 PBR × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5d1b2ffd86f77425243e8d17",
+   "text": "NIXXOR镜头 × 22 × 19,000 ₽ = 38,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/60b0f561c4449e4cb624c1d7",
+   "text": "LVNDMARK的老鼠药 × 11 × 25,555 ₽ = 25,555 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/62a1b7fbc30cfa1d366af586",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/62a1b7fbc30cfa1d366af586",
+   "text": "Gruppa 99 T30背包 （复合迷彩） × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 1010 × 459 ₽ = 4,590 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e5f3aa34a3034236bdb3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e5f3aa34a3034236bdb3",
+   "text": "HK G28 7.62x51 精确射手步枪 Patrol × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5c94bbff86f7747ee735c08f",
+   "text": "TerraGroup实验室访问钥匙卡 × 11 × 99,997 ₽ = 99,997 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/68a4858f9dc8c374800a3b4a",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/68a4858f9dc8c374800a3b4a",
+   "text": "6B45 防弹衣（数码丛林迷彩） 默认 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/59f32c3b86f77472a31742f0",
+   "text": "USEC 狗牌 × 1010 × 459 ₽ = 4,590 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/68947a4be4bf255d1b0ca746",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/68947a4be4bf255d1b0ca746",
+   "text": "First Spear Siege-R Optimized M.A.S.S. 插板胸挂 (黑色军团) × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/6a461bf82b2264dbe10d0ee6",
+   "text": "BD 狗牌 •| 绿色 × 11 × 535 ₽ = 535 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/6a461c41ec88c6b9a509fb17",
+   "text": "BD 狗牌 •| 红色 × 11 × 535 ₽ = 535 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c9a26332e2216001219ea70",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c9a26332e2216001219ea70",
+   "text": "Daniel Defence RIS II 9.5 英寸 AR-15 规格护木（狼棕色） × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5734779624597737e04bf329",
+   "text": "CPU风扇 × 22 × 12,200 ₽ = 24,400 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0558060db834001b735271",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0558060db834001b735271",
+   "text": "L3Harris GPNVG-18 夜视仪 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/59f32bb586f774757e1e8442",
+   "text": "BEAR 狗牌 × 99 × 459 ₽ = 4,131 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/68947ad3e4bf255d1b0ca75c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/68947ad3e4bf255d1b0ca75c",
+   "text": "Mystery Ranch NICE 框架式承重系统 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/6a461aed7391ab085a093760",
+   "text": "BD 狗牌 •| 铁灰 × 11 × 535 ₽ = 535 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/68947ab5a733b1602007e2fe",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/68947ab5a733b1602007e2fe",
+   "text": "Mystery Ranch 2 日突击包 (黑色) × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/68947a8ce4bf255d1b0ca759",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/68947a8ce4bf255d1b0ca759",
+   "text": "Tasmanian Tiger Modular Pack 45 Plus 模块化背包 (黑系复合迷彩) × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/6a461aed7391ab085a093760",
+   "text": "BD 狗牌 •| 铁灰 × 22 × 535 ₽ = 1,070 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5aa7e373e5b5b000137b76f0",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5aa7e373e5b5b000137b76f0",
+   "text": "Altyn面罩 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 66 × 459 ₽ = 2,754 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5a88af5086f77411a871682c",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5a88af5086f77411a871682c",
+   "text": "Glock 17 9x19 手枪 Tac 2 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/56742c324bdc2d150f8b456d",
+   "text": "损坏的GPhone × 22 × 15,000 ₽ = 30,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/590a3b0486f7743954552bdb",
+   "text": "印制电路板 × 11 × 27,777 ₽ = 27,777 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/603409c80ca681766b6a0fb2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/603409c80ca681766b6a0fb2",
+   "text": "NPP KIASS Condor 护目镜 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/590c651286f7741e566b6461",
+   "text": "袖珍日记 × 11 × 36,666 ₽ = 36,666 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5c093db286f7740a1b2617e3",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5c093db286f7740a1b2617e3",
+   "text": "Mr. Holodilnick保温箱 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5751496424597720a27126da",
+   "text": "罐装热棒能量饮料 × 1010 × 18,221 ₽ = 182,210 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/57514643245977207f2c2d09",
+   "text": "罐装塔可乐汽水 × 55 × 34,444 ₽ = 172,220 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/57347d9c245977448b40fa85",
+   "text": "鲱鱼罐头 × 55 × 34,000 ₽ = 170,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/57347d8724597744596b4e76",
+   "text": "罐装蔬菜泥 × 55 × 41,000 ₽ = 205,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000008",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000008",
+   "text": "柯尔特 M4A1 5.56x45 卡宾枪 ECHO1 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/6389c7750ef44505c87f5996",
+   "text": "微控制器电路板 × 11 × 51,000 ₽ = 51,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5d0377ce86f774186372f689",
+   "text": "Iridium军用热成像模块 × 11 × 49,990 ₽ = 49,990 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000038",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000038",
+   "text": "SR-3M 9x39紧凑型突击步枪 FF3 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/59f32c3b86f77472a31742f0",
+   "text": "USEC 狗牌 × 55 × 459 ₽ = 2,295 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f22086f77464e15a1d5f",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5b83f22086f77464e15a1d5f",
+   "text": "DS Arms SA-58 7.62x51 突击步枪 AUT × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/57347baf24597738002c6178",
+   "text": "内存条 × 33 × 17,000 ₽ = 51,000 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/58dffca786f774083a256ab1",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/58dffca786f774083a256ab1",
+   "text": "SIG MPX 9x19 冲锋枪 默认 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/customdogtags12345678910",
+   "text": "狗牌 × 55 × 459 ₽ = 2,295 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/5af08c4486f774223b094223",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5af08c4486f774223b094223",
+   "text": "春田 M1A 7.62x51 步枪 SASS × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/573476f124597737e04bf328",
+   "text": "云尔斯顿香烟 × 88 × 10,100 ₽ = 80,800 ₽",
+   "title": ""
+  },
+  {
+   "href": "/item/6571952aacb85662e7024c01",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/6571952aacb85662e7024c01",
+   "text": "ANA Tactical M2 插板胸挂（橄榄绿） 默认 × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/5ca20ee186f774799474abc2",
+   "text": "",
+   "title": ""
+  },
+  {
+   "href": "/item/5ca20ee186f774799474abc2",
+   "text": "Vulkan-5 (火神) LShZ-5 重型防弹头盔 (黑色) × 1",
+   "title": ""
+  },
+  {
+   "href": "/item/57347ca924597744596b4e71",
+   "text": "显示卡 × 11 × 295,666 ₽ = 295,666 ₽",
+   "title": ""
+  },
+  {
+   "href": "https://space.bilibili.com/393480563",
+   "text": "© 2022-2026 逃离塔科夫中文Wiki · Powered by 大傻",
+   "title": ""
+  },
+  {
+   "href": "https://beian.miit.gov.cn",
+   "text": "皖ICP备2023025241号-1",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/exchange",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59fb042886f7746c5005a7b2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/customdogtags12345678910-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5b7c710788a4506dec015957-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59fb023c86f7746d0d4b423c-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b2fa286f77425227d1674-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c06779c86f77426e00dd782-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b309586f77425227d1676-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d03775b86f774203e7e0c4b-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0530ee86f774697952d952-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59f32c3b86f77472a31742f0-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5af0534a86f7743b6f354284-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b3a5d86f774252167ba22-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5780cf7f2459777de4559322-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5bc9bdb8d4351e003562b8a1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5bffdd7e0db834001b734a1a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c052f6886f7746b1e3db148-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5913915886f774123603c392-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c1267ee86f77416ec610f72-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5a8ae73886f7747b2e6e1416-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5ab8e79e86f7742d8b372e78-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5734758f24597738025ee253-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5af0484c86f7740f02001f7f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5b83f29886f7746d956305a1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5d1b2ffd86f77425243e8d17-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/60b0f561c4449e4cb624c1d7-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62a1b7fbc30cfa1d366af586-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6193e5f3aa34a3034236bdb3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c94bbff86f7747ee735c08f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/68a4858f9dc8c374800a3b4a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/68947a4be4bf255d1b0ca746-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6a461bf82b2264dbe10d0ee6-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6a461c41ec88c6b9a509fb17-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c9a26332e2216001219ea70-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5734779624597737e04bf329-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0558060db834001b735271-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59f32bb586f774757e1e8442-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/68947ad3e4bf255d1b0ca75c-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6a461aed7391ab085a093760-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/68947ab5a733b1602007e2fe-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp&level=1",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp&level=2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp&level=3",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/exchange?mode=pvp&level=4",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252700045",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-exchange.png",
+ "screenshot_bytes": 181092
+}

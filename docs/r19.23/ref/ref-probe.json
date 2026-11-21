@@ -1,0 +1,604 @@
+{
+ "eftarkov_task": {
+  "loaded": true,
+  "url": "https://www.eftarkov.com/task",
+  "dom": {
+   "url": "https://www.eftarkov.com/task",
+   "title": "任务列表 - 逃离塔科夫中文Wiki",
+   "ready": "complete",
+   "bodyLen": 900,
+   "headings": [
+    "H1:任务列表"
+   ],
+   "buttons": [
+    "地图",
+    "信息",
+    "小工具",
+    "PVP",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成",
+    "未完成"
+   ],
+   "buttonCount": 24,
+   "inputs": [
+    {
+     "tag": "INPUT",
+     "type": "text",
+     "name": "q",
+     "id": "",
+     "ph": "搜索全站内容...",
+     "label": "",
+     "opts": null
+    },
+    {
+     "tag": "SELECT",
+     "type": "select-one",
+     "name": "trader",
+     "id": "",
+     "ph": "",
+     "label": "",
+     "opts": [
+      "全部商人",
+      "竞技场任务",
+      "Prapor",
+      "Therapist",
+      "Fence",
+      "Skier",
+      "Peacekeeper",
+      "Mechanic",
+      "Ragman",
+      "Jaeger",
+      "竞技场裁判",
+      "Lightkeeper",
+      "BTR司机"
+     ]
+    },
+    {
+     "tag": "SELECT",
+     "type": "select-one",
+     "name": "map",
+     "id": "",
+     "ph": "",
+     "label": "",
+     "opts": [
+      "地图",
+      "中心区",
+      "工厂",
+      "海关",
+      "森林",
+      "灯塔",
+      "海岸线",
+      "立交桥",
+      "储备站",
+      "塔科夫街区",
+      "实验室",
+      "破冰船",
+      "迷宫",
+      "码头"
+     ]
+    },
+    {
+     "tag": "INPUT",
+     "type": "text",
+     "name": "q",
+     "id": "",
+     "ph": "输入要搜索的任务名....",
+     "label": "",
+     "opts": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": "kappa",
+     "id": "",
+     "ph": "",
+     "label": "Kappa 任务",
+     "opts": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": "dspt",
+     "id": "",
+     "ph": "",
+     "label": "DSPT 任务",
+     "opts": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": "completed",
+     "id": "",
+     "ph": "",
+     "label": "已完成任务",
+     "opts": null
+    }
+   ],
+   "tables": [],
+   "topClasses": [
+    [
+     "fas",
+     27
+    ],
+    [
+     "transition",
+     26
+    ],
+    [
+     "text-[#e5e5e5]",
+     26
+    ],
+    [
+     "font-medium",
+     21
+    ],
+    [
+     "p-4",
+     21
+    ],
+    [
+     "text-sm",
+     20
+    ],
+    [
+     "task-list-entry-wrap",
+     20
+    ],
+    [
+     "task-active-item",
+     20
+    ],
+    [
+     "task-list-entry",
+     20
+    ],
+    [
+     "block",
+     20
+    ],
+    [
+     "rounded-lg",
+     20
+    ],
+    [
+     "group",
+     20
+    ],
+    [
+     "task-list-entry-row",
+     20
+    ],
+    [
+     "task-list-entry-main",
+     20
+    ],
+    [
+     "w-2",
+     20
+    ],
+    [
+     "h-2",
+     20
+    ],
+    [
+     "rounded-full",
+     20
+    ],
+    [
+     "bg-slate-700",
+     20
+    ],
+    [
+     "flex-shrink-0",
+     20
+    ],
+    [
+     "task-list-trader-avatar",
+     20
+    ],
+    [
+     "task-list-title",
+     20
+    ],
+    [
+     "group-hover:text-amber-600",
+     20
+    ],
+    [
+     "task-list-entry-meta",
+     20
+    ],
+    [
+     "task-list-map",
+     20
+    ],
+    [
+     "fa-map",
+     20
+    ],
+    [
+     "mr-1",
+     20
+    ]
+   ],
+   "svgCount": 0,
+   "canvas": 0,
+   "textSample": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n任务列表\n共 510 个任务\n全部商人\n竞技场任务\nPrapor\nTherapist\nFence\nSkier\nPeacekeeper\nMechanic\nRagman\nJaeger\n竞技场裁判\nLightkeeper\nBTR司机\n地图\n中心区\n工厂\n海关\n森林\n灯塔\n海岸线\n立交桥\n储备站\n塔科夫街区\n实验室\n破冰船\n迷宫\n码头\n重置\nKappa 任务\nDSPT 任务\n已完成任务\nDoxed\n中心区\n等级 1+\n未完成\nSide Hustle\n塔科夫街区、实验室\n等级 1+\n未完成\nInformation Trail\n实验室\n等级 1+\n未完成\nExtending the Operation\n实验室\n等级 1+\n未完成\nA Simple Task in a Difficult Place\n实验室\n等级 1+\n未完成\nHidden Route\n工厂\n等级 1+\n未完成\n棋留一着\n灯塔\n等级 1+\n未完成\n斩草除根\n灯塔\n等级 1+\n未完成\n顺利搬迁\n灯塔\n等级 1+\n未完成\n呼号“孔雀石”\n灯塔\n等级 1+\n未完成\n断尾行动\n灯塔\n等级 1+\n未完成\n圈地行动\n灯塔\n等级 1+\n未完成\n熟悉的面孔……\n灯塔\n等级 1+\n未完成\n全方位支援\n灯塔\n等级 1+\n未完成\n无法接通的号码\n灯塔\n等级 1+\n未完成\n战争迷雾\n灯塔\n等级 1+\n未完成\n感官分析 - 2\n不限制地图\n等级 1+\n未完成\n赚点快钱 - 2（PVP）\n不限制地图\n等级 10+\n未完成\n熟人\n不限制地图\n等级 1+\n未完成\nMake ULTRA Great Again\n立交桥\n等级 1+\n未完成\n‹ 上一页\n1\n2\n3\n…\n26\n下一页 ›\n当前在线 691 人\n今日PV 162,556\n今日UV 50,489\n昨日PV 600,767\n昨日UV 114,751\n累计访问 1.3亿\n\n© 2022-2026 逃离塔科夫中文Wiki · Powered by 大傻\n\n皖ICP备2023025241号-1"
+  },
+  "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.23\\ref\\eftarkov-task.png",
+  "clicks": [
+   {
+    "label": "PvE",
+    "res": {
+     "clicked": null
+    },
+    "state": {
+     "rows": 0,
+     "cards": 207,
+     "active": [
+      "任务 Prapor Therapist Fenc",
+      "Doxed 中心区 等级 1+",
+      "Side Hustle 塔科夫街区、实验室 等级",
+      "Information Trail 实验室 等级",
+      "Extending the Operation ",
+      "A Simple Task in a Diffi",
+      "Hidden Route 工厂 等级 1+",
+      "棋留一着 灯塔 等级 1+",
+      "斩草除根 灯塔 等级 1+",
+      "顺利搬迁 灯塔 等级 1+"
+     ],
+     "len": 900,
+     "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n任务列表\n共 510 个任务\n全部商人\n竞技场任务\nPrapor\nTherapist\nFence\nSkier\nPeacekeeper\nMechanic\nRagman\nJaeger\n竞技场裁判\nLightkeeper\nBTR司机\n地图\n中心区\n工厂\n海关\n森林\n灯塔\n海岸线\n立交桥\n储备站\n塔科夫街区\n实验室\n破冰船\n迷宫\n码头\n重置\nKappa 任务\nDSPT 任务\n已完成任务\nDoxed\n中心区\n等级 1+\n未完成\nSide Hustle\n塔科夫街区、实验室\n等级 1+\n未完成\nIn"
+    }
+   },
+   {
+    "label": "Season",
+    "res": {
+     "clicked": null
+    },
+    "state": {
+     "rows": 0,
+     "cards": 207,
+     "active": [
+      "任务 Prapor Therapist Fenc",
+      "Doxed 中心区 等级 1+",
+      "Side Hustle 塔科夫街区、实验室 等级",
+      "Information Trail 实验室 等级",
+      "Extending the Operation ",
+      "A Simple Task in a Diffi",
+      "Hidden Route 工厂 等级 1+",
+      "棋留一着 灯塔 等级 1+",
+      "斩草除根 灯塔 等级 1+",
+      "顺利搬迁 灯塔 等级 1+"
+     ],
+     "len": 900,
+     "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n任务列表\n共 510 个任务\n全部商人\n竞技场任务\nPrapor\nTherapist\nFence\nSkier\nPeacekeeper\nMechanic\nRagman\nJaeger\n竞技场裁判\nLightkeeper\nBTR司机\n地图\n中心区\n工厂\n海关\n森林\n灯塔\n海岸线\n立交桥\n储备站\n塔科夫街区\n实验室\n破冰船\n迷宫\n码头\n重置\nKappa 任务\nDSPT 任务\n已完成任务\nDoxed\n中心区\n等级 1+\n未完成\nSide Hustle\n塔科夫街区、实验室\n等级 1+\n未完成\nIn"
+    }
+   },
+   {
+    "label": "PvP",
+    "res": {
+     "clicked": null
+    },
+    "state": {
+     "rows": 0,
+     "cards": 207,
+     "active": [
+      "任务 Prapor Therapist Fenc",
+      "Doxed 中心区 等级 1+",
+      "Side Hustle 塔科夫街区、实验室 等级",
+      "Information Trail 实验室 等级",
+      "Extending the Operation ",
+      "A Simple Task in a Diffi",
+      "Hidden Route 工厂 等级 1+",
+      "棋留一着 灯塔 等级 1+",
+      "斩草除根 灯塔 等级 1+",
+      "顺利搬迁 灯塔 等级 1+"
+     ],
+     "len": 900,
+     "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n任务列表\n共 510 个任务\n全部商人\n竞技场任务\nPrapor\nTherapist\nFence\nSkier\nPeacekeeper\nMechanic\nRagman\nJaeger\n竞技场裁判\nLightkeeper\nBTR司机\n地图\n中心区\n工厂\n海关\n森林\n灯塔\n海岸线\n立交桥\n储备站\n塔科夫街区\n实验室\n破冰船\n迷宫\n码头\n重置\nKappa 任务\nDSPT 任务\n已完成任务\nDoxed\n中心区\n等级 1+\n未完成\nSide Hustle\n塔科夫街区、实验室\n等级 1+\n未完成\nIn"
+    }
+   }
+  ]
+ },
+ "eftarkov_tree": {
+  "loaded": true,
+  "url": "https://www.eftarkov.com/task-tree",
+  "dom": {
+   "url": "https://www.eftarkov.com/task-tree",
+   "title": "任务树形图 - 逃离塔科夫中文Wiki",
+   "ready": "complete",
+   "bodyLen": 45019,
+   "headings": [],
+   "buttons": [
+    "地图",
+    "信息",
+    "小工具",
+    "PVP",
+    "定位",
+    "复位",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成BEAR 专属任务PVP / PVE / ",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成USEC 专属任务PVP / PVE / ",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成BEAR 专属任务PVP / PVE / ",
+    "标记完成已完成USEC 专属任务PVP / PVE / ",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成USEC 专属任务PVP / PVE / ",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成BEAR 专属任务PVP / PVE / ",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务",
+    "标记完成已完成PVP / PVE / 赛季服 专属任务"
+   ],
+   "buttonCount": 609,
+   "inputs": [
+    {
+     "tag": "INPUT",
+     "type": "text",
+     "name": "q",
+     "id": "",
+     "ph": "搜索全站内容...",
+     "label": "",
+     "opts": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "search",
+     "name": "",
+     "id": "task-tree-search",
+     "ph": "搜索任务名称…",
+     "label": "",
+     "opts": null
+    }
+   ],
+   "tables": [],
+   "topClasses": [
+    [
+     "task-tree-objective",
+     1458
+    ],
+    [
+     "task-tree-node",
+     653
+    ],
+    [
+     "task-tree-node-task",
+     603
+    ],
+    [
+     "task-tree-card-link",
+     603
+    ],
+    [
+     "task-tree-card-top",
+     603
+    ],
+    [
+     "task-tree-title",
+     603
+    ],
+    [
+     "task-tree-meta",
+     603
+    ],
+    [
+     "task-tree-level",
+     603
+    ],
+    [
+     "task-tree-trader-avatar",
+     603
+    ],
+    [
+     "task-tree-objectives",
+     603
+    ],
+    [
+     "task-tree-complete-btn",
+     603
+    ],
+    [
+     "when-open",
+     540
+    ],
+    [
+     "is-mode-locked",
+     63
+    ],
+    [
+     "when-mode-locked",
+     63
+    ],
+    [
+     "[object",
+     53
+    ],
+    [
+     "SVGAnimatedString]",
+     53
+    ],
+    [
+     "task-tree-node-section",
+     39
+    ],
+    [
+     "task-tree-trader-jump-btn",
+     11
+    ],
+    [
+     "task-tree-node-trader",
+     11
+    ],
+    [
+     "site-nav-main-link",
+     10
+    ],
+    [
+     "items-center",
+     9
+    ],
+    [
+     "fas",
+     8
+    ],
+    [
+     "hidden",
+     7
+    ],
+    [
+     "transition",
+     6
+    ],
+    [
+     "h-8",
+     6
+    ],
+    [
+     "border",
+     6
+    ]
+   ],
+   "svgCount": 1,
+   "canvas": 0,
+   "textSample": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n定位\n复位\n首秀\nLv.1\n在森林、中心区、立交桥或海关消灭 Scav 5 名\n标记完成\n搜索任务\nLv.1\n在森林找到Prapor的失踪车队\n在森林找到USEC临时营地\n标记完成\n背景调查\nLv.1\n取得油罐车钥匙\n在海关取得青铜怀表\n上交青铜怀表\n标记完成\n商人好感 LL1\n硝烟野餐\nLv.1\n在森林、中心区、海关或立交桥消灭任意敌对目标 15 名\n标记完成\n商人好感 LL2\n油料快车\nLv.1\n在海关使用 MS2000 指示器标记任意一辆油罐车\n标记完成\n罪证\nLv.1\n在海关工棚中取得0031号机密文件夹\n上交机密文件夹0031\n标记完成\n探囊取物\nLv.1\n在海关宿舍203房间取得高价值物品\n上交高价值物品\n标记完成\n武力说服\nLv.1\n在森林、中心区、立交桥或海关使用 MP5SD 消灭 PMC 行动人员 5 名\n标记完成\n打靶训练\nLv.1\n在中心区找到 KORD Utyos 机枪\n在中心区找到 AGS 榴弹发射器\n在中心区消灭任意敌对目标 5 名\n标记完成\n奢靡人生\nLv.1\n在中心区找到酒商店\n在商店中找到并获取酒瓶\n上交酒瓶\n标记完成\n引路先驱\nLv.1\n在海关以幸存状态通过“铁路通道”信号弹撤离点撤离\n标记完成\n往事速递\nLv.1\n在位于海关关口的Tarcone公司主管办公室内找到一个保险盒\n将包裹藏匿在工厂 3 号门旁的二层铁皮休息室内\n标记完成\n蛋卷冰淇淋\nLv.6\n上交在战局中找到的：6L31 5.45x39 AK-74 60发弹匣 3 个\n标记完成\n邮递员派特 - 1\nLv.1\n在工厂找到死去的信使，并获取信件\n以幸存状态撤离工厂\n把信交给 Therapist\n标记完成\n邮递员派特 - 2\nLv.1\n上交Prapor信使身上的信件\n标记完成\n商人好感 LL3\n商人好感 LL4\n核心任务\n绿色通道\nLv.1\n在塔科夫街区找到运送货物的车队\n找到偷袭位置\n以幸存状态撤离该区域\n标记完成\n一信之缘\nLv.1\n在塔科夫街区找到并获取挂号信\n上交信件\n标记完成\n苏共之辉\nLv.6\n在塔科夫街区找到Prapor朋友的工作地点\n收集任何与 Prapor 朋友下落有关的信息\n上交数据\n标记完成\n屋顶战神\nLv.1\n在塔科夫街区消灭狙击 Scav 8 名\n标记完成\n掷弹兵\nLv.6\n使用手榴弹或者榴弹发射器消灭任意目标 5 名\n标记完成\n麻醉\nLv.1\n在海岸线找到第一处交易现场，并使用MS2000指示器标记\n在海岸线找到第二处交易现场，并使用MS2000指示器标记\n在海岸线找到第三处交易现场，并使用MS2000指示器标记\n标记完成\n爱国者的使命\nLv.20\n在塔科夫街区、海岸线或中心区使用装有PS-320瞄准镜与专用快拆消音器的AK-12"
+  },
+  "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.23\\ref\\eftarkov-tree.png",
+  "clicks": [
+   {
+    "label": "PvE",
+    "res": {
+     "clicked": null
+    },
+    "state": {
+     "rows": 0,
+     "cards": 7316,
+     "active": [],
+     "len": 45019,
+     "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n定位\n复位\n首秀\nLv.1\n在森林、中心区、立交桥或海关消灭 Scav 5 名\n标记完成\n搜索任务\nLv.1\n在森林找到Prapor的失踪车队\n在森林找到USEC临时营地\n标记完成\n背景调查\nLv.1\n取得油罐车钥匙\n在海关取得青铜怀表\n上交青铜怀表\n标记完成\n商人好感 LL1\n硝烟野餐\nLv.1\n在森林、中心区、海关或立交桥消灭任意敌对目标 15 名\n标记完成\n商人好感 LL2\n油料快车\nLv.1\n在海关使用 MS2000 指示器标记任意一辆油罐车\n标记完成\n罪证\nLv.1\n在海关工"
+    }
+   },
+   {
+    "label": "Season",
+    "res": {
+     "clicked": null
+    },
+    "state": {
+     "rows": 0,
+     "cards": 7316,
+     "active": [],
+     "len": 45019,
+     "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\n登录\n注册\n定位\n复位\n首秀\nLv.1\n在森林、中心区、立交桥或海关消灭 Scav 5 名\n标记完成\n搜索任务\nLv.1\n在森林找到Prapor的失踪车队\n在森林找到USEC临时营地\n标记完成\n背景调查\nLv.1\n取得油罐车钥匙\n在海关取得青铜怀表\n上交青铜怀表\n标记完成\n商人好感 LL1\n硝烟野餐\nLv.1\n在森林、中心区、海关或立交桥消灭任意敌对目标 15 名\n标记完成\n商人好感 LL2\n油料快车\nLv.1\n在海关使用 MS2000 指示器标记任意一辆油罐车\n标记完成\n罪证\nLv.1\n在海关工"
+    }
+   }
+  ]
+ },
+ "db4tarkov_quest": {
+  "loaded": true,
+  "url": "https://db4tarkov.com/quest",
+  "dom": {
+   "url": "https://db4tarkov.com/quest",
+   "title": "Quest",
+   "ready": "complete",
+   "bodyLen": 0,
+   "headings": [],
+   "buttons": [],
+   "buttonCount": 0,
+   "inputs": [],
+   "tables": [],
+   "topClasses": [],
+   "svgCount": 0,
+   "canvas": 0,
+   "textSample": ""
+  },
+  "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.23\\ref\\db4tarkov-quest.png"
+ }
+}

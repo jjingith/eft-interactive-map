@@ -1,6 +1,7 @@
 # EFT 互动地图
 
-> 《逃离塔科夫》互动地图：**免费、离线、无外挂性质**——底图与标注数据全部内置，运行期**不联网**。
+> 《逃离塔科夫》互动地图：**免费、离线、无外挂性质**——底图与标注数据全部内置，**默认运行期不联网**。
+> 可选的在线行情（PvP / PvE 跳蚤价）必须显式开启 `livePrices.enabled` 才会访问 tarkov.dev，详见下文。
 > 官方发布页：<https://github.com/jjingith/eft-interactive-map>
 
 双击 `EFTMap.exe` → 弹出「设置与启动」小窗 → 点**启动 WebUI**，跑完四步后自动打开浏览器进入地图界面
@@ -29,7 +30,10 @@
 
 ## 快速开始
 
-### 方式 A：双击发布包（推荐）
+> **只是想在源码目录里跑起来？** 双击项目根目录的 **`启动项目.bat`** 即可（自动找 Python、
+> 检查端口、启动服务并打开浏览器）。完整步骤、停止方式与故障排查见 **[`docs/STARTUP.md`](docs/STARTUP.md)**。
+
+### 方式 A：双击发布包（推荐给玩家）
 
 1. 到 [Releases](https://github.com/jjingith/eft-interactive-map/releases) 下载发布包（三个版本任选，见下表），解压到任意目录；
 2. 双击 `EFTMap.exe`，在「设置与启动」小窗里核对目录与开关（留空即用自动定位的结果）；
@@ -40,7 +44,7 @@
 这个按钮只是为了让你看见「已经存好了」）。设置不会因为重新打包或换个发布包目录而丢失——
 配置和自定义提示音存在**用户目录** `%APPDATA%\EFTMap\`（首次启动会自动从软件目录迁移旧配置，不删原文件）。
 
-无需安装 Python，无需联网。全程只监听本机 `127.0.0.1`。
+无需安装 Python，无需联网（默认离线；可选在线行情需手动开启）。全程只监听本机 `127.0.0.1`。
 
 发布包有**三个版本**（同一份程序，只是分发 / 开界面方式不同）：
 
@@ -55,7 +59,9 @@
 
 ### 方式 B：从源码运行
 
-需要 Python 3.9+（开发环境实测 3.14），**不使用任何第三方库**。
+需要 Python 3.9+（开发环境实测 3.14）。**运行期不引入第三方库**：后端只用 Python 标准库，
+前端是原生 JS。抓取 / 数据管道脚本同样只用标准库；只有**构建期打包 exe** 用 PyInstaller
+（见 `build/build.ps1`），它不进入运行期依赖。
 
 ```bash
 # 1) 首次使用：联网拉取一次数据与底图（构建期唯一一次联网）
@@ -91,9 +97,14 @@ python tools/serve.py --no-browser --port 8790
 ## 界面用法
 
 网页框架是 Windows XP（Luna）风格的浅色窗体（菜单栏 + 左侧栏 + 地图区），地图区与上面的标记保持深色，方便看清底图与彩色标注。
+顶栏最左边是**视图切换**（`地图` / `配装` / `配枪`），三个视图互斥，切换后记得在配置里沿用。
 
 - **顶部「战局与任务」菜单**：战局阶段、任务计数、自动截图 / 自动删除状态都收在这个下拉面板里，点开才展开。
 - **地图切换**：左侧点选切换地图，上次看的那张会被记住。
+- **底图模式（R34）**：地图下方用一个下拉选择「矢量图」/「官方 Wiki」。
+  - **矢量图**：按楼层拆分的 SVG，楼层过滤、图层、任务/剧情全部可用。
+  - **官方 Wiki**：使用 Escape from Tarkov Wiki 互动地图的 13 张拼图底图与 3297 个官方标点，左侧官方分类按**矢量图同款分组**筛选（含搜索、全选/全不选、点击弹窗）；多楼层是拼在一张图里的，所以该模式不做楼层过滤。
+  - 卫星入口已从界面移除；卫星瓦片数据与 `GWMapSatellite` 渲染能力仍保留在代码中，供后续恢复，详见下文数据说明。
 - **平移 / 缩放**：按住左键拖动平移，滚轮缩放（0.5×–20×），右上角「复位」回整图；走矢量重绘，**放大不会变糊**。
 - **自动居中 / 定位自动缩放**：实时定位一变就自动平移过去，手动拖动即切到「已锁定」，点一下恢复；可选按最近一次手动缩放比例自动缩放。**只在截图目录里出现新截图时才定位一次**，没新截图不动视角。
 - **自动截图**（**默认关**）：在战局中且游戏窗口在前台时，按间隔模拟按下截图键，让游戏自己写图。
@@ -104,15 +115,35 @@ python tools/serve.py --no-browser --port 8790
 - **楼层切换 / 标记浮窗 / 状态条**：多层图可切层；点任意标记在地图区**左上角固定位置**弹出简略浮窗（物资类标记会带对应物资小图标；浮窗**不再自动消失**——只有点别的标记才切换，或点浮窗右上角「×」关闭），浮窗底部另有「加入导航途径点」把该点加进路线；左侧「标记详情」给完整信息；底部状态条显示当前地图、光标世界坐标与实时定位状态。
 - **图标 / 地名缩放与透明度**：右上角「图标」滑条（50%–300%）统一调整地图上**全部标记图标**的大小（4K 屏图标偏小就往右拖）；其下方另有「地名」滑条（50%–300%）与「地名透明度」滑条（0%–100%），单独调地名的字号与浓淡。三者都本地保存、下次启动沿用；**地名默认跟着地图缩放走**，与底图绑死。
 - **保存配置**：顶栏「导航与路线」右侧的「保存配置」按钮，把当前界面偏好（图层开关 / 楼层 / 钉选 / 图标与地名缩放 / 地名透明度）**立刻写回配置文件**，点一下即显示「已保存 ✓」。
+- **配装工作台**（顶栏「配装」）：左侧是槽位卡片板（头盔 / 护面 / 眼镜 / 护甲 / 胸挂 / 背包，另有主武器 1 / 主武器 2 / 手枪 / 近战），**点槽位驱动右侧候选表**；父装备的附件子槽紧跟父装备显示，护甲板在右侧四个板位里点开弹窗选装。顶部统计条给出件数、重量、价格与三项减益；底部 Final Cost / Buy·Sell 按当前价格档（FLEA / BASE 可用，PVP / SCAV 上游没有独立价，保持禁用）实时汇总，缺价物品单独标记、不按 0 元计入。右侧表格按装备类别使用不同列集，列宽可拖动并持久化，「获取方式」在最右列用本地图标 + 悬停浮窗展示。
+- **装备预设**（配装工作台顶栏 PRESET）：新建 / 另存为 / 覆盖 / 重命名 / 加载 / 删除 / 导出 / 导入，保存在 `%APPDATA%\EFTMap\loadout-presets.json`（独立于 `data/gunslots.json`），换安装目录也能恢复。
+- **配枪工作台**（顶栏「配枪」）：搜索 163 把枪 → 左侧真实改装槽位树 → 右侧合法候选配件；冲突件标红禁装，换父件会自动清理失效子槽；可恢复上游内置参考预设，也可保存自己的枪械预设到 `%APPDATA%\EFTMap\weapon-presets.json`。保存后的枪械预设可从配装工作台的主武器 1 / 主武器 2 / 手枪槽直接选用。
 
 > 逐项细节见 [docs/USAGE.md](docs/USAGE.md)。
 
 ---
 
+## UI 设计系统
+
+- 规范：`docs/ui-system/design-spec.md`（Windows XP Luna 方向：令牌 / 组件 / 状态 / 布局 / 迁移策略）
+- 现状审计：`docs/ui-system/audit.md`（基于真实代码的量化数据，含风险清单）
+- 组件清单与用法：`docs/ui-system/component-catalog.md`
+- 实现：`styles/design-tokens.css`（`--ui-*` 令牌）、`styles/ui-components.css`、`js/ui-components.js`（`window.GWUI`）
+- 可交互样板：启动后在浏览器打开 `http://127.0.0.1:8787/ui-showcase`
+
+新增页面先读 `design-spec.md` §7.3 的检查清单；**不要再往业务模块里写私有的按钮 / 输入 / 表格 / 弹窗样式**，
+缺角色就加令牌或补组件，并同步更新组件清单。
+
 ## 收录地图
 
 内置 13 张常用图：塔科夫街区、中心区、海关、工厂、破冰船、立交桥、实验室、迷宫、灯塔、储备站、海岸线、码头、森林
 （各类标注合计约 1.2 万条；其中 10 张为上游矢量 SVG 底图，实验室 / 迷宫 / 破冰船由构建期按上游瓦片拼成合成 SVG）。
+
+官方 Wiki 模式另有同一 13 张图的官方拼图底图（`assets/wiki-maps/`，约 47 MB）与 33 个分类图标（`assets/wiki-icons/cat_*.webp`），
+标点数据在 `data/wiki-maps.json`，可用 `python tools/fetch_wiki_maps.py` 重新抓取（需要能访问 Fandom API 的网络/代理）。
+
+卫星瓦片数据仍保留：tarkov.dev 的 `tilePath` 在构建期按 zoom 3 拼成 `assets/satellite/<图>.webp`（约 4 MB），索引在 `data/satellite.json`，
+重新生成用 `python tools/build_satellite_maps.py`；`GWMapSatellite` 渲染接口也保留。本次只移除了界面入口，未删除数据或渲染代码。
 
 > 各图标注数量、容器分类与全部数据细节见 [docs/USAGE.md](docs/USAGE.md)。
 
@@ -125,6 +156,27 @@ python tools/serve.py --no-browser --port 8790
 - **实时定位（已实现）**：轮询截图目录、解析**截图文件名里的坐标与朝向**，经 SSE 推给页面，以青色光点 + 朝向箭头显示玩家位置，支持自动居中与手动锁定。
 - **日志监控（已实现）**：跟随游戏目录下 `Logs` 里最新的会话，从日志文本识别战局生命周期与任务事件，用于**进图自动切图**与统计本局任务（只统计本局、无条件级进度、不跨会话累计）。
 - **自动截图（可选，默认关）**：在战局中且**游戏窗口在前台**时按间隔模拟按下游戏截图键，让游戏自己写图；配套的「自动删除截图」开关在读出位置后只保留最新 1 张。
+
+---
+
+## 可选在线行情（默认关闭）
+
+行情默认只读构建期快照 `data/flea-prices.json`（来自 tarkov.dev 的 `regular` 端点，即 **PvP**）。
+想要更新鲜的价格时，可显式开启 `eftmap.config.json` 里的 `livePrices.enabled`，
+并在命令行抓一次：
+
+```bash
+python tools/live_prices.py --fetch            # PvP + PvE 都抓（走代理 127.0.0.1:7896）
+python tools/live_prices.py --fetch --mode pve # 只抓 PvE
+python tools/live_prices.py --status           # 只看缓存状态，不联网
+```
+
+- 开关关闭（默认）时，服务启动、页面加载都不联网，接口返回 `source:"snapshot"`；
+- 开关开启后只访问 **json.tarkov.dev**，约 10 分钟一版，用 `ETag` / `Last-Modified` 条件请求；
+- 失败一律回退快照，不影响地图 / 配装；PvP 与 PvE 两套缓存分开存（`live-prices-regular.json` / `live-prices-pve.json`）。
+- 只读接口：`GET /api/live-prices?mode=regular|pve`、`GET /api/live-prices/status`，
+  手动刷新 `POST /api/live-prices/refresh` 仅限回环：桌面壳带 token，浏览器同源页带
+  `X-EFTMap-Client: web`（服务端校验 Origin/Referer 同源，跨站触发不了）。完整契约见 [docs/USAGE.md](docs/USAGE.md)。
 
 ---
 
@@ -173,12 +225,13 @@ powershell -ExecutionPolicy Bypass -File build\build_release.ps1
 ```
 eft-interactive-map/
 ├── index.html / style.css / app.js   # 前端（原生 JS/CSS，零依赖，无构建）
-├── data/                             # maps.json（schema 8：图层 + 楼层波段 + 容器分类 + 钥匙名 + 高级资源点（含情报 / 蓝色文件夹）+ 瓦片图）+ roadnet.json（路网索引，供同层沿道路寻路）+ meta.json
+├── data/                             # maps.json（schema 8：图层 + 楼层波段 + 容器分类 + 钥匙名 + 高级资源点（含情报 / 蓝色文件夹）+ 瓦片图）+ roadnet.json（路网索引，供同层沿道路寻路）+ items.json（物品资料库，5480 件）+ gunslots.json（配枪槽位与预设，163 枪 / 398 套随包分发，上游共 497 套）+ gun-presets.json（内置预设的槽位还原，373 套可装载）+ meta.json
 ├── assets/maps/                      # 13 张底图 SVG（其中实验室 / 迷宫 / 破冰船是构建期用 tiles/ 下的瓦片拼出的合成 SVG）
 ├── assets/roadnet/                   # 10 张矢量图的静态路网位图（每格 2 bit 通行码，构建期 tools/roadnet.py 出品，约 779 KB）
 ├── assets/icons/                     # 219 个图标素材（64×64 透明 PNG，由 tools/iconize.py 从 wiki 截图抠图导出）
+├── assets/icons-items/               # 5480 个物品图标（64×64 透明 webp，构建期从 assets.tarkov.dev 拉取，配装 / 配枪视图用）
 ├── tools/
-│   ├── fetch_data.py                 # 构建期：拉数据与底图（联网一次），第 5 步顺带离线重建路网
+│   ├── fetch_data.py                 # 构建期：拉数据与底图（联网一次），第 5 步顺带离线重建路网；另拉物品资料库 / 配枪槽位 / 物品图标（items.json、gunslots.json、assets/icons-items/）
 │   ├── roadnet.py                    # 构建期：把底图 SVG 的通行区域栅格化成静态路网（纯离线）
 │   ├── iconize.py                    # 构建期：把用户提供的原图抠成 assets/icons 的透明 PNG（备忘 / 可复现）
 │   ├── coord.py                      # 世界坐标 → SVG 坐标的仿射系数
@@ -188,11 +241,14 @@ eft-interactive-map/
 │   ├── eftlog.py                     # 运行期：跟随 Logs 会话，日志行 → 战局 / 任务事件（含截图键同步）
 │   ├── keyinput.py                   # 运行期：模拟按键（SendInput）+ 前台窗口进程判定
 │   ├── config.py                     # 运行期：配置读写（%APPDATA%\EFTMap\eftmap.config.json）+ 自定义提示音导入 + 旧位置迁移
+│   ├── live_prices.py                # 可选在线行情：PvP / PvE 抓取 + 本地缓存（默认离线，只有 --fetch 才联网）
+│   ├── r20_fetch_prices.py           # 构建期：生成 PvP 跳蚤价快照 data/flea-prices.json（regular 端点 = PvP）
+│   ├── r20_fetch_flea_levels.py      # 构建期：生成跳蚤上架等级 sidecar data/flea-levels.json
 │   ├── launcher.py                   # 运行期入口：设置与启动小窗（含「保存配置」按钮、自动截图/自动删除设置与按键同步）+ 四步编排
 │   └── installer.py                  # 构建期：一键安装器（装到 %LOCALAPPDATA%\EFTMap + 快捷方式 + 卸载项），由 build_release.ps1 打成单文件 exe
 ├── build/build.ps1                   # PyInstaller 打包脚本（onedir）
 ├── build/build_release.ps1           # 发布三件套：Portable zip / AppWindow zip / Setup exe
-├── tests/                            # pytest 单测（571 条，全离线）
+├── tests/                            # pytest 单测（全离线，见下方「测试与验证」）
 ├── docs/USAGE.md                     # 详细用法与全部数据（逐项详解 / 各图计数 / 容器分类）
 ├── docs/superpowers/                 # 设计规格与实施计划
 └── release/                          # 发布产物（已 gitignore，不进仓库）
@@ -203,13 +259,16 @@ eft-interactive-map/
 ## 自测
 
 ```bash
-python -m pytest tests -q     # 全量单测 → 571 passed, 1 skipped
+python -m pytest tests -q     # 全量单测（全离线）→ 本轮 1646 passed, 1 skipped, 6 failed（均为配枪前端用例，见下）
 node --check app.js           # 前端语法检查
 ```
 
 - 覆盖范围：启动器编排（含加壳版开独立应用窗口）、安装器、配置持久化、日志解析、截图解析与删除、
   楼层与数据管道、服务端接口。
-- **只有 `tools/fetch_data.py` 联网**，测试用本地样本与桩件，不触网。
+- 本轮已知失败：6 个配枪 / 前端用例（`gunPushHistory is not defined`、找不到 `gunColumns` 等），
+  与本轮后端改动无关（`app.js` 正由另一会话改造）；保留原样，不跳过、不弱化。
+- **只有构建期 `tools/fetch_data.py` 与手动 / 显式开启的 `tools/live_prices.py` 会联网**，
+  测试用本地样本与桩件，不触网；`livePrices.enabled=false`（默认）时服务启动也不联网。
 - 坐标推导由不变量锁定：底图矩形的两个角点必须精确映射到 `(0,0)`/`(W,H)`，
   且每张图 ≥ 90% 的标注点落在 `viewBox` 内（推导写错会立刻失败）。
 - 数据管线幂等：数据就绪时再跑一次不联网；拉取失败**不破坏已有数据**。
@@ -246,6 +305,8 @@ node --check app.js           # 前端语法检查
 | [the-hideout/tarkov-dev](https://github.com/the-hideout/tarkov-dev) | 地图配置、翻译 | **MIT** | 保留版权与许可声明 |
 | [json.tarkov.dev](https://json.tarkov.dev/) | 标注数据（撤离 / 转移 / 出生点 / 物资 / 危险区 / 上锁 / Boss / BTR）与楼层波段 | tarkov.dev 社区公开数据 | 署名 tarkov.dev |
 | [json.tarkov.dev](https://json.tarkov.dev/) | 物品中文名（`/{mode}/items_zh`）：把上锁的门里的钥匙物品 id 解析成中文钥匙名，并筛出「高级资源点」的物品池 | tarkov.dev 社区公开数据 | 署名 tarkov.dev |
+| [json.tarkov.dev](https://json.tarkov.dev/) | **物品资料库**（`/{mode}/items`）：物品属性 / 槽位 / 价格快照，供配装与配枪视图使用（构建期拉取一次，运行期不联网） | tarkov.dev 社区公开数据 | 署名 tarkov.dev |
+| [assets.tarkov.dev](https://assets.tarkov.dev/) | **物品图标**（`{id}-icon.webp`，构建期一次拉取，原样再分发） | tarkov.dev 社区公开数据 | 署名 tarkov.dev + **非商业** |
 | [the-hideout/tarkov-dev-svg-maps](https://github.com/the-hideout/tarkov-dev-svg-maps) | 底图 SVG | **CC BY-NC-SA 4.0** | 署名 + **非商业** + 同许可再分发 |
 | [assets.tarkov.dev](https://assets.tarkov.dev/) | 实验室 / 迷宫 / 破冰船的**瓦片底图**（构建期按上游 `transform` / `bounds` 拼成合成 SVG，原样再分发） | tarkov.dev 社区公开数据 | 署名 tarkov.dev + **非商业** |
 

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配装工作台 · 第五轮验收报告</title>
+<style>
+  :root {
+    --bg: #12140f; --panel: #191c15; --panel2: #1f231a; --line: #31382a;
+    --fg: #e6e8dd; --dim: #9aa389; --green: #9ccb3b; --amber: #e0b341; --red: #d9584f;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 14px/1.65 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+  main { max-width: 1180px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; padding-left: 10px;
+       border-left: 3px solid var(--green); }
+  h3 { font-size: 15px; margin: 22px 0 8px; color: #cfd6c0; }
+  p, li { color: #d2d8c8; }
+  .sub { color: var(--dim); margin: 0 0 26px; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+             padding: 16px 20px; }
+  .summary b { color: var(--green); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .card .k { color: var(--dim); font-size: 12px; }
+  .card .v { font: 600 20px/1.3 var(--mono); color: var(--green); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: #cfd6c0; font-weight: 600; white-space: nowrap; }
+  td code, p code, li code { font-family: var(--mono); font-size: 12px; color: #cfe6a0;
+                             background: #20251a; padding: 1px 4px; border-radius: 3px; }
+  .ok { color: var(--green); font-weight: 600; }
+  .warn { color: var(--amber); font-weight: 600; }
+  .no { color: var(--red); font-weight: 600; }
+  .swatch { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 12px; }
+  .sw-ok { background: #2a3a1c; color: #b6dd6a; border: 1px solid #4d6b2a; }
+  .sw-fixed { background: #26241a; color: #d8c27a; border: 1px dashed #6d6031; }
+  .sw-na { background: #22241f; color: #7d8570; border: 1px solid #3a3f33; }
+  .sw-on { background: #1f3519; color: #a9e06a; border: 1px solid #9ccb3b; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 14px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+           overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  figcaption { padding: 8px 11px; font-size: 12px; color: var(--dim); }
+  figcaption b { color: #d6ddc7; font-weight: 600; }
+  .note { background: #1c2117; border-left: 3px solid var(--amber); padding: 10px 14px;
+          border-radius: 0 6px 6px 0; color: #d8dccd; }
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 16px; }
+  .flow span { background: var(--panel2); border: 1px solid var(--line); border-radius: 5px;
+               padding: 4px 9px; font-size: 12px; }
+  .flow i { color: var(--green); font-style: normal; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0 6px; }
+  .pair figure { margin: 0; }
+  .pair .tag { font-size: 11px; color: var(--dim); letter-spacing: .5px; }
+  .pair img { background: #0d0f0b; }
+  .verdict { font-size: 13px; margin: 0 0 26px; padding: 8px 12px; border-radius: 0 6px 6px 0;
+             background: #1c2117; border-left: 3px solid var(--green); }
+  .verdict.warnbox { border-left-color: var(--amber); }
+  @media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+  footer { margin-top: 46px; padding-top: 16px; border-top: 1px solid var(--line);
+           color: var(--dim); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>配装工作台 · 第五轮验收报告</h1>
+<p class="sub">项目：eft-interactive-map ｜ 参考站：db4tarkov.com/preset ｜ 参考素材：D:\personal\trae\02-塔科夫\ui图标 ｜ 日期：2026-10-20</p>
+
+<div class="summary">
+  <p style="margin:0 0 8px"><b>结论：</b>第五轮八大项全部落地，两项最终检查已完成：
+  ① 商人头像许可复核后<b>全部下架</b>，替换为项目内自绘中性 SVG，manifest 记录核查过程与下线清单；
+  ② 关键截图已集中到 <code>docs/r5-shots/key/</code>，与 <code>docs/r5-refs/</code> 的参考图逐项并排对照（第 9 章）。
+  全量回归 <b>647 passed / 1 skipped</b>，地图、路线、定位、搜索、任务、设置均无改动。</p>
+  <p style="margin:0;color:var(--dim)">本轮为增量修改：未重写 app.js，保留第四轮的槽位驱动、冲突校验、
+  物品数据、列宽持久化、本地资源与地图功能。运行期无任何网络请求，断网可完整使用。
+  <b>枪械预设选择与部分价格功能仍未接入</b>，本报告只针对已明确约定的功能做验收，不代表完整复刻已结束。</p>
+</div>
+
+<h2>交付顺序对照（按用户第八节）</h2>
+<table>
+  <tr><th>步骤</th><th>要求</th><th>状态</th><th>证据</th></tr>
+  <tr><td>一</td><td>扫描 ui图标，给出参考图映射清单</td><td class="ok">完成</td><td>本报告第 1 节</td></tr>
+  <tr><td>二</td><td>右侧各类别样式 + 护甲板安装布局</td><td class="ok">完成</td><td>第 5、6 节 + 截图 02–14</td></tr>
+  <tr><td>三</td><td>头部附件槽左置 + 手枪/近战分离</td><td class="ok">完成</td><td>第 7、8 节 + 截图 07/08/09</td></tr>
+  <tr><td>四</td><td>最右图标化获取方式 + 罗马数字 + 悬停浮窗 + 图标授权与打包</td><td class="ok">完成</td><td>第 2、3 节 + 截图 15/21</td></tr>
+  <tr><td>五</td><td>同分辨率截图 + 浏览器交互测试 + 回归结果</td><td class="ok">完成</td><td>第 9、10 节</td></tr>
+</table>
+
+<h2>1. 参考图盘点与映射清单</h2>
+<p>先完整扫描 <code>ui图标</code> 及其子目录（根目录 9 张、clean 224 张、src 47 张、头盔防护部位图 8 张、
+防弹衣防弹胸挂防护部位图 7 张），逐张读取后再动手。下列为与本轮界面直接相关的 9 张参考图：</p>
+
+<table>
+  <tr><th>参考图文件</th><th>尺寸</th><th>内容判断</th><th>对应界面区域</th><th>实现组件</th></tr>
+  <tr><td>右侧装备列表样式-护甲.png</td><td>1308×607</td><td>护甲表：Mov/Turn/Erg、Front/Back/Left/Right 四个板位、Class、Durability、Weight、Price、材质、毁损、有效耐久、防护区域、钝击、获取方式</td><td>右侧候选表（护甲）</td><td><code>gearColumns</code> armor 分支 17 列 + <code>srcCol</code>；<code>plateCol()</code>、<code>renderPlateCell</code></td></tr>
+  <tr><td>右侧装备列表样式-弹挂.png</td><td>1296×670</td><td>胸挂表：同样四板位列（装甲弹挂有真实板位，普通弹挂显示不可用）+ 容量/槽位</td><td>右侧候选表（胸挂）</td><td><code>gearColumns</code> rig 分支</td></tr>
+  <tr><td>右侧装备列表样式-头盔.png</td><td>1294×404</td><td>头盔表：有护甲属性，<b>没有</b>四个板位列</td><td>右侧候选表（头盔）</td><td><code>gearColumns</code> helmet 分支</td></tr>
+  <tr><td>右侧装备列表样式-耳机.png</td><td>1298×550</td><td>耳机表：Distance / Ambient / Dry Volume / Resonance 四参数</td><td>右侧候选表（耳机）</td><td><code>hpCol()</code> 四列</td></tr>
+  <tr><td>右侧装备列表样式-背包.png</td><td>1289×747</td><td>背包表：占用格、容量、仅允许、排除物品、槽位</td><td>右侧候选表（背包）</td><td><code>gearColumns</code> backpack 分支</td></tr>
+  <tr><td>右侧装备列表样式-眼部.png</td><td>1306×288</td><td>眼镜薄表：等级 / 减益 / 钝击</td><td>右侧候选表（眼镜）</td><td><code>gearColumns</code> glasses 分支</td></tr>
+  <tr><td>右侧装备列表样式-面部.png</td><td>1312×554</td><td>护面表：减益 + 互斥件数</td><td>右侧候选表（护面）</td><td><code>gearColumns</code> face 分支</td></tr>
+  <tr><td>头盔配件栏位范例.png</td><td>508×518</td><td>头盔卡片 + 附件槽在<b>卡片左侧</b>竖排，固定内衬用虚线筹码</td><td>左侧装备工作区（头部）</td><td><code>renderGearFigure</code> 的 <code>.lw-side-row</code> + <code>renderGearTree(…, "side")</code></td></tr>
+  <tr><td>配装参考布局.png</td><td>504×448</td><td>左栏整体比例与卡片位置（主武器 1/2、手枪、近战、护甲、弹挂、背包等）</td><td>左侧卡片板</td><td><code>LW_BOARD</code> 7 轨道 × 11 行网格、<code>--lw-side-w: min(504px, 30vw)</code></td></tr>
+</table>
+
+<div class="note">
+  <b>未看图就设计的情况：没有。</b>护甲板位置与交互按用户明确裁定的「护甲表四个板位列 + 点击弹窗选兼容插板，
+  弹窗列与护甲一致」实现；头盔附件按「头盔配件栏位范例」左置；八套右侧列表按各自参考图分别定义列集，
+  不再共用同一模板。
+</div>
+
+<h3>子目录用途说明</h3>
+<table>
+  <tr><th>目录</th><th>数量</th><th>用途</th><th>本项目使用情况</th></tr>
+  <tr><td>clean/</td><td>224</td><td>抠好的钥匙 / 物资 / 容器图标</td><td>既有地图图标来源，本轮未改动</td></tr>
+  <tr><td>src/</td><td>47</td><td>原始截图与素材</td><td>仅参考，不打包</td></tr>
+  <tr><td>头盔防护部位图/</td><td>8</td><td>头部防护部位组合图</td><td>既有 <code>assets/icons/zones</code> 来源</td></tr>
+  <tr><td>防弹衣防弹胸挂防护部位图/</td><td>7</td><td>躯干防护部位组合图</td><td>既有 <code>assets/icons/zones</code> 来源</td></tr>
+</table>
+
+<h2>2. 获取方式列：最右 + 图标化</h2>
+<h3>2.1 位置与结构</h3>
+<p>所有类别的列集统一收口为：<code>名称 → 冲突 → 类别专属列 → 重量 → 价格 → 获取方式（最右最后一列）</code>。
+代码里固定由 <code>cols.push(srcCol)</code> 追加，任何类别都不会把获取方式挤到中间。</p>
+
+<h3>2.2 显示规则（逐笔渲染，不合并）</h3>
+<table>
+  <tr><th>数据</th><th>图标</th><th>等级</th><th>浮窗文案</th></tr>
+  <tr><td><code>k:"flea"</code></td><td><code>assets/icons-traders/flea.svg</code>（项目内自绘）</td><td>—</td><td>跳蚤市场 · 允许购买</td></tr>
+  <tr><td><code>k:"buy"</code></td><td>对应商人的自绘 SVG 图标</td><td>罗马数字 I–IV</td><td>Prapor LL4 · 解锁购买 ＋ 价格 ＋ 任务解锁</td></tr>
+  <tr><td><code>k:"barter"</code></td><td>对应商人的自绘 SVG 图标</td><td>罗马数字 I–IV</td><td>Ragman LL1 · 解锁兑换配方 ＋ 配方「2 × 罐装 Max Energy 能量饮料」＋ 任务</td></tr>
+  <tr><td><code>k:"barter", x:1</code></td><td>商人的自绘 SVG 图标</td><td>有则显示</td><td>配方明细未确认（不编造配方）</td></tr>
+  <tr><td><code>src:["none"]</code></td><td>—</td><td>—</td><td>确认不可获得</td></tr>
+  <tr><td>无任何数据</td><td><code>unknown.svg</code></td><td>—</td><td>来源未确认（<b>不误判</b>为不可获得）</td></tr>
+</table>
+<p><code>ROMAN_LEVEL = ["", "I", "II", "III", "IV"]</code> 与上游 <code>minTraderLevel</code> 一一对应；
+多个来源各自成条，`.lw-src` 用 <code>inline-flex</code> + <code>gap 3px</code> + <code>margin-right 5px</code> 保证图标与罗马数字不重叠。</p>
+
+<h3>2.3 悬停浮窗与可访问性</h3>
+<ul>
+  <li><b>鼠标：</b><code>mouseenter</code> / <code>mouseleave</code> 显示与收起，浮窗 <code>position:fixed</code>，最大宽 360px。</li>
+  <li><b>键盘：</b>每个图标组带 <code>tabindex="0"</code> + <code>role="button"</code>，<code>focus</code>/<code>blur</code> 联动；另加 <code>keydown</code> 的 Enter / 空格兜底（无焦点窗口环境下也能唤出）。</li>
+  <li><b>触屏：</b><code>click</code> 同样唤出浮窗，<code>stopPropagation</code> 避免误触行点击安装。</li>
+  <li><b>渲染：</b>全部用本地 <code>state.traders</code> / <code>state.tasks</code> 数据，无运行期请求。</li>
+</ul>
+
+<h3>2.4 构建期数据提取</h3>
+<table>
+  <tr><th>字段</th><th>来源</th><th>说明</th></tr>
+  <tr><td>顶层 <code>traders</code></td><td><code>json.tarkov.dev/{mode}/traders</code> + <code>traders_zh</code></td><td>16 位：id → 显示名 / 规范化名 / 本地自绘图标路径（<code>.svg</code>）</td></tr>
+  <tr><td>顶层 <code>tasks</code></td><td><code>…/tasks</code></td><td>125 个被引用任务的名称（上游 <code>name</code> 为占位串时退化为 wikiLink slug，取不到则不落库）</td></tr>
+  <tr><td><code>trade[].k / t / l</code></td><td><code>buyFromTrader</code>、<code>barters</code></td><td>来源类型 / 商人稳定 id / 商人等级</td></tr>
+  <tr><td><code>trade[].c / p</code></td><td><code>buyFromTrader</code></td><td>货币与价格（购买专属）</td></tr>
+  <tr><td><code>trade[].r / o</code></td><td><code>barters.requiredItems / offeredItem</code></td><td>兑换所需物品与数量、产出数量（兑换专属）</td></tr>
+  <tr><td><code>trade[].u</code></td><td><code>minTraderLevel</code> 同级的 <code>taskUnlock</code></td><td>任务解锁条件</td></tr>
+  <tr><td><code>trade[].x</code></td><td><code>types</code> 含 <code>barter</code> 但无配方</td><td>确认可兑换、明细未确认</td></tr>
+</table>
+<p>购买与兑换使用<b>不同的 <code>k</code> 值</b>，并且一条记录里不会同时出现货币价 <code>p</code> 与配方 <code>r</code>
+（测试 <code>test_real_items_trade_entries_are_typed_and_resolvable</code> 强制校验）。</p>
+
+<div class="grid">
+  <div class="card"><div class="k">物品总数</div><div class="v">5,480</div></div>
+  <div class="card"><div class="k">有获取方式</div><div class="v">4,626</div></div>
+  <div class="card"><div class="k">跳蚤来源</div><div class="v">3,955</div></div>
+  <div class="card"><div class="k">商人购买</div><div class="v">2,674</div></div>
+  <div class="card"><div class="k">商人兑换</div><div class="v">1,192</div></div>
+  <div class="card"><div class="k">有配方 / 明细未确认</div><div class="v">855 / 337</div></div>
+  <div class="card"><div class="k">任务解锁引用</div><div class="v">168</div></div>
+  <div class="card"><div class="k">商人 / 任务表</div><div class="v">16 / 125</div></div>
+</div>
+
+<h2>3. 商人图标：许可复核结论与替换结果</h2>
+<div class="note">
+  <b>复核结论（更正上一版报告的判断）：</b>上一版把 <code>assets.tarkov.dev</code> 的商人头像记为
+  「tarkov.dev 社区公开数据」并沿用了网站源码的 MIT 许可。<b>这个判断是错的</b>：MIT 覆盖的是
+  the-hideout/tarkov-dev 的<b>源代码</b>，不覆盖游戏角色美术；「公开可下载 / 署名 / 非商业」也不等于
+  MIT 或 CC BY-NC-SA。按用户要求，<b>16 个头像全部下线</b>，改为项目内自绘中性图标。
+</div>
+
+<h3>3.1 逐项核实过程</h3>
+<table>
+  <tr><th>核查对象</th><th>实际内容</th><th>能否作为再分发依据</th></tr>
+  <tr><td><code>github.com/the-hideout/tarkov-dev/LICENSE</code></td><td>MIT License, Copyright (c) 2019 Oskar Risberg</td><td class="no">不能。正文只涉及软件源码，未提图片素材</td></tr>
+  <tr><td><code>…/tarkov-dev/README.md</code></td><td>项目说明与贡献指引</td><td class="no">不能。无图片许可或再分发条件声明</td></tr>
+  <tr><td><code>the-hideout/.github/…/infrastructure.md</code></td><td>图片经 S3 + Cloudflare 分发</td><td class="no">不能。只说明分发链路，不是授权</td></tr>
+  <tr><td><code>tarkov.dev</code> 页面页脚</td><td>「Game content and materials are trademarks and copyrights of Battlestate Games and its licensors. All rights reserved.」</td><td class="no">不能。明确指向 BSG 版权，保留所有权利</td></tr>
+  <tr><td><code>assets.tarkov.dev</code></td><td>纯 CDN 域名，无独立许可页 / robots 授权声明</td><td class="no">不能。可访问性不构成再分发许可</td></tr>
+</table>
+<p>结论：<b>16 个商人头像均无法核实到明确允许再分发的许可证</b>，因此不作为已获许可的分发资源打包。</p>
+
+<h3>3.2 替换方案：项目内自绘中性图标</h3>
+<p>构建期不再发起任何图片下载，改为在 <code>tools/fetch_data.py</code> 里用 <code>TRADER_INITIALS</code>
+生成 32×32 的 SVG（深色圆形底 + 商人缩写），写入 <code>assets/icons-traders/{normalizedName}.svg</code>。
+运行期 <code>traderIconUrl()</code> 只按规范化名拼 <code>.svg</code>，<b>即使旧数据里残留 <code>.webp</code> 路径也不会回退</b>，
+查不到商人时回退 <code>unknown.svg</code>。商人名称、等级（罗马数字）与获取方式全部保留，不受影响。</p>
+<table>
+  <tr><th>商人 ID</th><th>显示名</th><th>缩写</th><th>图标文件</th><th>许可</th><th>SHA-256（前 16 位）</th></tr>
+  <tr><td>54cb50c76803fa8b248b4571</td><td>Prapor</td><td>PR</td><td>prapor.svg</td><td>项目内自绘</td><td><code>4e525b131475be1d</code></td></tr>
+  <tr><td>54cb57776803fa99248b456e</td><td>Therapist</td><td>TH</td><td>therapist.svg</td><td>项目内自绘</td><td><code>86ee1abf2f35b4a9</code></td></tr>
+  <tr><td>579dc571d53a0658a154fbec</td><td>Fence</td><td>FE</td><td>fence.svg</td><td>项目内自绘</td><td><code>36690b9c0a40bb2a</code></td></tr>
+  <tr><td>58330581ace78e27b8b10cee</td><td>Skier</td><td>SK</td><td>skier.svg</td><td>项目内自绘</td><td><code>94a06d40e964f9b6</code></td></tr>
+  <tr><td>5935c25fb3acc3127c3d8cd9</td><td>Peacekeeper</td><td>PK</td><td>peacekeeper.svg</td><td>项目内自绘</td><td><code>a59e6d812dfe600e</code></td></tr>
+  <tr><td>5a7c2eca46aef81a7ca2145d</td><td>Mechanic</td><td>ME</td><td>mechanic.svg</td><td>项目内自绘</td><td><code>5133c28d9153c1f4</code></td></tr>
+  <tr><td>5ac3b934156ae10c4430e83c</td><td>Ragman</td><td>RA</td><td>ragman.svg</td><td>项目内自绘</td><td><code>e595dc78c42761f5</code></td></tr>
+  <tr><td>5c0647fdd443bc2504c2d371</td><td>Jaeger</td><td>JA</td><td>jaeger.svg</td><td>项目内自绘</td><td><code>abf075c039ec6973</code></td></tr>
+  <tr><td>638f541a29ffd1183d187f57</td><td>Lightkeeper</td><td>LK</td><td>lightkeeper.svg</td><td>项目内自绘</td><td><code>21b30f419287a6e7</code></td></tr>
+  <tr><td>656f0f98d80a697f855d34b1</td><td>BTR司机</td><td>BTR</td><td>btr-driver.svg</td><td>项目内自绘</td><td><code>80a6eb5ff38509f6</code></td></tr>
+  <tr><td>6617beeaa9cfa777ca915b7c</td><td>竞技场裁判</td><td>REF</td><td>ref.svg</td><td>项目内自绘</td><td><code>54fe600529da1ab2</code></td></tr>
+  <tr><td>688246518448b05efd61d461</td><td>Kerman</td><td>KM</td><td>mr-kerman.svg</td><td>项目内自绘</td><td><code>c9d1e886ce7b6e0c</code></td></tr>
+  <tr><td>688246958448b05efd61d462</td><td>Voevoda</td><td>VO</td><td>voevoda.svg</td><td>项目内自绘</td><td><code>b7958b56d537198b</code></td></tr>
+  <tr><td>68fe15910f29ba3fdbba9d54</td><td>Taran</td><td>TA</td><td>taran.svg</td><td>项目内自绘</td><td><code>49d7b69ad58b6047</code></td></tr>
+  <tr><td>68fe15990f29ba3fdbba9d55</td><td>无线电台</td><td>RS</td><td>radio-station.svg</td><td>项目内自绘</td><td><code>d3b90d1a76bd49f0</code></td></tr>
+  <tr><td>69e0d6cc77b63940375b9173</td><td>幸存者</td><td>SV</td><td>survivor.svg</td><td>项目内自绘</td><td><code>7c309e2097f291a4</code></td></tr>
+  <tr><td>—</td><td>跳蚤市场</td><td>—</td><td>flea.svg</td><td>项目内自绘</td><td><code>354238821dbdfda7</code></td></tr>
+  <tr><td>—</td><td>来源未确认</td><td>—</td><td>unknown.svg</td><td>项目内自绘</td><td><code>4ed7944855b55060</code></td></tr>
+</table>
+
+<h3>3.3 manifest 记录结构</h3>
+<p><code>assets/icons-traders/manifest.json</code> 现在包含：<code>licenseReview</code>（核查的 5 个来源、逐条结论、
+替换后运行期路径）、<code>localFiles</code>（18 条：16 位商人 + 跳蚤 + 未确认，含文件名 / 许可 / 来源 /
+SHA-256 / 字节数）、<code>removed</code>（16 条已下线 <code>.webp</code> 的原始 URL、SHA-256 与删除原因）、
+<code>files</code>（空对象，表示<b>不再分发任何第三方图片</b>）。测试
+<code>test_real_trader_manifest_records_license_and_hashes</code> 会强制校验上述约束并断言目录内不存在 <code>.webp</code>。</p>
+<div class="note">
+  <b>范围说明：</b>本轮只处理商人图标。项目既有的物品图标（<code>assets/icons/</code>）属于更早轮次的既有资产，
+  不在本轮改动范围内，其许可问题作为<b>独立后续复核项</b>记录，本次不宣称其已获许可。
+</div>
+
+<h2>4. 主武器 / 手枪 / 近战卡片分离</h2>
+<div class="flow">
+  <span>主武器 1</span><i>｜</i><span>主武器 2</span><i>｜</i><span>手枪</span><i>← 37px 稳定留白 →</i><span>近战武器</span>
+</div>
+<ul>
+  <li>四个槽位 ID 各自独立：<code>primary1</code> / <code>primary2</code> / <code>holster</code> / <code>melee</code>。</li>
+  <li>网格轨道分离：<code>holster</code> 占 <code>11 / 1 / 12 / 4</code>，<code>melee</code> 占 <code>11 / 5 / 12 / 6</code>，中间保留一整条 <code>37u</code> 空轨道，不共用边框。</li>
+  <li>实测边界：<code>holster [46, 785.5, 163, 893.5]</code>、<code>melee [200, 785.5, 308, 893.5]</code>，<b>gap = 37px</b>。</li>
+  <li>窗口变窄时由 <code>--lw-u</code> 等比缩放，间距随比例变化但不会重叠或挤压。</li>
+  <li>选中态、装备态、剪影、槽位标签各自独立；本轮未实现枪械预设（按要求不提前做）。</li>
+</ul>
+
+<h2>5. 右侧装备列表：按类别分别实现</h2>
+<p>八个类别各有独立列集（<code>gearColumns</code> 分支），共同骨架只保留「名称 / 冲突 / 重量 / 价格 / 获取方式」。</p>
+<table>
+  <tr><th>类别</th><th>列集（左 → 右）</th><th>专用点</th></tr>
+  <tr><td>ARMOR</td><td>名称｜冲突｜移动/转身/人机｜前插板｜后插板｜左侧板｜右侧板｜护甲等级｜基础耐久｜重量｜价格｜装甲材质｜材料毁损系数｜有效耐久｜防护区域｜钝击穿透｜槽位｜获取方式</td><td>四个板位列 + 六种护甲概念列</td></tr>
+  <tr><td>RIG</td><td>名称｜冲突｜减益｜四板位｜容量｜槽位｜等级｜耐久｜重量｜价格｜材质｜毁损｜有效耐久｜防护区域｜获取方式</td><td>普通弹挂板位显示「不可用」，装甲弹挂按真实板位出状态</td></tr>
+  <tr><td>BACKPACK</td><td>名称｜冲突｜减益｜占用格｜容量｜仅允许｜排除物品｜槽位｜重量｜价格｜获取方式</td><td>物品级装载限制</td></tr>
+  <tr><td>HEADPHONES</td><td>名称｜冲突｜减益｜距离系数｜环境音量｜干音量｜失真｜重量｜价格｜获取方式</td><td>四参数直接取上游 <code>hp</code></td></tr>
+  <tr><td>EYEWEAR</td><td>名称｜冲突｜护甲等级｜减益｜钝击｜重量｜价格｜获取方式</td><td>薄表</td></tr>
+  <tr><td>FACE COVER</td><td>名称｜冲突｜减益｜互斥物品｜重量｜价格｜获取方式</td><td>只列互斥件数，无伪造耐久</td></tr>
+  <tr><td>HELMET</td><td>名称｜冲突｜减益｜护甲等级｜装甲材质｜基础耐久｜有效耐久｜钝击｜防护区域｜槽位｜重量｜价格｜获取方式</td><td><b>无</b>四个板位列（与参考图一致）</td></tr>
+  <tr><td>ARMOR PLATE（弹窗）</td><td>名称｜冲突｜护甲等级｜基础耐久｜重量｜价格｜装甲材质｜毁损｜有效耐久｜防护区域｜钝击｜获取方式</td><td>与护甲表同源，去掉板位与槽位两列</td></tr>
+  <tr><td>MELEE</td><td>名称｜冲突｜类型｜减益｜重量｜价格｜获取方式</td><td>上游没有护甲字段</td></tr>
+</table>
+<p>交互不变：点左侧槽位 → 右侧换候选；兼容性过滤；冲突行整行标红且禁止安装；搜索 / 排序 / 筛选 / 列宽拖动；
+价格与获取方式；名称悬停浮窗；全部离线。</p>
+
+<h2>6. 护甲板安装（按用户裁定）</h2>
+<p>用户裁定原文：「严格按照参考图做成护甲表的四个板位列，然后点击后弹出新窗口选兼容插板，兼容插板显示的列与护甲一样」。实现如下：</p>
+<h3>6.1 四个板位列</h3>
+<table>
+  <tr><th>状态</th><th>显示</th><th>含义</th></tr>
+  <tr><td><span class="swatch sw-empty">未安装</span></td><td>虚线空位</td><td>该位置真实存在且可装插板</td></tr>
+  <tr><td><span class="swatch sw-fixed">II 6（固定）</span></td><td>虚线筹码 + 等级与耐久</td><td>固定内衬，不可拆卸（不可点击）</td></tr>
+  <tr><td><span class="swatch sw-na">—</span></td><td>不可用</td><td>该护甲没有这个位置</td></tr>
+  <tr><td><span class="swatch sw-on">III 45</span></td><td>绿色描边 + 等级与耐久</td><td>已安装该位置的插板</td></tr>
+</table>
+<h3>6.2 点击板位 → 弹窗选板</h3>
+<ul>
+  <li>板位格可点击、可键盘操作（Enter / 空格），打开 <code>.lw-modal</code> 弹窗，标题为「前插板 · 6B43 屏障-Sh 防弹衣」。</li>
+  <li>副标题写明槽位 id（如 <code>armor/Front_plate</code>）与合法插板件数，并注明「严格按上游 <code>armorSlots[].allowedPlates</code> 过滤，不用广义 ArmorAttachment 分类」。</li>
+  <li>候选表列集与护甲表一致（去四板位与槽位），因此同样能看等级 / 材质 / 毁损 / 有效耐久 / 防护区域 / 获取方式。</li>
+  <li>未装备该护甲时点板位：先安装这件护甲再开窗；若因互斥装不上，只提示原因，不开窗（不留假状态）。</li>
+  <li>装成功后：弹窗底部显示「当前：已安装 …」，主表板位格变绿，左栏重量统计同步更新（实测 14.10 → 15.85 KG）。</li>
+  <li>每个板位有稳定槽位 ID：<code>{根槽位}/{zone}</code>，例如 <code>armor/Front_plate</code>；只存位置明确的键，不存无位置含义的物品 id。</li>
+  <li>换父护甲后重建板位并清理不兼容的已装插板（实测 <code>armor/Front_plate</code> 随换甲被移除）。</li>
+</ul>
+<p>父护甲、插板、防护区域三者关联保留：插板的防护区域来自插板自身 <code>z</code>，父护甲的 <code>aps[].z</code> 描述该位置覆盖范围。</p>
+
+<h2>7. 头部附件槽左置</h2>
+<ul>
+  <li>头盔 / 面部等头部装备的子槽改到卡片<b>左侧</b>竖排：<code>.lw-side-row</code> = 左附件列 + 右卡片，不再追加到卡片下方。</li>
+  <li>槽位随父装备真实 <code>slots[]</code> 变化：6B47 有「夜视仪座 / 装备座」两个，换「杰克南瓜灯战术南瓜头盔」（<code>slots: 0</code>）后子槽数量为 0，<b>不显示虚构槽位</b>。</li>
+  <li>固定内衬（盔顶 / 盔后 / 盔耳）以虚线筹码同列展示，仍是不可拆卸组件，不进候选列表。</li>
+  <li>选中附件槽 → 右侧只出该槽兼容候选；不兼容仍整行标红并禁止安装。</li>
+  <li>换头盔时清理失效子槽与不兼容附件（实测 <code>helmet/*</code> 全部被清除）。</li>
+</ul>
+
+<h2>8. 本轮测试新增</h2>
+<table>
+  <tr><th>测试</th><th>覆盖</th><th>结果</th></tr>
+  <tr><td><code>test_real_trader_manifest_records_license_and_hashes</code></td><td><code>files</code> 为空；18 个本地图标（16 商人 + 跳蚤 + 未确认）均为自绘 SVG，许可文本 / 来源 / SHA-256 与磁盘一致；<code>licenseReview</code> 含 MIT 与 BSG 版权结论；<code>removed</code> 16 条；目录内无 <code>.webp</code></td><td class="ok">通过</td></tr>
+  <tr><td><code>test_real_items_trade_entries_are_typed_and_resolvable</code></td><td>三类来源计数、购买与兑换不混条、商人 / 等级 / 任务 / 配方全部可解析</td><td class="ok">通过</td></tr>
+  <tr><td>T20（动态，12 项）</td><td>逐笔获取方式：三源成条、头像 + 罗马数字、浮窗文案、跳蚤本地图标、none 与 unknown 区分、商人 id 缺失回退</td><td class="ok">通过</td></tr>
+  <tr><td>T21（动态，5 项）</td><td>四板位键顺序、未安装/不可用、槽位 id 带位置、装板后 on、固定内衬 fixed</td><td class="ok">通过</td></tr>
+  <tr><td>T22（动态，12 项，本轮新增）</td><td>八类列集逐列精确断言、获取方式恒为最右且唯一、冲突恒在第二列、插板弹窗列集、无节点兜底</td><td class="ok">通过</td></tr>
+</table>
+<p>全量：<b class="ok">647 passed, 1 skipped</b>（skip 为需外部环境的既有用例）。地图 / 路线 / 定位 / 搜索 / 任务 / 设置相关测试全部通过，无行为变化。</p>
+
+<h2>9. 参考图 vs 实现截图逐项对照</h2>
+<p>参考图已复制到 <code>docs/r5-refs/</code>（原文件仍保留在 <code>D:\personal\trae\02-塔科夫\ui图标</code>），
+关键实现截图集中到 <code>docs/r5-shots/key/</code>。下列每一组都是「左：用户参考图（原尺寸）｜右：实现截图」。</p>
+
+<h3>9.1 右侧护甲表</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-护甲.png" alt="参考-护甲表"><figcaption><span class="tag">参考图</span> 右侧装备列表样式-护甲.png</figcaption></figure>
+  <figure><img src="r5-shots/key/01-右侧护甲表-1920x909.png" alt="实现-护甲表"><figcaption><span class="tag">实现</span> 1920×909，护甲槽选中</figcaption></figure>
+</div>
+<p class="verdict">列序一致：移动 / 转身 / 人机 → 前·后·左·右四个板位 → 护甲等级 → 基础耐久 → 重量 → 价格 →
+装甲材质 → 材料毁损系数 → 有效耐久 → 防护区域 → 钝击穿透 → 槽位 → <b>获取方式（最右）</b>。
+共 17 列，与参考图的列名与语义逐项对应；参考图里的 SE / a,½-Cap 派生列因上游无字段未实现（见第 12 节）。</p>
+
+<h3>9.2 护甲板安装弹窗</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-护甲.png" alt="参考-板位"><figcaption><span class="tag">参考图</span> 四个板位以单元格形式排在护甲表内</figcaption></figure>
+  <figure><img src="r5-shots/key/02-护甲板安装弹窗.png" alt="实现-插板弹窗"><figcaption><span class="tag">实现</span> 点击「前插板」格 → 弹窗选兼容插板</figcaption></figure>
+</div>
+<p class="verdict">板位按参考图做成护甲表内的四列单元格；点击后弹出独立窗口，弹窗内列集与护甲表一致
+（去掉四板位与槽位），并按上游 <code>allowedPlates</code> 过滤候选，不混入广义 <code>ArmorAttachment</code>。
+安装后主表板位格变绿显示 <code>III 45</code>（见 <code>key/04-护甲表四板位安装后.png</code>）。</p>
+
+<h3>9.3 带附件槽的头盔（左置）</h3>
+<div class="pair">
+  <figure><img src="r5-refs/头盔配件栏位范例.png" alt="参考-头盔附件"><figcaption><span class="tag">参考图</span> 头盔配件栏位范例.png（附件槽在卡片左侧竖排）</figcaption></figure>
+  <figure><img src="r5-shots/key/05b-头盔附件左置-放大.png" alt="实现-头盔附件"><figcaption><span class="tag">实现</span> 夜视仪座 / 装备座竖排在卡片左侧</figcaption></figure>
+</div>
+<p class="verdict">附件槽位于父装备<b>左侧</b>竖向排列，顺序紧跟卡片；固定内衬用虚线筹码同列展示且不可点击；
+换无附件槽头盔后子槽数为 0，不显示虚构槽位（<code>r5-08-helmet-no-attach.png</code>）。</p>
+
+<h3>9.4 右侧头盔表</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-头盔.png" alt="参考-头盔表"><figcaption><span class="tag">参考图</span> 右侧装备列表样式-头盔.png</figcaption></figure>
+  <figure><img src="r5-shots/key/09-右侧头盔表.png" alt="实现-头盔表"><figcaption><span class="tag">实现</span> 头盔槽选中后的候选表</figcaption></figure>
+</div>
+<p class="verdict">头盔表<b>没有</b>四个板位列，保留护甲等级 / 装甲材质 / 基础耐久 / 有效耐久 / 钝击 /
+防护区域 / 槽位，与参考图一致。</p>
+
+<h3>9.5 右侧弹挂表</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-弹挂.png" alt="参考-弹挂表"><figcaption><span class="tag">参考图</span> 右侧装备列表样式-弹挂.png</figcaption></figure>
+  <figure><img src="r5-shots/key/10-右侧弹挂表.png" alt="实现-弹挂表"><figcaption><span class="tag">实现</span> 胸挂槽选中后的候选表</figcaption></figure>
+</div>
+<p class="verdict">装甲弹挂按真实板位出状态；普通弹挂显示「不可用」，不伪造板位。</p>
+
+<h3>9.6 商人悬停浮窗</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-护甲.png" alt="参考-来源列"><figcaption><span class="tag">参考图</span> 参考图右端的价格 / 来源区域</figcaption></figure>
+  <figure><img src="r5-shots/key/06-商人悬停浮窗.png" alt="实现-浮窗"><figcaption><span class="tag">实现</span> 悬停商人图标 → 浮窗</figcaption></figure>
+</div>
+<p class="verdict">浮窗实测文案：<code>Prapor LL1（I） · 解锁购买</code> / <code>价格：24,402 ₽（RUB）</code>；
+兑换类条目显示配方逐项与产出件数，任务解锁显示任务名，全部来自本地数据，无运行期网络请求。</p>
+
+<h3>9.7 最右侧获取方式列</h3>
+<div class="pair">
+  <figure><img src="r5-refs/右侧装备列表样式-护甲.png" alt="参考-最右列"><figcaption><span class="tag">参考图</span> 获取 / 价格信息位于表格最右</figcaption></figure>
+  <figure><img src="r5-shots/key/07-最右侧获取方式列-放大.png" alt="实现-最右列"><figcaption><span class="tag">实现</span> 表格滚到最右，获取方式列放大</figcaption></figure>
+</div>
+<p class="verdict">获取方式列位于表格<b>最右且唯一</b>，图标化紧凑显示：跳蚤图标 / 商人缩写图标 + 罗马数字；
+同一物品的跳蚤、购买、兑换三源<b>全部并排显示</b>，不合并、不截断。商人图标已全部换为项目内自绘 SVG。</p>
+
+<h3>9.8 手枪与近战分离后的左侧工作区</h3>
+<div class="pair">
+  <figure><img src="r5-refs/配装参考布局.png" alt="参考-左栏"><figcaption><span class="tag">参考图</span> 配装参考布局.png（504×448）</figcaption></figure>
+  <figure><img src="r5-shots/key/08-手枪与近战分离-左侧工作区.png" alt="实现-左栏"><figcaption><span class="tag">实现</span> 左侧装备工作区（含手枪 / 近战卡片）</figcaption></figure>
+</div>
+<p class="verdict">左栏宽度实测 504px，收敛为 <code>--lw-side-w</code>；手枪与近战是两张<b>独立卡片</b>，
+中间留 37px 稳定空轨道，不共用连续边框（放大图 <code>key/08b</code> / <code>key/08c</code>）。</p>
+
+<h2>10. 验收截图（1920 × 909 真实浏览器）</h2>
+<div class="shots">
+  <figure><img src="r5-shots/r5-02-armor-table-1920x909.png" alt="护甲表"><figcaption><b>七类之一 · 护甲</b>：普通防弹衣与多插板槽护甲同表；四个板位列；获取方式在最右。</figcaption></figure>
+  <figure><img src="r5-shots/r5-03-plate-picker.png" alt="插板弹窗"><figcaption><b>护甲板安装前</b>：点「6B43」前插板格 → 弹窗，槽位 id <code>armor/Front_plate</code>，合法插板 21 件。</figcaption></figure>
+  <figure><img src="r5-shots/r5-04-plate-picker-installed.png" alt="弹窗内已安装"><figcaption><b>弹窗内安装后</b>：底部显示「当前：已安装 AR500 Legacy Plate 防弹插板」并提供「卸下该位置插板」。</figcaption></figure>
+  <figure><img src="r5-shots/r5-05-armor-plate-on.png" alt="主表已安装"><figcaption><b>护甲板安装后</b>：主表 6B43 行前插板格变绿显示 <code>III 45</code>，左栏重量 15.85 KG。</figcaption></figure>
+  <figure><img src="r5-shots/r5-06-helmet-table.png" alt="头盔表"><figcaption><b>七类之二 · 头盔</b>：有护甲属性列，无四个板位列。</figcaption></figure>
+  <figure><img src="r5-shots/r5-07-helmet-attach-left.png" alt="头盔附件左置"><figcaption><b>带多个附件槽的头盔</b>：夜视仪座 / 装备座竖排在卡片左侧；固定内衬用虚线筹码。</figcaption></figure>
+  <figure><img src="r5-shots/r5-17-helmet-left-zoom.png" alt="附件左置放大"><figcaption><b>附件左置（放大）</b>：左侧筹码列与父卡片形成稳定局部布局。</figcaption></figure>
+  <figure><img src="r5-shots/r5-08-helmet-no-attach.png" alt="无附件槽头盔"><figcaption><b>无附件槽的头盔</b>：不显示任何虚构附件槽。</figcaption></figure>
+  <figure><img src="r5-shots/r5-22-helmet-switch-no-fake-slots.png" alt="换头盔清理"><figcaption><b>换头盔后</b>：子槽与旧附件全部清理，右侧候选随新头盔重算。</figcaption></figure>
+  <figure><img src="r5-shots/r5-09-holster-melee-separated.png" alt="手枪近战分离"><figcaption><b>手枪与近战卡片分离</b>：两张独立卡片，中间 37px 稳定留白。</figcaption></figure>
+  <figure><img src="r5-shots/r5-18-holster-zoom.png" alt="手枪卡片放大"><figcaption><b>手枪卡片（放大）</b>：独立边框、独立剪影与标签。</figcaption></figure>
+  <figure><img src="r5-shots/r5-19-melee-zoom.png" alt="近战卡片放大"><figcaption><b>近战卡片（放大）</b>：与手枪不共边、不共选中态。</figcaption></figure>
+  <figure><img src="r5-shots/r5-10-rig.png" alt="胸挂"><figcaption><b>七类之三 · 胸挂</b>：普通弹挂板位「不可用」，装甲弹挂按真实板位出状态。</figcaption></figure>
+  <figure><img src="r5-shots/r5-11-backpack.png" alt="背包"><figcaption><b>七类之四 · 背包</b>：占用格 / 容量 / 仅允许 / 排除物品。</figcaption></figure>
+  <figure><img src="r5-shots/r5-12-headphones.png" alt="耳机"><figcaption><b>七类之五 · 耳机</b>：距离系数 / 环境音量 / 干音量 / 失真。</figcaption></figure>
+  <figure><img src="r5-shots/r5-13-glasses.png" alt="眼镜"><figcaption><b>七类之六 · 眼镜</b>：等级 / 减益 / 钝击薄表。</figcaption></figure>
+  <figure><img src="r5-shots/r5-14-face.png" alt="护面"><figcaption><b>七类之七 · 护面</b>：减益 + 互斥件数，无伪造耐久。</figcaption></figure>
+  <figure><img src="r5-shots/r5-15-src-icons-tooltip.png" alt="商人悬停浮窗"><figcaption><b>悬停商人图标</b>：浮窗显示真实商人、等级与交易类型（Prapor LL1（I） · 解锁购买 ＋ 价格）。图标为项目内自绘 SVG。</figcaption></figure>
+  <figure><img src="r5-shots/r5-21-src-column-zoom.png" alt="获取方式列放大"><figcaption><b>获取方式列（放大）</b>：同一行同时存在跳蚤 + 商人购买 + 商人兑换三个来源，图标与罗马数字不重叠；商人图标为字母缩写 SVG。</figcaption></figure>
+</div>
+
+<h2>11. 浏览器交互实测</h2>
+<table>
+  <tr><th>用例</th><th>操作</th><th>预期</th><th>实测</th></tr>
+  <tr><td>插板安装</td><td>护甲槽装 6B43 → 点前插板格 → 选 AR500 Legacy Plate</td><td>板位变绿、价格/重量/有效耐久更新</td><td class="ok">通过（15.85 KG）</td></tr>
+  <tr><td>换父护甲清理</td><td>已装前插板后换 6B2 防弹衣</td><td>旧插板键被清除</td><td class="ok">通过（loadout 仅剩 armor）</td></tr>
+  <tr><td>无板位护甲</td><td>选中 6B2（固定内衬）</td><td>板位显示 <code>fixed</code>，不可点</td><td class="ok">通过</td></tr>
+  <tr><td>头部附件左置</td><td>装 6B47 → 点附件槽 → 装 Peltor 转接座</td><td>子槽在左、安装后状态更新</td><td class="ok">通过</td></tr>
+  <tr><td>无附件头盔</td><td>换杰克南瓜灯头盔</td><td>子槽 0 个、旧附件清除</td><td class="ok">通过</td></tr>
+  <tr><td>多来源图标</td><td>选 MF-UNTAR 防弹背心行</td><td>三源并排、图片均成功加载</td><td class="ok">通过（3/3 loaded）</td></tr>
+  <tr><td>悬停浮窗</td><td>悬停 Ragman 图标</td><td>显示 LL1 · 解锁兑换配方 + 配方</td><td class="ok">通过（浮窗在视口内）</td></tr>
+  <tr><td>手枪/近战</td><td>量取两张卡片边界</td><td>独立卡片、稳定间距</td><td class="ok">通过（gap 37px）</td></tr>
+  <tr><td>键盘可达</td><td>聚焦图标组后按 Enter</td><td>唤出同一浮窗</td><td class="ok">通过（headless 无焦点窗口时由 keydown 兜底）</td></tr>
+</table>
+
+<h2>12. 已知取舍（已确认，不是遗漏）</h2>
+<ul>
+  <li>护甲表的 SE / a,½-Cap 派生列不实现：上游没有对应字段，不编造。</li>
+  <li>表头「Armor Class n」不做视觉分组，仅保留列名与悬停说明。</li>
+  <li>背包「仅允许 / 排除物品」只显示上游物品级限制，不含「某类物品」的推理规则。</li>
+  <li>参考图把 Price 与获取方式排在一起，本轮按用户第二节要求拆成独立价格列 + 最右独立获取方式列。</li>
+  <li>插板弹窗列集去掉四个板位列与槽位列（插板自身没有板位槽）。</li>
+  <li>335 件「确认可兑换但上游无配方」的物品显示「配方明细未确认」，不猜测配方。</li>
+  <li>枪械预设（主武器 1/2、手枪）本轮按用户要求只修布局，未接入预设选择。</li>
+</ul>
+
+<h2>13. 改动边界声明</h2>
+<ul>
+  <li>未重写 app.js：仅在既有函数上增量修改（<code>gearColumns</code>、<code>gearRows</code>、<code>renderGearFigure</code>、<code>renderGearTree</code>、<code>equipItem</code>、<code>commitLoadoutChange</code> 等）。</li>
+  <li>新增样式全部作用域在 <code>.loadout-workbench</code> 内；地图、侧栏、时间轴等全局样式零改动。</li>
+  <li>新增本地资源仅 <code>assets/icons-traders/</code>（18 个自绘 SVG + manifest，<b>无第三方图片</b>）；未引入运行期依赖。</li>
+  <li>许可复核改动只涉及 <code>tools/fetch_data.py</code> 的图标生成、<code>app.js</code> 的 <code>traderIconUrl</code>、对应测试与本报告；未触碰地图与配装业务逻辑。</li>
+  <li>数据仅在构建期从既有上游（tarkov.dev）提取；运行期零网络请求，断网可用。</li>
+</ul>
+
+<footer>
+  第五轮验收报告 · eft-interactive-map · 明细数据见 <code>assets/icons-traders/manifest.json</code>、
+  <code>data/items.json</code>（schema 5）与 <code>tests/</code>。
+</footer>
+
+</main>
+</body>
+</html>

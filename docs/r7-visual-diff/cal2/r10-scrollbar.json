@@ -1,0 +1,19 @@
+{
+  "tag": "r10",
+  "viewport": { "w": 1920, "h": 1080, "dpr": 1 },
+  "container": { "x": 510.0, "y": 136.5, "w": 1404.0, "h": 937.5 },
+  "scroll": { "scrollWidth": 1626, "clientWidth": 1392, "scrollLeftStart": 0, "scrollLeftMax": 234 },
+  "thumb": {
+    "method": "3x screenshot strip at container bottom 12px, pixels equal to rgb(90,90,90)",
+    "atScrollLeft0": { "cssX0": 15.7, "cssX1": 1181.0, "cssWidth": 1165.5 },
+    "atScrollLeftMax": { "cssX0": 212.7, "cssX1": 1378.0, "cssWidth": 1165.5 },
+    "shift": 197.0
+  },
+  "rightmostColumnWhenScrolled": { "text": "获取方式", "x": 1733.0, "right": 1859.0, "containerRight": 1914.0 },
+  "syntheticInput": {
+    "mouseWheel": "CDP Input.dispatchMouseEvent mouseWheel timed out; scrollLeft unchanged",
+    "mouseDrag": "CDP mousePressed + mouseMoved over native scrollbar left scrollLeft at 0; Chromium handles native scrollbars outside renderer hit-testing",
+    "note": "scrollbar usability evidenced by rendered thumb and its position change, not by synthetic drag"
+  },
+  "computedStyle": { "scrollbarWidth": "thin", "thumbColor": "rgb(90, 90, 90)", "trackColor": "rgb(21, 21, 21)", "webkitScrollbarSize": "12px" }
+}

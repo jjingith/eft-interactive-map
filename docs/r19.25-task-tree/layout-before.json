@@ -1,0 +1,153 @@
+{
+ "tag": "before",
+ "base": "http://127.0.0.1:8790",
+ "modes": {
+  "regular": {
+   "mode": "regular",
+   "nodes": 503,
+   "edges": 257,
+   "layers": 18,
+   "perLayerMax": 300,
+   "perLayerAvg": 27.9,
+   "canvas": {
+    "w": 4356,
+    "h": 18000
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 536,
+   "geometricCrossings": 974,
+   "longEdges": 11,
+   "edgesThroughNodes": 32,
+   "crossingsPerEdge": 3.79,
+   "maxIndegree": 6,
+   "maxOutdegree": 6,
+   "domNodes": 503,
+   "domEdges": 257,
+   "cycles": [
+    [
+     "6744af0969a58fceba101fed",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6744af0969a58fceba101fed"
+    ],
+    [
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "6746053b5b555b53460d9896"
+    ],
+    [
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896"
+    ]
+   ],
+   "raw": {
+    "width": 4356,
+    "height": 18000,
+    "nodes": 503
+   }
+  },
+  "pve": {
+   "mode": "pve",
+   "nodes": 499,
+   "edges": 256,
+   "layers": 13,
+   "perLayerMax": 297,
+   "perLayerAvg": 38.4,
+   "canvas": {
+    "w": 3146,
+    "h": 17820
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 580,
+   "geometricCrossings": 1115,
+   "longEdges": 11,
+   "edgesThroughNodes": 36,
+   "crossingsPerEdge": 4.36,
+   "maxIndegree": 6,
+   "maxOutdegree": 6,
+   "domNodes": 499,
+   "domEdges": 256,
+   "cycles": [
+    [
+     "6744af0969a58fceba101fed",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6744af0969a58fceba101fed"
+    ],
+    [
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "6746053b5b555b53460d9896"
+    ],
+    [
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896"
+    ]
+   ],
+   "raw": {
+    "width": 3146,
+    "height": 17820,
+    "nodes": 499
+   }
+  },
+  "pvps": {
+   "mode": "pvps",
+   "nodes": 462,
+   "edges": 197,
+   "layers": 13,
+   "perLayerMax": 293,
+   "perLayerAvg": 35.5,
+   "canvas": {
+    "w": 3146,
+    "h": 17580
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 478,
+   "geometricCrossings": 742,
+   "longEdges": 7,
+   "edgesThroughNodes": 14,
+   "crossingsPerEdge": 3.77,
+   "maxIndegree": 6,
+   "maxOutdegree": 5,
+   "domNodes": 462,
+   "domEdges": 197,
+   "cycles": [
+    [
+     "597a171586f77405ba6887d3",
+     "597a160786f77477531d39d2",
+     "597a171586f77405ba6887d3"
+    ],
+    [
+     "597a0f5686f774273b74f676",
+     "597a171586f77405ba6887d3",
+     "597a160786f77477531d39d2",
+     "597a0f5686f774273b74f676"
+    ],
+    [
+     "597a0f5686f774273b74f676",
+     "597a171586f77405ba6887d3",
+     "597a0f5686f774273b74f676"
+    ]
+   ],
+   "raw": {
+    "width": 3146,
+    "height": 17580,
+    "nodes": 462
+   }
+  }
+ }
+}

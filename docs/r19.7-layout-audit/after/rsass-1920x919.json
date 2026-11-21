@@ -1,0 +1,530 @@
+{
+  "gunId": "5a367e5dc4a282000e49738f",
+  "tag": "rsass",
+  "viewport": {
+    "w": 1920,
+    "h": 919
+  },
+  "picked": {
+    "ok": true,
+    "label": "7.62x517雷明顿 R11 RSASS 7.62x51 精确射手步枪"
+  },
+  "resetOk": true,
+  "rev": "rev R19.7-04f4d52f",
+  "version": "",
+  "buildpage": {
+    "x": 0,
+    "y": 103,
+    "w": 1920,
+    "h": 816
+  },
+  "gridCols": "236px 600px 1008px",
+  "forge": {
+    "x": 0,
+    "y": 103,
+    "w": 236,
+    "h": 816
+  },
+  "center": {
+    "x": 244,
+    "y": 103,
+    "w": 600,
+    "h": 816
+  },
+  "cands": {
+    "x": 852,
+    "y": 103,
+    "w": 1008,
+    "h": 816
+  },
+  "canvas": {
+    "x": 261,
+    "y": 169,
+    "w": 566,
+    "h": 215
+  },
+  "canvasCols": "38.7656px 38.7656px 38.7656px 38.7656px 38.7812px 38.7656px 38.7656px 38.7656px 38.7812px 38.7656px 38.7656px 38.7656px 38.7656px",
+  "meta": "基础枪械 | 雷明顿 R11 RSASS 7.62x51 精确射手步枪 | 改装槽位 | 20 | 已装配件 | 8",
+  "presetState": "预设：未改动",
+  "statsText": "整枪属性 | 人机工效 | 34.0 | 垂直后坐力 | 74.4 | 水平后坐力 | 166.2 | 重量 | 4.92 kg | 精度 MOA | 0.79 MOA | 射速 | 700 rpm | 瞄准距离 | 100 m | 弹匣容量 | 20 发 | 初速 | — | 整枪成本（含原厂件） | 326,600 ₽ | 其中改装件 | 252,993 ₽",
+  "hiddenText": "隐藏属性ADS 时间1.40 sTrueErgoDelta-5.0OverSwing是Aim Sway 摆动强度6.2 %ArmStamina39.0 s爆头有效距离45 m相机后坐3.5散布偏差上限30.0后坐散布11.0后坐角90.0",
+  "focusText": "当前槽位：握把",
+  "bottomText": "改装件 252,993 ₽含枪 326,600 ₽回收 54,584 ₽Final Cost: 326,600 ₽Magpul MIAD AR-15 手枪式握把 (FDE)+6-1.2%defaultMagpul PMAG 20 SR-LR GEN M3 7.62x51 20发弹匣-10.0%defaultMagpul Enhanced AR-15 机匣延长缓冲管-1.5-1.0%defaultMagpul PRS GEN2 AR-15 枪托 (FDE)+3-23.5%defaultR11 RSASS护木+18.50.0%default22 英寸 AR-10 枪管 7.62x51-38-14.0%defaultAAC Blackout 51T 7.62x51 AR-10 消焰器-1-5.0%defaultJP Enterprises 6 型 AR-10 导气系统-2-4.0%default",
+  "overlay": "700 RPMDPS —",
+  "overlayPos": {
+    "x": 490,
+    "y": 232,
+    "w": 31,
+    "h": 18
+  },
+  "shot": {
+    "x": 486,
+    "y": 229,
+    "w": 116,
+    "h": 25
+  },
+  "gunImg": {
+    "x": 486,
+    "y": 229,
+    "w": 116,
+    "h": 25
+  },
+  "heroText": "",
+  "hasPartX": false,
+  "cells": [
+    {
+      "slot": "mod_barrel/mod_gas_block/mod_sight_front",
+      "lane": "top2",
+      "row": 1,
+      "col": 1,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "SIGHT_FRONT",
+      "parent": "mod_barrel/mod_gas_block",
+      "r": {
+        "x": 268,
+        "y": 178,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_scope",
+      "lane": "top2",
+      "row": 1,
+      "col": 4,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "SCOPE",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 396,
+        "y": 178,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_scope",
+      "lane": "top2",
+      "row": 1,
+      "col": 6,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "SCOPE",
+      "parent": null,
+      "r": {
+        "x": 482,
+        "y": 178,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_sight_rear",
+      "lane": "top2",
+      "row": 1,
+      "col": 8,
+      "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+      "label": "SIGHT_REAR",
+      "parent": null,
+      "r": {
+        "x": 567,
+        "y": 178,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_barrel/mod_muzzle",
+      "lane": "main",
+      "row": 2,
+      "col": 1,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "-1-5.0%",
+      "parent": "mod_barrel",
+      "r": {
+        "x": 268,
+        "y": 232,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_barrel/mod_gas_block",
+      "lane": "main",
+      "row": 2,
+      "col": 2,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "-2-4.0%",
+      "parent": "mod_barrel",
+      "r": {
+        "x": 311,
+        "y": 232,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_barrel",
+      "lane": "main",
+      "row": 2,
+      "col": 3,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "-38-14.0%",
+      "parent": null,
+      "r": {
+        "x": 354,
+        "y": 232,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard",
+      "lane": "main",
+      "row": 2,
+      "col": 4,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "+18.50.0%",
+      "parent": null,
+      "r": {
+        "x": 396,
+        "y": 232,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_stock",
+      "lane": "main",
+      "row": 2,
+      "col": 5,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "-1.5-1.0%",
+      "parent": null,
+      "r": {
+        "x": 439,
+        "y": 232,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_barrel/mod_muzzle/mod_muzzle",
+      "lane": "lower",
+      "row": 3,
+      "col": 1,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MUZZLE",
+      "parent": "mod_barrel/mod_muzzle",
+      "r": {
+        "x": 268,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_tactical",
+      "lane": "lower",
+      "row": 3,
+      "col": 3,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "TACTICAL",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 354,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_foregrip",
+      "lane": "lower",
+      "row": 3,
+      "col": 4,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "FOREGRIP",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 396,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_stock/mod_stock",
+      "lane": "lower",
+      "row": 3,
+      "col": 5,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "+3-23.5%",
+      "parent": "mod_stock",
+      "r": {
+        "x": 439,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_magazine",
+      "lane": "lower",
+      "row": 3,
+      "col": 7,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "-10.0%",
+      "parent": null,
+      "r": {
+        "x": 525,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_pistol_grip",
+      "lane": "lower",
+      "row": 3,
+      "col": 8,
+      "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+      "label": "+6-1.2%",
+      "parent": null,
+      "r": {
+        "x": 567,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_mount_000",
+      "lane": "lower",
+      "row": 3,
+      "col": 9,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_000",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 610,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_mount_001",
+      "lane": "lower",
+      "row": 3,
+      "col": 10,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_001",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 653,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_mount_002",
+      "lane": "lower",
+      "row": 3,
+      "col": 11,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_002",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 696,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_mount_003",
+      "lane": "lower",
+      "row": 3,
+      "col": 12,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_003",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 738,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "slot": "mod_handguard/mod_mount_004",
+      "lane": "lower",
+      "row": 3,
+      "col": 13,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_004",
+      "parent": "mod_handguard",
+      "r": {
+        "x": 781,
+        "y": 285,
+        "w": 39,
+        "h": 39
+      }
+    },
+    {
+      "lane": "ammo",
+      "row": 4,
+      "col": 7,
+      "cls": "gw-part gw-part-ammo gw-part-empty",
+      "label": "AMMO",
+      "parent": null,
+      "r": {
+        "x": 525,
+        "y": 334,
+        "w": 39,
+        "h": 39
+      }
+    }
+  ],
+  "body": {
+    "row": 2,
+    "col": 6,
+    "r": {
+      "x": 482,
+      "y": 227,
+      "w": 124,
+      "h": 49
+    }
+  },
+  "ammoCell": {
+    "text": "AMMO",
+    "cls": "gw-part gw-part-ammo gw-part-empty",
+    "r": {
+      "x": 525,
+      "y": 334,
+      "w": 39,
+      "h": 39
+    }
+  },
+  "candHeaders": [
+    "配件▲",
+    "Ergo",
+    "下级槽",
+    "Kg",
+    "FLEA价",
+    "后坐",
+    "状态"
+  ],
+  "candRows": 37,
+  "loadvar": {
+    "x": 256,
+    "y": 111,
+    "w": 576,
+    "h": 30
+  },
+  "loadvarFit": {
+    "w": 576,
+    "h": 30,
+    "scrollW": 574,
+    "clientW": 574,
+    "kids": [
+      {
+        "cls": "gw-loadvar-t",
+        "x": 265,
+        "w": 101,
+        "right": 366,
+        "over": -466,
+        "clipped": false
+      },
+      {
+        "cls": "gw-ref",
+        "x": 374,
+        "w": 177,
+        "right": 551,
+        "over": -281,
+        "clipped": false
+      },
+      {
+        "cls": "gw-btn",
+        "x": 559,
+        "w": 70,
+        "right": 629,
+        "over": -203,
+        "clipped": false
+      },
+      {
+        "cls": "gw-preset-state",
+        "x": 637,
+        "w": 54,
+        "right": 691,
+        "over": -141,
+        "clipped": false
+      },
+      {
+        "cls": "lw-grow",
+        "x": 699,
+        "w": 124,
+        "right": 823,
+        "over": -9,
+        "clipped": false
+      },
+      {
+        "cls": "gw-visual gw-visual-slim",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "over": -832,
+        "clipped": false
+      }
+    ],
+    "overflowX": "hidden"
+  },
+  "refSel": {
+    "w": 150,
+    "clipped": false,
+    "text": "（手动配置）"
+  },
+  "presetClipped": false,
+  "nameTooltip": "丰和 20 式手枪式握把（配件）",
+  "candNamesMissing": [],
+  "candNameSample": [
+    {
+      "text": "丰和 20 式手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "柯尔特 A1 AR-15 手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "柯尔特A2 AR-15手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Aeroknox Orion AR-15 手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Damage Industries ECS AR-15 手枪式握把 (FDE)",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Daniel Defense Enhanced AR-15 手枪式握把（黑色）",
+      "w": 451,
+      "visible": true
+    }
+  ],
+  "scrollbar": {
+    "sh": 1318,
+    "ch": 783,
+    "sw": 995,
+    "cw": 995,
+    "overflowY": "auto"
+  }
+}

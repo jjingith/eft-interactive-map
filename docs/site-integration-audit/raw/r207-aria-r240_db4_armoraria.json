@@ -1,0 +1,738 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.29-1 🌑 22:24 🌕 10:24",
+  "x": 787,
+  "y": 24,
+  "w": 1573,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 533,
+  "y": 24,
+  "w": 73,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 605,
+  "y": 24,
+  "w": 71,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 672,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 730,
+  "y": 24,
+  "w": 54,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 781,
+  "y": 24,
+  "w": 49,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 840,
+  "y": 24,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 905,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 961,
+  "y": 24,
+  "w": 50,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 1020,
+  "y": 24,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 1086,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.3.0.0",
+  "x": 1157,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 1225,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 37 day(s)",
+  "x": 1657,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 1605,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 1657,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (37d)",
+  "x": 1708,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 1762,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 1796,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 1830,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 1864,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1898,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "only TraderLvl",
+  "x": 640,
+  "y": 68,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "only FleaLvl",
+  "x": 704,
+  "y": 68,
+  "w": 60,
+  "h": 30
+ },
+ {
+  "role": "input",
+  "label": "Mov",
+  "x": 874,
+  "y": 71,
+  "w": 48,
+  "h": 34
+ },
+ {
+  "role": "input",
+  "label": "Turn",
+  "x": 916,
+  "y": 71,
+  "w": 48,
+  "h": 34
+ },
+ {
+  "role": "input",
+  "label": "Ergo",
+  "x": 958,
+  "y": 71,
+  "w": 48,
+  "h": 34
+ },
+ {
+  "role": "input",
+  "label": "Type to search item in preset",
+  "x": 1399,
+  "y": 71,
+  "w": 809,
+  "h": 33
+ },
+ {
+  "role": "group",
+  "label": "Move/Turn/Ergo 0 / 0 / 0 Kg 0 kg 0 / 0 / 0 Final Cost:",
+  "x": 304,
+  "y": 308,
+  "w": 500,
+  "h": 439
+ },
+ {
+  "role": "button",
+  "label": "Headwear",
+  "x": 304,
+  "y": 172,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "role": "button",
+  "label": "Glasses",
+  "x": 129,
+  "y": 246,
+  "w": 65,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Headset",
+  "x": 129,
+  "y": 306,
+  "w": 65,
+  "h": 65
+ },
+ {
+  "role": "button",
+  "label": "Face Cover",
+  "x": 196,
+  "y": 246,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Armor Armored Rig",
+  "x": 304,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Chest Rig",
+  "x": 471,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Gun",
+  "x": 228,
+  "y": 418,
+  "w": 319,
+  "h": 108
+ },
+ {
+  "role": "button",
+  "label": "Backpack",
+  "x": 471,
+  "y": 419,
+  "w": 167,
+  "h": 134
+ },
+ {
+  "role": "button",
+  "label": "Buy ()",
+  "x": 179,
+  "y": 515,
+  "w": 250,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Sell",
+  "x": 429,
+  "y": 515,
+  "w": 250,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Name",
+  "x": 831,
+  "y": 102,
+  "w": 450,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Mov/Turn/Erg",
+  "x": 1111,
+  "y": 102,
+  "w": 110,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Capacity Cap",
+  "x": 1580,
+  "y": 102,
+  "w": 24,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Storage Efficiency = Capacity / (width * height) SE",
+  "x": 1604,
+  "y": 102,
+  "w": 24,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Kg",
+  "x": 1714,
+  "y": 102,
+  "w": 40,
+  "h": 27
+ },
+ {
+  "role": "group",
+  "label": "SFMP LBT-2670 Slim Field Med Pack (Black) -4 / -1 / -6 Medical supplies Meds 48 2.4 1.9",
+  "x": 1216,
+  "y": 135,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "6Sh118 6Sh118 raid backpack (EMR) -5 / -3 / -7 48 1.1 3.5",
+  "x": 1216,
+  "y": 175,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "RUSH 100 5.11 Tactical RUSH 100 backpack (Black) -5 / -3 / -7 45 1.1 2.6",
+  "x": 1216,
+  "y": 215,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Blackjack 50 Mystery Ranch Blackjack 50 backpack (MultiCam) -4 / -2 / -6 42 1.2 3.3",
+  "x": 1216,
+  "y": 255,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Modular Pack 45 Tasmanian Tiger Modular Pack 45 Plus (MultiCam Black) -4 / -2 / -6 40 1.0 3.0",
+  "x": 1216,
+  "y": 295,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "F4 Terminator Eberlestock F4 Terminator load bearing backpack (Tiger Stripe) -5 / -1 / -4 40 1.1 5,659 4.2 226,381 IV [3",
+  "x": 1216,
+  "y": 335,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "SATL Mystery Ranch SATL Bridger Assault Pack (Foliage) -5 / -3 / -6 36 1.0 5,564 3.0 200,325 IV [1]",
+  "x": 1216,
+  "y": 375,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+  "x": 1304,
+  "y": 375,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "ANA Tactical Beta 2 Battle backpack (Olive Drab)",
+  "x": 1344,
+  "y": 375,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Oakley Mechanism heavy duty backpack (Black)",
+  "x": 1384,
+  "y": 375,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "LBT-1476A 3Day Pack (Woodland)",
+  "x": 1424,
+  "y": 375,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Trooper 35 Tasmanian Tiger Trooper 35 backpack (Khaki) -4 / -1 / -5 35 1.0 1.0",
+  "x": 1216,
+  "y": 415,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Paratus 3V Gear Paratus 3-Day Operator's Tactical backpack (Foliage Grey) -3 / -1 / -5 35 1.0 5,350 2.0 187,262 IV [1]",
+  "x": 1216,
+  "y": 455,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Santa's bag Santa's bag -4 / -3 / -7 35 1.0 2.6",
+  "x": 1216,
+  "y": 495,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Attack 2 SSO Attack 2 raid backpack (Khaki) -5 / -3 / -7 35 1.0 2.8",
+  "x": 1216,
+  "y": 535,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "G2 Gunslinger II Eberlestock G2 Gunslinger II backpack (Dry Earth) -4 / -1 / -3 35 1.0 4,845 2.9 169,580 IV [1]",
+  "x": 1216,
+  "y": 575,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Pilgrim Pilgrim tourist backpack -7 / -4 / -8 35 1.0 3.5",
+  "x": 1216,
+  "y": 615,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "NICE Load Sling Mystery Ranch NICE Frame Load Sling -4 / -2 / -6 35 1.2 7.0",
+  "x": 1216,
+  "y": 655,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Mechanism Oakley Mechanism heavy duty backpack (Black) -2 / -1 / -3 32 1.3 4,798 1.0 153,562 II [2]",
+  "x": 1216,
+  "y": 695,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Pillbox backpack (Black)",
+  "x": 1304,
+  "y": 695,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "T30 Gruppa 99 T30 backpack (Black) -2 / -1 / -2 30 1.0 1.4",
+  "x": 1216,
+  "y": 735,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "T30 Gruppa 99 T30 backpack (MultiCam) -2 / -1 / -2 30 1.0 1.4 15 III [2]",
+  "x": 1216,
+  "y": 775,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "2 Day Assault Mystery Ranch 2 Day Assault Pack (Black) -4 / -2 / -6 30 1.0 1.5",
+  "x": 1216,
+  "y": 815,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "F5 Switchblade Eberlestock F5 Switchblade backpack (Dry Earth) -3 / -1 / -3 30 1.0 1.6",
+  "x": 1216,
+  "y": 855,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Beta 2 ANA Tactical Beta 2 Battle backpack (Olive Drab) -2 / -3 / -6 30 1.2 5,710 2.0 171,327 III [2]",
+  "x": 1216,
+  "y": 895,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Oakley Mechanism heavy duty backpack (Black)",
+  "x": 1304,
+  "y": 895,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+  "x": 1344,
+  "y": 895,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Tri-Zip Camelbak Tri-Zip assault backpack (MultiCam) -3 / -1 / -4 30 1.0 2,557 2.2 76,718 III [3]",
+  "x": 1216,
+  "y": 934,
+  "w": 1300,
+  "h": 38
+ },
+ {
+  "role": "group",
+  "label": "Tri-Zip Camelbak Tri-Zip assault backpack (Foliage) -3 / -1 / -4 30 1.0 5,114 2.2 153,436 III [3]",
+  "x": 1216,
+  "y": 975,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Terraframe Mystery Ranch Terraframe backpack (Olive Drab) -3 / -2 / -5 30 1.0 2.2",
+  "x": 1216,
+  "y": 1015,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "Terraframe CE Mystery Ranch Terraframe backpack (Christmas Edition) -3 / -2 / -5 30 1.0 2.3",
+  "x": 1216,
+  "y": 1055,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "RK-PT-25 Tehinkom RK-PT-25 patrol backpack (EMR) -1 / -1 / -2 25 1.0 1,520 1.1 38,018 II [3]",
+  "x": 1216,
+  "y": 1095,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+  "x": 1304,
+  "y": 1095,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "ANA Tactical Beta 2 Battle backpack (Olive Drab)",
+  "x": 1344,
+  "y": 1095,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Oakley Mechanism heavy duty backpack (Black)",
+  "x": 1384,
+  "y": 1095,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "LBT-1476A 3Day Pack (Woodland)",
+  "x": 1424,
+  "y": 1095,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "LBT-1476A LBT-1476A 3Day Pack (Woodland) -1 / 0 / -2 25 1.3 1.1",
+  "x": 1216,
+  "y": 1135,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Gruppa 99 T20 backpack (Umber Brown)",
+  "x": 1304,
+  "y": 1135,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "ANA Tactical Beta 2 Battle backpack (Olive Drab)",
+  "x": 1344,
+  "y": 1135,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Oakley Mechanism heavy duty backpack (Black)",
+  "x": 1384,
+  "y": 1135,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+  "x": 1424,
+  "y": 1135,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "LBT-1476A LBT-1476A 3Day Pack (MultiCam Alpine) -1 / 0 / -2 25 1.3 1.1",
+  "x": 1216,
+  "y": 1175,
+  "w": 1300,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Gruppa 99 T20 backpack (Umber Brown)",
+  "x": 1304,
+  "y": 1175,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "ANA Tactical Beta 2 Battle backpack (Olive Drab)",
+  "x": 1344,
+  "y": 1175,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Oakley Mechanism heavy duty backpack (Black)",
+  "x": 1384,
+  "y": 1175,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Hazard 4 Drawbridge backpack (Coyote Tan)",
+  "x": 1424,
+  "y": 1175,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "group",
+  "label": "T20 Gruppa 99 T20 backpack (Umber Brown) -1 / 0 / -1 25 1.0 1,635 1.3 40,880 III [5]",
+  "x": 1216,
+  "y": 1199,
+  "w": 1300,
+  "h": 8
+ },
+ {
+  "role": "button",
+  "label": "Price",
+  "x": 1794,
+  "y": 102,
+  "w": 120,
+  "h": 27
+ }
+]

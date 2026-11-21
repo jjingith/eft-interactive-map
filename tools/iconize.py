@@ -17,6 +17,7 @@
 import os
 import sys
 import math
+import shutil
 import argparse
 from collections import Counter, deque
 
@@ -24,6 +25,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 SRC = r"D:\personal\trae\02-塔科夫\ui图标"
 DST = r"D:\personal\trae\02-塔科夫\eft-interactive-map\assets\icons"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 项目根（zone 暂存目录用）
 
 CANVAS = 64          # 输出画布边长
 DEF_FRAC = 0.86      # 内容占画布比例
@@ -261,6 +263,72 @@ JOBS = [
     ("f74a2149-b1e6-450d-957c-6fb02613141c.png", "key-59381445.png", "strip", {"T": 30, "ring": 0, "band": [0.2584, 0.7640]}),  # 简易工棚钥匙
     ("9d1afb4f-d637-40b4-ab4a-8204cc8e0a8b.png", "key-61a6446f.png", "strip", {"T": 30, "ring": 0, "band": [0.3158, 0.8553]}),  # 冷库钥匙
 ]
+
+
+# ----------------------------------------------------------------------------- 防护区域图标（第三轮第七项；R31.1 组件化）
+# R31.1 起组合图不再手工绘制：tools/gen_zone_icons.py 把每个防护部位单独抠成
+# piece（assets/icons/zones/parts/region-*.png），再依据 data/items.json 的真实
+# 防护区域 z 自动叠放成组合图，写入暂存目录 build-cache/zone-gen/。
+# 这里只做「从暂存目录复制到可打包目录 assets/icons/zones/」（ASCII 名、可离线）。
+# words = 该图对应的部位词集合（与 app.js 的 ZONE_WORD_ORDER 用词一致，供映射一致性审计核对）。
+ZONE_DST = os.path.join(DST, "zones")
+ZONE_STAGE = os.path.join(ROOT, "build-cache", "zone-gen")
+ZONE_JOBS = [
+    ("防护部位图（手绘重做 R31.3）", "zone-jaw.png", "zone-jaw.png", ["下颚"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-jaw-ears.png", "zone-jaw-ears.png", ["下颚", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-jaw-neck.png", "zone-jaw-neck.png", ["脖颈", "下颚"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-back.png", "zone-back.png", ["后脑"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top.png", "zone-top.png", ["头顶"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back.png", "zone-top-back.png", ["头顶", "后脑"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-ears.png", "zone-top-back-ears.png", ["头顶", "后脑", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-face-jaw-eyes.png", "zone-top-back-face-jaw-eyes.png", ["头顶", "后脑", "面部", "下颚", "眼部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-face-jaw-eyes-ears.png", "zone-top-back-face-jaw-eyes-ears.png", ["头顶", "后脑", "面部", "下颚", "眼部", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-face-jaw-eyes-ears-neck.png", "zone-top-back-face-jaw-eyes-ears-neck.png", ["脖颈", "头顶", "后脑", "面部", "下颚", "眼部", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-face-jaw-ears.png", "zone-top-back-face-jaw-ears.png", ["头顶", "后脑", "面部", "下颚", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-back-face-eyes-ears.png", "zone-top-back-face-eyes-ears.png", ["头顶", "后脑", "面部", "眼部", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-eyes.png", "zone-top-eyes.png", ["头顶", "眼部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-face-jaw-eyes.png", "zone-top-face-jaw-eyes.png", ["头顶", "面部", "下颚", "眼部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-face-jaw-eyes-ears.png", "zone-top-face-jaw-eyes-ears.png", ["头顶", "面部", "下颚", "眼部", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-top-face-jaw-eyes-neck.png", "zone-top-face-jaw-eyes-neck.png", ["脖颈", "头顶", "面部", "下颚", "眼部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-ears.png", "zone-ears.png", ["耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-face-jaw-eyes.png", "zone-face-jaw-eyes.png", ["面部", "下颚", "眼部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-face-jaw-ears.png", "zone-face-jaw-ears.png", ["面部", "下颚", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-face-jaw-ears-neck.png", "zone-face-jaw-ears-neck.png", ["脖颈", "面部", "下颚", "耳部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-face-jaw-neck.png", "zone-face-jaw-neck.png", ["脖颈", "面部", "下颚"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-face-eyes.png", "zone-face-eyes.png", ["面部", "眼部"]),
+    ("防护部位图（R79 眼部）", "zone-eyes.png", "zone-eyes.png", ["眼部"]),
+    ("防护部位图（R79 面部下颚）", "zone-face-jaw.png", "zone-face-jaw.png", ["面部", "下颚"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest.png", "zone-chest.png", ["上胸"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen.png", "zone-chest-abdomen.png", ["上胸", "腹部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side.png", "zone-chest-abdomen-side.png", ["上胸", "腹部", "侧面"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side-groin.png", "zone-chest-abdomen-side-groin.png", ["上胸", "腹部", "侧面", "裆部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side-groin-neck.png", "zone-chest-abdomen-side-groin-neck.png", ["上胸", "腹部", "侧面", "裆部", "脖颈"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side-groin-neck-shoulder.png", "zone-chest-abdomen-side-groin-neck-shoulder.png", ["上胸", "腹部", "侧面", "裆部", "脖颈", "肩部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side-neck.png", "zone-chest-abdomen-side-neck.png", ["上胸", "腹部", "侧面", "脖颈"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-side-neck-shoulder.png", "zone-chest-abdomen-side-neck-shoulder.png", ["上胸", "腹部", "侧面", "脖颈", "肩部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-groin.png", "zone-chest-abdomen-groin.png", ["上胸", "腹部", "裆部"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-abdomen-groin-neck.png", "zone-chest-abdomen-groin-neck.png", ["上胸", "腹部", "裆部", "脖颈"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-chest-side.png", "zone-chest-side.png", ["上胸", "侧面"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-side.png", "zone-side.png", ["侧面"]),
+    ("防护部位图（手绘重做 R31.3）", "zone-neck.png", "zone-neck.png", ["脖颈"]),
+]
+
+
+def copy_zones():
+    """把组件化生成的防护区域组合图复制到 assets/icons/zones/（ASCII 名，可打包、可离线）。
+    源 = tools/gen_zone_icons.py 的输出暂存目录 build-cache/zone-gen/。"""
+    os.makedirs(ZONE_DST, exist_ok=True)
+    made = 0
+    for sub, src_name, dst_name, words in ZONE_JOBS:
+        src = os.path.join(ZONE_STAGE, src_name)
+        dst = os.path.join(ZONE_DST, dst_name)
+        if not os.path.exists(src):
+            print("缺失源文件:", src, "（请先运行 tools/gen_zone_icons.py）")
+            continue
+        shutil.copyfile(src, dst)
+        made += 1
+        print("%-40s zone-copy words=%s" % (dst_name, "/".join(words)))
+    print("共复制 %d 个防护区域图标到 %s" % (made, ZONE_DST))
 
 
 # ----------------------------------------------------------------------------- 工具
@@ -620,6 +688,7 @@ def main():
               (dst_name, mode, info["size"][0], info["size"][1], info["split"],
                info["box"], info["content"]))
     print("共输出 %d 个文件到 %s" % (len(made), DST))
+    copy_zones()
     if args.sheet:
         base = os.path.join(os.path.dirname(DST), "..", "tools")
         p = make_sheet(made, os.path.join(base, "_debug_sheet.png"), dark=False)

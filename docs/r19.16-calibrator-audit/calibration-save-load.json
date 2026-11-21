@@ -1,0 +1,77 @@
+{
+ "generatedFor": "R19.16",
+ "savePath": "data/gun-layout-calibration.json",
+ "backupPath": "data/gun-layout-calibration.json.bak.json",
+ "api": {
+  "GET": "/api/layout-calibration",
+  "POST": "/api/layout-calibration",
+  "actions": [
+   "save",
+   "save-all",
+   "clear",
+   "restore-backup",
+   "import"
+  ]
+ },
+ "writePolicy": "整包校验 → 备份上一版 → 临时文件 + fsync + os.replace 原子替换；路径由服务端固定，客户端不可传任意路径",
+ "persistence": {
+  "pageReload": true,
+  "serverRestart": true,
+  "diskFile": true,
+  "diskSummary": {
+   "guns": 1,
+   "slots": 1,
+   "updatedAt": "2026-10-27T11:17:57",
+   "schemaVersion": 1,
+   "toolVersion": "R19.16"
+  },
+  "localStorageUsedForPersistence": false
+ },
+ "import": {
+  "invalidRejected": true,
+  "invalidError": "schemaVersion 不支持：99（当前只接受 1）",
+  "existingDataKept": true
+ },
+ "export": {
+  "method": "浏览器下载 gun-layout-calibration.json（内容与项目文件一致）"
+ },
+ "backup": {
+  "exists": true,
+  "restoreApi": "POST action=restore-backup",
+  "prevKeptAs": "data/gun-layout-calibration.json.prev.json"
+ },
+ "fileOnDisk": {
+  "schemaVersion": 1,
+  "toolVersion": "R19.16",
+  "updatedAt": "2026-10-27T11:17:57",
+  "guns": {
+   "5644bd2b4bdc2d3b4c8b4572": {
+    "name": "AK-74N 5.45x39 突击步枪",
+    "updatedAt": "2026-10-27T11:17:57",
+    "slots": {
+     "mod_mount_000|mod_mount_000|": {
+      "slotId": "mod_mount_000",
+      "slotPath": "mod_mount_000",
+      "ownerItemId": "",
+      "logicalRow": 5,
+      "col": 2,
+      "topPad": 0,
+      "displayRow": 5,
+      "role": "dovetailMount",
+      "source": "manual",
+      "note": "冒烟",
+      "updatedAt": "2026-10-27T11:17:57",
+      "autoRow": 2,
+      "autoCol": 8
+     }
+    },
+    "history": [
+     {
+      "at": "2026-10-27T03:17:57",
+      "changed": 1
+     }
+    ]
+   }
+  }
+ }
+}

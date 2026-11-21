@@ -1,0 +1,405 @@
+{
+ "name": "db4-logs",
+ "requested_url": "https://db4tarkov.com/logs",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "semantics_auto": "clicked",
+ "url": "https://db4tarkov.com/logs",
+ "title": "Logs",
+ "ready": "complete",
+ "textLen": 2998,
+ "htmlLen": 89787,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 29,
+ "input": 0,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0 🌖 18:59 🌓 06:59"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "button",
+   "label": "SELECT LOGS FOLDER"
+  },
+  {
+   "role": "button",
+   "label": "Log settings"
+  },
+  {
+   "role": "group",
+   "label": "OPS LOG SCAV READY IDLE"
+  },
+  {
+   "role": "button",
+   "label": "Clear"
+  },
+  {
+   "role": "button",
+   "label": "Collapse"
+  },
+  {
+   "role": "button",
+   "label": "Maximize"
+  },
+  {
+   "role": "button",
+   "label": "Tactical sling bag (Khaki)"
+  },
+  {
+   "role": "button",
+   "label": "The Tarkov Shooter - Part 3"
+  },
+  {
+   "role": "button",
+   "label": "Bottle of Pevko Light beer"
+  },
+  {
+   "role": "button",
+   "label": "Provide Viewership"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/logs",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793252523110",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5ab8f04f86f774585f4237d8.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/62a09f32621468534a797acb.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notosanssc/v37/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FnYkldv7JjxkkgFsFSSOPMOkySAZ73y9ViAt3acb8NexQ2w.119.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Ref.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabsE4tq3luCC7p-aXxcn.7.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-N427SV6H5B",
+   "host": "www.googletagmanager.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1v9117849133za208zd9117849133xf1&_p=1793252565203&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3",
+   "host": "www.google-analytics.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/db4-logs.png",
+ "screenshot_bytes": 168297
+}

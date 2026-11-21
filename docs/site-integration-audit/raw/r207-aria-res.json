@@ -1,0 +1,26 @@
+[
+ {
+  "role": "flt-semantics",
+  "label": "Popup menu",
+  "x": 961,
+  "y": 96,
+  "w": 110,
+  "h": 112
+ },
+ {
+  "role": "button",
+  "label": "1080P",
+  "x": 961,
+  "y": 72,
+  "w": 110,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "1440P",
+  "x": 961,
+  "y": 120,
+  "w": 110,
+  "h": 48
+ }
+]

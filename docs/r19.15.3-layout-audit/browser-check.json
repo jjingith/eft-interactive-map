@@ -1,0 +1,1657 @@
+{
+ "generatedFor": "R19.15.3",
+ "guns": {
+  "ak74n": {
+   "gunName": "AK-74N 5.45x39 突击步枪",
+   "rows": 6,
+   "cols": 9,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "slotCount": 15,
+   "treeSlots": 13,
+   "phantomCount": 0,
+   "phantoms": [],
+   "realEmptySlots": 5,
+   "emptySlots": [
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    }
+   ],
+   "emptySlotInteractive": true,
+   "viewport": 1920,
+   "viewportH": 919,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 313
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 577,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 246
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 246
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 246
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 392,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 323
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 323
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 323
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 639,
+     "y": 400
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 400
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 400
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 468
+    }
+   ]
+  },
+  "akm": {
+   "gunName": "AKM 7.62x39 突击步枪",
+   "rows": 6,
+   "cols": 9,
+   "rowHeights": [
+    56,
+    57.8,
+    79.3,
+    57.8,
+    57.8,
+    56
+   ],
+   "slotCount": 15,
+   "treeSlots": 13,
+   "phantomCount": 0,
+   "phantoms": [],
+   "realEmptySlots": 5,
+   "emptySlots": [
+    {
+     "slot": "mod_sight_front",
+     "row": 2,
+     "col": 2,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    }
+   ],
+   "emptySlotInteractive": true,
+   "viewport": 1920,
+   "viewportH": 919,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 313
+    },
+    {
+     "slot": "mod_sight_front",
+     "row": 2,
+     "col": 2,
+     "item": "",
+     "empty": true,
+     "x": 330,
+     "y": 246
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 8,
+     "item": "AKM 照门",
+     "empty": false,
+     "x": 700,
+     "y": 246
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 246
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AKM 7.62x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 324
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AKM 导气管",
+     "empty": false,
+     "x": 392,
+     "y": 324
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AKM 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 324
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AKM 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 324
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AKM 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 324
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "7.62x39 AK 30发弹匣（1955 年后配发）",
+     "empty": false,
+     "x": 639,
+     "y": 403
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AKM 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 403
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 403
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 470
+    }
+   ]
+  },
+  "saiga": {
+   "gunName": "Saiga-12K 12 铅径自动霰弹枪",
+   "rows": 6,
+   "cols": 9,
+   "rowHeights": [
+    56,
+    57.8,
+    85.5,
+    57.8,
+    57.8,
+    57.8
+   ],
+   "slotCount": 26,
+   "treeSlots": 24,
+   "phantomCount": 0,
+   "phantoms": [],
+   "realEmptySlots": 9,
+   "emptySlots": [
+    {
+     "slot": "mod_handguard/mod_mount/mod_scope",
+     "row": 2,
+     "col": 4,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_mount_001",
+     "row": 4,
+     "col": 5,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_handguard/mod_bipod",
+     "row": 6,
+     "col": 3,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    }
+   ],
+   "emptySlotInteractive": true,
+   "viewport": 1920,
+   "viewportH": 919,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 313
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_sight_front",
+     "row": 2,
+     "col": 3,
+     "item": "Chaos 仿 HK 式准星",
+     "empty": false,
+     "x": 392,
+     "y": 246
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_scope",
+     "row": 2,
+     "col": 4,
+     "item": "",
+     "empty": true,
+     "x": 453,
+     "y": 246
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "Chaos 仿 HK 式照门",
+     "empty": false,
+     "x": 577,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 246
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 246
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 246
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 3,
+     "item": "Tromix 怪爪 12 铅径膛口制退器",
+     "empty": false,
+     "x": 392,
+     "y": 327
+    },
+    {
+     "slot": "mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "SOK-12 Chaos Titan 四面导轨护木",
+     "empty": false,
+     "x": 453,
+     "y": 327
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "SOK-12 Kiba Arms定制生化风格导轨防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 327
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "CAA AKTS AK74M 缓冲管",
+     "empty": false,
+     "x": 762,
+     "y": 327
+    },
+    {
+     "slot": "mod_handguard/mod_foregrip",
+     "row": 4,
+     "col": 4,
+     "item": "KAC 垂直前握把",
+     "empty": false,
+     "x": 453,
+     "y": 409
+    },
+    {
+     "slot": "mod_mount_001",
+     "row": 4,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 409
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "SOK-12 12 铅径 MD Arms 20发弹鼓",
+     "empty": false,
+     "x": 639,
+     "y": 409
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "PUFGUN SG-M2 AK 手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 409
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "MFT BUS AR-15 枪托",
+     "empty": false,
+     "x": 762,
+     "y": 409
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_000",
+     "row": 6,
+     "col": 1,
+     "item": "",
+     "empty": true,
+     "x": 268,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_tactical_001",
+     "row": 6,
+     "col": 2,
+     "item": "",
+     "empty": true,
+     "x": 330,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_bipod",
+     "row": 6,
+     "col": 3,
+     "item": "",
+     "empty": true,
+     "x": 392,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount",
+     "row": 6,
+     "col": 4,
+     "item": "SOK-12 Chaos Titan 四面导轨护木顶盖",
+     "empty": false,
+     "x": 453,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_tactical",
+     "row": 6,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_mount",
+     "row": 6,
+     "col": 6,
+     "item": "SOK-12 Chaos Titan 机匣上导轨",
+     "empty": false,
+     "x": 577,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_scope",
+     "row": 6,
+     "col": 7,
+     "item": "Aimpoint QRP2 CompM4/PRO反射式瞄具基座",
+     "empty": false,
+     "x": 639,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_scope/mod_scope",
+     "row": 6,
+     "col": 8,
+     "item": "标准Aimpont瞄具垫高器",
+     "empty": false,
+     "x": 700,
+     "y": 544
+    },
+    {
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_scope/mod_scope/mod_scope",
+     "row": 6,
+     "col": 9,
+     "item": "Aimpoint COMP M4反射式瞄具",
+     "empty": false,
+     "x": 762,
+     "y": 544
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 477
+    }
+   ]
+  }
+ },
+ "flow": {
+  "akBase": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": null,
+   "opticGrandchild": null,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 313
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 577,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 246
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 246
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 246
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 392,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 323
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 323
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 323
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 639,
+     "y": 400
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 400
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 400
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 468
+    }
+   ]
+  },
+  "akOpticInstalled": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    57.8,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "Axion Kobra 燕尾槽适配导轨基座",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": {
+    "row": 1,
+    "col": 8,
+    "empty": true,
+    "item": ""
+   },
+   "opticGrandchild": null,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 315
+    },
+    {
+     "slot": "mod_mount_000/mod_scope",
+     "row": 1,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 180
+    },
+    {
+     "slot": "mod_mount_000/mod_tactical",
+     "row": 1,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 180
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 247
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 577,
+     "y": 247
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 247
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "Axion Kobra 燕尾槽适配导轨基座",
+     "empty": false,
+     "x": 700,
+     "y": 247
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 247
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 325
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 392,
+     "y": 325
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 325
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 325
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 325
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 639,
+     "y": 402
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 402
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 402
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 470
+    }
+   ]
+  },
+  "afterOpticInstall": {
+   "bodyRow": 3,
+   "rows": 7,
+   "rowHeights": [
+    57.8,
+    57.8,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 3,
+   "mountCol": 8,
+   "mountItem": "Axion Kobra 燕尾槽适配导轨基座",
+   "rearSightRow": 3,
+   "rearSightCol": 6,
+   "optic": {
+    "row": 2,
+    "col": 8,
+    "empty": false,
+    "item": "北方工业 QMK-171A 瞄具基座"
+   },
+   "opticGrandchild": {
+    "row": 1,
+    "col": 8,
+    "empty": true,
+    "item": ""
+   },
+   "slots": [
+    {
+     "slot": "",
+     "row": 4,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 383
+    },
+    {
+     "slot": "mod_mount_000/mod_scope/mod_scope",
+     "row": 1,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 180
+    },
+    {
+     "slot": "mod_mount_000/mod_scope",
+     "row": 2,
+     "col": 8,
+     "item": "北方工业 QMK-171A 瞄具基座",
+     "empty": false,
+     "x": 700,
+     "y": 247
+    },
+    {
+     "slot": "mod_mount_000/mod_tactical",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 247
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 3,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 315
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 3,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 577,
+     "y": 315
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 3,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 315
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 3,
+     "col": 8,
+     "item": "Axion Kobra 燕尾槽适配导轨基座",
+     "empty": false,
+     "x": 700,
+     "y": 315
+    },
+    {
+     "slot": "mod_charge",
+     "row": 3,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 315
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 4,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 392
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 4,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 392,
+     "y": 392
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 4,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 392
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 4,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 392
+    },
+    {
+     "slot": "mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 392
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 5,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 639,
+     "y": 470
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 5,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 470
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 5,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 470
+    },
+    {
+     "slot": "",
+     "row": 6,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 537
+    }
+   ],
+   "scopeClicked": "北方工业 QMK-171A 瞄具基座",
+   "mountPath": "mod_mount_000/mod_scope"
+  },
+  "akOpticRemoved": {
+   "bodyRow": 3,
+   "rows": 6,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "phantomCount": 0,
+   "mountRow": 2,
+   "mountCol": 8,
+   "mountItem": "",
+   "rearSightRow": 2,
+   "rearSightCol": 6,
+   "optic": null,
+   "opticGrandchild": null,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 577,
+     "y": 313
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 515,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 577,
+     "y": 246
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 639,
+     "y": 246
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 700,
+     "y": 246
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 246
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 330,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 392,
+     "y": 323
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 453,
+     "y": 323
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 515,
+     "y": 323
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 762,
+     "y": 323
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 639,
+     "y": 400
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 700,
+     "y": 400
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 762,
+     "y": 400
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 639,
+     "y": 468
+    }
+   ]
+  },
+  "baseSlotClicked": "mod_mount_000",
+  "baseItemClicked": "Axion Kobra 燕尾槽适配导轨基座"
+ },
+ "console": [],
+ "build": null,
+ "viewports": {
+  "ak74n_1384x805": {
+   "gunName": "AK-74N 5.45x39 突击步枪",
+   "rows": 6,
+   "cols": 9,
+   "rowHeights": [
+    56,
+    57.8,
+    76.9,
+    57.8,
+    57.8,
+    56
+   ],
+   "slotCount": 15,
+   "treeSlots": 13,
+   "phantomCount": 0,
+   "phantoms": [],
+   "realEmptySlots": 5,
+   "emptySlots": [
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "w": 58,
+     "h": 58,
+     "border": "1px solid rgb(127, 157, 185)",
+     "pointer": "auto"
+    }
+   ],
+   "emptySlotInteractive": true,
+   "viewport": 1384,
+   "viewportH": 805,
+   "slots": [
+    {
+     "slot": "",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "empty": false,
+     "x": 549,
+     "y": 338
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "empty": true,
+     "x": 487,
+     "y": 270
+    },
+    {
+     "slot": "mod_sight_rear",
+     "row": 2,
+     "col": 6,
+     "item": "AK-74 照门",
+     "empty": false,
+     "x": 549,
+     "y": 270
+    },
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "empty": true,
+     "x": 611,
+     "y": 270
+    },
+    {
+     "slot": "mod_mount_000",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "empty": true,
+     "x": 672,
+     "y": 270
+    },
+    {
+     "slot": "mod_charge",
+     "row": 2,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 734,
+     "y": 270
+    },
+    {
+     "slot": "mod_muzzle",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "empty": false,
+     "x": 302,
+     "y": 347
+    },
+    {
+     "slot": "mod_gas_block",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74导气管",
+     "empty": false,
+     "x": 364,
+     "y": 347
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 木制护木",
+     "empty": false,
+     "x": 425,
+     "y": 347
+    },
+    {
+     "slot": "mod_reciever",
+     "row": 3,
+     "col": 5,
+     "item": "AK-74 防尘盖",
+     "empty": false,
+     "x": 487,
+     "y": 347
+    },
+    {
+     "slot": "mod_stock",
+     "row": 3,
+     "col": 9,
+     "item": "AK-74 木制枪托",
+     "empty": false,
+     "x": 734,
+     "y": 347
+    },
+    {
+     "slot": "mod_magazine",
+     "row": 4,
+     "col": 7,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "empty": false,
+     "x": 611,
+     "y": 425
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "row": 4,
+     "col": 8,
+     "item": "AK-74 胶木手枪式握把",
+     "empty": false,
+     "x": 672,
+     "y": 425
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "row": 4,
+     "col": 9,
+     "item": "",
+     "empty": true,
+     "x": 734,
+     "y": 425
+    },
+    {
+     "slot": "",
+     "row": 5,
+     "col": 7,
+     "item": "",
+     "empty": false,
+     "x": 611,
+     "y": 492
+    }
+   ]
+  }
+ },
+ "visual": {
+  "svgCount": 0,
+  "linkPaths": 0,
+  "skinCount": 0,
+  "skinTag": 0,
+  "fontBody": "Tahoma, \"Microsoft YaHei UI\", \"Microsoft YaHei\", sans-serif"
+ }
+}

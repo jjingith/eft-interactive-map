@@ -1,0 +1,1791 @@
+{
+  "build": "R19.29",
+  "generatedBy": "tools/r19_29_taskb.js",
+  "rule": "战术类父件在低行生成子槽时，子槽占父件同行右邻格；该格被独立槽位占着则独立槽位右移；无空位记冲突不覆盖",
+  "summary": {
+    "scenarios": 61,
+    "childAtWant": 59,
+    "sameRowConflict": 0,
+    "dup": 0,
+    "shifted": 12,
+    "restoreClean": 61,
+    "idempotent": 61,
+    "fallbackDirty": 0,
+    "synthPass": 7,
+    "synthTotal": 7,
+    "calibUntouched": true,
+    "gunCount": 36
+  },
+  "synthChecks": [
+    {
+      "id": "B4-1_slide_right",
+      "pass": true,
+      "got": "r6c3 / C r6c2"
+    },
+    {
+      "id": "B4-2_keep_searching",
+      "pass": true,
+      "got": "r6c5 / C r6c2"
+    },
+    {
+      "id": "B4-3_no_space_conflict",
+      "pass": true,
+      "got": "r6c2 / C r3c1 conflicts=1"
+    },
+    {
+      "id": "B4-4_sibling_no_move",
+      "pass": true,
+      "got": "r6c2 / C r6c5"
+    },
+    {
+      "id": "B4-5_anchor_not_used",
+      "pass": true,
+      "got": "r5c8 / C r5c2"
+    },
+    {
+      "id": "B4-6_free_cell_return",
+      "pass": true,
+      "got": "C r6c2"
+    },
+    {
+      "id": "B4-7_already_above",
+      "pass": true,
+      "got": "C r5c1"
+    }
+  ],
+  "cases": [
+    {
+      "gunId": "588892092459774ac91d4b11",
+      "gun": "DVL-10 7.62x51 栓动式狙击步枪",
+      "parent": "mod_barrel/mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_barrel/mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_barrel/mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "58948c8e86f77409493f7266",
+      "gun": "SIG MPX 9x19 冲锋枪",
+      "parent": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "58948c8e86f77409493f7266",
+      "gun": "SIG MPX 9x19 冲锋枪",
+      "parent": "mod_reciever/mod_handguard/mod_mount_002/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_mount_002/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_mount_002/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5b0bbe4e5acfc40dc528a72d",
+      "gun": "DS Arms SA-58 7.62x51 突击步枪",
+      "parent": "mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5b0bbe4e5acfc40dc528a72d",
+      "gun": "DS Arms SA-58 7.62x51 突击步枪",
+      "parent": "mod_handguard/mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_handguard/mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5ba26383d4351e00334c93d9",
+      "gun": "HK MP7A1 4.6x30 冲锋枪",
+      "parent": "mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_002 r6c3->r6c4"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5bb2475ed4351e00853264e3",
+      "gun": "HK 416A5 5.56x45 突击步枪",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5bb2475ed4351e00853264e3",
+      "gun": "HK 416A5 5.56x45 突击步枪",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5bd70322209c4d00d7167b8f",
+      "gun": "HK MP7A2 4.6x30 冲锋枪",
+      "parent": "mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_002 r6c3->r6c4"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "parent": "mod_handguard/mod_mount_000/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_mount_000/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_000/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "parent": "mod_handguard/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5cc82d76e24e8d00134b4b83",
+      "gun": "FN P90 5.7x28 冲锋枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r7c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r7c3"
+      ],
+      "want": "r7c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_mount_002 r7c3->r7c5"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5cc82d76e24e8d00134b4b83",
+      "gun": "FN P90 5.7x28 冲锋枪",
+      "parent": "mod_reciever/mod_mount_002/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_reciever/mod_mount_002/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_002/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5d43021ca4b9362eab4b5e25",
+      "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+      "parent": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5de7bd7bfd6b4e6e2276dc25",
+      "gun": "B&T MP9-N 9x19 冲锋枪",
+      "parent": "mod_reciever/mod_mount/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5df24cf80dee1b22f862e9bc",
+      "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+      "parent": "mod_stock/mod_handguard/mod_mount_003/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_stock/mod_handguard/mod_mount_003/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_stock/mod_handguard/mod_mount_003/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5e81ebcd8e146c7080625e15",
+      "gun": "FN GL-40 Mk.2 榴弹发射器",
+      "parent": "mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Daniel Defense 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_002 r6c2->r6c3"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fb64bc92b1b027b1f50bcf2",
+      "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+      "parent": "mod_mount_001/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_mount_001/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_001/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_mount_002 r6c4->r6c6"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fb64bc92b1b027b1f50bcf2",
+      "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+      "parent": "mod_mount_002/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c5",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c6"
+      ],
+      "want": "r6c6",
+      "occupiedWantBy": "mod_mount_002/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_002/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fc3e272f8b6a877a729eac5",
+      "gun": "HK UMP .45 ACP冲锋枪",
+      "parent": "mod_mount_001/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_mount_001/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_001/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_mount_002 r6c3->r6c5"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fc3e272f8b6a877a729eac5",
+      "gun": "HK UMP .45 ACP冲锋枪",
+      "parent": "mod_mount_002/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_mount_002/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_002/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fc3f2d5900b1d5091531e57",
+      "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+      "parent": "mod_mount_001/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_mount_001/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_001/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_mount_002 r6c4->r6c6"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "5fc3f2d5900b1d5091531e57",
+      "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+      "parent": "mod_mount_002/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c5",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c6"
+      ],
+      "want": "r6c6",
+      "occupiedWantBy": "mod_mount_002/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_mount_002/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6165ac306ef05c2ce828ef74",
+      "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_001 r6c2->r6c3"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6165ac306ef05c2ce828ef74",
+      "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r7c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r7c3"
+      ],
+      "want": "r7c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r7c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r7c4"
+      ],
+      "want": "r7c4",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6183afd850224f204c1da514",
+      "gun": "FN SCAR-H 7.62x51突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_001 r6c2->r6c3"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6183afd850224f204c1da514",
+      "gun": "FN SCAR-H 7.62x51突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6184055050224f204c1da540",
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r5c1"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001",
+        "kind": "ancestor"
+      },
+      "childAtWant": false,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6184055050224f204c1da540",
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_000 r6c2->r6c4"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "618428466ef05c2ce828f218",
+      "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_001 r6c2->r6c4"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "618428466ef05c2ce828f218",
+      "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001",
+        "kind": "ancestor"
+      },
+      "childAtWant": false,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6275303a9f372d6ea97f9ec7",
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "parent": "mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6275303a9f372d6ea97f9ec7",
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "parent": "mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r6c5",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c6"
+      ],
+      "want": "r6c6",
+      "occupiedWantBy": "mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "627e14b21713922ded6f2c15",
+      "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+      "parent": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Daniel Defense 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "627e14b21713922ded6f2c15",
+      "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+      "parent": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_002/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c6",
+      "item": "Daniel Defense 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c7"
+      ],
+      "want": "r6c7",
+      "occupiedWantBy": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_002/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_002/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "627e14b21713922ded6f2c15",
+      "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+      "parent": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_003/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c8",
+      "item": "Daniel Defense 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c9"
+      ],
+      "want": "r6c9",
+      "occupiedWantBy": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_003/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_pistol_grip/mod_reciever/mod_handguard/mod_mount_003/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "62e14904c2699c0ec93adc47",
+      "gun": "SR-2M 石楠 9x21 冲锋枪",
+      "parent": "mod_handguard/mod_mount_000/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "parent": "mod_reciever/mod_mount/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r7c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r7c2"
+      ],
+      "want": "r7c2",
+      "occupiedWantBy": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "parent": "mod_handguard/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "65fb023261d5829b2d090755",
+      "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+      "parent": "mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "65fb023261d5829b2d090755",
+      "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+      "parent": "mod_handguard/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "661ceb1b9311543c7104149b",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+      "parent": "mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "661ceb1b9311543c7104149b",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+      "parent": "mod_handguard/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "661cec09b2c6356b4d0c7a36",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+      "parent": "mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "661cec09b2c6356b4d0c7a36",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+      "parent": "mod_handguard/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "parent": "mod_reciever/mod_mount/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r7c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r7c2"
+      ],
+      "want": "r7c2",
+      "occupiedWantBy": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "673cab3e03c6a20581028bc1",
+      "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+      "parent": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "673cab3e03c6a20581028bc1",
+      "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+      "parent": "mod_reciever/mod_handguard/mod_mount_001/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c5",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c6"
+      ],
+      "want": "r6c6",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_mount_001/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_mount_001/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "parent": "mod_handguard/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_handguard/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "parent": "mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "676176d362e0497044079f4c",
+      "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 1,
+      "shifted": [
+        "mod_tactical_001 r6c2->r6c3"
+      ],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "676176d362e0497044079f4c",
+      "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+      "parent": "mod_reciever/mod_mount_001/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_mount_001/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "parent": "mod_handguard/mod_mount_000/mod_tactical",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_000/mod_tactical/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "parent": "mod_handguard/mod_mount_001/mod_tactical_000",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_handguard/mod_mount_001/mod_tactical_000/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6932abeb5403890d0c09c926",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c1",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c2"
+      ],
+      "want": "r6c2",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6932abeb5403890d0c09c926",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6932abeb5403890d0c09c926",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_003",
+      "parentBase": "tactical",
+      "parentPos": "r6c4",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c5"
+      ],
+      "want": "r6c5",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_003/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_003/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6a15ae2ae5267ba21c07f98f",
+      "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_001",
+      "parentBase": "tactical",
+      "parentPos": "r6c2",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c3"
+      ],
+      "want": "r6c3",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_001/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    },
+    {
+      "gunId": "6a15ae2ae5267ba21c07f98f",
+      "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+      "parent": "mod_reciever/mod_handguard/mod_tactical_002",
+      "parentBase": "tactical",
+      "parentPos": "r6c3",
+      "item": "Kiba Arms 25毫米环形基座",
+      "kids": [
+        "flashlight@r6c4"
+      ],
+      "want": "r6c4",
+      "occupiedWantBy": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+      "wantBlocker": {
+        "path": "mod_reciever/mod_handguard/mod_tactical_002/mod_flashlight",
+        "kind": "independent"
+      },
+      "childAtWant": true,
+      "shiftedCount": 0,
+      "shifted": [],
+      "dup": [],
+      "conflicts": [],
+      "fallback": 0,
+      "restoreClean": true,
+      "restoreDiff": [],
+      "idempotent": true,
+      "doubleApplyDiff": [],
+      "sameRowConflict": false
+    }
+  ],
+  "failures": []
+}

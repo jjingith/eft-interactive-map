@@ -1,0 +1,1645 @@
+{
+ "generatedFor": "R19.15.3",
+ "rule": {
+  "dovetailMount": "r2c8（本体第三行正上方一行、本体右侧第 3 列）",
+  "opticSlot": "r1c8（基座正上方同列）",
+  "sideSlot": "r1c9（瞄具槽右侧）",
+  "rearSight1": "r2c6",
+  "rearSight2": "r2c7（仅在真实槽位存在时出现）",
+  "frontSight": "枪口槽正上方（不受燕尾槽规则影响）",
+  "evidence": "in-game-confirmed（用户 R19.15.2→R19.15.3 任务书指定的固定坐标）"
+ },
+ "compatibleGuns": [
+  {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "gunId": "576165642459773c7a400233",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "gunId": "57838ad32459774a17445cd2",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    },
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": false,
+     "target": {
+      "row": null,
+      "col": null,
+      "label": "第二个真实燕尾槽类基座（未在用户坐标表中指定）"
+     },
+     "actualRow": 2,
+     "actualCol": 1,
+     "actualLabel": "r2c1",
+     "onFixedAnchor": null,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "gunId": "57c44b372459772d2b39b8ce",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    },
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": false,
+     "target": {
+      "row": null,
+      "col": null,
+      "label": "第二个真实燕尾槽类基座（未在用户坐标表中指定）"
+     },
+     "actualRow": 2,
+     "actualCol": 1,
+     "actualLabel": "r2c1",
+     "onFixedAnchor": null,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74UN 5.45x39 短突击步枪",
+   "gunId": "583990e32459771419544dd2",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74UB 5.45x39 短突击步枪",
+   "gunId": "5839a40f24597726f856b511",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "gunId": "5ab8e9fcd8ce870019439434",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_001",
+     "slotId": "mod_mount_001",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "gunId": "5ac4cd105acfc40016339859",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "gunId": "5ac66cb05acfc40198510a10",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "gunId": "5ac66d015acfc400180ae6e4",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "gunId": "5ac66d2e5acfc43b321d4b53",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "gunId": "5ac66d725acfc43b321d4b60",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "gunId": "5ac66d9b5acfc4001633997a",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "gunId": "5c46fbd72e2216398b5a8c9c",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 7,
+     "actualLabel": "r2c7",
+     "onFixedAnchor": false,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    },
+    {
+     "slotPath": "mod_mount_002",
+     "slotId": "mod_mount_002",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "6113d6c3290d254f5e6b27db",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": false,
+     "target": {
+      "row": null,
+      "col": null,
+      "label": "第二个真实燕尾槽类基座（未在用户坐标表中指定）"
+     },
+     "actualRow": 2,
+     "actualCol": 2,
+     "actualLabel": "r2c2",
+     "onFixedAnchor": null,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "gunId": "5c501a4d2e221602b412b540",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount",
+     "slotId": "mod_mount",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪",
+   "gunId": "5cc82d76e24e8d00134b4b83",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": "5cebec38d7f00c00110a652a",
+     "installedItemName": "FN P90 Ring Sight反射式瞄具",
+     "allowScopeIds": [
+      "5cebec38d7f00c00110a652a"
+     ],
+     "allowScopeNames": [
+      "FN P90 Ring Sight反射式瞄具"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "gunId": "5e870397991fd70db46995c8",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount",
+     "slotId": "mod_mount",
+     "installedItemId": "5e87114fe2db31558c75a120",
+     "installedItemName": "M590 鬼环照门",
+     "allowScopeIds": [
+      "5e87114fe2db31558c75a120"
+     ],
+     "allowScopeNames": [
+      "M590 鬼环照门"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "gunId": "628a60ae6b1d481ff772e9c8",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "SR-2M 石楠 9x21 冲锋枪",
+   "gunId": "62e14904c2699c0ec93adc47",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "62ff9920fe938a24c90c10d2"
+     ],
+     "allowScopeNames": [
+      "SR-2M KP-SR2反射式瞄具"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "gunId": "63171672192e68c5460cebc5",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "installedItemId": "62ebd290c427473eff0baafb",
+     "installedItemName": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+     "allowScopeIds": [
+      "62ebd290c427473eff0baafb"
+     ],
+     "allowScopeNames": [
+      "Steyr AUG A3 M1 1.5倍光学瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": "mod_reciever/mod_mount/mod_scope",
+     "sideSlots": [
+      "mod_reciever/mod_mount/mod_tactical"
+     ],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "gunId": "651450ce0e00edc794068371",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_004",
+     "slotId": "mod_mount_004",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    },
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": false,
+     "target": {
+      "row": null,
+      "col": null,
+      "label": "第二个真实燕尾槽类基座（未在用户坐标表中指定）"
+     },
+     "actualRow": 2,
+     "actualCol": 1,
+     "actualLabel": "r2c1",
+     "onFixedAnchor": null,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "gunId": "6718817435e3cfd9550d2c27",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount",
+     "slotId": "mod_mount",
+     "installedItemId": "62ebd290c427473eff0baafb",
+     "installedItemName": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+     "allowScopeIds": [
+      "62ebd290c427473eff0baafb"
+     ],
+     "allowScopeNames": [
+      "Steyr AUG A3 M1 1.5倍光学瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": "mod_reciever/mod_mount/mod_scope",
+     "sideSlots": [
+      "mod_reciever/mod_mount/mod_tactical"
+     ],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "gunId": "674d6121c09f69dfb201a888",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "gunId": "674fe9a75e51f1c47c04ec23",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "gunId": "6871284e9a353bb50606f3ed",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "TKPD 9.3x64 突击卡宾枪",
+   "gunId": "68aee763130c00663d08aea8",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "57486e672459770abd687134",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    },
+    {
+     "slotPath": "mod_mount_002",
+     "slotId": "mod_mount_002",
+     "installedItemId": null,
+     "installedItemName": "",
+     "allowScopeIds": [
+      "6113d6c3290d254f5e6b27db",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611"
+     ],
+     "allowScopeNames": [
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜"
+     ],
+     "primary": false,
+     "target": {
+      "row": null,
+      "col": null,
+      "label": "第二个真实燕尾槽类基座（未在用户坐标表中指定）"
+     },
+     "actualRow": 2,
+     "actualCol": 2,
+     "actualLabel": "r2c2",
+     "onFixedAnchor": null,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "gunId": "6981d72ed009ad83920da43a",
+   "bodyRow": 4,
+   "topPad": 1,
+   "rows": 7,
+   "mounts": [
+    {
+     "slotPath": "mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": "638db77630c4240f9e06f8b6",
+     "installedItemName": "SAG Bit 低基线燕尾槽基座",
+     "allowScopeIds": [
+      "5947db3f86f77447880cf76f",
+      "6113d6c3290d254f5e6b27db",
+      "57486e672459770abd687134",
+      "618a5d5852ecee1505530b2a",
+      "5c82342f2e221644f31c060e",
+      "576fd4ec2459777f0b518431",
+      "5c82343a2e221644f31c0611",
+      "5cf638cbd7f00c06595bc936",
+      "5a7c74b3e899ef0014332c29",
+      "6544d4187c5457729210d277"
+     ],
+     "allowScopeNames": [
+      "Axion Kobra EKP-8-02 反射式瞄具（燕尾槽）",
+      "BelOMO PK-AA 燕尾槽反射式瞄具",
+      "OKP-7反射式瞄具（燕尾槽）",
+      "NPZ PK1 Obzor“监视”反射式瞄具（燕尾槽）",
+      "BelOMO PSO-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2-1 4x24 瞄准镜",
+      "BelOMO PSO-1M2 4x24 瞄准镜",
+      "NPZ USP-1 郁金香 4x 瞄准镜",
+      "NSPU-M 3.5 倍 燕尾槽夜视瞄准镜",
+      "Axion Kobra EKP-1S-03 反射式瞄具（燕尾槽）"
+     ],
+     "primary": true,
+     "target": {
+      "row": 3,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 3,
+     "actualCol": 8,
+     "actualLabel": "r3c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": "mod_mount_000/mod_scope",
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "gunId": "6a78b7f8c2016eb33e0027cd",
+   "bodyRow": 3,
+   "topPad": 0,
+   "rows": 6,
+   "mounts": [
+    {
+     "slotPath": "mod_reciever/mod_mount_000",
+     "slotId": "mod_mount_000",
+     "installedItemId": "5cebec38d7f00c00110a652a",
+     "installedItemName": "FN P90 Ring Sight反射式瞄具",
+     "allowScopeIds": [
+      "5cebec38d7f00c00110a652a"
+     ],
+     "allowScopeNames": [
+      "FN P90 Ring Sight反射式瞄具"
+     ],
+     "primary": true,
+     "target": {
+      "row": 2,
+      "col": 8,
+      "label": "r2c8"
+     },
+     "actualRow": 2,
+     "actualCol": 8,
+     "actualLabel": "r2c8",
+     "onFixedAnchor": true,
+     "dom": null,
+     "domMatches": null,
+     "opticSlot": null,
+     "sideSlots": [],
+     "role": "dovetailMount"
+    }
+   ]
+  }
+ ],
+ "summary": {
+  "guns": 30,
+  "mountSlots": 35,
+  "primaryOnR2C8": 29,
+  "secondaryMounts": 5,
+  "domChecked": 0,
+  "domMatch": 0,
+  "domMismatch": []
+ },
+ "scannedGuns": 163
+}

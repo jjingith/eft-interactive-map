@@ -1,0 +1,3668 @@
+{
+ "forge": {
+  "initial": {
+   "nOptBox": 0,
+   "rows": [],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [],
+   "notes": []
+  },
+  "tierSummary": {
+   "near": {
+    "openRows": 23,
+    "tierChipPressed": true,
+    "picked": "Aimpoint COMP M4反射式瞄具",
+    "pickedRows": 1,
+    "pickedYellow": true,
+    "reopenRows": 23,
+    "reopenKeeps": true,
+    "clearedRows": 0,
+    "clearedTierOff": true
+   },
+   "mid": {
+    "openRows": 17,
+    "tierChipPressed": true,
+    "picked": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+    "pickedRows": 1,
+    "pickedYellow": true,
+    "reopenRows": 17,
+    "reopenKeeps": true,
+    "clearedRows": 0,
+    "clearedTierOff": true
+   },
+   "far": {
+    "openRows": 17,
+    "tierChipPressed": true,
+    "picked": "DEON March-F 1-8x24 紧凑型 30 毫米步枪瞄准镜",
+    "pickedRows": 1,
+    "pickedYellow": true,
+    "reopenRows": 17,
+    "reopenKeeps": true,
+    "clearedRows": 0,
+    "clearedTierOff": true
+   }
+  },
+  "initial_1920": {
+   "nOptBox": 0,
+   "rows": [],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [],
+   "notes": []
+  },
+  "mid_open_1920": {
+   "nOptBox": 1,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "tag": "2×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+     "tag": "2.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+     "tag": "3.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "1",
+      "pressed": "true"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "当前档位：中 · 17 款兼容 · 选择一个具体型号",
+     "on": "0"
+    }
+   ],
+   "notes": []
+  },
+  "picked_1920": {
+   "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+   "state": {
+    "nOptBox": 1,
+    "rows": [
+     {
+      "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "tag": "1–4×",
+      "on": "1",
+      "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+      "bgc": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "rgb(200, 131, 42)",
+      "weight": "700",
+      "dev": "",
+      "visible": true
+     }
+    ],
+    "chips": [
+     [
+      {
+       "t": "10 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "20 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "30 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "32 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "40 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "60 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "100 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "近",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "中",
+       "on": "1",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "远",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "清除",
+       "on": "",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "手电",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "激光",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      }
+     ],
+     [
+      {
+       "t": "低后坐力",
+       "on": "1",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "高人机工效",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "轻量化",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "性价比",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ]
+    ],
+    "sel": [
+     {
+      "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "on": "1"
+     }
+    ],
+    "notes": []
+   }
+  },
+  "reopen_1920": {
+   "nOptBox": 1,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "tag": "2×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+     "tag": "2.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+     "tag": "3.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "1",
+      "pressed": "true"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "on": "1"
+    }
+   ],
+   "notes": []
+  },
+  "swapped_1920": {
+   "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+   "state": {
+    "nOptBox": 1,
+    "rows": [
+     {
+      "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+      "tag": "1–4×",
+      "on": "1",
+      "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+      "bgc": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "rgb(200, 131, 42)",
+      "weight": "700",
+      "dev": "",
+      "visible": true
+     }
+    ],
+    "chips": [
+     [
+      {
+       "t": "10 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "20 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "30 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "32 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "40 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "60 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "100 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "近",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "中",
+       "on": "1",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "远",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "清除",
+       "on": "",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "手电",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "激光",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      }
+     ],
+     [
+      {
+       "t": "低后坐力",
+       "on": "1",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "高人机工效",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "轻量化",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "性价比",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ]
+    ],
+    "sel": [
+     {
+      "text": "已选：中 · 1–4× · ELCAN SpecterDR 1x/4x瞄准镜",
+      "on": "1"
+     }
+    ],
+    "notes": []
+   }
+  },
+  "cleared_1920": {
+   "nOptBox": 0,
+   "rows": [],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [],
+   "notes": []
+  },
+  "both_1920": {
+   "nOptBox": 3,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Armytek Predator Pro v3 XHP35 HI手电",
+     "tag": "手电",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "light",
+     "visible": true
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "tag": "手电+激光",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "laser",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "on": "1"
+    }
+   ],
+   "notes": []
+  },
+  "summary_1920": {
+   "openRows": 17,
+   "pickedRows": 1,
+   "pickedYellow": true,
+   "pickedName": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+   "reopenRows": 17,
+   "reopenKeepsSelected": true,
+   "swappedRows": 1,
+   "swappedName": "ELCAN SpecterDR 1x/4x瞄准镜",
+   "swappedYellow": true,
+   "oldHidden": true,
+   "clearedRows": 0,
+   "clearedNoSel": true,
+   "bothRows": 3,
+   "bothAllYellow": true,
+   "bothDevTags": [
+    "light",
+    "laser"
+   ],
+   "bothText": [
+    "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+    "Armytek Predator Pro v3 XHP35 HI手电",
+    "Glock GTL 21 战术手电激光组合"
+   ],
+   "chips": [
+    {
+     "t": "10 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "20 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "30 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "32 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "40 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "60 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "100 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "近",
+     "on": "0",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "中",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "远",
+     "on": "0",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "清除",
+     "on": "",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "手电",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "激光",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "清除",
+     "on": "",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "低后坐力",
+     "on": "1",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "高人机工效",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "轻量化",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "性价比",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    }
+   ]
+  },
+  "apply_1920": {
+   "selected": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "id": "5b2388675acfc4771e1be0be",
+     "dev": "optic"
+    },
+    {
+     "name": "Armytek Predator Pro v3 XHP35 HI手电",
+     "id": "59d790f486f77403cb06aec6",
+     "dev": "light"
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "id": "5a800961159bd4315e3a1657",
+     "dev": "laser"
+    }
+   ],
+   "results": [
+    {
+     "text": "低后坐力人机 49.5 · 后坐 63.0 · 778,947 ₽瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜 · 手电：Armytek Predator Pro v3 XHP35 HI手电 · 激光：Glock GTL 21 战术手电激光组合应用",
+     "bad": false
+    },
+    {
+     "text": "高人机工效人机 111.5 · 后坐 82.5 · 667,561 ₽瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜 · 手电：Armytek Predator Pro v3 XHP35 HI手电 · 激光：Glock GTL 21 战术手电激光组合应用",
+     "bad": false
+    },
+    {
+     "text": "轻量化人机 62.5 · 后坐 79.5 · 442,301 ₽瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜 · 手电：Armytek Predator Pro v3 XHP35 HI手电 · 激光：Glock GTL 21 战术手电激光组合应用",
+     "bad": false
+    },
+    {
+     "text": "性价比人机 62.5 · 后坐 79.5 · 442,301 ₽瞄具：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜 · 手电：Armytek Predator Pro v3 XHP35 HI手电 · 激光：Glock GTL 21 战术手电激光组合应用",
+     "bad": false
+    }
+   ],
+   "applied": true,
+   "installedIds": [
+    "5b2388675acfc4771e1be0be",
+    "5fb6567747ce63734e3fa1dc",
+    "5b2389515acfc4771e1be0c0",
+    "5fb6564947ce63734e3fa1da",
+    "6895bf08e2d16810ba0bf43e",
+    "68c294b9eb59c46bf6070536",
+    "5bb20dcad4351e3bac1212da",
+    "5bb20dadd4351e00367faeff",
+    "5bb20de5d4351e0035629e59",
+    "5bb20d53d4351e4502010a69",
+    "5947e98b86f774778f1448bc",
+    "5c7fc87d2e221644f31c0298",
+    "5aaa5e60e5b5b000140293d6",
+    "5b07db875acfc40dc528a5f6",
+    "57d17e212459775a1179a0f5",
+    "59d790f486f77403cb06aec6",
+    "5a800961159bd4315e3a1657"
+   ],
+   "constraintHits": {
+    "5b2388675acfc4771e1be0be": true,
+    "59d790f486f77403cb06aec6": true,
+    "5a800961159bd4315e3a1657": true
+   }
+  },
+  "applySummary_1920": {
+   "selected": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "id": "5b2388675acfc4771e1be0be",
+     "dev": "optic"
+    },
+    {
+     "name": "Armytek Predator Pro v3 XHP35 HI手电",
+     "id": "59d790f486f77403cb06aec6",
+     "dev": "light"
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "id": "5a800961159bd4315e3a1657",
+     "dev": "laser"
+    }
+   ],
+   "applied": true,
+   "constraintHits": {
+    "5b2388675acfc4771e1be0be": true,
+    "59d790f486f77403cb06aec6": true,
+    "5a800961159bd4315e3a1657": true
+   }
+  },
+  "afterSwitch": {
+   "nOptBox": 2,
+   "rows": [
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "tag": "手电+激光",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "laser",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "17 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "19 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "21 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "24 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "31 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "33 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "50 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "当前档位：中 · 点档位展开候选",
+     "on": "0"
+    }
+   ],
+   "notes": [
+    "原选中瞄具与当前枪械不兼容，已清除：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜；原选中手电与当前枪械不兼容，已清除：Armytek Predator Pro v3 XHP35 HI手电"
+   ]
+  },
+  "switchCleared": {
+   "rows": 1,
+   "notes": [
+    "原选中瞄具与当前枪械不兼容，已清除：Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜；原选中手电与当前枪械不兼容，已清除：Armytek Predator Pro v3 XHP35 HI手电"
+   ],
+   "anyOn": true
+  },
+  "pistol_tiers": {
+   "near": {
+    "rows": 1,
+    "note": "当前枪械在这个档位没有兼容瞄具（按真实槽位与一级转接座判定）。"
+   },
+   "mid": {
+    "rows": 1,
+    "note": "当前枪械在这个档位没有兼容瞄具（按真实槽位与一级转接座判定）。"
+   },
+   "far": {
+    "rows": 1,
+    "note": "当前枪械在这个档位没有兼容瞄具（按真实槽位与一级转接座判定）。"
+   }
+  },
+  "initial_1384": {
+   "nOptBox": 0,
+   "rows": [],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [],
+   "notes": [
+    "原选中激光与当前枪械不兼容，已清除：Glock GTL 21 战术手电激光组合"
+   ]
+  },
+  "mid_open_1384": {
+   "nOptBox": 1,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "tag": "2×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+     "tag": "2.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+     "tag": "3.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "1",
+      "pressed": "true"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "当前档位：中 · 17 款兼容 · 选择一个具体型号",
+     "on": "0"
+    }
+   ],
+   "notes": []
+  },
+  "picked_1384": {
+   "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+   "state": {
+    "nOptBox": 1,
+    "rows": [
+     {
+      "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "tag": "1–4×",
+      "on": "1",
+      "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+      "bgc": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "rgb(200, 131, 42)",
+      "weight": "700",
+      "dev": "",
+      "visible": true
+     }
+    ],
+    "chips": [
+     [
+      {
+       "t": "10 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "20 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "30 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "32 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "40 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "60 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "100 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "近",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "中",
+       "on": "1",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "远",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "清除",
+       "on": "",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "手电",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "激光",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      }
+     ],
+     [
+      {
+       "t": "低后坐力",
+       "on": "1",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "高人机工效",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "轻量化",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "性价比",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ]
+    ],
+    "sel": [
+     {
+      "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+      "on": "1"
+     }
+    ],
+    "notes": []
+   }
+  },
+  "reopen_1384": {
+   "nOptBox": 1,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "tag": "1–4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "tag": "1–3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "tag": "2×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Kiba Arms 短款 2.5x 棱镜式瞄准镜",
+     "tag": "2.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "北方工业 QMK 171A 3x 棱镜式瞄准镜",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "tag": "3×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA11D 3.5x35 瞄准镜",
+     "tag": "3.5×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜 (黑色)",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA01NSN 4x32 瞄准镜（黄褐色）",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Trijicon ACOG TA02 4x32 瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "VOMZ Pilad 4x32 25.4 毫米步枪瞄准镜",
+     "tag": "4×",
+     "on": "0",
+     "bg": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(127, 157, 185)",
+     "weight": "400",
+     "dev": "",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "1",
+      "pressed": "true"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "on": "1"
+    }
+   ],
+   "notes": []
+  },
+  "swapped_1384": {
+   "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+   "state": {
+    "nOptBox": 1,
+    "rows": [
+     {
+      "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+      "tag": "1–4×",
+      "on": "1",
+      "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+      "bgc": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "rgb(200, 131, 42)",
+      "weight": "700",
+      "dev": "",
+      "visible": true
+     }
+    ],
+    "chips": [
+     [
+      {
+       "t": "10 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "20 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "30 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "32 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "40 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "60 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "100 发",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "近",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "中",
+       "on": "1",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "远",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "清除",
+       "on": "",
+       "open": "",
+       "pressed": ""
+      }
+     ],
+     [
+      {
+       "t": "手电",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      },
+      {
+       "t": "激光",
+       "on": "0",
+       "open": "0",
+       "pressed": "false"
+      }
+     ],
+     [
+      {
+       "t": "低后坐力",
+       "on": "1",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "高人机工效",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "轻量化",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      },
+      {
+       "t": "性价比",
+       "on": "0",
+       "open": "",
+       "pressed": ""
+      }
+     ]
+    ],
+    "sel": [
+     {
+      "text": "已选：中 · 1–4× · ELCAN SpecterDR 1x/4x瞄准镜",
+      "on": "1"
+     }
+    ],
+    "notes": []
+   }
+  },
+  "cleared_1384": {
+   "nOptBox": 0,
+   "rows": [],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [],
+   "notes": []
+  },
+  "both_1384": {
+   "nOptBox": 3,
+   "rows": [
+    {
+     "name": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "tag": "1–4×",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "",
+     "visible": true
+    },
+    {
+     "name": "Armytek Predator Pro v3 XHP35 HI手电",
+     "tag": "手电",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "light",
+     "visible": true
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "tag": "手电+激光",
+     "on": "1",
+     "bg": "linear-gradient(rgb(255, 246, 210) 0%, rgb(255, 233, 168) 100%)",
+     "bgc": "rgba(0, 0, 0, 0)",
+     "color": "rgb(0, 0, 0)",
+     "border": "rgb(200, 131, 42)",
+     "weight": "700",
+     "dev": "laser",
+     "visible": true
+    }
+   ],
+   "chips": [
+    [
+     {
+      "t": "10 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "20 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "30 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "32 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "40 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "60 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "100 发",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "近",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "中",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "远",
+      "on": "0",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "手电",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "激光",
+      "on": "1",
+      "open": "0",
+      "pressed": "false"
+     },
+     {
+      "t": "清除",
+      "on": "",
+      "open": "",
+      "pressed": ""
+     }
+    ],
+    [
+     {
+      "t": "低后坐力",
+      "on": "1",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "高人机工效",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "轻量化",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     },
+     {
+      "t": "性价比",
+      "on": "0",
+      "open": "",
+      "pressed": ""
+     }
+    ]
+   ],
+   "sel": [
+    {
+     "text": "已选：中 · 1–4× · Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+     "on": "1"
+    }
+   ],
+   "notes": []
+  },
+  "summary_1384": {
+   "openRows": 17,
+   "pickedRows": 1,
+   "pickedYellow": true,
+   "pickedName": "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+   "reopenRows": 17,
+   "reopenKeepsSelected": true,
+   "swappedRows": 1,
+   "swappedName": "ELCAN SpecterDR 1x/4x瞄准镜",
+   "swappedYellow": true,
+   "oldHidden": true,
+   "clearedRows": 0,
+   "clearedNoSel": true,
+   "bothRows": 3,
+   "bothAllYellow": true,
+   "bothDevTags": [
+    "light",
+    "laser"
+   ],
+   "bothText": [
+    "Burris FullField TAC30 1-4x24 30 毫米 步枪瞄准镜",
+    "Armytek Predator Pro v3 XHP35 HI手电",
+    "Glock GTL 21 战术手电激光组合"
+   ],
+   "chips": [
+    {
+     "t": "10 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "20 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "30 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "32 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "40 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "60 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "100 发",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "近",
+     "on": "0",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "中",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "远",
+     "on": "0",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "清除",
+     "on": "",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "手电",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "激光",
+     "on": "1",
+     "open": "0",
+     "pressed": "false"
+    },
+    {
+     "t": "清除",
+     "on": "",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "低后坐力",
+     "on": "1",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "高人机工效",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "轻量化",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    },
+    {
+     "t": "性价比",
+     "on": "0",
+     "open": "",
+     "pressed": ""
+    }
+   ]
+  }
+ },
+ "foregrip": {
+  "hk416": {
+   "cells": 20,
+   "cols": "9",
+   "rows": "6",
+   "body": {
+    "row": 2,
+    "col": 6,
+    "x": 316,
+    "w": 181
+   },
+   "ammo": {
+    "row": 5,
+    "col": 7
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "HK Battle Grip“海狸尾”AR-15 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "HK 416 四面导轨护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "parentSlot": "mod_reciever/mod_handguard",
+   "sameRowAsMag": false,
+   "rightOfGrip": false,
+   "alignedWithParent": true,
+   "directlyBelowParent": true,
+   "linkFromParent": true,
+   "linkD": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "kind": "direct",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   }
+  },
+  "scar": {
+   "cells": 23,
+   "cols": "9",
+   "rows": "7",
+   "body": {
+    "row": 3,
+    "col": 4,
+    "x": 192,
+    "w": 181
+   },
+   "ammo": {
+    "row": 6,
+    "col": 5
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 5,
+    "col": 5,
+    "item": "FN SCAR-H 7.62x51 20发弹匣",
+    "x": 254,
+    "y": 294,
+    "w": 58,
+    "h": 58,
+    "cx": 283,
+    "bottom": 351
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 5,
+    "col": 6,
+    "item": "柯尔特A2 AR-15手枪式握把",
+    "x": 316,
+    "y": 294,
+    "w": 58,
+    "h": 58,
+    "cx": 345,
+    "bottom": 351
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+    "parent": "mod_reciever/mod_mount_000",
+    "lane": "lower",
+    "row": 4,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 226,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 284
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_mount_000",
+    "parent": "mod_reciever",
+    "lane": "top2",
+    "row": 2,
+    "col": 4,
+    "item": "FN SCAR底轨",
+    "x": 192,
+    "y": 77,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 135
+   },
+   "parentSlot": "mod_reciever/mod_mount_000",
+   "sameRowAsMag": false,
+   "rightOfGrip": false,
+   "alignedWithParent": true,
+   "directlyBelowParent": false,
+   "linkFromParent": true,
+   "linkD": "M221.21875 134.5625 L221.21875 225.75",
+   "kind": "rail",
+   "install": {
+    "slot": "mod_reciever/mod_mount_000/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   }
+  },
+  "mcx": {
+   "cells": 18,
+   "cols": "9",
+   "rows": "5",
+   "body": {
+    "row": 2,
+    "col": 6,
+    "x": 316,
+    "w": 181
+   },
+   "ammo": {
+    "row": 5,
+    "col": 7
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "MCX 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "A3 Tactical MVF001 KeyMod 垂直前握把（黑色）",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "MCX GEN1 KeyMod 8 英寸护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "parentSlot": "mod_reciever/mod_handguard",
+   "sameRowAsMag": false,
+   "rightOfGrip": false,
+   "alignedWithParent": true,
+   "directlyBelowParent": true,
+   "linkFromParent": true,
+   "linkD": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "kind": "direct",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "A3 Tactical MVF001 KeyMod 垂直前握把（黑色）"
+   }
+  },
+  "hk416_1384": {
+   "cells": 20,
+   "cols": "9",
+   "rows": "6",
+   "body": {
+    "row": 2,
+    "col": 6,
+    "x": 316,
+    "w": 181
+   },
+   "ammo": {
+    "row": 5,
+    "col": 7
+   },
+   "magazine": {
+    "slot": "mod_magazine",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 7,
+    "item": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+    "x": 378,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 407,
+    "bottom": 298
+   },
+   "pistolGrip": {
+    "slot": "mod_pistol_grip",
+    "parent": "",
+    "lane": "lower",
+    "row": 4,
+    "col": 8,
+    "item": "HK Battle Grip“海狸尾”AR-15 手枪式握把",
+    "x": 439,
+    "y": 240,
+    "w": 58,
+    "h": 58,
+    "cx": 468,
+    "bottom": 298
+   },
+   "foregrip": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "parent": "mod_reciever/mod_handguard",
+    "lane": "lower",
+    "row": 3,
+    "col": 4,
+    "item": "ASh-12 垂直前握把",
+    "x": 192,
+    "y": 172,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 230
+   },
+   "parent": {
+    "slot": "mod_reciever/mod_handguard",
+    "parent": "mod_reciever",
+    "lane": "main",
+    "row": 2,
+    "col": 4,
+    "item": "HK 416 四面导轨护木",
+    "x": 192,
+    "y": 91,
+    "w": 58,
+    "h": 58,
+    "cx": 221,
+    "bottom": 148
+   },
+   "parentSlot": "mod_reciever/mod_handguard",
+   "sameRowAsMag": false,
+   "rightOfGrip": false,
+   "alignedWithParent": true,
+   "directlyBelowParent": true,
+   "linkFromParent": true,
+   "linkD": "M221.21875 148.4375 L221.21875 160.375 L159.4375 160.375 L159.4375 172.3125",
+   "install": {
+    "slot": "mod_reciever/mod_handguard/mod_foregrip",
+    "picked": "ASh-12 垂直前握把"
+   }
+  }
+ },
+ "viewports": {
+  "1920": {
+   "w": 1384,
+   "sw": 1384
+  },
+  "1384_restored": {
+   "w": 1920,
+   "sw": 1920
+  }
+ },
+ "console": [],
+ "external": []
+}

@@ -1,0 +1,740 @@
+{
+ "name": "eft-task",
+ "requested_url": "https://www.eftarkov.com/task",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/task",
+ "title": "任务列表 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 1036,
+ "htmlLen": 98704,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 96,
+ "input": 9,
+ "table": 0,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "所有塔科夫任务的完整列表，支持按 trader、地图、模式筛选。",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "重置",
+   "title": ""
+  },
+  {
+   "href": "/task/6a885ad91006f9d30a0ed61b",
+   "text": "棋留一着 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a76466e752258ce02073d07",
+   "text": "斩草除根 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a764462e432ba0a190a7fe9",
+   "text": "顺利搬迁 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a764367850f975dc00bc5bd",
+   "text": "呼号“孔雀石” 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a76422ae432ba0a190a7fe4",
+   "text": "断尾行动 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a763f35ce9a947b4d0918b6",
+   "text": "圈地行动 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a763df2161e4b45b1015663",
+   "text": "熟悉的面孔…… 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a763c7bd31fb1191903fc15",
+   "text": "全方位支援 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a763a2fce9a947b4d0918a6",
+   "text": "无法接通的号码 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/6a7637fed31fb1191903fc07",
+   "text": "战争迷雾 灯塔 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/67a096ed77dd677f600804ba",
+   "text": "感官分析 - 2 不限制地图 核心任务 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/66058cb5ae4719735349b9e8",
+   "text": "赚点快钱 - 2（PVP） 不限制地图 核心任务 等级 10+",
+   "title": ""
+  },
+  {
+   "href": "/task/5d24b81486f77439c92d6ba8",
+   "text": "熟人 不限制地图 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/5ae448bf86f7744d733e55ee",
+   "text": "Make ULTRA Great Again 立交桥 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/657315e4a6af4ab4b50f3459",
+   "text": "救援行动 中心区 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/5a0327ba86f77456b9154236",
+   "text": "燃料短缺 不限制地图 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/657315e270bb0b8dba00cc48",
+   "text": "快车初体验 中心区 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/657315ddab5a49b71f098853",
+   "text": "新手上路 中心区 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task/66058ccbc7f3584787181478",
+   "text": "良心作祟 - 1（PVP） 海关 核心任务 等级 10+",
+   "title": ""
+  },
+  {
+   "href": "/task/5936d90786f7742b1420ba5b",
+   "text": "首秀 中心区、海关、森林、立交桥 好感 LL 1 等级 1+",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=1",
+   "text": "‹ 上一页",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=1",
+   "text": "1",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=2",
+   "text": "2",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=3",
+   "text": "3",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=26",
+   "text": "26",
+   "title": ""
+  },
+  {
+   "href": "/task?mode=pvp&page=2",
+   "text": "下一页 ›",
+   "title": ""
+  },
+  {
+   "href": "https://space.bilibili.com/393480563",
+   "text": "© 2022-2026 逃离塔科夫中文Wiki · Powered by 大傻",
+   "title": ""
+  },
+  {
+   "href": "https://beian.miit.gov.cn",
+   "text": "皖ICP备2023025241号-1",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/task",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/638f541a29ffd1183d187f57.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/5c0647fdd443bc2504c2d371.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/5935c25fb3acc3127c3d8cd9.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/54cb50c76803fa8b248b4571.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/58330581ace78e27b8b10cee.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/656f0f98d80a697f855d34b1.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/6617beeaa9cfa777ca915b7c.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/5ac3b934156ae10c4430e83c.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/5a7c2eca46aef81a7ca2145d.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/54cb57776803fa99248b456e.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/trader/579dc571d53a0658a154fbec.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/task?completed=1",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252635592",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-task.png",
+ "screenshot_bytes": 129264
+}

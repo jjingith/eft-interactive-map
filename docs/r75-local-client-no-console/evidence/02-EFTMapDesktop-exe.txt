@@ -1,0 +1,45 @@
+﻿==== R75 控制台实测 ====
+目标：D:\personal\trae\02-塔科夫\eft-interactive-map\dist\EFTMap\EFTMapDesktop.exe
+
+--- 1. 进程树（EFTMap*） ---
+
+Name              ProcessId ParentProcessId
+----              --------- ---------------
+EFTMapDesktop.exe     47960           16132
+EFTMap.exe            53164           47960
+
+
+
+--- 2. 新增 conhost.exe ---
+（无）
+--- 3. 新增可见控制台窗口 ---
+（无）
+--- 4. 壳的顶层窗口 ---
+hwnd=0x420FD2 visible=1 exstyle=0x080900A8 class=WindowsForms10.Window.8.app.0.ea7f4a_r7_ad1 title=EFT 小地图
+hwnd=0x7F113E visible=0 exstyle=0x00000180 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0x4D1168 visible=0 exstyle=0x00000100 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0x9510FA visible=1 exstyle=0x00010180 class=WindowsForms10.Window.8.app.0.ea7f4a_r7_ad1 title=EFT 互动地图
+hwnd=0xC80F92 visible=0 exstyle=0x00000180 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0x2160B3A visible=0 exstyle=0x00000000 class=GDI+ Hook Window Class title=GDI+ Window (EFTMapDesktop.exe)
+hwnd=0x15C0532 visible=0 exstyle=0x00000000 class=.NET-BroadcastEventWindow.4.0.0.0.ea7f4a.0 title=.NET-BroadcastEventWindow.4.0.0.0.ea7f4a.0
+hwnd=0x311018 visible=0 exstyle=0x00000008 class=MSCTFIME UI title=MSCTFIME UI
+hwnd=0x970AFC visible=0 exstyle=0x00000008 class=IME title=Default IME
+hwnd=0x1810B7E visible=0 exstyle=0x00000000 class=IME title=Default IME
+--- 5. 浏览器进程增量（不含 msedgewebview2） ---
++ chrome.exe pid=44936 parent=33672 本次启动派生=False
+  cmd: "C:\Program Files\Google\Chrome\Application\chrome.exe" --type=renderer --extension-process --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=zh-CN --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1000 --launch-time-ticks=4326158635266 --metrics-shmem-handle=9420,i,2007003444923283133,8317461730744196938,1572864 --field-trial-handle=2148,i,11081936664361324433,13389362663875114935,262144 --variations-seed-version=20261104-090046.308000-production --pseudonymization-salt-handle=2152,i,7122977298725182953,14505631973684588674,4 --trace-process-track-uuid=3190709923353720494 --mojo-platform-channel-handle=9024 /prefetch:2
++ chrome.exe pid=19160 parent=33672 本次启动派生=False
+  cmd: "C:\Program Files\Google\Chrome\Application\chrome.exe" --type=renderer --extension-process --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=zh-CN --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1001 --launch-time-ticks=4326161957327 --metrics-shmem-handle=6800,i,5044915943604615507,12458302806791231351,1572864 --field-trial-handle=2148,i,11081936664361324433,13389362663875114935,262144 --variations-seed-version=20261104-090046.308000-production --pseudonymization-salt-handle=2152,i,7122977298725182953,14505631973684588674,4 --trace-process-track-uuid=3190709924290762343 --mojo-platform-channel-handle=10172 /prefetch:2
+由本次启动派生的浏览器主进程数：0
+--- 6. 60 秒内的 TCP 端点（壳 + 后端 + WebView2） ---
+  0.0.0.0:0 [Bound] ×210
+  0.0.0.0:0 [Listen] ×30
+  127.0.0.1:1972 [Established] ×210
+  127.0.0.1:1974 [Established] ×30
+  127.0.0.1:1975 [Established] ×30
+  127.0.0.1:1976 [Established] ×30
+  127.0.0.1:1979 [Established] ×30
+  127.0.0.1:1980 [Established] ×30
+  127.0.0.1:1981 [Established] ×30
+  127.0.0.1:1982 [Established] ×30
+非回环远端连接：（无）

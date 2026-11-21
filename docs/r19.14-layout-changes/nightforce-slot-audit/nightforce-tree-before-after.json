@@ -1,0 +1,106 @@
+{
+  "gun": {
+    "id": "55801eed4bdc2d89578b4588",
+    "name": "SV-98 7.62x54R 栓动式狙击步枪"
+  },
+  "before": {
+    "source": "build-cache/r19-upstream/items.json（上游快照）",
+    "upstreamSlotCount": 4,
+    "upstreamSids": [
+      "MOD_SCOPE:5aa66c90e5b5b00016327c96",
+      "MOD_SCOPE:5aa66c9ce5b5b00015693125",
+      "MOD_SCOPE:5aa66cabe5b5b055d0630d82",
+      "MOD_SCOPE:5aa66cb7e5b5b0214e506e99"
+    ],
+    "note": "上游声明 4 个同名 MOD_SCOPE；项目此前直接按 4 个建树，画布出现 4 个直接子槽",
+    "reconstructedChildren": 4
+  },
+  "after": {
+    "source": "data/items.json（应用 OPTIC_SLOT_CORRECTIONS 后）",
+    "declaredSlotCount": 2,
+    "declaredSids": [
+      "mod_scope_000",
+      "mod_scope_001"
+    ],
+    "treeDirectChildren": 2,
+    "treeChildren": [
+      {
+        "path": "mod_scope/mod_scope_000",
+        "sid": "mod_scope_000",
+        "label": "瞄准镜",
+        "allowCount": 4
+      },
+      {
+        "path": "mod_scope/mod_scope_001",
+        "sid": "mod_scope_001",
+        "label": "单倍瞄具 / 单倍瞄具底座",
+        "allowCount": 8
+      }
+    ],
+    "layoutAfterInstall": {
+      "rows": 7,
+      "topPad": 1,
+      "mountAndChildren": [
+        {
+          "path": "mod_scope",
+          "row": 3,
+          "col": 5
+        },
+        {
+          "path": "mod_scope/mod_scope_000",
+          "row": 2,
+          "col": 5
+        },
+        {
+          "path": "mod_scope/mod_scope_001",
+          "row": 2,
+          "col": 6
+        },
+        {
+          "path": "mod_scope/mod_scope_001/mod_scope",
+          "row": 1,
+          "col": 6
+        }
+      ]
+    },
+    "treeWithParts": [
+      {
+        "path": "mod_scope",
+        "sid": "mod_scope",
+        "label": "瞄准镜",
+        "allowCount": 78,
+        "installed": "5aa66c72e5b5b00016327c93",
+        "installedName": "Nightforce MagMount Multimount 34毫米一体式导轨基座"
+      },
+      {
+        "path": "mod_scope/mod_scope_000",
+        "sid": "mod_scope_000",
+        "label": "瞄准镜",
+        "allowCount": 4,
+        "installed": "5aa66be6e5b5b0214e506e97",
+        "installedName": "Nightforce ATACR 7-35x56 34 毫米步枪瞄准镜"
+      },
+      {
+        "path": "mod_scope/mod_scope_001",
+        "sid": "mod_scope_001",
+        "label": "单倍瞄具 / 单倍瞄具底座",
+        "allowCount": 8,
+        "installed": "58d39d3d86f77445bb794ae7",
+        "installedName": "Aimpoint Micro瞄具基座"
+      },
+      {
+        "path": "mod_scope/mod_scope_001/mod_scope",
+        "sid": "mod_scope",
+        "label": "瞄准镜",
+        "allowCount": 4,
+        "installed": null,
+        "installedName": null
+      }
+    ]
+  },
+  "checks": {
+    "declaredEqualsTwo": true,
+    "treeEqualsTwo": true,
+    "layoutDirectEqualsTwo": true
+  }
+}

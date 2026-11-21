@@ -1,0 +1,38 @@
+{
+  "debuff": [
+    {
+      "slot": "helmet",
+      "v": "移动 / 转身 / 人机-1 / -12 / -11"
+    },
+    {
+      "slot": "left",
+      "v": "移动 / 转身 / 人机0 / 0 / -2"
+    },
+    {
+      "slot": "armor",
+      "v": "移动 / 转身 / 人机-1 / -1 / -1"
+    },
+    {
+      "slot": "rig",
+      "v": "移动 / 转身 / 人机0 / 0 / 0"
+    }
+  ],
+  "total": "移动转身人机-2.0%-13.0%-14.0%Kg6.74 KG",
+  "preset": {
+    "open": true,
+    "rows": 2,
+    "path": "存储位置：C:\\Users\\Administrator\\AppData\\Roaming\\EFTMap\\loadout-presets.json",
+    "buttons": 9
+  },
+  "gun": {
+    "root": true,
+    "imgs": 0,
+    "broken": 0
+  },
+  "map": {
+    "imgs": 0,
+    "broken": 0,
+    "layers": 0
+  },
+  "offline": true
+}

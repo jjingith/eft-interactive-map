@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "name": "共用位图规则里已摘掉弹药页",
+      "ok": true,
+      "detail": "/* 表格滚区：theme 的 `border: 1px solid` 同样会重置 border-image；白底保留（可读性） */\nhtml body .loadout-workbench .tbl-scroll,\nhtml body .gun-workbench .tbl-scroll {\n  border: 2px solid transparent !important;\n  borde"
+    },
+    {
+      "name": "弹药页改用 1px 实线 + 白底",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "配装 / 枪匠仍用 table-frame.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "有数据时表格滚区无位图边框",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "name": "有数据时是 1px 实线 + 白底",
+      "ok": true,
+      "detail": "('1px', 'rgb(255, 255, 255)')"
+    },
+    {
+      "name": "确实全部隐藏（0 件且显示空态行）",
+      "ok": true,
+      "detail": "0 / 200 件"
+    },
+    {
+      "name": "空结果时仍无被拉伸的位图",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "name": "空结果时滚动区仍是 1px 白底（没有灰带）",
+      "ok": true,
+      "detail": "('1px', 'rgb(255, 255, 255)')"
+    },
+    {
+      "name": "枪匠 表格滚区仍用 table-frame.png（未回归）",
+      "ok": true,
+      "detail": "url(\"http://127.0.0.1:8787/assets/xp-ui/table-frame.png\")"
+    },
+    {
+      "name": "配装 表格滚区仍用 table-frame.png（未回归）",
+      "ok": true,
+      "detail": "url(\"http://127.0.0.1:8787/assets/xp-ui/table-frame.png\")"
+    },
+    {
+      "name": "口径按钮等宽 + 默认全亮不回归",
+      "ok": true,
+      "detail": "{'n': 32, 'uniq': [90], 'lit': 32}"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "shots": [
+    {
+      "file": "01-normal.png",
+      "bytes": 116650
+    },
+    {
+      "file": "02-empty-fixed.png",
+      "bytes": 27929
+    }
+  ],
+  "normal": {
+    "borderImg": "none",
+    "borderW": "1px",
+    "bgColor": "rgb(255, 255, 255)",
+    "w": 1282,
+    "h": 715,
+    "rows": 200,
+    "empty": false
+  },
+  "empty": {
+    "borderImg": "none",
+    "borderW": "1px",
+    "bgColor": "rgb(255, 255, 255)",
+    "w": 1282,
+    "h": 715,
+    "rows": 1,
+    "empty": true
+  },
+  "chips": {
+    "n": 32,
+    "uniq": [
+      90
+    ],
+    "lit": 32
+  }
+}

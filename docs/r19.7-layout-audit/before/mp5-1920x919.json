@@ -1,0 +1,245 @@
+{
+  "tag": "after-mp5-1920",
+  "url": "http://127.0.0.1:8787/",
+  "clicked": [
+    [
+      "view-gun",
+      true
+    ],
+    [
+      "gun-card",
+      true
+    ],
+    [
+      "mode-build",
+      true
+    ]
+  ],
+  "info": {
+    "viewport": {
+      "w": 1920,
+      "h": 919
+    },
+    "badge": "rev R19.6-1d5c707f",
+    "buildRev": "R19.6-1d5c707f",
+    "buildpage": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 1920,
+        "h": 816
+      },
+      "cols": "236px 964.797px 643.203px",
+      "gap": "8px"
+    },
+    "forge": {
+      "rect": {
+        "x": 0,
+        "y": 103,
+        "w": 236,
+        "h": 816
+      },
+      "padding": "6px 8px 10px",
+      "fontSize": "10px",
+      "scrollH": 816,
+      "clientH": 816,
+      "head": {
+        "x": 8,
+        "y": 109,
+        "w": 219,
+        "h": 12
+      },
+      "headFont": "11px",
+      "subFont": "9px",
+      "subMargin": "1px 0px 6px",
+      "secMargin": "7px"
+    },
+    "canvas": {
+      "rect": {
+        "x": 436,
+        "y": 144,
+        "w": 566,
+        "h": 362
+      },
+      "display": "grid",
+      "cols": "75.4219px 75.4219px 75.4375px 75.4219px 75.4375px 75.4219px 75.4375px",
+      "rowGap": "10px",
+      "colGap": "4px",
+      "cellCount": 10,
+      "rowCount": 3,
+      "rows": {
+        "1": 3,
+        "2": 5,
+        "3": 2
+      },
+      "parts": [
+        {
+          "slot": "mod_reciever/mod_mount",
+          "parent": "mod_reciever",
+          "row": "1",
+          "col": "3",
+          "x": 602,
+          "y": 153,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever/mod_sight_rear",
+          "parent": "mod_reciever",
+          "row": "1",
+          "col": "6",
+          "x": 840,
+          "y": 153,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_charge",
+          "parent": "",
+          "row": "1",
+          "col": "7",
+          "x": 919,
+          "y": 153,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever/mod_muzzle",
+          "parent": "mod_reciever",
+          "row": "2",
+          "col": "1",
+          "x": 443,
+          "y": 243,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever/mod_handguard",
+          "parent": "mod_reciever",
+          "row": "2",
+          "col": "2",
+          "x": 522,
+          "y": 243,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever",
+          "parent": "",
+          "row": "2",
+          "col": "3",
+          "x": 602,
+          "y": 243,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever/mod_stock",
+          "parent": "mod_reciever",
+          "row": "2",
+          "col": "7",
+          "x": 919,
+          "y": 243,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_reciever/mod_muzzle/mod_muzzle",
+          "parent": "mod_reciever/mod_muzzle",
+          "row": "3",
+          "col": "1",
+          "x": 443,
+          "y": 334,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "slot": "mod_magazine",
+          "parent": "",
+          "row": "3",
+          "col": "5",
+          "x": 761,
+          "y": 334,
+          "w": 75,
+          "h": 75
+        },
+        {
+          "row": "4",
+          "col": "5",
+          "x": 761,
+          "y": 419,
+          "w": 75,
+          "h": 75
+        }
+      ],
+      "overlaps": [],
+      "scrollW": 565,
+      "clientW": 564,
+      "scrollH": 360,
+      "clientH": 360,
+      "gun": {
+        "rect": {
+          "x": 681,
+          "y": 238,
+          "w": 234,
+          "h": 86
+        },
+        "colSpan": "span 3"
+      }
+    },
+    "centerOrder": [
+      "gw-cmp",
+      "gw-loadvar",
+      "gw-tree",
+      "gw-bars",
+      "gw-stats",
+      "gw-hidden",
+      "gw-focus",
+      "gw-ammo",
+      "gw-bottom"
+    ],
+    "bars": {
+      "x": 256,
+      "y": 506,
+      "w": 926,
+      "h": 66
+    },
+    "stats": {
+      "x": 256,
+      "y": 578,
+      "w": 926,
+      "h": 69
+    },
+    "hidden": {
+      "x": 256,
+      "y": 650,
+      "w": 926,
+      "h": 66
+    },
+    "focus": {
+      "x": 256,
+      "y": 719,
+      "w": 926,
+      "h": 16
+    },
+    "ammo": {
+      "x": 256,
+      "y": 745,
+      "w": 926,
+      "h": 49
+    },
+    "bottom": {
+      "x": 256,
+      "y": 804,
+      "w": 926,
+      "h": 193
+    },
+    "hiddenCells": 11,
+    "statsCells": 16,
+    "centerScroll": {
+      "w": 950,
+      "cw": 950
+    },
+    "consoleErrors": 0
+  }
+}

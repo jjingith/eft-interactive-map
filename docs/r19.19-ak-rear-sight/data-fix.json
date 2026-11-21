@@ -1,0 +1,102 @@
+{
+ "schema": "r19.19-data-fix/1",
+ "itemSlotFixes": [
+  {
+   "itemId": "59d650cf86f7741b846413a4",
+   "name": "AKM 照门",
+   "status": "unchanged",
+   "dropped": [],
+   "droppedSids": [],
+   "evidence": "in-game-confirmed(R19.19 A2): AKM 系只有一个照门安装槽，AKMP-only 子槽不应独立存在；AKMP RS 改由枪身照门槽直接兼容"
+  }
+ ],
+ "gunAllowAdds": [
+  {
+   "gunId": "59d6088586f774275f37482f",
+   "name": "AKM 7.62x39 突击步枪",
+   "status": "unchanged",
+   "added": []
+  },
+  {
+   "gunId": "59ff346386f77477562ff5e2",
+   "name": "AKMS 7.62x39 突击步枪",
+   "status": "unchanged",
+   "added": []
+  },
+  {
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "name": "AKMN 7.62x39 突击步枪",
+   "status": "unchanged",
+   "added": []
+  },
+  {
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "name": "AKMSN 7.62x39 突击步枪",
+   "status": "unchanged",
+   "added": []
+  },
+  {
+   "gunId": "59e6152586f77473dc057aa1",
+   "name": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "status": "unchanged",
+   "added": []
+  }
+ ],
+ "gunAllowAddsItemsJson": [
+  {
+   "gunId": "59d6088586f774275f37482f",
+   "name": "AKM 7.62x39 突击步枪",
+   "status": "fixed",
+   "added": [
+    {
+     "sid": "mod_sight_rear",
+     "itemId": "5a0ed824fcdbcb0176308b0d"
+    }
+   ]
+  },
+  {
+   "gunId": "59ff346386f77477562ff5e2",
+   "name": "AKMS 7.62x39 突击步枪",
+   "status": "fixed",
+   "added": [
+    {
+     "sid": "mod_sight_rear",
+     "itemId": "5a0ed824fcdbcb0176308b0d"
+    }
+   ]
+  },
+  {
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "name": "AKMN 7.62x39 突击步枪",
+   "status": "fixed",
+   "added": [
+    {
+     "sid": "mod_sight_rear",
+     "itemId": "5a0ed824fcdbcb0176308b0d"
+    }
+   ]
+  },
+  {
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "name": "AKMSN 7.62x39 突击步枪",
+   "status": "fixed",
+   "added": [
+    {
+     "sid": "mod_sight_rear",
+     "itemId": "5a0ed824fcdbcb0176308b0d"
+    }
+   ]
+  },
+  {
+   "gunId": "59e6152586f77473dc057aa1",
+   "name": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "status": "fixed",
+   "added": [
+    {
+     "sid": "mod_sight_rear",
+     "itemId": "5a0ed824fcdbcb0176308b0d"
+    }
+   ]
+  }
+ ]
+}

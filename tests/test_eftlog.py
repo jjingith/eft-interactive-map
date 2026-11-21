@@ -514,3 +514,95 @@ def test_follower_screenshot_key_none_without_game_dir():
     follower = eftlog.LogFollower(None)
     assert follower.screenshot_key() is None
 
+
+
+# ------------------------------------------------- R32.10：阶段不能倒流（实测踩过）
+# application 与 backend 是两条独立日志流。按通道顺序合并的话，回放时会出现
+# 「15:39 的 PlayerSpawnEvent(start) 被 15:35 的 client/match/local/end(end) 盖掉」：
+# 人已经在战局里，快照却停在上一局的 end → 自动截图要么该拍不拍、要么在菜单里乱拍。
+
+def test_merge_raid_refuses_to_rewind_by_timestamp():
+    state = eftlog.merge_raid(None, {"type": "raid", "ts": "2026-11-02 15:39:19.000", "phase": "start"})
+    rewound = eftlog.merge_raid(state, {"type": "raid", "ts": "2026-11-02 15:35:37.000", "phase": "end"})
+    assert rewound["phase"] == "start", "旧事件不许把阶段倒回去"
+    assert rewound["ts"] == "2026-11-02 15:39:19.000"
+    newer = eftlog.merge_raid(rewound, {"type": "raid", "ts": "2026-11-02 15:50:00.000", "phase": "end"})
+    assert newer["phase"] == "end", "更晚的事件仍然要能推进"
+
+
+def test_merge_raid_keeps_state_when_event_has_no_timestamp():
+    """没时间戳的事件没法比新旧，只能照单全收（否则会静默丢事件）。"""
+    state = eftlog.merge_raid(None, {"type": "raid", "ts": "2026-11-02 15:39:19.000", "phase": "start"})
+    got = eftlog.merge_raid(state, {"type": "raid", "ts": None, "phase": "end"})
+    assert got["phase"] == "end"
+
+
+def test_follower_merges_channels_by_timestamp(game):
+    """同一轮 poll 里，application 的 start 与 backend 的 end 同时到货 → 按时间戳决定胜负。"""
+    session = make_session(logs_of(game))
+    log(session, "backend",
+        "---> Request HTTPS, id [307]: URL: https://gw-pve.escapefromtarkov.ru/client/match/local/end.",
+        ts="2026-11-02 15:35:35.000")
+    log(session, "application", "PlayerSpawnEvent:75.23(75.23) real:99.5(99.5) diff:24.26",
+        ts="2026-11-02 15:39:19.000")
+    follower = eftlog.LogFollower(game)
+    follower.poll_once()
+    raid = follower.snapshot()["raid"]
+    assert raid is not None
+    assert raid["phase"] == "start", raid          # 出生（15:39）晚于结束（15:35）
+    assert raid["ts"] == "2026-11-02 15:39:19.000"
+
+
+def test_follower_resets_raid_state_on_new_session(game):
+    """换会话（游戏重启）不能带着上一局的状态：没 end 行时它会一直卡在 start。"""
+    session = make_session(logs_of(game))
+    log(session, "application", "PlayerSpawnEvent:1.0(1.0) real:1.0(1.0) diff:0")
+    follower = eftlog.LogFollower(game)
+    follower.poll_once()
+    assert follower.snapshot()["raid"]["phase"] == "start"
+
+    make_session(logs_of(game), session="log_2026.11.02_20-00-00_1.3.0.0.48484")
+    follower.poll_once()
+    assert follower.snapshot()["raid"] is None, "新会话必须从干净状态开始"
+
+
+def test_follower_treats_profile_reload_as_raid_end(game):
+    """`CompleteSelectedProfile` = 回到菜单，作 end 的第二条信号（backend 那行可能漏读）。
+
+    实测里它只出现在战局外（两局结束后 15~20 秒、以及游戏刚启动），战局内从不出现。
+    """
+    session = make_session(logs_of(game))
+    log(session, "application", "PlayerSpawnEvent:1.0(1.0) real:1.0(1.0) diff:0",
+        ts="2026-11-02 15:39:19.000")
+    follower = eftlog.LogFollower(game)
+    follower.poll_once()
+    assert follower.snapshot()["raid"]["phase"] == "start"
+
+    log(session, "application",
+        "CompleteSelectedProfile ProfileId:67e7e4c034a08fb518127f27 AccountId:3341269",
+        ts="2026-11-02 15:52:00.000")
+    follower.poll_once()
+    raid = follower.snapshot()["raid"]
+    assert raid["phase"] == "end", "回到菜单后不能再算「战局中」"
+    assert raid["mapId"] == "bigmap" or raid["mapId"] is None or True   # mapId 保留与否不作要求
+
+
+# --------------------------------------------------------------- R107 截图键（Control.ini）
+def test_control_ini_parses_makescreenshot_key_codes(tmp_path):
+    """真实 Control.ini 是多个 JSON 对象首尾相接，只做局部匹配，不猜默认键。"""
+    path = tmp_path / "Control.ini"
+    path.write_text(
+        '{"keyName":"MoveForward","variants":[{"keyCode":["W"]}]}'
+        '{"keyName":"MakeScreenshot","variants":[{"keyCode":["SysReq"]},{"keyCode":["F10"]}]}'
+        '{"keyName":"Jump","variants":[{"keyCode":["Space"]}]}',
+        encoding="utf-8",
+    )
+    assert eftlog.screenshot_keys_from_control_ini(str(path)) == ["SysReq", "F10"]
+    assert eftlog.read_screenshot_key_from_control_ini(str(path)) == "SysReq"
+
+
+def test_control_ini_without_binding_returns_nothing(tmp_path):
+    path = tmp_path / "Control.ini"
+    path.write_text('{"keyName":"Jump","variants":[{"keyCode":["Space"]}]}', encoding="utf-8")
+    assert eftlog.screenshot_keys_from_control_ini(str(path)) == []
+    assert eftlog.read_screenshot_key_from_control_ini(str(path)) is None

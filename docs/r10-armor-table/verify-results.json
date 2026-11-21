@@ -1,0 +1,88 @@
+{
+  "round": "r10",
+  "date": "2026-10-21",
+  "env": {
+    "server": "http://127.0.0.1:8787/ (tools/serve.py)",
+    "browser": "Chrome 1920x909 via CDP (r7shot.py, port 9225)",
+    "note": "验收期间发现并隔离了双标签页竞态（见 issues）"
+  },
+  "col_model_20": {
+    "order": ["图标", "名称", "移动/转身/人机", "前插板", "后插板", "左侧板", "右侧板", "内衬材质及内衬总耐久", "前内衬", "后内衬", "左内衬", "右内衬", "脖颈内衬", "左肩内衬", "右肩内衬", "前裆内衬", "后裆内衬", "防护区域", "重量", "获取方式"],
+    "head_widths_px": {"ico": 44, "n": 300, "pen": 104, "plate_x4": 40, "linerSum": 118, "liner_x9": 64, "zoneIco": 60, "w": 60, "srcGroup": 200},
+    "x_coords_6b43_row": [511, 555, 855, 959, 999, 1039, 1079, 1119, 1237, 1301, 1365, 1429, 1493, 1557, 1621, 1685, 1749, 1813, 1873, 1933],
+    "scroll": {"scrollWidth": 1622, "clientWidth": 1402},
+    "row_cell_count": 20,
+    "head_cell_count": 20
+  },
+  "regression_6b43": {
+    "id": "545cdb794bdc2d3a198b456a",
+    "name": "6B43 屏障-Sh 防弹衣（数码丛林迷彩）",
+    "pen": "-9.0/-5.5/-7.0",
+    "plates": ["未安装", "未安装", "未安装", "未安装"],
+    "plate_note": "本地数据 6B43 拥有四个硬板位槽（Front/Back/Left/Right_plate）但默认无出厂插板，显示「未安装」安装入口，符合任务书「有槽位未安装→保留空槽/安装入口」",
+    "linerSum": "芳纶 350 / 1867",
+    "linerSum_calc": "显示耐久总和 = 85+85+26+26+32+28+28+40 = 350；有效 = 350 ÷ 0.1875（audit.materials.Aramid.d）= 1866.67 → 四舍五入 1867",
+    "liners": ["III 85", "III 85", "III 26", "III 26", "III 32", "III 28", "III 28", "III 40", "—"],
+    "liner_note": "后裆内衬（groin_back）本地数据不存在 → 空位符「—」，与任务书回归预期一致",
+    "zone": "仅图标（22×22），无文字，悬停 title 显示部位名称",
+    "weight": "10.80",
+    "weight_note": "本地数据 w=10.8，显示格式保留两位小数",
+    "src": "Prapor 头像 + IV + 「2×地形调查地图 + 1×相位控制继电器」（兑换）",
+    "src_note": "src 字段为 [\"none\"] 但存在真实 barter 数据，运行期 hasRealTrade 修正为兑换渠道，未显示红叉也未伪造跳蚤价",
+    "badges": {"cl": "6", "at": "H", "atCls": "lw-at-badge lw-at-heavy"}
+  },
+  "scenarios": [
+    {"name": "插板安装（弹窗选装）", "steps": "点前插板空槽 → .lw-modal 弹窗（21 候选）→ 点 AR500 Legacy Plate", "result": "前插板显示 IIIC45 + 插板图标；角标不变", "pass": true},
+    {"name": "右键卸单个插板", "steps": "对已安装前插板格 dispatch contextmenu", "result": "前插板变回「未安装」；后/左/右不受影响；本体保留", "pass": true},
+    {"name": "插板持久化", "steps": "装 AR500 → reload → 定位 6B43 行", "result": "前插板仍 IIIC45（on 态）；角标 6/H 保留", "pass": true},
+    {"name": "预设保存", "steps": "6B43+AR500 → PRESET 面板 → 另存为", "result": "loadout-presets.json 记录 slots.armor 与 slots.armor/Front_plate 两个键", "pass": true},
+    {"name": "预设加载恢复插板", "steps": "clear → reload → 加载预设 → 点 armor 槽查 6B43 行", "result": "前插板 IIIC45 恢复；角标 6/H 恢复；再次 reload 后仍在", "pass": true},
+    {"name": "角标动态-装板升级", "steps": "PLATEminus V2（cl2/L，四板位）装 Cult Termite（cl6）", "result": "角标 2/L → 6/L（左下数字随插板升级）", "pass": true},
+    {"name": "角标动态-卸板回落", "steps": "同上后右键卸板", "result": "角标 6/L → 2/L", "pass": true},
+    {"name": "角标动态-卸本体消失", "steps": "右键 armor 卡卸除 6B43", "result": "等级数字与 H/L 角标同时消失（无残留）", "pass": true},
+    {"name": "角标-rig 轻甲", "steps": "rig 装 Crye Precision AVS（cl4/Light）", "result": "rig 卡角标 4/L（绿）", "pass": true},
+    {"name": "角标-rig 重甲", "steps": "rig 装 6B5-16 Zh-86（cl3/Heavy，armor 空时可装）", "result": "rig 卡角标 3/H（紫）", "pass": true},
+    {"name": "角标-at=None 不伪造", "steps": "armor 装 5.11 Hexgrid（cl6，armorType=None）", "result": "显示等级 6，无 H/L 角标（数据无可靠分类依据不显示）", "pass": true},
+    {"name": "装甲弹挂互斥拦截", "steps": "armor=6B43 时尝试安装 AVS（装甲胸挂）", "result": "红字提示「与已装备的 6B43…冲突（防弹衣与装甲弹挂互斥）（未改动配装）」；rig 未装备", "pass": true},
+    {"name": "无内衬装备汇总空位符", "steps": "Hexgrid（无 fx 内衬）/ Triton M43（弹挂无内衬）", "result": "内衬总耐久列显示「—」；九个内衬列全「—」；修复前曾显示假 0/0", "pass": true},
+    {"name": "无硬板位装备整格空白", "steps": "PACA（无任何硬板位）", "result": "四个插板列整格空白（na），无插板框/无 V 块/无内衬信息", "pass": true},
+    {"name": "部分板位装备", "steps": "Hexgrid / AVS（仅前+后板位）", "result": "前/后显示「未安装」入口，左/右整格空白", "pass": true},
+    {"name": "获取方式-跳蚤市场", "steps": "Hexgrid / AVS", "result": "63,735 ₽ / 102,263 ₽ + flea.svg 图标", "pass": true},
+    {"name": "获取方式-商人直购+多渠道", "steps": "PACA（三渠道）", "result": "跳蚤 36,721 ₽ + Prapor I 直购 36,506 ₽ + 兑换 3×遮脸半面巾 同格并列", "pass": true},
+    {"name": "获取方式-兑换", "steps": "6B43 / Cult Locust", "result": "商人头像 + 罗马等级 IV + 实际配方物品×数量", "pass": true},
+    {"name": "获取方式-无渠道红叉", "steps": "插板弹窗内 Cult Termite / ESAPI 等（armor 主表所有装备均有渠道，无红叉样本）", "result": "显示红色 ✗（与主表共用 renderSrcCell）", "pass": true},
+    {"name": "获取方式-藏身处制作", "steps": "全量检索 items.json", "result": "制作类来源 0 条（数据缺口，如实报告不伪造）", "pass": null},
+    {"name": "防护区域只显示图标", "steps": "6B43 / AVS 行防护区域列", "result": "仅 22×22 图标；无可见文字；悬停 title 保留部位名称；数据与映射未改动", "pass": true},
+    {"name": "面部空槽剪影", "steps": "clear 后观察 face 槽", "result": "显示巴拉克拉法帽剪影（assets/icons-items/572b7f1624597762ae139822.webp，灰化半透明）；data-state=empty；其他槽占位未变", "pass": true},
+    {"name": "其他类别列配置回归", "steps": "头盔/背包/主武器1 类别表头", "result": "helmet 13 列、backpack 11 列、primary1 5 列（均保持原配置，未被 20 列重构连带改变）", "pass": true},
+    {"name": "r9 右键卸除回归", "steps": "装 ULACH → 卡片右键", "result": "图标消失（卸除成功）；glasses 空槽右键不拦截（state 不变）", "pass": true}
+  ],
+  "issues": [
+    {
+      "id": "multi-tab-race",
+      "title": "双标签页广播竞态污染 localStorage（验收环境问题，既有架构行为）",
+      "detail": "Chrome 中同时存在两个本项目标签页时（同源共享 localStorage），旧标签页收到配置广播后会把自身含旧子槽键的 state.loadout 整体写回 localStorage，覆盖新标签页刚加载的预设插板（复现快照：t=6300 预设加载正确 → t=6601 被旧 tab 写为含 helmet 附件键的状态）。单标签页环境下同流程稳定通过（含 reload 恢复）。该行为 r7-r9 已存在（SELF_ECHO_GRACE 2500ms 仅防护单页回声），不属于本轮六项需求范围；使用上避免多开本项目标签页即可。",
+      "evidence": "r10_sniff.py 快照时间线（本文档目录外，过程记录于对话）"
+    }
+  ],
+  "data_gaps": [
+    "藏身处制作来源：items.json 无任何 craft 类数据（0 条），获取方式列无法展示该渠道，未伪造",
+    "armor 主表红叉样本：本地所有防弹衣均有至少一个获取渠道，红叉场景在共用同一渲染函数的插板弹窗中验证（Cult Termite 等）",
+    "6B43 默认插板：本地数据只有硬板位槽定义，无出厂默认插板安装状态，按「未安装」入口展示"
+  ],
+  "screenshots": {
+    "s1-6b43-full.png": "6B43 装备全景（角标 6/H、面部剪影、20 列表、芳纶 350/1867、九内衬列）",
+    "s1-6b43-table-right.png": "表格滚动到最右（防护图标、10.80、Prapor IV 兑换配方）",
+    "s2-6b43-plate-on.png": "前插板 AR500 已安装（IIIC45 + 图标）",
+    "s2-6b43-plate-persist.png": "reload 后插板持久化",
+    "s3-paca-high-plate-badge.png": "PACA 装备（2/L 角标、无板位空白）",
+    "s4-rig-20col.png": "Triton 弹挂 20 列（无内衬 —）",
+    "s5-plateminus-cl6-badge.png": "PLATEminus V2 装 cl6 插板后角标 6/L",
+    "s6-rig-badges.png": "弹挂视图",
+    "s7-rig-heavy-badge.png": "armor 6B43 + rig 尝试安装（互斥场景前置）",
+    "s8-rig-avs-badge-after-armor-clear.png": "卸 armor 后 AVS 装上（rig 4/L）",
+    "s9-rig-6b516-h-badge.png": "6B5-16 rig 角标 3/H（紫）",
+    "s10-preset-restore.png": "预设加载恢复（6/H 角标恢复）",
+    "s11-regression-final.png": "回归终态（面部剪影、空槽右键不拦截）"
+  }
+}

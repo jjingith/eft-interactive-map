@@ -1,0 +1,373 @@
+{
+ "build": "R19.24",
+ "pass": true,
+ "checks": [
+  {
+   "name": "A1 展示页加载成功且有 10 个分节",
+   "ok": true,
+   "detail": {
+    "sections": 10
+   }
+  },
+  {
+   "name": "A2 GWUI 已加载",
+   "ok": true,
+   "detail": "1.0"
+  },
+  {
+   "name": "A3 设计令牌已加载且可解析（颜色/字号/间距/尺寸/层级）",
+   "ok": true,
+   "detail": {
+    "--ui-color-primary": "#0a3f9e",
+    "--ui-color-surface": "#ece9d8",
+    "--ui-color-selected": "#316ac5",
+    "--ui-color-border": "#aca899",
+    "--ui-color-text": "#000000",
+    "--ui-fs-body": "13px",
+    "--ui-space-3": "8px",
+    "--ui-control-h-md": "26px",
+    "--ui-z-dialog": "9100",
+    "primaryResolved": "rgb(10, 63, 158)",
+    "xpResolved": "rgb(10, 63, 158)",
+    "bodyBg": "rgb(236, 233, 216)"
+   }
+  },
+  {
+   "name": "A4 桥接令牌与既有 --xp-* 解析为同一颜色（没有第二套近似色）",
+   "ok": true,
+   "detail": {
+    "--ui-color-primary": "#0a3f9e",
+    "--ui-color-surface": "#ece9d8",
+    "--ui-color-selected": "#316ac5",
+    "--ui-color-border": "#aca899",
+    "--ui-color-text": "#000000",
+    "--ui-fs-body": "13px",
+    "--ui-space-3": "8px",
+    "--ui-control-h-md": "26px",
+    "--ui-z-dialog": "9100",
+    "primaryResolved": "rgb(10, 63, 158)",
+    "xpResolved": "rgb(10, 63, 158)",
+    "bodyBg": "rgb(236, 233, 216)"
+   }
+  },
+  {
+   "name": "A5 页面底色来自 --ui-color-surface",
+   "ok": true,
+   "detail": "rgb(236, 233, 216)"
+  },
+  {
+   "name": "A6 十类基础组件都渲染出来了",
+   "ok": true,
+   "detail": {
+    "btn": 33,
+    "input": 9,
+    "select": 2,
+    "check": 10,
+    "tab": 6,
+    "panel": 17,
+    "row": 6,
+    "badge": 19,
+    "dialog": 0,
+    "menu": 0,
+    "tip": 0
+   }
+  },
+  {
+   "name": "A7 禁用按钮真的是禁用（disabled + not-allowed）",
+   "ok": true,
+   "detail": {
+    "disabled": true,
+    "cursor": "not-allowed",
+    "before": "linear-gradient(rgb(253, 253, 253), rgb(226, 223, 207))|false",
+    "after": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) 100%)|true",
+    "ring": "rgb(255, 255, 255) 1px 1px 0px 0px inset, rgb(172, 168, 153) -1px -1px 0px 0px inset",
+    "disabledCursorOk": true
+   }
+  },
+  {
+   "name": "A8 开关型按钮点击后 aria-pressed 与底色同时变化",
+   "ok": true,
+   "detail": {
+    "before": "linear-gradient(rgb(253, 253, 253), rgb(226, 223, 207))|false",
+    "after": "linear-gradient(rgb(255, 224, 138) 0%, rgb(255, 201, 61) 52%, rgb(255, 176, 42) 100%)|true"
+   }
+  },
+  {
+   "name": "A9 键盘焦点有可见焦点环（box-shadow 非 none）",
+   "ok": true,
+   "detail": "rgb(255, 255, 255) 1px 1px 0px 0px inset, rgb(172, 168, 153) -1px -1px 0px 0px inset"
+  },
+  {
+   "name": "A10 弹窗可打开且带 role=dialog/aria-modal、锁滚动",
+   "ok": true,
+   "detail": {
+    "open": true,
+    "title": "数据说明（示例）",
+    "ariaModal": "true",
+    "scrollLock": true
+   }
+  },
+  {
+   "name": "A11 Esc 关闭弹窗、解除滚动锁并把焦点还给触发按钮",
+   "ok": true,
+   "detail": {
+    "open": false,
+    "lock": false,
+    "focus": "普通"
+   }
+  },
+  {
+   "name": "A12 危险弹窗：确认按钮为 danger 变体，默认焦点在「取消」",
+   "ok": true,
+   "detail": {
+    "focus": "取消",
+    "confirmCls": "ui-btn ui-btn--danger",
+    "headBg": "linear-gradient(rgb(161, 27, 27), rgb(161, 27, 27))"
+   }
+  },
+  {
+   "name": "A13 菜单可打开、在视口内、焦点进入菜单",
+   "ok": true,
+   "detail": {
+    "open": true,
+    "items": 4,
+    "inViewport": true,
+    "role": "menu",
+    "focusInMenu": true
+   }
+  },
+  {
+   "name": "A14 Esc 关闭菜单",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "name": "A15 自定义提示可显示、不被视口裁切、限宽 320px",
+   "ok": true,
+   "detail": {
+    "shown": true,
+    "text": "这是一条很长的提示，用来验证换行与最大宽度（320px）：目",
+    "inViewport": true,
+    "maxWidth": "320px"
+   }
+  },
+  {
+   "name": "A16 表格：行可选中（aria-selected+蓝底）、冲突行虚线、禁用行灰面",
+   "ok": true,
+   "detail": {
+    "rows": 6,
+    "sel": "true",
+    "selClass": "ui-table__row is-selected",
+    "conflict": true,
+    "conflictBorder": "dashed",
+    "disabledBg": "rgb(242, 240, 230)"
+   }
+  },
+  {
+   "name": "A17 标签页切换改变 aria-selected（且只有一个当前项）",
+   "ok": true,
+   "detail": {
+    "before": [
+     "任务树"
+    ],
+    "after": [
+     "我的进度"
+    ],
+    "count": 3
+   }
+  },
+  {
+   "name": "A18 1680px 下无横向溢出（整页与长文段落）",
+   "ok": true,
+   "detail": {
+    "docScroll": 1680,
+    "docClient": 1680,
+    "bodyScroll": 1680,
+    "bodyClient": 1680,
+    "proseScroll": 760,
+    "proseClient": 760
+   }
+  },
+  {
+   "name": "A19 1280px 下无横向溢出",
+   "ok": true,
+   "detail": {
+    "s": 1280,
+    "c": 1280
+   }
+  },
+  {
+   "name": "A20 展示页无 JS 异常/控制台错误",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "B1 任务树仍正常渲染（主程序未被设计系统破坏）",
+   "ok": true,
+   "detail": {
+    "got": 503,
+    "expect": 503
+   }
+  },
+  {
+   "name": "B2 商人任务表改由 ui-table 渲染（保留 tk-* 结构钩子）",
+   "ok": true,
+   "detail": {
+    "rows": 504,
+    "expect": 504,
+    "uiRows": 503
+   }
+  },
+  {
+   "name": "B3 状态列用 ui-badge（每行一个）",
+   "ok": true,
+   "detail": 503
+  },
+  {
+   "name": "B4 工具栏与排序下拉改用组件，标题仍是原钩子",
+   "ok": true,
+   "detail": {
+    "table": true,
+    "isUiTable": true,
+    "rows": 504,
+    "uiRows": 503,
+    "badges": 503,
+    "toolbar": true,
+    "sort": true,
+    "head": true,
+    "modeCells": 504,
+    "tbCols": "minmax(140px, 2fr) 84px 44px 96px 66px 44px 44px 44px 56px"
+   }
+  },
+  {
+   "name": "B5 表格列宽由 --ui-table-cols 控制（不再写死 grid）",
+   "ok": true,
+   "detail": "minmax(140px, 2fr) 84px 44px 96px 66px 44px 44px 44px 56px"
+  },
+  {
+   "name": "B6 排序下拉切换后列表顺序变化（业务逻辑未被改坏）",
+   "ok": true,
+   "detail": {
+    "before": "安全通道",
+    "after": "爱国者的使命"
+   }
+  },
+  {
+   "name": "B7「数据说明」弹窗内容来自真实数据（模式名 + 任务数）",
+   "ok": true,
+   "detail": "数据说明 · PvP（常规）✕下表是当前模式的数据事实（来自本地数据文件，不是估算）。切换右上角模式后数值会随之变化。项目值当前模式PvP（常规）上游端点tarkov.dev regular任务数503任务目标数1416前置关系（边）222赛季专属任务0Kappa 必需13阵营限定34攻略状态数据派生 503 · 人工整理 0 · 待补充 0数据生成时间2026-10-28 11:46:46关闭"
+  },
+  {
+   "name": "B8 弹窗可 Esc 关闭",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "name": "B9 模式列改用自定义提示（不再用原生 title）",
+   "ok": true,
+   "detail": {
+    "shown": true,
+    "text": "三种模式都有此任务；目标/前置/进度仍按模式各自独立",
+    "inViewport": true
+   }
+  },
+  {
+   "name": "B10 切到 PvPS 后表格行数 = PvPS 任务数（模式隔离未回归）",
+   "ok": true,
+   "detail": {
+    "got": 463,
+    "expect": 463
+   }
+  },
+  {
+   "name": "B11 任务详情页仍可打开且区块齐全",
+   "ok": true,
+   "detail": 7
+  },
+  {
+   "name": "B12 进度页仍可渲染三模式对照表",
+   "ok": true,
+   "detail": 4
+  },
+  {
+   "name": "B13 筛选下拉（ui-select）仍然驱动任务树弱化",
+   "ok": true,
+   "detail": {
+    "dim": 449
+   }
+  },
+  {
+   "name": "B14 搜索框（ui-input）仍然命中任务",
+   "ok": true,
+   "detail": {
+    "needle": "半满",
+    "matches": 1
+   }
+  },
+  {
+   "name": "C1 所有请求都是本地同源资源（无 CDN / 在线字体 / 在线图标）",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "C2 请求里包含新样式与组件脚本",
+   "ok": true,
+   "detail": [
+    "http://127.0.0.1:8790/styles/ui-components.css?v=r19.24",
+    "http://127.0.0.1:8790/js/ui-components.js?v=r19.24",
+    "http://127.0.0.1:8790/styles/ui-components.css?v=r19.24",
+    "http://127.0.0.1:8790/js/ui-components.js?v=r19.24"
+   ]
+  },
+  {
+   "name": "C3 试点页无新增 JS 异常",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "detail": {
+  "tokens": {
+   "--ui-color-primary": "#0a3f9e",
+   "--ui-color-surface": "#ece9d8",
+   "--ui-color-selected": "#316ac5",
+   "--ui-color-border": "#aca899",
+   "--ui-color-text": "#000000",
+   "--ui-fs-body": "13px",
+   "--ui-space-3": "8px",
+   "--ui-control-h-md": "26px",
+   "--ui-z-dialog": "9100",
+   "primaryResolved": "rgb(10, 63, 158)",
+   "xpResolved": "rgb(10, 63, 158)",
+   "bodyBg": "rgb(236, 233, 216)"
+  },
+  "components": {
+   "btn": 33,
+   "input": 9,
+   "select": 2,
+   "check": 10,
+   "tab": 6,
+   "panel": 17,
+   "row": 6,
+   "badge": 19,
+   "dialog": 0,
+   "menu": 0,
+   "tip": 0
+  },
+  "pilot": {
+   "table": true,
+   "isUiTable": true,
+   "rows": 504,
+   "uiRows": 503,
+   "badges": 503,
+   "toolbar": true,
+   "sort": true,
+   "head": true,
+   "modeCells": 504,
+   "tbCols": "minmax(140px, 2fr) 84px 44px 96px 66px 44px 44px 44px 56px"
+  },
+  "requests": {
+   "total": 83,
+   "external": []
+  }
+ }
+}

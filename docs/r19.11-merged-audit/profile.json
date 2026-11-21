@@ -1,0 +1,310 @@
+{
+ "schema": "eftmap.r19.11.profile/1",
+ "modalOpened": true,
+ "invalidInput": {
+  "shown": true,
+  "text": "⚠ 力量等级 超出合法等级范围（0–51）",
+  "stored": null
+ },
+ "afterSave": {
+  "stored": {
+   "v": 1,
+   "strength": 40,
+   "endurance": 25,
+   "weaponSkillDefault": 30,
+   "skillByClass": {
+    "pistol": 45
+   },
+   "equipErgo": 0,
+   "mastery": 0
+  },
+  "bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 55
+     }
+    ],
+    "baseLeft": 55,
+    "text": "基线 55.0|改装 55.0|技能 58.3",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18.2
+     }
+    ],
+    "baseLeft": 18.2,
+    "text": "基线 1.8|改装 1.8|技能 1.8",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 11.2
+     }
+    ],
+    "baseLeft": 11.2,
+    "text": "基线 78.1|改装 78.1|技能 71.1",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 18
+     }
+    ],
+    "baseLeft": 18,
+    "text": "基线 224.4|改装 224.4|技能 204.2",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 70.7
+     }
+    ],
+    "baseLeft": 70.7,
+    "text": "基线 922.0|改装 922.0|技能 922.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ],
+  "stats": "整枪属性人机工效58.3+3.3垂直后坐力71.1-7.03水平后坐力204.2-20.2重量2.85 kg精度 MOA1.82 MOA射速800 rpm瞄准距离100 m弹匣容量30 发初速922 m/s整枪成本（含原厂件）308,475"
+ },
+ "pistolOverride": {
+  "bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 91
+     }
+    ],
+    "baseLeft": 91,
+    "text": "基线 91.0|改装 91.0|技能 99.2",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 100
+     }
+    ],
+    "baseLeft": 100,
+    "text": "基线 11.7|改装 11.7|技能 11.7",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 43.1
+     }
+    ],
+    "baseLeft": 43.1,
+    "text": "基线 302.0|改装 302.0|技能 261.2",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 20.2
+     }
+    ],
+    "baseLeft": 20.2,
+    "text": "基线 252.5|改装 252.5|技能 218.4",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 13.4
+     }
+    ],
+    "baseLeft": 13.4,
+    "text": "基线 377.0|改装 377.0|技能 377.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ],
+  "skillNote": "技能后数值：手枪 技能 45 级 · 后坐力 −13.5% · 人机 +9.0%"
+ },
+ "afterPageSwitch": {
+  "skillNote": "技能后数值：手枪 技能 45 级 · 后坐力 −13.5% · 人机 +9.0%"
+ },
+ "afterReload": {
+  "stored": {
+   "v": 1,
+   "strength": 40,
+   "endurance": 25,
+   "weaponSkillDefault": 30,
+   "skillByClass": {
+    "pistol": 45
+   },
+   "equipErgo": 0,
+   "mastery": 0
+  },
+  "modalValues": {
+   "strength": "40",
+   "endurance": "25",
+   "skill": "30"
+  }
+ },
+ "zeroSkill": {
+  "bars": [
+   {
+    "key": "ergonomics",
+    "label": "人机工效",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 91
+     }
+    ],
+    "baseLeft": 91,
+    "text": "基线 91.0|改装 91.0|技能 91.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "accuracy",
+    "label": "散布角",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 100
+     }
+    ],
+    "baseLeft": 100,
+    "text": "基线 11.7|改装 11.7|技能 11.7",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilV",
+    "label": "垂直后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 43.1
+     }
+    ],
+    "baseLeft": 43.1,
+    "text": "基线 302.0|改装 302.0|技能 302.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "recoilH",
+    "label": "水平后坐",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 20.2
+     }
+    ],
+    "baseLeft": 20.2,
+    "text": "基线 252.5|改装 252.5|技能 252.5",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   },
+   {
+    "key": "velocity",
+    "label": "初速 m/s",
+    "segs": [
+     {
+      "cls": "neutral",
+      "left": 0,
+      "width": 13.4
+     }
+    ],
+    "baseLeft": 13.4,
+    "text": "基线 377.0|改装 377.0|技能 377.0",
+    "trackW": 314,
+    "valW": 172,
+    "valClipped": false,
+    "clippedKeys": []
+   }
+  ]
+ }
+}

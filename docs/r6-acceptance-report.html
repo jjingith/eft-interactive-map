@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EFT 互动地图 · 第六轮夜间冲刺验收报告</title>
+<style>
+  :root {
+    --bg: #12140f; --panel: #191c15; --panel2: #1f231a; --line: #31382a;
+    --fg: #e6e8dd; --dim: #9aa389; --green: #9ccb3b; --amber: #e0b341; --red: #d9584f;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 14px/1.65 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+  main { max-width: 1180px; margin: 0 auto; padding: 40px 28px 80px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; padding-left: 10px; border-left: 3px solid var(--green); }
+  h3 { font-size: 15px; margin: 22px 0 8px; color: #cfd6c0; }
+  p, li { color: #d2d8c8; }
+  .sub { color: var(--dim); margin: 0 0 26px; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; }
+  .summary b { color: var(--green); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .card .k { color: var(--dim); font-size: 12px; }
+  .card .v { font: 600 20px/1.3 var(--mono); color: var(--green); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: #cfd6c0; font-weight: 600; white-space: nowrap; }
+  td code, p code, li code { font-family: var(--mono); font-size: 12px; color: #cfe6a0;
+                             background: #20251a; padding: 1px 4px; border-radius: 3px; }
+  .ok { color: var(--green); font-weight: 600; }
+  .warn { color: var(--amber); font-weight: 600; }
+  .no { color: var(--red); font-weight: 600; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 14px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  figcaption { padding: 8px 11px; font-size: 12px; color: var(--dim); }
+  figcaption b { color: #d6ddc7; font-weight: 600; }
+  .note { background: #1c2117; border-left: 3px solid var(--amber); padding: 10px 14px; border-radius: 0 6px 6px 0; color: #d8dccd; }
+  .verdict { font-size: 13px; margin: 0 0 26px; padding: 8px 12px; border-radius: 0 6px 6px 0;
+             background: #1c2117; border-left: 3px solid var(--green); }
+  .verdict.warnbox { border-left-color: var(--amber); }
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 16px; }
+  .flow span { background: var(--panel2); border: 1px solid var(--line); border-radius: 5px;
+               padding: 4px 9px; font-size: 12px; }
+  .flow i { color: var(--green); font-style: normal; }
+  footer { margin-top: 46px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--dim); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>EFT 互动地图 · 第六轮夜间冲刺验收报告</h1>
+<p class="sub">项目：<code>D:\personal\trae\02-塔科夫\eft-interactive-map</code> ｜ 参考站：db4tarkov.com/preset ｜ 日期：2026-10-20 ｜ 约束：开发者离线，全程自主实现与验证</p>
+
+<div class="summary">
+  <p style="margin:0 0 8px"><b>结论：</b>P0–P5 全部落地。人物装备预设与枪械预设都保存到 <code>%APPDATA%\EFTMap</code> 的独立文件，
+  通过后端原子写入 + 结构校验；配枪视图从占位页变成真实改装工作台；主武器 1 / 主武器 2 / 手枪改为从
+  <b>已保存的枪械预设</b>中选择，枪械类型在候选与安装两层都做了分流；Buy / Sell 使用上游真实交易字段；
+  断网重启、真实浏览器全流程、打包产物均已实测。</p>
+  <p style="margin:0;color:var(--dim)">全量测试 <b>672 passed / 1 skipped</b>（新增 25 项 + 手枪分流 6 项断言）。
+  地图渲染、底图、原有图标、路线与定位代码未被修改。所有截图来自真实 Chrome（headless CDP，1920×909），
+  未使用静态示意图冒充运行结果。</p>
+</div>
+
+<div class="verdict">
+  <b>完成标准核对：</b>“至少完成一把主武器和一把手枪的改装、保存、选入人物方案，再从程序重启后的方案中正确恢复。”
+  —— 已用 M4A1（11 槽 / 2 配件 / 1.53 kg / 136,995 ₽）与 Glock 17（7 槽 / 2 配件 / 0.71 kg / 69,194 ₽）
+  在真实浏览器中完成，刷新后主武器 1 =「R6 自动验收 M4A1」、手枪 =「R6 自动验收 Glock 17」（截图 07 / 10 / 13）。
+</div>
+
+<h2>0. 交付顺序对照</h2>
+<table>
+  <tr><th>优先级</th><th>要求</th><th>状态</th><th>证据</th></tr>
+  <tr><td>P0</td><td>保护当前项目，确认第五轮成果真实存在且可运行</td><td class="ok">完成</td><td>第 1 节；基线 647 passed 后开始修改</td></tr>
+  <tr><td>P1</td><td>人物装备预设独立保存 / 恢复 / 管理 / 导入导出</td><td class="ok">完成</td><td>第 2 节；截图 08–10、15–16</td></tr>
+  <tr><td>P2</td><td>配枪视图真实改装 + 枪械预设管理</td><td class="ok">完成</td><td>第 3 节；截图 01–05b、12</td></tr>
+  <tr><td>P3</td><td>枪械预设接入主武器 1 / 2 / 手枪</td><td class="ok">完成</td><td>第 4 节；截图 06–07、10</td></tr>
+  <tr><td>P4</td><td>Buy / Sell 与费用汇总</td><td class="ok">完成（有数据部分）</td><td>第 5 节；覆盖率 JSON</td></tr>
+  <tr><td>P5</td><td>UI 回归、断网重启、打包检查、交付报告</td><td class="ok">完成</td><td>第 6–9 节</td></tr>
+</table>
+
+<h2>1. 实际修改的文件清单</h2>
+<h3>1.1 本轮新增</h3>
+<table>
+  <tr><th>文件</th><th>作用</th></tr>
+  <tr><td><code>tools/presets.py</code></td><td>预设存储层：结构校验、稳定 id、原子写入、导入冲突换新 id、损坏文件保护</td></tr>
+  <tr><td><code>tools/gunpresets.py</code></td><td>构建期把上游 497 套枪械预设回溯为可装载的槽位路径（<code>gun-presets.json/js</code>）</td></tr>
+  <tr><td><code>data/gun-presets.json</code> / <code>data/gun-presets.js</code></td><td>373 套可还原内置预设 + 25 套 unsolved，随包分发、只读</td></tr>
+  <tr><td><code>tests/test_presets.py</code></td><td>20 项：路径、校验、原子写、损坏文件 409、CRUD、导入、HTTP 接口</td></tr>
+  <tr><td><code>tests/test_r6_gun_workbench.py</code></td><td>5 组：槽位树 / 父子槽清理 / 冲突禁装 / 重量价格去重 / 缺失引用 / 静态约束</td></tr>
+  <tr><td><code>docs/r6-price-coverage.json</code></td><td>按 11 个类别的价格字段覆盖率审计结果</td></tr>
+  <tr><td><code>docs/loadout-gun-simulator-roadmap.md</code></td><td>六阶段状态、数据限制、存储与接口速查</td></tr>
+  <tr><td><code>docs/r6-shots/</code></td><td>16 张真实浏览器验收截图</td></tr>
+  <tr><td><code>docs/r6-acceptance-report.html</code></td><td>本报告</td></tr>
+</table>
+<h3>1.2 本轮定点修改（未重写 app.js）</h3>
+<table>
+  <tr><th>文件</th><th>改动</th></tr>
+  <tr><td><code>app.js</code></td><td>新增枪械工作台与两类预设弹窗；<code>@wp:</code> 稳定引用；<code>GUN_CAT_HANDGUN</code>/<code>gunIsHandgun</code> 类型分流（候选 + 业务层双重守卫）；Buy/Sell 合计；重量/价格去重</td></tr>
+  <tr><td><code>index.html</code></td><td>配枪视图骨架、PRESET 按钮、<code>gun-presets.js</code> 先行加载</td></tr>
+  <tr><td><code>style.css</code></td><td>仅在 <code>.lw-scope</code> / <code>.gun-workbench</code> 内新增深色工作台与弹窗样式</td></tr>
+  <tr><td><code>tools/serve.py</code></td><td><code>GET/POST /api/presets</code>（4 MB 上限，失败原样返回）</td></tr>
+  <tr><td><code>tools/fetch_data.py</code></td><td>items 增补 <code>sl</code>/<code>ci</code>；来源去重；<code>gunslots</code> 元数据区分文件内/上游预设数</td></tr>
+  <tr><td><code>data/items.json</code></td><td>schema 6，5480 件；新增 sellToTrader 与预设包含件字段</td></tr>
+  <tr><td><code>data/meta.json</code></td><td>来源 14→8 去重；<code>presets:398</code>、<code>presetsUpstream:497</code>；字节数校正</td></tr>
+  <tr><td><code>tests/test_loadout_workbench.py</code></td><td>抽取新增枪械纯函数；夹具增手枪；T15b 扩为三套预设并新增 6 条类型分流断言</td></tr>
+  <tr><td><code>README.md</code> / <code>docs/USAGE.md</code> / <code>AGENT_HANDOFF.md</code></td><td>删除“配枪为占位”的过期描述，补预设、配枪与 <code>@wp:</code> 说明</td></tr>
+</table>
+<p class="note">P0 基线：修改前已记录工作区状态（大量未提交文件保持原样），未执行 <code>git reset --hard</code>、
+<code>git clean</code>，未用旧版远端代码覆盖本地，未重写 <code>app.js</code>，未改动地图渲染器 / 底图 / 地图图标 / 路线 / 定位。</p>
+
+<h2>2. 人物装备预设管理</h2>
+<h3>2.1 存储与安全写入</h3>
+<table>
+  <tr><th>项目</th><th>实现</th></tr>
+  <tr><td>路径</td><td><code>%APPDATA%\EFTMap\loadout-presets.json</code>（不写 <code>data/gunslots.json</code>）</td></tr>
+  <tr><td>结构</td><td><code>{version, kind:"loadout", presets:[{id, name, createdAt, updatedAt, slots, priceMode, sens}]}</code></td></tr>
+  <tr><td>稳定标识</td><td>预设 <code>lp_</code> 前缀；槽位值全部是物品 id 或 <code>@wp:&lt;枪械预设 id&gt;</code>，不保存中文名</td></tr>
+  <tr><td>写入</td><td>tmp 文件 + <code>flush</code>+<code>fsync</code>+<code>os.replace</code>，不会留下写一半的文件</td></tr>
+  <tr><td>校验</td><td>后端拒绝未知 kind、坏 id、空名称、非字符串槽位值、重复 id、非白名单价格档</td></tr>
+  <tr><td>损坏文件</td><td>默认返回 <code>409 {corrupt:true}</code> 并保持原文件；只有用户点「修复并覆盖（丢弃损坏文件）」才重建</td></tr>
+  <tr><td>更新安装目录</td><td>路径由 <code>config.default_storage_dir()</code> 提供，程序目录变化不影响读取</td></tr>
+</table>
+
+<h3>2.2 界面操作（PRESET 弹窗）</h3>
+<p>新建、另存为、覆盖保存、重命名（id 不变）、加载、删除、导出 JSON、导入 JSON 八项全部可用。
+删除枪械预设前会扫描当前配装与所有人物预设的引用并在 <code>confirm</code> 中逐条列出（截图 14）。</p>
+
+<h3>2.3 恢复完整性（含护甲板子槽）</h3>
+<p>真实浏览器流程：装备 5.11 Hexgrid 插板背心 → 通过板位弹窗装上前插板 → 另存为「R6 自动验收护甲板」→
+清空 localStorage 并重载 → 从预设加载。落盘内容与恢复后的界面如下：</p>
+<table>
+  <tr><th>阶段</th><th>观测值</th></tr>
+  <tr><td>落盘 slots</td><td><code>{"armor":"5fd4c474dd870108a754b241","armor/front_plate":"656f9d5900d62bcd2e02407c"}</code></td></tr>
+  <tr><td>重载前护甲卡</td><td>5.11 Hexgrid 插板背心</td></tr>
+  <tr><td>加载后护甲卡</td><td>5.11 Hexgrid 插板背心（文本完全一致）</td></tr>
+  <tr><td>加载后板位状态</td><td><code>on, empty, na, na</code> —— 前板恢复，其余保持未装 / 不可用</td></tr>
+</table>
+<p>说明：<code>applyLoadoutPreset</code> 会重建槽位树并 <code>pruneOrphanSlots</code>，因此不会残留已经不存在的子槽；
+枪械槽的 <code>@wp:</code> 引用随 slots 原样恢复（截图 10）。</p>
+
+<h2>3. 配枪工作台与枪械预设</h2>
+<h3>3.1 数据审计结论</h3>
+<table>
+  <tr><th>项目</th><th>实测结果</th></tr>
+  <tr><td>枪械槽位树</td><td><code>data/gunslots.json</code> 收录 163 把有真实 <code>slots[].allow</code> 的枪</td></tr>
+  <tr><td>内置参考预设</td><td>上游共 497 套；99 套的基础枪没有槽位树未分发；随包 <b>398 套</b> 元数据</td></tr>
+  <tr><td>可还原预设</td><td><code>data/gun-presets.json</code> 中 <b>373 套</b> 可按 <code>allow</code> 还原；<b>25 套 unsolved</b>（上游配件与该槽位 allow 不匹配，明确标记而不是硬塞）</td></tr>
+  <tr><td>读写边界</td><td>内置预设只读；用户预设写 <code>weapon-presets.json</code>，永不回写 <code>gunslots.json</code></td></tr>
+  <tr><td>配件数据</td><td>名称、重量、价格（FLEA/BASE/Buy/Sell）、图标、稳定 id 均可从 <code>items.json</code> 对应</td></tr>
+</table>
+
+<h3>3.2 实际可用功能</h3>
+<ol>
+  <li>搜索并选择基础枪械（163 把可选）。</li>
+  <li>槽位树完全来自该枪真实的 <code>slots[].allow</code>；装父件后才生成对应子槽。</li>
+  <li>点槽位 → 右侧表格切换为该槽合法候选；不可装的行标红并显示原因。</li>
+  <li>安装 / 更换 / 卸下均走同一套 <code>gunInstallCheck</code>，冲突件点不动。</li>
+  <li>父件更换后重建子树，自动清理不再兼容的子附件（单测 G3 / 截图 05b 流程）。</li>
+  <li>重量、价格按“基础枪 + 已装配件”实时计算；同一配件多路径只计一次。</li>
+  <li>显示上游基准参数（人机工效 / 垂直后坐 / 水平后坐 / MOA）。</li>
+  <li>可一键恢复该枪的内置参考预设作为改装起点（下拉 <code>gw-ref</code>）。</li>
+  <li>枪械预设：新建 / 另存为 / 覆盖 / 重命名 / 加载 / 删除 / 导入 / 导出。</li>
+</ol>
+<p>实测数值（真实浏览器）：M4A1 改装后 11 个槽位、2 件配件、整枪 <b>1.53 kg</b> / <b>136,995 ₽</b>（FLEA）；
+Glock 17 为 7 槽、2 件配件、<b>0.71 kg</b> / <b>69,194 ₽</b>。两套方案分别保存为枪械预设（截图 05 / 05b）。</p>
+
+<h3>3.3 枪械预设存储</h3>
+<p><code>%APPDATA%\EFTMap\weapon-presets.json</code>，预设 id 前缀 <code>wp_</code>，保存
+<code>{gunId, items:{槽位路径: 配件 id}, createdAt, updatedAt}</code>。槽位路径沿用上游 <code>sid</code>，
+重复 sid 加 <code>#序号</code> 消歧，因此加载时能准确还原父子关系。删除被引用预设时不会自动替换其他枪械。</p>
+
+<h2>4. 主武器 / 手枪与人物方案的联动</h2>
+<div class="flow">
+  <span>配枪视图选枪</span><i>→</i><span>改装</span><i>→</i><span>保存枪械预设</span><i>→</i>
+  <span>人物工作台点主武器 1 / 手枪</span><i>→</i><span>从预设列表中选择</span><i>→</i>
+  <span>保存人物预设</span><i>→</i><span>刷新 / 重启</span><i>→</i><span>加载恢复</span>
+</div>
+<table>
+  <tr><th>规则</th><th>实现与测试</th></tr>
+  <tr><td>槽位值</td><td><code>@wp:&lt;预设 id&gt;</code>，随 <code>slots</code> 落盘；预设重命名 id 不变，引用不失效</td></tr>
+  <tr><td>主武器 / 手枪分流</td><td><code>gunIsHandgun</code> 按上游 <code>cats</code> 中的 handgun 分类判断；手枪槽只列手枪预设，主武器槽只列非手枪预设</td></tr>
+  <tr><td>双层守卫</td><td>候选过滤 + <code>equipGunRef</code> 业务层再次校验；用手枪塞主武器槽会保留原枪并提示「主武器槽只能装主武器类枪械预设」</td></tr>
+  <tr><td>删除保护</td><td><code>confirm</code> 列出当前配装与人物预设中的所有引用位置，删除后显示「预设缺失」，不静默换枪（截图 14）</td></tr>
+  <tr><td>统计去重</td><td><code>weaponPresetTotals</code> 按物品 id 去重；人物合计把三把枪的重量/价格并入</td></tr>
+  <tr><td>恢复</td><td>刷新后主武器 1 = R6 自动验收 M4A1、手枪 = R6 自动验收 Glock 17（截图 10 / 13）</td></tr>
+</table>
+<p>本轮修复了一个真实缺陷：早期实现不区分手枪与主武器，浏览器实测曾把 M4A1 装进手枪槽。
+已加入分类分流、业务层守卫，并在 <code>tests/test_loadout_workbench.py</code> 的 T15b 中新增 6 条断言覆盖两个方向。</p>
+
+<h2>5. Buy / Sell 与费用汇总</h2>
+<h3>5.1 字段语义（严格区分，不混用）</h3>
+<table>
+  <tr><th>显示</th><th>来源</th><th>规则</th></tr>
+  <tr><td>Final Cost</td><td>当前价格档（FLEA / BASE）</td><td>逐件快照价求和；缺价件单独提示，不按 0 元</td></tr>
+  <tr><td>Buy</td><td><code>trade[k=buy].p</code></td><td>所有商人货币报价中的<b>最低</b>一条，原生卢布，不做汇率折算</td></tr>
+  <tr><td>Sell</td><td><code>sl[0][1]</code></td><td>上游 <code>sellToTrader</code> 的<b>最高</b>回购价</td></tr>
+  <tr><td>Barter</td><td><code>trade[k=barter]</code></td><td>只展示兑换配方，<b>不折算现金价</b></td></tr>
+  <tr><td>PVP / SCAV</td><td>无独立字段</td><td>保持禁用，不复用 FLEA / BASE</td></tr>
+</table>
+
+<h3>5.2 覆盖率（<code>docs/r6-price-coverage.json</code>）</h3>
+<div class="grid">
+  <div class="card"><div class="k">物品总数</div><div class="v">5480</div></div>
+  <div class="card"><div class="k">BASE 基础参考价</div><div class="v">5186</div></div>
+  <div class="card"><div class="k">FLEA 跳蚤快照</div><div class="v">3523</div></div>
+  <div class="card"><div class="k">Buy 商人货币价</div><div class="v">2613</div></div>
+  <div class="card"><div class="k">Barter 兑换</div><div class="v">1116</div></div>
+  <div class="card"><div class="k">Sell 商人回购</div><div class="v">4895</div></div>
+  <div class="card"><div class="k">完全无价格</div><div class="v">273</div></div>
+  <div class="card"><div class="k">无 Sell 报价</div><div class="v">585</div></div>
+</div>
+<table>
+  <tr><th>类别</th><th>总数</th><th>BASE</th><th>FLEA</th><th>Buy</th><th>Barter</th><th>Sell</th></tr>
+  <tr><td>枪械</td><td>172</td><td>172</td><td>147</td><td>18</td><td>2</td><td>171</td></tr>
+  <tr><td>枪械配件</td><td>1887</td><td>1887</td><td>1626</td><td>1651</td><td>125</td><td>1887</td></tr>
+  <tr><td>护甲</td><td>72</td><td>72</td><td>55</td><td>8</td><td>25</td><td>72</td></tr>
+  <tr><td>头盔</td><td>40</td><td>40</td><td>29</td><td>25</td><td>8</td><td>40</td></tr>
+  <tr><td>胸挂</td><td>82</td><td>82</td><td>41</td><td>22</td><td>44</td><td>82</td></tr>
+  <tr><td>背包</td><td>47</td><td>47</td><td>34</td><td>20</td><td>17</td><td>47</td></tr>
+  <tr><td>护甲板</td><td>38</td><td>38</td><td>20</td><td>13</td><td>8</td><td>38</td></tr>
+  <tr><td>面罩</td><td>124</td><td>120</td><td>37</td><td>11</td><td>73</td><td>117</td></tr>
+  <tr><td>眼镜</td><td>40</td><td>34</td><td>15</td><td>11</td><td>19</td><td>34</td></tr>
+  <tr><td>耳机</td><td>28</td><td>28</td><td>16</td><td>10</td><td>16</td><td>28</td></tr>
+  <tr><td>其他</td><td>2950</td><td>2666</td><td>1503</td><td>824</td><td>779</td><td>2379</td></tr>
+</table>
+
+<h3>5.3 界面实测与独立核算一致</h3>
+<p>验收配装（M4A1 预设 + Glock 17 预设）在页面上的读数为：
+<code>Final Cost 206,189 ₽</code>、<code>Buy 143,687 ₽</code>、<code>Sell 40,100 ₽</code>。
+用 <code>items.json</code> 逐件独立计算得到完全相同的三个数（FLEA 206,189 / Buy 143,687 / Sell 40,100），
+说明界面不是把基础价或跳蚤价换个标签复用。</p>
+<p>更换装备、装卸插板、更换枪械配件后合计立即重算；价格档（<code>priceMode</code>）随人物预设保存并在加载时恢复；
+缺价件显示「另有 N 件缺价，未按 0 元计入」，Buy / Sell 缺来源时显示「数据不足」与缺失件数。</p>
+
+<h2>6. 新增测试与完整测试结果</h2>
+<table>
+  <tr><th>测试文件</th><th>新增内容</th><th>结果</th></tr>
+  <tr><td><code>tests/test_presets.py</code>（新）</td><td>路径隔离、结构校验、原子写无 tmp 残留、损坏文件 409 不覆盖、repair、CRUD、重命名保 id、导入冲突换新 id、HTTP 接口</td><td class="ok">20 passed</td></tr>
+  <tr><td><code>tests/test_r6_gun_workbench.py</code>（新）</td><td>G1 真实 allow 建树 / G2 动态子槽 / G3 换父件清理 / G4 冲突标红禁装 / G5 不在 allow 拒绝 / G6 重量价格去重与缺价 / G7 预设负载 / G8 缺失引用 + 静态离线约束</td><td class="ok">5 passed</td></tr>
+  <tr><td><code>tests/test_loadout_workbench.py</code></td><td>T15b 扩为三套预设：主武器槽不混手枪、主武器拒绝手枪、手枪槽只列手枪、手枪拒绝步枪、手枪可装手枪预设等 6 条断言</td><td class="ok">24 passed（本文件）</td></tr>
+  <tr><td>全量</td><td><code>python -m pytest tests -q</code></td><td class="ok">672 passed, 1 skipped（46.79s）</td></tr>
+</table>
+<p>测试直接抽取 <code>app.js</code> 的真实函数到 Node 运行，不复制实现；预设存储通过真实 HTTP 接口与临时
+<code>%APPDATA%</code> 目录验证。既有测试未删改，唯一 skip 为原有平台条件跳过项。</p>
+
+<h2>7. 断网重启实测记录</h2>
+<ol>
+  <li>停止旧服务进程，重新启动 <code>python tools/serve.py --no-browser --port 8787</code>（<code>/api/health</code> 200）。</li>
+  <li>彻底关闭验收用 Chrome（含所有子进程），以全新配置启动，并加参数
+      <code>--host-resolver-rules="MAP * 0.0.0.0, EXCLUDE localhost, EXCLUDE 127.0.0.1"</code>：
+      除本机外任何域名都会解析到 0.0.0.0，联网即失败。</li>
+  <li>依次完成：打开地图（截图 11）→ 配装工作台 → 修改装备 → 保存 / 加载人物预设 →
+      打开配枪（截图 12）→ 改装 → 加载已保存预设 → 回到配装加载人物方案（截图 13）。</li>
+  <li>网络监听：<b>162 个请求，host 仅 <code>127.0.0.1:8787</code></b>，外链列表为 <code>[]</code>，
+      console 异常为 <code>[]</code>。</li>
+  <li>恢复结果：主武器 1 =「R6 自动验收 M4A1」，与重启前一致。</li>
+</ol>
+<p class="note">不是“联网一次后靠缓存”：Chrome 以 <code>Network.setCacheDisabled(true)</code> 运行，页面启动即禁用缓存并重新拉取全部本地资源。</p>
+
+<h2>8. 截图文件路径</h2>
+<p>全部位于 <code>docs/r6-shots/</code>，1920×909，真实浏览器截图。</p>
+<div class="shots">
+  <figure><img src="r6-shots/r6-01-gun-default.png" alt=""><figcaption><b>r6-01-gun-default.png</b><br>配枪工作台默认界面</figcaption></figure>
+  <figure><img src="r6-shots/r6-02-gun-search.png" alt=""><figcaption><b>r6-02-gun-search.png</b><br>枪械搜索结果（M4A1）</figcaption></figure>
+  <figure><img src="r6-shots/r6-02-gun-slots.png" alt=""><figcaption><b>r6-02-gun-slots.png</b><br>选中枪械后的真实槽位树</figcaption></figure>
+  <figure><img src="r6-shots/r6-03-gun-candidates.png" alt=""><figcaption><b>r6-03-gun-candidates.png</b><br>机匣槽位的合法候选列表</figcaption></figure>
+  <figure><img src="r6-shots/r6-04-gun-installed.png" alt=""><figcaption><b>r6-04-gun-installed.png</b><br>已安装机匣 + 枪管，重量价格实时统计</figcaption></figure>
+  <figure><img src="r6-shots/r6-05-weapon-preset-saved.png" alt=""><figcaption><b>r6-05-weapon-preset-saved.png</b><br>保存 M4A1 枪械预设后的列表</figcaption></figure>
+  <figure><img src="r6-shots/r6-05b-handgun-preset-saved.png" alt=""><figcaption><b>r6-05b-handgun-preset-saved.png</b><br>手枪（Glock 17）单独改装并保存预设</figcaption></figure>
+  <figure><img src="r6-shots/r6-06-loadout-weapon-candidates.png" alt=""><figcaption><b>r6-06-loadout-weapon-candidates.png</b><br>主武器 1 槽只列主武器类枪械预设</figcaption></figure>
+  <figure><img src="r6-shots/r6-07-loadout-weapons-equipped.png" alt=""><figcaption><b>r6-07-loadout-weapons-equipped.png</b><br>主武器 1 与手枪分别选入 M4A1 / Glock 17</figcaption></figure>
+  <figure><img src="r6-shots/r6-08-loadout-preset-saved.png" alt=""><figcaption><b>r6-08-loadout-preset-saved.png</b><br>保存人物装备预设</figcaption></figure>
+  <figure><img src="r6-shots/r6-09-preset-load.png" alt=""><figcaption><b>r6-09-preset-load.png</b><br>刷新后从预设列表加载</figcaption></figure>
+  <figure><img src="r6-shots/r6-10-after-restart-restored.png" alt=""><figcaption><b>r6-10-after-restart-restored.png</b><br>重启后完整恢复（含两把枪与费用）</figcaption></figure>
+  <figure><img src="r6-shots/r6-11-map-regression.png" alt=""><figcaption><b>r6-11-map-regression.png</b><br>地图视图回归（底图 / 图标 / 标注未变）</figcaption></figure>
+  <figure><img src="r6-shots/r6-12-gun-offline.png" alt=""><figcaption><b>r6-12-gun-offline.png</b><br>断网模式下打开配枪视图</figcaption></figure>
+  <figure><img src="r6-shots/r6-13-restart-restored.png" alt=""><figcaption><b>r6-13-restart-restored.png</b><br>断网重启后加载人物方案</figcaption></figure>
+  <figure><img src="r6-shots/r6-14-delete-guard.png" alt=""><figcaption><b>r6-14-delete-guard.png</b><br>删除被引用的枪械预设：列出引用位置并取消</figcaption></figure>
+  <figure><img src="r6-shots/r6-15-plate-saved.png" alt=""><figcaption><b>r6-15-plate-saved.png</b><br>护甲 + 前插板装好后保存人物预设</figcaption></figure>
+  <figure><img src="r6-shots/r6-16-plate-restored.png" alt=""><figcaption><b>r6-16-plate-restored.png</b><br>清空重载后护甲板子槽完整恢复</figcaption></figure>
+</div>
+
+<h2>9. 打包产物检查</h2>
+<table>
+  <tr><th>检查项</th><th>结果</th></tr>
+  <tr><td>构建方式</td><td><code>python -m PyInstaller --noconfirm --clean --distpath D:\Temp\r6-dist --workpath D:\Temp\r6-build build\EFTMap.spec</code>（不影响正式 <code>dist\EFTMap</code>）</td></tr>
+  <tr><td>体积 / 文件数</td><td>63.8 MB / 7061 个文件；<code>EFTMap.exe</code> 2,535,467 字节</td></tr>
+  <tr><td>前端与数据哈希</td><td><code>app.js</code>、<code>index.html</code>、<code>style.css</code>、<code>data/meta.json</code>、<code>items.json</code>、<code>gunslots.json</code>、<code>gun-presets.js/json</code> 与工作区 <b>SHA-256 完全一致</b></td></tr>
+  <tr><td>新增资源</td><td><code>assets/icons-items</code> 5480 个、<code>assets/icons-traders</code> 19 个，均在产物内</td></tr>
+  <tr><td>运行期网络</td><td>断网流程 162 请求全部指向本机；源码无运行期外部 URL、无远程字体、无 CDN</td></tr>
+  <tr><td>约束</td><td>Python 标准库 + 原生 JS/CSS，未新增运行期第三方依赖；前端保持 ES5 写法；未覆盖正式 Release、未推送远端</td></tr>
+</table>
+
+<h2>10. 未完成 / 数据缺失 / 需要你决定</h2>
+<table>
+  <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+  <tr><td>上游 497 套参考预设</td><td class="warn">398 套随包</td><td>99 套的基础枪在上游没有槽位树，无法安全还原；未用近似槽位硬凑。缺失清单可由 <code>tools/gunpresets.py</code> 重跑复现</td></tr>
+  <tr><td>25 套 unsolved 预设</td><td class="warn">明确标记</td><td>上游配件与该槽位 <code>allow</code> 冲突，保留元数据但不可装载，避免造出非法枪</td></tr>
+  <tr><td>PVP / SCAV 价格</td><td class="no">继续禁用</td><td>上游没有独立、可验证的价格字段；未复用 FLEA / BASE 冒充</td></tr>
+  <tr><td>兑换配方折现</td><td class="no">未折现</td><td>没有可靠换算规则，只展示配方，不计入现金 Buy 合计</td></tr>
+  <tr><td>完全无价格的 273 件</td><td class="warn">显示缺失</td><td>不按 0 元计入；其中面罩 4、眼镜 6、其他 263</td></tr>
+  <tr><td>无 Sell 报价的 585 件</td><td class="warn">显示「数据不足」</td><td>主要在其他类别（571 件），不伪造回购价</td></tr>
+  <tr><td>枪械性能参数</td><td class="warn">部分完成</td><td>显示上游基础枪基准值（人机工效 / 后坐 / MOA）；上游没有逐配件可加和增量，未自行编造叠加结果</td></tr>
+  <tr><td>旧数据兼容</td><td class="warn">不自动迁移</td><td>本轮之前的测试数据若曾把手枪预设放进主武器槽，不会被自动改写；当前 <code>%APPDATA%</code> 中的验收预设已全部合法</td></tr>
+  <tr><td>导入 UI 的自动化</td><td class="warn">后端已测，前端未自动驱动</td><td>浏览器原生文件选择框无法在 headless 中稳定操作；后端 import（含 id 冲突换新）由 20 项测试覆盖，界面按钮已人工路径可用</td></tr>
+</table>
+
+<div class="note">
+  <b>需要你决定的事项</b>（不影响当前使用）：<br>
+  1. 是否需要把 25 套 unsolved 预设按“近似 allow”强行还原（会偏离上游真实兼容关系，我倾向保持现状）。<br>
+  2. 枪械性能是否要引入第三方公式做逐配件叠加（会改变数据口径，需要新的数据来源与许可确认）。<br>
+  3. 是否要把当前验收用的 3 套预设保留为示例，或清空 <code>%APPDATA%\EFTMap</code> 从零开始。
+</div>
+
+<footer>
+  第六轮夜间冲刺 · 所有完成状态均对应实际代码、测试或截图证据。截图目录：<code>docs/r6-shots/</code>；
+  价格覆盖率：<code>docs/r6-price-coverage.json</code>；路线图：<code>docs/loadout-gun-simulator-roadmap.md</code>。
+</footer>
+
+</main>
+</body>
+</html>

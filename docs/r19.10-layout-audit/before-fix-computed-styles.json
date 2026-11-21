@@ -1,0 +1,2517 @@
+{
+ "guns": {
+  "mcx": {
+   "cols": "9",
+   "rows": "5",
+   "body": {
+    "row": 2,
+    "col": 6
+   },
+   "cells": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_sight_front",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "top2",
+     "row": 1,
+     "col": 1,
+     "item": "SIG MCX折叠式准星",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 5,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 6,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 8,
+     "item": "SIG MCX 折叠式照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 9,
+     "item": "MCX 拉机柄",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 2,
+     "col": 1,
+     "item": "SIG Sauer Taper-LOK 7.62x51/.300 BLK膛口转接器",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 2,
+     "col": 2,
+     "item": "MCX 导气箍",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 3,
+     "item": "9 英寸 MCX 枪管 .300 BLK",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 4,
+     "item": "MCX GEN1 KeyMod 8 英寸护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 5,
+     "item": "MCX GEN1 .300 BLK 上机匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 9,
+     "item": "SIG Sauer 轻量化折叠式枪托",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle_000",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "lane": "lower",
+     "row": 3,
+     "col": 1,
+     "item": "SIG Sauer Two Port Brake 7.62x51 双端膛口制退器",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_000",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 3,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_mount_001",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 3,
+     "col": 5,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 7,
+     "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 8,
+     "item": "MCX 手枪式握把",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_tactical",
+     "parent": "mod_reciever",
+     "lane": "tactical",
+     "row": 5,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    }
+   ],
+   "gun": "SIG MCX .300 Blackout 突击步枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "m4a1": {
+   "cols": "9",
+   "rows": "5",
+   "body": {
+    "row": 3,
+    "col": 6
+   },
+   "cells": [
+    {
+     "slot": "mod_reciever/mod_sight_rear/mod_scope",
+     "parent": "mod_reciever/mod_sight_rear",
+     "lane": "top1",
+     "row": 1,
+     "col": 8,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 2,
+     "col": 5,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 2,
+     "col": 8,
+     "item": "AR-15提把式照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 2,
+     "col": 9,
+     "item": "柯尔特AR-15拉机柄",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 3,
+     "col": 1,
+     "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 3,
+     "col": 2,
+     "item": "柯尔特 M4准星",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 3,
+     "col": 3,
+     "item": "14.5 英寸 AR-15 枪管 5.56x45",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 3,
+     "col": 4,
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 5,
+     "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 9,
+     "item": "柯尔特 AR-15 卡宾枪缓冲管",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "lane": "lower",
+     "row": 4,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_handguard",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 4,
+     "col": 4,
+     "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge_001",
+     "parent": "",
+     "lane": "lower",
+     "row": 4,
+     "col": 6,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 4,
+     "col": 7,
+     "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 4,
+     "col": 8,
+     "item": "柯尔特A2 AR-15手枪式握把",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "parent": "mod_stock",
+     "lane": "lower",
+     "row": 4,
+     "col": 9,
+     "item": "High Standard M4SS AR-15 枪托",
+     "cls": "gw-part gw-part-sub gw-cell"
+    }
+   ],
+   "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "ak74": {
+   "cols": "8",
+   "rows": "5",
+   "body": {
+    "row": 3,
+    "col": 5
+   },
+   "cells": [
+    {
+     "slot": "mod_sight_rear/mod_sight_rear",
+     "parent": "mod_sight_rear",
+     "lane": "top1",
+     "row": 1,
+     "col": 7,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_mount",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 2,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_sight_rear",
+     "parent": "",
+     "lane": "top2",
+     "row": 2,
+     "col": 7,
+     "item": "AK-74 照门",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 2,
+     "col": 8,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_muzzle",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 1,
+     "item": "AK-74 5.45x39 膛口制退器",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_gas_block",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 2,
+     "item": "AK-74导气管",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_gas_block/mod_handguard",
+     "parent": "mod_gas_block",
+     "lane": "main",
+     "row": 3,
+     "col": 3,
+     "item": "AK-74 木制护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 4,
+     "item": "AK-74 防尘盖",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 3,
+     "col": 8,
+     "item": "AK-74 木制枪托",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 4,
+     "col": 6,
+     "item": "6L20 5.45x39 AK-74 30发弹匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 4,
+     "col": 7,
+     "item": "AKS-74U 胶木手枪式握把",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock/mod_stock",
+     "parent": "mod_stock",
+     "lane": "lower",
+     "row": 4,
+     "col": 8,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    }
+   ],
+   "gun": "AK-74 5.45x39 突击步枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "glock17": {
+   "cols": "7",
+   "rows": "5",
+   "body": {
+    "row": 2,
+    "col": 4
+   },
+   "cells": [
+    {
+     "slot": "mod_reciever/mod_sight_front",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 1,
+     "item": "Glock准星",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_mount",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 6,
+     "item": "Glock照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_muzzle",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_barrel",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 2,
+     "item": "Glock 17标准枪管 9x19",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 3,
+     "item": "Glock 9x19套筒",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 7,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 5,
+     "item": "Glock 9x19弹匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 6,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_tactical",
+     "parent": "",
+     "lane": "tactical",
+     "row": 5,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    }
+   ],
+   "gun": "Glock 17 9x19 手枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "hk416": {
+   "cols": "11",
+   "rows": "5",
+   "body": {
+    "row": 2,
+    "col": 6
+   },
+   "cells": [
+    {
+     "slot": "mod_reciever/mod_handguard/mod_sight_front",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "top2",
+     "row": 1,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_scope",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "top2",
+     "row": 1,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_scope",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 5,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 8,
+     "item": "HK 416A5可折叠照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 9,
+     "item": "HK 加长卡笋 AR-15 拉机柄",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 2,
+     "col": 1,
+     "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_gas_block",
+     "parent": "mod_reciever/mod_barrel",
+     "lane": "main",
+     "row": 2,
+     "col": 2,
+     "item": "HK 416A5 低轮廓导气箍",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 3,
+     "item": "14.5 英寸 HK416 附折叠式准星枪管 5.56x45",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 4,
+     "item": "HK 416 四面导轨护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 5,
+     "item": "HK 416A5 5.56x45 上机匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 9,
+     "item": "HK 416 Enhanced 缓冲管",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "lane": "lower",
+     "row": 3,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_foregrip",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 3,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 7,
+     "item": "HK 钢制防水腐蚀 5.56x45 STANAG 30发弹匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 8,
+     "item": "HK Battle Grip“海狸尾”AR-15 手枪式握把",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_bipod",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "lower",
+     "row": 3,
+     "col": 10,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_stock/mod_stock_000",
+     "parent": "mod_stock",
+     "lane": "lower",
+     "row": 3,
+     "col": 11,
+     "item": "HK Slim Line AR-15 枪托",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "tactical",
+     "row": 5,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "tactical",
+     "row": 5,
+     "col": 2,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard/mod_tactical_002",
+     "parent": "mod_reciever/mod_handguard",
+     "lane": "tactical",
+     "row": 5,
+     "col": 3,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    }
+   ],
+   "gun": "HK 416A5 5.56x45 突击步枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "asval": {
+   "cols": "7",
+   "rows": "4",
+   "body": {
+    "row": 2,
+    "col": 4
+   },
+   "cells": [
+    {
+     "slot": "mod_mount_004",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 4,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_mount_000",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 5,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_muzzle/mod_sight_rear",
+     "parent": "mod_muzzle",
+     "lane": "top2",
+     "row": 1,
+     "col": 6,
+     "item": "AS VAL标准照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 7,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_muzzle",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 1,
+     "item": "AS VAL 9x39 一体式消音枪管",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_handguard",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 2,
+     "item": "VSS/VAL 聚合物护木（黑红色）",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 3,
+     "item": "AS VAL防尘盖",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_stock",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 7,
+     "item": "TSNIITochMash AS VAL枪托",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_muzzle/mod_mount_000",
+     "parent": "mod_muzzle",
+     "lane": "lower",
+     "row": 3,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 5,
+     "item": "VSS/VAL 9x39 6L25 20发弹匣（黑红色）",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_pistol_grip",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 6,
+     "item": "AS VAL 手枪式握把（黑红色）",
+     "cls": "gw-part gw-part-root gw-cell"
+    }
+   ],
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "pkm": {
+   "error": "选枪失败"
+  },
+  "mp5": {
+   "cols": "7",
+   "rows": "4",
+   "body": {
+    "row": 2,
+    "col": 4
+   },
+   "cells": [
+    {
+     "slot": "mod_reciever/mod_mount",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 3,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_sight_rear",
+     "parent": "mod_reciever",
+     "lane": "top2",
+     "row": 1,
+     "col": 6,
+     "item": "HK MP5鼓式照门",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_charge",
+     "parent": "",
+     "lane": "top2",
+     "row": 1,
+     "col": 7,
+     "item": "HK MP5拉机柄",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_muzzle",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 1,
+     "item": "HK MP5 三叉膛口转接器",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_handguard",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 2,
+     "item": "HK MP5 Wide Tropical聚合物护木",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever",
+     "parent": "",
+     "lane": "main",
+     "row": 2,
+     "col": 3,
+     "item": "HK MP5上机匣",
+     "cls": "gw-part gw-part-root gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_stock",
+     "parent": "mod_reciever",
+     "lane": "main",
+     "row": 2,
+     "col": 7,
+     "item": "HK A2枪托",
+     "cls": "gw-part gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_reciever/mod_muzzle/mod_muzzle",
+     "parent": "mod_reciever/mod_muzzle",
+     "lane": "lower",
+     "row": 3,
+     "col": 1,
+     "item": "",
+     "cls": "gw-part gw-part-empty gw-part-sub gw-cell"
+    },
+    {
+     "slot": "mod_magazine",
+     "parent": "",
+     "lane": "lower",
+     "row": 3,
+     "col": 5,
+     "item": "HK MP5 9x19 30发弹匣",
+     "cls": "gw-part gw-part-focus gw-part-root gw-cell"
+    }
+   ],
+   "gun": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "url": "http://127.0.0.1:8787/index.html"
+  },
+  "svds": {
+   "error": "选枪失败"
+  }
+ },
+ "forge": {
+  "ak74_idle": {
+   "optBoxes": [
+    {
+     "rows": 9
+    },
+    {
+     "rows": 17
+    }
+   ],
+   "rows": [
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight WMX200 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner LAS/TAC 2 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Surefire XC1战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2U 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Holosun LS321战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight AN/PEQ-2 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备 (黑色)",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris LA-5B 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris NGAL 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "MAWL-C1+战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "NcSTAR Tactical LAM模块 蓝色激光",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner DBAL-PL 战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Wilcox RAPTAR ES 战术测距仪",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2IKS 红外补光/激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Perst-3战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    }
+   ],
+   "chips": [
+    {
+     "text": "主武器",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "手枪",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Auto",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Single",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Burst",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Silent ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Loud ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "10 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "20 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "30 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "45 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "60 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "95 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "近",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "中",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "远",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "低后坐力",
+     "on": "1",
+     "pressed": null
+    },
+    {
+     "text": "高人机工效",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "轻量化",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "性价比",
+     "on": "0",
+     "pressed": null
+    }
+   ],
+   "sel": [
+    {
+     "text": "未选择 · 点下方型号指定手电",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    },
+    {
+     "text": "未选择 · 点下方型号指定激光",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    }
+   ]
+  },
+  "mid_open": {
+   "optBoxes": [
+    {
+     "rows": 9
+    },
+    {
+     "rows": 9
+    },
+    {
+     "rows": 17
+    }
+   ],
+   "rows": [
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight WMX200 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner LAS/TAC 2 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Surefire XC1战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2U 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Holosun LS321战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight AN/PEQ-2 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备 (黑色)",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris LA-5B 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris NGAL 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "MAWL-C1+战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "NcSTAR Tactical LAM模块 蓝色激光",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner DBAL-PL 战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Wilcox RAPTAR ES 战术测距仪",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2IKS 红外补光/激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Perst-3战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    }
+   ],
+   "chips": [
+    {
+     "text": "主武器",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "手枪",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Auto",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Single",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Burst",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Silent ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Loud ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "10 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "20 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "30 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "45 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "60 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "95 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "近",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "中",
+     "on": "1",
+     "pressed": "true"
+    },
+    {
+     "text": "远",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "清除",
+     "pressed": null
+    },
+    {
+     "text": "低后坐力",
+     "on": "1",
+     "pressed": null
+    },
+    {
+     "text": "高人机工效",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "轻量化",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "性价比",
+     "on": "0",
+     "pressed": null
+    }
+   ],
+   "sel": [
+    {
+     "text": "当前档位：中 · 请选择具体瞄具",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    },
+    {
+     "text": "未选择 · 点下方型号指定手电",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    },
+    {
+     "text": "未选择 · 点下方型号指定激光",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    }
+   ]
+  },
+  "picked_optic": "ELCAN SpecterDR 1x/4x瞄准镜",
+  "mid_after_pick": {
+   "optBoxes": [
+    {
+     "rows": 9
+    },
+    {
+     "rows": 9
+    },
+    {
+     "rows": 17
+    }
+   ],
+   "rows": [
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜",
+     "on": "1",
+     "pressed": "true",
+     "style": {
+      "bg": "rgb(44, 54, 70)",
+      "bgi": "none",
+      "border": "rgb(10, 63, 158)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "ELCAN SpecterDR 1x/4x瞄准镜 FDE",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "EOTech HHS-1 复合瞄具（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Monstrum 紧凑战术棱镜式瞄准镜 2x32",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Monstrum Tactical Marksman 棱镜式瞄准镜 3x30",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SwampFox Trihawk 棱镜式瞄准镜 3x30",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Leupold Mark 4 HAMR 4x24 DeltaPoint 组合式突击瞄准镜",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SIG Sauer BRAVO4 4x30 瞄准镜",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight WMX200 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner LAS/TAC 2 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Surefire XC1战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2U 战术手电",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Glock GTL 21 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Holosun LS321战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Insight AN/PEQ-2 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris AN/PEQ-15 战术设备 (黑色)",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris LA-5B 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "L3Harris NGAL 战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "MAWL-C1+战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "NcSTAR Tactical LAM模块 蓝色激光",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Olight Baldr Pro 战术手电激光组合（黄褐色）",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Steiner DBAL-PL 战术装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "SureFire X400 Ultra 战术手电与镭射装置",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Wilcox RAPTAR ES 战术测距仪",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit 2P Klesch 手电激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Klesch-2IKS 红外补光/激光指示器",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    },
+    {
+     "name": "Zenit Perst-3战术设备",
+     "on": "0",
+     "pressed": "false",
+     "style": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "linear-gradient(rgb(253, 253, 253) 0%, rgb(241, 239, 228) 46%, rgb(226, 223, 207) 54%, rgb(247, 245, 238) 100%)",
+      "border": "rgb(127, 157, 185)",
+      "color": "rgb(0, 0, 0)",
+      "shadow": "rgb(255, 255, 255) 0px 0px 0px 1px inset"
+     }
+    }
+   ],
+   "chips": [
+    {
+     "text": "主武器",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "手枪",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Auto",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Single",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Burst",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Silent ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "Loud ✕无数据",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "10 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "20 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "30 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "45 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "60 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "95 发",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "近",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "中",
+     "on": "1",
+     "pressed": "true"
+    },
+    {
+     "text": "远",
+     "on": "0",
+     "pressed": "false"
+    },
+    {
+     "text": "清除",
+     "pressed": null
+    },
+    {
+     "text": "低后坐力",
+     "on": "1",
+     "pressed": null
+    },
+    {
+     "text": "高人机工效",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "轻量化",
+     "on": "0",
+     "pressed": null
+    },
+    {
+     "text": "性价比",
+     "on": "0",
+     "pressed": null
+    }
+   ],
+   "sel": [
+    {
+     "text": "当前：中 · 1–4× · ELCAN SpecterDR 1x/4x瞄准镜",
+     "on": "1",
+     "color": "rgb(46, 107, 46)"
+    },
+    {
+     "text": "未选择 · 点下方型号指定手电",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    },
+    {
+     "text": "未选择 · 点下方型号指定激光",
+     "on": "0",
+     "color": "rgb(74, 74, 74)"
+    }
+   ]
+  }
+ },
+ "console": [],
+ "external": []
+}

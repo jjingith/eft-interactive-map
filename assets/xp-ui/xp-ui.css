@@ -1,0 +1,595 @@
+@charset "utf-8";
+/* ============================================================================
+   XP 风格 UI 组件层 —— 独立文件，不并入 style.css / theme-windows-xp.css
+   位图来自 ../xp-ui/*.png（由 tools/xp_ui_slice.py 生成，见 manifest.json）
+   坐标约定：1x = 源图 1/4。所有 border-image-slice 数值都以 1x 像素为准，
+   并且与 border-width 1:1 对应，保证位图不被二次缩放。
+   ========================================================================== */
+
+.xp-ui {
+  --xp-ink: #23231b;
+  --xp-ink-dim: #69675b;
+  --xp-cream: #ede9d8;
+  --xp-shadow: #1b1b1b;
+}
+
+/* ---------- 按钮：五态 ------------------------------------------------------------------
+   源切片 20px（1x=5px）。9-slice 后宽度可任意，五个状态的位图高度已经统一为 42px，
+   因此切换状态时不会上下抖动。 */
+.xp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 95px;
+  height: 42px;
+  padding: 0 14px;
+  border: 5px solid transparent;
+  border-image-source: url("btn-normal.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  background: transparent;
+  color: var(--xp-ink);
+  font: 12px/1 Tahoma, "Microsoft YaHei", "SimHei", sans-serif;
+  letter-spacing: .2px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.xp-btn:hover {
+  border-image-source: url("btn-hover.png");
+}
+.xp-btn:active {
+  border-image-source: url("btn-pressed.png");
+}
+.xp-btn:disabled {
+  border-image-source: url("btn-disabled.png");
+  color: var(--xp-ink-dim);
+  cursor: default;
+}
+/* 焦点：位图态 + CSS 点状内框（源图那张焦点态的点距是 1.5px 点 / 9.5px 间隔，太稀疏，
+   这里用密集 1px 点，更接近系统原生焦点框） */
+.xp-btn:focus-visible {
+  border-image-source: url("btn-focus.png");
+}
+.xp-btn:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dotted #1a1a16;
+  pointer-events: none;
+}
+
+/* ---------- 输入框 / 下拉 ------------------------------------------------------------ */
+.xp-input {
+  box-sizing: border-box;
+  width: 269px;
+  height: 33px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image-source: url("input.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  background: transparent;
+  color: var(--xp-ink);
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  outline: none;
+}
+.xp-input::placeholder {
+  color: #8d8b78;
+}
+
+.xp-select {
+  display: inline-flex;
+  align-items: stretch;
+  height: 33px;
+  vertical-align: middle;
+}
+.xp-select__field {
+  box-sizing: border-box;
+  width: 204px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  border: 5px solid transparent;
+  border-image-source: url("select.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  background: transparent;
+  color: var(--xp-ink);
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.xp-select__arrow {
+  width: 35px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: url("select-arrow.png") no-repeat center / 100% 100%;
+  cursor: pointer;
+}
+
+/* ---------- 复选框 / 单选（整件位图，字形已画入） ---------------------------------- */
+.xp-check,
+.xp-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  color: var(--xp-ink);
+  cursor: pointer;
+  user-select: none;
+}
+.xp-check__box,
+.xp-radio__box {
+  width: 24px;
+  height: 24px;
+  background: no-repeat center / 100% 100%;
+  flex: none;
+}
+.xp-check__box { background-image: url("check-off.png"); }
+.xp-check--on .xp-check__box { background-image: url("check-on.png"); }
+.xp-check--mixed .xp-check__box { background-image: url("check-indeterminate.png"); }
+.xp-radio__box { background-image: url("radio-off.png"); }
+.xp-radio--on .xp-radio__box { background-image: url("radio-on.png"); }
+
+/* ---------- 滑轨 / 滚动条 ------------------------------------------------------------ */
+.xp-slider {
+  position: relative;
+  height: 33px;
+  display: flex;
+  align-items: center;
+}
+.xp-slider__track {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15px;
+  border: 6px solid transparent;
+  border-image-source: url("track.png");
+  border-image-slice: 6 8 6 8 fill;
+  border-image-width: 6px 8px;
+  border-image-repeat: stretch;
+  pointer-events: none;
+}
+.xp-slider__thumb {
+  position: absolute;
+  top: 0;
+  width: 19px;
+  height: 33px;
+  background: url("thumb.png") no-repeat center / 100% 100%;
+}
+
+.xp-scrollbar-h {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 21px;
+}
+.xp-scrollbar-h__btn {
+  box-sizing: border-box;
+  width: 19px;
+  height: 21px;
+  flex: none;
+  border: 5px solid transparent;
+  border-image-source: url("btn-normal.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  position: relative;
+  background: transparent;
+  padding: 0;
+}
+/* 箭头方向由 CSS 三角给出（源图箭头按钮内是空白，没有图形） */
+.xp-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -3px;
+}
+.xp-arrow--left {
+  border-width: 4px 5px 4px 0;
+  border-color: transparent #2b2b22 transparent transparent;
+  margin-left: -3px;
+}
+.xp-arrow--right {
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #2b2b22;
+  margin-left: -2px;
+}
+.xp-arrow--down {
+  border-width: 5px 4px 0 4px;
+  border-color: #2b2b22 transparent transparent transparent;
+  margin-top: -2px;
+}
+.xp-scrollbar-h__track {
+  box-sizing: border-box;
+  flex: 1;
+  height: 21px;
+  margin: 0 1px;
+  position: relative;
+  border: 4px solid transparent;
+  border-image-source: url("scroll-h-track.png");
+  border-image-slice: 4 0 4 4 fill;
+  border-image-width: 4px 0;
+  border-image-repeat: stretch;
+}
+.xp-scrollbar-h__thumb {
+  position: absolute;
+  left: 30%;
+  top: 0;
+  width: 44px;
+  height: 21px;
+  background: url("scroll-h-thumb.png") no-repeat center / 100% 100%;
+}
+
+/* ---------- 进度条（框体位图 + CSS 蓝填充） ---------------------------------------- */
+.xp-progress {
+  box-sizing: border-box;
+  width: 227px;
+  height: 21px;
+  border: 5px solid transparent;
+  border-image-source: url("progress-frame.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  position: relative;
+  background: transparent;
+}
+.xp-progress__bar {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  bottom: 2px;
+  width: 38%;
+  background: linear-gradient(180deg, #e2f1ff 0, #cfe6fb 2px, #4b86dd 2px, #2b63b8 100%);
+}
+
+/* ---------- 分组框 / 标题牌 --------------------------------------------------------- */
+.xp-groupbox {
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  border-image-source: url("groupbox.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  padding: 22px 16px 16px;
+  position: relative;
+  background: transparent;
+  color: var(--xp-ink);
+}
+.xp-groupbox__title {
+  box-sizing: border-box;
+  position: absolute;
+  left: 12px;
+  top: -19px;
+  height: 39px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 110px 0 26px; /* 左 26px 让出源图左侧内凹槽 */
+  border: 5px solid transparent;
+  border-image-source: url("plaque-3.png");
+  border-image-slice: 5 5 5 14 fill;
+  border-image-width: 5px 5px 5px 14px;
+  border-image-repeat: stretch;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+
+.xp-plaque-1,
+.xp-plaque-2,
+.xp-plaque-3 {
+  box-sizing: border-box;
+  height: 39px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px 0 26px;
+  border: 5px solid transparent;
+  border-image-slice: 5 5 5 14 fill;
+  border-image-width: 5px 5px 5px 14px;
+  border-image-repeat: stretch;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  color: var(--xp-ink);
+}
+.xp-plaque-1 { border-image-source: url("plaque-1.png"); width: 329px; }
+.xp-plaque-2 { border-image-source: url("plaque-2.png"); width: 240px; }
+.xp-plaque-3 { border-image-source: url("plaque-3.png"); width: 183px; }
+
+/* ---------- 窗口标题栏 + 三键 ------------------------------------------------------ */
+.xp-titlebar {
+  box-sizing: border-box;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 10px;
+  border: 5px solid transparent;
+  border-image-source: url("titlebar.png");
+  border-image-slice: 5 fill;
+  border-image-width: 5px;
+  border-image-repeat: stretch;
+  position: relative;
+  background: transparent;
+  font: bold 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  color: #2c2c22;
+}
+.xp-titlebar__ctrls {
+  position: absolute;
+  right: 7px;
+  top: 6px;
+  display: flex;
+  gap: 7px;
+}
+/* 三键本体与图标都用 CSS 重建：源图三个按钮内是空白的，没有任何图形 */
+.xp-winbtn {
+  width: 27px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid #6c6c60;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #fdfcf6 0, #f4f2e4 40%, #dedbc8 100%);
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #b4b09d, 0 1px 1px rgba(0, 0, 0, .25);
+  position: relative;
+  cursor: pointer;
+}
+.xp-winbtn:active {
+  background: linear-gradient(180deg, #dedbc8 0, #f2efe0 100%);
+  box-shadow: inset 1px 1px 0 #b4b09d, inset -1px -1px 0 #ffffff;
+}
+.xp-winbtn--close {
+  border-color: #6f4139;
+  background: linear-gradient(180deg, #edb2a2 0, #cf6f50 40%, #b54a30 100%);
+  box-shadow: inset 1px 1px 0 #fbe0d8, inset -1px -1px 0 #8b4030, 0 1px 1px rgba(0, 0, 0, .25);
+}
+.xp-winbtn--min::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 2px;
+  margin: -1px 0 0 -4px;
+  background: #1a1a16;
+}
+.xp-winbtn--max::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  margin: -5px 0 0 -5px;
+  border: 1px solid #1a1a16;
+  border-top-width: 2px;
+  box-sizing: border-box;
+}
+.xp-winbtn--close::before,
+.xp-winbtn--close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 2px;
+  margin: -1px 0 0 -5.5px;
+  background: #2a1410;
+}
+.xp-winbtn--close::before { transform: rotate(45deg); }
+.xp-winbtn--close::after { transform: rotate(-45deg); }
+
+/* ---------- 标签页 ---------------------------------------------------------------- */
+.xp-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding-left: 4px;
+}
+.xp-tab {
+  box-sizing: border-box;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  border: 5px solid transparent;
+  border-bottom-width: 0;
+  border-image-source: url("tab-inactive.png");
+  border-image-slice: 5 5 0 5 fill;
+  border-image-width: 5px 5px 0;
+  border-image-repeat: stretch;
+  background: transparent;
+  color: #646152;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+.xp-tab--active {
+  height: 36px;
+  border-image-source: url("tab-active.png");
+  color: var(--xp-ink);
+  font-weight: bold;
+  cursor: default;
+}
+
+/* ---------- 纯 CSS 件：分隔线 / 状态胶囊 / 焦点框 ---------------------------------- */
+.xp-divider {
+  width: 100%;
+  border: 0;
+}
+.xp-divider--single {
+  height: 3px;
+  background: #7b8478;
+}
+.xp-divider--double {
+  height: 5px;
+  background: linear-gradient(180deg, #72746e 0 2px, #f0eedb 2px 3px, #fdf9f9 3px 5px);
+}
+
+.xp-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 29px;
+  padding: 0 15px;
+  border-radius: 999px;
+  color: #fff;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  letter-spacing: .3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -2px 0 rgba(0, 0, 0, .14),
+              0 1px 1px rgba(0, 0, 0, .2);
+}
+.xp-badge--blue  { background: #4874c1; }
+.xp-badge--amber { background: #c98a27; }
+.xp-badge--green { background: #497d45; }
+.xp-badge--grey  { background: #9e9f9c; }
+
+.xp-focus-dots {
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+
+/* ============================================================================
+   第二张合体板（8 倍绘制，BOX 降采样）：竖向滚动条 / 竖向滑轨 / 窗口三键
+   坐标与色值见 tools/xp_ui_slice_gen.py 与 manifest.json 的 generated_board。
+   ========================================================================== */
+
+/* ---------- 竖向滚动条 ---------------------------------------------------------------
+   scroll-v-track 22x171，只做纵向平铺：上/下 8px 是端头斜面，中间 16px 纵向均匀
+   （实测行均值极差 <=2），因此 border-image-repeat 用 "stretch repeat"（横向拉伸、
+   纵向重复），长条拼接处不会出现色阶断层。 */
+.xp-vscroll {
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  height: 320px;
+}
+.xp-vscroll__btn {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 27px;
+  padding: 0;
+  border: 0;
+  background: url("scroll-v-arrow-up.png") no-repeat center / 100% 100%;
+  cursor: pointer;
+  outline: none;
+}
+.xp-vscroll__btn--down { background-image: url("scroll-v-arrow-down.png"); }
+.xp-vscroll__btn--up:hover { background-image: url("scroll-v-arrow-up-hover.png"); }
+.xp-vscroll__btn--up:active { background-image: url("scroll-v-arrow-up-pressed.png"); }
+.xp-vscroll__btn--down:hover { background-image: url("scroll-v-arrow-down-hover.png"); }
+.xp-vscroll__btn--down:active { background-image: url("scroll-v-arrow-down-pressed.png"); }
+.xp-vscroll__glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 9px;
+  margin: -4.5px 0 0 -8px;
+  background: no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+.xp-vscroll__glyph--up { background-image: url("scroll-v-glyph-up.png"); }
+.xp-vscroll__glyph--down { background-image: url("scroll-v-glyph-down.png"); }
+.xp-vscroll__track {
+  box-sizing: border-box;
+  position: relative;
+  flex: 1;
+  border: 18px solid transparent;
+  border-image-source: url("scroll-v-track.png");
+  border-image-slice: 18 3 18 3 fill;
+  border-image-width: 18px 3px;
+  border-image-repeat: stretch repeat;
+}
+.xp-vscroll__thumb {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 23px;
+  height: 51px;
+  margin-left: -11.5px;
+  background: url("scroll-v-thumb.png") no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+.xp-vscroll__thumb--hover { background-image: url("scroll-v-thumb-hover.png"); }
+.xp-vscroll__thumb--pressed { background-image: url("scroll-v-thumb-pressed.png"); }
+
+/* ---------- 竖向滑轨 --------------------------------------------------------------- */
+.xp-vslider {
+  position: relative;
+  width: 55px;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+}
+.xp-vslider__track {
+  box-sizing: border-box;
+  width: 18px;
+  height: 100%;
+  border: 8px solid transparent;
+  border-image-source: url("slider-v-track.png");
+  border-image-slice: 8 3 8 3 fill;
+  border-image-width: 8px 3px;
+  border-image-repeat: stretch repeat;
+}
+.xp-vslider__thumb {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 55px;
+  height: 29px;
+  background: url("slider-v-thumb.png") no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+.xp-vslider__thumb--hover { background-image: url("slider-v-thumb-hover.png"); }
+.xp-vslider__thumb--pressed { background-image: url("slider-v-thumb-pressed.png"); }
+
+/* ---------- 窗口三键（32x30 底板 + 独立 glyph 叠加） -------------------------------- */
+.xp-winbtn2 {
+  position: relative;
+  flex: none;
+  width: 32px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: url("win-btn-min.png") no-repeat center / 100% 100%;
+  cursor: pointer;
+  outline: none;
+}
+.xp-winbtn2--max { background-image: url("win-btn-max.png"); }
+.xp-winbtn2--close { background-image: url("win-btn-close.png"); }
+.xp-winbtn2--min:hover { background-image: url("win-btn-min-hover.png"); }
+.xp-winbtn2--min:active { background-image: url("win-btn-min-pressed.png"); }
+.xp-winbtn2--max:hover { background-image: url("win-btn-max-hover.png"); }
+.xp-winbtn2--max:active { background-image: url("win-btn-max-pressed.png"); }
+.xp-winbtn2--close:hover { background-image: url("win-btn-close-hover.png"); }
+.xp-winbtn2--close:active { background-image: url("win-btn-close-pressed.png"); }
+.xp-winbtn2__glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -6px 0 0 -6px;
+  width: 12px;
+  height: 12px;
+  background: no-repeat center / 100% 100%;
+  pointer-events: none;
+}
+.xp-winbtn2__glyph--min {
+  width: 12px;
+  height: 5px;
+  margin: -2.5px 0 0 -6px;
+  background-image: url("win-glyph-min.png");
+}
+.xp-winbtn2__glyph--max { background-image: url("win-glyph-max.png"); }
+.xp-winbtn2__glyph--close {
+  width: 10px;
+  height: 11px;
+  margin: -5.5px 0 0 -5px;
+  background-image: url("win-glyph-close.png");
+}

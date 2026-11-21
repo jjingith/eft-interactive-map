@@ -1,0 +1,4318 @@
+{
+  "total": 163,
+  "bad": [
+    {
+      "gid": "5447a9cd4bdc2dbd208b4567",
+      "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=8"
+      ]
+    },
+    {
+      "gid": "5447a9cd4bdc2dbd208b4567",
+      "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "55801eed4bdc2d89578b4588",
+      "gun": "SV-98 7.62x54R 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5644bd2b4bdc2d3b4c8b4572",
+      "gun": "AK-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "576165642459773c7a400233",
+      "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "57838ad32459774a17445cd2",
+      "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列9!=8"
+      ]
+    },
+    {
+      "gid": "57c44b372459772d2b39b8ce",
+      "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c1",
+        "tactical@r1c2"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列1!=8",
+        "tactical 列2!=8"
+      ]
+    },
+    {
+      "gid": "583990e32459771419544dd2",
+      "gun": "AKS-74UN 5.45x39 短突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5839a40f24597726f856b511",
+      "gun": "AKS-74UB 5.45x39 短突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "588892092459774ac91d4b11",
+      "gun": "DVL-10 7.62x51 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "58948c8e86f77409493f7266",
+      "gun": "SIG MPX 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "59984ab886f7743e98271174",
+      "gun": "PP-19-01 勇士 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "59e6687d86f77411d949b251",
+      "gun": "VPO-209 .366TKM 卡宾枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r1c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c6"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 行2>=1"
+      ]
+    },
+    {
+      "gid": "5a0ec13bfcdbcb00165aa685",
+      "gun": "AKMN 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5a367e5dc4a282000e49738f",
+      "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5ab8e9fcd8ce870019439434",
+      "gun": "AKS-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5abcbc27d8ce8700182eceeb",
+      "gun": "AKMSN 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_001",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac4cd105acfc40016339859",
+      "gun": "AK-74M 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66cb05acfc40198510a10",
+      "gun": "AK-101 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d015acfc400180ae6e4",
+      "gun": "AK-102 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d2e5acfc43b321d4b53",
+      "gun": "AK-103 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r3c7",
+      "nk": 2,
+      "kids": [
+        "scope@r2c8",
+        "tactical@r2c9"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d725acfc43b321d4b60",
+      "gun": "AK-104 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r3c7",
+      "nk": 2,
+      "kids": [
+        "scope@r2c8",
+        "tactical@r2c9"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d9b5acfc4001633997a",
+      "gun": "AK-105 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5b0bbe4e5acfc40dc528a72d",
+      "gun": "DS Arms SA-58 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5ba26383d4351e00334c93d9",
+      "gun": "HK MP7A1 4.6x30 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5bb2475ed4351e00853264e3",
+      "gun": "HK 416A5 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5bd70322209c4d00d7167b8f",
+      "gun": "HK MP7A2 4.6x30 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "5c07c60e0db834002330051f",
+      "gun": "ADAR 2-15 .223 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5c46fbd72e2216398b5a8c9c",
+      "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5c488a752e221602b412af63",
+      "gun": "沙漠科技 MDR 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5c501a4d2e221602b412b540",
+      "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_mount",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5d43021ca4b9362eab4b5e25",
+      "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5dcbd56fdbd3d91b3e5468d5",
+      "gun": "沙漠科技 MDR 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5de652c31b7e3716273428be",
+      "gun": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5de7bd7bfd6b4e6e2276dc25",
+      "gun": "B&T MP9-N 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5df24cf80dee1b22f862e9bc",
+      "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5df8ce05b11454561e39243b",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5e00903ae9dc277128008b87",
+      "gun": "B&T MP9 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5e81ebcd8e146c7080625e15",
+      "gun": "FN GL-40 Mk.2 榴弹发射器",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7",
+        "tactical@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7",
+        "tactical 列8!=7"
+      ]
+    },
+    {
+      "gid": "5f2a9575926fd9352339381f",
+      "gun": "Kel-Tec RFB 7.62x51",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5fb64bc92b1b027b1f50bcf2",
+      "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5fbcc1d9016cce60e8341ab3",
+      "gun": "SIG MCX .300 Blackout 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5fc22d7c187fea44d52eda44",
+      "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5fc3e272f8b6a877a729eac5",
+      "gun": "HK UMP .45 ACP冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5fc3f2d5900b1d5091531e57",
+      "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "60339954d62c9b14ed777c06",
+      "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "606587252535c57a13424cfd",
+      "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6165ac306ef05c2ce828ef74",
+      "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r3c5",
+      "nk": 3,
+      "kids": [
+        "scope@r2c5",
+        "scope@r2c6",
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r3c5",
+      "nk": 3,
+      "kids": [
+        "scope@r2c5",
+        "scope@r2c6",
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6183afd850224f204c1da514",
+      "gun": "FN SCAR-H 7.62x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6184055050224f204c1da540",
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c6",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=6",
+        "scope 列7!=6"
+      ]
+    },
+    {
+      "gid": "618428466ef05c2ce828f218",
+      "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c6",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=6",
+        "scope 列7!=6"
+      ]
+    },
+    {
+      "gid": "61f7c9e189e6fb1a5e3ea78d",
+      "gun": "MP-18 7.62x54R单发步枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=4"
+      ]
+    },
+    {
+      "gid": "6259b864ebedf17603599e88",
+      "gun": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c4",
+        "scope@r1c5"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列4!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "6275303a9f372d6ea97f9ec7",
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r6c2",
+      "nk": 3,
+      "kids": [
+        "scope@r1c7",
+        "tactical@r6c1",
+        "tactical@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=2",
+        "tactical 列1!=2",
+        "tactical 列8!=2"
+      ]
+    },
+    {
+      "gid": "627e14b21713922ded6f2c15",
+      "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_pistol_grip/mod_reciever/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "628a60ae6b1d481ff772e9c8",
+      "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "628b5638ad252a16da6dd245",
+      "gun": "SAG AK-545 5.45x39卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "628b9c37a733087d0d7fe84b",
+      "gun": "SAG AK-545 5.45x39截短卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "62e14904c2699c0ec93adc47",
+      "gun": "SR-2M 石楠 9x21 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r6c1"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r3c5",
+      "nk": 2,
+      "kids": [
+        "scope@r2c5",
+        "tactical@r7c1"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "643ea5b23db6f9f57107d9fd",
+      "gun": "托卡列夫 SVT-40 7.62x54R 步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "644674a13d52156624001fbc",
+      "gun": "KBP 9A-91 9x39紧凑型突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "645e0c6b3b381ede770e1cc9",
+      "gun": "KBP VSK-94 9x39步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "64ca3d3954fc657e230529cc",
+      "gun": "PKP 7.62x54R 步兵机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "tactical 列7!=5"
+      ]
+    },
+    {
+      "gid": "651450ce0e00edc794068371",
+      "gun": "SR-3M 9x39紧凑型突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c1",
+        "tactical@r1c2"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列1!=8",
+        "tactical 列2!=8"
+      ]
+    },
+    {
+      "gid": "65268d8ecb944ff1e90ea385",
+      "gun": "RPDN 7.62x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "65290f395ae2ae97b80fdf2d",
+      "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=8"
+      ]
+    },
+    {
+      "gid": "65fb023261d5829b2d090755",
+      "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "661ceb1b9311543c7104149b",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "6680304edadb7aa61d00cef0",
+      "gun": "IWI UZI PRO Pistol 9x19冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "668e71a8dadf42204c032ce1",
+      "gun": "IWI UZI PRO SMG 9x19冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "67124dcfa3541f2a1f0e788b",
+      "gun": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "default",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r6c1"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r3c5",
+      "nk": 2,
+      "kids": [
+        "scope@r2c5",
+        "tactical@r7c1"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "674d6121c09f69dfb201a888",
+      "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r3c7",
+      "nk": 1,
+      "kids": [
+        "scope@r2c5"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "676176d362e0497044079f4c",
+      "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "67d0576f29f580ebc10efd08",
+      "gun": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_mount_002/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r6c5",
+        "scope@r2c4",
+        "scope@r1c5"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 行6>=2",
+        "scope 列4!=5"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "6895bb82c4519957df062f82",
+      "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68a639748e1fe612970728e9",
+      "gun": "柯尔特 M16A1 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5"
+      ]
+    },
+    {
+      "gid": "68a6399922b1e0bd360afe56",
+      "gun": "柯尔特 M16A2 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5"
+      ]
+    },
+    {
+      "gid": "68aee763130c00663d08aea8",
+      "gun": "TKPD 9.3x64 突击卡宾枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列9!=8"
+      ]
+    },
+    {
+      "gid": "68aee763130c00663d08aea8",
+      "gun": "TKPD 9.3x64 突击卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68c16b9ab6b75a8a480520a6",
+      "gun": "NL545 (DI) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68c2940aecc41cc5490bd40e",
+      "gun": "NL545 (GP) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6932abeb5403890d0c09c926",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "69f9ebbcaae020b0db02f65d",
+      "gun": "北方工业 QBZ-191 5.8x42 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6a15ae2ae5267ba21c07f98f",
+      "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6a3bffbebc377285900b85cf",
+      "gun": "丰和 20 式 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    }
+  ],
+  "all": [
+    {
+      "gid": "5447a9cd4bdc2dbd208b4567",
+      "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=8"
+      ]
+    },
+    {
+      "gid": "5447a9cd4bdc2dbd208b4567",
+      "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "55801eed4bdc2d89578b4588",
+      "gun": "SV-98 7.62x54R 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5644bd2b4bdc2d3b4c8b4572",
+      "gun": "AK-74N 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5644bd2b4bdc2d3b4c8b4572",
+      "gun": "AK-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5644bd2b4bdc2d3b4c8b4572",
+      "gun": "AK-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "576165642459773c7a400233",
+      "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "57838ad32459774a17445cd2",
+      "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列9!=8"
+      ]
+    },
+    {
+      "gid": "57c44b372459772d2b39b8ce",
+      "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c1",
+        "tactical@r1c2"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列1!=8",
+        "tactical 列2!=8"
+      ]
+    },
+    {
+      "gid": "583990e32459771419544dd2",
+      "gun": "AKS-74UN 5.45x39 短突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5839a40f24597726f856b511",
+      "gun": "AKS-74UB 5.45x39 短突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "588892092459774ac91d4b11",
+      "gun": "DVL-10 7.62x51 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "58948c8e86f77409493f7266",
+      "gun": "SIG MPX 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "59984ab886f7743e98271174",
+      "gun": "PP-19-01 勇士 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "59e6687d86f77411d949b251",
+      "gun": "VPO-209 .366TKM 卡宾枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r1c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c6"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 行2>=1"
+      ]
+    },
+    {
+      "gid": "5a0ec13bfcdbcb00165aa685",
+      "gun": "AKMN 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5a367e5dc4a282000e49738f",
+      "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5a367e5dc4a282000e49738f",
+      "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5aafa857e5b5b00018480968",
+      "gun": "春田 M1A 7.62x51 步枪",
+      "scen": "filled",
+      "parent": "mod_stock/mod_mount/mod_scope",
+      "pp": "r3c5",
+      "nk": 1,
+      "kids": [
+        "tactical@r1c5"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "5ab8e9fcd8ce870019439434",
+      "gun": "AKS-74N 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ab8e9fcd8ce870019439434",
+      "gun": "AKS-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ab8e9fcd8ce870019439434",
+      "gun": "AKS-74N 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5abcbc27d8ce8700182eceeb",
+      "gun": "AKMSN 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_001",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac4cd105acfc40016339859",
+      "gun": "AK-74M 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac4cd105acfc40016339859",
+      "gun": "AK-74M 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac4cd105acfc40016339859",
+      "gun": "AK-74M 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66cb05acfc40198510a10",
+      "gun": "AK-101 5.56x45 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66cb05acfc40198510a10",
+      "gun": "AK-101 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66cb05acfc40198510a10",
+      "gun": "AK-101 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d015acfc400180ae6e4",
+      "gun": "AK-102 5.56x45 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66d015acfc400180ae6e4",
+      "gun": "AK-102 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66d015acfc400180ae6e4",
+      "gun": "AK-102 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d2e5acfc43b321d4b53",
+      "gun": "AK-103 7.62x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "5ac66d2e5acfc43b321d4b53",
+      "gun": "AK-103 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "5ac66d2e5acfc43b321d4b53",
+      "gun": "AK-103 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r3c7",
+      "nk": 2,
+      "kids": [
+        "scope@r2c8",
+        "tactical@r2c9"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d725acfc43b321d4b60",
+      "gun": "AK-104 7.62x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "5ac66d725acfc43b321d4b60",
+      "gun": "AK-104 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "5ac66d725acfc43b321d4b60",
+      "gun": "AK-104 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r3c7",
+      "nk": 2,
+      "kids": [
+        "scope@r2c8",
+        "tactical@r2c9"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5ac66d9b5acfc4001633997a",
+      "gun": "AK-105 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66d9b5acfc4001633997a",
+      "gun": "AK-105 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5ac66d9b5acfc4001633997a",
+      "gun": "AK-105 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5b0bbe4e5acfc40dc528a72d",
+      "gun": "DS Arms SA-58 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5ba26383d4351e00334c93d9",
+      "gun": "HK MP7A1 4.6x30 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5bb2475ed4351e00853264e3",
+      "gun": "HK 416A5 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5bb2475ed4351e00853264e3",
+      "gun": "HK 416A5 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5bd70322209c4d00d7167b8f",
+      "gun": "HK MP7A2 4.6x30 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "5beed0f50db834001c062b12",
+      "gun": "RPK-16 5.45x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5bf3e03b0db834001d2c4a9c",
+      "gun": "AK-74 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5bf3e0490db83400196199af",
+      "gun": "AKS-74 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_sight_rear",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5c07c60e0db834002330051f",
+      "gun": "ADAR 2-15 .223 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5c46fbd72e2216398b5a8c9c",
+      "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5c488a752e221602b412af63",
+      "gun": "沙漠科技 MDR 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5c501a4d2e221602b412b540",
+      "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_mount",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "5cadfbf7ae92152ac412eeef",
+      "gun": "ASh-12 12.7x55 突击步枪",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5cadfbf7ae92152ac412eeef",
+      "gun": "ASh-12 12.7x55 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r5c6",
+      "nk": 1,
+      "kids": [
+        "scope@r4c6"
+      ],
+      "rows": 9,
+      "off": []
+    },
+    {
+      "gid": "5cadfbf7ae92152ac412eeef",
+      "gun": "ASh-12 12.7x55 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope/mod_scope",
+      "pp": "r4c6",
+      "nk": 3,
+      "kids": [
+        "scope@r3c6",
+        "scope@r2c6",
+        "scope@r1c6"
+      ],
+      "rows": 9,
+      "off": []
+    },
+    {
+      "gid": "5d43021ca4b9362eab4b5e25",
+      "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5d43021ca4b9362eab4b5e25",
+      "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5dcbd56fdbd3d91b3e5468d5",
+      "gun": "沙漠科技 MDR 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "5de652c31b7e3716273428be",
+      "gun": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5de7bd7bfd6b4e6e2276dc25",
+      "gun": "B&T MP9-N 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5df24cf80dee1b22f862e9bc",
+      "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5df8ce05b11454561e39243b",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5df8ce05b11454561e39243b",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5e00903ae9dc277128008b87",
+      "gun": "B&T MP9 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5e81ebcd8e146c7080625e15",
+      "gun": "FN GL-40 Mk.2 榴弹发射器",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7",
+        "tactical@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7",
+        "tactical 列8!=7"
+      ]
+    },
+    {
+      "gid": "5f2a9575926fd9352339381f",
+      "gun": "Kel-Tec RFB 7.62x51",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r4c7",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": [
+        "scope 列5!=7",
+        "scope 列5!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "5fb64bc92b1b027b1f50bcf2",
+      "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5fbcc1d9016cce60e8341ab3",
+      "gun": "SIG MCX .300 Blackout 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5fc22d7c187fea44d52eda44",
+      "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "5fc22d7c187fea44d52eda44",
+      "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "5fc3e272f8b6a877a729eac5",
+      "gun": "HK UMP .45 ACP冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "5fc3f2d5900b1d5091531e57",
+      "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列6!=7"
+      ]
+    },
+    {
+      "gid": "60339954d62c9b14ed777c06",
+      "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "606587252535c57a13424cfd",
+      "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "606587252535c57a13424cfd",
+      "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "6165ac306ef05c2ce828ef74",
+      "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r3c5",
+      "nk": 3,
+      "kids": [
+        "scope@r2c5",
+        "scope@r2c6",
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_scope/mod_scope_001",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r3c5",
+      "nk": 3,
+      "kids": [
+        "scope@r2c5",
+        "scope@r2c6",
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope/mod_scope_001",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope/mod_scope_002",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c7"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "6176aca650224f204c1da3fb",
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r3c4",
+      "nk": 1,
+      "kids": [
+        "scope@r2c4"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "6183afd850224f204c1da514",
+      "gun": "FN SCAR-H 7.62x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6184055050224f204c1da540",
+      "gun": "FN SCAR-L 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c6",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=6",
+        "scope 列7!=6"
+      ]
+    },
+    {
+      "gid": "618428466ef05c2ce828f218",
+      "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c6",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=6",
+        "scope 列7!=6"
+      ]
+    },
+    {
+      "gid": "61f7c9e189e6fb1a5e3ea78d",
+      "gun": "MP-18 7.62x54R单发步枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=4"
+      ]
+    },
+    {
+      "gid": "623063e994fc3f7b302a9696",
+      "gun": "HK G36 5.56x45 突击步枪",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "6259b864ebedf17603599e88",
+      "gun": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+      "scen": "filled",
+      "parent": "mod_mount/mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "tactical@r1c4",
+        "scope@r1c5"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列4!=7",
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "6275303a9f372d6ea97f9ec7",
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r6c2",
+      "nk": 3,
+      "kids": [
+        "scope@r1c7",
+        "tactical@r6c1",
+        "tactical@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=2",
+        "tactical 列1!=2",
+        "tactical 列8!=2"
+      ]
+    },
+    {
+      "gid": "627e14b21713922ded6f2c15",
+      "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+      "scen": "filled",
+      "parent": "mod_pistol_grip/mod_reciever/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "628a60ae6b1d481ff772e9c8",
+      "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "628b5638ad252a16da6dd245",
+      "gun": "SAG AK-545 5.45x39卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "628b5638ad252a16da6dd245",
+      "gun": "SAG AK-545 5.45x39卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "628b9c37a733087d0d7fe84b",
+      "gun": "SAG AK-545 5.45x39截短卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "628b9c37a733087d0d7fe84b",
+      "gun": "SAG AK-545 5.45x39截短卡宾枪",
+      "scen": "filled",
+      "parent": "mod_gas_block/mod_handguard/mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "62e14904c2699c0ec93adc47",
+      "gun": "SR-2M 石楠 9x21 冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r6c1"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r3c5",
+      "nk": 2,
+      "kids": [
+        "scope@r2c5",
+        "tactical@r7c1"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "63171672192e68c5460cebc5",
+      "gun": "Steyr AUG A3 5.56x45突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "633ec7c2a6918cb895019c6c",
+      "gun": "RSh-12 12.7x55转轮手枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c6",
+      "nk": 1,
+      "kids": [
+        "tactical@r1c6"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "643ea5b23db6f9f57107d9fd",
+      "gun": "托卡列夫 SVT-40 7.62x54R 步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "644674a13d52156624001fbc",
+      "gun": "KBP 9A-91 9x39紧凑型突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "645e0c6b3b381ede770e1cc9",
+      "gun": "KBP VSK-94 9x39步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6499849fc93611967b034949",
+      "gun": "AK-12 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "64ca3d3954fc657e230529cc",
+      "gun": "PKP 7.62x54R 步兵机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "tactical 列7!=5"
+      ]
+    },
+    {
+      "gid": "651450ce0e00edc794068371",
+      "gun": "SR-3M 9x39紧凑型突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c1",
+        "tactical@r1c2"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列1!=8",
+        "tactical 列2!=8"
+      ]
+    },
+    {
+      "gid": "65268d8ecb944ff1e90ea385",
+      "gun": "RPDN 7.62x39 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c6",
+        "tactical@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "65290f395ae2ae97b80fdf2d",
+      "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "65290f395ae2ae97b80fdf2d",
+      "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "65290f395ae2ae97b80fdf2d",
+      "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列7!=8"
+      ]
+    },
+    {
+      "gid": "65fb023261d5829b2d090755",
+      "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "661ceb1b9311543c7104149b",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列5!=7",
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "661cec09b2c6356b4d0c7a36",
+      "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "mount@r1c7"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "6680304edadb7aa61d00cef0",
+      "gun": "IWI UZI PRO Pistol 9x19冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "668e71a8dadf42204c032ce1",
+      "gun": "IWI UZI PRO SMG 9x19冲锋枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "668fe5a998b5ad715703ddd6",
+      "gun": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "669fa39b48fc9f8db6035a0c",
+      "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "669fa3d876116c89840b1217",
+      "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "669fa3f88abd2662d80eee77",
+      "gun": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "669fa409933e898cce0c2166",
+      "gun": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+      "scen": "filled",
+      "parent": "mod_barrel/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "67124dcfa3541f2a1f0e788b",
+      "gun": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=7"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "default",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r2c5",
+      "nk": 2,
+      "kids": [
+        "scope@r1c5",
+        "tactical@r6c1"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount",
+      "pp": "r3c5",
+      "nk": 2,
+      "kids": [
+        "scope@r2c5",
+        "tactical@r7c1"
+      ],
+      "rows": 7,
+      "off": [
+        "tactical 列1!=5"
+      ]
+    },
+    {
+      "gid": "6718817435e3cfd9550d2c27",
+      "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列8!=5"
+      ]
+    },
+    {
+      "gid": "673cab3e03c6a20581028bc1",
+      "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_mount/mod_scope",
+      "pp": "r4c5",
+      "nk": 3,
+      "kids": [
+        "scope@r3c5",
+        "scope@r2c5",
+        "scope@r1c5"
+      ],
+      "rows": 9,
+      "off": []
+    },
+    {
+      "gid": "674d6121c09f69dfb201a888",
+      "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+      "scen": "default",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "674d6121c09f69dfb201a888",
+      "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c7",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列8!=7",
+        "tactical 列9!=7"
+      ]
+    },
+    {
+      "gid": "674d6121c09f69dfb201a888",
+      "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+      "scen": "filled",
+      "parent": "mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c5"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "default",
+      "parent": "mod_handguard/mod_mount/mod_mount/mod_scope",
+      "pp": "r7c7",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "default",
+      "parent": "mod_handguard/mod_mount/mod_mount/mod_scope/mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c7"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_mount/mod_scope",
+      "pp": "r3c4",
+      "nk": 1,
+      "kids": [
+        "scope@r2c4"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_mount/mod_mount/mod_scope",
+      "pp": "r7c7",
+      "nk": 1,
+      "kids": [
+        "scope@r2c7"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_mount/mod_mount/mod_scope/mod_scope",
+      "pp": "r2c7",
+      "nk": 1,
+      "kids": [
+        "scope@r1c7"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "674fe9a75e51f1c47c04ec23",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪",
+      "scen": "filled",
+      "parent": "mod_sight_rear",
+      "pp": "r3c7",
+      "nk": 1,
+      "kids": [
+        "scope@r2c5"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 列5!=7"
+      ]
+    },
+    {
+      "gid": "676176d362e0497044079f4c",
+      "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "67d0576f29f580ebc10efd08",
+      "gun": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "scen": "filled",
+      "parent": "mod_handguard/mod_mount_002/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r6c5",
+        "scope@r2c4",
+        "scope@r1c5"
+      ],
+      "rows": 7,
+      "off": [
+        "scope 行6>=2",
+        "scope 列4!=5"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "default",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "689166b6c2d6fa42e7044756",
+      "gun": "AK-308 7.62x51 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_sight_rear",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "sight_rear@r2c7"
+      ],
+      "rows": 6,
+      "off": [
+        "sight_rear 列7!=8"
+      ]
+    },
+    {
+      "gid": "6895bb82c4519957df062f82",
+      "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6895bb82c4519957df062f82",
+      "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "68a639748e1fe612970728e9",
+      "gun": "柯尔特 M16A1 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5"
+      ]
+    },
+    {
+      "gid": "68a6399922b1e0bd360afe56",
+      "gun": "柯尔特 M16A2 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 1,
+      "kids": [
+        "scope@r1c6"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5"
+      ]
+    },
+    {
+      "gid": "68aee763130c00663d08aea8",
+      "gun": "TKPD 9.3x64 突击卡宾枪",
+      "scen": "filled",
+      "parent": "mod_mount_000",
+      "pp": "r2c8",
+      "nk": 2,
+      "kids": [
+        "scope@r1c8",
+        "tactical@r1c9"
+      ],
+      "rows": 6,
+      "off": [
+        "tactical 列9!=8"
+      ]
+    },
+    {
+      "gid": "68aee763130c00663d08aea8",
+      "gun": "TKPD 9.3x64 突击卡宾枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68c16b9ab6b75a8a480520a6",
+      "gun": "NL545 (DI) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68c16b9ab6b75a8a480520a6",
+      "gun": "NL545 (DI) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "68c2940aecc41cc5490bd40e",
+      "gun": "NL545 (GP) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "68c2940aecc41cc5490bd40e",
+      "gun": "NL545 (GP) 5.45x39 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r6c3",
+      "nk": 1,
+      "kids": [
+        "scope@r5c3"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "6932abeb5403890d0c09c926",
+      "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6981d72ed009ad83920da43a",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+      "scen": "default",
+      "parent": "mod_mount_000",
+      "pp": "r3c8",
+      "nk": 1,
+      "kids": [
+        "scope@r2c8"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "6981d72ed009ad83920da43a",
+      "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+      "scen": "default",
+      "parent": "mod_mount_000/mod_scope",
+      "pp": "r2c8",
+      "nk": 1,
+      "kids": [
+        "scope@r1c8"
+      ],
+      "rows": 7,
+      "off": []
+    },
+    {
+      "gid": "69f9ebbcaae020b0db02f65d",
+      "gun": "北方工业 QBZ-191 5.8x42 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6a15ae2ae5267ba21c07f98f",
+      "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    },
+    {
+      "gid": "6a15ae2ae5267ba21c07f98f",
+      "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_handguard/mod_scope",
+      "pp": "r2c4",
+      "nk": 1,
+      "kids": [
+        "scope@r1c4"
+      ],
+      "rows": 6,
+      "off": []
+    },
+    {
+      "gid": "6a3bffbebc377285900b85cf",
+      "gun": "丰和 20 式 5.56x45 突击步枪",
+      "scen": "filled",
+      "parent": "mod_reciever/mod_scope",
+      "pp": "r2c5",
+      "nk": 3,
+      "kids": [
+        "scope@r1c5",
+        "scope@r1c6",
+        "scope@r1c7"
+      ],
+      "rows": 6,
+      "off": [
+        "scope 列6!=5",
+        "scope 列7!=5"
+      ]
+    }
+  ]
+}

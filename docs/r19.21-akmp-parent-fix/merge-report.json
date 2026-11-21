@@ -1,0 +1,58 @@
+{
+ "schema": "r19.21-merge-report/1",
+ "export": {
+  "exportFilename": "gun-layout-calibration (1).json",
+  "exportSha256": "151e4ad4ab058b6cb5a8302dcb87eb530069f3703beebe5fb33bf734ec84928e",
+  "statedMeta": {
+   "schemaVersion": 1,
+   "toolVersion": "R19.16",
+   "exportedAt": "2026-10-27T21:17:53",
+   "guns": 152,
+   "records": 397
+  },
+  "fileFoundAt": "data/gun-layout-calibration.json（用户经校准器保存后导出，当前正式文件与导出字节一致）"
+ },
+ "verification": {
+  "currentFileSha256BeforeMigration": "151e4ad4ab058b6cb5a8302dcb87eb530069f3703beebe5fb33bf734ec84928e",
+  "byteIdenticalToExport": true,
+  "topUpdatedAt": "2026-10-27T21:17:53",
+  "toolVersion": "R19.16",
+  "schemaVersion": 1,
+  "guns": 152,
+  "records": 397,
+  "note": "导出文件与修改前正式文件 SHA 完全一致（151e4ad4…）——用户 21:17 经校准器保存后导出；合并即以该文件为权威基线执行 R19.21 §5.3 处理，未发生任何坐标覆盖/删除冲突。"
+ },
+ "conflicts": [],
+ "userAdjustedPreserved": [
+  {
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "gun": "AKM / AKMS",
+   "coords": "r2c6",
+   "updatedAt": "2026-10-27T21:17:34 / 21:17:49",
+   "action": "保留未动"
+  },
+  {
+   "key": "mod_mount_000|mod_mount_000|",
+   "gun": "AK-103 / AK-104",
+   "coords": "r2c7",
+   "updatedAt": "2026-10-27T21:17:05 / 21:17:10",
+   "action": "保留未动"
+  },
+  {
+   "key": "mod_pistol_grip_akms|mod_pistol_grip_akms|",
+   "gun": "AKMSN / AKMS / AKM",
+   "coords": "r4c8",
+   "updatedAt": "2026-10-27T21:17:34 / 21:17:49 / 21:17:53",
+   "action": "保留未动"
+  },
+  {
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf…",
+   "gun": "AKM / AKMS 等 5 把",
+   "action": "并列时代记录→标失效留痕（§5.3：槽位已删、身份无效，不得迁移）"
+  }
+ ],
+ "missingInExport": {
+  "count": 0,
+  "note": "导出与正式文件同源同字节，不存在缺失记录"
+ }
+}

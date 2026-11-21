@@ -17,6 +17,7 @@ from pathlib import Path
 
 import pytest
 
+import config
 import serve
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -129,6 +130,28 @@ def test_maps_json_served(base_url):
     assert json.loads(body.decode("utf-8"))["maps"]
 
 
+def test_items_json_served(base_url):
+    """物品资料库（配装 / 配枪视图用）也要能静态取到，且里面真有带槽位的装备。"""
+    status, ctype, body = get(base_url + "data/items.json")
+    assert status == 200
+    assert "application/json" in ctype
+    payload = json.loads(body.decode("utf-8"))
+    assert payload["count"] == len(payload["items"])
+    gear = [rec for rec in payload["items"].values() if rec.get("slot")]
+    assert gear
+
+
+def test_item_icon_gets_webp_content_type(base_url):
+    """物品图标是 .webp：标准库要给出 image/webp，否则浏览器可能不按图片渲染。"""
+    _, _, body = get(base_url + "data/items.json")
+    items = json.loads(body.decode("utf-8"))["items"]
+    item_id = next(i for i, rec in items.items() if rec.get("ic"))
+    status, ctype, icon = get(base_url + "assets/icons-items/%s.webp" % item_id)
+    assert status == 200
+    assert ctype.startswith("image/webp")
+    assert icon[:4] == b"RIFF" and icon[8:12] == b"WEBP"
+
+
 def test_missing_file_is_404(base_url):
     status, _, _ = get(base_url + "no-such-file.txt")
     assert status == 404
@@ -213,6 +236,41 @@ def test_port_in_use_raises_clear_error():
 def test_url_for_maps_wildcard_host_to_loopback():
     assert serve.url_for("0.0.0.0", 8787) == "http://127.0.0.1:8787/"
     assert serve.url_for("127.0.0.1", 9000) == "http://127.0.0.1:9000/"
+    assert serve.url_for("", 9000) == "http://127.0.0.1:9000/"
+
+
+def test_lan_address_is_plausible_or_none():
+    """局域网地址探测：要么给出一个非回环 IPv4，要么返回 None；绝不抛异常、不发包。"""
+    ip = serve.lan_address()
+    assert ip is None or (isinstance(ip, str) and ip.count(".") == 3 and not ip.startswith("127."))
+
+
+def test_url_for_lan_uses_detected_ip():
+    ip = serve.lan_address()
+    url = serve.url_for_lan(8787)
+    if ip is None:
+        assert url is None
+    else:
+        assert url == "http://%s:8787/" % ip
+
+
+def test_lan_hint_only_when_listening_on_all_interfaces(monkeypatch):
+    monkeypatch.setattr(serve, "lan_address", lambda: "192.168.1.23")
+    assert serve.lan_hint("127.0.0.1", 8787) is None
+    hint = serve.lan_hint("0.0.0.0", 8787)
+    assert hint and "http://192.168.1.23:8787/" in hint and "防火墙" in hint
+    monkeypatch.setattr(serve, "lan_address", lambda: None)
+    assert "未探测到" in serve.lan_hint("0.0.0.0", 8787)
+
+
+def test_is_network_path_flags_unc_only():
+    """UNC 路径（游戏在另一台电脑）要能识别出来，好提示「模拟按键跨机无效」。"""
+    assert serve.is_network_path(r"\\JJPC\eft") is True
+    assert serve.is_network_path("//JJPC/eft") is True
+    assert serve.is_network_path(r"D:\EFT") is False
+    assert serve.is_network_path("E:/Games/EFT") is False
+    assert serve.is_network_path("") is False
+    assert serve.is_network_path(None) is False
 
 
 def test_main_reports_port_conflict():
@@ -303,12 +361,16 @@ def _response_socket(response):
         return None
 
 
-def _read_sse(response, count: int, timeout: float = 8.0, want: str | None = None):
+def _read_sse(response, count: int, timeout: float = 8.0, want: str | tuple | None = None):
     """从 SSE 流里读 count 条消息，返回负载列表。
 
     `want=None` 只收**无名帧**（实时位置）；给事件名（config/state/raid/quest）
-    则只收该命名事件。读到 count 条或到 timeout 就返回；超时无帧返回 []（socket 到期会抛
+    则只收该命名事件；给名字元组则收其中任意一种。
+    读到 count 条或到 timeout 就返回；超时无帧返回 []（socket 到期会抛
     TimeoutError，不捕获会把「这段时间内没有新帧」误报成测试异常）。
+
+    R32.10：事件现在按**时间戳**合流广播（两条日志流排序后合并），所以
+    「先 raid 后 quest」这种到达顺序不能当前提——需要多类事件时给元组一起收。
     """
     frames = []
     deadline = time.monotonic() + timeout
@@ -335,7 +397,11 @@ def _read_sse(response, count: int, timeout: float = 8.0, want: str | None = Non
             continue
         if text.startswith("data:"):
             payload = json.loads(text[5:].strip())
-            if name == want:
+            if isinstance(want, (tuple, list, set)):
+                matched = name in want
+            else:
+                matched = name == want
+            if matched:
                 frames.append(payload)
     return frames
 
@@ -374,7 +440,13 @@ def test_sse_sends_current_state_immediately(tmp_path):
 def test_sse_broadcasts_new_screenshot(tmp_path):
     """新截图出现后必须被推给已订阅的页面（这是实时定位的核心链路）。"""
     fake_shot(tmp_path, "10.00", "10.00")
-    url, httpd, thread = serve_dir(str(tmp_path), poll_interval=0.05)
+    # R108：这条测的是 SSE 推送链路本身，声明会员态以关闭非会员的 10 秒位置节流。
+    # 注意：create_server 会构造 CloudClient，其初始化会按会话缓存重设会员态，
+    # 所以要在起服务之后、订阅之前再声明一次。
+    cfg_dir = tmp_path / "cfg"
+    cfg_dir.mkdir()
+    url, httpd, thread = serve_dir(str(tmp_path), poll_interval=0.05, config_dir=str(cfg_dir))
+    config.set_member_state({"member": True, "member_status": "permanent"})
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
     try:
         res = opener.open(url + "events", timeout=15)
@@ -444,7 +516,9 @@ def test_sse_client_disconnect_unsubscribes(tmp_path, monkeypatch):
 
 def test_tracker_poll_once_detects_change_only(tmp_path):
     fake_shot(tmp_path, "1.00", "1.00")
-    tracker = serve.PositionTracker(str(tmp_path))
+    # R108：这里测的是「变化才推」的原始语义，声明会员态以关闭位置节流
+    # （非会员的 10 秒节流见 test_member_gate）。
+    tracker = serve.PositionTracker(str(tmp_path), member=lambda: True)
     assert tracker.poll_once() is True       # 首次拿到位置
     assert tracker.poll_once() is False      # 没变就不再推
     time.sleep(0.02)
@@ -500,7 +574,12 @@ def test_config_endpoint_reports_defaults(tmp_path):
         assert status == 200
         assert payload["config"]["auto_center"] is True
         assert payload["config"]["sound"]["enabled"] is False
-        assert payload["config"]["auto_screenshot"] == {"enabled": False, "interval_ms": 1000, "key": None}
+        # R32：默认间隔改成 5 秒（1 秒一张 ≈ 2 GB/小时），断言盯常量而不是硬编码
+        # R108：默认是非会员，所以落锁定值 10000ms
+        assert payload["config"]["auto_screenshot"] == {
+            "enabled": False, "interval_ms": config.SHOT_INTERVAL_LOCKED_MS, "key": None,
+            "cleanup_on_raid_end": False}
+        assert payload["config"]["account"] == {"member": False}
         assert payload["resolved"]["appDir"] == str(tmp_path)
         assert payload["resolved"]["soundsDir"] == str(tmp_path / "sounds")
     finally:
@@ -614,8 +693,10 @@ def test_prefs_endpoint_broadcasts_config_to_open_pages(tmp_path):
 
 # --------------------------------------------------------------- /api/logstate
 
-def test_logstate_reports_disabled_without_game_dir():
-    _, httpd, thread = serve_dir()
+def test_logstate_reports_disabled_without_game_dir(monkeypatch, tmp_path):
+    # 隔离自动探测：显式关掉 default_game_dir，并用空白配置目录，验证「没有任何可识别日志目录时」应禁用
+    monkeypatch.setattr(serve, "default_game_dir", lambda: None)
+    _, httpd, thread = serve_dir(config_dir=str(tmp_path))
     try:
         status, payload = get_json(serve.url_for("127.0.0.1", httpd.server_address[1]) + "api/logstate")
         assert status == 200
@@ -635,7 +716,8 @@ def test_health_exposes_shot_state(tmp_path):
         _, payload = get_json(serve.url_for("127.0.0.1", httpd.server_address[1]) + "api/health")
         shot = payload["shot"]
         assert shot["enabled"] is False                  # 默认关闭
-        assert shot["intervalMs"] == 1000
+        # R108：默认非会员，健康检查里的间隔是锁定值 10000ms
+        assert shot["intervalMs"] == config.SHOT_INTERVAL_LOCKED_MS
         assert shot["available"] is False                # 没开 = 不可能在拍
         assert shot["sent"] == 0
     finally:
@@ -766,7 +848,9 @@ def test_sounds_rejects_traversal_and_missing(tmp_path):
 
 # --------------------------------------------------------------- SSE 命名事件
 
-def test_sse_sends_config_and_state_on_connect(tmp_path):
+def test_sse_sends_config_and_state_on_connect(tmp_path, monkeypatch):
+    # 隔离自动探测，验证「未配置日志目录」时 state 快照的 available 为 False
+    monkeypatch.setattr(serve, "default_game_dir", lambda: None)
     _, httpd, thread = serve_dir(config_dir=str(tmp_path))
     response = open_stream(serve.url_for("127.0.0.1", httpd.server_address[1]))
     try:
@@ -776,6 +860,36 @@ def test_sse_sends_config_and_state_on_connect(tmp_path):
         assert states and states[0]["available"] is False
     finally:
         response.close()
+        stop(httpd, thread)
+
+
+def test_active_map_broadcasts_to_sse_clients(tmp_path, monkeypatch):
+    # R-fix：主窗口切图上报 /api/active-map 后，应广播 `map` 事件给所有 SSE 客户端（小地图据此跟随）
+    monkeypatch.setattr(serve, "default_game_dir", lambda: None)
+    url, httpd, thread = serve_dir(config_dir=str(tmp_path))
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    try:
+        res = opener.open(url + "events", timeout=15)
+        read_event(res, "config")  # 先消耗连上时的初始帧
+        req = urllib.request.Request(
+            url + "api/active-map",
+            data=json.dumps({"map": "woods"}).encode("utf-8"),
+            headers={"Content-Type": "application/json"}, method="POST")
+        with opener.open(req, timeout=5):
+            pass
+        maps = read_event(res, "map")
+        assert maps and maps[0].get("map") == "woods"
+        # 再次切换也应继续广播
+        req2 = urllib.request.Request(
+            url + "api/active-map",
+            data=json.dumps({"map": "lighthouse"}).encode("utf-8"),
+            headers={"Content-Type": "application/json"}, method="POST")
+        with opener.open(req2, timeout=5):
+            pass
+        maps2 = read_event(res, "map")
+        assert maps2 and maps2[0].get("map") == "lighthouse"
+    finally:
+        res.close()
         stop(httpd, thread)
 
 
@@ -800,10 +914,14 @@ def test_sse_broadcasts_raid_and_quest_events(tmp_path):
             fh.write("2026-10-17 19:52:44.123 | PlayerSpawnEvent:22.21(22.21)\n")
         with open(push, "a", encoding="utf-8") as fh:
             fh.write(json.dumps({"type": "new_message", "message": {
-                "templateId": "q1 description", "hasRewards": False, "dt": 1}}) + "\n")
+                "templateId": "q1 description", "hasRewards": False,
+                "dt": 1760787163}}) + "\n")       # 2026-10-17 前后的真实 unix 秒
 
-        raids = _read_sse(response, 2, timeout=4.0, want="raid")
-        quests = read_event(response, "quest", timeout=4.0)
+        # R32.10：事件按时间戳合流广播，raid 与 quest 的先后不再是约定，
+        # 两类一起收回来再分开断言（顺序不再是前提，内容仍然是）。
+        got = _read_sse(response, 3, timeout=4.0, want=("raid", "quest"))
+        raids = [e for e in got if e.get("type") == "raid"]
+        quests = [e for e in got if e.get("type") == "quest"]
         assert [e["phase"] for e in raids] == ["map", "start"]
         assert raids[0]["mapId"] == "bigmap"
         assert quests and quests[0]["action"] == "started"
@@ -872,9 +990,54 @@ def test_default_game_dir_honours_env_var(tmp_path, monkeypatch):
 
 
 def test_default_game_dir_never_raises(monkeypatch):
+    """探测不到就返回 None，探测到就返回**真实存在的目录**，两种都不许抛异常。
+
+    这里刻意不再断言「一定是 None」：那等于假设跑测试的机器上没装游戏。
+    本机装好 EFT 之后（D:\\Games\\EFT 这类默认位置）该断言就会误报，
+    而函数行为其实完全正确。
+    """
     monkeypatch.delenv("EFT_GAME_DIR", raising=False)
     monkeypatch.setattr(serve, "GAME_DIR_NAMES", ("绝不存在_EFT_目录",))
-    assert serve.default_game_dir() in (None, *[])     # 没有就当没找到，不抛异常
+    result = serve.default_game_dir()
+    assert result is None or os.path.isdir(result)
+
+
+def test_parse_net_use_extracts_and_dedupes_hosts():
+    """连接表输出里既有带盘符的映射，也有「记住的」无盘符共享，两种都要抽到且去重。"""
+    text = (
+        "\nStatus       Local     Remote                    Network\n"
+        "-------------------------------------------------------------------------------\n"
+        "OK                     \\\\JJPC\\Screenshots        Microsoft Windows Network\n"
+        "OK           Z:         \\\\JJPC\\eft                Microsoft Windows Network\n"
+        "OK                     \\\\NAS\\backup               Microsoft Windows Network\n"
+    )
+    assert serve.parse_net_use(text) == ["\\\\JJPC", "\\\\NAS"]
+    assert serve.parse_net_use("") == []
+    assert serve.parse_net_use(None) == []
+
+
+def test_network_roots_survives_missing_net_command(monkeypatch):
+    def boom(*_args, **_kwargs):
+        raise FileNotFoundError("没有 net 命令")
+
+    monkeypatch.setattr(serve.subprocess, "run", boom)
+    assert serve._network_roots() == []
+
+
+def test_default_game_dir_also_probes_network_shares(monkeypatch):
+    """游戏装在别的机器共享盘上时（本地盘符扫不到），要能在网络主机上找到。"""
+    monkeypatch.delenv("EFT_GAME_DIR", raising=False)
+    monkeypatch.setattr(serve, "_network_roots", lambda: ["\\\\JJPC"])
+    seen: list[str] = []
+    target = os.path.join("\\\\JJPC", "EFT")
+
+    def fake_looks(path):
+        seen.append(path)
+        return path == target
+
+    monkeypatch.setattr(serve, "_looks_like_game_dir", fake_looks)
+    assert serve.default_game_dir() == target
+    assert target in seen
 
 
 def test_health_exposes_log_monitoring(tmp_path):
@@ -889,5 +1052,84 @@ def test_health_exposes_log_monitoring(tmp_path):
         assert payload["logSession"] is None      # 还没有会话
     finally:
         stop(httpd, thread)
+
+
+# --------------------------------------------------------------- R107 自动探测
+def test_detect_logs_dir_prefers_session_with_application_log(tmp_path, monkeypatch):
+    """多会话时选「最新且真的含 application 日志」的那个，空壳会话不能算命中。"""
+    monkeypatch.setattr(serve, "_documents_dirs", lambda: [])
+    monkeypatch.setenv("LOCALAPPDATA", str(tmp_path / "local-missing"))
+    logs = tmp_path / "Logs"
+    old = logs / "log_2026.10.01_10-00-00_1.0.0.0.40000"
+    new = logs / "log_2026.10.02_10-00-00_1.0.0.0.40001"
+    old.mkdir(parents=True)
+    new.mkdir()
+    (old / "2026.10.01_10-00-00_1.0.0.0.40000 application_000.log").write_text("", encoding="utf-8")
+
+    found, note = serve.detect_logs_dir(str(tmp_path))
+    assert found == str(logs)
+    assert "2026.10.01" in (note or "")
+
+
+def test_detect_screenshots_dir_picks_most_recent(tmp_path, monkeypatch):
+    a, b = tmp_path / "A", tmp_path / "B"
+    a.mkdir()
+    b.mkdir()
+    fake_shot(a, 1, 1, when=1_000_000)
+    fake_shot(b, 1, 1, when=2_000_000)
+    monkeypatch.setattr(serve, "screenshot_dir_candidates", lambda game_dir=None: [str(a), str(b)])
+    found, _note = serve.detect_screenshots_dir()
+    assert found == str(b)
+
+
+def test_path_resolver_manual_paths_win_over_auto(tmp_path, monkeypatch):
+    app = tmp_path / "cfg"
+    manual_shots = tmp_path / "manual-shots"
+    manual_logs = tmp_path / "manual-logs"
+    manual_shots.mkdir()
+    manual_logs.mkdir()
+    config.save({"screenshots_dir": str(manual_shots), "log_dir": str(manual_logs)}, str(app))
+    monkeypatch.setattr(serve, "detect_screenshots_dir", lambda game_dir=None: (str(tmp_path / "auto"), "auto"))
+    monkeypatch.setattr(serve, "detect_logs_dir", lambda game_dir=None: (str(tmp_path / "auto"), "auto"))
+
+    resolver = serve.PathResolver(str(app))
+    assert resolver.screenshots_dir() == str(manual_shots)
+    assert resolver.logs_dir() == str(manual_logs)
+    snap = resolver.snapshot()
+    assert snap["screenshotsManual"] is True
+    assert snap["logManual"] is True
+
+
+def test_shot_manifest_add_and_discard(tmp_path):
+    manifest = serve.ShotManifest(str(tmp_path))
+    first = tmp_path / "a.png"
+    second = tmp_path / "b.png"
+    manifest.add(str(first))
+    manifest.add(str(second))
+    assert manifest.list() == [str(first), str(second)]
+    manifest.discard([str(first)])
+    assert manifest.list() == [str(second)]
+
+
+def test_raid_end_cleaner_only_deletes_manifest_files(tmp_path):
+    """保守清理：只删清单内（本工具按键后新出现）的图，手动截图原样保留。"""
+    shots = tmp_path / "shots"
+    shots.mkdir()
+    auto = shots / "auto.png"
+    manual = shots / "manual.png"
+    auto.write_bytes(b"auto")
+    manual.write_bytes(b"manual")
+    app = tmp_path / "cfg"
+    config.save({"screenshots_dir": str(shots),
+                 "auto_screenshot": {"cleanup_on_raid_end": True}}, str(app))
+    manifest = serve.ShotManifest(str(app))
+    manifest.add(str(auto))
+
+    cleaner = serve.RaidEndCleaner(str(app), manifest, directory=str(shots))
+    result = cleaner.cleanup()
+    assert result["deleted"] == 1
+    assert auto.exists() is False
+    assert manual.exists() is True
+    assert manifest.list() == []
 
 

@@ -1,0 +1,74 @@
+﻿﻿﻿﻿﻿﻿﻿﻿host=HOMONAS user=MASTERJJ at=2026-11-03T11:23:01.4686427+08:00 round=R34-package-3
+
+## 安装器验收（silent --dir）
+安装目录: C:\Users\Administrator\AppData\Local\EFTMap-R34Accept
+文件总数: 14234
+总体积: 282.16 MB
+顶层文件:
+  EFTMap.exe  2588015 B
+  EFTMapDesktop.exe  92160 B
+  Microsoft.Web.WebView2.Core.dll  698208 B
+  Uninstall.exe  133274698 B
+  WebView2Loader.dll  194912 B
+关键文件:
+  [OK] EFTMap.exe
+  [OK] EFTMapDesktop.exe
+  [OK] Microsoft.Web.WebView2.Core.dll
+  [OK] WebView2Loader.dll
+  [OK] _internal\tasks.js
+  [OK] _internal\wiki-map.js
+  [OK] _internal\gun_builder.js
+  [OK] _internal\combat_sim.js
+  [OK] _internal\i18n.js
+  [OK] _internal\calibrator.js
+  [OK] _internal\styles
+  [OK] _internal\js
+  [OK] Uninstall.exe
+appmode.flag: 不存在（OK）
+
+快捷方式:
+  C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\EFT 互动地图.lnk
+    存在: True
+    TargetPath: 
+    Arguments: 
+    WorkingDirectory: 
+    IconLocation: ,0
+    目标是壳: False
+  C:\Users\Administrator\Desktop\EFT 互动地图.lnk
+    存在: True
+    TargetPath: 
+    Arguments: 
+    WorkingDirectory: 
+    IconLocation: ,0
+    目标是壳: False
+
+卸载注册表 HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\EFTMap:
+  DisplayName = EFT 互动地图（离线版）
+  DisplayVersion = 0.1.0
+  InstallLocation = C:\Users\Administrator\AppData\Local\EFTMap-R34Accept
+  DisplayIcon = C:\Users\Administrator\AppData\Local\EFTMap-R34Accept\EFTMapDesktop.exe,0
+  UninstallString = "C:\Users\Administrator\AppData\Local\EFTMap-R34Accept\Uninstall.exe" --uninstall
+
+## 修正：快捷方式内容读取（WSH 中文路径限制）
+
+WScript.Shell 直接用中文 .lnk 路径读取本机返回空值（TargetPath 空、IconLocation ",0"），
+是 WSH 按 ANSI 代码页处理路径导致的读取失败，不是快捷方式损坏。
+把 .lnk 原样复制成 ASCII 临时名后读取：
+
+- 原 .lnk 大小：2178 B（开始菜单与桌面各一份）
+- TargetPath: C:\Users\Administrator\AppData\Local\EFTMap-R34Accept\EFTMapDesktop.exe
+- WorkingDirectory: C:\Users\Administrator\AppData\Local\EFTMap-R34Accept
+- IconLocation: C:\Users\Administrator\AppData\Local\EFTMap-R34Accept\EFTMapDesktop.exe,0
+- ASCII 副本大小：2178 B（与原文一致）
+
+## 快捷方式启动验证
+
+- 从桌面 `EFT 互动地图.lnk` 启动：EFTMapDesktop pid=46172；后端 EFTMap pid=31448。
+- 主窗口标题 `EFT 互动地图`，style=0x16040000（无 WS_CAPTION），exStyle=0x00050100，
+  visible=True，rect=(0,0) 1280x720。
+- 日志出现 `托盘已创建`（11:25:18.653），托盘右键菜单截图见 `installer-shell/tray-menu.png`。
+- 说明：`%APPDATA%\EFTMap\shell.json` 初始 `trayEnabled=false`，是 2026-11-02 23:19
+  一次 `--no-tray` 测试残留；为了让快捷方式启动时显示托盘，临时改为 true 后复测通过。
+  原值已记录；临时备份随验收临时目录一并清理，当前保持 true（默认值）。
+- 无边框主窗截图 `installer-shell/main.png`；隔离配置抓取窗口状态 `installer-shell/window-state.json`
+  （main style=0x16040000 visible=true ready=true；mini style=0x96000000）。

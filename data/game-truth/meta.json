@@ -1,0 +1,24 @@
+{
+  "source": {
+    "install": "D:\\GAMES\\EFT",
+    "assets": "D:\\GAMES\\EFT\\EscapeFromTarkov_Data\\resources.assets",
+    "assets_bytes": 1080890396,
+    "exe_version": "1.3.0.48484",
+    "sha256": "97c790c135cbee79ce6f73fd4b780a54a6f6175177f9ffa1924f727555dec27a"
+  },
+  "extracted_at": "2026-11-04 12:57:38",
+  "counts": {
+    "items_total": 7220,
+    "armor_likes": 919,
+    "plates": 381,
+    "ammo_ballistic": 218,
+    "with_plate_slots": 175,
+    "globals_parse": "ok"
+  },
+  "structure": {
+    "slotted_base_zero": 175,
+    "slotted_base_nonzero": 0,
+    "monolithic": 506,
+    "no_slots_base_zero": 238
+  }
+}

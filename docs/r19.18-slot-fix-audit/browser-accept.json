@@ -1,0 +1,690 @@
+{
+  "generatedFor": "R19.18",
+  "guns": {
+    "svds": {
+      "cards": 15,
+      "dovetail": [
+        {
+          "slot": "mod_mount_000",
+          "row": 2,
+          "col": 7,
+          "parent": "",
+          "item": ""
+        }
+      ]
+    },
+    "ak_sights": {
+      "ak74n": {
+        "gun": "AK-74N 5.45x39 突击步枪",
+        "akmpChildSlot": false,
+        "cards": 13,
+        "calib": "1",
+        "applied": "2",
+        "fallback": "1"
+      },
+      "ak74m": {
+        "gun": "AK-74M 5.45x39 突击步枪",
+        "akmpChildSlot": false,
+        "cards": 13,
+        "calib": "1",
+        "applied": "1",
+        "fallback": "1"
+      },
+      "ak101": {
+        "gun": "AK-101 5.56x45 突击步枪",
+        "akmpChildSlot": false,
+        "cards": 13,
+        "calib": "1",
+        "applied": "1",
+        "fallback": "1"
+      },
+      "ak102": {
+        "gun": "AK-102 5.56x45 突击步枪",
+        "akmpChildSlot": false,
+        "cards": 13,
+        "calib": "1",
+        "applied": "1",
+        "fallback": "1"
+      },
+      "akm": {
+        "gun": "AKM 7.62x39 突击步枪",
+        "akmpChildSlot": true,
+        "cards": 14,
+        "calib": "1",
+        "applied": "2",
+        "fallback": "0"
+      },
+      "akms": {
+        "gun": "AKMS 7.62x39 突击步枪",
+        "akmpChildSlot": true,
+        "cards": 14,
+        "calib": "1",
+        "applied": "3",
+        "fallback": "0"
+      }
+    },
+    "g28": {
+      "gun": "HK G28 7.62x51 精确射手步枪",
+      "rows": 7,
+      "row7": [
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+          "row": 7,
+          "col": 1,
+          "parent": "mod_reciever/mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+          "row": 7,
+          "col": 2,
+          "parent": "mod_reciever/mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_002",
+          "row": 7,
+          "col": 3,
+          "parent": "mod_reciever/mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_bipod",
+          "row": 7,
+          "col": 4,
+          "parent": "mod_reciever/mod_handguard",
+          "item": ""
+        }
+      ],
+      "cards": 24
+    },
+    "s12k": {
+      "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+      "rows": 7,
+      "row7": [
+        {
+          "slot": "mod_handguard/mod_mount_000",
+          "row": 7,
+          "col": 1,
+          "parent": "mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_handguard/mod_mount_001",
+          "row": 7,
+          "col": 2,
+          "parent": "mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_handguard/mod_mount_002",
+          "row": 7,
+          "col": 3,
+          "parent": "mod_handguard",
+          "item": ""
+        },
+        {
+          "slot": "mod_stock/mod_stock/mod_stock_003",
+          "row": 7,
+          "col": 9,
+          "parent": "mod_stock/mod_stock",
+          "item": ""
+        }
+      ],
+      "cards": 19
+    },
+    "t5000": {
+      "tactical": [
+        "mod_stock/mod_handguard/mod_mount_000/mod_tactical",
+        "mod_stock/mod_handguard/mod_mount_003/mod_tactical"
+      ],
+      "rails": [
+        "mod_stock/mod_handguard/mod_mount_000",
+        "mod_stock/mod_handguard/mod_mount_003"
+      ]
+    },
+    "sks": {
+      "socom": [
+        {
+          "slot": "mod_barrel/mod_mount_001",
+          "row": 4,
+          "col": 3,
+          "parent": "mod_barrel",
+          "item": ""
+        }
+      ],
+      "installed": {
+        "id": "593d1fa786f7746da62d61ac",
+        "t": "UTG SKS SOCOM导轨基座配件—50.0723,599 ₽—可装"
+      },
+      "scope": [
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_scope",
+          "row": 2,
+          "col": 3,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        }
+      ],
+      "tactical": [
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_000",
+          "row": 5,
+          "col": 3,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_001",
+          "row": 5,
+          "col": 4,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_002",
+          "row": 5,
+          "col": 5,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_003",
+          "row": 5,
+          "col": 6,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        }
+      ]
+    },
+    "opsks": {
+      "socom": [
+        {
+          "slot": "mod_barrel/mod_mount_001",
+          "row": 4,
+          "col": 3,
+          "parent": "mod_barrel",
+          "item": ""
+        }
+      ],
+      "installed": {
+        "id": "593d1fa786f7746da62d61ac",
+        "t": "UTG SKS SOCOM导轨基座配件—50.0723,599 ₽—可装"
+      },
+      "scope": [
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_scope",
+          "row": 2,
+          "col": 3,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        }
+      ],
+      "tactical": [
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_000",
+          "row": 5,
+          "col": 3,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_001",
+          "row": 5,
+          "col": 4,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_002",
+          "row": 5,
+          "col": 5,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        },
+        {
+          "slot": "mod_barrel/mod_mount_001/mod_tactical_003",
+          "row": 5,
+          "col": 6,
+          "parent": "mod_barrel/mod_mount_001",
+          "item": ""
+        }
+      ]
+    },
+    "gp25": {
+      "ak74n": {
+        "launcher": [
+          4,
+          3
+        ],
+        "gas": [
+          3,
+          3
+        ]
+      },
+      "akm": {
+        "launcher": [
+          4,
+          3
+        ],
+        "gas": [
+          3,
+          3
+        ]
+      },
+      "ak101": {
+        "launcher": [
+          4,
+          3
+        ],
+        "gas": [
+          3,
+          3
+        ]
+      }
+    },
+    "vsk94": {
+      "cards": [
+        "mod_scope",
+        "mod_barrel/mod_muzzle",
+        "mod_barrel",
+        "mod_barrel/mod_handguard",
+        "mod_stock",
+        "mod_magazine"
+      ]
+    },
+    "asvalmod4": {
+      "rails": [
+        "mod_handguard/mod_mount_000"
+      ],
+      "cover": [
+        {
+          "slot": "mod_handguard/mod_mount_002",
+          "row": 2,
+          "col": 5,
+          "parent": "mod_handguard",
+          "item": "NB AS VAL MOD.4 套件防尘盖"
+        }
+      ],
+      "removed": {
+        "id": "68712bd4251b8d4c6c04ec19",
+        "t": "NB AS VAL MOD.4 套件防尘盖配件-1.020.124,411 ₽—已装"
+      },
+      "restored": true
+    },
+    "tkpd": {
+      "tactical": [
+        "mod_mount_001/mod_handguard/mod_tactical"
+      ],
+      "dovetail": [
+        "mod_mount_002@r2c2",
+        "mod_mount_000@r2c8"
+      ]
+    },
+    "svds_after_reload": [
+      {
+        "slot": "mod_mount_000",
+        "row": 2,
+        "col": 7,
+        "parent": "",
+        "item": ""
+      }
+    ],
+    "calibrator_g28": {
+      "rows": 7,
+      "row7": [
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+          "row": 7,
+          "col": 1
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+          "row": 7,
+          "col": 2
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_tactical_002",
+          "row": 7,
+          "col": 3
+        },
+        {
+          "slot": "mod_reciever/mod_handguard/mod_bipod",
+          "row": 7,
+          "col": 4
+        }
+      ],
+      "after": {
+        "row": 6,
+        "col": 1
+      },
+      "undo": {
+        "row": 7,
+        "col": 1
+      },
+      "redo": {
+        "row": 6,
+        "col": 1
+      }
+    }
+  },
+  "checks": {
+    "svds_dovetail_r2c7": true,
+    "svds_dovetail_r2c7_detail": {
+      "r": 2,
+      "c": 7
+    },
+    "svds_dovetail_not_duplicated": true,
+    "svds_dovetail_has_real_items": true,
+    "svds_dovetail_has_real_items_detail": [
+      "Axion Kobra 燕尾槽适配导轨基座配件-",
+      "Axion Kobra EKP-1S-03 反射",
+      "Axion Kobra EKP-8-02 反射式"
+    ],
+    "ak_45_56_no_akmp_ak74n": true,
+    "ak_45_56_no_akmp_ak74n_detail": [],
+    "ak_45_56_no_akmp_ak74m": true,
+    "ak_45_56_no_akmp_ak74m_detail": [],
+    "ak_45_56_no_akmp_ak101": true,
+    "ak_45_56_no_akmp_ak101_detail": [],
+    "ak_45_56_no_akmp_ak102": true,
+    "ak_45_56_no_akmp_ak102_detail": [],
+    "akm_has_akmp_akm": true,
+    "akm_has_akmp_akm_detail": [
+      {
+        "slot": "mod_sight_rear/mod_sight_rear",
+        "row": 2,
+        "col": 6,
+        "parent": "mod_sight_rear",
+        "item": ""
+      }
+    ],
+    "akm_has_akmp_akms": true,
+    "akm_has_akmp_akms_detail": [
+      {
+        "slot": "mod_sight_rear/mod_sight_rear",
+        "row": 2,
+        "col": 6,
+        "parent": "mod_sight_rear",
+        "item": ""
+      }
+    ],
+    "g28_rows_7": true,
+    "g28_rows_7_detail": 7,
+    "g28_row7_slots": true,
+    "g28_row7_slots_detail": [
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+        "row": 7,
+        "col": 1,
+        "parent": "mod_reciever/mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+        "row": 7,
+        "col": 2,
+        "parent": "mod_reciever/mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_002",
+        "row": 7,
+        "col": 3,
+        "parent": "mod_reciever/mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_bipod",
+        "row": 7,
+        "col": 4,
+        "parent": "mod_reciever/mod_handguard",
+        "item": ""
+      }
+    ],
+    "s12k_rows_7": true,
+    "s12k_rows_7_detail": 7,
+    "s12k_row7_slots": true,
+    "s12k_row7_slots_detail": [
+      {
+        "slot": "mod_handguard/mod_mount_000",
+        "row": 7,
+        "col": 1,
+        "parent": "mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_handguard/mod_mount_001",
+        "row": 7,
+        "col": 2,
+        "parent": "mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_handguard/mod_mount_002",
+        "row": 7,
+        "col": 3,
+        "parent": "mod_handguard",
+        "item": ""
+      },
+      {
+        "slot": "mod_stock/mod_stock/mod_stock_003",
+        "row": 7,
+        "col": 9,
+        "parent": "mod_stock/mod_stock",
+        "item": ""
+      }
+    ],
+    "t5000_tactical_2": true,
+    "t5000_tactical_2_detail": [
+      "mod_stock/mod_handguard/mod_mount_000/mod_tactical",
+      "mod_stock/mod_handguard/mod_mount_003/mod_tactical"
+    ],
+    "t5000_rails_2": true,
+    "t5000_rails_2_detail": [
+      "mod_stock/mod_handguard/mod_mount_000",
+      "mod_stock/mod_handguard/mod_mount_003"
+    ],
+    "sks_socom_r4c3": true,
+    "sks_socom_r4c3_detail": {
+      "r": 4,
+      "c": 3
+    },
+    "sks_socom_installable": true,
+    "sks_socom_installable_detail": [
+      "UTG SKS SOCOM导轨基座配件—50.0"
+    ],
+    "sks_socom_scope_r2c3": true,
+    "sks_socom_scope_r2c3_detail": {
+      "r": 2,
+      "c": 3
+    },
+    "sks_socom_tactical_r5c3": true,
+    "sks_socom_tactical_r5c3_detail": {
+      "r": 5,
+      "c": 3
+    },
+    "sks_socom_children_removed": true,
+    "sks_socom_children_removed_detail": [],
+    "opsks_socom_r4c3": true,
+    "opsks_socom_r4c3_detail": {
+      "r": 4,
+      "c": 3
+    },
+    "opsks_socom_installable": true,
+    "opsks_socom_installable_detail": [
+      "UTG SKS SOCOM导轨基座配件—50.0"
+    ],
+    "opsks_socom_scope_r2c3": true,
+    "opsks_socom_scope_r2c3_detail": {
+      "r": 2,
+      "c": 3
+    },
+    "opsks_socom_tactical_r5c3": true,
+    "opsks_socom_tactical_r5c3_detail": {
+      "r": 5,
+      "c": 3
+    },
+    "opsks_socom_children_removed": true,
+    "opsks_socom_children_removed_detail": [],
+    "gp25_slot_ak74n": true,
+    "gp25_slot_ak74n_detail": [
+      {
+        "slot": "mod_launcher",
+        "row": 4,
+        "col": 3,
+        "parent": "",
+        "item": ""
+      }
+    ],
+    "gp25_below_gas_ak74n": true,
+    "gp25_below_gas_ak74n_detail": {
+      "launcher": [
+        4,
+        3
+      ],
+      "gas": [
+        3,
+        3
+      ]
+    },
+    "gp25_real_item_ak74n": true,
+    "gp25_real_item_ak74n_detail": [
+      "GP-25“篝火”40 毫米下挂式榴弹发射器配件-3"
+    ],
+    "gp25_slot_akm": true,
+    "gp25_slot_akm_detail": [
+      {
+        "slot": "mod_launcher",
+        "row": 4,
+        "col": 3,
+        "parent": "",
+        "item": ""
+      }
+    ],
+    "gp25_below_gas_akm": true,
+    "gp25_below_gas_akm_detail": {
+      "launcher": [
+        4,
+        3
+      ],
+      "gas": [
+        3,
+        3
+      ]
+    },
+    "gp25_real_item_akm": true,
+    "gp25_real_item_akm_detail": [
+      "GP-25“篝火”40 毫米下挂式榴弹发射器配件-3"
+    ],
+    "gp25_slot_ak101": true,
+    "gp25_slot_ak101_detail": [
+      {
+        "slot": "mod_launcher",
+        "row": 4,
+        "col": 3,
+        "parent": "",
+        "item": ""
+      }
+    ],
+    "gp25_below_gas_ak101": true,
+    "gp25_below_gas_ak101_detail": {
+      "launcher": [
+        4,
+        3
+      ],
+      "gas": [
+        3,
+        3
+      ]
+    },
+    "gp25_real_item_ak101": true,
+    "gp25_real_item_ak101_detail": [
+      "GP-25“篝火”40 毫米下挂式榴弹发射器配件-3"
+    ],
+    "gp25_not_on_ak545": true,
+    "vsk94_no_b3_slot": true,
+    "vsk94_no_b3_slot_detail": [
+      "mod_scope",
+      "mod_barrel/mod_muzzle",
+      "mod_barrel",
+      "mod_barrel/mod_handguard",
+      "mod_stock",
+      "mod_magazine"
+    ],
+    "asvalmod4_single_35in_rail": true,
+    "asvalmod4_single_35in_rail_detail": [
+      "mod_handguard/mod_mount_000"
+    ],
+    "asvalmod4_cover_installed_by_default": true,
+    "asvalmod4_cover_installed_by_default_detail": "NB AS VAL MOD.4 套件防尘盖",
+    "asvalmod4_dovetail_hidden_with_cover": true,
+    "asvalmod4_dovetail_restored": true,
+    "asvalmod4_dovetail_restored_detail": [
+      "mod_mount_004"
+    ],
+    "asvalmod4_cover_children_gone": true,
+    "tkpd_tactical_1": true,
+    "tkpd_tactical_1_detail": [
+      "mod_mount_001/mod_handguard/mod_tactical"
+    ],
+    "tkpd_two_dovetail": true,
+    "tkpd_two_dovetail_detail": [
+      "mod_mount_002@r2c2",
+      "mod_mount_000@r2c8"
+    ],
+    "tkpd_dovetail_installable": true,
+    "tkpd_dovetail_installable_detail": [
+      "Axion Kobra 燕尾槽适配导轨基座配件-",
+      "Axion Kobra EKP-8-02 反射式",
+      "NPZ 1P78-1燕尾槽基座配件-1.010."
+    ],
+    "svds_after_reload_r2c7": true,
+    "calibrator_g28_rows_7": true,
+    "calibrator_g28_rows_7_detail": 7,
+    "calibrator_g28_row7_cards": true,
+    "calibrator_g28_row7_cards_detail": [
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_000",
+        "row": 7,
+        "col": 1
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_001",
+        "row": 7,
+        "col": 2
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_tactical_002",
+        "row": 7,
+        "col": 3
+      },
+      {
+        "slot": "mod_reciever/mod_handguard/mod_bipod",
+        "row": 7,
+        "col": 4
+      }
+    ],
+    "calibrator_row7_drag_works": true,
+    "calibrator_row7_drag_works_detail": {
+      "drag": "{\"ok\":true,\"slot\":\"mod_reciever/mod_handguard/mod_tactical_000\"}",
+      "after": {
+        "row": 6,
+        "col": 1
+      }
+    },
+    "calibrator_row7_undo": true,
+    "calibrator_row7_undo_detail": {
+      "row": 7,
+      "col": 1
+    },
+    "calibrator_row7_redo": true,
+    "calibrator_row7_redo_detail": {
+      "row": 6,
+      "col": 1
+    }
+  },
+  "failures": [],
+  "console": [],
+  "ok": true
+}

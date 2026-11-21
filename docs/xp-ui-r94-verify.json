@@ -1,0 +1,386 @@
+{
+ "loadout": {
+  "plate_gun": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/current-gun-plate.png\")"
+  },
+  "brand": {
+   "w": 86,
+   "h": 20,
+   "v": "none"
+  },
+  "version": {
+   "w": 137,
+   "h": 21,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/version-plate.png\")"
+  },
+  "table": {
+   "w": 1316,
+   "h": 735,
+   "v": "none"
+  },
+  "icon_map": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-map.png\")"
+  },
+  "icon_tasks": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-tasks.png\")"
+  },
+  "icon_ammo": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-ammo.png\")"
+  },
+  "icon_gun": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-gun.png\")"
+  },
+  "icon_loadout": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-loadout.png\")"
+  },
+  "empty_task": null,
+  "empty_story": null,
+  "empty_gun": null,
+  "thumb": "",
+  "radius": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "modalhead": {
+   "w": 0,
+   "h": 0,
+   "v": "linear-gradient(rgb(10, 63, 158) 0px, rgb(10, 63, 158) 33.34%, rgb(20, 102, 224) 33.34%, rgb(20, 102, 224) 66.67%, rgb(74, 155, 255) 66.67%, rgb(74, 155, 255) 100%)"
+  },
+  "legendArrow": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "spin": {
+   "w": 76,
+   "h": 31,
+   "v": "textfield"
+  },
+  "fonts": {
+   ".app-menu-btn": "12px",
+   ".tk-node-name": "12px",
+   ".lw-cell-name": "8px",
+   ".sb-rev": "11px"
+  }
+ },
+ "tasks": {
+  "plate_gun": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/current-gun-plate.png\")"
+  },
+  "brand": {
+   "w": 86,
+   "h": 20,
+   "v": "none"
+  },
+  "version": {
+   "w": 137,
+   "h": 21,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/version-plate.png\")"
+  },
+  "table": {
+   "w": 0,
+   "h": 0,
+   "v": "none"
+  },
+  "icon_map": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-map.png\")"
+  },
+  "icon_tasks": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-tasks.png\")"
+  },
+  "icon_ammo": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-ammo.png\")"
+  },
+  "icon_gun": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-gun.png\")"
+  },
+  "icon_loadout": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-loadout.png\")"
+  },
+  "empty_task": null,
+  "empty_story": null,
+  "empty_gun": null,
+  "thumb": "",
+  "radius": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "modalhead": {
+   "w": 0,
+   "h": 0,
+   "v": "linear-gradient(rgb(10, 63, 158) 0px, rgb(10, 63, 158) 33.34%, rgb(20, 102, 224) 33.34%, rgb(20, 102, 224) 66.67%, rgb(74, 155, 255) 66.67%, rgb(74, 155, 255) 100%)"
+  },
+  "legendArrow": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "spin": {
+   "w": 0,
+   "h": 0,
+   "v": "textfield"
+  },
+  "fonts": {
+   ".app-menu-btn": "12px",
+   ".tk-node-name": "12px",
+   ".lw-cell-name": "8px",
+   ".sb-rev": "11px"
+  }
+ },
+ "gun": {
+  "plate_gun": {
+   "w": 222,
+   "h": 34,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/current-gun-plate.png\")"
+  },
+  "brand": {
+   "w": 86,
+   "h": 20,
+   "v": "none"
+  },
+  "version": {
+   "w": 137,
+   "h": 21,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/version-plate.png\")"
+  },
+  "table": {
+   "w": 0,
+   "h": 0,
+   "v": "none"
+  },
+  "icon_map": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-map.png\")"
+  },
+  "icon_tasks": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-tasks.png\")"
+  },
+  "icon_ammo": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-ammo.png\")"
+  },
+  "icon_gun": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-gun.png\")"
+  },
+  "icon_loadout": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-loadout.png\")"
+  },
+  "empty_task": null,
+  "empty_story": null,
+  "empty_gun": null,
+  "thumb": "",
+  "radius": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "modalhead": {
+   "w": 0,
+   "h": 0,
+   "v": "linear-gradient(rgb(10, 63, 158) 0px, rgb(10, 63, 158) 33.34%, rgb(20, 102, 224) 33.34%, rgb(20, 102, 224) 66.67%, rgb(74, 155, 255) 66.67%, rgb(74, 155, 255) 100%)"
+  },
+  "legendArrow": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "spin": {
+   "w": 0,
+   "h": 0,
+   "v": "textfield"
+  },
+  "fonts": {
+   ".app-menu-btn": "12px",
+   ".tk-node-name": "12px",
+   ".lw-cell-name": "8px",
+   ".sb-rev": "11px"
+  }
+ },
+ "map": {
+  "plate_gun": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/current-gun-plate.png\")"
+  },
+  "brand": {
+   "w": 86,
+   "h": 20,
+   "v": "none"
+  },
+  "version": {
+   "w": 137,
+   "h": 21,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/version-plate.png\")"
+  },
+  "table": {
+   "w": 0,
+   "h": 0,
+   "v": "none"
+  },
+  "icon_map": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-map.png\")"
+  },
+  "icon_tasks": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-tasks.png\")"
+  },
+  "icon_ammo": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-ammo.png\")"
+  },
+  "icon_gun": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-gun.png\")"
+  },
+  "icon_loadout": {
+   "w": 16,
+   "h": 16,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-loadout.png\")"
+  },
+  "empty_task": null,
+  "empty_story": null,
+  "empty_gun": null,
+  "thumb": "",
+  "radius": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "modalhead": {
+   "w": 0,
+   "h": 0,
+   "v": "linear-gradient(rgb(10, 63, 158) 0px, rgb(10, 63, 158) 33.34%, rgb(20, 102, 224) 33.34%, rgb(20, 102, 224) 66.67%, rgb(74, 155, 255) 66.67%, rgb(74, 155, 255) 100%)"
+  },
+  "legendArrow": {
+   "w": 12,
+   "h": 12,
+   "v": "0px"
+  },
+  "spin": {
+   "w": 0,
+   "h": 0,
+   "v": "textfield"
+  },
+  "fonts": {
+   ".app-menu-btn": "12px",
+   ".tk-node-name": "12px",
+   ".lw-cell-name": "8px",
+   ".sb-rev": "11px"
+  }
+ },
+ "mini": {
+  "plate_gun": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/current-gun-plate.png\")"
+  },
+  "brand": {
+   "w": 0,
+   "h": 0,
+   "v": "none"
+  },
+  "version": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/version-plate.png\")"
+  },
+  "table": {
+   "w": 0,
+   "h": 0,
+   "v": "none"
+  },
+  "icon_map": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-map.png\")"
+  },
+  "icon_tasks": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-tasks.png\")"
+  },
+  "icon_ammo": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-ammo.png\")"
+  },
+  "icon_gun": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-gun.png\")"
+  },
+  "icon_loadout": {
+   "w": 0,
+   "h": 0,
+   "v": "url(\"http://127.0.0.1:8791/assets/xp-ui/icon-loadout.png\")"
+  },
+  "empty_task": null,
+  "empty_story": null,
+  "empty_gun": null,
+  "thumb": "",
+  "radius": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "modalhead": {
+   "w": 0,
+   "h": 0,
+   "v": "linear-gradient(rgb(10, 63, 158) 0px, rgb(10, 63, 158) 33.34%, rgb(20, 102, 224) 33.34%, rgb(20, 102, 224) 66.67%, rgb(74, 155, 255) 66.67%, rgb(74, 155, 255) 100%)"
+  },
+  "legendArrow": {
+   "w": 0,
+   "h": 0,
+   "v": "0px"
+  },
+  "spin": {
+   "w": 0,
+   "h": 0,
+   "v": "textfield"
+  },
+  "fonts": {
+   ".app-menu-btn": "12px",
+   ".tk-node-name": "12px",
+   ".sb-rev": "11px"
+  }
+ }
+}

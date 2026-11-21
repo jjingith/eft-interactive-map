@@ -1,0 +1,9 @@
+﻿R76 packaged Portable smoke (EFTMap-Portable-0.1.0.zip expanded to smoke-portable)
+
+shell pid=53960 title=EFT 互动地图
+shell children: EFTMap.exe#47212 parent=53960 | msedgewebview2.exe#54500 parent=53960
+listen: 127.0.0.1:8787 OwningProcess=47212 (EFTMap.exe backend)
+conhost children of shell=0
+taskbar/main window: 1 top-level main window, title='EFT 互动地图'; mini is WS_EX_TOOLWINDOW (no taskbar button)
+
+Note: plain EFTMap.exe does not forward arbitrary args (exit code 2), so smoke uses the real user entry and kills the tree afterwards.

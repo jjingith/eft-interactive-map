@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "配置含 ocrScan 默认值（热键 + 4 档）",
+      "ok": true,
+      "detail": "{\"hotkey\": \"ctrl+alt+p\", \"labelStyle\": {\"tiers\": [{\"max\": 50000, \"color\": \"#b9c0c9\", \"sizeScale\": 1.0, \"font\": \"msyhbd\", \"outer\": true, \"outerColor\": \"#000000\", \"inner\": false, \"innerColor\": \"#000000\""
+    },
+    {
+      "name": "「价格识别」面板打开",
+      "ok": true,
+      "detail": "{\"panelOpen\": true, \"rows\": 4, \"hotkeyEditable\": true, \"locked\": false, \"styleInputsDisabled\": false}"
+    },
+    {
+      "name": "默认 4 个档位行渲染",
+      "ok": true,
+      "detail": "rows=4"
+    },
+    {
+      "name": "截图热键可编辑（免费用户也能改）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "会员锁状态与登录态一致",
+      "ok": true,
+      "detail": "member=True locked=False disabled=False"
+    },
+    {
+      "name": "热键保存生效（配置回声 f8）",
+      "ok": true,
+      "detail": "hotkey='f8'"
+    },
+    {
+      "name": "宿主热键热切换（日志确认，无需重启）",
+      "ok": true,
+      "detail": " 18:55:46] 宿主启动：pid=17924 server=http://127.0.0.1:8787\n[11-11 18:55:49] 识别出 3 件\n[11-11 18:55:49] 浮窗显示中（3 件，口径 最新价）——截屏取证后自动关闭\n[11-11 18:57:17] 热键已切换为 f8（即时生效）\n[11-11 18:57:18] 热键已切换为 ctrl+alt+p（即时生效）\n"
+    },
+    {
+      "name": "无 JS 异常",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "热键还原为 ctrl+alt+p（配置+宿主日志）",
+      "ok": true,
+      "detail": "cfg=ctrl+alt+p restored=True"
+    }
+  ]
+}

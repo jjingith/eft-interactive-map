@@ -1,0 +1,326 @@
+{
+ "schema": 1,
+ "tool": "tools/r1926_gear_accept.py",
+ "base": "http://127.0.0.1:8791",
+ "armors": {
+  "a": "545cdb794bdc2d3a198b456a",
+  "aName": "6B43 屏障-Sh 防弹衣（数码丛林迷彩）",
+  "b": "5ab8e79e86f7742d8b372e78",
+  "bName": "BNTI Gzhel-K（彩瓷-K）防弹衣",
+  "plate": "64afc71497cf3a403c01ff38",
+  "plateName": "Granit Br5防弹插板",
+  "zone": "Front_plate"
+ },
+ "checks": [
+  {
+   "name": "L0 配装接口存在",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "name": "P1 护甲 A 的前插板已写入稳定身份键",
+   "ok": true,
+   "detail": {
+    "got": "64afc71497cf3a403c01ff38",
+    "want": "64afc71497cf3a403c01ff38",
+    "key": "armor/Front_plate@545cdb794bdc2d3a198b456a"
+   }
+  },
+  {
+   "name": "P1b 板位状态显示为已安装",
+   "ok": true,
+   "detail": [
+    {
+     "key": "front",
+     "label": "前插板",
+     "state": "on",
+     "text": "VI 60",
+     "plate": "64afc71497cf3a403c01ff38",
+     "cl": 6,
+     "mat": "Ceramic",
+     "dur": 60,
+     "socket": {
+      "zone": "Front_plate",
+      "plates": [
+       "656f9d5900d62bcd2e02407c",
+       "656fa8d700d62bcd2e024084",
+       "656fa99800d62bcd2e024088",
+       "656fae5f7c2d57afe200c0d7",
+       "656faf0ca0dce000a2020f77",
+       "656fa0fb498d1b7e3e071d9c",
+       "656fafe3498d1b7e3e071da4",
+       "656fa76500d62bcd2e024080",
+       "656fa25e94b480b8a500c0e0",
+       "656fad8c498d1b7e3e071da0",
+       "656fa61e94b480b8a500c0e8",
+       "656fb21fa0dce000a2020f7c",
+       "656fac30c6baea13cd07e10c",
+       "656f9fa0498d1b7e3e071d98",
+       "656fb0bd7c2d57afe200c0dc",
+       "656fa53d94b480b8a500c0e4",
+       "65573fa5655447403702a816",
+       "64afc71497cf3a403c01ff38",
+       "655746010177119f4a097ff7",
+       "64afdcb83efdfea28601d041",
+       "6943c85be2f21398e70378cc"
+      ],
+      "z": [
+       "Plate_Granit_SAPI_chest"
+      ]
+     },
+     "slotId": "armor/Front_plate",
+     "tip": "前插板：已安装 Granit Br5防弹插板\n护甲等级：6\n基础耐久：60\n材质：陶瓷\n点一下可更换该位置的插板；右键直接卸下该插板"
+    }
+   ]
+  },
+  {
+   "name": "P2 切到护甲 B 后不套用 A 的插板（兼容性不被绕过）",
+   "ok": true,
+   "detail": {
+    "gotB": null,
+    "frontB": [
+     {
+      "key": "front",
+      "label": "前插板",
+      "state": "empty",
+      "text": "未安装",
+      "plate": null,
+      "cl": null,
+      "mat": null,
+      "dur": null,
+      "socket": {
+       "zone": "Front_plate",
+       "plates": [
+        "656f611f94b480b8a500c0db",
+        "656f603f94b480b8a500c0d6",
+        "656f57dc27aed95beb08f628",
+        "656f63c027aed95beb08f62c"
+       ],
+       "z": [
+        "Plate_Korund_chest"
+       ]
+      },
+      "slotId": "armor/Front_plate",
+      "tip": "前插板：未安装（本位置合法插板 4 件）\n点一下打开插板选择窗"
+     }
+    ]
+   }
+  },
+  {
+   "name": "P3 切回护甲 A 后插板配置恢复",
+   "ok": true,
+   "detail": {
+    "got": "64afc71497cf3a403c01ff38"
+   }
+  },
+  {
+   "name": "P4 切换页面后插板配置仍在",
+   "ok": true,
+   "detail": {
+    "got": "64afc71497cf3a403c01ff38"
+   }
+  },
+  {
+   "name": "P5 刷新页面后插板配置恢复（沿用 eftmap.loadout）",
+   "ok": true,
+   "detail": {
+    "got": "64afc71497cf3a403c01ff38"
+   }
+  },
+  {
+   "name": "P6 统计不把别的护甲的插板算进来",
+   "ok": true,
+   "detail": {
+    "withA": 14.100000000000001,
+    "expectA": 14.100000000000001,
+    "withB": 2.95,
+    "expectB": 2.95,
+    "plateW": 3.3
+   }
+  },
+  {
+   "name": "P7 主动卸下插板立即生效并保存",
+   "ok": true,
+   "detail": {
+    "got": null
+   }
+  },
+  {
+   "name": "L1 内容高下降且不再溢出滚动",
+   "ok": true,
+   "detail": {
+    "before": 1021,
+    "after": 955,
+    "client": 955
+   }
+  },
+  {
+   "name": "L2 相邻装备行间距全面收紧",
+   "ok": true,
+   "detail": {
+    "before": [
+     5,
+     26,
+     26,
+     26
+    ],
+    "after": [
+     3,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "name": "L3 无文本裁切",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "T0 找到联动测试用任务",
+   "ok": true,
+   "detail": {
+    "a": "6740a2c17e3818d5bb0648b6",
+    "b": "6740a2c17e3818d5bb0648b6"
+   }
+  },
+  {
+   "name": "T1 未满足前置时弹出确认框（含确认按钮）",
+   "ok": true,
+   "detail": "前置任务尚未完成"
+  },
+  {
+   "name": "T2 弹窗列出了前置任务名称",
+   "ok": true,
+   "detail": {
+    "names": [
+     "缔结友谊"
+    ],
+    "body": "你正在将「半满半空」设置为已完成，但有 7 项前置条件未满足。直接前置（第 1 层）「缔结友谊」：未开始 → 已完成（需 已完成；因「半满半空」需要）间接前置（第 2 层）「现世报」：未开始 → 已完成（需 已完成；因「缔结友谊」需要）「自然交换」：未开始 → 已完成（需 已完成；因「缔结友谊」需要）间接前置（第 3 "
+   }
+  },
+  {
+   "name": "T3 弹窗打开期间未提前改状态",
+   "ok": true,
+   "detail": {
+    "6740a2c17e3818d5bb0648b6": "none"
+   }
+  },
+  {
+   "name": "T4 取消后当前任务与前置全部不变",
+   "ok": true,
+   "detail": {
+    "before": {
+     "6740a2c17e3818d5bb0648b6": "none",
+     "6740a15566e6a521aa051b15": "none"
+    },
+    "after": {
+     "6740a2c17e3818d5bb0648b6": "none",
+     "6740a15566e6a521aa051b15": "none"
+    }
+   }
+  },
+  {
+   "name": "T5 确认后前置被调整、当前任务变为已完成",
+   "ok": true,
+   "detail": {
+    "after": {
+     "6740a2c17e3818d5bb0648b6": "completed",
+     "6740a15566e6a521aa051b15": "completed"
+    },
+    "pre": [
+     "6740a15566e6a521aa051b15"
+    ]
+   }
+  },
+  {
+   "name": "T10 三模式进度隔离（同 ID 不互相污染）",
+   "ok": true,
+   "detail": {
+    "pvp": "completed",
+    "pve": "none",
+    "pvps": "none"
+   }
+  },
+  {
+   "name": "T11 刷新后非当前模式不被污染",
+   "ok": true,
+   "detail": {
+    "pvps": "none"
+   }
+  },
+  {
+   "name": "T12 刷新后 PvP 模式仍保留确认后的状态",
+   "ok": true,
+   "detail": {
+    "pvp": "completed"
+   }
+  },
+  {
+   "name": "T6 重置后续确认框出现并含「仅重置当前任务」",
+   "ok": true,
+   "detail": "重置后续任务？"
+  },
+  {
+   "name": "T7 弹窗列出直接/间接后续任务",
+   "ok": true,
+   "detail": "将「半满半空」设置为未开始，会影响 1 个依赖它的后续任务。直接后续「横插一杠」：已完成 → 未开始确认前不会修改任何任务状态；取消则全部保持原样。"
+  },
+  {
+   "name": "T8 「仅重置当前任务」不动后续任务",
+   "ok": true,
+   "detail": {
+    "cur": "none",
+    "fu": "completed"
+   }
+  },
+  {
+   "name": "T9 确认后后续任务被重置（真实解锁方向）",
+   "ok": true,
+   "detail": {
+    "fu": "none",
+    "cur": "none"
+   }
+  },
+  {
+   "name": "G1 所有请求同源（离线可跑）",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "G2 无 JS 异常 / 控制台错误",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "detail": {
+  "side": {
+   "scrollH": 955,
+   "clientH": 955,
+   "boardH": 593,
+   "lineGaps": [
+    3,
+    12,
+    12,
+    12
+   ],
+   "clipped": []
+  },
+  "sideBefore": {
+   "scrollH": 1021,
+   "lineGaps": [
+    5,
+    26,
+    26,
+    26
+   ],
+   "boardH": 639
+  },
+  "requests": {
+   "total": 439,
+   "external": []
+  }
+ },
+ "pass": true
+}

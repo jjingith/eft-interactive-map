@@ -1,0 +1,35 @@
+{
+ "sampled": 412,
+ "withRealAlpha": 412,
+ "noAlpha": 0,
+ "nearOpaque": 0,
+ "totalGenerated": 5355,
+ "totalMissing": 5,
+ "missingReasons": [
+  {
+   "itemId": "6a15ae2ae5267ba21c07f98f",
+   "name": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+   "reason": "下载失败：HTTP Error 404: Not Found"
+  },
+  {
+   "itemId": "6a78b7f8c2016eb33e0027cd",
+   "name": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "reason": "下载失败：HTTP Error 404: Not Found"
+  },
+  {
+   "itemId": "6aa948d1a7cdc313b50cdd11",
+   "name": "“杀人鲸”推刃匕首",
+   "reason": "下载失败：HTTP Error 404: Not Found"
+  },
+  {
+   "itemId": "6aa94a3ca7cdc313b50cdd15",
+   "name": "NKVD 芬卡工具刀",
+   "reason": "下载失败：HTTP Error 404: Not Found"
+  },
+  {
+   "itemId": "707265736574000000000018",
+   "name": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪 SVD 20",
+   "reason": "下载失败：HTTP Error 404: Not Found"
+  }
+ ]
+}

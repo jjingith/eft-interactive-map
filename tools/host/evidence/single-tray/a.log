@@ -1,0 +1,18 @@
+﻿
+=== 2026-11-02 22:33:02 start pid=47952 ===
+22:33:02.783  桌面壳启动参数：--backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --exit-after-ms 60000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\single-tray\a.log
+22:33:02.819  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-47952.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-47952.log" --parent-pid 47952
+22:33:02.849  后端已加入 Job Object（壳退出即杀）
+22:33:04.011  后端就绪：http://127.0.0.1:3176/ pid=43676
+22:33:04.023  WebView2 Runtime 版本：156.0.4314.58
+22:33:04.287  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+22:33:04.671  主窗口导航：http://127.0.0.1:3176/
+22:33:04.687  HWND 创建：2625410
+22:33:04.687  布局 260x260 @ (1644,764) scale=1 full=False
+22:33:04.694  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+22:33:04.749  布局 260x260 @ (1644,764) scale=1 full=False
+22:33:04.750  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:3176/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:33:04.902  托盘已创建
+22:33:04.969  WebView2 就绪，导航：http://127.0.0.1:3176/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:33:05.561  主页面加载完成
+22:33:05.882  资源 HTTP 404：http://127.0.0.1:3176/favicon.ico

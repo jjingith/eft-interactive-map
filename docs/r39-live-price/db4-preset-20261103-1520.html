@@ -1,0 +1,1286 @@
+<!DOCTYPE html><html><head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Database for Tarkov</title>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter &amp; more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="DB For Tarkov">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Kick off the ~3.4MB (br) app bundle during HTML parse instead of
+         waiting for flutter_bootstrap.js to run and request it. Same-origin,
+         same URL Flutter's loader resolves (main.dart.js), so it's reused, not
+         re-fetched. CanvasKit is intentionally NOT preloaded here — its variant
+         (full vs chromium) is browser-dependent, so a static preload would pull
+         the wrong one on Firefox/Safari; the loader picks the right one. -->
+    <link rel="preload" href="main.dart.js" as="script">
+
+    <script src="flutter.js" defer=""></script>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="firebase-app-check-site-verification" content="6LeaFTIsAAAAANC_BjK6ipmSfXga87ZIvCVpST4E">
+    <meta name="google-signin-client_id" content="691484958322-avktna8i67jai3lnfp39hm4l243qq3jf.apps.googleusercontent.com">
+
+    <style id="splash-screen-style">
+        html { height: 100% }
+        body { margin: 0; min-height: 100%; background-color: #121212; background-size: 100% 100%; }
+        .center { margin:0; position:absolute; top:50%; left:50%; -ms-transform:translate(-50%,-50%); transform:translate(-50%,-50%); }
+        .contain    { display:block; width:100%; height:100%; object-fit:contain; }
+        .stretch    { display:block; width:100%; height:100%; }
+        .cover      { display:block; width:100%; height:100%; object-fit:cover; }
+        .bottom     { position:absolute; bottom:0; left:50%; -ms-transform:translate(-50%,0); transform:translate(-50%,0); }
+        .bottomLeft  { position:absolute; bottom:0; left:0; }
+        .bottomRight { position:absolute; bottom:0; right:0; }
+        @media (prefers-color-scheme: dark) { body { background-color: #121212; } }
+
+        #splash-extra {
+            position: fixed; inset: 0;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            pointer-events: none; z-index: 9998; font-family: monospace;
+        }
+        #splash-extra-inner {
+            margin-top: 0;
+            display: flex; flex-direction: column; align-items: center;
+            pointer-events: auto;
+        }
+
+        @keyframes pulse-glow {
+            0%,100% { filter: drop-shadow(0 0 8px rgba(200,160,40,0.25)); }
+            50%      { filter: drop-shadow(0 0 22px rgba(200,160,40,0.65)); }
+        }
+        #sp-logo { animation: pulse-glow 2.6s ease-in-out infinite; width: 88px; height: 88px; }
+        @keyframes shimmer { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+        #sp-caching { font-size: 13px; white-space: nowrap; line-height: 1; }
+        .sp-sh { background: linear-gradient(90deg,#555 30%,#ccc 50%,#555 70%); background-size:400px 100%;
+                 -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+                 animation: shimmer 2s linear infinite; display:inline-block; font-weight:600; }
+        .sp-sh2 { animation-delay:0.25s; font-weight:700; }
+        #sp-dots { color:#fff; font-weight:400; margin-left:4px; display:inline-block; width:14px; text-align:left; vertical-align:baseline; }
+
+
+        #sp-main { margin-top:16px; display:flex; flex-direction:row; width:100%; max-width:490px; }
+        #sp-tl { width:32px; flex-shrink:0; position:relative; }
+        #sp-tl-track { position:absolute; left:50%; transform:translateX(-50%); width:2px; background:#222; border-radius:1px; }
+        .sp-seg { position:absolute; left:50%; transform:translateX(-50%); width:2px; height:0; }
+        #sg0{background:#4ade80;} #sg1r{background:#f59e0b;} #sg1n{background:#22d3ee;} #sg2{background:#ef4444;}
+        .sp-node { position:absolute; left:50%; transform:translate(-50%,-50%); width:9px; height:9px;
+                   border-radius:50%; border:2px solid #2a2a2a; background:#121212;
+                   transition:background 0.4s,border-color 0.4s; z-index:2; }
+        .sp-lbl { position:absolute; right:calc(100% + 6px); transform:translateY(-20%);
+                  font-size:10px; font-weight:600; white-space:nowrap; }
+
+        #sp-lines { flex:1; display:flex; flex-direction:column; padding-left:10px; }
+        .sp-line { font-size:12px; font-style:italic; font-weight:600; padding:8px 10px; border-radius:3px;
+                   border:1px solid transparent; display:flex; flex-direction:column; justify-content:center; flex:1;
+                   transition:opacity 0.45s ease,background 0.45s ease,border-color 0.45s ease; }
+        .sp-line .sp-sub { margin-top:3px; font-size:10px; font-style:normal; opacity:0.6; }
+        #sl0  { color:#4ade80; opacity:0.18; }
+        #sl2r { color:#f59e0b; opacity:0.18; display:none; }
+        #sl2n { color:#22d3ee; opacity:0.18; display:none; }
+        #sl3  { color:#f87171; opacity:0.18; }
+        #sl4  { color:#ef4444; opacity:0.18; }
+        #sl0.on  { opacity:1; background:rgba(74,222,128,0.07);  border-color:rgba(74,222,128,0.18); }
+        #sl2r.on { opacity:1; background:rgba(245,158,11,0.07);  border-color:rgba(245,158,11,0.18); }
+        #sl2n.on { opacity:1; background:rgba(34,211,238,0.07);  border-color:rgba(34,211,238,0.18); }
+        #sl3.on  { opacity:1; background:rgba(248,113,113,0.07); border-color:rgba(248,113,113,0.18); }
+        #sl4.on  { opacity:1; background:rgba(239,68,68,0.08);   border-color:rgba(239,68,68,0.18); }
+        .sp-ver  { margin-top:4px; display:flex; align-items:center; gap:6px; font-style:normal; font-size:10px; }
+        .sp-vo   { color:#666; } .sp-va { color:#888; } .sp-vn { color:#fbbf24; font-weight:700; }
+        .sp-note { margin-top:4px; font-size:10px; font-style:normal; color:#0e7490; }
+
+        .sp-btns { margin-top:6px; display:flex; gap:6px; flex-wrap:wrap; }
+        .sp-line:not(.on) .sp-btns { display:none; }
+        .sp-line.passed { opacity:0.55; }
+        .sp-btn  { display:inline-flex; align-items:center; gap:5px; padding:5px 13px; border-radius:4px;
+                   font-size:10px; font-style:normal; font-family:monospace; cursor:pointer; font-weight:700;
+                   letter-spacing:0.6px; transition:all 0.15s ease; position:relative; border:none; outline:none; }
+        #sp-btn-hard  { color:#fff; background:#c0392b; box-shadow:0 2px 8px rgba(192,57,43,0.4); }
+        #sp-btn-hard:hover  { background:#e74c3c; box-shadow:0 4px 14px rgba(231,76,60,0.5); transform:translateY(-1px); }
+        #sp-btn-clear { color:#fff; background:#7f1d1d; border:1px solid rgba(239,68,68,0.5); }
+        #sp-btn-clear:hover { background:#991b1b; border-color:#ef4444; transform:translateY(-1px); }
+        .sp-tip { position:absolute; bottom:calc(100% + 4px); left:50%; transform:translateX(-50%);
+                  background:#1a1a1a; border:1px solid #333; color:#aaa; font-size:10px; padding:3px 8px;
+                  border-radius:3px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.2s;
+                  font-style:normal; font-weight:400; }
+        .sp-tip.show { opacity:1; }
+
+        #sp-links { margin-top:20px; display:flex; gap:10px; align-items:center; }
+        .sp-link { display:flex; align-items:center; justify-content:center; gap:7px; height:34px; padding:0 14px;
+                   border-radius:6px; cursor:pointer; border:1px solid transparent; text-decoration:none;
+                   transition:transform 0.15s,box-shadow 0.15s,filter 0.15s; opacity:0.8; }
+        .sp-link:hover { opacity:1; transform:translateY(-2px); filter:brightness(1.15); }
+        .sp-link.apple   { background:#111; border-color:rgba(255,255,255,0.2); }
+        .sp-link.apple:hover  { box-shadow:0 4px 14px rgba(255,255,255,0.1); }
+        .sp-link.gplay   { background:#1a1a2e; border-color:rgba(66,133,244,0.4); }
+        .sp-link.gplay:hover  { box-shadow:0 4px 14px rgba(66,133,244,0.25); }
+        .sp-link.discord { background:#5865f2; border-color:rgba(88,101,242,0.6); }
+        .sp-link.discord:hover{ box-shadow:0 4px 14px rgba(88,101,242,0.4); }
+        .sp-link-lbl { font-family:sans-serif; font-size:11px; font-weight:600; color:#fff; letter-spacing:0.3px; white-space:nowrap; }
+    </style>
+
+    <script id="splash-screen-script">
+        // ── Version check — runs before Flutter init, then again on tab
+        //    refocus / bfcache restore / a slow timer so a long-open tab still
+        //    picks up a new deploy without a manual reload ─────────────────────
+        (function() {
+          var STORAGE_KEY = '_web_ver';
+          // Same-tab reloads of a wasm-heavy page can trip a known Chromium
+          // WebAssembly-memory leak (tab eventually crashes "Out of Memory"
+          // after enough same-tab reloads — see
+          // https://github.com/brave/brave-browser/issues/3366). Cap the
+          // forced reload below to once per tab session (sessionStorage,
+          // cleared when the tab closes) so a version bump landing while a
+          // tab has been open a while can't compound into a reload loop; a
+          // version change beyond the first is adopted silently and picked
+          // up next time the tab is actually closed/reopened or reloaded by
+          // the user. This cap is also what makes the extra triggers below
+          // safe: a refocus/timer/bfcache check can adopt a new version and
+          // reload at most once, never in a loop.
+          var SESSION_RELOAD_KEY = '_web_ver_reloaded';
+          var POLL_INTERVAL_MS = 30 * 60 * 1000; // background fallback: 30 min
+          var checking = false;
+
+          function checkVersion() {
+            if (checking) return; // avoid overlapping fetches from >1 trigger
+            checking = true;
+            var stored = localStorage.getItem(STORAGE_KEY);
+            fetch('/version.json?v=' + Date.now(), { cache: 'no-store' })
+              .then(function(r) { return r.json(); })
+              .then(function(data) {
+                var server = data.version;
+                if (!server) return;
+                if (stored === null || stored === server) {
+                  localStorage.setItem(STORAGE_KEY, server);
+                  return;
+                }
+                if (sessionStorage.getItem(SESSION_RELOAD_KEY)) {
+                  localStorage.setItem(STORAGE_KEY, server);
+                  return;
+                }
+                sessionStorage.setItem(SESSION_RELOAD_KEY, '1');
+                localStorage.setItem(STORAGE_KEY, server);
+                // unregister service worker first so it re-fetches fresh files
+                var doReload = function() {
+                  location.replace(location.href.split('?')[0] + '?v=' + Date.now());
+                };
+                if ('serviceWorker' in navigator) {
+                  navigator.serviceWorker.getRegistrations().then(function(regs) {
+                    var promises = regs.map(function(r) { return r.unregister(); });
+                    Promise.all(promises).then(doReload).catch(doReload);
+                  }).catch(doReload);
+                } else {
+                  doReload();
+                }
+              })
+              .catch(function() {})
+              .finally(function() { checking = false; });
+          }
+
+          // Initial check — before Flutter boots (unchanged behavior).
+          checkVersion();
+
+          // Long-open / backgrounded tab: re-check when it is refocused
+          // (immediate, and skips wasted requests while the tab is hidden),
+          // plus a slow timer fallback for tabs that stay foregrounded.
+          document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') checkVersion();
+          });
+          setInterval(checkVersion, POLL_INTERVAL_MS);
+
+          // bfcache: back/forward restores the page from memory WITHOUT
+          // re-running this script, so re-check on a persisted pageshow.
+          window.addEventListener('pageshow', function(e) {
+            if (e.persisted) checkVersion();
+          });
+        })();
+
+        // ── Splash ────────────────────────────────────────────────────────────
+        function removeSplashFromWeb() {
+          document.getElementById("splash")?.remove();
+          document.getElementById("splash-extra")?.remove();
+          document.getElementById("splash-branding")?.remove();
+          document.body.style.background = "transparent";
+        }
+    </script>
+</head>
+<body>
+
+<picture id="splash" style="display:none">
+    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+    <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+</picture>
+
+<div id="splash-extra">
+    <div id="splash-extra-inner">
+        <img id="sp-logo" src="icons/Icon-512.png" alt="">
+        <div id="sp-caching" style="margin-top:16px;">
+            <span class="sp-sh">caching</span> <span class="sp-sh sp-sh2">data</span>
+        </div>
+        <div id="sp-main">
+            <div id="sp-tl">
+                <div id="sp-tl-track"></div>
+                <div class="sp-seg" id="sg0"></div>
+                <div class="sp-seg" id="sg1r"></div>
+                <div class="sp-seg" id="sg1n"></div>
+                <div class="sp-seg" id="sg2"></div>
+                <div class="sp-node" id="sn0"><span class="sp-lbl" id="sl0-lbl">0s</span></div>
+                <div class="sp-node" id="sn1"><span class="sp-lbl" id="sl1-lbl">1s</span></div>
+                <div class="sp-node" id="sn5"><span class="sp-lbl" id="sl5-lbl">5s</span></div>
+            </div>
+            <div id="sp-lines">
+                <div class="sp-line" id="sl0">
+                    checking for updates
+                    <div class="sp-sub" id="sl0-sub">reading local cache</div>
+                </div>
+                <div class="sp-line" id="sl2r">
+                    new version found, updating cache
+                    <div class="sp-sub">please wait a moment</div>
+                </div>
+                <div class="sp-line" id="sl2n">
+                    first visit — downloading app assets
+                    <div class="sp-note">subsequent visits will load instantly</div>
+                </div>
+                <div class="sp-line" id="sl3">
+                    cache conflict detected
+                    <div class="sp-btns">
+                        <button class="sp-btn" id="sp-btn-hard" onclick="splashHardRefresh()">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                            HARD REFRESH
+                        </button>
+                    </div>
+                </div>
+                <div class="sp-line" id="sl4">
+                    still stuck? clear browser site data
+                    <div class="sp-btns">
+                        <button class="sp-btn" id="sp-btn-clear" onclick="splashClearData(this)">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            COPY SETTINGS URL
+                            <span class="sp-tip" id="sp-copy-tip">Paste in address bar &amp; Enter</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sp-links">
+            <a class="sp-link apple" href="https://apps.apple.com/us/app/id1557116752" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg>
+                <span class="sp-link-lbl">App Store</span>
+            </a>
+            <a class="sp-link gplay" href="https://play.google.com/store/apps/details?id=com.dvcstudiox.eft" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3.18 23.76c.3.17.64.24.99.2l11.76-11.76L12 9.27 3.18 23.76z" fill="#EA4335"/><path d="M20.73 10.03L17.5 8.17l-3.57 3.57 3.57 3.57 3.26-1.88c.93-.54.93-1.86-.03-2.4z" fill="#FBBC05"/><path d="M3.18.24C2.85.42 2.62.77 2.62 1.24v21.52c0 .47.23.82.56 1l13.32-11.56L3.18.24z" fill="#4285F4"/><path d="M4.17.04L16.5 11.96 12.93 15.53 3.18 23.76c.31.04.63-.03.93-.2l14.35-8.28c.93-.54.93-1.85 0-2.39L4.17.04z" fill="#34A853"/></svg>
+                <span class="sp-link-lbl">Google Play</span>
+            </a>
+            <a class="sp-link discord" href="https://discord.gg/aaFjxhg4Pj" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.003.022.015.043.032.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                <span class="sp-link-lbl">Discord</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ── dots ──────────────────────────────────────────────────────────────────
+
+    // ── detect mode ───────────────────────────────────────────────────────────
+    var _isFirst = (localStorage.getItem('_web_ver') === null);
+    var _p0, _p1, _p5, _pEnd;
+
+    function _mid(id){
+        var tl=document.getElementById('sp-tl');
+        if(!tl) return 0;
+        var r=document.getElementById(id);
+        if(!r) return 0;
+        var tb=tl.getBoundingClientRect(), rb=r.getBoundingClientRect();
+        return rb.top+rb.height/2-tb.top;
+    }
+    function _bot(id){
+        var tl=document.getElementById('sp-tl');
+        if(!tl) return 0;
+        var r=document.getElementById(id);
+        if(!r) return 0;
+        var tb=tl.getBoundingClientRect(), rb=r.getBoundingClientRect();
+        return rb.bottom-tb.top;
+    }
+
+    function _applyMode() {
+        var l0=document.getElementById('sl0-lbl'), l1=document.getElementById('sl1-lbl'), l5=document.getElementById('sl5-lbl');
+        if (_isFirst) {
+            document.getElementById('sl0-sub').style.display  = 'none';
+            document.getElementById('sl2r').style.display = 'none';
+            document.getElementById('sl2n').style.display = 'flex';
+            document.getElementById('sl3').style.display  = 'none';
+            document.getElementById('sl4').style.display  = 'none';
+            document.getElementById('sg0').style.background = '#4ade80';
+            l0.style.color='#4ade80'; l0.textContent='0s';
+            l1.style.color='#22d3ee'; l1.textContent='0.2s';
+            document.getElementById('sn5').style.display='none';
+        } else {
+            document.getElementById('sl0-sub').style.display  = 'block';
+            document.getElementById('sl2r').style.display = 'flex';
+            document.getElementById('sl2n').style.display = 'none';
+            document.getElementById('sl3').style.display  = 'flex';
+            document.getElementById('sl4').style.display  = 'flex';
+            document.getElementById('sg0').style.background = '#4ade80';
+            l0.style.color='#4ade80'; l0.textContent='0s';
+            l1.style.color='#f59e0b'; l1.textContent='0.2s';
+            l5.style.color='#ef4444'; l5.textContent='5s';
+            document.getElementById('sn5').style.display='block';
+
+        }
+        setTimeout(_initTL, 30);
+    }
+
+    function _initTL() {
+        if(!document.getElementById('sp-tl')) return; // ← thêm dòng này
+        _p0 = _mid('sl0');
+        if (_isFirst) { _p1=_mid('sl2n'); _p5=_bot('sl2n'); _pEnd=_bot('sl2n'); }
+        else          { _p1=_mid('sl2r'); _p5=_mid('sl3');   _pEnd=_bot('sl4'); }
+        var t = document.getElementById('sp-tl-track');
+        t.style.top=_p0+'px'; t.style.height=(_pEnd-_p0)+'px';
+        ['sg0','sg1r','sg1n','sg2'].forEach(function(id){ document.getElementById(id).style.height='0px'; });
+        document.getElementById('sg0').style.top  = _p0+'px';
+        document.getElementById('sg1r').style.top = _p1+'px';
+        document.getElementById('sg1n').style.top = _p1+'px';
+        document.getElementById('sg2').style.top  = _p5+'px';
+        document.getElementById('sn0').style.top  = _p0+'px';
+        document.getElementById('sn1').style.top  = _p1+'px';
+        document.getElementById('sn5').style.top  = _p5+'px';
+    }
+
+    function _sn(id,c){ var e=document.getElementById(id); if(c){e.style.borderColor=c;e.style.background=c;}else{e.style.borderColor='#2a2a2a';e.style.background='#121212';} }
+
+    var _el=0, _tk=null;
+    function _step(){
+        _el+=60;
+        var ms=_el, t1=200, t5=5000;
+        var h0=ms<=0?0:ms<=t1?(ms/t1)*(_p1-_p0):(_p1-_p0);
+        var h1,h2;
+        if(_isFirst){ h1=ms<=t1?0:Math.min(((ms-t1)/3000)*(_pEnd-_p1),_pEnd-_p1); h2=0; }
+        else        { h1=ms<=t1?0:ms<=t5?((ms-t1)/(t5-t1))*(_p5-_p1):(_p5-_p1); h2=ms<=t5?0:Math.min(((ms-t5)/3000)*(_pEnd-_p5),_pEnd-_p5); }
+        document.getElementById('sg0').style.height  = h0+'px';
+        document.getElementById('sg1r').style.height = _isFirst?'0px':h1+'px';
+        document.getElementById('sg1n').style.height = _isFirst?h1+'px':'0px';
+        document.getElementById('sg2').style.height  = h2+'px';
+        _sn('sn0', '#4ade80');
+        _sn('sn1', ms>=t1?(_isFirst?'#22d3ee':'#f59e0b'):null);
+        if(!_isFirst) _sn('sn5', ms>=t5?'#ef4444':null);
+        if(_isFirst){
+            document.getElementById('sl0').classList.toggle('on',     ms>=0&&ms<t1);
+            document.getElementById('sl0').classList.toggle('passed',  ms>=t1);
+            document.getElementById('sl2n').classList.toggle('on',    ms>=t1);
+        } else {
+            document.getElementById('sl0').classList.toggle('on',     ms>=0&&ms<t1);
+            document.getElementById('sl0').classList.toggle('passed',  ms>=t1);
+            document.getElementById('sl2r').classList.toggle('on',    ms>=t1&&ms<t5);
+            document.getElementById('sl2r').classList.toggle('passed', ms>=t5);
+            document.getElementById('sl3').classList.toggle('on',     ms>=t5);
+            document.getElementById('sl4').classList.toggle('on',     ms>=t5);
+        }
+    }
+
+    function splashHardRefresh() { location.replace(location.href.split('?')[0]+'?v='+Date.now()); }
+    function splashClearData(btn) {
+        var url='chrome://settings/content/siteDetails?site='+encodeURIComponent('https://db4tarkov.com');
+        navigator.clipboard.writeText(url).then(function(){
+            var tip=document.getElementById('sp-copy-tip'); tip.classList.add('show');
+            var orig=btn.childNodes[0].textContent; btn.childNodes[0].textContent='✓ Copied!';
+            setTimeout(function(){ tip.classList.remove('show'); btn.childNodes[0].textContent=orig; },2500);
+        }).catch(function(){});
+    }
+
+    // hide nodes until positioned to avoid overlap at y=0
+    ['sn0','sn1','sn5'].forEach(function(id){ document.getElementById(id).style.visibility='hidden'; });
+
+    requestAnimationFrame(function(){
+        setTimeout(function(){
+            _applyMode();
+            // wait for layout + initTL (30ms inside applyMode) before starting step
+            setTimeout(function(){
+                ['sn0','sn1','sn5'].forEach(function(id){ document.getElementById(id).style.visibility='visible'; });
+                _tk=setInterval(_step,60);
+            }, 200);
+        }, 80);
+    });
+    window.addEventListener('resize', function() {
+    if(document.getElementById('sp-tl')) _initTL();
+    });
+
+    // ── remove overlay when Flutter first frame is painted ──────────────────
+    function _removeSplashExtra() {
+        var e = document.getElementById('splash-extra');
+        if (e) e.remove();
+        if (_tk) clearInterval(_tk);
+    }
+    // ── register custom icon-cache SW (replaces Flutter's auto SW with one
+    //    that importScripts the Flutter SW + adds cache-first for tarkov.dev
+    //    icons). Done AFTER flutter-first-frame so Flutter has already
+    //    completed its own SW registration — our register() then takes over
+    //    the scope without a race. See web/icon_cache_sw.js for the rationale
+    //    (304-revalidation per icon = 5-20s gun-load freeze on web only).
+    function _registerIconCacheSW() {
+        if (!('serviceWorker' in navigator)) return;
+        navigator.serviceWorker.register('/icon_cache_sw.js', { scope: '/' })
+            .catch(function(err) { console.warn('[icon-cache-sw] register failed:', err); });
+    }
+    // flutter-first-frame fires after Flutter paints its first frame
+    window.addEventListener('flutter-first-frame', function() {
+        _removeSplashExtra();
+        _registerIconCacheSW();
+    });
+    // fallback: poll for flt-glass-pane then wait 400ms for first paint
+    var _pt = setInterval(function() {
+        if (document.querySelector('flt-glass-pane') || document.querySelector('flutter-view')) {
+            clearInterval(_pt);
+            setTimeout(function() { _removeSplashExtra(); _registerIconCacheSW(); }, 400);
+        }
+    }, 100);
+</script>
+
+<script src="flutter_bootstrap.js" async=""></script>
+
+<script>
+    window.eftLogFS = {
+      _dbName: 'eft-log-fs',
+      _storeName: 'handles',
+      _handleKey: 'logs-dir',
+
+      _clearCaches() {
+        window._eftFileCache = {};
+        window._eftFolderFileCache = {};
+        this._folderHandleCache = {};
+        this._fileHandleMap = {};
+      },
+
+      async _openDb() {
+        return await new Promise((resolve, reject) => {
+          const req = indexedDB.open(this._dbName, 1);
+          req.onupgradeneeded = () => {
+            const db = req.result;
+            if (!db.objectStoreNames.contains(this._storeName)) db.createObjectStore(this._storeName);
+          };
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => reject(req.error);
+        });
+      },
+
+      async _saveHandle(handle) {
+        try {
+          const db = await this._openDb();
+          await new Promise((resolve, reject) => {
+            const tx = db.transaction(this._storeName, 'readwrite');
+            tx.objectStore(this._storeName).put(handle, this._handleKey);
+            tx.oncomplete = () => resolve();
+            tx.onerror = () => reject(tx.error);
+            tx.onabort = () => reject(tx.error);
+          });
+          db.close();
+        } catch (e) {
+          console.warn('[EFT-FS] save handle failed', e);
+        }
+      },
+
+      async _loadSavedHandle() {
+        try {
+          const db = await this._openDb();
+          const handle = await new Promise((resolve, reject) => {
+            const tx = db.transaction(this._storeName, 'readonly');
+            const req = tx.objectStore(this._storeName).get(this._handleKey);
+            req.onsuccess = () => resolve(req.result ?? null);
+            req.onerror = () => reject(req.error);
+          });
+          db.close();
+          return handle;
+        } catch (e) {
+          console.warn('[EFT-FS] load handle failed', e);
+          return null;
+        }
+      },
+
+      async _ensureHandle() {
+        if (window._eftLogs) return window._eftLogs;
+        if (window._eftHandleLoadPromise) return await window._eftHandleLoadPromise;
+        window._eftHandleLoadPromise = (async () => {
+          const saved = await this._loadSavedHandle();
+          if (!saved) return null;
+          window._eftLogs = saved;
+          return saved;
+        })();
+        try {
+          return await window._eftHandleLoadPromise;
+        } finally {
+          window._eftHandleLoadPromise = null;
+        }
+      },
+
+      async _requestReadPermission(handle) {
+        if (!handle) return false;
+        try {
+          const current = await handle.queryPermission({ mode: 'read' });
+          if (current === 'granted') return true;
+          const granted = await handle.requestPermission({ mode: 'read' });
+          return granted === 'granted';
+        } catch (e) {
+          console.warn('[EFT-FS] permission request failed', e);
+          return false;
+        }
+      },
+
+      async _pickNewDirectory() {
+        const h = await window.showDirectoryPicker({
+          mode: 'read',
+          startIn: 'documents',
+          id: 'eft-logs',
+        });
+        window._eftLogs = h;
+        this._clearCaches();
+        await this._saveHandle(h);
+        return h;
+      },
+
+      async pickDirectory(forceNew = false) {
+        try {
+          if (forceNew) {
+            const picked = await this._pickNewDirectory();
+            return picked.name;
+          }
+          const remembered = await this._ensureHandle();
+          if (remembered && await this._requestReadPermission(remembered)) {
+            this._clearCaches();
+            return remembered.name;
+          }
+          const picked = await this._pickNewDirectory();
+          return picked.name;
+        } catch(e) { return null; }
+      },
+
+      async listLogFolders() {
+        const root = await this._ensureHandle();
+        if (!root) return null;
+        if (!(await this._requestReadPermission(root))) return null;
+        const folders = [];
+        for await (const [name, h] of root.entries()) {
+          if (h.kind === 'directory' && name.startsWith('log_')) folders.push(name);
+        }
+        return folders.sort();
+      },
+
+      // Giải nén .gz bằng DecompressionStream API (built-in trình duyệt, không cần thư viện)
+      async _decompressGz(arrayBuffer) {
+        try {
+          const ds = new DecompressionStream('gzip');
+          const writer = ds.writable.getWriter();
+          const reader = ds.readable.getReader();
+          writer.write(new Uint8Array(arrayBuffer));
+          writer.close();
+          const chunks = [];
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            chunks.push(value);
+          }
+          const total = chunks.reduce((sum, c) => sum + c.length, 0);
+          const result = new Uint8Array(total);
+          let offset = 0;
+          for (const chunk of chunks) { result.set(chunk, offset); offset += chunk.length; }
+          const text = new TextDecoder().decode(result);
+          return text;
+        } catch(e) {
+          console.error('[EFT-GZ] Decompress error:', e);
+          return '';
+        }
+      },
+
+      async _readAllFiles(folder, baseSuffix) {
+        const cacheKey = folder + '|all|' + baseSuffix;
+        if (window._eftFileCache && window._eftFileCache[cacheKey] !== undefined) {
+          return window._eftFileCache[cacheKey];
+        }
+
+        try {
+          const fh = await this._getFolderHandle(folder);
+
+          const plain = [];
+          const gzipped = [];
+
+          for await (const [name, handle] of fh.entries()) {
+            if (handle.kind !== 'file') continue;
+            // Bỏ qua files không chứa baseSuffix
+            if (!name.includes(baseSuffix)) continue;
+
+            // Check .gz trước (vì .log.gz cũng match /_(\d+)\.log$/)
+            const gzMatch = name.match(/_(\d+)\.log\.gz$/);
+            if (gzMatch) {
+              gzipped.push({ num: parseInt(gzMatch[1]), handle, name });
+              continue;
+            }
+            // Plain .log
+            const plainMatch = name.match(/_(\d+)\.log$/);
+            if (plainMatch) {
+              plain.push({ num: parseInt(plainMatch[1]), handle, name });
+            }
+          }
+
+          plain.sort((a, b) => a.num - b.num);
+          gzipped.sort((a, b) => a.num - b.num);
+
+          const parts = [];
+
+          for (const { handle, name } of gzipped) {
+            try {
+              const file = await handle.getFile();
+              const buf = await file.arrayBuffer();
+              const text = await this._decompressGz(buf);
+              if (text) parts.push(text);
+            } catch(e) { console.error('[EFT-FS] Error reading gz', name, e); }
+          }
+
+          for (const { handle, name } of plain) {
+            try {
+              const file = await handle.getFile();
+              const text = await file.text();
+              if (text) parts.push(text);
+            } catch(e) { console.error('[EFT-FS] Error reading plain', name, e); }
+          }
+
+          const result = parts.join('\n');
+          if (!window._eftFileCache) window._eftFileCache = {};
+          window._eftFileCache[cacheKey] = result;
+          return result;
+        } catch(e) {
+          console.error('[EFT-FS] _readAllFiles error:', e);
+          return '';
+        }
+      },
+
+      _filterLogText(text, markers, keepNotificationBlocks) {
+        if (!text) return '';
+        const out = [];
+        const lines = text.split(/\r?\n/);
+        let captureJson = false;
+        let braceDepth = 0;
+        for (const line of lines) {
+          if (captureJson) {
+            out.push(line);
+            for (let i = 0; i < line.length; i++) {
+              if (line[i] === '{') braceDepth++;
+              else if (line[i] === '}') braceDepth--;
+            }
+            if (braceDepth <= 0 && line.includes('}')) {
+              captureJson = false;
+              braceDepth = 0;
+            }
+            continue;
+          }
+          const matched = markers.some(marker => line.includes(marker));
+          if (!matched) continue;
+          out.push(line);
+          if (keepNotificationBlocks && line.includes('Got notification |')) {
+            captureJson = true;
+            braceDepth = 0;
+          }
+        }
+        return out.join('\n');
+      },
+
+      async _readAllFilesFiltered(folder, baseSuffix, markers, keepNotificationBlocks = false) {
+        try {
+          const fh = await this._getFolderHandle(folder);
+          const plain = [];
+          const gzipped = [];
+
+          for await (const [name, handle] of fh.entries()) {
+            if (handle.kind !== 'file') continue;
+            if (!name.includes(baseSuffix)) continue;
+            const gzMatch = name.match(/_(\d+)\.log\.gz$/);
+            if (gzMatch) {
+              gzipped.push({ num: parseInt(gzMatch[1]), handle, name });
+              continue;
+            }
+            const plainMatch = name.match(/_(\d+)\.log$/);
+            if (plainMatch) plain.push({ num: parseInt(plainMatch[1]), handle, name });
+          }
+
+          plain.sort((a, b) => a.num - b.num);
+          gzipped.sort((a, b) => a.num - b.num);
+
+          const parts = [];
+          const scanFile = async (handle, name, gz) => {
+            try {
+              const file = await handle.getFile();
+              const text = gz ? await this._decompressGz(await file.arrayBuffer()) : await file.text();
+              const filtered = this._filterLogText(text, markers, keepNotificationBlocks);
+              if (filtered) parts.push(filtered);
+            } catch(e) { console.error('[EFT-FS] Error reading summary', name, e); }
+          };
+
+          for (const { handle, name } of gzipped) await scanFile(handle, name, true);
+          for (const { handle, name } of plain) await scanFile(handle, name, false);
+
+          return parts.join('\n');
+        } catch(e) {
+          console.error('[EFT-FS] _readAllFilesFiltered error:', e);
+          return '';
+        }
+      },
+
+      _parseNotificationEvents(text) {
+        if (!text) return [];
+        const events = [];
+        const detectedMode = (() => {
+          if (/wsn-pvp-season-/i.test(text) || /pvpseason/i.test(text)) return 'season';
+          if (/wsn-pve-/i.test(text) || /\/pve\//i.test(text)) return 'pve';
+          if (/wsn-pvp-/i.test(text) || /\/regular\//i.test(text) || /\/pvp\//i.test(text)) return 'pvp';
+          return null;
+        })();
+        const readStatus = (jsonText) => {
+          const m = jsonText.match(/"survivedStatus"\s*:\s*"(\w+)"/) || jsonText.match(/survivedStatus\\?":\s*\\?"(\w+)\\?"/);
+          return m ? m[1] : null;
+        };
+        const readQuestId = (message, expectedSuffix = null) => {
+          const raw = String(message.templateId || '').trim();
+          if (!raw) return null;
+          const parts = raw.split(/\s+/);
+          if (parts.length < 2) return null;
+          const questId = parts[0];
+          const suffix = parts[1];
+          if (expectedSuffix != null && suffix !== expectedSuffix) return null;
+          return /^[a-f0-9]{24}$/i.test(questId) ? questId : null;
+        };
+        const findJsonObjectEnd = (value, start) => {
+          let depth = 0, inString = false, escaped = false;
+          for (let i = start; i < value.length; i++) {
+            const ch = value[i];
+            if (inString) {
+              if (escaped) escaped = false;
+              else if (ch === '\\') escaped = true;
+              else if (ch === '"') inString = false;
+              continue;
+            }
+            if (ch === '"') inString = true;
+            else if (ch === '{') depth++;
+            else if (ch === '}') {
+              depth--;
+              if (depth === 0) return i;
+            }
+          }
+          return -1;
+        };
+        const extractNotificationBlocks = (name) => {
+          const blocks = [];
+          const marker = 'Got notification | ' + name;
+          let searchStart = 0;
+          while (true) {
+            const markerIndex = text.indexOf(marker, searchStart);
+            if (markerIndex < 0) break;
+            const jsonStart = text.indexOf('{', markerIndex + marker.length);
+            if (jsonStart < 0) break;
+            const jsonEnd = findJsonObjectEnd(text, jsonStart);
+            if (jsonEnd < 0) {
+              searchStart = jsonStart + 1;
+              continue;
+            }
+            const lineStart = text.lastIndexOf('\n', markerIndex) + 1;
+            blocks.push({
+              time: text.substring(lineStart, Math.min(lineStart + 23, text.length)).replace(' ', 'T'),
+              json: text.substring(jsonStart, jsonEnd + 1)
+            });
+            searchStart = jsonEnd + 1;
+          }
+          return blocks;
+        };
+
+        for (const block of extractNotificationBlocks('ChatMessageReceived')) {
+          try {
+            const data = JSON.parse(block.json);
+            const message = data.message;
+            if (!message) continue;
+            const type = Number(message.type || 0);
+            if (type === 4) {
+              const systemData = typeof message.systemData === 'string'
+                ? JSON.parse(message.systemData)
+                : message.systemData;
+              const soldItem = systemData && systemData.soldItem ? String(systemData.soldItem) : '';
+              if (!soldItem) continue;
+              events.push({
+                kind: 'fleaSold',
+                id: soldItem,
+                mode: detectedMode,
+                buyerNickname: systemData.buyerNickname ? String(systemData.buyerNickname) : null,
+                itemCount: Number(systemData.itemCount || 1),
+                receivedAmount: Number(systemData.receivedAmount || 0),
+                time: block.time
+              });
+              continue;
+            }
+            let id = null;
+            let taskType = null;
+            if (type === 10) {
+              id = readQuestId(message, 'description');
+              taskType = 'started';
+            } else if (type === 11) {
+              id = readQuestId(message);
+              taskType = 'failed';
+            } else if (type === 12) {
+              id = readQuestId(message, 'successMessageText');
+              taskType = 'finished';
+            } else {
+              continue;
+            }
+            if (!id) {
+              continue;
+            }
+            events.push({
+              kind: 'quest',
+              id,
+              mode: detectedMode,
+              taskType,
+              time: block.time,
+              eventId: data.eventId ? String(data.eventId) : null,
+              templateId: String(message.templateId || '')
+            });
+          } catch(e) {}
+        }
+
+        for (const block of extractNotificationBlocks('RaidFinished')) {
+          const status = readStatus(block.json);
+          if (!status) continue;
+          events.push({
+            kind: 'raidFinished',
+            mode: detectedMode,
+            status,
+            time: block.time
+          });
+        }
+        for (const block of extractNotificationBlocks('UserConfirmed')) {
+          try {
+            const data = JSON.parse(block.json);
+            events.push({
+              kind: 'userConfirmed',
+              location: data.location ? String(data.location) : null,
+              raidMode: data.raidMode ? String(data.raidMode) : null,
+              version: data.version ? String(data.version) : null,
+              mode: data.mode ? String(data.mode) : detectedMode,
+              time: block.time
+            });
+          } catch(e) {}
+        }
+        return events;
+      },
+
+      // Đọc chỉ _000.log để poll (live mode — offset-based, không đọc archives)
+      async readFolderSummaryAll(folder) {
+        try {
+          const fh = await this._getFolderHandle(folder);
+          const buckets = {
+            app: { suffix: 'application', markers: [
+              'application|Session mode:',
+              'application|SelectProfile ProfileId:',
+              'application|scene preset path:',
+              'application|LocationLoaded',
+              'application|PlayerSpawnEvent',
+              'application|MatchingCompleted',
+              'application|TRACE-NetworkGameCreate profileStatus:',
+              'application|GameRunned',
+              'application|GameStarting',
+              'application|GameStarted',
+              'application|GameSpawned',
+              'application|[Transit]'
+            ], notify: false, plain: [], gzipped: [] },
+            backend: { suffix: 'backend', markers: [
+              '/client/game/start',
+              '/client/game/version/validate',
+              '/client/game/keepalive',
+              'gw-pve.escapefromtarkov.com',
+              'gw-pve.escapefromtarkov.ru',
+              'gw-pvp.escapefromtarkov.com',
+              'gw-pvp.escapefromtarkov.ru',
+              'prod-',
+              'survivedStatus'
+            ], notify: false, plain: [], gzipped: [] },
+            errors: { suffix: 'errors', markers: [
+              'NetworkGame.GameStopped received. ExitStatus:'
+            ], notify: false, plain: [], gzipped: [] },
+            output: { suffix: 'output', markers: [
+              'NetworkGame.GameStopped received. ExitStatus:',
+              'FinishScavSession',
+              'PrepareSelectedProfileLocally',
+              'CompleteSelectedProfile',
+              '<b>Quest.</b>',
+              "Can't find condition for target",
+              'TarkovApplication:ComebackToMainMenu()',
+              'EFT.<OnGameEnd>d__119:MoveNext()'
+            ], notify: false, plain: [], gzipped: [] },
+            notif: { suffix: 'push-notifications', markers: [
+              'Got notification | ChatMessageReceived',
+              'Got notification | RaidFinished',
+              'Got notification | UserConfirmed',
+              'NotificationManager: new params received url:',
+              'wsn-pve-',
+              'wsn-pvp-'
+            ], notify: true, plain: [], gzipped: [] }
+          };
+          let archiveCount = 0;
+
+          for await (const [name, handle] of fh.entries()) {
+            if (handle.kind !== 'file') continue;
+            if (name.endsWith('.gz')) archiveCount++;
+            const gzMatch = name.match(/_(\d+)\.log\.gz$/);
+            const plainMatch = name.match(/_(\d+)\.log$/);
+            if (!gzMatch && !plainMatch) continue;
+            const num = parseInt((gzMatch || plainMatch)[1]);
+            for (const key of Object.keys(buckets)) {
+              const bucket = buckets[key];
+              if (!name.includes(bucket.suffix)) continue;
+              (gzMatch ? bucket.gzipped : bucket.plain).push({ num, handle, name });
+              break;
+            }
+          }
+
+          const scanBucket = async (bucket) => {
+            bucket.plain.sort((a, b) => a.num - b.num);
+            bucket.gzipped.sort((a, b) => a.num - b.num);
+            const parts = [];
+            const scanFile = async (handle, name, gz) => {
+              try {
+                const file = await handle.getFile();
+                const text = gz ? await this._decompressGz(await file.arrayBuffer()) : await file.text();
+                const filtered = this._filterLogText(text, bucket.markers, bucket.notify);
+                if (filtered) parts.push(filtered);
+              } catch(e) { console.error('[EFT-FS] Error reading folder summary', name, e); }
+            };
+            for (const { handle, name } of bucket.gzipped) await scanFile(handle, name, true);
+            for (const { handle, name } of bucket.plain) await scanFile(handle, name, false);
+            return parts.join('\n');
+          };
+
+          // Serialize bucket scans to reduce peak disk I/O (was Promise.all).
+          // Each bucket decompresses .gz files — running all 5 in parallel
+          // causes heavy concurrent disk reads that can stall HDD users' games.
+          const app = await scanBucket(buckets.app);
+          const backend = await scanBucket(buckets.backend);
+          const errors = await scanBucket(buckets.errors);
+          const output = await scanBucket(buckets.output);
+          const notif = await scanBucket(buckets.notif);
+          const result = {
+            app,
+            backend,
+            errors,
+            output,
+            notifEvents: this._parseNotificationEvents(notif),
+            archiveCount
+          };
+          return JSON.stringify(result);
+        } catch(e) {
+          console.error('[EFT-FS] readFolderSummaryAll error:', e);
+          return '';
+        }
+      },
+
+      async _findFile(folder, suffix) {
+        // Delegate to the unified file handle cache.
+        return await this._getFileHandle(folder, suffix);
+      },
+
+      // ── Push notifications ───────────────────────────────────────────────────
+
+      // History scan: đọc TẤT CẢ (_000, _001, gz...)
+      async readNotifFileAll(folder) {
+        return await this._readAllFiles(folder, 'push-notifications');
+      },
+
+      async readNotifFileSummaryAll(folder) {
+        return await this._readAllFilesFiltered(folder, 'push-notifications', [
+          'Got notification | ChatMessageReceived',
+          'Got notification | RaidFinished',
+          'Got notification | UserConfirmed',
+          'NotificationManager: new params received url:',
+          'wsn-pve-',
+          'wsn-pvp-'
+        ], true);
+      },
+
+      // Live poll: chỉ _000.log với offset
+      async readNotifFile(folder, offset) {
+        try {
+          const handle = await this._findFile(folder, 'push-notifications_000.log');
+          if (!handle) return '';
+          const file = await handle.getFile();
+          if (offset >= file.size) return '';
+          return await file.slice(offset).text();
+        } catch(e) { return ''; }
+      },
+
+      async getNotifFileSize(folder) {
+        try {
+          const handle = await this._findFile(folder, 'push-notifications_000.log');
+          if (!handle) return 0;
+          return (await handle.getFile()).size;
+        } catch(e) { return 0; }
+      },
+
+      // ── Application log ──────────────────────────────────────────────────────
+
+      async readAppLogAll(folder) {
+        return await this._readAllFiles(folder, 'application');
+      },
+
+      async readAppLogSummaryAll(folder) {
+        return await this._readAllFilesFiltered(folder, 'application', [
+          'application|Session mode:',
+          'application|SelectProfile ProfileId:',
+          'application|scene preset path:',
+          'application|LocationLoaded',
+          'application|PlayerSpawnEvent',
+          'application|MatchingCompleted',
+          'application|TRACE-NetworkGameCreate profileStatus:',
+          'application|GameRunned',
+          'application|GameStarting',
+          'application|GameStarted',
+          'application|GameSpawned',
+          'application|[Transit]'
+        ]);
+      },
+
+      async readAppLog(folder, offset) {
+        try {
+          const handle = await this._findFile(folder, 'application_000.log');
+          if (!handle) return '';
+          const file = await handle.getFile();
+          if (offset >= file.size) return '';
+          return await file.slice(offset).text();
+        } catch(e) { return ''; }
+      },
+
+      async getAppFileSize(folder) {
+        try {
+          const handle = await this._findFile(folder, 'application_000.log');
+          if (!handle) return 0;
+          return (await handle.getFile()).size;
+        } catch(e) { return 0; }
+      },
+
+      // ── Backend log ──────────────────────────────────────────────────────────
+
+      async readBackendLogAll(folder) {
+        return await this._readAllFiles(folder, 'backend');
+      },
+
+      async readBackendLogSummaryAll(folder) {
+        return await this._readAllFilesFiltered(folder, 'backend', [
+          '/client/game/start',
+          '/client/game/version/validate',
+          '/client/game/keepalive',
+          'gw-pve.escapefromtarkov.com',
+          'gw-pve.escapefromtarkov.ru',
+          'gw-pvp.escapefromtarkov.com',
+          'gw-pvp.escapefromtarkov.ru',
+          'prod-',
+          'survivedStatus'
+        ]);
+      },
+
+      async readErrorLogAll(folder) {
+        return await this._readAllFiles(folder, 'errors');
+      },
+
+      async readErrorLogSummaryAll(folder) {
+        return await this._readAllFilesFiltered(folder, 'errors', [
+          'NetworkGame.GameStopped received. ExitStatus:'
+        ]);
+      },
+
+      async readErrorLog(folder, offset) {
+        try {
+          const handle = await this._findFile(folder, 'errors_000.log');
+          if (!handle) return '';
+          const file = await handle.getFile();
+          if (offset >= file.size) return '';
+          return await file.slice(offset).text();
+        } catch(e) { return ''; }
+      },
+
+      async getErrorFileSize(folder) {
+        try {
+          const handle = await this._findFile(folder, 'errors_000.log');
+          if (!handle) return 0;
+          return (await handle.getFile()).size;
+        } catch(e) { return 0; }
+      },
+
+      async readOutputLogAll(folder) {
+        return await this._readAllFiles(folder, 'output');
+      },
+
+      async readOutputLogSummaryAll(folder) {
+        return await this._readAllFilesFiltered(folder, 'output', [
+          'NetworkGame.GameStopped received. ExitStatus:',
+          'FinishScavSession',
+          'PrepareSelectedProfileLocally',
+          'CompleteSelectedProfile',
+          '<b>Quest.</b>',
+          "Can't find condition for target",
+          'TarkovApplication:ComebackToMainMenu()',
+          'EFT.<OnGameEnd>d__119:MoveNext()'
+        ]);
+      },
+
+      async readOutputLog(folder, offset) {
+        try {
+          const handle = await this._findFile(folder, 'output_000.log');
+          if (!handle) return '';
+          const file = await handle.getFile();
+          if (offset >= file.size) return '';
+          return await file.slice(offset).text();
+        } catch(e) { return ''; }
+      },
+
+      async getOutputFileSize(folder) {
+        try {
+          const handle = await this._findFile(folder, 'output_000.log');
+          if (!handle) return 0;
+          return (await handle.getFile()).size;
+        } catch(e) { return 0; }
+      },
+
+      async readBackendLog(folder, offset) {
+        try {
+          const handle = await this._findFile(folder, 'backend_000.log');
+          if (!handle) return '';
+          const file = await handle.getFile();
+          if (offset >= file.size) return '';
+          return await file.slice(offset).text();
+        } catch(e) { return ''; }
+      },
+
+      async getBackendFileSize(folder) {
+        try {
+          const handle = await this._findFile(folder, 'backend_000.log');
+          if (!handle) return 0;
+          return (await handle.getFile()).size;
+        } catch(e) { return 0; }
+      },
+
+      // Số lượng archive files trong folder (để hiện stats)
+      async countArchiveFiles(folder) {
+        try {
+          const fh = await this._getFolderHandle(folder);
+          let count = 0;
+          const names = [];
+          for await (const [name] of fh.entries()) {
+            if (name.endsWith('.gz')) { count++; names.push(name); }
+          }
+          return count;
+        } catch(e) { return 0; }
+      },
+
+      // ── Folder handle cache ─────────────────────────────────────────────────
+      // Cache directory handles so we don't re-iterate the root for every folder access.
+      _folderHandleCache: {},
+
+      async _getFolderHandle(folder) {
+        if (this._folderHandleCache[folder]) return this._folderHandleCache[folder];
+        const fh = await window._eftLogs.getDirectoryHandle(folder);
+        this._folderHandleCache[folder] = fh;
+        return fh;
+      },
+
+      // ── File handle cache per folder ──────────────────────────────────────
+      // Maps "folder|suffix" → FileSystemFileHandle, persists across polls.
+      _fileHandleMap: {},
+
+      async _getFileHandle(folder, suffix) {
+        const key = folder + '|' + suffix;
+        if (this._fileHandleMap[key]) return this._fileHandleMap[key];
+        try {
+          const fh = await this._getFolderHandle(folder);
+          for await (const [name, handle] of fh.entries()) {
+            if (handle.kind === 'file' && name.endsWith(suffix)) {
+              this._fileHandleMap[key] = handle;
+              return handle;
+            }
+          }
+        } catch(e) {}
+        return null;
+      },
+
+      // ── Batched poll — single call for all 5 log files ─────────────────────
+      // Returns JSON: { notif, app, backend, errors, output } with new text for each.
+      // skipMode: 0 = read all, 1 = raid-only (skip notif+app to minimize disk I/O)
+      async pollBatch(folder, notifOffset, appOffset, backendOffset, errorOffset, outputOffset, skipMode) {
+        const result = { notif: '', app: '', backend: '', errors: '', output: '' };
+        const allSuffixes = [
+          ['push-notifications_000.log', 'notif',   notifOffset],
+          ['application_000.log',        'app',     appOffset],
+          ['backend_000.log',            'backend', backendOffset],
+          ['errors_000.log',             'errors',  errorOffset],
+          ['output_000.log',             'output',  outputOffset],
+        ];
+        // In raid-only mode, skip notif + app (indices 0,1) — no useful data mid-raid.
+        const suffixes = skipMode === 1 ? allSuffixes.slice(2) : allSuffixes;
+        try {
+          // Resolve file handles (cached after first call)
+          const handles = await Promise.all(
+            suffixes.map(([suffix]) => this._getFileHandle(folder, suffix))
+          );
+          // Get File objects in parallel (disk metadata reads)
+          const filePromises = handles.map(h => h ? h.getFile().catch(() => null) : null);
+          const files = await Promise.all(filePromises);
+          // Read only files that have new data (size > offset)
+          const readPromises = suffixes.map(([, key, offset], i) => {
+            const file = files[i];
+            if (!file || offset >= file.size) return Promise.resolve('');
+            return file.slice(offset).text().catch(() => '');
+          });
+          const texts = await Promise.all(readPromises);
+          for (let i = 0; i < suffixes.length; i++) {
+            result[suffixes[i][1]] = texts[i];
+          }
+        } catch(e) {
+          console.error('[EFT-FS] pollBatch error:', e);
+        }
+        return JSON.stringify(result);
+      },
+
+      // ── Check latest folder — cached, returns only newest folder name ──────
+      // Avoids full listLogFolders iteration; remembers last known list.
+      _lastKnownFolders: null,
+
+      async checkNewestFolder() {
+        try {
+          const root = await this._ensureHandle();
+          if (!root) return null;
+          if (!(await this._requestReadPermission(root))) return null;
+          const folders = [];
+          for await (const [name, h] of root.entries()) {
+            if (h.kind === 'directory' && name.startsWith('log_')) folders.push(name);
+          }
+          folders.sort();
+          this._lastKnownFolders = folders;
+          return folders.length > 0 ? folders[folders.length - 1] : null;
+        } catch(e) { return null; }
+      },
+
+      async hasHandle() {
+        const root = await this._ensureHandle();
+        if (!root) return false;
+        try {
+          return await this._requestReadPermission(root);
+        } catch (_) {
+          return false;
+        }
+      },
+    };
+</script>
+
+</body></html>

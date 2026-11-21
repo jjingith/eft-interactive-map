@@ -1,0 +1,4 @@
+﻿
+=== 2026-11-02 22:33:10 start pid=50856 ===
+22:33:10.906  桌面壳启动参数：--backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --exit-after-ms 10000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\single-tray\b.log
+22:33:10.911  已有壳实例，激活后退出

@@ -1,0 +1,1009 @@
+{
+ "name": "db4-map",
+ "requested_url": "https://db4tarkov.com/map",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "semantics_auto": "clicked",
+ "url": "https://db4tarkov.com/map",
+ "title": "Map",
+ "ready": "complete",
+ "textLen": 1350,
+ "htmlLen": 112707,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 125,
+ "input": 1,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0 🌖 18:29 🌓 06:29"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "tab",
+   "label": "cultists Ground Zero 2% 40%"
+  },
+  {
+   "role": "tab",
+   "label": "reshala Customs 60% 20% 25% 20%"
+  },
+  {
+   "role": "tab",
+   "label": "Factory"
+  },
+  {
+   "role": "tab",
+   "label": "shturman Woods 60% 20% 25% 20% 40%"
+  },
+  {
+   "role": "tab",
+   "label": "sanitar Shoreline 60% 20% 25% 17% 40%"
+  },
+  {
+   "role": "tab",
+   "label": "raider Reserve 40%"
+  },
+  {
+   "role": "tab",
+   "label": "killa Interchange 60% 35%"
+  },
+  {
+   "role": "tab",
+   "label": "exusecfree Lighthouse 100% 100% 20% 25% 100%"
+  },
+  {
+   "role": "tab",
+   "label": "kaban Streets 60% 60% 40%"
+  },
+  {
+   "role": "tab",
+   "label": "black_div. The Lab 60%"
+  },
+  {
+   "role": "tab",
+   "label": "shadow_of_tagilla The Labyrinth 100%"
+  },
+  {
+   "role": "tab",
+   "label": "black_div. Terminal 100% 20% 20% 20% 20% 20%"
+  },
+  {
+   "role": "tab",
+   "label": "knight Icebreaker 100% 100% 100% 100%"
+  },
+  {
+   "role": "input",
+   "label": "Press any key to start searching Item Price on Flea Market (press ESC to end sea"
+  },
+  {
+   "role": "tabpanel",
+   "label": "￼ Skyside Skyside ASAP Winery ASAP Winery TerraGroup TerraGroup Science Office S"
+  },
+  {
+   "role": "button",
+   "label": "Emercom Checkpoint"
+  },
+  {
+   "role": "button",
+   "label": "First in Line"
+  },
+  {
+   "role": "button",
+   "label": "Mira Ave (Flare)"
+  },
+  {
+   "role": "button",
+   "label": "Transit to Streets of Tarkov"
+  },
+  {
+   "role": "button",
+   "label": "Saving the Mole"
+  },
+  {
+   "role": "group",
+   "label": "Science"
+  },
+  {
+   "role": "group",
+   "label": "Utility"
+  },
+  {
+   "role": "button",
+   "label": "Tartowers Sales Office"
+  },
+  {
+   "role": "button",
+   "label": "Burning Rubber"
+  },
+  {
+   "role": "button",
+   "label": "Police Cordon V-Ex"
+  },
+  {
+   "role": "button",
+   "label": "Shooting Cans"
+  },
+  {
+   "role": "button",
+   "label": "Rough Tarkov"
+  },
+  {
+   "role": "group",
+   "label": "UC reg."
+  },
+  {
+   "role": "button",
+   "label": "Nakatani Basement Stairs"
+  },
+  {
+   "role": "button",
+   "label": "HOTKEYS"
+  },
+  {
+   "role": "group",
+   "label": "FILTER"
+  },
+  {
+   "role": "button",
+   "label": "Show All"
+  },
+  {
+   "role": "button",
+   "label": "Hide All"
+  },
+  {
+   "role": "button",
+   "label": "Show"
+  },
+  {
+   "role": "button",
+   "label": "Hide"
+  },
+  {
+   "role": "button",
+   "label": "PMC 5"
+  },
+  {
+   "role": "button",
+   "label": "Scav 3"
+  },
+  {
+   "role": "button",
+   "label": "Co-Op 2"
+  },
+  {
+   "role": "button",
+   "label": "Transit 1"
+  },
+  {
+   "role": "button",
+   "label": "Register 0"
+  },
+  {
+   "role": "button",
+   "label": "PC 0"
+  },
+  {
+   "role": "button",
+   "label": "Safe 0"
+  },
+  {
+   "role": "button",
+   "label": "DeadScav 1"
+  },
+  {
+   "role": "button",
+   "label": "Drawer 0"
+  },
+  {
+   "role": "button",
+   "label": "Stash 0"
+  },
+  {
+   "role": "button",
+   "label": "Jacket 0"
+  },
+  {
+   "role": "button",
+   "label": "MedCase 0"
+  },
+  {
+   "role": "button",
+   "label": "SuitCase 0"
+  },
+  {
+   "role": "button",
+   "label": "Duffle 0"
+  },
+  {
+   "role": "button",
+   "label": "MedBag 0"
+  },
+  {
+   "role": "button",
+   "label": "ToolBox 0"
+  },
+  {
+   "role": "button",
+   "label": "GrenadeBox 0"
+  },
+  {
+   "role": "button",
+   "label": "AmmoBox 0"
+  },
+  {
+   "role": "button",
+   "label": "WeaponBox 0"
+  },
+  {
+   "role": "button",
+   "label": "GreenCrate 0"
+  },
+  {
+   "role": "button",
+   "label": "SupplyCrate 0"
+  },
+  {
+   "role": "button",
+   "label": "Boss 0"
+  },
+  {
+   "role": "button",
+   "label": "PMC 20"
+  },
+  {
+   "role": "button",
+   "label": "Scav 11"
+  },
+  {
+   "role": "button",
+   "label": "Sniper 2"
+  },
+  {
+   "role": "button",
+   "label": "Rogue 0"
+  },
+  {
+   "role": "button",
+   "label": "Landmark 13"
+  },
+  {
+   "role": "button",
+   "label": "BTR 0"
+  },
+  {
+   "role": "button",
+   "label": "Lever 0"
+  },
+  {
+   "role": "button",
+   "label": "Locked 3"
+  },
+  {
+   "role": "button",
+   "label": "Quest 8"
+  },
+  {
+   "role": "button",
+   "label": "AGS 2"
+  },
+  {
+   "role": "button",
+   "label": "Keycard 0"
+  },
+  {
+   "role": "button",
+   "label": "KeySpawn 0"
+  },
+  {
+   "role": "button",
+   "label": "DRAW"
+  },
+  {
+   "role": "button",
+   "label": "P1 0L 0M"
+  },
+  {
+   "role": "button",
+   "label": "P2"
+  },
+  {
+   "role": "button",
+   "label": "P3"
+  },
+  {
+   "role": "button",
+   "label": "P4"
+  },
+  {
+   "role": "button",
+   "label": "P5"
+  },
+  {
+   "role": "button",
+   "label": "Toggle Tools mode • ON — LMB to draw polyline, RMB to place marker/circle • OFF "
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/map",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793252262634",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://gacxmpsnkkizmzmcimlh.supabase.co/functions/v1/list-my-marker-submissions",
+   "host": "gacxmpsnkkizmzmcimlh.supabase.co"
+  },
+  {
+   "url": "https://gacxmpsnkkizmzmcimlh.supabase.co/functions/v1/list-my-marker-submissions",
+   "host": "gacxmpsnkkizmzmcimlh.supabase.co"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-0-0.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-1-0.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-0-1.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-1-1.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-2-0.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-2-1.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-3-0.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/webp/map/ground_zero/ground_zero-2-3-1.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/675aaae75a3ab8372d0b02a7.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/658199972dc4e60f6d556a2f.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/658199aa38c79576a2569e13.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/grid/6581998038c79576a2569e11.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/6575a6ca8778e96ded05a802-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Shooting_Cans_Utyos.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://json.tarkov.dev/pvp-season/maps",
+   "host": "json.tarkov.dev"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_pmc.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_scav.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_coop.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_transit.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_cash.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_pc.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_safe.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_dead.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_drawer.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_stash.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_jacket.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_medcase.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_suitcase.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_duffle.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_medical.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_tool.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_grenade.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_ammo.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_weapon.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_greencrate.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/container_crate.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/spawn_boss.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/spawn_pmc.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/spawn_scav.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/spawn_sniper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/spawn_rogueraider.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/btr.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/lever.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/locked.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/quest.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/stationarygun.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/loot_keycard.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/loot_key.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/pin.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_pmc_flare.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_pmc_taxi.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/map/exfil_pmc_code.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/visit.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Mechanic.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/findQuestItem.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Skier.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/quest_type/extract.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Therapist.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Prapor.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Shooting_Cans_AGS.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Ground_Zero_Emercom_Station.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Police_Checkpoint.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/cultists.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/pmcbotblackdivseason.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/reshala.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/knight.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/partisan.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/shturman.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/sanitar.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/raider.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/killa.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/tagilla.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/zryachiy.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/exusecfree.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/glukhar.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/kaban.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/kollontay.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/black_div..png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/shadow_of_tagilla.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/rogue.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/boss/the_wedge.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Scientist%27s_Office.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Saving_the_mole_hard_drive_location.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Saving_the_mole_hard_drive_location_2.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Saving_the_mole_hard_drive_location_3.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/obj_screenshot/Rough_Tarkov_Ground_Zero_Approach2.webp?v=2",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabsE4tq3luCC7p-aXxcn.7.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-assets.dvcstudiox.workers.dev/6575a6ca8778e96ded05a802-icon.webp",
+   "host": "eft-assets.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-N427SV6H5B",
+   "host": "www.googletagmanager.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1v9117849133za208zd9117849133xf1&_p=1793252291911&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3",
+   "host": "www.google-analytics.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1v9117849133za200zd9117849133xf1&_p=1793252291911&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=14&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%3",
+   "host": "www.google-analytics.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/db4-map.png",
+ "screenshot_bytes": 524757
+}

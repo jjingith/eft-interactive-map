@@ -1,0 +1,416 @@
+{
+ "schema": "eftmap.r19.11.panel/1",
+ "slotInfo": {
+  "initial": "mod_pistol_grip",
+  "stock": {
+   "exists": true,
+   "title": "当前槽位：枪托",
+   "sub": "已装 柯尔特 AR-15 卡宾枪缓冲管",
+   "kind": "slot",
+   "slot": "mod_stock",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "handguard": {
+   "exists": true,
+   "title": "当前槽位：护木",
+   "sub": "父件 机匣 · 已装 柯尔特 M4 卡宾枪长度 AR-15 护木",
+   "kind": "slot",
+   "slot": "mod_reciever/mod_handguard",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "scope": {
+   "exists": true,
+   "title": "当前槽位：瞄具",
+   "sub": "父件 照门 · 5 个可选型号",
+   "kind": "slot",
+   "slot": "mod_reciever/mod_sight_rear/mod_scope",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "magazine": {
+   "exists": true,
+   "title": "当前槽位：弹匣",
+   "sub": "已装 柯尔特 5.56x45 STANAG 30发弹匣",
+   "kind": "slot",
+   "slot": "mod_magazine",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "foregrip": {
+   "exists": true,
+   "title": "当前槽位：前握把",
+   "sub": "父件 护木 · 42 个可选型号",
+   "kind": "slot",
+   "slot": "mod_reciever/mod_handguard/mod_foregrip",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "ammo": {
+   "exists": true,
+   "title": "当前槽位：子弹",
+   "sub": "5.56x45 · 在右侧列表里选择弹药",
+   "kind": "ammo",
+   "slot": "mod_magazine",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  }
+ },
+ "stockCandidates": {
+  "total": 17,
+  "bad": 0,
+  "rows": [
+   {
+    "name": "柯尔特 A2 AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "柯尔特 AR-15 卡宾枪缓冲管",
+    "conflict": false,
+    "state": "已装",
+    "why": ""
+   },
+   {
+    "name": "联盟-TM AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "ADAR缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "ERGO F93 PRO AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Phase5 Hexone AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "RTM ATP AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries Viper PDW AR-15 枪托",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   }
+  ]
+ },
+ "integratedGrip": {
+  "picked": {
+   "x": 1356.5,
+   "y": 557.1875,
+   "name": "Hera Arms CQR AR-15 一体化枪托",
+   "conflict": false,
+   "state": "可装",
+   "why": ""
+  },
+  "slot": {
+   "exists": true,
+   "title": "当前槽位：握把",
+   "sub": "已装 Hera Arms CQR AR-15 一体化枪托",
+   "kind": "slot",
+   "slot": "mod_pistol_grip",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  },
+  "toast": "已装上 Hera Arms CQR AR-15 一体化枪托（握把）　｜　价格档 FLEA：构建期快照，非实时行情"
+ },
+ "integratedBlockedByTube": {
+  "picked": {
+   "x": 1356.5,
+   "y": 557.3828125,
+   "name": "Hera Arms CQR AR-15 一体化枪托",
+   "conflict": true,
+   "state": "⛔ 不可装",
+   "why": "与已安装的「High Standard M4SS AR-15 枪托」互斥（上游 conflictingItems）"
+  },
+  "toast": "⛔ 无法安装 Hera Arms CQR AR-15 一体化枪托：与已安装的「High Standard M4SS AR-15 枪托」互斥（上游 conflictingItems）（未改动改装）　｜　价格档 FLEA：构建期快照，非实时行情",
+  "slot": {
+   "exists": true,
+   "title": "当前槽位：握把",
+   "sub": "已装 柯尔特A2 AR-15手枪式握把",
+   "kind": "slot",
+   "slot": "mod_pistol_grip",
+   "topOffset": 0,
+   "beforeSearch": true,
+   "inCenter": false
+  }
+ },
+ "conflictCandidates": {
+  "total": 17,
+  "bad": 11,
+  "rows": [
+   {
+    "name": "柯尔特 A2 AR-15 缓冲管",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "柯尔特 AR-15 卡宾枪缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "联盟-TM AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "ADAR缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "DoubleStar ACE ARFX AR-15 镂空枪托",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "DoubleStar ACE SOCOM Gen.4 AR-15 枪托",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "ERGO F93 PRO AR-15 枪托",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "Magpul Enhanced AR-15 机匣延长缓冲管",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托 (FDE)",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "Phase5 Hexone AR-15 缓冲管",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "RTM ATP AR-15 缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+    "conflict": false,
+    "state": "可装",
+    "why": ""
+   },
+   {
+    "name": "Strike Industries Viper PDW AR-15 枪托",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托 (FDE)",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   },
+   {
+    "name": "TROY M7A1 PDW AR-15 枪托（黑色）",
+    "conflict": true,
+    "state": "⛔ 不可装",
+    "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+   }
+  ]
+ },
+ "stripeStyle": {
+  "bgImage": "repeating-linear-gradient(45deg, rgba(178, 28, 28, 0.3) 0px, rgba(178, 28, 28, 0.3) 5px, rgba(178, 28, 28, 0.1) 5px, rgba(178, 28, 28, 0.1) 11px)",
+  "pointer": "none",
+  "zIndex": "2",
+  "coverW": 1005,
+  "coverH": 46,
+  "rowW": 1005,
+  "textColor": "rgb(92, 20, 20)",
+  "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）",
+  "name": "柯尔特 A2 AR-15 缓冲管"
+ },
+ "stripeOnHover": {
+  "bgImage": "repeating-linear-gradient(45deg, rgba(178, 28, 28, 0.34) 0px, rgba(178, 28, 28, 0.34) 5px, rgba(178, 28, 28, 0.12) 5px, rgba(178, 28, 28, 0.12) 11px)",
+  "hoverBg": "rgb(247, 245, 238)"
+ },
+ "blockedInstall": {
+  "candidate": {
+   "x": 1356.5,
+   "y": 242.5859375,
+   "name": "柯尔特 A2 AR-15 缓冲管",
+   "conflict": true,
+   "state": "⛔ 不可装",
+   "why": "与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）"
+  },
+  "unchanged": true,
+  "toast": "⛔ 无法安装 柯尔特 A2 AR-15 缓冲管：与已安装的「Hera Arms CQR AR-15 一体化枪托」互斥（上游 conflictingItems）（未改动改装）　｜　价格档 FLEA：构建期快照，非实时行情",
+  "installedHas": 0
+ },
+ "hideIncompat": {
+  "before": {
+   "total": 17,
+   "bad": 11
+  },
+  "after": {
+   "total": 6,
+   "bad": 0
+  },
+  "count": "已隐藏 11 个",
+  "withSearch": {
+   "cands": {
+    "total": 6,
+    "bad": 0,
+    "rows": [
+     {
+      "name": "柯尔特 AR-15 卡宾枪缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "联盟-TM AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "ADAR缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "RTM ATP AR-15 缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     },
+     {
+      "name": "Strike Industries 先进机匣延长缓冲管（电镀红）",
+      "conflict": false,
+      "state": "可装",
+      "why": ""
+     }
+    ]
+   },
+   "query": "缓冲管"
+  },
+  "emptyState": {
+   "rows": 0,
+   "text": "没有匹配「ubr gen2」的兼容配件（另有 11 个不兼容项已隐藏）。可清空搜索或取消「隐藏不兼容配件」查看全部"
+  }
+ },
+ "unhide": {
+  "total": 17,
+  "bad": 11
+ }
+}

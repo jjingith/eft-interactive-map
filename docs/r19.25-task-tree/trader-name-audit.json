@@ -1,0 +1,308 @@
+{
+ "schema": 1,
+ "tool": "tools/r1925_trader_audit.py",
+ "rule": "任务系统内的商人名称直接显示游戏内英文原名；其它 UI 文案继续中文。本条目是中文化规则的显式例外（见 design 决策 docs/r19.25-task-tree/audit.md §5）。",
+ "dataSource": "data/tasks/traders.json 的 nameEn（上游 traders 端点的 normalizedName → 英文名）",
+ "resolution": "按稳定 traderId 关联；不用显示名匹配、不反向翻译、不用内部 ID 当名字",
+ "total": 16,
+ "resolved": 16,
+ "suspect": [],
+ "unresolved": [],
+ "sites": [
+  {
+   "site": "任务树节点副标题",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "var bits = [traderEn(rec)"
+  },
+  {
+   "site": "任务树节点悬停",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "\"商人：\" + traderEn(rec)"
+  },
+  {
+   "site": "商人分带标题",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "(t.nameEn || band.trader || \"未收录商人\") + \" · \""
+  },
+  {
+   "site": "奖励·声望商人",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "\"声望：\" + traderNameById(s.traderId)"
+  },
+  {
+   "site": "奖励·解锁商人",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "\"解锁商人：\" + traderNameById(t)"
+  },
+  {
+   "site": "商人任务中心卡片",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "var nm = h(\"span\", \"tk-trader-name\", tr.nameEn"
+  },
+  {
+   "site": "商人任务中心标题",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "(state.traders[selectedTrader] || {}).nameEn"
+  },
+  {
+   "site": "商人筛选下拉",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "(state.traders[tid].nameEn || \"未收录商人\") + \"（\""
+  },
+  {
+   "site": "任务详情副标题",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "sub.textContent = traderEn(rec)"
+  },
+  {
+   "site": "任务详情「所属商人」",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "[\"所属商人\", traderEn(rec), \"traderEn\"]"
+  },
+  {
+   "site": "前置任务摘要",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "(t ? traderEn(t) + \" · \" : \"\")"
+  },
+  {
+   "site": "后续任务摘要",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "traderEn(t) + (extra.length"
+  },
+  {
+   "site": "进度页条目",
+   "file": "tasks.js",
+   "found": true,
+   "evidence": "var meta = [traderEn(rec)"
+  },
+  {
+   "site": "攻略概述（数据层生成）",
+   "file": "tools/fetch_tasks.py（生成进 guides.*.json）",
+   "found": true,
+   "evidence": "由 %s 发布"
+  }
+ ],
+ "sitesMissing": [],
+ "traders": [
+  {
+   "traderId": "656f0f98d80a697f855d34b1",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "btr-driver",
+   "nameEn": "BTR Driver",
+   "nameZhBefore": "BTR 驾驶员",
+   "displayName": "BTR Driver",
+   "taskCountMax": 19,
+   "icon": "assets/icons-traders/btr-driver.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "579dc571d53a0658a154fbec",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "fence",
+   "nameEn": "Fence",
+   "nameZhBefore": "篱笆",
+   "displayName": "Fence",
+   "taskCountMax": 16,
+   "icon": "assets/icons-traders/fence.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "5c0647fdd443bc2504c2d371",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "jaeger",
+   "nameEn": "Jaeger",
+   "nameZhBefore": "猎人",
+   "displayName": "Jaeger",
+   "taskCountMax": 64,
+   "icon": "assets/icons-traders/jaeger.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "638f541a29ffd1183d187f57",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "lightkeeper",
+   "nameEn": "Lightkeeper",
+   "nameZhBefore": "灯塔看守",
+   "displayName": "Lightkeeper",
+   "taskCountMax": 14,
+   "icon": "assets/icons-traders/lightkeeper.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "5a7c2eca46aef81a7ca2145d",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "mechanic",
+   "nameEn": "Mechanic",
+   "nameZhBefore": "机械师",
+   "displayName": "Mechanic",
+   "taskCountMax": 72,
+   "icon": "assets/icons-traders/mechanic.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "688246518448b05efd61d461",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "mr-kerman",
+   "nameEn": "Mr. Kerman",
+   "nameZhBefore": "克尔曼先生",
+   "displayName": "Mr. Kerman",
+   "taskCountMax": 0,
+   "icon": "assets/icons-traders/mr-kerman.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "5935c25fb3acc3127c3d8cd9",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "peacekeeper",
+   "nameEn": "Peacekeeper",
+   "nameZhBefore": "和平卫士",
+   "displayName": "Peacekeeper",
+   "taskCountMax": 51,
+   "icon": "assets/icons-traders/peacekeeper.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "54cb50c76803fa8b248b4571",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "prapor",
+   "nameEn": "Prapor",
+   "nameZhBefore": "大老板",
+   "displayName": "Prapor",
+   "taskCountMax": 66,
+   "icon": "assets/icons-traders/prapor.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "68fe15990f29ba3fdbba9d55",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "radio-station",
+   "nameEn": "Radio Station",
+   "nameZhBefore": "无线电台",
+   "displayName": "Radio Station",
+   "taskCountMax": 0,
+   "icon": "assets/icons-traders/radio-station.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "5ac3b934156ae10c4430e83c",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "ragman",
+   "nameEn": "Ragman",
+   "nameZhBefore": "拉格曼",
+   "displayName": "Ragman",
+   "taskCountMax": 61,
+   "icon": "assets/icons-traders/ragman.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "6617beeaa9cfa777ca915b7c",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "ref",
+   "nameEn": "Ref",
+   "nameZhBefore": "裁判",
+   "displayName": "Ref",
+   "taskCountMax": 20,
+   "icon": "assets/icons-traders/ref.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "58330581ace78e27b8b10cee",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "skier",
+   "nameEn": "Skier",
+   "nameZhBefore": "滑雪",
+   "displayName": "Skier",
+   "taskCountMax": 67,
+   "icon": "assets/icons-traders/skier.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "69e0d6cc77b63940375b9173",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "survivor",
+   "nameEn": "Survivor",
+   "nameZhBefore": "幸存者",
+   "displayName": "Survivor",
+   "taskCountMax": 0,
+   "icon": "assets/icons-traders/survivor.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "68fe15910f29ba3fdbba9d54",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "taran",
+   "nameEn": "Taran",
+   "nameZhBefore": "塔兰",
+   "displayName": "Taran",
+   "taskCountMax": 0,
+   "icon": "assets/icons-traders/taran.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "54cb57776803fa99248b456e",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "therapist",
+   "nameEn": "Therapist",
+   "nameZhBefore": "医生",
+   "displayName": "Therapist",
+   "taskCountMax": 53,
+   "icon": "assets/icons-traders/therapist.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  },
+  {
+   "traderId": "688246958448b05efd61d462",
+   "source": "data/tasks/traders.json（由 tools/fetch_tasks.py 从上游 traders 端点解析）",
+   "upstreamEndpoint": "https://json.tarkov.dev/regular/traders",
+   "normalizedName": "voevoda",
+   "nameEn": "Voevoda",
+   "nameZhBefore": "总督",
+   "displayName": "Voevoda",
+   "taskCountMax": 0,
+   "icon": "assets/icons-traders/voevoda.svg",
+   "status": "ok",
+   "note": "直接显示英文原名（游戏内名称）"
+  }
+ ]
+}

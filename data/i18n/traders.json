@@ -1,0 +1,86 @@
+{
+ "schema": 1,
+ "note": "商人名一律使用英文原名（Prapor / Therapist / Fence …）。R23.2 用户指出此前中文名是机翻（Prapor→大老板、Fence→篱笆、Skier→滑雪），既不准确也非社区叫法，故 nameZh 与 nameEn 保持一致。",
+ "traders": {
+  "prapor": {
+   "nameEn": "Prapor",
+   "nameZh": "Prapor",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "therapist": {
+   "nameEn": "Therapist",
+   "nameZh": "Therapist",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "fence": {
+   "nameEn": "Fence",
+   "nameZh": "Fence",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "skier": {
+   "nameEn": "Skier",
+   "nameZh": "Skier",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "peacekeeper": {
+   "nameEn": "Peacekeeper",
+   "nameZh": "Peacekeeper",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "mechanic": {
+   "nameEn": "Mechanic",
+   "nameZh": "Mechanic",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "ragman": {
+   "nameEn": "Ragman",
+   "nameZh": "Ragman",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "jaeger": {
+   "nameEn": "Jaeger",
+   "nameZh": "Jaeger",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "lightkeeper": {
+   "nameEn": "Lightkeeper",
+   "nameZh": "Lightkeeper",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "ref": {
+   "nameEn": "Ref",
+   "nameZh": "Ref",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "btr-driver": {
+   "nameEn": "BTR Driver",
+   "nameZh": "BTR Driver",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "taran": {
+   "nameEn": "Taran",
+   "nameZh": "Taran",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "radio-station": {
+   "nameEn": "Radio Station",
+   "nameZh": "Radio Station",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "mr-kerman": {
+   "nameEn": "Mr. Kerman",
+   "nameZh": "Mr. Kerman",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "voevoda": {
+   "nameEn": "Voevoda",
+   "nameZh": "Voevoda",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  },
+  "survivor": {
+   "nameEn": "Survivor",
+   "nameZh": "Survivor",
+   "note": "R23.2：显示层一律用英文原名（用户决定，不再机翻）"
+  }
+ }
+}

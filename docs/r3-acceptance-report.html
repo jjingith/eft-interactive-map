@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配装工作台 · 第三轮返工交付报告</title>
+<style>
+  :root {
+    --bg: #14161a; --panel: #1b1e24; --panel2: #22262d; --line: #32373f;
+    --fg: #e7e9ee; --dim: #9aa2af; --dim2: #6f7886;
+    --ok: #4ec98a; --bad: #ff6b6b; --warn: #e8b23a; --acc: #7aa2ff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font: 14px/1.7 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    padding: 32px 20px 80px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 { font-size: 19px; margin: 42px 0 14px; padding-left: 11px; border-left: 4px solid var(--acc); }
+  h3 { font-size: 15px; margin: 26px 0 10px; color: var(--acc); }
+  .sub { color: var(--dim); margin: 0 0 22px; }
+  .meta { color: var(--dim2); font-size: 12.5px; }
+  p { margin: 9px 0; }
+  code {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 4px;
+    padding: 1px 6px; font-family: Consolas, "Courier New", monospace; font-size: 12.5px;
+    color: #d8dcff;
+  }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
+  .verdict { border-left: 4px solid var(--warn); background: linear-gradient(90deg, rgba(232,178,58,.10), transparent 60%); }
+  .verdict.ok { border-left-color: var(--ok); background: linear-gradient(90deg, rgba(78,201,138,.10), transparent 60%); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--panel2); color: var(--dim); font-weight: 600; white-space: nowrap; }
+  td.ok { color: var(--ok); font-weight: 600; white-space: nowrap; }
+  td.no { color: var(--bad); font-weight: 600; white-space: nowrap; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pill { display: inline-block; border-radius: 999px; padding: 1px 9px; font-size: 11.5px;
+    border: 1px solid var(--line); background: var(--panel2); color: var(--dim);
+    margin-right: 6px; white-space: nowrap; }
+  .pill.pass { color: var(--ok); border-color: rgba(78,201,138,.45); }
+  .pill.note { color: var(--warn); border-color: rgba(232,178,58,.45); }
+  .pill.no { color: var(--bad); border-color: rgba(255,107,107,.45); }
+  .shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; margin-top: 12px; }
+  figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; background: #0b0e12; }
+  figcaption { padding: 9px 12px; font-size: 12.5px; color: var(--dim); border-top: 1px solid var(--line); }
+  figcaption b { color: var(--fg); }
+  ul { margin: 8px 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .kpi { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0; }
+  .kpi div { flex: 1 1 150px; background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .kpi .v { font-size: 22px; font-weight: 700; }
+  .kpi .k { font-size: 12px; color: var(--dim); margin-top: 2px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
+  .mono { font-family: Consolas, "Courier New", monospace; font-size: 12.5px; color: #c9cfe0; }
+  .small { font-size: 12.5px; color: var(--dim); }
+  .bar { height: 8px; background: #2b3038; border-radius: 4px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: var(--acc); }
+  .bar.ok > i { background: var(--ok); }
+  .bar.warn > i { background: var(--warn); }
+  .bar.bad > i { background: var(--bad); }
+  .zico { height: 18px; width: auto; vertical-align: middle; background: #0b0e12; border: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>配装工作台 · 第三轮返工交付报告</h1>
+  <p class="meta">项目：EFT 互动地图 · 配装工作台 &nbsp;|&nbsp; 交付时间：2026-10-20 &nbsp;|&nbsp;
+    本轮范围：九项业务逻辑修正（三阶段） + 动态测试 + 全量回归 + 同分辨率截图 + 覆盖率与图标映射清单</p>
+
+  <div class="card verdict ok">
+    <b style="color:var(--ok)">交付状态：九项需求全部落地，业务逻辑层校验（非 CSS 遮挡）已生效，全量回归 644 passed / 1 skipped，地图功能零回归。
+      另按用户插话要求，左侧装备面板已按参考布局重做（见「零」节）。</b>
+    <p style="margin-bottom:0">本轮未推倒重写：槽位树、动态附件槽、列宽调整、物品数据库、本地资源与地图功能全部保留；
+      所有改动都是业务逻辑修复，不是表层视觉效果。仍有两项<b>本轮明确未接入</b>的功能（枪械槽配装、商人买/卖价），
+      已在界面与报告中标为「待接入 / 暂不可用」，<b>没有用假数据冒充</b>。</p>
+  </div>
+
+  <div class="kpi">
+    <div><div class="v" style="color:var(--ok)">9 / 9</div><div class="k">本项目需求</div></div>
+    <div><div class="v" style="color:var(--ok)">644</div><div class="k">全量回归通过（1 skipped）</div></div>
+    <div><div class="v" style="color:var(--ok)">17 张</div><div class="k">防护区域本地图标</div></div>
+    <div><div class="v" style="color:var(--ok)">10 张</div><div class="k">实测截图 + 运行时证据</div></div>
+    <div><div class="v" style="color:var(--warn)">2</div><div class="k">本轮未接入项（明示）</div></div>
+  </div>
+
+  <h2>零、左侧配装面板按参考布局重做（本轮追加）</h2>
+
+  <p class="small">用户插话反馈「左侧的配装你做的太丑了」，并提供了参考布局图
+    <code>ui图标/配装参考布局.png</code>（546×481：顶部数值条 + 深色卡片阵 + 灰剪影 + 居中白字槽位名 +
+    选中绿描边 + 底部 <code>Final Cost:</code> / <code>Buy | Sell</code>）。
+    本轮<b>只重做左侧装备工作区的呈现</b>，不动槽位驱动模型、冲突校验、统计计算、右侧装备表、
+    列宽持久化、物品数据库、本地资源与地图功能。</p>
+
+  <table>
+    <tr><th>参考图要素</th><th>本轮落地方式</th><th>证据</th></tr>
+    <tr>
+      <td>深色卡片阵（四列不挤压，卡片有呼吸感）</td>
+      <td>左栏由 256px 放宽到 400px；卡片板按 5 条 band 排布，卡片 78px 起、
+          头部卡 92px、护甲行 112px、枪械行 92px；选中卡划 58% 居中</td>
+      <td>截图 <code>r5-06-board-empty.png</code></td>
+    </tr>
+    <tr>
+      <td>灰色剪影 + 居中白字槽位名</td>
+      <td>9 个根槽位各一张本地内联 SVG 剪影（<code>LW_SIL</code>，全为填充图元、
+          无 stroke-only、无 CSS 动画 / transform）：头盔=头+颈、护甲=宽带肩背心、
+          胸挂=面板+三弹匣袋、背包=主体+顶盖、近战=匕首、枪械=步枪，彼此轮廓可区分</td>
+      <td>截图 <code>r5-06-board-empty.png</code></td>
+    </tr>
+    <tr>
+      <td>选中 → 绿色描边（不压暗底色）</td>
+      <td><code>.lw-cell[data-state="focus"]</code> 只改描边；已装态用第二档绿</td>
+      <td>截图 <code>r5-07-equipped-board.png</code></td>
+    </tr>
+    <tr>
+      <td>父卡片下方一条细分段条</td>
+      <td>子槽条由「整行列表」改为<b>紧凑分段筹码条</b>：可装子槽 = 可点小筹码，
+          固定内衬 = 整行虚线筹码（带材质 / 等级 / 耐久 / 防护区真实数据，不可点、无 ×）。
+          条仍<b>紧跟各自父装备</b>（<code>.lw-node-group</code> 由 <code>renderGearTree</code>
+          在该行卡片之后 append），父装备一换即重建，不统一堆到底部</td>
+      <td>截图 <code>r5-07-equipped-board.png</code></td>
+    </tr>
+    <tr>
+      <td>底部 <code>Final Cost:</code> + <code>Buy | Sell</code> 两格平分</td>
+      <td>费用面板改为居中「Final Cost · 价格档快照」+ 绿色总价，下方 Buy / Sell 两格平分</td>
+      <td>截图 <code>r5-04-cost.png</code></td>
+    </tr>
+    <tr>
+      <td>不把原始英文键名露给用户</td>
+      <td>上游 <code>armorSlots[].zone</code> 大小写不统一（<code>Front_plate</code> vs
+          <code>front_plate</code>），新增大小写无关查表 <code>plateLabel()</code>，
+          插板槽统一显示「前插板 / 后插板 / 左侧板 / 右侧板」</td>
+      <td>截图 <code>r5-07-equipped-board.png</code> 护甲子槽</td>
+    </tr>
+  </table>
+
+  <div class="shots">
+    <figure>
+      <img src="r3-shots/01-workbench-default.png" alt="重做前">
+      <figcaption><b>重做前（对照）</b><br>左栏 256px，卡片被挤到 224px，剪影 30px 高、标签被截断，
+        子槽是十几行整行列表，把卡片板压没了。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/r5-06-board-empty.png" alt="重做后 · 空板">
+      <figcaption><b>重做后 · 空板</b><br>左栏 400px、卡片板 368px；头部居中、护甲宽卡、
+        枪械通栏；9 张剪影轮廓互不混淆。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/r5-07-equipped-board.png" alt="重做后 · 已装态">
+      <figcaption><b>重做后 · 已装态 + 子槽条</b><br>已装卡显示物品图标 + 物品名；
+        头盔子槽条 2 枚可点筹码 + 3 枚虚线内衬筹码（真实属性），护甲子槽条显示
+        「前插板 / 后插板」。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/r5-02-side.png" alt="左侧整栏">
+      <figcaption><b>重做后 · 左侧整栏</b><br>顶部紧凑统计栏 → 卡片板 → Final Cost（Buy / Sell）→
+        灵敏度补偿，自上而下顺序与参考图一致。</figcaption>
+    </figure>
+  </div>
+
+  <p class="small">本轮未改动右侧装备表与地图视图；<code>python -m pytest tests -q</code> →
+    <b>644 passed / 1 skipped</b>（含同步更新的卡片板静态断言与 <code>plateLabel</code> 抽取）。</p>
+
+  <h2>一、九项需求逐条对照</h2>
+
+  <h3>① 冲突装备必须真正禁止安装</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>业务逻辑层统一安装前校验，不能只禁按钮 / 靠 CSS</td>
+      <td>新增唯一入口校验 <code>installCheck(itemId, nodeId)</code>（app.js L4589），<code>equipItem</code> 在改动任何状态前先过它；返回 <code>allowed:false</code> 时直接 <code>return</code>，不写 <code>state.loadout</code></td>
+      <td>静态测试断言 <code>equipItem</code> 内先调 <code>installCheck</code> 再改状态</td>
+    </tr>
+    <tr>
+      <td>点击冲突物品不得改动任何状态（已装备物品 / 槽位 / 附件树 / 价格 / 重量 / 减益）</td>
+      <td>拦截分支只写 <code>state.pending</code>（提示串），随后 <code>syncLwFilters()</code> 仅刷新提示栏</td>
+      <td>运行时实测：点击冲突胸挂前后<br><span class="mono">statsBefore = statsAfter = 移动 -1.0% / 转身 -1.0% / 人机 -1.0% / 装备总重量 1.02 kg</span><br>左侧槽位标签 before = after =「胸挂」；截图 <code>04</code></td>
+    </tr>
+    <tr>
+      <td>不得自动卸下现有装备以容纳新物品</td>
+      <td><code>installCheck</code> 只读遍历已装备节点，命中即拒绝，从不反写其它槽位</td>
+      <td>拦截后 <code>armorInstalled</code> 仍是「5.11 Hexgrid 插板背心」（运行时日志）</td>
+    </tr>
+    <tr>
+      <td>区分「明确装备互斥 / 槽位不兼容 / 普通警告」</td>
+      <td><code>conflictKinds</code> 只返回<b>确认不兼容</b>的规则名（<code>上游装备互斥</code> / <code>防弹衣与装甲弹挂互斥</code>）；普通属性提醒不进这个函数，不过滤、不拦截</td>
+      <td>冲突列文案形如「⛔ 不可安装：与已装备的 5.11 Hexgrid 插板背心 冲突（防弹衣与装甲弹挂互斥）」，截图 <code>03</code></td>
+    </tr>
+    <tr>
+      <td>保留红色状态与冲突原因</td>
+      <td><code>rowClass</code> 给冲突行挂 <code>tbl-conflict</code>（整行红）+ <code>tbl-locked</code>（不可用光标）；样式在 <code>.loadout-workbench .tbl-row.tbl-conflict</code></td>
+      <td>截图 <code>03</code>（36 行冲突候选整行标红）</td>
+    </tr>
+  </table>
+
+  <h3>② 防弹衣与装甲弹挂双向互斥</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>两种先后顺序都互斥</td>
+      <td><code>conflictKinds(a,b)</code> 用对称判定 <code>(isBodyArmor(a)&amp;&amp;isArmoredRig(b)) || (isArmoredRig(a)&amp;&amp;isBodyArmor(b))</code>，与安装先后无关</td>
+      <td>动态测试覆盖<b>两个方向</b>：先装护甲再装弹挂 / 先装弹挂再装护甲，两次都 <code>allowed:false</code></td>
+    </tr>
+    <tr>
+      <td>卸下其一后另一类恢复可选</td>
+      <td>冲突基于<b>当前已装备集合</b>实时计算，不缓存「冲突标记」；卸下后重算即通过</td>
+      <td>动态测试：卸下护甲后同一件弹挂 <code>allowed:true</code></td>
+    </tr>
+    <tr>
+      <td>普通无装甲弹挂<b>不得</b>被误判冲突</td>
+      <td><code>isArmoredRig</code> 要求上游 <code>pt === "ChestRig"</code> 且 <code>aps</code> 里<b>真实存在</b>固定内衬（<code>fx</code>）或有插板槽（<code>plates</code>）；两个条件都没有的普通弹挂返回 false</td>
+      <td>动态测试：普通弹挂 + 护甲 → <code>allowed:true</code>（不冲突）</td>
+    </tr>
+    <tr>
+      <td>基于真实装备属性，不用中文名称判断</td>
+      <td>判定只看上游 <code>pt</code> / <code>aps</code> 结构；上游 <code>conflictingItems</code> 对护甲、弹挂全为空（实测 0/46、0/52），故自建这条派生规则并在注释里说明</td>
+      <td>静态测试断言 <code>isArmoredRig</code> 不含任何中文名匹配</td>
+    </tr>
+  </table>
+
+  <h3>③ 重新核查全身减益统计</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>统一检查<b>所有</b>已安装可装备物品，不只头盔与防弹衣</td>
+      <td><code>equippedList()</code>（L5731）<b>遍历 <code>state.loadout</code> 本身</b>，键即真实安装位；覆盖根槽（头盔 / 耳机 / 眼镜 / 护面 / 护甲 / 胸挂 / 背包 / 近战）+ 子槽（<code>armor/Front_plate</code> 等实际装上的插板）</td>
+      <td>动态测试：装上眼镜 / 背包 / 护甲板后三项减益都随之变化</td>
+    </tr>
+    <tr>
+      <td>每个物品只计一次</td>
+      <td>以 <code>state.loadout</code> 的键为唯一来源，同一 id 不会因渲染多次而重复累加</td>
+      <td>动态测试：同一件物品的 <code>penOf</code> 只出现一次</td>
+    </tr>
+    <tr>
+      <td>固定内衬不得重复增加父装备属性</td>
+      <td>固定内衬（<code>kind === "liner"</code>）<b>永远不会</b>写进 <code>state.loadout</code>，因此不参与 <code>gearTotals</code></td>
+      <td>动态测试：装上带内衬的护甲，件数只 +1，不是 +2</td>
+    </tr>
+    <tr>
+      <td>缺失数据优先补齐、不得伪造</td>
+      <td>上游没有惩罚字段的物品按 0 处理（即「无此项」），<b>不补固定惩罚</b>；构建期覆盖率见第四节</td>
+      <td>覆盖率：penAny 383 / penT 244 / penS 216 / penE 330</td>
+    </tr>
+  </table>
+
+  <h3>④ 删除左下独立「减益合计」面板 + 左上紧凑统计栏</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>删除左侧下方独立的大面板</td>
+      <td>原「减益合计」面板与其长篇说明整块移除，<code>renderGearCost()</code> 里不再出现该区块</td>
+      <td>全库检索 <code>减益合计</code> 仅剩一处历史注释，无任何渲染代码</td>
+    </tr>
+    <tr>
+      <td>左上第一行 <code>移动 / 转身 / 人机</code>，第二行数值</td>
+      <td><code>renderLwStats()</code>（L5458）生成两行：<code>.lw-stat-labs</code> + <code>.lw-stat-nums</code>，三列网格对齐；负值给 <code>data-tone="bad"</code></td>
+      <td>运行时实测文本：<span class="mono">移动 转身 人机 / -1.0% -1.0% -1.0%</span>；截图 <code>01</code></td>
+    </tr>
+    <tr>
+      <td>右上角显示「装备总重量」+ 实际总重量</td>
+      <td>同一容器内 <code>justify-content: space-between</code>，右侧 <code>.lw-stat-weight</code> 放标签与 <code>fmtNum(w,2) + " kg"</code></td>
+      <td>运行时实测：<span class="mono">装备总重量 1.02 kg</span></td>
+    </tr>
+  </table>
+
+  <h3>⑤ 新增主武器 1 / 主武器 2 / 手枪 / 近战武器四个槽位</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>四个槽位真实存在</td>
+      <td><code>ROOT_SLOTS</code>（L4051）扩到 11 个根槽，新增 <code>primary1 / primary2 / holster / melee</code></td>
+      <td>截图 <code>07</code> / <code>08</code>；人形槽位框未改动（本轮只改槽位树与表格）</td>
+    </tr>
+    <tr>
+      <td>枪械槽只做 UI 与数据接口，显示明确「待接入」</td>
+      <td>三个槽位标 <code>pending: true</code>；<code>candidatesOf()</code> 对 pending 直接返回空数组；<code>candidateSource()</code> 写明「候选来源：**待接入** …枪械配装与预设保存实现前不提供任何候选」</td>
+      <td>运行时实测 <code>primary1Rows = 1</code>（表格只有空数据行，无候选）；截图 <code>07</code></td>
+    </tr>
+    <tr>
+      <td><b>不提供虚假枪械预设列表</b></td>
+      <td>不拿 5480 件普通物品冒充预设；候选集为空是设计如此</td>
+      <td>空数据行文案「当前槽位没有匹配的候选装备」+ 顶部「待接入」说明</td>
+    </tr>
+    <tr>
+      <td>近战武器用本地数据建正确候选集合并可实际安装</td>
+      <td>按上游 <code>pt === "Melee"</code> 出候选（<code>types[]</code> 里没有 melee / knife，只能按 <code>pt</code> 判定）；<code>equipItem</code> 与其它槽位同一入口，可实际装上</td>
+      <td>运行时实测 <code>meleeRows = 27</code>，首行「"杀人鲸"推刃匕首 / Melee / 跳蚤市场购买 / 0.15 / — / 500,000 ₽」；截图 <code>08</code></td>
+    </tr>
+  </table>
+
+  <h3>⑥ 新增「获取方式」列</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>支持 跳蚤市场购买 / 商人购买 / 商人兑换 / 以上方式不可获得</td>
+      <td>构建期 <code>_access_sources()</code>（fetch_data.py L1206）落库为 <code>src[]</code>；<code>flea</code> = types 不含 noFlea；<code>trader</code> = buyFromTrader 有货币报价；<code>barter</code> = types 含 barter</td>
+      <td>覆盖率表（第四节）；首行实测「跳蚤市场购买」</td>
+    </tr>
+    <tr>
+      <td>多种方式必须全部展示</td>
+      <td><code>accessText()</code> 按固定序 <code>[flea, trader, barter]</code> 拼接，<b>不强行只留一个</b></td>
+      <td>实测 2402 件同时有 <code>flea + trader</code>、240 件 <code>barter + flea</code>、10 件三种齐全</td>
+    </tr>
+    <tr>
+      <td>只有来源完整且确认无以上方式才标「以上方式不可获得」</td>
+      <td><code>none</code> 仅在 types <b>非空</b>且三种来源一个都没有时给出</td>
+      <td>1217 件 <code>none</code> 的 <code>ts</code> 样例：<code>["noFlea"]</code> / <code>["mods","noFlea"]</code>…均为非空；无一件同时含 <code>none</code> 与真实来源</td>
+    </tr>
+    <tr>
+      <td>数据缺失 / 无法判断 →「数据未确认」</td>
+      <td>types 为空或非列表 → <code>["unknown"]</code>，界面文案「数据未确认」并在悬停说明「不误判为不可获得」；与 <code>none</code> 用 <code>data-tone</code> 分开着色</td>
+      <td>7 件 <code>unknown</code>：防弹衣维修套件 / 武器维修套件 / 装有糖果的南瓜 / 加密U盘 / Labrys 研发记录 / 军用数据随身碟 / Dunduk 软盘</td>
+    </tr>
+    <tr>
+      <td>构建期提取并打包，运行期不联网</td>
+      <td><code>src</code> 随 <code>data/items.json</code> 分发；前端只读本地字段，任何情形都不发网络请求</td>
+      <td>静态测试：工作台代码不含任何 fetch / XHR 取来源数据</td>
+    </tr>
+  </table>
+
+  <h3>⑦ 纠正护甲属性列，删除「部位有效护甲值」</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>删除错误的「部位有效护甲值」列</td>
+      <td><code>gearColumns()</code> 已无该列（它把防护等级与覆盖部位揉在一起）；改用「护甲等级」+「防护区域」两列各司其职</td>
+      <td>截图 <code>02</code> / <code>09</code> 全列可见，无此列</td>
+    </tr>
+    <tr>
+      <td>保留唯一语义明确的「有效耐久」列</td>
+      <td><code>effDurCol</code> 文本 <code>fmtNum(r.effDur, 0)</code>，取不到显示「—」</td>
+      <td>截图 <code>09</code></td>
+    </tr>
+    <tr>
+      <td>有效耐久须用未四舍五入的实际系数计算</td>
+      <td><code>effectiveDurability(rec) = rec.dur / materialDestructibility(rec.mat)</code>，系数直接取 <code>audit.materials[mat].d</code> 原值，显示时才四舍五入</td>
+      <td>动态测试：系数 0.19 → <code>dur/0.19</code> 与逐位手算一致</td>
+    </tr>
+    <tr>
+      <td>六个概念分列不得重新合并，不适用显示「—」</td>
+      <td>护甲类列顺序：<code>护甲等级 / 基础耐久 / 装甲材质 / 材料毁损系数 / 有效耐久 / 防护区域</code>，六列各自独立</td>
+      <td>截图 <code>09</code>（2400 宽视口一次显示全部列）</td>
+    </tr>
+  </table>
+
+  <h3>⑧ 统一右侧装备表对齐</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>文字左对齐 / 数值右对齐 / 图标可居中</td>
+      <td><code>alignOf(col)</code>：显式 <code>col.align</code> 优先，缺省时 <code>col.num → right</code>、其余 <code>left</code>；<code>cellClass</code> 映射到 <code>.tbl-num</code> / <code>.tbl-mid</code> / 默认</td>
+      <td>静态测试：列定义里文字列显式 <code>align:"left"</code>、数值列 <code>num:true</code></td>
+    </tr>
+    <tr>
+      <td>表头、数据行、空数据行遵循同一对齐</td>
+      <td><code>buildHead()</code> 与数据行、空数据行都走同一个 <code>cellClass(col)</code>，所以三者天然一致，不靠内容宽度决定</td>
+      <td>动态测试：同一列在表头 / 数据行 / 空数据行的 class 完全一致</td>
+    </tr>
+    <tr>
+      <td>类别切换时保持一致</td>
+      <td>列集由 <code>setColumns()</code> 整表替换并重建表头，同名列复用同一 <code>align</code> / <code>num</code> 定义</td>
+      <td>截图 <code>02</code>（护甲）/ <code>08</code>（近战）对照</td>
+    </tr>
+  </table>
+
+  <h3>⑨ 防护部位改用本地图标</h3>
+  <table>
+    <tr><th>要求</th><th>落地方式</th><th>实测证据</th></tr>
+    <tr>
+      <td>先扫描图标目录建映射表再接入</td>
+      <td><code>tools/iconize.py</code> 新增 <code>ZONE_JOBS</code>（17 项）与 <code>copy_zones()</code>，从「<b>防护</b>部位」源目录复制到 <code>assets/icons/zones/</code>（ASCII 文件名）；app.js 侧 <code>ZONE_ICON_BY_WORDS</code> 建 17 项映射</td>
+      <td>静态测试：17 个文件真实存在，且与 <code>iconize.ZONE_JOBS</code> 的输出名一一对应</td>
+    </tr>
+    <tr>
+      <td>右侧表防护部位改紧凑本地图标组合，悬停显示中文部位名</td>
+      <td><code>renderZoneCell</code> 命中即渲染 <code>&lt;img class="tbl-zone-ico"&gt;</code>，<code>title</code> 给完整中文部位名</td>
+      <td>截图 <code>02</code> / <code>10</code>（2× 放大）</td>
+    </tr>
+    <tr>
+      <td>命中口径：完全一致才用那张图</td>
+      <td><code>zoneIconKey()</code> 把真实 zone 投影成部位词并按 <code>ZONE_WORD_ORDER</code> 规范化为键；<b>必须与某张图完全一致</b>才命中，否则 <code>null</code> → 文字降级（不做模糊匹配、不拿别的图顶替）</td>
+      <td>动态测试：<code>["RibcageUp","RibcageLow","LeftSideChestDown"]</code> → <code>null</code>（不拿「胸部|胃部」图顶替）</td>
+    </tr>
+    <tr>
+      <td>图标未覆盖的部位不能造成误读</td>
+      <td>命中图标但物品还防到图上没画的部位时，图标后补标暗色小字 <code>＋上背</code>（<code>.tbl-zone-more</code>），悬停与审计都注明「未在图中标示」</td>
+      <td>运行时实测行文本尾部：<span class="mono">…芳纶 0.19 907 ＋后背插板区、上背</span>；动态测试断言为两个子节点</td>
+    </tr>
+    <tr>
+      <td>缺图标须文字降级并在映射报告注明</td>
+      <td>无法投影的部位走 <code>zoneText</code> 文字，悬停一律给完整中文部位名并说明「含现有图标无法表达的部位（…）→ 文字降级」；长清单被列宽截断时也能靠悬停看全</td>
+      <td>降级 132 件；审计面板列出主因（第五节）</td>
+    </tr>
+    <tr>
+      <td>图标须在项目可打包的本地资源目录，运行期不依赖开发机路径</td>
+      <td>app.js 只出现 <code>assets/icons/zones/*.png</code> 相对路径</td>
+      <td>静态测试：映射块内不得出现 <code>D:</code> / <code>http:</code> / <code>//</code> / <code>\\</code></td>
+    </tr>
+    <tr>
+      <td>不引入远程图标 / 在线字体 / 运行期网络请求</td>
+      <td>全部为本地 PNG；无 <code>@font-face</code> 远程源、无 <code>link</code> 外链</td>
+      <td>审计面板明确标注「全部为本地资源，运行期不联网」</td>
+    </tr>
+    <tr>
+      <td>新增图标映射审计</td>
+      <td><code>zoneIconAudit()</code>（L4283）统计张数 / 命中 / 降级 / 无防护 / 降级主因，<code>renderLwAudit()</code> 末尾输出一行</td>
+      <td>截图 <code>05</code>；运行时证据见下</td>
+    </tr>
+  </table>
+
+  <div class="card">
+    <b>审计面板实拍文本（运行时抓取，非手写）</b>
+    <p class="mono" style="margin-bottom:0">防护区域图标映射（全部为本地资源，运行期不联网）：本地图标 17 张；命中 205 件；文字降级 132 件；无防护区域 5143 件；降级主因：上背 23 件、后背插板区 20 件、下背 18 件、后背插板区 3 件。</p>
+  </div>
+
+  <h2>二、三阶段实施顺序（按用户指定）</h2>
+  <table>
+    <tr><th>阶段</th><th>内容</th><th>状态</th></tr>
+    <tr><td>第一阶段</td><td>装备互斥 + 点击仍能安装 → <code>conflictKinds</code> / <code>installCheck</code> / <code>equipItem</code> 前置校验 / 冲突行红色与原因</td><td class="ok">已完成</td></tr>
+    <tr><td>第二阶段</td><td>减益统计重算 + 删除左下合计面板 + 左上紧凑统计栏 + 四个武器槽位 → <code>equippedList</code> / <code>gearTotals</code> / <code>renderLwStats</code> / <code>ROOT_SLOTS</code></td><td class="ok">已完成</td></tr>
+    <tr><td>第三阶段</td><td>获取方式列 + 纠正有效耐久列 + 统一表格对齐 + 接入防护部位图标 → <code>accessText</code> / <code>gearColumns</code> / <code>alignOf</code> / <code>ZONE_ICON_BY_WORDS</code> / <code>renderZoneCell</code></td><td class="ok">已完成</td></tr>
+  </table>
+
+  <h2>三、测试与回归</h2>
+  <div class="card">
+    <p><span class="pill pass">643 passed</span><span class="pill note">1 skipped</span> — <code>python -m pytest tests -q</code></p>
+    <p class="small" style="margin-bottom:0">新增/更新的断言分布在两处：</p>
+    <ul class="small">
+      <li><b>静态测试</b> <code>test_zone_icon_mapping_uses_local_packaged_assets</code>：词序规范化、17 项、无绝对/远程路径、文件真实存在、与 <code>iconize.ZONE_JOBS</code> 一一对应、接线断言，以及「新样式限在 <code>.loadout-workbench</code> 内」。</li>
+      <li><b>动态 harness（T18）</b>：词序键、单/组合命中、不命中返回 null、未图示部位列表、护甲行字段、图标渲染（IMG + <code>tbl-zone-ico</code> + 中文悬停）、图标+小字双子节点、文字降级 span 与悬停原因、映射审计计数。</li>
+      <li>装备互斥两个方向的动态用例、普通无装甲弹挂不误判、减益去重与内衬不重复计入、对齐一致性等断言同在 harness 内执行。</li>
+    </ul>
+  </div>
+
+  <h2>四、字段覆盖率</h2>
+
+  <h3>获取方式（第六项，构建期落库 <code>audit.coverage</code>）</h3>
+  <table>
+    <tr><th>口径</th><th>件数</th><th>占比（分母 5480）</th><th>分布</th></tr>
+    <tr><td>至少有一种获取方式（flea / trader / barter 任一）</td><td class="num">4256</td><td class="num">77.7%</td><td><div class="bar ok"><i style="width:77.7%"></i></div></td></tr>
+    <tr><td>跳蚤市场购买（<code>flea</code>）</td><td class="num">3948</td><td class="num">72.1%</td><td><div class="bar ok"><i style="width:72.1%"></i></div></td></tr>
+    <tr><td>商人购买（<code>trader</code>）</td><td class="num">2613</td><td class="num">47.7%</td><td><div class="bar"><i style="width:47.7%"></i></div></td></tr>
+    <tr><td>商人兑换（<code>barter</code>）</td><td class="num">358</td><td class="num">6.5%</td><td><div class="bar"><i style="width:6.5%"></i></div></td></tr>
+    <tr><td>以上方式不可获得（<code>none</code>）</td><td class="num">1217</td><td class="num">22.2%</td><td><div class="bar bad"><i style="width:22.2%"></i></div></td></tr>
+    <tr><td>数据未确认（<code>unknown</code>）</td><td class="num">7</td><td class="num">0.13%</td><td><div class="bar warn"><i style="width:1.3%"></i></div></td></tr>
+  </table>
+  <p class="small">口径闭环：<code>ts</code> 非空 5473 件，缺 types 的正好是那 7 件 <code>unknown</code>（<code>5480 − 5473 = 7</code>）；
+    且<b>没有任何一件物品同时带 <code>none</code>/<code>unknown</code> 与真实来源</b>，所以「不可获得」与「未确认」不会被混为一谈。</p>
+
+  <h3>减益字段（第三项）</h3>
+  <table>
+    <tr><th>字段</th><th>含义</th><th>件数</th></tr>
+    <tr><td><code>penT</code></td><td>转身惩罚（<code>turnPenalty</code>）</td><td class="num">244</td></tr>
+    <tr><td><code>penS</code></td><td>移动惩罚（<code>speedPenalty</code>）</td><td class="num">216</td></tr>
+    <tr><td><code>penE</code></td><td>人体工学惩罚（<code>ergoPenalty</code>）</td><td class="num">330</td></tr>
+    <tr><td><code>penAny</code></td><td>三项至少有一项</td><td class="num">383</td></tr>
+  </table>
+  <p class="small">分母说明：上游只有可装备物品带这三项惩罚字段，非装备物品没有该字段属正常；
+    缺失按「无此项」即 0 处理，<b>不补固定惩罚、不伪造数值</b>。</p>
+
+  <h2>五、防护区域图标映射清单（17 张，全部本地资源）</h2>
+  <p class="small">词集合键 = 物品真实 zone 投影成部位词后按固定词序 <code>头顶·后脑·面部·下颚·眼部·耳部·颈部·肩部·胸部·胃部·侧面·腹股沟</code> 规范化；<b>完全一致才命中</b>。</p>
+  <table>
+    <tr><th>#</th><th>部位词集合</th><th>本地文件</th><th>命中件数</th></tr>
+    <tr><td class="num">1</td><td>后脑</td><td class="mono">assets/icons/zones/head-back.png</td><td class="num">1</td></tr>
+    <tr><td class="num">2</td><td>头顶 | 后脑</td><td class="mono">assets/icons/zones/head-top-back.png</td><td class="num">50</td></tr>
+    <tr><td class="num">3</td><td>头顶 | 后脑 | 耳部</td><td class="mono">assets/icons/zones/head-top-back-ears.png</td><td class="num">31</td></tr>
+    <tr><td class="num">4</td><td>头顶 | 后脑 | 下颚 | 耳部</td><td class="mono">assets/icons/zones/head-top-back-jaw-ears.png</td><td class="num">0</td></tr>
+    <tr><td class="num">5</td><td>头顶 | 后脑 | 面部 | 下颚</td><td class="mono">assets/icons/zones/head-top-back-face-jaw.png</td><td class="num">0</td></tr>
+    <tr><td class="num">6</td><td>头顶 | 后脑 | 面部 | 下颚 | 耳部</td><td class="mono">assets/icons/zones/head-top-back-face-jaw-ears.png</td><td class="num">1</td></tr>
+    <tr><td class="num">7</td><td>头顶 | 后脑 | 面部 | 下颚 | 眼部</td><td class="mono">assets/icons/zones/head-top-back-face-jaw-eyes.png</td><td class="num">1</td></tr>
+    <tr><td class="num">8</td><td>头顶 | 后脑 | 面部 | 下颚 | 眼部 | 耳部</td><td class="mono">assets/icons/zones/head-top-back-face-jaw-eyes-ears.png</td><td class="num">9</td></tr>
+    <tr><td class="num">9</td><td>胸部</td><td class="mono">assets/icons/zones/torso-chest.png</td><td class="num">48</td></tr>
+    <tr><td class="num">10</td><td>胸部 | 侧面</td><td class="mono">assets/icons/zones/torso-chest-side.png</td><td class="num">15</td></tr>
+    <tr><td class="num">11</td><td>胸部 | 胃部</td><td class="mono">assets/icons/zones/torso-chest-stomach.png</td><td class="num">6</td></tr>
+    <tr><td class="num">12</td><td>胸部 | 胃部 | 腹股沟</td><td class="mono">assets/icons/zones/torso-chest-stomach-groin.png</td><td class="num">4</td></tr>
+    <tr><td class="num">13</td><td>胸部 | 胃部 | 侧面 | 腹股沟</td><td class="mono">assets/icons/zones/torso-chest-stomach-side-groin.png</td><td class="num">5</td></tr>
+    <tr><td class="num">14</td><td>颈部 | 胸部 | 胃部 | 侧面</td><td class="mono">assets/icons/zones/torso-neck-chest-stomach-side.png</td><td class="num">10</td></tr>
+    <tr><td class="num">15</td><td>颈部 | 胸部 | 胃部 | 侧面 | 腹股沟</td><td class="mono">assets/icons/zones/torso-neck-chest-stomach-side-groin.png</td><td class="num">15</td></tr>
+    <tr><td class="num">16</td><td>颈部 | 肩部 | 胸部 | 胃部 | 侧面</td><td class="mono">assets/icons/zones/torso-neck-shoulder-chest-stomach-side.png</td><td class="num">3</td></tr>
+    <tr><td class="num">17</td><td>颈部 | 肩部 | 胸部 | 胃部 | 侧面 | 腹股沟</td><td class="mono">assets/icons/zones/torso-neck-shoulder-chest-stomach-side-groin.png</td><td class="num">6</td></tr>
+  </table>
+  <p class="small" style="margin-bottom:4px"><b>合计</b>：命中 205 件，分布在 15 张图上（第 4、5 号两张图本批数据里没有完全一致的物品，
+    属「备用图」——保留在映射表里，不做模糊匹配去凑）。</p>
+
+  <h3>文字降级原因统计（132 件）</h3>
+  <table>
+    <tr><th>降级组合（部位词）</th><th>件数</th><th>原因</th></tr>
+    <tr><td>胸部 | 胃部 | 侧面</td><td class="num">22</td><td>缺少「胸部+胃部+侧面」这一组合图，不做模糊匹配</td></tr>
+    <tr><td>面部 | 下颚 | 眼部</td><td class="num">15</td><td>面罩类组合无对应图</td></tr>
+    <tr><td>头顶 | 面部 | 下颚 | 眼部</td><td class="num">15</td><td>头顶开面组合无对应图</td></tr>
+    <tr><td>头顶</td><td class="num">13</td><td>只有「头顶」单项，无对应图（现有图都是组合图）</td></tr>
+    <tr><td>面部 | 下颚 | 耳部</td><td class="num">12</td><td>无对应图</td></tr>
+    <tr><td>耳部</td><td class="num">9</td><td>无对应图</td></tr>
+    <tr><td>下颚 | 耳部</td><td class="num">6</td><td>无对应图</td></tr>
+    <tr><td>面部 | 下颚 | 耳部 | 颈部</td><td class="num">6</td><td>无对应图</td></tr>
+    <tr><td>（无法表达）</td><td class="num">6</td><td>zone 里只有 <code>SpineTop</code> / <code>SpineDown</code> / <code>Plate_*_back</code>，现有图标无「后背」概念</td></tr>
+    <tr><td>其余零散组合</td><td class="num">28</td><td>同上：无完全一致的图</td></tr>
+  </table>
+  <p class="small"><b>无法表达的部位</b>（出现在图标命中件里、但图上没画，已在单元格后补标 <code>＋…</code> 小字并计入审计）：
+    <code>SpineTop</code>（上背）、<code>SpineDown</code>（下背）、<code>Plate_Granit_SAPI_back</code> 与 <code>Plate_6B13_back</code>（后背插板区）。
+    这两类处理方式不同：<b>能表达的部位组合不完整 → 整格文字降级</b>；<b>只多出无法表达的部位 → 图标照用 + 补标小字</b>。</p>
+
+  <h2>六、实测截图与运行时证据</h2>
+  <p class="small">全部截图为本次改动的真实浏览器（Chrome DevTools Protocol）抓取，视口 1600×869（全列图为 2400×1200，放大图为 2×），
+    附运行时抓取的 DOM 文本证据 <code>docs/r3-shots/runtime-log.json</code>。</p>
+  <div class="shots">
+    <figure>
+      <img src="r3-shots/01-workbench-default.png" alt="工作台默认态">
+      <figcaption><b>01 工作台默认态</b><br>左上紧凑统计栏（移动/转身/人机 + 装备总重量 1.02 kg），左侧槽位树含新增的 4 个武器槽。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/02-armor-columns-icons.png" alt="护甲列与防护区域图标">
+      <figcaption><b>02 护甲列 + 防护区域本地图标</b><br>防护区域列显示本地组合高亮图；已无「部位有效护甲值」列。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/03-conflict-blocked-row.png" alt="冲突候选整行标红">
+      <figcaption><b>03 冲突候选整行标红</b><br>胸挂槽 36 行候选与已装护甲冲突，冲突列给出规则原因。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/04-blocked-click-no-change.png" alt="点击冲突行后的顶栏提示">
+      <figcaption><b>04 点击冲突行 → 状态不变</b><br>顶栏提示「⛔ 无法安装 …（未改动配装）」；统计栏数值与点击前完全一致。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/05-audit-icon-mapping.png" alt="图标映射审计">
+      <figcaption><b>05 图标映射审计</b><br>分类审计内输出图标张数 / 命中 / 降级 / 无防护 / 降级主因。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/06-map-view-regression.png" alt="地图视图零回归">
+      <figcaption><b>06 地图视图零回归</b><br>地图渲染、标注、图标、路线与定位功能未受影响。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/07-gun-slot-pending.png" alt="枪械槽待接入">
+      <figcaption><b>07 枪械槽「待接入」</b><br>主武器 1 / 2、手枪：候选为空（不拿普通物品冒充预设），界面写明待接入。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/08-melee-real-candidates.png" alt="近战武器真实候选">
+      <figcaption><b>08 近战武器真实候选 27 件</b><br>按上游 <code>pt === "Melee"</code> 出候选，可实际选中装上。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/09-wide-armor-all-columns.png" alt="全列视图">
+      <figcaption><b>09 全列视图（2400 宽视口）</b><br>护甲类六项属性列各自独立、对齐规则统一；名称后紧跟「冲突」与「获取方式」。</figcaption>
+    </figure>
+    <figure>
+      <img src="r3-shots/10-zone-icon-zoom.png" alt="防护区域列 2 倍放大">
+      <figcaption><b>10 防护区域列 2× 放大</b><br>可看清组合高亮图中的具体部件。</figcaption>
+    </figure>
+  </div>
+
+  <h3>运行时证据（<code>docs/r3-shots/runtime-log.json</code> 摘录）</h3>
+  <div class="card">
+    <p class="mono" style="margin:0">
+      <b>冲突拦截</b>：<br>
+      rigConflictRows = 36<br>
+      rigConflictText = 「5.11 Tactical TacTec 插板胸挂（风暴灰）⛔ 不可安装：与已装备的 5.11 Hexgrid 插板背心 冲突（防弹衣与装甲弹挂互斥）… ＋后背插板区、上背」<br><br>
+      <b>点击前后无副作用</b>：<br>
+      statsBefore = 「移动 转身 人机 -1.0% -1.0% -1.0% 装备总重量 1.02 kg」<br>
+      statsAfter&nbsp; = 「移动 转身 人机 -1.0% -1.0% -1.0% 装备总重量 1.02 kg」<br>
+      rigNodeBefore = 「胸挂」 / rigNodeAfter = 「胸挂」<br>
+      hintAfterBlockedClick = 「⛔ 无法安装 5.11 Tactical TacTec 插板胸挂（风暴灰）：…（未改动配装）」<br><br>
+      <b>槽位与候选</b>：<br>
+      armorRows = 72 / primary1Rows = 1（待接入）/ meleeRows = 27<br>
+      meleeFirst = 「"杀人鲸"推刃匕首 / Melee / 跳蚤市场购买 / 0.15 / — / 500,000 ₽」<br><br>
+      <b>图标审计</b>：<br>
+      auditIconLine = 「本地图标 17 张；命中 205 件；文字降级 132 件；无防护区域 5143 件；降级主因：上背 23 件、后背插板区 20 件、下背 18 件、后背插板区 3 件。」
+    </p>
+  </div>
+
+  <h2>七、本轮未接入项与剩余问题（明示，不含糊）</h2>
+  <table>
+    <tr><th>项</th><th>现状</th><th>处理</th></tr>
+    <tr>
+      <td>主武器 1 / 主武器 2 / 手枪的完整选配</td>
+      <td class="no">未接入</td>
+      <td>需要先完成「配枪」视图的改枪与<b>枪械预设保存</b>，再从已保存预设里选取。当前槽位 UI 与数据接口已就位，候选为空、界面写明「待接入」，<b>不用普通物品冒充预设列表</b>。</td>
+    </tr>
+    <tr>
+      <td>商人买入价 / 卖出价（Buy / Sell）、PVP / SCAV 价格档</td>
+      <td class="no">未接入</td>
+      <td>上游 <code>buyFromTrader</code> / <code>sellToTrader</code> 与 PVP / SCAV 专用价本轮未提取，保留位置与视觉结构、置灰「暂不可用」，<b>不拿其他档位价格冒充</b>。当前价格仅 FLEA（跳蚤 24h 均价快照）与 BASE（基础参考价）可用。</td>
+    </tr>
+    <tr>
+      <td>背 / 上背 / 下背 / 后背插板区的防护图标</td>
+      <td class="note">图缺失</td>
+      <td>用户本批提供的头盔 8 张 + 躯干 9 张均为前 / 侧组合图，无「后背」图。已改为：图标照用 + 单元格补标 <code>＋上背</code> 小字 + 悬停说明 + 审计列出件数，<b>不造成「只防到图里那些」的误读</b>；补图后映射表加键即可命中（无需改判定逻辑）。</td>
+    </tr>
+    <tr>
+      <td>装备预设（PRESET 按钮）</td>
+      <td class="note">未实现</td>
+      <td>本轮不在九项范围内，顶栏按钮保留并标注「第三轮」，未做半成品。</td>
+    </tr>
+  </table>
+
+  <h2>八、约束自检</h2>
+  <table>
+    <tr><th>约束</th><th>自检结果</th></tr>
+    <tr><td>不推倒重写、保留槽位树 / 动态附件槽 / 列宽调整 / 物品数据库 / 本地资源 / 地图</td><td class="ok">满足 — 全为增量修复，未重写 app.js，未改动地图渲染器 / 标注 / 底图 / 原有图标</td></tr>
+    <tr><td>禁止只改 CSS 或加表面视觉效果而不修业务逻辑</td><td class="ok">满足 — 拦截在 <code>installCheck</code>、统计在 <code>equippedList</code>、来源在构建期落库、图标命中走映射函数</td></tr>
+    <tr><td>Python 标准库后端 / 原生 JS / 原生 CSS / 无新增运行期第三方依赖 / ES5 前端</td><td class="ok">满足 — 无新增依赖，新增代码保持 ES5（<code>var</code> / 函数声明）</td></tr>
+    <tr><td>新样式必须限在 <code>.loadout-workbench</code> 内</td><td class="ok">满足 — 本轮新增的 <code>.tbl-zone-ico</code> / <code>.tbl-zone-more</code> 均为 <code>.loadout-workbench</code> 前缀（原全局写法已迁移），静态测试断言</td></tr>
+    <tr><td>运行期不得联网 / 不用远程图标与在线字体 / 图标路径不得依赖开发机绝对路径</td><td class="ok">满足 — 图标为本地 PNG，仅相对路径，静态测试断言无 <code>D:</code> / <code>http:</code> / <code>//</code></td></tr>
+    <tr><td>不使用 git reset --hard / git clean 等丢弃改动的操作</td><td class="ok">满足 — 未执行任何破坏性 git 操作</td></tr>
+    <tr><td>测试须为真实新增覆盖</td><td class="ok">满足 — 见第三节，静态 + 动态 harness 双份断言</td></tr>
+  </table>
+
+  <hr>
+  <p class="small">报告生成时间：2026-10-20 &nbsp;|&nbsp; 证据目录：<code>docs/r3-shots/</code>（10 张 PNG + runtime-log.json）
+    &nbsp;|&nbsp; 图标资源：<code>assets/icons/zones/</code>（17 张）</p>
+
+</div>
+</body>
+</html>

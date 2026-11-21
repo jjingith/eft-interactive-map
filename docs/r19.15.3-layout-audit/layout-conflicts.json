@@ -1,0 +1,107 @@
+{
+ "generatedFor": "R19.15.3",
+ "userFixedAnchors": {
+  "r2c6": "第一个真实照门相关槽位（仅燕尾槽枪）",
+  "r2c7": "第二个真实照门相关槽位（仅燕尾槽枪）",
+  "r2c8": "AK 燕尾槽基座",
+  "r1c8": "基座对应的光学瞄具槽",
+  "r1c9": "光学槽右侧的额外真实配件槽"
+ },
+ "conflicts": [
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "gunId": "57838ad32459774a17445cd2",
+   "kind": "second-dovetail-interface",
+   "slotPath": "mod_mount_004",
+   "slotId": "mod_mount_004",
+   "target": "用户坐标表只规定主基座 r2c8",
+   "actual": "r2c1",
+   "detail": "同一把枪存在第二个真实燕尾槽类接口（另一套独立 allow 清单）。保留该真实槽位不合并，按避让规则放到 r2c1，不占用 r2c6/r2c7 照门带与 r2c8 主锚点。",
+   "status": "resolved-by-rule"
+  },
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "gunId": "57838ad32459774a17445cd2",
+   "kind": "layout-exception",
+   "slotPath": "mod_mount_004",
+   "detail": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "gunId": "57c44b372459772d2b39b8ce",
+   "kind": "second-dovetail-interface",
+   "slotPath": "mod_mount_000",
+   "slotId": "mod_mount_000",
+   "target": "用户坐标表只规定主基座 r2c8",
+   "actual": "r2c1",
+   "detail": "同一把枪存在第二个真实燕尾槽类接口（另一套独立 allow 清单）。保留该真实槽位不合并，按避让规则放到 r2c1，不占用 r2c6/r2c7 照门带与 r2c8 主锚点。",
+   "status": "resolved-by-rule"
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "gunId": "57c44b372459772d2b39b8ce",
+   "kind": "layout-exception",
+   "slotPath": "mod_mount_000",
+   "detail": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "gunId": "651450ce0e00edc794068371",
+   "kind": "second-dovetail-interface",
+   "slotPath": "mod_mount_000",
+   "slotId": "mod_mount_000",
+   "target": "用户坐标表只规定主基座 r2c8",
+   "actual": "r2c1",
+   "detail": "同一把枪存在第二个真实燕尾槽类接口（另一套独立 allow 清单）。保留该真实槽位不合并，按避让规则放到 r2c1，不占用 r2c6/r2c7 照门带与 r2c8 主锚点。",
+   "status": "resolved-by-rule"
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "gunId": "651450ce0e00edc794068371",
+   "kind": "layout-exception",
+   "slotPath": "mod_mount_000",
+   "detail": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "gunId": "6871284e9a353bb50606f3ed",
+   "kind": "second-dovetail-interface",
+   "slotPath": "mod_mount_000",
+   "slotId": "mod_mount_000",
+   "target": "用户坐标表只规定主基座 r2c8",
+   "actual": "r2c1",
+   "detail": "同一把枪存在第二个真实燕尾槽类接口（另一套独立 allow 清单）。保留该真实槽位不合并，按避让规则放到 r2c1，不占用 r2c6/r2c7 照门带与 r2c8 主锚点。",
+   "status": "resolved-by-rule"
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "gunId": "6871284e9a353bb50606f3ed",
+   "kind": "layout-exception",
+   "slotPath": "mod_mount_000",
+   "detail": "同一把枪存在第二个真实燕尾槽类基座：主基座固定 r2c8，该接口按避让规则落 r2c1"
+  }
+ ],
+ "resolvedByDesign": [
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "slotPath": "mod_mount_004",
+   "actual": "r2c1"
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "slotPath": "mod_mount_000",
+   "actual": "r2c1"
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "slotPath": "mod_mount_000",
+   "actual": "r2c1"
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "slotPath": "mod_mount_000",
+   "actual": "r2c1"
+  }
+ ],
+ "blocking": []
+}

@@ -1,0 +1,2284 @@
+{
+ "name": "eft-ammo",
+ "requested_url": "https://www.eftarkov.com/ammo",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "url": "https://www.eftarkov.com/ammo",
+ "title": "子弹 - 逃离塔科夫中文Wiki",
+ "ready": "complete",
+ "textLen": 7206,
+ "htmlLen": 554846,
+ "canvas": 0,
+ "flutter": false,
+ "btn": 76,
+ "input": 2,
+ "table": 2,
+ "ls": [
+  "tarkov_site_update_token_v1"
+ ],
+ "meta": "",
+ "links": [
+  {
+   "href": "/",
+   "text": "逃离塔科夫中文Wiki",
+   "title": ""
+  },
+  {
+   "href": "/",
+   "text": "首页",
+   "title": ""
+  },
+  {
+   "href": "/storyline",
+   "text": "剧情",
+   "title": ""
+  },
+  {
+   "href": "/task",
+   "text": "任务",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Prapor",
+   "text": "Prapor",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Therapist",
+   "text": "Therapist",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Fence",
+   "text": "Fence",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Skier",
+   "text": "Skier",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Peacekeeper",
+   "text": "Peacekeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Mechanic",
+   "text": "Mechanic",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Ragman",
+   "text": "Ragman",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Jaeger",
+   "text": "Jaeger",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=竞技场裁判",
+   "text": "竞技场裁判",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=Lightkeeper",
+   "text": "Lightkeeper",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=BTR司机",
+   "text": "BTR司机",
+   "title": ""
+  },
+  {
+   "href": "/task?trader=arena",
+   "text": "竞技场任务",
+   "title": ""
+  },
+  {
+   "href": "/task-tree",
+   "text": "任务树形图",
+   "title": ""
+  },
+  {
+   "href": "/prestige",
+   "text": "转生",
+   "title": ""
+  },
+  {
+   "href": "/collection",
+   "text": "收集",
+   "title": ""
+  },
+  {
+   "href": "/hideout",
+   "text": "藏身处",
+   "title": ""
+  },
+  {
+   "href": "/map/653e6760052c01c1c805532f",
+   "text": "中心区",
+   "title": ""
+  },
+  {
+   "href": "/map/55f2d3fd4bdc2d5f408b4567",
+   "text": "工厂",
+   "title": ""
+  },
+  {
+   "href": "/map/56f40101d2720b2a4d8b45d6",
+   "text": "海关",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e3c2d2720bac5b8b4567",
+   "text": "森林",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e4dad2720bb55b8b4567",
+   "text": "灯塔",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e554d2720bac5b8b456e",
+   "text": "海岸线",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dbc024597771384a510d",
+   "text": "立交桥",
+   "title": ""
+  },
+  {
+   "href": "/map/5704e5fad2720bc05b8b4567",
+   "text": "储备站",
+   "title": ""
+  },
+  {
+   "href": "/map/5714dc692459777137212e12",
+   "text": "塔科夫街区",
+   "title": ""
+  },
+  {
+   "href": "/map/5b0fc42d86f7744a585f9105",
+   "text": "实验室",
+   "title": ""
+  },
+  {
+   "href": "/map/69af492a4819ea4ba10a69c5",
+   "text": "破冰船",
+   "title": ""
+  },
+  {
+   "href": "/map/6733700029c367a3d40b02af",
+   "text": "迷宫",
+   "title": ""
+  },
+  {
+   "href": "/map/65cc8f81a9aac3e77d0cfd3e",
+   "text": "码头",
+   "title": ""
+  },
+  {
+   "href": "/trader",
+   "text": "商人",
+   "title": ""
+  },
+  {
+   "href": "/boss",
+   "text": "BOSS",
+   "title": ""
+  },
+  {
+   "href": "/achievement",
+   "text": "成就",
+   "title": ""
+  },
+  {
+   "href": "/skill",
+   "text": "技能",
+   "title": ""
+  },
+  {
+   "href": "/item",
+   "text": "物品",
+   "title": ""
+  },
+  {
+   "href": "/ammo",
+   "text": "子弹",
+   "title": ""
+  },
+  {
+   "href": "/key",
+   "text": "钥匙",
+   "title": ""
+  },
+  {
+   "href": "/gun",
+   "text": "武器",
+   "title": ""
+  },
+  {
+   "href": "/helmet",
+   "text": "头盔",
+   "title": ""
+  },
+  {
+   "href": "/mask",
+   "text": "面具",
+   "title": ""
+  },
+  {
+   "href": "/headset",
+   "text": "耳机",
+   "title": ""
+  },
+  {
+   "href": "/chest",
+   "text": "胸挂",
+   "title": ""
+  },
+  {
+   "href": "/knapsack",
+   "text": "背包",
+   "title": ""
+  },
+  {
+   "href": "/armor",
+   "text": "防弹衣",
+   "title": ""
+  },
+  {
+   "href": "/armorchest",
+   "text": "防弹胸挂",
+   "title": ""
+  },
+  {
+   "href": "/additional",
+   "text": "附加装甲",
+   "title": ""
+  },
+  {
+   "href": "/diet",
+   "text": "饮食",
+   "title": ""
+  },
+  {
+   "href": "/medical",
+   "text": "医疗",
+   "title": ""
+  },
+  {
+   "href": "/container",
+   "text": "容器",
+   "title": ""
+  },
+  {
+   "href": "/armband",
+   "text": "臂带",
+   "title": ""
+  },
+  {
+   "href": "/security",
+   "text": "安全箱",
+   "title": ""
+  },
+  {
+   "href": "/projectile",
+   "text": "投掷物",
+   "title": ""
+  },
+  {
+   "href": "/melee",
+   "text": "近战武器",
+   "title": ""
+  },
+  {
+   "href": "/sight",
+   "text": "瞄具",
+   "title": ""
+  },
+  {
+   "href": "/handguard",
+   "text": "护木",
+   "title": ""
+  },
+  {
+   "href": "/barrel",
+   "text": "枪管",
+   "title": ""
+  },
+  {
+   "href": "/magazine",
+   "text": "弹匣",
+   "title": ""
+  },
+  {
+   "href": "/foregrip",
+   "text": "前握把",
+   "title": ""
+  },
+  {
+   "href": "/muzzle",
+   "text": "枪口装置",
+   "title": ""
+  },
+  {
+   "href": "/pistolgrip",
+   "text": "手枪式握把",
+   "title": ""
+  },
+  {
+   "href": "/gunstock",
+   "text": "枪托&框架",
+   "title": ""
+  },
+  {
+   "href": "/casing",
+   "text": "机匣&套筒",
+   "title": ""
+  },
+  {
+   "href": "/lighting",
+   "text": "照明&激光装置",
+   "title": ""
+  },
+  {
+   "href": "/search-containers",
+   "text": "可搜索容器",
+   "title": ""
+  },
+  {
+   "href": "/btr",
+   "text": "BTR追踪",
+   "title": ""
+  },
+  {
+   "href": "/spawn",
+   "text": "BOSS刷率",
+   "title": ""
+  },
+  {
+   "href": "/goon",
+   "text": "三狗追踪",
+   "title": ""
+  },
+  {
+   "href": "/price",
+   "text": "物价查询",
+   "title": ""
+  },
+  {
+   "href": "/ranking",
+   "text": "物价天梯",
+   "title": ""
+  },
+  {
+   "href": "/resale",
+   "text": "倒货排行",
+   "title": ""
+  },
+  {
+   "href": "/exchange",
+   "text": "商人交换",
+   "title": ""
+  },
+  {
+   "href": "/fabrication",
+   "text": "藏身处制作",
+   "title": ""
+  },
+  {
+   "href": "/ceremony",
+   "text": "仪式圈计算器",
+   "title": ""
+  },
+  {
+   "href": "/Traits",
+   "text": "赛季特质模拟器",
+   "title": ""
+  },
+  {
+   "href": "/document",
+   "text": "赛季通行证文件",
+   "title": ""
+  },
+  {
+   "href": "/changes",
+   "text": "数据变更记录",
+   "title": ""
+  },
+  {
+   "href": "/roulette",
+   "text": "装备大轮盘",
+   "title": ""
+  },
+  {
+   "href": "/guestbook",
+   "text": "留言板",
+   "title": ""
+  },
+  {
+   "href": "/login",
+   "text": "登录",
+   "title": ""
+  },
+  {
+   "href": "/register",
+   "text": "注册",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=penetrationPower&dir=desc",
+   "text": "全部",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572f1d60103b4a3270332db&sort=penetrationPower&dir=desc",
+   "text": ".300",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572f1ca4c8d903cc60c874e&sort=penetrationPower&dir=desc",
+   "text": "7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657322b7d9d89ff7ac0d961f&sort=penetrationPower&dir=desc",
+   "text": "5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657322acd9d89ff7ac0d961b&sort=penetrationPower&dir=desc",
+   "text": "5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657322a4cea9255e21023651&sort=penetrationPower&dir=desc",
+   "text": "6.8x51",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657322988c1cc6dcd9098b2d&sort=penetrationPower&dir=desc",
+   "text": "9.3x64",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6575f26d9c7cad336508e480&sort=penetrationPower&dir=desc",
+   "text": "9x39",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6575f2649cfdfe416f0399b8&sort=penetrationPower&dir=desc",
+   "text": "5.8x42",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6575f25ada698a4e98067836&sort=penetrationPower&dir=desc",
+   "text": "12.7x55",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6575f24ff6a13a7b7100b09e&sort=penetrationPower&dir=desc",
+   "text": ".50 BMG",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572eb865b5eac12f10a03ee&sort=penetrationPower&dir=desc",
+   "text": ".338",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572eb3b04ee6483ef03988a&sort=penetrationPower&dir=desc",
+   "text": ".366",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572eb3004ee6483ef039886&sort=penetrationPower&dir=desc",
+   "text": ".308",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572eb1b04ee6483ef039882&sort=penetrationPower&dir=desc",
+   "text": "7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572eb0e55beba16bc04079f&sort=penetrationPower&dir=desc",
+   "text": "7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572fca39a866b80ab07eb65&sort=penetrationPower&dir=desc",
+   "text": ".357",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572fc989a866b80ab07eb61&sort=penetrationPower&dir=desc",
+   "text": ".45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572fc8c9a866b80ab07eb5d&sort=penetrationPower&dir=desc",
+   "text": ".50 AE",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6572fc809a866b80ab07eb59&sort=penetrationPower&dir=desc",
+   "text": "4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b6b6042b0f210020ef6&sort=penetrationPower&dir=desc",
+   "text": "5.7x28",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b716e709cddd001ec47&sort=penetrationPower&dir=desc",
+   "text": "20x1",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b666e709cddd001ec43&sort=penetrationPower&dir=desc",
+   "text": "7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b60ff6dc44a7d068c4a&sort=penetrationPower&dir=desc",
+   "text": "9x18",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b576e709cddd001ec3f&sort=penetrationPower&dir=desc",
+   "text": "9x19",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b4fcea9255e2102360e&sort=penetrationPower&dir=desc",
+   "text": "9x21",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=65731b46cea9255e2102360a&sort=penetrationPower&dir=desc",
+   "text": "12/70",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657fa07387e11c61f70bface&sort=penetrationPower&dir=desc",
+   "text": "20/70",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657fa04ac6679fefb3051e24&sort=penetrationPower&dir=desc",
+   "text": "23x75",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657fa009d4caf976440afe3a&sort=penetrationPower&dir=desc",
+   "text": "26x75",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657f8b43f92cd718b70154fb&sort=penetrationPower&dir=desc",
+   "text": "40x46",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=657f8b94f92cd718b70154ff&sort=penetrationPower&dir=desc",
+   "text": "40x53",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sub=6575c326c6700bd6b40e8a80&sort=penetrationPower&dir=desc",
+   "text": "72.5",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=penetrationPower&dir=asc",
+   "text": "穿透",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=damage&dir=desc",
+   "text": "肉伤",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=armorDamage&dir=desc",
+   "text": "甲伤",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=accuracyModifier&dir=desc",
+   "text": "精度",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=recoilModifier&dir=desc",
+   "text": "后座",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=ricochetChance&dir=desc",
+   "text": "跳弹概率",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=failureToFeedChance&dir=desc",
+   "text": "卡壳概率",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=fragmentationChance&dir=desc",
+   "text": "碎弹概率",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=lightBleedModifier&dir=desc",
+   "text": "小出血的概率",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=heavyBleedModifier&dir=desc",
+   "text": "大出血的概率",
+   "title": ""
+  },
+  {
+   "href": "/ammo?sort=tracer&dir=desc",
+   "text": "曳光弹",
+   "title": ""
+  },
+  {
+   "href": "/item/67dc2648ba5b79876906a166",
+   "text": ".50 BMG M903 SLAP.50 BMG",
+   "title": ""
+  },
+  {
+   "href": "/item/5fc382a9d724d907e2077dab",
+   "text": ".338 Lapua Magnum AP.338",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023d48186a883be655e551",
+   "text": "7.62x54R 7N377.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0c1bd79ff02a1f5e68d9",
+   "text": "7.62x51毫米 M9937.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d5e4486f77478390952fe",
+   "text": "5.45x39毫米 7N39“针刺”5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/560d61e84bdc2da74d8b4571",
+   "text": "7.62x54R SNB7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/5a6086ea4f39f99cd479502f",
+   "text": "7.62x51毫米 M617.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/601aa3d2b2bcb34913271e6d",
+   "text": "7.62x39毫米 MAI AP7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/6a60f36fb3d057447a095aee",
+   "text": ".50 AE FMJ Bull.50 AE",
+   "title": ""
+  },
+  {
+   "href": "/item/601949593ae8f707c4608daa",
+   "text": "5.56x45毫米 SSA AP5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/67dc255ee3028a8b120efc48",
+   "text": ".50 BMG M33.50 BMG",
+   "title": ""
+  },
+  {
+   "href": "/item/68bad8376cb22acf1107a586",
+   "text": "9.3x64毫米 7N339.3x64",
+   "title": ""
+  },
+  {
+   "href": "/item/6768c25aa7b238f14a08d3f6",
+   "text": "7.62x51毫米 M80A17.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023d34e8a400319a28ed44",
+   "text": "7.62x54R 7BT17.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff026d2720bb8668b4567",
+   "text": "5.45x39毫米 BS5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d688c86f77413ae3407b2",
+   "text": "9x39毫米 BP9x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5ba26835d4351e0035628ff5",
+   "text": "4.6x30毫米 AP SX4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/item/59e690b686f7746c9f75e848",
+   "text": "5.56x45毫米 M9955.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/6a42662fcb506840dd053827",
+   "text": "5.8x42毫米 DVC125.8x42",
+   "title": ""
+  },
+  {
+   "href": "/item/5fd20ff893a8961fc660a954",
+   "text": ".300 Blackout AP.300",
+   "title": ""
+  },
+  {
+   "href": "/item/57a0e5022459774d1673f889",
+   "text": "9x39毫米 SP-69x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5fc275cf85fd526b824a571a",
+   "text": ".338 Lapua Magnum FMJ.338",
+   "title": ""
+  },
+  {
+   "href": "/item/6a426637ddc63098d100ae67",
+   "text": "5.8x42毫米 DVX125.8x42",
+   "title": ""
+  },
+  {
+   "href": "/item/6529243824cbe3c74a05e5c1",
+   "text": "6.8x51毫米 SIG Hybrid6.8x51",
+   "title": ""
+  },
+  {
+   "href": "/item/59e0d99486f7744a32234762",
+   "text": "7.62x39毫米 BP7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cadf6eeae921500134b2799",
+   "text": "12.7x55毫米 PS12B12.7x55",
+   "title": ""
+  },
+  {
+   "href": "/item/67dc212493ce32834b0fa446",
+   "text": ".50 BMG M21.50 BMG",
+   "title": ""
+  },
+  {
+   "href": "/item/56dfef82d2720bbd668b4567",
+   "text": "5.45x39毫米 BP5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/59e77a2386f7742ee578960a",
+   "text": "7.62x54R 7N1狙击弹7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/54527ac44bdc2d36668b4567",
+   "text": "5.56x45毫米 M855A15.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/68bac6ca653ee6b1e406d978",
+   "text": "9.3x64毫米 FMJ9.3x64",
+   "title": ""
+  },
+  {
+   "href": "/item/64b8725c4b75259c590fa899",
+   "text": ".300 Blackout CBJ.300",
+   "title": ""
+  },
+  {
+   "href": "/item/58dd3ad986f77403051cba8f",
+   "text": "7.62x51毫米 M807.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/61962d879bb3d20b0946d385",
+   "text": "9x39毫米 PAB-99x39",
+   "title": ""
+  },
+  {
+   "href": "/item/67c540c3d0538d12ec036c08",
+   "text": ".308 ME.308",
+   "title": ""
+  },
+  {
+   "href": "/item/5f0596629e22f464da6bbdd9",
+   "text": ".366 AP.366",
+   "title": ""
+  },
+  {
+   "href": "/item/61962b617c6c7b169525f168",
+   "text": "5.45x39毫米 7N405.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5a608bf24f39f98ffc77720e",
+   "text": "7.62x51毫米 M62 曳光弹7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5887431f2459777e1612938f",
+   "text": "7.62x54R LPS7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/64b7af434b75259c590fa893",
+   "text": "7.62x39毫米 PP7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023cf8186a883be655e54f",
+   "text": "7.62x54R T-46M7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/668fe62ac62660a5d8071446",
+   "text": ".50 AE FMJ.50 AE",
+   "title": ""
+  },
+  {
+   "href": "/item/5ba2678ad4351e44f824b344",
+   "text": "4.6x30毫米 FMJ SX4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/item/5e85aa1a988a8701445df1f5",
+   "text": "23x75毫米破障独头弹23x75",
+   "title": ""
+  },
+  {
+   "href": "/item/6a07208057b2695f9d001e63",
+   "text": "5.8x42毫米 DBP1915.8x42",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0da7a29a85116f6ea05f",
+   "text": "9x19毫米 7N319x19",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0cabfb3e451d70735af5",
+   "text": ".45 ACP AP.45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6906286f7746c9f75e847",
+   "text": "5.56x45毫米 M856A15.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/6576f4708ca9c4381d16cd9d",
+   "text": "9x21毫米 7N42“凿刀”穿甲手枪弹9x21",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68a8a4b9360b6c0d54e2",
+   "text": "12/70 AP-20 穿甲独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff061d2720bb5668b4567",
+   "text": "5.45x39毫米 BT5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc80f38e4a949001152b560",
+   "text": "5.7x28毫米 SS1905.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/68c15f77ed3d7df9220debd6",
+   "text": "7.62x25毫米 TT M9957.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023e53d4353e3302577c4c",
+   "text": "7.62x51毫米 BPZ FMJ7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/68aeed8a8906b00bc800fdd6",
+   "text": "9.3x64毫米 SP9.3x64",
+   "title": ""
+  },
+  {
+   "href": "/item/619636be6db0f2477964e710",
+   "text": ".300 Blackout M62 曳光弹.300",
+   "title": ""
+  },
+  {
+   "href": "/item/6529302b8c26af6326029fb7",
+   "text": "6.8x51毫米 SIG FMJ6.8x51",
+   "title": ""
+  },
+  {
+   "href": "/item/64b8f7968532cf95ee0a0dbf",
+   "text": "7.62x54R FMJ7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/62330b3ed4dc74626d570b95",
+   "text": ".357 Magnum FMJ.357",
+   "title": ""
+  },
+  {
+   "href": "/item/5656d7c34bdc2d9d198b4587",
+   "text": "7.62x39毫米 PS7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d668f86f7747ccb7f13b2",
+   "text": "9x39毫米 SPP9x39",
+   "title": ""
+  },
+  {
+   "href": "/item/67d41936f378a36c4706eeb9",
+   "text": ".50 BMG HP.50 BMG",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff2ced2720bb4668b4567",
+   "text": "5.45x39毫米 PP5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/66a0d1e0ed648d72fe064d06",
+   "text": ".50 AE实心铜弹.50 AE",
+   "title": ""
+  },
+  {
+   "href": "/item/60194943740c5d77f6705eea",
+   "text": "5.56x45毫米 Mk 318 Mod 0 (SOST)5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc80f53e4a949000e1ea4f8",
+   "text": "5.7x28毫米 L1915.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/6a42661705016139300b2085",
+   "text": "5.8x42毫米 DBX955.8x42",
+   "title": ""
+  },
+  {
+   "href": "/item/5fc382c1016cce60e8341b20",
+   "text": ".338 Lapua Magnum UCW.338",
+   "title": ""
+  },
+  {
+   "href": "/item/64b6979341772715af0f9c39",
+   "text": "4.6x30毫米 JSP SX4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/item/5a26ac0ec4a28200741e1e18",
+   "text": "9x21毫米 SP139x21",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6911a4b9361bd5780d52",
+   "text": "12/70 箭形弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/54527a984bdc2d4e668b4567",
+   "text": "5.56x45毫米 M8555.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/68c15a033173b556890b5959",
+   "text": "7.62x25毫米 TT M855A17.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/64b8f7b5389d7ffd620ccba2",
+   "text": "7.62x54R SP BT7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/5fbe3ffdf8b6a877a729ea82",
+   "text": ".300 Blackout BPZ FMJ.300",
+   "title": ""
+  },
+  {
+   "href": "/item/59e655cb86f77411dc52a77b",
+   "text": ".366 TKM EKO.366",
+   "title": ""
+  },
+  {
+   "href": "/item/660137d8481cc6907a0c5cda",
+   "text": "20/70 TSS 穿甲独头弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/59e4cf5286f7741778269d8a",
+   "text": "7.62x39毫米 T45M17.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023e6e34d52a55c3304f71",
+   "text": "7.62x51毫米 TCW SP7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5c925fa22e221601da359b7b",
+   "text": "9x19毫米 AP 6.39x19",
+   "title": ""
+  },
+  {
+   "href": "/item/59e4d24686f7741776641ac7",
+   "text": "7.62x39毫米 US7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cadf6ddae9215051e1c23b2",
+   "text": "12.7x55毫米 PS1212.7x55",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff3afd2720bba668b4567",
+   "text": "5.45x39毫米 PS5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/573719df2459775a626ccbc2",
+   "text": "9x18毫米 PM PBM9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/57a0dfb82459774d3078b56c",
+   "text": "9x39毫米 SP-59x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc80f67e4a949035e43bbba",
+   "text": "5.7x28毫米 SB1935.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/68c15b4bb30038a118088bd6",
+   "text": "7.62x25毫米 TT M856A17.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/6576f93989f0062e741ba952",
+   "text": "9x21毫米 7U49x21",
+   "title": ""
+  },
+  {
+   "href": "/item/66a0d1f88486c69fce00fdf6",
+   "text": ".50 AE Hawk JSP.50 AE",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68c4a4b9361b93413f79",
+   "text": "12/70 .50 BMG 简易独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/64b7af5a8532cf95ee0a0dbd",
+   "text": "7.62x39毫米 FMJ7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/64b8f7c241772715af0f9c3d",
+   "text": "7.62x54R HP BT7.62x54",
+   "title": ""
+  },
+  {
+   "href": "/item/5e81f423763d9f754677bf2e",
+   "text": ".45 ACP FMJ.45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/item/660137ef76c1b56143052be8",
+   "text": "20/70“危险猎物”独头弹 (DGS)20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc80f8fe4a949033b0224a2",
+   "text": "5.7x28毫米 SS197SR5.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/573603562459776430731618",
+   "text": "7.62x25毫米 TT Pst7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/67c540cfb032bbdb530201b8",
+   "text": ".308 ME LOKT.308",
+   "title": ""
+  },
+  {
+   "href": "/item/62330c18744e5e31df12f516",
+   "text": ".357 Magnum JHP.357",
+   "title": ""
+  },
+  {
+   "href": "/item/64b8ee384b75259c590fa89b",
+   "text": "12/70 “食人鱼”12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/6601380580e77cfd080e3418",
+   "text": "20/70 箭形弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff0bed2720bb0668b4567",
+   "text": "5.45x39毫米 FMJ5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/57371aab2459775a77142f22",
+   "text": "9x18毫米 PMM PstM9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6542b86f77411dc52a77a",
+   "text": ".366 TKM FMJ.366",
+   "title": ""
+  },
+  {
+   "href": "/item/5ba26844d4351e00334c9475",
+   "text": "4.6x30毫米 Subsonic SX4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6920f86f77411d82aa167",
+   "text": "5.56x45毫米 FMJ5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/5a269f97c4a282000b151807",
+   "text": "9x21毫米 SP109x21",
+   "title": ""
+  },
+  {
+   "href": "/item/6196364158ef8c428c287d9f",
+   "text": ".300 Blackout V-Max.300",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68e6a4b9361c140bcfe0",
+   "text": "12/70 FTX Custom Lite独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e689ca4b9361bc8618956",
+   "text": "12/70 Poleva-6U 独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff4a2d2720bbd668b456a",
+   "text": "5.45x39毫米 T5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/64b7af734b75259c590fa895",
+   "text": "7.62x39毫米 SP7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/56d59d3ad2720bdb418b4577",
+   "text": "9x19毫米 Pst9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0d4f4bc50b58e81710f3",
+   "text": ".45 ACP Lasermatch FMJ.45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/item/5fc382b6d6fa9c00c571bbc3",
+   "text": ".338 Lapua Magnum TAC-X.338",
+   "title": ""
+  },
+  {
+   "href": "/item/62330bfadc5883093563729b",
+   "text": ".357 Magnum Hollow Point.357",
+   "title": ""
+  },
+  {
+   "href": "/item/5ba26812d4351e003201fef1",
+   "text": "4.6x30毫米 Action SX4.6x30",
+   "title": ""
+  },
+  {
+   "href": "/item/59e68f6f86f7746c9f75e846",
+   "text": "5.56x45毫米 M8565.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/573603c924597764442bd9cb",
+   "text": "7.62x25毫米 TT PT7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/573718ba2459775a75491131",
+   "text": "9x18毫米 PM BZhT9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/64b7bbb74b75259c590fa897",
+   "text": "9x19毫米 FMJ M8829x19",
+   "title": ""
+  },
+  {
+   "href": "/item/5a26abfac4a28232980eabff",
+   "text": "9x21毫米 SP119x21",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68dea4b9361bcc29e659",
+   "text": "12/70 Dual Sabot 独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6891a4b9361bd473feea",
+   "text": "12/70 Poleva-3 独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6a42a4b9364f07165f52",
+   "text": "20/70 Poleva-6U 独头弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff4ecd2720b5f5a8b4568",
+   "text": "5.45x39毫米 US5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc80f79e4a949033c7343b2",
+   "text": "5.7x28毫米 SS198LF5.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/6576f96220d53a5b8f3e395e",
+   "text": "9x39毫米 FMJ9x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6a05a4b93618084f58d0",
+   "text": "20/70 Star独头弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/58820d1224597753c90aeb13",
+   "text": "12/70 铅头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff421d2720b5f5a8b4567",
+   "text": "5.45x39毫米 SP5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/59e4d3d286f774176a36250a",
+   "text": "7.62x39毫米 HP7.62x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5e023e88277cce2b522ff2b1",
+   "text": "7.62x51毫米 Ultra Nosler7.62x51",
+   "title": ""
+  },
+  {
+   "href": "/item/5a26ac06c4a282000c5a90a8",
+   "text": "9x21毫米 SP129x21",
+   "title": ""
+  },
+  {
+   "href": "/item/6196365d58ef8c428c287da1",
+   "text": ".300 Whisper.300",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6658b86f77411d949b250",
+   "text": ".366 TKM Geksa.366",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68b3a4b9361bca7e50b5",
+   "text": "12/70 Copper Sabot Premier 空尖独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6a53a4b9361bd473feec",
+   "text": "20/70 Poleva-3 独头弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5736026a245977644601dc61",
+   "text": "7.62x25毫米TT P gl7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/5c3df7d588a4501f290594e5",
+   "text": "9x19毫米 绿色曳光弹9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0fc6aeb21837e749c801",
+   "text": ".45 ACP Hydra-Shok.45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff338d2720bbd668b4569",
+   "text": "5.45x39毫米 PRS5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/573720e02459776143012541",
+   "text": "9x18毫米 PM RG0289x18",
+   "title": ""
+  },
+  {
+   "href": "/item/62330c40bdd19b369e1e53d1",
+   "text": ".357 Magnum Soft Point.357",
+   "title": ""
+  },
+  {
+   "href": "/item/66a0d1c87d0d369e270bb9de",
+   "text": ".50 AE JHP.50 AE",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6869a4b9361c140bcfde",
+   "text": "12/70 Grizzly 40独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5735fdcd2459776445391d61",
+   "text": "7.62x25毫米TT AKBS7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/5737201124597760fc4431f1",
+   "text": "9x18毫米 PM Pst9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5e85a9a6eacf8c039e4e2ac1",
+   "text": "23x75毫米“破片-10”霰弹23x75",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6918f86f7746c9f75e849",
+   "text": "5.56x45毫米 MK 255 Mod 0 (RRLP)5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc86840d7f00c002412c56c",
+   "text": "5.7x28毫米 R37.X5.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/5735ff5c245977640e39ba7e",
+   "text": "7.62x25毫米TT FMJ437.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/5cadf6e5ae921500113bb973",
+   "text": "12.7x55毫米 PS12A12.7x55",
+   "title": ""
+  },
+  {
+   "href": "/item/5f647f31b6238e5dd066e196",
+   "text": "23x75 毫米“破片-25”霰弹23x75",
+   "title": ""
+  },
+  {
+   "href": "/item/5a3c16fe86f77452b62de32a",
+   "text": "9x19毫米 Luger CCI9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/58864a4f2459770fcc257101",
+   "text": "9x19毫米 PSO gzh9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/56dff216d2720bbd668b4568",
+   "text": "5.45x39毫米 HP5.45x39",
+   "title": ""
+  },
+  {
+   "href": "/item/5cc86832d7f00c000d3a6e6c",
+   "text": "5.7x28毫米 R37.F5.7x28",
+   "title": ""
+  },
+  {
+   "href": "/item/573601b42459776410737435",
+   "text": "7.62x25毫米TT LRN7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/57371e4124597760ff7b25f1",
+   "text": "9x18毫米 PM PPT9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5efb0e16aeb21837e749c7ff",
+   "text": "9x19毫米 QuakeMaker9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/59e6927d86f77411da468256",
+   "text": "5.56x45毫米 HP5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/573602322459776445391df1",
+   "text": "7.62x25毫米TT LRNPC7.62x25",
+   "title": ""
+  },
+  {
+   "href": "/item/57371b192459775a9f58a5e0",
+   "text": "9x18毫米 PM PPe9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/57371eb62459776125652ac1",
+   "text": "9x18毫米 PM PRS9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/57371f2b24597761224311f1",
+   "text": "9x18毫米 PM PS PPO9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e68d1a4b93622fe60e845",
+   "text": "12/70 SuperFormance 空尖独头弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6a5fa4b93614ec501745",
+   "text": "20/70 Devastator独头弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5ede475339ee016e8c534742",
+   "text": "40x46毫米 M576(MP-APERS)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/573719762459775a626ccbc1",
+   "text": "9x18毫米 PM P9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/57371f8d24597761006c6a81",
+   "text": "9x18毫米 PM PSO9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5ea2a8e200685063ec28c05a",
+   "text": ".45 RIP.45 ACP",
+   "title": ""
+  },
+  {
+   "href": "/item/560d5e524bdc2d25448b4571",
+   "text": "12/70 7毫米鹿弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e67fba4b9361bc73bc779",
+   "text": "12/70 Express 6.5 毫米鹿弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e69c7a4b9360b6c0d54e4",
+   "text": "20/70 7.3毫米鹿弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5a38ebd9c4a282000d722a5b",
+   "text": "20/70 7.5毫米鹿弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d5ae286f7741e46554302",
+   "text": "5.56x45毫米 Warmageddon5.56x45",
+   "title": ""
+  },
+  {
+   "href": "/item/5737207f24597760ff7b25f2",
+   "text": "9x18毫米 PM PSV9x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6806a4b936088465b17e",
+   "text": "12/70 Magnum 8.5 毫米鹿弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d591486f7744c505b416f",
+   "text": "12/70 RIP12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e69b9a4b9361bc8618958",
+   "text": "20/70 6.2毫米鹿弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/57372140245977611f70ee91",
+   "text": "9x18毫米 PM SP79x18",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d56a986f774449d5de529",
+   "text": "9x19毫米 RIP9x19",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e6772a4b936088465b17c",
+   "text": "12/70 5.25毫米鹿弹12/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5d6e695fa4b936359b35d852",
+   "text": "20/70 5.6毫米鹿弹20/70",
+   "title": ""
+  },
+  {
+   "href": "/item/5ede474b0c226a66f5402622",
+   "text": "40x46毫米 M381(HE)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/5ede475b549eed7c6d5c18fb",
+   "text": "40x46毫米 M386(HE)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/5ede4739e0350d05467f73e8",
+   "text": "40x46毫米 M406(HE)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/5f0c892565703e5c461894e9",
+   "text": "40x46毫米 M433 (HEDP)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/5ede47405b097655935d7d16",
+   "text": "40x46毫米 M441(HE)40x46",
+   "title": ""
+  },
+  {
+   "href": "/item/5737218f245977612125ba51",
+   "text": "9x18毫米 PM SP89x18",
+   "title": ""
+  },
+  {
+   "href": "/item/6601546f86889319850bd566",
+   "text": "20x1毫米塑料片20x1",
+   "title": ""
+  },
+  {
+   "href": "/item/5e85a9f4add9fe03027d9bf1",
+   "text": "23x75毫米“红星”闪光弹23x75",
+   "title": ""
+  },
+  {
+   "href": "/item/62389bc9423ed1685422dc57",
+   "text": "26x75 毫米照明信号弹（白色）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/62389ba9a63f32501b1b4451",
+   "text": "26x75 毫米照明信号弹（红色）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/62389aaba63f32501b1b444f",
+   "text": "26x75 毫米照明信号弹（绿色）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/635267f063651329f75a4ee8",
+   "text": "26x75 毫米照明信号弹（酸绿）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/62389be94d5d474bf712e709",
+   "text": "26x75燃烧照明信号弹（黄色）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/5656eb674bdc2d35148b457c",
+   "text": "40毫米VOG-25榴弹40x53",
+   "title": ""
+  },
+  {
+   "href": "/item/66d97834d2985e11480d5c1e",
+   "text": "信号弹（蓝）26x75",
+   "title": ""
+  },
+  {
+   "href": "/item/67446fdd752be02c220f27b3",
+   "text": "ShG-2 反人员火箭弹72.5",
+   "title": ""
+  },
+  {
+   "href": "/item/675ff11da6335de2280d492a",
+   "text": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪 迅猛龙",
+   "title": ""
+  },
+  {
+   "href": "/item/5fd251a31189a17bcc172662",
+   "text": "SIG MCX .300 Blackout 突击步枪 MCX .300 BLK",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7e2b86f7740874790e20",
+   "text": "AK-103 7.62x39 突击步枪 AK-103",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7e4c86f774499a3f3bdd",
+   "text": "AK-104 7.62x39 突击步枪 AK-104",
+   "title": ""
+  },
+  {
+   "href": "/item/59e8d2ab86f77407f03fc9c2",
+   "text": "AKM 7.62x39 突击步枪 AKM",
+   "title": ""
+  },
+  {
+   "href": "/item/5a325c3686f7744273716c5b",
+   "text": "AKMN 7.62x39 突击步枪 AKMN",
+   "title": ""
+  },
+  {
+   "href": "/item/5a327f4a86f774766866140b",
+   "text": "AKMS 7.62x39 突击步枪 AKMS",
+   "title": ""
+  },
+  {
+   "href": "/item/5ac4ab8886f7747d0f66429a",
+   "text": "AKMSN 7.62x39 突击步枪 AKMSN",
+   "title": ""
+  },
+  {
+   "href": "/item/60b7d76e2a3c79100f1979de",
+   "text": "CMMG Mk47 Mutant 7.62x39 突击步枪 Mk47",
+   "title": ""
+  },
+  {
+   "href": "/item/62972a7d91492d1a34152fbe",
+   "text": "Rifle Dynamics RD-704 7.62x39突击步枪 RD-704",
+   "title": ""
+  },
+  {
+   "href": "/item/657eb281b0bc0f28b178311e",
+   "text": "RPD 7.62x39 轻机枪 RPD",
+   "title": ""
+  },
+  {
+   "href": "/item/657eb30326f0eb0718056204",
+   "text": "RPDN 7.62x39 轻机枪 RPDN",
+   "title": ""
+  },
+  {
+   "href": "/item/59ef24b986f77439987b8762",
+   "text": "VPO-136 野猪-KM 7.62x39 卡宾枪 VPO-136 野猪-KM",
+   "title": ""
+  },
+  {
+   "href": "/item/59dcdbb386f77417b03f350d",
+   "text": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪 OP-SKS",
+   "title": ""
+  },
+  {
+   "href": "/item/58dffce486f77409f40f8162",
+   "text": "西蒙诺夫 SKS 7.62x39 卡宾枪 SKS",
+   "title": ""
+  },
+  {
+   "href": "/item/64c1510bda0f6d156000cc17",
+   "text": "AK-12 5.45x39 突击步枪 AK-12",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0c1ce886f77401c119d014",
+   "text": "AK-74 5.45x39 突击步枪 AK-74",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7db286f7743a9c7092e3",
+   "text": "AK-74M 5.45x39 突击步枪 AK-74M",
+   "title": ""
+  },
+  {
+   "href": "/item/5841474424597759ba49be91",
+   "text": "AK-74N 5.45x39 突击步枪 AK-74N",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7e7986f774401e19c3a0",
+   "text": "AK-105 5.45x39 突击步枪 AK-105",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0c1d2b86f77401c119d01f",
+   "text": "AKS-74 5.45x39 突击步枪 AKS-74",
+   "title": ""
+  },
+  {
+   "href": "/item/5ac4abf986f7747d117c67aa",
+   "text": "AKS-74N 5.45x39 突击步枪 AKS-74N",
+   "title": ""
+  },
+  {
+   "href": "/item/584147732459775a2b6d9f12",
+   "text": "AKS-74U 5.45x39 短突击步枪 AKS-74U",
+   "title": ""
+  },
+  {
+   "href": "/item/584147982459775a6c55e931",
+   "text": "AKS-74UB 5.45x39 短突击步枪 AKS-74UB",
+   "title": ""
+  },
+  {
+   "href": "/item/584147ed2459775a77263501",
+   "text": "AKS-74UN 5.45x39 短突击步枪 AKS-74UN",
+   "title": ""
+  },
+  {
+   "href": "/item/68d66850cc802b243f0627a9",
+   "text": "NL545 (DI) 5.45x39 突击步枪 NL545 DI",
+   "title": ""
+  },
+  {
+   "href": "/item/68d6662644990caf770b8a2e",
+   "text": "NL545 (GP) 5.45x39 突击步枪 NL545 GP",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d1ec986f77439512a1a72",
+   "text": "RPK-16 5.45x39 轻机枪 RPK-16",
+   "title": ""
+  },
+  {
+   "href": "/item/62971cf67af74c3ff577954b",
+   "text": "SAG AK-545 5.45x39卡宾枪 AK-545",
+   "title": ""
+  },
+  {
+   "href": "/item/629711787af74c3ff577951d",
+   "text": "SAG AK-545 5.45x39截短卡宾枪 AK-545短",
+   "title": ""
+  },
+  {
+   "href": "/item/5c10fcb186f774533e5529ab",
+   "text": "ADAR 2-15 .223 卡宾枪 ADAR 2-15",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7dd986f774486e1281bf",
+   "text": "AK-101 5.56x45 突击步枪 AK-101",
+   "title": ""
+  },
+  {
+   "href": "/item/5acf7dfc86f774401e19c390",
+   "text": "AK-102 5.56x45 突击步枪 AK-102",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e18de693542ea37d11b3",
+   "text": "FN SCAR-L 5.56x45突击步枪 LB Mk 16 LB",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e226449ec003d9127fa6",
+   "text": "FN SCAR-L 5.56x45突击步枪 （FDE） Mk 16",
+   "title": ""
+  },
+  {
+   "href": "/item/5c0d1e9386f77440120288b7",
+   "text": "HK 416A5 5.56x45 突击步枪 HK 416A5",
+   "title": ""
+  },
+  {
+   "href": "/item/6a2a77cae232fdab260b484a",
+   "text": "HK 416A5 5.56x45 突击步枪 (RAL 8000) HK 416A5",
+   "title": ""
+  },
+  {
+   "href": "/item/6297738b9f1b474e440c45b5",
+   "text": "HK G36 5.56x45 突击步枪 G36",
+   "title": ""
+  },
+  {
+   "href": "/item/5d4d617f86f77449c463d107",
+   "text": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪 TX-15 DML",
+   "title": ""
+  },
+  {
+   "href": "/item/6398636bb483a550805be5e5",
+   "text": "Steyr AUG A1 5.56x45突击步枪 AUG A1",
+   "title": ""
+  },
+  {
+   "href": "/item/671b89f03d4217059b0c6a26",
+   "text": "Steyr AUG A3 5.56x45 突击步枪（黑色） AUG A3",
+   "title": ""
+  },
+  {
+   "href": "/item/63986752a28b76105a33c095",
+   "text": "Steyr AUG A3 5.56x45突击步枪 AUG A3",
+   "title": ""
+  },
+  {
+   "href": "/item/6a5f8182948bfbabc30b0659",
+   "text": "丰和 20 式 5.56x45 突击步枪 20 式",
+   "title": ""
+  },
+  {
+   "href": "/item/5af08cf886f774223c269184",
+   "text": "柯尔特 M4A1 5.56x45 卡宾枪 Carbine M4A1 Carbine",
+   "title": ""
+  },
+  {
+   "href": "/item/68d6697620029562570c586c",
+   "text": "柯尔特 M16A1 5.56x45 突击步枪 M16A1E1 M16A1 M16A1E1",
+   "title": ""
+  },
+  {
+   "href": "/item/68d669b220029562570c587a",
+   "text": "柯尔特 M16A2 5.56x45 突击步枪 M16A2",
+   "title": ""
+  },
+  {
+   "href": "/item/5c98bd7386f7740cfb15654e",
+   "text": "沙漠科技 MDR 5.56x45 突击步枪 MDR",
+   "title": ""
+  },
+  {
+   "href": "/item/68d3db3e0c47fe28c2067ab9",
+   "text": "雷电 Model 1 FA 5.56x45 突击步枪 Model 1",
+   "title": ""
+  },
+  {
+   "href": "/item/657eb3773271d8578610fe28",
+   "text": "SIG MCX SPEAR 6.8x51突击步枪 SPEAR 6.8",
+   "title": ""
+  },
+  {
+   "href": "/item/68d6bd436be0692f9d08b6eb",
+   "text": "TKPD 9.3x64 突击卡宾枪 TKPD",
+   "title": ""
+  },
+  {
+   "href": "/item/5841482e2459775a050cdda9",
+   "text": "AS VAL“巨浪” 9x39 特种突击步枪 AS VAL",
+   "title": ""
+  },
+  {
+   "href": "/item/68d502e016a16a91e200bbbc",
+   "text": "AS“巨浪”MOD.4 9x39 特种突击步枪 AS VAL MOD.4",
+   "title": ""
+  },
+  {
+   "href": "/item/657eb19b7ba4217c5e65b689",
+   "text": "KBP 9A-91 9x39紧凑型突击步枪 9A-91",
+   "title": ""
+  },
+  {
+   "href": "/item/657eb1fa2ce80354b8259889",
+   "text": "KBP VSK-94 9x39步枪 VSK-94",
+   "title": ""
+  },
+  {
+   "href": "/item/66b09282ae030a24a5663815",
+   "text": "SR-3M 9x39紧凑型突击步枪 SR-3M",
+   "title": ""
+  },
+  {
+   "href": "/item/58414a3f2459775a77263531",
+   "text": "VSS “绞丝机”9x39 特种狙击步枪 VSS",
+   "title": ""
+  },
+  {
+   "href": "/item/6a3a73f7e7aba1d34a094a57",
+   "text": "北方工业 QBZ-191 5.8x42 突击步枪 QBZ-192 QBZ-191 QBZ-192",
+   "title": ""
+  },
+  {
+   "href": "/item/5d23467086f77443f37fc602",
+   "text": "ASh-12 12.7x55 突击步枪 ASh-12",
+   "title": ""
+  },
+  {
+   "href": "/item/639868a207a3eb0207197bb5",
+   "text": "RSh-12 12.7x55转轮手枪 RSH-12",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000000",
+   "text": "TheAKGuy AK-50 .50 BMG 反器材步枪 AK-50",
+   "title": ""
+  },
+  {
+   "href": "/item/62973e474bb5ab23071c2a70",
+   "text": "Accuracy International AXMC .338 LM 栓动式狙击步枪 AXMC",
+   "title": ""
+  },
+  {
+   "href": "/item/67618651ac5e57c15709a417",
+   "text": "Sako TRG M10 .338 LM 栓动狙击步枪 TRG M10",
+   "title": ""
+  },
+  {
+   "href": "/item/5fd25119dd870108a754a163",
+   "text": "SWORD International Mk-18 .338 LM 精确射手步枪 Mk-18 雷霆之锤",
+   "title": ""
+  },
+  {
+   "href": "/item/59ef247086f77439967a900a",
+   "text": "VPO-209 .366TKM 卡宾枪 VPO-209",
+   "title": ""
+  },
+  {
+   "href": "/item/5e0359bd86f7746b243db876",
+   "text": "VPO-215 雪貂 .366 TKM 栓动式步枪 VPO-215 雪貂",
+   "title": ""
+  },
+  {
+   "href": "/item/68d67d0affacb2bc8b07e468",
+   "text": "马林 MXLR .308 ME 杠杆步枪 MXLR",
+   "title": ""
+  },
+  {
+   "href": "/item/68d6788b2704678f29096b85",
+   "text": "AK-308 7.62x51 突击步枪 AK-308",
+   "title": ""
+  },
+  {
+   "href": "/item/5b439b5686f77428bd137424",
+   "text": "DS Arms SA-58 7.62x51 突击步枪 SA-58",
+   "title": ""
+  },
+  {
+   "href": "/item/58dffc5d86f77407c744a847",
+   "text": "DVL-10 7.62x51 栓动式狙击步枪 Urbana DVL-10 Urbana",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e4fae693542ea37d11c6",
+   "text": "FN SCAR-H 7.62x51 突击步枪 (FDE) Mk 17",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e4a46bb904059c382295",
+   "text": "FN SCAR-H 7.62x51突击步枪 LB Mk 17 LB",
+   "title": ""
+  },
+  {
+   "href": "/item/707265736574000000000002",
+   "text": "FN SCAR-H X-17 7.62x51突击步枪 X-17",
+   "title": ""
+  },
+  {
+   "href": "/item/6193e590069d61205d490dd8",
+   "text": "HK G28 7.62x51 精确射手步枪 G28",
+   "title": ""
+  }
+ ],
+ "aria": [
+  {
+   "role": "button",
+   "label": "展开搜索"
+  },
+  {
+   "role": "button",
+   "label": "切换主题色"
+  },
+  {
+   "role": "button",
+   "label": "切换到暗黑模式"
+  },
+  {
+   "role": "button",
+   "label": "菜单"
+  },
+  {
+   "role": "button",
+   "label": "展开分导航"
+  },
+  {
+   "role": "div",
+   "label": "网站访问统计"
+  },
+  {
+   "role": "button",
+   "label": "回到顶部"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://www.eftarkov.com/ammo",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-boot.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-boot.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/tailwind-built.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/css/all.min.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/font.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/theme-tokens.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/css/site.css?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/theme-switcher.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/site.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/progress.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/comment.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/price-chart.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/js/desktop-sticky-tables.js?v=1793204134",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fonts/www.eftarkov.com.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/assets/fontawesome/webfonts/fa-solid-900.woff2",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fd20ff893a8961fc660a954-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fbe3ffdf8b6a877a729ea82-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/64b8725c4b75259c590fa899-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/619636be6db0f2477964e710-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6196364158ef8c428c287d9f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6196365d58ef8c428c287da1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/67c540c3d0538d12ec036c08-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/67c540cfb032bbdb530201b8-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fc382a9d724d907e2077dab-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fc275cf85fd526b824a571a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fc382b6d6fa9c00c571bbc3-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5fc382c1016cce60e8341b20-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62330b3ed4dc74626d570b95-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62330bfadc5883093563729b-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62330c18744e5e31df12f516-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/62330c40bdd19b369e1e53d1-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5f0596629e22f464da6bbdd9-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e655cb86f77411dc52a77b-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e6542b86f77411dc52a77a-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e6658b86f77411d949b250-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6a60f36fb3d057447a095aee-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/67dc255ee3028a8b120efc48-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/67dc2648ba5b79876906a166-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5ba26835d4351e0035628ff5-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0d5e4486f77478390952fe-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/56dff026d2720bb8668b4567-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/59e690b686f7746c9f75e848-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/601949593ae8f707c4608daa-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6a42662fcb506840dd053827-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/601aa3d2b2bcb34913271e6d-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5a6086ea4f39f99cd479502f-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/6768c25aa7b238f14a08d3f6-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5efb0c1bd79ff02a1f5e68d9-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e023d34e8a400319a28ed44-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5e023d48186a883be655e551-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/560d61e84bdc2da74d8b4571-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/68bad8376cb22acf1107a586-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/uploads/base/5c0d688c86f77413ae3407b2-base-image.webp",
+   "host": "www.eftarkov.com"
+  },
+  {
+   "url": "https://www.eftarkov.com/cache/site-update.json?_=1793252660195",
+   "host": "www.eftarkov.com"
+  }
+ ],
+ "console": [],
+ "screenshot": "screenshots/eft-ammo.png",
+ "screenshot_bytes": 136817
+}

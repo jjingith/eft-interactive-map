@@ -1,0 +1,167 @@
+{
+ "tag": "after",
+ "base": "http://127.0.0.1:8790",
+ "modes": {
+  "regular": {
+   "mode": "regular",
+   "nodes": 503,
+   "edges": 257,
+   "layers": 18,
+   "perLayerMax": 300,
+   "perLayerAvg": 27.9,
+   "canvas": {
+    "w": 4118,
+    "h": 4822
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 67,
+   "geometricCrossings": 99,
+   "longEdges": 11,
+   "edgesThroughNodes": 23,
+   "crossingsPerEdge": 0.39,
+   "maxIndegree": 6,
+   "maxOutdegree": 6,
+   "domNodes": 503,
+   "domEdges": 257,
+   "cycles": [
+    [
+     "6744af0969a58fceba101fed",
+     "6745fae369a58fceba10343d",
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6744af0969a58fceba101fed"
+    ],
+    [
+     "6745fae369a58fceba10343d",
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "6745fae369a58fceba10343d"
+    ],
+    [
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "674600a366e6a521aa05eb66"
+    ]
+   ],
+   "raw": {
+    "width": 4118,
+    "height": 4822,
+    "nodes": 503
+   }
+  },
+  "pve": {
+   "mode": "pve",
+   "nodes": 499,
+   "edges": 256,
+   "layers": 13,
+   "perLayerMax": 297,
+   "perLayerAvg": 38.4,
+   "canvas": {
+    "w": 2968,
+    "h": 4822
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 66,
+   "geometricCrossings": 99,
+   "longEdges": 11,
+   "edgesThroughNodes": 23,
+   "crossingsPerEdge": 0.39,
+   "maxIndegree": 6,
+   "maxOutdegree": 6,
+   "domNodes": 499,
+   "domEdges": 256,
+   "cycles": [
+    [
+     "6744af0969a58fceba101fed",
+     "6745fae369a58fceba10343d",
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6744af0969a58fceba101fed"
+    ],
+    [
+     "6745fae369a58fceba10343d",
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "6745fae369a58fceba10343d"
+    ],
+    [
+     "674600a366e6a521aa05eb66",
+     "674602307e3818d5bb069489",
+     "6746053b5b555b53460d9896",
+     "674605df60a98cad1b0ec799",
+     "67460662d0fbbc74ca0f7229",
+     "6745cbee909d2013670a4a55",
+     "674600a366e6a521aa05eb66"
+    ]
+   ],
+   "raw": {
+    "width": 2968,
+    "height": 4822,
+    "nodes": 499
+   }
+  },
+  "pvps": {
+   "mode": "pvps",
+   "nodes": 462,
+   "edges": 197,
+   "layers": 13,
+   "perLayerMax": 293,
+   "perLayerAvg": 35.5,
+   "canvas": {
+    "w": 2968,
+    "h": 4488
+   },
+   "nodeOverlaps": 0,
+   "adjacentCrossings": 53,
+   "geometricCrossings": 27,
+   "longEdges": 7,
+   "edgesThroughNodes": 10,
+   "crossingsPerEdge": 0.14,
+   "maxIndegree": 6,
+   "maxOutdegree": 5,
+   "domNodes": 462,
+   "domEdges": 197,
+   "cycles": [
+    [
+     "597a0f5686f774273b74f676",
+     "597a160786f77477531d39d2",
+     "597a0f5686f774273b74f676"
+    ],
+    [
+     "597a0f5686f774273b74f676",
+     "597a160786f77477531d39d2",
+     "597a171586f77405ba6887d3",
+     "597a0f5686f774273b74f676"
+    ],
+    [
+     "597a160786f77477531d39d2",
+     "597a171586f77405ba6887d3",
+     "597a160786f77477531d39d2"
+    ]
+   ],
+   "raw": {
+    "width": 2968,
+    "height": 4488,
+    "nodes": 462
+   }
+  }
+ }
+}

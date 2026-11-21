@@ -1,0 +1,84 @@
+{
+ "validator": "r206_accept.py",
+ "base": "http://127.0.0.1:8810",
+ "pass": true,
+ "summary": {
+  "total": 14,
+  "passed": 14
+ },
+ "baselineRows": 40,
+ "checks": [
+  {
+   "id": "L1_筛选条存在(5控件+3排序)",
+   "pass": true,
+   "detail": "{'bar': True, 'cl': True, 'lv': True, 'kg': True, 'mincl': True, 'pen': True, 'nSort': 3}"
+  },
+  {
+   "id": "L2_重量上限过滤生效",
+   "pass": true,
+   "detail": "40 -> 8 ｜ 筛选中：重量 ≤ 1 kg"
+  },
+  {
+   "id": "L3_防弹等级下限过滤生效",
+   "pass": true,
+   "detail": "40 -> 5"
+  },
+  {
+   "id": "L4_惩罚上限过滤生效",
+   "pass": true,
+   "detail": "40 -> 35"
+  },
+  {
+   "id": "L5_商人等级过滤生效",
+   "pass": true,
+   "detail": "40 -> 7，越界行=0"
+  },
+  {
+   "id": "L6_护甲等级过滤生效",
+   "pass": true,
+   "detail": "40 -> 1"
+  },
+  {
+   "id": "L6b_跳蚤等级过滤生效",
+   "pass": true,
+   "detail": "选项=['不限', '≤ 20（1036 件）', '≤ 25（1519 件）', '≤ 30（284 件）', '≤ 35（32 件）', '≤ 40（51 件）'] ｜ 40 -> 38 ｜ 筛选中：跳蚤等级 ≤ 20"
+  },
+  {
+   "id": "L7_移动分项排序生效",
+   "pass": true,
+   "detail": "aria-pressed=true ｜ 序列=[0.0, 0.0, -1.0, -2.0, -2.0] ｜ 首行 ['Altyn 突击头盔（橄榄绿）'] -> ['Vulkan-5 (火神) LShZ-5 重型防弹头盔 (黑色)']"
+  },
+  {
+   "id": "L8_转身分项排序生效",
+   "pass": true,
+   "detail": "aria-pressed=true ｜ 序列=[-2.0, -2.0, -4.0, -10.0, -10.0] ｜ 首行 ['Vulkan-5 (火神) LShZ-5 重型防弹头盔 (黑色)'] -> ['Vulkan-5 (火神) LShZ-5 重型防弹头盔 (黑色)']"
+  },
+  {
+   "id": "L9_人机分项排序生效",
+   "pass": true,
+   "detail": "aria-pressed=true ｜ 序列=[-3.0, -3.0, -3.0, -15.0, -15.0] ｜ 首行 ['Vulkan-5 (火神) LShZ-5 重型防弹头盔 (黑色)'] -> ['Altyn 突击头盔（橄榄绿）']"
+  },
+  {
+   "id": "L10_清空筛选后回到基线",
+   "pass": true,
+   "detail": "40 -> 40 ｜ 状态=''"
+  },
+  {
+   "id": "L11_装配一件后左栏统计更新",
+   "pass": true,
+   "detail": "Altyn 突击头盔（橄榄绿）5-1.0/-4.0/-3.0装甲钢0.538115422.50—IV ｜ '移动\\n转身\\n人机\\n-10.0%\\n-9.5%\\n-10.0%\\n千克\\n13.30 KG' -> '移动\\n转身\\n人机\\n-9.0%\\n-5.5%\\n-7.0%\\n千克\\n10.80 KG'"
+  },
+  {
+   "id": "L12a_控制台无错误",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "L12b_运行期无外部请求",
+   "pass": true,
+   "detail": "[]"
+  }
+ ],
+ "consoleErrors": 0,
+ "externalHosts": []
+}

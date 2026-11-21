@@ -1,0 +1,18 @@
+HTTP/1.1 200 Connection established
+
+HTTP/1.1 200 OK
+Date: Tue, 03 Nov 2026 14:46:25 GMT
+Content-Type: application/json
+Content-Length: 37413
+Connection: keep-alive
+Access-Control-Allow-Origin: https://db4tarkov.com
+Cache-Control: public, max-age=3600
+ETag: "63148b12e2a56c07ec2ec531182d2f64"
+Access-Control-Expose-Headers: ETag, X-Items-Version
+X-Items-Version: 1.1.5.1.47510
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FppUFaG68gWRU7iSq0ThNwa%2FB5ZBAS0N6MRQTNl%2Ff5OD3qdsoDmTyfGfoN%2BldbsiaNPaB5XqCcDdNYc7Bxt6%2Bavghsj6R2wkUbWd1bRhgd3Oq9ijHpE7gxX7yMY%2BFSQy39g1usCUDRECHwwojaP5czE%3D"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Server: cloudflare
+CF-RAY: a54c2b166d2bddc1-HKG
+alt-svc: h3=":443"; ma=86400
+

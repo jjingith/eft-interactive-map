@@ -1,0 +1,101 @@
+{
+  "generatedFor": "R19.15",
+  "views": [
+    {
+      "key": "map",
+      "label": "地图",
+      "measured": true
+    },
+    {
+      "key": "loadout",
+      "label": "配装",
+      "measured": true
+    },
+    {
+      "key": "gun",
+      "label": "配枪",
+      "measured": true
+    },
+    {
+      "key": "ammo",
+      "label": "弹药",
+      "measured": true
+    },
+    {
+      "key": "sim",
+      "label": "模拟",
+      "measured": true
+    }
+  ],
+  "components": [
+    {
+      "name": "顶部导航",
+      "selector": ".view-btn[data-view]",
+      "states": [
+        "normal",
+        "hover",
+        "selected"
+      ]
+    },
+    {
+      "name": "工作台面板",
+      "selector": ".lw-panel / .gw-* / .am-panel",
+      "states": [
+        "normal"
+      ]
+    },
+    {
+      "name": "数据表格",
+      "selector": ".tbl / .tbl-row / .tbl-cell",
+      "states": [
+        "normal",
+        "hover",
+        "conflict"
+      ]
+    },
+    {
+      "name": "主按钮",
+      "selector": "button",
+      "states": [
+        "normal",
+        "hover",
+        "active",
+        "flash",
+        "disabled"
+      ]
+    },
+    {
+      "name": "输入框/下拉",
+      "selector": "input / select",
+      "states": [
+        "normal",
+        "focus"
+      ]
+    },
+    {
+      "name": "弹窗",
+      "selector": ".lw-modal-box / .am-modal",
+      "states": [
+        "normal"
+      ]
+    },
+    {
+      "name": "配枪画布",
+      "selector": "#gw-tree.gw-grid",
+      "states": [
+        "normal",
+        "empty-slot",
+        "conflict"
+      ]
+    }
+  ],
+  "buttonsCovered": [
+    "顶部导航",
+    "工具栏",
+    "搜索/筛选/分类/排序",
+    "枪匠大师生成与应用",
+    "弹窗与确认框",
+    "动态重渲染按钮",
+    "开关类按钮"
+  ]
+}

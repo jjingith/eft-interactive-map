@@ -1,0 +1,1232 @@
+{
+ "generatedFor": "R19.15.1",
+ "principle": "真实装配树回答“装在哪”，视觉角色回答“画在哪”；两者用显式角色分离，角色判定只认真实槽位数据（sid / parent / allow / 物品 pt），不看枪名或物品名。",
+ "priority": [
+  "1 固定 6×9 坐标与顶部扩展",
+  "2 枪械本体（r3c6–c8）",
+  "3 主体结构角色：上机匣 / 下机匣 / 后托",
+  "4 固定锚点：弹匣 r4c7 / 后握把 r4c8 / B.A.D r4c6 / 拉机柄 r2c9 / 子弹 r5c7",
+  "5 上置：前照门 · 上导轨战术 · 瞄具/镜座 · 燕尾槽基座 · 后照门",
+  "6 枪口链 / 护木链 / 前握把链",
+  "7 其余真实附件稳定避让"
+ ],
+ "rules": [
+  {
+   "id": "receiverUpper / receiverLower",
+   "intent": "AXMC 这类有独立上下机匣的枪：上机匣在机体左侧相邻列，下机匣在上机匣正下方同列",
+   "detect": "槽位基名是机匣类（reciever/receiver/slide/frame/upper/lower）且其父槽位也是机匣类",
+   "position": "上机匣 r3c5；下机匣 r4c5",
+   "evidence": "数据可核实（真实槽位树父子关系）+ 真实 DOM 实测",
+   "affected": [
+    {
+     "id": "627e14b21713922ded6f2c15",
+     "name": "Accuracy International AXMC .338 LM 栓动式狙击步枪"
+    }
+   ],
+   "count": 1
+  },
+  {
+   "id": "stock / stockOnGrip / stockUnderParent",
+   "intent": "后托视觉位置由枪托角色决定，不由父件决定（AXMC 后托真实父件是手枪式握把）",
+   "detect": "槽位基名 stock（含上游的 stock_akms 等变体）；优先根级枪托，否则取「父件不是枪托」的第一个枪托槽",
+   "position": "r3c9；其枪托子槽沿 r4c9 → r5c9 → r6c9",
+   "evidence": "数据可核实 + DOM 实测",
+   "affected": [
+    {
+     "id": "627e14b21713922ded6f2c15",
+     "name": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+     "at": [
+      {
+       "slot": "mod_pistol_grip/mod_stock",
+       "row": 3,
+       "col": 9,
+       "role": "stockOnGrip"
+      }
+     ]
+    },
+    {
+     "id": "5926bb2186f7744b1c6c6e60",
+     "name": "HK MP5 9x19 冲锋枪（海军三发点射）"
+    },
+    {
+     "id": "5d2f0d8048f0356c925bc3b0",
+     "name": "HK MP5K 9x19 微型冲锋枪"
+    }
+   ],
+   "count": 3
+  },
+  {
+   "id": "hammer / hammerCap（杠杆步枪）",
+   "intent": "击锤帽 → 击锤 → 枪托 竖直一条列，击锤在枪托正上方",
+   "detect": "槽位基名 hammer 且该枪有真实枪托槽位；击锤帽 = 击锤槽的真实子槽",
+   "position": "击锤 r2c9、击锤帽 r1c9（不足则顶部扩展）",
+   "evidence": "数据可核实 + DOM 实测（马林 MXLR）",
+   "affected": [
+    {
+     "id": "67c6de3ce39861860909e8e5",
+     "name": "马林 MXLR .308 ME 杠杆步枪",
+     "hammer": {
+      "slot": "mod_hammer",
+      "row": 2,
+      "col": 9,
+      "caps": [
+       {
+        "slot": "mod_hammer/mod_tactical",
+        "row": 1,
+        "col": 9
+       }
+      ]
+     }
+    }
+   ],
+   "count": 1
+  },
+  {
+   "id": "trigger",
+   "intent": "扳机槽位固定在本体正下方三格的最右一格",
+   "detect": "槽位基名 trigger 且该枪没有后握把槽位（避免与 r4c8 握把锚点抢位）",
+   "position": "r4c8",
+   "evidence": "数据可核实 + DOM 实测",
+   "affected": [
+    {
+     "id": "6193a720f8ee7e52e42109ed",
+     "name": "HK USP .45 ACP手枪",
+     "trigger": {
+      "slot": "mod_trigger",
+      "row": 4,
+      "col": 8
+     }
+    },
+    {
+     "id": "67c6de3ce39861860909e8e5",
+     "name": "马林 MXLR .308 ME 杠杆步枪",
+     "trigger": {
+      "slot": "mod_trigger",
+      "row": 4,
+      "col": 8
+     }
+    }
+   ],
+   "count": 2
+  },
+  {
+   "id": "lever",
+   "intent": "杠杆步枪的环状杠杆（真实 charge 槽）让出第 9 列上方给击锤链，改锚到枪托正下方",
+   "detect": "存在 hammer 链且存在真实 charge 槽",
+   "position": "r4c9",
+   "evidence": "数据可核实 + DOM 实测（马林 MXLR）",
+   "affected": [
+    {
+     "id": "67c6de3ce39861860909e8e5",
+     "name": "马林 MXLR .308 ME 杠杆步枪",
+     "hammer": {
+      "slot": "mod_hammer",
+      "row": 2,
+      "col": 9,
+      "caps": [
+       {
+        "slot": "mod_hammer/mod_tactical",
+        "row": 1,
+        "col": 9
+       }
+      ]
+     }
+    }
+   ],
+   "count": 1
+  },
+  {
+   "id": "topOptic（镜座/瞄具上置链）",
+   "intent": "能装光学瞄具的镜座、以及瞄具槽，必须排在父件（或机匣列）上方，绝不下沉到本体行下方",
+   "detect": "槽位基名 mount/scope/sight_*，lane 为上置；mount 需子树含瞄具槽，或 allow 里的候选件自带瞄具槽；父件是护木的顶盖类除外",
+   "position": "父件同列上一行（机匣列优先）；再往上叠加，超出则顶部扩展",
+   "evidence": "数据可核实 + DOM 实测",
+   "affected": [
+    {
+     "id": "54491c4f4bdc2db1078b4568",
+     "name": "MP-133 12 铅径泵动式霰弹枪",
+     "cells": [
+      "mod_mount_001"
+     ]
+    },
+    {
+     "id": "56dee2bdd2720bc8328b4567",
+     "name": "MP-153 12铅径半自动霰弹枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "57d14d2524597714373db789",
+     "name": "PP-91 雪松 9x18PM冲锋枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "57dc2fa62459775949412633",
+     "name": "AKS-74U 5.45x39 短突击步枪",
+     "cells": [
+      "mod_reciever/mod_mount_000"
+     ]
+    },
+    {
+     "id": "57f4c844245977379d5c14d1",
+     "name": "PP-9 楔子 9x18PMM 冲锋枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "583990e32459771419544dd2",
+     "name": "AKS-74UN 5.45x39 短突击步枪",
+     "cells": [
+      "mod_reciever/mod_mount_000"
+     ]
+    },
+    {
+     "id": "587e02ff24597743df3deaeb",
+     "name": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5926bb2186f7744b1c6c6e60",
+     "name": "HK MP5 9x19 冲锋枪（海军三发点射）",
+     "cells": [
+      "mod_reciever/mod_mount"
+     ]
+    },
+    {
+     "id": "59f98b4986f7746f546d2cef",
+     "name": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5a7828548dc32e5a9c28b516",
+     "name": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5a7ae0c351dfba0017554310",
+     "name": "Glock 17 9x19 手枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5aafa857e5b5b00018480968",
+     "name": "春田 M1A 7.62x51 步枪",
+     "cells": [
+      "mod_stock/mod_mount",
+      "mod_stock/mod_mount/mod_scope",
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5b1fa9b25acfc40018633c01",
+     "name": "GLOCK 18C 9x19 冲锋手枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5bfea6e90db834001b7347f3",
+     "name": "雷明顿Model 700 7.62x51 狙击步枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "5c46fbd72e2216398b5a8c9c",
+     "name": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+     "cells": [
+      "mod_mount_001"
+     ]
+    },
+    {
+     "id": "5d2f0d8048f0356c925bc3b0",
+     "name": "HK MP5K 9x19 微型冲锋枪",
+     "cells": [
+      "mod_reciever/mod_mount"
+     ]
+    },
+    {
+     "id": "5de652c31b7e3716273428be",
+     "name": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+     "cells": [
+      "mod_mount",
+      "mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "5df24cf80dee1b22f862e9bc",
+     "name": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+     "cells": [
+      "mod_mount",
+      "mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "5e81c3cbac2bb513793cdc75",
+     "name": "柯尔特 M1911A1 .45 ACP 手枪",
+     "cells": [
+      "mod_mount_000"
+     ]
+    },
+    {
+     "id": "5f2a9575926fd9352339381f",
+     "name": "Kel-Tec RFB 7.62x51",
+     "cells": [
+      "mod_mount",
+      "mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "606dae0ab0e443224b421bb7",
+     "name": "MP-155 12铅径半自动霰弹枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "6165ac306ef05c2ce828ef74",
+     "name": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+     "cells": [
+      "mod_reciever/mod_sight_front"
+     ]
+    },
+    {
+     "id": "6183afd850224f204c1da514",
+     "name": "FN SCAR-H 7.62x51突击步枪",
+     "cells": [
+      "mod_reciever/mod_sight_front"
+     ]
+    },
+    {
+     "id": "6184055050224f204c1da540",
+     "name": "FN SCAR-L 5.56x45突击步枪",
+     "cells": [
+      "mod_reciever/mod_sight_front"
+     ]
+    },
+    {
+     "id": "618428466ef05c2ce828f218",
+     "name": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+     "cells": [
+      "mod_reciever/mod_sight_front"
+     ]
+    },
+    {
+     "id": "61f7c9e189e6fb1a5e3ea78d",
+     "name": "MP-18 7.62x54R单发步枪",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "6259b864ebedf17603599e88",
+     "name": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+     "cells": [
+      "mod_mount",
+      "mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "63088377b5cd696784087147",
+     "name": "Glock 19X 9x19 手枪",
+     "cells": [
+      "mod_mount"
+     ]
+    },
+    {
+     "id": "63171672192e68c5460cebc5",
+     "name": "Steyr AUG A3 5.56x45突击步枪",
+     "cells": [
+      "mod_reciever/mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "668fe5a998b5ad715703ddd6",
+     "name": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "66992b349950f5f4cd06029f",
+     "name": "IWI UZI 9x19冲锋枪",
+     "cells": [
+      "mod_mount_000"
+     ]
+    },
+    {
+     "id": "669fa39b48fc9f8db6035a0c",
+     "name": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "669fa3d876116c89840b1217",
+     "name": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "669fa3f88abd2662d80eee77",
+     "name": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "669fa409933e898cce0c2166",
+     "name": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+     "cells": [
+      "mod_barrel/mod_scope"
+     ]
+    },
+    {
+     "id": "6718817435e3cfd9550d2c27",
+     "name": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+     "cells": [
+      "mod_reciever/mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "673cab3e03c6a20581028bc1",
+     "name": "Sako TRG M10 .338 LM 栓动狙击步枪",
+     "cells": [
+      "mod_reciever/mod_mount",
+      "mod_reciever/mod_mount/mod_scope"
+     ]
+    },
+    {
+     "id": "674fe9a75e51f1c47c04ec23",
+     "name": "Saiga-12K 12 铅径自动霰弹枪",
+     "cells": [
+      "mod_sight_rear"
+     ]
+    },
+    {
+     "id": "676176d362e0497044079f4c",
+     "name": "FN SCAR-H X-17 7.62x51突击步枪",
+     "cells": [
+      "mod_reciever/mod_sight_front"
+     ]
+    },
+    {
+     "id": "67c6de3ce39861860909e8e5",
+     "name": "马林 MXLR .308 ME 杠杆步枪",
+     "cells": [
+      "mod_mount"
+     ]
+    }
+   ],
+   "count": 41
+  },
+  {
+   "id": "dovetailMount（AK 燕尾槽基座）",
+   "intent": "本体正上方一行，且是该行从左往右第 3 个真实槽位；不新建虚假槽位",
+   "detect": "槽位基名 mount；父件是机匣或根级；allow 里直接列着光学瞄具（pt=Scope）",
+   "position": "r2；按该行真实槽位序号取第 3 位，不足时取最接近第 3 位的光学带空位并记录",
+   "evidence": "数据可核实（allow 列表）+ DOM 实测",
+   "affected": [
+    {
+     "id": "5644bd2b4bdc2d3b4c8b4572",
+     "name": "AK-74N 5.45x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "576165642459773c7a400233",
+     "name": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "57838ad32459774a17445cd2",
+     "name": "VSS “绞丝机”9x39 特种狙击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        6,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 3,
+       "aboveBody": true
+      },
+      {
+       "slot": "mod_mount_004",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        5,
+        6,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 7,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "57c44b372459772d2b39b8ce",
+     "name": "AS VAL“巨浪” 9x39 特种突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_004",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        6,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 7,
+       "aboveBody": true
+      },
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        5,
+        6,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 3,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "583990e32459771419544dd2",
+     "name": "AKS-74UN 5.45x39 短突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        5,
+        6,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5839a40f24597726f856b511",
+     "name": "AKS-74UB 5.45x39 短突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5a0ec13bfcdbcb00165aa685",
+     "name": "AKMN 7.62x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        2,
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ab8e9fcd8ce870019439434",
+     "name": "AKS-74N 5.45x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5abcbc27d8ce8700182eceeb",
+     "name": "AKMSN 7.62x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_001",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        2,
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac4cd105acfc40016339859",
+     "name": "AK-74M 5.45x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac66cb05acfc40198510a10",
+     "name": "AK-101 5.56x45 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac66d015acfc400180ae6e4",
+     "name": "AK-102 5.56x45 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac66d2e5acfc43b321d4b53",
+     "name": "AK-103 7.62x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac66d725acfc43b321d4b60",
+     "name": "AK-104 7.62x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5ac66d9b5acfc4001633997a",
+     "name": "AK-105 5.45x39 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        7,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5c501a4d2e221602b412b540",
+     "name": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+     "cells": [
+      {
+       "slot": "mod_mount",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        8
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5cc82d76e24e8d00134b4b83",
+     "name": "FN P90 5.7x28 冲锋枪",
+     "cells": [
+      {
+       "slot": "mod_reciever/mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "FN P90 Ring Sight反射式瞄具",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "5e870397991fd70db46995c8",
+     "name": "Mossberg 590A1 12铅径泵动式霰弹枪",
+     "cells": [
+      {
+       "slot": "mod_mount",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        1,
+        5
+       ],
+       "expectedOrdinal": 3,
+       "item": "M590 鬼环照门",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "628a60ae6b1d481ff772e9c8",
+     "name": "Rifle Dynamics RD-704 7.62x39突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        4,
+        5,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "62e14904c2699c0ec93adc47",
+     "name": "SR-2M 石楠 9x21 冲锋枪",
+     "cells": [
+      {
+       "slot": "mod_reciever/mod_mount",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "63171672192e68c5460cebc5",
+     "name": "Steyr AUG A3 5.56x45突击步枪",
+     "cells": [
+      {
+       "slot": "mod_reciever/mod_mount",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "651450ce0e00edc794068371",
+     "name": "SR-3M 9x39紧凑型突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_004",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        6,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 6,
+       "aboveBody": true
+      },
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        5,
+        6,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 3,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "6718817435e3cfd9550d2c27",
+     "name": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+     "cells": [
+      {
+       "slot": "mod_reciever/mod_mount",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "Steyr AUG A3 M1 1.5倍光学瞄准镜",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "674d6121c09f69dfb201a888",
+     "name": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        5,
+        6,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "674fe9a75e51f1c47c04ec23",
+     "name": "Saiga-12K 12 铅径自动霰弹枪",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 4,
+       "row2Cols": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "6871284e9a353bb50606f3ed",
+     "name": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+     "cells": [
+      {
+       "slot": "mod_mount_004",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 3,
+       "row2Cols": [
+        3,
+        4,
+        5,
+        6,
+        8
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 7,
+       "aboveBody": true
+      },
+      {
+       "slot": "mod_mount_000",
+       "row": 2,
+       "col": 6,
+       "ordinalInRow": 4,
+       "row2Cols": [
+        3,
+        4,
+        5,
+        6,
+        8
+       ],
+       "expectedOrdinal": 3,
+       "item": "",
+       "scopeAllow": 3,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "6981d72ed009ad83920da43a",
+     "name": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+     "cells": [
+      {
+       "slot": "mod_mount_000",
+       "row": 3,
+       "col": 5,
+       "ordinalInRow": 1,
+       "row2Cols": [
+        5,
+        8,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "SAG Bit 低基线燕尾槽基座",
+       "scopeAllow": 10,
+       "aboveBody": true
+      }
+     ]
+    },
+    {
+     "id": "6a78b7f8c2016eb33e0027cd",
+     "name": "FN P90 5.7x28 冲锋枪（灾厄）",
+     "cells": [
+      {
+       "slot": "mod_reciever/mod_mount_000",
+       "row": 2,
+       "col": 5,
+       "ordinalInRow": 2,
+       "row2Cols": [
+        4,
+        5,
+        9
+       ],
+       "expectedOrdinal": 3,
+       "item": "FN P90 Ring Sight反射式瞄具",
+       "scopeAllow": 1,
+       "aboveBody": true
+      }
+     ]
+    }
+   ],
+   "count": 28
+  },
+  {
+   "id": "mainRowCompaction",
+   "intent": "主体行真实槽位向本体连续排列，末列紧邻本体（有独立上机匣时让出一列）",
+   "detect": "槽位基名 muzzle/gas_block/barrel/handguard（机匣单独判定）",
+   "position": "r3，列连续，末列 = body.col-1（有上机匣时 body.col-2）",
+   "evidence": "数据可核实 + 全量 DOM 实测",
+   "affected": "全部枪械"
+  },
+  {
+   "id": "bodyRowExclusive",
+   "intent": "主体行只放主体链角色；其他附件一律不得占用 r3",
+   "detect": "落位后校验：r3 上的槽位基名必须属于主体链（含枪托/战术例外）",
+   "position": "—",
+   "evidence": "全量 DOM 实测",
+   "affected": "全部枪械"
+  },
+  {
+   "id": "topChildUpward",
+   "intent": "父件已在第 1/2 行的子槽继续向上，不落回本体行",
+   "detect": "父件行 ≤ 2 且基名不是 foregrip/bipod/magazine",
+   "position": "父件同列上一行",
+   "evidence": "全量 DOM 实测",
+   "affected": "全部枪械"
+  }
+ ],
+ "unchangedClasses": [
+  {
+   "id": "导轨/顶盖类（非镜座）",
+   "why_unchanged": "槽位子树和 allow 里都没有瞄具槽，属于枪管/导气箍/护木上的导轨或防尘盖，不是镜座；把它们搬到上方会与真实物理位置冲突。",
+   "count": 12,
+   "samples": [
+    {
+     "gun": "MP-153 12铅径半自动霰弹枪",
+     "id": "56dee2bdd2720bc8328b4567",
+     "chainRoot": "barrel",
+     "slot": "mod_barrel/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 4,
+     "parentBase": "barrel",
+     "itemName": ""
+    },
+    {
+     "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+     "id": "57838ad32459774a17445cd2",
+     "chainRoot": "muzzle",
+     "slot": "mod_muzzle/mod_mount_000",
+     "base": "mount",
+     "row": 4,
+     "col": 3,
+     "parentBase": "muzzle",
+     "itemName": ""
+    },
+    {
+     "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+     "id": "57c44b372459772d2b39b8ce",
+     "chainRoot": "muzzle",
+     "slot": "mod_muzzle/mod_mount_000",
+     "base": "mount",
+     "row": 4,
+     "col": 3,
+     "parentBase": "muzzle",
+     "itemName": ""
+    },
+    {
+     "gun": "MTs-255-12 12铅径转轮霰弹枪",
+     "id": "60db29ce99594040e04c4a27",
+     "chainRoot": "barrel",
+     "slot": "mod_barrel/mod_mount",
+     "base": "mount",
+     "row": 4,
+     "col": 4,
+     "parentBase": "barrel",
+     "itemName": ""
+    },
+    {
+     "gun": "Saiga-12K 12 铅径自动霰弹枪",
+     "id": "674fe9a75e51f1c47c04ec23",
+     "chainRoot": "handguard",
+     "slot": "mod_handguard/mod_mount",
+     "base": "mount",
+     "row": 6,
+     "col": 4,
+     "parentBase": "handguard",
+     "itemName": "SOK-12 Chaos Titan 四面导轨护木顶盖"
+    },
+    {
+     "gun": "Saiga-12K 12 铅径自动霰弹枪",
+     "id": "674fe9a75e51f1c47c04ec23",
+     "chainRoot": "handguard",
+     "slot": "mod_handguard/mod_mount/mod_mount",
+     "base": "mount",
+     "row": 6,
+     "col": 6,
+     "parentBase": "mount",
+     "itemName": "SOK-12 Chaos Titan 机匣上导轨"
+    },
+    {
+     "gun": "Saiga-12K 12 铅径自动霰弹枪",
+     "id": "674fe9a75e51f1c47c04ec23",
+     "chainRoot": "handguard",
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_scope",
+     "base": "scope",
+     "row": 6,
+     "col": 7,
+     "parentBase": "mount",
+     "itemName": "Aimpoint QRP2 CompM4/PRO反射式瞄具基座"
+    },
+    {
+     "gun": "Saiga-12K 12 铅径自动霰弹枪",
+     "id": "674fe9a75e51f1c47c04ec23",
+     "chainRoot": "handguard",
+     "slot": "mod_handguard/mod_mount/mod_mount/mod_scope/mod_scope",
+     "base": "scope",
+     "row": 6,
+     "col": 8,
+     "parentBase": "scope",
+     "itemName": "标准Aimpont瞄具垫高器"
+    }
+   ],
+   "status": "保留原车道（父件相邻下方），列入待核实"
+  }
+ ]
+}

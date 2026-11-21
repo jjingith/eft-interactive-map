@@ -1,0 +1,266 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.29-1",
+  "x": 787,
+  "y": 24,
+  "w": 1573,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 533,
+  "y": 24,
+  "w": 73,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 605,
+  "y": 24,
+  "w": 71,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 672,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 730,
+  "y": 24,
+  "w": 54,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 781,
+  "y": 24,
+  "w": 49,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 840,
+  "y": 24,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 905,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 961,
+  "y": 24,
+  "w": 50,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 1020,
+  "y": 24,
+  "w": 69,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 1086,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.3.0.0",
+  "x": 1157,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 1225,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 37 day(s)",
+  "x": 1657,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 1605,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 1657,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (37d)",
+  "x": 1708,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 1762,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 1796,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 1830,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 1864,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1898,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "group",
+  "label": "Move/Turn/Ergo 0 / 0 / 0 Kg 0 kg 0 / 0 / 0 Final Cost:",
+  "x": 304,
+  "y": 308,
+  "w": 500,
+  "h": 439
+ },
+ {
+  "role": "button",
+  "label": "Headwear",
+  "x": 304,
+  "y": 172,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "role": "button",
+  "label": "Glasses",
+  "x": 129,
+  "y": 246,
+  "w": 65,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Headset",
+  "x": 129,
+  "y": 306,
+  "w": 65,
+  "h": 65
+ },
+ {
+  "role": "button",
+  "label": "Face Cover",
+  "x": 196,
+  "y": 246,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Armor Armored Rig",
+  "x": 304,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Chest Rig",
+  "x": 471,
+  "y": 291,
+  "w": 167,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Gun",
+  "x": 228,
+  "y": 418,
+  "w": 319,
+  "h": 108
+ },
+ {
+  "role": "button",
+  "label": "Backpack",
+  "x": 471,
+  "y": 419,
+  "w": 167,
+  "h": 134
+ },
+ {
+  "role": "button",
+  "label": "Buy ()",
+  "x": 179,
+  "y": 515,
+  "w": 250,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Sell",
+  "x": 429,
+  "y": 515,
+  "w": 250,
+  "h": 24
+ }
+]

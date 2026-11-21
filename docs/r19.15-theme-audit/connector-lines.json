@@ -1,0 +1,21 @@
+{
+  "generatedFor": "R19.15",
+  "requirement": "移除配枪画布中配件之间的连接线（保留面板边框/表格分割线/输入框边界）",
+  "codeEvidence": {
+    "createsSvgContainer": false,
+    "callsGwDrawLinks": false,
+    "bindsResizeRedraw": false,
+    "keepsFunctionImplementation": true
+  },
+  "browserEvidence": {
+    "svgCount": 0,
+    "linkPaths": 0,
+    "anySvg": 0
+  },
+  "untouched": [
+    "面板边框",
+    "表格横向/纵向分割线",
+    "输入框边界",
+    "窗口与弹窗外框"
+  ]
+}

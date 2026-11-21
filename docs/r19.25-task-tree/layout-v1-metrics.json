@@ -1,0 +1,56 @@
+{
+ "regular": {
+  "version": "1.0",
+  "canvas": [
+   4118,
+   4822
+  ],
+  "nodes": 503,
+  "edges": 222,
+  "auxEdges": 35,
+  "dummies": 25,
+  "segmentCrossings": 249,
+  "segmentOverlaps": 44,
+  "segmentOverlapsLong": 41,
+  "edgeNodeHits": 32,
+  "edgeNodeHitEdges": 22,
+  "nodeOverlaps": 0,
+  "bends": 200
+ },
+ "pve": {
+  "version": "1.0",
+  "canvas": [
+   2968,
+   4822
+  ],
+  "nodes": 499,
+  "edges": 221,
+  "auxEdges": 35,
+  "dummies": 20,
+  "segmentCrossings": 252,
+  "segmentOverlaps": 45,
+  "segmentOverlapsLong": 41,
+  "edgeNodeHits": 30,
+  "edgeNodeHitEdges": 22,
+  "nodeOverlaps": 0,
+  "bends": 208
+ },
+ "pvps": {
+  "version": "1.0",
+  "canvas": [
+   2968,
+   4488
+  ],
+  "nodes": 462,
+  "edges": 184,
+  "auxEdges": 13,
+  "dummies": 12,
+  "segmentCrossings": 144,
+  "segmentOverlaps": 20,
+  "segmentOverlapsLong": 16,
+  "edgeNodeHits": 16,
+  "edgeNodeHitEdges": 8,
+  "nodeOverlaps": 0,
+  "bends": 132
+ }
+}

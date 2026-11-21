@@ -1,0 +1,414 @@
+{
+ "generatedAt": "2026-11-21T05:40:49",
+ "schema": "r19.21-engine-audit/1",
+ "checks": {
+  "A_6P44 Sb.1-30_subslot_exists": true,
+  "A_6P44 Sb.1-30_allow_akmp_only": true,
+  "A_6P20 Sb.2_subslot_exists": true,
+  "A_6P20 Sb.2_allow_akmp_only": true,
+  "A_6P1 Sb.2_subslot_exists": true,
+  "A_6P1 Sb.2_allow_akmp_only": true,
+  "A_akmsight_no_akmp_subslot": true,
+  "A_no_auto_akmp_on_other_sights": true,
+  "B_uninstall_sub_presence": true,
+  "B_uninstall_single_sub_cell": true,
+  "B_install_6P1Sb2_sub_presence": true,
+  "B_install_6P1Sb2_single_sub_cell": true,
+  "B_install_6P1Sb2_parent_is_sight": true,
+  "B_install_6P1Sb2_candidate_only_akmp": true,
+  "B_swap_to_akm_sight_unsupported_sub_presence": true,
+  "B_swap_to_akm_sight_unsupported_single_sub_cell": true,
+  "B_swap_to_6P44_sub_presence": true,
+  "B_swap_to_6P44_single_sub_cell": true,
+  "B_swap_to_6P44_parent_is_sight": true,
+  "B_swap_to_6P44_candidate_only_akmp": true,
+  "B_swap_to_6P20_sub_presence": true,
+  "B_swap_to_6P20_single_sub_cell": true,
+  "B_swap_to_6P20_parent_is_sight": true,
+  "B_swap_to_6P20_candidate_only_akmp": true,
+  "B_no_residue_after_uninstall": true,
+  "C_AK-74N_parent_is_confirmed": true,
+  "C_AK-74N_auto_above_same_col": true,
+  "C_AK-74N_final_above_same_col": true,
+  "C_AK-74_parent_is_confirmed": true,
+  "C_AK-74_auto_above_same_col": true,
+  "C_AK-74_final_above_same_col": true,
+  "C_AK-105_parent_is_confirmed": true,
+  "C_AK-105_auto_above_same_col": true,
+  "C_AK-105_final_above_same_col": true,
+  "C_AK-74M_parent_is_confirmed": true,
+  "C_AK-74M_auto_above_same_col": true,
+  "C_AK-74M_final_above_same_col": true,
+  "C_AK-103_parent_is_confirmed": true,
+  "C_AK-103_auto_above_same_col": true,
+  "C_AK-103_final_above_same_col": true,
+  "C_AK-104_parent_is_confirmed": true,
+  "C_AK-104_auto_above_same_col": true,
+  "C_AK-104_final_above_same_col": true,
+  "C_AK-101_parent_is_confirmed": true,
+  "C_AK-101_auto_above_same_col": true,
+  "C_AK-101_final_above_same_col": true,
+  "C_AK-102_parent_is_confirmed": true,
+  "C_AK-102_auto_above_same_col": true,
+  "C_AK-102_final_above_same_col": true,
+  "C_AK103_top_expansion": true,
+  "E_auto_without_records": true,
+  "E_rule_is_parent_item_based": true,
+  "F_akm_AKM_single_sight_slot": true,
+  "F_akm_AKM_no_akmp_anywhere": true,
+  "F_akm_AKM_sight_record_kept": true,
+  "F_akm_AKMS_single_sight_slot": true,
+  "F_akm_AKMS_no_akmp_anywhere": true,
+  "F_akm_AKMS_sight_record_kept": true,
+  "F_akm_AKMN_single_sight_slot": true,
+  "F_akm_AKMN_no_akmp_anywhere": true,
+  "F_akm_AKMN_sight_record_kept": true,
+  "F_akm_AKMSN_single_sight_slot": true,
+  "F_akm_AKMSN_no_akmp_anywhere": true,
+  "F_akm_AKMSN_sight_record_kept": true,
+  "F_akm_VPO-136_single_sight_slot": true,
+  "F_akm_VPO-136_no_akmp_anywhere": true,
+  "F_akm_VPO-136_sight_record_kept": true,
+  "F_vpo209_sub_untouched": true,
+  "F_vpo209_not_in_rule": true,
+  "F_svds_dovetail_r2c7": true,
+  "F_sks_socom_r4c3": true,
+  "F_gp25_kept": true,
+  "calib_total_397": true,
+  "calib_no_fallback": true,
+  "calib_revived_AK-74N": true,
+  "calib_revived_AK-74": true,
+  "calib_revived_AK-105": true,
+  "calib_revived_AK-74M": true,
+  "calib_revived_AK-103": true,
+  "calib_revived_AK-104": true,
+  "calib_revived_AK-101": true,
+  "calib_revived_AK-102": true,
+  "calib_stale_AKM": true,
+  "calib_stale_AKMS": true,
+  "calib_stale_AKMN": true,
+  "calib_stale_AKMSN": true,
+  "calib_stale_VPO-136": true,
+  "calib_revived_AKS-74": true,
+  "calib_revived_AKS-74N": true,
+  "calib_revived_count_10": true,
+  "calib_stale_count_5": true
+ },
+ "detail": {
+  "A": [
+   {
+    "itemId": "5ac733a45acfc400192630e2",
+    "name": "AK-105 照门",
+    "pt": "Scope",
+    "subSlotId": "5ac733a45acfc400192630e4",
+    "subSid": "mod_sight_rear",
+    "subAllow": [
+     "5a0ed824fcdbcb0176308b0d"
+    ]
+   },
+   {
+    "itemId": "5ac72e475acfc400180ae6fe",
+    "name": "AK-74M 照门",
+    "pt": "Scope",
+    "subSlotId": "5ac72e475acfc400180ae700",
+    "subSid": "mod_sight_rear",
+    "subAllow": [
+     "5a0ed824fcdbcb0176308b0d"
+    ]
+   },
+   {
+    "itemId": "5649b0544bdc2d1b2b8b458a",
+    "name": "AK-74 照门",
+    "pt": "Scope",
+    "subSlotId": "5a0ee12cfcdbcb001912fa64",
+    "subSid": "mod_sight_rear",
+    "subAllow": [
+     "5a0ed824fcdbcb0176308b0d"
+    ]
+   }
+  ],
+  "B": [
+   {
+    "scenario": "uninstall",
+    "sight": null,
+    "hasSub": false,
+    "subCellCount": 0
+   },
+   {
+    "scenario": "install_6P1Sb2",
+    "sight": "5649b0544bdc2d1b2b8b458a",
+    "hasSub": true,
+    "subCellCount": 1
+   },
+   {
+    "scenario": "swap_to_akm_sight_unsupported",
+    "sight": "59d650cf86f7741b846413a4",
+    "hasSub": false,
+    "subCellCount": 0
+   },
+   {
+    "scenario": "swap_to_6P44",
+    "sight": "5ac733a45acfc400192630e2",
+    "hasSub": true,
+    "subCellCount": 1
+   },
+   {
+    "scenario": "swap_to_6P20",
+    "sight": "5ac72e475acfc400180ae6fe",
+    "hasSub": true,
+    "subCellCount": 1
+   }
+  ],
+  "C": [
+   {
+    "gun": "AK-74N",
+    "gunId": "5644bd2b4bdc2d3b4c8b4572",
+    "parentItem": "6P1 Sb.2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   },
+   {
+    "gun": "AK-74",
+    "gunId": "5bf3e03b0db834001d2c4a9c",
+    "parentItem": "6P1 Sb.2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   },
+   {
+    "gun": "AK-105",
+    "gunId": "5ac66d9b5acfc4001633997a",
+    "parentItem": "6P44 Sb.1-30",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   },
+   {
+    "gun": "AK-74M",
+    "gunId": "5ac4cd105acfc40016339859",
+    "parentItem": "6P20 Sb.2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   },
+   {
+    "gun": "AK-103",
+    "gunId": "5ac66d2e5acfc43b321d4b53",
+    "parentItem": "6P20 Sb.2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 0,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 1
+   },
+   {
+    "gun": "AK-104",
+    "gunId": "5ac66d725acfc43b321d4b60",
+    "parentItem": "6P44 Sb.1-30",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 0,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 1
+   },
+   {
+    "gun": "AK-101",
+    "gunId": "5ac66cb05acfc40198510a10",
+    "parentItem": "6P20 Sb.2",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   },
+   {
+    "gun": "AK-102",
+    "gunId": "5ac66d015acfc400180ae6e4",
+    "parentItem": "6P44 Sb.1-30",
+    "auto": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "final": {
+     "sight": {
+      "row": 2,
+      "col": 6,
+      "path": "mod_sight_rear"
+     },
+     "sub": {
+      "row": 1,
+      "col": 6,
+      "path": "mod_sight_rear/mod_sight_rear"
+     }
+    },
+    "topPad": 0
+   }
+  ],
+  "calib": {
+   "totalRecords": 397,
+   "applied": 388,
+   "unmatched": 9,
+   "fallback": 0,
+   "revived": 10,
+   "staleMarked": 5
+  }
+ },
+ "failed": []
+}

@@ -1,0 +1,268 @@
+{
+ "schema": 1,
+ "round": "R29.3",
+ "note": "空槽占位图案：直接裁自塔科夫游戏内「装备」界面的空槽卡片（深色斜纹底 + 浅灰半透明装备渲染），不做二次绘制。裁切坐标固定在 extract 块内，重建需原始游戏截图。",
+ "source": {
+  "file": "D:/personal/trae/02-塔科夫/游戏内截图2.png",
+  "size": [
+   1185,
+   2071
+  ],
+  "ui": "游戏内 装备 页（空槽占位图案）"
+ },
+ "extract": {
+  "headphones": {
+   "box": [
+    96,
+    372,
+    361,
+    577
+   ],
+   "target": [
+    126,
+    122
+   ]
+  },
+  "helmet": {
+   "box": [
+    520,
+    368,
+    752,
+    572
+   ],
+   "target": [
+    152,
+    152
+   ]
+  },
+  "face": {
+   "box": [
+    852,
+    372,
+    1113,
+    577
+   ],
+   "target": [
+    126,
+    122
+   ]
+  },
+  "armor": {
+   "box": [
+    590,
+    712,
+    752,
+    895
+   ],
+   "target": [
+    212,
+    210
+   ]
+  },
+  "glasses": {
+   "box": [
+    852,
+    707,
+    1113,
+    912
+   ],
+   "target": [
+    126,
+    122
+   ]
+  },
+  "primary": {
+   "box": [
+    110,
+    1045,
+    700,
+    1190
+   ],
+   "target": [
+    520,
+    212
+   ]
+  },
+  "holster": {
+   "box": [
+    852,
+    1037,
+    1113,
+    1272
+   ],
+   "target": [
+    304,
+    212
+   ]
+  },
+  "melee": {
+   "box": [
+    852,
+    1438,
+    1113,
+    1605
+   ],
+   "target": [
+    212,
+    212
+   ]
+  },
+  "rig": {
+   "box": [
+    96,
+    1774,
+    361,
+    1935
+   ],
+   "target": [
+    212,
+    210
+   ]
+  },
+  "backpack": {
+   "box": [
+    445,
+    1774,
+    752,
+    1935
+   ],
+   "target": [
+    212,
+    212
+   ]
+  }
+ },
+ "items": [
+  {
+   "key": "headphones",
+   "file": "assets/ui/placeholders/headphones.png",
+   "canvas": [
+    126,
+    122
+   ],
+   "card": [
+    63,
+    61
+   ],
+   "sha256": "260029815cddd85d"
+  },
+  {
+   "key": "helmet",
+   "file": "assets/ui/placeholders/helmet.png",
+   "canvas": [
+    152,
+    152
+   ],
+   "card": [
+    76,
+    76
+   ],
+   "sha256": "31dd1765d9285766"
+  },
+  {
+   "key": "face",
+   "file": "assets/ui/placeholders/face.png",
+   "canvas": [
+    126,
+    122
+   ],
+   "card": [
+    63,
+    61
+   ],
+   "sha256": "a7185d85e1a0ab7c"
+  },
+  {
+   "key": "armor",
+   "file": "assets/ui/placeholders/armor.png",
+   "canvas": [
+    212,
+    210
+   ],
+   "card": [
+    106,
+    105
+   ],
+   "sha256": "126514620b917e2c"
+  },
+  {
+   "key": "glasses",
+   "file": "assets/ui/placeholders/glasses.png",
+   "canvas": [
+    126,
+    122
+   ],
+   "card": [
+    63,
+    61
+   ],
+   "sha256": "0c35571583bc7045"
+  },
+  {
+   "key": "primary",
+   "file": "assets/ui/placeholders/primary.png",
+   "canvas": [
+    520,
+    212
+   ],
+   "card": [
+    260,
+    106
+   ],
+   "sha256": "344d6314a7d0ae15"
+  },
+  {
+   "key": "holster",
+   "file": "assets/ui/placeholders/holster.png",
+   "canvas": [
+    304,
+    212
+   ],
+   "card": [
+    152,
+    106
+   ],
+   "sha256": "91d1b60bfdc97fda"
+  },
+  {
+   "key": "melee",
+   "file": "assets/ui/placeholders/melee.png",
+   "canvas": [
+    212,
+    212
+   ],
+   "card": [
+    106,
+    106
+   ],
+   "sha256": "fdc724815753a4cb"
+  },
+  {
+   "key": "rig",
+   "file": "assets/ui/placeholders/rig.png",
+   "canvas": [
+    212,
+    210
+   ],
+   "card": [
+    106,
+    105
+   ],
+   "sha256": "6101bebd42f5679c"
+  },
+  {
+   "key": "backpack",
+   "file": "assets/ui/placeholders/backpack.png",
+   "canvas": [
+    212,
+    212
+   ],
+   "card": [
+    106,
+    106
+   ],
+   "sha256": "44212e1f8778240b"
+  }
+ ],
+ "missing": []
+}

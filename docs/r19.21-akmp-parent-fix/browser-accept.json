@@ -1,0 +1,191 @@
+{
+ "C": [
+  {
+   "gun": "AK-74N",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  },
+  {
+   "gun": "AK-74",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  },
+  {
+   "gun": "AK-105",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-105 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  },
+  {
+   "gun": "AK-74M",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74M 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  },
+  {
+   "gun": "AK-103",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74M 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 1
+  },
+  {
+   "gun": "AK-104",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-105 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 1
+  },
+  {
+   "gun": "AK-101",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-74M 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  },
+  {
+   "gun": "AK-102",
+   "sight": {
+    "slot": "mod_sight_rear",
+    "row": 2,
+    "col": 6,
+    "item": "AK-105 照门"
+   },
+   "sub": {
+    "slot": "mod_sight_rear/mod_sight_rear",
+    "row": 1,
+    "col": 6,
+    "item": ""
+   },
+   "aboveSameCol": true,
+   "topPad": 0
+  }
+ ],
+ "B": {
+  "goneAfterSightRemove": true,
+  "goneWithAkmSight": true,
+  "backOnSwap": true,
+  "akmpInstalled": true,
+  "subKeptAfterAkmpRemove": true
+ },
+ "D": {
+  "initial": {
+   "sight": {
+    "row": 2,
+    "col": 6
+   },
+   "sub": {
+    "row": 1,
+    "col": 6
+   }
+  },
+  "parallelAbove": true,
+  "afterDrag": {
+   "sight": {
+    "row": 2,
+    "col": 6
+   },
+   "sub": {
+    "row": 1,
+    "col": 8
+   }
+  },
+  "subMovedIndependently": true,
+  "sightUntouched": true,
+  "afterReload": {
+   "sight": {
+    "row": 2,
+    "col": 6
+   },
+   "sub": {
+    "row": 1,
+    "col": 8
+   }
+  },
+  "persistedAfterReload": true,
+  "mainCanvasMatches": true,
+  "restoredToR1C6": true
+ },
+ "F": {
+  "akmSingleSight": true,
+  "vpo209Unchanged": true
+ },
+ "failures": [],
+ "pass": true
+}

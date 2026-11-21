@@ -1,0 +1,497 @@
+{
+ "generatedFor": "R19.15.3",
+ "rule": {
+  "opticAboveMount": "同一列、基座上方的第一行（r2c8 → r1c8）",
+  "stacking": "更高层继续向上，超顶部走 topPad"
+ },
+ "guns": [
+  {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "gunId": "576165642459773c7a400233",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "gunId": "57838ad32459774a17445cd2",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "gunId": "57c44b372459772d2b39b8ce",
+   "base": {
+    "slot": "mod_mount_004",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AKS-74UN 5.45x39 短突击步枪",
+   "gunId": "583990e32459771419544dd2",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AKS-74UB 5.45x39 短突击步枪",
+   "gunId": "5839a40f24597726f856b511",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "gunId": "5ab8e9fcd8ce870019439434",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "base": {
+    "slot": "mod_mount_001",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "gunId": "5ac4cd105acfc40016339859",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "gunId": "5ac66cb05acfc40198510a10",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "gunId": "5ac66d015acfc400180ae6e4",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "gunId": "5ac66d2e5acfc43b321d4b53",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "gunId": "5ac66d725acfc43b321d4b60",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "gunId": "5ac66d9b5acfc4001633997a",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "gunId": "5c46fbd72e2216398b5a8c9c",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 7
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "gunId": "5c501a4d2e221602b412b540",
+   "base": {
+    "slot": "mod_mount",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪",
+   "gunId": "5cc82d76e24e8d00134b4b83",
+   "base": {
+    "slot": "mod_reciever/mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "gunId": "5e870397991fd70db46995c8",
+   "base": {
+    "slot": "mod_mount",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "gunId": "628a60ae6b1d481ff772e9c8",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "SR-2M 石楠 9x21 冲锋枪",
+   "gunId": "62e14904c2699c0ec93adc47",
+   "base": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "gunId": "63171672192e68c5460cebc5",
+   "base": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 8
+   },
+   "optic": {
+    "slot": "mod_reciever/mod_mount/mod_scope",
+    "row": 1,
+    "col": 8,
+    "target": {
+     "row": 1,
+     "col": 8
+    },
+    "sameColumn": true,
+    "directlyAbove": true,
+    "dom": null
+   },
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "chainSameColumn": true,
+   "sides": [
+    {
+     "slot": "mod_reciever/mod_mount/mod_tactical",
+     "row": 1,
+     "col": 9,
+     "base": "tactical",
+     "rightOfOptic": true
+    }
+   ]
+  },
+  {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "gunId": "651450ce0e00edc794068371",
+   "base": {
+    "slot": "mod_mount_004",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "gunId": "6718817435e3cfd9550d2c27",
+   "base": {
+    "slot": "mod_reciever/mod_mount",
+    "row": 2,
+    "col": 8
+   },
+   "optic": {
+    "slot": "mod_reciever/mod_mount/mod_scope",
+    "row": 1,
+    "col": 8,
+    "target": {
+     "row": 1,
+     "col": 8
+    },
+    "sameColumn": true,
+    "directlyAbove": true,
+    "dom": null
+   },
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "chainSameColumn": true,
+   "sides": [
+    {
+     "slot": "mod_reciever/mod_mount/mod_tactical",
+     "row": 1,
+     "col": 9,
+     "base": "tactical",
+     "rightOfOptic": true
+    }
+   ]
+  },
+  {
+   "gun": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "gunId": "674d6121c09f69dfb201a888",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "gunId": "674fe9a75e51f1c47c04ec23",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "gunId": "6871284e9a353bb50606f3ed",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "TKPD 9.3x64 突击卡宾枪",
+   "gunId": "68aee763130c00663d08aea8",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  },
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "gunId": "6981d72ed009ad83920da43a",
+   "base": {
+    "slot": "mod_mount_000",
+    "row": 3,
+    "col": 8
+   },
+   "optic": {
+    "slot": "mod_mount_000/mod_scope",
+    "row": 2,
+    "col": 8,
+    "target": {
+     "row": 2,
+     "col": 8
+    },
+    "sameColumn": true,
+    "directlyAbove": true,
+    "dom": null
+   },
+   "chain": [
+    {
+     "slot": "mod_mount_000/mod_scope/mod_scope",
+     "row": 1,
+     "col": 8,
+     "depth": 1,
+     "item": "DI Optical FC1 反射式瞄具"
+    }
+   ],
+   "rows": 7,
+   "topPad": 1,
+   "chainSameColumn": true,
+   "sides": []
+  },
+  {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "gunId": "6a78b7f8c2016eb33e0027cd",
+   "base": {
+    "slot": "mod_reciever/mod_mount_000",
+    "row": 2,
+    "col": 8
+   },
+   "optic": null,
+   "chain": [],
+   "rows": 6,
+   "topPad": 0,
+   "sides": []
+  }
+ ],
+ "summary": {
+  "gunsWithOpticSlot": 3,
+  "sameColumn": 3,
+  "childAbove": 3,
+  "topPadGuns": 1,
+  "mismatches": []
+ },
+ "scannedGuns": 163
+}

@@ -120,7 +120,7 @@ def test_missing_data_fails_before_touching_server(tmp_path):
 
 
 def test_port_in_use_becomes_actionable_error():
-    def _boom(port, host, root, screenshots=None):
+    def _boom(port, host, root, screenshots=None, **_kwargs):
         raise serve.PortInUseError("端口 %d 已被占用。" % port)
 
     startup, rec = make_startup(create_server=_boom)
@@ -201,8 +201,9 @@ def test_screenshots_passed_through_when_explicitly_given(tmp_path):
 
 
 def test_default_screenshot_dir_used_only_when_it_exists(tmp_path, monkeypatch):
-    """没给参数时自动探测默认目录：目录存在才开监听，不存在就静默关闭（不报错）。"""
-    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(tmp_path))
+    """没给参数时自动探测：目录存在才开监听，不存在就静默关闭（不报错）。"""
+    # R107：自动探测走候选列表；测试里把候选收敛到 tmp_path，避免受本机真实目录影响
+    monkeypatch.setattr(serve, "screenshot_dir_candidates", lambda game_dir=None: [str(tmp_path)])
     startup, rec = make_startup(root=ROOT, port=0, create_server=serve.create_server)
     startup.step_check_data()
     startup.step_start_server()
@@ -213,7 +214,7 @@ def test_default_screenshot_dir_used_only_when_it_exists(tmp_path, monkeypatch):
         startup.stop()
 
     missing = tmp_path / "nope"
-    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(missing))
+    monkeypatch.setattr(serve, "screenshot_dir_candidates", lambda game_dir=None: [str(missing)])
     startup2, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server)
     startup2.step_check_data()
     startup2.step_start_server()
@@ -291,6 +292,38 @@ def test_parse_args_app_window_flag_defaults_off():
     assert launcher.parse_args(["--app-window"]).app_window is True
 
 
+def test_parse_args_browser_flag_defaults_off():
+    """R71：浏览器只能是显式开关，默认不开。"""
+    assert launcher.parse_args([]).browser is False
+    assert launcher.parse_args(["--browser"]).browser is True
+
+
+def test_main_defaults_to_desktop_shell(monkeypatch):
+    """R71 回归锁：无参数启动必须走桌面壳，绝不进 Tk/浏览器路径。"""
+    calls = []
+    monkeypatch.setattr(launcher, "launch_desktop_shell", lambda args: calls.append(("shell", args)) or 0)
+    monkeypatch.setattr(launcher, "run_legacy_ui", lambda args: calls.append(("legacy", args)) or 0)
+    assert launcher.main([]) == 0
+    assert [name for name, _ in calls] == ["shell"]
+
+
+def test_main_server_only_skips_shell_and_ui(monkeypatch):
+    calls = []
+    monkeypatch.setattr(launcher, "run_server_only", lambda args: calls.append("server") or 0)
+    monkeypatch.setattr(launcher, "launch_desktop_shell", lambda args: calls.append("shell") or 0)
+    monkeypatch.setattr(launcher, "run_legacy_ui", lambda args: calls.append("legacy") or 0)
+    assert launcher.main(["--server-only"]) == 0
+    assert calls == ["server"]
+
+
+def test_main_browser_flag_goes_to_legacy_ui(monkeypatch):
+    calls = []
+    monkeypatch.setattr(launcher, "launch_desktop_shell", lambda args: calls.append("shell") or 0)
+    monkeypatch.setattr(launcher, "run_legacy_ui", lambda args: calls.append("legacy") or 0)
+    assert launcher.main(["--browser"]) == 0
+    assert calls == ["legacy"]
+
+
 def test_app_mode_enabled_reads_flag_in_resource_dir(tmp_path, monkeypatch):
     """资源目录里出现 appmode.flag 才算加壳版；没有就是普通版。"""
     monkeypatch.setattr(launcher, "app_root", lambda: str(tmp_path))
@@ -352,7 +385,8 @@ def test_resolve_dirs_prefers_explicit_then_config_then_auto(tmp_path, monkeypat
     auto = tmp_path / "auto"
     auto.mkdir()
     monkeypatch.setattr(serve, "default_game_dir", lambda: str(auto))
-    monkeypatch.setattr(serve, "default_screenshots_dir", lambda: str(auto))
+    # R107：截图目录改为多候选自动探测，测试里把候选收敛到 auto 这一处
+    monkeypatch.setattr(serve, "screenshot_dir_candidates", lambda game_dir=None: [str(auto)])
 
     cfg = {"game_dir": str(remembered), "screenshots_dir": str(remembered)}
     assert launcher.resolve_dirs(cfg, str(explicit)) == (str(explicit), str(remembered))
@@ -360,8 +394,9 @@ def test_resolve_dirs_prefers_explicit_then_config_then_auto(tmp_path, monkeypat
     assert launcher.resolve_dirs({}) == (str(auto), str(auto))
 
 
-def test_resolve_dirs_drops_nonexistent_paths(tmp_path):
+def test_resolve_dirs_drops_nonexistent_paths(tmp_path, monkeypatch):
     """配置里记着的目录被删了：不能把一个用不了的路径显示在界面上。"""
+    monkeypatch.setattr(serve, "screenshot_dir_candidates", lambda game_dir=None: [])
     cfg = {"game_dir": str(tmp_path / "gone"), "screenshots_dir": str(tmp_path / "gone2")}
     assert launcher.resolve_dirs(cfg) == ("", "")
 
@@ -381,6 +416,13 @@ def test_build_config_shape_and_bool_coercion(tmp_path):
     assert cfg["sound"]["location_loading"] == {"on": True, "file": None}
 
 
+def test_build_config_carries_host_through_whitelist():
+    """监听地址走白名单：勾选局域网 → 0.0.0.0，默认 / 怪值 → 回环。"""
+    assert launcher.build_config()["host"] == config.HOST_DEFAULT
+    assert launcher.build_config(host="0.0.0.0")["host"] == "0.0.0.0"
+    assert launcher.build_config(host="evil.example.com")["host"] == config.HOST_DEFAULT
+
+
 def test_build_config_round_trips_through_config_module(tmp_path):
     """build_config 的产物必须能被 config.normalize 原样收下（两个模块的契约）。"""
     cfg = launcher.build_config(game_dir="E:\\EFT", auto_zoom=True, sound_enabled=True,
@@ -394,12 +436,13 @@ def test_build_config_round_trips_through_config_module(tmp_path):
 def test_build_config_auto_screenshot_defaults_to_off():
     cfg = launcher.build_config()
     assert cfg["auto_screenshot"] == {"enabled": False, "interval_ms": config.SHOT_INTERVAL_DEFAULT,
-                                      "key": None}
+                                      "key": None, "cleanup_on_raid_end": False}
 
 
 def test_build_config_auto_screenshot_passes_values():
     cfg = launcher.build_config(auto_screenshot=True, shot_interval_ms=2500, shot_key="  V  ")
-    assert cfg["auto_screenshot"] == {"enabled": True, "interval_ms": 2500, "key": "V"}
+    assert cfg["auto_screenshot"] == {"enabled": True, "interval_ms": 2500, "key": "V",
+                                      "cleanup_on_raid_end": False}
 
 
 def test_build_config_auto_screenshot_blank_key_is_none():
@@ -422,7 +465,11 @@ def test_build_config_auto_screenshot_round_trips(tmp_path):
     cfg = launcher.build_config(auto_screenshot=True, shot_interval_ms=1500, shot_key="V")
     (tmp_path / config.CONFIG_NAME).write_text(json.dumps(cfg), encoding="utf-8")
     loaded = config.load(str(tmp_path))
-    assert loaded["auto_screenshot"] == cfg["auto_screenshot"]
+    # R108：默认非会员，落盘/读取时间隔会被锁到 10000ms；其余字段原样保持
+    expect = dict(cfg["auto_screenshot"])
+    expect["interval_ms"] = config.SHOT_INTERVAL_LOCKED_MS
+    assert loaded["auto_screenshot"] == expect
+    assert loaded["account"] == {"member": False}
 
 
 # --------------------------------------------------------------- 自动删除截图配置
@@ -482,7 +529,12 @@ def test_no_game_dir_means_no_log_monitoring(tmp_path):
         startup.stop()
 
 
-def test_self_check_reports_log_monitoring(tmp_path):
+def test_self_check_reports_log_monitoring(tmp_path, monkeypatch):
+    # R-fix：日志目录改成「每轮动态探测」后，本机装了 EFT 的开发机会自动探测到
+    # <game>/Logs，于是这条「没配游戏目录 → 监控未开启」的断言在装了游戏的机器上
+    # 必然失败。把自动探测钉死为 None，让契约（无可见日志目录 = 未开启）在任何
+    # 机器上都能确定性地验证。
+    monkeypatch.setattr(serve, "default_game_dir", lambda: None)
     seen = []
     startup, _ = make_startup(root=ROOT, port=0, create_server=serve.create_server,
                               health=launcher.check_health,

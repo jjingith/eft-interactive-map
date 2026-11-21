@@ -1,0 +1,658 @@
+{
+ "round": "R18.2",
+ "base": "http://127.0.0.1:8787",
+ "slots": [
+  {
+   "key": "helmet",
+   "name": "头盔",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5aa7e276e5b5b000171d0647.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5f60c74e3b85f6263c145586.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/60a7ad3a0c5cb24b0134664a.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/60a7ad2a2198820d95707a2e.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5ca20ee186f774799474abc2.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5d6d3716a4b9361bc8618872.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ],
+   "pixels": {
+    "w": 64,
+    "h": 64,
+    "transparentPct": 55.3,
+    "opaquePct": 40.2,
+    "cornerAlpha": [
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "armor",
+   "name": "护甲",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5fd4c474dd870108a754b241.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/545cdb794bdc2d3a198b456a.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68948a95d8f2b85fb705e2a6.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5c0e625a86f7742d77340f62.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5ca21c6986f77479963115a7.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/6038b4ca92ec1c3103795a0d.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ],
+   "pixels": {
+    "w": 64,
+    "h": 64,
+    "transparentPct": 41.2,
+    "opaquePct": 54.6,
+    "cornerAlpha": [
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "rig",
+   "name": "胸挂",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/68948b118c57a8a52301d7ae.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/609e860ebd219504d8507525.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/689479a4a733b1602007e2eb.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/66b6295178bbc0200425f995.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/628cd624459354321c4b7fa2.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5b44cad286f77402a54ae7e5.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  },
+  {
+   "key": "backpack",
+   "name": "背包",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5c0e805e86f774683f3dd637.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/67458730df3c1da90b0b052b.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5df8a4d786f77412672a1e3b.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/56e33634d2720bd8058b456b.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/61b9e1aaef9a1b5d6a79899a.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/56e33680d2720be2748b4576.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  },
+  {
+   "key": "headphones",
+   "name": "耳机",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/69413241b1ce1e5fbb09ed0a.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5b432b965acfc47a8774094e.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5aa2ba71e5b5b000137b758f.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5a16b9fffcdbcb0176308b34.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/6033fa48ffd42c541047f728.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/693bb59250fafa102607aeb7.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  },
+  {
+   "key": "glasses",
+   "name": "眼镜",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5b432be65acfc433000ed01f.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68bede355f1439bc3c0bf814.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68d6b3568f9527c33609ce83.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68bede2fd6da72c13f03db91.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68bede1d233f2c935b0eda02.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68bede2876e02b9e340ef10f.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  },
+  {
+   "key": "face",
+   "name": "面部",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/67a9ea004fb4a4a8a00d2828.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/67a9cd381fb22063280728a6.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/67a9cd28cade15e0f00123b6.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/68a9adc2bc09b91c4f07dbe6.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/572b7f1624597762ae139822.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/67a9ccfff05be177170bcd78.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  },
+  {
+   "key": "primary1",
+   "name": "主武器 1",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5bfd297f0db834001a669119.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/59d6088586f774275f37482f.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5447a9cd4bdc2dbd208b4567.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ],
+   "pixels": {
+    "w": 64,
+    "h": 64,
+    "transparentPct": 86.8,
+    "opaquePct": 9.7,
+    "cornerAlpha": [
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "holster",
+   "name": "手枪",
+   "icons": [
+    {
+     "src": "assets/icons-items-white/5a7ae0c351dfba0017554310.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ],
+   "pixels": {
+    "w": 64,
+    "h": 64,
+    "transparentPct": 80.4,
+    "opaquePct": 15.7,
+    "cornerAlpha": [
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "key": "melee",
+   "name": "近战武器",
+   "icons": [
+    {
+     "src": "assets/icons-items/6aa948d1a7cdc313b50cdd11.webp",
+     "natural": "0x0",
+     "ok": false,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/674d90b55704568fe60bc8f5.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5bffdc370db834001d23eca8.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5bffe7930db834001b734a39.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/5bc9c1e2d4351e00367fbcf0.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    },
+    {
+     "src": "assets/icons-items-white/679ba90d269ddfea47012159.png",
+     "natural": "64x64",
+     "ok": true,
+     "boxBg": "rgb(255, 255, 255)",
+     "size": "30pxx30px"
+    }
+   ]
+  }
+ ],
+ "gunSwitch": {
+  "initial": {
+   "sil": "primary.png",
+   "icon": null,
+   "state": "focus"
+  },
+  "before": {
+   "sil": "primary.png",
+   "icon": null,
+   "state": "focus"
+  },
+  "equipped": {
+   "sil": null,
+   "icon": "5bfd297f0db834001a669119.png",
+   "state": "focus"
+  },
+  "removed": {
+   "sil": "primary.png",
+   "icon": null,
+   "state": "focus"
+  },
+  "pickedRow": {
+   "x": 1040,
+   "y": 210,
+   "i": 0
+  }
+ },
+ "build": "R18.2 构建 · compat 加载中 · 配置改完后直接点这里；参数校验仍在引擎入口执行。",
+ "console": [],
+ "externalRequests": [],
+ "layout": {
+  "noHScroll": true,
+  "bodyW": 1600
+ },
+ "clearedNodes": 0,
+ "leftSilhouettes": [
+  {
+   "slot": "helmet",
+   "src": "helmet.png",
+   "natural": "76x76",
+   "ok": true
+  },
+  {
+   "slot": "glasses",
+   "src": "glasses.png",
+   "natural": "63x61",
+   "ok": true
+  },
+  {
+   "slot": "headphones",
+   "src": "headphones.png",
+   "natural": "63x61",
+   "ok": true
+  },
+  {
+   "slot": "face",
+   "src": "face.png",
+   "natural": "63x61",
+   "ok": true
+  },
+  {
+   "slot": "armor",
+   "src": "armor.png",
+   "natural": "106x105",
+   "ok": true
+  },
+  {
+   "slot": "rig",
+   "src": "rig.png",
+   "natural": "106x105",
+   "ok": true
+  },
+  {
+   "slot": "primary1",
+   "src": "primary.png",
+   "natural": "260x106",
+   "ok": true
+  },
+  {
+   "slot": "backpack",
+   "src": "backpack.png",
+   "natural": "106x106",
+   "ok": true
+  },
+  {
+   "slot": "primary2",
+   "src": "primary.png",
+   "natural": "260x106",
+   "ok": true
+  },
+  {
+   "slot": "holster",
+   "src": "holster.png",
+   "natural": "152x106",
+   "ok": true
+  },
+  {
+   "slot": "melee",
+   "src": "melee.png",
+   "natural": "106x106",
+   "ok": true
+  }
+ ],
+ "rowStates": {
+  "hover": {
+   "rowBg": "rgb(234, 243, 255)",
+   "iconBg": "rgb(255, 255, 255)"
+  },
+  "selected": {
+   "rowBg": "rgb(49, 106, 197)",
+   "iconBg": "rgb(255, 255, 255)",
+   "selected": "true"
+  }
+ },
+ "shots": [
+  {
+   "file": "after-01-left-silhouettes.png",
+   "bytes": 39912
+  },
+  {
+   "file": "after-02-list-helmet.png",
+   "bytes": 117400
+  },
+  {
+   "file": "after-02-list-armor.png",
+   "bytes": 125465
+  },
+  {
+   "file": "after-02-list-rig.png",
+   "bytes": 134382
+  },
+  {
+   "file": "after-02-list-backpack.png",
+   "bytes": 118753
+  },
+  {
+   "file": "after-02-list-headphones.png",
+   "bytes": 104968
+  },
+  {
+   "file": "after-02-list-glasses.png",
+   "bytes": 71514
+  },
+  {
+   "file": "after-02-list-face.png",
+   "bytes": 84119
+  },
+  {
+   "file": "after-02-list-primary1.png",
+   "bytes": 22577
+  },
+  {
+   "file": "after-02-list-holster.png",
+   "bytes": 14092
+  },
+  {
+   "file": "after-02-list-melee.png",
+   "bytes": 68204
+  },
+  {
+   "file": "after-03-hover-row.png",
+   "bytes": 9522
+  },
+  {
+   "file": "after-04-selected-row.png",
+   "bytes": 115316
+  },
+  {
+   "file": "after-05-gun-slot-empty.png",
+   "bytes": 45814
+  },
+  {
+   "file": "after-06-gun-equipped.png",
+   "bytes": 43330
+  },
+  {
+   "file": "after-07-gun-removed.png",
+   "bytes": 45806
+  }
+ ]
+}

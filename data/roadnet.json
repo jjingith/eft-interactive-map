@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "tool": "tools/roadnet.py",
- "generatedAt": "2026-10-19T09:48:30Z",
+ "generatedAt": "2026-11-21T05:39:53Z",
  "cellNote": "格子码 0 不可通行 / 1 道路 / 2 地形 / 3 难走，每格 2 bit 低位在前",
  "maps": {
   "streets-of-tarkov": {
@@ -580,6 +580,71 @@
       "rough": 16843,
       "components": 8,
       "largest": 85235
+     }
+    }
+   }
+  },
+  "infected-factory": {
+   "cell": 0.5233,
+   "origin": [
+    0.0,
+    0.0
+   ],
+   "layers": {
+    "Basement": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/infected-factory/Basement.bin",
+     "cells": {
+      "blocked": 54898,
+      "road": 0,
+      "terrain": 12013,
+      "rough": 589,
+      "components": 3,
+      "largest": 12524
+     }
+    },
+    "Ground_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/infected-factory/Ground_Floor.bin",
+     "cells": {
+      "blocked": 27006,
+      "road": 0,
+      "terrain": 36876,
+      "rough": 3618,
+      "components": 2,
+      "largest": 40493
+     }
+    },
+    "Second_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/infected-factory/Second_Floor.bin",
+     "cells": {
+      "blocked": 63931,
+      "road": 0,
+      "terrain": 3411,
+      "rough": 158,
+      "components": 5,
+      "largest": 1740
+     }
+    },
+    "Third_Floor": {
+     "w": 250,
+     "h": 270,
+     "bytes": 16875,
+     "file": "assets/roadnet/infected-factory/Third_Floor.bin",
+     "cells": {
+      "blocked": 60433,
+      "road": 0,
+      "terrain": 7034,
+      "rough": 33,
+      "components": 2,
+      "largest": 6518
      }
     }
    }

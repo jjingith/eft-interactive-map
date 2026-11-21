@@ -1,0 +1,563 @@
+{
+  "gunId": "5fbcc1d9016cce60e8341ab3",
+  "tag": "mcx",
+  "viewport": {
+    "w": 1920,
+    "h": 919
+  },
+  "picked": {
+    "ok": true,
+    "label": ".300 Blk5SIG MCX .300 Blackout 突击步枪"
+  },
+  "resetOk": true,
+  "rev": "rev R19.7-04f4d52f",
+  "version": "",
+  "buildpage": {
+    "x": 0,
+    "y": 103,
+    "w": 1920,
+    "h": 816
+  },
+  "gridCols": "236px 600px 1008px",
+  "forge": {
+    "x": 0,
+    "y": 103,
+    "w": 236,
+    "h": 816
+  },
+  "center": {
+    "x": 244,
+    "y": 103,
+    "w": 600,
+    "h": 816
+  },
+  "cands": {
+    "x": 852,
+    "y": 103,
+    "w": 1008,
+    "h": 816
+  },
+  "canvas": {
+    "x": 256,
+    "y": 169,
+    "w": 561,
+    "h": 374
+  },
+  "canvasCols": "57.2188px 57.2188px 57.2188px 57.2188px 57.2344px 57.2188px 57.2188px 57.2188px 57.2188px",
+  "meta": "基础枪械 | SIG MCX .300 Blackout 突击步枪 | 改装槽位 | 19 | 已装配件 | 12",
+  "presetState": "预设：未改动",
+  "statsText": "整枪属性 | 人机工效 | 71.5 | 垂直后坐力 | 82.4 | 水平后坐力 | 227.8 | 重量 | 2.72 kg | 精度 MOA | 2.75 MOA | 射速 | 800 rpm | 瞄准距离 | 100 m | 弹匣容量 | 30 发 | 初速 | — | 整枪成本（含原厂件） | 321,716 ₽ | 其中改装件 | 201,521 ₽",
+  "hiddenText": "隐藏属性ADS 时间0.35 sTrueErgoDelta71.5OverSwing否Aim Sway 摆动强度0.0 %ArmStamina56.5 s爆头有效距离57 m相机后坐3.5散布偏差上限23.0后坐散布10.0后坐角90.0",
+  "focusText": "当前槽位：握把",
+  "bottomText": "改装件 201,521 ₽含枪 321,716 ₽回收 28,228 ₽Final Cost: 321,716 ₽MCX 手枪式握把+30.0%default柯尔特 5.56x45 STANAG 30发弹匣-1.50.0%defaultMCX GEN1 .300 BLK 上机匣+50.0%default9 英寸 MCX 枪管 .300 BLK-4-4.1%defaultSIG Sauer Taper-LOK 7.62x51/.300 BLK膛口转接器00.0%defaultSIG Sauer Two Port Brake 7.62x51 双端膛口制退器-4-8.5%defaultMCX 导气箍-1-3.0%defaultMCX GEN1 KeyMod 8 英寸护木+140.0%defaultSIG MCX折叠式准星00.0%defaultSIG MCX 折叠式照门00.0%defaultSIG Sauer 轻量化折叠式枪托+17-19.5%defaultMCX 拉机柄00.0%default",
+  "overlay": "800 RPMDPS —",
+  "overlayPos": {
+    "x": 577,
+    "y": 288,
+    "w": 31,
+    "h": 18
+  },
+  "shot": {
+    "x": 573,
+    "y": 247,
+    "w": 172,
+    "h": 62
+  },
+  "gunImg": {
+    "x": 573,
+    "y": 247,
+    "w": 172,
+    "h": 62
+  },
+  "heroText": "",
+  "hasPartX": false,
+  "cells": [
+    {
+      "slot": "mod_reciever/mod_handguard/mod_sight_front",
+      "lane": "top2",
+      "row": 1,
+      "col": 1,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "00.0%",
+      "parent": "mod_reciever/mod_handguard",
+      "r": {
+        "x": 263,
+        "y": 178,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_scope",
+      "lane": "top2",
+      "row": 1,
+      "col": 5,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "SCOPE",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 508,
+        "y": 178,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_mount",
+      "lane": "top2",
+      "row": 1,
+      "col": 6,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 569,
+        "y": 178,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_sight_rear",
+      "lane": "top2",
+      "row": 1,
+      "col": 8,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "00.0%",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 692,
+        "y": 178,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_charge",
+      "lane": "top2",
+      "row": 1,
+      "col": 9,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "00.0%",
+      "parent": null,
+      "r": {
+        "x": 753,
+        "y": 178,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_barrel/mod_muzzle",
+      "lane": "main",
+      "row": 2,
+      "col": 1,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "00.0%",
+      "parent": "mod_reciever/mod_barrel",
+      "r": {
+        "x": 263,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_barrel/mod_gas_block",
+      "lane": "main",
+      "row": 2,
+      "col": 2,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "-1-3.0%",
+      "parent": "mod_reciever/mod_barrel",
+      "r": {
+        "x": 324,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_barrel",
+      "lane": "main",
+      "row": 2,
+      "col": 3,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "-4-4.1%",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 385,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_handguard",
+      "lane": "main",
+      "row": 2,
+      "col": 4,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "+140.0%",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 447,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever",
+      "lane": "main",
+      "row": 2,
+      "col": 5,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "+50.0%",
+      "parent": null,
+      "r": {
+        "x": 508,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_stock",
+      "lane": "main",
+      "row": 2,
+      "col": 9,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "+17-19.5%",
+      "parent": null,
+      "r": {
+        "x": 753,
+        "y": 259,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle_000",
+      "lane": "lower",
+      "row": 3,
+      "col": 1,
+      "cls": "gw-part gw-part-sub gw-cell",
+      "label": "-4-8.5%",
+      "parent": "mod_reciever/mod_barrel/mod_muzzle",
+      "r": {
+        "x": 263,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_handguard/mod_mount_000",
+      "lane": "lower",
+      "row": 3,
+      "col": 4,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_000",
+      "parent": "mod_reciever/mod_handguard",
+      "r": {
+        "x": 447,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_handguard/mod_mount_001",
+      "lane": "lower",
+      "row": 3,
+      "col": 5,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "MOUNT_001",
+      "parent": "mod_reciever/mod_handguard",
+      "r": {
+        "x": 508,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_handguard/mod_foregrip",
+      "lane": "lower",
+      "row": 3,
+      "col": 6,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "FOREGRIP",
+      "parent": "mod_reciever/mod_handguard",
+      "r": {
+        "x": 569,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_magazine",
+      "lane": "lower",
+      "row": 3,
+      "col": 7,
+      "cls": "gw-part gw-part-root gw-cell",
+      "label": "-1.50.0%",
+      "parent": null,
+      "r": {
+        "x": 630,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_pistol_grip",
+      "lane": "lower",
+      "row": 3,
+      "col": 8,
+      "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+      "label": "+30.0%",
+      "parent": null,
+      "r": {
+        "x": 692,
+        "y": 341,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "slot": "mod_reciever/mod_tactical",
+      "lane": "tactical",
+      "row": 5,
+      "col": 1,
+      "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+      "label": "TACTICAL",
+      "parent": "mod_reciever",
+      "r": {
+        "x": 263,
+        "y": 475,
+        "w": 57,
+        "h": 57
+      }
+    },
+    {
+      "lane": "ammo",
+      "row": 4,
+      "col": 7,
+      "cls": "gw-part gw-part-ammo gw-part-empty",
+      "label": "AMMO",
+      "parent": null,
+      "r": {
+        "x": 630,
+        "y": 408,
+        "w": 57,
+        "h": 57
+      }
+    }
+  ],
+  "body": {
+    "row": 2,
+    "col": 6,
+    "r": {
+      "x": 569,
+      "y": 245,
+      "w": 180,
+      "h": 86
+    }
+  },
+  "ammoCell": {
+    "text": "AMMO",
+    "cls": "gw-part gw-part-ammo gw-part-empty",
+    "r": {
+      "x": 630,
+      "y": 408,
+      "w": 57,
+      "h": 57
+    }
+  },
+  "candHeaders": [
+    "配件▲",
+    "Ergo",
+    "下级槽",
+    "Kg",
+    "FLEA价",
+    "后坐",
+    "状态"
+  ],
+  "candRows": 37,
+  "loadvar": {
+    "x": 256,
+    "y": 111,
+    "w": 561,
+    "h": 30
+  },
+  "loadvarFit": {
+    "w": 561,
+    "h": 30,
+    "scrollW": 559,
+    "clientW": 559,
+    "kids": [
+      {
+        "cls": "gw-loadvar-t",
+        "x": 265,
+        "w": 101,
+        "right": 366,
+        "over": -451,
+        "clipped": false
+      },
+      {
+        "cls": "gw-ref",
+        "x": 374,
+        "w": 177,
+        "right": 551,
+        "over": -266,
+        "clipped": false
+      },
+      {
+        "cls": "gw-btn",
+        "x": 559,
+        "w": 70,
+        "right": 629,
+        "over": -188,
+        "clipped": false
+      },
+      {
+        "cls": "gw-preset-state",
+        "x": 637,
+        "w": 54,
+        "right": 691,
+        "over": -126,
+        "clipped": false
+      },
+      {
+        "cls": "lw-grow",
+        "x": 699,
+        "w": 109,
+        "right": 808,
+        "over": -9,
+        "clipped": false
+      },
+      {
+        "cls": "gw-visual gw-visual-slim",
+        "x": 0,
+        "w": 0,
+        "right": 0,
+        "over": -817,
+        "clipped": false
+      }
+    ],
+    "overflowX": "hidden"
+  },
+  "refSel": {
+    "w": 150,
+    "clipped": false,
+    "text": "（手动配置）"
+  },
+  "presetClipped": false,
+  "nameTooltip": "丰和 20 式手枪式握把（配件）",
+  "candNamesMissing": [],
+  "candNameSample": [
+    {
+      "text": "丰和 20 式手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "柯尔特 A1 AR-15 手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "柯尔特A2 AR-15手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Aeroknox Orion AR-15 手枪式握把",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Damage Industries ECS AR-15 手枪式握把 (FDE)",
+      "w": 451,
+      "visible": true
+    },
+    {
+      "text": "Daniel Defense Enhanced AR-15 手枪式握把（黑色）",
+      "w": 451,
+      "visible": true
+    }
+  ],
+  "scrollbar": {
+    "sh": 1318,
+    "ch": 783,
+    "sw": 995,
+    "cw": 995,
+    "overflowY": "auto"
+  },
+  "ammoTest": {
+    "before": {
+      "dps": "800 RPMDPS —",
+      "ammo": "AMMO"
+    },
+    "table": {
+      "heads": [
+        "弹药（.300 Blk）▲",
+        "伤害",
+        "穿透",
+        "初速",
+        "价格",
+        "状态"
+      ],
+      "count": 6,
+      "rows": [
+        {
+          "n": ".300 Blackout AP.300 Blk",
+          "dmg": "51",
+          "pen": "48"
+        },
+        {
+          "n": ".300 Blackout BPZ FMJ.300 Blk",
+          "dmg": "60",
+          "pen": "30"
+        },
+        {
+          "n": ".300 Blackout CBJ.300 Blk",
+          "dmg": "58",
+          "pen": "43"
+        },
+        {
+          "n": ".300 Blackout M62 曳光弹.300 Blk",
+          "dmg": "54",
+          "pen": "36"
+        },
+        {
+          "n": ".300 Blackout V-Max.300 Blk",
+          "dmg": "72",
+          "pen": "20"
+        },
+        {
+          "n": ".300 Whisper.300 Blk",
+          "dmg": "90",
+          "pen": "14"
+        }
+      ],
+      "focus": "子弹：未选择（在右侧列表中选择弹药）"
+    },
+    "pickedRow": {
+      "idx": 0,
+      "n": ".300 Blackout AP.300 Blk",
+      "id": "5fd20ff893a8961fc660a954"
+    },
+    "after": {
+      "ammo": "AMMO.300 Blackout AP",
+      "ammoCls": "gw-part gw-part-ammo gw-part-ammo-on gw-part-ammo-focus",
+      "overlay": "800 RPMDPS ≈ 680",
+      "dps": "DPS ≈ 680",
+      "rpm": "800 RPM",
+      "focus": ""
+    }
+  }
+}

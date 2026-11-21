@@ -1,0 +1,43 @@
+{
+ "generatedFor": "R19.16",
+ "method": "真实浏览器 CDP Input 事件（mousePressed/Moved/Released）拖动卡片，非模拟函数调用",
+ "drag": {
+  "from": "r2c8 mod_mount_000",
+  "to": "r5c1",
+  "moved": true,
+  "dirtyFlag": true,
+  "msg": "已移动 mod_mount_000 → r5c1（未保存）"
+ },
+ "undo": {
+  "reverted": true
+ },
+ "redo": {
+  "reapplied": true
+ },
+ "coordInput": {
+  "target": "r5c2",
+  "applied": true
+ },
+ "bodyProtection": {
+  "target": "r3c6（枪械本体区域）",
+  "rejected": true,
+  "msg": "无法放置：目标是枪械本体占用区（r3c6–c8），不允许放置"
+ },
+ "swap": {
+  "pair": "mod_mount_000 ↔ mod_charge",
+  "result": {
+   "mount": {
+    "row": 2,
+    "col": 9
+   },
+   "charge": {
+    "row": 2,
+    "col": 8
+   },
+   "msg": "已与 mod_charge 交换位置（未丢失任何槽位）",
+   "allSlotsKept": true
+  },
+  "noSlotLost": true
+ },
+ "conflictPolicy": "目标格被真实槽位占用 → 交换；本体跨格区 → 拒绝并提示；绝不静默覆盖或删除槽位"
+}

@@ -1,0 +1,42 @@
+﻿==== R75 控制台实测 ====
+目标：D:\personal\trae\02-塔科夫\eft-interactive-map\dist\EFTMap\EFTMap.exe
+
+--- 1. 进程树（EFTMap*） ---
+
+Name              ProcessId ParentProcessId
+----              --------- ---------------
+EFTMapDesktop.exe      3352           14908
+EFTMap.exe            47864            3352
+
+
+
+--- 2. 新增 conhost.exe ---
+（无）
+--- 3. 新增可见控制台窗口 ---
+（无）
+--- 4. 壳的顶层窗口 ---
+hwnd=0xC00706 visible=1 exstyle=0x080900A8 class=WindowsForms10.Window.8.app.0.ea7f4a_r7_ad1 title=EFT 小地图
+hwnd=0x580F1A visible=0 exstyle=0x00000180 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0x950AFC visible=0 exstyle=0x00000100 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0xC10DC4 visible=1 exstyle=0x00010180 class=WindowsForms10.Window.8.app.0.ea7f4a_r7_ad1 title=EFT 互动地图
+hwnd=0x17F0B7E visible=0 exstyle=0x00000180 class=WindowsForms10.Window.0.app.0.ea7f4a_r7_ad1 title=
+hwnd=0xAA0742 visible=0 exstyle=0x00000000 class=GDI+ Hook Window Class title=GDI+ Window (EFTMapDesktop.exe)
+hwnd=0x3B1058 visible=0 exstyle=0x00000000 class=.NET-BroadcastEventWindow.4.0.0.0.ea7f4a.0 title=.NET-BroadcastEventWindow.4.0.0.0.ea7f4a.0
+hwnd=0x2810D4 visible=0 exstyle=0x00000008 class=MSCTFIME UI title=MSCTFIME UI
+hwnd=0x1AE05A4 visible=0 exstyle=0x00000008 class=IME title=Default IME
+hwnd=0x2140B3A visible=0 exstyle=0x00000000 class=IME title=Default IME
+--- 5. 浏览器进程增量（不含 msedgewebview2） ---
+（无）
+由本次启动派生的浏览器主进程数：0
+--- 6. 60 秒内的 TCP 端点（壳 + 后端 + WebView2） ---
+  0.0.0.0:0 [Bound] ×210
+  0.0.0.0:0 [Listen] ×30
+  127.0.0.1:1725 [Established] ×30
+  127.0.0.1:1726 [Established] ×30
+  127.0.0.1:1727 [Established] ×30
+  127.0.0.1:1730 [Established] ×30
+  127.0.0.1:1731 [Established] ×30
+  127.0.0.1:1732 [Established] ×30
+  127.0.0.1:1733 [Established] ×30
+  127.0.0.1:8787 [Established] ×210
+非回环远端连接：（无）

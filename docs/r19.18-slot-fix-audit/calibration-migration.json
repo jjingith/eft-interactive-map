@@ -1,0 +1,50 @@
+{
+  "generatedFor": "R19.18",
+  "dryRun": false,
+  "backup": "data/gun-layout-calibration.json.r1918.bak.json",
+  "sha256Before": "9a8c2603a72b9efcfd6741c9643f49277223c44cf66f0ae69d19d7022040762d",
+  "sha256After": "d969a2c44d5cea6c4e43dfb1ddb13a16a8dca4f2e8cc7612bea43e655b926e44",
+  "recordsBefore": 397,
+  "recordsAfter": 397,
+  "markedCount": 0,
+  "marked": [],
+  "unmarkedCount": 5,
+  "unmarked": [
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "key": "mod_handguard/mod_bipod|mod_bipod|687128c4505fed5f370b1625",
+      "ownerItemId": "687128c4505fed5f370b1625",
+      "slotPath": "mod_handguard/mod_bipod"
+    },
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "key": "mod_handguard/mod_muzzle|mod_muzzle|687128c4505fed5f370b1625",
+      "ownerItemId": "687128c4505fed5f370b1625",
+      "slotPath": "mod_handguard/mod_muzzle"
+    },
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "key": "mod_handguard/mod_mount_000|mod_mount_000|687128c4505fed5f370b1625",
+      "ownerItemId": "687128c4505fed5f370b1625",
+      "slotPath": "mod_handguard/mod_mount_000"
+    },
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "key": "mod_handguard/mod_mount_000/mod_tactical|mod_tactical|68712b57a1be89347f0d8179",
+      "ownerItemId": "68712b57a1be89347f0d8179",
+      "slotPath": "mod_handguard/mod_mount_000/mod_tactical"
+    },
+    {
+      "gunId": "6871284e9a353bb50606f3ed",
+      "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+      "key": "mod_handguard/mod_mount_002|mod_mount_002|687128c4505fed5f370b1625",
+      "ownerItemId": "687128c4505fed5f370b1625",
+      "slotPath": "mod_handguard/mod_mount_002"
+    }
+  ],
+  "note": "记录条数不变；只给失效记录补 note 说明回退原因，坐标与身份一律未改。"
+}

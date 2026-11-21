@@ -1,0 +1,11 @@
+2026-11-05 14:26:31  server-only start pid=31856 runtime=D:\personal\trae\02-塔科夫\eft-interactive-map\docs\r76-window-parity\run-screen-clamp\runtime\desktop-35764.json
+2026-11-05 14:26:31  [check-data] running 
+2026-11-05 14:26:31  [check-data] done 已收录 13 张地图
+2026-11-05 14:26:31  [start-server] running 
+2026-11-05 14:26:31  [start-server] done http://127.0.0.1:8816/
+2026-11-05 14:26:31  [load-assets] running 
+2026-11-05 14:26:31  [load-assets] done 版本 0.1.0 · 实时定位已开启 · 日志监控已开启（自动切图 / 任务事件）
+2026-11-05 14:26:31  [open-browser] running 
+2026-11-05 14:26:31  [open-browser] done http://127.0.0.1:8816/
+2026-11-05 14:26:31  ready url=http://127.0.0.1:8816/ pid=31856
+2026-11-05 14:26:54  server-only exit pid=31856

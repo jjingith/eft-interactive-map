@@ -1,0 +1,28 @@
+﻿
+=== 2026-11-02 22:47:29 start pid=42308 ===
+22:47:29.722  桌面壳启动参数：--backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --capture-settings --capture d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\settings --exit-after-ms 12000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\settings\desktop.log
+22:47:29.756  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-42308.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-42308.log" --parent-pid 42308
+22:47:29.783  后端已加入 Job Object（壳退出即杀）
+22:47:30.944  后端就绪：http://127.0.0.1:5360/ pid=21008
+22:47:30.987  WebView2 Runtime 版本：156.0.4314.58
+22:47:31.280  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+22:47:31.651  主窗口导航：http://127.0.0.1:5360/
+22:47:31.668  HWND 创建：2887554
+22:47:31.673  布局 260x260 @ (1644,764) scale=1 full=False
+22:47:31.673  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True
+22:47:31.725  布局 260x260 @ (1644,764) scale=1 full=False
+22:47:31.726  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:5360/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:47:31.849  托盘已创建
+22:47:31.918  WebView2 就绪，导航：http://127.0.0.1:5360/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+22:47:32.447  主页面加载完成
+22:47:32.726  资源 HTTP 404：http://127.0.0.1:5360/favicon.ico
+22:47:34.976  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-372.71335701265673 174.91785880429262 207.561751488 207.8943825\",\"svgInner\":732769,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-372.71335701265673 174.91785880429262 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n  \",\"svgImages\":1153,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5360/data/flea-prices.json\",694332,36],[\"http://127.0.0.1:5360/data/flea-levels.json\",162619,21],[\"http://127.0.0.1:5360/data/season-documents.json\",31639,25],[\"http://127.0.0.1:5360/data/search-index.json\",274591,31],[\"http://127.0.0.1:5360/data/task-points.json\",231696,30],[\"http://127.0.0.1:5360/data/tasks/tasks.regular.json\",3058248,107],[\"http://127.0.0.1:5360/data/tasks/guides.regular.json\",1287595,66],[\"http://127.0.0.1:5360/data/tasks/traders.json\",7339,37],[\"http://127.0.0.1:5360/data/tasks/index.json\",6639,37],[\"http://127.0.0.1:5360/data/tasks/season.json\",8229,41],[\"http://127.0.0.1:5360/assets/maps/StreetsOfTarkov.svg\",0,3],[\"http://127.0.0.1:5360/data/satellite.json\",2600,14]]}"
+22:47:34.989  截图失败：句柄无效。
+22:47:40.000  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-372.71335701265673 174.91785880429262 207.561751488 207.8943825\",\"svgInner\":732769,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-372.71335701265673 174.91785880429262 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n  \",\"svgImages\":1153,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5360/data/flea-prices.json\",694332,36],[\"http://127.0.0.1:5360/data/flea-levels.json\",162619,21],[\"http://127.0.0.1:5360/data/season-documents.json\",31639,25],[\"http://127.0.0.1:5360/data/search-index.json\",274591,31],[\"http://127.0.0.1:5360/data/task-points.json\",231696,30],[\"http://127.0.0.1:5360/data/tasks/tasks.regular.json\",3058248,107],[\"http://127.0.0.1:5360/data/tasks/guides.regular.json\",1287595,66],[\"http://127.0.0.1:5360/data/tasks/traders.json\",7339,37],[\"http://127.0.0.1:5360/data/tasks/index.json\",6639,37],[\"http://127.0.0.1:5360/data/tasks/season.json\",8229,41],[\"http://127.0.0.1:5360/assets/maps/StreetsOfTarkov.svg\",0,3],[\"http://127.0.0.1:5360/data/satellite.json\",2600,14]]}"
+22:47:40.003  截图失败：句柄无效。
+22:47:41.058  设置页截图已写入
+22:47:43.187  RequestExit
+22:47:43.189  FormClosing exitRequested=True reason=UserClosing
+22:47:43.201  FormClosed begin
+22:47:43.296  桌面壳退出
+22:47:43.313  已请求后端 shutdown

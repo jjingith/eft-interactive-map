@@ -1,0 +1,248 @@
+﻿
+=== 2026-11-05 17:31:52 start pid=54868 ===
+17:31:52.317  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:31:52.326  已有壳实例，激活后退出
+
+=== 2026-11-05 17:33:07 start pid=45220 ===
+17:33:07.647  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:33:07.679  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-45220.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-45220.log" --parent-pid 45220
+17:33:07.789  后端已加入 Job Object（壳退出即杀）
+17:33:08.934  后端就绪：http://127.0.0.1:3356/ pid=20524
+17:33:08.943  WebView2 Runtime 版本：156.0.4314.58
+17:33:09.268  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:33:09.657  主窗口导航：http://127.0.0.1:3356/
+17:33:09.673  HWND 创建：47844462
+17:33:09.678  SetWindowDisplayAffinity(WDA_NONE)=True
+17:33:09.680  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:33:09.685  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:33:09.738  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:3356/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:33:09.854  托盘已创建
+17:33:09.935  WebView2 就绪，导航：http://127.0.0.1:3356/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:33:10.537  主页面加载完成
+17:33:13.066  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:3356/data/flea-levels.json\",163284,28],[\"http://127.0.0.1:3356/data/season-documents.json\",31639,24],[\"http://127.0.0.1:3356/data/search-index.json\",274591,32],[\"http://127.0.0.1:3356/data/task-points.json\",231696,32],[\"http://127.0.0.1:3356/data/tasks/tasks.regular.json\",3253548,116],[\"http://127.0.0.1:3356/data/tasks/guides.regular.json\",1287595,61],[\"http://127.0.0.1:3356/data/tasks/traders.json\",8523,33],[\"http://127.0.0.1:3356/data/tasks/index.json\",6639,33],[\"http://127.0.0.1:3356/data/tasks/season.json\",8229,39],[\"http://127.0.0.1:3356/data/tasks/tasks.regular.json\",300,241],[\"http://127.0.0.1:3356/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:3356/data/task-images.json\",300,3]]}"
+17:33:13.145  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:33:18.156  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:3356/data/flea-levels.json\",163284,28],[\"http://127.0.0.1:3356/data/season-documents.json\",31639,24],[\"http://127.0.0.1:3356/data/search-index.json\",274591,32],[\"http://127.0.0.1:3356/data/task-points.json\",231696,32],[\"http://127.0.0.1:3356/data/tasks/tasks.regular.json\",3253548,116],[\"http://127.0.0.1:3356/data/tasks/guides.regular.json\",1287595,61],[\"http://127.0.0.1:3356/data/tasks/traders.json\",8523,33],[\"http://127.0.0.1:3356/data/tasks/index.json\",6639,33],[\"http://127.0.0.1:3356/data/tasks/season.json\",8229,39],[\"http://127.0.0.1:3356/data/tasks/tasks.regular.json\",300,241],[\"http://127.0.0.1:3356/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:3356/data/task-images.json\",300,3]]}"
+17:33:18.207  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:33:41.207  [backend:err] ----------------------------------------
+17:33:41.207  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 3433)
+17:33:41.208  [backend:err] Traceback (most recent call last):
+17:33:41.210  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+17:33:41.210  [backend:err]     self.finish_request(request, client_address)
+17:33:41.210  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+17:33:41.212  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+17:33:41.213  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+17:33:41.213  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+17:33:41.214  [backend:err]   File "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+17:33:41.214  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+17:33:41.214  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+17:33:41.214  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+17:33:41.214  [backend:err]     super().__init__(*args, **kwargs)
+17:33:41.215  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+17:33:41.215  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+17:33:41.215  [backend:err]     self.handle()
+17:33:41.215  [backend:err]     ~~~~~~~~~~~^^
+17:33:41.215  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+17:33:41.216  [backend:err]     self.handle_one_request()
+17:33:41.216  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+17:33:41.216  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+17:33:41.216  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+17:33:41.216  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+17:33:41.217  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+17:33:41.217  [backend:err]     return self._sock.recv_into(b)
+17:33:41.217  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+17:33:41.217  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+17:33:41.217  [backend:err] ----------------------------------------
+
+=== 2026-11-05 17:36:33 start pid=31504 ===
+17:36:33.782  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:36:33.815  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-31504.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-31504.log" --parent-pid 31504
+17:36:33.937  后端已加入 Job Object（壳退出即杀）
+17:36:35.134  后端就绪：http://127.0.0.1:3794/ pid=53032
+17:36:35.149  WebView2 Runtime 版本：156.0.4314.58
+17:36:35.440  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:36:35.857  主窗口导航：http://127.0.0.1:3794/
+17:36:35.875  HWND 创建：8982584
+17:36:35.881  SetWindowDisplayAffinity(WDA_NONE)=True
+17:36:35.885  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:36:35.891  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:36:35.941  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:3794/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:36:36.060  托盘已创建
+17:36:36.126  WebView2 就绪，导航：http://127.0.0.1:3794/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:36:36.530  主页面加载完成
+17:36:39.054  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\" preserveAspectRatio=\\\"none\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:3794/data/flea-prices.json\",701704,42],[\"http://127.0.0.1:3794/data/season-documents.json\",31639,18],[\"http://127.0.0.1:3794/data/search-index.json\",274591,28],[\"http://127.0.0.1:3794/data/task-points.json\",231696,35],[\"http://127.0.0.1:3794/data/tasks/tasks.regular.json\",3253548,157],[\"http://127.0.0.1:3794/data/tasks/guides.regular.json\",1287595,57],[\"http://127.0.0.1:3794/data/tasks/traders.json\",8523,38],[\"http://127.0.0.1:3794/data/tasks/index.json\",6639,38],[\"http://127.0.0.1:3794/data/tasks/season.json\",8229,42],[\"http://127.0.0.1:3794/data/tasks/tasks.regular.json\",300,281],[\"http://127.0.0.1:3794/assets/maps/StreetsOfTarkov.svg\",0,4],[\"http://127.0.0.1:3794/data/task-images.json\",300,3]]}"
+17:36:39.145  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:36:44.160  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\" preserveAspectRatio=\\\"none\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:3794/data/flea-prices.json\",701704,42],[\"http://127.0.0.1:3794/data/season-documents.json\",31639,18],[\"http://127.0.0.1:3794/data/search-index.json\",274591,28],[\"http://127.0.0.1:3794/data/task-points.json\",231696,35],[\"http://127.0.0.1:3794/data/tasks/tasks.regular.json\",3253548,157],[\"http://127.0.0.1:3794/data/tasks/guides.regular.json\",1287595,57],[\"http://127.0.0.1:3794/data/tasks/traders.json\",8523,38],[\"http://127.0.0.1:3794/data/tasks/index.json\",6639,38],[\"http://127.0.0.1:3794/data/tasks/season.json\",8229,42],[\"http://127.0.0.1:3794/data/tasks/tasks.regular.json\",300,281],[\"http://127.0.0.1:3794/assets/maps/StreetsOfTarkov.svg\",0,4],[\"http://127.0.0.1:3794/data/task-images.json\",300,3]]}"
+17:36:44.237  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+
+=== 2026-11-05 17:38:54 start pid=53204 ===
+17:38:54.623  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:38:54.657  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-53204.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-53204.log" --parent-pid 53204
+17:38:54.774  后端已加入 Job Object（壳退出即杀）
+17:38:55.896  后端就绪：http://127.0.0.1:4146/ pid=54632
+17:38:55.904  WebView2 Runtime 版本：156.0.4314.58
+17:38:56.197  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:38:56.586  主窗口导航：http://127.0.0.1:4146/
+17:38:56.603  HWND 创建：14880658
+17:38:56.607  SetWindowDisplayAffinity(WDA_NONE)=True
+17:38:56.610  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:38:56.616  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:38:56.667  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:4146/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:38:56.783  托盘已创建
+17:38:56.850  WebView2 就绪，导航：http://127.0.0.1:4146/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1
+17:38:57.485  主页面加载完成
+17:39:00.013  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:4146/data/flea-levels.json\",163284,20],[\"http://127.0.0.1:4146/data/season-documents.json\",31639,19],[\"http://127.0.0.1:4146/data/search-index.json\",274591,26],[\"http://127.0.0.1:4146/data/task-points.json\",231696,32],[\"http://127.0.0.1:4146/data/tasks/tasks.regular.json\",3253548,129],[\"http://127.0.0.1:4146/data/tasks/traders.json\",8523,36],[\"http://127.0.0.1:4146/data/tasks/guides.regular.json\",1287595,58],[\"http://127.0.0.1:4146/data/tasks/index.json\",6639,36],[\"http://127.0.0.1:4146/data/tasks/season.json\",8229,38],[\"http://127.0.0.1:4146/data/tasks/tasks.regular.json\",300,247],[\"http://127.0.0.1:4146/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:4146/data/task-images.json\",300,3]]}"
+17:39:00.112  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:39:05.128  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:4146/data/flea-levels.json\",163284,20],[\"http://127.0.0.1:4146/data/season-documents.json\",31639,19],[\"http://127.0.0.1:4146/data/search-index.json\",274591,26],[\"http://127.0.0.1:4146/data/task-points.json\",231696,32],[\"http://127.0.0.1:4146/data/tasks/tasks.regular.json\",3253548,129],[\"http://127.0.0.1:4146/data/tasks/traders.json\",8523,36],[\"http://127.0.0.1:4146/data/tasks/guides.regular.json\",1287595,58],[\"http://127.0.0.1:4146/data/tasks/index.json\",6639,36],[\"http://127.0.0.1:4146/data/tasks/season.json\",8229,38],[\"http://127.0.0.1:4146/data/tasks/tasks.regular.json\",300,247],[\"http://127.0.0.1:4146/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:4146/data/task-images.json\",300,3]]}"
+17:39:05.176  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+
+=== 2026-11-05 17:40:32 start pid=52784 ===
+17:40:32.182  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:40:32.216  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-52784.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-52784.log" --parent-pid 52784
+17:40:32.334  后端已加入 Job Object（壳退出即杀）
+17:40:33.499  后端就绪：http://127.0.0.1:4341/ pid=38296
+17:40:33.508  WebView2 Runtime 版本：156.0.4314.58
+17:40:33.824  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:40:34.214  主窗口导航：http://127.0.0.1:4341/
+17:40:34.234  HWND 创建：48041070
+17:40:34.239  SetWindowDisplayAffinity(WDA_NONE)=True
+17:40:34.242  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:40:34.246  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:40:34.303  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:4341/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=2.0
+17:40:34.421  托盘已创建
+17:40:34.499  WebView2 就绪，导航：http://127.0.0.1:4341/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=2.0
+17:40:35.133  主页面加载完成
+17:40:37.661  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:4341/data/flea-levels.json\",163284,30],[\"http://127.0.0.1:4341/data/season-documents.json\",31639,23],[\"http://127.0.0.1:4341/data/search-index.json\",274591,37],[\"http://127.0.0.1:4341/data/task-points.json\",231696,37],[\"http://127.0.0.1:4341/data/tasks/tasks.regular.json\",3253548,129],[\"http://127.0.0.1:4341/data/tasks/guides.regular.json\",1287595,68],[\"http://127.0.0.1:4341/data/tasks/traders.json\",8523,44],[\"http://127.0.0.1:4341/data/tasks/index.json\",6639,43],[\"http://127.0.0.1:4341/data/tasks/season.json\",8229,50],[\"http://127.0.0.1:4341/data/tasks/tasks.regular.json\",300,245],[\"http://127.0.0.1:4341/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:4341/data/task-images.json\",300,2]]}"
+17:40:37.736  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:40:42.747  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:4341/data/flea-levels.json\",163284,30],[\"http://127.0.0.1:4341/data/season-documents.json\",31639,23],[\"http://127.0.0.1:4341/data/search-index.json\",274591,37],[\"http://127.0.0.1:4341/data/task-points.json\",231696,37],[\"http://127.0.0.1:4341/data/tasks/tasks.regular.json\",3253548,129],[\"http://127.0.0.1:4341/data/tasks/guides.regular.json\",1287595,68],[\"http://127.0.0.1:4341/data/tasks/traders.json\",8523,44],[\"http://127.0.0.1:4341/data/tasks/index.json\",6639,43],[\"http://127.0.0.1:4341/data/tasks/season.json\",8229,50],[\"http://127.0.0.1:4341/data/tasks/tasks.regular.json\",300,245],[\"http://127.0.0.1:4341/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:4341/data/task-images.json\",300,2]]}"
+17:40:42.799  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:41:23.897  [backend:err] ----------------------------------------
+17:41:23.898  [backend:err] Exception occurred during processing of request from ('127.0.0.1', 4438)
+17:41:23.898  [backend:err] Traceback (most recent call last):
+17:41:23.899  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 697, in process_request_thread
+17:41:23.899  [backend:err]     self.finish_request(request, client_address)
+17:41:23.900  [backend:err]     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+17:41:23.901  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 362, in finish_request
+17:41:23.901  [backend:err]     self.RequestHandlerClass(request, client_address, self)
+17:41:23.902  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+17:41:23.902  [backend:err]   File "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\serve.py", line 1260, in __init__
+17:41:23.902  [backend:err]     super().__init__(*args, directory=root, **kwargs)
+17:41:23.903  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+17:41:23.903  [backend:err]   File "C:\Python314\Lib\http\server.py", line 732, in __init__
+17:41:23.903  [backend:err]     super().__init__(*args, **kwargs)
+17:41:23.904  [backend:err]     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+17:41:23.904  [backend:err]   File "C:\Python314\Lib\socketserver.py", line 766, in __init__
+17:41:23.904  [backend:err]     self.handle()
+17:41:23.904  [backend:err]     ~~~~~~~~~~~^^
+17:41:23.905  [backend:err]   File "C:\Python314\Lib\http\server.py", line 498, in handle
+17:41:23.905  [backend:err]     self.handle_one_request()
+17:41:23.905  [backend:err]     ~~~~~~~~~~~~~~~~~~~~~~~^^
+17:41:23.905  [backend:err]   File "C:\Python314\Lib\http\server.py", line 464, in handle_one_request
+17:41:23.906  [backend:err]     self.raw_requestline = self.rfile.readline(65537)
+17:41:23.906  [backend:err]                            ~~~~~~~~~~~~~~~~~~~^^^^^^^
+17:41:23.907  [backend:err]   File "C:\Python314\Lib\socket.py", line 725, in readinto
+17:41:23.907  [backend:err]     return self._sock.recv_into(b)
+17:41:23.907  [backend:err]            ~~~~~~~~~~~~~~~~~~~~^^^
+17:41:23.907  [backend:err] ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+17:41:23.907  [backend:err] ----------------------------------------
+
+=== 2026-11-05 17:42:49 start pid=17992 ===
+17:42:49.755  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:42:49.787  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-17992.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-17992.log" --parent-pid 17992
+17:42:49.941  后端已加入 Job Object（壳退出即杀）
+17:42:51.162  后端就绪：http://127.0.0.1:5229/ pid=56132
+17:42:51.178  WebView2 Runtime 版本：156.0.4314.58
+17:42:51.491  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:42:51.870  主窗口导航：http://127.0.0.1:5229/
+17:42:51.887  HWND 创建：5902398
+17:42:51.893  SetWindowDisplayAffinity(WDA_NONE)=True
+17:42:51.896  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:42:51.901  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:42:51.958  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:5229/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=2.0
+17:42:52.078  托盘已创建
+17:42:52.149  WebView2 就绪，导航：http://127.0.0.1:5229/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=2.0
+17:42:52.761  主页面加载完成
+17:42:55.288  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5229/data/flea-levels.json\",163284,22],[\"http://127.0.0.1:5229/data/search-index.json\",274591,28],[\"http://127.0.0.1:5229/data/season-documents.json\",31639,21],[\"http://127.0.0.1:5229/data/task-points.json\",231696,33],[\"http://127.0.0.1:5229/data/tasks/tasks.regular.json\",3253548,110],[\"http://127.0.0.1:5229/data/tasks/guides.regular.json\",1287595,57],[\"http://127.0.0.1:5229/data/tasks/traders.json\",8523,32],[\"http://127.0.0.1:5229/data/tasks/index.json\",6639,37],[\"http://127.0.0.1:5229/data/tasks/season.json\",8229,38],[\"http://127.0.0.1:5229/data/tasks/tasks.regular.json\",300,247],[\"http://127.0.0.1:5229/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:5229/data/task-images.json\",300,2]]}"
+17:42:55.392  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:43:00.404  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5229/data/flea-levels.json\",163284,22],[\"http://127.0.0.1:5229/data/search-index.json\",274591,28],[\"http://127.0.0.1:5229/data/season-documents.json\",31639,21],[\"http://127.0.0.1:5229/data/task-points.json\",231696,33],[\"http://127.0.0.1:5229/data/tasks/tasks.regular.json\",3253548,110],[\"http://127.0.0.1:5229/data/tasks/guides.regular.json\",1287595,57],[\"http://127.0.0.1:5229/data/tasks/traders.json\",8523,32],[\"http://127.0.0.1:5229/data/tasks/index.json\",6639,37],[\"http://127.0.0.1:5229/data/tasks/season.json\",8229,38],[\"http://127.0.0.1:5229/data/tasks/tasks.regular.json\",300,247],[\"http://127.0.0.1:5229/assets/maps/StreetsOfTarkov.svg\",0,2],[\"http://127.0.0.1:5229/data/task-images.json\",300,2]]}"
+17:43:00.486  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:43:20.926  小地图形状=circle client=208x208
+17:44:21.924  SetWindowDisplayAffinity(WDA_NONE)=True
+17:44:21.924  点击穿透=False
+17:44:21.956  小地图状态截图：mini-state-1.png full=False visible=True
+
+=== 2026-11-05 17:45:46 start pid=40372 ===
+17:45:46.925  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:45:46.963  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-40372.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-40372.log" --parent-pid 40372
+17:45:47.121  后端已加入 Job Object（壳退出即杀）
+17:45:48.537  后端就绪：http://127.0.0.1:5861/ pid=52868
+17:45:48.549  WebView2 Runtime 版本：156.0.4314.58
+17:45:48.992  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:45:49.621  主窗口导航：http://127.0.0.1:5861/
+17:45:49.643  HWND 创建：16976848
+17:45:49.651  SetWindowDisplayAffinity(WDA_NONE)=True
+17:45:49.655  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:45:49.666  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:45:49.787  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:5861/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:45:49.959  托盘已创建
+17:45:50.033  WebView2 就绪，导航：http://127.0.0.1:5861/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:45:50.813  主页面加载完成
+17:45:53.399  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5861/data/flea-prices.json\",300,89],[\"http://127.0.0.1:5861/data/search-index.json\",300,61],[\"http://127.0.0.1:5861/data/season-documents.json\",300,61],[\"http://127.0.0.1:5861/data/task-points.json\",300,60],[\"http://127.0.0.1:5861/data/tasks/tasks.regular.json\",300,203],[\"http://127.0.0.1:5861/data/tasks/guides.regular.json\",300,111],[\"http://127.0.0.1:5861/data/tasks/traders.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/index.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/season.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/tasks.regular.json\",300,391],[\"http://127.0.0.1:5861/assets/maps/StreetsOfTarkov.svg\",0,27],[\"http://127.0.0.1:5861/data/task-images.json\",300,4]]}"
+17:45:53.585  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:45:58.606  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:5861/data/flea-prices.json\",300,89],[\"http://127.0.0.1:5861/data/search-index.json\",300,61],[\"http://127.0.0.1:5861/data/season-documents.json\",300,61],[\"http://127.0.0.1:5861/data/task-points.json\",300,60],[\"http://127.0.0.1:5861/data/tasks/tasks.regular.json\",300,203],[\"http://127.0.0.1:5861/data/tasks/guides.regular.json\",300,111],[\"http://127.0.0.1:5861/data/tasks/traders.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/index.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/season.json\",300,67],[\"http://127.0.0.1:5861/data/tasks/tasks.regular.json\",300,391],[\"http://127.0.0.1:5861/assets/maps/StreetsOfTarkov.svg\",0,27],[\"http://127.0.0.1:5861/data/task-images.json\",300,4]]}"
+17:45:58.709  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+
+=== 2026-11-05 17:47:06 start pid=12160 ===
+17:47:06.199  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:47:06.242  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-12160.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-12160.log" --parent-pid 12160
+17:47:06.424  后端已加入 Job Object（壳退出即杀）
+17:47:08.084  后端就绪：http://127.0.0.1:6170/ pid=46864
+17:47:08.095  WebView2 Runtime 版本：156.0.4314.58
+17:47:08.591  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:47:09.228  主窗口导航：http://127.0.0.1:6170/
+17:47:09.252  HWND 创建：8785766
+17:47:09.259  SetWindowDisplayAffinity(WDA_NONE)=True
+17:47:09.262  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:47:09.276  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:47:09.362  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:6170/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:47:09.671  托盘已创建
+17:47:09.791  WebView2 就绪，导航：http://127.0.0.1:6170/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:47:10.565  主页面加载完成
+17:47:13.097  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:6170/data/flea-levels.json\",163284,105],[\"http://127.0.0.1:6170/data/season-documents.json\",31639,67],[\"http://127.0.0.1:6170/data/search-index.json\",274591,112],[\"http://127.0.0.1:6170/data/task-points.json\",231696,108],[\"http://127.0.0.1:6170/data/tasks/tasks.regular.json\",3253548,208],[\"http://127.0.0.1:6170/data/tasks/guides.regular.json\",1287595,135],[\"http://127.0.0.1:6170/data/tasks/traders.json\",8523,107],[\"http://127.0.0.1:6170/data/tasks/index.json\",6639,107],[\"http://127.0.0.1:6170/data/tasks/season.json\",8229,110],[\"http://127.0.0.1:6170/data/tasks/tasks.regular.json\",300,369],[\"http://127.0.0.1:6170/assets/maps/StreetsOfTarkov.svg\",335572,50],[\"http://127.0.0.1:6170/data/task-images.json\",39737,65]]}"
+17:47:13.177  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:47:18.192  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"-112.46152797600001 0 830.247005952 831.57753\",\"svgInner\":745339,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"-112.46152797600001 0 830.247005952 831.57753\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n    .land { fill:#1f5\",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:6170/data/flea-levels.json\",163284,105],[\"http://127.0.0.1:6170/data/season-documents.json\",31639,67],[\"http://127.0.0.1:6170/data/search-index.json\",274591,112],[\"http://127.0.0.1:6170/data/task-points.json\",231696,108],[\"http://127.0.0.1:6170/data/tasks/tasks.regular.json\",3253548,208],[\"http://127.0.0.1:6170/data/tasks/guides.regular.json\",1287595,135],[\"http://127.0.0.1:6170/data/tasks/traders.json\",8523,107],[\"http://127.0.0.1:6170/data/tasks/index.json\",6639,107],[\"http://127.0.0.1:6170/data/tasks/season.json\",8229,110],[\"http://127.0.0.1:6170/data/tasks/tasks.regular.json\",300,369],[\"http://127.0.0.1:6170/assets/maps/StreetsOfTarkov.svg\",335572,50],[\"http://127.0.0.1:6170/data/task-images.json\",39737,65]]}"
+17:47:18.272  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:47:21.960  小地图状态截图：mini-state-1.png full=False visible=True
+17:47:22.364  小地图状态截图：mini-state-2.png full=False visible=True
+17:47:38.426  小地图状态截图：mini-state-3.png full=False visible=True
+17:47:38.833  小地图状态截图：mini-state-4.png full=False visible=True
+
+=== 2026-11-05 17:48:14 start pid=41316 ===
+17:48:14.602  桌面壳启动参数：--root d:\personal\trae\02-塔科夫\eft-interactive-map --mini --capture d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence --dump-json d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\window-state-locked.json --log d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence\desktop.log
+17:48:14.650  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-41316.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-41316.log" --parent-pid 41316
+17:48:14.832  后端已加入 Job Object（壳退出即杀）
+17:48:16.627  后端就绪：http://127.0.0.1:6580/ pid=52792
+17:48:16.641  WebView2 Runtime 版本：156.0.4314.58
+17:48:17.249  WebView2 环境就绪：156.0.4314.58 UDF=C:\Users\Administrator\AppData\Local\EFTMap\WebView2
+17:48:18.040  主窗口导航：http://127.0.0.1:6580/
+17:48:18.060  HWND 创建：8851302
+17:48:18.066  SetWindowDisplayAffinity(WDA_NONE)=True
+17:48:18.071  布局 208x208 @ (1696,816) dpiScale=1 userScale=1 mode=auto work=[0,0,1920,1040] full=False
+17:48:18.081  热键注册 Ctrl+Shift+M=True Ctrl+Shift+F=True Ctrl+Shift+Plus=True Ctrl+Shift+Minus=True
+17:48:18.175  小地图窗口已创建（同进程第二窗口），url=http://127.0.0.1:6580/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:48:18.670  托盘已创建
+17:48:18.858  WebView2 就绪，导航：http://127.0.0.1:6580/index.html?mini=1&size=260&opacity=0.90&shape=square&labels=1&follow=1&ha=1&zoom=1.0
+17:48:19.754  主页面加载完成
+17:48:22.291  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:6580/data/flea-levels.json\",163284,62],[\"http://127.0.0.1:6580/data/season-documents.json\",31639,61],[\"http://127.0.0.1:6580/data/search-index.json\",274591,68],[\"http://127.0.0.1:6580/data/task-points.json\",231696,66],[\"http://127.0.0.1:6580/data/tasks/tasks.regular.json\",300,317],[\"http://127.0.0.1:6580/data/tasks/traders.json\",300,209],[\"http://127.0.0.1:6580/data/tasks/index.json\",300,212],[\"http://127.0.0.1:6580/data/tasks/guides.regular.json\",300,254],[\"http://127.0.0.1:6580/data/tasks/season.json\",300,212],[\"http://127.0.0.1:6580/data/tasks/tasks.regular.json\",300,402],[\"http://127.0.0.1:6580/assets/maps/StreetsOfTarkov.svg\",335572,22],[\"http://127.0.0.1:6580/data/task-images.json\",300,23]]}"
+17:48:22.397  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:48:27.422  页面状态："{\"title\":\"EFT 互动地图 · 离线免费版\",\"bodyClass\":\"\",\"svgChildren\":2,\"svgViewBox\":\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\",\"svgInner\":747799,\"svgOuter\":\"\u003Csvg id=\\\"map-svg\\\" xmlns=\\\"http://www.w3.org/2000/svg\\\" preserveAspectRatio=\\\"none\\\" viewBox=\\\"120.07856181818907 192.68566407043534 207.561751488 207.8943825\\\">\u003Cg id=\\\"emk-base\\\">\\n  \u003Cstyle id=\\\"style_common\\\">\\n    .trees { fill:#144043 }\\n    .cement { fill:#c6c2c2 }\\n   \",\"svgImages\":1222,\"dpr\":1,\"inner\":[1254,660],\"visual\":[1254,660,1],\"viewport\":[624,625],\"stage\":[624,625],\"error\":\"\",\"status\":\"塔科夫街区 · 605×832 世界单位\",\"resources\":[[\"http://127.0.0.1:6580/data/flea-levels.json\",163284,62],[\"http://127.0.0.1:6580/data/season-documents.json\",31639,61],[\"http://127.0.0.1:6580/data/search-index.json\",274591,68],[\"http://127.0.0.1:6580/data/task-points.json\",231696,66],[\"http://127.0.0.1:6580/data/tasks/tasks.regular.json\",300,317],[\"http://127.0.0.1:6580/data/tasks/traders.json\",300,209],[\"http://127.0.0.1:6580/data/tasks/index.json\",300,212],[\"http://127.0.0.1:6580/data/tasks/guides.regular.json\",300,254],[\"http://127.0.0.1:6580/data/tasks/season.json\",300,212],[\"http://127.0.0.1:6580/data/tasks/tasks.regular.json\",300,402],[\"http://127.0.0.1:6580/assets/maps/StreetsOfTarkov.svg\",335572,22],[\"http://127.0.0.1:6580/data/task-images.json\",300,23]]}"
+17:48:27.527  截图已写入：d:\personal\trae\02-塔科夫\eft-interactive-map\docs\r78-mini-zoom\evidence
+17:48:37.055  小地图状态截图：mini-state-1.png full=False visible=True
+17:48:37.458  小地图状态截图：mini-state-2.png full=False visible=True
+17:48:37.833  小地图状态截图：mini-state-3.png full=False visible=True
+17:48:38.208  小地图状态截图：mini-state-4.png full=False visible=True
+17:48:38.583  小地图状态截图：mini-state-5.png full=False visible=True
+17:48:38.988  小地图状态截图：mini-state-6.png full=False visible=True
+17:48:39.338  小地图状态截图：mini-state-7.png full=False visible=True
+17:48:39.737  小地图状态截图：mini-state-8.png full=False visible=True
+17:48:40.116  小地图状态截图：mini-state-9.png full=False visible=True
+17:48:40.519  小地图状态截图：mini-state-10.png full=False visible=True

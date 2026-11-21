@@ -1,0 +1,954 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.29-1 🌑 03:26 🌕 15:26",
+  "x": 339,
+  "y": 24,
+  "w": 677,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 255,
+  "y": 24,
+  "w": 84,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 339,
+  "y": 24,
+  "w": 82,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 416,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 482,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 540,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 608,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 662,
+  "y": 24,
+  "w": 30,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 746,
+  "y": 24,
+  "w": 57,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 814,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 890,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.3.0.0",
+  "x": 973,
+  "y": 24,
+  "w": 94,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 1051,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)",
+  "x": 761,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 709,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 761,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (38d)",
+  "x": 812,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 866,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 900,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 934,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 968,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1002,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "tab",
+  "label": "Caliber",
+  "x": 25,
+  "y": 67,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "tab",
+  "label": "Class",
+  "x": 75,
+  "y": 67,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "tab",
+  "label": "Table",
+  "x": 125,
+  "y": 67,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "tab",
+  "label": "Gun",
+  "x": 175,
+  "y": 67,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "input",
+  "label": "Type to search — ESC to clear",
+  "x": 367,
+  "y": 71,
+  "w": 317,
+  "h": 39
+ },
+ {
+  "role": "button",
+  "label": "Gunsmith",
+  "x": 552,
+  "y": 68,
+  "w": 69,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "TierMaker",
+  "x": 641,
+  "y": 68,
+  "w": 96,
+  "h": 32
+ },
+ {
+  "role": "group",
+  "label": "Streamers builds that they will manually update their builds from the web Content Management System 24",
+  "x": 733,
+  "y": 68,
+  "w": 89,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Streamer",
+  "x": 733,
+  "y": 68,
+  "w": 89,
+  "h": 32
+ },
+ {
+  "role": "flt-semantics",
+  "label": "All Variants from the gun include buy from Trader / Barter",
+  "x": 815,
+  "y": 68,
+  "w": 75,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Variant",
+  "x": 815,
+  "y": 68,
+  "w": 75,
+  "h": 32
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Your saved guns",
+  "x": 886,
+  "y": 68,
+  "w": 67,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Saved",
+  "x": 886,
+  "y": 68,
+  "w": 67,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "only FleaLvl",
+  "x": 963,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "only TraderLvl",
+  "x": 1043,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Trader level / PMC Setting",
+  "x": 1107,
+  "y": 68,
+  "w": 40,
+  "h": 40
+ },
+ {
+  "role": "button",
+  "label": "Primary",
+  "x": 31,
+  "y": 109,
+  "w": 52,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "Handgun",
+  "x": 84,
+  "y": 109,
+  "w": 52,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "Class Filter",
+  "x": 185,
+  "y": 109,
+  "w": 140,
+  "h": 34
+ },
+ {
+  "role": "button",
+  "label": "Caliber Filter",
+  "x": 325,
+  "y": 109,
+  "w": 140,
+  "h": 34
+ },
+ {
+  "role": "button",
+  "label": "Auto",
+  "x": 426,
+  "y": 109,
+  "w": 52,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "Single",
+  "x": 479,
+  "y": 109,
+  "w": 52,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "Burst",
+  "x": 533,
+  "y": 109,
+  "w": 52,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": ".300",
+  "x": 512,
+  "y": 183,
+  "w": 1016,
+  "h": 106
+ },
+ {
+  "role": "group",
+  "label": "600 3.50 Velociraptor",
+  "x": 138,
+  "y": 183,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "4",
+  "x": 238,
+  "y": 183,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 2.72 MCX",
+  "x": 238,
+  "y": 183,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "5.8x42 2",
+  "x": 512,
+  "y": 289,
+  "w": 1016,
+  "h": 106
+ },
+ {
+  "role": "group",
+  "label": "750 2.90 QBZ-191 1.1",
+  "x": 138,
+  "y": 289,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "5.56x45",
+  "x": 512,
+  "y": 445,
+  "w": 1016,
+  "h": 206
+ },
+ {
+  "role": "group",
+  "label": "700 3.50 Type 20 1.1",
+  "x": 138,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 3.35 M16A2",
+  "x": 238,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 2.65 M16A1",
+  "x": 338,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 3.01 Model 1",
+  "x": 438,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 538,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 3.27 ADAR",
+  "x": 538,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "10",
+  "x": 638,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 2.93 M4A1",
+  "x": 638,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "5",
+  "x": 738,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "750 3.03 G36",
+  "x": 738,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "600 3.21 AK-102",
+  "x": 838,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 938,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.29 Mk 16",
+  "x": 938,
+  "y": 395,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "800 3.70 TX-15",
+  "x": 138,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.34 Mk 16",
+  "x": 238,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.61 AK-101",
+  "x": 338,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "715 3.74 AUG A3",
+  "x": 438,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 538,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "850 3.82 HK 416A5",
+  "x": 538,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "850 3.82 HK 416A5 1.1",
+  "x": 638,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 738,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "715 3.83 AUG A1",
+  "x": 738,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 838,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 4.00 MDR",
+  "x": 838,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "715 4.04 AUG A3",
+  "x": 938,
+  "y": 495,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "5.45x39",
+  "x": 512,
+  "y": 595,
+  "w": 1016,
+  "h": 93
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 138,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 2.69 AKS-74U",
+  "x": 138,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 2.73 AKS-74UN",
+  "x": 238,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 338,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "800 2.98 NL545 DI",
+  "x": 338,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 438,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "850 3.01 NL545 GP",
+  "x": 438,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "4",
+  "x": 538,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 3.02 RPK-16",
+  "x": 538,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 3.13 AKS-74",
+  "x": 638,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "600 3.21 AK-105",
+  "x": 738,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 3.23 AKS-74N",
+  "x": 838,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 938,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "650 3.32 AK-74",
+  "x": 938,
+  "y": 596,
+  "w": 100,
+  "h": 90
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 138,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.34 AKS-74UB",
+  "x": 138,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 238,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.42 AK-74N",
+  "x": 238,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "4",
+  "x": 338,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.61 AK-74M",
+  "x": 338,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "3",
+  "x": 438,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "700 3.61 AK-12",
+  "x": 438,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 3.92 AK-545 (s)",
+  "x": 538,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "650 4.03 AK-545",
+  "x": 638,
+  "y": 701,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "6.8x51",
+  "x": 512,
+  "y": 807,
+  "w": 1016,
+  "h": 106
+ },
+ {
+  "role": "group",
+  "label": "800 4.21 SPEAR",
+  "x": 138,
+  "y": 807,
+  "w": 100,
+  "h": 100
+ },
+ {
+  "role": "group",
+  "label": "7.62x39",
+  "x": 512,
+  "y": 876,
+  "w": 1016,
+  "h": 31
+ },
+ {
+  "role": "group",
+  "label": "650 2.32 Mk47",
+  "x": 138,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 238,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.21 AK-104",
+  "x": 238,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 338,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.25 VPO-136",
+  "x": 338,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.44 AKMS",
+  "x": 438,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.44 AKMSN",
+  "x": 538,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 638,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.50 AKM",
+  "x": 638,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 738,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.56 AKMN",
+  "x": 738,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "600 3.61 AK-103",
+  "x": 838,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "2",
+  "x": 938,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "40 3.79 SKS",
+  "x": 938,
+  "y": 877,
+  "w": 100,
+  "h": 28
+ }
+]

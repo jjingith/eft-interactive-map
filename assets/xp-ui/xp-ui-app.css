@@ -1,0 +1,3749 @@
+@charset "utf-8";
+/* ============================================================================
+   XP UI 素材 → 主界面 适配层（R78）
+   只做「把现有类名映射到 assets/xp-ui 里的位图」，不改元素结构、不改类名。
+   加载顺序必须排在 theme-windows-xp.css / tasks.css / styles/*.css 之后。
+   位图坐标约定：所有 border-image-slice 都用 1x 像素，border-image-width 1:1，
+   border-image-repeat 用 stretch（滚动条轨道按用户要求纵向 repeat）。
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   一、按钮：五态位图（btn-normal / hover / pressed / focus / disabled，95×42）
+   现有按钮高度差异很大，统一压到 30px：5px 斜角切片保持 1:1 不缩放，
+   只压缩中间带，斜面上的 1px 高光不会糊。
+   --------------------------------------------------------------------------- */
+html body .menu-btn,
+html body .hud button,
+html body .sidebar-collapse,
+html body .sidebar-expand,
+html body .task-panel-collapse,
+html body .task-panel-expand,
+html body .task-search-reset,
+html body .route-actions button,
+html body .route-del,
+html body .wiki-actions button,
+html body .wiki-hud button,
+html body .live-btn,
+html body .acc-btn,
+html body .lw-clear,
+html body .gw-btn,
+html body .am-btn,
+html body .lw-modal-box button,
+html body .gw-prof-foot button {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 11px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", "SimHei", sans-serif;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+html body .menu-btn:hover,
+html body .hud button:hover,
+html body .sidebar-collapse:hover,
+html body .sidebar-expand:hover,
+html body .task-panel-collapse:hover,
+html body .task-panel-expand:hover,
+html body .task-search-reset:hover,
+html body .route-actions button:hover,
+html body .route-del:hover,
+html body .wiki-actions button:hover,
+html body .wiki-hud button:hover,
+html body .live-btn:hover,
+html body .acc-btn:hover,
+html body .lw-clear:hover,
+html body .gw-btn:hover:not([disabled]),
+html body .am-btn:hover,
+html body .lw-modal-box button:hover,
+html body .gw-prof-foot button:hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .menu-btn:active,
+html body .hud button:active,
+html body .sidebar-collapse:active,
+html body .sidebar-expand:active,
+html body .task-panel-collapse:active,
+html body .task-panel-expand:active,
+html body .task-search-reset:active,
+html body .route-actions button:active,
+html body .route-del:active,
+html body .wiki-actions button:active,
+html body .wiki-hud button:active,
+html body .live-btn:active,
+html body .acc-btn:active,
+html body .lw-clear:active,
+html body .gw-btn:active:not([disabled]),
+html body .am-btn:active,
+html body .lw-modal-box button:active,
+html body .gw-prof-foot button:active {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .menu-btn:disabled,
+html body .gw-btn:disabled,
+html body .am-btn:disabled,
+html body .gw-prof-foot button:disabled {
+  border-image-source: url("btn-disabled.png");
+  color: #69675b; /* 禁用文字 ≥4.5:1（位图按钮面 5.59:1） */
+  cursor: default;
+}
+html body .menu-btn:focus-visible,
+html body .hud button:focus-visible,
+html body .task-search-reset:focus-visible,
+html body .gw-btn:focus-visible,
+html body .am-btn:focus-visible,
+html body .gw-prof-foot button:focus-visible {
+  border-image-source: url("btn-focus.png");
+}
+html body .menu-btn:focus-visible::after,
+html body .hud button:focus-visible::after,
+html body .gw-btn:focus-visible::after,
+html body .am-btn:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px dotted #1a1a16;
+  pointer-events: none;
+}
+/* 弹药工作台的 RESET / SHOW / 显示 等按钮：主题里的选择器带了 4 个 :not()，
+   这里照同样的结构再补一个 :not(.am-seg-btn)（分段切换按钮保持原样，避免 26px 行高被撑破） */
+html body .am-workbench button:not(.am-tab):not(.am-seg-btn):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x) {
+  box-sizing: border-box;
+  height: 28px;
+  padding: 0 8px; /* 9→8，与工具条按钮同一档 */
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+}
+html body .am-workbench button:not(.am-tab):not(.am-seg-btn):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .am-workbench button:not(.am-tab):not(.am-seg-btn):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):active {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+
+/* 菜单项展开 / 视图选中：用按下态位图，不再用纯蓝色块 */
+html body .menu-btn.open,
+html body .view-btn[aria-selected="true"] {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+
+/* 菜单栏 / HUD / 状态条里的按钮用 position:relative 才能挂焦点虚线 */
+html body .menu-btn,
+html body .hud button,
+html body .gw-btn,
+html body .am-btn { position: relative; }
+
+/* ---------------------------------------------------------------------------
+   二、输入框 / 下拉框（input 269×33 / select 204×33 / select-arrow 35×32）
+   --------------------------------------------------------------------------- */
+html body .menu-panel input[type="search"],
+html body .menu-panel input[type="text"],
+html body .menu-panel input[type="number"],
+/* R109：小地图设置浮层与原设置面板同属顶部菜单，输入框沿用同一套 XP 位图皮肤 */
+html body .app-mini-panel input[type="text"],
+html body .app-mini-panel input[type="number"],
+html body .wiki-search,
+html body .task-search-wrap input,
+html body #search,
+/* 工作台里的输入框按父级选择器匹配，才能压过 .loadout-workbench .lw-search 这类双类规则 */
+html body .loadout-workbench .lw-search,
+html body .loadout-workbench .lw-num,
+html body .loadout-workbench .lw-fl input,
+html body .gun-workbench .lw-search,
+html body .gun-workbench .gw-lvlnum,
+html body .am-workbench .am-search,
+html body #sens-input,
+html body .gw-prof-f input,
+html body .gw-cand-search {
+  box-sizing: border-box;
+  height: 31px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("input.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  outline: none;
+}
+html body .menu-panel input:focus,
+html body .app-mini-panel input:focus,
+html body .wiki-search:focus,
+html body .task-search-wrap input:focus,
+html body #search:focus,
+html body .loadout-workbench .lw-search:focus,
+html body .loadout-workbench .lw-num:focus,
+html body .loadout-workbench .lw-fl input:focus,
+html body .gun-workbench .lw-search:focus,
+html body .gun-workbench .gw-lvlnum:focus,
+html body .am-workbench .am-search:focus,
+html body #sens-input:focus,
+html body .gw-prof-f input:focus {
+  border-image-source: url("input.png");
+  box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55);
+}
+html body .menu-panel ::placeholder,
+html body .app-mini-panel ::placeholder,
+html body .task-search-wrap ::placeholder,
+html body .lw-search::placeholder,
+html body #search::placeholder { color: #6f6d5c; opacity: 1; } /* 3.44→5.23，占位仍需 ≥4.5 */
+
+html body #map-list,
+html body .menu-panel select,
+html body .app-mini-panel select,
+html body .ov-row select,
+html body .loadout-workbench .lw-fl select,
+html body .gun-workbench .gw-lvsel select,
+html body .gun-workbench .gw-ref select,
+html body .am-workbench #am-maxdist,
+html body .am-workbench .am-side select {
+  box-sizing: border-box;
+  height: 33px;
+  padding: 0 42px 0 8px;
+  border: 5px solid transparent;
+  border-image: url("select.png") 5 fill / 5px stretch;
+  background-color: transparent;
+  background-image: url("select-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 3px center;
+  background-size: 35px 32px;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+html body #map-list option,
+html body .app-mini-panel select option,
+html body .menu-panel select option { color: #23231b; background: var(--ui-color-surface-raised); }
+
+/* R212：右侧任务面板的四选一单选组已换成图层勾选，两条间距规则随之撤除。 */
+/* 弹药右栏很窄，24px 复选框把 "only TraderLvl" 挤出去了，允许文字换行 */
+html body .am-workbench .am-chk { flex-wrap: wrap; row-gap: 2px; line-height: 1.2; }
+
+/* ---------------------------------------------------------------------------
+   三、复选框 / 单选（整件位图，24×24）
+   --------------------------------------------------------------------------- */
+html body input[type="checkbox"],
+html body input[type="radio"] {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: url("check-off.png") no-repeat center / 100% 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  flex: none;
+}
+html body input[type="checkbox"]:checked { background-image: url("check-on.png"); }
+html body input[type="checkbox"]:indeterminate { background-image: url("check-indeterminate.png"); }
+html body input[type="radio"] { background-image: url("radio-off.png"); }
+html body input[type="radio"]:checked { background-image: url("radio-on.png"); }
+html body input[type="checkbox"]:focus-visible,
+html body input[type="radio"]:focus-visible {
+  outline: 1px dotted #1a1a16;
+  outline-offset: 1px;
+}
+
+/* ---------------------------------------------------------------------------
+   四、进度条框（progress-frame 227×21，内部蓝色填充仍由原 .gw-bar-fill 负责）
+   --------------------------------------------------------------------------- */
+html body .gun-workbench .gw-bar-track {
+  box-sizing: border-box;
+  height: 15px;
+  border: 5px solid transparent;
+  border-image: url("progress-frame.png") 5 fill / 5px stretch;
+  background: transparent;
+}
+html body .gun-workbench .gw-bar-fill { left: 0; right: auto; top: 0; bottom: 0; }
+html body .gun-workbench .gw-bar-seg { top: 0; bottom: 0; }
+
+/* ---------------------------------------------------------------------------
+   五、分组框（groupbox 280×154）：侧栏每一个 .block 变成 XP 分组框
+   --------------------------------------------------------------------------- */
+/* R103：上切片必须是 7，不能是 5。
+   groupbox.png 的凹槽是第 1-2 行（黑）+ 第 5 行（灰，亮度约 102）；slice 5 会把第 5 行
+   留在中间区域，而中间区域会被纵向拉伸——图层块越高，这一行就被拉得越厚，
+   在「图层」标题下方出现一条随高度增长的黑边（实测 200/500/900px 高时暗带 7/11/17px）。
+   上切片改成 7 后凹槽整条归入上边框，中间从第 7 行（亮米色）开始，拉伸不再产生暗带
+   （同三档高度实测恒为 5px，即 groupbox 上边框本身的厚度）；
+   右/下/左仍保持 5，边框外观不变。 */
+html body .panel section.block {
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  border-image: url("groupbox.png") 7 5 5 5 fill / 5px stretch;
+  padding: 12px; /* 10 12 12 → 12，面板内边距统一 */
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   六、标题牌 / 标签页（titlebar 719×36 / plaque-2 240×39 / plaque-3 183×39
+                / tab-active 111×36 / tab-inactive 88×30）
+   --------------------------------------------------------------------------- */
+/* 侧栏品牌条里的标题做成 plaque-3 米色牌，压在蓝色标题栏上 */
+html body .brand h1 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 39px;
+  margin: 0 0 2px;
+  padding: 0 18px 0 26px;
+  border: 5px solid transparent;
+  border-image: url("plaque-3.png") 5 5 5 14 fill / 5px 5px 5px 14px stretch;
+  background: transparent;
+  color: #23231b;
+  font: bold 13px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  text-shadow: none;
+}
+html body .task-panel-head h2 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 39px;
+  padding: 0 22px 0 26px;
+  border: 5px solid transparent;
+  border-image: url("plaque-2.png") 5 5 5 14 fill / 5px 5px 5px 14px stretch;
+  background: transparent;
+  color: #23231b;
+}
+
+/* 顶部视图切换（R81 起改为 .view-toolbar 分组工具条，样式见文件末尾「十、主工具条」） */
+
+/* 弹药视图标签页：26px 三态位图（120×26）
+   三件源图实测同尺寸、alpha 轮廓 IoU≈1.00，所以三态统一 26px、同倒角；
+   旧版 inactive 30 / active 36 会把 26px 的工具条顶穿。
+   整张高度 1:1（slice 上下 0），只在水平方向拉中间带，左右 8px 端帽不缩放。
+   外框宽度与旧版对齐：border 8+8 + padding 9+9 = 34px，与旧 5+5+12+12 相同。 */
+html body .am-workbench .am-tab {
+  box-sizing: border-box;
+  height: 26px;
+  padding: 0 9px;
+  border: 0 solid transparent;
+  border-width: 0 8px;
+  border-image: url("tab-inactive-26.png") 0 8 0 8 fill / 0 8px 0 8px stretch;
+  border-radius: 0;
+  background: transparent;
+  color: #646152; /* 未选中标签 5.10:1（米色面 214） */
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+}
+html body .am-workbench .am-tab:hover {
+  border-image-source: url("tab-hover-26.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .am-workbench .am-tab[aria-selected="true"] {
+  border-image-source: url("tab-active-26.png");
+  background: transparent;
+  color: #23231b;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   七、滚动条 / 滑块
+   scroll-v-track 22×171 纵向 repeat；thumb 23×51；箭头 28×27（up/down 三态）
+   横向沿用原有 scroll-h-track / scroll-h-thumb。
+   --------------------------------------------------------------------------- */
+/* 这些容器原来写了 scrollbar-width: thin（8–12px 的细条），标准属性会压过
+   ::-webkit-scrollbar 自定义样式，导致位图滚动条根本不生效。先恢复 auto。 */
+html body .db4-scroll,
+html body .db4-rail,
+html body .db4-strip,
+html body .tbl-scroll,
+html body .am-side,
+html body .lw-side,
+html body .am-sim-cfg,
+html body .panel,
+html body .task-list { scrollbar-width: auto; }
+
+html body ::-webkit-scrollbar { width: 22px; height: 21px; }
+/* 各模块自己的 8px / 12px 细条规则要把宽度拉回 22px，否则位图被二次缩放 */
+html body .db4-scroll::-webkit-scrollbar,
+html body .db4-rail::-webkit-scrollbar,
+html body .db4-strip::-webkit-scrollbar,
+html body .tbl-scroll::-webkit-scrollbar,
+html body .am-side::-webkit-scrollbar,
+html body .lw-side::-webkit-scrollbar,
+html body .am-sim-cfg::-webkit-scrollbar { width: 22px; height: 21px; }
+html body .db4-scroll::-webkit-scrollbar-track,
+html body .db4-rail::-webkit-scrollbar-track,
+html body .db4-strip::-webkit-scrollbar-track,
+html body .tbl-scroll::-webkit-scrollbar-track,
+html body .am-side::-webkit-scrollbar-track,
+html body .lw-side::-webkit-scrollbar-track,
+html body .am-sim-cfg::-webkit-scrollbar-track {
+  background: transparent;
+  border: 18px solid transparent;
+  border-image: url("scroll-v-track.png") 18 0 18 0 fill / 18px 0 repeat;
+}
+html body .db4-scroll::-webkit-scrollbar-thumb,
+html body .db4-rail::-webkit-scrollbar-thumb,
+html body .db4-strip::-webkit-scrollbar-thumb,
+html body .tbl-scroll::-webkit-scrollbar-thumb,
+html body .am-side::-webkit-scrollbar-thumb,
+html body .lw-side::-webkit-scrollbar-thumb,
+html body .am-sim-cfg::-webkit-scrollbar-thumb {
+  /* R96 A：三层背景 —— 顶帽 / 底帽 / 1px 中段。中段必须放最后一层（最底），
+     否则 repeat-y 会盖住底帽；帽高固定成 px，滑块再长端头也不变形 */
+  background-color: transparent;
+  background-image: url("scroll-v-thumb-cap-top.png"), url("scroll-v-thumb-cap-bottom.png"), url("scroll-v-thumb-mid.png");
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  background-position: center top, center bottom, center top;
+  background-size: 100% 3px, 100% 4px, 100% 1px;
+}
+html body .db4-scroll::-webkit-scrollbar-thumb:hover,
+html body .db4-rail::-webkit-scrollbar-thumb:hover,
+html body .db4-strip::-webkit-scrollbar-thumb:hover,
+html body .tbl-scroll::-webkit-scrollbar-thumb:hover,
+html body .am-side::-webkit-scrollbar-thumb:hover,
+html body .lw-side::-webkit-scrollbar-thumb:hover,
+html body .am-sim-cfg::-webkit-scrollbar-thumb:hover {
+  background-image: url("scroll-v-thumb-cap-top-hover.png"), url("scroll-v-thumb-cap-bottom-hover.png"), url("scroll-v-thumb-mid-hover.png");
+}
+html body .db4-scroll::-webkit-scrollbar-thumb:active,
+html body .db4-rail::-webkit-scrollbar-thumb:active,
+html body .db4-strip::-webkit-scrollbar-thumb:active,
+html body .tbl-scroll::-webkit-scrollbar-thumb:active,
+html body .am-side::-webkit-scrollbar-thumb:active,
+html body .lw-side::-webkit-scrollbar-thumb:active,
+html body .am-sim-cfg::-webkit-scrollbar-thumb:active {
+  background-image: url("scroll-v-thumb-cap-top-pressed.png"), url("scroll-v-thumb-cap-bottom-pressed.png"), url("scroll-v-thumb-mid-pressed.png");
+}
+/* 箭头底板是空白的，三角是独立的 20×11 glyph 件：两层背景叠加，
+   glyph 按 1x 原尺寸 20×11 居中，底板才做 28→22 的横向压缩 */
+html body .db4-scroll::-webkit-scrollbar-button:vertical:start:decrement,
+html body .db4-rail::-webkit-scrollbar-button:vertical:start:decrement,
+html body .tbl-scroll::-webkit-scrollbar-button:vertical:start:decrement,
+html body .am-side::-webkit-scrollbar-button:vertical:start:decrement,
+html body .lw-side::-webkit-scrollbar-button:vertical:start:decrement,
+html body .am-sim-cfg::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block; width: 22px; height: 27px;
+  background-image: url("scroll-v-glyph-up.png"), url("scroll-v-arrow-up.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 8px, center;
+  background-size: 20px 11px, 22px 27px;
+}
+html body .db4-scroll::-webkit-scrollbar-button:vertical:end:increment,
+html body .db4-rail::-webkit-scrollbar-button:vertical:end:increment,
+html body .tbl-scroll::-webkit-scrollbar-button:vertical:end:increment,
+html body .am-side::-webkit-scrollbar-button:vertical:end:increment,
+html body .lw-side::-webkit-scrollbar-button:vertical:end:increment,
+html body .am-sim-cfg::-webkit-scrollbar-button:vertical:end:increment {
+  display: block; width: 22px; height: 27px;
+  /* R96 C：三角已烘焙进底板（15×10 / 距顶 9），不再叠 glyph 层 */
+  background-image: url("scroll-v-arrow-down-normal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 27px;
+}
+html body .db4-scroll::-webkit-scrollbar-button:vertical:end:increment:hover,
+html body .db4-rail::-webkit-scrollbar-button:vertical:end:increment:hover,
+html body .tbl-scroll::-webkit-scrollbar-button:vertical:end:increment:hover,
+html body .am-side::-webkit-scrollbar-button:vertical:end:increment:hover,
+html body .lw-side::-webkit-scrollbar-button:vertical:end:increment:hover,
+html body .am-sim-cfg::-webkit-scrollbar-button:vertical:end:increment:hover {
+  background-image: url("scroll-v-arrow-down-hover.png");
+}
+html body ::-webkit-scrollbar-track {
+  background: transparent;
+  border: 18px solid transparent;
+  border-image: url("scroll-v-track.png") 18 0 18 0 fill / 18px 0 repeat;
+}
+html body ::-webkit-scrollbar-thumb {
+  /* R96 A：三层背景，顶帽 3px / 底帽 4px / 中段 1px 全部固定 px；
+     中段放最后一层（最底），否则 repeat-y 会盖住底帽 */
+  background-color: transparent;
+  background-image: url("scroll-v-thumb-cap-top.png"), url("scroll-v-thumb-cap-bottom.png"), url("scroll-v-thumb-mid.png");
+  background-repeat: no-repeat, no-repeat, repeat-y;
+  background-position: center top, center bottom, center top;
+  background-size: 100% 3px, 100% 4px, 100% 1px;
+}
+html body ::-webkit-scrollbar-thumb:hover {
+  background-image: url("scroll-v-thumb-cap-top-hover.png"), url("scroll-v-thumb-cap-bottom-hover.png"), url("scroll-v-thumb-mid-hover.png");
+}
+html body ::-webkit-scrollbar-thumb:active {
+  background-image: url("scroll-v-thumb-cap-top-pressed.png"), url("scroll-v-thumb-cap-bottom-pressed.png"), url("scroll-v-thumb-mid-pressed.png");
+}
+html body ::-webkit-scrollbar-button:vertical:start:decrement {
+  display: block;
+  width: 22px;
+  height: 27px;
+  background-image: url("scroll-v-glyph-up.png"), url("scroll-v-arrow-up.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 8px, center;
+  background-size: 20px 11px, 22px 27px;
+}
+html body ::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
+  width: 22px;
+  height: 27px;
+  /* R96 C：新底板把 15×10 三角烘焙进去，单层即可，不再叠 glyph */
+  background-image: url("scroll-v-arrow-down-normal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 22px 27px;
+}
+html body ::-webkit-scrollbar-button:vertical:start:decrement:hover {
+  background-image: url("scroll-v-glyph-up.png"), url("scroll-v-arrow-up-hover.png");
+}
+html body ::-webkit-scrollbar-button:vertical:end:increment:hover {
+  background-image: url("scroll-v-arrow-down-hover.png");
+}
+/* 横向滚动条：track 71×21 / thumb 44×21（常态沿用上一批的 scroll-h-thumb，
+   悬停 / 按下为本批新件；滑块坐标与尺寸一致，可直接共用）。
+   左右箭头为本批新增（scroll-h-arrow-left / right，21×21，三角已烘焙，无 hover/pressed 态）。 */
+html body ::-webkit-scrollbar-corner { background: #e4e1d2; }
+html body ::-webkit-scrollbar:horizontal { height: 21px; }
+html body ::-webkit-scrollbar-track:horizontal { background: url("scroll-h-track.png") repeat-x; }
+html body ::-webkit-scrollbar-thumb:horizontal {
+  /* R96 A：左帽 3px / 右帽 3px / 中段 1px 固定 px；中段放最后一层，避免盖住右帽 */
+  background-color: transparent;
+  background-image: url("scroll-h-thumb-cap-left.png"), url("scroll-h-thumb-cap-right.png"), url("scroll-h-thumb-mid.png");
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: left center, right center, left center;
+  background-size: 3px 100%, 3px 100%, 1px 100%;
+}
+html body ::-webkit-scrollbar-thumb:horizontal:hover {
+  background-image: url("scroll-h-thumb-cap-left-hover.png"), url("scroll-h-thumb-cap-right-hover.png"), url("scroll-h-thumb-mid-hover.png");
+}
+html body ::-webkit-scrollbar-thumb:horizontal:active {
+  background-image: url("scroll-h-thumb-cap-left-pressed.png"), url("scroll-h-thumb-cap-right-pressed.png"), url("scroll-h-thumb-mid-pressed.png");
+}
+html body ::-webkit-scrollbar-button:horizontal { display: none; }
+/* ?mini=1 保持原样：横向箭头只在主窗口出现（mini 窗口像素零变化） */
+html:not(.tk-mini-root) body:not(.tk-mini) ::-webkit-scrollbar-button:horizontal:decrement {
+  display: block; width: 21px; height: 21px;
+  background: url("scroll-h-arrow-left.png") no-repeat center / 21px 21px;
+}
+html:not(.tk-mini-root) body:not(.tk-mini) ::-webkit-scrollbar-button:horizontal:increment {
+  display: block; width: 21px; height: 21px;
+  background: url("scroll-h-arrow-right.png") no-repeat center / 21px 21px;
+}
+
+/* 水平滑块：track 208×15 / thumb 19×33 */
+html body input[type="range"] {
+  box-sizing: border-box;
+  height: 33px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+html body input[type="range"]::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  height: 15px;
+  border: 6px solid transparent;
+  border-image: url("range-track.png") 6 8 6 8 fill / 6px 8px stretch;
+  background: transparent;
+}
+html body input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 19px;
+  height: 33px;
+  margin-top: -9px;
+  border: 0;
+  background: url("range-thumb.png") no-repeat center / 100% 100%;
+}
+/* R91：拇指三态（常态 19×33 / 悬停 / 按下），尺寸与旧 thumb.png 一致，居中修正沿用下面两条 */
+html body input[type="range"]:hover::-webkit-slider-thumb { background-image: url("range-thumb-hover.png"); }
+html body input[type="range"]:active::-webkit-slider-thumb { background-image: url("range-thumb-pressed.png"); }
+html body input[type="range"]:focus-visible { outline: 1px dotted #1a1a16; outline-offset: 1px; }
+/* 第六条：侧栏底部 #display-block 里的三条滑块统一垂直居中。
+   第九条：把截图放大 4 倍 + 纯色探针（红拇指 / 绿轨道 / 蓝输入框）量过：
+   input 高 33px，轨道可视区（border-box）15px，上下各 6px 透明边框；
+   Chrome 自定义轨道的拇指顶边默认对齐「轨道内容盒顶边」（= 轨道顶 + 6px），
+   所以 margin-top:0 时 33px 拇指中心比轨道中线低 15px，下沿还会被下一行背景裁掉。
+   居中准确值 = (15 - 33) / 2 - 6 = -15px：此时拇指上下边正好与 input 的 33px 重合。
+   三条滑块共用这一条选择器，小浮窗设置等其它滑条仍用上面的 -9px。 */
+html body #display-block .hud-scale input[type="range"]::-webkit-slider-thumb { margin-top: -15px; }
+html body #display-block .hud-scale input[type="range"]::-moz-range-thumb { margin-top: 0; }
+/* R109：小地图设置浮层里的四条滑条沿用同一套 #display-block 网格与居中修正 */
+html body .app-mini-panel .hud-scale input[type="range"]::-webkit-slider-thumb { margin-top: -15px; }
+html body .app-mini-panel .hud-scale input[type="range"]::-moz-range-thumb { margin-top: 0; }
+
+/* ---------------------------------------------------------------------------
+   八、窗口三键：关闭键三张位图是橄榄黄（不能用），这里用 xp-ui.css 的
+   CSS 重建版本（红色关闭键），由 HTML 里加的 .xp-winbtn--close 生效。
+   这里只补位置与尺寸，保证在弹窗标题栏里对齐。
+   --------------------------------------------------------------------------- */
+/* 个人属性弹窗的标题栏换成 titlebar 位图（36×719，5px 九宫格 stretch） */
+html body .gw-prof-head {
+  box-sizing: border-box;
+  height: 38px;
+  padding: 4px 8px;
+  border: 5px solid transparent;
+  border-image: url("titlebar.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #2c2c22;
+}
+html body .gw-prof-title { color: #2c2c22; }
+
+html body .gw-prof-x.xp-winbtn,
+html body .am-modal-x.xp-winbtn,
+html body .gs-x.xp-winbtn {
+  width: 27px;
+  height: 25px;
+  padding: 0;
+  border-radius: var(--ui-radius-btn);
+  position: relative;
+  flex: none;
+}
+html body .gs-x.xp-winbtn { margin-left: 0; }
+html body .am-modal-x.xp-winbtn { margin-left: 8px; }
+
+/* 主题里的 `html .am-modal-x`、`.gun-workbench .gs-x` 等多类规则会压过单类
+   `.xp-winbtn--close`，把关闭键退回白底/透明底。这里用 html body + 双类把红底与叉线
+   提上来，保证个人属性 / 弹药详情 / 枪匠三处统一是 CSS 重建的红色关闭键
+   （橄榄黄的三张关闭键位图仍未启用）。 */
+html body .xp-winbtn.xp-winbtn--close {
+  border: 1px solid #6f4139;
+  background: linear-gradient(180deg, #edb2a2 0, #cf6f50 40%, #b54a30 100%);
+  box-shadow: inset 1px 1px 0 #fbe0d8, inset -1px -1px 0 #8b4030, 0 1px 1px rgba(0, 0, 0, .25);
+}
+html body .xp-winbtn.xp-winbtn--close:hover {
+  background: linear-gradient(180deg, #f8cbbc 0, #e08d70 40%, #c25c3f 100%);
+  border-color: #8a4a3c;
+}
+html body .xp-winbtn.xp-winbtn--close:active {
+  background: linear-gradient(180deg, #b54a30 0, #cf6f50 60%, #edb2a2 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .35), inset -1px -1px 0 #fbe0d8;
+}
+/* R80：叉线改成 XP 原版白色叉 + 1px 深色阴影（深色叉在红底上对比偏弱） */
+html body .xp-winbtn.xp-winbtn--close::before,
+html body .xp-winbtn.xp-winbtn--close::after {
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(58, 20, 12, .85), 0 0 1px rgba(58, 20, 12, .55);
+}
+
+/* ================================================================ 九、顶部菜单栏（R80）
+   主导航优先：项目名 + 工作区切换 + 低频应用设置 + 模式与账号版本。
+   菜单项全部落到真实动作（见 js/app-menubar.js）。
+   菜单栏参与 body 的纵向 flex，地图工作区自动下移，不覆盖地图可视区。 */
+.app-menubar {
+  --amh: 34px;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--amh);
+  padding: 0 6px; /* 左右对齐（原 0 6px 0 4px，品牌块不再少 2px） */
+  background: linear-gradient(#fbfaf5, var(--ui-color-surface));
+  border-bottom: 1px solid var(--xp-border);
+  box-shadow: inset 0 1px 0 #fff;
+  user-select: none;
+}
+
+/* R88：品牌徽标挪进菜单栏最左侧，与菜单项同排。
+   蓝底保留，高度锁在 34px 菜单栏内，不撑高菜单栏；
+   文字直接写在蓝底上（去掉 plaque-3 米色牌，不加第二层背景/边框/高光）。 */
+html body .app-menubar .app-brand {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  /* 蓝底黑字需 ≥4.5:1：上端由 #0058ee 提亮到 #1a6ff5（3.63→4.64），下端不变 */
+  background: linear-gradient(#1a6ff5, #3d9cf5);
+  border-bottom: 0;
+}
+html body .app-menubar .app-brand h1 {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-image: none;
+  background: none;
+  color: #000;
+  font: 700 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  letter-spacing: .3px;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+/* R89 第七条：收起 / 展开键统一成项目里 XP 位图按钮的 30×30 单字规格，
+   切换前后尺寸不跳变；收起键仍浮在侧栏右上角、不额外占整行高度，
+   展开键位置保持在 stage 左上角不变。 */
+html body #sidebar > .sidebar-collapse,
+html body .sidebar-expand {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 13px;
+}
+
+/* 顶层菜单按钮：XP 工具条按钮的平面态，悬停浅蓝、展开蓝色选中。
+   .app-menu 撑满整条高度，下拉面板就能从菜单栏下缘（而不是按钮下缘）展开。 */
+.app-menus { display: flex; align-items: stretch; gap: 1px; order: 2; }
+.app-menu { position: relative; display: flex; align-items: center; height: 100%; }
+.app-menu-btn {
+  height: 24px;
+  padding: 0 8px; /* 9→8，按钮左右内边距归 8 */
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--xp-text);
+  font: inherit;
+  cursor: pointer;
+}
+.app-menu-btn:hover { background: #e8f0ff; border-color: #a9c0e6; }
+.app-menu-btn.open { background: var(--xp-sel); border-color: var(--ui-color-focus); color: var(--ui-color-text-inverse); }
+.app-menu-btn:focus-visible { outline: 1px dotted #000; outline-offset: -3px; }
+
+/* 下拉面板：XP 弹出菜单的白底 + 细边 + 硬阴影；条目悬停走系统蓝 */
+.app-menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 95;
+  min-width: 210px;
+  margin-top: 1px;
+  padding: 4px; /* 3→4，回到间距阶梯 */
+  background: var(--ui-color-surface-raised);
+  border: 1px solid var(--xp-border);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .32);
+}
+.app-menu-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 8px; /* 10→8，归块间档 */
+  width: 100%;
+  min-height: 24px;
+  padding: 4px 12px 4px 24px; /* 10→12、22→24，左右与分组档对齐 */
+  border: 0;
+  background: transparent;
+  color: var(--xp-text);
+  font: inherit;
+  text-align: left;
+  white-space: nowrap; /* 中文标签不折行：面板按内容自动加宽，而不是把「战局与任务」压成三行 */
+  cursor: pointer;
+}
+.app-menu-item .app-menu-hint {
+  margin-left: auto;
+  font-size: 11px;
+  color: #6b6b60;
+  white-space: nowrap;
+}
+.app-menu-item:hover,
+.app-menu-item:focus-visible {
+  background: var(--xp-sel);
+  color: var(--ui-color-text-inverse);
+  outline: none;
+}
+.app-menu-item:hover .app-menu-hint,
+.app-menu-item:focus-visible .app-menu-hint { color: #dbe7ff; }
+.app-menu-item.is-current::before {
+  content: "✓";
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  font-weight: 700;
+}
+
+/* 右侧：模式 + 价格来源、账号版本、运行版本；账号版本是全应用唯一入口 */
+.app-menubar-right {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  min-width: 0;
+}
+/* 右簇固定顺序：账号版本 → 模式 → 运行版本（style.css 的窄屏 order 会打乱，这里显式定序）。
+   R87：账号版本入口移到模式条左侧，与 PvP/PvE/PvPS 选择栏同排。
+   width:auto 覆盖 style.css ≤860 的 width:100%——那条会把账号入口挤出视口（实测 x=864）。 */
+.app-menubar .scope-cluster {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  order: 2;
+  width: auto;
+  flex: 0 1 auto;
+}
+.app-menubar .game-mode-bar { margin-left: 0; }
+.app-menubar .game-mode-bar .gm-btn { padding: 1px 8px; }
+.app-menubar .app-account-wrap { flex: 0 0 auto; order: 1; }
+
+/* R87：模式选择栏右侧的模式 / 快照说明文字不再显示。
+   只做「视觉隐藏」：元素、id、aria 属性与运行期状态全部保留——
+   #game-mode-label 仍由 game-mode.js 写入「模式：PvPS（赛季服）」，
+   #price-source-badge 是 aria-live 状态区（显示/隐藏只影响可见性，不摘除节点）。
+   用 clip 式视觉隐藏而不是 display:none：display:none 会把 live region 移出无障碍树，
+   状态更新就不会被读屏播报，等于把语义一起删了。 */
+.app-menubar .game-mode-bar .gm-label,
+.app-menubar .price-source-badge {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  pointer-events: none;
+}
+
+.app-menubar .app-account-btn {
+  height: 26px;
+  max-width: 158px;
+  padding: 0 8px; /* 9→8 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 账号权益卡：按菜单栏下缘定位（.menu-wrap 只有 30px 高，top:100% 会压住菜单栏底边）。
+   窄屏（≤860）沿用 style.css 的视口固定布局，只把 top 让过新增的菜单栏。 */
+@media (min-width: 861px) {
+  .app-menubar .app-account-wrap > .account-panel {
+    position: fixed;
+    top: calc(var(--amh) + 3px);
+    right: 6px;
+    left: auto;
+  }
+}
+@media (max-width: 860px) {
+  .app-menubar .account-panel { top: calc(var(--amh) + 50px); }
+}
+.app-menubar #build-rev { margin-left: 0; order: 3; }
+.app-menubar .app-panel-anchors { order: 4; }
+.app-menubar .app-menu-status {
+  padding: 2px 8px;
+  border: 1px solid #b6c9a8;
+  background: #f3f8e9;
+  color: #4c6b2f;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* 隐藏锚点：原有按钮 hidden，面板 fixed 贴到菜单栏下方右侧（仍由 app.js 的 bindMenu 控制显隐） */
+.app-panel-anchors { display: flex; align-items: center; width: 0; }
+.app-panel-anchors .menu-wrap { width: 0; height: 0; }
+.app-panel-anchors .menu-panel {
+  position: fixed;
+  top: var(--amh);
+  right: 6px;
+  left: auto;
+  margin-top: 2px;
+}
+
+/* 窄屏：先收说明文字与价格/版本徽标，保留菜单、模式与版本入口 */
+@media (max-width: 1180px) {
+  .app-menubar .app-menu-hint { display: none; }
+  .app-menubar #price-source-badge { display: none; }
+}
+@media (max-width: 900px) {
+  .app-menubar { gap: 5px; padding-right: 4px; }
+  /* R301：徽标改显示数据截止日期后只有 ~130px，860 也放得下，不再隐藏（fit 实测无裁切） */
+  .app-menubar #build-rev { padding: 0 5px; font-size: 10px; }
+  .app-menubar .app-menu-btn { padding: 0 7px; }
+  /* R88：窄屏徽标只收字号（已无内嵌牌，内边距归零），855px 下不横向溢出 */
+  html body .app-menubar .app-brand h1 { font-size: 11px; }
+  /* 窄屏去掉重复的模式说明（按钮自身已高亮），避免「模式：PvP（常…」被截断 */
+  .app-menubar .game-mode-bar .gm-label { display: none; }
+}
+
+/* ?mini=1 的小地图窗口不带菜单栏（同时也兜底：JS 在 mini 下不会迁 DOM） */
+body.tk-mini #app-menubar,
+html.tk-mini-root #app-menubar { display: none !important; }
+
+/* ---------------------------------------------------------------------------
+   十、主工具条（R81）：旧的 41px 视图 tab 行 → Adobe 式分组工具条
+   与菜单栏同一条 XP 带（渐变面 + 顶部 1px 暗线 + 白色高光）；
+   按钮平时扁平，悬停用 btn-hover 位图，当前视图用 btn-pressed 位图（不再叠高亮条）。
+   高度写死 35px（含 1px 分隔线 + 1px 下边框），地图容器随 flex 流自动下移，不留空白。
+   --------------------------------------------------------------------------- */
+html body .app-menubar { border-bottom: 0; } /* 分隔线交给工具条顶边，避免出现 2px 双暗线 */
+
+html body #menubar {
+  box-sizing: border-box;
+  height: 35px;
+  min-height: 35px;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 0 6px;
+  overflow: hidden;
+  /* 接着菜单栏下缘的 var(--ui-color-surface) 继续往下压，两条读作同一条 XP 带，而不是另起一行白底 */
+  background: linear-gradient(var(--ui-color-surface), #e3dfce);
+  border-top: 1px solid var(--ui-color-border);      /* XP 工具条分隔线：1px 暗 */
+  border-bottom: 1px solid var(--xp-border);
+  box-shadow: inset 0 1px 0 #ffffff;  /* 暗线下的 1px 高光 */
+}
+
+html body .view-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html body .view-toolbar .vt-group {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+html body .view-toolbar .vt-sep {
+  box-sizing: border-box;
+  flex: none;
+  width: 2px;
+  height: 22px;
+  margin: 0 5px;
+  background: linear-gradient(90deg, var(--ui-color-border) 0 1px, #ffffff 1px 2px);
+}
+/* R265：二级工具条上的全局价格口径（最新 / 24h 均价 / 7 日均价）。
+   与「市场」之间留 4 个字符的空隙（4ch）。 */
+html body .view-toolbar .vt-prices {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+  margin-left: 4ch;
+}
+html body .view-toolbar .vt-price {
+  box-sizing: border-box;
+  height: 22px;
+  padding: 0 8px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #1b1b18;
+  border: 1px solid var(--ui-color-border, #919b9c);
+  border-radius: 3px;
+  background: linear-gradient(#ffffff, #f0f0ec);
+}
+html body .view-toolbar .vt-price:hover {
+  background: linear-gradient(#ffffff, #e6eefb);
+}
+html body .view-toolbar .vt-price[aria-checked="true"] {
+  font-weight: 600;
+  color: #0a2a5e;
+  border-color: #316ac5;
+  background: linear-gradient(#cfe2ff, #a9c9ff);
+}
+html body .view-toolbar .vt-price:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+/* R266：市场页的「获取最新数据 + 数据截止」移到二级工具条最右侧。 */
+html body .view-toolbar .vt-market-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+  min-width: 0;
+  /* R267：在价格口径按钮之后留 4 个字符的间距（用户要求再右移 4 个空位符）。 */
+  margin-left: 4ch;
+}
+
+html body .view-toolbar .view-btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* 5→4，图标↔文字行内档 */
+  height: 30px;
+  min-width: 0;
+  margin: 0;
+  padding: 0 4px;
+  border: 5px solid transparent;      /* 预留 5px 切片位：悬停/按下切换位图时图标不横向跳动 */
+  border-image: none;
+  border-radius: 0;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", "SimHei", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+html body .view-toolbar .view-btn:hover {
+  border-image: url("btn-hover.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+}
+html body .view-toolbar .view-btn[aria-selected="true"],
+html body .view-toolbar .view-btn[aria-selected="true"]:hover {
+  border-image: url("btn-pressed.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+}
+html body .view-toolbar .view-btn:focus-visible {
+  border-image: url("btn-focus.png") 5 fill / 5px stretch;
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+html body .view-toolbar .view-btn[aria-selected="true"]:focus-visible {
+  border-image: url("btn-pressed.png") 5 fill / 5px stretch;
+}
+
+html body .view-toolbar .vt-ico {
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: #23231b;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+}
+/* R94：五视图图标换成最后一板位图（16×16 画布，1:1 不缩放），内联 SVG 隐藏 */
+html body .view-toolbar #view-btn-map .vt-ico { background-image: url("icon-map.png"); }
+html body .view-toolbar #view-btn-tasks .vt-ico { background-image: url("icon-tasks.png"); }
+html body .view-toolbar #view-btn-ammo .vt-ico { background-image: url("icon-ammo.png"); }
+html body .view-toolbar #view-btn-gun .vt-ico { background-image: url("icon-gun.png"); }
+html body .view-toolbar #view-btn-loadout .vt-ico { background-image: url("icon-loadout.png"); }
+/* R271：市场按钮原来漏了图标规则（内联 SVG 又被下面这条 display:none 收掉），
+   于是「市场」只剩文字、左边空一格 16px —— 补一板同风格位图。 */
+html body .view-toolbar #view-btn-market .vt-ico { background-image: url("icon-market.png"); }
+/* R286：大盘按钮同样需要位图图标 —— `.vt-ico svg{display:none}` 会收掉内联 SVG，
+   漏规则就会像 R271 的市场按钮那样左边空一格。 */
+html body .view-toolbar #view-btn-market-board .vt-ico { background-image: url("icon-market-board.png"); }
+html body .view-toolbar .vt-ico svg { display: none; }
+html body .view-toolbar .vt-label {
+  display: block;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+/* 窄屏：工具条本身只有 5 个 2 字标签，860 不会溢出；
+   真到更窄时退化为纯图标 + title 提示（文字收进 0 宽，不占位也不截断）。 */
+@media (max-width: 560px) {
+  html body .view-toolbar .vt-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  html body .view-toolbar .view-btn { padding: 0 2px; }
+}
+
+/* ---------------------------------------------------------------------------
+   十一、上下文栏（R82）：第三行，随视图切换
+   架空槽里的控件由 js/app-menubar.js 从各视图原位迁来（换父级，不复制），
+   id / 事件 / 当前选档全部沿用；高度写死 36px，切视图时行高不塌不跳。
+   --------------------------------------------------------------------------- */
+html body #context-bar {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  height: 36px;
+  min-height: 36px;
+  padding: 0 6px;
+  /* 不裁剪：配枪搜索的结果下拉要从这一行往下探（窄屏才在下面的媒体查询里开滚动） */
+  overflow: visible;
+  position: relative;
+  z-index: 8;
+  background: linear-gradient(#f4f2e6, #e9e6d6);
+  border-bottom: 1px solid var(--xp-border);
+}
+
+/* 槽：只有当前视图那一个显示（hidden 由 syncContext 写），横向排一行 */
+html body .context-bar .cb-pane {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: none;
+  height: 100%;
+  min-width: 0;
+}
+html body .context-bar .cb-group {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 5→6，块内标准档 */
+  flex: none;
+  height: 100%;
+}
+html body .context-bar .cb-label {
+  flex: none;
+  padding: 0 1px 0 0;
+  color: #5a574d;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+html body .context-bar .cb-sep {
+  flex: none;
+  width: 2px;
+  height: 22px;
+  margin: 0 4px;
+  background: linear-gradient(90deg, var(--ui-color-border) 0 1px, #ffffff 1px 2px);
+}
+html body .context-bar .cb-empty {
+  color: #69675b; /* 5.06（亮端）/ 4.54（暗端） */
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+
+/* 迁上来的「地图 / 楼层」原本是 XP 分组框：进栏后退成一行，h2 变 11px 小标题 */
+html body .context-bar section.block.cb-src-block {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 5→6，块内标准档 */
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-image: none;
+  background: none;
+  box-shadow: none;
+}
+html body .context-bar section.block.cb-src-block > h2 {
+  margin: 0;
+  padding: 0 2px 0 0;
+  color: #5a574d;
+  font: 400 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+/* R211：地图上提后的分组占满侧栏对应的横向区间，使下拉右缘与左侧「图层」栏右缘齐平。
+   上下文栏有 2px 边框 + 6px 左内边距，故分组宽度取「侧栏宽 - 8px」；
+   侧栏自身还有 1px 右边框，下拉右缘正好落在该边框外沿（无头浏览器实测 300px）。
+   下拉吃掉小标题之外的全部剩余宽度，长地图名（如「塔科夫街区 · 19 撤离 · 2230 物资」）不再被截断。
+   底图说明文字已移除（见 index.html），这里不再需要 > p 的样式。 */
+html body .context-bar #cb-map > section.block.cb-src-block {
+  box-sizing: border-box;
+  width: calc(var(--eft-sidebar-w, 300px) - 8px);
+}
+html body .context-bar #floor-block::before {
+  content: "";
+  flex: none;
+  width: 2px;
+  height: 22px;
+  margin-right: 6px;
+  background: linear-gradient(90deg, var(--ui-color-border) 0 1px, #ffffff 1px 2px);
+}
+html body .context-bar #map-list {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+}
+
+/* 楼层按钮：工具条同款位图（平时平面、悬停 hover、当前层 pressed） */
+html body .context-bar .floor-list {
+  flex: none;
+  flex-wrap: nowrap;
+  gap: 2px;
+  margin: 0;
+}
+html body .context-bar .floor-item {
+  box-sizing: border-box;
+  height: 24px;
+  padding: 0 6px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  box-shadow: none;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+html body .context-bar .floor-item:hover {
+  border-color: transparent;
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+}
+html body .context-bar .floor-item[data-on="true"] {
+  border-color: transparent;
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+  box-shadow: none;
+}
+html body .context-bar .floor-opts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+}
+html body .context-bar .floor-opts .toggle {
+  display: inline-flex;
+  flex: none;
+  width: auto;
+  height: 24px;
+  gap: 4px; /* 5→4，勾选框↔文字行内档 */
+  align-items: center;
+}
+html body .context-bar .floor-opts label {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: #3b3b31;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+
+/* 输入 / 下拉：沿用 XP 位图，高度按栏内可用空间收缩到 31 / 33px */
+html body .context-bar input[type="search"],
+html body .context-bar input[type="text"] {
+  box-sizing: border-box;
+  flex: none;
+  width: 200px;
+  height: 31px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("input.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  outline: none;
+}
+html body .context-bar input[type="search"]:focus,
+html body .context-bar input[type="text"]:focus {
+  box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55);
+}
+html body .context-bar select {
+  box-sizing: border-box;
+  flex: none;
+  height: 33px;
+  padding: 0 42px 0 8px;
+  border: 5px solid transparent;
+  border-image: url("select.png") 5 fill / 5px stretch;
+  background-color: transparent;
+  background-image: url("select-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 3px center;
+  background-size: 35px 32px;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+html body .context-bar select option { color: #23231b; background: var(--ui-color-surface-raised); }
+/* 任务栏的「商人 / 状态 / 地图」保留原来的小标签，只压成一行 */
+html body .context-bar .tk-sel { flex: none; gap: 4px; }
+html body .context-bar .tk-sel-label {
+  color: #5a574d;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+html body .context-bar .tk-sel select { min-height: 33px; }
+
+/* 弹药：价格口径的 h3 与 RESET 一并上提，h3 当小标题 */
+html body .context-bar .am-side-head {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0;
+}
+html body .context-bar .am-side-head h3,
+html body .context-bar .am-side-head .am-h3 {
+  margin: 0;
+  color: #5a574d;
+  font: 400 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+html body .context-bar .am-side-head button { margin: 0; }
+html body .context-bar #am-price-mode,
+html body .context-bar #am-units { flex: none; gap: 2px; }
+
+/* 配枪：搜索框与结果下拉一起搬（下拉靠 .gw-pick 的定位，栏本身不裁剪）；
+   类别 / 射击模式两组芯片压成一行 */
+html body .context-bar .gw-pick { flex: none; }
+html body .context-bar .gw-kindchips,
+html body .context-bar .gw-firechips {
+  display: flex;
+  flex: none;
+  gap: 3px;
+  flex-wrap: nowrap;
+}
+html body .context-bar .gw-chip { white-space: nowrap; }
+
+/* 配装：7 个浏览分类 + 名称筛选 */
+html body .context-bar .lw-cats {
+  display: flex;
+  flex: none;
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+html body .context-bar .lw-cats button,
+html body .context-bar .lw-cats .lw-cat { white-space: nowrap; }
+
+/* 860 及以下：允许这一行横向滚动（滚动条压到 7px，不占内容区高度），
+   行高仍是 36px，下面的工作区高度不受影响。 */
+@media (max-width: 900px) {
+  html body #context-bar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+  html body #context-bar::-webkit-scrollbar { height: 7px; }
+  html body #context-bar::-webkit-scrollbar-track { background: #dedacb; }
+  html body #context-bar::-webkit-scrollbar-thumb {
+    background: linear-gradient(#fdfdfb, #cfcbba);
+    border: 1px solid var(--ui-color-border);
+  }
+}
+
+/* 780 及以下侧栏改为整行铺满（见 style.css），300px 的对齐基准失效：
+   分组宽度交回内容，下拉按最长选项自适应；262px 下限保证长地图名仍有足够余量，
+   超出的部分交给 900px 档已开启的横向滚动。 */
+@media (max-width: 780px) {
+  html body .context-bar #cb-map > section.block.cb-src-block { width: auto; }
+  html body .context-bar #map-list { min-width: 262px; }
+}
+
+/* ?mini=1：小地图窗口不带上下文栏（JS 在 mini 下也不会迁 DOM） */
+body.tk-mini #context-bar,
+html.tk-mini-root #context-bar { display: none !important; }
+
+/* ---------------------------------------------------------------------------
+   十二、底部状态栏（R83）：第四层
+   固定 24px 的浅色凹陷条，占的是 .workspace 之外的空间；工作区是 flex:1 +
+   min-height:0，会自动减掉这 24px，不会凭空多出页面级纵向滚动条。
+   --------------------------------------------------------------------------- */
+html body #app-statusbar {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 6px;
+  overflow: hidden;
+  background: linear-gradient(#f4f2e6, #e9e6d6);
+  border-top: 1px solid var(--xp-border);
+  box-shadow: inset 0 1px 0 #ffffff;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* 每个字段一格「凹陷」浅面板，跟 XP 状态栏一致 */
+html body #app-statusbar .sb-cell {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px; /* 5→6，与状态栏外框统一块内档 */
+  border: 1px solid;
+  border-color: var(--ui-color-border) #ffffff #ffffff var(--ui-color-border);
+  background: #f6f4ea;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html body #app-statusbar .sb-gap { flex: 1 1 auto; }
+html body #app-statusbar .sb-map { max-width: 260px; }
+html body #app-statusbar .sb-rev { font-family: Consolas, "Courier New", monospace; }
+
+/* 860：只留「视图 / 地图 / 运行版本」，数据版本 / 模式 / 加载状态收进整条 title */
+@media (max-width: 900px) {
+  html body #app-statusbar .sb-optional,
+  html body #app-statusbar .sb-state { display: none !important; }
+  html body #app-statusbar .sb-map { max-width: 160px; }
+}
+
+/* ?mini=1：小地图窗口不带状态栏（本文件在 mini 下整体不执行，这里再兜一层样式） */
+body.tk-mini #app-statusbar,
+html.tk-mini-root #app-statusbar { display: none !important; }
+
+/* ============================================================================
+   十三、R90 覆盖补齐（第一批：最高频）
+   目标：把仍是纯 CSS 自绘 / 浏览器原生外观的高频控件，接回 assets/xp-ui 既有位图。
+   约定：沿用本文件前面的 5px 九宫格（border-image ... 5 fill / 5px stretch），
+   不新造素材、不改 DOM / 交互 / 数据流。
+   ?mini=1：菜单栏、工具条、上下文栏、任务/配枪/配装工作区在 mini 下不渲染，
+   下列选择器即使命中隐藏节点也不会产生可见影响。
+   --------------------------------------------------------------------------- */
+
+/* --- 13.1 菜单栏按钮（账号版本 / PvP·PvE·PvPS / 文件·视图·工具·帮助） --- */
+html body .app-menubar .app-account-btn,
+html body .app-menu-btn {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+html body .app-menubar .game-mode-bar .gm-btn {
+  box-sizing: border-box;
+  height: 28px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+  outline: none;
+}
+html body .app-menubar .app-account-btn:hover,
+html body .app-menu-btn:hover,
+html body .app-menubar .game-mode-bar .gm-btn:hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .app-menu-btn.open,
+html body .app-menubar .game-mode-bar .gm-btn.is-on,
+html body .app-menubar .game-mode-bar .gm-btn[aria-selected="true"] {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+  box-shadow: none;
+}
+html body .app-menubar .app-account-btn:active,
+html body .app-menu-btn:active,
+html body .app-menubar .game-mode-bar .gm-btn:active {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .app-menubar .app-account-btn:focus-visible,
+html body .app-menu-btn:focus-visible,
+html body .app-menubar .game-mode-bar .gm-btn:focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+
+/* --- 13.2 主工具条视图按钮：常态也落到 btn-normal（悬停/选中/焦点已在前文） --- */
+html body .view-toolbar .view-btn {
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+}
+
+/* --- 13.3 小号按钮（任务页签 / 楼层 / 配装排序 / 配枪模式页签） --- */
+html body .tk-mode,
+html body .tk-tab,
+html body .task-floor,
+html body .floor-item,
+html body .gun-workbench .gw-modes-tabs .gw-mode {
+  box-sizing: border-box;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+/* 配装排序按钮：主题的 `button:not(...)` 链有 5 个类，单类选择器压不过；
+   这里照同样结构补 :not(...)，提高优先级而不改主题文件。 */
+html body .loadout-workbench button.lw-sortbtn:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close) {
+  box-sizing: border-box;
+  height: 24px;
+  min-height: 24px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+/* 楼层小按钮保持 10px 字号档，不因换图升档 */
+html body .task-floor { font-size: 10px; }
+html body .tk-mode:hover,
+html body .tk-tab:hover,
+html body .task-floor:hover,
+html body .gun-workbench .gw-modes-tabs .gw-mode:hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .loadout-workbench button.lw-sortbtn:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close):hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .tk-mode[aria-selected="true"],
+html body .tk-tab[aria-selected="true"],
+html body .gun-workbench .gw-modes-tabs .gw-mode[data-on="1"] {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+  box-shadow: none;
+  outline: none;
+}
+html body .loadout-workbench button.lw-sortbtn.is-on:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close) {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+  box-shadow: none;
+  outline: none;
+}
+
+/* R19.96：获取方式筛选按钮（配装 / 配枪同一套）—— 与排序按钮同档的小号位图按钮，
+   选中态用 pressed 位图。两条页面规则都用 :not() 链提高优先级，压过主题的通用按钮规则。 */
+html body .loadout-workbench button.lw-srcbtn:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close),
+html body .gun-workbench button.gw-srcbtn:not(.gw-hit):not(.gw-card) {
+  box-sizing: border-box;
+  height: 22px;
+  min-height: 22px;
+  padding: 0 6px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+html body .loadout-workbench button.lw-srcbtn:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close):hover,
+html body .gun-workbench button.gw-srcbtn:not(.gw-hit):not(.gw-card):hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .loadout-workbench button.lw-srcbtn.is-on:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close),
+html body .gun-workbench button.gw-srcbtn[aria-pressed="true"]:not(.gw-hit):not(.gw-card) {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+/* 地图侧栏的楼层按钮：style.css 的 .floor-item 带了 CSS 渐变，
+   这里用更高优先级接回按钮位图（上下文栏版本已有 24px 规则）。 */
+html body .floor-item:hover {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .floor-item[data-on="true"] {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+
+/* 配枪工作台 .gw-btn：主题的 `html .gun-workbench button:not(.gw-hit):not(.gw-card)`
+   有 3 个类，单类 .gw-btn 压不过；这里补 :not() 链提高优先级，不改主题文件。 */
+html body .gun-workbench button.gw-btn:not(.gw-hit):not(.gw-card) {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 11px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  cursor: pointer;
+}
+html body .gun-workbench button.gw-btn:not(.gw-hit):not(.gw-card):hover:not([disabled]) {
+  border-image-source: url("btn-hover.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .gun-workbench button.gw-btn:not(.gw-hit):not(.gw-card):active:not([disabled]),
+html body .gun-workbench button.gw-btn[data-on="1"]:not(.gw-hit):not(.gw-card):not([disabled]) {
+  border-image-source: url("btn-pressed.png");
+  background: transparent;
+  color: #23231b;
+}
+html body .gun-workbench button.gw-btn:not(.gw-hit):not(.gw-card):disabled {
+  border-image-source: url("btn-disabled.png");
+  background: transparent;
+  color: #69675b;
+  cursor: default;
+}
+html body .gun-workbench button.gw-btn:not(.gw-hit):not(.gw-card):focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+
+/* --- 13.4 搜索 / 文本 / 数字输入补齐（C 档 4 个 search + 8 个 number） --- */
+html body #gs-search,
+html body #tk-story-search,
+html body .gun-workbench .gw-forge-search {
+  box-sizing: border-box;
+  height: 28px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("input.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+html body #gs-search:focus,
+html body #tk-story-search:focus,
+html body .gun-workbench .gw-forge-search:focus {
+  border-image-source: url("input.png");
+  box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55);
+}
+/* 原生搜索框的取消按钮不属于 XP 素材，隐藏它（不新增控件） */
+html body #gs-search::-webkit-search-cancel-button,
+html body #tk-story-search::-webkit-search-cancel-button,
+html body .gun-workbench .gw-forge-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* 紧凑数字输入（弹药距离区间 / 任务等级区间）：24px 高，保留 5px 斜角 1:1 */
+html body .am-workbench .am-num,
+html body #tk-level-min,
+html body #tk-level-max {
+  box-sizing: border-box;
+  height: 24px;
+  padding: 0 5px;
+  border: 5px solid transparent;
+  border-image: url("input.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: textfield;
+}
+html body .am-workbench .am-num:focus,
+html body #tk-level-min:focus,
+html body #tk-level-max:focus {
+  border-image-source: url("input.png");
+  box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55);
+}
+/* 素材库没有数字微调箭头：如实隐藏原生 spin-button，不做缩放糊 */
+html body .am-workbench .am-num::-webkit-inner-spin-button,
+html body .am-workbench .am-num::-webkit-outer-spin-button,
+html body #tk-level-min::-webkit-inner-spin-button,
+html body #tk-level-min::-webkit-outer-spin-button,
+html body #tk-level-max::-webkit-inner-spin-button,
+html body #tk-level-max::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* --- 13.5 下拉补齐（任务版本 / 弹药图表距离） --- */
+html body #tk-edition,
+html body .am-workbench .am-dist select {
+  box-sizing: border-box;
+  height: 33px;
+  padding: 0 42px 0 8px;
+  border: 5px solid transparent;
+  border-image: url("select.png") 5 fill / 5px stretch;
+  background-color: transparent;
+  background-image: url("select-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 3px center;
+  background-size: 35px 32px;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+html body #tk-edition:focus,
+html body .am-workbench .am-dist select:focus {
+  box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55);
+}
+html body #tk-edition option,
+html body .am-workbench .am-dist select option { color: #23231b; background: var(--ui-color-surface-raised); }
+
+/* --- 13.6 统一清掉数字微调箭头 / 搜索取消按钮（素材库没有这两类件） ---
+   只作用于主界面；?mini=1 的 body 带 .tk-mini，整体跳过。
+   数字输入仍保留 input.png 的九宫格外框，只是不再叠加浏览器原生箭头。 */
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="number"]::-webkit-inner-spin-button,
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="search"]::-webkit-search-cancel-button,
+html:not(.tk-mini-root) body:not(.tk-mini) input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* --- 13.7 通用弹窗标题栏：复用 titlebar.png（与 .gw-prof-head / .am-modal-head 同一素材） ---
+   素材库没有对话框底板，底板仍保留主题的 CSS 外观，见 docs/xp-ui-coverage.md 缺件表。 */
+html body .lw-modal-box .lw-modal-head {
+  box-sizing: border-box;
+  height: 38px;
+  padding: 4px 8px;
+  border: 5px solid transparent;
+  border-image: url("titlebar.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #2c2c22;
+}
+html body .lw-modal-box .lw-modal-title { color: #2c2c22; }
+
+/* ============================================================================
+   十四、R91 缺件板接入（20261106补充.jpg，4096×4096 JPEG）
+   键色实测均值 #F207F6（四边 σ≈2.5），抠图容差 45（切比雪夫）+ MedianFilter(3)；
+   面板类按 0.5 降采样后统一用 border-image 九宫格 stretch，不做整图缩放。
+   只接入「浅色 XP 上下文」的容器；深色工作台内部件保持原皮肤，避免破坏深色设计。
+   逐件实测数据见 docs/xp-ui-20261106-slice-report.json。
+   --------------------------------------------------------------------------- */
+
+/* --- 14.1 底部状态栏：statusbar-bg 630×100 / statusbar-cell 120×18 --- */
+html body #app-statusbar {
+  border: 2px solid transparent;
+  border-image: url("statusbar-bg.png") 12 14 12 14 fill / 2px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+html body #app-statusbar .sb-cell {
+  border-width: 1px 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: url("statusbar-cell.png") 3 4 3 4 fill / 1px 2px stretch;
+  background: transparent;
+}
+
+/* --- 14.2 菜单底板 / 旧下拉面板 / 任务右键菜单 --- */
+html body .app-menu-panel {
+  border: 7px solid transparent;
+  border-image: url("app-menu-panel-bg.png") 22 fill / 7px stretch;
+  background: transparent;
+}
+html body .menu-panel {
+  border: 7px solid transparent;
+  border-image: url("menu-panel-bg.png") 22 fill / 7px stretch;
+  background: transparent;
+}
+html body .task-context-menu {
+  border: 6px solid transparent;
+  border-image: url("context-menu-bg.png") 20 fill / 6px stretch;
+  background: transparent;
+}
+
+/* --- 14.3 对话框底板：dialog-box 630×469（浅色 .gw-prof-box；
+   深色 .lw-scope 内的 .lw-modal-box / .am-modal-box / .lw-preset-box 不接，保持深色皮肤） --- */
+html body .gw-prof-box {
+  border: 5px solid transparent;
+  border-image: url("dialog-box.png") 10 fill / 5px stretch;
+  background: transparent;
+}
+
+/* --- 14.4 进度填充：progress-fill 197×17（纯蓝段，已剔除右端轨道框）--- */
+/* 绿色 .ok / 红色 .red 仍用纯色，状态语义不能换成蓝色位图。
+   R97：填充条只有 5px 高（轨道 15px − 上下各 5px 框），17px 图整体压进 5px 会把
+   顶部亮带与底部暗带糊掉。改成九宫格纵向 2px 切片：上 2 行（亮带）+ 下 2 行（暗带）
+   1:1 保留，中段拉伸；左右各 1px 暗边也按 1px 切片，横向拉长时不变粗。 */
+html body .gun-workbench .gw-bar-fill.blue {
+  box-sizing: border-box;
+  border: 2px 1px solid transparent;
+  border-image: url("progress-fill.png") 2 1 2 1 fill / 2px 1px stretch;
+  background: transparent;
+}
+html body .gun-workbench .gw-bar-seg.neutral {
+  box-sizing: border-box;
+  border: 2px 1px solid transparent;
+  border-image: url("progress-fill-indeterminate.png") 2 1 2 1 fill / 2px 1px stretch;
+  background: transparent;
+}
+
+/* --- 14.5 空态插图：empty-box 48×48（仅任务面板空态；表格空行是深色行，不加图） --- */
+html body .task-list > .task-empty::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 6px;
+  background: url("empty-box.png") no-repeat center / 48px 48px;
+}
+
+/* --- 14.6 disabled 复选 / 单选 / 下拉 --- */
+/* check-disabled 烘焙的是「禁用 + 已勾选」勾号，只给 :checked 用；
+   未勾选的禁用框继续用 check-off，避免把空的画成已选的 */
+html body input[type="checkbox"]:disabled:checked {
+  background-image: url("check-disabled.png");
+}
+/* radio-disabled 是「禁用 + 未选中」圆环（无圆点），只给未选中的用；
+   已选中的禁用单选保留 radio-on，避免丢状态 */
+html body input[type="radio"]:disabled:not(:checked) {
+  background-image: url("radio-disabled.png");
+}
+/* select-disabled 右下角烘焙了下拉箭头（位于右侧 52px 切片内），
+   所以这里把右侧边框加宽到 24px 并去掉 select-arrow 叠加，避免出现两个箭头 */
+html body #map-list:disabled,
+html body #context-bar select:disabled,
+html body .menu-panel select:disabled {
+  padding: 0 var(--ui-space-3);
+  border-image: url("select-disabled.png") 10 52 10 10 fill / 5px 24px 5px 5px stretch;
+  background-image: none;
+  cursor: default;
+}
+
+/* --- 14.7 表格表头 / 行底 / 网格：tbl-head 630×187 / tbl-row 600×24 /
+   tbl-row-alt 600×24 / tbl-grid-h 600×1 / tbl-grid-v 1×24 --- */
+/* 三张工作台表格在 theme-windows-xp.css 里已是浅色 XP 皮肤（实测 .tbl-row 为白 / 米色），
+   所以浅色表格素材可以安全接入；作用域限定到 .tbl-scroll，深色弹窗内的表格不受影响 */
+html body .tbl-scroll .tbl-head {
+  /* R96 B：tbl-head.png 是 630×187 的整块面板（四周暗边 + 米色面）。
+     原先 100% 100% 会把 187 行压进 32px、横向再拉 2.08 倍，端头倒角完全走形。
+     改用九宫格：4px 切片缩成 1px 边框，中间 fill 只铺均匀米色面，
+     容器高度 20 / 32 / 48px 时四个角的形状都由切片决定，不再随高度变化。 */
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid transparent;
+  border-image: url("tbl-head.png") 4 4 4 4 fill / 1px stretch;
+}
+/* R97：行底 600×24 铺进 1312×78 会把纸纹与 1px 边拉成 2.2× / 3.25×，且行高可变
+   （内容撑高后 100% 100% 无解），改为纯色 + 既有 1px 网格线。
+   颜色取自 tbl-row / tbl-row-alt 的实测均值（#FAF6ED / #CDC5B5），
+   网格线仍由 tbl-grid-h / tbl-grid-v 的 1px 切片负责，长列表无接缝。 */
+html body .tbl-scroll .tbl-row {
+  background: #faf6ed;
+  border-top: 1px solid transparent;
+  border-image: url("tbl-grid-h.png") 1 0 0 0 / 1px 0 0 0 stretch;
+  border-bottom: 0;
+}
+html body .tbl-scroll .tbl-row:nth-child(even) {
+  background: #cdc5b5;
+}
+html body .tbl-scroll .tbl-cell {
+  border-right: 1px solid transparent;
+  border-image: url("tbl-grid-v.png") 0 1 0 0 / 0 1px 0 0 stretch;
+}
+
+/* --- 14.8 本批已切出但未接入 / 不可用的件（详见 coverage 文档 §5.6）---
+   · badge-md / badge-sm：素材烘焙了「EMPTY」文字，不可用 → 徽标继续用 CSS。
+   · menu-panel-sep / context-menu-sep / statusbar-sep：DOM 里没有对应分隔元素 → 未接入。
+   · scroll-v-arrow-down-hover：源图漏画（有标签无图形），沿用上一批空白底板 + glyph 叠加。 */
+
+/* ================================================================
+   十五、R92 可见元素级替换（容器 / 条带 / 卡片 / 芯片 / 弹窗）
+   ----------------------------------------------------------------
+   上一轮只统计 button/input/select/textarea，容器与列表项全被排除，
+   观感上仍是大片 CSS 自绘。本轮把「有底色 / 有边框 / 有阴影」的可见元素
+   全部纳入，按「大面积面板 → 列表卡片 → 表单控件 → 小装饰」替换。
+   约束：不改 DOM / 类名 / 交互；border-image 九宫格，不做整图缩放。
+   素材池：titlebar(719×36) / menu-panel-bg(434×328) / groupbox(280×154) /
+          dialog-box(630×469) / btn-* / tbl-row / empty-box / statusbar-bg。
+   ================================================================ */
+
+/* --- 15.1 三条框架条：菜单栏 / 视图工具条 / 上下文栏 --- */
+/* titlebar.png 是一条 XP 标题栏纹理（浅米色渐变 + 亮边），最适合做横向条带 */
+html body .app-menubar,
+html body #menubar,
+html body #context-bar {
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: url("titlebar.png") 8 fill / 2px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+/* 菜单栏底边仍保留 1px 暗线，避免与工具条融成一条 */
+html body .app-menubar {
+  border-bottom-color: transparent;
+}
+html body #menubar,
+html body #context-bar {
+  border-top-color: transparent;
+}
+
+/* --- 15.2 大面积面板与滚区外壳 --- */
+/* groupbox.png 是 3px 凹槽边框 + 米色底，适合侧栏、故事树、表格滚区等大面板 */
+html body #sidebar,
+html body aside#task-panel,
+html body aside.am-side,
+html body aside.lw-side,
+html body #lw-filters,
+html body #lw-focus,
+html body #lw-cost,
+html body #lw-figure,
+html body section.lw-block,
+html body #lw-gun-presets,
+html body #tk-story-main,
+html body #tk-story-list,
+html body #task-list,
+html body #gw-browse {
+  /* R232：`.tbl-scroll` 原本也在这组里用 groupbox.png(280×154) 做 6 fill / 2px stretch。
+     表格滚区动辄上千像素高，位图里的细边框被拉成模糊灰带（空结果时最明显）。
+     已从本组摘出，统一回落到 style.css / theme 的纯色 + 1px 实线，见 15.7 下方。 */
+  border: 2px solid transparent;
+  border-image: url("groupbox.png") 6 fill / 2px stretch;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* --- 15.3 工作台外壳：1px 窗口边，内缩 2px，不改外层尺寸 --- */
+html body #am-workbench,
+html body .gun-workbench,
+html body .loadout-workbench,
+html body #task-root.tk-shell {
+  border: 1px solid transparent;
+  border-image: url("menu-panel-bg.png") 12 fill / 1px stretch;
+  background-color: transparent;
+}
+
+/* --- 15.4 面板头 / 工具条带 / 页签行 --- */
+html body header.am-top,
+html body header.gw-top,
+html body header.lw-top,
+html body header.tk-head,
+html body header.task-panel-head,
+html body .am-head,
+html body nav.gw-modes,
+html body #am-tabs,
+html body #am-groups,
+html body #am-range,
+html body #gw-browsepage {
+  border: 1px solid transparent;
+  border-image: url("titlebar.png") 8 fill / 1px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* --- 15.5 底部状态条（地图 statusbar / 任务 tk-statusbar） --- */
+html body div.statusbar,
+html body footer.tk-statusbar {
+  border: 1px solid transparent;
+  border-image: url("statusbar-bg.png") 12 14 12 14 fill / 1px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* --- 15.6 列表行 / 卡片 --- */
+/* 任务行：用表格行底（白）+ XP 1px 凹槽边，替换纯 CSS 白底
+   R97：行高随任务标题换行而变，位图 100% 100% 必拉，改纯色（同 tbl-row 均值）。
+   边线也从 groupbox 九宫格换成 1px 四向纯色（取自 groupbox 实测：上 #D5D3C4 /
+   左 #8B8876 / 下 #F8F6EB / 右 #FBFAF5），高度怎么变边线都不动。 */
+html body .task-list .task-row {
+  background: #faf6ed;
+  border: 1px solid;
+  border-color: #d5d3c4 #fbfaf5 #f8f6eb #8b8876;
+  box-shadow: none;
+}
+/* 枪匠武器卡：3px 凹槽卡面，内缩 4px（原卡片 105×91，图 64×42 仍有余量） */
+html body .gun-workbench .gw-card {
+  border: 2px solid transparent;
+  border-image: url("groupbox.png") 6 fill / 2px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+html body .gun-workbench .gw-card[aria-current="true"],
+html body .gun-workbench .gw-card.is-on {
+  border-image: url("btn-pressed.png") 5 fill / 2px stretch;
+}
+/* 配装槽位卡：把原来的纯黑底换成凹槽米色，装备素描在浅底上更协调 */
+html body .loadout-workbench .lw-cell {
+  border: 2px solid transparent;
+  border-image: url("groupbox.png") 6 fill / 2px stretch;
+  background: transparent;
+}
+html body .loadout-workbench .lw-cell:hover {
+  border-image: url("btn-hover.png") 5 fill / 2px stretch;
+}
+/* 剧情树节点卡 */
+html body .tk-story-item {
+  border: 2px solid transparent;
+  border-image: url("groupbox.png") 6 fill / 2px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+html body .tk-story-item.is-on,
+html body .tk-story-item[aria-selected="true"] {
+  border-image: url("btn-pressed.png") 5 fill / 2px stretch;
+}
+/* 枪匠浏览页的行（原深色 hover 在浅色面板上突兀）
+   R97 降级：95×42 的 btn-hover / btn-pressed 是带圆角的整图，铺进整行会被拉扁、
+   圆角也变形；这里退化成纯 CSS 三态 + 1px 双色边（与同屏列表行 #FAF6ED 同底），
+   不再引用任何会被拉伸的位图。详见 docs/xp-ui-coverage.md「R97 按钮降级」。 */
+html body .gun-workbench .gw-browse-gun {
+  background: #faf6ed;
+  border: 1px solid var(--xp-border);
+  border-color: #ffffff var(--ui-color-border) var(--ui-color-border) #ffffff;
+  color: var(--xp-text);
+}
+html body .gun-workbench .gw-browse-gun:hover {
+  background: var(--ui-color-surface-alt);
+  border-color: #ffffff var(--ui-color-border) var(--ui-color-border) #ffffff;
+  color: var(--xp-text);
+}
+html body .gun-workbench .gw-browse-gun[aria-current="true"] {
+  background: #d4d4c2;
+  border-color: var(--ui-color-border) #ffffff #ffffff var(--ui-color-border);
+  color: var(--xp-text);
+}
+
+/* --- 15.7 芯片 / 分段按钮 / 页签（原地是小号 CSS 自定义按钮） --- */
+html body #am-workbench .am-seg-btn,
+html body #am-workbench .am-chip,
+html body .gun-workbench .gw-chip,
+html body .loadout-workbench .lw-cat,
+html body .loadout-workbench .lw-sortbtn,
+html body .loadout-workbench .lw-clear,
+html body .loadout-workbench .lw-gp-go,
+html body .tk-story-filter,
+html body .tk-story-check,
+html body .tk-story-expand,
+html body .tk-tab,
+html body #am-workbench .am-show {
+  border: 1px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 1px 6px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+html body #am-workbench .am-seg-btn:hover,
+html body #am-workbench .am-chip:hover,
+html body .gun-workbench .gw-chip:hover,
+html body .loadout-workbench .lw-cat:hover,
+html body .loadout-workbench .lw-sortbtn:hover,
+html body .loadout-workbench .lw-clear:hover,
+html body .loadout-workbench .lw-gp-go:hover,
+html body .tk-story-filter:hover,
+html body .tk-story-check:hover,
+html body .tk-story-expand:hover,
+html body .tk-tab:hover,
+html body #am-workbench .am-show:hover {
+  border-image: url("btn-hover.png") 5 fill / 1px 6px stretch;
+  color: var(--xp-text);
+}
+html body .tk-story-filter.is-on,
+html body .tk-story-check.is-on,
+html body .loadout-workbench .lw-cat[aria-selected="true"],
+html body #am-workbench .am-seg-btn.is-on,
+html body .gun-workbench .gw-chip.is-on {
+  border-image: url("btn-pressed.png") 5 fill / 1px 6px stretch;
+  color: var(--xp-text);
+}
+
+/* --- 15.8 弹窗与浮层底板（重新判定：theme 已把它们改成浅色，不是深色对比层） --- */
+html body .lw-modal-box,
+html body .lw-preset-box,
+html body .am-modal-box,
+html body .cal-modal {
+  border: 5px solid transparent;
+  border-image: url("dialog-box.png") 12 fill / 5px stretch;
+  background: transparent;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, .34);
+}
+/* 预设弹窗内的深色行/输入在浅色底板上不协调，改 XP 浅色 */
+html body .lw-scope .lw-preset-row {
+  background: var(--ui-color-surface-raised);
+  border: 1px solid var(--xp-border);
+  color: var(--xp-text);
+}
+html body .lw-scope .lw-preset-row:hover {
+  background: var(--xp-row-hover);
+  border-color: var(--xp-border-dark);
+}
+html body .lw-scope .lw-preset-row[aria-selected="true"] {
+  background: var(--xp-sel);
+  border-color: var(--ui-color-focus);
+  color: var(--ui-color-text-inverse);
+}
+
+/* --- 15.9 空态插图（其余空态/加载态没有独立容器，只用文字） --- */
+html body .task-list > .task-empty::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 6px;
+  background: url("empty-task.png") no-repeat center / 48px 48px;
+}
+html body #tk-story-list .tk-story-empty::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 6px auto 8px;
+  background: url("empty-story.png") no-repeat center / 48px 48px;
+}
+html body #gw-browse .lw-loading::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 6px auto 8px;
+  background: url("empty-gun.png") no-repeat center / 48px 48px;
+}
+
+/* --- 15.10 补漏：上下文栏里的分类芯片、图例行、模式条、配装表网格 --- */
+/* 配装分类芯片其实住在上下文栏里（不在 loadout-workbench 内），单独补一条 */
+html body #context-bar .lw-cat,
+html body #context-bar .am-seg-btn,
+html body #context-bar .gw-chip {
+  border: 1px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 1px 6px stretch;
+  background: transparent;
+  box-shadow: none;
+}
+html body #context-bar .lw-cat:hover,
+html body #context-bar .am-seg-btn:hover,
+html body #context-bar .gw-chip:hover {
+  border-image: url("btn-hover.png") 5 fill / 1px 6px stretch;
+}
+html body #context-bar .lw-cat[aria-selected="true"] {
+  border-image: url("btn-pressed.png") 5 fill / 1px 6px stretch;
+}
+/* 图例行：XP 列表行（白底 + 1px 凹槽边），替换纯透明容器
+   R97：行高随图例层级/换行变化，位图 100% 100% 会拉；底色与边线都改纯色，
+   四向颜色与 groupbox 九宫格实测一致（上 #D5D3C4 / 左 #8B8876 / 下 #F8F6EB / 右 #FBFAF5）。 */
+/* R212：右侧任务 / 剧情图层勾选复用同一套 XP 图例行与折叠头外观，
+   保证「和左侧点位一样」不是只长得像，而是同一份皮肤规则。 */
+html body #layers-block .legend-item,
+html body #layers-block .legend-sub,
+html body #task-layer-toggles .legend-item,
+html body #task-layer-toggles .legend-sub {
+  background: #faf6ed;
+  border: 1px solid;
+  border-color: #d5d3c4 #fbfaf5 #f8f6eb #8b8876;
+}
+html body #layers-block .legend-item:hover,
+html body #task-layer-toggles .legend-item:hover {
+  background: var(--ui-color-surface-alt);
+}
+html body #layers-block .legend-group-toggle,
+html body #task-layer-toggles .legend-group-toggle {
+  border: 1px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 1px 6px stretch;
+  background: transparent;
+}
+/* 顶栏全局模式条（包住 PvP/PvE/PvPS 三键） */
+html body .game-mode-bar {
+  border: 1px solid transparent;
+  border-image: url("menu-panel-bg.png") 12 fill / 1px stretch;
+  background: transparent;
+}
+/* 配装侧栏表格：补右网格线（与原表头/行底同一套素材） */
+html body .loadout-workbench td,
+html body .loadout-workbench th {
+  border-right: 1px solid transparent;
+  border-image: url("tbl-grid-v.png") 0 1 0 0 / 0 1px 0 0 stretch;
+}
+
+/* ---------------------------------------------------------------------------
+   15.11 级联修正（R92 复查）
+   实测原因：theme-windows-xp.css 里有两类规则的**简写属性**把 border-image 重置成 none，
+   且特异性压过本节前面的写法：
+   · `html .gun-workbench button:not(.gw-hit):not(.gw-card)`（0,3,2）→ `border: 1px solid`
+     （该选择器没有排除 .gw-chip / .lw-price，所以芯片与价格胶囊全被重置）
+   · `html .loadout-workbench button:not(.lw-cell):not(.lw-cat)…`（同构）→ 同上
+   · `html .loadout-workbench .tbl-scroll`（0,2,1）→ `border: 1px solid`，压过 `html body .tbl-scroll`（0,1,2）
+   处理方式：选择器补足到实际冲突的那一级，只对确被覆盖的属性加 !important，
+   其余（圆角、字号、内边距、颜色）继续沿用 theme，不做多余改动。
+   --------------------------------------------------------------------------- */
+html body .gun-workbench button.gw-chip,
+html body .gun-workbench button.gw-price-pill,
+html body .loadout-workbench button.lw-clear,
+html body .loadout-workbench button.lw-gp-go,
+html body .loadout-workbench button.lw-sortbtn,
+html body .am-workbench button.am-seg-btn,
+html body .am-workbench button.am-chip,
+html body .am-workbench button.am-show {
+  border: 1px solid transparent !important; /* theme 的 border 简写会重置 border-image，见上 */
+  border-image: url("btn-normal.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important; /* 去掉 theme 的按钮渐变，让位图面显示 */
+  box-shadow: none !important;
+}
+html body .gun-workbench button.gw-chip:hover,
+html body .gun-workbench button.gw-price-pill:hover,
+html body .loadout-workbench button.lw-clear:hover,
+html body .loadout-workbench button.lw-gp-go:hover,
+html body .loadout-workbench button.lw-sortbtn:hover,
+html body .am-workbench button.am-seg-btn:hover,
+html body .am-workbench button.am-chip:hover,
+html body .am-workbench button.am-show:hover {
+  border-image: url("btn-hover.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important;
+}
+html body .gun-workbench button.gw-chip:active,
+html body .gun-workbench button.gw-price-pill:active,
+html body .loadout-workbench button.lw-clear:active,
+html body .loadout-workbench button.lw-gp-go:active,
+html body .loadout-workbench button.lw-sortbtn:active,
+html body .am-workbench button.am-seg-btn:active,
+html body .am-workbench button.am-chip:active,
+html body .am-workbench button.am-show:active {
+  border-image: url("btn-pressed.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important;
+}
+html body .gun-workbench button.gw-chip[aria-pressed="true"],
+html body .gun-workbench button.gw-chip[aria-current="true"],
+html body .gun-workbench button.gw-chip.is-on,
+html body .gun-workbench button.gw-price-pill[aria-pressed="true"],
+html body .am-workbench button.am-seg-btn.is-on,
+html body .am-workbench button.am-seg-btn[aria-pressed="true"],
+html body .am-workbench button.am-chip.is-on {
+  border-image: url("btn-pressed.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important;
+}
+/* R232：表格滚区一律不再用位图 fill。
+   table-frame.png 只有 64×64，原先 `2 fill / 2px stretch` 会把中间那圈细内框线
+   拉到整块滚动区（弹药 1282×715、配装 1095×559），变成模糊的放大灰带；
+   表格有行时被行盖住，筛空后全部露出来。groupbox.png 的通用兜底已在上文摘掉。
+   现在所有 .tbl-scroll 统一回落到：
+     style.css                 → 1px solid var(--xp-input) + 纯色底
+     theme-windows-xp.css      → 1px solid var(--xp-border-dark) + #fff
+   弹药页下面另有一条 !important，因为 style.css 对它写了 border:0。 */
+html body .am-workbench .am-table .tbl-scroll {
+  border: 1px solid var(--xp-border-dark, #aca899) !important;
+  background-color: #fff !important;
+}
+/* 枪匠顶部「当前配枪」状态条：R94 最后一板 288×32 专用铭牌（中心空白，枪名 CSS 叠字） */
+html body .gun-workbench #gw-current {
+  border: 5px solid transparent;
+  border-image: url("current-gun-plate.png") 5 5 5 14 fill / 5px 5px 5px 14px stretch;
+  background: transparent;
+  color: var(--xp-text);
+}
+
+/* ---------------------------------------------------------------------------
+   16. R92 第二轮：地图页剩余可见件
+   --------------------------------------------------------------------------- */
+/* 16.1 任务行「在地图上显示」开关：28×14 胶囊 + 10×10 圆钮，
+   R93 换成 20261107 补充板的成套位图（off / on 轨道 + off / on / hover 滑块）。
+   实测两态轨道 bbox 344×127 / 354×126、三个滑块 137~138×138~140，
+   归一到 28×14 与 10×10 后 alpha 轮廓 IoU 0.9973 / 1.0000，切换不会跳。
+   元素实测 27.98×13.99 / 9.98×9.98，位图按固定 28×14、10×10 居中绘制 = 1:1 不缩放。 */
+/* style.css 的 `.task-switch input:checked + .task-switch-track`（0,3,1）用
+   background 简写把 background-size 一起重置成 initial，基础规则 (0,1,2) 顶不住，
+   实测开态背景尺寸退回 auto。这里逐条 longhand + !important 锁死，
+   状态切换只覆盖 background-image（同为 !important，靠 specificity 取胜）。 */
+html body .task-switch-track {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 28px 14px !important;
+  background-image: url("switch-track-off.png") !important;
+}
+html body .task-switch input:checked + .task-switch-track {
+  background-image: url("switch-track-on.png") !important;
+}
+html body .task-switch-knob {
+  box-sizing: border-box;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 10px 10px !important;
+  background-image: url("switch-knob-off.png") !important;
+}
+html body .task-switch:hover .task-switch-knob {
+  background-image: url("switch-knob-hover.png") !important;
+}
+html body .task-switch input:checked + .task-switch-track .task-switch-knob {
+  background-image: url("switch-knob-on.png") !important;
+}
+/* 选中且悬停：hover 位图优先（选择器最specific，写在最后） */
+html body .task-switch input:checked:hover + .task-switch-track .task-switch-knob {
+  background-image: url("switch-knob-hover.png") !important;
+}
+/* 16.2 顶部品牌条：R94 最后一板 120×31 专用品牌牌（中心空白，应用名 CSS 叠字） */
+html body #app-brand.app-brand {
+  box-sizing: border-box;
+  padding: 0 10px 0 16px;
+  border: 5px solid transparent;
+  border-image: url("brand-plate.png") 5 5 5 14 fill / 5px 5px 5px 14px stretch;
+  background: transparent;
+  color: var(--xp-text);
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+/* 16.3 版本徽标：R94 最后一板 136×22 专用版本牌（中心空白） */
+html body #build-rev.build-rev,
+html body .tk-build {
+  box-sizing: border-box;
+  padding: 0 6px;
+  border: 4px solid transparent;
+  border-image: url("version-plate.png") 4 5 4 5 fill / 4px 5px stretch;
+  background: transparent;
+  color: var(--xp-muted);
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------------------------------------------------------------------------
+   17. R92 第三轮：配装页剩余可换件
+   --------------------------------------------------------------------------- */
+/* 17.1 区块底板：theme `html .loadout-workbench .lw-block`（0,2,1）用 background/border
+   简写覆盖了 15.2 的 `html body section.lw-block`（0,1,3），这里补到 (0,2,3)。 */
+html body .loadout-workbench section.lw-block {
+  border: 2px solid transparent !important;
+  border-image: url("groupbox.png") 6 fill / 2px stretch !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* 17.2 费用清单：行底用 tbl-row；
+   外层 `.lw-cost` 本身已是 2px groupbox，这里不再叠加第二层框（否则会出现双框接缝），
+   只让行承担位图。 */
+html body .loadout-workbench .lw-cost-list {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+html body .loadout-workbench .lw-cost-item {
+  background: #faf6ed;
+  border: 0;
+  box-shadow: none;
+}
+html body .loadout-workbench .lw-cost-item:hover {
+  background: var(--ui-color-surface-alt);
+}
+/* 17.3 预设按钮 / 费用行删除键 / 聚焦标签：按钮型小件统一用 btn 三态。
+   `#lw-preset` / `.lw-ci-x` 都被 theme 的按钮简写重置过，这里用 !important 拿回。 */
+html body .loadout-workbench button#lw-preset,
+html body .loadout-workbench button.lw-ci-x,
+html body .loadout-workbench button.lw-focus-x,
+html body .loadout-workbench .lw-focus-tag {
+  border: 1px solid transparent !important;
+  border-image: url("btn-normal.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html body .loadout-workbench button#lw-preset:hover,
+html body .loadout-workbench button.lw-ci-x:hover,
+html body .loadout-workbench button.lw-focus-x:hover,
+html body .loadout-workbench .lw-focus-tag:hover {
+  border-image: url("btn-hover.png") 5 fill / 1px 6px stretch !important;
+  background: transparent !important;
+}
+html body .loadout-workbench button#lw-preset:active,
+html body .loadout-workbench button.lw-ci-x:active,
+html body .loadout-workbench button.lw-focus-x:active {
+  border-image: url("btn-pressed.png") 5 fill / 1px 6px stretch !important;
+}
+
+/* ---------------------------------------------------------------------------
+   18. R93 20261107 补充板：徽标 / 提示气泡 / 紧凑滑条
+   源图 2880×2880，实测键色 #E815EF（不是提示词里的 #F207F6/#F51CF7），
+   四边均值互差 ≤1.31/通道、最大单边 σ=2.05 → 背景干净，抠图容差 12。
+   bbox 由键色分割 + 连通域实测，未照抄坐标表；18 件里 16 件采纳，
+   scroll-v-arrow-down-hover 与 scroll-h-thumb 不采纳（原因见 docs）。
+   --------------------------------------------------------------------------- */
+
+/* 18.1 配枪卡片槽位数徽标（b.gw-card-badge，163 处；实测 1~11，含 2 位数）
+   badge-md 17×17：底边 1px 暗线 + 下角 3px 台阶，因此上下切片不对称
+   （top 0 / right 3 / bottom 3 / left 3），左右 3px 端帽 1:1，中间米面横向拉伸。
+   高度锁 17px（原 16.5），line-height 14 让 9px 数字在 14px 内容区居中。 */
+html body .gun-workbench .gw-card-badge {
+  box-sizing: border-box;
+  height: 17px;
+  padding: 0 1px;
+  border: 0 solid transparent;
+  border-width: 0 3px 3px 3px;
+  border-image: url("badge-md.png") 0 3 3 3 fill / 0 3px 3px 3px stretch;
+  background: transparent;
+  border-radius: 0;
+  color: #23231b;
+  line-height: 14px;
+}
+html body .gun-workbench .gw-card:hover .gw-card-badge {
+  border-image-source: url("badge-md-hover.png");
+}
+
+/* 18.2 配枪页签上的 NEW 角标（i.gw-badge-new，26×11，实测 26.20×11.18）
+   旧版是深蓝底 + 深灰字（2.2:1，几乎读不出），换成米色牌 + 近黑字。
+   高度锁 11px，只剩 8px 内容区，行高同步压到 8px。 */
+html body .gun-workbench .gw-badge-new {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 11px;
+  padding: 0 1px;
+  border: 0 solid transparent;
+  border-width: 0 3px 3px 3px;
+  border-image: url("badge-sm.png") 0 3 3 3 fill / 0 3px 3px 3px stretch;
+  background: transparent;
+  border-radius: 0;
+  color: #23231b;
+  font: 700 8px/8px Tahoma, sans-serif;
+  letter-spacing: .3px;
+}
+
+/* 18.3 配装卡片护甲等级徽标（span.lw-cl-badge，13×16）
+   theme 用的是 1.5px 边（外框 16.01px），这里 border 2px + 内容 12px 保持 16 高。 */
+html body .loadout-workbench .lw-cl-badge {
+  box-sizing: border-box;
+  height: 16px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-image: url("badge-micro.png") 2 fill / 2px stretch;
+  background: transparent;
+  border-radius: 0;
+  color: #23231b;
+  line-height: 12px;
+}
+
+/* 18.4 配装卡片护甲类型 H/L（span.lw-at-badge，13×13）
+   注意：这是本板唯一“不按原尺寸”的件——素材是 13×16，元素是 13×13。
+   走 9-slice（slice 2 / border 2），只压中间 12→9px 的米面，1px 边框 1:1 不动。
+   顺带修掉 theme 的既有缺陷：`.lw-at-heavy` 背景被翻成 #fff，而字色仍是 #fff，
+   白上白等于隐形；这里统一米色牌 + 近黑字，H/L 靠字形区分。 */
+html body .loadout-workbench .lw-at-badge {
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-image: url("badge-micro.png") 2 fill / 2px stretch;
+  background: transparent;
+  border-radius: 0;
+  color: #23231b;
+  font-size: 8px;
+  line-height: 9px;
+}
+html body .loadout-workbench .lw-at-badge.lw-at-heavy,
+html body .loadout-workbench .lw-at-badge.lw-at-light {
+  background: transparent;
+}
+
+/* 18.5 提示气泡（tip-plate 120×40，slice 4 / border 4）
+   旧 padding 6/9 + 1px 边 = 内缩 7/10；新 padding 3/6 + 4px 边 = 7/10，文字位置不变。
+   `.lw-tip` / `.am-graph-tip` 被 theme 以 (0,2,1) 用 border 简写覆盖，这里补到 (0,2,2)。 */
+html body .loadout-workbench .lw-tip,
+html body .gw-tip,
+html body .am-workbench .am-graph-tip,
+html body .marker-pop {
+  box-sizing: border-box;
+  border: 4px solid transparent;
+  border-image: url("tip-plate.png") 4 fill / 4px stretch;
+  background: transparent;
+  border-radius: 0;
+  color: #23231b;
+}
+html body .loadout-workbench .lw-tip,
+html body .gw-tip,
+html body .marker-pop {
+  padding: 3px 6px;
+}
+html body .am-workbench .am-graph-tip {
+  padding: 3px 5px;
+}
+
+/* 18.6 紧凑滑条（range-track-compact 200×16 / range-thumb-compact 10×16）
+   只用于侧栏两处 16px 高的滑条（#am-traderlvl / #gw-traderlv），
+   全局 33px 滑条（track 15 + thumb 19×33）保持不变。
+   轨道高度 16 = 素材高度，slice 上下 0 → 纵向 1:1，只横向拉中间带。 */
+html body #am-traderlvl,
+html body #gw-traderlv {
+  box-sizing: border-box;
+  height: 16px;
+  padding: 0;
+  background: transparent;
+}
+html body #am-traderlvl::-webkit-slider-runnable-track,
+html body #gw-traderlv::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  height: 16px;
+  border: 0 solid transparent;
+  border-width: 0 6px;
+  border-image: url("range-track-compact.png") 0 6 0 6 fill / 0 6px 0 6px stretch;
+  background: transparent;
+}
+html body #am-traderlvl::-webkit-slider-thumb,
+html body #gw-traderlv::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 10px;
+  height: 16px;
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background: url("range-thumb-compact.png") no-repeat center / 10px 16px;
+}
+
+/* ---------------------------------------------------------------------------
+   19. R94 最后一板（`Create ONE single 4K sprite she_881c048f.png`）+ CSS 侧 12 条
+   板面实测：2880×2880（非规格 3840×2160）；键色实测 RGB(223,44,235)=#DF2CEB，
+   四边均值互差 ≤1.2/通道、σ ≤1.7（与规格 #E815EF 的绿通道差 23）。
+   19.1 位图接入：铭牌三件 + 表格外框 + 五个视图图标 + 三个空态 + 三个横向滑块；
+   两枚箭头（三角 12×7≠15×10、距顶 11≠9）与两条分隔线（4~5px 三段立体槽、沿长度
+   有 20+ 级灰度漂移）体检不过，**保留现状**，本段不接。
+   19.2 CSS 侧 12 条按 `docs/xp-ui-final-board-prompt.md` §4 编号逐条落地。
+   --------------------------------------------------------------------------- */
+
+/* 19.1 横向滑块三态：M11–M13 已按文档同名落盘（44×21），沿用原 background 规则，
+   在无缝区（44px 宽）为 1:1，列表很长时仅横向拉中间平面带（与旧件行为一致）。 */
+
+/* 19.2 ① 圆角归零（S1 全表 + S2 + S6 + S11 + S12） */
+html body .task-floor,
+html body .task-main,
+html body .gw-card,
+html body .am-chip,
+html body .am-seg-btn,
+html body .am-show,
+html body .gw-chip,
+html body .gw-mode,
+html body .lw-cell,
+html body .lw-cat,
+html body .lw-sortbtn,
+html body .gw-calblock,
+html body .lw-mat-chip,
+html body .lw-board,
+html body .lw-deco,
+html body .lw-block,
+html body .lw-cost,
+html body input.search,
+html body select.ui-select,
+html body span.dot,
+html body .tk-story-dot,
+html body .lw-modal-btn,
+html body .lw-preset-row,
+html body .tk-story-chip {
+  border-radius: 0 !important;
+}
+
+/* 19.2 ② 柔和阴影移除（保留 dialog-box 九宫格硬边） */
+html body .gw-prof-box,
+html body .lw-preset-box,
+html body .am-modal-box {
+  box-shadow: none !important;
+}
+
+/* 19.2 ③ 标题栏硬化：三段硬色标，无圆角、无内高光 */
+html body header.am-modal-head {
+  border-radius: 0 !important;
+  background: linear-gradient(180deg,
+    #0A3F9E 0 33.34%, #1466E0 33.34% 66.67%, #4A9BFF 66.67% 100%) !important;
+  box-shadow: none !important;
+}
+
+/* 19.2 ④ 关钮硬化：两段硬色标 */
+html body button.gw-prof-x,
+html body button.am-modal-x {
+  border-radius: 0 !important;
+  background: linear-gradient(180deg, #E2917E 0 50%, #B93A28 50% 100%) !important;
+  box-shadow: none !important;
+}
+
+/* 19.2 ⑤ 米色按钮去圆角（圆角已在 ① 覆盖，这里只补边界） */
+html body .lw-modal-btn,
+html body .lw-preset-row {
+  border-radius: 0 !important;
+}
+
+/* 19.2 ⑥ R299 修订：空槽名也贴右上角浮字，透明底、无边框 */
+html body .lw-cell-label {
+  box-sizing: border-box;
+  background: transparent !important;
+  border: 0 !important;
+  color: #23231b !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+/* R299：装备名按 PSD 浮在卡片右上角，透明底/无边框，靠文字描边保证可读 */
+html body .lw-cell-name {
+  box-sizing: border-box;
+  background: transparent !important;
+  border: 0 !important;
+  color: #fff !important;
+  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 1px 2px #000 !important;
+  box-shadow: none !important;
+}
+
+/* R299 修订：左侧装备板严格 512×512，去掉主题额外边框，避免把 PSD 坐标推偏 1px */
+html body .loadout-workbench .lw-board {
+  box-sizing: border-box;
+  width: 512px;
+  height: 512px;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* 19.2 ⑦ 模态遮罩改中性半透明，去掉模糊 */
+html body #am-detail {
+  background: rgba(0, 0, 0, .28) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* 19.2 ⑧ 语义色块方形化：去掉圆形、加 1px 边、饱和度 −15%（色相不动） */
+html body span.dot,
+html body .tk-story-dot,
+html body .tk-story-chip,
+html body .lw-mat-chip,
+html body .gw-callegend-dot {
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  border: 1px solid var(--ui-color-border) !important;
+  filter: saturate(.85);
+}
+
+/* 19.2 ⑨ 数字输入：隐藏原生微调箭头（键盘、滚轮不变） */
+html body input[type="number"] {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+html body input[type="number"]::-webkit-inner-spin-button,
+html body input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 19.2 ⑩ 字模替代：`▾` 字符隐身，::after 画 CSS 三角（折叠时继承容器 rotate(-90deg)） */
+html body .legend-group-arrow {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  font-size: 0;
+  color: transparent;
+}
+html body .legend-group-arrow::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin: -2px 0 0 -5px;
+  border: 5px solid transparent;
+  border-top-color: #3B412F;
+  border-bottom: 0;
+}
+
+/* 19.2 ⑪ 字号归一：8/9px → 10px；13.333px → 12px；15/15.21/18px → 13px */
+html body i.gw-card-cal,
+html body b.gw-card-badge,
+html body span.gw-card-fig,
+html body i.gw-calblock-n,
+html body i.gw-badge-new,
+html body .lw-at-badge,
+html body span.lw-cell-name {
+  font-size: 10px !important;
+}
+html body input,
+html body select,
+html body textarea,
+html body .ui-select {
+  font-size: 12px !important;
+}
+html body h3,
+html body h3.am-h3,
+html body h3.lw-h3,
+html body h2.tk-title {
+  font-size: 13px !important;
+}
+/* 19.2 ⑫ `⛔` / `✕` 在文本节点内，不在 CSS 能力范围，本轮只登记（见文档 §4 第 12 条）。 */
+
+/* ================================================================
+   二十、R96 几何件接入（两条分隔线）
+   sep-horizontal 64×2 / sep-vertical 2×22，全部走伪元素，DOM 不动。
+   状态栏 .sb-cell 已有 statusbar-cell.png 的 1px/2px 整框，再叠分隔线会成双线，
+   所以竖分隔改挂顶部菜单分组之间（.app-menu 已是 position:relative）。
+   ================================================================ */
+html body .task-context-item + .task-context-item::before {
+  content: "";
+  display: block;
+  height: 2px;
+  margin: 2px 4px;
+  background: url("sep-horizontal.png") repeat-x left top / 64px 2px;
+  pointer-events: none;
+}
+html body .app-menus .app-menu + .app-menu::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  width: 2px;
+  height: 22px;
+  margin-top: -11px;
+  background: url("sep-vertical.png") no-repeat left top / 2px 22px;
+  pointer-events: none;
+}
+
+/* ================================================================
+   二十一、R110：控件四态统一层
+   ----------------------------------------------------------------
+   目标：全部原生控件（按钮 / 输入 / 下拉 / 复选 / 单选 / 滑条）与
+   面板标题条，都具备「常态 / 悬停 / 按下 / 焦点 / 禁用 / 锁定」的一致表达。
+   本层只补「缺的那几态」：不换位图、不换配色、不改尺寸，因此既有视觉
+   语言不变，只是把散落在各节的态补齐、把选择器覆盖面拉齐。
+   统一约定（与第一节一致，全文件唯一一套）：
+     · 禁用 = btn-disabled 位图 + 灰字 var(--ui-color-text-disabled) + 默认光标 + 去立体；
+     · 焦点 = btn-focus 位图 + 1px 点线（内缩 4px），不影响布局；
+     · 锁定 = 控件压暗（透明度）+ not-allowed，提示文案由容器伪元素给。
+   ================================================================ */
+
+/* --- 21.1 按钮：禁用态补齐（原先只有 4 个选择器，其余按钮禁用后仍是亮面） --- */
+html body .menu-btn:disabled,
+html body .hud button:disabled,
+html body .sidebar-collapse:disabled,
+html body .sidebar-expand:disabled,
+html body .task-panel-collapse:disabled,
+html body .task-panel-expand:disabled,
+html body .task-search-reset:disabled,
+html body .route-actions button:disabled,
+html body .route-del:disabled,
+html body .wiki-actions button:disabled,
+html body .wiki-hud button:disabled,
+html body .live-btn:disabled,
+html body .acc-btn:disabled,
+html body .lw-clear:disabled,
+html body .gw-btn:disabled,
+html body .am-btn:disabled,
+html body .lw-modal-box button:disabled,
+html body .gw-prof-foot button:disabled,
+html body .app-menubar .app-account-btn:disabled,
+html body .app-menu-btn:disabled,
+html body .app-menubar .game-mode-bar .gm-btn:disabled,
+html body .view-toolbar .view-btn:disabled,
+html body .am-workbench button:not(.am-tab):not(.am-seg-btn):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):disabled,
+html body .menu-btn[aria-disabled="true"],
+html body .hud button[aria-disabled="true"],
+html body .live-btn[aria-disabled="true"],
+html body .gw-btn[aria-disabled="true"],
+html body .am-btn[aria-disabled="true"],
+html body .view-toolbar .view-btn[aria-disabled="true"],
+html body .app-menubar .game-mode-bar .gm-btn[aria-disabled="true"],
+html body .app-menubar .app-account-btn[aria-disabled="true"] {
+  border-image-source: url("btn-disabled.png");
+  color: var(--ui-color-text-disabled);
+  box-shadow: none;
+  cursor: default;
+}
+
+/* --- 21.2 按钮：焦点态补齐（原先只有 6 个选择器带 btn-focus） --- */
+html body .sidebar-collapse:focus-visible,
+html body .sidebar-expand:focus-visible,
+html body .task-panel-collapse:focus-visible,
+html body .task-panel-expand:focus-visible,
+html body .route-actions button:focus-visible,
+html body .route-del:focus-visible,
+html body .wiki-actions button:focus-visible,
+html body .wiki-hud button:focus-visible,
+html body .live-btn:focus-visible,
+html body .acc-btn:focus-visible,
+html body .lw-clear:focus-visible,
+html body .lw-modal-box button:focus-visible,
+html body .app-menubar .app-account-btn:focus-visible,
+html body .app-menubar .game-mode-bar .gm-btn:focus-visible,
+html body .am-workbench button:not(.am-tab):not(.am-seg-btn):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+/* 已选中 / 已展开的按钮，焦点态仍要能看出"当前"：保留按下位图，只加焦点点线 */
+html body .app-menu-btn.open:focus-visible,
+html body .app-menubar .game-mode-bar .gm-btn[aria-selected="true"]:focus-visible,
+html body .app-menubar .game-mode-bar .gm-btn.is-on:focus-visible,
+html body .view-toolbar .view-btn[aria-selected="true"]:focus-visible {
+  border-image-source: url("btn-pressed.png");
+}
+
+/* --- 21.3 芯片 / 分段按钮 / 小页签：禁用 + 焦点（原先没有任何禁用表达） --- */
+html body #am-workbench .am-seg-btn:disabled,
+html body #am-workbench .am-chip:disabled,
+html body #am-workbench .am-show:disabled,
+html body .gun-workbench .gw-chip:disabled,
+html body .gun-workbench .gw-modes-tabs .gw-mode:disabled,
+html body .loadout-workbench .lw-cat:disabled,
+html body .loadout-workbench .lw-sortbtn:disabled,
+html body .loadout-workbench .lw-gp-go:disabled,
+html body .tk-mode:disabled,
+html body .tk-tab:disabled,
+html body .task-floor:disabled,
+html body .tk-story-filter:disabled,
+html body .tk-story-check:disabled,
+html body .tk-story-expand:disabled {
+  border-image-source: url("btn-disabled.png");
+  color: var(--ui-color-text-disabled);
+  cursor: default;
+}
+html body #am-workbench .am-seg-btn:focus-visible,
+html body #am-workbench .am-chip:focus-visible,
+html body #am-workbench .am-show:focus-visible,
+html body .gun-workbench .gw-chip:focus-visible,
+html body .gun-workbench .gw-modes-tabs .gw-mode:focus-visible,
+html body .loadout-workbench .lw-cat:focus-visible,
+html body .loadout-workbench .lw-sortbtn:focus-visible,
+html body .loadout-workbench .lw-gp-go:focus-visible,
+html body .tk-mode:focus-visible,
+html body .tk-tab:focus-visible,
+html body .task-floor:focus-visible,
+html body .tk-story-filter:focus-visible,
+html body .tk-story-check:focus-visible,
+html body .tk-story-expand:focus-visible {
+  outline: 1px dotted #1a1a16;
+  outline-offset: 1px;
+}
+
+/* --- 21.4 输入框：禁用态补齐（位图皮肤没有专用禁用图，统一"压暗 + 灰字 + 默认光标"） --- */
+html body .menu-panel input[type="search"]:disabled,
+html body .menu-panel input[type="text"]:disabled,
+html body .menu-panel input[type="number"]:disabled,
+html body .app-mini-panel input:disabled,
+html body .wiki-search:disabled,
+html body .task-search-wrap input:disabled,
+html body #search:disabled,
+html body .loadout-workbench .lw-search:disabled,
+html body .loadout-workbench .lw-num:disabled,
+html body .loadout-workbench .lw-fl input:disabled,
+html body .gun-workbench .lw-search:disabled,
+html body .gun-workbench .gw-lvlnum:disabled,
+html body .am-workbench .am-search:disabled,
+html body #sens-input:disabled,
+html body .gw-prof-f input:disabled,
+html body .gw-cand-search:disabled,
+html body .context-bar input[type="text"]:disabled,
+html body textarea:disabled {
+  color: var(--ui-color-text-disabled);
+  opacity: .6;
+  cursor: default;
+}
+/* 只读输入：保持可读，只把光标改成默认态，不再表现为"可编辑" */
+html body .app-mini-panel input[readonly],
+html body .menu-panel input[readonly] {
+  color: var(--ui-color-text-muted);
+  cursor: default;
+}
+
+/* --- 21.5 下拉：禁用态覆盖到全部带位图皮肤的下拉（原先只有 3 个选择器） --- */
+html body .app-mini-panel select:disabled,
+html body .ov-row select:disabled,
+html body .loadout-workbench .lw-fl select:disabled,
+html body .gun-workbench .gw-lvsel select:disabled,
+html body .gun-workbench .gw-ref select:disabled,
+html body .am-workbench #am-maxdist:disabled,
+html body .am-workbench .am-side select:disabled,
+html body .am-workbench .am-dist select:disabled,
+html body .tk-sel select:disabled,
+html body .context-bar select:disabled {
+  padding: 0 var(--ui-space-3);
+  border-image: url("select-disabled.png") 10 52 10 10 fill / 5px 24px 5px 5px stretch;
+  background-image: none;
+  color: var(--ui-color-text-disabled);
+  cursor: default;
+}
+/* 下拉焦点：与输入框同一套（位图不变，只补点线环，避免有的下拉有焦点提示、有的没有） */
+html body .app-mini-panel select:focus-visible,
+html body .ov-row select:focus-visible,
+html body .loadout-workbench .lw-fl select:focus-visible,
+html body .gun-workbench .gw-lvsel select:focus-visible,
+html body .gun-workbench .gw-ref select:focus-visible,
+html body .am-workbench #am-maxdist:focus-visible,
+html body .am-workbench .am-side select:focus-visible,
+html body .am-workbench .am-dist select:focus-visible,
+html body .tk-sel select:focus-visible,
+html body #map-list:focus-visible,
+html body .map-select:focus-visible,
+html body .context-bar select:focus-visible {
+  border-image-source: url("select.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -3px;
+}
+
+/* --- 21.6 复选 / 单选：禁用（含未勾选）+ 悬停 + 焦点（原先未勾选的禁用框毫无变化） --- */
+html body input[type="checkbox"]:disabled,
+html body input[type="radio"]:disabled {
+  cursor: default;
+  opacity: .55; /* 与 .is-member-locked 的压暗同档，禁用与锁定看起来是同一件事 */
+}
+/* 已勾选的禁用件用的是专用 disabled 位图，压暗会叠成"双重变灰"，这里留在 0.9 */
+html body input[type="checkbox"]:disabled:checked,
+html body input[type="radio"]:disabled:checked {
+  opacity: .9;
+}
+/* 可用态悬停：位图无专用悬停图，用轻微提亮表达"指针在控件上"（与按钮的悬停位图同一语义） */
+html body input[type="checkbox"]:not(:disabled):hover,
+html body input[type="radio"]:not(:disabled):hover {
+  filter: brightness(1.06);
+}
+
+/* --- 21.7 滑条：通用禁用态（原先只有两处逐个类名的禁用规则） --- */
+html body input[type="range"]:disabled {
+  opacity: .45;
+  cursor: default;
+}
+/* 禁用时锁回常态拇指，避免滚动经过时出现按下位图（禁用元素本不该响应 hover） */
+html body input[type="range"]:disabled::-webkit-slider-thumb {
+  background-image: url("range-thumb.png");
+}
+html body input[type="range"]:disabled::-moz-range-thumb {
+  background-image: url("range-thumb.png");
+}
+
+/* --- 21.8 面板标题条：统一为一档（13px 粗体 + 1px 分隔线 + 固定下距） ---
+   被统一的对象是"区块小标题"：地图侧栏 .block > h2、菜单浮层 .about-h、
+   三个工作台侧栏的 .lw-h3 / .am-h3。字号取 13px：与全表 h3 的既有归一档一致，
+   不再出现 12/13/15px 三种小标题。 */
+html body .panel section.block > h2,
+html body .about-panel .about-h,
+html body .settings-panel .about-h,
+html body .app-mini-panel .about-h,
+html body .loadout-workbench .lw-side h3.lw-h3,
+html body .am-workbench h3.am-h3 {
+  color: #23231b;                      /* 有意例外：--xp-ink 定义在 .xp-ui 作用域，此处不在其内 */
+  font-family: var(--ui-font);
+  font-size: var(--ui-fs-body);
+  font-weight: var(--ui-fw-bold);
+  line-height: var(--ui-lh-tight);
+  letter-spacing: .02em;
+}
+/* 独立成段的标题条：补 1px 分隔线，形成统一的"标题栏" */
+html body .panel section.block > h2,
+html body .about-panel .about-h,
+html body .settings-panel .about-h,
+html body .app-mini-panel .about-h {
+  margin: 0 0 var(--ui-space-3);
+  padding: 0 0 var(--ui-space-1);
+  border-bottom: 1px solid var(--xp-border);
+}
+/* 浮层内多段标题：段间留 12px，首个标题贴顶 */
+html body .about-panel .about-h,
+html body .settings-panel .about-h,
+html body .app-mini-panel .about-h {
+  margin: var(--ui-space-4) 0 var(--ui-space-2);
+}
+html body .about-panel .about-h:first-child,
+html body .settings-panel .about-h:first-child,
+html body .app-mini-panel .about-h:first-child {
+  margin-top: 0;
+}
+
+/* ============================================================================
+   二十二、R111：页面级规格统一（地图 / 任务 / 市场 / 商人 / 三个工作台）
+   ----------------------------------------------------------------------------
+   只对齐"页面骨架"的三件事：页头条与标题、内容区留白、三种状态（空 / 加载 / 错误）。
+   不改任何业务类名与 DOM 结构；本层位于文件末尾，优先级最高。
+   地图与市场是"工具条驱动"的页面（没有一行独立页标题），因此这里对齐的是
+   工具条高度与留白，而不是硬塞一行标题——那会改变既有信息密度。
+   ==========================================================================*/
+
+/* --- 22.1 页头 / 工具条：统一纵向节奏（6px 上下、10px 左右、8px 分组间距） ---
+   统一前：tk-head 6/8/4、task-panel-head 6/8/6/12、lw-top 4/8、gw-top 6/10、am-top 5/10。 */
+html body header.tk-head,
+html body header.task-panel-head,
+html body header.lw-top,
+html body header.gw-top,
+html body header.am-top,
+html body .mk-toolbar {
+  padding: var(--ui-space-2) 10px;
+  gap: var(--ui-space-3);
+}
+/* 主行与次行之间固定 4px（统一前 tk-subbar 4px、mk-tb-sub 5px 混用） */
+html body .tk-subbar,
+html body .mk-tb-sub {
+  margin-top: var(--ui-space-1);
+}
+
+/* --- 22.2 页标题：13px / 700 / Luna 蓝，字距与行高统一 ---
+   统一前 task-panel-head h2 用 #204070、tk-title 用 #316ac5，字号同为 13 但字距不同。 */
+html body header.task-panel-head h2,
+html body header.tk-head .tk-title {
+  margin: 0;
+  font-size: var(--ui-fs-body);
+  font-weight: var(--ui-fw-bold);
+  line-height: var(--ui-lh-tight);
+  letter-spacing: .02em;
+  color: var(--ui-color-selected);
+}
+html body header.task-panel-head h2 small {
+  margin-left: var(--ui-space-1);
+  font-size: var(--ui-fs-micro);
+  font-weight: var(--ui-fw-normal);
+  color: var(--ui-color-text-muted);
+}
+
+/* --- 22.3 空态 --- */
+/* 框式空态：市场（mk-empty）与任务大区（db4-empty）共用一套尺寸与底色。
+   统一前 mk-empty 28px/24+20/圆角 3px + 阴影，db4-empty 40+20/无边框，两页观感不同。 */
+html body #market-view .mk-empty,
+html body #task-root .db4-empty {
+  max-width: 520px;
+  margin: var(--ui-space-7) auto;
+  padding: var(--ui-space-6) var(--ui-space-5);
+  text-align: center;
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-compact);
+  line-height: var(--ui-lh-normal);
+  border: 1px solid var(--ui-color-border-soft);
+  border-radius: var(--ui-radius-panel);
+  background: var(--ui-color-surface-raised);
+  box-shadow: none;
+}
+html body #market-view .mk-empty-title {
+  margin: 0 0 var(--ui-space-3);
+  font-size: var(--ui-fs-panel);
+  font-weight: var(--ui-fw-bold);
+  line-height: var(--ui-lh-tight);
+  color: var(--ui-color-text);
+}
+html body #market-view .mk-empty-detail {
+  margin: 0 0 var(--ui-space-4);
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-compact);
+  line-height: var(--ui-lh-normal);
+}
+
+/* 行内空态：任务侧栏 / 剧情列表 / 地图侧栏搜索，统一字号与行高（留白按各自容器收） */
+html body .tk-empty,
+html body .tk-side-empty,
+html body .tk-story-empty,
+html body .db4-empty,
+html body .search-empty,
+html body .quest-empty {
+  color: var(--ui-color-text-muted);
+  font-size: var(--ui-fs-compact);
+  line-height: var(--ui-lh-normal);
+}
+html body .tk-empty { padding: var(--ui-space-4) var(--ui-space-3); }
+html body .tk-story-empty { padding: var(--ui-space-5) var(--ui-space-3); }
+html body .search-empty { padding: var(--ui-space-2) var(--ui-space-1); }
+html body .quest-empty { font-size: var(--ui-fs-micro); }
+
+/* --- 22.4 加载态：虚线框 + 一条呼吸进度线（市场已有，任务大区补齐） --- */
+html body #market-view .mk-empty.is-loading,
+html body #task-root .db4-empty.is-loading {
+  border-style: dashed;
+  box-shadow: none;
+}
+html body #market-view .mk-empty.is-loading .mk-empty-detail::after,
+html body #task-root .db4-empty.is-loading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  margin: var(--ui-space-4) auto 0;
+  background: linear-gradient(90deg, transparent, var(--ui-color-primary-hi), transparent);
+  animation: ui-loading-pulse 1.1s ease-in-out infinite;
+}
+@keyframes ui-loading-pulse {
+  0%, 100% { opacity: .2; }
+  50% { opacity: .95; }
+}
+/* 剧情列表：加载中与加载失败此前共用一个类，无法区分；改用 is-loading / is-error 区分 */
+html body .tk-story-empty.is-loading { font-style: italic; }
+html body .tk-story-empty.is-error { color: var(--ui-color-danger); }
+
+/* --- 22.5 错误态 ---
+   市场错误走同一个框式空态（红边 + 淡红底），任务剧情失败走行内红字。
+   地图上的 #error 叠在深色底图上，底色仍用深色面板，仅统一内距/圆角/字号/阴影。 */
+html body #market-view .mk-empty.is-error,
+html body #task-root .db4-empty.is-error {
+  border-color: var(--ui-color-danger);
+  background: var(--ui-color-danger-bg);
+}
+html body #market-view .mk-empty.is-error .mk-empty-title {
+  color: var(--ui-color-danger);
+}
+html body #error {
+  padding: var(--ui-space-5);
+  border-radius: var(--ui-radius-btn);
+  font-size: var(--ui-fs-body);
+  line-height: var(--ui-lh-loose);
+  box-shadow: var(--ui-shadow-dialog);
+}
+html body #error code {
+  border-radius: var(--ui-radius-control);
+}
+
+/* --- 22.6 窄屏浮层：菜单挂在最右侧时 right:0 会顶出视口（420px 实测溢出 266px）。
+   窄屏统一改成 fixed + 左右各留 8px，宽高与顶部偏移跟菜单栏对齐；
+   桌面宽度不受影响（>.900px 仍是原来的向右/向左展开）。 --- */
+@media (max-width: 900px) {
+  html body .app-menu-panel {
+    position: fixed;
+    left: var(--ui-space-3);
+    right: var(--ui-space-3);
+    top: calc(var(--amh, 34px) + 2px);
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - var(--amh, 34px) - 12px);
+  }
+}
+
+/* ==========================================================================
+   R212：右侧任务 / 剧情栏 —— 标题撤除、图层勾选区
+   面板宽 330px，勾选行沿用左侧 #layers-block 的 XP 外观（见 2047 一带）；
+   这里只收窄行高、压低标题带，把纵向空间留给下面的任务列表。
+   ========================================================================== */
+html body header.task-panel-head {
+  box-sizing: border-box;
+  height: 34px;
+  min-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* R213：XP 皮肤给所有按钮 30px 高 + 5px 九宫格边 + 11px 左右内边距。
+   上一版这里强行压成 20px，位图被压扁、箭头也挤歪；改回 30×30 正方形并去掉
+   左右内边距，让「›」在 20px 内容区居中，标题带留 34px 正好容纳。 */
+html body header.task-panel-head .task-panel-collapse {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+html body header.task-panel-head .inspector-tabs { gap: 3px; }
+html body header.task-panel-head .inspector-tab {
+  box-sizing: border-box;
+  height: 30px;
+  min-width: 0;
+  padding: 0 3px;
+  font-size: 11px;
+  line-height: 28px;
+}
+html body header.task-panel-head .inspector-tab.is-active {
+  background: linear-gradient(#ffffff, #f4f2e9);
+  border-color: #718bb2;
+  box-shadow: inset 0 1px 0 #fff;
+}
+html body #task-panel .inspector-marker-search { height: 26px; }
+html body #task-panel .inspector-marker-main { min-height: 38px; }
+html body #task-panel .inspector-marker-pin { height: 24px; }
+html body #task-panel .inspector-detail-actions button { min-height: 26px; }
+html body #task-layer-toggles .legend-group-head { margin-top: 7px; }
+html body #task-layer-toggles .legend-group:first-child .legend-group-head { margin-top: 0; }
+html body #task-layer-toggles .legend-item { gap: 6px; padding: 1px 5px; }
+html body #task-layer-toggles .legend-name { font-size: 11px; }
+html body #task-layer-toggles .legend-count { font-size: 11px; }
+/* 未勾 / 被「可并行推进」临时压住的行统一压暗，与左侧图例同款反馈 */
+html body #task-layer-toggles .legend-item[data-on="false"] .legend-name { color: #9b9686; }
+html body #task-layer-toggles .legend-item[data-on="false"] .task-layer-ico { opacity: .35; }
+html body #task-layer-toggles .legend-item input:disabled { opacity: .55; }
+html body .task-parallel-toggle { gap: 6px; }
+html body .task-parallel-toggle .dot { flex: 0 0 auto; }
+
+/* ===========================================================================
+   R272：一级 / 二级工具条的按钮尺寸与间距统一
+   · 导航按钮（一级菜单项、二级视图 tab）统一 72×30，文字居中；
+   · 相邻按钮间距统一 5px（一级菜单组、右侧簇、二级视图组、价格按钮、市场元信息）；
+   · 二级栏原来那两条 2px 分隔条会把组间空隙撑到 12px，直接隐藏，
+     这样六个视图按钮才是真正的等距 5px。
+   =========================================================================== */
+html body .app-menubar .app-menu-btn {
+  box-sizing: border-box;
+  width: 72px;
+  padding: 0 4px;          /* 两侧各 5px 的按钮切片边框吃掉 10px，内宽 62px：容得下「价格识别」 */
+  text-align: center;
+  white-space: nowrap;
+}
+/* 云账号随菜单组搬到右侧：与菜单按钮同宽同高，排在「版本：…」左边 */
+html body .app-menubar .app-cloud-wrap { flex: 0 0 auto; order: 0; }
+
+/* 版本入口：宽度随版本名自适应（「版本：标准版」需要 100px），高度与菜单按钮对齐 */
+html body .app-menubar .app-account-btn { min-width: 72px; height: 30px; text-align: center; }
+
+/* 间距：一级 */
+html body .app-menubar { gap: 5px; }
+html body .app-menus { gap: 5px; }
+html body .app-menubar-right { gap: 5px; }
+
+/* 尺寸 + 间距：二级 */
+html body .view-toolbar { gap: 5px; }        /* 组与组之间也要 5px（分隔条已隐藏，组间距靠这条） */
+html body .view-toolbar .vt-group { gap: 5px; }
+html body .view-toolbar .view-btn { flex: 0 0 72px; width: 72px; }
+html body .view-toolbar .vt-sep { display: none; }
+html body .view-toolbar .vt-prices { gap: 5px; }
+html body .view-toolbar .vt-market-meta { gap: 5px; }
+
+/* R272：云账号搬到右侧后，它的面板改为「贴着按钮右缘向左展开」——
+   style.css 里 .am-cloud-panel 的 right:0 会被后加载的 .app-menu-panel 的 left:0 覆盖，
+   这里用更高的选择器把它改回来，否则 340px 的面板会向右溢出到版本 / 模式区。 */
+html body .app-cloud-wrap .am-cloud-panel {
+  left: auto;
+  right: 0;
+}
+
+/* R272：窄窗（≤1020）时两条栏统一收到 64px——仍然等宽等距，只是更紧凑，
+   否则一级栏在 900px 左右会被右侧簇挤出可视区。 */
+@media (max-width: 1020px) {
+  html body .app-menubar .app-menu-btn { width: 64px; padding: 0 2px; }
+  html body .view-toolbar .view-btn { flex: 0 0 64px; width: 64px; }
+}
+
+/* R273：云账号按钮文案改为「云账号：免费版 / 会员版」，7 个字装不进 R272 的 72px，
+   只有这一个按钮按内容自适应（其余一级 / 二级按钮仍是统一尺寸与 5px 间距）。 */
+html body .app-cloud-wrap .app-menu-btn {
+  width: auto;
+  min-width: 104px;
+  padding: 0 8px;
+}
+@media (max-width: 1020px) {
+  html body .app-cloud-wrap .app-menu-btn { min-width: 96px; padding: 0 5px; }
+}
+
+/* ============================================================
+   R19.97：所有界面的底图改为纯色
+   ------------------------------------------------------------
+   用户反馈：各界面底板像是「某张图被拉伸」出来的，会看到奇怪的
+   图案。根因是大面积容器用了 groupbox / menu-panel-bg / dialog-box
+   / titlebar / statusbar-bg 的 **fill 区域**做底色：这些位图只有
+   几百像素，铺到上千像素的面板上时中心被拉伸，细纹理就变成斑块。
+   这里保留原九宫格边框（只去掉 fill），容器底色统一用 XP 面部色
+   #ece9d8；小尺寸控件（按钮 / 输入框 / 卡片）仍保持原位图皮肤。
+   ============================================================ */
+
+/* 1) 三条框架条：菜单栏 / 视图工具条 / 上下文栏（原 15.1） */
+html body .app-menubar,
+html body #menubar,
+html body #context-bar {
+  border-image: url("titlebar.png") 8 / 2px stretch;
+  background: #ece9d8;
+}
+
+/* 2) 大面积面板（原 15.2） */
+html body #sidebar,
+html body aside#task-panel,
+html body aside.am-side,
+html body aside.lw-side,
+html body #lw-filters,
+html body #lw-focus,
+html body #lw-cost,
+html body #lw-figure,
+html body section.lw-block,
+html body #lw-gun-presets,
+html body #tk-story-main,
+html body #tk-story-list,
+html body #task-list,
+html body #gw-browse {
+  border-image: url("groupbox.png") 6 / 2px stretch;
+  background-color: #ece9d8;
+}
+
+/* 3) 工作台外壳（原 15.3） */
+html body #am-workbench,
+html body .gun-workbench,
+html body .loadout-workbench,
+html body #task-root.tk-shell {
+  border-image: url("menu-panel-bg.png") 12 / 1px stretch;
+  background-color: #ece9d8;
+}
+
+/* 4) 面板头 / 工具条带（原 15.4） */
+html body header.am-top,
+html body header.gw-top,
+html body header.lw-top,
+html body header.tk-head,
+html body header.task-panel-head,
+html body .am-head,
+html body nav.gw-modes,
+html body #am-tabs,
+html body #am-groups,
+html body #am-range,
+html body #gw-browsepage {
+  border-image: url("titlebar.png") 8 / 1px stretch;
+  background: #ece9d8;
+}
+
+/* 5) 底部状态条（原 15.5） */
+html body div.statusbar,
+html body footer.tk-statusbar {
+  border-image: url("statusbar-bg.png") 12 14 12 14 / 1px stretch;
+  background: #ece9d8;
+}
+
+/* 6) 弹窗底板（原 15.8） */
+html body .lw-modal-box,
+html body .lw-preset-box,
+html body .am-modal-box,
+html body .cal-modal {
+  border-image: url("dialog-box.png") 12 / 5px stretch;
+  background: #ece9d8;
+}
+
+/* 7) 配装空槽卡片底部的 45° 斜纹也一并换成纯色 */
+html .loadout-workbench .lw-cell[data-state="empty"] {
+  background-image: none;
+}
+
+/* R277 会员充值：ikuuu 式档位卡片（价格写在卡里）+ 一个主按钮兑换。
+   写在最后加载的主题里，用 html body 前缀压住 .acc-btn 的通用按钮外观。 */
+html body .am-cloud-panel .cloud-redeem {
+  margin: 10px 0 0;
+  padding: 8px;
+  border: 1px solid var(--ui-color-border, #919b9c);
+  background: var(--lw-panel-2, #ffffff);
+}
+html body .am-cloud-panel .cloud-redeem .cloud-section-title { margin: 0 0 6px; }
+html body .am-cloud-panel .rd-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin: 0 0 6px;
+}
+/* 纯展示卡片：不可点、无选中态（兑换以激活码自带天数为准，不要求选档位）。 */
+html body .am-cloud-panel .rd-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 42px;
+  padding: 4px 2px;
+  border: 1px solid var(--xp-border, #919b9c);
+  background: var(--ui-color-surface-raised, #ffffff);
+  color: var(--xp-text, #222);
+  font: inherit;
+  line-height: 1.2;
+  cursor: default;
+}
+html body .am-cloud-panel .rd-tier-label { font-size: 10px; white-space: nowrap; }
+html body .am-cloud-panel .rd-tier-price { font-size: 12px; font-weight: 700; }
+html body .am-cloud-panel .rd-hint {
+  margin: 0 0 6px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+html body .am-cloud-panel .rd-buy {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  margin: 0 0 6px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #5b45c4;
+  background: linear-gradient(#8368f0, #6a4fd8);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+html body .am-cloud-panel .rd-buy:hover {
+  color: #ffffff;
+  background: linear-gradient(#8f77f5, #7457e0);
+}
+html body .am-cloud-panel .rd-buy:active {
+  color: #ffffff;
+  background: linear-gradient(#6a4fd8, #5b45c4);
+}
+html body .am-cloud-panel .rd-buy[hidden] { display: none; }
+html body .am-cloud-panel .rd-form { display: flex; gap: 5px; }
+html body .am-cloud-panel .rd-form input {
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
+  font: inherit;
+  padding: 3px 6px;
+  border: 1px solid var(--xp-border, #919b9c);
+  background: var(--ui-color-surface-raised, #ffffff);
+  color: var(--xp-text, #222);
+}
+html body .am-cloud-panel .rd-form input:focus {
+  outline: 1px solid var(--ui-color-focus, #316ac5);
+  outline-offset: -1px;
+}
+html body .am-cloud-panel .rd-form .rd-submit {
+  flex: 0 0 76px;
+  padding: 3px 0;
+  font-weight: 700;
+}
+html body .am-cloud-panel .rd-form .rd-submit:disabled { opacity: .6; cursor: default; }
+html body .am-cloud-panel .rd-msg {
+  margin: 6px 0 0;
+  min-height: 1.4em;
+  font-size: 10px;
+}
+
+/* ===========================================================================
+   第一阶段：主导航与地图页
+   1) 工作区导航并入顶栏；2) 单一「应用菜单」设置弹层；
+   3) 地图工具栏（地图 / 楼层 / 定位 / 复位 / 显示）；4) 左栏搜索与快捷开关。
+   ========================================================================== */
+
+/* --- 1. 顶栏工作区导航 --- */
+html body .app-menubar .view-toolbar {
+  order: 1;
+  flex: 0 0 auto;
+  height: 100%;
+  margin: 0 0 0 2px;
+  padding: 0 0 0 8px;
+  border-left: 1px solid var(--ui-color-border);
+  gap: 5px;
+}
+html body .app-menubar .view-toolbar .vt-group { gap: 5px; }
+html body .app-menubar .view-toolbar .view-btn {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  height: 30px;
+  padding: 0 8px;
+}
+html body .app-menubar .view-toolbar .vt-sep { display: none; }
+html body .app-menubar .app-app-trigger { width: auto; min-width: 88px; }
+
+/* --- 2. 应用菜单：设置弹层 --- */
+html body .app-app-panel {
+  position: fixed;
+  top: var(--amh, 34px);
+  right: 6px;
+  left: auto;
+  width: min(780px, calc(100vw - 12px));
+  height: min(620px, calc(100vh - 80px));
+  min-width: 0;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+}
+html body .app-app-nav {
+  box-sizing: border-box;
+  flex: 0 0 132px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 6px;
+  border-right: 1px solid var(--ui-color-border);
+  background: linear-gradient(#f4f2e6, #e9e6d6);
+}
+html body .app-app-navbtn {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 10px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+html body .app-app-navbtn:hover { border-image-source: url("btn-hover.png"); color: #23231b; }
+html body .app-app-navbtn.is-active,
+html body .app-app-navbtn[aria-selected="true"] {
+  border-image-source: url("btn-pressed.png");
+  color: #23231b;
+  font-weight: 700;
+}
+html body .app-app-navbtn:focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -7px;
+}
+html body .app-app-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 12px 14px;
+  overflow: auto;
+  background: var(--ui-color-surface-raised, #ffffff);
+}
+html body .app-app-sec { display: block; }
+html body .app-app-h {
+  margin: 0 0 8px;
+  color: #3b3b31;
+  font: 700 13px/1.3 Tahoma, "Microsoft YaHei", sans-serif;
+}
+html body .app-app-close {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #5a574d;
+  font: 700 16px/1 Tahoma, sans-serif;
+  cursor: pointer;
+}
+html body .app-app-close:hover { background: var(--xp-sel); color: #fff; border-color: var(--ui-color-focus); }
+html body .app-app-close:focus-visible { outline: 1px dotted #000; outline-offset: -3px; }
+
+/* 迁进来的旧面板：不再是绝对定位下拉，回到文档流 */
+html body .app-app-body .app-menu-panel,
+html body .app-app-body .menu-panel {
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+html body .app-app-body .app-menu-item {
+  padding-left: 12px;
+  min-height: 30px;
+}
+html body .app-app-body .app-menu-item.is-current::before { display: none; }
+html body .app-app-body .settings-panel,
+html body .app-app-body .about-panel { width: auto; }
+/* 小地图面板在主界面里改成随设置弹层一起滚动，避免出现内外两条滚动条 */
+html body .app-app-body .app-mini-panel { max-height: none; overflow: visible; }
+html body .app-app-body .settings-note,
+html body .app-app-body .about-note,
+html body .app-app-body .about-lead { max-width: 620px; }
+html body .app-app-body #raid-block { width: auto; }
+
+/* --- 3. 地图工具栏 --- */
+html body .context-bar .cb-global {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: none;
+  height: 100%;
+  margin-left: auto;
+  padding-left: 8px;
+  border-left: 1px solid var(--ui-color-border);
+}
+html body .context-bar .vt-prices { display: flex; align-items: center; gap: 5px; flex: none; }
+html body .context-bar .vt-price {
+  box-sizing: border-box;
+  height: 24px;
+  padding: 0 8px;
+  font: 12px/20px Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #1b1b18;
+  border: 1px solid var(--ui-color-border, #919b9c);
+  border-radius: 3px;
+  background: linear-gradient(#ffffff, #f0f0ec);
+}
+html body .context-bar .vt-price:hover { background: linear-gradient(#ffffff, #e6eefb); }
+html body .context-bar .vt-price[aria-checked="true"] {
+  font-weight: 600;
+  color: #0a2a5e;
+  border-color: #316ac5;
+  background: linear-gradient(#cfe2ff, #a9c9ff);
+}
+html body .context-bar .vt-price:disabled { opacity: .5; cursor: not-allowed; }
+html body .context-bar .vt-market-meta { display: flex; align-items: center; gap: 5px; flex: none; min-width: 0; }
+html body .context-bar .vt-member-expire {
+  flex: none;
+  padding: 0 2px;
+  color: #5a574d;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+
+/* 地图工具栏：整槽可伸缩，楼层按钮在剩余宽度里横向滚动，右侧全局价格区不被挤出视口 */
+html body .context-bar .cb-pane#cb-map {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+/* 地图下拉：工具栏里按视口宽度收紧，给楼层和动作按钮留空间 */
+html body .context-bar #cb-map > section.block.cb-src-block {
+  flex: 0 0 auto;
+  width: clamp(150px, 16vw, 240px);
+}
+html body .context-bar #floor-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-image: none;
+  background: none;
+  box-shadow: none;
+}
+html body .context-bar #floor-block > h2 {
+  margin: 0;
+  padding: 0 2px 0 0;
+  color: #5a574d;
+  font: 400 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+html body .context-bar #floor-note { display: none; }
+html body .context-bar .floor-list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  gap: 2px;
+  min-width: 0;
+  height: 24px;
+  margin: 0;
+  overflow-x: auto;
+  /* 工具栏只有 36px：滚条本身不占高度，楼层按钮仍可横向滚动 */
+  scrollbar-width: none;
+}
+html body .context-bar .floor-list::-webkit-scrollbar { width: 0; height: 0; }
+html body .context-bar .floor-opts { display: flex; flex: 0 0 auto; flex-wrap: nowrap; gap: 8px; margin: 0; }
+html body .context-bar .floor-opts .toggle { height: 24px; }
+html body .context-bar .floor-opts label { font-size: 11px; }
+
+html body .context-bar .cb-tool {
+  box-sizing: border-box;
+  flex: none;
+  height: 30px;
+  padding: 0 9px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+html body .context-bar .cb-tool:hover { border-image-source: url("btn-hover.png"); }
+html body .context-bar .cb-tool:active,
+html body .context-bar .cb-tool.is-open { border-image-source: url("btn-pressed.png"); }
+html body .context-bar .cb-tool:focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -4px;
+}
+
+html body .cb-popover {
+  position: absolute;
+  top: 100%;
+  right: 6px;
+  z-index: 60;
+  box-sizing: border-box;
+  width: 340px;
+  padding: 10px 12px;
+  background: var(--ui-color-surface-raised, #ffffff);
+  border: 1px solid var(--xp-border, #919b9c);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .32);
+}
+html body .cb-popover .block {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+html body .cb-popover h2 {
+  margin: 0 0 8px;
+  color: #3b3b31;
+  font: 700 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+}
+html body .cb-popover .hud-scales { align-items: stretch; }
+html body .cb-popover .hud-scale { justify-content: space-between; }
+
+/* --- 4. 左栏搜索与常用图层快捷开关 --- */
+html body .layer-search {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("input.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 12px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  outline: none;
+}
+html body .layer-search:focus { box-shadow: inset 0 0 0 1px rgba(49, 106, 197, .55); }
+html body .layer-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 6px 0 4px;
+}
+html body .layer-chip {
+  box-sizing: border-box;
+  height: 24px;
+  padding: 0 8px;
+  border: 5px solid transparent;
+  border-image: url("btn-normal.png") 5 fill / 5px stretch;
+  background: transparent;
+  color: #23231b;
+  font: 11px/1 Tahoma, "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+html body .layer-chip:hover { border-image-source: url("btn-hover.png"); }
+html body .layer-chip[aria-pressed="true"] { border-image-source: url("btn-pressed.png"); color: #0a2a5e; }
+html body .layer-chip[aria-pressed="mixed"] {
+  border-image-source: url("btn-hover.png");
+  color: #0a2a5e;
+  outline: 1px dashed #316ac5;
+  outline-offset: -6px;
+}
+html body .layer-chip:focus-visible {
+  border-image-source: url("btn-focus.png");
+  outline: 1px dotted #1a1a16;
+  outline-offset: -6px;
+}
+
+/* --- 5. HUD 移到右下角，避开底部状态栏 --- */
+html body #hud {
+  top: auto;
+  right: 10px;
+  bottom: 34px;
+}
+
+/* --- 6. 窄屏 --- */
+@media (max-width: 1180px) {
+  html body .app-menubar .view-toolbar .vt-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  html body .app-menubar .view-toolbar .view-btn { padding: 0 6px; }
+  /* 窄屏优先保住地图 / 楼层 / 动作按钮；楼层自动切层、行情截止说明与会员到期属于低频信息 */
+  html body .context-bar #floor-block .floor-opts { display: none; }
+  html body .context-bar .vt-member-expire { display: none; }
+  html body .context-bar .vt-market-meta .mk-cutoff { display: none; }
+}
+@media (max-width: 900px) {
+  html body .app-menubar .view-toolbar { gap: 2px; margin-left: 0; padding-left: 4px; }
+  html body .app-menubar .app-app-trigger { min-width: 0; }
+  html body .app-app-panel { width: calc(100vw - 12px); height: calc(100vh - 80px); }
+  html body .app-app-nav { flex-basis: 110px; }
+  html body .context-bar .cb-global { gap: 3px; padding-left: 4px; }
+  /* 再窄时顶栏不折行、不压到地图：允许横向滚动（滚条隐藏），所有入口仍可达 */
+  html body #app-menubar {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+  html body #app-menubar::-webkit-scrollbar { width: 0; height: 0; }
+  html body .app-menubar-right { flex: 0 0 auto; }
+  html body .app-menubar .scope-cluster { flex: 0 0 auto; width: auto; max-width: none; }
+  html body .app-menubar .scope-cluster .game-mode-bar { flex-wrap: nowrap; }
+}

@@ -1,0 +1,833 @@
+{
+ "name": "db4-barter",
+ "requested_url": "https://db4tarkov.com/barter",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "semantics_auto": "clicked",
+ "url": "https://db4tarkov.com/barter",
+ "title": "Barter",
+ "ready": "complete",
+ "textLen": 393,
+ "htmlLen": 91066,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 65,
+ "input": 1,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0 🌖 18:34 🌓 06:34"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "input",
+   "label": "Type to search — ESC to clear"
+  },
+  {
+   "role": "button",
+   "label": "lastPrice"
+  },
+  {
+   "role": "button",
+   "label": "avg24h"
+  },
+  {
+   "role": "button",
+   "label": "avg7d"
+  },
+  {
+   "role": "button",
+   "label": "only TraderLvl"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "List attachment from gun barter that force sell to Trader Current: 0"
+  },
+  {
+   "role": "button",
+   "label": "Trader"
+  },
+  {
+   "role": "button",
+   "label": "InstaProfit"
+  },
+  {
+   "role": "button",
+   "label": "Save %"
+  },
+  {
+   "role": "group",
+   "label": "3 Peacekeeper 94,520"
+  },
+  {
+   "role": "button",
+   "label": "Access 1 94,520"
+  },
+  {
+   "role": "img",
+   "label": "G28 Patrol"
+  },
+  {
+   "role": "group",
+   "label": "2 Therapist 20,711"
+  },
+  {
+   "role": "button",
+   "label": "1 20,711"
+  },
+  {
+   "role": "img",
+   "label": "Croutons"
+  },
+  {
+   "role": "group",
+   "label": "3 Jaeger 60,862"
+  },
+  {
+   "role": "button",
+   "label": "2 30,431"
+  },
+  {
+   "role": "img",
+   "label": "Bramit"
+  },
+  {
+   "role": "group",
+   "label": "2 Ragman 53,155 79,400"
+  },
+  {
+   "role": "button",
+   "label": "2 39,700"
+  },
+  {
+   "role": "img",
+   "label": "UNTAR"
+  },
+  {
+   "role": "group",
+   "label": "2 Jaeger 103,555"
+  },
+  {
+   "role": "button",
+   "label": "5 20,711"
+  },
+  {
+   "role": "img",
+   "label": "Sugar"
+  },
+  {
+   "role": "group",
+   "label": "4 Ref"
+  },
+  {
+   "role": "button",
+   "label": "155"
+  },
+  {
+   "role": "img",
+   "label": "GPU"
+  },
+  {
+   "role": "group",
+   "label": "2 Mechanic"
+  },
+  {
+   "role": "button",
+   "label": "2"
+  },
+  {
+   "role": "img",
+   "label": "LCD"
+  },
+  {
+   "role": "group",
+   "label": "4 Mechanic"
+  },
+  {
+   "role": "button",
+   "label": "3"
+  },
+  {
+   "role": "button",
+   "label": "1"
+  },
+  {
+   "role": "button",
+   "label": "5"
+  },
+  {
+   "role": "img",
+   "label": "MB"
+  },
+  {
+   "role": "button",
+   "label": "10"
+  },
+  {
+   "role": "button",
+   "label": "8"
+  },
+  {
+   "role": "img",
+   "label": "GPSA"
+  },
+  {
+   "role": "group",
+   "label": "1 Mechanic"
+  },
+  {
+   "role": "img",
+   "label": "GasAn"
+  },
+  {
+   "role": "group",
+   "label": "3 Mechanic"
+  },
+  {
+   "role": "button",
+   "label": "7"
+  },
+  {
+   "role": "button",
+   "label": "30"
+  },
+  {
+   "role": "img",
+   "label": "MCC"
+  },
+  {
+   "role": "group",
+   "label": "1 Ragman"
+  },
+  {
+   "role": "img",
+   "label": "Soap"
+  },
+  {
+   "role": "group",
+   "label": "1 Therapist"
+  },
+  {
+   "role": "img",
+   "label": "Toothpaste"
+  },
+  {
+   "role": "img",
+   "label": "0.2BTC"
+  },
+  {
+   "role": "group",
+   "label": "2 Ref"
+  },
+  {
+   "role": "button",
+   "label": "19"
+  },
+  {
+   "role": "img",
+   "label": "Fuel"
+  },
+  {
+   "role": "group",
+   "label": "3 Ref 238,944"
+  },
+  {
+   "role": "button",
+   "label": "41"
+  },
+  {
+   "role": "group",
+   "label": "3 Skier 238,944"
+  },
+  {
+   "role": "button",
+   "label": "6"
+  },
+  {
+   "role": "group",
+   "label": "1 Jaeger 238,944"
+  },
+  {
+   "role": "group",
+   "label": "2 Prapor 238,944"
+  },
+  {
+   "role": "group",
+   "label": "2 Therapist"
+  },
+  {
+   "role": "button",
+   "label": "4"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/barter",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793252310726",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabsE4tq3luCC7p-aXxcn.7.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Peacekeeper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c94bbff86f7747ee735c08f.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6193e5f3aa34a3034236bdb3.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5751487e245977207e26a315.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57347d3d245977448f7b7f61.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590c5d4b86f774784e1b9c45.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5b86a0e586f7745b600ccb23.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/59e770b986f7742cbd762754.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5aa7d03ae5b5b00016327db5.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/59e3577886f774176a362503.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d235b4d86f7742e017bc88a.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57347ca924597744596b4e71.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d1b309586f77425227d1676.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d1b304286f774253763a528.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c05308086f7746b2101e90b.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c1265fc86f7743f896a21c2.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c05300686f7746dce784e5d.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6389c7750ef44505c87f5996.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d03784a86f774203e7e0c4d.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d0375ff86f774186372f685.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c052fb986f7746b2101e909.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c052f6886f7746b1e3db148.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6389c7f115805221fb410466.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5734779624597737e04bf329.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/590a3efd86f77437d351a25b.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5733279d245977289b77ec24.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6389c70ca33d8c4cdf4932c6.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d03775b86f774203e7e0c4b.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6389c85357baa773a825b356.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/62a0a098de7ac8199358053b.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c13cd2486f774072c757944.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d4041f086f7743cac3f22a7.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57347c93245977448d35f6e3.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5c12620d86f7743f8b198b72.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5e2aedd986f7746d404f3aa4.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/59faff1d86f7746c51718c9c.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d1b371186f774253763a656.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5d1b36a186f7742523398433.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/62a09f32621468534a797acb.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57347b8b24597737dd42e192.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5e2af2bc86f7746d3f3c33fc.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/59fafb5d86f774067a6f2084.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/5b43575a86f77424f443fe62.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/6389c6463485cf0eeb260715.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notosanssc/v37/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FnYkldv7JjxkkgFsFSSOPMOkySAZ73y9ViAt3acb8NexQ2w.119.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/All.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Prapor.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Therapist.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Skier.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Peacekeeper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Mechanic.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Ragman.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Ref.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-N427SV6H5B",
+   "host": "www.googletagmanager.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6as0h2v9117849133za208zd9117849133xf1&_p=1793252352267&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=16&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand",
+   "host": "www.google-analytics.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Peacekeeper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Jaeger.png",
+   "host": "db4tarkov.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/db4-barter.png",
+ "screenshot_bytes": 293844
+}

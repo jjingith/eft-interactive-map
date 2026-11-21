@@ -1,0 +1,877 @@
+{
+ "name": "db4-season",
+ "requested_url": "https://db4tarkov.com/season",
+ "viewport": [
+  1600,
+  1000
+ ],
+ "errors": [],
+ "semantics_auto": "clicked",
+ "url": "https://db4tarkov.com/season",
+ "title": "Season",
+ "ready": "complete",
+ "textLen": 1716,
+ "htmlLen": 86710,
+ "canvas": 0,
+ "flutter": true,
+ "btn": 33,
+ "input": 0,
+ "table": 0,
+ "ls": [
+  "FlutterFire-[DEFAULT]-recaptchaType",
+  "_web_ver",
+  "FlutterFire-[DEFAULT]-recaptchaSiteKey",
+  "logs_settings",
+  "GetStorage"
+ ],
+ "meta": "Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter & more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.",
+ "links": [],
+ "aria": [
+  {
+   "role": "header",
+   "label": "DB4Tarkov v2026.10.28-0 🌖 18:54 🌓 06:54"
+  },
+  {
+   "role": "button",
+   "label": "MARKET"
+  },
+  {
+   "role": "button",
+   "label": "SEASON Kord"
+  },
+  {
+   "role": "button",
+   "label": "QUEST"
+  },
+  {
+   "role": "button",
+   "label": "KEEP"
+  },
+  {
+   "role": "button",
+   "label": "GUN"
+  },
+  {
+   "role": "button",
+   "label": "PRESET"
+  },
+  {
+   "role": "button",
+   "label": "AMMO"
+  },
+  {
+   "role": "button",
+   "label": "MAP"
+  },
+  {
+   "role": "button",
+   "label": "BARTER"
+  },
+  {
+   "role": "button",
+   "label": "CRAFT"
+  },
+  {
+   "role": "button",
+   "label": "CHANGES 1.2.0.0"
+  },
+  {
+   "role": "button",
+   "label": "LOGS"
+  },
+  {
+   "role": "flt-semantics",
+   "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+  },
+  {
+   "role": "button",
+   "label": "PvE"
+  },
+  {
+   "role": "button",
+   "label": "PvP"
+  },
+  {
+   "role": "button",
+   "label": "SS (38d)"
+  },
+  {
+   "role": "button",
+   "label": "Change Site Resolution"
+  },
+  {
+   "role": "button",
+   "label": "Change Language"
+  },
+  {
+   "role": "button",
+   "label": "About Me"
+  },
+  {
+   "role": "button",
+   "label": "Discord Server"
+  },
+  {
+   "role": "button",
+   "label": "Login to save your progress"
+  },
+  {
+   "role": "img",
+   "label": "NO INSURANCE Cannot insure items before raid"
+  },
+  {
+   "role": "img",
+   "label": "BLACK DIVISION Black Division operatives can be encountered on specific location"
+  },
+  {
+   "role": "group",
+   "label": "NO FIR FOR HIDEOUT"
+  },
+  {
+   "role": "img",
+   "label": "Hideout zones don't require the Found in Raid status"
+  },
+  {
+   "role": "img",
+   "label": "ARMOR SHORTAGE Traders across Tarkov are experiencing an armor shortage"
+  },
+  {
+   "role": "group",
+   "label": "HANDYMAN"
+  },
+  {
+   "role": "img",
+   "label": "Item crafting time is reduced by 50% Crafting skill starts at level 51"
+  },
+  {
+   "role": "img",
+   "label": "SEASONED PMCS Your character gains 25% more experience"
+  },
+  {
+   "role": "button",
+   "label": "SHARE"
+  },
+  {
+   "role": "button",
+   "label": "RESET"
+  },
+  {
+   "role": "group",
+   "label": "INCOMPETENT - All character skills can only be increased up to level 30 (Excludi"
+  },
+  {
+   "role": "img",
+   "label": "- All character skills are leveled 25% slower (Excluding Bolt-action Rifles )"
+  },
+  {
+   "role": "group",
+   "label": "AVERAGE -12"
+  },
+  {
+   "role": "img",
+   "label": "- All character skills are set to level 25 but cannot be leveled further (Exclud"
+  },
+  {
+   "role": "button",
+   "label": "NO FLEA MARKET - Trading with players on the Flea Market is disabled +10"
+  },
+  {
+   "role": "group",
+   "label": "KAPPA PROTOCOL -12"
+  },
+  {
+   "role": "img",
+   "label": "- Immediately receive Secure container Kappa"
+  },
+  {
+   "role": "button",
+   "label": "￼Allowed in Broken Secure Container Besides cash, keys & keycards, dogtags, spec"
+  },
+  {
+   "role": "button",
+   "label": "BUSHBORNE - Walking in vegetation generates 75% less noise and movement slowdown"
+  },
+  {
+   "role": "button",
+   "label": "EXHAUSTION - Arm and leg stamina recovers 20% slower - Arm and leg stamina is re"
+  },
+  {
+   "role": "group",
+   "label": "HERCULES - and start at level 15 -5"
+  },
+  {
+   "role": "img",
+   "label": "Strength"
+  },
+  {
+   "role": "img",
+   "label": "Endurance skills"
+  },
+  {
+   "role": "button",
+   "label": "UNDERDOG - You started the season later than everyone else, but it’s too early t"
+  },
+  {
+   "role": "button",
+   "label": "￼Skill experience The increase applies to both in-raid skill experience and skil"
+  },
+  {
+   "role": "group",
+   "label": "￼Allergens The 3 items are picked on character creation and can be any drug, inj"
+  },
+  {
+   "role": "img",
+   "label": "Provisions"
+  },
+  {
+   "role": "img",
+   "label": "Medication"
+  },
+  {
+   "role": "button",
+   "label": "SAFECRACKER - Mechanical keys have a 25% chance not to lose durability when used"
+  },
+  {
+   "role": "group",
+   "label": "OSTEOPOROSIS - Falling from heights deals 20% more damage +3"
+  },
+  {
+   "role": "img",
+   "label": "- Limb fracture chance is increased by 25%"
+  },
+  {
+   "role": "group",
+   "label": "YOUTH - Arm and leg stamina is increased by 10 -5"
+  },
+  {
+   "role": "img",
+   "label": "- Energy is consumed 20% slower"
+  },
+  {
+   "role": "group",
+   "label": "CHRONIC FATIGUE SYNDROME +2"
+  },
+  {
+   "role": "img",
+   "label": "- Energy is consumed 20% faster"
+  },
+  {
+   "role": "button",
+   "label": "MARATHON RUNNER - Arm and leg stamina is consumed 20% slower -3"
+  },
+  {
+   "role": "group",
+   "label": "HEMOPHILIA +2"
+  },
+  {
+   "role": "img",
+   "label": "- Bleeding chance is increased by 25%"
+  },
+  {
+   "role": "button",
+   "label": "SPRINTER - Running speed is increased by 5% -3"
+  },
+  {
+   "role": "group",
+   "label": "￼Trader prices The increased price applies to both direct purchases and barter t"
+  },
+  {
+   "role": "img",
+   "label": "- Charisma skill cannot be increased"
+  },
+  {
+   "role": "group",
+   "label": "STURDY BONES - Falling from heights deals 20% less damage -3"
+  },
+  {
+   "role": "img",
+   "label": "- Limb fracture chance is decreased by 25%"
+  },
+  {
+   "role": "group",
+   "label": "POLYDIPSIA +2"
+  },
+  {
+   "role": "img",
+   "label": "- Hydration is consumed 15% faster"
+  },
+  {
+   "role": "group",
+   "label": "DIET -2"
+  },
+  {
+   "role": "img",
+   "label": "- All provisions consume 50% less resource"
+  },
+  {
+   "role": "group",
+   "label": "WELL THAT HURT! +2"
+  },
+  {
+   "role": "img",
+   "label": "- All medkit uses consume 25% more resource"
+  },
+  {
+   "role": "group",
+   "label": "HYPODIPSIA -2"
+  },
+  {
+   "role": "img",
+   "label": "- Hydration is consumed 20% slower"
+  },
+  {
+   "role": "group",
+   "label": "DR. JEKYLL +1"
+  },
+  {
+   "role": "img",
+   "label": "- After gaining the Fresh Wound status, it cannot be removed until the end of th"
+  },
+  {
+   "role": "group",
+   "label": "JUICE TIME - Consuming a grants the effect for 60 seconds -2"
+  },
+  {
+   "role": "img",
+   "label": "juice drink"
+  },
+  {
+   "role": "img",
+   "label": "Painkiller"
+  },
+  {
+   "role": "group",
+   "label": "THIRD LEG - Movement speed is decreased by 1% +1"
+  },
+  {
+   "role": "img",
+   "label": "- Buying items at Therapist is 5% cheaper"
+  },
+  {
+   "role": "group",
+   "label": "POLYPHAGIA -2"
+  },
+  {
+   "role": "button",
+   "label": "UNLUCKY - Your bad luck can sometimes have dire consequences +1"
+  },
+  {
+   "role": "group",
+   "label": "SAILOR'S NOSTALGIA -2"
+  },
+  {
+   "role": "img",
+   "label": "- Consuming canned fish grants the Health Regeneration (+2) effect for 30 second"
+  },
+  {
+   "role": "group",
+   "label": "THE TARKOV SHOOTER -2"
+  },
+  {
+   "role": "img",
+   "label": "- Bolt-action Rifles skill starts at level 25"
+  },
+  {
+   "role": "img",
+   "label": "- Bolt-action Rifles skill leveling speed is increased by 100%"
+  },
+  {
+   "role": "group",
+   "label": "THROMBOPHILIA -2"
+  },
+  {
+   "role": "img",
+   "label": "- Bleeding chance is decreased by 25%"
+  },
+  {
+   "role": "button",
+   "label": "LUCKY - Audentes fortuna iuvat! -1"
+  },
+  {
+   "role": "group",
+   "label": "STREET TAX -1"
+  },
+  {
+   "role": "img",
+   "label": "- Once per week, some Scavs pay you protection money"
+  }
+ ],
+ "requests": [
+  {
+   "url": "https://db4tarkov.com/season",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/main.dart.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/splash/img/light-1x.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-512.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/flutter_bootstrap.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+   "host": "static.cloudflareinsights.com"
+  },
+  {
+   "url": "https://db4tarkov.com/version.json?v=1793252474944",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/manifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.wasm",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/canvaskit/chromium/canvaskit.js",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/FontManifest.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/cdn-cgi/rum?",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/icons/Icon-192.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/MaterialIcons-Regular.otf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/FiraCode-Light.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/fonts/RobotoMono-Regular.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://accounts.google.com/gsi/client",
+   "host": "accounts.google.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore-pipelines.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-analytics.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-app-check.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-database.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.gstatic.com/firebasejs/12.15.0/firebase-remote-config.js",
+   "host": "www.gstatic.com"
+  },
+  {
+   "url": "https://www.google.com/recaptcha/api.js",
+   "host": "www.google.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/AssetManifest.bin.json",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/core/changes.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57347d9c245977448b40fa85.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/544fb45d4bdc2dee738b4568.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://cdn.db4tarkov.com/icon/57513f07245977207e26a311.webp",
+   "host": "cdn.db4tarkov.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://firebase.googleapis.com/v1alpha/projects/-/apps/1:691484958322:web:b09c4c5d27d21aa947eceb/webConfig",
+   "host": "firebase.googleapis.com"
+  },
+  {
+   "url": "https://json.tarkov.dev/pvp-season/season",
+   "host": "json.tarkov.dev"
+  },
+  {
+   "url": "https://json.tarkov.dev/pvp-season/season_en",
+   "host": "json.tarkov.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notosanssc/v37/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FrYtHbQ.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Incompetent_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/weapon/Sniper.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/No_Flea_Market_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Broken_Secure_Container_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Exhaustion_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Underdog_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Allergic_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Osteoporosis_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_Fracture.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Chronic_Fatigue_Syndrome_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_Fatigue.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Hemophilia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_Bleeding.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Personality_Vacuum_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/skill/charisma.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Polydipsia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_Dehydration.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Well_That_Hurt_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Dr._Jekyll_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_Fresh_Wound.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Third_Leg_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Therapist.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Unlucky_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Average_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/skill/crafting.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Kappa_Protocol_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/kappa.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Bush_Borne_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Hercules_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/skill/strength.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/skill/endurance.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Prodigy_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Safecracker_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Youth_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Marathon_Runner_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Sprinter_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Sturdy_Bones_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Diet_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Hypodipsia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/The_Juice_Time_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Status_On_Painkillers.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Polyphagia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Sailor_Nostalgia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/The_Tarkov_Shooter_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/skill/bolt-actions.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Thrombophilia_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Lucky_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/Street_Tax_Modifier_icon.webp",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/images/npc/Fence.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/no_insurance.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/black_division.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/no_fir_for_hideout.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/text/found_in_raid.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/armor_shortage.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/handyman.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://db4tarkov.com/assets/assets/icon/season/seasoned_pmcs.png",
+   "host": "db4tarkov.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_dev_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFabsE4tq3luCC7p-aXxcn.7.woff2",
+   "host": "fonts.gstatic.com"
+  },
+  {
+   "url": "https://eft-cdn.dvcstudiox.workers.dev/json/realtime/market_tm_ss.json",
+   "host": "eft-cdn.dvcstudiox.workers.dev"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://firebaseinstallations.googleapis.com/v1/projects/tarkov-e9c6f/installations",
+   "host": "firebaseinstallations.googleapis.com"
+  },
+  {
+   "url": "https://www.googletagmanager.com/gtag/js?l=dataLayer&id=G-N427SV6H5B",
+   "host": "www.googletagmanager.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1h1v9117849133za208zd9117849133xf1&_p=1793252507470&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%",
+   "host": "www.google-analytics.com"
+  },
+  {
+   "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-N427SV6H5B&gtm=45je6ar1h1v9117849133za200zd9117849133xf1&_p=1793252507470&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&_fid=ekQm1qyF77w4AcwFaJSGZX&cid=1047573073.1793251631&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=800x600&uaa=x86&uab=64&uafvl=Not%253AA-Brand%",
+   "host": "www.google-analytics.com"
+  }
+ ],
+ "console": [
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  },
+  {
+   "type": "log",
+   "text": "Refused to set unsafe header \"User-Agent\""
+  }
+ ],
+ "screenshot": "screenshots/db4-season.png",
+ "screenshot_bytes": 349458
+}

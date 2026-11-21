@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- R240 · 截图识别工作流页（QQ 式速度：保温窗口轮询换帧 → 框选 → 交接宿主）
+
+  由 tools/scan.py 以全屏无边框浏览器窗口打开（窗口识别完只隐藏不销毁，R240 保温）：
+    /scan.html?frame=<id>&mode=regular&autotest=1&bbox=x,y,w,h   （frame 可省——轮询自动拉）
+  · 换帧（R240）：页面每 150ms（可见时）轮询 GET /api/ocr/frame 元信息，
+    发现新 frame id → 暗色待机 → 拉帧 → 框选就绪；窗口隐藏时节流 800ms，
+    唤醒瞬间 visibilitychange 立即拉取——无白屏/旧帧闪动
+  · 框选：QQ 式暗化遮罩 + 十字线 + 尺寸提示；Esc / 右键取消（标题「EFT截图·关闭」，
+    宿主隐藏窗口保温）
+  · 识别：前端按图像坐标裁剪 → POST /api/ocr/recognize（annotate:false）
+  · 交接（R239）：POST /api/ocr/overlay/state {region, matches} → 标题「EFT截图·完成」
+    → 宿主隐藏本窗、开原生透明浮窗（价格叠在装备上、全窗点击穿透）——
+    本页只负责框选与交接，从不渲染结果面板，也从不自行关闭窗口
+  · autotest：验收用——每帧就绪后自动框选 bbox 并识别，暴露 window.__scanTest
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>EFT 截图识别</title>
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #14161a;
+               font: 12px/1.5 "Microsoft YaHei", Tahoma, sans-serif; user-select: none; }
+  #frame { position: absolute; inset: 0; width: 100vw; height: 100vh; }
+  #shade { position: absolute; inset: 0; background: rgba(8, 10, 14, .55); cursor: crosshair; }
+  #sel { position: absolute; overflow: hidden; display: none; pointer-events: none;
+         outline: 2px solid #69b6e1; }
+  #sel img { position: absolute; }
+  #sizeTip { position: absolute; display: none; background: #0e1116; color: #e8e8e6;
+             border: 1px solid #69b6e1; padding: 2px 8px; font-size: 11px; z-index: 40;
+             pointer-events: none; }
+  #crossV, #crossH { position: absolute; background: rgba(105, 182, 225, .55); display: none;
+                     pointer-events: none; z-index: 30; }
+  #crossV { width: 1px; top: 0; bottom: 0; }
+  #crossH { height: 1px; left: 0; right: 0; }
+  #hint { position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+          background: rgba(14, 17, 22, .92); color: #e8e8e6; border: 1px solid #3a4652;
+          padding: 8px 18px; z-index: 50; }
+  #hint b { color: #69b6e1; }
+  #status { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+            background: rgba(14, 17, 22, .92); color: #e8e8e6; border: 1px solid #3a4652;
+            padding: 6px 16px; z-index: 50; display: none; }
+</style>
+</head>
+<body>
+<img id="frame" alt="" style="visibility:hidden">
+<div id="shade"></div>
+<div id="sel"><img alt=""></div>
+<div id="crossV"></div><div id="crossH"></div>
+<div id="sizeTip"></div>
+<div id="hint" style="display:none">按住左键<b>框选要识别的区域</b> · Esc 或右键取消</div>
+<div id="status"></div>
+<script>
+(function () {
+  "use strict";
+  var qs = new URLSearchParams(location.search);
+  var mode = qs.get("mode") || "regular";
+  var autotest = qs.get("autotest") === "1";
+  var autotestBbox = qs.get("bbox") || "";
+  var BASE_TITLE = "EFT 截图识别";
+
+  var curFrameId = qs.get("frame") || null;
+  var selecting = false;        // 当前帧处于框选流程（标题信号只在这一态被宿主消费）
+  var matches = [];
+  var lastRegion = null;
+
+  var img = document.getElementById("frame");
+  var shade = document.getElementById("shade");
+  var selBox = document.getElementById("sel");
+  var selImg = selBox.querySelector("img");
+  var crossV = document.getElementById("crossV");
+  var crossH = document.getElementById("crossH");
+  var sizeTip = document.getElementById("sizeTip");
+  var hint = document.getElementById("hint");
+  var statusEl = document.getElementById("status");
+  var drag = null;
+
+  function setStatus(text) {
+    statusEl.textContent = text || "";
+    statusEl.style.display = text ? "block" : "none";
+  }
+  function scaleFactor() {
+    // 窗口尺寸可能与图像像素不完全一致（DPI / 窗口补偿），按实际显示比例换算
+    return img.naturalWidth ? (img.naturalWidth / img.clientWidth) : 1;
+  }
+  function scaleFactors() {
+    // X / Y 各自换算（显示被拉伸时裁剪才不偏）
+    return { sx: img.naturalWidth ? (img.naturalWidth / img.clientWidth) : 1,
+             sy: img.naturalHeight ? (img.naturalHeight / img.clientHeight) : 1 };
+  }
+
+  // ---- 待机 / 新帧（R240） ----
+  function resetIdle() {
+    selecting = false;
+    matches = [];
+    lastRegion = null;
+    img.style.visibility = "hidden";
+    selBox.style.display = "none";
+    shade.style.display = "block";
+    shade.style.pointerEvents = "auto";
+    sizeTip.style.display = "none";
+    crossV.style.display = "none";
+    crossH.style.display = "none";
+    hint.style.display = "none";
+    setStatus("");
+  }
+  function startNewScan(fid) {
+    curFrameId = fid;
+    selecting = true;
+    document.title = BASE_TITLE;        // 复位上一轮的完成/关闭标记（宿主按 ts 防误读）
+    img.style.visibility = "hidden";
+    selBox.style.display = "none";
+    shade.style.display = "block";
+    shade.style.pointerEvents = "auto";
+    hint.style.display = "block";
+    setStatus("");
+    img.src = "/api/ocr/frame?id=" + encodeURIComponent(fid);
+  }
+  img.onload = function () {
+    if (!selecting) { return; }
+    selImg.src = img.src;
+    img.style.visibility = "visible";
+    if (autotest && autotestBbox) {
+      var p = autotestBbox.split(",").map(function (v) { return parseFloat(v); });
+      setTimeout(function () { finishSelect({ x: p[0], y: p[1], w: p[2], h: p[3] }); }, 60);
+    }
+  };
+  img.onerror = function () {
+    if (selecting) { setStatus("冻结帧不存在或已过期（重新按热键即可）"); }
+  };
+
+  // 轮询元信息：可见 150ms / 隐藏 800ms（浏览器对隐藏页节流，唤醒靠 visibilitychange 兜底）
+  function pollOnce() {
+    fetch("/api/ocr/frame", { cache: "no-store" }).then(function (r) { return r.json(); })
+      .then(function (meta) {
+        if (meta && meta.ok && meta.id && meta.id !== curFrameId) { startNewScan(meta.id); }
+      }).catch(function () { /* 服务未起/网络抖动，下一轮再试 */ });
+  }
+  var pollTimer = null;
+  function setupPoll() {
+    if (pollTimer) { clearInterval(pollTimer); }
+    pollTimer = setInterval(pollOnce, document.hidden ? 800 : 150);
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { return; }
+    document.title = BASE_TITLE;        // 立即清掉上一轮标记，宿主以 shown_at+ts 防竞态
+    // R245：隐藏期间 Chromium 可能暂停合成，唤醒后首帧会是白屏（要点击才重绘）。
+    // 这里强制一次合成提交（极小的透明度变化 + 下一帧还原），配合宿主侧的
+    // RedrawWindow / DwmFlush 与浏览器关遮挡参数，保证唤醒即出画面。
+    var de = document.documentElement;
+    de.style.opacity = "0.999";
+    requestAnimationFrame(function () { de.style.opacity = "1"; });
+    pollOnce();                         // 唤醒瞬间立刻拉帧，不等下一轮
+    setupPoll();
+  });
+  setupPoll();
+  if (curFrameId) { startNewScan(curFrameId); }   // 冷启动/验收：直接载 URL 指定帧
+
+  // ---- 框选 ----
+  shade.addEventListener("mousedown", function (ev) {
+    if (ev.button !== 0) { return; }
+    drag = { x0: ev.clientX, y0: ev.clientY };
+    ev.preventDefault();
+  });
+  document.addEventListener("mousemove", function (ev) {
+    if (!drag) {
+      crossV.style.left = ev.clientX + "px";
+      crossH.style.top = ev.clientY + "px";
+      return;
+    }
+    var r = normRect(drag.x0, drag.y0, ev.clientX, ev.clientY);
+    showSel(r);
+    sizeTip.textContent = Math.round(r.w * scaleFactor()) + " × " + Math.round(r.h * scaleFactor());
+    sizeTip.style.left = Math.min(ev.clientX + 14, innerWidth - 90) + "px";
+    sizeTip.style.top = Math.min(ev.clientY + 14, innerHeight - 30) + "px";
+  });
+  document.addEventListener("mouseup", function (ev) {
+    if (!drag || ev.button !== 0) { return; }
+    var r = normRect(drag.x0, drag.y0, ev.clientX, ev.clientY);
+    drag = null;
+    sizeTip.style.display = "none";
+    crossV.style.display = "none";
+    crossH.style.display = "none";
+    if (r.w < 8 || r.h < 8) { exitScan(); return; }   // 误点/单击 = 取消
+    finishSelect(r);
+  });
+  shade.addEventListener("contextmenu", function (ev) { ev.preventDefault(); exitScan(); });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") { exitScan(); }
+  });
+  function normRect(x0, y0, x1, y1) {
+    return { x: Math.min(x0, x1), y: Math.min(y0, y1),
+             w: Math.abs(x1 - x0), h: Math.abs(y1 - y0) };
+  }
+  function showSel(r) {
+    shade.style.pointerEvents = "none";
+    selBox.style.display = "block";
+    selBox.style.left = r.x + "px";
+    selBox.style.top = r.y + "px";
+    selBox.style.width = r.w + "px";
+    selBox.style.height = r.h + "px";
+    selImg.style.width = img.clientWidth + "px";
+    selImg.style.height = img.clientHeight + "px";
+    selImg.style.left = -r.x + "px";
+    selImg.style.top = -r.y + "px";
+    sizeTip.style.display = "block";
+    crossV.style.display = "block";
+    crossH.style.display = "block";
+    hint.style.display = "none";
+  }
+
+  // ---- 取消：宿主隐藏窗口保温（R240 起页面绝不自行关闭窗口） ----
+  function exitScan() {
+    document.title = "EFT截图·关闭";
+    resetIdle();
+  }
+
+  // ---- 识别（前端按图像坐标裁剪）→ 交接宿主 ----
+  function finishSelect(r) {
+    var s = scaleFactors();
+    var ir = { x: Math.round(r.x * s.sx), y: Math.round(r.y * s.sy),
+               w: Math.max(8, Math.round(r.w * s.sx)), h: Math.max(8, Math.round(r.h * s.sy)) };
+    lastRegion = ir;
+    var cv = document.createElement("canvas");
+    cv.width = ir.w; cv.height = ir.h;
+    cv.getContext("2d").drawImage(img, ir.x, ir.y, ir.w, ir.h, 0, 0, ir.w, ir.h);
+    selBox.style.display = "none";
+    shade.style.display = "none";
+    setStatus("识别中…（框越大越久，约数秒）");
+    fetch("/api/ocr/recognize", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ image: cv.toDataURL("image/png"), annotate: false, mode: mode })
+    }).then(function (res) { return res.json(); }).then(function (d) {
+      if (!d || d.ok !== true) {
+        // R279：失败信息停留 6 秒（原来 2.5 秒，用户常来不及看就切走了），
+        // 并明确说是「云端/模型」哪一侧的问题。
+        var why = (d && d.hint) ? d.hint : ((d && d.error) || "识别失败");
+        setStatus(why + "（6 秒后自动关闭；详情见日志 scan-host.log）");
+        setTimeout(exitScan, 6000);
+        if (window.__scanTestResolve) { window.__scanTestResolve(d); }
+        return;
+      }
+      matches = d.matches || [];
+      if (!matches.length) {
+        setStatus("没有识别到物品——试试框小一点，对准物品名");
+        setTimeout(exitScan, 1400);
+        if (window.__scanTestResolve) { window.__scanTestResolve(d); }
+        return;
+      }
+      // R239 交接：区域+结果交给宿主 → 原生透明浮窗（价格叠在装备上，不挡操作）
+      setStatus("识别到 " + matches.length + " 件，切到透明浮窗…");
+      fetch("/api/ocr/overlay/state", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ region: ir, matches: matches })
+      }).then(function () {
+        document.title = "EFT截图·完成";   // 宿主读取后隐藏窗口保温、开浮窗
+        resetIdle();                        // 立即回暗色待机（窗口即将隐藏）
+        if (window.__scanTestResolve) { window.__scanTestResolve(d); }
+      }, function () {
+        setStatus("交接失败（服务未响应）");
+        setTimeout(exitScan, 1800);
+      });
+    }).catch(function (err) {
+      setStatus("请求失败：" + (err && err.message || err));
+      setTimeout(exitScan, 6000);
+    });
+  }
+
+  // ---- 验收钩子（?autotest=1 时暴露状态） ----
+  if (autotest) {
+    window.__scanTest = {
+      ready: false,
+      get matches() { return matches; },
+      get region() { return lastRegion; },
+      get handedOff() { return document.title === "EFT截图·完成"; },
+      get frameId() { return curFrameId; }
+    };
+    img.addEventListener("load", function () {
+      window.__scanTest.ready = selecting && img.style.visibility === "visible";
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "task": "r14 弹药散点图修正与逐发击杀模拟器",
+    "generatedAt": "2026-10-22",
+    "rule": "缺失字段不得填 0，一律标记 missing / unavailable；verified 仅指「来源可复核且为官方或可整转录的公开模型」，estimated 指社区模型或视频口播数据，missing 指上游不存在",
+    "dataSchema": {"ammoJsonSchema": 1, "ammoCount": 200, "calibers": 31}
+  },
+  "ammoFields": {
+    "source": "build-cache/items-regular.json（tarkov-dev 上游缓存，构建期经 tools/build_ammo.py 提取）",
+    "originalNameMap": {
+      "dmg": "damage", "ard": "armorDamage", "pen": "penetrationPower", "v0": "initialSpeed",
+      "bc": "ballisticCoeficient", "m": "bulletMassGrams", "dia": "bulletDiameterMilimeters",
+      "frag": "fragmentationChance", "ric": "ricochetChance", "acc": "accuracyModifier",
+      "rec": "recoilModifier", "pc": "projectileCount", "stack": "stackMaxSize",
+      "pch": "penetrationChance", "tr": "tracer", "w": "weight", "base": "basePrice"
+    },
+    "units": {
+      "dmg": "每发生命值伤害（无单位游戏数值）", "ard": "每次命中护甲耐久扣减（无单位游戏数值）",
+      "pen": "穿透力（无单位游戏数值，0-78）", "v0": "m/s", "bc": "G1 弹道系数（无量纲）",
+      "m": "g", "dia": "mm", "frag": "0-1 概率", "ric": "0-1 概率", "pc": "弹丸数/发",
+      "stack": "发/组"
+    },
+    "coverage200": {"dmg": 200, "ard": 200, "pen": 200, "v0": 200, "bc": 200, "m": 200, "dia": 200,
+                    "frag": 200, "ric": 200, "acc": 200, "rec": 200, "pc": 200, "stack": 200,
+                    "base": 200, "sell": 200, "buy": 154, "flea": 0},
+    "status": "verified（上游 tarkov-dev 公开数据原样提取，构建期管线有覆盖审计）",
+    "unavailable": {
+      "flea": "avg24hPrice 上游为 null，界面显示「—」，不按 0 处理",
+      "buy": "154/200 有商人售 价，其余 missing（显示「—」/数据未确认，不编造）"
+    }
+  },
+  "graphMode1_penVsDmg": {
+    "fields": ["dmg", "pen"],
+    "axisRule": "整数保留整数：横轴 dmg 原值，纵轴 pen 原值，不做距离修正",
+    "status": "verified"
+  },
+  "graphMode2_penChance": {
+    "model": "Desmos m8cmsfokkl「Tarkov Armor Penetration」社区模型",
+    "formula": "a=(121-5000/(45+2d))·c/10；p≤a-15→0；a-15<p<a→0.4(a-p-15)²/100；p≥a→(100+p/(0.9a-p))/100",
+    "params": {"c": "护甲等级 1-6（用户输入）", "d": "护甲耐久百分比 0-100（用户输入）", "p": "弹药穿透力（距离 0 用原值，距离>0 用 round(pen·(0.5+0.5·v(d)/v0))）"},
+    "transcription": "verified：表达式自官方状态 JSON docs/r14-combat/desmos-m8cmsfokkl-state.json 原样转录（2026-10-22 经代理实访 https://www.desmos.com/calc-states/production/m8cmsfokkl）",
+    "gameValidity": "estimated：未验证为当前游戏官方机制；界面注释已标注「估算，未验证为官方机制」",
+    "tests": "tests/test_r14_combat.py（独立转录互证 + 性质锚点 + 全域扫描 [0,1]）"
+  },
+  "graphMode3_maxClass": {
+    "definition": "amMaxClass = 最高等级 lv 使 amPenChance(pen,lv)≥0.5；amPenChance = clamp((pen-0.4·AV)/(0.8·AV))，AV=lv×10（tarkov-dev/the-hideout 开源社区公式）；50% 阈值等价 pen≥8·lv → floor(pen/8) 封顶 6",
+    "status": "estimated（社区公式推导的离散评级，界面注释已注明定义依据）"
+  },
+  "ballisticsDistanceModel": {
+    "amFactor": "伤害/穿透衰减因子 = 0.5+0.5·v(d)/v0（速度线性比）",
+    "amSimulate": "G1 阻力模型数值积分（48 节点，Δt=0.01s，瞄准高 0.06858m，50m 归零，10m 采样），速度 MAE≈7 m/s",
+    "fields": ["v0", "bc"],
+    "status": "estimated（社区弹道模型，非官方）"
+  },
+  "iconAssets": {
+    "total": 200, "ok": 199, "missing": 1,
+    "missingList": [{"id": "6a60f36fb3d057447a095aee", "n": ".50 AE FMJ Bull", "reason": "上游 CDN 已删除该图标（2026-10-22 实测 assets.tarkov.dev 返回 404），本地文件亦无效", "uiBehavior": "回退为按组着色圆点，属设计内降级，不崩图"}],
+    "probeEvidence": "同源 tab 批量探测：10 个正常本地图标 ID 全部 200/RIFF，7 个坏图标样本全部 404/HTML；证明 CDN 路径仍有效、坏图标为上游删除，不可修复",
+    "history": "历史下载任务曾把 CDN 404 错误页存为 .webp（tools/fetch_data.py 旧 fetch() 无内容校验），全库曾达 124 个坏文件，已清理",
+    "status": "verified"
+  },
+  "combatSimParams": {
+    "source": "视频《塔科夫护甲》（B 站 MAJ_Kelvin，本地文件逐帧审阅，见 video-notes.md）",
+    "partHpPmc": {"head": 35, "chest": 85, "stomach": 70, "leftArm": 60, "rightArm": 60, "leftLeg": 65, "rightLeg": 65, "total": 440, "timecode": "03:00", "status": "verified（fandom Health_system HealthOverview.png 逐部位读数，证据图 docs/r14-combat/targets/hp_pmc_scav.png；视频口播双腿 60 与总数 440 矛盾已按 wiki 修正，见 combat-targets.json source.note）"},
+    "materialDestructibility": {"aramid": 0.1875, "uhmwpe": 0.3375, "combined": 0.375, "titan": 0.4125, "aluminium": 0.45, "armorSteel": 0.525, "ceramic": 0.6, "glass": 0.6, "source": "fandom Ballistics（2026-10-22 真实 Chrome+代理实访提取）", "status": "verified（公开 wiki 数据）", "note": "有效耐久 = 耐久 ÷ destructibility；耐久损伤 = f(pen,等级)×armorDamage%×destructibility%，单发最低 1 点"},
+    "destroyedPartRules": {"headChest": "立即死亡", "limbOverflow": "0.49× 入全身血池", "stomachOverflow": "1.05× 入全身血池", "source": "fandom Health_system", "status": "verified（公开 wiki 数据）"},
+    "armorResistanceFactor": {"formula": "等级×10+12.5（满耐久，4 级=52.5）", "timecode": "01:30", "status": "estimated"},
+    "throughDamageFactor": {"formula": "clamp(穿透力÷护甲抵抗系数, 0.6, 1.0)×子弹肉伤", "timecode": "21:30", "status": "estimated", "examples": ["AP SX 53÷52.5→1×35=35", "M995 53÷62.5×42≈35.6"]},
+    "bluntDamage": {"qualitative": "未穿透时按护甲钝伤通过率结算；插板耐久越低钝伤越高；材质从低到高：钛 14%、钢 18%、复合 18%（6 板 22%）、聚乙烯 26%、陶瓷 28-29%；甲皮三组 18%/31%/36%", "timecode": "17:00-20:00", "status": "estimated（具体公式未给出）"},
+    "durabilityRatioRule": {"fact": "穿透概率取决于当前/最大耐久比值（30/60 与 30/30 概率一致）；耐久损耗使防护线性下降", "timecode": "14:30-16:30", "status": "estimated"},
+    "unconfirmed": ["多层障碍物判定顺序（头盔+面罩+防弹衣）", "材质毁损系数具体数值表", "钝伤具体公式", "跳弹触发角度/概率公式"]
+  },
+  "combatTargetPresets": {
+    "file": "data/combat-targets.json（schema 1）",
+    "presets": ["pmc 440", "scav1 420", "scav2 435", "scav3 530", "boss Scourge 750", "follower 570"],
+    "source": "fandom Health_system（PMC + Scav 三血池）与 Scourge 页（Boss/护卫），2026-10-22 经代理 Chrome 实访，canvas 导出原图后逐张人工读数",
+    "evidence": "docs/r14-combat/targets/（6 张原图截图）",
+    "correction": "视频《塔科夫护甲》[03:00] 称双腿各 60，但其总数 440 推算矛盾（430）；wiki HealthOverview.png 双腿各 65 与总数 440 吻合，以 wiki 为准",
+    "runtimeLicense": "数值本身不受版权保护；wiki 原图仅作 docs 证据存档，不进入运行时资源",
+    "status": "verified"
+  },
+  "combatSimUi": {
+    "engine": "combat_sim.js（UMD，纯计算，无 DOM/网络依赖）",
+    "ui": "app.js renderAmmoSim / buildAmmoSimPanel / bindAmmoSimUI（.am-workbench .am-sim 作用域）",
+    "fix": "阶段D 浏览器验收发现 dist 命中分布权重未归一化（rng∈[0,1) 与原始百分比比较 → 恒中首键部位），已在 combat_sim.js pickPart 按权重总和归一化修复，并补引擎场景测试 test_dist_mode_raw_weights_normalized",
+    "networkAudit": "禁缓存重载全页 172 个请求全部为 127.0.0.1:8787 本地资源，外部请求 0（含 sim tab 懒加载 combat-targets.json）",
+    "killCase": "docs/r14-combat/kill-case.json（混压弹匣 M856A1×2+M995×3 vs PMC+4级复合板，seed 12345，第 4 发击杀，同配置复跑两次逐发日志一致）"
+  },
+  "externalSources": {
+    "desmos": {"url": "https://www.desmos.com/calc-states/production/m8cmsfokkl", "viaProxy": "127.0.0.1:7896", "http": 200, "status": "实访成功，状态 JSON 已归档"},
+    "tarkovDevCdn": {"url": "https://assets.tarkov.dev/{id}-icon.webp", "viaProxy": "直连可达", "result": "正常图标 200，坏图标 404（上游删除）"},
+    "fandom": {"url": "https://escapefromtarkov.fandom.com/wiki/Ballistics", "viaProxy": "127.0.0.1:7896", "curlHttp": 403, "note": "curl 指纹被拒，改用真实 Chrome+代理核对（见 fandom-notes.md）"},
+    "fandomHealth": {"url": "https://escapefromtarkov.fandom.com/wiki/Health_system", "viaProxy": "127.0.0.1:7896", "chrome": "实访成功（阶段D 目标血池读数）"},
+    "fandomScourge": {"url": "https://escapefromtarkov.fandom.com/wiki/Scourge", "viaProxy": "127.0.0.1:7896", "chrome": "实访成功（Boss/护卫血池读数）"},
+    "fandomImages": {"url": "https://static.wikia.nocookie.net/tarkov/...（HealthOverview / Scav-HP-Pool1-3 / Scourge_Health_Overview 等）", "viaProxy": "127.0.0.1:7896 + Chrome canvas 同源导出", "note": "CDN 拦截 curl（返回 5.9KB HTML 错误页），图片经真实 Chrome 页面提取，证据存 docs/r14-combat/targets/"}
+  },
+  "networkAccess": {
+    "proxySpec": "用户指定 127.0.0.1:7896（2026-10-23 用户确认正确端口为 7896；任务规则中曾写的 7890 为笔误，实测该端口连接拒绝）",
+    "proxyEffective": "127.0.0.1:7896（实测可用：Desmos 200 / GitHub 200 / fandom 页面与图片经 Chrome 实访成功）",
+    "localBypass": "localhost / 127.0.0.1 / CDP 调试接口一律直连（NO_PROXY）",
+    "runtimeAudit": "运行期零外部请求（阶段D 禁缓存重载实测：172/172 全部 127.0.0.1:8787）",
+    "unreachable": "7890 拒连；fandom/static.wikia CDN 拒绝 curl 指纹（403/HTML），仅真实 Chrome 可访问"
+  }
+}

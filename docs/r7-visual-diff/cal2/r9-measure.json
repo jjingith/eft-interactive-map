@@ -1,0 +1,164 @@
+{
+ "viewport": {
+  "w": 1920,
+  "h": 1080,
+  "dpr": 1
+ },
+ "tableRect": {
+  "x": 510,
+  "y": 136.5,
+  "w": 1404,
+  "h": 937.5
+ },
+ "scroll": {
+  "sw": 1626,
+  "cw": 1392,
+  "sh": 1992,
+  "ch": 926,
+  "sl": 0,
+  "maxScroll": 234
+ },
+ "headH": 32,
+ "headFont": "11px",
+ "dataFont": "12px",
+ "rowH": [
+  40,
+  40,
+  40,
+  40
+ ],
+ "icon": {
+  "w": 30,
+  "h": 30
+ },
+ "cols": [
+  [
+   "n",
+   300
+  ],
+  [
+   "conflict",
+   64
+  ],
+  [
+   "pen",
+   104
+  ],
+  [
+   "plate_front",
+   40
+  ],
+  [
+   "plate_back",
+   40
+  ],
+  [
+   "plate_left",
+   40
+  ],
+  [
+   "plate_right",
+   40
+  ],
+  [
+   "cl",
+   66
+  ],
+  [
+   "dur",
+   78
+  ],
+  [
+   "w",
+   60
+  ],
+  [
+   "price",
+   94
+  ],
+  [
+   "matLabel",
+   88
+  ],
+  [
+   "destr",
+   90
+  ],
+  [
+   "effDur",
+   82
+  ],
+  [
+   "zoneText",
+   136
+  ],
+  [
+   "bt",
+   72
+  ],
+  [
+   "slots",
+   62
+  ],
+  [
+   "srcGroup",
+   126
+  ]
+ ],
+ "plateCells": [
+  {
+   "state": "on",
+   "w": 39,
+   "visH": 28,
+   "statsH": 11,
+   "statsW": 39,
+   "statsSW": 39,
+   "clip": false,
+   "text": "VT60"
+  },
+  {
+   "state": "on",
+   "w": 39,
+   "visH": 28,
+   "statsH": 11,
+   "statsW": 39,
+   "statsSW": 39,
+   "clip": false,
+   "text": "VT60"
+  },
+  {
+   "state": "on",
+   "w": 39,
+   "visH": 28,
+   "statsH": 11,
+   "statsW": 39,
+   "statsSW": 39,
+   "clip": false,
+   "text": "VIC20"
+  },
+  {
+   "state": "on",
+   "w": 39,
+   "visH": 28,
+   "statsH": 11,
+   "statsW": 39,
+   "statsSW": 39,
+   "clip": false,
+   "text": "VIC20"
+  }
+ ],
+ "plateImg": {
+  "w": 37,
+  "h": 26
+ },
+ "plateFont": "10px",
+ "selected": {
+  "bg": "rgba(0, 0, 0, 0)",
+  "shadow": "rgb(0, 162, 255) 2px 0px 0px 0px inset",
+  "color": "rgb(255, 255, 255)"
+ },
+ "scrollbar": {
+  "color": "rgb(90, 90, 90) rgb(21, 21, 21)",
+  "width": "thin"
+ }
+}

@@ -1,0 +1,6163 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-10-22",
+ "source": {
+  "items": "https://json.tarkov.dev/regular/items",
+  "localItems": "data/items.json（同源导出的 slots[mod_magazine].allow）",
+  "localAmmo": "data/ammo.json（200 条，cal/caln 用于口径显示名与 ID 校验）",
+  "fields": [
+   "properties.caliber",
+   "properties.allowedAmmo",
+   "properties.handbookCategories",
+   "properties.normalizedName",
+   "slots[sid=mod_magazine].allow"
+  ],
+  "note": "口径 / 可用弹药 / 可用弹匣均为上游精确字段或精确物品 ID（verified）；弹匣列表取自本地 items.json 的机匣槽位 allow，不是按口径推的。数据仅构建期读取，运行期只读本文件。"
+ },
+ "counts": {
+  "guns": 163,
+  "withCaliber": 163,
+  "withAmmo": 163,
+  "withMags": 159,
+  "withPlatform": 87,
+  "withoutPlatform": 76,
+  "ammoIdsNotInLocalDb": 1
+ },
+ "guns": {
+  "5447a9cd4bdc2dbd208b4567": {
+   "n": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579bfb507e45a68038d7f",
+    "6a1579afcbb8d0c82606c541",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5448bd6b4bdc2dfc2f8b4569": {
+   "n": "马卡洛夫9x18PM 手枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "pm",
+   "platformN": "马卡洛夫平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d485be4bdc2d962f8b456f",
+    "5448c12b4bdc2d02308b456f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "54491c4f4bdc2db1078b4568": {
+   "n": "MP-133 12 铅径泵动式霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_mp",
+   "platformN": "MP 系列霰弹枪",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d484b44bdc2d1d4e8b456d",
+    "55d485804bdc2d8c2f8b456b",
+    "56deee15d2720bee328b4567",
+    "5882163e24597758206fee8c",
+    "5882163824597757561aa922",
+    "5882163224597757561aa920",
+    "56deeefcd2720bc8328b4568"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "55801eed4bdc2d89578b4588": {
+   "n": "SV-98 7.62x54R 栓动式狙击步枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "bolt762",
+   "platformN": "7.62 栓动平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7c241772715af0f9c3d",
+    "64b8f7b5389d7ffd620ccba2",
+    "64b8f7968532cf95ee0a0dbf"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "559ba5b34bdc2d1f1a8b4582"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5580223e4bdc2d1c128b457f": {
+   "n": "MP-43-1C 12 铅径双管霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_mp",
+   "platformN": "MP 系列霰弹枪",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [],
+   "hasMagSlot": false,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "missing",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5644bd2b4bdc2d3b4c8b4572": {
+   "n": "AK-74N 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "56d59856d2720bd8418b456a": {
+   "n": "SIG P226R 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "p226",
+   "platformN": "SIG P226 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c920e902e221644f31c3c99",
+    "56d59948d2720bb7418b4582"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "56dee2bdd2720bc8328b4567": {
+   "n": "MP-153 12铅径半自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_mp",
+   "platformN": "MP 系列霰弹枪",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d484b44bdc2d1d4e8b456d",
+    "55d485804bdc2d8c2f8b456b",
+    "56deee15d2720bee328b4567",
+    "5882163e24597758206fee8c",
+    "5882163824597757561aa922",
+    "5882163224597757561aa920",
+    "56deeefcd2720bc8328b4568"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "56e0598dd2720bb5668b45a6": {
+   "n": "PB 9x18PM消音手枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "pm",
+   "platformN": "马卡洛夫平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d485be4bdc2d962f8b456f",
+    "5448c12b4bdc2d02308b456f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "571a12c42459771f627b58a0": {
+   "n": "托卡列夫 TT-33 7.62x25 手枪",
+   "cal": "Caliber762x25TT",
+   "caln": "7.62x25",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "tt",
+   "platformN": "TT 平台",
+   "ammo": [
+    "5735ff5c245977640e39ba7e",
+    "573601b42459776410737435",
+    "573602322459776445391df1",
+    "5736026a245977644601dc61",
+    "573603562459776430731618",
+    "573603c924597764442bd9cb",
+    "5735fdcd2459776445391d61",
+    "68c15a033173b556890b5959",
+    "68c15b4bb30038a118088bd6",
+    "68c15f77ed3d7df9220debd6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "571a29dc2459771fb2755a6a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "574d967124597745970e7c94": {
+   "n": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "61695095d92c473c7702147a",
+    "5c5970672e221602b21d7855",
+    "587df583245977373c4f1129",
+    "587df3a12459772c28142567"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "576165642459773c7a400233": {
+   "n": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_saiga",
+   "platformN": "Saiga 平台",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57616a9e2459773c7a400234",
+    "5cf8f3b0d7f00c00217872ef",
+    "5a966f51a2750c00156aacf6",
+    "674fe8f6f34d761ab8020cc8"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "576a581d2459771e7b1bc4f1": {
+   "n": "雅利金 MP-443 “乌鸦” 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "grach",
+   "platformN": "雅利金平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "576a5ed62459771e9c2096cb"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57838ad32459774a17445cd2": {
+   "n": "VSS “绞丝机”9x39 特种狙击步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57838f0b2459774a256959b2",
+    "57838f9f2459774a150289a0",
+    "5a9e81fba2750c00164f6b11",
+    "65118f531b90b4fc77015083"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "579204f224597773d619e051": {
+   "n": "马卡洛夫 PM(t) 9x18PM 手枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "pm",
+   "platformN": "马卡洛夫平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d485be4bdc2d962f8b456f",
+    "5448c12b4bdc2d02308b456f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57c44b372459772d2b39b8ce": {
+   "n": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57838f0b2459774a256959b2",
+    "57838f9f2459774a150289a0",
+    "5a9e81fba2750c00164f6b11",
+    "65118f531b90b4fc77015083"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57d14d2524597714373db789": {
+   "n": "PP-91 雪松 9x18PM冲锋枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "kedr",
+   "platformN": "PP-91 平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57d14e1724597714010c3f4b",
+    "57d1519e24597714373db79d"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57dc2fa62459775949412633": {
+   "n": "AKS-74U 5.45x39 短突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57f3c6bd24597738e730fa2f": {
+   "n": "PP-91-01 雪松-B 9x18PM 冲锋枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "kedr",
+   "platformN": "PP-91 平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57d14e1724597714010c3f4b",
+    "57d1519e24597714373db79d"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "57f4c844245977379d5c14d1": {
+   "n": "PP-9 楔子 9x18PMM 冲锋枪",
+   "cal": "Caliber9x18PMM",
+   "caln": "9x18PMM",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "kedr",
+   "platformN": "PP-91 平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57d14e1724597714010c3f4b",
+    "57d1519e24597714373db79d"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "583990e32459771419544dd2": {
+   "n": "AKS-74UN 5.45x39 短突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5839a40f24597726f856b511": {
+   "n": "AKS-74UB 5.45x39 短突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "587e02ff24597743df3deaeb": {
+   "n": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "61695095d92c473c7702147a",
+    "5c5970672e221602b21d7855",
+    "587df583245977373c4f1129",
+    "587df3a12459772c28142567"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "588892092459774ac91d4b11": {
+   "n": "DVL-10 7.62x51 栓动式狙击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "bolt762",
+   "platformN": "7.62 栓动平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5888988e24597752fe43a6fa"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "58948c8e86f77409493f7266": {
+   "n": "SIG MPX 9x19 冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c5db6742e2216000f1b2852",
+    "5c5db6552e2216001026119d",
+    "5894a05586f774094708ef75",
+    "5c5db6652e221600113fba51"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5926bb2186f7744b1c6c6e60": {
+   "n": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "mp5",
+   "platformN": "MP5 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5d2f213448f0355009199284",
+    "5926c3b286f774640d189b6b",
+    "5a351711c4a282000b1521a4"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59984ab886f7743e98271174": {
+   "n": "PP-19-01 勇士 9x19 冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "vityaz",
+   "platformN": "PP-19 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5998529a86f774647f44f421",
+    "599860ac86f77436b225ed1a",
+    "5c0673fb0db8340023300271",
+    "5c0672ed0db834001b7353f3",
+    "6749c40822a2740bb408d066"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59d6088586f774275f37482f": {
+   "n": "AKM 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59e6152586f77473dc057aa1": {
+   "n": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59e6687d86f77411d949b251": {
+   "n": "VPO-209 .366TKM 卡宾枪",
+   "cal": "Caliber366TKM",
+   "caln": ".366 TKM",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e655cb86f77411dc52a77b",
+    "59e6542b86f77411dc52a77a",
+    "59e6658b86f77411d949b250",
+    "5f0596629e22f464da6bbdd9"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59f98b4986f7746f546d2cef": {
+   "n": "谢尔久科夫 SR1MP 9x21 “斑蝰蛇” 半自动手枪",
+   "cal": "Caliber9x21",
+   "caln": "9x21",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "gyurza",
+   "platformN": "SR-1 平台",
+   "ammo": [
+    "5a269f97c4a282000b151807",
+    "5a26abfac4a28232980eabff",
+    "5a26ac06c4a282000c5a90a8",
+    "5a26ac0ec4a28200741e1e18",
+    "6576f93989f0062e741ba952",
+    "6576f4708ca9c4381d16cd9d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59f99a7d86f7745b134aa97b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59f9cabd86f7743a10721f46": {
+   "n": "Saiga-9 9x19卡宾枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "shotgun_saiga",
+   "platformN": "Saiga 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5998529a86f774647f44f421",
+    "599860ac86f77436b225ed1a",
+    "5c0673fb0db8340023300271",
+    "5c0672ed0db834001b7353f3",
+    "6749c40822a2740bb408d066"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "59ff346386f77477562ff5e2": {
+   "n": "AKMS 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a0ec13bfcdbcb00165aa685": {
+   "n": "AKMN 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a17f98cfcdbcb0980087290": {
+   "n": "斯捷奇金 APS 9x18PM 冲锋手枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "pm",
+   "platformN": "马卡洛夫平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a17fb03fcdbcbcae668728f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a367e5dc4a282000e49738f": {
+   "n": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df8f535bb49d91fb446d6b0",
+    "5df8f541c41b2312ea3335e3",
+    "5a3501acc4a282000d72293a",
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a38e6bac4a2826c6e06d79b": {
+   "n": "TOZ-106 20铅径栓动式霰弹枪",
+   "cal": "Caliber20g",
+   "caln": "20g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_toz",
+   "platformN": "TOZ / KS 平台",
+   "ammo": [
+    "5a38ebd9c4a282000d722a5b",
+    "5d6e695fa4b936359b35d852",
+    "5d6e69b9a4b9361bc8618958",
+    "5d6e69c7a4b9360b6c0d54e4",
+    "5d6e6a5fa4b93614ec501745",
+    "5d6e6a53a4b9361bd473feec",
+    "5d6e6a42a4b9364f07165f52",
+    "5d6e6a05a4b93618084f58d0",
+    "6601380580e77cfd080e3418",
+    "660137d8481cc6907a0c5cda",
+    "660137ef76c1b56143052be8"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a38ee51c4a282000c5a955c",
+    "5a38ed75c4a28232996e40c6",
+    "5c6161fb2e221600113fbde5"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a7828548dc32e5a9c28b516": {
+   "n": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_rem",
+   "platformN": "雷明顿 870 / 莫斯伯格平台",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7882dcc5856700177af662",
+    "5a78832ec5856700155a6ca3",
+    "5a78830bc5856700137e4c90"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5a7ae0c351dfba0017554310": {
+   "n": "Glock 17 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "glock",
+   "platformN": "格洛克平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7ad2e851dfba0016153692",
+    "5a718b548dc32e000d46d262",
+    "5a718da68dc32e000d46d264",
+    "5a718f958dc32e00094b97e7",
+    "630769c4962d0247b029dc60",
+    "630767c37d50ff5e8a1ea71a",
+    "63076701a987397c0816d21b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5aafa857e5b5b00018480968": {
+   "n": "春田 M1A 7.62x51 步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5aaf8a0be5b5b00015693243",
+    "5addcce35acfc4001a5fc635",
+    "5addccf45acfc400185c2989",
+    "64b9e2037fdfb81df81e3c25"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ab8e9fcd8ce870019439434": {
+   "n": "AKS-74N 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5abcbc27d8ce8700182eceeb": {
+   "n": "AKMSN 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5abccb7dd8ce87001773e277": {
+   "n": "斯捷奇金 APB 9x18PM 消音型自动手枪",
+   "cal": "Caliber9x18PM",
+   "caln": "9x18",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "pm",
+   "platformN": "马卡洛夫平台",
+   "ammo": [
+    "573718ba2459775a75491131",
+    "573719df2459775a626ccbc2",
+    "57371aab2459775a77142f22",
+    "57371b192459775a9f58a5e0",
+    "57371e4124597760ff7b25f1",
+    "57371eb62459776125652ac1",
+    "57371f8d24597761006c6a81",
+    "5737201124597760fc4431f1",
+    "5737207f24597760ff7b25f2",
+    "57371f2b24597761224311f1",
+    "573719762459775a626ccbc1",
+    "573720e02459776143012541",
+    "57372140245977611f70ee91",
+    "5737218f245977612125ba51"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a17fb03fcdbcbcae668728f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac4cd105acfc40016339859": {
+   "n": "AK-74M 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac66cb05acfc40198510a10": {
+   "n": "AK-101 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c0548ae0db834001966a3c2",
+    "5ac66c5d5acfc4001718d314",
+    "6764139c44b3c96e7b0e2f7b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac66d015acfc400180ae6e4": {
+   "n": "AK-102 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c0548ae0db834001966a3c2",
+    "5ac66c5d5acfc4001718d314",
+    "6764139c44b3c96e7b0e2f7b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac66d2e5acfc43b321d4b53": {
+   "n": "AK-103 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac66d725acfc43b321d4b60": {
+   "n": "AK-104 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ac66d9b5acfc4001633997a": {
+   "n": "AK-105 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ae08f0a5acfc408fb1398a1": {
+   "n": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型）",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "mosin",
+   "platformN": "莫辛平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7c241772715af0f9c3d",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7b5389d7ffd620ccba2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5ae0973a5acfc4001562206c",
+    "5bae13ded4351e44f824bf38"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5b0bbe4e5acfc40dc528a72d": {
+   "n": "DS Arms SA-58 7.62x51 突击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5b7bef1e5acfc43d82528402",
+    "5b099ac65acfc400186331e1",
+    "5b7bef5d5acfc43bca7067a3",
+    "5b7c2d1d5acfc43d1028532a",
+    "5b7d37845acfc400170e2f87",
+    "5b7bef9c5acfc43d102852ec"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5b1fa9b25acfc40018633c01": {
+   "n": "GLOCK 18C 9x19 冲锋手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7ad2e851dfba0016153692",
+    "5a718b548dc32e000d46d262",
+    "5a718da68dc32e000d46d264",
+    "5a718f958dc32e00094b97e7",
+    "630769c4962d0247b029dc60",
+    "630767c37d50ff5e8a1ea71a",
+    "63076701a987397c0816d21b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5b3b713c5acfc4330140bd8d": {
+   "n": "托卡列夫 TT-33 7.62x25 黄金手枪",
+   "cal": "Caliber762x25TT",
+   "caln": "7.62x25",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "tt",
+   "platformN": "TT 平台",
+   "ammo": [
+    "5735ff5c245977640e39ba7e",
+    "573601b42459776410737435",
+    "573602322459776445391df1",
+    "5736026a245977644601dc61",
+    "573603562459776430731618",
+    "573603c924597764442bd9cb",
+    "5735fdcd2459776445391d61",
+    "68c15f77ed3d7df9220debd6",
+    "68c15a033173b556890b5959",
+    "68c15b4bb30038a118088bd6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "571a29dc2459771fb2755a6a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ba26383d4351e00334c93d9": {
+   "n": "HK MP7A1 4.6x30 冲锋枪",
+   "cal": "Caliber46x30",
+   "caln": "4.6x30",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5ba26812d4351e003201fef1",
+    "5ba26835d4351e0035628ff5",
+    "5ba2678ad4351e44f824b344",
+    "5ba26844d4351e00334c9475",
+    "64b6979341772715af0f9c39"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5ba264f6d4351e0034777d52",
+    "5ba2657ed4351e0035628ff2",
+    "5ba26586d4351e44f824b340"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bb2475ed4351e00853264e3": {
+   "n": "HK 416A5 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bd70322209c4d00d7167b8f": {
+   "n": "HK MP7A2 4.6x30 冲锋枪",
+   "cal": "Caliber46x30",
+   "caln": "4.6x30",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5ba26812d4351e003201fef1",
+    "5ba26835d4351e0035628ff5",
+    "5ba2678ad4351e44f824b344",
+    "5ba26844d4351e00334c9475",
+    "64b6979341772715af0f9c39"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5ba264f6d4351e0034777d52",
+    "5ba2657ed4351e0035628ff2",
+    "5ba26586d4351e44f824b340"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5beed0f50db834001c062b12": {
+   "n": "RPK-16 5.45x39 轻机枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "64b9e265c94d0d15c5027e35",
+    "649ec30cb013f04a700e60fb",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bf3e03b0db834001d2c4a9c": {
+   "n": "AK-74 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bf3e0490db83400196199af": {
+   "n": "AKS-74 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bfd297f0db834001a669119": {
+   "n": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型）",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "mosin",
+   "platformN": "莫辛平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7c241772715af0f9c3d",
+    "64b8f7b5389d7ffd620ccba2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5ae0973a5acfc4001562206c",
+    "5bae13ded4351e44f824bf38"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5bfea6e90db834001b7347f3": {
+   "n": "雷明顿Model 700 7.62x51 狙击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "bolt762",
+   "platformN": "7.62 栓动平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5d25a6538abbc306c62e630d",
+    "5d25a4a98abbc30b917421a4",
+    "5d25a7b88abbc3054f3e60bc",
+    "5ce69cbad7f00c00b61c5098",
+    "5d25a6a48abbc306c62e6310",
+    "5d25af8f8abbc3055079fec5",
+    "5cf12a15d7f00c05464b293f",
+    "5bfeaa0f0db834001b734927",
+    "5bfea7ad0db834001c38f1ee"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5c07c60e0db834002330051f": {
+   "n": "ADAR 2-15 .223 卡宾枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5c46fbd72e2216398b5a8c9c": {
+   "n": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": "svd",
+   "platformN": "SVD 平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7b5389d7ffd620ccba2",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7c241772715af0f9c3d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c471c442e221602b542a6f8",
+    "5c88f24b2e22160bc12c69a6"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5c488a752e221602b412af63": {
+   "n": "沙漠科技 MDR 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5c501a4d2e221602b412b540": {
+   "n": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c503ad32e2216398b5aada2",
+    "5c503ac82e221602b21d6e9a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5cadc190ae921500103bb3b6": {
+   "n": "伯莱塔 M9A3 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "m9",
+   "platformN": "伯莱塔 92 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5cadc2e0ae9215051e1c21e7",
+    "676176b762e0497044079f49"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5cadfbf7ae92152ac412eeef": {
+   "n": "ASh-12 12.7x55 突击步枪",
+   "cal": "Caliber127x55",
+   "caln": "12.7x55",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ash12",
+   "platformN": "ASH-12 平台",
+   "ammo": [
+    "5cadf6ddae9215051e1c23b2",
+    "5cadf6e5ae921500113bb973",
+    "5cadf6eeae921500134b2799"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5caf1041ae92157c28402e3f",
+    "5caf1109ae9215753c44119f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5cc82d76e24e8d00134b4b83": {
+   "n": "FN P90 5.7x28 冲锋枪",
+   "cal": "Caliber57x28",
+   "caln": "5.7x28",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "p90",
+   "platformN": "P90 平台",
+   "ammo": [
+    "5cc80f53e4a949000e1ea4f8",
+    "5cc86832d7f00c000d3a6e6c",
+    "5cc86840d7f00c002412c56c",
+    "5cc80f67e4a949035e43bbba",
+    "5cc80f38e4a949001152b560",
+    "5cc80f8fe4a949033b0224a2",
+    "5cc80f79e4a949033c7343b2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5cc70093e4a949033c734312"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5d2f0d8048f0356c925bc3b0": {
+   "n": "HK MP5K 9x19 微型冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5d2f213448f0355009199284",
+    "5926c3b286f774640d189b6b",
+    "5a351711c4a282000b1521a4"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5d3eb3b0a4b93615055e84d2": {
+   "n": "FN Five-seveN MK2 5.7x28 手枪",
+   "cal": "Caliber57x28",
+   "caln": "5.7x28",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "five-seven",
+   "platformN": "FN Five-seveN 平台",
+   "ammo": [
+    "5cc80f53e4a949000e1ea4f8",
+    "5cc86832d7f00c000d3a6e6c",
+    "5cc86840d7f00c002412c56c",
+    "5cc80f67e4a949035e43bbba",
+    "5cc80f38e4a949001152b560",
+    "5cc80f8fe4a949033b0224a2",
+    "5cc80f79e4a949033c7343b2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5d3eb5eca4b9363b1f22f8e4",
+    "6889f1c4f7a5d7de7b089550"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5d43021ca4b9362eab4b5e25": {
+   "n": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5d67abc1a4b93614ec50137f": {
+   "n": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+   "cal": "Caliber57x28",
+   "caln": "5.7x28",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "five-seven",
+   "platformN": "FN Five-seveN 平台",
+   "ammo": [
+    "5cc80f53e4a949000e1ea4f8",
+    "5cc86832d7f00c000d3a6e6c",
+    "5cc86840d7f00c002412c56c",
+    "5cc80f67e4a949035e43bbba",
+    "5cc80f38e4a949001152b560",
+    "5cc80f8fe4a949033b0224a2",
+    "5cc80f79e4a949033c7343b2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5d3eb5eca4b9363b1f22f8e4",
+    "6889f1c4f7a5d7de7b089550"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5dcbd56fdbd3d91b3e5468d5": {
+   "n": "沙漠科技 MDR 7.62x51 突击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df8f535bb49d91fb446d6b0",
+    "5df8f541c41b2312ea3335e3",
+    "5a3501acc4a282000d72293a",
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5de652c31b7e3716273428be": {
+   "n": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+   "cal": "Caliber366TKM",
+   "caln": ".366 TKM",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e655cb86f77411dc52a77b",
+    "59e6542b86f77411dc52a77a",
+    "59e6658b86f77411d949b250",
+    "5f0596629e22f464da6bbdd9"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5de653abf76fdc1ce94a5a2a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5de7bd7bfd6b4e6e2276dc25": {
+   "n": "B&T MP9-N 9x19 冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "mp9",
+   "platformN": "MP9 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5de8e8dafd6b4e6e2276dc32",
+    "5de8ea8ffd6b4e6e2276dc35",
+    "5de8eaadbbaf010b10528a6d",
+    "5de8eac42a78646d96665d91"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5df24cf80dee1b22f862e9bc": {
+   "n": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df25b6c0b92095fd441e4cf"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5df8ce05b11454561e39243b": {
+   "n": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df8f535bb49d91fb446d6b0",
+    "5df8f541c41b2312ea3335e3",
+    "5a3501acc4a282000d72293a",
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5e00903ae9dc277128008b87": {
+   "n": "B&T MP9 9x19 冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "mp9",
+   "platformN": "MP9 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5de8e8dafd6b4e6e2276dc32",
+    "5de8ea8ffd6b4e6e2276dc35",
+    "5de8eaadbbaf010b10528a6d",
+    "5de8eac42a78646d96665d91"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5e81c3cbac2bb513793cdc75": {
+   "n": "柯尔特 M1911A1 .45 ACP 手枪",
+   "cal": "Caliber1143x23ACP",
+   "caln": ".45 ACP",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "m1911",
+   "platformN": "1911 平台",
+   "ammo": [
+    "5e81f423763d9f754677bf2e",
+    "5efb0cabfb3e451d70735af5",
+    "5efb0fc6aeb21837e749c801",
+    "5efb0d4f4bc50b58e81710f3",
+    "5ea2a8e200685063ec28c05a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5e81c4ca763d9f754677befa",
+    "5f3e77b26cda304dcc634057",
+    "5ef3448ab37dfd6af863525c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5e81ebcd8e146c7080625e15": {
+   "n": "FN GL-40 Mk.2 榴弹发射器",
+   "cal": "Caliber40x46",
+   "caln": "40x46",
+   "cls": "grenade-launchers",
+   "clsZh": "榴弹发射器",
+   "platform": "gl40",
+   "platformN": "40mm 榴弹发射器",
+   "ammo": [
+    "5ede474b0c226a66f5402622",
+    "5ede475b549eed7c6d5c18fb",
+    "5ede4739e0350d05467f73e8",
+    "5f0c892565703e5c461894e9",
+    "5ede47405b097655935d7d16",
+    "5ede475339ee016e8c534742"
+   ],
+   "ammoMissing": [],
+   "mags": [],
+   "hasMagSlot": false,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "missing",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5e848cc2988a8701445df1e8": {
+   "n": "TOZ KS-23M 23x75 毫米泵动式霰弹枪",
+   "cal": "Caliber23x75",
+   "caln": "23x75",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5e85aa1a988a8701445df1f5",
+    "5e85a9a6eacf8c039e4e2ac1",
+    "5f647f31b6238e5dd066e196",
+    "5e85a9f4add9fe03027d9bf1"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5f647d9f8499b57dc40ddb93"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5e870397991fd70db46995c8": {
+   "n": "Mossberg 590A1 12铅径泵动式霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5e87080c81c4ed43e83cefda"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5ea03f7400685063ec28bfa8": {
+   "n": "PPSh-41 7.62x25 冲锋枪",
+   "cal": "Caliber762x25TT",
+   "caln": "7.62x25",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "ppsh",
+   "platformN": "PPSh 平台",
+   "ammo": [
+    "573601b42459776410737435",
+    "573602322459776445391df1",
+    "5735fdcd2459776445391d61",
+    "573603c924597764442bd9cb",
+    "573603562459776430731618",
+    "5735ff5c245977640e39ba7e",
+    "5736026a245977644601dc61",
+    "68c15a033173b556890b5959",
+    "68c15b4bb30038a118088bd6",
+    "68c15f77ed3d7df9220debd6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5ea034eb5aad6446a939737b",
+    "5ea034f65aad6446a939737e"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5f2a9575926fd9352339381f": {
+   "n": "Kel-Tec RFB 7.62x51",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5b7bef1e5acfc43d82528402",
+    "5b099ac65acfc400186331e1",
+    "5b7bef5d5acfc43bca7067a3",
+    "5b7c2d1d5acfc43d1028532a",
+    "5b7d37845acfc400170e2f87"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5f36a0e5fbf956000b716b65": {
+   "n": "柯尔特 M45A1 .45 ACP 手枪",
+   "cal": "Caliber1143x23ACP",
+   "caln": ".45 ACP",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": "m1911",
+   "platformN": "1911 平台",
+   "ammo": [
+    "5e81f423763d9f754677bf2e",
+    "5efb0cabfb3e451d70735af5",
+    "5efb0fc6aeb21837e749c801",
+    "5efb0d4f4bc50b58e81710f3",
+    "5ea2a8e200685063ec28c05a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5e81c4ca763d9f754677befa",
+    "5f3e77b26cda304dcc634057",
+    "5ef3448ab37dfd6af863525c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5fb64bc92b1b027b1f50bcf2": {
+   "n": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+   "cal": "Caliber1143x23ACP",
+   "caln": ".45 ACP",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "vector",
+   "platformN": "Vector 平台",
+   "ammo": [
+    "5e81f423763d9f754677bf2e",
+    "5efb0cabfb3e451d70735af5",
+    "5efb0fc6aeb21837e749c801",
+    "5efb0d4f4bc50b58e81710f3",
+    "5ea2a8e200685063ec28c05a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5fb651b52b1b027b1f50bcff",
+    "5fb651dc85f90547f674b6f4"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5fbcc1d9016cce60e8341ab3": {
+   "n": "SIG MCX .300 Blackout 突击步枪",
+   "cal": "Caliber762x35",
+   "caln": ".300 Blk",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "5fbe3ffdf8b6a877a729ea82",
+    "5fd20ff893a8961fc660a954",
+    "619636be6db0f2477964e710",
+    "6196364158ef8c428c287d9f",
+    "6196365d58ef8c428c287da1",
+    "64b8725c4b75259c590fa899"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5fc22d7c187fea44d52eda44": {
+   "n": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "cal": "Caliber86x70",
+   "caln": ".338",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5fc382a9d724d907e2077dab",
+    "5fc275cf85fd526b824a571a",
+    "5fc382c1016cce60e8341b20",
+    "5fc382b6d6fa9c00c571bbc3"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5fc23426900b1d5091531e15"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5fc3e272f8b6a877a729eac5": {
+   "n": "HK UMP .45 ACP冲锋枪",
+   "cal": "Caliber1143x23ACP",
+   "caln": ".45 ACP",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "ump",
+   "platformN": "UMP 平台",
+   "ammo": [
+    "5e81f423763d9f754677bf2e",
+    "5efb0cabfb3e451d70735af5",
+    "5efb0fc6aeb21837e749c801",
+    "5efb0d4f4bc50b58e81710f3",
+    "5ea2a8e200685063ec28c05a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5fc3e466187fea44d52eda90"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "5fc3f2d5900b1d5091531e57": {
+   "n": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "vector",
+   "platformN": "Vector 平台",
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7ad2e851dfba0016153692",
+    "5a718b548dc32e000d46d262",
+    "5a718da68dc32e000d46d264",
+    "5a718f958dc32e00094b97e7",
+    "630769c4962d0247b029dc60",
+    "630767c37d50ff5e8a1ea71a",
+    "63076701a987397c0816d21b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "602a9740da11d6478d5a06dc": {
+   "n": "列别杰夫 PL-15 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "602286df23506e50807090c6"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "60339954d62c9b14ed777c06": {
+   "n": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7ad2e851dfba0016153692",
+    "5a718b548dc32e000d46d262",
+    "5a718da68dc32e000d46d264",
+    "5a718f958dc32e00094b97e7",
+    "630769c4962d0247b029dc60",
+    "630767c37d50ff5e8a1ea71a",
+    "63076701a987397c0816d21b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "606587252535c57a13424cfd": {
+   "n": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "6272874a6c47bd74f92e2087",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "606dae0ab0e443224b421bb7": {
+   "n": "MP-155 12铅径半自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6076c87f232e5a31c233d50e",
+    "55d484b44bdc2d1d4e8b456d",
+    "55d485804bdc2d8c2f8b456b",
+    "56deee15d2720bee328b4567",
+    "5882163e24597758206fee8c",
+    "5882163824597757561aa922",
+    "5882163224597757561aa920",
+    "56deeefcd2720bc8328b4568"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "60db29ce99594040e04c4a27": {
+   "n": "MTs-255-12 12铅径转轮霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5d6e6891a4b9361bd473feea",
+    "58820d1224597753c90aeb13",
+    "5d6e6806a4b936088465b17e",
+    "5d6e6772a4b936088465b17c",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e68d1a4b93622fe60e845",
+    "5c0d591486f7744c505b416f",
+    "5d6e67fba4b9361bc73bc779",
+    "64b8ee384b75259c590fa89b",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e6911a4b9361bd5780d52",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e68c4a4b9361b93413f79",
+    "560d5e524bdc2d25448b4571"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "60dc519adf4c47305f6d410d"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6165ac306ef05c2ce828ef74": {
+   "n": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "618168dc8004cc50514c34fc",
+    "6183d53f1cb55961fa0fdcda"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6176aca650224f204c1da3fb": {
+   "n": "HK G28 7.62x51 精确射手步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "617130016c780c1e710c9a24",
+    "617131a4568c120fdd29482d"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6183afd850224f204c1da514": {
+   "n": "FN SCAR-H 7.62x51突击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "618168dc8004cc50514c34fc",
+    "6183d53f1cb55961fa0fdcda"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6184055050224f204c1da540": {
+   "n": "FN SCAR-L 5.56x45突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579bfb507e45a68038d7f",
+    "6a1579afcbb8d0c82606c541",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "618428466ef05c2ce828f218": {
+   "n": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6193a720f8ee7e52e42109ed": {
+   "n": "HK USP .45 ACP手枪",
+   "cal": "Caliber1143x23ACP",
+   "caln": ".45 ACP",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5e81f423763d9f754677bf2e",
+    "5efb0cabfb3e451d70735af5",
+    "5efb0fc6aeb21837e749c801",
+    "5efb0d4f4bc50b58e81710f3",
+    "5ea2a8e200685063ec28c05a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6193d338de3cdf1d2614a6fc",
+    "6193d3149fb0c665d5490e32"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "61a4c8884f95bc3b2c5dc96f": {
+   "n": "Chiappa 犀牛 50DS .357 左轮手枪",
+   "cal": "Caliber9x33R",
+   "caln": ".357",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "62330c40bdd19b369e1e53d1",
+    "62330b3ed4dc74626d570b95",
+    "62330c18744e5e31df12f516",
+    "62330bfadc5883093563729b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "619f54a1d25cbd424731fb99"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "61f7c9e189e6fb1a5e3ea78d": {
+   "n": "MP-18 7.62x54R单发步枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7c241772715af0f9c3d",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7b5389d7ffd620ccba2"
+   ],
+   "ammoMissing": [],
+   "mags": [],
+   "hasMagSlot": false,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "missing",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "623063e994fc3f7b302a9696": {
+   "n": "HK G36 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "62307b7b10d2321fa8741921",
+    "55d4887d4bdc2d962f8b4570",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "68a63b73c92ee33ffa01bf57",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "624c2e8614da335f1e034d8c": {
+   "n": "Chiappa 犀牛 200DS 9x19 左轮手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d56a986f774449d5de529",
+    "56d59d3ad2720bdb418b4577",
+    "5efb0e16aeb21837e749c7ff",
+    "5c925fa22e221601da359b7b",
+    "58864a4f2459770fcc257101",
+    "5a3c16fe86f77452b62de32a",
+    "64b7bbb74b75259c590fa897",
+    "5c3df7d588a4501f290594e5",
+    "5efb0da7a29a85116f6ea05f"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "624c3074dbbd335e8e6becf3"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6259b864ebedf17603599e88": {
+   "n": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "625ff2ccb8c587128c1a01dd",
+    "625ff3046d721f05d93bf2ee",
+    "625ff31daaaa8c1130599f64",
+    "625ff2eb9f5537057932257d",
+    "6259bdcabd28e4721447a2aa"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6275303a9f372d6ea97f9ec7": {
+   "n": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+   "cal": "Caliber40x46",
+   "caln": "40x46",
+   "cls": "grenade-launchers",
+   "clsZh": "榴弹发射器",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5f0c892565703e5c461894e9",
+    "5ede4739e0350d05467f73e8",
+    "5ede475b549eed7c6d5c18fb",
+    "5ede47405b097655935d7d16",
+    "5ede475339ee016e8c534742",
+    "5ede474b0c226a66f5402622"
+   ],
+   "ammoMissing": [
+    "5ede47641cf3836a88318df1"
+   ],
+   "mags": [
+    "627bce33f21bc425b06ab967"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "627e14b21713922ded6f2c15": {
+   "n": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "cal": "Caliber86x70",
+   "caln": ".338",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "bolt762",
+   "platformN": "7.62 栓动平台",
+   "ammo": [
+    "5fc382a9d724d907e2077dab",
+    "5fc275cf85fd526b824a571a",
+    "5fc382c1016cce60e8341b20",
+    "5fc382b6d6fa9c00c571bbc3"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "628120fd5631d45211793c9f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "628a60ae6b1d481ff772e9c8": {
+   "n": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "5656d7c34bdc2d9d198b4587",
+    "59e4cf5286f7741778269d8a",
+    "59e4d24686f7741776641ac7",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "64b7af734b75259c590fa895",
+    "64b7af434b75259c590fa893"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "59e5d83b86f7745aed03d262",
+    "6272874a6c47bd74f92e2087",
+    "5a01c29586f77474660c694c",
+    "5ac66bea5acfc43b321d4aec",
+    "59d625f086f774661516605d",
+    "5b1fd4e35acfc40018633c39",
+    "5a0060fc86f7745793204432",
+    "59e5f5a486f7746c530b3ce2",
+    "5b1fb3e15acfc4001637f068",
+    "59d6272486f77466146386ff",
+    "5e21a3c67e40bd02257a008a",
+    "5cbdc23eae9215001136a407",
+    "5c6175362e221600133e3b94",
+    "59fafc5086f7740dbe19f6c3",
+    "59fafc9386f774067d462453",
+    "5cfe8010d7ad1a59283b14c6",
+    "64b9cf0ac12b9c38db26923a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "628b5638ad252a16da6dd245": {
+   "n": "SAG AK-545 5.45x39卡宾枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "628b9c37a733087d0d7fe84b": {
+   "n": "SAG AK-545 5.45x39截短卡宾枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "62e14904c2699c0ec93adc47": {
+   "n": "SR-2M 石楠 9x21 冲锋枪",
+   "cal": "Caliber9x21",
+   "caln": "9x21",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a269f97c4a282000b151807",
+    "5a26abfac4a28232980eabff",
+    "5a26ac06c4a282000c5a90a8",
+    "5a26ac0ec4a28200741e1e18",
+    "6576f93989f0062e741ba952",
+    "6576f4708ca9c4381d16cd9d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "62e153bcdb1a5c41971c1b5b",
+    "633a98eab8b0506e48497c1a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "62e7c4fba689e8c9c50dfc38": {
+   "n": "Steyr AUG A1 5.56x45突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "62e7c98b550c8218d602cbb4",
+    "630e1adbbd357927e4007c09",
+    "630e295c984633f1fb0e7c30"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "63088377b5cd696784087147": {
+   "n": "Glock 19X 9x19 手枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5a7ad2e851dfba0016153692",
+    "5a718b548dc32e000d46d262",
+    "5a718da68dc32e000d46d264",
+    "5a718f958dc32e00094b97e7",
+    "630769c4962d0247b029dc60",
+    "630767c37d50ff5e8a1ea71a",
+    "63076701a987397c0816d21b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "63171672192e68c5460cebc5": {
+   "n": "Steyr AUG A3 5.56x45突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "62e7c98b550c8218d602cbb4",
+    "630e1adbbd357927e4007c09",
+    "630e295c984633f1fb0e7c30"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "633ec7c2a6918cb895019c6c": {
+   "n": "RSh-12 12.7x55转轮手枪",
+   "cal": "Caliber127x55",
+   "caln": "12.7x55",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5cadf6eeae921500134b2799",
+    "5cadf6ddae9215051e1c23b2",
+    "5cadf6e5ae921500113bb973"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "633ec6ee025b096d320a3b15"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6410733d5dd49d77bd07847e": {
+   "n": "托卡列夫 AVT-40 7.62x54R 自动步枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7b5389d7ffd620ccba2",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7c241772715af0f9c3d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "641074a07fd350b98c0b3f96",
+    "6422e1ea3c0f06190302161a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "643ea5b23db6f9f57107d9fd": {
+   "n": "托卡列夫 SVT-40 7.62x54R 步枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7b5389d7ffd620ccba2",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7c241772715af0f9c3d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "641074a07fd350b98c0b3f96",
+    "6422e1ea3c0f06190302161a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "644674a13d52156624001fbc": {
+   "n": "KBP 9A-91 9x39紧凑型突击步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6450ec2e7da7133e5a09ca96"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "645e0c6b3b381ede770e1cc9": {
+   "n": "KBP VSK-94 9x39步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6450ec2e7da7133e5a09ca96"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "64637076203536ad5600c990": {
+   "n": "PKM 7.62x54R 机枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": "lmg_pk",
+   "platformN": "PK 平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7c241772715af0f9c3d",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7b5389d7ffd620ccba2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "646372518610c40fc20204e8"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "64748cb8de82c85eaf0a273a": {
+   "n": "MP-43 12铅径截短双管霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [],
+   "hasMagSlot": false,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "missing",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6499849fc93611967b034949": {
+   "n": "AK-12 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ak",
+   "platformN": "AK 平台",
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d482194bdc2d1d4e8b456b",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "649ec30cb013f04a700e60fb",
+    "64b9e265c94d0d15c5027e35",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "64ca3d3954fc657e230529cc": {
+   "n": "PKP 7.62x54R 步兵机枪",
+   "cal": "Caliber762x54R",
+   "caln": "7.62x54R",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": "lmg_pk",
+   "platformN": "PK 平台",
+   "ammo": [
+    "5e023d34e8a400319a28ed44",
+    "5e023d48186a883be655e551",
+    "5e023cf8186a883be655e54f",
+    "59e77a2386f7742ee578960a",
+    "5887431f2459777e1612938f",
+    "560d61e84bdc2da74d8b4571",
+    "64b8f7b5389d7ffd620ccba2",
+    "64b8f7968532cf95ee0a0dbf",
+    "64b8f7c241772715af0f9c3d"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "646372518610c40fc20204e8"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6513ef33e06849f06c0957ca": {
+   "n": "RPD 7.62x39 轻机枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": "lmg_rpd",
+   "platformN": "RPD 平台",
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "59e4d24686f7741776641ac7",
+    "5656d7c34bdc2d9d198b4587",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895",
+    "59e4cf5286f7741778269d8a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6513f0a194c72326990a3868"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "651450ce0e00edc794068371": {
+   "n": "SR-3M 9x39紧凑型突击步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57838f0b2459774a256959b2",
+    "57838f9f2459774a150289a0",
+    "5a9e81fba2750c00164f6b11",
+    "65118f531b90b4fc77015083"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "65268d8ecb944ff1e90ea385": {
+   "n": "RPDN 7.62x39 轻机枪",
+   "cal": "Caliber762x39",
+   "caln": "7.62x39",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e0d99486f7744a32234762",
+    "59e4d3d286f774176a36250a",
+    "601aa3d2b2bcb34913271e6d",
+    "64b7af5a8532cf95ee0a0dbd",
+    "59e4d24686f7741776641ac7",
+    "5656d7c34bdc2d9d198b4587",
+    "64b7af434b75259c590fa893",
+    "64b7af734b75259c590fa895",
+    "59e4cf5286f7741778269d8a"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "6513f0a194c72326990a3868"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "65290f395ae2ae97b80fdf2d": {
+   "n": "SIG MCX SPEAR 6.8x51突击步枪",
+   "cal": "Caliber68x51",
+   "caln": "6.8x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "ar15",
+   "platformN": "AR-15 平台",
+   "ammo": [
+    "6529243824cbe3c74a05e5c1",
+    "6529302b8c26af6326029fb7"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "5a3501acc4a282000d72293a",
+    "5df8f541c41b2312ea3335e3",
+    "5df8f535bb49d91fb446d6b0",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "65fb023261d5829b2d090755": {
+   "n": "U.S Ordnance M60E4 7.62x51 轻机枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5a6086ea4f39f99cd479502f",
+    "6768c25aa7b238f14a08d3f6",
+    "5e023e53d4353e3302577c4c"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "660ea4453786cc0af808a1be"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "66015072e9f84d5680039678": {
+   "n": "20x1毫米玩具枪",
+   "cal": "Caliber20x1mm",
+   "caln": "20x1mm",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "6601546f86889319850bd566"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "66015dc4aaad2f54cb04c56a"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "661ceb1b9311543c7104149b": {
+   "n": "U.S Ordnance M60E6 7.62x51 轻机枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5a6086ea4f39f99cd479502f",
+    "6768c25aa7b238f14a08d3f6",
+    "5e023e53d4353e3302577c4c"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "660ea4453786cc0af808a1be"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "661cec09b2c6356b4d0c7a36": {
+   "n": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "machine-guns",
+   "clsZh": "机枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5a6086ea4f39f99cd479502f",
+    "6768c25aa7b238f14a08d3f6",
+    "5e023e53d4353e3302577c4c"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "660ea4453786cc0af808a1be"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6680304edadb7aa61d00cef0": {
+   "n": "IWI UZI PRO Pistol 9x19冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668031ffe3e7eb26e8004cdd",
+    "66866f4ec3d473265104f381",
+    "66866f622a2296a8d9099639"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "668e71a8dadf42204c032ce1": {
+   "n": "IWI UZI PRO SMG 9x19冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5efb0da7a29a85116f6ea05f",
+    "5c3df7d588a4501f290594e5",
+    "58864a4f2459770fcc257101",
+    "56d59d3ad2720bdb418b4577",
+    "5c925fa22e221601da359b7b",
+    "5a3c16fe86f77452b62de32a",
+    "5efb0e16aeb21837e749c7ff",
+    "5c0d56a986f774449d5de529",
+    "64b7bbb74b75259c590fa897"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668031ffe3e7eb26e8004cdd",
+    "66866f4ec3d473265104f381",
+    "66866f622a2296a8d9099639"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "668fe5a998b5ad715703ddd6": {
+   "n": "Magnum Research “沙漠之鹰”Mk XIX .50 AE手枪",
+   "cal": "Caliber127x33",
+   "caln": ".50 AE",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "668fe62ac62660a5d8071446",
+    "66a0d1e0ed648d72fe064d06",
+    "66a0d1c87d0d369e270bb9de",
+    "66a0d1f88486c69fce00fdf6",
+    "6a60f36fb3d057447a095aee"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668fe5c5f35310705d02b696"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "66992b349950f5f4cd06029f": {
+   "n": "IWI UZI 9x19冲锋枪",
+   "cal": "Caliber9x19PARA",
+   "caln": "9x19",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d56a986f774449d5de529",
+    "56d59d3ad2720bdb418b4577",
+    "5efb0e16aeb21837e749c7ff",
+    "5c925fa22e221601da359b7b",
+    "58864a4f2459770fcc257101",
+    "5a3c16fe86f77452b62de32a",
+    "64b7bbb74b75259c590fa897",
+    "5c3df7d588a4501f290594e5",
+    "5efb0da7a29a85116f6ea05f"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "66992713ae08c5c29e0c4f97",
+    "6699271b9950f5f4cd060299",
+    "669927203c4fda6471005cbe",
+    "66992725ae08c5c29e0c4f9a",
+    "6699272a3c4fda6471005cc1",
+    "668031ffe3e7eb26e8004cdd",
+    "66866f4ec3d473265104f381",
+    "66866f622a2296a8d9099639",
+    "676176a162e0497044079f46"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "669fa39b48fc9f8db6035a0c": {
+   "n": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+   "cal": "Caliber127x33",
+   "caln": ".50 AE",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "668fe62ac62660a5d8071446",
+    "66a0d1e0ed648d72fe064d06",
+    "66a0d1c87d0d369e270bb9de",
+    "66a0d1f88486c69fce00fdf6",
+    "6a60f36fb3d057447a095aee"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668fe5c5f35310705d02b696"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "669fa3d876116c89840b1217": {
+   "n": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+   "cal": "Caliber127x33",
+   "caln": ".50 AE",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "668fe62ac62660a5d8071446",
+    "66a0d1e0ed648d72fe064d06",
+    "66a0d1c87d0d369e270bb9de",
+    "66a0d1f88486c69fce00fdf6",
+    "6a60f36fb3d057447a095aee"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668fe5c5f35310705d02b696"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "669fa3f88abd2662d80eee77": {
+   "n": "Magnum Research “沙漠之鹰”L5 .50 AE手枪",
+   "cal": "Caliber127x33",
+   "caln": ".50 AE",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "668fe62ac62660a5d8071446",
+    "66a0d1e0ed648d72fe064d06",
+    "66a0d1f88486c69fce00fdf6",
+    "66a0d1c87d0d369e270bb9de",
+    "6a60f36fb3d057447a095aee"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "668fe5c5f35310705d02b696"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "669fa409933e898cce0c2166": {
+   "n": "Magnum Research “沙漠之鹰”L5 .357 手枪",
+   "cal": "Caliber9x33R",
+   "caln": ".357",
+   "cls": "pistols",
+   "clsZh": "手枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "62330b3ed4dc74626d570b95",
+    "62330bfadc5883093563729b",
+    "62330c18744e5e31df12f516",
+    "62330c40bdd19b369e1e53d1"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "669fa435803b94fb5d0e3a76"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "66ffa9b66e19cc902401c5e8": {
+   "n": "MPS Auto Assault-12 Gen 1 12铅径自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5d6e6891a4b9361bd473feea",
+    "58820d1224597753c90aeb13",
+    "5d6e6806a4b936088465b17e",
+    "5d6e6772a4b936088465b17c",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e68d1a4b93622fe60e845",
+    "5c0d591486f7744c505b416f",
+    "5d6e67fba4b9361bc73bc779",
+    "64b8ee384b75259c590fa89b",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e6911a4b9361bd5780d52",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e68c4a4b9361b93413f79",
+    "560d5e524bdc2d25448b4571"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "66ffaab91f7492c901027bb8",
+    "6709133fa532466d5403fb7c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "67124dcfa3541f2a1f0e788b": {
+   "n": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5d6e6891a4b9361bd473feea",
+    "58820d1224597753c90aeb13",
+    "5d6e6806a4b936088465b17e",
+    "5d6e6772a4b936088465b17c",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e68d1a4b93622fe60e845",
+    "5c0d591486f7744c505b416f",
+    "5d6e67fba4b9361bc73bc779",
+    "64b8ee384b75259c590fa89b",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e6911a4b9361bd5780d52",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e68c4a4b9361b93413f79",
+    "560d5e524bdc2d25448b4571"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "66ffaab91f7492c901027bb8",
+    "6709133fa532466d5403fb7c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6718817435e3cfd9550d2c27": {
+   "n": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "62e7c98b550c8218d602cbb4",
+    "630e1adbbd357927e4007c09",
+    "630e295c984633f1fb0e7c30"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "673cab3e03c6a20581028bc1": {
+   "n": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "cal": "Caliber86x70",
+   "caln": ".338",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": "bolt762",
+   "platformN": "7.62 栓动平台",
+   "ammo": [
+    "5fc382a9d724d907e2077dab",
+    "5fc275cf85fd526b824a571a",
+    "5fc382c1016cce60e8341b20",
+    "5fc382b6d6fa9c00c571bbc3"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "673cbdfad0453ba50c0f76d6"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "674d6121c09f69dfb201a888": {
+   "n": "Aklys Defense 迅猛龙 .300 Blackout 突击步枪",
+   "cal": "Caliber762x35",
+   "caln": ".300 Blk",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "6196365d58ef8c428c287da1",
+    "6196364158ef8c428c287d9f",
+    "619636be6db0f2477964e710",
+    "64b8725c4b75259c590fa899",
+    "5fd20ff893a8961fc660a954",
+    "5fbe3ffdf8b6a877a729ea82"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5c0548ae0db834001966a3c2",
+    "5ac66c5d5acfc4001718d314",
+    "6764139c44b3c96e7b0e2f7b"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "674fe9a75e51f1c47c04ec23": {
+   "n": "Saiga-12K 12 铅径自动霰弹枪",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_saiga",
+   "platformN": "Saiga 平台",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57616a9e2459773c7a400234",
+    "5cf8f3b0d7f00c00217872ef",
+    "5a966f51a2750c00156aacf6",
+    "674fe8f6f34d761ab8020cc8"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "676176d362e0497044079f4c": {
+   "n": "FN SCAR-H X-17 7.62x51突击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df8f535bb49d91fb446d6b0",
+    "5df8f541c41b2312ea3335e3",
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "5a3501acc4a282000d72293a",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "67c6de3ce39861860909e8e5": {
+   "n": "马林 MXLR .308 ME 杠杆步枪",
+   "cal": "Caliber784x49",
+   "caln": ".308 ME",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "67c540c3d0538d12ec036c08",
+    "67c540cfb032bbdb530201b8"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "67c5424826265106dd0697a4"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "67d0576f29f580ebc10efd08": {
+   "n": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+   "cal": "Caliber127x99",
+   "caln": ".50 BMG",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "67d41936f378a36c4706eeb9",
+    "67dc212493ce32834b0fa446",
+    "67dc255ee3028a8b120efc48",
+    "67dc2648ba5b79876906a166"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "67d418d0ffb910d21f04720e"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6871284e9a353bb50606f3ed": {
+   "n": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "cal": "Caliber9x39",
+   "caln": "9x39",
+   "cls": "assault-carbines",
+   "clsZh": "突击卡宾枪",
+   "platform": "vss",
+   "platformN": "VSS / VAL 平台",
+   "ammo": [
+    "5c0d688c86f77413ae3407b2",
+    "61962d879bb3d20b0946d385",
+    "57a0dfb82459774d3078b56c",
+    "57a0e5022459774d1673f889",
+    "5c0d668f86f7747ccb7f13b2",
+    "6576f96220d53a5b8f3e395e"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57838f0b2459774a256959b2",
+    "57838f9f2459774a150289a0",
+    "5a9e81fba2750c00164f6b11",
+    "65118f531b90b4fc77015083"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "689166b6c2d6fa42e7044756": {
+   "n": "AK-308 7.62x51 突击步枪",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "6768c25aa7b238f14a08d3f6",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "68916701bd91cc17c109c758",
+    "68935269af943a06e8038c58"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6895bb82c4519957df062f82": {
+   "n": "雷电 Model 1 FA 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "68a639748e1fe612970728e9": {
+   "n": "柯尔特 M16A1 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "68a6399922b1e0bd360afe56": {
+   "n": "柯尔特 M16A2 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "55d4887d4bdc2d962f8b4570",
+    "68a63b73c92ee33ffa01bf57",
+    "6a16f3a28873771c3704a132",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "68aee763130c00663d08aea8": {
+   "n": "TKPD 9.3x64 突击卡宾枪",
+   "cal": "Caliber93x64",
+   "caln": "9.3x64",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "68aeed8a8906b00bc800fdd6",
+    "68bac6ca653ee6b1e406d978",
+    "68bad8376cb22acf1107a586"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "68aef9bf4efeccb5220d25c6"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "68c16b9ab6b75a8a480520a6": {
+   "n": "NL545 (DI) 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5c0d5e4486f77478390952fe",
+    "61962b617c6c7b169525f168",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff2ced2720bb4668b4567",
+    "56dff338d2720bbd668b4569",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "64b9e265c94d0d15c5027e35",
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "649ec30cb013f04a700e60fb",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "68c2940aecc41cc5490bd40e": {
+   "n": "NL545 (GP) 5.45x39 突击步枪",
+   "cal": "Caliber545x39",
+   "caln": "5.45x39",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "61962b617c6c7b169525f168",
+    "5c0d5e4486f77478390952fe",
+    "56dfef82d2720bbd668b4567",
+    "56dff026d2720bb8668b4567",
+    "56dff061d2720bb5668b4567",
+    "56dff0bed2720bb0668b4567",
+    "56dff216d2720bbd668b4568",
+    "56dff338d2720bbd668b4569",
+    "56dff2ced2720bb4668b4567",
+    "56dff3afd2720bba668b4567",
+    "56dff421d2720b5f5a8b4567",
+    "56dff4a2d2720bbd668b456a",
+    "56dff4ecd2720b5f5a8b4568"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "64b9e265c94d0d15c5027e35",
+    "564ca9df4bdc2d35148b4569",
+    "564ca99c4bdc2d16268b4589",
+    "55d480c04bdc2d1d4e8b456a",
+    "5cbdaf89ae9215000e5b9c94",
+    "55d481904bdc2d8c2f8b456a",
+    "55d4837c4bdc2d1d4e8b456c",
+    "5aaa4194e5b5b055d06310a5",
+    "649ec30cb013f04a700e60fb",
+    "5bed61680db834001d2c45ab",
+    "5bed625c0db834001c062946",
+    "68d566b2aa07af2e14059e01"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6932abeb5403890d0c09c926": {
+   "n": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+   "cal": "Caliber762x51",
+   "caln": "7.62x51",
+   "cls": "marksman-rifles",
+   "clsZh": "精确射手步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "5a6086ea4f39f99cd479502f",
+    "5a608bf24f39f98ffc77720e",
+    "58dd3ad986f77403051cba8f",
+    "5e023e53d4353e3302577c4c",
+    "5efb0c1bd79ff02a1f5e68d9",
+    "5e023e6e34d52a55c3304f71",
+    "5e023e88277cce2b522ff2b1",
+    "6768c25aa7b238f14a08d3f6"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5df8f535bb49d91fb446d6b0",
+    "5df8f541c41b2312ea3335e3",
+    "5a3501acc4a282000d72293a",
+    "65293c38fc460e50a509cb25",
+    "65293c7a17e14363030ad308",
+    "6761770e48fa5c377e06fc3c"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6981d72ed009ad83920da43a": {
+   "n": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "cal": "Caliber12g",
+   "caln": "12g",
+   "cls": "shotguns",
+   "clsZh": "霰弹枪",
+   "platform": "shotgun_saiga",
+   "platformN": "Saiga 平台",
+   "ammo": [
+    "560d5e524bdc2d25448b4571",
+    "5d6e6772a4b936088465b17c",
+    "5d6e67fba4b9361bc73bc779",
+    "5d6e6806a4b936088465b17e",
+    "5d6e68dea4b9361bcc29e659",
+    "5d6e6911a4b9361bd5780d52",
+    "5c0d591486f7744c505b416f",
+    "58820d1224597753c90aeb13",
+    "5d6e68c4a4b9361b93413f79",
+    "5d6e68a8a4b9360b6c0d54e2",
+    "5d6e68e6a4b9361c140bcfe0",
+    "5d6e6869a4b9361c140bcfde",
+    "5d6e68b3a4b9361bca7e50b5",
+    "5d6e6891a4b9361bd473feea",
+    "5d6e689ca4b9361bc8618956",
+    "5d6e68d1a4b93622fe60e845",
+    "64b8ee384b75259c590fa89b"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "57616a9e2459773c7a400234",
+    "5cf8f3b0d7f00c00217872ef",
+    "5a966f51a2750c00156aacf6",
+    "674fe8f6f34d761ab8020cc8"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "69f9ebbcaae020b0db02f65d": {
+   "n": "北方工业 QBZ-191 5.8x42 突击步枪",
+   "cal": "Caliber58x42",
+   "caln": "5.8x42",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "6a07208057b2695f9d001e63",
+    "6a42661705016139300b2085",
+    "6a42662fcb506840dd053827",
+    "6a426637ddc63098d100ae67"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "69f9ec5a7596e93e340c0a1e"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6a15ae2ae5267ba21c07f98f": {
+   "n": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6a3bffbebc377285900b85cf": {
+   "n": "丰和 20 式 5.56x45 突击步枪",
+   "cal": "Caliber556x45NATO",
+   "caln": "5.56x45",
+   "cls": "assault-rifles",
+   "clsZh": "突击步枪",
+   "platform": null,
+   "platformN": null,
+   "ammo": [
+    "59e6920f86f77411d82aa167",
+    "59e6927d86f77411da468256",
+    "54527a984bdc2d4e668b4567",
+    "54527ac44bdc2d36668b4567",
+    "59e68f6f86f7746c9f75e846",
+    "59e6906286f7746c9f75e847",
+    "59e690b686f7746c9f75e848",
+    "59e6918f86f7746c9f75e849",
+    "60194943740c5d77f6705eea",
+    "601949593ae8f707c4608daa",
+    "5c0d5ae286f7741e46554302"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "55d4887d4bdc2d962f8b4570",
+    "61840bedd92c473c77021635",
+    "61840d85568c120fdd2962a5",
+    "5c05413a0db834001c390617",
+    "5c6d450c2e221600114c997d",
+    "5c6d42cb2e2216000e69d7d1",
+    "59c1383d86f774290a37e0ca",
+    "5aaa5e60e5b5b000140293d6",
+    "5448c1d04bdc2dff2f8b4569",
+    "5aaa5dfee5b5b000140293d3",
+    "5d1340b3d7ad1a0b52682ed7",
+    "544a378f4bdc2d30388b4567",
+    "5d1340bdd7ad1a0e8d245aab",
+    "55802d5f4bdc2dac148b458e",
+    "5d1340cad7ad1a0b0b249869",
+    "6241c2c2117ad530666a5108",
+    "5c6592372e221600133e47d7",
+    "544a37c44bdc2d25388b4567",
+    "5c6d46132e221601da357d56",
+    "6761765f1f08ed5e8800b7a6",
+    "68a63b73c92ee33ffa01bf57",
+    "6a1579afcbb8d0c82606c541",
+    "6a1579bfb507e45a68038d7f",
+    "6a16f3a28873771c3704a132"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "missing"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  },
+  "6a78b7f8c2016eb33e0027cd": {
+   "n": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "cal": "Caliber57x28",
+   "caln": "5.7x28",
+   "cls": "submachine-guns",
+   "clsZh": "冲锋枪",
+   "platform": "p90",
+   "platformN": "P90 平台",
+   "ammo": [
+    "5cc80f53e4a949000e1ea4f8",
+    "5cc86832d7f00c000d3a6e6c",
+    "5cc86840d7f00c002412c56c",
+    "5cc80f67e4a949035e43bbba",
+    "5cc80f38e4a949001152b560",
+    "5cc80f8fe4a949033b0224a2",
+    "5cc80f79e4a949033c7343b2"
+   ],
+   "ammoMissing": [],
+   "mags": [
+    "5cc70093e4a949033c734312"
+   ],
+   "hasMagSlot": true,
+   "confidence": {
+    "caliber": "verified",
+    "ammo": "verified",
+    "mags": "verified",
+    "platform": "estimated"
+   },
+   "sourceKind": "tarkov.dev static + local items.json (build time)"
+  }
+ }
+}

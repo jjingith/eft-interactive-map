@@ -1,0 +1,378 @@
+{
+ "guns": {
+  "mcx": {
+   "gun": "SIG MCX .300 Blackout 突击步枪",
+   "bars": [
+    {
+     "label": "人机工效",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "71.5基线 71.5",
+     "valClipped": false,
+     "baseLeftPct": "71.5%",
+     "baseTitle": "默认装配基线 71.5"
+    },
+    {
+     "label": "散布角",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "2.8基线 2.8",
+     "valClipped": false,
+     "baseLeftPct": "27.5%",
+     "baseTitle": "默认装配基线 2.8"
+    },
+    {
+     "label": "垂直后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "82.4基线 82.4",
+     "valClipped": false,
+     "baseLeftPct": "11.7714%",
+     "baseTitle": "默认装配基线 82.4"
+    },
+    {
+     "label": "水平后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "227.8基线 227.8",
+     "valClipped": false,
+     "baseLeftPct": "18.224%",
+     "baseTitle": "默认装配基线 227.8"
+    },
+    {
+     "label": "初速 m/s",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "605.0基线 605.0",
+     "valClipped": false,
+     "baseLeftPct": "37.3684%",
+     "baseTitle": "默认装配基线 605.0"
+    }
+   ],
+   "trackWidthsEqual": true,
+   "valWidthsEqual": true,
+   "anyClipped": false
+  },
+  "m4a1": {
+   "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "bars": [
+    {
+     "label": "人机工效",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "55.0基线 55.0",
+     "valClipped": false,
+     "baseLeftPct": "55%",
+     "baseTitle": "默认装配基线 55.0"
+    },
+    {
+     "label": "散布角",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "1.8基线 1.8",
+     "valClipped": false,
+     "baseLeftPct": "18.2%",
+     "baseTitle": "默认装配基线 1.8"
+    },
+    {
+     "label": "垂直后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "78.1基线 78.1",
+     "valClipped": false,
+     "baseLeftPct": "11.1571%",
+     "baseTitle": "默认装配基线 78.1"
+    },
+    {
+     "label": "水平后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "224.4基线 224.4",
+     "valClipped": false,
+     "baseLeftPct": "17.952%",
+     "baseTitle": "默认装配基线 224.4"
+    },
+    {
+     "label": "初速 m/s",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "922.0基线 922.0",
+     "valClipped": false,
+     "baseLeftPct": "70.7368%",
+     "baseTitle": "默认装配基线 922.0"
+    }
+   ],
+   "trackWidthsEqual": true,
+   "valWidthsEqual": true,
+   "anyClipped": false
+  },
+  "ak74": {
+   "gun": "AK-74 5.45x39 突击步枪",
+   "bars": [
+    {
+     "label": "人机工效",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "47.0基线 47.0",
+     "valClipped": false,
+     "baseLeftPct": "47%",
+     "baseTitle": "默认装配基线 47.0"
+    },
+    {
+     "label": "散布角",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "2.0基线 2.0",
+     "valClipped": false,
+     "baseLeftPct": "19.9%",
+     "baseTitle": "默认装配基线 2.0"
+    },
+    {
+     "label": "垂直后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "71.0基线 71.0",
+     "valClipped": false,
+     "baseLeftPct": "10.1429%",
+     "baseTitle": "默认装配基线 71.0"
+    },
+    {
+     "label": "水平后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "180.6基线 180.6",
+     "valClipped": false,
+     "baseLeftPct": "14.448%",
+     "baseTitle": "默认装配基线 180.6"
+    },
+    {
+     "label": "初速 m/s",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "890.0基线 890.0",
+     "valClipped": false,
+     "baseLeftPct": "67.3684%",
+     "baseTitle": "默认装配基线 890.0"
+    }
+   ],
+   "trackWidthsEqual": true,
+   "valWidthsEqual": true,
+   "anyClipped": false
+  },
+  "glock17": {
+   "gun": "Glock 17 9x19 手枪",
+   "bars": [
+    {
+     "label": "人机工效",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "91.0基线 91.0",
+     "valClipped": false,
+     "baseLeftPct": "91%",
+     "baseTitle": "默认装配基线 91.0"
+    },
+    {
+     "label": "散布角",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "11.7基线 11.7",
+     "valClipped": false,
+     "baseLeftPct": "100%",
+     "baseTitle": "默认装配基线 11.7"
+    },
+    {
+     "label": "垂直后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "302.0基线 302.0",
+     "valClipped": false,
+     "baseLeftPct": "43.1429%",
+     "baseTitle": "默认装配基线 302.0"
+    },
+    {
+     "label": "水平后坐",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "252.5基线 252.5",
+     "valClipped": false,
+     "baseLeftPct": "20.2%",
+     "baseTitle": "默认装配基线 252.5"
+    },
+    {
+     "label": "初速 m/s",
+     "trackW": 382,
+     "trackX": 329,
+     "valW": 104,
+     "valX": 719,
+     "valText": "377.0基线 377.0",
+     "valClipped": false,
+     "baseLeftPct": "13.3684%",
+     "baseTitle": "默认装配基线 377.0"
+    }
+   ],
+   "trackWidthsEqual": true,
+   "valWidthsEqual": true,
+   "anyClipped": false
+  }
+ },
+ "devices": {
+  "initial": [
+   {
+    "title": "手电",
+    "count": "9 款兼容",
+    "summary": "未选择 · 点下方型号指定手电",
+    "rowCount": 9,
+    "firstRows": [
+     {
+      "name": "Glock GTL 21 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "0"
+     },
+     {
+      "name": "Insight WMX200 战术手电",
+      "tag": "手电",
+      "on": "0"
+     },
+     {
+      "name": "Olight Baldr Pro 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "0"
+     }
+    ]
+   },
+   {
+    "title": "激光",
+    "count": "17 款兼容",
+    "summary": "未选择 · 点下方型号指定激光",
+    "rowCount": 17,
+    "firstRows": [
+     {
+      "name": "Glock GTL 21 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "0"
+     },
+     {
+      "name": "Holosun LS321战术设备",
+      "tag": "激光",
+      "on": "0"
+     },
+     {
+      "name": "Insight AN/PEQ-2 战术设备",
+      "tag": "激光",
+      "on": "0"
+     }
+    ]
+   }
+  ],
+  "pickedLight": "Glock GTL 21 战术手电激光组合",
+  "afterPick": [
+   {
+    "title": "手电",
+    "count": "9 款兼容",
+    "summary": "当前：Glock GTL 21 战术手电激光组合",
+    "rowCount": 9,
+    "firstRows": [
+     {
+      "name": "Glock GTL 21 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "1"
+     },
+     {
+      "name": "Insight WMX200 战术手电",
+      "tag": "手电",
+      "on": "0"
+     },
+     {
+      "name": "Olight Baldr Pro 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "0"
+     }
+    ]
+   },
+   {
+    "title": "激光",
+    "count": "17 款兼容",
+    "summary": "未选择 · 点下方型号指定激光",
+    "rowCount": 17,
+    "firstRows": [
+     {
+      "name": "Glock GTL 21 战术手电激光组合",
+      "tag": "手电+激光",
+      "on": "0"
+     },
+     {
+      "name": "Holosun LS321战术设备",
+      "tag": "激光",
+      "on": "0"
+     },
+     {
+      "name": "Insight AN/PEQ-2 战术设备",
+      "tag": "激光",
+      "on": "0"
+     }
+    ]
+   }
+  ],
+  "generate": "clicked",
+  "results": [
+   {
+    "text": "低后坐力人机 44.1 · 后坐 30.4 · 313,222 ₽手电：未满足（要求 Glock GTL 21 战术手电激光组合）⛔ 所选战术设备「Glock GTL 21 战术手电激光组合」未装入方案：装配树里没有可安装它的槽位（可能被其它配件选择占用或被转接座替换）应用",
+    "bad": true
+   },
+   {
+    "text": "高人机工效人机 108.2 · 后坐 49.9 · 296,440 ₽手电：Glock GTL 21 战术手电激光组合应用",
+    "bad": false
+   },
+   {
+    "text": "轻量化人机 86.7 · 后坐 43.7 · 199,506 ₽手电：未满足（要求 Glock GTL 21 战术手电激光组合）⛔ 所选战术设备「Glock GTL 21 战术手电激光组合」未装入方案：装配树里没有可安装它的槽位（可能被其它配件选择占用或被转接座替换）应用",
+    "bad": true
+   },
+   {
+    "text": "性价比人机 91.7 · 后坐 44.2 · 236,314 ₽手电：未满足（要求 Glock GTL 21 战术手电激光组合）⛔ 所选战术设备「Glock GTL 21 战术手电激光组合」未装入方案：装配树里没有可安装它的槽位（可能被其它配件选择占用或被转接座替换）应用",
+    "bad": true
+   }
+  ],
+  "apply": "applied",
+  "installedAfterApply": "[\"628a7b23b0f75035732dd565\",\"6130ca3fd92c473c77020dbd\",\"68540aae1e5c6ff6f1051477\",\"59c6633186f7740cf0493bb9\",\"5cf4e3f3d7f00c06595bc7f0\",\"5ac50da15acfc4001718d287\",\"5e217ba4c1434648c13568cd\",\"5a800961159bd4315e3a1657\",\"5c791e872e2216001219c40a\",\"55d4837c4bdc2d1d4e8b456c\",\"619b69037b9de8162902673e\"]"
+ },
+ "console": [],
+ "requests": 0
+}

@@ -1,0 +1,282 @@
+{
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "results": [
+    {
+      "name": "A1_减后坐3_人机10",
+      "pass": true,
+      "detail": 6.333333333333334
+    },
+    {
+      "name": "A2_加后坐3_人机10",
+      "pass": true,
+      "detail": 0.3333333333333335
+    },
+    {
+      "name": "A3_加后坐3_人机6_负",
+      "pass": true,
+      "detail": -1
+    },
+    {
+      "name": "A4_减后坐6_人机负6",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "name": "A5_人机为0",
+      "pass": true,
+      "detail": 9
+    },
+    {
+      "name": "A6_后坐力为0",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "A7_缺人机_null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A8_缺后坐_null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A9_无mod_null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "A10_符号仅反一次",
+      "pass": true,
+      "detail": 3
+    },
+    {
+      "name": "B1_真实0非缺失",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B2_缺失为null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B3_无mod为null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B4_非数字为null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "B5_尺寸2x1",
+      "pass": true,
+      "detail": "2×1"
+    },
+    {
+      "name": "B6_尺寸缺失null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C1_满重计算",
+      "pass": true,
+      "detail": 0.45499999999999996
+    },
+    {
+      "name": "C2_缺容量null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C3_缺空重null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C4_缺弹种null",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "C5_用选中弹种",
+      "pass": true,
+      "detail": 0.755
+    },
+    {
+      "name": "D1_弹匣",
+      "pass": true,
+      "detail": "magazine"
+    },
+    {
+      "name": "D2_枪管",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D3_枪口",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D4_枪口带序号",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D5_其它为一般",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "D6_无槽位为一般",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "E1_一般配件列序",
+      "pass": true,
+      "detail": [
+        "n",
+        "slots",
+        "recoil",
+        "ergo",
+        "re3",
+        "size",
+        "w"
+      ]
+    },
+    {
+      "name": "E2_枪管隐藏MOA",
+      "pass": true,
+      "detail": [
+        "n",
+        "slots",
+        "recoil",
+        "ergo",
+        "re3",
+        "size",
+        "w"
+      ]
+    },
+    {
+      "name": "E3_枪口ACC位置",
+      "pass": true,
+      "detail": [
+        "n",
+        "slots",
+        "recoil",
+        "acc",
+        "ergo",
+        "re3",
+        "size",
+        "w"
+      ]
+    },
+    {
+      "name": "E4_枪口无ACC隐藏",
+      "pass": true,
+      "detail": [
+        "n",
+        "slots",
+        "recoil",
+        "ergo",
+        "re3",
+        "size",
+        "w"
+      ]
+    },
+    {
+      "name": "E5_弹匣列序",
+      "pass": true,
+      "detail": [
+        "n",
+        "ergo",
+        "cap",
+        "w",
+        "magFull"
+      ]
+    },
+    {
+      "name": "E6_弹匣无后坐",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "E7_弹匣无子槽",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "E8_弹匣无RE3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "E9_弹匣无容量则隐藏",
+      "pass": true,
+      "detail": [
+        "n",
+        "ergo",
+        "w"
+      ]
+    },
+    {
+      "name": "E10_空列表不崩",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F1_RE3三位小数",
+      "pass": true,
+      "detail": {
+        "t": "6.667",
+        "title": "3 + 10.0 / 3 = 6.667（R 取正面增益：减少为正、增加为负）"
+      }
+    },
+    {
+      "name": "F2_后坐力负号",
+      "pass": true,
+      "detail": {
+        "t": "-3.0%",
+        "title": ""
+      }
+    },
+    {
+      "name": "F3_子槽真实0",
+      "pass": true,
+      "detail": {
+        "t": "0",
+        "title": ""
+      }
+    },
+    {
+      "name": "F4_缺失显示破折号",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F5_缺失有说明",
+      "pass": true,
+      "detail": "本地物品数据里没有这条配件的后坐力属性（不按 0 计入）"
+    },
+    {
+      "name": "F6_尺寸文本",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "F7_显示与计算一致",
+      "pass": true,
+      "detail": {
+        "computed": -1,
+        "shown": "-1.000"
+      }
+    }
+  ]
+}

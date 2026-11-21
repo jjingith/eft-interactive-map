@@ -1,0 +1,122 @@
+{
+ "generatedFor": "R19.15.1",
+ "gun": {
+  "id": "627e14b21713922ded6f2c15",
+  "name": "Accuracy International AXMC .338 LM 栓动式狙击步枪"
+ },
+ "realTree": {
+  "rootSlots": [
+   {
+    "slot": "mod_magazine",
+    "label": "弹匣",
+    "allowCount": 1,
+    "installedItemSlots": []
+   },
+   {
+    "slot": "mod_pistol_grip",
+    "label": "手枪式握把",
+    "allowCount": 2,
+    "installedItemSlots": [
+     {
+      "item": "AI AXMC手枪式握把",
+      "id": "62811e2510e26c1f344e6554",
+      "slots": [
+       {
+        "slot": "mod_stock",
+        "label": "枪托"
+       },
+       {
+        "slot": "mod_reciever",
+        "label": "机匣"
+       }
+      ]
+     },
+     {
+      "item": "AI AXMC GTAC AR 规格手枪式握把转接器",
+      "id": "62811e335631d45211793c95",
+      "slots": [
+       {
+        "slot": "mod_stock_000",
+        "label": "枪托"
+       },
+       {
+        "slot": "mod_pistol_grip",
+        "label": "手枪式握把"
+       },
+       {
+        "slot": "mod_reciever",
+        "label": "机匣"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "slot": "mod_charge",
+    "label": "拉机柄",
+    "allowCount": 1,
+    "installedItemSlots": []
+   }
+  ],
+  "chain": "mod_pistol_grip → mod_reciever(枪身/下机匣) → mod_reciever(上机匣) / mod_stock(后托)"
+ },
+ "before": {
+  "receiverUpper": {
+   "slot": "mod_pistol_grip/mod_reciever/mod_reciever",
+   "row": 4,
+   "col": 1,
+   "item": "AI AXMC上机匣"
+  },
+  "receiverLower": {
+   "slot": "mod_pistol_grip/mod_reciever",
+   "row": 3,
+   "col": 5,
+   "item": "AI AXMC .338 LM 枪身"
+  },
+  "stock": {
+   "slot": "mod_pistol_grip/mod_stock",
+   "row": 5,
+   "col": 8,
+   "item": "AI AXMC AX枪托"
+  },
+  "rows": 6
+ },
+ "after": {
+  "receiverUpper": {
+   "slot": "mod_pistol_grip/mod_reciever/mod_reciever",
+   "row": 3,
+   "col": 5,
+   "item": "AI AXMC上机匣"
+  },
+  "receiverLower": {
+   "slot": "mod_pistol_grip/mod_reciever",
+   "row": 4,
+   "col": 5,
+   "item": "AI AXMC .338 LM 枪身"
+  },
+  "stock": {
+   "slot": "mod_pistol_grip/mod_stock",
+   "row": 3,
+   "col": 9,
+   "item": "AI AXMC AX枪托"
+  },
+  "rows": 6,
+  "roles": {
+   "receiverUpper": "mod_pistol_grip/mod_reciever/mod_reciever",
+   "receiverLower": "mod_pistol_grip/mod_reciever",
+   "stockOnGrip": "mod_pistol_grip/mod_stock",
+   "stockUnderParent": null,
+   "hammer": null,
+   "trigger": null,
+   "topOptic": []
+  }
+ },
+ "expectation": {
+  "receiverUpper": "r3c5（本体左侧相邻列）",
+  "receiverLower": "r4c5（上机匣正下方同列）",
+  "stock": "r3c9（本体右侧枪托锚点，即使真实父件是手枪式握把）"
+ },
+ "result": "全部达成",
+ "parentRelationsPreserved": true,
+ "note": "只改视觉坐标；mod_pistol_grip → mod_reciever → mod_reciever 的真实父子链未改动"
+}

@@ -23,29 +23,706 @@ from __future__ import annotations
 
 import argparse
 import errno
+import hashlib
 import json
 import mimetypes
 import os
+import datetime
 import queue
+import re
+import socket
+import subprocess
 import sys
 import threading
 import time
+import urllib.request
 import webbrowser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 
+import cloud
+import cloud_market
 import config
 import eftlog
 import keyinput
+import layoutcal
+import live_prices
+import market_overview
+import ocr
+import poi_shots
+import presets
+import price_cache
+import price_history
+import prices_source
 import screenshot
 
-VERSION = "0.1.0"
+
+VERSION = "0.2.8.3"
+UPDATE_REPO_API = "https://api.github.com/repos/jjingith/eft-interactive-map/releases/latest"
+_UPDATE_CACHE: dict[str, Any] = {"at": 0.0, "payload": None}
+_UPDATE_CACHE_LOCK = threading.Lock()
+_UPDATE_CACHE_TTL = 900.0
+
+
+def update_check_payload() -> dict[str, Any]:
+    """Fetch the latest stable GitHub release once per local server run."""
+    now = time.monotonic()
+    with _UPDATE_CACHE_LOCK:
+        cached = _UPDATE_CACHE.get("payload")
+        if cached is not None and now - float(_UPDATE_CACHE.get("at") or 0) < _UPDATE_CACHE_TTL:
+            return dict(cached)
+    payload: dict[str, Any] = {"ok": True, "available": False, "current_version": VERSION}
+    try:
+        request = urllib.request.Request(
+            UPDATE_REPO_API,
+            headers={"Accept": "application/vnd.github+json", "User-Agent": "EFTMap-Updater"},
+        )
+        with urllib.request.urlopen(request, timeout=5) as response:
+            release = json.loads(response.read(1024 * 1024).decode("utf-8"))
+        tag = str(release.get("tag_name") or "").strip()
+        version = tag[1:] if tag[:1].lower() == "v" else tag
+
+        def parts(value: str) -> tuple[int, ...]:
+            values = value.split(".")
+            if not values or any(not piece.isdigit() for piece in values):
+                return ()
+            return tuple(int(piece) for piece in values)
+
+        latest_parts, current_parts = parts(version), parts(VERSION)
+        if latest_parts and current_parts:
+            latest_parts += (0,) * max(0, len(current_parts) - len(latest_parts))
+            current_parts += (0,) * max(0, len(latest_parts) - len(current_parts))
+            payload.update({
+                "available": latest_parts > current_parts,
+                "latest_version": version,
+                "tag": tag,
+                "release_name": str(release.get("name") or tag),
+                "release_url": str(release.get("html_url") or ""),
+                "published_at": str(release.get("published_at") or ""),
+                "notes": str(release.get("body") or "").strip(),
+                "assets": [
+                    {"name": str(asset.get("name") or "下载文件"),
+                     "url": str(asset.get("browser_download_url") or ""),
+                     "size": int(asset.get("size") or 0)}
+                    for asset in (release.get("assets") or [])
+                    if isinstance(asset, dict)
+                    and str(asset.get("name") or "").lower().endswith((".zip", ".exe"))
+                    and str(asset.get("browser_download_url") or "").startswith(
+                        "https://github.com/jjingith/eft-interactive-map/releases/download/"
+                    )
+                ],
+            })
+    except Exception as exc:  # 更新检查失败不能影响离线主功能
+        payload["error"] = str(exc)[:160]
+    with _UPDATE_CACHE_LOCK:
+        _UPDATE_CACHE.update({"at": now, "payload": payload})
+    return dict(payload)
 APP_ID = "eft-interactive-map"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8787
 DEFAULT_POLL = 1.0        # 截图目录轮询间隔（秒）
 SSE_HEARTBEAT = 15.0      # SSE 心跳间隔（秒），防止连接被中间层掐掉
 MAX_PREFS_BODY = 64 * 1024   # /api/prefs 请求体上限：界面偏好只有几 KB，超了直接拒
+# 云同步每次最多 3 个键，单键服务端上限 256 KB；这里再留一点 JSON 壳的余量。
+MAX_CLOUD_BODY = 3 * 256 * 1024 + 128 * 1024
+# R238 截图识别：1080p PNG base64 约 8-12 MB，留足余量但设硬上限防滥用。
+MAX_OCR_BODY = 24 * 1024 * 1024
+# R238 冻结帧（QQ 式框选）：整屏 PNG 原始字节，4K 约 10-20 MB，上限 48 MB。
+MAX_OCR_FRAME_BODY = 48 * 1024 * 1024
+# 内存里只留**最近一帧**（宿主每次热键都重抓覆盖），10 分钟没人用就丢弃。
+# R240：帧格式跟随宿主上报（BMP 免压缩编码，热键→可框选 <0.5s；PNG 兼容旧路径）。
+_OCR_FRAME: dict[str, Any] = {"id": None, "bytes": None, "at": 0.0, "fmt": "png"}
+_OCR_FRAME_TTL = 600.0
+
+# R239 截图识别交接态：scan.html 识别完成后把框选区域与匹配结果 POST 上来，
+# 宿主（tools/scan.py）轮询标题看到「完成」后 GET 走，改开原生透明浮窗。
+# 单槽覆盖（只保留最近一次交接），无 TTL——宿主消费完就不再读。
+_OCR_OVERLAY: dict[str, Any] = {"ts": 0.0, "region": None, "matches": []}
+
+# 物品目录 / 匹配器缓存（items.json 按 mtime 失效；匹配器随目录重建）
+_OCR_CATALOG: dict[str, Any] = {"mtime": None, "names": None,
+                                "name_to_ids": None, "items": None}
+_OCR_MATCHER: dict[str, Any] = {"key": None, "matcher": None}
+
+
+# R237：OCR 短名表缓存（data/ocr-item-names.json，tools/build_ocr_names.py 生成）
+_OCR_SHORTNAMES: dict[str, Any] = {"mtime": None, "shorts": None}
+
+
+def _ocr_shortnames(root_dir: str) -> dict[str, str]:
+    """id → 中文短名（游戏内显示名）。占位符 "<id> ShortName" 已在生成时过滤。"""
+    path = os.path.join(root_dir, "data", "ocr-item-names.json")
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        mtime = None
+    cache = _OCR_SHORTNAMES
+    if cache["shorts"] is not None and cache["mtime"] == mtime:
+        return cache["shorts"]
+    shorts: dict[str, str] = {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            doc = json.load(f)
+        for iid, v in (doc.get("names") or {}).items():
+            zh = v.get("zh") if isinstance(v, dict) else None
+            if isinstance(zh, str) and zh.strip():
+                shorts[iid] = zh.strip()
+    except (OSError, ValueError):
+        shorts = {}
+    cache.update({"mtime": mtime, "shorts": shorts})
+    return shorts
+
+
+# R242：OCR 匹配的档位层级（去重时保留更高层级的匹配）
+_OCR_TIER_RANK = {"精确": 4, "去空格": 3, "整串模糊": 1}
+
+
+def _ocr_match_rank(m: dict) -> int:
+    tier = str(m.get("tier") or "")
+    for pre, r in _OCR_TIER_RANK.items():
+        if tier.startswith(pre):
+            return r
+    return 2  # 模糊(n)
+
+
+def _ocr_close(a: dict, b: dict) -> bool:
+    """两个 OCR 行框近到视为同一物品。
+
+    R243 修正：水平/垂直分开取阈值——同一物品名的多个片段是**同一行**被切碎
+    （dx 可到 3×行高、dy≈0），而**相邻行**的间距也是约 3×行高，垂直用 3h 会把
+    上下格的不同物品误合并（演示帧 80px 行距实测被误并）。垂直收到 1.2h。"""
+    h = max(a.get("h") or 10, b.get("h") or 10)
+    return (abs(a.get("x", 0) - b.get("x", 0)) < 3 * h
+            and abs(a.get("y", 0) - b.get("y", 0)) < 1.2 * h)
+
+
+def dedup_ocr_matches(matches: list) -> list:
+    """同位置只留一个匹配（R242，实测驱动）：
+    · 同 id 近距 = 同一物品名的多个 OCR 片段（'肾上'+'腺素'→肾上腺素×2）→ 留优；
+    · 不同 id 近距 = 正确匹配与擦线误配共存（EXFIL 精确 vs EXPIE 整串模糊、
+      LBCR vs SDSK）→ 按档位层级+分数留优；
+    · 远距的同 id 物品（两块夹板）各自保留。"""
+    out: list = []
+    for m in sorted(matches, key=lambda x: (-x.get("ocrScore", 0), -_ocr_match_rank(x))):
+        slot = None
+        for j, other in enumerate(out):
+            if _ocr_close(m, other):
+                slot = j
+                break
+        if slot is None:
+            out.append(m)
+        elif ((_ocr_match_rank(m), m.get("ocrScore", 0))
+              > (_ocr_match_rank(out[slot]), out[slot].get("ocrScore", 0))):
+            out[slot] = m
+    return sorted(out, key=lambda x: (x.get("y", 0), x.get("x", 0)))
+
+
+def _ocr_catalog(root_dir: str):
+    """items.json + ocr-item-names.json → (names, name_to_ids, items)。
+
+    索引名单 = 全名（items.json n）+ 中文短名（游戏内显示名）；name_to_ids
+    两种名字都能反查到 id。缓存键含两个数据源的变化标记，任一更新即重建。
+    """
+    path = os.path.join(root_dir, "data", "items.json")
+    shorts = _ocr_shortnames(root_dir)
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        mtime = None
+    cache = _OCR_CATALOG
+    cache_key = (mtime, len(shorts))
+    if cache["names"] is not None and cache["mtime"] == cache_key:
+        return cache["names"], cache["name_to_ids"], cache["items"]
+    items: dict[str, Any] = {}
+    name_to_ids: dict[str, list[str]] = {}
+    names: list[str] = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            doc = json.load(f)
+        for iid, rec in (doc.get("items") or {}).items():
+            name = rec.get("n")
+            if not name:
+                continue
+            name_to_ids.setdefault(name, []).append(iid)
+            names.append(name)
+        items = doc.get("items") or {}
+    except (OSError, ValueError):
+        items = {}
+    # 中文短名（游戏内显示名）也进索引与反查表——OCR 读到的就是它们
+    known = set(names)
+    for iid, short in shorts.items():
+        if not short:
+            continue
+        name_to_ids.setdefault(short, []).append(iid)
+        if short not in known:
+            known.add(short)
+            names.append(short)
+    cache.update({"mtime": cache_key, "names": names,
+                  "name_to_ids": name_to_ids, "items": items})
+    return names, name_to_ids, items
+
+
+def _trader_sell_price(rec: dict):
+    """R249：商人收购价（玩家把物品卖给商人拿到手的钱）。
+
+    数据源与市场页「Sell to 卖给谁」**完全相同**：items.json 的 `sl` =
+    `[[traderId, priceRUB], …]`，价格已由采集脚本换算成卢布，按降序排好，
+    所以取第一条就是最高收购价（市场页也是默认只显示最高值）。
+    没有 `sl` 时退回 `p.b`（基础价）并标 `approx=True`；两者都没有返回 None。
+
+    返回 (价格 or None, 商人 id or None, 是否为基础价兜底)。
+    """
+    best = None
+    for row in rec.get("sl") or []:
+        if isinstance(row, (list, tuple)) and len(row) > 1:
+            p = row[1]
+            if isinstance(p, (int, float)) and not isinstance(p, bool) and p > 0:
+                if best is None or p > best[0]:
+                    best = (int(p), row[0])
+    if best:
+        return best[0], best[1], False
+    p = (rec.get("p") or {}).get("b")
+    if isinstance(p, (int, float)) and not isinstance(p, bool) and p > 0:
+        return int(p), None, True
+    return None, None, False
+
+
+def _ocr_no_flea(rec: dict) -> bool:
+    """是否被禁止在跳蚤市场挂单（与市场页 ts.noFlea 同一判据）。"""
+    return ("noFlea" in (rec.get("ts") or [])
+            or "flea" not in (rec.get("src") or []))
+
+
+def _ocr_flea_price(rec: dict, snap_row: dict):
+    """跳蚤价：实时快照优先（lastLowPrice / avg24hPrice），缺失回退目录 p.l / p.a
+    （这些是目录里的跳蚤基线价，采集时写入）。返回 (base, last_low, avg24, fallback?)。"""
+    row = snap_row or {}
+    last_low = row.get("lastLowPrice") or row.get("l")
+    avg24 = row.get("avg24hPrice") or row.get("a")
+    base = last_low or avg24
+    if base:
+        return base, last_low, avg24, False
+    p = (rec or {}).get("p") or {}
+    fb = p.get("l") or p.get("a")
+    if fb:
+        # 目录基线价没有分口径，lastLow/avg24h 都填它，避免前端误判缺失
+        return fb, fb, fb, True
+    return None, None, None, False
+
+
+def _trader_sell_offer(rec: dict):
+    """商人售卖价（玩家从商人处购买的价，R258）：trade 列表里 k='buy' 的 RUB 报价，
+    取最低（最便宜的买入渠道）。返回 (价, 商人id, 等级) 或 (None, None, None)。"""
+    best = None
+    for opt in (rec or {}).get("trade") or []:
+        if not isinstance(opt, dict) or opt.get("k") != "buy":
+            continue
+        c = opt.get("c")
+        if c and c != "RUB":
+            continue
+        pr = opt.get("p")
+        if isinstance(pr, (int, float)) and not isinstance(pr, bool) and pr > 0:
+            if best is None or pr < best[0]:
+                best = (int(pr), opt.get("t"), opt.get("l"))
+    return best or (None, None, None)
+
+
+def _ocr_resolve_price(rec: dict, snap_row: dict, hist_row: dict, avg7_val):
+    """R258：按三档优先级解析单件物品的展示价（见上方调用处注释）。返回 price dict。
+
+    优先级：
+      1) 跳蚤有售卖（src 含 flea 且非 noFlea）→ 跳蚤价（lastLow/avg24h/avg7d 分口径）；
+      2) 跳蚤不卖但商人会卖（trade 含 k='buy'）→ 商人售卖价（玩家从商人处购买）；
+      3) 都不卖 → 商人收购价（sl，玩家卖给商人，红购物车警示）。
+    商人价没有历史行情窗口，w72/w30d 一律置空，绝不拿跳蚤均价冒充商人价。"""
+    gw, gh = rec.get("gw"), rec.get("gh")
+    slots = (gw * gh) if (isinstance(gw, int) and isinstance(gh, int)
+                         and gw > 0 and gh > 0) else 1
+    no_flea = _ocr_no_flea(rec)
+    flea_base, last_low, avg24, flea_fallback = _ocr_flea_price(rec, snap_row)
+    if (not no_flea) and flea_base:
+        per_slot = flea_base / slots
+        return {
+            "lastLow": last_low, "avg24h": avg24, "avg7d": avg7_val,
+            "w72": (hist_row or {}).get("w72"),
+            "w30d": (hist_row or {}).get("w30d"),
+            "base": flea_base, "perSlot": per_slot,
+            "priceSource": "flea", "noFlea": no_flea,
+            "fleaFallback": flea_fallback,
+            "updated": (snap_row or {}).get("updated"),
+        }
+    # 跳蚤不卖 → 看商人是否售卖
+    tsell, tsell_id, tsell_lvl = _trader_sell_offer(rec)
+    if tsell:
+        return {
+            "lastLow": None, "avg24h": None, "avg7d": None,
+            "w72": None, "w30d": None,
+            "base": tsell, "perSlot": tsell / slots,
+            "priceSource": "traderSell",
+            "traderSell": tsell, "traderSellId": tsell_id,
+            "traderSellLvl": tsell_lvl, "noFlea": True,
+        }
+    # 都不卖 → 商人收购价（玩家卖给商人）
+    tbuy, tbuy_id, _ = _trader_sell_price(rec)
+    return {
+        "lastLow": None, "avg24h": None, "avg7d": None,
+        "w72": None, "w30d": None,
+        "base": tbuy, "perSlot": (tbuy / slots) if tbuy else None,
+        "priceSource": "trader", "trader": tbuy, "traderId": tbuy_id,
+        "noFlea": True,
+    }
+
+
+_OCR_PRICE_FIELDS = ("lastLow", "avg24h", "avg7d", "w72", "w30d",
+                     "base", "perSlot", "trader", "traderSell", "unitPrice",
+                     "manual")
+
+
+def _ocr_scrub_prices(matches: list) -> None:
+    """R19.81：未登录时抹掉所有价格。
+
+    价格只能来自云端行情；未登录既不发云端请求，也不拿 items.json 里构建期
+    写入的跳蚤基线（p.l / p.a）冒充行情，否则「截图识别」照常报价。
+    物品名 / 档位 / 歧义徽记保留，前端价格列显示「—」。
+    """
+    for m in matches or []:
+        price = m.get("price")
+        if isinstance(price, dict):
+            for field in _OCR_PRICE_FIELDS:
+                if field in price:
+                    price[field] = None
+            price["priceSource"] = "flea"
+            price["noFlea"] = bool(price.get("noFlea"))
+            price["fleaFallback"] = False
+            for cand in price.get("candidates") or []:
+                cand["price"] = None
+        for cand in m.get("candidates") or []:
+            cand["price"] = None
+            cand["perSlot"] = None
+
+
+# R260：同名多 id 的「颜色/版本变体」识别（如弹匣 GEN M3 的黑/ FDE / 香蕉黄 / BB弹）。
+# 游戏内显示名（ShortName）对同家族所有变体完全相同（都是「GEN M3」），OCR 无法区分；
+# 而异色版在跳蚤上常贵好几倍，按「每格价最高」挑会误选成异色版（用户实反馈：普通版
+# PvE ~4 万，却显示成 FDE 版 10 万）。变体名的共同特征：带括号后缀「(FDE)」「（香蕉黄）」。
+_VARIANT_BRACKET_RE = re.compile(r"[\(（\[【][^\)）\]】]*[\)）\]】]")
+
+
+def _ocr_name_is_variant(name) -> bool:
+    """物品名是否带括号后缀（颜色/特殊版本标记）。"""
+    return bool(_VARIANT_BRACKET_RE.search(str(name or "")))
+
+
+def _ocr_prefer_base_variant(ids: list, catalog: dict) -> list:
+    """同名多 id：若存在不带括号后缀的「普通版本」，优先只在普通版本里挑，
+    避免异色/特殊版把价格拉高。全是变体（或单条）时原样返回。"""
+    if len(ids) <= 1:
+        return ids
+    plain = [i for i in ids if not _ocr_name_is_variant((catalog.get(i) or {}).get("n"))]
+    return plain if plain else ids
+
+
+def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
+                        hist: dict, snap: dict) -> list:
+    """同一个游戏内显示名对应多个**不同物品**时的候选清单。
+
+    背景（用户实测）：实验室白卡、蓝色记号钥匙卡、钥匙卡收纳盒的短名都是「钥匙卡」，
+    截图只看得到「钥匙卡」三个字，OCR 无法区分；旧逻辑按「每格价最高」直接挑一个，
+    于是白卡被显示成收纳盒的价格。这里把候选**按全名折叠**后返回，长度 ≥2 即
+    说明该显示名确实歧义，调用方据此打「?」徽记并把候选价目写进 tooltip。
+
+    同一件物品重复录入（全名完全相同）折叠成一条，取每格价最高的那条作代表。
+    """
+    by_name: dict[str, dict] = {}
+    for iid in ids:
+        rec = catalog.get(iid) or {}
+        name = rec.get("n") or iid
+        avg7 = (snap.get("avg7d") or {}).get("values", {}).get(iid)
+        price = _ocr_resolve_price(rec, snap_items.get(iid) or {},
+                                   hist.get(iid) or {}, avg7)
+        per_slot = price.get("perSlot")
+        # 菜单里显示「整件价」；排序仍用每格价（同格数比才公平）
+        main = price.get("lastLow")
+        for field in ("traderSell", "trader", "base"):
+            if main is None:
+                main = price.get(field)
+        cand = {"id": iid, "name": name,
+                "price": main if main is not None else per_slot,
+                "perSlot": per_slot, "kind": price.get("priceSource")}
+        cur = by_name.get(name)
+        if cur is None or (cand["perSlot"] or -1) > (cur["perSlot"] or -1):
+            by_name[name] = cand
+    return sorted(by_name.values(),
+                  key=lambda c: -(c["perSlot"] if c["perSlot"] is not None else -1))
+
+
+# ---------------------------------------------------------------- R250 弹药
+#
+# 游戏里「散装子弹」不能上跳蚤（只有弹药包能挂单），但 OCR 读到的短名（BS / BT /
+# BP / M856A1 …）在索引里同时指向散装子弹和弹药包，旧逻辑按「每格价最高」挑，
+# 于是散装子弹常被错配成弹药包的跳蚤价（80 发 BS 显示成 30 发装弹药包的价格）。
+#
+# 判据（用户提供 + 4K 游戏截图实测）：两种物品的数量都印在**同一格右下角**、
+# 与右上角的名字右沿对齐、纵向相距约 0.76 个格子（4K：名字 y=42 / 数量 y=138）：
+#   · 弹药包 → "25/25" "30/30" "120/120"（带斜杠）
+#   · 散装弹 → "80" "21" "24"（不带斜杠）
+# 有斜杠 → 按弹药包价；无斜杠 → 单发商人收购价 × 堆叠数量。
+
+_AMMO_PACK_RE = re.compile(r"^(\d{1,4})\s*/\s*(\d{1,4})$")
+_AMMO_STACK_RE = re.compile(r"^(\d{1,4})$")
+_AMMO_PACK_SIZE_RE = re.compile(r"(\d+)\s*发\s*装")
+# 口径：公制 "5.45x39"（别把 mm 吞进去，弹药包名带 mm、散装名带「毫米」）；
+# 英制 ".338" ".300" ".45" ".357"（.338 AP 与 .300 AP 的短名都是 AP，游戏内
+# 显示名完全相同，只能靠这个把候选口径分开）。「12/70」霰弹口径不带 x 也不带
+# 前导点，匹配不到 → 返回空串，这类组（Poleva 12/70 vs 20/70）按歧义处理。
+_AMMO_CALIBER_RE = re.compile(r"^\s*(\d+(?:\.\d+)?x\d+|\.\d+)", re.I)
+_AMMO_COUNT_TR = str.maketrans({"O": "0", "o": "0", "l": "1", "I": "1",
+                                "|": "1", "S": "5", "B": "8", "，": "", ",": ""})
+
+
+def _ocr_ammo_kind(rec: dict) -> str | None:
+    """弹药形态：'ammoBox' → 弹药包；仅 'ammo' → 散装子弹；其余 → None。
+
+    items.json 里少数弹药包 ts 同时含 ammo 和 ammoBox，所以必须先判 ammoBox。"""
+    ts = rec.get("ts") or []
+    if "ammoBox" in ts:
+        return "pack"
+    if "ammo" in ts:
+        return "loose"
+    return None
+
+
+def _ocr_caliber(name) -> str:
+    m = _AMMO_CALIBER_RE.match(str(name or ""))
+    return m.group(1).lower() if m else ""
+
+
+def _ocr_pack_size(name) -> int | None:
+    m = _AMMO_PACK_SIZE_RE.search(str(name or ""))
+    return int(m.group(1)) if m else None
+
+
+def _ocr_count_lines(lines) -> list:
+    """从 OCR 原始行里挑数量行（带斜杠=弹药包 / 纯数字=散装堆叠）。
+
+    只做 OCR 常见字形归一（O→0、l→1 …），且要求原文含数字或斜杠，避免把
+    'BS' 这类纯字母物品名误判成数量。"""
+    out = []
+    for ln in lines or []:
+        raw = str(ln.get("text") or "").strip()
+        if not raw or not re.search(r"\d|/", raw):
+            continue
+        text = raw.replace(" ", "").translate(_AMMO_COUNT_TR)
+        mp = _AMMO_PACK_RE.match(text)
+        ms = None if mp else _AMMO_STACK_RE.match(text)
+        if not (mp or ms):
+            continue
+        g = mp or ms
+        qty = int(g.group(1))
+        if not (0 < qty <= 999):
+            continue
+        pts = ln.get("points") or []
+        if len(pts) < 3:
+            continue
+        xs = [p[0] for p in pts]
+        ys = [p[1] for p in pts]
+        out.append({"y": min(ys), "right": max(xs), "left": min(xs),
+                    "cx": (min(xs) + max(xs)) / 2.0,
+                    "pack": bool(mp), "qty": qty, "text": raw})
+    return out
+
+
+def _ocr_ammo_count(match: dict, counts: list):
+    """找装备名所在格子底部的数量行：右沿对齐、纵向不超过约一格半。
+
+    R261：改为**先比水平对齐（同格右沿 dx）、再比纵向距离 dy**。原来只按 dy 最近
+    挑，遇到同格附近有别的数字行（价格/耐久/邻格）时可能挑错或挑空；按 (dx, dy)
+    排序后，只有「右沿几乎对齐本格」的数量行才会被认领，不会抢邻格的数字。"""
+    right = (match.get("x") or 0) + (match.get("w") or 0)
+    top = match.get("y") or 0
+    h = max(8, match.get("h") or 16)
+    best = None
+    for c in counts:
+        dy = c["y"] - top
+        # R261：纵向窗口放宽到 14h——格子高、名字字框矮时 dy/h 会偏大，10h 会把
+        # 同格的数量行挡在外面（实测散装弹 80 明明检出却没对上）。仍按 (dx,dy) 取最近，
+        # 自己那行 dy 最小，不会去抢下一行。
+        if not (1.0 * h <= dy <= 14.0 * h):
+            continue
+        dx = abs(c["right"] - right)
+        if dx > 4.0 * h:
+            continue
+        key = (dx, dy)
+        if best is None or key < best[0]:
+            best = (key, c)
+    return best[1] if best else None
+
+
+def _ocr_prefer_pack(packs: list, catalog: dict, qty: int) -> list:
+    """'30/30' → 优先 30 发装弹药包，'120/120' → 120 发装。"""
+    sized = [i for i in packs
+             if _ocr_pack_size((catalog.get(i) or {}).get("n")) == qty]
+    return sized or packs
+
+
+def _ocr_prefer_loose(loose: list, packs: list, catalog: dict) -> list:
+    """同名多口径（BP 有 5.45x39 / 7.62x39 / 9x39）时，用弹药包口径分布投票。
+
+    票数 = 该口径在数据里「包装规格」的种类数，不是流行度——FMJ 的 5.56 有
+    50/100 发两种装所以得 2 票，不代表玩家手里的散装 FMJ 就是 5.56。因此
+    只认压倒性证据：最高口径 ≥3 种包装规格，或全部包都是同一口径。
+    BP（5.45x39 三种规格 vs 2/1）锁定 5.45；AP/FMJ 分布接近均匀时不锁定，
+    交由歧义标注（R251），比瞎猜一个口径更诚实。"""
+    if len(loose) <= 1:
+        return loose
+    votes: dict[str, int] = {}
+    for i in packs:
+        c = _ocr_caliber((catalog.get(i) or {}).get("n"))
+        if c:
+            votes[c] = votes.get(c, 0) + 1
+    if not votes:
+        return loose
+    ranked = sorted(votes.items(), key=lambda kv: -kv[1])
+    top, tv = ranked[0]
+    if not (tv >= 3 or (tv >= 2 and len(votes) == 1)):
+        return loose
+    same = [i for i in loose
+            if _ocr_caliber((catalog.get(i) or {}).get("n")) == top]
+    return same or loose
+
+
+def _ocr_ambiguous(ids: list, catalog: dict) -> bool:
+    """缩小后的候选里仍含 >1 个口径 → 截图上根本无法区分，必须如实标注。"""
+    return len({_ocr_caliber((catalog.get(i) or {}).get("n")) or "?"
+                for i in ids}) > 1
+
+
+def _ocr_ambig_candidates(ids: list, catalog: dict, snap_items: dict) -> list:
+    """歧义候选价目表（市场页 tooltip 用）：每个口径显示什么价一目了然。
+
+    R258：与主浮窗同一套三档优先级解析（跳蚤价 → 商人售卖价 → 商人收购价），
+    保证候选价与识别价一致。最多列 6 个，避免 FMJ 这种 11 口径组刷屏。"""
+    out = []
+    for iid in ids[:6]:
+        rec = catalog.get(iid) or {}
+        row = snap_items.get(iid) or {}
+        price = _ocr_resolve_price(rec, row, {}, None)
+        src = price.get("priceSource")
+        label = "flea" if src == "flea" else "trader"
+        out.append({"name": rec.get("n") or iid, "caliber": _ocr_caliber(rec.get("n")),
+                    "kind": _ocr_ammo_kind(rec) or "", "source": label,
+                    "price": price.get("base")})
+    return out
+
+
+def _ocr_ammo_decision(match: dict, lines: list, ids: list, catalog: dict,
+                       counts: list | None = None):
+    """→ (kind, qty, narrowed_ids, count_found, ambiguous)
+
+    kind: "pack"（显示弹药包价）/ "loose"（单价×堆叠）/ None（非弹药，不干预）
+    narrowed_ids 为空表示数据里没有该形态，调用方应退回原逻辑。
+    `counts` 可由调用方预先算好（整张图只扫一次），省略时内部现算。
+    ambiguous: 缩小后仍有多个口径（.338 AP vs .300 AP、50 发装 .300/.45 撞车…）。
+    截图上只有短名 + 数量，这种歧义没法消除，只能标出来让玩家核对（R251）。
+    """
+    packs = [i for i in ids if _ocr_ammo_kind(catalog.get(i) or {}) == "pack"]
+    loose = [i for i in ids if _ocr_ammo_kind(catalog.get(i) or {}) == "loose"]
+    if not packs and not loose:
+        return None, 0, [], False, False
+    cnt = _ocr_ammo_count(match, counts if counts is not None else _ocr_count_lines(lines))
+    if cnt and cnt["pack"] and packs:
+        narrowed = _ocr_prefer_pack(packs, catalog, cnt["qty"])
+        return ("pack", cnt["qty"], narrowed, True,
+                _ocr_ambiguous(narrowed, catalog))
+    if loose:
+        qty = cnt["qty"] if (cnt and not cnt["pack"]) else 1
+        narrowed = _ocr_prefer_loose(loose, packs, catalog)
+        return ("loose", qty, narrowed, bool(cnt and not cnt["pack"]),
+                _ocr_ambiguous(narrowed, catalog))
+    # 只有弹药包数据、又没读到 xx/xx：仍按弹药包显示，不臆造散装单价
+    return "pack", 0, packs, False, _ocr_ambiguous(packs, catalog)
+
+
+def _ocr_apply_ammo_stack(cand: dict, catalog: dict, qty: int, found: bool) -> bool:
+    """散装弹：整体价 = 单发商人收购价 × 堆叠数量（写进 price，供浮窗/表格共用）。"""
+    rec = catalog.get(cand.get("id")) or {}
+    unit, trader_id, approx = _trader_sell_price(rec)
+    if not unit:
+        return False
+    qty = max(1, int(qty or 1))
+    total = unit * qty
+    gw, gh = rec.get("gw"), rec.get("gh")
+    slots = gw * gh if (isinstance(gw, int) and isinstance(gh, int)
+                        and gw > 0 and gh > 0) else 1
+    (cand["price"] or {}).update({
+        "lastLow": None, "avg24h": None, "w72": None, "w30d": None,
+        "base": total, "perSlot": total / slots,
+        "priceSource": "trader", "trader": total,
+        "traderId": trader_id, "traderApprox": approx,
+        "noFlea": True, "ammoStack": True, "ammoPack": False,
+        "unitPrice": unit, "qty": qty, "qtyFound": bool(found),
+    })
+    cand["ammoKind"] = "loose"
+    cand["qty"] = qty
+    return True
+
+
+def _ocr_matcher(names):
+    """ItemMatcher 进程级缓存（构建 0.2 s，不能每个请求重建）。"""
+    key = (len(names), names[0] if names else "", names[-1] if names else "")
+    cache = _OCR_MATCHER
+    if cache["matcher"] is None or cache["key"] != key:
+        cache["matcher"] = ocr.ItemMatcher(names)
+        cache["key"] = key
+    return cache["matcher"]
+MAX_PRESET_BODY = 1024 * 1024   # /api/presets：单个方案很小，1MB 足够容纳导入整包
+MAX_CALIB_BODY = 4 * 1024 * 1024   # /api/layout-calibration：整包导入，400 枪 × 400 槽位也够
+# 页面顶部「构建标记」与启动器自检共用的资源清单（路径相对仓库根）
+BUILD_ASSETS = ("index.html", "app.js", "style.css")
+# 版本前缀只在这里写一次；/api/health 与 /api/build 共用（每轮升级只改这一行 + 前端）
+# 注意：多处测试会用字面量 '"rev": "R19.xx-"' 检查同步，下面的 payload 必须保留字面量写法。
+
+
+def build_digest(root: str) -> str:
+    """站点指纹：三个入口文件的 size+mtime 摘要，换版本即变，用于本地缓存失效排查。"""
+    h = hashlib.sha256()
+    for rel in ("index.html", "app.js", "style.css"):
+        try:
+            st = os.stat(os.path.join(root, rel))
+        except OSError:
+            continue
+        h.update(("%s:%d:%d" % (rel, st.st_size, int(st.st_mtime))).encode("utf-8"))
+    return h.hexdigest()[:8]
+
+
+def build_payload(root: str) -> dict:
+    """`/api/build`：页面构建标记 + 启动器「端口是否本仓库」自检。
+
+    返回 `root` 是刚需：启动器会把 `os.path.abspath(root)` 与自身目录比对，
+    不一致就提示「端口被别的程序占用」。`assets` 给出入口文件的体积 / 修改时间 /
+    内容摘要，便于排查「明明换了版本页面还是旧的」。
+    """
+    assets = []
+    for rel in BUILD_ASSETS:
+        path = os.path.join(root, rel)
+        try:
+            st = os.stat(path)
+            with open(path, "rb") as fh:
+                digest = hashlib.sha256(fh.read()).hexdigest()
+        except OSError:
+            continue
+        assets.append({
+            "file": rel,
+            "size": st.st_size,
+            "mtime": int(st.st_mtime),
+            "sha256": digest,
+        })
+    return {
+        "ok": True,
+        "rev": "R19.97-" + build_digest(root),
+        "root": os.path.abspath(root),
+        "assets": assets,
+    }
 
 # 仓库根目录（tools/ 的上一级）
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -119,6 +796,156 @@ def default_screenshots_dir() -> str:
     return os.path.join(docs, "Escape from Tarkov", "Screenshots")
 
 
+def _documents_dirs() -> list[str]:
+    """可能的「我的文档」目录（R107 自动探测用）。
+
+    OneDrive 接管文档 / 中文系统 / 多用户环境都可能让真实路径不在 `%USERPROFILE%\\Documents`，
+    这里把系统 API 与常见替代位置都收进来，按优先级去重返回。
+    """
+    dirs: list[str] = []
+    try:
+        import ctypes
+
+        buf = ctypes.create_unicode_buffer(260)
+        # CSIDL_PERSONAL = 5（我的文档）
+        if ctypes.windll.shell32.SHGetFolderPathW(None, 5, None, 0, buf) == 0 and buf.value:
+            dirs.append(buf.value)
+    except (AttributeError, OSError, ValueError):
+        pass
+
+    home = os.path.expanduser("~")
+    dirs.extend([
+        os.path.join(home, "Documents"),
+        os.path.join(home, "OneDrive", "Documents"),
+        os.path.join(home, "OneDrive", "文档"),
+        os.path.join(home, "文档"),
+    ])
+    seen: set[str] = set()
+    out: list[str] = []
+    for path in dirs:
+        key = os.path.normcase(os.path.abspath(path))
+        if key not in seen:
+            seen.add(key)
+            out.append(path)
+    return out
+
+
+def screenshot_dir_candidates(game_dir: str | None = None) -> list[str]:
+    """可能存放 EFT 截图的目录，按优先级排列。
+
+    游戏目录附近的 Screenshots → 我的文档（含 OneDrive 改道）→ 图片目录。
+    只做浅层枚举，绝不递归遍历磁盘。
+    """
+    candidates: list[str] = []
+    if game_dir:
+        candidates.append(os.path.join(game_dir, "Screenshots"))
+        parent = os.path.dirname(os.path.abspath(game_dir))
+        if parent:
+            candidates.append(os.path.join(parent, "Escape from Tarkov", "Screenshots"))
+    candidates.append(default_screenshots_dir())
+    for docs in _documents_dirs():
+        candidates.append(os.path.join(docs, "Escape from Tarkov", "Screenshots"))
+    home = os.path.expanduser("~")
+    candidates.append(os.path.join(home, "Pictures", "Escape from Tarkov", "Screenshots"))
+
+    seen: set[str] = set()
+    out: list[str] = []
+    for path in candidates:
+        key = os.path.normcase(os.path.abspath(path))
+        if key not in seen:
+            seen.add(key)
+            out.append(path)
+    return out
+
+
+def detect_screenshots_dir(game_dir: str | None = None) -> tuple[str | None, str | None]:
+    """在候选目录里挑「最新截图最晚」的那个，返回 (目录, 说明)。
+
+    没有任何可解析截图时，退回第一个存在的候选目录：刚装好的游戏可能还没拍过图，
+    但目录本身有效，实时定位应当先开着等第一张截图。
+    """
+    best: str | None = None
+    best_mtime: float | None = None
+    fallback: str | None = None
+    for path in screenshot_dir_candidates(game_dir):
+        if not os.path.isdir(path):
+            continue
+        if fallback is None:
+            fallback = path
+        newest = screenshot.newest_mtime(path)
+        if newest is None:
+            continue
+        if best is None or best_mtime is None or newest > best_mtime:
+            best, best_mtime = path, newest
+    if best is None:
+        if fallback is not None:
+            return fallback, "自动探测到截图目录：%s（还没有截图）" % fallback
+        return None, "未找到可用的 EFT 截图目录（可在启动器里手动指定）"
+    return best, "自动探测到截图目录：%s" % best
+
+
+def best_logs_dir(primary, alternatives) -> str | None:
+    """返回当前应跟随的 Logs 目录。
+
+    ``primary``（game_dir/Logs）优先，保持 LogFollower「目录存在就等日志出现」的
+    原语义：目录还在但还没有会话时不该切走。仅当 ``alternatives`` 里存在明显
+    更新（>1 天）的有效会话才切换——EFT 常把应用日志写在
+    ``%LOCALAPPDATA%\\Temp\\Battlestate Games\\EFT\\Logs``，只认 primary 会一直
+    跟随数周前的旧会话，战局阶段永远停在 end，自动截图因此永不触发（R285）。
+    用会话目录 mtime 而非会话名比较，避免临时目录 / 调试产物干扰。
+    """
+    if not primary or not os.path.isdir(primary):
+        return None
+    try:
+        base = eftlog.latest_session_with_channel(primary)
+    except OSError:
+        return primary
+    if not base:
+        return primary
+    best, best_mtime = primary, os.path.getmtime(base)
+    seen = {os.path.normcase(os.path.abspath(primary))}
+    for logs in alternatives:
+        key = os.path.normcase(os.path.abspath(logs))
+        if key in seen:
+            continue
+        seen.add(key)
+        try:
+            session = eftlog.latest_session_with_channel(logs)
+            if not session:
+                continue
+            mtime = os.path.getmtime(session)
+        except OSError:
+            continue
+        if mtime > best_mtime + 86400.0:
+            best, best_mtime = logs, mtime
+    return best
+
+
+def detect_logs_dir(game_dir: str | None = None) -> tuple[str | None, str | None]:
+    """在候选位置里找「真的含 application 日志」的最新会话，返回 (Logs 目录, 说明)。"""
+    candidates: list[str] = []
+    if game_dir:
+        candidates.append(os.path.join(game_dir, "Logs"))
+    for docs in _documents_dirs():
+        candidates.append(os.path.join(docs, "Escape from Tarkov", "Logs"))
+    local = os.environ.get("LOCALAPPDATA")
+    if local:
+        candidates.append(os.path.join(local, "Temp", "Battlestate Games", "EFT", "Logs"))
+    home = os.path.expanduser("~")
+    candidates.append(os.path.join(home, "AppData", "Local", "Temp", "Battlestate Games", "EFT", "Logs"))
+
+    seen: set[str] = set()
+    for logs in candidates:
+        key = os.path.normcase(os.path.abspath(logs))
+        if key in seen:
+            continue
+        seen.add(key)
+        session = eftlog.latest_session_with_channel(logs)
+        if session:
+            return logs, "自动探测到日志目录：%s（会话 %s）" % (logs, os.path.basename(session))
+    return None, "未找到包含 application 日志的游戏会话目录（可在启动器里手动指定）"
+
+
 # 游戏目录常见命名（用户实测目录为 `E:\EFT`，这里把裸名字与常见安装路径都覆盖）
 GAME_DIR_NAMES = ("EFT", "Escape from Tarkov", "EscapeFromTarkov")
 _GAME_EXES = ("EscapeFromTarkov.exe", "EscapeFromTarkov_BE.exe")
@@ -133,11 +960,51 @@ def _looks_like_game_dir(path: str) -> bool:
     return any(os.path.isfile(os.path.join(path, exe)) for exe in _GAME_EXES)
 
 
+def is_network_path(path) -> bool:
+    """是不是 UNC 网络路径（`\\\\server\\share`）。
+
+    游戏装在另一台电脑上时，模拟按键物理上只能打到**本机**前台窗口，硬发键会把内容
+    打进本机正在用的程序里，所以调用方必须先识别出来并停下。
+    """
+    if not isinstance(path, str) or not path:
+        return False
+    return path.replace("/", "\\").startswith("\\\\")
+
+
+_NET_USE_RE = re.compile(r"\\\\([^\\\s]+)\\")
+
+
+def parse_net_use(text) -> list[str]:
+    """从 `net use` 输出里抽出网络主机根（`\\\\HOST`），按出现顺序去重。
+
+    输出里既有带盘符的映射（`Z:  \\\\JJPC\\eft`），也有无盘符的「记住的共享」，
+    两种都认；`None` / 空串返回空列表。
+    """
+    if not text:
+        return []
+    roots: list[str] = []
+    for host in _NET_USE_RE.findall(text):
+        root = "\\\\" + host
+        if root not in roots:
+            roots.append(root)
+    return roots
+
+
+def _network_roots() -> list[str]:
+    """跑一次 `net use` 取已连接 / 记住的网络主机；命令不存在或无输出都返回空列表。"""
+    try:
+        proc = subprocess.run(["net", "use"], capture_output=True, text=True,
+                              timeout=5, errors="ignore")
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return []
+    return parse_net_use(proc.stdout or "")
+
+
 def default_game_dir() -> str | None:
     """自动定位 EFT 游戏目录（找不到返回 None，由用户在启动器里手填）。
 
-    依次尝试：环境变量 `EFT_GAME_DIR` → 常见盘符下的裸目录名 → 常见安装路径。
-    只做**浅层**存在性判断，不递归遍历整盘，避免启动卡顿。
+    依次尝试：环境变量 `EFT_GAME_DIR` → 常见盘符下的裸目录名 → 常见安装路径 →
+    `net use` 里记录的网络共享。只做**浅层**存在性判断，不递归遍历整盘，避免启动卡顿。
     """
     env = os.environ.get("EFT_GAME_DIR")
     if env and _looks_like_game_dir(env):
@@ -160,7 +1027,56 @@ def default_game_dir() -> str | None:
     for path in candidates:
         if _looks_like_game_dir(path):
             return path
+
+    for root in _network_roots():
+        for name in GAME_DIR_NAMES:
+            path = os.path.join(root, name)
+            if _looks_like_game_dir(path):
+                return path
     return None
+
+
+class PathResolver:
+    """截图 / 日志目录的「手动优先、自动兜底」解析器。
+
+    手动值来自配置文件（页面或启动器写入），只有目录真实存在才采信；否则走自动探测。
+    探测结果不回写配置——自动值只是本次运行的兜底，用户确认过才落盘。
+    """
+
+    def __init__(self, app_dir: str, game_dir: str | None = None):
+        self.app_dir = app_dir
+        self.game_dir = game_dir
+
+    def _manual(self, key: str) -> str | None:
+        value = (config.load(self.app_dir) or {}).get(key)
+        if isinstance(value, str) and value and os.path.isdir(value):
+            return value
+        return None
+
+    def screenshots_dir(self) -> str | None:
+        manual = self._manual("screenshots_dir")
+        if manual:
+            return manual
+        found, _note = detect_screenshots_dir(self.game_dir)
+        return found
+
+    def logs_dir(self) -> str | None:
+        manual = self._manual("log_dir")
+        if manual:
+            return manual
+        found, _note = detect_logs_dir(self.game_dir)
+        return found
+
+    def snapshot(self) -> dict[str, Any]:
+        """当前解析结果 + 两个「是否手动值」标记（启动器界面据此展示来源）。"""
+        manual_shots = self._manual("screenshots_dir")
+        manual_logs = self._manual("log_dir")
+        return {
+            "screenshots": manual_shots or self.screenshots_dir(),
+            "logs": manual_logs or self.logs_dir(),
+            "screenshotsManual": manual_shots is not None,
+            "logManual": manual_logs is not None,
+        }
 
 
 class Broadcaster:
@@ -210,18 +1126,33 @@ class PositionTracker:
 
     降级行为：目录不存在 / 读不了 / 一张都解析不出来 → available=false 并给出原因，
     地图其余功能不受影响（不抛异常、不停服务）。
+
+    R108 会员门控：非会员两次位置刷新至少间隔 `SHOT_INTERVAL_LOCKED_MS`（10 秒），
+    锁定期内直接不扫描、不广播；会员（或 `force=True`，用于进战局时丢掉上一局坐标）
+    不受这个限制。会员态通过可调用对象读取，配置变化后无需重建 tracker。
     """
 
+    LOCK_SECONDS = config.SHOT_INTERVAL_LOCKED_MS / 1000.0
+
     def __init__(self, directory: str | None, poll_interval: float = DEFAULT_POLL,
-                 broadcaster: Broadcaster | None = None):
+                 broadcaster: Broadcaster | None = None, member=None,
+                 clock=time.monotonic):
         self.directory = directory
         self.poll_interval = poll_interval
         self.broadcaster = broadcaster or Broadcaster()
+        if member is None:
+            self.member = lambda: True
+        elif callable(member):
+            self.member = member
+        else:
+            self.member = lambda: bool(member)
+        self.clock = clock
         self._stop = threading.Event()
         self._thread: threading.Thread | None = None
         self._lock = threading.Lock()
         self._latest: dict[str, Any] | None = None
         self._reason: str | None = None
+        self._last_accept: float | None = None
 
     # ------------------------------------------------------------ 状态
     def enabled(self) -> bool:
@@ -242,10 +1173,22 @@ class PositionTracker:
         return {"available": True, "reason": None, "position": pos, "directory": self.directory}
 
     # ------------------------------------------------------------ 轮询
-    def poll_once(self) -> bool:
-        """扫一次目录；位置有变化返回 True（并广播）。"""
+    def poll_once(self, force: bool = False) -> bool:
+        """扫一次目录；位置有变化返回 True（并广播）。
+
+        非会员在锁定期内直接返回 False——既不扫描也不广播，避免「攒了几张一起补发」。
+        """
         if not self.enabled():
             return False
+        now = self.clock()
+        if not force and not self.member():
+            with self._lock:
+                last = self._last_accept
+            if last is not None and now - last < self.LOCK_SECONDS:
+                return False
+        with self._lock:
+            self._last_accept = now
+
         if not os.path.isdir(self.directory):
             with self._lock:
                 changed = self._latest is not None
@@ -256,6 +1199,7 @@ class PositionTracker:
             return changed
 
         found = screenshot.latest_position(self.directory)
+        prev = None
         with self._lock:
             if found is None:
                 self._reason = "截图目录里还没有可解析的截图"
@@ -351,32 +1295,157 @@ class ConfigWatcher:
 
 # 自动截图只对游戏主程序在前台时发送（模拟按键只能打到前台窗口）
 GAME_PROCESS = "escapefromtarkov.exe"
+# 通过 BattlEye 启动时前台窗口可能属于 `EscapeFromTarkov_BE.exe`（防作弊引导进程），
+# 它和主程序是同一个游戏窗口。只认主程序名会让「自动截图」在 BE 启动下永远不触发。
+GAME_PROCESS_ALSO = ("escapefromtarkov_be.exe",)
+
+
+def is_game_process(name) -> bool:
+    """前台进程名是否属于 EFT（主程序或 BattlEye 引导进程）。"""
+    base = os.path.basename(str(name or "")).lower()
+    return base == GAME_PROCESS or base in GAME_PROCESS_ALSO
+
+
+class ShotManifest:
+    """自动截图的清理清单：只记录「本工具发键后新出现」的文件。
+
+    「手动截图永不自动删除」是硬承诺，所以清单必须是**加法记录**而不是按目录乱删：
+    `AutoShotter` 只有确认某张图是本次发键后新出现的，才调用 `add()`；
+    `RaidEndCleaner` 战局结束时只删清单里的文件。清单落盘在软件目录，重启后仍然有效。
+    """
+
+    FILENAME = "auto-screenshot-manifest.json"
+
+    def __init__(self, app_dir: str):
+        self.app_dir = app_dir
+        self._lock = threading.Lock()
+        self._paths = self._load()
+
+    def _path(self) -> str:
+        return os.path.join(self.app_dir, self.FILENAME)
+
+    def _load(self) -> list[str]:
+        try:
+            with open(self._path(), "r", encoding="utf-8") as fh:
+                raw = json.load(fh)
+        except (OSError, ValueError):
+            return []
+        if not isinstance(raw, list):
+            return []
+        return [os.path.abspath(str(p)) for p in raw if isinstance(p, str) and p]
+
+    def _save(self):
+        os.makedirs(self.app_dir, exist_ok=True)
+        path = self._path()
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(self._paths, fh, ensure_ascii=False, indent=2)
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp, path)
+
+    def add(self, path: str):
+        """登记一张自动截图（绝对路径，重复登记幂等）。"""
+        target = os.path.abspath(str(path))
+        with self._lock:
+            if target in self._paths:
+                return
+            self._paths.append(target)
+            self._save()
+
+    def discard(self, paths) -> None:
+        """把已删除 / 已失效的路径移出清单。"""
+        drop = {os.path.abspath(str(p)) for p in paths or []}
+        with self._lock:
+            remain = [p for p in self._paths if p not in drop]
+            if len(remain) == len(self._paths):
+                return
+            self._paths = remain
+            self._save()
+
+    def list(self) -> list[str]:
+        with self._lock:
+            return list(self._paths)
+
+
+class RaidEndCleaner:
+    """战局结束清理：只删 `ShotManifest` 里登记过的自动截图。
+
+    默认关闭（`auto_screenshot.cleanup_on_raid_end`），开启后才在 `phase == "end"` 时执行。
+    清单里的文件已经不存在就不算删除，顺手从清单里摘掉；落单的手动截图永远不碰。
+    """
+
+    def __init__(self, app_dir: str, manifest: ShotManifest, directory: str | None = None):
+        self.app_dir = app_dir
+        self.manifest = manifest
+        self.directory = directory
+
+    def cleanup(self) -> dict[str, Any]:
+        shot = (config.load(self.app_dir) or {}).get("auto_screenshot") or {}
+        if not shot.get("cleanup_on_raid_end"):
+            return {"deleted": 0, "reason": "未开启战局结束清理"}
+
+        base = os.path.abspath(self.directory) if self.directory else None
+        deleted: list[str] = []
+        stale: list[str] = []
+        for path in self.manifest.list():
+            absolute = os.path.abspath(path)
+            # 只处理截图目录里的文件：清单被手改 / 目录换了也不会误删别处的东西
+            if base is not None and os.path.dirname(absolute) != base:
+                continue
+            if not os.path.exists(absolute):
+                stale.append(absolute)
+                continue
+            try:
+                os.remove(absolute)
+            except OSError:
+                continue
+            deleted.append(absolute)
+        self.manifest.discard(deleted + stale)
+        return {"deleted": len(deleted), "files": [os.path.basename(p) for p in deleted]}
+
+    def on_event(self, event: dict) -> None:
+        """挂到 `LogFollower.on_event`：战局结束（end）时清理，其它事件忽略。"""
+        if event.get("type") == "raid" and event.get("phase") == "end":
+            self.cleanup()
 
 
 class AutoShotter:
     """自动截图：在战局中按固定间隔向游戏窗口发送截图键（模拟按键）。
 
-    三个门条件（**都**满足才发键）：
+    四个门条件（**都**满足才发键）：
 
     1. 启动器里开了「自动截图」（读 `eftmap.config.json`）；
-    2. 日志显示当前在战局中（`phase == "start"`，来自 `LogFollower`）；
-    3. 前台窗口的进程是 `EscapeFromTarkov.exe`（模拟按键只能打到前台窗口）。
+    2. 游戏目录不是 UNC 网络路径（跨机模拟按键物理上打不到对方窗口）；
+    3. 日志显示当前在战局中（`phase == "start"`，来自 `LogFollower`）；
+    4. 前台窗口的进程是 `EscapeFromTarkov.exe`（模拟按键只能打到前台窗口）。
 
     截图键优先用配置里填/同步到的 `auto_screenshot.key`，为空时回落到日志同步到的键
     （`LogFollower.screenshot_key()`，即游戏内 `MakeScreenshot` 绑定）。
+
+    发键后会在 `GRACE` 秒窗口内校验截图目录是否真的多了文件：到货才算成功；
+    连续两次没到货就自动改用虚拟键码注入。窗口内出现多张新图时整批放弃归属，
+    因为无法区分哪张是用户手动拍的——宁可漏删，也不删手动截图。
 
     `sender` / `foreground` 可注入，便于单测时不必真的发按键。
     """
 
     TICK = 0.1     # 内部轮询步长（秒）：比最短间隔 200ms 更细，保证不丢拍
+    GRACE = 1.2    # 发键后允许截图落盘的归属窗口（秒），与发送间隔无关
 
     def __init__(self, app_dir: str, follower: "eftlog.LogFollower | None" = None,
                  broadcaster: Broadcaster | None = None, sender=None, foreground=None,
-                 tick: float = TICK):
+                 tick: float = TICK, directory: str | None = None,
+                 game_dir: str | None = None, clock=time.monotonic,
+                 manifest: ShotManifest | None = None):
         self.app_dir = app_dir
         self.follower = follower
         self.broadcaster = broadcaster or Broadcaster()
-        self.sender = sender or keyinput.send_key
+        self.directory = directory
+        self.game_dir = game_dir
+        self.clock = clock
+        self.manifest = manifest
+        self.sender = sender or self._default_send
         self.foreground = foreground or keyinput.foreground_process_name
         self.tick = tick
         self._stop = threading.Event()
@@ -385,13 +1454,17 @@ class AutoShotter:
         self._sent = 0
         self._last_at = 0.0
         self._reason = "自动截图未开启"
+        self._mode = keyinput.MODE_SCAN
+        self._arrived: bool | None = None
+        self._misses = 0
+        self._pending: dict[str, Any] | None = None
 
     # ------------------------------------------------------------ 状态
     def settings(self) -> tuple[bool, int, str | None]:
         """读配置 → (是否开启, 间隔毫秒, 截图键)。键为空时回落到日志同步到的键。"""
         shot = (config.load(self.app_dir) or {}).get("auto_screenshot") or {}
         enabled = bool(shot.get("enabled"))
-        interval = config.clamp_interval(shot.get("interval_ms"))
+        interval = config.clamp_interval(shot.get("interval_ms"), config.is_member(self.app_dir))
         key = shot.get("key") or (self.follower.screenshot_key() if self.follower else None)
         return enabled, interval, key
 
@@ -404,6 +1477,7 @@ class AutoShotter:
         enabled, interval, key = self.settings()
         with self._lock:
             sent, last, reason = self._sent, self._last_at, self._reason
+            mode, arrived, misses = self._mode, self._arrived, self._misses
         return {
             "enabled": enabled,
             "intervalMs": interval,
@@ -412,49 +1486,202 @@ class AutoShotter:
             "lastSentAt": last or None,
             "available": bool(enabled and key),
             "reason": reason,
+            "mode": mode,
+            "arrived": arrived,
+            "misses": misses,
         }
 
     def _set_reason(self, text: str | None):
         with self._lock:
             self._reason = text
 
+    def _block(self, text: str):
+        """记下被门条件拦住的原因；原因没变就不重复推（轮询很密，重复推会刷爆页面）。"""
+        with self._lock:
+            changed = self._reason != text
+            self._reason = text
+        if changed:
+            self.broadcaster.publish_event("shot", self.snapshot())
+
+    def _game_dir(self) -> str | None:
+        """实际生效的游戏目录：注入值（命令行/自动探测）优先于配置文件。"""
+        if self.game_dir is not None:
+            return self.game_dir
+        return (config.load(self.app_dir) or {}).get("game_dir")
+
+    def _network_reason(self) -> str | None:
+        path = self._game_dir()
+        if is_network_path(path):
+            return ("游戏目录在另一台电脑（%s）上，模拟按键无法跨机发送；"
+                    "请在本机运行游戏，或改用本地截图目录" % path)
+        return None
+
+    def _default_send(self, key: str) -> tuple[bool, str]:
+        """默认注入：按当前模式（scan / vk）调用 keyinput，模式可随到货校验自动切换。"""
+        return keyinput.send_key(key, self._mode)
+
+    def _file_snapshot(self) -> set[str] | None:
+        """目录里当前所有图片的文件名；没有可用目录返回 None（不校验）。"""
+        if not self.directory or not os.path.isdir(self.directory):
+            return None
+        names: set[str] = set()
+        try:
+            entries = os.scandir(self.directory)
+        except OSError:
+            return None
+        try:
+            for entry in entries:
+                if entry.is_file() and os.path.splitext(entry.name)[1].lower() in screenshot.IMAGE_EXTS:
+                    names.add(entry.name)
+        except OSError:
+            pass
+        finally:
+            entries.close()
+        return names
+
+    # ------------------------------------------------------------ 到货校验
+    def _check_arrival(self, now: float) -> bool:
+        """判定上一次发键是否真的产生了截图；返回状态是否变化。"""
+        with self._lock:
+            pending = self._pending
+        if pending is None:
+            return False
+        if not self.directory or not os.path.isdir(self.directory):
+            # 不知道 / 用不了截图目录时不下结论，绝不冤枉游戏
+            with self._lock:
+                self._pending = None
+            return False
+
+        current = self._file_snapshot() or set()
+        new = sorted(n for n in current if n not in pending["baseline"])
+        elapsed = now - pending["sentAt"]
+
+        if not new:
+            if elapsed < self.GRACE:
+                return False
+            with self._lock:
+                self._pending = None
+                self._arrived = False
+                self._misses += 1
+                if self._misses >= 2:
+                    self._mode = keyinput.MODE_VK
+                    self._reason = ("连续 %d 次没到货：已切换为虚拟键码注入"
+                                    "（发送截图键后没有出现新截图）" % self._misses)
+                else:
+                    self._reason = "发送截图键后没有出现新截图（已等待 %.1f 秒）" % elapsed
+            return True
+
+        if elapsed > self.GRACE:
+            # 超出归属窗口：可能是用户手动拍的，宁可漏删也不能记进清理清单
+            with self._lock:
+                self._pending = None
+                self._arrived = False
+                self._reason = ("发键后新截图超出 %.1f 秒归属窗口，放弃归属（不会写入清理清单）"
+                                % self.GRACE)
+            print("[auto-shot] 发键后新截图超出归属窗口（%.1f 秒），放弃归属：%s"
+                  % (self.GRACE, "、".join(new)), file=sys.stderr)
+            return True
+
+        if len(new) != 1:
+            with self._lock:
+                self._pending = None
+                self._arrived = False
+                self._reason = ("发键后出现 %d 张新截图，无法区分来源，全部放弃（不会写入清理清单）"
+                                % len(new))
+            print("[auto-shot] 窗口内出现 %d 张新截图，无法区分来源，放弃归属：%s"
+                  % (len(new), "、".join(new)), file=sys.stderr)
+            return True
+
+        path = os.path.join(self.directory, new[0])
+        with self._lock:
+            self._pending = None
+            self._arrived = True
+            self._misses = 0
+            self._reason = None
+        if self.manifest is not None:
+            self.manifest.add(path)
+        return True
+
     # ------------------------------------------------------------ 轮询
     def poll_once(self, now: float | None = None) -> bool:
         """跑一轮门检查；真的发了按键返回 True（并发 `shot` 事件）。"""
-        now = time.monotonic() if now is None else now
+        now = self.clock() if now is None else now
         enabled, interval_ms, key = self.settings()
         if not enabled:
-            self._set_reason("自动截图未开启")
+            self._block("自动截图未开启")
             return False
         if not key:
-            self._set_reason("未取得截图按键：请在启动器里从日志同步或手动填写")
+            self._block("未取得截图按键：请在启动器里从日志同步或手动填写")
+            return False
+        network = self._network_reason()
+        if network:
+            self._block(network)
             return False
         phase = self.phase()
         if phase != "start":
-            self._set_reason("不在战局中（当前阶段：%s）" % (phase or "无日志"))
+            reason = "不在战局中（当前阶段：%s）" % (phase or "无日志")
+            # 区分「在菜单里没进战局」与「日志压根没读到」：后者才是自动截图永不触发的真因，
+            # 直接把 follower 的原因摆到界面上，省得用户在截图设置里反复折腾。
+            snap = self.follower.snapshot() if self.follower is not None else {}
+            if not snap.get("available"):
+                reason = "游戏日志未就绪，无法判断战局阶段：%s" % (
+                    snap.get("reason") or "未找到日志目录或会话文件夹")
+            self._block(reason)
             return False
         process = self.foreground()
         if not process:
-            self._set_reason("无法确认游戏窗口是否在前台")
+            self._block("无法确认游戏窗口是否在前台")
             return False
-        if os.path.basename(str(process)).lower() != GAME_PROCESS:
-            self._set_reason("游戏窗口不在前台（当前前台：%s）" % os.path.basename(str(process)))
+        if not is_game_process(process):
+            self._block("游戏窗口不在前台（当前前台：%s）" % os.path.basename(str(process)))
             return False
+
+        if self._check_arrival(now):
+            self.broadcaster.publish_event("shot", self.snapshot())
+
         with self._lock:
             last = self._last_at
         if now - last < interval_ms / 1000.0:
             return False
+        return self._shoot(key, now)
+
+    def shoot_once(self) -> dict[str, Any]:
+        """「试拍一张」：不受自动截图开关、战局阶段、前台与间隔限制，只保留跨机拦截。"""
+        network = self._network_reason()
+        if network:
+            self._block(network)
+            return {"ok": False, "reason": network}
+        _enabled, _interval, key = self.settings()
+        if not key:
+            reason = "未取得截图按键：请在启动器里从日志同步或手动填写"
+            self._block(reason)
+            return {"ok": False, "reason": reason}
+        ok = self._shoot(key, self.clock())
+        if not ok:
+            return {"ok": False, "reason": self.snapshot()["reason"], "key": key}
+        return {"ok": True, "key": key, "verifying": self._pending is not None}
+
+    def _shoot(self, key: str, now: float) -> bool:
+        baseline = self._file_snapshot()
         ok, error = self._send(key)
         with self._lock:
             self._last_at = now
             if ok:
                 self._sent += 1
-                self._reason = None
             else:
                 self._reason = error or "发送按键失败"
-        if ok:
+        if not ok:
             self.broadcaster.publish_event("shot", self.snapshot())
-        return ok
+            return False
+
+        with self._lock:
+            # 「没到货」的提示不能被下一拍的成功发送立刻清掉，否则用户根本看不到
+            if self._arrived is not False:
+                self._reason = None
+        # 基线为 None（没目录 / 目录不存在）时不校验，arrived 保持 None
+        self._pending = {"sentAt": now, "baseline": baseline} if baseline is not None else None
+        self.broadcaster.publish_event("shot", self.snapshot())
+        return True
 
     def _send(self, key: str) -> tuple[bool, str]:
         try:
@@ -618,11 +1845,248 @@ def config_payload(app_dir: str) -> dict[str, Any]:
     }
 
 
+def _cloud_ca_path() -> str:
+    """云证书路径：源码在仓库 assets/，PyInstaller onedir 在 _internal/assets/。
+
+    打包后 `__file__` 是 `<exe目录>/_internal/serve.py`，ROOT 会算成 exe 目录，
+    而 --add-data 的资源实际落在 `_internal`，所以这里按候选逐个找，
+    避免冻结版直接抛 FileNotFoundError 让云端功能全废。
+    """
+    candidates = [os.path.join(ROOT, "assets", "cloud-ca.pem")]
+    meipass = getattr(sys, "_MEIPASS", None)
+    if meipass:
+        candidates.append(os.path.join(meipass, "assets", "cloud-ca.pem"))
+    candidates.append(
+        os.path.join(os.path.dirname(os.path.abspath(sys.executable)), "_internal", "assets", "cloud-ca.pem")
+    )
+    for path in candidates:
+        if os.path.isfile(path):
+            return path
+    return candidates[0]
+
+
+def make_cloud_client(app_dir: str) -> "cloud.CloudClient":
+    """云账号客户端：CA 随仓库发布（assets/cloud-ca.pem），证书固定只认这一份。"""
+    return cloud.CloudClient(app_dir, _cloud_ca_path())
+
+
+def _cloud_logged_in(cloud_client) -> bool:
+    """是否已有可用的登录会话（token 过期由 CloudClient 自动刷新）。"""
+    if cloud_client is None:
+        return False
+    try:
+        return bool((cloud_client.session or {}).get("access_token"))
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def _free_price_cutoff(member: bool):
+    """免费账号可见的数据上限（现在 − 12 小时）；会员返回 None。"""
+    if member:
+        return None
+    return datetime.datetime.now().astimezone() - datetime.timedelta(
+        seconds=cloud_market.FREE_DELAY_SECONDS
+    )
+
+
+# ---------------------------------------------------------------- 云端历史曲线（R278）
+# 本机快照是「这个用户自己的采集器」，新装的机器一份都没有；云端那份是采集机
+# 每 30 分钟上传的同一批数据。这里给 /api/price-history 补一个云端来源：
+# 会员 → 直接问云端；非会员 / 离线 / 出错 → 一律静默回退本机，不弹错、不阻塞。
+_CLOUD_SERIES_TTL = 300.0          # 5 分钟内同一个 (模式, 物品, 天数) 只问一次云端
+_CLOUD_SERIES_MAX_ITEMS = 12       # 与云端 /v1/prices/series 的上限保持一致
+_cloud_series_cache: dict[tuple, tuple[float, dict | None, str]] = {}
+_cloud_series_lock = threading.Lock()
+
+
+def _cloud_series(cloud_client, mode: str, ids: list[str], days: int) -> tuple[dict | None, str]:
+    """带 TTL 缓存的云端曲线查询；任何失败都收敛成 (None, status)。"""
+    if cloud_client is None or not ids:
+        return None, "disabled"
+    ids = ids[:_CLOUD_SERIES_MAX_ITEMS]
+    key = (mode, tuple(ids), int(days))
+    now = time.monotonic()
+    with _cloud_series_lock:
+        hit = _cloud_series_cache.get(key)
+    if hit and now - hit[0] < _CLOUD_SERIES_TTL:
+        return hit[1], hit[2]
+    try:
+        payload = cloud_client.prices_series(mode, ids, days)
+        status = str(payload.get("status") or "ok")
+    except cloud.CloudError as exc:
+        if exc.status == 403 and exc.code == "membership_required":
+            payload, status = None, "member_required"
+        elif exc.status == 0:
+            payload, status = None, "offline"
+        elif exc.status == 404:
+            payload, status = None, "no_data"
+        else:
+            payload, status = None, "error"
+    except Exception:  # noqa: BLE001 - 云端异常不能影响本机曲线
+        payload, status = None, "error"
+    with _cloud_series_lock:
+        if len(_cloud_series_cache) > 64:
+            _cloud_series_cache.clear()
+        _cloud_series_cache[key] = (time.monotonic(), payload, status)
+    return payload, status
+
+
+def _cloud_series_cached(app_dir: str, cloud_client, mode: str, ids: list[str],
+                         days: int) -> tuple[dict | None, str]:
+    """先读本地缓存，没有再用云端实时接口兜底。
+
+    R279：登录会员后整包下载的缓存就躺在 `<app_dir>/cloud-cache/` 里，
+    读它是本地文件操作（单物品 ~2 ms），比每次开图都打云端快一个数量级，
+    也让「会员但暂时断网」照样能看曲线。缓存为空（刚登录还没同步完 /
+    清过缓存）才回落到 `/v1/prices/series`。
+    """
+    try:
+        cached = price_cache.series(app_dir, mode, ids, days)
+    except Exception:  # noqa: BLE001 - 缓存坏了不能连累本机曲线
+        cached = None
+    if isinstance(cached, dict) and cached.get("status") == "ok":
+        return cached, "cache"
+    return _cloud_series(cloud_client, mode, ids, days)
+
+
+# ---------------------------------------------------------------- 行情缓存（R20.5 / R42）
+
+def _local_date() -> str:
+    """本机本地日期（`YYYY-MM-DD`），用来判断 flea-prices.json 是不是今天的。"""
+    return time.strftime("%Y-%m-%d")
+
+
+def _read_json_file(path: str):
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError):
+        return None
+
+
+def flea_price_status(root: str) -> dict[str, Any]:
+    """构建期跳蚤快照的状态：missing / stale / fresh，并带上上次抓取失败原因。
+
+    只读本地文件，不联网；供 `/api/prices` 与页面状态行轮询使用。
+    """
+    data_dir = os.path.join(root, "data")
+    path = os.path.join(data_dir, "flea-prices.json")
+    payload = _read_json_file(path)
+    out: dict[str, Any] = {
+        "ok": True,
+        "state": "missing",
+        "items": 0,
+        "path": path,
+        "localDate": None,
+        "lastSuccessAt": None,
+        "source": None,
+        "gameMode": None,
+        "counts": None,
+        "lastError": None,
+    }
+    error = _read_json_file(os.path.join(data_dir, "flea-prices.last-error.json"))
+    if isinstance(error, dict):
+        out["lastError"] = error.get("error")
+    if isinstance(payload, dict) and isinstance(payload.get("items"), dict):
+        out["items"] = len(payload["items"])
+        out["localDate"] = payload.get("localDate")
+        out["lastSuccessAt"] = payload.get("lastSuccessAt")
+        out["source"] = payload.get("source")
+        out["gameMode"] = payload.get("gameMode")
+        out["counts"] = payload.get("counts")
+        out["state"] = "fresh" if payload.get("localDate") == _local_date() else "stale"
+    return out
+
+
+_FLEA_REFRESH_LOCK = threading.Lock()
+_FLEA_REFRESHING = False
+
+
+def spawn_flea_refresh(root: str, force: bool = True) -> tuple[bool, str]:
+    """后台跑一次 `tools/r20_fetch_prices.py`；返回 (是否已启动, 说明)。
+
+    抓取器不存在 / 已在运行时不抛异常、也不起线程，只把原因交给调用方。
+    """
+    global _FLEA_REFRESHING
+
+    root = os.path.abspath(root or ROOT)
+    fetcher = os.path.join(root, "tools", "r20_fetch_prices.py")
+    if not os.path.isfile(fetcher):
+        return False, "抓取器不存在：%s" % fetcher
+    with _FLEA_REFRESH_LOCK:
+        if _FLEA_REFRESHING:
+            return False, "已有行情抓取进行中"
+        _FLEA_REFRESHING = True
+
+    def run():
+        global _FLEA_REFRESHING
+        try:
+            argv = [sys.executable, fetcher,
+                    "--out", os.path.join(root, "data", "flea-prices.json"), "--no-proxy"]
+            if force:
+                argv.append("--force")
+            subprocess.run(argv, cwd=root, timeout=300,
+                           stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except (OSError, subprocess.SubprocessError):
+            pass
+        finally:
+            with _FLEA_REFRESH_LOCK:
+                _FLEA_REFRESHING = False
+
+    threading.Thread(target=run, daemon=True, name="eft-flea-refresh").start()
+    return True, "已开始更新跳蚤行情"
+
+
+_LIVE_FETCH_LOCK = threading.Lock()
+_LIVE_FETCHING: set[str] = set()
+
+
+def spawn_live_fetch(root: str, app_dir: str, mode: str, settings: dict | None = None) -> tuple[bool, str]:
+    """后台抓取一个模式（regular=PvP / pve）的在线行情；返回 (是否已启动, 说明)。
+
+    同一模式已有抓取在跑时直接跳过（去重），全部异常都收在后台线程里，
+    旧缓存由 live_prices.fetch_mode 自己保证不被破坏。
+    """
+    try:
+        mode = live_prices.normalize_mode(mode)
+    except ValueError as exc:
+        return False, str(exc)
+    settings = settings or config.live_prices(app_dir)
+    ttl = int(settings.get("ttlSec") or live_prices.DEFAULT_TTL)
+    source = settings.get("source")
+
+    with _LIVE_FETCH_LOCK:
+        if mode in _LIVE_FETCHING:
+            return False, "该模式已有抓取进行中（%s）" % mode
+        _LIVE_FETCHING.add(mode)
+
+    def run():
+        try:
+            proxy = live_prices.DEFAULT_PROXY
+            reachable, _why = live_prices.proxy_reachable(proxy)
+            live_prices.fetch_mode(mode, proxy=proxy if reachable else None,
+                                   ttl_sec=ttl, force=True, source=source)
+        except Exception:       # 后台抓取失败只写 attempt 记录，绝不影响服务
+            pass
+        finally:
+            with _LIVE_FETCH_LOCK:
+                _LIVE_FETCHING.discard(mode)
+
+    threading.Thread(target=run, daemon=True, name="eft-live-prices-%s" % mode).start()
+    return True, "已开始抓取 %s 行情" % mode
+
+
 def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollower | None = None,
                   app_dir: str | None = None, shotter: AutoShotter | None = None,
-                  pruner: ScreenshotPruner | None = None):
-    """构造静态文件 Handler，并把 /api/ 前缀留给 JSON 接口、/sounds/ 留给自定义提示音。"""
+                  pruner: ScreenshotPruner | None = None, cloud_client: "cloud.CloudClient | None" = None,
+                  shutdown_token: str | None = None, shutdown_callback=None):
+    """构造静态文件 Handler，并把 /api/ 前缀留给 JSON 接口、/sounds/ 留给自定义提示音。
+
+    `shutdown_token` 是桌面壳写进 runtime JSON 的随机令牌：只有带对 `X-EFTMap-Token`
+    才能调 `/api/shutdown`、`/api/live-prices/refresh`；网页刷新另走同源校验。
+    """
     app_dir = app_dir or config.app_dir()
+    cloud_client = cloud_client or make_cloud_client(app_dir)
 
     class Handler(SimpleHTTPRequestHandler):
         server_version = "EFTMap/%s" % VERSION
@@ -654,14 +2118,134 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
             """接口自行声明过缓存策略时打个招呼，免得 end_headers() 再叠一层。"""
             self._cache_header_set = True
 
+        def do_OPTIONS(self):  # noqa: N802 - 覆盖标准库签名
+            """预检：只声明允许的方法，**不发**任何 Access-Control-Allow-* 头。
+
+            本服务只给同源页面用；跨站网页即使拿到预检响应，浏览器也不会放行带
+            自定义头的 POST。这是抵御跨站刷新行情 / 关闭服务的第一道门。
+            """
+            self.send_response(204)
+            self.send_header("Allow", "GET, POST, OPTIONS")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+
         def do_GET(self):  # noqa: N802 - 覆盖标准库签名
-            path = self.path.split("?", 1)[0].split("#", 1)[0]
+            raw_path, _, query = self.path.partition("?")
+            path = raw_path.split("#", 1)[0]
+            if path in ("/ui-showcase", "/ui-showcase/"):
+                self.path = "/ui-showcase.html"
+                return SimpleHTTPRequestHandler.do_GET(self)
             if path == "/api/health":
                 return self._send_json(200, health_payload(root, tracker, follower, shotter, pruner))
+            if path == "/api/update-check":
+                return self._send_json(200, update_check_payload())
+            if path == "/api/presets":
+                return self._handle_presets_get(query)
+            if path == "/api/live-prices":
+                return self._handle_live_prices_get(query)
+            if path == "/api/live-prices/status":
+                return self._handle_live_prices_status()
+            if path == "/api/price-snapshot":
+                return self._handle_price_snapshot(query)
+            if path == "/api/price-history":
+                return self._handle_price_history(query)
+            if path == "/api/market-overview":
+                return self._handle_market_overview(query)
+            if path == "/api/market-offers":
+                # R291 热卖榜：本机累积快照里的在售挂单数 / 24h 峰值（不联网、不扣配额）
+                from urllib.parse import parse_qs
+                qs = parse_qs(query)
+                mode = (qs.get("mode") or ["regular"])[0]
+                ids: list[str] = []
+                for chunk in qs.get("itemIds") or []:
+                    for part in str(chunk).split(","):
+                        part = part.strip()
+                        if part and part not in ids:
+                            ids.append(part)
+                if not ids:
+                    return self._send_json(400, {"ok": False, "error": "no-itemIds"})
+                try:
+                    hours = max(1, min(24 * 90, int((qs.get("hours") or ["24"])[0])))
+                except (TypeError, ValueError):
+                    hours = 24
+                return self._send_json(200, cloud_market.offers_history(app_dir, mode, ids[:64], hours))
+            if path == "/api/market-history":
+                return self._handle_market_history(query)
+            if path == "/api/poi-shot":
+                return self._handle_poi_shot_get(query)
+            if path == "/api/poi-shots":
+                return self._send_json(200, {"ok": True, "items": poi_shots.list_keys(app_dir),
+                                             "maxBytes": poi_shots.MAX_BYTES})
+            if path == "/api/ocr/frame":
+                return self._handle_ocr_frame_get(query)
+            if path == "/api/ocr/overlay/state":
+                return self._handle_ocr_overlay_get()
+            if path == "/api/prices":
+                return self._send_json(200, flea_price_status(root))
             if path == "/api/position":
                 return self._send_json(200, tracker.snapshot())
             if path == "/api/config":
                 return self._send_json(200, config_payload(app_dir))
+            if path == "/api/build":
+                return self._send_json(200, build_payload(root))
+            if path == "/api/layout-calibration":
+                return self._handle_calibration_get()
+            if path == "/api/cloud/status":
+                return self._cloud_call(cloud_client.status)
+            if path == "/api/cloud/login-preferences":
+                return self._cloud_call(cloud_client.login_preferences)
+            if path == "/api/cloud/me":
+                return self._cloud_call(cloud_client.me)
+            if path == "/api/cloud/redeem/tiers":
+                return self._cloud_call(cloud_client.redeem_tiers)
+            if path == "/api/member":
+                # R256：截图宿主是独立进程，读不到 BFF 进程的会员快照。
+                # 提供一个只读接口，宿主启动时/每次开浮窗前拉一次当前会员态。
+                st = config.member_state()
+                return self._send_json(200, {
+                    "member": config.is_member(app_dir),
+                    "member_status": st.get("member_status"),
+                    "member_plan": st.get("member_plan"),
+                    "member_since": st.get("member_since"),
+                    "member_expires_at": st.get("member_expires_at"),
+                })
+            if path == "/api/cloud/devices":
+                return self._cloud_call(cloud_client.devices)
+            if path == "/api/cloud/prices/series":
+                # R290：市场列表「历史 72h」缩略图。云端 /v1/prices/series 是会员接口，
+                # 从采集机上传的 30 分钟快照抽真实序列；未登录 / 非会员由云客户端报错，
+                # _cloud_call 原样回 401 / 403，前端据此显示「会员功能」而不是假曲线。
+                from urllib.parse import parse_qs
+                qs = parse_qs(query)
+                mode = (qs.get("mode") or ["regular"])[0]
+                ids: list[str] = []
+                for chunk in qs.get("itemIds") or []:
+                    for part in str(chunk).split(","):
+                        part = part.strip()
+                        if part and part not in ids:
+                            ids.append(part)
+                days = 3
+                try:
+                    days = max(1, min(90, int((qs.get("days") or ["3"])[0])))
+                except (TypeError, ValueError):
+                    pass
+                if not ids:
+                    return self._send_json(400, {"ok": False, "error": "no-itemIds"})
+                return self._cloud_call(cloud_client.prices_series, mode, ids[:12], days)
+            if path == "/api/price-cache/status":
+                # R279：本地云端价格缓存概况（各模式快照数 / 更新时间 / 体积）。
+                # 会员过期时顺手清掉——「过期自动清理缓存」是产品口径。
+                try:
+                    member = config.is_member(app_dir)
+                except Exception:  # noqa: BLE001
+                    member = False
+                if not member:
+                    price_cache.purge(app_dir, reason="not-member")
+                    live_prices.purge_cache()
+                data = price_cache.status(app_dir)
+                data["ok"] = True
+                data["member"] = member
+                return self._send_json(200, data)
             if path == "/api/logstate":
                 snap = follower.snapshot() if follower is not None else {"available": False}
                 if shotter is not None:
@@ -680,14 +2264,42 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
             return super().do_GET()
 
         def do_POST(self):  # noqa: N802 - 覆盖标准库签名
-            """页面把界面偏好（图层开关 / 楼层开关 / 自动居中）写回 `eftmap.config.json`。
+            """写接口：界面偏好 + 云账号 + 行情刷新 + 关闭服务。
 
-            这是唯一的 POST 接口，本地单机服务不做鉴权；请求体限制在 MAX_PREFS_BODY 内。
-            写盘后顺手广播一次 `config`，让其它已打开的页面立刻跟上。
+            `/api/prefs` 只写本机配置（无鉴权，限制在 MAX_PREFS_BODY）；
+            `/api/cloud/*` 只是把页面请求转给 CloudClient，真正的鉴权与证书固定都在 Python 侧，
+            页面永远拿不到 token。云同步的请求体上限单独用 MAX_CLOUD_BODY（3 个 256KB 键）。
             """
             path = self.path.split("?", 1)[0].split("#", 1)[0]
+            if path.startswith("/api/cloud/"):
+                return self._handle_cloud_post(path)
+            if path == "/api/presets":
+                return self._handle_presets_post()
+            if path == "/api/ocr/frame":
+                return self._handle_ocr_frame_post()
+            if path == "/api/ocr/recognize":
+                return self._handle_ocr_recognize()
+            if path == "/api/ocr/overlay/state":
+                return self._handle_ocr_overlay_post()
+            if path == "/api/price-cache/sync":
+                return self._handle_price_cache_sync()
+            if path == "/api/live-prices/refresh":
+                return self._handle_live_prices_refresh()
+            if path == "/api/prices/refresh":
+                return self._handle_flea_refresh()
+            if path == "/api/shutdown":
+                return self._handle_shutdown()
+            if path == "/api/overlay":
+                return self._handle_overlay_toggle()
+            if path == "/api/active-map":
+                return self._handle_active_map()
+            if path == "/api/layout-calibration":
+                return self._handle_calibration_post()
+            if path == "/api/poi-shot":
+                return self._handle_poi_shot_post()
             if path != "/api/prefs":
-                return self._send_json(404, {"ok": False, "error": "未知接口：%s" % path})
+                # 该路径没有请求体读取逻辑；关闭连接，避免残留字节污染下一条请求。
+                return self._send_json(404, {"ok": False, "error": "未知接口：%s" % path}, close=True)
             try:
                 length = int(self.headers.get("Content-Length") or 0)
             except (TypeError, ValueError):
@@ -705,13 +2317,1226 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
             tracker.broadcaster.publish_event("config", config_payload(app_dir))
             return self._send_json(200, {"ok": True, "config": cfg})
 
-        def _send_json(self, code: int, payload: dict):
+        # ---- 小浮窗显隐（R104：设置面板与左侧栏开关共用） ----
+        def _handle_overlay_toggle(self):
+            """`POST /api/overlay {enabled: bool}`：写 overlay.enabled 并广播 config。
+
+            桌面壳每 500ms 读一次配置决定小浮窗窗口是否出现；这里的 POST 只是让
+            页面在写完偏好后立刻拿到一次确认（前端失败时会提示手动启动 overlay.py）。
+            """
+            body = self._read_body(MAX_PREFS_BODY, "too_large")
+            if body is None:
+                return
+            enabled = body.get("enabled") if isinstance(body, dict) else None
+            if not isinstance(enabled, bool):
+                return self._send_json(400, {"ok": False, "error": "需要 enabled 布尔值"})
+            try:
+                cfg = config.load(app_dir)
+                overlay = dict(cfg.get("overlay") or {})
+                overlay["enabled"] = enabled
+                cfg["overlay"] = overlay
+                config.save(cfg, app_dir)
+            except OSError as exc:
+                return self._send_json(500, {"ok": False, "error": "保存配置失败：%s" % exc})
+            tracker.broadcaster.publish_event("config", config_payload(app_dir))
+            return self._send_json(200, {"ok": True, "enabled": enabled})
+
+        # ---- 当前主窗口地图（R-fix：小地图窗口据此实时跟随主界面选中的地图） ----
+        def _handle_active_map(self):
+            """`POST /api/active-map {map: key}`：记录当前主地图并广播 `map` 事件。
+
+            主窗口每次切换地图都上报一次；两个 WebView2 窗口各自独立连 SSE，
+            后端把当前地图广播给所有订阅者，小地图窗口收到后切换自己的底图，
+            从而实现「主界面切图 → 小地图跟着切」的实时联动。
+            """
+            body = self._read_body(MAX_PREFS_BODY, "too_large")
+            if body is None:
+                return
+            key = body.get("map") if isinstance(body, dict) else None
+            if not isinstance(key, str) or not key:
+                return self._send_json(400, {"ok": False, "error": "需要 map 字段（地图 key）"})
+            self.server.active_map = key
+            tracker.broadcaster.publish_event("map", {"map": key})
+            return self._send_json(200, {"ok": True, "map": key})
+
+        # ---- 武器布局校准（校准器页面唯一写入口，见 tools/layoutcal.py） ----
+        @staticmethod
+        def _calibration_payload(doc: dict) -> dict:
+            return {
+                "ok": True,
+                "path": "data/%s" % layoutcal.FILENAME,
+                "data": doc,
+                "summary": layoutcal.summary(doc),
+            }
+
+        def _calibration_error(self, exc: "layoutcal.CalibrationError"):
+            return self._send_json(409 if exc.corrupt else 400, {
+                "ok": False,
+                "code": exc.code,
+                "corrupt": exc.corrupt,
+                "error": str(exc),
+            })
+
+        def _handle_calibration_get(self):
+            try:
+                doc = layoutcal.load(root)
+            except layoutcal.CalibrationError as exc:
+                return self._calibration_error(exc)
+            return self._send_json(200, self._calibration_payload(doc))
+
+        def _handle_calibration_post(self):
+            body = self._read_body(MAX_CALIB_BODY, "too_large")
+            if body is None:
+                return
+            if not isinstance(body, dict):
+                return self._send_json(400, {"ok": False, "error": "请求体必须是 JSON 对象"})
+            action = body.get("action")
+            try:
+                doc = layoutcal.load(root)
+                if action == "save":
+                    gun_id, gun = body.get("gunId"), body.get("gun")
+                    if not isinstance(gun_id, str) or not gun_id or not isinstance(gun, dict):
+                        raise layoutcal.CalibrationError("save 需要 gunId（字符串）与 gun（对象）")
+                    doc = layoutcal.merge_gun(doc, gun_id, layoutcal.validate_gun(gun, gun_id))
+                elif action == "save-all":
+                    guns = body.get("guns")
+                    if not isinstance(guns, dict):
+                        raise layoutcal.CalibrationError("save-all 需要 guns 对象")
+                    for gun_id, gun in guns.items():
+                        if not isinstance(gun_id, str) or not gun_id:
+                            raise layoutcal.CalibrationError("save-all 的 gunId 必须是非空字符串")
+                        doc = layoutcal.merge_gun(doc, gun_id, layoutcal.validate_gun(gun, gun_id))
+                elif action == "clear":
+                    gun_id = body.get("gunId")
+                    if not isinstance(gun_id, str) or not gun_id:
+                        raise layoutcal.CalibrationError("clear 需要 gunId（字符串）")
+                    doc = layoutcal.drop_gun(doc, gun_id)
+                elif action == "import":
+                    # 整包替换语义：先整包校验，非法直接拒，磁盘上的旧数据保持不变
+                    doc = layoutcal.validate_doc(body.get("data"))
+                else:
+                    raise layoutcal.CalibrationError("未知 action：%r" % (action,), code="action")
+                doc = layoutcal.save(doc, root)
+            except layoutcal.CalibrationError as exc:
+                return self._calibration_error(exc)
+            except OSError as exc:
+                return self._send_json(500, {"ok": False, "error": "写入校准文件失败：%s" % exc})
+            return self._send_json(200, self._calibration_payload(doc))
+
+        # ---- 行情（云端唯一数据源；免费 / 会员共用，按账号限次） ----
+        def _handle_market_overview(self, query: str):
+            """`GET /api/market-overview?mode=&hours=` —— 市场大盘（只读）。
+
+            数据来自云端行情快照（与本机「市场列表」同一次取数结果）；
+            免费账号由服务端延迟 12 小时。没有可用缓存时才向云端取一次，
+            列表已经取过就直接复用，不重复扣次。
+            """
+            from urllib.parse import parse_qs
+
+            qs = parse_qs(query)
+            raw_mode = (qs.get("mode") or ["regular"])[0]
+            try:
+                mode = prices_source.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(prices_source.MODE_ALIASES)})
+            try:
+                hours = int((qs.get("hours") or [market_overview.WINDOW_HOURS_DEFAULT])[0])
+            except (TypeError, ValueError):
+                return self._send_json(400, {"ok": False, "error": "bad-hours"})
+            ids = []
+            for key in ("ids", "itemIds", "itemId"):
+                for chunk in qs.get(key) or []:
+                    for part in str(chunk).split(","):
+                        part = part.strip()
+                        if part and part not in ids:
+                            ids.append(part)
+            ids = ids[:24]
+            sector = (qs.get("sector") or [""])[0].strip()
+            if not _cloud_logged_in(cloud_client):
+                return self._send_json(200, {
+                    "ok": False, "mode": mode, "source": "cloud",
+                    "loginRequired": True, "error": "login_required",
+                    "message": "市场行情需要登录账号后从云端获取",
+                    "buckets": [], "gainers": [], "losers": [], "hot": [],
+                    "sectors": [], "items": {},
+                })
+            try:
+                member = config.is_member(app_dir)
+            except Exception:  # noqa: BLE001
+                member = False
+            # 大盘的 24h / 48h / 七天均价用云端价格缓存（会员全量序列）；
+            # 每次打开大盘做一次增量同步，失败不阻塞（继续用已有缓存 / 快照）。
+            if member and cloud_client is not None:
+                try:
+                    price_cache.sync(app_dir, cloud_client, mode)
+                except Exception:  # noqa: BLE001
+                    pass
+            cutoff = _free_price_cutoff(member)
+            if cloud_market.load_latest(app_dir, mode) is None:
+                try:
+                    cloud_market.fetch(app_dir, mode, cloud_client, max_generated_at=cutoff)
+                except Exception as exc:  # noqa: BLE001 - 大盘失败不能影响主服务
+                    code = getattr(exc, "code", "") or "unavailable"
+                    return self._send_json(200, {
+                        "ok": False, "mode": mode, "source": "cloud",
+                        "error": code, "message": str(exc) or "云端行情不可用",
+                        "loginRequired": getattr(exc, "status", None) in (401, 403),
+                        "quota": (getattr(exc, "details", {}) or {}).get("quota"),
+                    })
+            try:
+                payload = cloud_market.overview(app_dir, mode, hours, ids=ids,
+                                                sector=sector or None,
+                                                max_generated_at=cutoff)
+            except Exception as exc:  # noqa: BLE001
+                return self._send_json(200, {"ok": False, "error": "overview-failed",
+                                             "hint": str(exc)})
+            return self._send_json(200, payload)
+
+        def _handle_market_history(self, query: str):
+            """`GET /api/market-history?mode=&itemIds=&days=` —— 大盘专用曲线。
+
+            只读本机历次云端取数累积的快照，不再额外向云端请求、不重复扣配额。
+            免费账号拿到的快照本身已由服务端延迟 12 小时，曲线口径与列表一致。
+            """
+            from urllib.parse import parse_qs
+
+            qs = parse_qs(query)
+            raw_mode = (qs.get("mode") or ["regular"])[0]
+            try:
+                mode = prices_source.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(prices_source.MODE_ALIASES)})
+            ids = []
+            for key in ("itemId", "itemIds"):
+                for chunk in qs.get(key) or []:
+                    for part in str(chunk).split(","):
+                        part = part.strip()
+                        if part and part not in ids:
+                            ids.append(part)
+            if not ids:
+                return self._send_json(400, {"ok": False, "error": "no-item"})
+            ids = ids[:24]
+            try:
+                days = int((qs.get("days") or ["1"])[0])
+            except (TypeError, ValueError):
+                days = 1
+            days = max(1, min(90, days))
+            if not _cloud_logged_in(cloud_client):
+                return self._send_json(200, {
+                    "ok": False, "mode": mode, "source": "cloud",
+                    "loginRequired": True, "error": "login_required",
+                    "series": {}, "status": "login_required",
+                })
+            try:
+                member = config.is_member(app_dir)
+            except Exception:  # noqa: BLE001
+                member = False
+            try:
+                payload = cloud_market.history(app_dir, mode, ids, days,
+                                               max_generated_at=_free_price_cutoff(member))
+            except Exception as exc:  # noqa: BLE001 - 大盘曲线失败不能影响主服务
+                return self._send_json(200, {"ok": False, "error": "history-failed",
+                                             "hint": str(exc)})
+            # 会员登录时可能已经整包下载过云端历史：补进曲线，免去「等本机攒样本」。
+            # 免费账号不合并（会员缓存里可能是 12 小时内的新数据）。
+            if member and price_cache.has_data(app_dir, mode):
+                try:
+                    cached = price_cache.series(app_dir, mode, ids, days)
+                    payload = price_history.merge_cloud(
+                        payload, cached, status=str(cached.get("status") or "ok")
+                    )
+                except Exception:  # noqa: BLE001 - 缓存损坏不能影响已有曲线
+                    pass
+            return self._send_json(200, payload)
+
+        # ---------------------------------------------------------- 点位参考图
+        def _read_raw(self, limit: int, code: str):
+            """读原始二进制请求体（图片上传）。超限也要读尽剩余字节，否则连接错位。"""
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                length = 0
+            if length <= 0:
+                self._send_json(400, {"ok": False, "code": code, "error": "请求体为空"})
+                return None
+            if length > limit:
+                remaining = length
+                while remaining > 0:
+                    chunk = self.rfile.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    remaining -= len(chunk)
+                self._send_json(413, {"ok": False, "code": code,
+                                      "error": "图片超过上限（%d MB）"
+                                               % (poi_shots.MAX_BYTES // 1024 // 1024)})
+                return None
+            data = self.rfile.read(length)
+            if len(data) != length:
+                self._send_json(400, {"ok": False, "code": code, "error": "请求体读取不完整"})
+                return None
+            return data
+
+        def _handle_poi_shot_get(self, query: str):
+            """`GET /api/poi-shot?key=` → 参考图原始字节（没有就 404，不回占位图）。"""
+            from urllib.parse import parse_qs
+
+            key = (parse_qs(query).get("key") or [""])[0]
+            found = poi_shots.load(app_dir, key) if key else None
+            if found is None:
+                return self._send_json(404, {"ok": False, "error": "该点位还没有参考图"})
+            data, ctype = found
+            self._send_cache_header()
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(len(data)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            try:
+                self.wfile.write(data)
+            except (BrokenPipeError, ConnectionResetError):
+                pass
+
+        def _handle_poi_shot_post(self):
+            """`POST /api/poi-shot?key=[&action=delete]`，非 delete 时请求体就是图片字节。
+
+            类型按**魔数**判定而不是 Content-Type：前端可以随便写 header，
+            但写不出 JPEG 的 FFD8FF。
+            """
+            from urllib.parse import parse_qs, urlparse
+
+            qs = parse_qs(urlparse(self.path).query)
+            key = (qs.get("key") or [""])[0]
+            action = (qs.get("action") or ["save"])[0].strip().lower()
+            if action == "delete":
+                try:
+                    removed = poi_shots.delete(app_dir, key)
+                except poi_shots.ShotError as exc:
+                    return self._send_json(400, {"ok": False, "error": str(exc)})
+                return self._send_json(200, {"ok": True, "removed": removed})
+            data = self._read_raw(poi_shots.MAX_BYTES, "poi_shot")
+            if data is None:
+                return
+            try:
+                info = poi_shots.save(app_dir, key, data, self.headers.get("Content-Type") or "")
+            except poi_shots.ShotError as exc:
+                return self._send_json(400, {"ok": False, "error": str(exc)})
+            payload = {"ok": True, "hash": poi_shots.hash_of(key)}
+            payload.update(info)
+            return self._send_json(200, payload)
+
+        def _handle_price_history(self, query: str):
+            """`GET /api/price-history?mode=&itemId=&days=`。
+
+            只读 `data/flea-price-history/` 里由采集脚本落下的真实快照，
+            没有数据就说没有：不插值、不补点、不拿别的模式顶替。
+            支持 `itemIds=a,b,c`（表格首屏批量取迷你曲线，最多 60 个）。
+            """
+            from urllib.parse import parse_qs
+
+            qs = parse_qs(query)
+            raw_mode = (qs.get("mode") or ["regular"])[0]
+            try:
+                mode = prices_source.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(prices_source.MODE_ALIASES)})
+            ids = []
+            for key in ("itemId", "itemIds"):
+                for chunk in qs.get(key) or []:
+                    for part in str(chunk).split(","):
+                        part = part.strip()
+                        if part and part not in ids:
+                            ids.append(part)
+            if not ids:
+                return self._send_json(400, {"ok": False, "error": "no-item"})
+            try:
+                member = config.is_member(app_dir)
+            except Exception:  # noqa: BLE001
+                member = False
+            if not member:
+                price_cache.purge(app_dir, reason="not-member")
+                live_prices.purge_cache()
+                return self._send_json(403, {
+                    "ok": False, "error": "member_required",
+                    "hint": "价格历史是会员功能；免费档仅提供随安装包发布的离线快照。",
+                })
+            try:
+                days = int((qs.get("days") or ["7"])[0])
+            except (TypeError, ValueError):
+                days = 7
+            payload = price_history.series(root, mode, ids, days)
+            # R278/R279：本机快照之外再并一份云端历史。
+            # 优先级：本地缓存（登录时整包下载，秒回、不联网）→ 云端实时接口（缓存还没建好时兜底）。
+            # 会员才有云端价格权限；非会员直接跳过，接口行为与旧版一致。
+            if cloud_client is not None and len(ids) <= _CLOUD_SERIES_MAX_ITEMS:
+                try:
+                    member = config.is_member(app_dir)
+                except Exception:  # noqa: BLE001 - 会员态读不到按非会员处理
+                    member = False
+                if member:
+                    cloud_payload, cloud_status = _cloud_series_cached(
+                        app_dir, cloud_client, mode, ids, days
+                    )
+                else:
+                    cloud_payload, cloud_status = None, "member_required"
+                    # 会员过期 / 退出登录：缓存不再可用，直接清掉（用户要求）。
+                    if price_cache.has_data(app_dir, mode):
+                        price_cache.purge(app_dir, reason="not-member")
+                    live_prices.purge_cache()
+                payload = price_history.merge_cloud(
+                    payload, cloud_payload, status=cloud_status
+                )
+            return self._send_json(200, payload)
+
+        def _handle_price_cache_sync(self):
+            """`POST /api/price-cache/sync`：整包 / 增量同步云端价格缓存。
+
+            请求体 `{"mode": "regular"}`（可选，缺省用当前数据模式）。
+            · 本地还没有缓存 → 整包下载（首次登录，约 2–4 MB / 一个模式）；
+            · 已有 cursor → 只取新快照（通常 0–2 条）；
+            · 非会员 → 403 `member_required`，顺手清掉本地缓存；
+            · 云端不可达 → 502，本地缓存照旧可用（不清）。
+            """
+            body = self._read_cloud_body()
+            raw_mode = body.get("mode") if isinstance(body, dict) else None
+            if not raw_mode:
+                try:
+                    raw_mode = (config.load(app_dir) or {}).get("dataScope", {}).get("mode")
+                except (OSError, ValueError):
+                    raw_mode = None
+            try:
+                mode = prices_source.normalize_mode(raw_mode or "regular")
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(prices_source.MODE_ALIASES)})
+            try:
+                member = config.is_member(app_dir)
+            except Exception:  # noqa: BLE001
+                member = False
+            if not member:
+                price_cache.purge(app_dir, reason="not-member")
+                live_prices.purge_cache()
+                return self._send_json(403, {
+                    "ok": False,
+                    "error": "member_required",
+                    "hint": "云端价格缓存是会员数据；开通会员后登录即自动下载。",
+                })
+            if cloud_client is None:
+                return self._send_json(503, {"ok": False, "error": "cloud-disabled",
+                                             "hint": "云端客户端不可用"})
+            try:
+                summary = price_cache.sync(app_dir, cloud_client, mode)
+            except cloud.CloudError as exc:
+                if exc.status == 403 and exc.code == "membership_required":
+                    # 服务端说已经不是会员了：本地缓存立刻清，界面按非会员重画。
+                    price_cache.purge(app_dir, reason="membership-required")
+                    live_prices.purge_cache()
+                    config.set_member_state({"member": False, "member_status": "none"})
+                    return self._send_json(403, {
+                        "ok": False, "error": "member_required",
+                        "hint": "会员已过期，本地云端缓存已清理；重新开通后再点一次。",
+                    })
+                if exc.status == 0:
+                    return self._send_json(502, {"ok": False, "error": "offline",
+                                                 "hint": "云端暂时连不上，本地缓存仍然可用。"})
+                return self._send_json(exc.status or 502, {"ok": False, "error": exc.code,
+                                                           "hint": str(exc)})
+            except OSError as exc:
+                return self._send_json(500, {"ok": False, "error": "io", "hint": str(exc)})
+            summary["ok"] = True
+            summary["member"] = True
+            summary["status"] = price_cache.status(app_dir)
+            return self._send_json(200, summary)
+
+        def _handle_price_snapshot(self, query: str):
+            """`GET /api/price-snapshot?mode=regular|pve|pvps[&force=1]`。
+
+            数据只来自云端（免费与会员同一入口）：
+              · 未登录 → `loginRequired=true`，不发任何云端请求；
+              · 免费 → 服务端 12 小时延迟、每日 24 次、CD 59:59；
+              · 会员 → 最新快照、CD 30 秒；
+              · 云端不可达 / 配额用尽 → 本机最后一次成功结果，标 `cached=true`。
+            不再读取随安装包发布的离线快照。
+            """
+            from urllib.parse import parse_qs
+
+            qs = parse_qs(query)
+            raw_mode = (qs.get("mode") or ["regular"])[0]
+            try:
+                mode = prices_source.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(prices_source.MODE_ALIASES)})
+            if not _cloud_logged_in(cloud_client):
+                return self._send_json(200, {
+                    "ok": False,
+                    "mode": mode,
+                    "available": False,
+                    "source": "cloud",
+                    "loginRequired": True,
+                    "items": {},
+                    "error": "login_required",
+                    "message": "市场行情需要登录账号后从云端获取",
+                })
+            try:
+                member = config.is_member(app_dir)
+            except Exception:  # noqa: BLE001
+                member = False
+            if not member:
+                # 会员到期的本地会员缓存（旧版整包 history）不再可用；新行情缓存
+                # 仍允许免费账号读取自己最后一次云端结果。
+                price_cache.purge(app_dir, reason="not-member")
+                live_prices.purge_cache()
+            force = (qs.get("force") or ["0"])[0] == "1"
+            payload = prices_source.snapshot_for(
+                root, mode, cloud_client=cloud_client, member=member,
+                force=force, app_dir=app_dir,
+                max_generated_at=_free_price_cutoff(member),
+            )
+            return self._send_json(200, payload)
+
+        def _handle_ocr_frame_post(self):
+            """`POST /api/ocr/frame`（R238/R240）：宿主把热键抓的整屏冻结帧交上来。
+
+            原始图像字节（octet-stream）；R240 起宿主发 **BMP**（免压缩编码，
+            热键→可框选 <0.5s），按魔数嗅探格式（BM→bmp / PNG→png）。
+            内存里只留最近一帧（下一次热键覆盖），10 分钟无人使用即失效。
+            """
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                return self._send_json(400, {"ok": False, "error": "冻结帧 Content-Length 非法"}, close=True)
+            if not 0 < length <= MAX_OCR_FRAME_BODY:
+                return self._send_json(400, {"ok": False,
+                                             "error": "冻结帧缺失或超过上限（%d MB）"
+                                                      % (MAX_OCR_FRAME_BODY // (1024 * 1024))}, close=True)
+            data = self.rfile.read(length)
+            fmt = "bmp" if data[:2] == b"BM" else "png"
+            frame_id = "%d" % int(time.time() * 1000)
+            _OCR_FRAME.update({"id": frame_id, "bytes": data, "at": time.time(), "fmt": fmt})
+            return self._send_json(200, {"ok": True, "id": frame_id, "bytes": length})
+
+        def _handle_ocr_frame_get(self, query: str):
+            """`GET /api/ocr/frame`（R238/R240）：scan.html 取冻结帧。
+
+            带 `?id=`：返回图像原始字节（Content-Type 跟随上报格式，BMP/PNG）；
+            不带 id：返回元信息 `{"ok", "id", "fmt"}`——R240 页面轮询它发现新帧
+            （保温窗口不重载页面，热键后 ≤150ms 内换帧）。
+            """
+            from urllib.parse import parse_qs
+
+            qs = parse_qs(query)
+            if not qs.get("id"):
+                st = _OCR_FRAME
+                fresh = bool(st["id"]) and time.time() - st["at"] <= _OCR_FRAME_TTL
+                return self._send_json(200, {"ok": True,
+                                             "id": st["id"] if fresh else None,
+                                             "fmt": st["fmt"] if fresh else None})
+            fid = (qs.get("id") or [""])[0]
+            frame = _OCR_FRAME
+            if (not fid or frame["id"] != fid or not frame["bytes"]
+                    or time.time() - frame["at"] > _OCR_FRAME_TTL):
+                return self._send_json(404, {"ok": False, "error": "冻结帧不存在或已过期"})
+            body = frame["bytes"]
+            self._send_cache_header()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/bmp" if frame.get("fmt") == "bmp"
+                             else "image/png")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            self.wfile.write(body)
+
+        def _handle_ocr_overlay_get(self):
+            """`GET /api/ocr/overlay/state`（R239）：宿主读框选交接状态。
+
+            scan.html 识别成功后 POST 上来（region + matches），宿主轮询到
+            「EFT截图·完成」标题后取走并切换原生透明浮窗。
+            """
+            st = _OCR_OVERLAY
+            return self._send_json(200, {
+                "ok": True,
+                "active": bool(st.get("region")),
+                "region": st.get("region"),
+                "matches": st.get("matches") or [],
+                "ageMs": int((time.time() - st.get("ts", 0.0)) * 1000) if st.get("ts") else None,
+                "ts": st.get("ts"),
+            })
+
+        def _handle_ocr_overlay_post(self):
+            """`POST /api/ocr/overlay/state`（R239）：scan.html 交接框选区域与匹配结果。
+
+            matches 做白名单瘦身（宿主只渲染标签用不到的字段不收），单槽覆盖。
+            """
+            body = self._read_body(4 * 1024 * 1024, "overlay_too_large")
+            if body is None:
+                return
+            region = body.get("region")
+            if not isinstance(region, dict):
+                return self._send_json(400, {"ok": False, "error": "缺少 region"})
+            try:
+                rx, ry = int(region["x"]), int(region["y"])
+                rw, rh = int(region["w"]), int(region["h"])
+            except (KeyError, TypeError, ValueError):
+                return self._send_json(400, {"ok": False, "error": "region 需要 x/y/w/h 整数"})
+            if rw <= 0 or rh <= 0:
+                return self._send_json(400, {"ok": False, "error": "region 尺寸非法"})
+            raw_matches = body.get("matches")
+            if not isinstance(raw_matches, list):
+                raw_matches = []
+            keep = ("id", "name", "short", "text", "tier", "ocrScore",
+                    "x", "y", "w", "h", "gw", "gh", "weight", "noFlea",
+                    "ammoKind", "qty", "price")
+            matches = []
+            for m in raw_matches[:200]:
+                if not isinstance(m, dict):
+                    continue
+                matches.append({k: m.get(k) for k in keep if m.get(k) is not None})
+            _OCR_OVERLAY.update({"ts": time.time(),
+                                 "region": {"x": rx, "y": ry, "w": rw, "h": rh},
+                                 "matches": matches})
+            return self._send_json(200, {"ok": True, "count": len(matches)})
+
+        def _handle_ocr_recognize(self):
+            """`POST /api/ocr/recognize`（R234）：截图 → OCR → 物品匹配 → 价格。
+
+            请求体：`{"image": "<base64 或 dataURL>", "mode": "regular|pve|pvps"(可选),
+            "annotate": true(可选)}`。价格复用市场页同一数据源
+            `prices_source.snapshot_for`（云端行情；免费延迟 12 小时）。
+            OCR 引擎/模型缺失回 503 `ocr-unavailable`，不影响其它功能。
+            """
+            import base64
+
+            body = self._read_body(MAX_OCR_BODY, "ocr_too_large")
+            if body is None:
+                return
+            raw = body.get("image") or ""
+            if isinstance(raw, str) and raw.startswith("data:"):
+                _, _, raw = raw.partition(",")
+            if not raw or not isinstance(raw, str):
+                return self._send_json(400, {"ok": False, "error": "缺少 image 字段（base64）"})
+            try:
+                img_bytes = base64.b64decode(raw)
+            except (ValueError, TypeError):
+                return self._send_json(400, {"ok": False, "error": "image 不是合法 base64"})
+            try:
+                img = ocr.decode_image_bgr(img_bytes)
+            except ocr.OcrUnavailable as exc:
+                return self._send_json(503, {"ok": False, "error": "ocr-unavailable",
+                                             "hint": str(exc)})
+            if img is None:
+                return self._send_json(400, {"ok": False, "error": "图片解码失败（支持 PNG/JPEG）"})
+
+            raw_mode = body.get("mode")
+            mode = None
+            if raw_mode:
+                try:
+                    mode = prices_source.normalize_mode(raw_mode)
+                except ValueError:
+                    return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                                 "allowed": list(prices_source.MODE_ALIASES)})
+            else:
+                mode = "regular"
+                try:
+                    scope = (config.load(app_dir) or {}).get("dataScope") or {}
+                    mode = prices_source.normalize_mode(scope.get("mode") or "regular")
+                except (ValueError, OSError):
+                    mode = "regular"
+
+            try:
+                engine = ocr.get_engine()
+            except ocr.OcrUnavailable as exc:
+                return self._send_json(503, {"ok": False, "error": "ocr-unavailable",
+                                             "hint": str(exc)})
+            want_annotate = body.get("annotate")
+            want_annotate = True if want_annotate is None else bool(want_annotate)
+            lines, annotated_png, took_ms = engine.recognize(img, annotate=want_annotate)
+
+            names, name_to_ids, catalog = _ocr_catalog(root)
+            matcher = _ocr_matcher(names)
+            matches = matcher.match_lines(
+                [{"text": ln["text"], "score": ln["score"], "box": ln["points"]} for ln in lines])
+
+            # R19.81：未登录不请求云端，也不拿目录里的构建期基线价冒充行情。
+            # 截图识别只做物品名识别，价格列留空（前端显示「—」）。
+            logged_in = _cloud_logged_in(cloud_client)
+            if logged_in:
+                try:
+                    member = config.is_member(app_dir)
+                except Exception:
+                    member = False
+                snap = prices_source.snapshot_for(root, mode, cloud_client=cloud_client,
+                                                  member=member, app_dir=app_dir,
+                                                  max_generated_at=_free_price_cutoff(member))
+                snap_items = (snap.get("items") or {}) if snap.get("available") else {}
+            else:
+                snap = {"available": False, "loginRequired": True, "source": "cloud",
+                        "items": {}, "avg7d": {"values": {}}}
+                snap_items = {}
+            # R238：72h / 30d 均价（price_history 本地快照，72h=3 天窗口）。
+            # 快照序列 points = [[iso, lastLow, avg24h], …]；取 lastLow 非空值求均值，
+            # 一个窗口没有任何快照就没有该字段（绝不估算/插值）。
+            hist: dict[str, dict[str, int]] = {}
+            match_ids = []
+            for m in matches:
+                for iid in name_to_ids.get(matcher.names_for(m["key"])[0]) or []:
+                    if iid not in match_ids:
+                        match_ids.append(iid)
+            if match_ids and logged_in:
+                # R248：只扫一次 30 天序列，按时间戳本地切 72h 窗口。
+                # 原来 3 天 / 30 天各调一次 series → 全部 gz 解压两遍。
+                try:
+                    s = price_history.series(root, mode, match_ids, days=30)
+                except Exception:
+                    s = {}
+                cutoff3 = (datetime.datetime.now().astimezone()
+                           - datetime.timedelta(days=3)).isoformat(timespec="seconds")
+                for iid, row in (s.get("series") or {}).items():
+                    pts = [p for p in (row.get("points") or [])
+                           if isinstance(p, (list, tuple)) and len(p) > 1 and p[1]]
+                    vals30 = [p[1] for p in pts]
+                    vals3 = [p[1] for p in pts if str(p[0]) >= cutoff3]
+                    if vals3:
+                        hist.setdefault(iid, {})["w72"] = int(sum(vals3) / len(vals3))
+                    if vals30:
+                        hist.setdefault(iid, {})["w30d"] = int(sum(vals30) / len(vals30))
+            out_matches = []
+            count_lines = _ocr_count_lines(lines)   # R250：整张图只扫一次数量行
+            for m in matches:
+                ids = name_to_ids.get(matcher.names_for(m["key"])[0]) or []
+                # R250：短名同时指向散装子弹与弹药包时，按格子右下角的数量形态
+                # 决定用哪一类候选（xx/xx=弹药包 / 纯数字=散装堆叠）。
+                # R251：ammo_ambig = 缩小后仍有多个口径（.338 AP vs .300 AP…），
+                # 截图上无法区分，只标注不瞎猜。
+                ammo_kind, ammo_qty, ammo_ids, ammo_found, ammo_ambig = \
+                    _ocr_ammo_decision(m, lines, ids, catalog, count_lines)
+                if ammo_kind and ammo_ids:
+                    ids = ammo_ids
+                else:
+                    ammo_kind = None          # 数据里没这个形态 → 不干预原逻辑
+                # 同名多 id：挑价格可用且每格价最高的（对应规格 PickBest PerSlot↓Price↓）
+                # R260：先排除异色/特殊版（带括号后缀）——避免 FDE/香蕉黄/BB弹 等
+                # 高价变体盖过普通版（弹匣 GEN M3 这类一字多版本的重灾区）。
+                disp = matcher.names_for(m["key"])[0]
+                best = None
+                best_rank = None
+                for iid in _ocr_prefer_base_variant(ids, catalog):
+                    rec = catalog.get(iid) or {}
+                    row = snap_items.get(iid) or {}
+                    hist_row = hist.get(iid) or {}
+                    avg7 = (snap.get("avg7d") or {}).get("values", {}).get(iid)
+                    # R258：三档价格优先级（用户提供）
+                    #   1) 跳蚤有售卖 → 跳蚤价（实时快照优先，缺失回退目录跳蚤基线）
+                    #   2) 跳蚤不卖但商人会卖 → 商人售卖价（玩家从商人处购买）
+                    #   3) 都不卖 → 商人收购价（玩家卖给商人，红购物车警示）
+                    price = _ocr_resolve_price(rec, row, hist_row, avg7)
+                    no_flea = bool(price.get("noFlea"))
+                    per_slot = price.get("perSlot")
+                    cand = {"id": iid, "name": rec.get("n") or iid,
+                            "short": ocr.short_name_of(rec.get("n") or ""),
+                            "gw": rec.get("gw"), "gh": rec.get("gh"),
+                            "weight": rec.get("w"),
+                            "noFlea": no_flea, "price": price}
+                    # 撞名时的排序：**全名以该显示名结尾**的优先。游戏内短名几乎都是全名
+                    # 的末段（「TerraGroup实验室访问钥匙卡」），而容器/打包品不是
+                    # （「钥匙卡收纳盒」）。同档再比每格价。
+                    suffix = 1 if str(cand["name"]).endswith(disp) else 0
+                    rank = (suffix, per_slot if per_slot is not None else -1)
+                    if best is None or rank > best_rank:
+                        best, best_rank = cand, rank
+                if best is None:
+                    continue
+                if ocr.item_name_excluded(best["name"]):
+                    continue  # R242：臂带/臂章/狗牌类物品不识别（用户点名）
+                # 撞名徽记：一个显示名对应多个**不同物品**时（钥匙卡 / 海报 / FMJ…），
+                # 截图上无法区分，只标「?」并把候选价目给前端，绝不假装确定。
+                # 弹药有自己的通道（口径歧义 / 弹药包形态），这里不掺和，避免双重标注。
+                if not ammo_kind:
+                    collided = _ocr_name_collision(ids, catalog, snap_items, hist, snap)
+                    if len(collided) > 1:
+                        best["ambiguous"] = True
+                        best["candidates"] = collided
+                        # 候选价差：浮窗据此决定「只画徽章不报价」还是「报价 + 徽章」。
+                        # 差价很小的同名组（同款不同色）不该被剥掉价格。
+                        vals = [c["perSlot"] for c in collided
+                                if isinstance(c["perSlot"], (int, float)) and c["perSlot"] > 0]
+                        if len(vals) >= 2:
+                            best["priceSpread"] = round(max(vals) / min(vals), 2)
+                if ammo_kind == "loose" and not _ocr_apply_ammo_stack(
+                        best, catalog, ammo_qty, ammo_found):
+                    ammo_kind = None       # 没取到商人收购价，保留原结果
+                elif ammo_kind == "pack":
+                    best["ammoKind"] = "pack"
+                    best["qty"] = ammo_qty
+                    best["price"]["ammoPack"] = True
+                    best["price"]["ammoStack"] = False
+                if ammo_kind and ammo_ambig:
+                    # R251：同短名多口径无法从截图区分（显示名都是 AP/FMJ）。
+                    # 显示的价取自 price.name（每格价最高的那个口径），
+                    # 候选价目表一并给前端，tooltip 里让玩家自己核对。
+                    best["price"]["ambiguous"] = True
+                    best["price"]["candidates"] = _ocr_ambig_candidates(
+                        ammo_ids, catalog, snap_items)
+                best.update({"text": m["text"], "tier": m["path"],
+                             "ocrScore": m["score"], "x": m["x"], "y": m["y"],
+                             "w": m["w"], "h": m["h"]})
+                out_matches.append(best)
+            out_matches = dedup_ocr_matches(out_matches)
+            # R261 诊断：散装弹没对上数量行时记一行（含检测到的数量行 qty + 该件兜底价），
+            # 便于用户偶发「两堆 80 只显示单价」时定位是没检出还是没对齐。
+            try:
+                unfound = [m for m in out_matches
+                           if (m.get("price") or {}).get("ammoStack")
+                           and (m.get("price") or {}).get("qtyFound") is False]
+                if unfound:
+                    print("[ocr] 散装弹药未对齐数量 %d 件；数量行 qty=%s；件=%s"
+                          % (len(unfound), [c["qty"] for c in count_lines],
+                             "、".join("%s@%s" % ((m.get("price") or {}).get("unitPrice"),
+                                                  (m.get("name") or "")[:16])
+                                       for m in unfound)),
+                          file=sys.stderr)
+            except Exception:
+                pass
+            if not logged_in:
+                _ocr_scrub_prices(out_matches)
+            annotated = None
+            if annotated_png:
+                annotated = "data:image/png;base64," + base64.b64encode(annotated_png).decode("ascii")
+            return self._send_json(200, {
+                "ok": True,
+                "tookMs": round(took_ms),
+                "mode": mode,
+                "loginRequired": not logged_in,
+                "source": snap.get("sourceType") or snap.get("source") or "",
+                "nonLive": bool(snap.get("nonLive")),
+                "offline": bool(snap.get("offline")),
+                "counts": {"lines": len(lines), "matched": len(out_matches)},
+                "lines": [{"text": ln["text"], "score": ln["score"],
+                           "points": ln["points"]} for ln in lines],
+                "matches": out_matches,
+                "annotated": annotated,
+            })
+
+        def _handle_live_prices_get(self, query: str):
+            """`GET /api/live-prices?mode=regular|pve`：返回缓存里的价格（只读本地）。"""
+            from urllib.parse import parse_qs
+
+            try:
+                member = config.is_member(app_dir)
+            except Exception:
+                member = False
+            if not member:
+                price_cache.purge(app_dir, reason="not-member")
+                live_prices.purge_cache()
+                return self._send_json(200, {
+                    "ok": True, "enabled": False, "available": False,
+                    "source": "bundled", "prices": {}, "count": 0,
+                    "stale": True, "error": "member-required",
+                    "message": "在线行情仅对有效会员开放", "mode": "regular",
+                })
+            settings = config.live_prices(app_dir)
+            raw_mode = (parse_qs(query).get("mode") or [settings["mode"]])[0]
+            try:
+                mode = live_prices.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(live_prices.MODES)})
+            info = live_prices.MODES[mode]
+            source = settings.get("source") or info["source"]
+            if not settings["enabled"]:
+                return self._send_json(200, {
+                    "ok": True,
+                    "enabled": False,
+                    "available": False,
+                    "source": "snapshot",
+                    "snapshot": "data/flea-prices.json",
+                    "prices": {},
+                    "count": 0,
+                    "stale": True,
+                    "mode": mode,
+                    "priceMode": info["priceMode"],
+                })
+            status = live_prices.cache_status(mode, settings["ttlSec"])
+            cache = live_prices.load_cache(mode)
+            if cache is None:
+                return self._send_json(200, {
+                    "ok": False,
+                    "enabled": True,
+                    "available": False,
+                    "error": status.get("error") or "no-cache",
+                    "prices": {},
+                    "count": 0,
+                    "stale": True,
+                    "mode": mode,
+                    "priceMode": info["priceMode"],
+                    "source": source,
+                })
+            prices: dict[str, dict[str, Any]] = {}
+            for item_id, row in cache["items"].items():
+                if not isinstance(row, dict):
+                    continue
+                quote = {key: row[key] for key in ("l", "a", "u") if key in row}
+                if quote:
+                    prices[str(item_id)] = quote
+            return self._send_json(200, {
+                "ok": True,
+                "enabled": True,
+                "available": True,
+                "prices": prices,
+                "count": len(cache["items"]),
+                "stale": bool(status.get("stale")),
+                "mode": mode,
+                "priceMode": info["priceMode"],
+                "source": source,
+                "fetchedAt": cache.get("fetchedAt"),
+                "checkedAt": cache.get("checkedAt"),
+                "updatedOldest": status.get("updatedOldest"),
+                "updatedNewest": status.get("updatedNewest"),
+                "ttlSec": status.get("ttlSec"),
+                "ageSec": status.get("ageSec"),
+            })
+
+        def _handle_live_prices_status(self):
+            """`GET /api/live-prices/status`：开关 + 两个模式各自的缓存状态。"""
+            settings = config.live_prices(app_dir)
+            modes = {mode: live_prices.cache_status(mode, settings["ttlSec"])
+                     for mode in live_prices.MODES}
+            return self._send_json(200, {"ok": True, "enabled": settings["enabled"],
+                                         "mode": settings["mode"], "ttlSec": settings["ttlSec"],
+                                         "modes": modes})
+
+        def _is_loopback_client(self) -> bool:
+            host = (getattr(self, "client_address", None) or ("", 0))[0]
+            return host in ("::1", "localhost") or str(host).startswith("127.")
+
+        def _same_origin_ok(self) -> bool:
+            """Origin / Referer 的 netloc 必须与请求 Host 一致（同源页面）。"""
+            from urllib.parse import urlparse
+
+            origin = self.headers.get("Origin") or self.headers.get("Referer")
+            if not origin:
+                return False
+            host = (self.headers.get("Host") or "").strip().lower()
+            try:
+                netloc = urlparse(origin).netloc.lower()
+            except ValueError:
+                return False
+            return bool(netloc) and netloc == host
+
+        def _read_refresh_body(self):
+            """读刷新接口的 JSON 体；超限 / 非法 Content-Length 会直接回错误并关连接。
+
+            提前返回 409/403 之前也必须先把 body 读尽，否则残留字节会被当下一请求行。
+            """
+            raw = self.headers.get("Content-Length")
+            if raw in (None, ""):
+                return {}
+            try:
+                length = int(raw)
+            except (TypeError, ValueError):
+                self._send_json(400, {"ok": False, "error": "Content-Length 非法"}, close=True)
+                return None
+            if length < 0:
+                self._send_json(400, {"ok": False, "error": "Content-Length 非法"}, close=True)
+                return None
+            if length == 0:
+                return {}
+            if length > MAX_PREFS_BODY:
+                remaining = length
+                while remaining > 0:
+                    chunk = self.rfile.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    remaining -= len(chunk)
+                self._send_json(413, {"ok": False, "error": "请求体过大",
+                                      "limit": MAX_PREFS_BODY}, close=True)
+                return None
+            data = self.rfile.read(length)
+            try:
+                body = json.loads(data.decode("utf-8"))
+            except (ValueError, UnicodeDecodeError):
+                self._send_json(400, {"ok": False, "error": "请求体不是合法 JSON"})
+                return None
+            return body if isinstance(body, dict) else {}
+
+        def _handle_live_prices_refresh(self):
+            """`POST /api/live-prices/refresh`：桌面壳凭 token、网页凭同源会话触发抓取。
+
+            判定顺序固定为：本机限制 → 读尽请求体 → 开关 → 凭据。
+            这样开关关闭时先回 409（而不是 403），且 keep-alive 连接不会残留 body。
+            """
+            if not self._is_loopback_client():
+                return self._send_json(403, {"ok": False, "error": "刷新行情只允许本机操作"})
+            body = self._read_refresh_body()
+            if body is None:
+                return
+            try:
+                member = config.is_member(app_dir)
+            except Exception:
+                member = False
+            if not member:
+                price_cache.purge(app_dir, reason="not-member")
+                live_prices.purge_cache()
+                return self._send_json(403, {"ok": False, "error": "member-required",
+                                             "message": "在线行情仅对有效会员开放"})
+            settings = config.live_prices(app_dir)
+            if not settings["enabled"]:
+                return self._send_json(409, {"ok": False, "enabled": False,
+                                             "error": "disabled",
+                                             "message": "在线行情未开启（设置里打开 livePrices 后再试）"})
+            raw_mode = body.get("mode") or settings["mode"]
+            try:
+                mode = live_prices.normalize_mode(raw_mode)
+            except ValueError:
+                return self._send_json(400, {"ok": False, "error": "bad-mode",
+                                             "allowed": list(live_prices.MODES)})
+
+            token = (self.headers.get("X-EFTMap-Token") or "").strip()
+            client = (self.headers.get("X-EFTMap-Client") or "").strip().lower()
+            via = None
+            if shutdown_token and token and token == shutdown_token:
+                via = "token"
+            elif client == "web":
+                if not (self.headers.get("Origin") or self.headers.get("Referer")):
+                    return self._send_json(403, {"ok": False,
+                                                 "error": "网页刷新需要同源 Origin/Referer"})
+                if not self._same_origin_ok():
+                    return self._send_json(403, {"ok": False, "error": "跨站请求被拒绝"})
+                via = "web"
+            if via is None:
+                return self._send_json(403, {"ok": False,
+                                             "error": "缺少有效的 token（X-EFTMap-Token 不匹配）"})
+
+            started, reason = spawn_live_fetch(root, app_dir, mode, settings=settings)
+            if not started:
+                return self._send_json(409, {"ok": False, "started": False, "mode": mode,
+                                             "via": via, "error": "busy", "message": reason})
+            return self._send_json(202, {"ok": True, "started": True, "mode": mode,
+                                         "via": via, "message": reason})
+
+        def _handle_flea_refresh(self):
+            """`POST /api/prices/refresh`：页面手动刷新构建期跳蚤快照（本机 + 并发保护）。"""
+            if not self._is_loopback_client():
+                return self._send_json(403, {"ok": False, "error": "刷新行情只允许本机操作"})
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                return self._send_json(400, {"ok": False, "error": "Content-Length 非法"}, close=True)
+            if length < 0 or length > MAX_PREFS_BODY:
+                return self._send_json(400, {"ok": False, "error": "请求体长度非法或过大"}, close=True)
+            if length > 0:
+                self.rfile.read(length)
+            started, reason = spawn_flea_refresh(root, force=True)
+            return self._send_json(202, {"ok": True, "started": started,
+                                         "state": flea_price_status(root)["state"],
+                                         "message": reason})
+
+        def _handle_shutdown(self):
+            """`POST /api/shutdown`：桌面壳带 token 关闭后端；缺 token 一律 403。"""
+            token = (self.headers.get("X-EFTMap-Token") or "").strip()
+            if not shutdown_token or token != shutdown_token:
+                return self._send_json(403, {"ok": False, "error": "token 校验失败"})
+            self._send_json(200, {"ok": True})
+            if shutdown_callback is not None:
+                try:
+                    shutdown_callback()
+                except Exception:
+                    pass
+            server = getattr(self, "server", None)
+            if server is not None:
+                threading.Thread(target=server.shutdown, daemon=True).start()
+
+        # ---- 云账号（页面 <-> BFF）：错误一律回 {"ok": false, "code": ...} ----
+        _CLOUD_POST_ROUTES = {
+            "/api/cloud/login-preferences": ("set_login_preferences", ("remember_password", "auto_login", "email", "password")),
+            "/api/cloud/login": ("login", ("email", "password")),
+            "/api/cloud/login/verify": ("verify_login", ("email", "code", "challenge")),
+            "/api/cloud/register": ("register", ("email", "password")),
+            "/api/cloud/register/verify": ("verify_register", ("email", "code")),
+            "/api/cloud/resend-verification": ("resend_verification", ("email",)),
+            "/api/cloud/password/reset-request": ("request_password_reset", ("email",)),
+            "/api/cloud/password/reset": ("reset_password", ("email", "code", "password")),
+            "/api/cloud/password/change-request": ("request_password_change", ()),
+            "/api/cloud/password/change": ("change_password", ("code", "password")),
+            "/api/cloud/devices/remove": ("revoke_device", ("device_id",)),
+            "/api/cloud/logout": ("logout", ()),
+            "/api/cloud/redeem": ("redeem", ("code",)),
+        }
+
+        def _cloud_call(self, fn, *args, **kwargs):
+            try:
+                result = fn(*args, **kwargs)
+            except cloud.CloudError as exc:
+                code = exc.status if exc.status and 400 <= exc.status <= 599 else 502
+                return self._send_json(code, exc.to_dict())
+            except OSError as exc:
+                return self._send_json(500, {"ok": False, "code": "io", "error": str(exc)})
+            payload = dict(result) if isinstance(result, dict) else {"value": result}
+            payload.setdefault("ok", True)
+            return self._send_json(200, payload)
+
+        def _read_cloud_body(self):
+            """读 JSON 请求体；超过 MAX_CLOUD_BODY 直接 413（并把剩余字节读掉，避免连接错位）。"""
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                length = 0
+            if length <= 0:
+                return {}
+            if length > MAX_CLOUD_BODY:
+                remaining = length
+                while remaining > 0:
+                    chunk = self.rfile.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    remaining -= len(chunk)
+                self._send_json(413, {"ok": False, "code": "payload_too_large",
+                                      "error": "请求体超过上限（%d 字节）" % MAX_CLOUD_BODY})
+                return None
+            try:
+                data = json.loads(self.rfile.read(length).decode("utf-8"))
+            except (ValueError, UnicodeDecodeError):
+                self._send_json(400, {"ok": False, "code": "invalid_json", "error": "请求体不是合法 JSON"})
+                return None
+            return data if isinstance(data, dict) else {}
+
+        def _handle_cloud_post(self, path):
+            if path == "/api/cloud/sync":
+                body = self._read_cloud_body()
+                if body is None:
+                    return
+                values = body.get("values")
+                if not isinstance(values, dict):
+                    return self._send_json(400, {"ok": False, "code": "invalid_request",
+                                                 "error": "values 必须是对象"})
+                return self._cloud_call(cloud_client.sync, values, force=bool(body.get("force")))
+            route = self._CLOUD_POST_ROUTES.get(path)
+            if route is None:
+                # 未知云接口不会解析请求体，不能在 keep-alive 上留下未读字节。
+                return self._send_json(404, {"ok": False, "error": "未知接口：%s" % path}, close=True)
+            name, keys = route
+            body = self._read_cloud_body()
+            if body is None:
+                return
+            return self._cloud_call(getattr(cloud_client, name), *[body.get(k) for k in keys])
+
+        # ---- 预设（配装 / 配枪）：读写 tools/presets.py 的本地 JSON ----
+        @staticmethod
+        def _preset_error(exc) -> dict[str, Any]:
+            payload: dict[str, Any] = {"ok": False, "code": exc.code, "error": str(exc)}
+            if getattr(exc, "corrupt", False):
+                payload["corrupt"] = True
+            return payload
+
+        def _handle_presets_get(self, query: str):
+            from urllib.parse import parse_qs
+
+            kind = (parse_qs(query).get("kind") or ["loadout"])[0]
+            try:
+                store = presets.load(kind, app_dir)
+                path = presets.store_path(kind, app_dir)
+            except presets.PresetError as exc:
+                return self._send_json(409 if exc.corrupt else 400, self._preset_error(exc))
+            return self._send_json(200, {"ok": True, "kind": kind, "path": path,
+                                         "count": len(store["presets"]),
+                                         "presets": store["presets"]})
+
+        def _handle_presets_post(self):
+            body = self._read_body(MAX_PRESET_BODY, "preset_payload_too_large")
+            if body is None:
+                return
+            kind = body.get("kind")
+            action = body.get("action") or "save"
+            repair = bool(body.get("repair"))
+            try:
+                store = presets.empty_store(kind) if repair else presets.load(kind, app_dir)
+            except presets.PresetError as exc:
+                return self._send_json(409 if exc.corrupt else 400, self._preset_error(exc))
+            items = list(store["presets"])
+            rec = None
+            try:
+                if action == "save":
+                    rec = presets.normalize_preset(kind, body.get("preset"))
+                    for i, cur in enumerate(items):
+                        if cur.get("id") == rec.get("id"):
+                            items[i] = rec
+                            break
+                    else:
+                        items.insert(0, rec)
+                elif action == "delete":
+                    pid = body.get("id")
+                    remain = [p for p in items if p.get("id") != pid]
+                    if len(remain) == len(items):
+                        return self._send_json(400, {"ok": False, "code": "missing",
+                                                     "error": "没有这个预设"})
+                    items = remain
+                elif action == "import":
+                    rec = presets.normalize_preset(kind, body.get("data"))
+                    if any(p.get("id") == rec.get("id") for p in items):
+                        rec["id"] = presets.new_id(kind)
+                    items.insert(0, rec)
+                elif action == "replace":
+                    # R233：会员云同步下发的预设整包。只接受数组，交给下面统一的
+                    # presets.save 走逐条归一化校验 + 原子写回；本地文件仍是第一事实源，
+                    # 磁盘文件损坏时 save 会拒绝覆盖（不静默冲掉数据）。
+                    incoming = body.get("presets")
+                    if not isinstance(incoming, list):
+                        raise presets.PresetError("replace 需要 presets 数组", code="invalid")
+                    items = list(incoming)
+                else:
+                    return self._send_json(400, {"ok": False, "code": "action",
+                                                 "error": "未知操作：%s" % action})
+                saved = presets.save(kind, dict(store, presets=items), app_dir, repair=repair)
+            except presets.PresetError as exc:
+                return self._send_json(400, self._preset_error(exc))
+            except OSError as exc:
+                return self._send_json(500, {"ok": False, "code": "io", "error": str(exc)})
+            payload: dict[str, Any] = {"ok": True, "kind": kind, "action": action,
+                                       "count": len(saved["presets"]),
+                                       "path": presets.store_path(kind, app_dir),
+                                       "presets": saved["presets"]}
+            if rec is not None:
+                payload["preset"] = rec
+            return self._send_json(200, payload)
+
+        def _read_body(self, limit: int, code: str):
+            """读 JSON 请求体；超过 limit 回 413（读掉剩余字节，避免连接错位）。"""
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                length = 0
+            if length <= 0:
+                return {}
+            if length > limit:
+                remaining = length
+                while remaining > 0:
+                    chunk = self.rfile.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    remaining -= len(chunk)
+                self._send_json(413, {"ok": False, "code": code,
+                                      "error": "请求体超过上限（%d 字节）" % limit})
+                return None
+            try:
+                data = json.loads(self.rfile.read(length).decode("utf-8"))
+            except (ValueError, UnicodeDecodeError):
+                self._send_json(400, {"ok": False, "code": "invalid_json", "error": "请求体不是合法 JSON"})
+                return None
+            return data if isinstance(data, dict) else {}
+
+        def _send_json(self, code: int, payload: dict, close: bool = False):
             body = json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
             self._send_cache_header()
             self.send_response(code)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
+            if close:
+                # 无法安全判断请求体长度（超限 / Content-Length 非法）时才关连接
+                self.close_connection = True
+                self.send_header("Connection", "close")
             self.end_headers()
             self.wfile.write(body)
 
@@ -758,6 +3583,11 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                     self._write_event("shot", shotter.snapshot())
                 if pruner is not None:
                     self._write_event("clean", pruner.snapshot())
+                # R-fix：把当前主窗口选中的地图也推给刚连上的小地图窗口，
+                # 这样即使它错过之前的 `map` 广播，也能立刻对齐到主界面当前地图。
+                active = getattr(self.server, "active_map", None)
+                if active:
+                    self._write_event("map", {"map": active})
                 last_beat = time.monotonic()
                 while True:
                     try:
@@ -805,14 +3635,17 @@ def health_payload(root: str, tracker: PositionTracker | None = None,
                    shotter: AutoShotter | None = None,
                    pruner: ScreenshotPruner | None = None) -> dict[str, Any]:
     status = data_status(root)
+    ocr_ok, ocr_hint = ocr.check_available()
     payload = {
         "ok": bool(status["ready"]),
         "app": APP_ID,
         "version": VERSION,
+        "rev": "R19.97-" + build_digest(root),
         "root": root,
         "data": status,
         "position": bool(tracker and tracker.enabled()),
         "logs": bool(follower and follower.enabled()),
+        "ocr": {"available": bool(ocr_ok), "hint": ocr_hint},
     }
     if tracker is not None:
         snap = tracker.snapshot()
@@ -846,28 +3679,77 @@ class _Server(ThreadingHTTPServer):
 
 def create_server(port: int = DEFAULT_PORT, host: str = DEFAULT_HOST, root: str | None = None,
                   screenshots: str | None = None, poll_interval: float = DEFAULT_POLL,
-                  config_dir: str | None = None, game_dir: str | None = None) -> ThreadingHTTPServer:
+                  config_dir: str | None = None, game_dir: str | None = None,
+                  detect_paths: bool = False, shutdown_token: str | None = None,
+                  shutdown_callback=None, shell_mode: bool = False) -> ThreadingHTTPServer:
     """创建（已 listen 的）HTTP 服务对象。
 
     port=0 表示由系统分配空闲端口，便于测试。
     `screenshots=None` 表示**不开启**实时定位，`game_dir=None` 表示**不开启**日志监控
     （测试与无对应目录的场景走这两条路），传入目录才启动监听线程。
     `config_dir` 是配置与 `sounds/` 的落盘位置，默认软件目录。
+    `detect_paths=True` 时（启动器路径）截图目录没给就自动探测候选目录；
+    游戏目录不做二次探测，避免把用户清空的目录又顶回来。
+    `shutdown_token` / `shutdown_callback` 供桌面壳 Secure 关闭后端。
     """
     root = os.path.abspath(root or ROOT)
     if not os.path.isfile(os.path.join(root, "index.html")):
         raise FileNotFoundError("根目录里找不到 index.html：%s\n请用 --root 指向仓库根目录。" % root)
 
+    if detect_paths and screenshots is None:
+        screenshots, _note = detect_screenshots_dir(game_dir)
+
     app_dir = os.path.abspath(config_dir) if config_dir else os.path.abspath(config.default_storage_dir())
     if not config_dir:
         config.migrate_legacy(app_dir, config.app_dir())   # 旧软件目录里的配置首次搬到用户目录
     broadcaster = Broadcaster()
-    tracker = PositionTracker(screenshots, poll_interval, broadcaster)
-    follower = eftlog.LogFollower(game_dir, poll_interval, broadcaster)
+    manifest = ShotManifest(app_dir)
+    cleaner = RaidEndCleaner(app_dir, manifest, directory=screenshots)
+    # 会员门控读实时配置：页面里切换会员/账号后，无需重启服务
+    tracker = PositionTracker(screenshots, poll_interval, broadcaster,
+                              member=lambda: config.is_member(app_dir))
+    # R-fix：动态解析日志目录。配置（启动器写入的 game_dir）或默认自动探测任一就绪即启用
+    # 跟随，避免「启动时目录还没就位 / 启动器后写配置 / 游戏后安装」导致监控彻底不开。
+    _logs_probe = {"at": 0.0, "dir": None}
+
+    def _log_dir_getter():
+        """每轮返回当前应跟随的 Logs 目录：在全部候选里挑「会话名最新」的一个。
+
+        旧实现只认 ``game_dir/Logs``，但 EFT 常把真正的应用日志写到
+        ``%LOCALAPPDATA%\\Temp\\Battlestate Games\\EFT\\Logs``。硬取前者会一直跟随
+        数周前的旧会话，LogFollower 的战局阶段永远停在 ``end``，自动截图因此永不
+        触发（实测：game_dir/Logs 停在 11/02，实际会话在 11/15）。
+        轮询很密，扫描结果缓存 3 秒；新会话出现后最多 3 秒即切换。
+        """
+        now = time.monotonic()
+        if now - _logs_probe["at"] < 3.0:
+            return _logs_probe["dir"]
+        g = game_dir
+        if not g:
+            try:
+                g = (config.load(app_dir) or {}).get("game_dir")
+            except Exception:
+                g = None
+        if not g:
+            g = default_game_dir()
+        primary = os.path.join(g, "Logs") if g else None
+        alternatives: list[str] = []
+        for docs in _documents_dirs():
+            alternatives.append(os.path.join(docs, "Escape from Tarkov", "Logs"))
+        local = os.environ.get("LOCALAPPDATA")
+        if local:
+            alternatives.append(os.path.join(local, "Temp", "Battlestate Games", "EFT", "Logs"))
+        _logs_probe.update(at=now, dir=best_logs_dir(primary, alternatives))
+        return _logs_probe["dir"]
+    follower = eftlog.LogFollower(game_dir, poll_interval, broadcaster,
+                                  on_event=cleaner.on_event, log_dir_getter=_log_dir_getter)
     watcher = ConfigWatcher(app_dir, poll_interval, broadcaster)
-    shotter = AutoShotter(app_dir, follower, broadcaster)
+    shotter = AutoShotter(app_dir, follower, broadcaster, directory=screenshots,
+                          game_dir=game_dir, manifest=manifest)
     pruner = ScreenshotPruner(screenshots, app_dir, broadcaster, poll_interval)
-    handler = build_handler(root, tracker, follower, app_dir, shotter, pruner)
+    handler = build_handler(root, tracker, follower, app_dir, shotter, pruner,
+                            shutdown_token=shutdown_token,
+                            shutdown_callback=shutdown_callback)
     try:
         httpd = _Server((host, port), handler)
     except OSError as exc:
@@ -882,6 +3764,8 @@ def create_server(port: int = DEFAULT_PORT, host: str = DEFAULT_HOST, root: str 
     httpd.shotter = shotter       # type: ignore[attr-defined]
     httpd.pruner = pruner         # type: ignore[attr-defined]
     httpd.app_dir = app_dir       # type: ignore[attr-defined]
+    httpd.shell_mode = bool(shell_mode)  # type: ignore[attr-defined]
+    httpd.active_map = None       # type: ignore[attr-defined]
     tracker.start()
     follower.start()
     watcher.start()
@@ -893,6 +3777,42 @@ def create_server(port: int = DEFAULT_PORT, host: str = DEFAULT_HOST, root: str 
 def url_for(host: str, port: int) -> str:
     shown = "127.0.0.1" if host in ("", "0.0.0.0") else host
     return "http://%s:%d/" % (shown, port)
+
+
+def lan_address() -> str | None:
+    """取本机局域网 IPv4（取不到返回 None）。
+
+    只做本机名字解析，不发任何网络包；解析结果里的回环 / 链路本地地址一律跳过。
+    """
+    try:
+        infos = socket.gethostbyname_ex(socket.gethostname())[2]
+    except (OSError, UnicodeError, ValueError):
+        return None
+    for ip in infos:
+        if not ip or ip.count(".") != 3:
+            continue
+        if ip.startswith("127.") or ip.startswith("169.254."):
+            continue
+        return ip
+    return None
+
+
+def url_for_lan(port: int) -> str | None:
+    """监听 `0.0.0.0` 时给用户的局域网访问地址；探测不到就返回 None。"""
+    ip = lan_address()
+    if not ip:
+        return None
+    return "http://%s:%d/" % (ip, port)
+
+
+def lan_hint(host: str, port: int) -> str | None:
+    """根据监听地址生成「怎么让手机/平板访问」的提示；仅本机监听时返回 None。"""
+    if host not in ("0.0.0.0", "::", ""):
+        return None
+    lan = url_for_lan(port)
+    if not lan:
+        return "已监听所有网卡，但未探测到局域网地址；手机/平板暂时无法访问。"
+    return "局域网访问：%s（若打不开，请在 Windows 防火墙里允许本程序）" % lan
 
 
 def parse_args(argv=None):

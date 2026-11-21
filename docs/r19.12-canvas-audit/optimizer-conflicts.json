@@ -1,0 +1,105 @@
+{
+ "schema": "eftmap.r19.12.optimizer-conflicts/1",
+ "knownCase": {
+  "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+  "intent": "保留 Hera 一体化枪托（握把槽）并换成 Magpul UBR GEN2 枪托",
+  "items": [
+   {
+    "role": "握把（一体化枪托）",
+    "id": "5a33e75ac4a2826c6e06d759",
+    "name": "Hera Arms CQR AR-15 一体化枪托"
+   },
+   {
+    "role": "枪托",
+    "id": "5947e98b86f774778f1448bc",
+    "name": "Magpul UBR GEN2 AR-15 枪托（黑色）"
+   }
+  ],
+  "beforeFix": {
+   "note": "修复前 validate() 不检查 conflictingItems（只查槽位存在 / allow），sanitize 不会清掉任何一方，优化器把这对组合当有效方案输出且 constraintOk=true",
+   "pairs": [],
+   "problemsIgnoringConflicts": [
+    {
+     "kind": "missing",
+     "why": "方案声称已装「Hera Arms CQR AR-15 一体化枪托」，最终装配里没有它（可能被互斥/兼容清理掉了）"
+    }
+   ],
+   "problemsAfterSanitize": [
+    {
+     "kind": "missing",
+     "why": "方案声称已装「Hera Arms CQR AR-15 一体化枪托」，最终装配里没有它（可能被互斥/兼容清理掉了）"
+    }
+   ],
+   "sanitizedStillHasBoth": false
+  },
+  "afterFix": [
+   {
+    "name": "低后坐力",
+    "ok": true,
+    "verifyOk": true,
+    "parts": 13,
+    "pairs": [],
+    "problems": [],
+    "grip": "Tactical Dynamics AR-15 镂空手枪式握把",
+    "stock": "Magpul UBR GEN2 AR-15 枪托（黑色）",
+    "dropped": [
+     "柯尔特AR-15拉机柄(被替换)",
+     "柯尔特 5.56x45 STANAG 30发弹匣(被替换)",
+     "柯尔特A2 AR-15手枪式握把(被替换)",
+     "柯尔特M4A1 5.56x45突击步枪上机匣(被替换)",
+     "14.5 英寸 AR-15 枪管 5.56x45(被替换)",
+     "柯尔特 M4准星(被替换)",
+     "柯尔特USGI A2 5.56x45 AR-15消焰器(被替换)",
+     "柯尔特 M4 卡宾枪长度 AR-15 护木(被替换)",
+     "柯尔特 M4 卡宾枪长度 AR-15 下护木(被移除（与最终装配不共存）)",
+     "AR-15提把式照门(被替换)",
+     "柯尔特 AR-15 卡宾枪缓冲管(被替换)",
+     "High Standard M4SS AR-15 枪托(被移除（与最终装配不共存）)"
+    ]
+   },
+   {
+    "name": "高人机工效",
+    "ok": true,
+    "verifyOk": true,
+    "parts": 12,
+    "pairs": [],
+    "problems": [],
+    "grip": "Magpul MIAD AR-15 手枪式握把 (FDE)",
+    "stock": "柯尔特 AR-15 卡宾枪缓冲管",
+    "dropped": [
+     "柯尔特 5.56x45 STANAG 30发弹匣(被替换)",
+     "柯尔特A2 AR-15手枪式握把(被替换)",
+     "柯尔特M4A1 5.56x45突击步枪上机匣(被替换)"
+    ]
+   },
+   {
+    "name": "轻量化",
+    "ok": true,
+    "verifyOk": true,
+    "parts": 12,
+    "pairs": [],
+    "problems": [],
+    "grip": "柯尔特A2 AR-15手枪式握把",
+    "stock": "柯尔特 AR-15 卡宾枪缓冲管",
+    "dropped": []
+   },
+   {
+    "name": "性价比",
+    "ok": true,
+    "verifyOk": true,
+    "parts": 12,
+    "pairs": [],
+    "problems": [],
+    "grip": "柯尔特A2 AR-15手枪式握把",
+    "stock": "柯尔特 AR-15 卡宾枪缓冲管",
+    "dropped": []
+   }
+  ]
+ },
+ "scan": {
+  "buildsChecked": 815,
+  "buildsWithPairs": 0,
+  "samples": []
+ },
+ "rule": "conflictPairs(ctx, installed) 双向比较所有已装件；validate()/checkConstraints()/verifyBuild() 同源"
+}

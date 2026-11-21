@@ -1,0 +1,1786 @@
+{
+ "schema": "eftmap.r19.13.muzzle-chains/1",
+ "rule": "枪口 → 转接件 → 消音器… 沿枪口正下方同列逐行展开；层级超过 6 行时记录容量不足，不静默省略。",
+ "summary": {
+  "guns": 129,
+  "sameColumn": 129,
+  "breaks": 0
+ },
+ "chains": {
+  "5447a9cd4bdc2dbd208b4567": {
+   "gun": "柯尔特 M4A1 5.56x45 卡宾枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "54491c4f4bdc2db1078b4568": {
+   "gun": "MP-133 12 铅径泵动式霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "55801eed4bdc2d89578b4588": {
+   "gun": "SV-98 7.62x54R 栓动式狙击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5644bd2b4bdc2d3b4c8b4572": {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "56dee2bdd2720bc8328b4567": {
+   "gun": "MP-153 12铅径半自动霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "56e0598dd2720bb5668b45a6": {
+   "gun": "PB 9x18PM消音手枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "571a12c42459771f627b58a0": {
+   "gun": "托卡列夫 TT-33 7.62x25 手枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "574d967124597745970e7c94": {
+   "gun": "西蒙诺夫 SKS 7.62x39 卡宾枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "576165642459773c7a400233": {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "57838ad32459774a17445cd2": {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_mount_000",
+     "base": "mount",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "579204f224597773d619e051": {
+   "gun": "马卡洛夫 PM(t) 9x18PM 手枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "57c44b372459772d2b39b8ce": {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_mount_000",
+     "base": "mount",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "57dc2fa62459775949412633": {
+   "gun": "AKS-74U 5.45x39 短突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "57f3c6bd24597738e730fa2f": {
+   "gun": "PP-91-01 雪松-B 9x18PM 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "583990e32459771419544dd2": {
+   "gun": "AKS-74UN 5.45x39 短突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5839a40f24597726f856b511": {
+   "gun": "AKS-74UB 5.45x39 短突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "587e02ff24597743df3deaeb": {
+   "gun": "西蒙诺夫 OP-SKS 7.62x39 卡宾枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "588892092459774ac91d4b11": {
+   "gun": "DVL-10 7.62x51 栓动式狙击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "58948c8e86f77409493f7266": {
+   "gun": "SIG MPX 9x19 冲锋枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5926bb2186f7744b1c6c6e60": {
+   "gun": "HK MP5 9x19 冲锋枪（海军三发点射）",
+   "muzzle": {
+    "slot": "mod_reciever/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "59984ab886f7743e98271174": {
+   "gun": "PP-19-01 勇士 9x19 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "59d6088586f774275f37482f": {
+   "gun": "AKM 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "59e6152586f77473dc057aa1": {
+   "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "59e6687d86f77411d949b251": {
+   "gun": "VPO-209 .366TKM 卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "59f9cabd86f7743a10721f46": {
+   "gun": "Saiga-9 9x19卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "59ff346386f77477562ff5e2": {
+   "gun": "AKMS 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5a0ec13bfcdbcb00165aa685": {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5a367e5dc4a282000e49738f": {
+   "gun": "雷明顿 R11 RSASS 7.62x51 精确射手步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5a7828548dc32e5a9c28b516": {
+   "gun": "雷明顿 Model 870 12铅径泵动式霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5a7ae0c351dfba0017554310": {
+   "gun": "Glock 17 9x19 手枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5aafa857e5b5b00018480968": {
+   "gun": "春田 M1A 7.62x51 步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ab8e9fcd8ce870019439434": {
+   "gun": "AKS-74N 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5abcbc27d8ce8700182eceeb": {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5abccb7dd8ce87001773e277": {
+   "gun": "斯捷奇金 APB 9x18PM 消音型自动手枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac4cd105acfc40016339859": {
+   "gun": "AK-74M 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac66cb05acfc40198510a10": {
+   "gun": "AK-101 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac66d015acfc400180ae6e4": {
+   "gun": "AK-102 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac66d2e5acfc43b321d4b53": {
+   "gun": "AK-103 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac66d725acfc43b321d4b60": {
+   "gun": "AK-104 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ac66d9b5acfc4001633997a": {
+   "gun": "AK-105 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ae08f0a5acfc408fb1398a1": {
+   "gun": "莫辛-纳甘 7.62x54R 栓动式步枪（狙击型）",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5b0bbe4e5acfc40dc528a72d": {
+   "gun": "DS Arms SA-58 7.62x51 突击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5b3b713c5acfc4330140bd8d": {
+   "gun": "托卡列夫 TT-33 7.62x25 黄金手枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5ba26383d4351e00334c93d9": {
+   "gun": "HK MP7A1 4.6x30 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5bb2475ed4351e00853264e3": {
+   "gun": "HK 416A5 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5bd70322209c4d00d7167b8f": {
+   "gun": "HK MP7A2 4.6x30 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5beed0f50db834001c062b12": {
+   "gun": "RPK-16 5.45x39 轻机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5bf3e03b0db834001d2c4a9c": {
+   "gun": "AK-74 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5bf3e0490db83400196199af": {
+   "gun": "AKS-74 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5bfd297f0db834001a669119": {
+   "gun": "莫辛-纳甘 7.62x54R 栓动式步枪（步兵型）",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5bfea6e90db834001b7347f3": {
+   "gun": "雷明顿Model 700 7.62x51 狙击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5c07c60e0db834002330051f": {
+   "gun": "ADAR 2-15 .223 卡宾枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5c46fbd72e2216398b5a8c9c": {
+   "gun": "德拉贡诺夫 SVDS 7.62x54R 半自动狙击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5c488a752e221602b412af63": {
+   "gun": "沙漠科技 MDR 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5c501a4d2e221602b412b540": {
+   "gun": "VPO-101 Vepr-Hunter 7.62x51 卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5cadc190ae921500103bb3b6": {
+   "gun": "伯莱塔 M9A3 9x19 手枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5cadfbf7ae92152ac412eeef": {
+   "gun": "ASh-12 12.7x55 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5cc82d76e24e8d00134b4b83": {
+   "gun": "FN P90 5.7x28 冲锋枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5d43021ca4b9362eab4b5e25": {
+   "gun": "Lone Star TX-15 DML 5.56x45 半自动卡宾枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5d67abc1a4b93614ec50137f": {
+   "gun": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5dcbd56fdbd3d91b3e5468d5": {
+   "gun": "沙漠科技 MDR 7.62x51 突击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5de652c31b7e3716273428be": {
+   "gun": "VPO-215 雪貂 .366 TKM 栓动式步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5de7bd7bfd6b4e6e2276dc25": {
+   "gun": "B&T MP9-N 9x19 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5df24cf80dee1b22f862e9bc": {
+   "gun": "ORSIS T-5000M 7.62x51 栓动式狙击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5df8ce05b11454561e39243b": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "5e00903ae9dc277128008b87": {
+   "gun": "B&T MP9 9x19 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5e81c3cbac2bb513793cdc75": {
+   "gun": "柯尔特 M1911A1 .45 ACP 手枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5f2a9575926fd9352339381f": {
+   "gun": "Kel-Tec RFB 7.62x51",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5f36a0e5fbf956000b716b65": {
+   "gun": "柯尔特 M45A1 .45 ACP 手枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5fb64bc92b1b027b1f50bcf2": {
+   "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5fbcc1d9016cce60e8341ab3": {
+   "gun": "SIG MCX .300 Blackout 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle_000",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    },
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle_001",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 5,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4,
+    5
+   ]
+  },
+  "5fc22d7c187fea44d52eda44": {
+   "gun": "SWORD International Mk-18 .338 LM 精确射手步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5fc3e272f8b6a877a729eac5": {
+   "gun": "HK UMP .45 ACP冲锋枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "5fc3f2d5900b1d5091531e57": {
+   "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "60339954d62c9b14ed777c06": {
+   "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "606587252535c57a13424cfd": {
+   "gun": "CMMG Mk47 Mutant 7.62x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "606dae0ab0e443224b421bb7": {
+   "gun": "MP-155 12铅径半自动霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "60db29ce99594040e04c4a27": {
+   "gun": "MTs-255-12 12铅径转轮霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6165ac306ef05c2ce828ef74": {
+   "gun": "FN SCAR-H 7.62x51 突击步枪 (FDE)",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6176aca650224f204c1da3fb": {
+   "gun": "HK G28 7.62x51 精确射手步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 4,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 5,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    5
+   ]
+  },
+  "6183afd850224f204c1da514": {
+   "gun": "FN SCAR-H 7.62x51突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6184055050224f204c1da540": {
+   "gun": "FN SCAR-L 5.56x45突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "618428466ef05c2ce828f218": {
+   "gun": "FN SCAR-L 5.56x45突击步枪 （FDE）",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "623063e994fc3f7b302a9696": {
+   "gun": "HK G36 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6259b864ebedf17603599e88": {
+   "gun": "Benelli M3 Super 90 12铅径双模式霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "627e14b21713922ded6f2c15": {
+   "gun": "Accuracy International AXMC .338 LM 栓动式狙击步枪",
+   "muzzle": {
+    "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_pistol_grip/mod_reciever/mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "628a60ae6b1d481ff772e9c8": {
+   "gun": "Rifle Dynamics RD-704 7.62x39突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "628b5638ad252a16da6dd245": {
+   "gun": "SAG AK-545 5.45x39卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "628b9c37a733087d0d7fe84b": {
+   "gun": "SAG AK-545 5.45x39截短卡宾枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "62e14904c2699c0ec93adc47": {
+   "gun": "SR-2M 石楠 9x21 冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "62e7c4fba689e8c9c50dfc38": {
+   "gun": "Steyr AUG A1 5.56x45突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle_000",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "63171672192e68c5460cebc5": {
+   "gun": "Steyr AUG A3 5.56x45突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle_000",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6410733d5dd49d77bd07847e": {
+   "gun": "托卡列夫 AVT-40 7.62x54R 自动步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "643ea5b23db6f9f57107d9fd": {
+   "gun": "托卡列夫 SVT-40 7.62x54R 步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "644674a13d52156624001fbc": {
+   "gun": "KBP 9A-91 9x39紧凑型突击步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "645e0c6b3b381ede770e1cc9": {
+   "gun": "KBP VSK-94 9x39步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "64637076203536ad5600c990": {
+   "gun": "PKM 7.62x54R 机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6499849fc93611967b034949": {
+   "gun": "AK-12 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "64ca3d3954fc657e230529cc": {
+   "gun": "PKP 7.62x54R 步兵机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6513ef33e06849f06c0957ca": {
+   "gun": "RPD 7.62x39 轻机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "651450ce0e00edc794068371": {
+   "gun": "SR-3M 9x39紧凑型突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "65268d8ecb944ff1e90ea385": {
+   "gun": "RPDN 7.62x39 轻机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "65290f395ae2ae97b80fdf2d": {
+   "gun": "SIG MCX SPEAR 6.8x51突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "65fb023261d5829b2d090755": {
+   "gun": "U.S Ordnance M60E4 7.62x51 轻机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "661ceb1b9311543c7104149b": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "661cec09b2c6356b4d0c7a36": {
+   "gun": "U.S Ordnance M60E6 7.62x51 轻机枪（FDE）",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6680304edadb7aa61d00cef0": {
+   "gun": "IWI UZI PRO Pistol 9x19冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle_000",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "668e71a8dadf42204c032ce1": {
+   "gun": "IWI UZI PRO SMG 9x19冲锋枪",
+   "muzzle": {
+    "slot": "mod_muzzle_000",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "66992b349950f5f4cd06029f": {
+   "gun": "IWI UZI 9x19冲锋枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "67124dcfa3541f2a1f0e788b": {
+   "gun": "MPS Auto Assault-12 Gen 2 12铅径自动霰弹枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 4
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6718817435e3cfd9550d2c27": {
+   "gun": "Steyr AUG A3 5.56x45 突击步枪（黑色）",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "673cab3e03c6a20581028bc1": {
+   "gun": "Sako TRG M10 .338 LM 栓动狙击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "674fe9a75e51f1c47c04ec23": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "676176d362e0497044079f4c": {
+   "gun": "FN SCAR-H X-17 7.62x51突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "67d0576f29f580ebc10efd08": {
+   "gun": "TheAKGuy AK-50 .50 BMG 反器材步枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6871284e9a353bb50606f3ed": {
+   "gun": "AS“巨浪”MOD.4 9x39 特种突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "689166b6c2d6fa42e7044756": {
+   "gun": "AK-308 7.62x51 突击步枪",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 3,
+    "col": 2
+   },
+   "chain": [
+    {
+     "slot": "mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 2
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6895bb82c4519957df062f82": {
+   "gun": "雷电 Model 1 FA 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "68a639748e1fe612970728e9": {
+   "gun": "柯尔特 M16A1 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "68a6399922b1e0bd360afe56": {
+   "gun": "柯尔特 M16A2 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "68aee763130c00663d08aea8": {
+   "gun": "TKPD 9.3x64 突击卡宾枪",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "68c16b9ab6b75a8a480520a6": {
+   "gun": "NL545 (DI) 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "68c2940aecc41cc5490bd40e": {
+   "gun": "NL545 (GP) 5.45x39 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6932abeb5403890d0c09c926": {
+   "gun": "奈特军械公司 (KAC) SR-25 7.62x51 精确射手步枪（褐灰色）",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "6981d72ed009ad83920da43a": {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "muzzle": {
+    "slot": "mod_muzzle",
+    "row": 4,
+    "col": 3
+   },
+   "chain": [],
+   "sameColumn": null,
+   "levels": []
+  },
+  "69f9ebbcaae020b0db02f65d": {
+   "gun": "北方工业 QBZ-191 5.8x42 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6a15ae2ae5267ba21c07f98f": {
+   "gun": "HK 416A5 5.56x45 突击步枪 (RAL 8000)",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6a3bffbebc377285900b85cf": {
+   "gun": "丰和 20 式 5.56x45 突击步枪",
+   "muzzle": {
+    "slot": "mod_reciever/mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 1
+   },
+   "chain": [
+    {
+     "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_reciever/mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 1
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4
+   ]
+  },
+  "6a78b7f8c2016eb33e0027cd": {
+   "gun": "FN P90 5.7x28 冲锋枪（灾厄）",
+   "muzzle": {
+    "slot": "mod_barrel/mod_muzzle",
+    "row": 3,
+    "col": 3
+   },
+   "chain": [
+    {
+     "slot": "mod_barrel/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_barrel/mod_muzzle",
+     "pos": {
+      "row": 4,
+      "col": 3
+     }
+    },
+    {
+     "slot": "mod_barrel/mod_muzzle/mod_muzzle/mod_muzzle",
+     "base": "muzzle",
+     "parent": "mod_barrel/mod_muzzle/mod_muzzle",
+     "pos": {
+      "row": 5,
+      "col": 3
+     }
+    }
+   ],
+   "sameColumn": true,
+   "levels": [
+    4,
+    5
+   ]
+  }
+ }
+}

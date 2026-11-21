@@ -1,0 +1,3751 @@
+{
+  "phase": "before",
+  "build": {
+    "api": null,
+    "dom": "rev R19.13-0a4d6642",
+    "appSrc": "http://127.0.0.1:8787/app.js?v=r19.13",
+    "cssHref": "http://127.0.0.1:8787/style.css?v=r19.13",
+    "themeHref": "http://127.0.0.1:8787/theme-windows-xp.css?v=r19.13",
+    "apiRaw": "{\n  \"ok\": true,\n  \"rev\": \"R19.13-0a4d6642\",\n  \"server_version\": \"0.1.0\",\n  \"pid\": 31540,\n  \"cwd\": \"D:\\\\personal\\\\trae\\\\02-塔科夫\\\\eft-interactive-map\",\n  \"root\": \"D:\\\\personal\\\\trae\\\\02-塔科夫\\\\eft-interactive-map\",\n  \"started_at\": 1793000498,\n  \"assets\": [\n    {\n      \"file\": \"index.html\",\n      \"size\": 26852,\n      \"mtime\": 1793000005,\n      \"sha256\": \"9ccb75d26bc36c43eb3769b141a343e96676215462ddf26e7160c63e2306f9a0\"\n    },\n    {\n      \"file\": \"style.css\",\n      \"size\": 200731,\n      \"mtime\": 1792993597,\n      \"sha256\": \"79b7431f9ea672191400cae5a622a4df310bcbde00646a1f36c939bd78ba0eda\"\n    },\n    {\n      \"file\": \"theme-windows-xp.css\",\n      \"size\": 59306,\n      \"mtime\": 1792977530,\n      \"sha256\": \"e4626a4954c060144bab700dd02c82045b5708408ad5e2f4969fb1fe62f97225\"\n    },\n    {\n      \"file\": \"app.js\",\n      \"size\": 842173,\n      \"mtime\": 1793001835,\n      \"sha256\": \"e2c6d6c3e510bc96dfa040a042a432369a665395c7196819fa65da50ac404670\"\n    },\n    {\n      \"file\": \"gun_builder.js\",\n      \"size\": 68480,\n      \"mtime\": 1792992012,\n      \"sha256\": \"ebe041b36ba15f5d9d80801ba5fd4a5593fa8fb7e3605fe5222e1b71151a908c\"\n    },\n    {\n      \"file\": \"combat_sim.js\",\n      \"size\": 33961,\n      \"mtime\": 1792763100,\n      \"sha256\": \"4432c61290d355ffe71123636aa2b4e1aee79940e08666e3b30d5f2df8706266\"\n    }\n  ]\n}",
+    "apiRev": "R19.13-0a4d6642",
+    "assets": [
+      {
+        "file": "index.html",
+        "size": 26852,
+        "sha": "9ccb75d26bc3",
+        "mtime": 1793000005
+      },
+      {
+        "file": "style.css",
+        "size": 200731,
+        "sha": "79b7431f9ea6",
+        "mtime": 1792993597
+      },
+      {
+        "file": "theme-windows-xp.css",
+        "size": 59306,
+        "sha": "e4626a4954c0",
+        "mtime": 1792977530
+      },
+      {
+        "file": "app.js",
+        "size": 842173,
+        "sha": "e2c6d6c3e510",
+        "mtime": 1793001835
+      },
+      {
+        "file": "gun_builder.js",
+        "size": 68480,
+        "sha": "ebe041b36ba1",
+        "mtime": 1792992012
+      },
+      {
+        "file": "combat_sim.js",
+        "size": 33961,
+        "sha": "4432c61290d3",
+        "mtime": 1792763100
+      }
+    ]
+  },
+  "resources": [],
+  "cases": {
+    "default": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas",
+          "rowsVar": "",
+          "colsVar": "",
+          "rowsTpl": "none",
+          "colsTpl": "none",
+          "rowCount": 0,
+          "colCount": 0,
+          "rowSizes": [],
+          "colSizes": [],
+          "rowGap": 5,
+          "colGap": 5,
+          "pad": {
+            "top": 6,
+            "bottom": 8,
+            "left": 4
+          },
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "bottom": 0,
+          "zeroRows": [],
+          "trackRects": [],
+          "colTrackRects": []
+        },
+        "cellsTotal": 0,
+        "rowsWithContent": [],
+        "byRow": {
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": []
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 0,
+          "scrollH": 0,
+          "clientH": 0,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 0,
+            "scrollH": 0,
+            "clientH": 0
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 0,
+        "colCount": 0,
+        "rowHeights": [],
+        "zeroOrCollapsedTracks": [],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0,
+          "6": 0
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 0,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 0,
+          "scrollH": 0,
+          "clientH": 0,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\A-default-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "m4a1": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 169,
+          "bottom": 556,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 340,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 350,
+              "bottom": 408,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 418,
+              "bottom": 476,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 486,
+              "bottom": 544,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 268,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 330,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 392,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 453,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 515,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 762,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 639,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "柯尔特A2 AR-15手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 762,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 419,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+              "ph": false,
+              "x": 268,
+              "y": 487,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 1018,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\B-m4a1-default-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "akm": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 79.3125px 57.7812px 57.7812px 0px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            79.3,
+            57.8,
+            57.8,
+            0
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 323,
+          "top": 169,
+          "bottom": 492,
+          "zeroRows": [
+            1,
+            6
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 334,
+              "height": 79.3,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 344,
+              "bottom": 402,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 412,
+              "bottom": 470,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 480,
+              "bottom": 480,
+              "height": 0,
+              "visible": false
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 15,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 2,
+              "col": 2,
+              "slot": "mod_sight_front",
+              "item": "",
+              "ph": false,
+              "x": 330,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_sight_rear/mod_sight_rear",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_sight_rear",
+              "item": "AKM 照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 79,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_muzzle",
+              "item": "AKM 7.62x39 膛口制退器",
+              "ph": false,
+              "x": 330,
+              "y": 267,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_gas_block",
+              "item": "AKM 导气管",
+              "ph": false,
+              "x": 392,
+              "y": 267,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_gas_block/mod_handguard",
+              "item": "AKM 木制护木",
+              "ph": false,
+              "x": 453,
+              "y": 267,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "AKM 防尘盖",
+              "ph": false,
+              "x": 515,
+              "y": 267,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "AKM 木制枪托",
+              "ph": false,
+              "x": 762,
+              "y": 267,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_reciever/mod_mount",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 345,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "7.62x39 AK 30发弹匣（1955 年后配发）",
+              "ph": false,
+              "x": 639,
+              "y": 345,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "AKM 胶木手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 345,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock",
+              "item": "",
+              "ph": false,
+              "x": 762,
+              "y": 345,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 413,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": []
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 865,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 865,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          79.3,
+          57.8,
+          57.8,
+          0
+        ],
+        "zeroOrCollapsedTracks": [
+          1,
+          6
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 6,
+          "4": 4,
+          "5": 1,
+          "6": 0
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 323,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 865,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\C-akm-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "hk416_muzzle": {
+      "error": "pick HK416 failed"
+    },
+    "m4_before_add": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 169,
+          "bottom": 556,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 340,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 350,
+              "bottom": 408,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 418,
+              "bottom": 476,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 486,
+              "bottom": 544,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 268,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 330,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 392,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 453,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 515,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 762,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 639,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "柯尔特A2 AR-15手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 762,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 419,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+              "ph": false,
+              "x": 268,
+              "y": 487,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 1018,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\E-m4-before-add-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "m4_after_add": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 169,
+          "bottom": 556,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 340,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 350,
+              "bottom": 408,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 418,
+              "bottom": 476,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 486,
+              "bottom": 544,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 268,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 330,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 392,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 453,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 515,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 762,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 639,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "丰和 20 式手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 762,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 419,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+              "ph": false,
+              "x": 268,
+              "y": 487,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 1018,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\F-m4-after-add-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "m4_after_remove": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 169,
+          "bottom": 556,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 340,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 350,
+              "bottom": 408,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 418,
+              "bottom": 476,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 486,
+              "bottom": 544,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 268,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 330,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 392,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 453,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 515,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 762,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 639,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "丰和 20 式手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 762,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 419,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 487,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 996,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 996,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 996,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\G-m4-after-remove-1920x919-1920.png",
+      "label": "1920x919"
+    },
+    "back_1920": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1920,
+        "innerH": 919,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 169,
+          "bottom": 556,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 177,
+              "bottom": 177,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 187,
+              "bottom": 245,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 255,
+              "bottom": 340,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 350,
+              "bottom": 408,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 418,
+              "bottom": 476,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 486,
+              "bottom": 544,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 267,
+              "right": 325,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 329,
+              "right": 387,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 391,
+              "right": 448,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 452,
+              "right": 510,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 514,
+              "right": 572,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 576,
+              "right": 634,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 638,
+              "right": 696,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 700,
+              "right": 757,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 761,
+              "right": 819,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 700,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 762,
+              "y": 188,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 577,
+              "y": 256,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 268,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 330,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 392,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 453,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 515,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 762,
+              "y": 270,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 268,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 515,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 639,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "柯尔特A2 AR-15手枪式握把",
+              "ph": false,
+              "x": 700,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 762,
+              "y": 351,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 639,
+              "y": 419,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+              "ph": false,
+              "x": 268,
+              "y": 487,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 816,
+            "scrollH": 1018,
+            "clientH": 816
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 888,
+            "scrollH": 888,
+            "clientH": 888
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 816,
+          "scrollH": 1018,
+          "clientH": 816,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\I-back-1920-1920x919-1920.png",
+      "label": "1920x919"
+    }
+  },
+  "viewports": {
+    "1384x805": {
+      "measure": {
+        "ok": true,
+        "url": "http://127.0.0.1:8787/index.html",
+        "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+        "innerW": 1384,
+        "innerH": 805,
+        "dpr": 1,
+        "assetV": "http://127.0.0.1:8787/app.js?v=r19.13",
+        "cssV": "",
+        "grid": {
+          "className": "gw-tree gw-canvas gw-grid",
+          "rowsVar": "6",
+          "colsVar": "9",
+          "rowsTpl": "0px 57.7812px 85.5312px 57.7812px 57.7812px 57.7656px",
+          "colsTpl": "57.7656px 57.7812px 57.7812px 57.7812px 57.7656px 57.7812px 57.7812px 57.7812px 57.7812px",
+          "rowCount": 6,
+          "colCount": 9,
+          "rowSizes": [
+            0,
+            57.8,
+            85.5,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "colSizes": [
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8,
+            57.8
+          ],
+          "rowGap": 10,
+          "colGap": 4,
+          "pad": {
+            "top": 8,
+            "bottom": 10,
+            "left": 6
+          },
+          "width": 566,
+          "height": 387,
+          "top": 194,
+          "bottom": 580,
+          "zeroRows": [
+            1
+          ],
+          "trackRects": [
+            {
+              "track": 1,
+              "top": 202,
+              "bottom": 202,
+              "height": 0,
+              "visible": false
+            },
+            {
+              "track": 2,
+              "top": 212,
+              "bottom": 269,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 3,
+              "top": 279,
+              "bottom": 365,
+              "height": 85.5,
+              "visible": true
+            },
+            {
+              "track": 4,
+              "top": 375,
+              "bottom": 433,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 5,
+              "top": 443,
+              "bottom": 500,
+              "height": 57.8,
+              "visible": true
+            },
+            {
+              "track": 6,
+              "top": 510,
+              "bottom": 568,
+              "height": 57.8,
+              "visible": true
+            }
+          ],
+          "colTrackRects": [
+            {
+              "track": 1,
+              "left": 239,
+              "right": 297,
+              "width": 57.8
+            },
+            {
+              "track": 2,
+              "left": 301,
+              "right": 359,
+              "width": 57.8
+            },
+            {
+              "track": 3,
+              "left": 363,
+              "right": 420,
+              "width": 57.8
+            },
+            {
+              "track": 4,
+              "left": 424,
+              "right": 482,
+              "width": 57.8
+            },
+            {
+              "track": 5,
+              "left": 486,
+              "right": 544,
+              "width": 57.8
+            },
+            {
+              "track": 6,
+              "left": 548,
+              "right": 606,
+              "width": 57.8
+            },
+            {
+              "track": 7,
+              "left": 610,
+              "right": 668,
+              "width": 57.8
+            },
+            {
+              "track": 8,
+              "left": 672,
+              "right": 729,
+              "width": 57.8
+            },
+            {
+              "track": 9,
+              "left": 733,
+              "right": 791,
+              "width": 57.8
+            }
+          ]
+        },
+        "cellsTotal": 18,
+        "rowsWithContent": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "byRow": {
+          "1": [],
+          "2": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 5,
+              "slot": "mod_reciever/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 487,
+              "y": 213,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 2,
+              "col": 7,
+              "slot": "mod_reciever/mod_sight_rear/mod_scope",
+              "item": "",
+              "ph": false,
+              "x": 611,
+              "y": 213,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 2,
+              "col": 8,
+              "slot": "mod_reciever/mod_sight_rear",
+              "item": "AR-15提把式照门",
+              "ph": false,
+              "x": 672,
+              "y": 213,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 2,
+              "col": 9,
+              "slot": "mod_charge",
+              "item": "柯尔特AR-15拉机柄",
+              "ph": false,
+              "x": 734,
+              "y": 213,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "3": [
+            {
+              "cls": "gw-gun gw-cell gw-cell-body",
+              "row": 3,
+              "col": 6,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 549,
+              "y": 280,
+              "w": 181,
+              "h": 86,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle",
+              "item": "柯尔特USGI A2 5.56x45 AR-15消焰器",
+              "ph": false,
+              "x": 240,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 2,
+              "slot": "mod_reciever/mod_barrel/mod_gas_block",
+              "item": "柯尔特 M4准星",
+              "ph": false,
+              "x": 302,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 3,
+              "slot": "mod_reciever/mod_barrel",
+              "item": "14.5 英寸 AR-15 枪管 5.56x45",
+              "ph": false,
+              "x": 364,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 3,
+              "col": 4,
+              "slot": "mod_reciever/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 护木",
+              "ph": false,
+              "x": 425,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 5,
+              "slot": "mod_reciever",
+              "item": "柯尔特M4A1 5.56x45突击步枪上机匣",
+              "ph": false,
+              "x": 487,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 3,
+              "col": 9,
+              "slot": "mod_stock",
+              "item": "柯尔特 AR-15 卡宾枪缓冲管",
+              "ph": false,
+              "x": 734,
+              "y": 294,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "4": [
+            {
+              "cls": "gw-part gw-part-empty gw-part-sub gw-cell",
+              "row": 4,
+              "col": 1,
+              "slot": "mod_reciever/mod_barrel/mod_muzzle/mod_muzzle",
+              "item": "",
+              "ph": false,
+              "x": 240,
+              "y": 376,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-empty gw-part-root gw-cell",
+              "row": 4,
+              "col": 5,
+              "slot": "mod_charge_001",
+              "item": "",
+              "ph": false,
+              "x": 487,
+              "y": 376,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "0.8"
+            },
+            {
+              "cls": "gw-part gw-part-root gw-cell",
+              "row": 4,
+              "col": 7,
+              "slot": "mod_magazine",
+              "item": "柯尔特 5.56x45 STANAG 30发弹匣",
+              "ph": false,
+              "x": 611,
+              "y": 376,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-focus gw-part-root gw-cell",
+              "row": 4,
+              "col": 8,
+              "slot": "mod_pistol_grip",
+              "item": "柯尔特A2 AR-15手枪式握把",
+              "ph": false,
+              "x": 672,
+              "y": 376,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            },
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 4,
+              "col": 9,
+              "slot": "mod_stock/mod_stock_000",
+              "item": "High Standard M4SS AR-15 枪托",
+              "ph": false,
+              "x": 734,
+              "y": 376,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "5": [
+            {
+              "cls": "gw-part gw-part-ammo gw-part-ammo-on",
+              "row": 5,
+              "col": 7,
+              "slot": "",
+              "item": "",
+              "ph": false,
+              "x": 611,
+              "y": 444,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ],
+          "6": [
+            {
+              "cls": "gw-part gw-part-sub gw-cell",
+              "row": 6,
+              "col": 1,
+              "slot": "mod_reciever/mod_handguard/mod_handguard",
+              "item": "柯尔特 M4 卡宾枪长度 AR-15 下护木",
+              "ph": false,
+              "x": 240,
+              "y": 511,
+              "w": 58,
+              "h": 58,
+              "display": "flex",
+              "vis": "visible",
+              "op": "1"
+            }
+          ]
+        },
+        "parent": {
+          "cls": "gw-center",
+          "h": 678,
+          "scrollH": 1030,
+          "clientH": 678,
+          "overflow": "auto",
+          "overflowY": "auto"
+        },
+        "clipChain": [
+          {
+            "cls": "gw-center",
+            "overflow": "auto",
+            "overflowY": "auto",
+            "overflowX": "auto",
+            "h": 678,
+            "scrollH": 1030,
+            "clientH": 678
+          },
+          {
+            "cls": "gun-workbench",
+            "overflow": "hidden",
+            "overflowY": "hidden",
+            "overflowX": "hidden",
+            "h": 774,
+            "scrollH": 774,
+            "clientH": 774
+          }
+        ],
+        "canvasFullyInViewport": true
+      },
+      "verdict": {
+        "pass": false,
+        "rowCount": 6,
+        "colCount": 9,
+        "rowHeights": [
+          0,
+          57.8,
+          85.5,
+          57.8,
+          57.8,
+          57.8
+        ],
+        "zeroOrCollapsedTracks": [
+          1
+        ],
+        "cellsPerRow": {
+          "1": 0,
+          "2": 4,
+          "3": 7,
+          "4": 5,
+          "5": 1,
+          "6": 1
+        },
+        "rowsWithFewerThan9Cells": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "gridHeight": 387,
+        "canvasFullyInViewport": true,
+        "parent": {
+          "cls": "gw-center",
+          "h": 678,
+          "scrollH": 1030,
+          "clientH": 678,
+          "overflow": "auto",
+          "overflowY": "auto"
+        }
+      },
+      "shot": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\docs\\r19.14-six-rows\\before\\screenshots\\H-m4-1384x805.png"
+    }
+  },
+  "console": [],
+  "runtimeFlags": "{\"hasGrid\":false,\"rowsVar\":\"\",\"amBuild\":null,\"gwRows\":\"inline\"}"
+}

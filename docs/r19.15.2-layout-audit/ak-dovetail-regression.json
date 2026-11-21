@@ -1,0 +1,48 @@
+{
+ "generatedFor": "R19.15.2",
+ "guns": 163,
+ "failed": 0,
+ "checks": {
+  "mountOnR2C3": 28,
+  "opticAbove": 3,
+  "sideRight": 2,
+  "domMatchesLayout": 32
+ },
+ "topPadGuns": [
+  {
+   "gun": "Saiga-12K 12 铅径自动霰弹枪（红线）",
+   "id": "6981d72ed009ad83920da43a",
+   "rows": 7,
+   "topPad": 1,
+   "mountRow": [
+    3
+   ]
+  }
+ ],
+ "installUninstall": [
+  {
+   "gun": "AK-74N 5.45x39 突击步枪",
+   "id": "5644bd2b4bdc2d3b4c8b4572",
+   "note": "安装/卸载后仍满足：基座在本体正上方一行、瞄具在基座正上方同列",
+   "verifiedBy": "浏览器实测（见 screenshots/after）"
+  },
+  {
+   "gun": "Saiga-12K ver.10 12铅径半自动霰弹枪",
+   "id": "576165642459773c7a400233",
+   "note": "安装/卸载后仍满足：基座在本体正上方一行、瞄具在基座正上方同列",
+   "verifiedBy": "浏览器实测（见 screenshots/after）"
+  },
+  {
+   "gun": "VSS “绞丝机”9x39 特种狙击步枪",
+   "id": "57838ad32459774a17445cd2",
+   "note": "安装/卸载后仍满足：基座在本体正上方一行、瞄具在基座正上方同列",
+   "verifiedBy": "浏览器实测（见 screenshots/after）"
+  },
+  {
+   "gun": "AS VAL“巨浪” 9x39 特种突击步枪",
+   "id": "57c44b372459772d2b39b8ce",
+   "note": "安装/卸载后仍满足：基座在本体正上方一行、瞄具在基座正上方同列",
+   "verifiedBy": "浏览器实测（见 screenshots/after）"
+  }
+ ]
+}

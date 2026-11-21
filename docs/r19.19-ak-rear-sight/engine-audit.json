@@ -1,0 +1,241 @@
+{
+ "generatedAt": "2026-11-21T05:40:47",
+ "schema": "r19.19-engine-audit/1",
+ "checks": {
+  "a1_AK-105_at_r2c6": true,
+  "a1_AK-105_sight_and_akmp_sub": true,
+  "a1_AK-105_sub_above_parent": true,
+  "a1_AK-105_legal_candidates_kept": true,
+  "a1_AK-74_at_r2c6": true,
+  "a1_AK-74_sight_and_akmp_sub": true,
+  "a1_AK-74_sub_above_parent": true,
+  "a1_AK-74_legal_candidates_kept": true,
+  "a1_AK-74N_at_r2c6": true,
+  "a1_AK-74N_sight_and_akmp_sub": true,
+  "a1_AK-74N_sub_above_parent": true,
+  "a1_AK-74N_legal_candidates_kept": true,
+  "a1_AKS-74_at_r2c6": true,
+  "a1_AKS-74_sight_and_akmp_sub": true,
+  "a1_AKS-74_sub_above_parent": true,
+  "a1_AKS-74_legal_candidates_kept": true,
+  "a1_AKS-74N_at_r2c6": true,
+  "a1_AKS-74N_sight_and_akmp_sub": true,
+  "a1_AKS-74N_sub_above_parent": true,
+  "a1_AKS-74N_legal_candidates_kept": true,
+  "a1_others_untouched_5ac66d2e5acfc43b321d4b53": true,
+  "a1_others_untouched_5ac66d725acfc43b321d4b60": true,
+  "a1_others_untouched_59d6088586f774275f37482f": true,
+  "a1_others_untouched_59e6152586f77473dc057aa1": true,
+  "a2_AKM_single_sight_slot": true,
+  "a2_AKM_no_akmp_sub": true,
+  "a2_AKM_akmp_not_in_gun_allow": true,
+  "a2_AKM_legal_kept": true,
+  "a2_AKM_no_dup_after_install": true,
+  "a2_AKMS_single_sight_slot": true,
+  "a2_AKMS_no_akmp_sub": true,
+  "a2_AKMS_akmp_not_in_gun_allow": true,
+  "a2_AKMS_legal_kept": true,
+  "a2_AKMS_no_dup_after_install": true,
+  "a2_AKMN_single_sight_slot": true,
+  "a2_AKMN_no_akmp_sub": true,
+  "a2_AKMN_akmp_not_in_gun_allow": true,
+  "a2_AKMN_legal_kept": true,
+  "a2_AKMN_no_dup_after_install": true,
+  "a2_AKMSN_single_sight_slot": true,
+  "a2_AKMSN_no_akmp_sub": true,
+  "a2_AKMSN_akmp_not_in_gun_allow": true,
+  "a2_AKMSN_legal_kept": true,
+  "a2_AKMSN_no_dup_after_install": true,
+  "a2_VPO-136_single_sight_slot": true,
+  "a2_VPO-136_no_akmp_sub": true,
+  "a2_VPO-136_akmp_not_in_gun_allow": true,
+  "a2_VPO-136_legal_kept": true,
+  "a2_VPO-136_no_dup_after_install": true,
+  "a2_AK-103_sight_plus_akmp_sub": true,
+  "a2_AK-103_sub_above_parent": true,
+  "a2_AK-104_sight_plus_akmp_sub": true,
+  "a2_AK-104_sub_above_parent": true,
+  "a2_AK-74M_sight_plus_akmp_sub": true,
+  "a2_AK-74M_sub_above_parent": true,
+  "a3_akmp_only_via_parent_subslot": true,
+  "a3_akm_family_no_akmp": true,
+  "a3_akm_no_ak74_rs": true,
+  "a3_gp25_still_at_gas_below": true,
+  "a3_svds_dovetail_r2c7": true,
+  "a3_sks_socom_r4c3": true,
+  "a3_calib_total_unchanged": true,
+  "a3_calib_no_silent_loss": true,
+  "a3_calib_no_fallback": true
+ },
+ "detail": {
+  "a1": [
+   {
+    "gun": "AK-105",
+    "gunId": "5ac66d9b5acfc4001633997a",
+    "slotCount": 2,
+    "final": "r2c6",
+    "calibRecord": {
+     "logicalRow": 2,
+     "col": 6,
+     "note": "R19.19 A1：AK-74 系列照门槽人工校"
+    },
+    "autoWouldBe": "r2c6"
+   },
+   {
+    "gun": "AK-74",
+    "gunId": "5bf3e03b0db834001d2c4a9c",
+    "slotCount": 2,
+    "final": "r2c6",
+    "calibRecord": {
+     "logicalRow": 2,
+     "col": 6,
+     "note": "R19.19 A1：AK-74 系列照门槽人工校"
+    },
+    "autoWouldBe": "r2c6"
+   },
+   {
+    "gun": "AK-74N",
+    "gunId": "5644bd2b4bdc2d3b4c8b4572",
+    "slotCount": 2,
+    "final": "r2c6",
+    "calibRecord": {
+     "logicalRow": 2,
+     "col": 6,
+     "note": "R19.19 A1：AK-74 系列照门槽人工校"
+    },
+    "autoWouldBe": "r2c6"
+   },
+   {
+    "gun": "AKS-74",
+    "gunId": "5bf3e0490db83400196199af",
+    "slotCount": 2,
+    "final": "r2c6",
+    "calibRecord": {
+     "logicalRow": 2,
+     "col": 6,
+     "note": "R19.19 A1：AK-74 系列照门槽人工校"
+    },
+    "autoWouldBe": "r2c6"
+   },
+   {
+    "gun": "AKS-74N",
+    "gunId": "5ab8e9fcd8ce870019439434",
+    "slotCount": 2,
+    "final": "r2c6",
+    "calibRecord": {
+     "logicalRow": 2,
+     "col": 6,
+     "note": "R19.19 A1：AK-74 系列照门槽人工校"
+    },
+    "autoWouldBe": "r2c6"
+   }
+  ],
+  "a1Others": [
+   {
+    "gun": "AK-103",
+    "final": "r1c6",
+    "rec": "r1c6"
+   },
+   {
+    "gun": "AK-104",
+    "final": "r1c6",
+    "rec": "r1c6"
+   },
+   {
+    "gun": "AKM",
+    "final": "r2c6",
+    "rec": "r2c6"
+   },
+   {
+    "gun": "VPO-136",
+    "final": "r1c6",
+    "rec": "r1c6"
+   }
+  ],
+  "a2": [
+   {
+    "gun": "AKM",
+    "gunId": "59d6088586f774275f37482f",
+    "slotCount": 1,
+    "slots": [
+     "mod_sight_rear"
+    ],
+    "allow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "akmpInGunSlot": false
+   },
+   {
+    "gun": "AKMS",
+    "gunId": "59ff346386f77477562ff5e2",
+    "slotCount": 1,
+    "slots": [
+     "mod_sight_rear"
+    ],
+    "allow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "akmpInGunSlot": false
+   },
+   {
+    "gun": "AKMN",
+    "gunId": "5a0ec13bfcdbcb00165aa685",
+    "slotCount": 1,
+    "slots": [
+     "mod_sight_rear"
+    ],
+    "allow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "akmpInGunSlot": false
+   },
+   {
+    "gun": "AKMSN",
+    "gunId": "5abcbc27d8ce8700182eceeb",
+    "slotCount": 1,
+    "slots": [
+     "mod_sight_rear"
+    ],
+    "allow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨",
+     "RD Enhanced V2 AK 照门"
+    ],
+    "akmpInGunSlot": false
+   },
+   {
+    "gun": "VPO-136",
+    "gunId": "59e6152586f77473dc057aa1",
+    "slotCount": 1,
+    "slots": [
+     "mod_sight_rear"
+    ],
+    "allow": [
+     "AKM 照门",
+     "AKMB系统照门",
+     "Taktika Tula TT01 照门导轨"
+    ],
+    "akmpInGunSlot": false
+   }
+  ],
+  "calib": {
+   "totalRecords": 397,
+   "applied": 388,
+   "unmatched": 9,
+   "fallback": 0,
+   "stale": 8,
+   "suppressed": 1
+  }
+ },
+ "failed": []
+}

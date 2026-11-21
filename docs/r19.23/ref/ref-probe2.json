@@ -1,0 +1,147 @@
+{
+ "mode_menu": {
+  "before": [],
+  "anchorHtml": "<div class=\"relative hidden md:block tarkov-dropdown\" data-dropdown=\"mode\">\n        <button type=\"button\" class=\"tarkov-dropdown-btn site-mode-dropdown-btn h-8 inline-flex items-center justify-between gap-2 px-3 bg-[#090909] border border-[#3a3a3a] rounded-md hover:bg-[#262626] transition text-sm text-[#e5e5e5]\" style=\"background-color: rgb(255, 255, 255); border-color: rgb(226, 232, 240); color: rgb(24, 24, 27);\">\n        <span class=\"tarkov-dropdown-label\">PVP</span>\n        <i class=\"fas fa-chevron-down text-xs text-stone-500\" style=\"color: rgb(82, 82, 91);\"></i>\n        </button>\n        <div class=\"tarkov-dropdown-menu absolute left-0 right-0 top-full mt-1 hidden bg-[#404040] border bor"
+ },
+ "mode_menu_after": {
+  "candidates": [
+   "PVP PVE PVP 赛季 登录 注册",
+   "PVP PVE PVP 赛季",
+   "PVP",
+   "PVE PVP 赛季",
+   "PVE",
+   "PVP",
+   "赛季"
+  ],
+  "len": 911,
+  "head": "逃离塔科夫中文Wiki\n首页\n剧情\n任务\n转生\n收集\n藏身处\n地图\n信息\n小工具\n留言板\nPVP\nPVE\nPVP\n赛季\n登录\n注册\n任务列表\n共 510 个任务\n全部商人\n竞技场任务\nPrapor\nTherapist\nFence\nSkier\nPeacekeeper\nMechanic\nRagman\nJaeger\n竞技场裁判\nLightkeeper\nBTR司机\n地图\n中心区\n工厂\n海关\n森林\n灯塔\n海"
+ },
+ "tree_structure": {
+  "nodeClass": "task-tree-objective",
+  "nodeCount": 1458,
+  "sampleText": "在森林、中心区、立交桥或海关消灭 Scav 5 名",
+  "sampleHtml": "<div class=\"task-tree-objective\">在森林、中心区、立交桥或海关消灭 Scav 5 名</div>",
+  "topClasses": [
+   [
+    "task-tree-objective",
+    1458
+   ],
+   [
+    "task-tree-card-top",
+    603
+   ],
+   [
+    "task-tree-meta",
+    603
+   ],
+   [
+    "task-tree-objectives",
+    603
+   ],
+   [
+    "task-tree-node task-tree-node-task",
+    540
+   ],
+   [
+    "task-tree-node task-tree-node-task is-mode-locked",
+    63
+   ],
+   [
+    "task-tree-node task-tree-node-section",
+    39
+   ],
+   [
+    "task-tree-node task-tree-node-trader",
+    11
+   ],
+   [
+    "site-nav-group ",
+    3
+   ],
+   [
+    "sticky top-0 z-50",
+    1
+   ],
+   [
+    "site-header-inner max-w-[1500px] mx-auto px-4 h-14 flex items-center gap-2",
+    1
+   ],
+   [
+    "site-nav-group",
+    1
+   ],
+   [
+    "hidden md:block ml-auto",
+    1
+   ],
+   [
+    "site-header-actions flex items-center gap-2 ml-auto md:ml-0",
+    1
+   ],
+   [
+    "relative hidden md:block tarkov-dropdown",
+    1
+   ],
+   [
+    "task-tree-shell",
+    1
+   ],
+   [
+    "task-tree-toolbar",
+    1
+   ],
+   [
+    "task-tree-search",
+    1
+   ],
+   [
+    "task-tree-trader-jump",
+    1
+   ],
+   [
+    "task-tree-viewport",
+    1
+   ]
+  ],
+  "toolbar": [
+   "立即刷新",
+   "地图",
+   "信息",
+   "小工具",
+   "",
+   "",
+   "",
+   "PVP",
+   "PVE",
+   "PVP",
+   "赛季",
+   ""
+  ]
+ },
+ "tree_zoom": {
+  "before": null,
+  "after": null
+ },
+ "db4": {
+  "url": "https://db4tarkov.com/quest",
+  "ready": "complete",
+  "title": "Quest",
+  "bodyLen": 0,
+  "html": "<html lang=\"en-US\"><head>\n    <base href=\"/\">\n    <meta charset=\"UTF-8\">\n    <title>Quest</title>\n    <meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\">\n    <meta name=\"description\" content=\"Gun Builder, Gun Tier Maker, Preset Builder, Flea Market, Quest Tracker, Item To Keep, Interactive Map, Craft, Barter &amp; more... for 📱mobile version: 'Database For Tarkov' app available on both IOS and Android stores.\">\n\n    <!-- iOS meta tags & icons -->\n    <meta name=\"mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n    <meta name=\"apple-mobile-web-app-title\" content=\"DB For Tarkov\">\n    <link rel=\"apple-touch-icon\" href=\"icons/Icon-192.png\">\n\n    <!-- Favicon -->\n    <link rel=\"icon\" type=\"image/png\" href=\"favicon.png\">\n    <link rel=\"manifest\" href=\"manifest.json\">\n\n ",
+  "scripts": [
+   "https://db4tarkov.com/flutter.js",
+   "(inline)",
+   "https://db4tarkov.com/main.dart.js",
+   "https://accounts.google.com/gsi/client",
+   "(inline)",
+   "(inline)",
+   "(inline)",
+   "(inline)",
+   "(inline)",
+   "(inline)",
+   "https://www.google.com/recaptcha/api.js",
+   "(inline)"
+  ]
+ },
+ "db4_console": null
+}

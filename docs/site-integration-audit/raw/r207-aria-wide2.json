@@ -1,0 +1,1138 @@
+[
+ {
+  "role": "header",
+  "label": "DB4Tarkov v2026.10.28-0 🌕 10:34 🌑 22:34",
+  "x": 579,
+  "y": 24,
+  "w": 1157,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MARKET",
+  "x": 291,
+  "y": 24,
+  "w": 84,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "SEASON Kord",
+  "x": 374,
+  "y": 24,
+  "w": 82,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "QUEST",
+  "x": 452,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "KEEP",
+  "x": 518,
+  "y": 24,
+  "w": 61,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "GUN",
+  "x": 576,
+  "y": 24,
+  "w": 55,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "PRESET",
+  "x": 643,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "AMMO",
+  "x": 718,
+  "y": 24,
+  "w": 70,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "MAP",
+  "x": 782,
+  "y": 24,
+  "w": 57,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "BARTER",
+  "x": 850,
+  "y": 24,
+  "w": 80,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CRAFT",
+  "x": 926,
+  "y": 24,
+  "w": 72,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "CHANGES 1.2.0.0",
+  "x": 1009,
+  "y": 24,
+  "w": 94,
+  "h": 48
+ },
+ {
+  "role": "button",
+  "label": "LOGS",
+  "x": 1087,
+  "y": 24,
+  "w": 62,
+  "h": 48
+ },
+ {
+  "role": "flt-semantics",
+  "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)",
+  "x": 1241,
+  "y": 24,
+  "w": 155,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "PvE",
+  "x": 1189,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "PvP",
+  "x": 1241,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "SS (38d)",
+  "x": 1292,
+  "y": 24,
+  "w": 50,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "Change Site Resolution",
+  "x": 1346,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Change Language",
+  "x": 1380,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "About Me",
+  "x": 1414,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Discord Server",
+  "x": 1448,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Login to save your progress",
+  "x": 1482,
+  "y": 24,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "only TraderLvl",
+  "x": 756,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "only FleaLvl",
+  "x": 840,
+  "y": 68,
+  "w": 80,
+  "h": 30
+ },
+ {
+  "role": "button",
+  "label": "picked Plates",
+  "x": 923,
+  "y": 68,
+  "w": 64,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "default Plates",
+  "x": 988,
+  "y": 68,
+  "w": 64,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "priority Plates",
+  "x": 1054,
+  "y": 68,
+  "w": 64,
+  "h": 32
+ },
+ {
+  "role": "tab",
+  "label": "Both",
+  "x": 1367,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "tab",
+  "label": "Armor",
+  "x": 1417,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "tab",
+  "label": "Armored Rig",
+  "x": 1467,
+  "y": 67,
+  "w": 50,
+  "h": 38
+ },
+ {
+  "role": "input",
+  "label": "Mov",
+  "x": 1341,
+  "y": 71,
+  "w": 48,
+  "h": 37
+ },
+ {
+  "role": "input",
+  "label": "Turn",
+  "x": 1383,
+  "y": 71,
+  "w": 48,
+  "h": 37
+ },
+ {
+  "role": "input",
+  "label": "Ergo",
+  "x": 1425,
+  "y": 71,
+  "w": 48,
+  "h": 37
+ },
+ {
+  "role": "button",
+  "label": "3-slot",
+  "x": 1477,
+  "y": 68,
+  "w": 50,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "4-slot",
+  "x": 1529,
+  "y": 68,
+  "w": 50,
+  "h": 28
+ },
+ {
+  "role": "group",
+  "label": "Move/Turn/Ergo 0 / 0 / 0 Kg 0 kg 0 / 0 / 0 Final Cost:",
+  "x": 330,
+  "y": 309,
+  "w": 660,
+  "h": 442
+ },
+ {
+  "role": "button",
+  "label": "Headwear",
+  "x": 330,
+  "y": 172,
+  "w": 80,
+  "h": 80
+ },
+ {
+  "role": "button",
+  "label": "Glasses",
+  "x": 128,
+  "y": 246,
+  "w": 65,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Headset",
+  "x": 128,
+  "y": 306,
+  "w": 65,
+  "h": 65
+ },
+ {
+  "role": "button",
+  "label": "Face Cover",
+  "x": 196,
+  "y": 246,
+  "w": 32,
+  "h": 32
+ },
+ {
+  "role": "button",
+  "label": "Armor Armored Rig",
+  "x": 330,
+  "y": 291,
+  "w": 220,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Chest Rig",
+  "x": 550,
+  "y": 291,
+  "w": 220,
+  "h": 122
+ },
+ {
+  "role": "button",
+  "label": "Gun",
+  "x": 227,
+  "y": 418,
+  "w": 426,
+  "h": 108
+ },
+ {
+  "role": "button",
+  "label": "Backpack",
+  "x": 550,
+  "y": 419,
+  "w": 220,
+  "h": 134
+ },
+ {
+  "role": "button",
+  "label": "Buy ()",
+  "x": 165,
+  "y": 518,
+  "w": 330,
+  "h": 24
+ },
+ {
+  "role": "button",
+  "label": "Sell",
+  "x": 495,
+  "y": 518,
+  "w": 330,
+  "h": 24
+ },
+ {
+  "role": "tabpanel",
+  "label": "Icon Front Back Left Right Zone Slots",
+  "x": 1088,
+  "y": 527,
+  "w": 832,
+  "h": 877
+ },
+ {
+  "role": "button",
+  "label": "Mov/Turn/Erg",
+  "x": 798,
+  "y": 102,
+  "w": 148,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Material",
+  "x": 1110,
+  "y": 102,
+  "w": 60,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Effective Durability / lowest Price Effective Durability (= Durability / Destructibility) Eff Dur",
+  "x": 1160,
+  "y": 102,
+  "w": 40,
+  "h": 27
+ },
+ {
+  "role": "button",
+  "label": "Capacity Cap",
+  "x": 1497,
+  "y": 102,
+  "w": 14,
+  "h": 27
+ },
+ {
+  "role": "group",
+  "label": "Redut-T5 H 354 FORT Redut-T5 body armor (Smog) -8 / -3 / -5 Aramid 354 - 1,888 III 75 III 75 III 28 III 28 III 28 III 30",
+  "x": 1088,
+  "y": 157,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 157,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 157,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 157,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 157,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "6B43 H 350 6B43 Zabralo-Sh body armor (EMR) -9 / -5.5 / -7 Aramid 350 - 1,867 III 85 III 85 III 26 III 26 III 32 III 28 ",
+  "x": 1088,
+  "y": 209,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 209,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 209,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 209,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 209,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "THOR IC 310 NFM THOR Integrated Carrier body armor -8 / -5 / -6 Aramid 310 - 1,653 III 70 III 70 III 30 III 30 III 28 II",
+  "x": 1088,
+  "y": 261,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 261,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 261,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 261,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 261,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 6B45 armored rig (Assault, EMR) -5 / -3 / -3 Aramid 254 85 ₽ 1,355 III 85 III 85 III 26 III 26 III 32 19 1.6 ",
+  "x": 1088,
+  "y": 313,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 313,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 313,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 313,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 313,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 6B45 body armor (EMR) -5 / -3 / -3 Aramid 254 77 ₽ 1,355 III 85 III 85 III 26 III 26 III 32 3.6 104,323 III [",
+  "x": 1088,
+  "y": 365,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 365,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 365,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 365,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 365,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Zhuk EMR L 165 BNTI Zhuk body armor (EMR) -1.5 / 0 / 0 Aramid 165 - 880 III 60 III 60 III 15 III 15 III 15 3.0",
+  "x": 1088,
+  "y": 417,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 50",
+  "x": 898,
+  "y": 417,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 417,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 417,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 417,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "SD mod.2 L 130 Stich Profi Stich Defense mod.2 plate carrier (MultiCam) -3 / -2 / -1 Aramid 130 - 693 III 45 III 45 III ",
+  "x": 1088,
+  "y": 469,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 469,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 469,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 469,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 469,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "LV-119 L 120 Spiritus Systems LV-119 Plate Carrier (Black Division V1) -1 / -1 / 0 Aramid 120 - 640 III 44 III 44 IV 16 ",
+  "x": 1088,
+  "y": 521,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 521,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 521,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 LBT-6094A Slick Plate Carrier (Olive Drab) 0 / 0 / 0 Aramid 100 - 533 III 50 III 50 1.3",
+  "x": 1088,
+  "y": 573,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 573,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 573,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 LBT-6094A Slick Plate Carrier (Black) 0 / 0 / 0 Aramid 100 - 533 III 50 III 50 1.3",
+  "x": 1088,
+  "y": 625,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 625,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 625,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Slick L 100 LBT-6094A Slick Plate Carrier (Coyote Tan) -5 / -1 / 0 Aramid 100 - 533 III 50 III 50 1.3",
+  "x": 1088,
+  "y": 677,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 677,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 677,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "AVS TE H 60 Crye Precision AVS plate carrier (Tagilla Edition) 0 / 0 / -2 Aramid 60 - 320 III 30 III 30 12 1.3 2.0",
+  "x": 1088,
+  "y": 729,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 729,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 729,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Hexgrid 5.11 Tactical Hexgrid plate carrier -1 / -1 / -1 1.0",
+  "x": 1088,
+  "y": 781,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 781,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 781,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "TT SK L Tasmanian Tiger SK plate carrier (MultiCam Black) -1 / 0 / 0 8 0.9 1.5",
+  "x": 1088,
+  "y": 833,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 833,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 833,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Gladiator-S H 330 FORT Gladiator-S plate carrier (Death is Inevitable) -7 / -3.5 / -5 Aramid 330 - 1,760 III 80 III 80 I",
+  "x": 1088,
+  "y": 901,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 901,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 901,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 901,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 901,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 6B45 armored rig (Medic, EMR) -5 / -3 / -3 Aramid 254 81 ₽ 1,355 III 85 III 85 III 26 III 26 III 32 16 1.3 4.",
+  "x": 1088,
+  "y": 946,
+  "w": 832,
+  "h": 38
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 946,
+  "w": 52,
+  "h": 38
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 946,
+  "w": 52,
+  "h": 38
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 946,
+  "w": 52,
+  "h": 38
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 946,
+  "w": 52,
+  "h": 38
+ },
+ {
+  "role": "group",
+  "label": "6B45 L 254 6B45 armored rig (General Purpose, EMR) -5 / -3 / -3 Aramid 254 82 ₽ 1,355 III 85 III 85 III 26 III 26 III 32",
+  "x": 1088,
+  "y": 1005,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 1005,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 1005,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 1005,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 1005,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 FORT Redut-M body armor (SK Woodland) -3 / -3 / -3 Aramid 248 - 1,323 III 64 III 64 III 24 III 24 III 24 I",
+  "x": 1088,
+  "y": 1057,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 1057,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 1057,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 1057,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 1057,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 FORT Redut-M body armor -3 / -3 / -3 Aramid 248 - 1,323 III 64 III 64 III 24 III 24 III 24 III 30 III 18 7",
+  "x": 1088,
+  "y": 1109,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 1109,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 1109,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 1109,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 1109,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 FORT Redut-M body armor (Black) -3 / -4 / -3 Aramid 248 - 1,323 III 64 III 64 III 24 III 24 III 24 III 30 ",
+  "x": 1088,
+  "y": 1161,
+  "w": 832,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 1161,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 1161,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 1161,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 1161,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "group",
+  "label": "Redut-M H 248 FORT Redut-M body armor (Prisoner of the Arena) -3 / -4 / -3 Aramid 248 - 1,323 III 64 III 64 III 24 III 2",
+  "x": 1088,
+  "y": 1201,
+  "w": 832,
+  "h": 28
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 898,
+  "y": 1213,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 60",
+  "x": 950,
+  "y": 1213,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1002,
+  "y": 1213,
+  "w": 52,
+  "h": 52
+ },
+ {
+  "role": "button",
+  "label": "V H 15",
+  "x": 1054,
+  "y": 1213,
+  "w": 52,
+  "h": 52
+ }
+]

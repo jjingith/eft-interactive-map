@@ -1,0 +1,1786 @@
+{
+  "round": "R18.1",
+  "base": "http://127.0.0.1:8801",
+  "viewports": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "tag": "1920",
+      "noHScroll": true,
+      "cellsEmpty": [
+        {
+          "slot": "helmet",
+          "state": "focus",
+          "sil": "assets/ui/placeholders/helmet.png",
+          "silW": 76,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/armor.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "silPixels": [
+        {
+          "slot": "helmet",
+          "w": 76,
+          "h": 76,
+          "whitePct": 44.3,
+          "blackPct": 49.5,
+          "midPct": 6.2
+        },
+        {
+          "slot": "glasses",
+          "w": 63,
+          "h": 61,
+          "whitePct": 82.6,
+          "blackPct": 13.2,
+          "midPct": 4.2
+        },
+        {
+          "slot": "headphones",
+          "w": 63,
+          "h": 61,
+          "whitePct": 64.5,
+          "blackPct": 25.3,
+          "midPct": 10.1
+        },
+        {
+          "slot": "face",
+          "w": 63,
+          "h": 61,
+          "whitePct": 57.9,
+          "blackPct": 36.9,
+          "midPct": 5.2
+        },
+        {
+          "slot": "armor",
+          "w": 106,
+          "h": 105,
+          "whitePct": 51.2,
+          "blackPct": 45.4,
+          "midPct": 3.5
+        },
+        {
+          "slot": "rig",
+          "w": 106,
+          "h": 105,
+          "whitePct": 51.7,
+          "blackPct": 42,
+          "midPct": 6.4
+        },
+        {
+          "slot": "primary1",
+          "w": 260,
+          "h": 106,
+          "whitePct": 81.3,
+          "blackPct": 13.5,
+          "midPct": 5.3
+        },
+        {
+          "slot": "backpack",
+          "w": 106,
+          "h": 106,
+          "whitePct": 60.5,
+          "blackPct": 36.4,
+          "midPct": 3
+        },
+        {
+          "slot": "primary2",
+          "w": 260,
+          "h": 106,
+          "whitePct": 81.3,
+          "blackPct": 13.5,
+          "midPct": 5.3
+        },
+        {
+          "slot": "holster",
+          "w": 152,
+          "h": 106,
+          "whitePct": 68.9,
+          "blackPct": 25,
+          "midPct": 6.1
+        },
+        {
+          "slot": "melee",
+          "w": 106,
+          "h": 106,
+          "whitePct": 87.6,
+          "blackPct": 10,
+          "midPct": 2.3
+        }
+      ],
+      "equippedName": "Altyn 突击头盔（橄榄绿）",
+      "afterEquip": [
+        {
+          "slot": "helmet",
+          "state": "focus",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5aa7e276e5b5b000171d0647.webp",
+          "blend": null
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/armor.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "tooltips": [
+        {
+          "shown": true,
+          "headText": "Ragman LL4 · 解锁兑换配方",
+          "lineText": "配方：3 × 圆嘴钳",
+          "headColor": "rgb(0, 0, 0)",
+          "lineColor": "rgb(35, 35, 35)",
+          "bg": "rgb(236, 233, 216)",
+          "rect": {
+            "x": 1725,
+            "y": 70,
+            "w": 175,
+            "h": 101
+          },
+          "inViewport": true,
+          "anchor": "#loadout-workbench .lw-src",
+          "contrastHead": 17.21,
+          "contrastLine": 12.88
+        },
+        {
+          "shown": true,
+          "headText": "前插板：未安装（本位置合法插板 19 件）",
+          "lineText": "点一下打开插板选择窗",
+          "headColor": "rgb(0, 0, 0)",
+          "lineColor": "rgb(35, 35, 35)",
+          "bg": "rgb(236, 233, 216)",
+          "rect": {
+            "x": 969,
+            "y": 95,
+            "w": 229,
+            "h": 50
+          },
+          "inViewport": true,
+          "anchor": "#loadout-workbench .lw-plate-cell",
+          "contrastHead": 17.21,
+          "contrastLine": 12.88
+        }
+      ],
+      "tooltip": {
+        "shown": true,
+        "headText": "Ragman LL4 · 解锁兑换配方",
+        "lineText": "配方：3 × 圆嘴钳",
+        "headColor": "rgb(0, 0, 0)",
+        "lineColor": "rgb(35, 35, 35)",
+        "bg": "rgb(236, 233, 216)",
+        "rect": {
+          "x": 1725,
+          "y": 70,
+          "w": 175,
+          "h": 101
+        },
+        "inViewport": true,
+        "anchor": "#loadout-workbench .lw-src",
+        "contrastHead": 17.21,
+        "contrastLine": 12.88
+      },
+      "armorEquipped": [
+        {
+          "slot": "helmet",
+          "state": "on",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5aa7e276e5b5b000171d0647.webp",
+          "blend": null
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "focus",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5fd4c474dd870108a754b241.webp",
+          "blend": null
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "tooltipPlate": {
+        "shown": true,
+        "headText": "前插板：未安装（本位置合法插板 19 件）",
+        "lineText": "点一下打开插板选择窗",
+        "headColor": "rgb(0, 0, 0)",
+        "lineColor": "rgb(35, 35, 35)",
+        "bg": "rgb(236, 233, 216)",
+        "rect": {
+          "x": 969,
+          "y": 95,
+          "w": 229,
+          "h": 50
+        },
+        "inViewport": true,
+        "anchor": "#loadout-workbench .lw-plate-cell",
+        "contrastHead": 17.21,
+        "contrastLine": 12.88
+      },
+      "removeClicked": true,
+      "afterRemove": [
+        {
+          "slot": "helmet",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/helmet.png",
+          "silW": 76,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "focus",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5fd4c474dd870108a754b241.webp",
+          "blend": null
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "graphText": {
+        "sample": [
+          {
+            "txt": "0",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "20",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "40",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "60",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "80",
+            "fill": "rgb(74, 74, 74)"
+          }
+        ],
+        "fillHistogram": {
+          "rgb(74, 74, 74)": 14,
+          "rgb(35, 35, 35)": 2
+        },
+        "count": 16,
+        "plotFill": "rgb(255, 255, 255)",
+        "legendColor": "rgb(35, 35, 35)",
+        "noteColor": "rgb(35, 35, 35)",
+        "plotAreaBg": "rgb(236, 233, 216)"
+      },
+      "graphTip": {
+        "shown": true,
+        "rowText": "26x75 毫米照明信号弹（白色）伤害 37 · pen 0 · ArD 60 · 初速 80",
+        "nameColor": "rgb(0, 0, 0)",
+        "rowColor": "rgb(35, 35, 35)",
+        "metaColor": "rgb(74, 74, 74)",
+        "bg": "rgb(236, 233, 216)",
+        "contrastName": 17.21,
+        "contrastMeta": 7.26
+      },
+      "ammoDetail": [
+        {
+          "open": true,
+          "name": "5.45x39毫米 7N39“针刺”",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "5.45x39 · 子弹 · RIFLE ROUNDS",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "5.45",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": "7.62x25毫米 TT M995",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "7.62x25 · 子弹 · PISTOL/SMG",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "7.62",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": ".357 Magnum FMJ",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": ".357 · 子弹 · PISTOL/SMG",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": ".357",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": "12/70 AP-20 穿甲独头弹",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "12g · 子弹 · SHOTGUN ROUNDS",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "12/70",
+          "contrastMeta": 5.72
+        }
+      ],
+      "build": "R18.1 构建 · compat 加载中 · 配置改完后直接点这里；参数校验仍在引擎入口执行。",
+      "armorGroups": {
+        "groups": [
+          {
+            "label": "IV · 陶瓷 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "IV · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "IV · 复合材料 · 内衬",
+            "n": 2
+          },
+          {
+            "label": "III · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "III · 装甲钢 · 内衬",
+            "n": 2
+          },
+          {
+            "label": "III · 铝合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "III · 芳纶 · 内衬",
+            "n": 52
+          },
+          {
+            "label": "II · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "II · 芳纶 · 内衬",
+            "n": 37
+          },
+          {
+            "label": "无内衬",
+            "n": 10
+          }
+        ],
+        "total": 109,
+        "looseOptions": 1
+      },
+      "armorPicked": {
+        "id": "689479cb47e5acd1e10be986",
+        "text": "Ferro Concepts FCPC V5 插板胸挂 (黑色军团) · 本体 5 级",
+        "grp": "IV · 复合材料 · 内衬",
+        "at": 2
+      },
+      "plateGroups": {
+        "groups": [
+          {
+            "label": "VI · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "VI · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "VI · 装甲钢",
+            "n": 1
+          },
+          {
+            "label": "VI · 超高分子量聚乙烯",
+            "n": 2
+          },
+          {
+            "label": "VI · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "V · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "V · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "V · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "V · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "IV · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "IV · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "IV · 装甲钢",
+            "n": 1
+          },
+          {
+            "label": "IV · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "IV · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "IV · 铝合金",
+            "n": 1
+          },
+          {
+            "label": "III · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "III · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "I · 超高分子量聚乙烯",
+            "n": 1
+          }
+        ],
+        "total": 20,
+        "zone": "Front_plate",
+        "looseOptions": 1
+      },
+      "bossPicked": {
+        "id": "boss:tagilla",
+        "text": "Tagilla（总血 1220）",
+        "total": 17
+      },
+      "bossState": {
+        "armorGroups": [
+          {
+            "label": "III · 芳纶 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "II · 芳纶 · 内衬",
+            "n": 1
+          }
+        ],
+        "plateGroups": [
+          {
+            "label": "VI · 钛合金",
+            "n": 1
+          }
+        ],
+        "armorTotal": 3,
+        "plateTotal": 2,
+        "note": "Tagilla 装备池（verified 白名单）：护甲 2 项 / 头盔 3 项；插板型号 wiki 未单列（missing）→ 按护甲插板位可选（estimated）。"
+      },
+      "noHScroll2": true
+    },
+    {
+      "w": 1264,
+      "h": 705,
+      "tag": "1264",
+      "noHScroll": true,
+      "cellsEmpty": [
+        {
+          "slot": "helmet",
+          "state": "focus",
+          "sil": "assets/ui/placeholders/helmet.png",
+          "silW": 76,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "on",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5fd4c474dd870108a754b241.webp",
+          "blend": null
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "silPixels": [
+        {
+          "slot": "helmet",
+          "w": 76,
+          "h": 76,
+          "whitePct": 44.3,
+          "blackPct": 49.5,
+          "midPct": 6.2
+        },
+        {
+          "slot": "glasses",
+          "w": 63,
+          "h": 61,
+          "whitePct": 82.6,
+          "blackPct": 13.2,
+          "midPct": 4.2
+        },
+        {
+          "slot": "headphones",
+          "w": 63,
+          "h": 61,
+          "whitePct": 64.5,
+          "blackPct": 25.3,
+          "midPct": 10.1
+        },
+        {
+          "slot": "face",
+          "w": 63,
+          "h": 61,
+          "whitePct": 57.9,
+          "blackPct": 36.9,
+          "midPct": 5.2
+        },
+        {
+          "slot": "rig",
+          "w": 106,
+          "h": 105,
+          "whitePct": 51.7,
+          "blackPct": 42,
+          "midPct": 6.4
+        },
+        {
+          "slot": "primary1",
+          "w": 260,
+          "h": 106,
+          "whitePct": 81.3,
+          "blackPct": 13.5,
+          "midPct": 5.3
+        },
+        {
+          "slot": "backpack",
+          "w": 106,
+          "h": 106,
+          "whitePct": 60.5,
+          "blackPct": 36.4,
+          "midPct": 3
+        },
+        {
+          "slot": "primary2",
+          "w": 260,
+          "h": 106,
+          "whitePct": 81.3,
+          "blackPct": 13.5,
+          "midPct": 5.3
+        },
+        {
+          "slot": "holster",
+          "w": 152,
+          "h": 106,
+          "whitePct": 68.9,
+          "blackPct": 25,
+          "midPct": 6.1
+        },
+        {
+          "slot": "melee",
+          "w": 106,
+          "h": 106,
+          "whitePct": 87.6,
+          "blackPct": 10,
+          "midPct": 2.3
+        }
+      ],
+      "equippedName": "Altyn 突击头盔（橄榄绿）",
+      "afterEquip": [
+        {
+          "slot": "helmet",
+          "state": "focus",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5aa7e276e5b5b000171d0647.webp",
+          "blend": null
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "on",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5fd4c474dd870108a754b241.webp",
+          "blend": null
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "tooltips": [
+        {
+          "shown": true,
+          "headText": "Ragman LL4 · 解锁兑换配方",
+          "lineText": "配方：3 × 圆嘴钳",
+          "headColor": "rgb(0, 0, 0)",
+          "lineColor": "rgb(35, 35, 35)",
+          "bg": "rgb(236, 233, 216)",
+          "rect": {
+            "x": 1081,
+            "y": 93,
+            "w": 175,
+            "h": 101
+          },
+          "inViewport": true,
+          "anchor": "#loadout-workbench .lw-src",
+          "contrastHead": 17.21,
+          "contrastLine": 12.88
+        },
+        {
+          "shown": true,
+          "headText": "前插板：未安装（本位置合法插板 19 件）",
+          "lineText": "先装备这件护甲，才能给它装插板",
+          "headColor": "rgb(0, 0, 0)",
+          "lineColor": "rgb(35, 35, 35)",
+          "bg": "rgb(236, 233, 216)",
+          "rect": {
+            "x": 511,
+            "y": 99,
+            "w": 229,
+            "h": 50
+          },
+          "inViewport": true,
+          "anchor": "#loadout-workbench .lw-plate-cell",
+          "contrastHead": 17.21,
+          "contrastLine": 12.88
+        }
+      ],
+      "tooltip": {
+        "shown": true,
+        "headText": "Ragman LL4 · 解锁兑换配方",
+        "lineText": "配方：3 × 圆嘴钳",
+        "headColor": "rgb(0, 0, 0)",
+        "lineColor": "rgb(35, 35, 35)",
+        "bg": "rgb(236, 233, 216)",
+        "rect": {
+          "x": 1081,
+          "y": 93,
+          "w": 175,
+          "h": 101
+        },
+        "inViewport": true,
+        "anchor": "#loadout-workbench .lw-src",
+        "contrastHead": 17.21,
+        "contrastLine": 12.88
+      },
+      "armorEquipped": [
+        {
+          "slot": "helmet",
+          "state": "on",
+          "sil": null,
+          "silW": 0,
+          "silOk": false,
+          "icon": "assets/icons-items/5aa7e276e5b5b000171d0647.webp",
+          "blend": null
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "focus",
+          "sil": "assets/ui/placeholders/armor.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "tooltipPlate": {
+        "shown": true,
+        "headText": "前插板：未安装（本位置合法插板 19 件）",
+        "lineText": "先装备这件护甲，才能给它装插板",
+        "headColor": "rgb(0, 0, 0)",
+        "lineColor": "rgb(35, 35, 35)",
+        "bg": "rgb(236, 233, 216)",
+        "rect": {
+          "x": 511,
+          "y": 99,
+          "w": 229,
+          "h": 50
+        },
+        "inViewport": true,
+        "anchor": "#loadout-workbench .lw-plate-cell",
+        "contrastHead": 17.21,
+        "contrastLine": 12.88
+      },
+      "removeClicked": true,
+      "afterRemove": [
+        {
+          "slot": "helmet",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/helmet.png",
+          "silW": 76,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "glasses",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/glasses.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "headphones",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/headphones.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "face",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/face.png",
+          "silW": 63,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "armor",
+          "state": "focus",
+          "sil": "assets/ui/placeholders/armor.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "rig",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/rig.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary1",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "backpack",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/backpack.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "primary2",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/primary.png",
+          "silW": 260,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "holster",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/holster.png",
+          "silW": 152,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        },
+        {
+          "slot": "melee",
+          "state": "empty",
+          "sil": "assets/ui/placeholders/melee.png",
+          "silW": 106,
+          "silOk": true,
+          "icon": null,
+          "blend": "multiply"
+        }
+      ],
+      "graphText": {
+        "sample": [
+          {
+            "txt": "0",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "20",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "40",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "60",
+            "fill": "rgb(74, 74, 74)"
+          },
+          {
+            "txt": "80",
+            "fill": "rgb(74, 74, 74)"
+          }
+        ],
+        "fillHistogram": {
+          "rgb(74, 74, 74)": 14,
+          "rgb(35, 35, 35)": 2
+        },
+        "count": 16,
+        "plotFill": "rgb(255, 255, 255)",
+        "legendColor": "rgb(35, 35, 35)",
+        "noteColor": "rgb(35, 35, 35)",
+        "plotAreaBg": "rgb(236, 233, 216)"
+      },
+      "graphTip": {
+        "shown": true,
+        "rowText": "26x75 毫米照明信号弹（白色）伤害 37 · pen 0 · ArD 60 · 初速 80",
+        "nameColor": "rgb(0, 0, 0)",
+        "rowColor": "rgb(35, 35, 35)",
+        "metaColor": "rgb(74, 74, 74)",
+        "bg": "rgb(236, 233, 216)",
+        "contrastName": 17.21,
+        "contrastMeta": 7.26
+      },
+      "ammoDetail": [
+        {
+          "open": true,
+          "name": "5.45x39毫米 7N39“针刺”",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "5.45x39 · 子弹 · RIFLE ROUNDS",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "5.45",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": "7.62x25毫米 TT M995",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "7.62x25 · 子弹 · PISTOL/SMG",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "7.62",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": ".357 Magnum FMJ",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": ".357 · 子弹 · PISTOL/SMG",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": ".357",
+          "contrastMeta": 5.72
+        },
+        {
+          "open": true,
+          "name": "12/70 AP-20 穿甲独头弹",
+          "nameColor": "rgb(255, 255, 255)",
+          "meta": "12g · 子弹 · SHOTGUN ROUNDS",
+          "metaColor": "rgb(255, 255, 255)",
+          "titleColor": "rgb(255, 255, 255)",
+          "headGradient": "linear-gradient(rgb(20, 102, 224) 0%, rgb(10, 63, 158) 62%, rgb(8, 50, 124) 100%)",
+          "probe": "12/70",
+          "contrastMeta": 5.72
+        }
+      ],
+      "build": "R18.1 构建 · compat 加载中 · 配置改完后直接点这里；参数校验仍在引擎入口执行。",
+      "armorGroups": {
+        "groups": [
+          {
+            "label": "IV · 陶瓷 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "IV · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "IV · 复合材料 · 内衬",
+            "n": 2
+          },
+          {
+            "label": "III · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "III · 装甲钢 · 内衬",
+            "n": 2
+          },
+          {
+            "label": "III · 铝合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "III · 芳纶 · 内衬",
+            "n": 52
+          },
+          {
+            "label": "II · 钛合金 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "II · 芳纶 · 内衬",
+            "n": 37
+          },
+          {
+            "label": "无内衬",
+            "n": 10
+          }
+        ],
+        "total": 109,
+        "looseOptions": 1
+      },
+      "armorPicked": {
+        "id": "689479cb47e5acd1e10be986",
+        "text": "Ferro Concepts FCPC V5 插板胸挂 (黑色军团) · 本体 5 级",
+        "grp": "IV · 复合材料 · 内衬",
+        "at": 2
+      },
+      "plateGroups": {
+        "groups": [
+          {
+            "label": "VI · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "VI · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "VI · 装甲钢",
+            "n": 1
+          },
+          {
+            "label": "VI · 超高分子量聚乙烯",
+            "n": 2
+          },
+          {
+            "label": "VI · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "V · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "V · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "V · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "V · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "IV · 陶瓷",
+            "n": 1
+          },
+          {
+            "label": "IV · 钛合金",
+            "n": 1
+          },
+          {
+            "label": "IV · 装甲钢",
+            "n": 1
+          },
+          {
+            "label": "IV · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "IV · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "IV · 铝合金",
+            "n": 1
+          },
+          {
+            "label": "III · 超高分子量聚乙烯",
+            "n": 1
+          },
+          {
+            "label": "III · 复合材料",
+            "n": 1
+          },
+          {
+            "label": "I · 超高分子量聚乙烯",
+            "n": 1
+          }
+        ],
+        "total": 20,
+        "zone": "Front_plate",
+        "looseOptions": 1
+      },
+      "bossPicked": {
+        "id": "boss:tagilla",
+        "text": "Tagilla（总血 1220）",
+        "total": 17
+      },
+      "bossState": {
+        "armorGroups": [
+          {
+            "label": "III · 芳纶 · 内衬",
+            "n": 1
+          },
+          {
+            "label": "II · 芳纶 · 内衬",
+            "n": 1
+          }
+        ],
+        "plateGroups": [
+          {
+            "label": "VI · 钛合金",
+            "n": 1
+          }
+        ],
+        "armorTotal": 3,
+        "plateTotal": 2,
+        "note": "Tagilla 装备池（verified 白名单）：护甲 2 项 / 头盔 3 项；插板型号 wiki 未单列（missing）→ 按护甲插板位可选（estimated）。"
+      },
+      "noHScroll2": true
+    }
+  ],
+  "shots": [
+    {
+      "file": "1920-01-loadout-empty.png",
+      "bytes": 37660
+    },
+    {
+      "file": "1920-02-loadout-equipped.png",
+      "bytes": 46271
+    },
+    {
+      "file": "1920-03-loadout-tooltip.png",
+      "bytes": 7587
+    },
+    {
+      "file": "1920-03b-loadout-armor.png",
+      "bytes": 62072
+    },
+    {
+      "file": "1920-03c-loadout-tip-plate.png",
+      "bytes": 7171
+    },
+    {
+      "file": "1920-04-loadout-removed.png",
+      "bytes": 54424
+    },
+    {
+      "file": "1920-05-ammo-graph.png",
+      "bytes": 120747
+    },
+    {
+      "file": "1920-06-ammo-graph-tip.png",
+      "bytes": 119519
+    },
+    {
+      "file": "1920-07-ammo-detail-1.png",
+      "bytes": 11364
+    },
+    {
+      "file": "1920-07-ammo-detail-2.png",
+      "bytes": 10635
+    },
+    {
+      "file": "1920-07-ammo-detail-3.png",
+      "bytes": 9562
+    },
+    {
+      "file": "1920-07-ammo-detail-4.png",
+      "bytes": 11532
+    },
+    {
+      "file": "1920-08-sim-armor-groups.png",
+      "bytes": 750
+    },
+    {
+      "file": "1920-09-sim-plate-groups.png",
+      "bytes": 4618
+    },
+    {
+      "file": "1920-09b-armor-open.png",
+      "bytes": 13319
+    },
+    {
+      "file": "1920-09c-plate-open.png",
+      "bytes": 11803
+    },
+    {
+      "file": "1920-10-sim-boss.png",
+      "bytes": 141856
+    },
+    {
+      "file": "1264-01-loadout-empty.png",
+      "bytes": 38079
+    },
+    {
+      "file": "1264-02-loadout-equipped.png",
+      "bytes": 42602
+    },
+    {
+      "file": "1264-03-loadout-tooltip.png",
+      "bytes": 7343
+    },
+    {
+      "file": "1264-03b-loadout-armor.png",
+      "bytes": 32800
+    },
+    {
+      "file": "1264-03c-loadout-tip-plate.png",
+      "bytes": 5481
+    },
+    {
+      "file": "1264-04-loadout-removed.png",
+      "bytes": 27803
+    },
+    {
+      "file": "1264-05-ammo-graph.png",
+      "bytes": 105353
+    },
+    {
+      "file": "1264-06-ammo-graph-tip.png",
+      "bytes": 100431
+    },
+    {
+      "file": "1264-07-ammo-detail-1.png",
+      "bytes": 11040
+    },
+    {
+      "file": "1264-07-ammo-detail-2.png",
+      "bytes": 10414
+    },
+    {
+      "file": "1264-07-ammo-detail-3.png",
+      "bytes": 9138
+    },
+    {
+      "file": "1264-07-ammo-detail-4.png",
+      "bytes": 11226
+    },
+    {
+      "file": "1264-08-sim-armor-groups.png",
+      "bytes": 750
+    },
+    {
+      "file": "1264-09-sim-plate-groups.png",
+      "bytes": 4618
+    },
+    {
+      "file": "1264-09b-armor-open.png",
+      "bytes": 13319
+    },
+    {
+      "file": "1264-09c-plate-open.png",
+      "bytes": 11803
+    },
+    {
+      "file": "1264-10-sim-boss.png",
+      "bytes": 108090
+    }
+  ],
+  "console": [],
+  "externalRequests": []
+}

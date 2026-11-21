@@ -1,0 +1,29 @@
+{
+ "schema": "r19.21-data-fix/1",
+ "restored": [],
+ "dropped": [],
+ "skipped": [
+  {
+   "itemId": "5ac733a45acfc400192630e2",
+   "slotId": "5ac733a45acfc400192630e4",
+   "why": "already-present"
+  },
+  {
+   "itemId": "5ac72e475acfc400180ae6fe",
+   "slotId": "5ac72e475acfc400180ae700",
+   "why": "already-present"
+  },
+  {
+   "itemId": "5649b0544bdc2d1b2b8b458a",
+   "slotId": "5a0ee12cfcdbcb001912fa64",
+   "why": "already-present"
+  },
+  {
+   "itemId": "59d650cf86f7741b846413a4",
+   "slotIds": [
+    "5a0eda49fcdbcb001912fa61"
+   ],
+   "why": "already-absent"
+  }
+ ]
+}

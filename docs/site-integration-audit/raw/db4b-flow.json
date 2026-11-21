@@ -1,0 +1,2184 @@
+{
+ "prefix": "db4b",
+ "start_url": "https://db4tarkov.com/gun",
+ "steps": [
+  {
+   "step": "base",
+   "url": "https://db4tarkov.com/gun",
+   "title": "Gun",
+   "aria": [
+    {
+     "role": "header",
+     "label": "DB4Tarkov v2026.10.28-0 🌕 17:41 🌓 05:41"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+    },
+    {
+     "role": "tab",
+     "label": "Caliber"
+    },
+    {
+     "role": "tab",
+     "label": "Class"
+    },
+    {
+     "role": "tab",
+     "label": "Table"
+    },
+    {
+     "role": "tab",
+     "label": "Gun"
+    },
+    {
+     "role": "input",
+     "label": "Type to search — ESC to clear"
+    },
+    {
+     "role": "group",
+     "label": "Streamers builds that they will manually update their builds from the web Content Management System 24"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "All Variants from the gun include buy from Trader / Barter"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Your saved guns"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Trader level / PMC Setting"
+    },
+    {
+     "role": "group",
+     "label": ".300"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 Velociraptor"
+    },
+    {
+     "role": "group",
+     "label": "4"
+    },
+    {
+     "role": "group",
+     "label": "800 2.72 MCX"
+    },
+    {
+     "role": "group",
+     "label": "5.8x42 2"
+    },
+    {
+     "role": "group",
+     "label": "750 2.90 QBZ-191 1.1"
+    },
+    {
+     "role": "group",
+     "label": "5.56x45"
+    },
+    {
+     "role": "group",
+     "label": "700 3.50 Type 20 1.1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.35 M16A2"
+    },
+    {
+     "role": "group",
+     "label": "800 2.65 M16A1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.01 Model 1"
+    },
+    {
+     "role": "group",
+     "label": "3"
+    },
+    {
+     "role": "group",
+     "label": "800 3.27 ADAR"
+    },
+    {
+     "role": "group",
+     "label": "10"
+    },
+    {
+     "role": "group",
+     "label": "800 2.93 M4A1"
+    },
+    {
+     "role": "group",
+     "label": "5"
+    },
+    {
+     "role": "group",
+     "label": "750 3.03 G36"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-102"
+    },
+    {
+     "role": "group",
+     "label": "650 3.29 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "800 3.70 TX-15"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-101"
+    },
+    {
+     "role": "group",
+     "label": "715 3.74 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "2"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5 1.1"
+    },
+    {
+     "role": "group",
+     "label": "715 3.83 AUG A1"
+    },
+    {
+     "role": "group",
+     "label": "650 4.00 MDR"
+    },
+    {
+     "role": "group",
+     "label": "715 4.04 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "5.45x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.69 AKS-74U"
+    },
+    {
+     "role": "group",
+     "label": "650 2.73 AKS-74UN"
+    },
+    {
+     "role": "group",
+     "label": "800 2.98 NL545 DI"
+    },
+    {
+     "role": "group",
+     "label": "850 3.01 NL545 GP"
+    },
+    {
+     "role": "group",
+     "label": "650 3.02 RPK-16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.13 AKS-74"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-105"
+    },
+    {
+     "role": "group",
+     "label": "650 3.23 AKS-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.32 AK-74"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 AKS-74UB"
+    },
+    {
+     "role": "group",
+     "label": "650 3.42 AK-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-74M"
+    },
+    {
+     "role": "group",
+     "label": "700 3.61 AK-12"
+    },
+    {
+     "role": "group",
+     "label": "650 3.92 AK-545 (s)"
+    },
+    {
+     "role": "group",
+     "label": "650 4.03 AK-545"
+    },
+    {
+     "role": "group",
+     "label": "6.8x51"
+    },
+    {
+     "role": "group",
+     "label": "800 4.21 SPEAR"
+    },
+    {
+     "role": "group",
+     "label": "7.62x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.32 Mk47"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-104"
+    },
+    {
+     "role": "group",
+     "label": "600 3.25 VPO-136"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMSN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 AKM"
+    },
+    {
+     "role": "group",
+     "label": "600 3.56 AKMN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.61 AK-103"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 SKS"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 OP-SKS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.84 RD-704"
+    },
+    {
+     "role": "group",
+     "label": "700 7.40 RPD"
+    },
+    {
+     "role": "group",
+     "label": "700 7.46 RPDN"
+    },
+    {
+     "role": "group",
+     "label": "7.62x51"
+    },
+    {
+     "role": "group",
+     "label": "600 0.81 X-17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.76 RFB"
+    },
+    {
+     "role": "group",
+     "label": "600 3.80 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "600 3.81 VPO-101"
+    },
+    {
+     "role": "group",
+     "label": "700 3.86 SR-25"
+    },
+    {
+     "role": "group",
+     "label": "700 3.89 AK-308"
+    },
+    {
+     "role": "group",
+     "label": "7"
+    },
+    {
+     "role": "group",
+     "label": "700 3.92 M1A"
+    },
+    {
+     "role": "group",
+     "label": "600 3.92 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.90 SA58"
+    },
+    {
+     "role": "group",
+     "label": "8"
+    },
+    {
+     "role": "group",
+     "label": "30 4.06 M700"
+    },
+    {
+     "role": "group",
+     "label": "650 4.47 MDR"
+    },
+    {
+     "role": "group",
+     "label": "700 4.92 RSASS"
+    },
+    {
+     "role": "group",
+     "label": "30 5.07 DVL-10"
+    },
+    {
+     "role": "group",
+     "label": "700 6.10 G28"
+    },
+    {
+     "role": "group",
+     "label": "30 5.90 T-5000M"
+    },
+    {
+     "role": "group",
+     "label": "550 9.50 M60E6"
+    },
+    {
+     "role": "group",
+     "label": "550 10.07 Mk 43"
+    },
+    {
+     "role": "group",
+     "label": "7.62x54R"
+    },
+    {
+     "role": "group",
+     "label": "10 2.85 MP-18"
+    },
+    {
+     "role": "group",
+     "label": "50 4.16 SVT-40"
+    },
+    {
+     "role": "group",
+     "label": "750 4.22 AVT-40"
+    },
+    {
+     "role": "group",
+     "label": "700 4.39 SVDS"
+    },
+    {
+     "role": "group",
+     "label": "30 4.89 Mosin (I)"
+    },
+    {
+     "role": "group",
+     "label": "30 4.88 Mosin (S)"
+    },
+    {
+     "role": "group",
+     "label": "30 5.19 SV-98"
+    },
+    {
+     "role": "group",
+     "label": "650 8.99 PKM"
+    },
+    {
+     "role": "group",
+     "label": "650 9.64 PKP"
+    },
+    {
+     "role": "group",
+     "label": ".308"
+    },
+    {
+     "role": "group",
+     "label": "100 3.08 MXLR"
+    },
+    {
+     "role": "group",
+     "label": ".338"
+    },
+    {
+     "role": "group",
+     "label": "30 6.80 TRG M10"
+    },
+    {
+     "role": "group",
+     "label": "30 5.79 AXMC"
+    },
+    {
+     "role": "group",
+     "label": "30 7.00 Mk-18"
+    },
+    {
+     "role": "group",
+     "label": "7.62x25"
+    },
+    {
+     "role": "group",
+     "label": "1000 4.05 PPSh41"
+    },
+    {
+     "role": "group",
+     "label": "9.3x64"
+    },
+    {
+     "role": "group",
+     "label": "25 5.28 TKPD"
+    },
+    {
+     "role": "group",
+     "label": "9x18"
+    },
+    {
+     "role": "group",
+     "label": "1000 1.53 PP-9"
+    },
+    {
+     "role": "group",
+     "label": "900 1.53 PP-91"
+    },
+    {
+     "role": "group",
+     "label": "900 1.73 PP-91-01-B"
+    },
+    {
+     "role": "group",
+     "label": "9x19"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.91 UZI SMG"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.66 UZI Pistol"
+    },
+    {
+     "role": "group",
+     "label": "600 3.75 UZI"
+    },
+    {
+     "role": "group",
+     "label": "900 1.29 MP9"
+    },
+    {
+     "role": "group",
+     "label": "1100 1.41 MP9-N"
+    },
+    {
+     "role": "group",
+     "label": "900 2.09 MP5K-N"
+    },
+    {
+     "role": "group",
+     "label": "800 2.71 MP5"
+    },
+    {
+     "role": "group",
+     "label": "800 1.99 STM-9"
+    },
+    {
+     "role": "group",
+     "label": "950 2.58 Vector"
+    },
+    {
+     "role": "group",
+     "label": "700 2.86 PP-19-01"
+    },
+    {
+     "role": "group",
+     "label": "850 2.88 MPX"
+    },
+    {
+     "role": "group",
+     "label": "650 3.01 Saiga-9"
+    },
+    {
+     "role": "group",
+     "label": "9x21 2"
+    },
+    {
+     "role": "group",
+     "label": "950 1.77 SR-2M"
+    }
+   ],
+   "shot_bytes": 251137,
+   "shot": "screenshots/db4b-base.png"
+  },
+  {
+   "step": "MARKET",
+   "click": "click(xy)",
+   "url_before": "https://db4tarkov.com/gun",
+   "url": "https://db4tarkov.com/gun",
+   "title": "Gun",
+   "aria": [
+    {
+     "role": "header",
+     "label": "DB4Tarkov v2026.10.28-0 🌕 17:42 🌓 05:42"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+    },
+    {
+     "role": "tab",
+     "label": "Caliber"
+    },
+    {
+     "role": "tab",
+     "label": "Class"
+    },
+    {
+     "role": "tab",
+     "label": "Table"
+    },
+    {
+     "role": "tab",
+     "label": "Gun"
+    },
+    {
+     "role": "input",
+     "label": "Type to search — ESC to clear"
+    },
+    {
+     "role": "group",
+     "label": "Streamers builds that they will manually update their builds from the web Content Management System 24"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "All Variants from the gun include buy from Trader / Barter"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Your saved guns"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Trader level / PMC Setting"
+    },
+    {
+     "role": "group",
+     "label": ".300"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 Velociraptor"
+    },
+    {
+     "role": "group",
+     "label": "4"
+    },
+    {
+     "role": "group",
+     "label": "800 2.72 MCX"
+    },
+    {
+     "role": "group",
+     "label": "5.8x42 2"
+    },
+    {
+     "role": "group",
+     "label": "750 2.90 QBZ-191 1.1"
+    },
+    {
+     "role": "group",
+     "label": "5.56x45"
+    },
+    {
+     "role": "group",
+     "label": "700 3.50 Type 20 1.1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.35 M16A2"
+    },
+    {
+     "role": "group",
+     "label": "800 2.65 M16A1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.01 Model 1"
+    },
+    {
+     "role": "group",
+     "label": "3"
+    },
+    {
+     "role": "group",
+     "label": "800 3.27 ADAR"
+    },
+    {
+     "role": "group",
+     "label": "10"
+    },
+    {
+     "role": "group",
+     "label": "800 2.93 M4A1"
+    },
+    {
+     "role": "group",
+     "label": "5"
+    },
+    {
+     "role": "group",
+     "label": "750 3.03 G36"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-102"
+    },
+    {
+     "role": "group",
+     "label": "650 3.29 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "800 3.70 TX-15"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-101"
+    },
+    {
+     "role": "group",
+     "label": "715 3.74 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "2"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5 1.1"
+    },
+    {
+     "role": "group",
+     "label": "715 3.83 AUG A1"
+    },
+    {
+     "role": "group",
+     "label": "650 4.00 MDR"
+    },
+    {
+     "role": "group",
+     "label": "715 4.04 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "5.45x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.69 AKS-74U"
+    },
+    {
+     "role": "group",
+     "label": "650 2.73 AKS-74UN"
+    },
+    {
+     "role": "group",
+     "label": "800 2.98 NL545 DI"
+    },
+    {
+     "role": "group",
+     "label": "850 3.01 NL545 GP"
+    },
+    {
+     "role": "group",
+     "label": "650 3.02 RPK-16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.13 AKS-74"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-105"
+    },
+    {
+     "role": "group",
+     "label": "650 3.23 AKS-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.32 AK-74"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 AKS-74UB"
+    },
+    {
+     "role": "group",
+     "label": "650 3.42 AK-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-74M"
+    },
+    {
+     "role": "group",
+     "label": "700 3.61 AK-12"
+    },
+    {
+     "role": "group",
+     "label": "650 3.92 AK-545 (s)"
+    },
+    {
+     "role": "group",
+     "label": "650 4.03 AK-545"
+    },
+    {
+     "role": "group",
+     "label": "6.8x51"
+    },
+    {
+     "role": "group",
+     "label": "800 4.21 SPEAR"
+    },
+    {
+     "role": "group",
+     "label": "7.62x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.32 Mk47"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-104"
+    },
+    {
+     "role": "group",
+     "label": "600 3.25 VPO-136"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMSN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 AKM"
+    },
+    {
+     "role": "group",
+     "label": "600 3.56 AKMN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.61 AK-103"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 SKS"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 OP-SKS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.84 RD-704"
+    },
+    {
+     "role": "group",
+     "label": "700 7.40 RPD"
+    },
+    {
+     "role": "group",
+     "label": "700 7.46 RPDN"
+    },
+    {
+     "role": "group",
+     "label": "7.62x51"
+    },
+    {
+     "role": "group",
+     "label": "600 0.81 X-17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.76 RFB"
+    },
+    {
+     "role": "group",
+     "label": "600 3.80 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "600 3.81 VPO-101"
+    },
+    {
+     "role": "group",
+     "label": "700 3.86 SR-25"
+    },
+    {
+     "role": "group",
+     "label": "700 3.89 AK-308"
+    },
+    {
+     "role": "group",
+     "label": "7"
+    },
+    {
+     "role": "group",
+     "label": "700 3.92 M1A"
+    },
+    {
+     "role": "group",
+     "label": "600 3.92 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.90 SA58"
+    },
+    {
+     "role": "group",
+     "label": "8"
+    },
+    {
+     "role": "group",
+     "label": "30 4.06 M700"
+    },
+    {
+     "role": "group",
+     "label": "650 4.47 MDR"
+    },
+    {
+     "role": "group",
+     "label": "700 4.92 RSASS"
+    },
+    {
+     "role": "group",
+     "label": "30 5.07 DVL-10"
+    },
+    {
+     "role": "group",
+     "label": "700 6.10 G28"
+    },
+    {
+     "role": "group",
+     "label": "30 5.90 T-5000M"
+    },
+    {
+     "role": "group",
+     "label": "550 9.50 M60E6"
+    },
+    {
+     "role": "group",
+     "label": "550 10.07 Mk 43"
+    },
+    {
+     "role": "group",
+     "label": "7.62x54R"
+    },
+    {
+     "role": "group",
+     "label": "10 2.85 MP-18"
+    },
+    {
+     "role": "group",
+     "label": "50 4.16 SVT-40"
+    },
+    {
+     "role": "group",
+     "label": "750 4.22 AVT-40"
+    },
+    {
+     "role": "group",
+     "label": "700 4.39 SVDS"
+    },
+    {
+     "role": "group",
+     "label": "30 4.89 Mosin (I)"
+    },
+    {
+     "role": "group",
+     "label": "30 4.88 Mosin (S)"
+    },
+    {
+     "role": "group",
+     "label": "30 5.19 SV-98"
+    },
+    {
+     "role": "group",
+     "label": "650 8.99 PKM"
+    },
+    {
+     "role": "group",
+     "label": "650 9.64 PKP"
+    },
+    {
+     "role": "group",
+     "label": ".308"
+    },
+    {
+     "role": "group",
+     "label": "100 3.08 MXLR"
+    },
+    {
+     "role": "group",
+     "label": ".338"
+    },
+    {
+     "role": "group",
+     "label": "30 6.80 TRG M10"
+    },
+    {
+     "role": "group",
+     "label": "30 5.79 AXMC"
+    },
+    {
+     "role": "group",
+     "label": "30 7.00 Mk-18"
+    },
+    {
+     "role": "group",
+     "label": "7.62x25"
+    },
+    {
+     "role": "group",
+     "label": "1000 4.05 PPSh41"
+    },
+    {
+     "role": "group",
+     "label": "9.3x64"
+    },
+    {
+     "role": "group",
+     "label": "25 5.28 TKPD"
+    },
+    {
+     "role": "group",
+     "label": "9x18"
+    },
+    {
+     "role": "group",
+     "label": "1000 1.53 PP-9"
+    },
+    {
+     "role": "group",
+     "label": "900 1.53 PP-91"
+    },
+    {
+     "role": "group",
+     "label": "900 1.73 PP-91-01-B"
+    },
+    {
+     "role": "group",
+     "label": "9x19"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.91 UZI SMG"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.66 UZI Pistol"
+    },
+    {
+     "role": "group",
+     "label": "600 3.75 UZI"
+    },
+    {
+     "role": "group",
+     "label": "900 1.29 MP9"
+    },
+    {
+     "role": "group",
+     "label": "1100 1.41 MP9-N"
+    },
+    {
+     "role": "group",
+     "label": "900 2.09 MP5K-N"
+    },
+    {
+     "role": "group",
+     "label": "800 2.71 MP5"
+    },
+    {
+     "role": "group",
+     "label": "800 1.99 STM-9"
+    },
+    {
+     "role": "group",
+     "label": "950 2.58 Vector"
+    },
+    {
+     "role": "group",
+     "label": "700 2.86 PP-19-01"
+    },
+    {
+     "role": "group",
+     "label": "850 2.88 MPX"
+    },
+    {
+     "role": "group",
+     "label": "650 3.01 Saiga-9"
+    },
+    {
+     "role": "group",
+     "label": "9x21 2"
+    },
+    {
+     "role": "group",
+     "label": "950 1.77 SR-2M"
+    }
+   ],
+   "shot": "screenshots/db4b-MARKET.png",
+   "shot_bytes": 251322
+  },
+  {
+   "step": "QUEST",
+   "click": "click(xy)",
+   "url_before": "https://db4tarkov.com/gun",
+   "url": "https://db4tarkov.com/gun",
+   "title": "Gun",
+   "aria": [
+    {
+     "role": "header",
+     "label": "DB4Tarkov v2026.10.28-0 🌕 17:43 🌓 05:43"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+    },
+    {
+     "role": "tab",
+     "label": "Caliber"
+    },
+    {
+     "role": "tab",
+     "label": "Class"
+    },
+    {
+     "role": "tab",
+     "label": "Table"
+    },
+    {
+     "role": "tab",
+     "label": "Gun"
+    },
+    {
+     "role": "input",
+     "label": "Type to search — ESC to clear"
+    },
+    {
+     "role": "group",
+     "label": "Streamers builds that they will manually update their builds from the web Content Management System 24"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "All Variants from the gun include buy from Trader / Barter"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Your saved guns"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Trader level / PMC Setting"
+    },
+    {
+     "role": "group",
+     "label": ".300"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 Velociraptor"
+    },
+    {
+     "role": "group",
+     "label": "4"
+    },
+    {
+     "role": "group",
+     "label": "800 2.72 MCX"
+    },
+    {
+     "role": "group",
+     "label": "5.8x42 2"
+    },
+    {
+     "role": "group",
+     "label": "750 2.90 QBZ-191 1.1"
+    },
+    {
+     "role": "group",
+     "label": "5.56x45"
+    },
+    {
+     "role": "group",
+     "label": "700 3.50 Type 20 1.1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.35 M16A2"
+    },
+    {
+     "role": "group",
+     "label": "800 2.65 M16A1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.01 Model 1"
+    },
+    {
+     "role": "group",
+     "label": "3"
+    },
+    {
+     "role": "group",
+     "label": "800 3.27 ADAR"
+    },
+    {
+     "role": "group",
+     "label": "10"
+    },
+    {
+     "role": "group",
+     "label": "800 2.93 M4A1"
+    },
+    {
+     "role": "group",
+     "label": "5"
+    },
+    {
+     "role": "group",
+     "label": "750 3.03 G36"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-102"
+    },
+    {
+     "role": "group",
+     "label": "650 3.29 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "800 3.70 TX-15"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-101"
+    },
+    {
+     "role": "group",
+     "label": "715 3.74 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "2"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5 1.1"
+    },
+    {
+     "role": "group",
+     "label": "715 3.83 AUG A1"
+    },
+    {
+     "role": "group",
+     "label": "650 4.00 MDR"
+    },
+    {
+     "role": "group",
+     "label": "715 4.04 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "5.45x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.69 AKS-74U"
+    },
+    {
+     "role": "group",
+     "label": "650 2.73 AKS-74UN"
+    },
+    {
+     "role": "group",
+     "label": "800 2.98 NL545 DI"
+    },
+    {
+     "role": "group",
+     "label": "850 3.01 NL545 GP"
+    },
+    {
+     "role": "group",
+     "label": "650 3.02 RPK-16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.13 AKS-74"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-105"
+    },
+    {
+     "role": "group",
+     "label": "650 3.23 AKS-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.32 AK-74"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 AKS-74UB"
+    },
+    {
+     "role": "group",
+     "label": "650 3.42 AK-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-74M"
+    },
+    {
+     "role": "group",
+     "label": "700 3.61 AK-12"
+    },
+    {
+     "role": "group",
+     "label": "650 3.92 AK-545 (s)"
+    },
+    {
+     "role": "group",
+     "label": "650 4.03 AK-545"
+    },
+    {
+     "role": "group",
+     "label": "6.8x51"
+    },
+    {
+     "role": "group",
+     "label": "800 4.21 SPEAR"
+    },
+    {
+     "role": "group",
+     "label": "7.62x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.32 Mk47"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-104"
+    },
+    {
+     "role": "group",
+     "label": "600 3.25 VPO-136"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMSN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 AKM"
+    },
+    {
+     "role": "group",
+     "label": "600 3.56 AKMN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.61 AK-103"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 SKS"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 OP-SKS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.84 RD-704"
+    },
+    {
+     "role": "group",
+     "label": "700 7.40 RPD"
+    },
+    {
+     "role": "group",
+     "label": "700 7.46 RPDN"
+    },
+    {
+     "role": "group",
+     "label": "7.62x51"
+    },
+    {
+     "role": "group",
+     "label": "600 0.81 X-17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.76 RFB"
+    },
+    {
+     "role": "group",
+     "label": "600 3.80 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "600 3.81 VPO-101"
+    },
+    {
+     "role": "group",
+     "label": "700 3.86 SR-25"
+    },
+    {
+     "role": "group",
+     "label": "700 3.89 AK-308"
+    },
+    {
+     "role": "group",
+     "label": "7"
+    },
+    {
+     "role": "group",
+     "label": "700 3.92 M1A"
+    },
+    {
+     "role": "group",
+     "label": "600 3.92 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.90 SA58"
+    },
+    {
+     "role": "group",
+     "label": "8"
+    },
+    {
+     "role": "group",
+     "label": "30 4.06 M700"
+    },
+    {
+     "role": "group",
+     "label": "650 4.47 MDR"
+    },
+    {
+     "role": "group",
+     "label": "700 4.92 RSASS"
+    },
+    {
+     "role": "group",
+     "label": "30 5.07 DVL-10"
+    },
+    {
+     "role": "group",
+     "label": "700 6.10 G28"
+    },
+    {
+     "role": "group",
+     "label": "30 5.90 T-5000M"
+    },
+    {
+     "role": "group",
+     "label": "550 9.50 M60E6"
+    },
+    {
+     "role": "group",
+     "label": "550 10.07 Mk 43"
+    },
+    {
+     "role": "group",
+     "label": "7.62x54R"
+    },
+    {
+     "role": "group",
+     "label": "10 2.85 MP-18"
+    },
+    {
+     "role": "group",
+     "label": "50 4.16 SVT-40"
+    },
+    {
+     "role": "group",
+     "label": "750 4.22 AVT-40"
+    },
+    {
+     "role": "group",
+     "label": "700 4.39 SVDS"
+    },
+    {
+     "role": "group",
+     "label": "30 4.89 Mosin (I)"
+    },
+    {
+     "role": "group",
+     "label": "30 4.88 Mosin (S)"
+    },
+    {
+     "role": "group",
+     "label": "30 5.19 SV-98"
+    },
+    {
+     "role": "group",
+     "label": "650 8.99 PKM"
+    },
+    {
+     "role": "group",
+     "label": "650 9.64 PKP"
+    },
+    {
+     "role": "group",
+     "label": ".308"
+    },
+    {
+     "role": "group",
+     "label": "100 3.08 MXLR"
+    },
+    {
+     "role": "group",
+     "label": ".338"
+    },
+    {
+     "role": "group",
+     "label": "30 6.80 TRG M10"
+    },
+    {
+     "role": "group",
+     "label": "30 5.79 AXMC"
+    },
+    {
+     "role": "group",
+     "label": "30 7.00 Mk-18"
+    },
+    {
+     "role": "group",
+     "label": "7.62x25"
+    },
+    {
+     "role": "group",
+     "label": "1000 4.05 PPSh41"
+    },
+    {
+     "role": "group",
+     "label": "9.3x64"
+    },
+    {
+     "role": "group",
+     "label": "25 5.28 TKPD"
+    },
+    {
+     "role": "group",
+     "label": "9x18"
+    },
+    {
+     "role": "group",
+     "label": "1000 1.53 PP-9"
+    },
+    {
+     "role": "group",
+     "label": "900 1.53 PP-91"
+    },
+    {
+     "role": "group",
+     "label": "900 1.73 PP-91-01-B"
+    },
+    {
+     "role": "group",
+     "label": "9x19"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.91 UZI SMG"
+    },
+    {
+     "role": "group",
+     "label": "1075 1.66 UZI Pistol"
+    },
+    {
+     "role": "group",
+     "label": "600 3.75 UZI"
+    },
+    {
+     "role": "group",
+     "label": "900 1.29 MP9"
+    },
+    {
+     "role": "group",
+     "label": "1100 1.41 MP9-N"
+    },
+    {
+     "role": "group",
+     "label": "900 2.09 MP5K-N"
+    },
+    {
+     "role": "group",
+     "label": "800 2.71 MP5"
+    },
+    {
+     "role": "group",
+     "label": "800 1.99 STM-9"
+    },
+    {
+     "role": "group",
+     "label": "950 2.58 Vector"
+    },
+    {
+     "role": "group",
+     "label": "700 2.86 PP-19-01"
+    },
+    {
+     "role": "group",
+     "label": "850 2.88 MPX"
+    },
+    {
+     "role": "group",
+     "label": "650 3.01 Saiga-9"
+    },
+    {
+     "role": "group",
+     "label": "9x21 2"
+    },
+    {
+     "role": "group",
+     "label": "950 1.77 SR-2M"
+    }
+   ],
+   "shot": "screenshots/db4b-QUEST.png",
+   "shot_bytes": 251294
+  },
+  {
+   "step": "AMMO",
+   "click": "click(xy)",
+   "url_before": "https://db4tarkov.com/gun",
+   "url": "https://db4tarkov.com/gun",
+   "title": "Gun",
+   "aria": [
+    {
+     "role": "header",
+     "label": "DB4Tarkov v2026.10.28-0 🌕 17:44 🌓 05:44"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Game Mode Kord Breach (Season 1) ends in 38 day(s)"
+    },
+    {
+     "role": "tab",
+     "label": "Caliber"
+    },
+    {
+     "role": "tab",
+     "label": "Class"
+    },
+    {
+     "role": "tab",
+     "label": "Table"
+    },
+    {
+     "role": "tab",
+     "label": "Gun"
+    },
+    {
+     "role": "input",
+     "label": "Type to search — ESC to clear"
+    },
+    {
+     "role": "group",
+     "label": "Streamers builds that they will manually update their builds from the web Content Management System 24"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "All Variants from the gun include buy from Trader / Barter"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Your saved guns"
+    },
+    {
+     "role": "flt-semantics",
+     "label": "Trader level / PMC Setting"
+    },
+    {
+     "role": "tabpanel",
+     "label": "Enable \"onlyTraderLvl\" in Settings to limit builds to your trader levels. 4 4 4 4 4 Pick a Gunsmith quest on the left to"
+    },
+    {
+     "role": "group",
+     "label": ".300"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 Velociraptor"
+    },
+    {
+     "role": "group",
+     "label": "4"
+    },
+    {
+     "role": "group",
+     "label": "800 2.72 MCX"
+    },
+    {
+     "role": "group",
+     "label": "5.8x42 2"
+    },
+    {
+     "role": "group",
+     "label": "750 2.90 QBZ-191 1.1"
+    },
+    {
+     "role": "group",
+     "label": "5.56x45"
+    },
+    {
+     "role": "group",
+     "label": "700 3.50 Type 20 1.1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.35 M16A2"
+    },
+    {
+     "role": "group",
+     "label": "800 2.65 M16A1"
+    },
+    {
+     "role": "group",
+     "label": "800 3.01 Model 1"
+    },
+    {
+     "role": "group",
+     "label": "3"
+    },
+    {
+     "role": "group",
+     "label": "800 3.27 ADAR"
+    },
+    {
+     "role": "group",
+     "label": "10"
+    },
+    {
+     "role": "group",
+     "label": "800 2.93 M4A1"
+    },
+    {
+     "role": "group",
+     "label": "5"
+    },
+    {
+     "role": "group",
+     "label": "750 3.03 G36"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-102"
+    },
+    {
+     "role": "group",
+     "label": "650 3.29 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "800 3.70 TX-15"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 Mk 16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-101"
+    },
+    {
+     "role": "group",
+     "label": "715 3.74 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "2"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5"
+    },
+    {
+     "role": "group",
+     "label": "850 3.82 HK 416A5 1.1"
+    },
+    {
+     "role": "group",
+     "label": "715 3.83 AUG A1"
+    },
+    {
+     "role": "group",
+     "label": "650 4.00 MDR"
+    },
+    {
+     "role": "group",
+     "label": "715 4.04 AUG A3"
+    },
+    {
+     "role": "group",
+     "label": "5.45x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.69 AKS-74U"
+    },
+    {
+     "role": "group",
+     "label": "650 2.73 AKS-74UN"
+    },
+    {
+     "role": "group",
+     "label": "800 2.98 NL545 DI"
+    },
+    {
+     "role": "group",
+     "label": "850 3.01 NL545 GP"
+    },
+    {
+     "role": "group",
+     "label": "650 3.02 RPK-16"
+    },
+    {
+     "role": "group",
+     "label": "650 3.13 AKS-74"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-105"
+    },
+    {
+     "role": "group",
+     "label": "650 3.23 AKS-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.32 AK-74"
+    },
+    {
+     "role": "group",
+     "label": "650 3.34 AKS-74UB"
+    },
+    {
+     "role": "group",
+     "label": "650 3.42 AK-74N"
+    },
+    {
+     "role": "group",
+     "label": "650 3.61 AK-74M"
+    },
+    {
+     "role": "group",
+     "label": "700 3.61 AK-12"
+    },
+    {
+     "role": "group",
+     "label": "650 3.92 AK-545 (s)"
+    },
+    {
+     "role": "group",
+     "label": "650 4.03 AK-545"
+    },
+    {
+     "role": "group",
+     "label": "6.8x51"
+    },
+    {
+     "role": "group",
+     "label": "800 4.21 SPEAR"
+    },
+    {
+     "role": "group",
+     "label": "7.62x39"
+    },
+    {
+     "role": "group",
+     "label": "650 2.32 Mk47"
+    },
+    {
+     "role": "group",
+     "label": "600 3.21 AK-104"
+    },
+    {
+     "role": "group",
+     "label": "600 3.25 VPO-136"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.44 AKMSN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.50 AKM"
+    },
+    {
+     "role": "group",
+     "label": "600 3.56 AKMN"
+    },
+    {
+     "role": "group",
+     "label": "600 3.61 AK-103"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 SKS"
+    },
+    {
+     "role": "group",
+     "label": "40 3.79 OP-SKS"
+    },
+    {
+     "role": "group",
+     "label": "600 3.84 RD-704"
+    },
+    {
+     "role": "group",
+     "label": "700 7.40 RPD"
+    },
+    {
+     "role": "group",
+     "label": "700 7.46 RPDN"
+    },
+    {
+     "role": "group",
+     "label": "7.62x51"
+    },
+    {
+     "role": "group",
+     "label": "600 0.81 X-17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.76 RFB"
+    },
+    {
+     "role": "group",
+     "label": "600 3.80 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "600 3.81 VPO-101"
+    },
+    {
+     "role": "group",
+     "label": "700 3.86 SR-25"
+    },
+    {
+     "role": "group",
+     "label": "700 3.89 AK-308"
+    },
+    {
+     "role": "group",
+     "label": "7"
+    },
+    {
+     "role": "group",
+     "label": "700 3.92 M1A"
+    },
+    {
+     "role": "group",
+     "label": "600 3.92 Mk 17"
+    },
+    {
+     "role": "group",
+     "label": "700 3.90 SA58"
+    },
+    {
+     "role": "group",
+     "label": "8"
+    },
+    {
+     "role": "group",
+     "label": "30 4.06 M700"
+    },
+    {
+     "role": "group",
+     "label": "650 4.47 MDR"
+    },
+    {
+     "role": "group",
+     "label": "700 4.92 RSASS"
+    },
+    {
+     "role": "group",
+     "label": "30 5.07 DVL-10"
+    },
+    {
+     "role": "group",
+     "label": "700 6.10 G28"
+    },
+    {
+     "role": "group",
+     "label": "30 5.90 T-5000M"
+    },
+    {
+     "role": "group",
+     "label": "550 9.50 M60E6"
+    },
+    {
+     "role": "group",
+     "label": "550 10.07 Mk 43"
+    },
+    {
+     "role": "group",
+     "label": "7.62x54R"
+    },
+    {
+     "role": "group",
+     "label": "10 2.85 MP-18"
+    },
+    {
+     "role": "group",
+     "label": "50 4.16 SVT-40"
+    },
+    {
+     "role": "group",
+     "label": "750 4.22 AVT-40"
+    },
+    {
+     "role": "group",
+     "label": "700 4.39 SVDS"
+    },
+    {
+     "role": "group",
+     "label": "30 4.89 Mosin (I)"
+    },
+    {
+     "role": "group",
+     "label": "30 4.88 Mosin (S)"
+    },
+    {
+     "role": "group",
+     "label": "30 5.19 SV-98"
+    },
+    {
+     "role": "group",
+     "label": "650 8.99 PKM"
+    },
+    {
+     "role": "group",
+     "label": "650 9.64 PKP"
+    },
+    {
+     "role": "group",
+     "label": ".308"
+    },
+    {
+     "role": "group",
+     "label": "100 3.08 MXLR"
+    },
+    {
+     "role": "group",
+     "label": ".338"
+    },
+    {
+     "role": "group",
+     "label": "30 6.80 TRG M10"
+    },
+    {
+     "role": "group",
+     "label": "30 5.79 AXMC"
+    },
+    {
+     "role": "group",
+     "label": "30 7.00 Mk-18"
+    },
+    {
+     "role": "group",
+     "label": "7.62x25"
+    },
+    {
+     "role": "group",
+     "label": "1000 4.05 PPSh41"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - AK-105 AK-105"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - AKS-74N AKS-74N"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - AKS-74U AKS-74U"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - HK MP5 MP5"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - MP-133 MP-133"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - MPX MPX"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - Model 870 M870"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - OP-SKS OP-SKS"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - P226R P226R"
+    },
+    {
+     "role": "group",
+     "label": "LV0 Gunsmith - Vector 9x19 Vector 9x19"
+    },
+    {
+     "role": "group",
+     "label": "LV12 Hell on Earth - Part 1 MP-43-1C"
+    },
+    {
+     "role": "group",
+     "label": "LV26 Gunsmith - AKM AKM"
+    },
+    {
+     "role": "group",
+     "label": "LV26 Gunsmith - M4A1 M4A1"
+    },
+    {
+     "role": "group",
+     "label": "LV29 Gunsmith - AS VAL AS VAL"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 1 HK 416A5"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 10 Mk47"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 11 SR-25"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 12 T-5000M"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 12 PP-19-01"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 12 Glock 17"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 13 PKP"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 2 RSASS"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 3 DVL-10"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 4 AK-102"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 5 AKMN"
+    },
+    {
+     "role": "group",
+     "label": "LV40 Gunsmith Master - Part 6 SVDS"
+    }
+   ],
+   "shot": "screenshots/db4b-AMMO.png",
+   "shot_bytes": 314949
+  }
+ ],
+ "requests": 156,
+ "hosts": {
+  "db4tarkov.com": 31,
+  "static.cloudflareinsights.com": 1,
+  "fonts.gstatic.com": 3,
+  "accounts.google.com": 1,
+  "www.gstatic.com": 6,
+  "www.google.com": 1,
+  "eft-cdn.dvcstudiox.workers.dev": 5,
+  "gacxmpsnkkizmzmcimlh.supabase.co": 1,
+  "cdn.db4tarkov.com": 97,
+  "eft-assets.dvcstudiox.workers.dev": 1,
+  "firebase.googleapis.com": 2,
+  "firebaseinstallations.googleapis.com": 6,
+  "www.googletagmanager.com": 1
+ }
+}

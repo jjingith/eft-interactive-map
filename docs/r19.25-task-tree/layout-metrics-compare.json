@@ -1,0 +1,139 @@
+{
+ "schema": 1,
+ "tool": "tools/r1925_tree_audit.py + build-cache/measure_v1.js（同一把几何尺子）",
+ "note": "三列都是同一份 data/tasks（regular/pve/pvps，2026-10-28 快照）；R19.24 用的是直线近似（贝塞尔边），正交实测列只有 R19.25 起的折线才能算。",
+ "columns": {
+  "regular": {
+   "R19.24-baseline": {
+    "nodes": 503,
+    "edges": 257,
+    "straightCrossings": 974,
+    "edgesThroughNodes(直线近似)": 32,
+    "nodeOverlaps": 0,
+    "canvas": {
+     "w": 4356,
+     "h": 18000
+    }
+   },
+   "R19.25-v1": {
+    "nodes": 503,
+    "edges": 257,
+    "segmentCrossings": 249,
+    "segmentOverlaps": 44,
+    "segmentOverlapsLong": 41,
+    "edgeNodeHits": 32,
+    "edgeNodeHitEdges": 22,
+    "nodeOverlaps": 0,
+    "bends": 200,
+    "canvas": {
+     "w": 4118,
+     "h": 4822
+    }
+   },
+   "R19.25.1-v2": {
+    "nodes": 503,
+    "edges": 257,
+    "segmentCrossings": 353,
+    "segmentOverlaps": 24,
+    "segmentOverlapsLong": 15,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "nodeOverlaps": 0,
+    "bends": 341,
+    "segments": 598,
+    "canvas": {
+     "w": 4118,
+     "h": 5020
+    }
+   }
+  },
+  "pve": {
+   "R19.24-baseline": {
+    "nodes": 499,
+    "edges": 256,
+    "straightCrossings": 1115,
+    "edgesThroughNodes(直线近似)": 36,
+    "nodeOverlaps": 0,
+    "canvas": {
+     "w": 3146,
+     "h": 17820
+    }
+   },
+   "R19.25-v1": {
+    "nodes": 499,
+    "edges": 256,
+    "segmentCrossings": 252,
+    "segmentOverlaps": 45,
+    "segmentOverlapsLong": 41,
+    "edgeNodeHits": 30,
+    "edgeNodeHitEdges": 22,
+    "nodeOverlaps": 0,
+    "bends": 208,
+    "canvas": {
+     "w": 2968,
+     "h": 4822
+    }
+   },
+   "R19.25.1-v2": {
+    "nodes": 499,
+    "edges": 256,
+    "segmentCrossings": 348,
+    "segmentOverlaps": 26,
+    "segmentOverlapsLong": 15,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "nodeOverlaps": 0,
+    "bends": 347,
+    "segments": 603,
+    "canvas": {
+     "w": 2968,
+     "h": 5094
+    }
+   }
+  },
+  "pvps": {
+   "R19.24-baseline": {
+    "nodes": 462,
+    "edges": 197,
+    "straightCrossings": 742,
+    "edgesThroughNodes(直线近似)": 14,
+    "nodeOverlaps": 0,
+    "canvas": {
+     "w": 3146,
+     "h": 17580
+    }
+   },
+   "R19.25-v1": {
+    "nodes": 462,
+    "edges": 197,
+    "segmentCrossings": 144,
+    "segmentOverlaps": 20,
+    "segmentOverlapsLong": 16,
+    "edgeNodeHits": 16,
+    "edgeNodeHitEdges": 8,
+    "nodeOverlaps": 0,
+    "bends": 132,
+    "canvas": {
+     "w": 2968,
+     "h": 4488
+    }
+   },
+   "R19.25.1-v2": {
+    "nodes": 462,
+    "edges": 197,
+    "segmentCrossings": 121,
+    "segmentOverlaps": 9,
+    "segmentOverlapsLong": 0,
+    "edgeNodeHits": 0,
+    "edgeNodeHitEdges": 0,
+    "nodeOverlaps": 0,
+    "bends": 198,
+    "segments": 395,
+    "canvas": {
+     "w": 2968,
+     "h": 4764
+    }
+   }
+  }
+ }
+}

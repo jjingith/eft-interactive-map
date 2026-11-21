@@ -1,0 +1,1991 @@
+{
+ "schema": "eftmap.armor-bt/1",
+ "source": {
+  "site": "https://tarkovgunsmith.com/",
+  "apis": [
+   "https://api.tarkovgunsmith.com/GetHelmetsDataSheetData",
+   "https://api.tarkovgunsmith.com/GetArmorModulesData"
+  ],
+  "fetched_at": "2026-11-04",
+  "field": "bluntThroughput (0-1, displayed as BT% on the site)",
+  "note": "per-item blunt throughput; missing items use material fallback and are marked btSource=material-fallback",
+  "inversion": {
+   "round": "R54",
+   "endpoint": "https://api.tarkovgunsmith.com/GetSingleShotBallisticSimulation",
+   "ammoId": "56dff3afd2720bba668b4567",
+   "ammo": "5.45x39mm PS",
+   "durabilityTiers": [
+    "full",
+    "half",
+    "near-zero"
+   ],
+   "formula": "BT = BluntDamage / (damage * bluntScale); bluntScale=clamp(1-0.03*(FactorA-pen),0.2,1); FactorA=(121-5000/(45+2*durPct))*cls*0.1",
+   "note": "btSource=gunsmith-inverted 表示由站点模拟输出方程反解并三档自洽；material-fallback 保留为兜底"
+  },
+  "upstream": {
+   "round": "R54b",
+   "field": "properties.armorSlots[].bluntThroughput",
+   "endpoint": "https://json.tarkov.dev/regular/items",
+   "kind": "json.tarkov.dev",
+   "bytes": 17345521,
+   "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+   "fetchedAt": "2026-11-04T09:27:42+0800",
+   "note": "根 properties.bluntThroughput 恒为 0；逐部位值取 armorSlots[]。5 件原 material-fallback 已改由上游字段覆盖，兜底值保留在 btFallback。",
+   "graphql": {
+    "endpoint": "https://api.tarkov.dev/graphql",
+    "status": 422,
+    "ok": false,
+    "errors": [
+     "{\"errors\":[\"GraphQL server unavailable. Try again later.\"]}"
+    ]
+   }
+  }
+ },
+ "items": {
+  "5645bc214bdc2d363b8b4571": {
+   "n": "FORT Kiver-M bulletproof helmet",
+   "bt": 0.218,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 63,
+   "cat": ""
+  },
+  "5a154d5cfcdbcb001a3b00da": {
+   "n": "Ops-Core FAST MT Super High Cut helmet (Black)",
+   "bt": 0.1431,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 48,
+   "cat": ""
+  },
+  "59e7711e86f7746cae05fbe1": {
+   "n": "Kolpak-1S riot helmet",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 45,
+   "cat": ""
+  },
+  "5a7c4850e899ef00150be885": {
+   "n": "6B47 Ratnik-BSh helmet (Olive Drab)",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 45,
+   "cat": ""
+  },
+  "5aa7cfc0e5b5b00015693143": {
+   "n": "6B47 Ratnik-BSh helmet (EMR cover)",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 45,
+   "cat": ""
+  },
+  "5aa7d03ae5b5b00016327db5": {
+   "n": "UNTAR helmet",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 45,
+   "cat": ""
+  },
+  "5aa7d193e5b5b000171d063f": {
+   "n": "SSSh-94 SFERA-S helmet",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 135,
+   "cat": ""
+  },
+  "5aa7e276e5b5b000171d0647": {
+   "n": "Altyn bulletproof helmet (Olive Drab)",
+   "bt": 0.1665,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 81,
+   "cat": ""
+  },
+  "5ac8d6885acfc400180ae7b0": {
+   "n": "Ops-Core FAST MT Super High Cut helmet (Urban Tan)",
+   "bt": 0.1431,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 48,
+   "cat": ""
+  },
+  "5b432d215acfc4771e1c6624": {
+   "n": "LShZ lightweight helmet (Olive Drab)",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 36,
+   "cat": ""
+  },
+  "5aa7e454e5b5b0214e506fa2": {
+   "n": "ZSh-1-2M helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 63,
+   "cat": ""
+  },
+  "5aa7e4a4e5b5b000137b76f2": {
+   "n": "ZSh-1-2M helmet (Black cover)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 63,
+   "cat": ""
+  },
+  "5c06c6a80db834001b735491": {
+   "n": "SSh-68 steel helmet (Olive Drab)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 54,
+   "cat": ""
+  },
+  "5c0e874186f7745dc7616606": {
+   "n": "Maska-1SCh bulletproof helmet (Killa Edition)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 108,
+   "cat": ""
+  },
+  "5c08f87c0db8340019124324": {
+   "n": "ShPM Firefighter helmet",
+   "bt": 0.225,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 96,
+   "cat": ""
+  },
+  "5c091a4e0db834001d5addc8": {
+   "n": "Maska-1SCh bulletproof helmet (Olive Drab)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 108,
+   "cat": ""
+  },
+  "5c0d2727d174af02a012cf58": {
+   "n": "PSh-97 DJETA riot helmet",
+   "bt": 0.217,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 156,
+   "cat": ""
+  },
+  "5c17a7ed2e2216152142459c": {
+   "n": "Crye Precision AirFrame helmet (Tan)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 48,
+   "cat": ""
+  },
+  "5ca20ee186f774799474abc2": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Black)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 75,
+   "cat": ""
+  },
+  "5b40e1525acfc4771e1c6611": {
+   "n": "HighCom Striker ULACH IIIA helmet (Black)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "5b40e2bc5acfc40016388216": {
+   "n": "HighCom Striker ULACH IIIA helmet (Desert Tan)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "5b40e3f35acfc40016388218": {
+   "n": "HighCom Striker ACHHC IIIA helmet (Black)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 36,
+   "cat": ""
+  },
+  "5b40e4035acfc47a87740943": {
+   "n": "HighCom Striker ACHHC IIIA helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 36,
+   "cat": ""
+  },
+  "5e4bfc1586f774264f7582d3": {
+   "n": "MSA Gallet TC 800 High Cut combat helmet (Black)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 36,
+   "cat": ""
+  },
+  "5df8a58286f77412631087ed": {
+   "n": "TSh-4M-L soft tank crew helmet",
+   "bt": 0.2576,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 1,
+   "dur": 105,
+   "cat": ""
+  },
+  "5d5e7d28a4b936645d161203": {
+   "n": "MSA ACH TC-2001 MICH Series helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 30,
+   "cat": ""
+  },
+  "5d5e9c74a4b9364855191c40": {
+   "n": "MSA ACH TC-2002 MICH Series helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 32,
+   "cat": ""
+  },
+  "5d6d3716a4b9361bc8618872": {
+   "n": "BNTI LShZ-2DTM helmet (Black)",
+   "bt": 0.1431,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 99,
+   "cat": ""
+  },
+  "61bca7cda0eae612383adf57": {
+   "n": "NFM HJELM helmet (Hellhound Grey)",
+   "bt": 0.1448,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 78,
+   "cat": ""
+  },
+  "5f60b34a41e30a4ab12a6947": {
+   "n": "Galvion Caiman Hybrid helmet (Grey)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 60,
+   "cat": ""
+  },
+  "5f60c74e3b85f6263c145586": {
+   "n": "Rys-T bulletproof helmet (Black)",
+   "bt": 0.1431,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 6,
+   "dur": 90,
+   "cat": ""
+  },
+  "5ea05cf85ad9772e6624305d": {
+   "n": "Tac-Kek FAST MT helmet (Replica)",
+   "bt": 0.33,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 7,
+   "dur": 48,
+   "cat": ""
+  },
+  "5ea17ca01412a1425304d1c0": {
+   "n": "Diamond Age Bastion helmet (Black)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 48,
+   "cat": ""
+  },
+  "65719f0775149d62ce0a670b": {
+   "n": "NPP KlASS Tor-2 helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 81,
+   "cat": ""
+  },
+  "66bdc28a0b603c26902b2011": {
+   "n": "DevTac Ronin ballistic helmet",
+   "bt": 0.22,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 180,
+   "cat": ""
+  },
+  "66b5f65ca7f72d197e70bcd6": {
+   "n": "Ballistic Armor Co. Bastion helmet (Armor Black)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": ""
+  },
+  "66b5f661af44ca0014063c05": {
+   "n": "Ballistic Armor Co. Bastion helmet (OD Green)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": ""
+  },
+  "66b5f666cad6f002ab7214c2": {
+   "n": "Ballistic Armor Co. Bastion helmet (MultiCam)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": ""
+  },
+  "6745895717824b1ec20570a6": {
+   "n": "6B47 Ratnik-BSh helmet (EMR Arctic cover)",
+   "bt": 0.2376,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 1,
+   "dur": 45,
+   "cat": ""
+  },
+  "675956062f6ddfe8ff0e2806": {
+   "n": "MTEK FLUX Ballistic helmet (MultiCam Alpine)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": ""
+  },
+  "6759655674aa5e0825040d62": {
+   "n": "MTEK FLUX Ballistic helmet (Olive Drab)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": ""
+  },
+  "67597ceea35600b4c10cea86": {
+   "n": "MTEK STRIKE Ballistic helmet (Coyote)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 40,
+   "cat": ""
+  },
+  "67597d241d5a44f2f605df06": {
+   "n": "MTEK STRIKE Ballistic helmet (Coyote/MultiCam Arid)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 40,
+   "cat": ""
+  },
+  "6759af0f9c8a538dd70bfae6": {
+   "n": "Maska-1SCh bulletproof helmet (Christmas Edition)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 108,
+   "cat": ""
+  },
+  "68a9be93f260f4e1c2038686": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Orange Stains)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 72,
+   "cat": ""
+  },
+  "68a9beecbba00932ed0bc256": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Aces)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 72,
+   "cat": ""
+  },
+  "68a986ca5c0073fa2d0d8cb8": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Eight-ball)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 75,
+   "cat": ""
+  },
+  "68bee28f79c8186398098e6f": {
+   "n": "Champion's helmet",
+   "bt": 0.5,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 100,
+   "cat": ""
+  },
+  "68bee2ccd6da72c13f03db95": {
+   "n": "HighCom Striker ULACH IIIA helmet (Sand)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "68bee2d9af253218c00ebbb4": {
+   "n": "HighCom Striker ULACH IIIA helmet (Green Stripes)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "68bee2e0ede5c8489f08e1b5": {
+   "n": "HighCom Striker ULACH IIIA helmet (Mesh Spray)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "68bee2e876e02b9e340ef113": {
+   "n": "HighCom Striker ULACH IIIA helmet (Coyote Stripes)",
+   "bt": 0.208,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 66,
+   "cat": ""
+  },
+  "68a98762609a5cb2120ebd26": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Flame)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 75,
+   "cat": ""
+  },
+  "68a987a1609a5cb2120ebd2f": {
+   "n": "Vulkan-5 LShZ-5 bulletproof helmet (Camouflage)",
+   "bt": 0.1314,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 75,
+   "cat": ""
+  },
+  "68a9b3ca0a9c4f9398032c46": {
+   "n": "Galvion Caiman Hybrid helmet (MultiCam)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 60,
+   "cat": ""
+  },
+  "68a9b5a5863d2a71fa0494a6": {
+   "n": "Galvion Caiman Hybrid helmet (Mutualist)",
+   "bt": 0.1548,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 60,
+   "cat": ""
+  },
+  "65709d2d21b9f815e208ff95": {
+   "n": "Diamond Age NeoSteel High Cut helmet (Black)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 72,
+   "cat": ""
+  },
+  "654a4a964b446df1ad03f192": {
+   "n": "Granit 4RS ballistic plates (Back)",
+   "bt": 0.29,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "64afc71497cf3a403c01ff38": {
+   "n": "Granit Br5 ballistic plate",
+   "bt": 0.28,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 60,
+   "cat": "Plate"
+  },
+  "64afd81707e2cf40e903a316": {
+   "n": "Granit ballistic plate (Side)",
+   "bt": 0.28,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 20,
+   "cat": "Plate"
+  },
+  "64afdb577bb3bfe8fe03fd1d": {
+   "n": "ESBI level IV ballistic plate (Side)",
+   "bt": 0.3,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 18,
+   "cat": "Plate"
+  },
+  "64afdcb83efdfea28601d041": {
+   "n": "ESAPI level IV ballistic plate",
+   "bt": 0.3,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 55,
+   "cat": "Plate"
+  },
+  "656fa0fb498d1b7e3e071d9c": {
+   "n": "Global Armor’s Steel ballistic plate",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656fa25e94b480b8a500c0e0": {
+   "n": "Kiba Arms Titan ballistic plate",
+   "bt": 0.14,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 6,
+   "dur": 55,
+   "cat": "Plate"
+  },
+  "656fa53d94b480b8a500c0e4": {
+   "n": "TallCom Guardian ballistic plate",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 55,
+   "cat": "Plate"
+  },
+  "656fa61e94b480b8a500c0e8": {
+   "n": "NESCO 4400-SA-MC ballistic plate",
+   "bt": 0.22,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 4,
+   "dur": 60,
+   "cat": "Plate"
+  },
+  "656fa76500d62bcd2e024080": {
+   "n": "Kiba Arms Steel ballistic plate",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 2,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "656fa8d700d62bcd2e024084": {
+   "n": "Cult Locust ballistic plate",
+   "bt": 0.14,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 6,
+   "dur": 60,
+   "cat": "Plate"
+  },
+  "656fa99800d62bcd2e024088": {
+   "n": "Cult Termite ballistic plate",
+   "bt": 0.14,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 6,
+   "dur": 65,
+   "cat": "Plate"
+  },
+  "656fac30c6baea13cd07e10c": {
+   "n": "PRTCTR Lightweight ballistic plate",
+   "bt": 0.26,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "Plate"
+  },
+  "656fad8c498d1b7e3e071da0": {
+   "n": "Monoclete level III PE ballistic plate",
+   "bt": 0.26,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 40,
+   "cat": "Plate"
+  },
+  "656fae5f7c2d57afe200c0d7": {
+   "n": "GAC 3s15m ballistic plate",
+   "bt": 0.26,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 7,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656faf0ca0dce000a2020f77": {
+   "n": "GAC 4sss2 ballistic plate",
+   "bt": 0.26,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 7,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "656fafe3498d1b7e3e071da4": {
+   "n": "KITECO SC-IV SA ballistic plate",
+   "bt": 0.26,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 7,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656fb0bd7c2d57afe200c0dc": {
+   "n": "SPRTN Elaphros ballistic plate",
+   "bt": 0.3,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 3,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656fb21fa0dce000a2020f7c": {
+   "n": "NewSphereTech level III ballistic plate",
+   "bt": 0.27,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 0,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "657b22485f444d6dff0c6c2f": {
+   "n": "6B23-2 ballistic plate (Back)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 40,
+   "cat": "Plate"
+  },
+  "657b2797c3dbcb01d60c35ea": {
+   "n": "Korund-VM ballistic plate (Back)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 40,
+   "cat": "Plate"
+  },
+  "657b28d25f444d6dff0c6c77": {
+   "n": "Korund-VM-K ballistic plate (Back)",
+   "bt": 0.29,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "654a4dea7c17dec2f50cc86a": {
+   "n": "6B12 ballistic plates (Front)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "654a4f8bc721968a4404ef18": {
+   "n": "Korund-VM ballistic plate (Side)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 25,
+   "cat": "Plate"
+  },
+  "65573fa5655447403702a816": {
+   "n": "Granit Br4 ballistic plate",
+   "bt": 0.28,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 3,
+   "dur": 55,
+   "cat": "Plate"
+  },
+  "6557458f83942d705f0c4962": {
+   "n": "SSAPI level III+ ballistic plate (Side)",
+   "bt": 0.3,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 3,
+   "dur": 15,
+   "cat": "Plate"
+  },
+  "655746010177119f4a097ff7": {
+   "n": "SAPI level III+ ballistic plate",
+   "bt": 0.3,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 3,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "656efaf54772930db4031ff5": {
+   "n": "Granit 4 ballistic plates (Back)",
+   "bt": 0.29,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 3,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656efd66034e8e01c407f35c": {
+   "n": "6B13 custom ballistic plates (Back)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656f57dc27aed95beb08f628": {
+   "n": "Zhuk-3 ballistic plate (Front)",
+   "bt": 0.24,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 40,
+   "cat": "Plate"
+  },
+  "656f603f94b480b8a500c0d6": {
+   "n": "6B33 ballistic plate (Front)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 2,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "656f611f94b480b8a500c0db": {
+   "n": "Granit 4 ballistic plate (Front)",
+   "bt": 0.28,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 3,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "656f63c027aed95beb08f62c": {
+   "n": "Granit 4RS ballistic plate (Front)",
+   "bt": 0.28,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 55,
+   "cat": "Plate"
+  },
+  "656f664200d62bcd2e024077": {
+   "n": "Korund-VM ballistic plates (Front)",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 60,
+   "cat": "Plate"
+  },
+  "656f66b5c6baea13cd07e108": {
+   "n": "Korund-VM-K ballistic plates (Front)",
+   "bt": 0.29,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 60,
+   "cat": "Plate"
+  },
+  "656f9d5900d62bcd2e02407c": {
+   "n": "AR500 Legacy Plate ballistic plate",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 4,
+   "dur": 45,
+   "cat": "Plate"
+  },
+  "656f9fa0498d1b7e3e071d98": {
+   "n": "SPRTN Omega ballistic plate",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 4,
+   "dur": 50,
+   "cat": "Plate"
+  },
+  "59ef13ca86f77445fd0e2483": {
+   "n": "Jack-o'-lantern tactical pumpkin helmet",
+   "bt": 0.18,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 40,
+   "cat": "Headwear"
+  },
+  "5b432b2f5acfc4771e1c6622": {
+   "n": "Shattered lightweight armored mask",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 1,
+   "dur": 40,
+   "cat": "FaceCover"
+  },
+  "5ac4c50d5acfc40019262e87": {
+   "n": "Kolpak-1S face shield",
+   "bt": 0.099,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 5,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5a16b672fcdbcb001912fa83": {
+   "n": "Ops-Core FAST Visor",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 5,
+   "dur": 20,
+   "cat": "ArmoredEquipment"
+  },
+  "5a16b7e1fcdbcb00165aa6c9": {
+   "n": "Ops-Core FAST multi-hit ballistic face shield",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "5a16ba61fcdbcb098008728a": {
+   "n": "Ops-Core FAST Gunsight Mandible",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 20,
+   "cat": "ArmoredEquipment"
+  },
+  "5a16badafcdbcb001865f72d": {
+   "n": "Ops-Core FAST Side Armor",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 0,
+   "dur": 25,
+   "cat": "ArmoredEquipment"
+  },
+  "5aa7e373e5b5b000137b76f0": {
+   "n": "Altyn helmet face shield",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 50,
+   "cat": "ArmoredEquipment"
+  },
+  "5aa7e3abe5b5b000171d064d": {
+   "n": "ZSh-1-2M face shield",
+   "bt": 0.099,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 50,
+   "cat": "ArmoredEquipment"
+  },
+  "5b46238386f7741a693bcf9c": {
+   "n": "Kiver-M face shield",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "5c178a942e22164bef5ceca3": {
+   "n": "Crye Precision AirFrame Chops",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 0,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5c1793902e221602b21d3de2": {
+   "n": "Crye Precision AirFrame Ears",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 0,
+   "dur": 27,
+   "cat": "ArmoredEquipment"
+  },
+  "5c0e842486f77443a74d2976": {
+   "n": "Maska-1SCh face shield (Killa Edition)",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 2,
+   "dur": 50,
+   "cat": "ArmoredEquipment"
+  },
+  "5c0919b50db834001b7ce3b9": {
+   "n": "Maska-1SCh face shield (Olive Drab)",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 2,
+   "dur": 50,
+   "cat": "ArmoredEquipment"
+  },
+  "5ca2113f86f7740b2547e1d2": {
+   "n": "Vulkan-5 helmet face shield",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 5,
+   "dur": 85,
+   "cat": "ArmoredEquipment"
+  },
+  "5c0e66e2d174af02a96252f4": {
+   "n": "Ops-Core SLAAP armor helmet plate (Tan)",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 7,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5e00cdd986f7747473332240": {
+   "n": "Team Wendy EXFIL Ballistic face shield (Black)",
+   "bt": 0.1188,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 45,
+   "cat": "ArmoredEquipment"
+  },
+  "5e00cfa786f77469dc6e5685": {
+   "n": "Team Wendy EXFIL Ear Covers (Black)",
+   "bt": 0.1287,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 0,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5e01f31d86f77465cf261343": {
+   "n": "Team Wendy EXFIL Ear Covers (Coyote Brown)",
+   "bt": 0.1287,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 0,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5e01f37686f774773c6f6c15": {
+   "n": "Team Wendy EXFIL Ballistic face shield (Coyote Brown)",
+   "bt": 0.1188,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 45,
+   "cat": "ArmoredEquipment"
+  },
+  "5d6d3829a4b9361bc8618943": {
+   "n": "LShZ-2DTM face shield",
+   "bt": 0.0693,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 5,
+   "dur": 50,
+   "cat": "ArmoredEquipment"
+  },
+  "5d6d3be5a4b9361bc73bc763": {
+   "n": "LShZ-2DTM aventail",
+   "bt": 0.0396,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 35,
+   "cat": "ArmoredEquipment"
+  },
+  "603409c80ca681766b6a0fb2": {
+   "n": "NPP KlASS Condor glasses",
+   "bt": 0.315,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 5,
+   "dur": 25,
+   "cat": "Glasses"
+  },
+  "60a7ad2a2198820d95707a2e": {
+   "n": "Tagilla's welding mask \"UBEY\"",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 40,
+   "cat": "FaceCover"
+  },
+  "60a7ad3a0c5cb24b0134664a": {
+   "n": "Tagilla's welding mask \"Gorilla\"",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 2,
+   "dur": 40,
+   "cat": "FaceCover"
+  },
+  "60bf74184a63fc79b60c57f6": {
+   "n": "Bomber beanie",
+   "bt": 0.216,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 1,
+   "dur": 150,
+   "cat": "Headwear"
+  },
+  "5f60b85bbdb8e27dee3dc985": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "5f60bf4558eff926626a60f2": {
+   "n": "Galvion Caiman Fixed Arm Visor",
+   "bt": 0.1485,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 5,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "5f60c076f2bcbb675b00dac2": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 20,
+   "cat": "ArmoredEquipment"
+  },
+  "5f60c85b58eff926626a60f7": {
+   "n": "Rys-T face shield",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 5,
+   "mat": 4,
+   "dur": 55,
+   "cat": "ArmoredEquipment"
+  },
+  "5ea058e01dbce517f324b3e2": {
+   "n": "Tac-Kek Heavy Trooper mask for Ops-Core-type helmets",
+   "bt": 0.099,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 45,
+   "cat": "ArmoredEquipment"
+  },
+  "5ea18c84ecf1982c7712d9a2": {
+   "n": "Diamond Age Bastion helmet armor plate",
+   "bt": 0.0495,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 3,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "62963c18dbc8ab5f0d382d0b": {
+   "n": "Death Knight mask",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 1,
+   "dur": 55,
+   "cat": "FaceCover"
+  },
+  "62a09e08de7ac81993580532": {
+   "n": "Glorious E lightweight armored mask",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 1,
+   "dur": 40,
+   "cat": "FaceCover"
+  },
+  "62a61c988ec41a51b34758d5": {
+   "n": "Oakley SI Batwolf glasses",
+   "bt": 0.225,
+   "btSource": "gunsmith",
+   "cls": 1,
+   "mat": 5,
+   "dur": 20,
+   "cat": "Glasses"
+  },
+  "657089638db3adca1009f4ca": {
+   "n": "Atomic Defense CQCM up armored ballistic mask (Black)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "65719f9ef392ad76c50a2ec8": {
+   "n": "NPP KlASS Tor-2 helmet face shield",
+   "bt": 0.1188,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 5,
+   "dur": 30,
+   "cat": "ArmoredEquipment"
+  },
+  "67a4b71ad3228756b6088ee2": {
+   "n": "Atomic Defense CQCM ballistic mask (Smile)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c5b6dfdf568c9009af66": {
+   "n": "Atomic Defense CQCM ballistic mask (Stop Me)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c5df782ce4655104db14": {
+   "n": "Atomic Defense CQCM ballistic mask (Scars)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c5f37f52620c5b05b4d6": {
+   "n": "Atomic Defense CQCM ballistic mask (Target)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c6068fcd9fb73f0752cf": {
+   "n": "Atomic Defense CQCM ballistic mask (Skull)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c61c7f52620c5b05b4d8": {
+   "n": "Atomic Defense CQCM ballistic mask (Demon)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "67a5c657782ce4655104db16": {
+   "n": "Atomic Defense CQCM ballistic mask (El Día de Muertos)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "678f84bb9e85556ca60f0362": {
+   "n": "Tagilla's welding mask \"ZABEY\"",
+   "bt": 0.05,
+   "btSource": "gunsmith",
+   "cls": 6,
+   "mat": 2,
+   "dur": 100,
+   "cat": "FaceCover"
+  },
+  "688b3bfa1ed594eccd0c45ee": {
+   "n": "Atomic Defense CQCM ballistic mask (Ping)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "68a9b873a4b28d56c80a1818": {
+   "n": "Death Shadow lightweight armored mask (White)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 30,
+   "cat": "FaceCover"
+  },
+  "68a9bf7d9f4c45817b0d83b6": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible (Black)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 25,
+   "cat": "ArmoredEquipment"
+  },
+  "68a9c0ed6d47c49b700faaf9": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible (Aces)",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 25,
+   "cat": "ArmoredEquipment"
+  },
+  "68bee22e79c8186398098e6d": {
+   "n": "DevTaс Samurai Menpo Mask",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 25,
+   "cat": "FaceCover"
+  },
+  "68bee238a48c3c320808abc4": {
+   "n": "DevTaс Samurai Menpo Mask (Gold)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 25,
+   "cat": "FaceCover"
+  },
+  "68bee246ede5c8489f08e1b3": {
+   "n": "DevTaс Samurai Menpo Mask (White)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 25,
+   "cat": "FaceCover"
+  },
+  "68a9a04373d52d47830759c7": {
+   "n": "Atomic Defense CQCM ballistic mask (Loui Peeton)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "68a9a0b01696fb8c1e0ee9cc": {
+   "n": "Atomic Defense CQCM ballistic mask (Toxic)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "68a9a1223e1ee5a70504c126": {
+   "n": "Atomic Defense CQCM ballistic mask (Crash Tested)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "68a9a15d73d52d47830759c9": {
+   "n": "Atomic Defense CQCM ballistic mask (Demonic Face)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "68a9b601863d2a71fa0494ae": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique (MultiCam)",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "68a9b669fa39b6976e07de96": {
+   "n": "Galvion Caiman Hybrid Ballistic Applique (Mutualist)",
+   "bt": 0.0792,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 40,
+   "cat": "ArmoredEquipment"
+  },
+  "68a9b6c8d3a061d8b6058346": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard (MultiCam)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 20,
+   "cat": "ArmoredEquipment"
+  },
+  "68a9b73bd3a061d8b6058348": {
+   "n": "Galvion Caiman Hybrid Ballistic Mandible Guard (Mutualist)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 1,
+   "dur": 20,
+   "cat": "ArmoredEquipment"
+  },
+  "68a9b821cdf661cc5a0626c6": {
+   "n": "Death Shadow lightweight armored mask (Gold)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 30,
+   "cat": "FaceCover"
+  },
+  "68a9b852cdf661cc5a0626c9": {
+   "n": "Death Shadow lightweight armored mask (Gray)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 30,
+   "cat": "FaceCover"
+  },
+  "68d54d0525ac8590a8075ac3": {
+   "n": "Atomic Defense CQCM ballistic mask (Loui Peeton)",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 4,
+   "mat": 7,
+   "dur": 35,
+   "cat": "FaceCover"
+  },
+  "6570a88c8f221f3b210353b7": {
+   "n": "Diamond Age NeoSteel helmet ballistic mandible",
+   "bt": 0.1726,
+   "btSource": "gunsmith",
+   "cls": 3,
+   "mat": 2,
+   "dur": 25,
+   "cat": "ArmoredEquipment"
+  },
+  "6570aead4d84f81fd002a033": {
+   "n": "Death Shadow lightweight armored mask",
+   "bt": 0.198,
+   "btSource": "gunsmith",
+   "cls": 2,
+   "mat": 7,
+   "dur": 30,
+   "cat": "FaceCover"
+  },
+  "5fd4c474dd870108a754b241": {
+   "n": "5.11 Hexgrid 插板背心",
+   "bt": 0.26,
+   "btSource": "gunsmith-inverted",
+   "cls": 6,
+   "mat": "UHMWPE",
+   "dur": 100,
+   "cat": "armor",
+   "btEvidence": {
+    "endpoint": "GetSingleShotBallisticSimulation",
+    "ammoId": "56dff3afd2720bba668b4567",
+    "ammo": "5.45x39mm PS",
+    "armorClass": 6,
+    "armorMaterial": "UHMWPE",
+    "maxDurability": 100,
+    "published": 0.25999999046325684,
+    "inverted": 0.26,
+    "selfConsistent": true,
+    "spread": 2.3960547657075892e-08,
+    "samples": [
+     {
+      "tier": "full",
+      "durability": 100,
+      "maxDurability": 100,
+      "durPct": 100.0,
+      "bluntDamage": 2.912,
+      "penetrationChance": 0,
+      "bluntScale": 0.2,
+      "btInverted": 0.25999999999999995,
+      "btPublished": 0.25999999046325684,
+      "delta": 9.536743117433133e-09
+     },
+     {
+      "tier": "half",
+      "durability": 50,
+      "maxDurability": 100,
+      "durPct": 50.0,
+      "bluntDamage": 4.115961,
+      "penetrationChance": 0,
+      "bluntScale": 0.28268966,
+      "btInverted": 0.2599999760394523,
+      "btPublished": 0.25999999046325684,
+      "delta": -1.442380453964276e-08
+     },
+     {
+      "tier": "near-zero",
+      "durability": 1,
+      "maxDurability": 100,
+      "durPct": 1.0,
+      "bluntDamage": 14.559999,
+      "penetrationChance": 0.9860744,
+      "bluntScale": 1.0,
+      "btInverted": 0.25999998214285713,
+      "btPublished": 0.25999999046325684,
+      "delta": -8.320399702554937e-09
+     }
+    ]
+   }
+  },
+  "609e8540d5c319764c2bc2e9": {
+   "n": "NFM THOR 隐蔽型强化防弹背心",
+   "bt": 0.33,
+   "btSource": "gunsmith-inverted",
+   "cls": 4,
+   "mat": "UHMWPE",
+   "dur": 170,
+   "cat": "armor",
+   "btEvidence": {
+    "endpoint": "GetSingleShotBallisticSimulation",
+    "ammoId": "56dff3afd2720bba668b4567",
+    "ammo": "5.45x39mm PS",
+    "armorClass": 3,
+    "armorMaterial": "Aramid",
+    "maxDurability": 170,
+    "published": 0.33000001311302185,
+    "inverted": 0.33,
+    "selfConsistent": true,
+    "spread": 1.2398508331123992e-08,
+    "samples": [
+     {
+      "tier": "full",
+      "durability": 170,
+      "maxDurability": 170,
+      "durPct": 100.0,
+      "bluntDamage": 17.272766,
+      "penetrationChance": 0.6576608,
+      "bluntScale": 0.93467347,
+      "btInverted": 0.33000000545863456,
+      "btPublished": 0.33000001311302185,
+      "delta": -7.654387290667586e-09
+     },
+     {
+      "tier": "half",
+      "durability": 85,
+      "maxDurability": 170,
+      "durPct": 50.0,
+      "bluntDamage": 18.480001,
+      "penetrationChance": 0.93965966,
+      "bluntScale": 1.0,
+      "btInverted": 0.3300000178571429,
+      "btPublished": 0.33000001311302185,
+      "delta": 4.744121040456406e-09
+     },
+     {
+      "tier": "near-zero",
+      "durability": 2,
+      "maxDurability": 170,
+      "durPct": 1.1765,
+      "bluntDamage": 18.480001,
+      "penetrationChance": 0.9882547,
+      "bluntScale": 1.0,
+      "btInverted": 0.3300000178571429,
+      "btPublished": 0.33000001311302185,
+      "delta": 4.744121040456406e-09
+     }
+    ]
+   }
+  },
+  "60a283193cb70855c43a381d": {
+   "n": "NFM THOR 一体式防弹护甲",
+   "bt": 0.36,
+   "btSource": "gunsmith-inverted",
+   "cls": 6,
+   "mat": "UHMWPE",
+   "dur": 466,
+   "cat": "armor",
+   "btEvidence": {
+    "endpoint": "GetSingleShotBallisticSimulation",
+    "ammoId": "56dff3afd2720bba668b4567",
+    "ammo": "5.45x39mm PS",
+    "armorClass": 3,
+    "armorMaterial": "Aramid",
+    "maxDurability": 466,
+    "published": 0.36000001430511475,
+    "inverted": 0.36,
+    "selfConsistent": true,
+    "spread": 1.6375903522103386e-08,
+    "samples": [
+     {
+      "tier": "full",
+      "durability": 466,
+      "maxDurability": 466,
+      "durPct": 100.0,
+      "bluntDamage": 18.843018,
+      "penetrationChance": 0.6576608,
+      "bluntScale": 0.93467347,
+      "btInverted": 0.3600000163759035,
+      "btPublished": 0.36000001430511475,
+      "delta": 2.0707887626869592e-09
+     },
+     {
+      "tier": "half",
+      "durability": 233,
+      "maxDurability": 466,
+      "durPct": 50.0,
+      "bluntDamage": 20.16,
+      "penetrationChance": 0.93965966,
+      "bluntScale": 1.0,
+      "btInverted": 0.36,
+      "btPublished": 0.36000001430511475,
+      "delta": -1.4305114759416426e-08
+     },
+     {
+      "tier": "near-zero",
+      "durability": 5,
+      "maxDurability": 466,
+      "durPct": 1.073,
+      "bluntDamage": 20.16,
+      "penetrationChance": 0.98831606,
+      "bluntScale": 1.0,
+      "btInverted": 0.36,
+      "btPublished": 0.36000001430511475,
+      "delta": -1.4305114759416426e-08
+     }
+    ]
+   }
+  },
+  "68a89146212dbbeead0d5636": {
+   "n": "NFM THOR 隐蔽型强化防弹背心（头眼）",
+   "bt": 0.33,
+   "btSource": "gunsmith-inverted",
+   "cls": 4,
+   "mat": "UHMWPE",
+   "dur": 170,
+   "cat": "armor",
+   "btEvidence": {
+    "endpoint": "GetSingleShotBallisticSimulation",
+    "ammoId": "56dff3afd2720bba668b4567",
+    "ammo": "5.45x39mm PS",
+    "armorClass": 3,
+    "armorMaterial": "Aramid",
+    "maxDurability": 170,
+    "published": 0.33000001311302185,
+    "inverted": 0.33,
+    "selfConsistent": true,
+    "spread": 1.2398508331123992e-08,
+    "samples": [
+     {
+      "tier": "full",
+      "durability": 170,
+      "maxDurability": 170,
+      "durPct": 100.0,
+      "bluntDamage": 17.272766,
+      "penetrationChance": 0.6576608,
+      "bluntScale": 0.93467347,
+      "btInverted": 0.33000000545863456,
+      "btPublished": 0.33000001311302185,
+      "delta": -7.654387290667586e-09
+     },
+     {
+      "tier": "half",
+      "durability": 85,
+      "maxDurability": 170,
+      "durPct": 50.0,
+      "bluntDamage": 18.480001,
+      "penetrationChance": 0.93965966,
+      "bluntScale": 1.0,
+      "btInverted": 0.3300000178571429,
+      "btPublished": 0.33000001311302185,
+      "delta": 4.744121040456406e-09
+     },
+     {
+      "tier": "near-zero",
+      "durability": 2,
+      "maxDurability": 170,
+      "durPct": 1.1765,
+      "bluntDamage": 18.480001,
+      "penetrationChance": 0.9882547,
+      "bluntScale": 1.0,
+      "btInverted": 0.3300000178571429,
+      "btPublished": 0.33000001311302185,
+      "delta": 4.744121040456406e-09
+     }
+    ]
+   }
+  },
+  "69cbfe44897389c1870b2337": {
+   "n": "Crye Precision AirFrame 头盔（瘟疫侵袭）",
+   "bt": 0.1314,
+   "btSource": "tarkov.dev:armorSlots.bluntThroughput",
+   "cls": 4,
+   "mat": "Combined",
+   "dur": 48,
+   "cat": "helmet",
+   "btFallback": 0.18,
+   "btFallbackSource": "material-fallback",
+   "btEvidence": {
+    "source": "json.tarkov.dev",
+    "field": "properties.armorSlots[].bluntThroughput",
+    "endpoint": "https://json.tarkov.dev/regular/items",
+    "fetchedAt": "2026-11-04T09:27:42+0800",
+    "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+    "rootBluntThroughput": 0,
+    "armorClass": 4,
+    "durability": 48,
+    "material": "Combined",
+    "slots": [
+     {
+      "nameId": "Helmet_top",
+      "bluntThroughput": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type ParietalHead"
+      ]
+     },
+     {
+      "nameId": "Helmet_back",
+      "bluntThroughput": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type BackHead"
+      ]
+     }
+    ],
+    "inverted": 0.1314
+   }
+  },
+  "6a567ae55cbe811cbe0136a8": {
+   "n": "Crye Precision AirFrame 头盔（慢工出烂活）",
+   "bt": 0.1314,
+   "btSource": "tarkov.dev:armorSlots.bluntThroughput",
+   "cls": 4,
+   "mat": "Combined",
+   "dur": 48,
+   "cat": "helmet",
+   "btFallback": 0.18,
+   "btFallbackSource": "material-fallback",
+   "btEvidence": {
+    "source": "json.tarkov.dev",
+    "field": "properties.armorSlots[].bluntThroughput",
+    "endpoint": "https://json.tarkov.dev/regular/items",
+    "fetchedAt": "2026-11-04T09:27:42+0800",
+    "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+    "rootBluntThroughput": 0,
+    "armorClass": 4,
+    "durability": 48,
+    "material": "Combined",
+    "slots": [
+     {
+      "nameId": "Helmet_top",
+      "bluntThroughput": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type ParietalHead"
+      ]
+     },
+     {
+      "nameId": "Helmet_back",
+      "bluntThroughput": 0.1314,
+      "class": 4,
+      "durability": 24,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type BackHead"
+      ]
+     }
+    ],
+    "inverted": 0.1314
+   }
+  },
+  "6a568dda1d89fcfb35010389": {
+   "n": "MTEK STRIKE 防弹头盔（碳纤维）",
+   "bt": 0.1548,
+   "btSource": "tarkov.dev:armorSlots.bluntThroughput",
+   "cls": 4,
+   "mat": "Combined",
+   "dur": 40,
+   "cat": "helmet",
+   "btFallback": 0.18,
+   "btFallbackSource": "material-fallback",
+   "btEvidence": {
+    "source": "json.tarkov.dev",
+    "field": "properties.armorSlots[].bluntThroughput",
+    "endpoint": "https://json.tarkov.dev/regular/items",
+    "fetchedAt": "2026-11-04T09:27:42+0800",
+    "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+    "rootBluntThroughput": 0,
+    "armorClass": 4,
+    "durability": 40,
+    "material": "Combined",
+    "slots": [
+     {
+      "nameId": "Helmet_top",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 20,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type ParietalHead"
+      ]
+     },
+     {
+      "nameId": "Helmet_back",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 20,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type BackHead"
+      ]
+     }
+    ],
+    "inverted": 0.1548
+   }
+  },
+  "6a576f2105af50743903b74c": {
+   "n": "ANA Tactical M1 插板胸挂（数码丛林迷彩）",
+   "bt": 0.33,
+   "btSource": "tarkov.dev:armorSlots.bluntThroughput",
+   "cls": 4,
+   "mat": "Aramid",
+   "dur": 194,
+   "cat": "rig",
+   "btFallback": 0.18,
+   "btFallbackSource": "material-fallback",
+   "btEvidence": {
+    "source": "json.tarkov.dev",
+    "field": "properties.armorSlots[].bluntThroughput",
+    "endpoint": "https://json.tarkov.dev/regular/items",
+    "fetchedAt": "2026-11-04T09:27:42+0800",
+    "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+    "rootBluntThroughput": 0,
+    "armorClass": 4,
+    "durability": 194,
+    "material": "Aramid",
+    "slots": [
+     {
+      "nameId": "Soft_armor_front",
+      "bluntThroughput": 0.33,
+      "class": 2,
+      "durability": 40,
+      "armorMaterial": "Aramid",
+      "zones": [
+       "Collider Type RibcageLow",
+       "Collider Type RibcageUp"
+      ]
+     },
+     {
+      "nameId": "Soft_armor_back",
+      "bluntThroughput": 0.33,
+      "class": 2,
+      "durability": 40,
+      "armorMaterial": "Aramid",
+      "zones": [
+       "Collider Type SpineDown",
+       "Collider Type SpineTop"
+      ]
+     },
+     {
+      "nameId": "Soft_armor_left",
+      "bluntThroughput": 0.33,
+      "class": 2,
+      "durability": 12,
+      "armorMaterial": "Aramid",
+      "zones": [
+       "Collider Type LeftSideChestDown"
+      ]
+     },
+     {
+      "nameId": "soft_armor_right",
+      "bluntThroughput": 0.33,
+      "class": 2,
+      "durability": 12,
+      "armorMaterial": "Aramid",
+      "zones": [
+       "Collider Type RightSideChestDown"
+      ]
+     }
+    ],
+    "inverted": 0.33
+   }
+  },
+  "6a670ae11ab6ac490a0b9a99": {
+   "n": "DevTac 浪人面罩（实验室安保）",
+   "bt": 0.1548,
+   "btSource": "tarkov.dev:armorSlots.bluntThroughput",
+   "cls": 4,
+   "mat": "Combined",
+   "dur": 180,
+   "cat": "helmet",
+   "btFallback": 0.18,
+   "btFallbackSource": "material-fallback",
+   "btEvidence": {
+    "source": "json.tarkov.dev",
+    "field": "properties.armorSlots[].bluntThroughput",
+    "endpoint": "https://json.tarkov.dev/regular/items",
+    "fetchedAt": "2026-11-04T09:27:42+0800",
+    "sha256": "ae3e723717422d573b14c9985986e18927fbd0771c391957aedb3f5e7cd754d7",
+    "rootBluntThroughput": 0,
+    "armorClass": 4,
+    "durability": 180,
+    "material": "Combined",
+    "slots": [
+     {
+      "nameId": "Helmet_top",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type ParietalHead"
+      ]
+     },
+     {
+      "nameId": "Helmet_back",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type BackHead"
+      ]
+     },
+     {
+      "nameId": "helmet_eyes",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type Eyes"
+      ]
+     },
+     {
+      "nameId": "helmet_jaw",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "armorMaterial": "Aramid",
+      "zones": [
+       "Collider Type Jaw",
+       "Collider Type HeadCommon"
+      ]
+     },
+     {
+      "nameId": "Helmet_ears",
+      "bluntThroughput": 0.1548,
+      "class": 4,
+      "durability": 36,
+      "armorMaterial": "Combined",
+      "zones": [
+       "Collider Type Ears"
+      ]
+     }
+    ],
+    "inverted": 0.1548
+   }
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "revision": "r17s4",
+  "source": {
+    "method": "以 data/gun-compat.json 实际出现的 29 个口径为全集，逐项人工归类；弹径取公称值（mm），榴弹/霰弹用实际口径而非编号。",
+    "categoriesFrom": "用户指定的五类固定顺序（冲锋枪弹/手枪弹、步枪弹、霰弹、PDW 弹、榴弹）；对应 EFT 武器分类习惯。",
+    "confidence": "estimated",
+    "note": "弹径用于组内「从大到小」排序，非弹道计算参数；少数口径（.366 TKM、.308 ME、.50 AE）按真实弹径而非编号数字取值，已逐条注明。"
+  },
+  "categories": [
+    { "id": "pistol_smg", "name": "冲锋枪弹 / 手枪弹" },
+    { "id": "rifle", "name": "步枪弹" },
+    { "id": "shotgun", "name": "霰弹" },
+    { "id": "pdw", "name": "PDW 弹" },
+    { "id": "grenade", "name": "榴弹" }
+  ],
+  "calibers": {
+    "Caliber9x18PM":   { "caln": "9x18",   "cat": "pistol_smg", "dia": 9.0,  "note": "马卡洛夫" },
+    "Caliber9x18PMM":  { "caln": "9x18PMM","cat": "pistol_smg", "dia": 9.0,  "note": "马卡洛夫高压" },
+    "Caliber9x19PARA": { "caln": "9x19",   "cat": "pistol_smg", "dia": 9.0,  "note": "帕拉贝鲁姆" },
+    "Caliber9x21":     { "caln": "9x21",   "cat": "pistol_smg", "dia": 9.0,  "note": "SR-1MP" },
+    "Caliber762x25TT": { "caln": "7.62x25","cat": "pistol_smg", "dia": 7.62, "note": "托卡列夫" },
+    "Caliber1143x23ACP":{ "caln": ".45 ACP","cat": "pistol_smg", "dia": 11.43,"note": ".45 ACP = 11.43mm" },
+    "Caliber127x33":   { "caln": ".50 AE", "cat": "pistol_smg", "dia": 12.7, "note": "沙漠之鹰 .50 AE（手枪弹）" },
+    "Caliber9x33R":    { "caln": ".357",   "cat": "pistol_smg", "dia": 9.07, "note": ".357 Magnum 转轮弹" },
+
+    "Caliber545x39":   { "caln": "5.45x39","cat": "rifle", "dia": 5.45, "note": "" },
+    "Caliber556x45NATO":{ "caln": "5.56x45","cat": "rifle", "dia": 5.56, "note": "" },
+    "Caliber58x42":    { "caln": "5.8x42", "cat": "rifle", "dia": 5.8,  "note": "" },
+    "Caliber68x51":    { "caln": "6.8x51", "cat": "rifle", "dia": 6.8,  "note": "" },
+    "Caliber762x35":   { "caln": ".300 Blk","cat": "rifle", "dia": 7.62, "note": ".300 Blackout = 7.62mm" },
+    "Caliber762x39":   { "caln": "7.62x39","cat": "rifle", "dia": 7.62, "note": "" },
+    "Caliber762x51":   { "caln": "7.62x51","cat": "rifle", "dia": 7.62, "note": "" },
+    "Caliber762x54R":  { "caln": "7.62x54R","cat": "rifle", "dia": 7.62, "note": "" },
+    "Caliber784x49":   { "caln": ".308 ME","cat": "rifle", "dia": 7.82, "note": ".308 Marlin Express ≈7.82mm（非 7.84）" },
+    "Caliber86x70":    { "caln": ".338",   "cat": "rifle", "dia": 8.6,  "note": ".338 Lapua = 8.6mm" },
+    "Caliber93x64":    { "caln": "9.3x64", "cat": "rifle", "dia": 9.3,  "note": "" },
+    "Caliber9x39":     { "caln": "9x39",   "cat": "rifle", "dia": 9.0,  "note": "亚音速步枪弹（VSS/VAL）" },
+    "Caliber366TKM":   { "caln": ".366 TKM","cat": "rifle", "dia": 9.55, "note": ".366 TKM 实际弹径 9.55mm（编号非弹径）" },
+    "Caliber127x55":   { "caln": "12.7x55","cat": "rifle", "dia": 12.7, "note": "ASh-12 / RSh-12" },
+    "Caliber127x99":   { "caln": ".50 BMG","cat": "rifle", "dia": 12.7, "note": ".50 BMG = 12.7mm" },
+
+    "Caliber12g":      { "caln": "12g",    "cat": "shotgun", "dia": 18.5, "note": "12 号霰弹 ≈18.5mm 膛径（Gauge 数字越大口径越小，不能当毫米排序）" },
+    "Caliber20g":      { "caln": "20g",    "cat": "shotgun", "dia": 15.6, "note": "20 号霰弹 ≈15.6mm" },
+    "Caliber23x75":    { "caln": "23x75",  "cat": "shotgun", "dia": 23.0, "note": "KS-23 专用 23mm 霰弹" },
+
+    "Caliber46x30":    { "caln": "4.6x30", "cat": "pdw", "dia": 4.6, "note": "MP7" },
+    "Caliber57x28":    { "caln": "5.7x28", "cat": "pdw", "dia": 5.7, "note": "P90 / Five-seveN" },
+
+    "Caliber40x46":    { "caln": "40x46",  "cat": "grenade", "dia": 40.0, "note": "40mm 榴弹" },
+    "Caliber20x1mm":   { "caln": "20x1mm", "cat": "grenade", "dia": 20.0, "note": "20×1mm 玩具枪：非战斗口径，暂归特殊发射器类并在此标注（未核实为正式分类）" }
+  },
+  "unidentified": []
+}

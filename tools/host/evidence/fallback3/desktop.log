@@ -1,0 +1,12 @@
+﻿
+=== 2026-11-02 22:26:10 start pid=9868 ===
+22:26:10.267  桌面壳启动参数：--simulate-no-runtime --backend-mode python --root d:\personal\trae\02-塔科夫\eft-interactive-map --fallback-json d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\fallback3\fallback.json --capture d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\fallback3 --exit-after-ms 8000 --log d:\personal\trae\02-塔科夫\eft-interactive-map\tools\host\evidence\fallback3\desktop.log
+22:26:10.297  启动后端：python.exe -u "d:\personal\trae\02-塔科夫\eft-interactive-map\tools\launcher.py" --server-only --shell-mode --port 0 --config-dir "C:\Users\Administrator\AppData\Roaming\EFTMap" --runtime-file "C:\Users\Administrator\AppData\Local\EFTMap\run\desktop-9868.json" --log-file "C:\Users\Administrator\AppData\Local\EFTMap\logs\backend-9868.log" --parent-pid 9868
+22:26:10.318  后端已加入 Job Object（壳退出即杀）
+22:26:11.529  后端就绪：http://127.0.0.1:2088/ pid=12072
+22:26:11.530  模拟 WebView2 Runtime 缺失，进入浏览器回退路径
+22:26:11.785  回退到浏览器 app 模式：C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+22:26:11.815  fallback：模拟 WebView2 Runtime 缺失 url=http://127.0.0.1:2088/ browser=edge/chrome --app: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+22:26:13.095  fallback 截图已写入
+22:26:19.681  fallback 定时退出
+22:26:19.776  已请求后端 shutdown

@@ -1,132 +1,591 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EFT 互动地图 · 离线免费版</title>
-<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css?v=r19.97">
+<link rel="stylesheet" href="theme-windows-xp.css?v=r19.97">
+<link rel="stylesheet" href="calibrator.css?v=r19.97">
+<link rel="stylesheet" href="tasks.css?v=r19.97">
+<!-- R97 市场视图（独立作用域 .mk-*，不影响既有页面） -->
+<link rel="stylesheet" href="market.css?v=r19.97">
+<!-- R19.24 设计系统：令牌 → 组件（必须最后加载，组件样式要压过模块样式） -->
+<link rel="stylesheet" href="styles/design-tokens.css?v=r19.97">
+<link rel="stylesheet" href="styles/ui-components.css?v=r19.97">
+<!-- R78 XP UI 素材接入：组件层 + 主界面适配层（必须最后加载，压过主题与模块样式） -->
+<link rel="stylesheet" href="assets/xp-ui/xp-ui.css?v=r19.97">
+<link rel="stylesheet" href="assets/xp-ui/xp-ui-app.css?v=r19.97">
+<link rel="stylesheet" href="styles/modern-flat.css?v=r19.97">
+<link rel="stylesheet" href="styles/market-dark.css?v=r19.97">
 </head>
 <body>
 
-<div class="menubar" id="menubar">
+<!-- R80：Adobe 式层级第 1 层 —— 顶部菜单栏（XP 标题牌 + 真实功能菜单 + 模式/版本单入口）
+     工作区导航在应用菜单之前；右侧的模式条 / 账号版本 / 运行版本，以及关于、战局、保存配置、个人属性的原按钮与面板，
+     都由 js/app-menubar.js 在启动时迁入，原 id 与既有绑定保持不变；?mini=1 时整段跳过。 -->
+<div class="app-menubar" id="app-menubar">
+  <div class="brand app-brand" id="app-brand">
+    <h1 title="塔科夫互动地图">塔科夫互动地图</h1>
+  </div>
+  <nav class="app-menus" id="app-menus" role="menubar" aria-label="主菜单">
+    <div class="app-menu">
+      <button type="button" class="app-menu-btn app-app-trigger" id="am-app" role="menuitem"
+              aria-haspopup="dialog" aria-expanded="false" aria-controls="am-app-panel">应用菜单 ▾</button>
+      <div class="app-menu-panel app-app-panel" id="am-app-panel" role="dialog"
+           aria-modal="false" aria-label="应用设置" hidden>
+        <button type="button" class="app-app-close" id="am-app-close"
+                title="关闭" aria-label="关闭应用菜单">×</button>
+        <nav class="app-app-nav" role="tablist" aria-label="设置分区" aria-orientation="vertical">
+          <button type="button" class="app-app-navbtn is-active" role="tab" data-sec="file"
+                  aria-selected="true" aria-controls="app-sec-file">文件</button>
+          <button type="button" class="app-app-navbtn" role="tab" data-sec="tools"
+                  aria-selected="false" aria-controls="app-sec-tools">工具</button>
+          <button type="button" class="app-app-navbtn" role="tab" data-sec="mini"
+                  aria-selected="false" aria-controls="app-sec-mini">小地图</button>
+          <button type="button" class="app-app-navbtn" role="tab" data-sec="ocr"
+                  aria-selected="false" aria-controls="app-sec-ocr">价格识别</button>
+          <button type="button" class="app-app-navbtn" role="tab" data-sec="about"
+                  aria-selected="false" aria-controls="app-sec-about">关于</button>
+        </nav>
+        <div class="app-app-body">
+          <section class="app-app-sec" id="app-sec-file" data-sec="file"
+                   role="tabpanel" aria-label="文件">
+            <h4 class="app-app-h">文件</h4>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="save-config">保存配置<span class="app-menu-hint">界面偏好写回配置文件</span></button>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="reload">重新载入<span class="app-menu-hint">刷新页面并重新量取地图</span></button>
+          </section>
+          <section class="app-app-sec" id="app-sec-mini" data-sec="mini"
+                   role="tabpanel" aria-label="小地图" hidden>
+            <div class="app-menu-panel app-mini-panel" id="am-mini-panel" role="region"
+                 aria-label="小地图设置">
+        <h4 class="about-h">显示与行为</h4>
+        <p class="muted settings-note">置顶、可点击穿透的小地图窗口。下列选项<strong>改完立刻生效</strong>，不用重启小窗。</p>
+
+        <div class="mini-toggles">
+          <label class="toggle mini-enabled-toggle"
+                 title="显示 / 隐藏游戏内小地图浮窗；与宿主 Ctrl+Shift+M 共用配置项 overlay.enabled">
+            <input type="checkbox" id="ov-enabled"><span class="dot dot-floor"></span>显示小地图浮窗
+          </label>
+          <label class="toggle mini-enabled-toggle" hidden>
+            <input type="checkbox" id="mini-enabled">
+          </label>
+          <label class="toggle mini-enabled-toggle" title="小地图视野固定在玩家周围（推荐）">
+            <input type="checkbox" id="ov-follow" checked><span class="dot dot-floor"></span>跟随玩家
+          </label>
+          <label class="toggle mini-enabled-toggle" hidden>
+            <input type="checkbox" id="mini-follow" checked>
+          </label>
+          <label class="toggle mini-enabled-toggle"
+                 title="自动缩放：进图 / 切图时把小地图视野套回中间的 100 米档（参考小地图实现的默认中档）；不会每张截图都缩放。不读取开镜 / 倍镜数据">
+            <input type="checkbox" id="mini-auto-zoom"><span class="dot dot-floor"></span>自动缩放
+          </label>
+          <label class="toggle mini-enabled-toggle" title="显示地图上的文字标签（小尺寸下会糊，默认关）">
+            <input type="checkbox" id="ov-labels"><span class="dot dot-floor"></span>显示标签
+          </label>
+          <label class="toggle mini-enabled-toggle" title="鼠标直接穿过小窗（不挡游戏操作）；关掉后可以点小窗里的东西">
+            <input type="checkbox" id="ov-click" checked><span class="dot dot-floor"></span>点击穿透
+          </label>
+        </div>
+
+        <h4 class="about-h">尺寸与位置</h4>
+        <div class="ov-rows">
+          <label class="ov-row">大小
+            <input type="range" id="ov-size" min="120" max="600" step="10" aria-label="小浮窗边长">
+            <output id="ov-size-v">260px</output>
+          </label>
+          <label class="ov-row">透明度
+            <input type="range" id="ov-opacity" min="0.3" max="1" step="0.05" aria-label="小浮窗透明度">
+            <output id="ov-opacity-v">90%</output>
+          </label>
+          <label class="ov-row">位置
+            <select id="ov-corner" aria-label="吸附角落">
+              <option value="bottom-right">右下</option>
+              <option value="bottom-left">左下</option>
+              <option value="top-right">右上</option>
+              <option value="top-left">左上</option>
+            </select>
+            <output></output>
+          </label>
+          <label class="ov-row">偏移 X
+            <input type="range" id="ov-offset-x" min="-300" max="300" step="10" aria-label="横向偏移">
+            <output id="ov-offset-x-v">0</output>
+          </label>
+          <label class="ov-row">偏移 Y
+            <input type="range" id="ov-offset-y" min="-300" max="300" step="10" aria-label="纵向偏移">
+            <output id="ov-offset-y-v">0</output>
+          </label>
+          <label class="ov-row">形状
+            <select id="ov-shape" aria-label="小窗形状">
+              <option value="square">方形</option>
+              <option value="circle">圆形</option>
+            </select>
+            <output></output>
+          </label>
+        </div>
+        <p class="muted" id="ov-note">小浮窗由 tools/overlay.py 托管，只读本机配置、不碰游戏进程。</p>
+
+        <h4 class="about-h">视野与显示</h4>
+        <div class="hud-scales mini-scales">
+          <label class="hud-scale" title="小地图视野：以玩家为中心、半径 25 / 50 / 100 / 200 / 300 米。米数是游戏世界坐标（按每张图的 worldToSvg 换算），不是屏幕比例">
+            视野
+            <input type="range" id="mini-radius" min="0" max="4" step="1" value="2"
+                   aria-label="小地图视野半径（米）">
+            <span id="mini-radius-value" class="hud-scale-value">100 米</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里地名的大小（只影响小地图，主地图用「显示」块里那条）">
+            小地名
+            <input type="range" id="mini-label-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="小地图地名缩放">
+            <span id="mini-label-scale-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里地名的透明度（只影响小地图，主地图用「显示」块里那条）">
+            地名透明
+            <input type="range" id="mini-label-alpha" min="0" max="1" step="0.01" value="1"
+                   aria-label="小地图地名透明度">
+            <span id="mini-label-alpha-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里图标的大小（只影响小地图，主地图用「显示」块里那条）">
+            小图标
+            <input type="range" id="mini-icon-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="小地图图标缩放">
+            <span id="mini-icon-scale-value" class="hud-scale-value">100%</span>
+          </label>
+        </div>
+
+        <h4 class="about-h">自动截图</h4>
+        <div class="mini-toggles">
+          <label class="toggle mini-enabled-toggle"
+                 title="自动截图：与启动器里的「自动截图」是同一个开关（auto_screenshot.enabled）。开启后由本地服务在战局中按设定间隔发送游戏内截图键">
+            <input type="checkbox" id="mini-shot"><span class="dot dot-floor"></span>自动截图
+          </label>
+        </div>
+        <!-- R107：自动截图设置。间隔 / 战局结束清理走 auto_screenshot.*；两个目录输入框留空 = 自动识别，
+             填写后写 screenshots_dir / log_dir，服务端下次探测时优先用手动值。 -->
+        <div class="mini-shot-settings">
+          <label for="mini-shot-interval">间隔 ms</label>
+          <input type="number" id="mini-shot-interval" min="200" max="60000" step="100" value="5000"
+                 inputmode="numeric" spellcheck="false"
+                 title="自动截图间隔：允许 200–60000 毫秒（0.2–60 秒）。下限按「游戏写盘 + 目录刷新」的最短可靠周期取 200ms，上限 60s 避免战局中几乎不产生定位点；服务端另有 config.clamp_interval 再钳一次">
+          <label for="mini-shots-dir">截图目录</label>
+          <input type="text" id="mini-shots-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                 title="EFT 截图目录。留空时服务端自动探测 Documents\Escape from Tarkov\Screenshots 等常见位置，并显示当前识别到的绝对路径">
+          <label for="mini-log-dir">日志目录</label>
+          <input type="text" id="mini-log-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                 title="EFT 日志目录（含 log_* 会话文件夹）。留空时服务端自动探测游戏目录\Logs、%LOCALAPPDATA%\Battlestate Games\EFT\Logs、Documents\Escape from Tarkov\Logs 等位置">
+          <label class="toggle mini-enabled-toggle mini-shot-wide"
+                 title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
+            <input type="checkbox" id="mini-shot-cleanup">战局结束清理
+          </label>
+          <span id="mini-shot-key" class="mini-path-note">截图键：读取中…</span>
+          <span id="mini-paths-note" class="mini-path-note">目录：读取中…</span>
+        </div>
+            </div>
+          </section>
+          <section class="app-app-sec" id="app-sec-ocr" data-sec="ocr"
+                   role="tabpanel" aria-label="价格识别" hidden>
+            <div class="app-menu-panel" id="am-ocr-panel" role="region"
+                 aria-label="价格识别设置">
+        <h4 class="about-h">截图识别</h4>
+        <p class="muted settings-note">按热键框选装备，价格直接叠在装备上。</p>
+        <div class="ocr-fullrow">
+          <label><input type="checkbox" id="ocr-fullscreen"> 全屏识别（不框选，直接识别整个屏幕）</label>
+        </div>
+        <div class="ocr-hotkey-row">
+          <label for="ocr-hotkey">截图热键</label>
+          <button type="button" class="ocr-hotkey-btn" id="ocr-hotkey"
+                  title="点击后按下新快捷键（须含 Ctrl / Alt / Shift，避免占用游戏按键）；Esc 取消。改完约 1 秒内生效">ctrl+alt+p</button>
+          <button type="button" class="ocr-hotkey-reset" id="ocr-hotkey-reset"
+                  title="恢复默认热键 ctrl+alt+p">恢复默认</button>
+        </div>
+        <div class="ocr-style-box" id="ocr-style-box">
+          <h4 class="about-h">价格档位<span class="ocr-member-tag">会员</span></h4>
+          <p class="muted settings-note">按价格分档上色；配色依据的「整体 / 单格」可在下方切换。</p>
+          <div class="ocr-basis-row" id="ocr-basis-row">
+            <span class="ocr-basis-label">配色依据</span>
+            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="overall" checked> 整体价格</label>
+            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="perslot"> 单格价格</label>
+          </div>
+          <div id="ocr-tiers"></div>
+          <button type="button" class="ocr-tier-add" id="ocr-tier-add">添加档位</button>
+        </div>
+            </div>
+          </section>
+          <section class="app-app-sec" id="app-sec-tools" data-sec="tools"
+                   role="tabpanel" aria-label="工具" hidden>
+            <h4 class="app-app-h">工具</h4>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="profile">个人属性<span class="app-menu-hint">力量 / 耐力 / 类别技能</span></button>
+            <div class="menu-panel" id="raid-block">
+              <p id="raid-status" class="muted">正在读取日志监控状态…</p>
+              <p id="raid-note" class="muted raid-note"></p>
+              <p id="shot-status" class="muted shot-status">自动截图：未开启（在启动器里开启）</p>
+              <p id="clean-status" class="muted shot-status">自动删除截图：未开启（在启动器里开启）</p>
+              <div class="quest-counts">
+                <span>本局完成 <strong id="quest-done">0</strong></span>
+                <span>本局接取 <strong id="quest-started">0</strong></span>
+              </div>
+              <ul id="quest-log" class="quest-log"></ul>
+              <p class="muted quest-hint" id="quest-hint">任务事件来自游戏日志的推送通知（只有任务开始 / 完成 / 失败，没有条件级进度）。</p>
+            </div>
+          </section>
+          <section class="app-app-sec" id="app-sec-about" data-sec="about"
+                   role="tabpanel" aria-label="关于" hidden>
+            <div class="menu-panel about-panel" id="about-block">
+              <!-- R70：瘦身为紧凑链接清单。许可署名逐条保留（法律要求），说明压到一行，
+                   详细内容点开链接看；数据版本仍由 renderMetaLine() 动态生成。 -->
+              <p class="about-lead">EFT 离线互动地图 · 配装 / 配枪 / 弹药 / 任务工作台</p>
+              <dl class="about-links">
+                <div class="about-row">
+                  <dt>数据来源</dt>
+                  <dd><a href="https://github.com/the-hideout/tarkov-dev" target="_blank" rel="noopener">the-hideout/tarkov-dev</a><span class="about-meta">MIT</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>底图</dt>
+                  <dd><a href="https://github.com/the-hideout/tarkov-dev-svg-maps" target="_blank" rel="noopener">tarkov-dev-svg-maps</a><span class="about-meta">CC BY-NC-SA 4.0 · 非商业</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>图标</dt>
+                  <dd><a href="https://tarkov.dev/" target="_blank" rel="noopener">tarkov.dev 分类图标</a></dd>
+                </div>
+                <div class="about-row">
+                  <dt>任务</dt>
+                  <dd><a href="https://tarkov.dev/" target="_blank" rel="noopener">tarkov.dev 任务数据</a><span class="about-meta">派生生成 · 未逐条复核</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>任务参考</dt>
+                  <dd><a href="https://escapefromtarkov.fandom.com/wiki/Quests" target="_blank"
+                         rel="noopener">Fandom Wiki 任务列表</a><span class="about-meta">站外参考 · 不逐任务生成链接</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>行情</dt>
+                  <dd><a href="https://tarkov.dev/items" target="_blank" rel="noopener">tarkov.dev 快照</a><span class="about-meta">构建期快照 · 配装表价格在「获取方式」格内，随右上角 PvP / PvE / PvPS 与价格档（最新 / 24h / 7 日均价）变化 · 运行期不联网</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>商标</dt>
+                  <dd><a href="https://www.battlestategames.com/" target="_blank" rel="noopener">Battlestate Games</a><span class="about-meta">商标与美术归其所有 · 永久免费 · 严禁售卖</span></dd>
+                </div>
+                <div class="about-row">
+                  <dt>公式</dt>
+                  <dd><span class="about-meta">甲伤 / 跳弹 / 穿透浮动按 0.13.x 反编译口径（R62）</span></dd>
+                </div>
+              </dl>
+              <!-- R217：三处「每开一次面板就要念一遍」的说明集中到这里 —— 任务详情底部的赛季服说明、
+                   我的进度底部的存储说明、剧情页底部的来源链接，原位置不再重复。赛季周期由
+                   tasks.js 的 syncAboutSeasonNote() 用 data/tasks/season.json 填，不写死日期。 -->
+              <dl class="about-notes">
+                <div class="about-note-row">
+                  <dt>赛季服</dt>
+                  <dd id="about-season-note">赛季服说明：以上内容来自上游 pvp-season 端点。赛季结束后请勿把旧赛季的完成状态当作新赛季进度。</dd>
+                </div>
+                <div class="about-note-row">
+                  <dt>进度</dt>
+                  <dd>进度只保存在本机浏览器（localStorage），按模式隔离；导入/导出为 JSON，格式不合法时不会覆盖原数据。</dd>
+                </div>
+                <div class="about-note-row">
+                  <dt>剧情</dt>
+                  <dd>数据来源：<a href="https://www.eftarkov.com/storyline" target="_blank" rel="noopener">eftarkov 剧情页</a></dd>
+                </div>
+              </dl>
+              <p class="about-note muted" id="about-meta-line"></p>
+              <p class="about-note muted" id="about-build-line">构建版本：—（仅用于排查；右上角与状态栏显示数据截止日期）</p>
+              <p class="about-note"><a href="https://github.com/jjingith/eft-interactive-map/releases"
+                 target="_blank" rel="noopener noreferrer">检查更新 / 下载发布包</a>
+                 · <a href="https://afdian.com/item/cb09a30cdf4411f1959f52540025c377"
+                 target="_blank" rel="noopener noreferrer">爱发电支持作者</a></p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 第一阶段：工作区导航常驻顶栏，不再占用单独一行；状态仍由 setView 写 aria-selected。 -->
+  <div class="view-toolbar" id="view-switch" role="tablist" aria-label="视图切换">
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-map"
+              role="tab" data-view="map" aria-selected="true" aria-controls="map-view"
+              title="地图（Tarkov 互动地图）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M2 3.4 6 1.6l4 1.8 4-1.8v11.2L10 14.6 6 12.8l-4 1.4z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M6 1.6v11.2M10 3.4v11.2" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="11.4" cy="6.4" r="1.5" fill="#b5453a"/></svg></span>
+        <span class="vt-label">地图</span>
+      </button>
+      <button type="button" class="view-btn vt-btn" id="view-btn-tasks"
+              role="tab" data-view="tasks" aria-selected="false" aria-controls="task-view"
+              title="任务（本局任务与进度）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><rect x="3.5" y="2.6" width="9" height="12" fill="#ffffff" stroke="currentColor" stroke-width="1"/><rect x="6" y="1.1" width="4" height="2.6" fill="currentColor"/><path d="M5.6 7.2l1.9 1.9 3.2-3.4" fill="none" stroke="#1d7a37" stroke-width="1.5" stroke-linecap="round"/><path d="M5.5 11.6h5" stroke="currentColor" stroke-width="1" opacity=".5"/></svg></span>
+        <span class="vt-label">任务</span>
+      </button>
+    </div>
+    <span class="vt-sep" role="presentation" aria-hidden="true"></span>
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-ammo"
+              role="tab" data-view="ammo" aria-selected="false" aria-controls="ammo-view"
+              title="弹药（弹道数据与模拟）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M6.4 5 8 1.4 9.6 5z" fill="#b87333" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M5.4 5h5.2v9H5.4z" fill="#c9a96a" stroke="currentColor" stroke-width="1"/><path d="M5.4 11.2h5.2" stroke="currentColor" stroke-width="1" opacity=".55"/></svg></span>
+        <span class="vt-label">弹药</span>
+      </button>
+    </div>
+    <span class="vt-sep" role="presentation" aria-hidden="true"></span>
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-gun"
+              role="tab" data-view="gun" aria-selected="false" aria-controls="gun-view"
+              title="配枪（枪械工作台）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><rect x="1" y="6.2" width="14" height="2.2" fill="currentColor"/><path d="M1 6.2h3.6v5.2H3.2V8.4H1z" fill="currentColor"/><rect x="8.4" y="8.4" width="2" height="4.2" fill="currentColor"/><rect x="5.8" y="8.4" width="1.7" height="3" fill="currentColor"/></svg></span>
+        <span class="vt-label">配枪</span>
+      </button>
+      <button type="button" class="view-btn vt-btn" id="view-btn-loadout"
+              role="tab" data-view="loadout" aria-selected="false" aria-controls="loadout-view"
+              title="配装（装备与负重）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M5.2 2.2h5.6l1.4 2.1 2 1v9.3H1.8V5.3l2-1z" fill="currentColor"/><rect x="4.4" y="7" width="2.7" height="2.4" fill="#f6efdd"/><rect x="8.9" y="7" width="2.7" height="2.4" fill="#f6efdd"/><path d="M8 5.3v9.3" stroke="#f6efdd" stroke-width="1"/></svg></span>
+        <span class="vt-label">配装</span>
+      </button>
+    </div>
+    <span class="vt-sep" role="presentation" aria-hidden="true"></span>
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-market"
+              role="tab" data-view="market" aria-selected="false" aria-controls="market-view"
+              title="市场（跳蚤行情、价格筛选与市场大盘）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M2.2 3.2h5.2l6.4 6.4-5.2 5.2-6.4-6.4z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><circle cx="4.8" cy="5.8" r="1.15" fill="currentColor"/><path d="M8.2 8.2l3.6-3.6" stroke="currentColor" stroke-width="1" opacity=".5"/></svg></span>
+        <span class="vt-label">市场</span>
+      </button>
+    </div>
+  </div>
+
+  <span class="app-menu-status" id="app-menu-status" hidden></span>
+  <div class="app-menubar-right" id="app-menubar-right">
+    <!-- R19.93：属性设置入口（商人好感 / 藏身处设施 / 技能等级，按模式独立保存） -->
+    <button type="button" class="app-menu-btn" id="am-attrs"
+            aria-haspopup="dialog" aria-controls="gw-profile"
+            title="属性设置：商人好感、藏身处设施等级、技能等级（三个模式分别保存）">属性设置</button>
+    <!-- R272：云账号从左侧菜单组移到右侧，紧贴「版本：…」左边（DOM 顺序即视觉顺序）。 -->
+    <div class="app-menu app-cloud-wrap">
+      <button type="button" class="app-menu-btn" id="am-cloud" role="menuitem"
+              aria-haspopup="true" aria-expanded="false" aria-controls="am-cloud-panel">云账号：免费版</button>
+      <div class="app-menu-panel am-cloud-panel" id="am-cloud-panel" role="dialog"
+           aria-label="云账号" aria-labelledby="am-cloud" hidden>
+        <!-- 形态由 js/cloud.js 填充；?mini=1 时整块跳过 -->
+        <div class="cloud-view" id="cloud-view" aria-live="polite">
+          <p class="cloud-loading" id="cloud-loading">正在读取登录状态…</p>
+        </div>
+      </div>
+    </div>
+    <!-- 运行期迁入：模式 + 价格来源、账号版本入口、运行版本；隐藏锚点里放设置 / 关于 / 战局 / 保存配置 / 个人属性 -->
+  </div>
+</div>
+
+<div class="menubar" id="menubar" hidden aria-hidden="true">
+  <!-- 第一阶段：原第二行工作区导航已上移到 #app-menubar；这里只作为遗留按钮的原位锚点，
+       由 js/app-menubar.js 迁入右侧或隐藏锚点，?mini=1 时整段不渲染。 -->
   <div class="menu-wrap">
     <button type="button" class="menu-btn" id="menu-raid"
             aria-haspopup="true" aria-expanded="false" aria-controls="raid-block">战局与任务</button>
-    <div class="menu-panel" id="raid-block" hidden>
-      <p id="raid-status" class="muted">正在读取日志监控状态…</p>
-      <p id="raid-note" class="muted raid-note"></p>
-      <p id="shot-status" class="muted shot-status">自动截图：未开启（在启动器里开启）</p>
-      <p id="clean-status" class="muted shot-status">自动删除截图：未开启（在启动器里开启）</p>
-      <div class="quest-counts">
-        <span>本局完成 <strong id="quest-done">0</strong></span>
-        <span>本局接取 <strong id="quest-started">0</strong></span>
-      </div>
-      <ul id="quest-log" class="quest-log"></ul>
-      <p class="muted quest-hint" id="quest-hint">任务事件来自游戏日志的推送通知（只有任务开始 / 完成 / 失败，没有条件级进度）。</p>
-    </div>
-  </div>
-  <div class="menu-wrap">
-    <button type="button" class="menu-btn" id="menu-nav"
-            aria-haspopup="true" aria-expanded="false" aria-controls="nav-block">导航与路线</button>
-    <div class="menu-panel" id="nav-block" hidden>
-      <p id="route-summary" class="muted">路线为空：在搜索结果或标记详情里点「路线」加入途经点</p>
-      <ol id="route-list" class="route-list"></ol>
-      <div class="route-actions">
-        <button type="button" id="route-clear">清空</button>
-        <button type="button" id="route-reverse">反转</button>
-        <label class="toggle route-opt" title="把实时定位的当前位置作为路线起点（1 号点）">
-          <input type="checkbox" id="route-from-player"><span class="dot dot-route"></span>从实时定位出发
-        </label>
-      </div>
-      <p class="muted route-note">同楼层的相邻途经点之间按底图栅格化出来的路网（道路优先）寻路，距离为沿线距离；跨楼层、以及只有瓦片底图的实验室 / 迷宫 / 破冰船仍是直线连接（会「穿墙」，需自行判断）。</p>
-    </div>
   </div>
   <button type="button" class="menu-btn" id="save-config"
           title="把当前界面偏好（图层开关 / 楼层 / 钉选 / 图标与地名缩放 / 地名透明度）立刻写回配置文件">保存配置</button>
+  <span class="menu-spacer" aria-hidden="true"></span>
+  <!-- R45：账号版本对照卡。只影响本面板的权益说明，不重载任务与价格。 -->
+  <div class="menu-wrap">
+    <button type="button" class="menu-btn" id="menu-account"
+            aria-haspopup="true" aria-expanded="false" aria-controls="account-block"
+            title="账号版本对照：仓库、安全容器、商人声望、专属权益、价格口径与停售状态">账号</button>
+    <div class="menu-panel account-panel" id="account-block" hidden>
+      <p class="about-lead">账号版本对照（权益卡）</p>
+      <div class="account-current">
+        <span id="account-current">当前：未选择版本</span>
+        <button type="button" class="acc-btn" id="account-clear"
+                title="不确定自己的版本时保持未选择；不影响任务与价格">不确定 / 清除</button>
+      </div>
+      <p class="account-note"><strong>任务与价格不随版本变化</strong>：任务集合全版本相同，价格也无版本折扣。
+        唯一例外是已停售的 <strong>Edge of Darkness（黑边）</strong> 附带一条 Nostalgia 怀旧任务链。</p>
+      <div id="account-cards" class="account-cards">
+        <p class="muted">正在读取 data/editions.json…</p>
+      </div>
+      <p class="account-note muted" id="account-task-status" hidden></p>
+      <p class="account-note muted">价格口径：购买页当前结算显示价（RU/CIS），数字非递增，很可能是升级补差价，<strong>不是版本售价</strong>；
+        停售版本无价格。</p>
+      <p class="account-note muted">数据来源：官方知识库 KB 529 / 534–538、官方购买页、Steam 捆绑包页（抓取于 2026-11-04 02:02 +08:00）。</p>
+    </div>
+  </div>
+  <!-- 设置与关于已迁入应用菜单；在线行情设置已由会员服务端行情流程取代。 -->
+  <div class="menu-wrap">
+    <button type="button" class="menu-btn" id="menu-about"
+            aria-haspopup="true" aria-expanded="false" aria-controls="about-block"
+            title="数据来源、攻略复核状态与使用说明">关于</button>
+  </div>
+  <!-- R19.11：顶栏全局入口 —— 个人属性（力量 / 耐力 / 类别枪械技能），与地图/配装/配枪同一行 -->
+  <button type="button" class="menu-btn menu-btn-profile" id="btn-profile"
+          aria-haspopup="dialog" aria-controls="gw-profile"
+          title="个人属性：力量、耐力、各武器类别技能等级；保存后全局生效并持久化">个人属性</button>
+  <!-- R19.27：全局游戏模式（PvP / PvE / PvPS）——全应用共用，固定右上角，随页面切换保留 -->
+  <!-- R44：模式 + 价格来源徽标作为一个整体；窄屏时整组换行，不把按钮拆散 -->
+  <div class="scope-cluster">
+    <div id="game-mode-bar" class="game-mode-bar tk-modebar" role="tablist" aria-label="游戏模式"></div>
+    <span id="price-source-badge" class="price-source-badge is-snapshot"
+          title="价格数据来源：快照 / 实时 / 回退" role="status" aria-live="polite">快照（PvP，构建期）</span>
+  </div>
+  <span id="build-rev" class="build-rev"
+        title="数据截止：来自 data/meta.json 的 generatedAt（主数据源 tarkov.dev 快照生成时间）；构建版本见「关于」">数据截止 —</span>
+</div>
+
+<!-- R82：上下文栏（第三行，随视图切换）。这里只留空槽，控件由 js/app-menubar.js 在启动时
+     从各视图原位**迁入**（不是复制），原 id / 事件 / 状态全部沿用；?mini=1 时整段隐藏且不迁。 -->
+<div class="context-bar" id="context-bar" role="region" aria-label="当前视图操作栏">
+  <div class="cb-pane" id="cb-map" data-view="map">
+    <!-- 第一阶段：地图工具栏 = 选地图 + 选楼层 + 定位 + 复位 + 显示设置。 -->
+    <section class="block cb-src-block">
+      <h2>地图</h2>
+      <select id="map-list" class="map-select" aria-label="选择地图"></select>
+    </section>
+    <section class="block" id="floor-block" hidden>
+      <h2>楼层</h2>
+      <div id="floor-list" class="floor-list"></div>
+      <div class="toggles floor-opts">
+        <label class="toggle" title="按截图文件名里的高度 y 自动切到对应楼层">
+          <input type="checkbox" id="floor-auto" checked><span class="dot dot-floor"></span>跟随截图自动切层
+        </label>
+        <label class="toggle" title="只显示当前楼层的标记（标记的高度 y 落在别的层就隐藏）">
+          <input type="checkbox" id="floor-filter" checked><span class="dot dot-floor"></span>按楼层过滤标记
+        </label>
+      </div>
+      <p id="floor-note" class="muted"></p>
+    </section>
+    <button type="button" class="cb-tool" id="cb-follow"
+            title="点位自动居中：实时定位到位后把地图平移到该位置">定位</button>
+    <button type="button" class="cb-tool" id="cb-reset"
+            title="复位视图（回到整图适配）">复位</button>
+    <button type="button" class="cb-tool cb-tool-menu" id="cb-display"
+            aria-haspopup="true" aria-expanded="false" aria-controls="display-pop">显示 ▾</button>
+    <div class="cb-popover" id="display-pop" hidden>
+      <section class="block cb-pop-block" id="display-block">
+        <h2>显示</h2>
+        <div class="hud-scales">
+          <label class="hud-scale" title="地图上地名的整体大小（地名与地图绑定，不受图标滑条影响；本地保存，下次启动沿用）">
+            地名
+            <input type="range" id="label-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="地名整体缩放">
+            <span id="label-scale-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="地名的透明度：往左拖可以压淡地名，避免挡住底图（本地保存，下次启动沿用）">
+            地名透明
+            <input type="range" id="label-alpha" min="0" max="1" step="0.01" value="1"
+                   aria-label="地名透明度">
+            <span id="label-alpha-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="地图上图标的整体大小：100% 即原来的 55% 尺寸（本地保存，下次启动沿用）">
+            图标
+            <input type="range" id="icon-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="地图图标整体缩放">
+            <span id="icon-scale-value" class="hud-scale-value">100%</span>
+          </label>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="cb-pane" id="cb-tasks" data-view="tasks" hidden></div>
+  <div class="cb-pane" id="cb-ammo" data-view="ammo" hidden></div>
+  <div class="cb-pane" id="cb-gun" data-view="gun" hidden>
+    <!-- R19.90：配枪页顶栏并到二级工具条；搜索框直接放这里，原来的 gw-top 行删除 -->
+    <div class="gw-pick">
+      <input id="gw-search" class="lw-search" type="search" autocomplete="off"
+             placeholder="搜索并选择基础枪械…" aria-label="搜索基础枪械">
+      <div id="gw-results" class="gw-results" hidden role="listbox" aria-label="枪械搜索结果"></div>
+    </div>
+  </div>
+  <div class="cb-pane" id="cb-loadout" data-view="loadout" hidden>
+    <!-- R19.85：预设入口放到视图工具条这一级（和地图/任务等视图的操作栏同一行） -->
+    <button type="button" class="lw-top-link" id="lw-save"
+            title="保存当前配装为本地预设（可命名 / 覆盖 / 导入导出）">保存配装</button>
+    <button type="button" class="lw-top-link" id="lw-load"
+            title="读取本地装备预设">读取预设</button>
+    <button type="button" class="lw-top-link" id="gear-clear"
+            title="清空当前配装（已装备的物品全部卸下）">清空配装</button>
+    <span class="lw-hint" id="lw-hint"></span>
+  </div>
+  <div class="cb-pane" id="cb-market" data-view="market" hidden>
+    <!-- R19.87：市场子页（列表 / 大盘）上提到二级工具条，市场页整体少一行 -->
+    <div class="mk-ws-nav" id="market-subnav" role="tablist" aria-label="市场子页面">
+      <button type="button" class="mk-ws-tab is-active" data-market-tab="list"
+              role="tab" aria-selected="true" aria-controls="market-list-pane">市场列表</button>
+      <button type="button" class="mk-ws-tab" data-market-tab="board"
+              role="tab" aria-selected="false" aria-controls="market-board-pane">市场大盘</button>
+    </div>
+  </div>
+  <!-- 第一阶段：价格档位 / 市场元信息 / 会员到期从旧工具条右端移到上下文栏右端，全站常显。 -->
+  <div class="cb-global" id="cb-global">
+    <div class="vt-prices" id="vt-prices" role="radiogroup" aria-label="价格口径"></div>
+    <div class="vt-market-meta" id="vt-market-meta"></div>
+    <span class="vt-member-expire" id="vt-member-expire" title="会员到期时间">会员未开通</span>
+  </div>
 </div>
 
 <div class="workspace">
 
+<div id="map-view" class="view-pane">
+
 <aside class="panel" id="sidebar">
-  <header class="brand">
-    <h1>EFT 互动地图</h1>
-    <p class="brand-sub">离线免费版 · 不读取游戏进程</p>
-  </header>
+  <button type="button" id="sidebar-collapse" class="sidebar-collapse"
+          title="收起侧栏" aria-label="收起侧栏" aria-expanded="true">‹</button>
 
-  <section class="block">
-    <h2>地图</h2>
-    <div id="map-list" class="map-list" role="listbox" aria-label="地图列表"></div>
-  </section>
-
-  <section class="block" id="floor-block" hidden>
-    <h2>楼层</h2>
-    <div id="floor-list" class="floor-list"></div>
-    <div class="toggles floor-opts">
-      <label class="toggle" title="按截图文件名里的高度 y 自动切到对应楼层">
-        <input type="checkbox" id="floor-auto" checked><span class="dot dot-floor"></span>跟随截图自动切层
-      </label>
-      <label class="toggle" title="只显示当前楼层的标记（标记的高度 y 落在别的层就隐藏）">
-        <input type="checkbox" id="floor-filter" checked><span class="dot dot-floor"></span>按楼层过滤标记
-      </label>
-    </div>
-    <p id="floor-note" class="muted"></p>
-  </section>
-
-  <section class="block">
+  <section class="block" id="layers-block">
     <h2>图层</h2>
+    <input id="layer-search" type="search" class="layer-search"
+           placeholder="搜索图层…" autocomplete="off" aria-label="搜索图层">
+    <div id="layer-quick" class="layer-quick" role="group" aria-label="常用图层快捷开关">
+      <button type="button" class="layer-chip" data-quick="extracts"
+              aria-pressed="false" title="共用 / PMC / Scav 撤离点">撤离点</button>
+      <button type="button" class="layer-chip" data-quick="valuables"
+              aria-pressed="false">高级资源点</button>
+      <button type="button" class="layer-chip" data-quick="hazards"
+              aria-pressed="false">危险区</button>
+      <button type="button" class="layer-chip" data-quick="bosses"
+              aria-pressed="false">Boss</button>
+      <button type="button" class="layer-chip" data-quick="labels"
+              aria-pressed="false">地名标注</button>
+    </div>
     <div id="layer-toggles" class="toggles"></div>
   </section>
 
-  <section class="block">
-    <h2>搜索</h2>
-    <input id="search" class="search" type="search" placeholder="输入名称（撤离点 / 物资 / Boss…）" autocomplete="off">
-    <div id="pinned-list" class="pinned-list" hidden></div>
-    <div id="search-results" class="search-results" hidden></div>
+  <section class="block" id="wiki-panel" hidden>
+    <h2>官方图层 <small id="wiki-count" class="muted"></small></h2>
+    <input id="wiki-search" type="search" class="wiki-search"
+           placeholder="搜索官方标点（标题 / 分类 / 说明）" autocomplete="off"
+           aria-label="搜索官方标点">
+    <div class="wiki-actions">
+      <button type="button" id="wiki-all">全选</button>
+      <button type="button" id="wiki-none">全不选</button>
+    </div>
+    <div id="wiki-cats" class="wiki-cats"></div>
+    <p class="muted wiki-note">来源：Escape from Tarkov Wiki 互动地图（tarkov.dev 同源）。平铺底图，无楼层过滤；分组与筛选沿用矢量图图层。</p>
   </section>
 
-  <section class="block" id="detail-block" hidden>
-    <h2>标记详情</h2>
-    <dl id="detail" class="detail"></dl>
-    <div class="detail-actions">
-      <button type="button" id="detail-add-route" title="把当前标记加入导航路线">加入路线</button>
-    </div>
-  </section>
+  <!-- R104：左侧「标记详情」整块已删除 —— 它与地图点位浮窗（.marker-pop）的信息完全重复，
+       点位选中后只在地图上出浮窗，左侧栏不再随之变化。详见 app.js 的 showDetail。 -->
 
   <footer class="credits">
-    <p><strong>数据来源</strong>：tarkov.dev 公开数据（<a href="https://github.com/the-hideout/tarkov-dev" target="_blank" rel="noopener">the-hideout/tarkov-dev</a>，MIT）；底图 SVG（<a href="https://github.com/the-hideout/tarkov-dev-svg-maps" target="_blank" rel="noopener">tarkov-dev-svg-maps</a>，CC BY-NC-SA 4.0，非商业）。</p>
-    <p>《逃离塔科夫》商标与原始美术归 Battlestate Games。本工具永久免费、严禁售卖，与游戏进程零交互。</p>
-    <p id="meta-line" class="muted"></p>
+    <p class="muted">数据与许可说明见顶部应用菜单「关于」。</p>
   </footer>
 </aside>
 
 <main id="stage">
+  <button type="button" id="sidebar-expand" class="sidebar-expand"
+          title="展开侧栏" aria-label="展开侧栏" hidden>›</button>
   <div id="viewport"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+
+  <div id="wiki-viewport" hidden>
+    <svg id="wiki-svg" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"></svg>
+    <div id="wiki-pop" hidden></div>
+    <div class="wiki-hud">
+      <button type="button" id="wiki-zoom-in" title="放大（滚轮向上）">+</button>
+      <button type="button" id="wiki-zoom-out" title="缩小（滚轮向下）">−</button>
+      <button type="button" id="wiki-reset" title="复位视图（整图适配）">复位</button>
+    </div>
+  </div>
 
   <div class="hud" id="hud">
     <button id="follow" title="点位自动居中：实时定位到位后把地图平移到该位置">自动居中</button>
     <button id="zoom-in" title="放大（滚轮向上）">+</button>
     <button id="zoom-out" title="缩小（滚轮向下）">−</button>
     <button id="reset" title="复位视图（回到整图适配）">复位</button>
-    <label class="hud-scale" title="地图上图标与地名的整体大小：4K 屏上图标偏小就往右拖（本地保存，下次启动沿用）">
-      图标
-      <input type="range" id="icon-scale" min="0.5" max="3" step="0.05" value="1"
-             aria-label="地图图标整体缩放">
-      <span id="icon-scale-value" class="hud-scale-value">100%</span>
-    </label>
-    <div class="hud-scales">
-      <label class="hud-scale" title="地图上地名的整体大小（地名与地图绑定，不受图标滑条影响；本地保存，下次启动沿用）">
-        地名
-        <input type="range" id="label-scale" min="0.5" max="3" step="0.05" value="1"
-               aria-label="地名整体缩放">
-        <span id="label-scale-value" class="hud-scale-value">100%</span>
-      </label>
-      <label class="hud-scale" title="地名的透明度：往左拖可以压淡地名，避免挡住底图（本地保存，下次启动沿用）">
-        地名透明
-        <input type="range" id="label-alpha" min="0" max="1" step="0.05" value="1"
-               aria-label="地名透明度">
-        <span id="label-alpha-value" class="hud-scale-value">100%</span>
-      </label>
-    </div>
   </div>
 
   <div class="statusbar">
@@ -140,8 +599,685 @@
   <div id="error" class="error" hidden></div>
 </main>
 
+<aside class="panel" id="task-panel" aria-label="地图检查器">
+  <header class="task-panel-head">
+    <div class="inspector-tabs" role="tablist" aria-label="地图检查器" aria-orientation="horizontal">
+      <button type="button" class="inspector-tab is-active" id="inspector-tab-tasks"
+              role="tab" data-inspector-tab="tasks" aria-selected="true"
+              aria-controls="inspector-pane-tasks">任务</button>
+      <button type="button" class="inspector-tab" id="inspector-tab-markers"
+              role="tab" data-inspector-tab="markers" aria-selected="false"
+              aria-controls="inspector-pane-markers" tabindex="-1">标记</button>
+      <button type="button" class="inspector-tab" id="inspector-tab-details"
+              role="tab" data-inspector-tab="details" aria-selected="false"
+              aria-controls="inspector-pane-details" tabindex="-1">详情</button>
+    </div>
+    <button type="button" id="task-panel-collapse" class="task-panel-collapse"
+            title="收起检查器" aria-label="收起地图检查器" aria-expanded="true">›</button>
+  </header>
+  <section class="inspector-pane inspector-pane-tasks" id="inspector-pane-tasks"
+           role="tabpanel" aria-labelledby="inspector-tab-tasks">
+  <!-- R213：任务 / 剧情列表与下方的「物资刷新点」结果区共用这一个搜索框，
+       el.search 与 el.taskSearch 在 app.js 里指向同一节点，两边各自消费同一个查询词。 -->
+  <div class="task-search-wrap">
+    <input id="task-search" type="search" placeholder="搜索任务 / 剧情 / 物资刷新点 / 撤离点…" autocomplete="off"
+           aria-label="搜索当前地图任务、剧情与物资刷新点">
+    <button type="button" id="task-search-reset" class="task-search-reset">重置</button>
+  </div>
+
+  <!-- R212：任务 / 剧情「标点图层」勾选。左侧「图层 → 任务 / 剧情」分组已整组搬到这里
+       （LAYER_SPEC 的 quests 组不再渲染进 #layer-toggles），按普通 / 剧情两类分组，
+       每组再按完成状态细分；同一套勾选同时决定地图标点与下方任务列表。 -->
+  <div id="task-layer-toggles" class="task-layer-toggles" role="group" aria-label="任务与剧情标点图层">
+    <div class="legend-group task-layer-group" data-group-id="task-normal">
+      <div class="toggle-group legend-group-head">
+        <button type="button" class="legend-group-toggle" data-task-layer-fold="tasks"
+                aria-controls="task-layer-body-tasks" aria-expanded="true">
+          <span class="legend-group-arrow" aria-hidden="true">▾</span>
+          <span class="legend-group-title">普通任务</span>
+        </button>
+        <span class="legend-group-count" id="task-group-count-tasks" title="当前列表里显示的条数">0</span>
+      </div>
+      <div class="legend-group-body" id="task-layer-body-tasks">
+        <label class="toggle legend-item" data-task-layer-row="tasks:done" data-on="true">
+          <input type="checkbox" data-task-layer="tasks" data-task-state="done" checked
+                 aria-label="显示已完成的普通任务标点">
+          <img class="legend-ico task-layer-ico" src="assets/icons/map-task-point.png"
+               width="15" height="15" alt="">
+          <span class="legend-name">已完成</span>
+          <span class="legend-count" id="task-layer-count-tasks-done">0</span>
+        </label>
+        <label class="toggle legend-item" data-task-layer-row="tasks:todo" data-on="true">
+          <input type="checkbox" data-task-layer="tasks" data-task-state="todo" checked
+                 aria-label="显示未完成的普通任务标点">
+          <img class="legend-ico task-layer-ico" src="assets/icons/map-task-point.png"
+               width="15" height="15" alt="">
+          <span class="legend-name">未完成</span>
+          <span class="legend-count" id="task-layer-count-tasks-todo">0</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="legend-group task-layer-group" data-group-id="task-story">
+      <div class="toggle-group legend-group-head">
+        <button type="button" class="legend-group-toggle" data-task-layer-fold="stories"
+                aria-controls="task-layer-body-stories" aria-expanded="true">
+          <span class="legend-group-arrow" aria-hidden="true">▾</span>
+          <span class="legend-group-title">剧情任务</span>
+        </button>
+        <span class="legend-group-count" id="task-group-count-stories" title="当前列表里显示的条数">0</span>
+      </div>
+      <div class="legend-group-body" id="task-layer-body-stories">
+        <label class="toggle legend-item" data-task-layer-row="stories:done" data-on="true">
+          <input type="checkbox" data-task-layer="stories" data-task-state="done" checked
+                 aria-label="显示已完成的剧情任务标点">
+          <img class="legend-ico task-layer-ico" src="assets/icons/map-story-point.png"
+               width="15" height="15" alt="">
+          <span class="legend-name">已完成</span>
+          <span class="legend-count" id="task-layer-count-stories-done">0</span>
+        </label>
+        <label class="toggle legend-item" data-task-layer-row="stories:todo" data-on="true">
+          <input type="checkbox" data-task-layer="stories" data-task-state="todo" checked
+                 aria-label="显示未完成的剧情任务标点">
+          <img class="legend-ico task-layer-ico" src="assets/icons/map-story-point.png"
+               width="15" height="15" alt="">
+          <span class="legend-name">未完成</span>
+          <span class="legend-count" id="task-layer-count-stories-todo">0</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 独立于上面两个分组：勾上后收紧为「未完成 + 前置已满足」，不改动分组勾选的值。 -->
+  <label class="toggle task-parallel-toggle" id="task-parallel-toggle"
+         title="只显示未完成、且前置任务已满足、当前地图就能推进的任务；剧情点无前置数据，按可直接推进处理">
+    <input type="checkbox" id="task-parallel-only"><span class="dot dot-task"></span>可并行推进
+  </label>
+
+  <div id="task-list" class="task-list"></div>
+  <p class="task-source muted">任务攻略数据来源：tarkov.dev（开源 MIT）</p>
+  </section>
+
+  <section class="inspector-pane inspector-pane-markers" id="inspector-pane-markers"
+           role="tabpanel" aria-labelledby="inspector-tab-markers" hidden>
+    <div class="inspector-pane-intro">
+      <strong>当前地图标记</strong>
+      <span class="muted">选择条目可定位并查看详情；钉选项会跨会话保留。</span>
+    </div>
+    <input id="inspector-marker-search" class="inspector-marker-search" type="search"
+           placeholder="筛选当前地图标记…" autocomplete="off" aria-label="筛选当前地图标记">
+    <div id="pinned-list" class="pinned-list" hidden></div>
+    <div class="inspector-marker-scroll">
+      <div id="inspector-marker-list" class="inspector-marker-list"></div>
+      <div id="search-results" class="search-results" hidden></div>
+    </div>
+  </section>
+
+  <section class="inspector-pane inspector-pane-details" id="inspector-pane-details"
+           role="tabpanel" aria-labelledby="inspector-tab-details" hidden>
+    <div id="inspector-detail-content" class="inspector-detail-content">
+      <div class="inspector-empty">
+        <span class="inspector-empty-icon" aria-hidden="true">⌖</span>
+        <strong>还没有选中的点位</strong>
+        <span>点击地图标记，或从“标记”页选择一个条目查看详情。</span>
+      </div>
+    </div>
+  </section>
+</aside>
+
+<button type="button" id="task-panel-expand" class="task-panel-expand"
+        title="展开地图检查器" aria-label="展开地图检查器" hidden>‹</button>
+
+</div><!-- /#map-view -->
+
+<section id="loadout-view" class="view-pane lw-scope" hidden aria-label="配装工作台">
+
+<div class="loadout-workbench" id="loadout-workbench">
+
+  <!-- 左：装备工作区（按参考布局重做 = 顶部统计条 + 槽位卡片板 + Final Cost / Buy·Sell）
+       卡片板上每个有子槽的父装备，其所在行下面紧跟一条**只属于它自己**的子槽条
+       （.lw-node-group > .lw-node-kids），不再有统一的槽位树列表容器。 -->
+  <aside class="lw-side">
+    <div class="lw-stats" id="lw-stats"></div>
+    <div class="lw-board" id="lw-figure" role="group" aria-label="装备槽位卡片板"></div>
+    <div class="lw-cost" id="lw-cost"></div>
+    <details class="lw-audit" id="lw-audit">
+      <summary>分类审计：七类件数 / 判定依据 / 重复归类 / 待审核</summary>
+      <div class="lw-audit-body" id="lw-audit-body"></div>
+    </details>
+  </aside>
+
+  <!-- 右：主物品列表（候选与列结构由左侧当前选中槽位及其规则驱动） -->
+  <main class="lw-main">
+    <div id="lw-focus" class="lw-focus"></div>
+    <!-- R20.6：候选筛选条 —— 对照参考站预设页候选表顶部的
+         Class / only TraderLvl / Max Kg / Min Built-in / Max Penalty + Mov/Turn/Ergo 排序 -->
+    <div class="lw-filters" id="lw-filters" role="group" aria-label="候选筛选与排序">
+      <input id="lw-search" class="lw-search lw-search-inline" type="search"
+             placeholder="输入物品名称筛选…" autocomplete="off" aria-label="按名称筛选当前分类">
+      <label class="lw-fl" for="lw-cl" title="按装备的护甲等级过滤（上游 cl 字段）">
+        <span>等级</span>
+        <select id="lw-cl">
+          <option value="">不限</option>
+          <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+          <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+        </select>
+      </label>
+      <label class="lw-check" for="lw-trader-level"
+             title="勾选后按「属性设置 → 商人好感」中各商人的等级筛选：只显示当前等级确实能买到的装备">
+        <input type="checkbox" id="lw-trader-level"><span>商人等级</span>
+      </label>
+      <label class="lw-check" for="lw-flea-level"
+             title="勾选后按「属性设置 → 商人好感」中的角色等级筛选：只显示跳蚤解锁等级 ≤ 角色等级的装备">
+        <input type="checkbox" id="lw-flea-level"><span>跳蚤等级</span>
+      </label>
+      <span class="lw-fl-mode" id="lw-plate-mode" role="group"
+            aria-label="插板策略（对照参考站预设页的 picked / default / priority Plates）">
+        <button type="button" class="lw-modebtn" data-lwpmode="1" aria-pressed="true"
+                title="只用你自己挑过的插板；没挑过的板位留空">挑的插板</button>
+        <button type="button" class="lw-modebtn" data-lwpmode="2" aria-pressed="false"
+                title="按护甲默认插板自动填满每个板位（防护等级优先），换护甲后各自按自己的默认板计">默认插板</button>
+        <button type="button" class="lw-modebtn" data-lwpmode="3" aria-pressed="false"
+                title="按价格优先自动挑选每个板位的插板（最便宜的一块）">优先插板</button>
+      </span>
+      <label class="lw-fl" for="lw-slots" hidden
+             title="按护甲本体的硬板位数量过滤（只数 Front/Back/Left/Right 这类可拆板槽，不含固定内衬）">
+        <span>板位数</span>
+        <select id="lw-slots">
+          <option value="0">不限</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+      <label class="lw-fl" for="lw-maxkg" title="装备本体重量上限（不含已安装附件）">
+        <span>重量</span>
+        <input id="lw-maxkg" type="number" min="0" step="0.5" placeholder="kg" autocomplete="off">
+      </label>
+      <label class="lw-fl" for="lw-mincl" title="按装备本体防弹等级过滤（不含已安装插板）">
+        <span>防弹</span>
+        <input id="lw-mincl" type="number" min="1" max="6" step="1" placeholder="1-6" autocomplete="off">
+      </label>
+      <label class="lw-fl" for="lw-maxpen"
+             title="移动 + 转身 + 人机 三项惩罚绝对值的合计（%），超过上限的装备被筛掉">
+        <span>惩罚</span>
+        <input id="lw-maxpen" type="number" min="0" step="1" placeholder="%" autocomplete="off">
+      </label>
+      <span class="lw-fl-sort" role="group" aria-label="按机动分项排序">
+        <button type="button" class="lw-sortbtn" data-lwsort="mov" aria-pressed="false"
+                title="按移动惩罚排序；再点一次反向">移动</button>
+        <button type="button" class="lw-sortbtn" data-lwsort="turn" aria-pressed="false"
+                title="按转身惩罚排序；再点一次反向">转身</button>
+        <button type="button" class="lw-sortbtn" data-lwsort="ergo" aria-pressed="false"
+                title="按人机工效排序；再点一次反向">人机</button>
+        <button type="button" class="lw-sortbtn" data-lwsort="kg" aria-pressed="false"
+                title="按装备本体重量排序；再点一次反向">重量</button>
+        <button type="button" class="lw-sortbtn" data-lwsort="price" aria-pressed="false"
+                title="按当前价格档的报价排序；再点一次反向">价格</button>
+      </span>
+      <span class="lw-fl-src" id="lw-src-filter" role="group" aria-label="按获取方式筛选">
+        <button type="button" class="lw-srcbtn is-on" data-lwsrc="" aria-pressed="true"
+                title="不限制获取方式">全部</button>
+        <button type="button" class="lw-srcbtn" data-lwsrc="flea" aria-pressed="false"
+                title="只显示可在跳蚤市场购买的物品">跳蚤</button>
+        <button type="button" class="lw-srcbtn" data-lwsrc="buy" aria-pressed="false"
+                title="只显示商人直接出售的物品">商人</button>
+        <button type="button" class="lw-srcbtn" data-lwsrc="barter" aria-pressed="false"
+                title="只显示可通过商人兑换获得的物品">兑换</button>
+        <button type="button" class="lw-srcbtn" data-lwsrc="craft" aria-pressed="false"
+                title="只显示可在藏身处制作的物品">制作</button>
+      </span>
+      <label class="lw-check" hidden title="九个分部位内衬等级列（前/后/左/右/脖颈/双肩/前后裆）默认常驻，格内两行显示「等级 / 耐久」。取消勾选可收起这九列，把宽度让给其它列">
+        <input type="checkbox" id="lw-liner-detail" checked><span>内衬明细</span>
+      </label>
+      <label class="lw-check lw-check-inline" title="只显示在当前价格档下确实有报价的物品">
+        <input type="checkbox" id="lw-quoted"><span>只看有报价</span>
+      </label>
+      <span class="lw-fl-state" id="lw-fl-state" aria-live="polite"></span>
+    </div>
+    <div id="gear-table" class="lw-table"></div>
+  </main>
+
+</div><!-- /.loadout-workbench -->
+
+</section>
+
+<section id="gun-view" class="view-pane lw-scope" hidden aria-label="配枪工作台">
+  <div class="gun-workbench" id="gun-workbench">
+
+    <!-- R19.90：原 gw-top 行删除（搜索/枪名/对比/装配预设/枪械预设）。
+         搜索框已并入二级工具条 #cb-gun；预设入口改为该行右侧的三个链接。 -->
+
+    <!-- R19.1 视图工具条：口径 / 类别 / 表格 / 工作台（对照参考截图 Caliber|Class|Table|Gun） -->
+    <nav class="gw-modes" aria-label="配枪视图切换">
+      <div class="gw-modes-tabs" role="tablist">
+        <button type="button" class="gw-mode" data-gwmode="caliber" role="tab"
+                title="按口径分组的枪械卡片墙（对照参考站 Caliber 视图）">口径</button>
+        <button type="button" class="gw-mode" data-gwmode="class" role="tab"
+                title="按武器类别分组的枪械卡片墙（对照参考站 Class 视图）">类别</button>
+        <button type="button" class="gw-mode" data-gwmode="table" role="tab"
+                title="全部枪械的对比表格（对照参考站 Table 视图）">表格</button>
+        <button type="button" class="gw-mode" data-gwmode="build" role="tab"
+                title="枪械装配工作台（对照参考站 Gun 视图）">工作台</button>
+      </div>
+      <!-- R19.92：枪械信息条并入视图工具条；Saved（已保存方案）入口移除 -->
+      <div id="gw-meta" class="gw-meta" aria-label="枪械信息"></div>
+      <span class="lw-grow"></span>
+      <!-- R19.96：右侧候选栏的「当前槽位 / 筛选 / 搜索」上提到这一行，
+           工作台右侧列表整体上移一行（切换视图时由 JS 显隐） -->
+      <div class="gw-cands-top" id="gw-cands-top" hidden>
+        <div id="gw-slotinfo" class="gw-slotinfo" aria-live="polite"></div>
+        <div class="gw-cands-filters">
+          <label class="gw-hidebad" for="gw-hidebad">
+            <input type="checkbox" id="gw-hidebad">
+            <span>隐藏不兼容配件</span>
+            <i id="gw-hidebad-count" class="gw-hidebad-count"></i>
+          </label>
+          <!-- R20.4：仅商人可买（对照参考站 only Trader 过滤；只影响候选列表显示） -->
+          <label class="gw-hidebad" for="gw-onlytrader">
+            <input type="checkbox" id="gw-onlytrader">
+            <span>仅商人可买</span>
+            <i id="gw-onlytrader-count" class="gw-hidebad-count"></i>
+          </label>
+        </div>
+        <div class="gw-cands-head">
+          <input id="gw-cand-search" class="lw-search" type="search" autocomplete="off"
+                 placeholder="筛选候选配件 — ESC 清空" aria-label="筛选候选配件">
+        </div>
+      </div>
+      <div class="gw-filterrow" id="gw-filterrow">
+        <span class="gw-chips" id="gw-kindchips" role="group" aria-label="主武器 / 手枪">
+          <button type="button" class="gw-chip" data-gwkind="primary" aria-pressed="false">主武器</button>
+          <button type="button" class="gw-chip" data-gwkind="handgun" aria-pressed="false">手枪</button>
+        </span>
+        <span class="gw-chips" id="gw-firechips" role="group" aria-label="射击模式筛选">
+          <button type="button" class="gw-chip" data-gwfire="fullauto" aria-pressed="false">Auto</button>
+          <button type="button" class="gw-chip" data-gwfire="single" aria-pressed="false">Single</button>
+          <button type="button" class="gw-chip" data-gwfire="burst" aria-pressed="false">Burst</button>
+        </span>
+        <!-- R19.97：三个预设入口（与配装页同一套蓝色链接样式），启动时随射击模式筛选一起迁到二级工具条；
+             操作提示紧跟在这组链接后面（不再跑到筛选芯片前面）；#gw-ref 保留为隐藏数据源，供「读取预设」菜单渲染。 -->
+        <span class="gw-preset-links" id="gw-preset-links">
+          <button type="button" class="lw-top-link" id="gw-save-link"
+                  title="输入名称，把当前枪械与装配保存为本机预设">保存配枪</button>
+          <button type="button" class="lw-top-link" id="gw-read-link"
+                  title="读取预设：内置参考预设与本机保存的预设">读取预设</button>
+          <button type="button" class="lw-top-link" id="gw-clear-link"
+                  title="按官方预设恢复这把枪的默认装配（清掉当前自定义装配）">清空预设</button>
+          <span class="lw-hint" id="gw-hint"></span>
+          <select id="gw-ref" hidden aria-hidden="true" tabindex="-1"><option value="">（手动配置）</option></select>
+        </span>
+        <!-- R19.96：获取方式筛选与配装页一致；等级改为勾选项，等级值统一读「属性设置」 -->
+        <span class="gw-srcgrp" id="gw-srcgrp" role="group" aria-label="按获取方式筛选">
+          <button type="button" class="gw-srcbtn is-on" data-gwsrc="" aria-pressed="true"
+                  title="不限制获取方式">全部</button>
+          <button type="button" class="gw-srcbtn" data-gwsrc="flea" aria-pressed="false"
+                  title="只显示可在跳蚤市场购买的枪">跳蚤</button>
+          <button type="button" class="gw-srcbtn" data-gwsrc="buy" aria-pressed="false"
+                  title="只显示商人直接出售的枪">商人</button>
+          <button type="button" class="gw-srcbtn" data-gwsrc="barter" aria-pressed="false"
+                  title="只显示可通过商人兑换获得的枪">兑换</button>
+          <button type="button" class="gw-srcbtn" data-gwsrc="craft" aria-pressed="false"
+                  title="只显示可在藏身处制作的枪">制作</button>
+        </span>
+        <label class="gw-lvcheck" for="gw-flea-level"
+               title="勾选后按「属性设置 → 商人好感」中的角色等级筛选跳蚤可购买的枪">
+          <input type="checkbox" id="gw-flea-level"><span>跳蚤等级</span>
+        </label>
+        <label class="gw-lvcheck" for="gw-trader-level"
+               title="勾选后按「属性设置 → 商人好感」里的各商人等级筛选可购买的枪">
+          <input type="checkbox" id="gw-trader-level"><span>商人等级</span>
+        </label>
+        <!-- R19.8：当前筛选条件与结果数量（单选组；未筛选时显示全部） -->
+        <span id="gw-filterstate" class="gw-filterstate" aria-live="polite"></span>
+      </div>
+    </nav>
+
+    <!-- 浏览页（口径 / 类别 两种分组共用容器） -->
+    <section id="gw-browsepage" class="gw-page" aria-label="枪械浏览">
+      <!-- R20.5c：浏览页价格口径（对照参考站列表页右上的 lastPrice / avg24h 切换） + 口径配色图例 -->
+      <div class="gw-browse-head">
+        <!-- R265：价格口径已上移到二级工具条（#vt-prices），此处不再重复。 -->
+        <span class="lw-grow"></span>
+        <span id="gw-callegend" class="gw-callegend" aria-label="口径配色图例"></span>
+      </div>
+      <div id="gw-browse" class="gw-browse" role="group" aria-label="全部枪械"></div>
+    </section>
+
+    <!-- 表格页（对照参考站 Table 视图） -->
+    <section id="gw-tablepage" class="gw-page" hidden aria-label="枪械对比表格">
+      <div id="gw-table2" class="lw-table gw-table2"></div>
+    </section>
+
+    <!-- 工作台页：左 FORGE / 中装配 / 右候选（对照参考站 Gun 视图三栏） -->
+    <section id="gw-buildpage" class="gw-buildpage" hidden aria-label="枪械装配工作台">
+      <aside class="gw-forge" aria-label="FORGE 自动配枪">
+        <div id="gw-forge"></div>
+      </aside>
+      <main class="gw-center">
+        <div id="gw-cmp" class="gw-compare" hidden></div>
+        <!-- R19.91：原「⤓ 载入变体 / 预设（手动配置）/ 恢复默认 / 保存预设 / 清空配件 / 回退」整行删除，
+             功能已并入二级工具条的四个预设链接；这里只保留枪身图。 -->
+        <div id="gw-visual" class="gw-visual gw-visual-slim"></div>
+        <!-- R19.92：枪械信息条已上移到视图工具条（#gw-meta 在 .gw-modes 内） -->
+        <!-- 结构化装配画布：CSS Grid 按真实槽位树排布（列数 / 行列位置见 app.js gwBuildLayout） -->
+        <div id="gw-tree" class="gw-tree gw-canvas" role="group" aria-label="枪械空间装配画布"></div>
+        <div id="gw-bars" class="gw-bars" aria-label="整枪属性条"></div>
+        <!-- R19.6：整枪属性明细（25 字段全保留，位于属性条下方、隐藏属性上方） -->
+        <div id="gw-stats" class="gw-stats"></div>
+        <!-- R19.6：隐藏属性独立紧凑块（位于整枪属性下方） -->
+        <div id="gw-hidden" class="gw-hidden" aria-label="隐藏属性"></div>
+        <!-- R19.7：画布下方的独立弹药区已删除；弹药改由画布子弹格 + 右侧候选列表驱动 -->
+        <div id="gw-bottom" class="gw-bottom" aria-label="成本与改装时间线"></div>
+      </main>
+      <aside class="gw-cands" aria-label="候选配件">
+        <!-- R19.96：当前槽位 / 筛选 / 搜索已上移到视图工具条，这里直接从候选表开始 -->
+        <div id="gw-table" class="lw-table"></div>
+      </aside>
+    </section>
+
+  </div>
+</section>
+
+<!-- R19.93：属性设置（全局，按游戏模式独立保存；原「个人属性」弹窗升级为三页签） -->
+<div id="gw-profile" class="gw-prof-modal gw-attrs-modal" hidden role="dialog" aria-modal="true"
+     aria-labelledby="gw-prof-title">
+  <div class="gw-prof-box gw-attrs-box">
+    <header class="gw-prof-head gw-attrs-head">
+      <span id="gw-prof-title" class="gw-prof-title">属性设置</span>
+      <span id="gw-attrs-mode" class="gw-attrs-mode">PvP</span>
+      <button type="button" class="gw-prof-x" id="gw-prof-x" aria-label="关闭属性设置（Esc）"
+              title="关闭（Esc）">×</button>
+    </header>
+    <nav class="gw-attrs-tabs" role="tablist" aria-label="属性设置分页">
+      <button type="button" class="gw-attrs-tab is-on" role="tab" data-attrtab="traders"
+              aria-selected="true" aria-controls="gw-attr-pane-traders">商人好感</button>
+      <button type="button" class="gw-attrs-tab" role="tab" data-attrtab="hideout"
+              aria-selected="false" aria-controls="gw-attr-pane-hideout">藏身处设施</button>
+      <button type="button" class="gw-attrs-tab" role="tab" data-attrtab="skills"
+              aria-selected="false" aria-controls="gw-attr-pane-skills">技能等级</button>
+    </nav>
+    <div class="gw-prof-body gw-attrs-body">
+      <!-- 1) 商人好感（对照参考站 Pragmatic 属性面板：Char Level / Trader Level / Scav Karma） -->
+      <section class="gw-attrs-pane" id="gw-attr-pane-traders" data-attrpane="traders">
+        <div class="gw-attr-slider">
+          <label for="gw-attr-charlevel">Char Level</label>
+          <output id="gw-attr-charlevel-v">42</output>
+          <input id="gw-attr-charlevel" type="range" min="1" max="70" step="1" value="42"
+                 aria-label="角色等级">
+        </div>
+        <div class="gw-attr-sec-title">Trader Level</div>
+        <div id="gw-attr-traders" class="gw-attr-traders"></div>
+        <div class="gw-attr-slider gw-attr-karma">
+          <label for="gw-attr-karma">Scav Karma: <b id="gw-attr-karma-v">+0</b></label>
+          <input id="gw-attr-karma" type="range" min="-6" max="6" step="0.1" value="0"
+                 aria-label="Scav 好感">
+          <div class="gw-attr-scale"><span>-6</span><span>+6</span></div>
+        </div>
+      </section>
+
+      <!-- 2) 藏身处设施等级 -->
+      <section class="gw-attrs-pane" id="gw-attr-pane-hideout" data-attrpane="hideout" hidden>
+        <p class="gw-prof-note">设置各设施当前等级。低于配方需求的藏身处制作来源会被视为不可用（影响配装来源与材料估价）。</p>
+        <div id="gw-attr-hideout" class="gw-attr-hideout"></div>
+      </section>
+
+      <!-- 3) 技能等级（沿用原有力量 / 耐力 / 武器技能字段，另加通用技能） -->
+      <section class="gw-attrs-pane" id="gw-attr-pane-skills" data-attrpane="skills" hidden>
+        <p class="gw-prof-note">力量、耐力与武器类别技能会直接参与配枪整枪属性计算；其余技能只做记录，供后续功能使用。</p>
+        <div class="gw-prof-grid">
+          <label class="gw-prof-f" for="gw-prof-strength">力量等级
+            <input id="gw-prof-strength" type="number" min="0" max="51" step="1"></label>
+          <label class="gw-prof-f" for="gw-prof-endurance">耐力等级
+            <input id="gw-prof-endurance" type="number" min="0" max="51" step="1"></label>
+          <label class="gw-prof-f" for="gw-prof-equip">装备人机修正
+            <input id="gw-prof-equip" type="number" min="-1" max="1" step="0.05"></label>
+          <label class="gw-prof-f" for="gw-prof-mastery">武器熟练度
+            <input id="gw-prof-mastery" type="number" min="0" max="51" step="1"></label>
+        </div>
+        <h4 class="gw-prof-h4">枪械技能（按武器类别）</h4>
+        <p class="gw-prof-note">默认等级作用于所有枪械；某一类别单独填写时覆盖默认值（留空 = 沿用默认）。</p>
+        <div class="gw-prof-grid">
+          <label class="gw-prof-f" for="gw-prof-skill-default">默认等级
+            <input id="gw-prof-skill-default" type="number" min="0" max="51" step="1"></label>
+        </div>
+        <div id="gw-prof-skillrows" class="gw-prof-skillrows"></div>
+        <h4 class="gw-prof-h4">其它技能</h4>
+        <div id="gw-attr-skills" class="gw-prof-skillrows gw-attr-skills"></div>
+      </section>
+      <p id="gw-prof-err" class="gw-prof-err" hidden role="alert"></p>
+    </div>
+    <footer class="gw-prof-foot gw-attrs-foot">
+      <button type="button" class="gw-btn" id="gw-prof-cancel">取消</button>
+      <button type="button" class="gw-prof-save gw-attrs-confirm" id="gw-prof-save">✓ Confirm</button>
+    </footer>
+  </div>
 </div>
 
-<script src="app.js"></script>
+<section id="ammo-view" class="view-pane" hidden aria-label="弹药数据">
+
+<div class="am-workbench" id="am-workbench">
+
+  <header class="am-top">
+    <!-- R70：弹药/弹道区域标题 + 副标题（XP 小字，不抢主标题；不影响标签栏布局） -->
+    <div class="am-head">
+      <h2 class="am-title">弹药与弹道</h2>
+      <span class="am-subtitle">诺文斯克弹道学</span>
+    </div>
+    <div class="am-tabs" id="am-tabs" role="tablist" aria-label="弹药视图">
+      <button type="button" class="am-tab" role="tab" data-tab="ballistics"
+              aria-selected="true" title="子弹信息：口径 / 名称 / 价格 / 穿透 / 伤害 / 初速 / 对 1–6 级护甲的穿透概率">BALLISTICS</button>
+      <button type="button" class="am-tab" role="tab" data-tab="drop-pen-dmg"
+              aria-selected="false" title="穿透·伤害距离衰减：各距离上的穿透力与伤害（穿透上 / 伤害下）">DROP pen dmg</button>
+      <button type="button" class="am-tab" role="tab" data-tab="drop-bullet"
+              aria-selected="false" title="弹道下坠：距离衰减下的弹速与下沉量，含每行衰减曲线">DROP bullet 3m</button>
+      <button type="button" class="am-tab" role="tab" data-tab="graph"
+              aria-selected="false" title="分析表：伤害 × 穿透力散点（主模式）/ 指定护甲穿透概率 / 离散穿透等级，点标记为本地图标">BALLISTICS graph</button>
+      <button type="button" class="am-tab" role="tab" data-tab="sim"
+              aria-selected="false" title="逐发击杀模拟器：混压弹匣 / 目标血量预设 / 护甲插板内衬 / 命中分布 / 单次与多次模拟">逐发模拟</button>
+    </div>
+    <span class="am-grow"></span>
+    <input id="am-search" class="am-search" type="search" autocomplete="off"
+           placeholder="搜索弹药名称 / 口径 / 类型…" aria-label="搜索弹药">
+    <span class="am-count" id="am-count"></span>
+    <span class="am-hint" id="am-hint"></span>
+  </header>
+
+  <!-- R20.8：侧栏按参考站 db4tarkov.com/ammo 的顺序重排——
+       价格口径 / 来源 / only TraderLvl / 单位 / 口径分组 / 区间 / RANGE。
+       语义树实测：参考站侧栏 role="Navigation menu"，宽 320，含 3 段价格按钮、
+       4 段来源按钮、only TraderLvl（复选 + 滑条）、metric/imperial、
+       5 个武器类别分组（各带 SHOW）、4 组数值滑条。 -->
+  <aside class="am-side" aria-label="弹药筛选">
+
+    <div class="am-side-head">
+      <h3 class="am-h3">筛选</h3>
+      <button type="button" class="am-btn" id="am-reset" title="清除全部筛选（区间 / 来源 / 商人等级）">RESET</button>
+    </div>
+    <!-- R265：价格口径已上移到二级工具条（#vt-prices），子弹页不再单独切换。 -->
+
+    <h3 class="am-h3">来源</h3>
+    <div class="am-seg am-seg-4" id="am-source" role="group" aria-label="来源">
+      <button type="button" class="am-seg-btn" data-amsrc="market" aria-pressed="false"
+              title="只显示跳蚤（市场）有报价的弹药">MARKET</button>
+      <button type="button" class="am-seg-btn" data-amsrc="trader" aria-pressed="false"
+              title="只显示商人有买入报价的弹药">TRADER</button>
+      <button type="button" class="am-seg-btn" data-amsrc="craft" aria-pressed="false"
+              title="只显示可制作的弹药（本地数据无制作来源记录，此项选中后结果为空并给出提示）">CRAFT</button>
+      <button type="button" class="am-seg-btn" data-amsrc="barter" aria-pressed="false"
+              title="只显示有以物易物来源的弹药">BARTER</button>
+    </div>
+
+    <div class="am-traderlvl">
+      <label class="am-chk" for="am-only-traderlvl"
+             title="只显示在所选商人等级及以下确实买得到的弹药（上游 buyForTrader 的等级字段）">
+        <input type="checkbox" id="am-only-traderlvl"> only TraderLvl
+      </label>
+      <div class="am-lvlrow">
+        <input type="range" id="am-traderlvl" min="1" max="4" step="1" value="4"
+               aria-label="商人等级上限" disabled>
+        <output class="am-lvlout" id="am-traderlvl-out">LL4</output>
+      </div>
+    </div>
+
+    <h3 class="am-h3">单位</h3>
+    <div class="am-seg am-seg-2" id="am-units" role="group" aria-label="单位制">
+      <button type="button" class="am-seg-btn" data-amunit="metric" aria-pressed="true"
+              title="公制：m/s、m、cm">公制</button>
+      <button type="button" class="am-seg-btn" data-amunit="imperial" aria-pressed="false"
+              title="英制：ft/s、yd、in（由公制原值换算，非独立测量）">英制</button>
+    </div>
+
+    <h3 class="am-h3">口径分组</h3>
+    <div id="am-groups" class="am-groups"></div>
+
+    <h3 class="am-h3">区间筛选</h3>
+    <div id="am-range" class="am-range"></div>
+
+    <label class="am-dist" for="am-maxdist" title="衰减类视图（穿透·伤害距离衰减 / 弹道下坠）与详情曲线使用的最远距离">
+      RANGE
+      <select id="am-maxdist">
+        <option value="100">100</option>
+        <option value="300">300</option>
+        <option value="500" selected>500</option>
+      </select>
+    </label>
+    <p class="am-note" id="am-note"></p>
+  </aside>
+
+  <main class="am-main">
+    <div id="am-table" class="am-table"></div>
+    <div id="am-graph" class="am-graph" hidden></div>
+    <div id="am-sim" class="am-sim" hidden></div>
+  </main>
+
+</div><!-- /.am-workbench -->
+
+<div id="am-detail" class="am-modal" hidden role="dialog" aria-modal="true"
+     aria-label="弹药详情">
+  <div class="am-modal-box">
+    <header class="am-modal-head">
+      <span class="am-modal-title" id="am-detail-title"></span>
+      <button type="button" class="am-modal-x xp-winbtn xp-winbtn--close" id="am-detail-x"
+              aria-label="关闭弹药详情（Esc）" title="关闭（Esc）"></button>
+    </header>
+    <div class="am-modal-body" id="am-detail-body"></div>
+  </div>
+</div>
+
+</section>
+
+<section id="task-view" class="view-pane" hidden aria-label="任务系统">
+  <!-- R19.23：任务模块的骨架与内容由 tasks.js 生成（任务树 / 任务列表 / 详情 / 进度）。
+       R68：已移除重复的「商人任务」入口（商人分组仍保留在任务列表内）。
+       右上角固定 PvP / PvE / PvPS（赛季服）三模式切换；三套数据与进度互相独立。 -->
+</section>
+
+<section id="market-view" class="view-pane" hidden aria-label="市场">
+  <!-- R97：市场视图（对照 db4tarkov.com/market 的信息架构）。
+       骨架与内容由 js/market.js 生成；行情按当前游戏模式经本机服务分层读取：
+       免费档用随安装包内置的离线快照（明确标注非实时），会员用云端近实时数据，
+       云端暂时不可用时自动回退内置快照并标注离线。页面显示「数据截止」时间与过期提示。
+       R286：市场工作区内部拆成「市场列表 / 市场大盘」两个子页，不新增顶层视图。
+       R19.87：子页切换已上提到二级工具条 #cb-market，这里不再有独立导航行。 -->
+  <div id="market-list-pane" class="mk-ws-pane" role="tabpanel" aria-label="市场列表"></div>
+  <div id="market-board-pane" class="mk-ws-pane" role="tabpanel" aria-label="市场大盘" hidden></div>
+</section>
+
+</div>
+
+<!-- R83：底部状态栏（第四层）。字段全部读现有状态，不写死：
+     左 = 当前视图 + 当前地图；中 = 数据版本 + 游戏模式；右 = 数据状态 + 数据截止。
+     860 及以下只留视图 / 地图 / 数据截止，其余字段收进整条 title。 -->
+<div class="app-statusbar" id="app-statusbar" role="status" aria-live="polite"
+     title="当前视图 / 地图 / 数据版本 / 模式 / 数据截止">
+  <span class="sb-cell sb-view" id="sb-view">视图：地图</span>
+  <span class="sb-cell sb-map" id="sb-map">地图：—</span>
+  <span class="sb-gap"></span>
+  <span class="sb-cell sb-optional" id="sb-data">数据：加载中…</span>
+  <span class="sb-cell sb-optional" id="sb-mode">模式：—</span>
+  <span class="sb-gap"></span>
+  <span class="sb-cell sb-state" id="sb-state">加载中…</span>
+  <span class="sb-cell sb-rev" id="sb-rev" title="数据截止：来自 data/meta.json 的 generatedAt（主数据源 tarkov.dev）">数据截止 —</span>
+</div>
+
+<div id="update-notice" class="update-notice" hidden role="dialog" aria-modal="true"
+     aria-labelledby="update-title">
+  <section class="update-notice-box">
+    <header class="update-notice-head">
+      <h2 id="update-title">发现新版本</h2>
+      <button type="button" data-update-close aria-label="关闭更新提示">×</button>
+    </header>
+    <p id="update-version-line" class="update-version-line"></p>
+    <h3>更新内容</h3>
+    <div id="update-notes" class="update-notes"></div>
+    <div id="update-downloads" class="update-downloads"></div>
+    <footer class="update-notice-foot">
+      <a href="https://afdian.com/item/cb09a30cdf4411f1959f52540025c377"
+         target="_blank" rel="noopener noreferrer">爱发电支持作者</a>
+      <a id="update-release-page" href="https://github.com/jjingith/eft-interactive-map/releases"
+         target="_blank" rel="noopener noreferrer">查看完整发布页</a>
+    </footer>
+  </section>
+</div>
+
+<script src="data/gun-presets.js"></script>
+<script src="combat_sim.js?v=r19.97"></script>
+<script src="gun_builder.js?v=r19.97"></script>
+<script src="i18n.js?v=r19.97"></script>
+<script src="js/ui-components.js?v=r19.97"></script>
+<script src="js/game-mode.js?v=r19.97"></script>
+<script src="js/task-graph-layout.js?v=r19.97"></script>
+<script src="app.js?v=r19.97"></script>
+<script src="calibrator.js?v=r19.97"></script>
+<script src="tasks.js?v=r19.97"></script>
+<script src="js/market.js?v=r19.97"></script>
+<script src="js/market-workspace.js?v=r19.97"></script>
+<script src="js/market-board.js?v=r19.97"></script>
+<!-- R80：顶部菜单栏交互 + 现有模式/账号/设置/关于入口迁入（?mini=1 时跳过） -->
+<script src="js/app-menubar.js?v=r19.97"></script>
+<!-- 云账号：注册 / 登录 / 低频增量同步（?mini=1 时自跳过） -->
+<script src="js/cloud.js?v=r19.97"></script>
+<script src="js/update-notice.js?v=r19.97"></script>
+<script>
+/* R19.5e 运行版本标记：向当前服务要文件指纹，写进 DOM / meta / 顶栏徽标，
+   让「浏览器到底加载了哪一版」可以直接在实际页面里核验。 */
+(function () {
+  var badge = document.getElementById('build-rev');
+  function apply(rev) {
+    document.documentElement.setAttribute('data-build-rev', rev);
+    var meta = document.querySelector('meta[name="build-rev"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'build-rev');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', rev);
+    /* R301：右上角不再暴露构建号（只显示数据截止日期，由 app-menubar.js 回填）。
+       构建号保留在 documentElement / meta 与「关于」面板，排查时仍可查。 */
+    if (badge) { badge.setAttribute('data-rev', rev); }
+    var aboutBuild = document.getElementById('about-build-line');
+    if (aboutBuild) {
+      aboutBuild.textContent = '构建版本：' + rev + '（仅用于排查；右上角与状态栏显示数据截止日期）';
+    }
+    if (window.console && console.info) { console.info('[EFTMap] build-rev = ' + rev); }
+  }
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'api/build?ts=' + Date.now(), true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4) { return; }
+      if (xhr.status === 200) {
+        var data;
+        try { data = JSON.parse(xhr.responseText); } catch (e) { return apply('parse-error'); }
+        apply(data.rev || 'no-rev');
+      } else {
+        apply('http-' + xhr.status);
+      }
+    };
+    xhr.send();
+  } catch (e) { apply('unavailable'); }
+})();
+</script>
 </body>
 </html>

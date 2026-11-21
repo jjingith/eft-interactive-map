@@ -1,0 +1,1740 @@
+{
+  "generator": "tools/xp_ui_slice.py",
+  "generated_at": "2026-11-05 13:35:11",
+  "config": {
+    "key_tolerance": 25,
+    "erode_px": 2,
+    "scale": 4,
+    "background_rule": "按每张源图四周边条均值实测，容差抠图后腐蚀 2px 再去污",
+    "generated_board": {
+      "file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "size": [
+        3840,
+        2160
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "bg_hex": "#F51CF7",
+      "bg_std": 1.5,
+      "scale": 8,
+      "downsample": "box",
+      "normalize": false,
+      "normalize_info": null,
+      "note": "第二张合体板（模型生成）：竖向滚动条 / 竖向滑轨+滑块 / 窗口三键，共 28 件"
+    }
+  },
+  "sources": [
+    {
+      "file": "XP-Style Button States — Textle_952bcd15.png",
+      "size": [
+        3520,
+        2336
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "bg_hex": "#F30DF5",
+      "bg_std": 1.7
+    },
+    {
+      "file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "size": [
+        2368,
+        1776
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "bg_hex": "#FA05F9",
+      "bg_std": 1.6
+    },
+    {
+      "file": "XP-Style Title Plaques & Status_ebc3e75a.png",
+      "size": [
+        3520,
+        2336
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "bg_hex": "#F806F7",
+      "bg_std": 1.6
+    },
+    {
+      "file": "XP-Style Window Chrome — Textle_e8a477c1.png",
+      "size": [
+        3520,
+        2336
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "bg_hex": "#F806F7",
+      "bg_std": 1.7
+    }
+  ],
+  "button_source_sizes": {
+    "btn-normal": [
+      380,
+      166
+    ],
+    "btn-hover": [
+      380,
+      169
+    ],
+    "btn-pressed": [
+      380,
+      174
+    ],
+    "btn-focus": [
+      380,
+      173
+    ],
+    "btn-disabled": [
+      380,
+      177
+    ]
+  },
+  "button_normalized": {
+    "note": "5 个按钮状态源图高度 166/169/174/173/177px，已统一缩放为 95x42 @1x",
+    "size": [
+      95,
+      42
+    ]
+  },
+  "assets": [
+    {
+      "file": "btn-normal.png",
+      "size": [
+        95,
+        42
+      ],
+      "source_file": "XP-Style Button States — Textle_952bcd15.png",
+      "source_box": [
+        219,
+        258,
+        599,
+        424
+      ],
+      "source_size": [
+        380,
+        166
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "按钮-普通态，border-image 九宫格"
+    },
+    {
+      "file": "btn-hover.png",
+      "size": [
+        95,
+        42
+      ],
+      "source_file": "XP-Style Button States — Textle_952bcd15.png",
+      "source_box": [
+        219,
+        632,
+        599,
+        801
+      ],
+      "source_size": [
+        380,
+        169
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "按钮-悬停态"
+    },
+    {
+      "file": "btn-pressed.png",
+      "size": [
+        95,
+        42
+      ],
+      "source_file": "XP-Style Button States — Textle_952bcd15.png",
+      "source_box": [
+        219,
+        1032,
+        599,
+        1206
+      ],
+      "source_size": [
+        380,
+        174
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "按钮-按下态（斜角明暗反转）"
+    },
+    {
+      "file": "btn-focus.png",
+      "size": [
+        95,
+        42
+      ],
+      "source_file": "XP-Style Button States — Textle_952bcd15.png",
+      "source_box": [
+        219,
+        1422,
+        599,
+        1595
+      ],
+      "source_size": [
+        380,
+        173
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "按钮-焦点态（内含黑点虚线框）"
+    },
+    {
+      "file": "btn-disabled.png",
+      "size": [
+        95,
+        42
+      ],
+      "source_file": "XP-Style Button States — Textle_952bcd15.png",
+      "source_box": [
+        219,
+        1812,
+        599,
+        1989
+      ],
+      "source_size": [
+        380,
+        177
+      ],
+      "bg_rgb": [
+        243,
+        13,
+        245
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "按钮-禁用态（无高光）"
+    },
+    {
+      "file": "input.png",
+      "size": [
+        269,
+        33
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        130,
+        140,
+        1207,
+        271
+      ],
+      "source_size": [
+        1077,
+        131
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "文本输入框框体"
+    },
+    {
+      "file": "select.png",
+      "size": [
+        204,
+        33
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1284,
+        140,
+        2100,
+        271
+      ],
+      "source_size": [
+        816,
+        131
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "下拉框输入区"
+    },
+    {
+      "file": "select-arrow.png",
+      "size": [
+        35,
+        32
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        2094,
+        141,
+        2233,
+        271
+      ],
+      "source_size": [
+        139,
+        130
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "下拉框箭头按钮（三角已画入，整件使用）"
+    },
+    {
+      "file": "check-off.png",
+      "size": [
+        24,
+        24
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        130,
+        404,
+        224,
+        500
+      ],
+      "source_size": [
+        94,
+        96
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "复选框-未选"
+    },
+    {
+      "file": "check-on.png",
+      "size": [
+        24,
+        24
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        343,
+        404,
+        437,
+        500
+      ],
+      "source_size": [
+        94,
+        96
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "复选框-选中（勾已画入）"
+    },
+    {
+      "file": "check-indeterminate.png",
+      "size": [
+        24,
+        24
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        556,
+        404,
+        651,
+        500
+      ],
+      "source_size": [
+        95,
+        96
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "复选框-半选（横杠已画入）"
+    },
+    {
+      "file": "radio-off.png",
+      "size": [
+        25,
+        24
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        823,
+        404,
+        921,
+        500
+      ],
+      "source_size": [
+        98,
+        96
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "单选-未选"
+    },
+    {
+      "file": "radio-on.png",
+      "size": [
+        24,
+        24
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1013,
+        404,
+        1110,
+        500
+      ],
+      "source_size": [
+        97,
+        96
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "单选-选中"
+    },
+    {
+      "file": "track.png",
+      "size": [
+        208,
+        15
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        130,
+        695,
+        1039,
+        755
+      ],
+      "source_size": [
+        831,
+        60
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        24,
+        32,
+        24,
+        32
+      ],
+      "slice_1x": [
+        6.0,
+        8.0,
+        6.0,
+        8.0
+      ],
+      "border_width_css": "6.0px 8.0px 6.0px 8.0px",
+      "purpose": "滑轨（左段 130~386 + 右段 465~1038 拼接，中间滑块覆盖区已跳过）"
+    },
+    {
+      "file": "thumb.png",
+      "size": [
+        19,
+        33
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1106,
+        648,
+        1181,
+        779
+      ],
+      "source_size": [
+        75,
+        131
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "滑块（整件使用，固定尺寸）"
+    },
+    {
+      "file": "scroll-h-track.png",
+      "size": [
+        71,
+        21
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1368,
+        687,
+        1650,
+        768
+      ],
+      "source_size": [
+        282,
+        81
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        16,
+        0,
+        16,
+        16
+      ],
+      "slice_1x": [
+        4.0,
+        0.0,
+        4.0,
+        4.0
+      ],
+      "border_width_css": "4.0px 0.0px 4.0px 4.0px",
+      "purpose": "横向滚动条轨道（左端圆头，右端齐平）"
+    },
+    {
+      "file": "scroll-h-thumb.png",
+      "size": [
+        44,
+        21
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1657,
+        687,
+        1832,
+        768
+      ],
+      "source_size": [
+        175,
+        81
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "横向滚动条滑块"
+    },
+    {
+      "file": "progress-frame.png",
+      "size": [
+        227,
+        21
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        130,
+        914,
+        1038,
+        999
+      ],
+      "source_size": [
+        908,
+        85
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "进度条框体（蓝色填充已替换为轨道色，蓝条由 CSS 另画）"
+    },
+    {
+      "file": "groupbox.png",
+      "size": [
+        280,
+        154
+      ],
+      "source_file": "XP-Style Form Controls — Textle_78ca08b3.png",
+      "source_box": [
+        1119,
+        915,
+        2239,
+        1531
+      ],
+      "source_size": [
+        1120,
+        616
+      ],
+      "bg_rgb": [
+        250,
+        5,
+        249
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "分组框框体（已抹掉叠在上边框的凸起标题标签）"
+    },
+    {
+      "file": "plaque-1.png",
+      "size": [
+        329,
+        39
+      ],
+      "source_file": "XP-Style Title Plaques & Status_ebc3e75a.png",
+      "source_box": [
+        185,
+        518,
+        1501,
+        674
+      ],
+      "source_size": [
+        1316,
+        156
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        56
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        14.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 14.0px",
+      "purpose": "宽标题牌；左 56px 保护边用于保留左侧内凹槽"
+    },
+    {
+      "file": "plaque-2.png",
+      "size": [
+        240,
+        39
+      ],
+      "source_file": "XP-Style Title Plaques & Status_ebc3e75a.png",
+      "source_box": [
+        1577,
+        518,
+        2538,
+        674
+      ],
+      "source_size": [
+        961,
+        156
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        56
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        14.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 14.0px",
+      "purpose": "中标题牌"
+    },
+    {
+      "file": "plaque-3.png",
+      "size": [
+        183,
+        39
+      ],
+      "source_file": "XP-Style Title Plaques & Status_ebc3e75a.png",
+      "source_box": [
+        2609,
+        518,
+        3341,
+        674
+      ],
+      "source_size": [
+        732,
+        156
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        56
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        14.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 14.0px",
+      "purpose": "窄标题牌"
+    },
+    {
+      "file": "titlebar.png",
+      "size": [
+        719,
+        36
+      ],
+      "source_file": "XP-Style Window Chrome — Textle_e8a477c1.png",
+      "source_box": [
+        110,
+        582,
+        2986,
+        726
+      ],
+      "source_size": [
+        2876,
+        144
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 5.0px 5.0px",
+      "purpose": "标题栏长条（已裁掉右侧三键，三键由 CSS 重建）"
+    },
+    {
+      "file": "tab-active.png",
+      "size": [
+        111,
+        36
+      ],
+      "source_file": "XP-Style Window Chrome — Textle_e8a477c1.png",
+      "source_box": [
+        116,
+        1429,
+        560,
+        1571
+      ],
+      "source_size": [
+        444,
+        142
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        0,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        0.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 0.0px 5.0px",
+      "purpose": "激活标签页（底部不设保护边，与内容区衔接）"
+    },
+    {
+      "file": "tab-inactive.png",
+      "size": [
+        88,
+        30
+      ],
+      "source_file": "XP-Style Window Chrome — Textle_e8a477c1.png",
+      "source_box": [
+        570,
+        1450,
+        922,
+        1571
+      ],
+      "source_size": [
+        352,
+        121
+      ],
+      "bg_rgb": [
+        248,
+        6,
+        247
+      ],
+      "slice_source": [
+        20,
+        20,
+        0,
+        20
+      ],
+      "slice_1x": [
+        5.0,
+        5.0,
+        0.0,
+        5.0
+      ],
+      "border_width_css": "5.0px 5.0px 0.0px 5.0px",
+      "purpose": "非激活标签页"
+    },
+    {
+      "file": "scroll-v-track.png",
+      "size": [
+        22,
+        171
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        223,
+        386,
+        397,
+        1757
+      ],
+      "source_size": [
+        174,
+        1371
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": [
+        144,
+        24,
+        144,
+        24
+      ],
+      "slice_1x": [
+        18,
+        3,
+        18,
+        3
+      ],
+      "border_width_css": "18px 3px 18px 3px",
+      "purpose": "竖向滚动条轨道（border-image repeat-y 平铺；端头斜面占 18px，中间 135 行实测行均值极差≤3）"
+    },
+    {
+      "file": "scroll-v-thumb.png",
+      "size": [
+        23,
+        51
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        542,
+        386,
+        724,
+        792
+      ],
+      "source_size": [
+        182,
+        406
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滚动条滑块-普通"
+    },
+    {
+      "file": "scroll-v-thumb-hover.png",
+      "size": [
+        23,
+        51
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        542,
+        848,
+        724,
+        1254
+      ],
+      "source_size": [
+        182,
+        406
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滚动条滑块-悬停"
+    },
+    {
+      "file": "scroll-v-thumb-pressed.png",
+      "size": [
+        23,
+        51
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        542,
+        1311,
+        724,
+        1717
+      ],
+      "source_size": [
+        182,
+        406
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滚动条滑块-按下"
+    },
+    {
+      "file": "scroll-v-arrow-up.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        872,
+        385,
+        1099,
+        599
+      ],
+      "source_size": [
+        227,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚上箭头底板-普通（底板空白，三角由 glyph 叠）"
+    },
+    {
+      "file": "scroll-v-arrow-up-hover.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        872,
+        742,
+        1099,
+        956
+      ],
+      "source_size": [
+        227,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚上箭头底板-悬停"
+    },
+    {
+      "file": "scroll-v-arrow-up-pressed.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        872,
+        1097,
+        1099,
+        1311
+      ],
+      "source_size": [
+        227,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚上箭头底板-按下"
+    },
+    {
+      "file": "scroll-v-arrow-down.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1234,
+        385,
+        1456,
+        599
+      ],
+      "source_size": [
+        222,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚下箭头底板-普通"
+    },
+    {
+      "file": "scroll-v-arrow-down-hover.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1234,
+        742,
+        1456,
+        956
+      ],
+      "source_size": [
+        222,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚下箭头底板-悬停"
+    },
+    {
+      "file": "scroll-v-arrow-down-pressed.png",
+      "size": [
+        28,
+        27
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1234,
+        1097,
+        1456,
+        1311
+      ],
+      "source_size": [
+        222,
+        214
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚下箭头底板-按下"
+    },
+    {
+      "file": "scroll-v-glyph-up.png",
+      "size": [
+        20,
+        11
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        926,
+        1432,
+        1086,
+        1518
+      ],
+      "source_size": [
+        160,
+        86
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚上三角（洋红底抠出，叠在箭头上）"
+    },
+    {
+      "file": "scroll-v-glyph-down.png",
+      "size": [
+        20,
+        11
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        926,
+        1627,
+        1087,
+        1717
+      ],
+      "source_size": [
+        161,
+        90
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖滚下三角"
+    },
+    {
+      "file": "slider-v-track.png",
+      "size": [
+        18,
+        138
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1707,
+        386,
+        1851,
+        1488
+      ],
+      "source_size": [
+        144,
+        1102
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": [
+        64,
+        24,
+        64,
+        24
+      ],
+      "slice_1x": [
+        8,
+        3,
+        8,
+        3
+      ],
+      "border_width_css": "8px 3px 8px 3px",
+      "purpose": "竖向滑轨轨道（全高行均值极差≤3，可 repeat-y）"
+    },
+    {
+      "file": "slider-v-thumb.png",
+      "size": [
+        55,
+        29
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1995,
+        381,
+        2435,
+        615
+      ],
+      "source_size": [
+        440,
+        234
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滑块-普通"
+    },
+    {
+      "file": "slider-v-thumb-hover.png",
+      "size": [
+        55,
+        29
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1995,
+        755,
+        2435,
+        989
+      ],
+      "source_size": [
+        440,
+        234
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滑块-悬停"
+    },
+    {
+      "file": "slider-v-thumb-pressed.png",
+      "size": [
+        55,
+        29
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        1995,
+        1131,
+        2435,
+        1365
+      ],
+      "source_size": [
+        440,
+        234
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "竖向滑块-按下"
+    },
+    {
+      "file": "win-btn-min.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        2678,
+        357,
+        2932,
+        601
+      ],
+      "source_size": [
+        254,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最小化-普通底板（空白）"
+    },
+    {
+      "file": "win-btn-min-hover.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        2678,
+        721,
+        2932,
+        965
+      ],
+      "source_size": [
+        254,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最小化-悬停"
+    },
+    {
+      "file": "win-btn-min-pressed.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        2678,
+        1086,
+        2932,
+        1330
+      ],
+      "source_size": [
+        254,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最小化-按下"
+    },
+    {
+      "file": "win-btn-max.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3023,
+        357,
+        3278,
+        601
+      ],
+      "source_size": [
+        255,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最大化-普通底板（空白）"
+    },
+    {
+      "file": "win-btn-max-hover.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3023,
+        721,
+        3278,
+        965
+      ],
+      "source_size": [
+        255,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最大化-悬停"
+    },
+    {
+      "file": "win-btn-max-pressed.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3023,
+        1086,
+        3278,
+        1330
+      ],
+      "source_size": [
+        255,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-最大化-按下"
+    },
+    {
+      "file": "win-btn-close.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3367,
+        357,
+        3626,
+        601
+      ],
+      "source_size": [
+        259,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-关闭-普通底板（实测橄榄黄面 #A5A300，空白；模型未按提示词红色）"
+    },
+    {
+      "file": "win-btn-close-hover.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3367,
+        721,
+        3626,
+        965
+      ],
+      "source_size": [
+        259,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-关闭-悬停（实测橄榄黄面提亮 #DBD900）"
+    },
+    {
+      "file": "win-btn-close-pressed.png",
+      "size": [
+        32,
+        30
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3366,
+        1086,
+        3625,
+        1330
+      ],
+      "source_size": [
+        259,
+        244
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键-关闭-按下（橄榄黄面）"
+    },
+    {
+      "file": "win-glyph-min.png",
+      "size": [
+        22,
+        8
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        2716,
+        1611,
+        2888,
+        1676
+      ],
+      "source_size": [
+        172,
+        65
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键最小化横杠"
+    },
+    {
+      "file": "win-glyph-max.png",
+      "size": [
+        20,
+        20
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3065,
+        1557,
+        3226,
+        1714
+      ],
+      "source_size": [
+        161,
+        157
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键最大化方框"
+    },
+    {
+      "file": "win-glyph-close.png",
+      "size": [
+        20,
+        22
+      ],
+      "source_file": "Create ONE 4K sprite sheet for_6bd58ee2.png",
+      "source_box": [
+        3423,
+        1557,
+        3582,
+        1729
+      ],
+      "source_size": [
+        159,
+        172
+      ],
+      "bg_rgb": [
+        245,
+        28,
+        247
+      ],
+      "slice_source": null,
+      "slice_1x": null,
+      "border_width_css": null,
+      "purpose": "窗口键关闭叉"
+    }
+  ],
+  "updated_at": "2026-11-05 13:35:11"
+}

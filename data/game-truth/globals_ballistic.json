@@ -1,0 +1,1968 @@
+{
+  "schema": "eftmap.game-truth.globals/1",
+  "source": {
+    "install": "D:\\GAMES\\EFT",
+    "assets": "D:\\GAMES\\EFT\\EscapeFromTarkov_Data\\resources.assets",
+    "assets_bytes": 1080890396,
+    "exe_version": "1.3.0.48484",
+    "sha256": "97c790c135cbee79ce6f73fd4b780a54a6f6175177f9ffa1924f727555dec27a"
+  },
+  "extracted_at": "2026-11-04 12:57:38",
+  "config_path": "data.config",
+  "subset": {
+    "Ballistic": {
+      "GlobalDamageDegradationCoefficient": 0.5
+    },
+    "BluntDamageReduceFromSoftArmorMod": 0.6,
+    "BodyPartColliderSettings": {
+      "HeadCommon": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "RibcageUp": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "Pelvis": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "LeftUpperArm": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "LeftForearm": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.67,
+        "PenetrationLevel": 5
+      },
+      "RightUpperArm": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "RightForearm": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.67,
+        "PenetrationLevel": 5
+      },
+      "LeftThigh": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "LeftCalf": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.67,
+        "PenetrationLevel": 5
+      },
+      "RightThigh": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "RightCalf": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.67,
+        "PenetrationLevel": 5
+      },
+      "ParietalHead": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "BackHead": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "Ears": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "Eyes": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "Jaw": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.57,
+        "PenetrationLevel": 15
+      },
+      "NeckFront": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "NeckBack": {
+        "PenetrationChance": 0.3,
+        "PenetrationDamageMod": 0.62,
+        "PenetrationLevel": 10
+      },
+      "RightSideChestUp": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "LeftSideChestUp": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "SpineTop": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "SpineDown": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "PelvisBack": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "RightSideChestDown": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "LeftSideChestDown": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      },
+      "RibcageLow": {
+        "PenetrationChance": 0,
+        "PenetrationDamageMod": 0,
+        "PenetrationLevel": 100
+      }
+    },
+    "armor": {
+      "class": [
+        {
+          "resistance": 1
+        },
+        {
+          "resistance": 10
+        },
+        {
+          "resistance": 20
+        },
+        {
+          "resistance": 30
+        },
+        {
+          "resistance": 40
+        },
+        {
+          "resistance": 50
+        },
+        {
+          "resistance": 60
+        },
+        {
+          "resistance": 70
+        },
+        {
+          "resistance": 80
+        },
+        {
+          "resistance": 90
+        },
+        {
+          "resistance": 100
+        }
+      ]
+    },
+    "ArmorMaterials": {
+      "Aluminium": {
+        "Destructibility": 0.45,
+        "ExplosionDestructibility": 0.45,
+        "MaxRepairDegradation": 0.1,
+        "MaxRepairKitDegradation": 0.09,
+        "MinRepairDegradation": 0.06,
+        "MinRepairKitDegradation": 0.055
+      },
+      "Aramid": {
+        "Destructibility": 0.1875,
+        "ExplosionDestructibility": 0.15,
+        "MaxRepairDegradation": 0.07,
+        "MaxRepairKitDegradation": 0.065,
+        "MinRepairDegradation": 0.03,
+        "MinRepairKitDegradation": 0.025
+      },
+      "ArmoredSteel": {
+        "Destructibility": 0.525,
+        "ExplosionDestructibility": 0.45,
+        "MaxRepairDegradation": 0.03,
+        "MaxRepairKitDegradation": 0.025,
+        "MinRepairDegradation": 0.01,
+        "MinRepairKitDegradation": 0.005
+      },
+      "Ceramic": {
+        "Destructibility": 0.6,
+        "ExplosionDestructibility": 0.525,
+        "MaxRepairDegradation": 0.22,
+        "MaxRepairKitDegradation": 0.2,
+        "MinRepairDegradation": 0.17,
+        "MinRepairKitDegradation": 0.155
+      },
+      "Combined": {
+        "Destructibility": 0.375,
+        "ExplosionDestructibility": 0.2,
+        "MaxRepairDegradation": 0.15,
+        "MaxRepairKitDegradation": 0.14,
+        "MinRepairDegradation": 0.1,
+        "MinRepairKitDegradation": 0.09
+      },
+      "Glass": {
+        "Destructibility": 0.6,
+        "ExplosionDestructibility": 0.6,
+        "MaxRepairDegradation": 0.42,
+        "MaxRepairKitDegradation": 0.38,
+        "MinRepairDegradation": 0.23,
+        "MinRepairKitDegradation": 0.21
+      },
+      "Titan": {
+        "Destructibility": 0.4125,
+        "ExplosionDestructibility": 0.375,
+        "MaxRepairDegradation": 0.1,
+        "MaxRepairKitDegradation": 0.09,
+        "MinRepairDegradation": 0.06,
+        "MinRepairKitDegradation": 0.055
+      },
+      "UHMWPE": {
+        "Destructibility": 0.3375,
+        "ExplosionDestructibility": 0.3,
+        "MaxRepairDegradation": 0.03,
+        "MaxRepairKitDegradation": 0.025,
+        "MinRepairDegradation": 0.01,
+        "MinRepairKitDegradation": 0.005
+      }
+    },
+    "RepairSettings": {
+      "ItemEnhancementSettings": {
+        "WeaponSpread": {
+          "PriceModifier": 1.1
+        },
+        "DamageReduction": {
+          "PriceModifier": 1.2
+        },
+        "MalfunctionProtections": {
+          "PriceModifier": 1.3
+        }
+      },
+      "MinimumLevelToApplyBuff": 3,
+      "RepairStrategies": {
+        "Firearms": {
+          "BuffTypes": [
+            "WeaponSpread",
+            "MalfunctionProtections"
+          ],
+          "Filter": [
+            "5422acb9af1c889c16000029"
+          ]
+        },
+        "Armor": {
+          "BuffTypes": [
+            "DamageReduction"
+          ],
+          "Filter": [
+            "57bef4c42459772e8d35a53b",
+            "5448e5284bdc2dcb718b4567"
+          ]
+        }
+      },
+      "armorClassDivisor": 6,
+      "durabilityPointCostArmor": 0.335,
+      "durabilityPointCostGuns": 0.5
+    },
+    "SkillsSettings.HeavyVests": {
+      "BluntThroughputDamageHVestsReducePerLevel": 0.004,
+      "BuffMaxCount": 1,
+      "BuffSettings": {
+        "CommonBuffChanceLevelBonus": 0.02,
+        "CommonBuffMinChanceValue": 0.4,
+        "CurrentDurabilityLossToRemoveBuff": 0.4,
+        "MaxDurabilityLossToRemoveBuff": 0.4,
+        "RareBuffChanceCoff": 0.4,
+        "ReceivedDurabilityMaxPercent": 45
+      },
+      "Counters": {
+        "armorDurability": {
+          "divisor": 30.6,
+          "points": 1
+        }
+      },
+      "MoveSpeedPenaltyReductionHVestsReducePerLevel": 0.005,
+      "RicochetChanceHVestsCurrentDurabilityThreshold": 0.5,
+      "RicochetChanceHVestsEliteLevel": 0.05,
+      "RicochetChanceHVestsMaxDurabilityThreshold": 0.2,
+      "WearAmountRepairHVestsReducePerLevel": 0.01,
+      "WearChanceRepairHVestsReduceEliteLevel": 0.5
+    }
+  },
+  "constants": [
+    {
+      "path": "data.config.ArmorMaterials.Aluminium.MaxRepairDegradation",
+      "value": 0.1
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aluminium.MaxRepairKitDegradation",
+      "value": 0.09
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aluminium.MinRepairDegradation",
+      "value": 0.06
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aluminium.MinRepairKitDegradation",
+      "value": 0.055
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aramid.MaxRepairDegradation",
+      "value": 0.07
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aramid.MaxRepairKitDegradation",
+      "value": 0.065
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aramid.MinRepairDegradation",
+      "value": 0.03
+    },
+    {
+      "path": "data.config.ArmorMaterials.Aramid.MinRepairKitDegradation",
+      "value": 0.025
+    },
+    {
+      "path": "data.config.ArmorMaterials.ArmoredSteel.MaxRepairDegradation",
+      "value": 0.03
+    },
+    {
+      "path": "data.config.ArmorMaterials.ArmoredSteel.MaxRepairKitDegradation",
+      "value": 0.025
+    },
+    {
+      "path": "data.config.ArmorMaterials.ArmoredSteel.MinRepairDegradation",
+      "value": 0.01
+    },
+    {
+      "path": "data.config.ArmorMaterials.ArmoredSteel.MinRepairKitDegradation",
+      "value": 0.005
+    },
+    {
+      "path": "data.config.ArmorMaterials.Ceramic.MaxRepairDegradation",
+      "value": 0.22
+    },
+    {
+      "path": "data.config.ArmorMaterials.Ceramic.MaxRepairKitDegradation",
+      "value": 0.2
+    },
+    {
+      "path": "data.config.ArmorMaterials.Ceramic.MinRepairDegradation",
+      "value": 0.17
+    },
+    {
+      "path": "data.config.ArmorMaterials.Ceramic.MinRepairKitDegradation",
+      "value": 0.155
+    },
+    {
+      "path": "data.config.ArmorMaterials.Combined.MaxRepairDegradation",
+      "value": 0.15
+    },
+    {
+      "path": "data.config.ArmorMaterials.Combined.MaxRepairKitDegradation",
+      "value": 0.14
+    },
+    {
+      "path": "data.config.ArmorMaterials.Combined.MinRepairDegradation",
+      "value": 0.1
+    },
+    {
+      "path": "data.config.ArmorMaterials.Combined.MinRepairKitDegradation",
+      "value": 0.09
+    },
+    {
+      "path": "data.config.ArmorMaterials.Glass.MaxRepairDegradation",
+      "value": 0.42
+    },
+    {
+      "path": "data.config.ArmorMaterials.Glass.MaxRepairKitDegradation",
+      "value": 0.38
+    },
+    {
+      "path": "data.config.ArmorMaterials.Glass.MinRepairDegradation",
+      "value": 0.23
+    },
+    {
+      "path": "data.config.ArmorMaterials.Glass.MinRepairKitDegradation",
+      "value": 0.21
+    },
+    {
+      "path": "data.config.ArmorMaterials.Titan.MaxRepairDegradation",
+      "value": 0.1
+    },
+    {
+      "path": "data.config.ArmorMaterials.Titan.MaxRepairKitDegradation",
+      "value": 0.09
+    },
+    {
+      "path": "data.config.ArmorMaterials.Titan.MinRepairDegradation",
+      "value": 0.06
+    },
+    {
+      "path": "data.config.ArmorMaterials.Titan.MinRepairKitDegradation",
+      "value": 0.055
+    },
+    {
+      "path": "data.config.ArmorMaterials.UHMWPE.MaxRepairDegradation",
+      "value": 0.03
+    },
+    {
+      "path": "data.config.ArmorMaterials.UHMWPE.MaxRepairKitDegradation",
+      "value": 0.025
+    },
+    {
+      "path": "data.config.ArmorMaterials.UHMWPE.MinRepairDegradation",
+      "value": 0.01
+    },
+    {
+      "path": "data.config.ArmorMaterials.UHMWPE.MinRepairKitDegradation",
+      "value": 0.005
+    },
+    {
+      "path": "data.config.ArtilleryShelling.ProjectileExplosionParams.ArmorDamage",
+      "value": 33
+    },
+    {
+      "path": "data.config.ArtilleryShelling.ProjectileExplosionParams.DirectionalDamageAngle",
+      "value": 0
+    },
+    {
+      "path": "data.config.ArtilleryShelling.ProjectileExplosionParams.DirectionalDamageMultiplier",
+      "value": 0
+    },
+    {
+      "path": "data.config.ArtilleryShelling.ProjectileExplosionParams.PenetrationPower",
+      "value": 2
+    },
+    {
+      "path": "data.config.Ballistic.GlobalDamageDegradationCoefficient",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.BluntDamageReduceFromSoftArmorMod",
+      "value": 0.6
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.HeadCommon.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.HeadCommon.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.HeadCommon.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageUp.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageUp.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageUp.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Pelvis.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Pelvis.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Pelvis.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftUpperArm.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftUpperArm.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftUpperArm.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftForearm.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftForearm.PenetrationDamageMod",
+      "value": 0.67
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftForearm.PenetrationLevel",
+      "value": 5
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightUpperArm.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightUpperArm.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightUpperArm.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightForearm.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightForearm.PenetrationDamageMod",
+      "value": 0.67
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightForearm.PenetrationLevel",
+      "value": 5
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftThigh.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftThigh.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftThigh.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftCalf.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftCalf.PenetrationDamageMod",
+      "value": 0.67
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftCalf.PenetrationLevel",
+      "value": 5
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightThigh.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightThigh.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightThigh.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightCalf.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightCalf.PenetrationDamageMod",
+      "value": 0.67
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightCalf.PenetrationLevel",
+      "value": 5
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.ParietalHead.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.ParietalHead.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.ParietalHead.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.BackHead.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.BackHead.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.BackHead.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Ears.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Ears.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Ears.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Eyes.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Eyes.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Eyes.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Jaw.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Jaw.PenetrationDamageMod",
+      "value": 0.57
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.Jaw.PenetrationLevel",
+      "value": 15
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckFront.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckFront.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckFront.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckBack.PenetrationChance",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckBack.PenetrationDamageMod",
+      "value": 0.62
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.NeckBack.PenetrationLevel",
+      "value": 10
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestUp.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestUp.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestUp.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestUp.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestUp.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestUp.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineTop.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineTop.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineTop.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineDown.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineDown.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.SpineDown.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.PelvisBack.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.PelvisBack.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.PelvisBack.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestDown.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestDown.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RightSideChestDown.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestDown.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestDown.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.LeftSideChestDown.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageLow.PenetrationChance",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageLow.PenetrationDamageMod",
+      "value": 0
+    },
+    {
+      "path": "data.config.BodyPartColliderSettings.RibcageLow.PenetrationLevel",
+      "value": 100
+    },
+    {
+      "path": "data.config.HandsOverdamage",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.Effects.Dehydration.DamageOnStrongDehydration",
+      "value": 1
+    },
+    {
+      "path": "data.config.Health.Effects.Exhaustion.Damage",
+      "value": 1
+    },
+    {
+      "path": "data.config.Health.Effects.Exhaustion.DamageLoopTime",
+      "value": 5
+    },
+    {
+      "path": "data.config.Health.Effects.Existence.EnergyDamage",
+      "value": 3.8
+    },
+    {
+      "path": "data.config.Health.Effects.Existence.HydrationDamage",
+      "value": 3.2
+    },
+    {
+      "path": "data.config.Health.Effects.HeavyBleeding.DamageEnergy",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.Effects.HeavyBleeding.DamageHealth",
+      "value": 1.53
+    },
+    {
+      "path": "data.config.Health.Effects.HeavyBleeding.DamageHealthDehydrated",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.Health.Effects.Intoxication.DamageHealth",
+      "value": 1
+    },
+    {
+      "path": "data.config.Health.Effects.LightBleeding.DamageEnergy",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.Effects.LightBleeding.DamageHealth",
+      "value": 1.36
+    },
+    {
+      "path": "data.config.Health.Effects.LightBleeding.DamageHealthDehydrated",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.Health.Effects.RadExposure.Damage",
+      "value": 1
+    },
+    {
+      "path": "data.config.Health.Effects.RadExposure.DamageLoopTime",
+      "value": 2
+    },
+    {
+      "path": "data.config.Health.Effects.TearGasStrong.ChestDamagePerTick",
+      "value": 2
+    },
+    {
+      "path": "data.config.Health.Effects.TearGasWeak.ChestDamagePerTick",
+      "value": 0
+    },
+    {
+      "path": "data.config.Health.Falling.DamagePerMeter",
+      "value": 9
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Head.EnvironmentDamageMultiplier",
+      "value": 0.125
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Head.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Chest.EnvironmentDamageMultiplier",
+      "value": 0.25
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Chest.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Stomach.EnvironmentDamageMultiplier",
+      "value": 0.17
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.Stomach.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.LeftArm.EnvironmentDamageMultiplier",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.LeftArm.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.RightArm.EnvironmentDamageMultiplier",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.RightArm.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.LeftLeg.EnvironmentDamageMultiplier",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.LeftLeg.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.RightLeg.EnvironmentDamageMultiplier",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.Health.ProfileHealthSettings.BodyPartsSettings.RightLeg.OverDamageReceivedMultiplier",
+      "value": 0.7
+    },
+    {
+      "path": "data.config.KolotunSettings.damageIntervalSec",
+      "value": 40
+    },
+    {
+      "path": "data.config.KolotunSettings.damagePerTickMax",
+      "value": 2
+    },
+    {
+      "path": "data.config.KolotunSettings.damagePerTickMin",
+      "value": 1
+    },
+    {
+      "path": "data.config.KolotunSettings.enableDamage",
+      "value": false
+    },
+    {
+      "path": "data.config.KolotunSettings.minHealthAfterDamage",
+      "value": 1
+    },
+    {
+      "path": "data.config.LegsOverdamage",
+      "value": 1
+    },
+    {
+      "path": "data.config.RepairSettings.armorClassDivisor",
+      "value": 6
+    },
+    {
+      "path": "data.config.RepairSettings.durabilityPointCostArmor",
+      "value": 0.335
+    },
+    {
+      "path": "data.config.RepairSettings.durabilityPointCostGuns",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.BluntThroughputDamageHVestsReducePerLevel",
+      "value": 0.004
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.BuffSettings.CurrentDurabilityLossToRemoveBuff",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.BuffSettings.MaxDurabilityLossToRemoveBuff",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.BuffSettings.ReceivedDurabilityMaxPercent",
+      "value": 45
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.RicochetChanceHVestsCurrentDurabilityThreshold",
+      "value": 0.5
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.RicochetChanceHVestsEliteLevel",
+      "value": 0.05
+    },
+    {
+      "path": "data.config.SkillsSettings.HeavyVests.RicochetChanceHVestsMaxDurabilityThreshold",
+      "value": 0.2
+    },
+    {
+      "path": "data.config.SkillsSettings.LightVests.BuffSettings.CurrentDurabilityLossToRemoveBuff",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.SkillsSettings.LightVests.BuffSettings.MaxDurabilityLossToRemoveBuff",
+      "value": 0.4
+    },
+    {
+      "path": "data.config.SkillsSettings.LightVests.BuffSettings.ReceivedDurabilityMaxPercent",
+      "value": 45
+    },
+    {
+      "path": "data.config.SkillsSettings.LightVests.MeleeDamageLVestsReducePerLevel",
+      "value": 0.006
+    },
+    {
+      "path": "data.config.SkillsSettings.Melee.BuffSettings.ReceivedDurabilityMaxPercent",
+      "value": 0.01
+    },
+    {
+      "path": "data.config.SkillsSettings.TroubleShooting.EliteDurabilityChanceReduceMult",
+      "value": 0.3
+    },
+    {
+      "path": "data.config.SkillsSettings.Vitality.DamageTakenAction",
+      "value": 0.0086
+    },
+    {
+      "path": "data.config.SkillsSettings.WeaponTreatment.BuffSettings.CurrentDurabilityLossToRemoveBuff",
+      "value": 0.05
+    },
+    {
+      "path": "data.config.SkillsSettings.WeaponTreatment.BuffSettings.MaxDurabilityLossToRemoveBuff",
+      "value": 0.05
+    },
+    {
+      "path": "data.config.SkillsSettings.WeaponTreatment.BuffSettings.ReceivedDurabilityMaxPercent",
+      "value": 45
+    },
+    {
+      "path": "data.config.Stamina.ExhaustedMeleeDamageMultiplier",
+      "value": 0.33
+    },
+    {
+      "path": "data.config.Stamina.FallDamageMultiplier",
+      "value": 3.9
+    },
+    {
+      "path": "data.config.StomachOverdamage",
+      "value": 1.5
+    },
+    {
+      "path": "data.config.TradingSettings.BuyoutRestrictions.MinDurability",
+      "value": 0.6
+    },
+    {
+      "path": "data.config.armor.class[0].resistance",
+      "value": 1
+    },
+    {
+      "path": "data.config.armor.class[1].resistance",
+      "value": 10
+    },
+    {
+      "path": "data.config.armor.class[2].resistance",
+      "value": 20
+    },
+    {
+      "path": "data.config.armor.class[3].resistance",
+      "value": 30
+    },
+    {
+      "path": "data.config.armor.class[4].resistance",
+      "value": 40
+    },
+    {
+      "path": "data.config.armor.class[5].resistance",
+      "value": 50
+    },
+    {
+      "path": "data.config.armor.class[6].resistance",
+      "value": 60
+    },
+    {
+      "path": "data.config.armor.class[7].resistance",
+      "value": 70
+    },
+    {
+      "path": "data.config.armor.class[8].resistance",
+      "value": 80
+    },
+    {
+      "path": "data.config.armor.class[9].resistance",
+      "value": 90
+    },
+    {
+      "path": "data.config.armor.class[10].resistance",
+      "value": 100
+    },
+    {
+      "path": "data.config.exp.kill.botExpOnDamageAllHealth",
+      "value": 30
+    },
+    {
+      "path": "data.config.exp.kill.pmcExpOnDamageAllHealth",
+      "value": 50
+    },
+    {
+      "path": "data.ItemPresets.59ef24b986f77439987b8762._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59ef24b986f77439987b8762._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c152953319a1cf380c4e1b._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c152953319a1cf380c4e1b._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5af08cc686f77424a61595f2._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5af08cc686f77424a61595f2._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.618aaf656bbeff39ad4acf0c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.618aaf656bbeff39ad4acf0c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c1510bda0f6d156000cc17._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c1510bda0f6d156000cc17._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398636bb483a550805be5e5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398636bb483a550805be5e5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59ef247086f77439967a900a._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59ef247086f77439967a900a._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb19b7ba4217c5e65b689._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb19b7ba4217c5e65b689._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59411abb86f77478f702b5d2._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59411abb86f77478f702b5d2._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5ac4ad3686f774181345c3da._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5ac4ad3686f774181345c3da._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c1525e3319a1cf380c4e09._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c1525e3319a1cf380c4e09._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb1c4aebd1b6d254bf6d5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb1c4aebd1b6d254bf6d5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5af08cf886f774223c269184._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5af08cf886f774223c269184._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986752a28b76105a33c095._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986752a28b76105a33c095._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398685ee678457197138035._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398685ee678457197138035._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.584149452459775992479702._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.584149452459775992479702._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398681b9f81ff62557b8225._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6398681b9f81ff62557b8225._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.639867ca90c8ca7156504f75._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.639867ca90c8ca7156504f75._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986a38608a960125446db5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986a38608a960125446db5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cf7b2d033b747d625b7666._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cf7b2d033b747d625b7666._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffce486f77409f40f8162._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffce486f77409f40f8162._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5841499024597759f825ff3e._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5841499024597759f825ff3e._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986acda28b76105a33c09f._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986acda28b76105a33c09f._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986a9ab483a550805be5ee._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.63986a9ab483a550805be5ee._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.639868a207a3eb0207197bb5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.639868a207a3eb0207197bb5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59dcdbb386f77417b03f350d._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.59dcdbb386f77417b03f350d._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cbe20d5aa0a53ad12f96c9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cbe20d5aa0a53ad12f96c9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c390af8427c75665190d1d._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c390af8427c75665190d1d._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cf7b7d8b48ea38c5030f65._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cf7b7d8b48ea38c5030f65._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58414967245977598f1ad391._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58414967245977598f1ad391._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cbdff43ccb85468628d5fc._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64cbdff43ccb85468628d5fc._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64ccaa66ad8a0956023901b6._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64ccaa66ad8a0956023901b6._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c151f83319a1cf380c4df7._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.64c151f83319a1cf380c4df7._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb23b7ba4217c5e65b692._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb23b7ba4217c5e65b692._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a3a85af86f774745637d46c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a3a85af86f774745637d46c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb30326f0eb0718056204._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb30326f0eb0718056204._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5dd8013ff4c3af18c507b10a._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5dd8013ff4c3af18c507b10a._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb44126f0eb0718056218._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb44126f0eb0718056218._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb42546a703073a5b91f1._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb42546a703073a5b91f1._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5d7b845786f7743c1e531da7._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5d7b845786f7743c1e531da7._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a8ae73886f7747b2e6e1416._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a8ae73886f7747b2e6e1416._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb2b246a703073a5b91e8._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb2b246a703073a5b91e8._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a88afdc86f7746de12fcc20._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a88afdc86f7746de12fcc20._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb3ef7ba4217c5e65b6a5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb3ef7ba4217c5e65b6a5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e6002fafeb5db478f1f3._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e6002fafeb5db478f1f3._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6606af2cc690b729e20beb56._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6606af2cc690b729e20beb56._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb391aebd1b6d254bf6e2._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb391aebd1b6d254bf6e2._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.618aaeb931ddad66c15eb7e9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.618aaeb931ddad66c15eb7e9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5c0c1dba86f7743e667da897._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5c0c1dba86f7743e667da897._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb3773271d8578610fe28._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb3773271d8578610fe28._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a8ae65f86f774377a23ed55._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5a8ae65f86f774377a23ed55._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5841482e2459775a050cdda9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5841482e2459775a050cdda9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb281b0bc0f28b178311e._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb281b0bc0f28b178311e._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09282ae030a24a5663815._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09282ae030a24a5663815._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09315c5987b623d6e0ea1._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09315c5987b623d6e0ea1._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0935ad11b1e4a1e1c9c04._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0935ad11b1e4a1e1c9c04._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0916b1516622c22700a30._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0916b1516622c22700a30._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b093bfae030a24a566381f._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b093bfae030a24a566381f._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09220ae030a24a5663808._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09220ae030a24a5663808._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b090946f11600e4e48bad5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b090946f11600e4e48bad5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b092dcd7a3ce164221e2dc._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b092dcd7a3ce164221e2dc._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b091116f11600e4e48badd._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b091116f11600e4e48badd._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09380ed57696ce626c08b._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09380ed57696ce626c08b._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09209c84cc7141324eeeb._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b09209c84cc7141324eeeb._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb1fa2ce80354b8259889._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.657eb1fa2ce80354b8259889._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b091a1d7a3ce164221e2cf._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b091a1d7a3ce164221e2cf._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58414a3f2459775a77263531._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58414a3f2459775a77263531._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a3d97939f4b37710e00f7._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a3d97939f4b37710e00f7._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5c0c1d6586f7743e5335d264._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5c0c1d6586f7743e5335d264._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.676385710ec76052ee01610b._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.676385710ec76052ee01610b._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffd4586f77408a27629b2._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffd4586f77408a27629b2._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6764089eba9ecbb20a0052f4._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6764089eba9ecbb20a0052f4._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.67618651ac5e57c15709a417._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.67618651ac5e57c15709a417._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b89f03d4217059b0c6a26._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b89f03d4217059b0c6a26._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a3daf0d3ec0f0fe04fad5._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a3daf0d3ec0f0fe04fad5._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e484c84cc7141324fd6c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e484c84cc7141324fd6c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffca786f774083a256ab1._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.58dffca786f774083a256ab1._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.675ff11da6335de2280d492a._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.675ff11da6335de2280d492a._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e7f8c5987b623d6e2e81._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.66b0e7f8c5987b623d6e2e81._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6762bf5bf34fb59c3d0b8247._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.6762bf5bf34fb59c3d0b8247._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a425a7d49aea42c029b56._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a425a7d49aea42c029b56._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a4d3d6d315b526708f110._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671a4d3d6d315b526708f110._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5f676b779ab5ec19f028eaf3._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5f676b779ab5ec19f028eaf3._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.628751e6af0a053a6672c261._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.628751e6af0a053a6672c261._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.628753bba4a8431af4739d3b._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.628753bba4a8431af4739d3b._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.62972a7d91492d1a34152fbe._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.62972a7d91492d1a34152fbe._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b88c4d14a58a85b09d845._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b88c4d14a58a85b09d845._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5d383e1a86f7742a1468ce63._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.5d383e1a86f7742a1468ce63._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b88b14e3838e4370ff5b8._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.671b88b14e3838e4370ff5b8._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.67a328326e3613a197068d05._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.67a328326e3613a197068d05._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d3db3e0c47fe28c2067ab9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d3db3e0c47fe28c2067ab9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.60479c3f420fac5ebc199f86._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.60479c3f420fac5ebc199f86._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.60b7c28ee53e4c5c8945dd73._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.60b7c28ee53e4c5c8945dd73._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6788b2704678f29096b85._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6788b2704678f29096b85._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66bde41d2c7cb5c0de8e9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66bde41d2c7cb5c0de8e9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d67d0affacb2bc8b07e468._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d67d0affacb2bc8b07e468._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d669b220029562570c587a._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d669b220029562570c587a._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66a305275b8087c0ac98a._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66a305275b8087c0ac98a._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6697620029562570c586c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6697620029562570c586c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66b7d388f5569b203ad1c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66b7d388f5569b203ad1c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66bb05275b8087c0ac99c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66bb05275b8087c0ac99c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d502e016a16a91e200bbbc._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d502e016a16a91e200bbbc._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d69b3463cb18251102640c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d69b3463cb18251102640c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6662644990caf770b8a2e._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6662644990caf770b8a2e._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66850cc802b243f0627a9._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d66850cc802b243f0627a9._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6bd436be0692f9d08b6eb._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68d6bd436be0692f9d08b6eb._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68ec0c1e4a10ddacb2069398._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68ec0c1e4a10ddacb2069398._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68eca99a7329df50fc0b7542._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.68eca99a7329df50fc0b7542._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.693ae5b60a32abe2210c69d6._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.693ae5b60a32abe2210c69d6._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.69a6bdfa896d77866e096752._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.69a6bdfa896d77866e096752._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.69eb793db978f26a9304e78c._items[0].upd.Repairable.Durability",
+      "value": 100
+    },
+    {
+      "path": "data.ItemPresets.69eb793db978f26a9304e78c._items[0].upd.Repairable.MaxDurability",
+      "value": 100
+    }
+  ]
+}

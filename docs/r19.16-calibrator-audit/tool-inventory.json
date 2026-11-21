@@ -1,0 +1,47 @@
+{
+ "generatedFor": "R19.16",
+ "entry": "http://127.0.0.1:8787/index.html?layoutCalibrator=1",
+ "activation": "calibrator.js 检测 ?layoutCalibrator=1，普通模式零副作用",
+ "engineSource": "window.GWCalib（app.js 暴露同一套 items / gunslots / 预设 / gwBuildLayout）",
+ "panes": {
+  "left": "枪械搜索 + 列表（163 把）+ 装配状态切换 + 枪械信息（ID / 预设 / 槽位数 / 画布行数 / 已保存与未保存）",
+  "center": "六行九列基础网格 + 顶部扩展 + 行列标签 + 真实槽位卡片（可拖动）+ 自动布局/校准预览切换",
+  "right": "槽位 ID / 完整路径 / 父槽位 / 拥有者物品 / 安装物品 / allow 清单 / 自动与校准坐标 / topPad / 角色 / 唯一身份键 / 行列输入框"
+ },
+ "operations": [
+  "save",
+  "save-all",
+  "undo",
+  "redo",
+  "reset-slot",
+  "restore-saved",
+  "clear-gun",
+  "import",
+  "export",
+  "preset-switch",
+  "exit"
+ ],
+ "safety": [
+  "拖动只改视觉坐标，不改物品 ID / 槽位 ID / 父子关系 / allow / 配装",
+  "枪械本体 r3c6–c8 受保护，不允许放置",
+  "目标格被占用时交换位置，不丢槽位",
+  "切枪 / 清除 / 退出均非阻塞二次确认（保存并切换 / 丢弃并切换 / 取消）"
+ ],
+ "screens": [
+  "A-calibrator-main-1920.png",
+  "B-ak74n-calibrator-1920.png",
+  "B-ash12-calibrator-1920.png",
+  "B-axmc-calibrator-1920.png",
+  "B-m10-calibrator-1920.png",
+  "B-m4a1-calibrator-1920.png",
+  "B-marlin-calibrator-1920.png",
+  "B-sa58-calibrator-1920.png",
+  "B-sv98-calibrator-1920.png",
+  "C-after-drag-1920.png",
+  "D-conditional-preset-1920.png",
+  "E-coord-input-1920.png",
+  "F-after-reload-1920.png",
+  "G-calibrator-1384x805.png",
+  "H-normal-page-1920.png"
+ ]
+}

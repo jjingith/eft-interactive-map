@@ -1,0 +1,84 @@
+{
+ "schema": 1,
+ "round": "R19",
+ "generatedAt": "2026-10-24",
+ "sources": {
+  "items": {
+   "file": "data/items.json",
+   "desc": "项目原有物品快照（名称/价格/重量/槽位/互斥/mod.e/mod.r/弹匣 cap）"
+  },
+  "gunslots": {
+   "file": "data/gunslots.json",
+   "desc": "163 把枪的真实槽位定义（slots[].allow）"
+  },
+  "gunPresets": {
+   "file": "data/gun-presets.json",
+   "desc": "373 条官方预设：装配清单 + 游戏内真值 e/rv/rh/moa"
+  },
+  "gunStats": {
+   "file": "data/gun-stats.json",
+   "desc": "R19 新增：从 json.tarkov.dev/regular/items 提取的枪械与配件战斗属性",
+   "origin": "https://json.tarkov.dev/regular/items",
+   "fetchedAt": "2026-10-24",
+   "generator": "tools/build_gun_stats.py"
+  }
+ },
+ "coverage": {
+  "guns": {
+   "total": 163,
+   "withBaseRecoil": 163,
+   "withDefaultPreset": 163,
+   "withSlots": 163,
+   "slotDefinitions": 987
+  },
+  "presets": {
+   "total": 373,
+   "usableGun": 373,
+   "gunMissing": 0,
+   "unsolvedAtBuild": 25
+  },
+  "modsInSlotAllow": {
+   "unique": 1391,
+   "withErgonomics": 1391,
+   "withRecoilModifier": 1391,
+   "withWeight": 1391,
+   "withPrice": 1391
+  }
+ },
+ "missingFields": [
+  {
+   "field": "accuracy(MOA)",
+   "status": "missing",
+   "why": "上游只有 centerOfImpact（度），与游戏内 MOA 的换算依赖未公开的 deviationCurve/devMax；用 373 条预设反证，moa/(coi*60) 比值在 0.571~39.55 浮动，无法可靠换算"
+  },
+  {
+   "field": "EvoErgoDelta / ArmStamina / 100% Headshot acc / ADS Time / OverSwing",
+   "status": "missing",
+   "why": "参考站有展示，但没有可核实的公式与数据源，本地不做"
+  },
+  {
+   "field": "配件历史版本属性（Changes）",
+   "status": "missing",
+   "why": "参考站的 Changes 依赖补丁前后对照数据，本地无历史快照"
+  },
+  {
+   "field": "PVP 与 PVE 双数据",
+   "status": "missing",
+   "why": "本地只抓了常规模式一套数据"
+  },
+  {
+   "field": "Sell 价 / 跳蚤手续费",
+   "status": "missing",
+   "why": "未核实参考站结算口径，未实现"
+  }
+ ],
+ "invalidReferences": {
+  "slotAllowMissingInItems": [],
+  "count": 0
+ },
+ "notes": [
+  "163 把枪全部有基础后坐力与默认预设，选枪后可以自动还原官方装配",
+  "987 个单层槽位定义，递归展开后实测 AK-74 为 13 个节点、M4A1 为 18 个",
+  "配件价格取自 items.json 的 p.a（跳蚤 24h 均价）优先，其次 p.b（基础参考价）；两者都无则记 missing，不按 0 计"
+ ]
+}

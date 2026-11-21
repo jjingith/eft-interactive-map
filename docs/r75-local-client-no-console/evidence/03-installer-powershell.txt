@@ -1,0 +1,12 @@
+﻿[1] 旧写法：无 creationflags（复现用户看到的窗口）
+  可见控制台窗口增量：1
+    pid=51976 title=管理员: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+1
+[2] 新写法：CREATE_NO_WINDOW
+  可见控制台窗口增量：0
+0
+[3] installer.create_shortcut()（已修复的生产代码）
+  可见控制台窗口增量：0
+0
+  快捷方式生成：True
+  执行结果：ok

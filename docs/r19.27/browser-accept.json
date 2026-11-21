@@ -1,0 +1,454 @@
+{
+ "schema": 1,
+ "round": "R19.27",
+ "pass": 17,
+ "fail": 0,
+ "checks": [
+  {
+   "name": "G1 右上角全局模式控件存在（PvP/PvE/PvPS）",
+   "ok": true,
+   "detail": {
+    "inMenubar": true,
+    "buttons": [
+     {
+      "key": "regular",
+      "text": "PvP",
+      "selected": "true"
+     },
+     {
+      "key": "pve",
+      "text": "PvE",
+      "selected": "false"
+     },
+     {
+      "key": "pvps",
+      "text": "PvPS（赛季服）",
+      "selected": "false"
+     }
+    ],
+    "mode": "regular",
+    "api": true
+   }
+  },
+  {
+   "name": "G2 初始默认 PvP 且唯一选中",
+   "ok": true,
+   "detail": {
+    "inMenubar": true,
+    "buttons": [
+     {
+      "key": "regular",
+      "text": "PvP",
+      "selected": "true"
+     },
+     {
+      "key": "pve",
+      "text": "PvE",
+      "selected": "false"
+     },
+     {
+      "key": "pvps",
+      "text": "PvPS（赛季服）",
+      "selected": "false"
+     }
+    ],
+    "mode": "regular",
+    "api": true
+   }
+  },
+  {
+   "name": "G3 地图/配装/配枪/弹药/任务 五页右上角都可见同一控件",
+   "ok": true,
+   "detail": {
+    "map": {
+     "visible": true,
+     "mode": "regular",
+     "inMenubar": true
+    },
+    "loadout": {
+     "visible": true,
+     "mode": "regular",
+     "inMenubar": true
+    },
+    "gun": {
+     "visible": true,
+     "mode": "regular",
+     "inMenubar": true
+    },
+    "ammo": {
+     "visible": true,
+     "mode": "regular",
+     "inMenubar": true
+    },
+    "tasks": {
+     "visible": true,
+     "mode": "regular",
+     "inMenubar": true
+    }
+   }
+  },
+  {
+   "name": "G4 跨页面模式一致：配装页切 PvPS → 任务页仍 PvPS",
+   "ok": true,
+   "detail": {
+    "global": "pvps",
+    "tasks": "pvps"
+   }
+  },
+  {
+   "name": "G5 刷新后恢复上次模式（PvPS）",
+   "ok": true,
+   "detail": "pvps"
+  },
+  {
+   "name": "G6 非法存储值回退默认 PvP",
+   "ok": true,
+   "detail": "regular"
+  },
+  {
+   "name": "R1 找到三层以上依赖链（真实数据）",
+   "ok": true,
+   "detail": {
+    "target": "67e993f5ed537409f009da75",
+    "depth": 17,
+    "chain": [
+     "67e993f5ed537409f009da75",
+     "67e993b1ac26bf29380a320b",
+     "66058ccf06ef1d50a60c1f48",
+     "66058ccde8e4f17985230807",
+     "66058ccbc7f3584787181478",
+     "66058cbd9f59e625462acc8e"
+    ]
+   }
+  },
+  {
+   "name": "R2 递归确认弹窗展示全部层级（含间接前置）",
+   "ok": true,
+   "detail": {
+    "title": "前置任务尚未完成",
+    "items": [
+     "直接前置（第 1 层）",
+     "「天降大礼 [PVP ZONE]」：未开始 → 已完成（需 已完成；因「迟来的奖励（PVP）」需要）",
+     "间接前置（第 2 层）",
+     "「两害相权（PVP）」：未开始 → 进行中（需 进行中；因「天降大礼 [PVP ZONE]」需要）",
+     "间接前置（第 3 层）",
+     "「良心作祟 - 2（PVP）」：未开始 → 已完成（需 已完成；因「两害相权（PVP）」需要）",
+     "间接前置（第 4 层）",
+     "「良心作祟 - 1（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 2（PVP）」需要）",
+     "间接前置（第 5 层）",
+     "「保持领先（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 1（PVP）」需要）",
+     "「声东击西 - 1（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 1（PVP）」需要）",
+     "间接前置（第 6 层）",
+     "「再创新高！- 6（PVP）」：未开始 → 已完成（需 已完成；因「保持领先（PVP）」需要）",
+     "「惊喜（PVP）」：未开始 → 已完成（需 已完成；因「声东击西 - 1（PVP）」需要）",
+     "间接前置（第 7 层）",
+     "「再创新高！- 5（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 6（PVP）」需要）",
+     "「平衡之力 - 2（PVP）」：未开始 → 已完成（需 已完成；因「惊喜（PVP）」需要）",
+     "间接前置（第 8 层）",
+     "「再创新高！- 4（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 5（PVP）」需要）",
+     "「平衡之力 - 1（PVP）」：未开始 → 已完成（需 已完成；因「平衡之力 - 2（PVP）」需要）",
+     "间接前置（第 9 层）",
+     "「再创新高！- 3（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 4（PVP）」需要）",
+     "「赚点快钱 - 2（PVP）」：未开始 → 已完成（需 已完成；因「平衡之力 - 1（PVP）」需要）",
+     "间接前置（第 10 层）",
+     "「再创新高！- 2（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 3（PVP）」需要）",
+     "「赚点快钱 - 1（PVP）」：未开始 → 已完成（需 已完成；因「赚点快钱 - 2（PVP）」需要）",
+     "间接前置（第 11 层）",
+     "「再创新高！- 1（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 2（PVP）」需要）",
+     "间接前置（第 12 层）",
+     "「专业热身 - 2（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 1（PVP）」需要）",
+     "间接前置（第 13 层）",
+     "「专业热身 - 1（PVP）」：未开始 → 已完成（需 已完成；因「专业热身 - 2（PVP）」需要）",
+     "间接前置（第 14 层）",
+     "「竞技场差事（PVP）」：未开始 → 进行中（需 进行中；因「专业热身 - 1（PVP）」需要）"
+    ],
+    "btns": [
+     "取消",
+     "确认并调整前置任务"
+    ]
+   }
+  },
+  {
+   "name": "R3 确认后整条依赖链递归推进（目标已完成、无一停在未开始）",
+   "ok": true,
+   "detail": [
+    [
+     "67e993f5ed537409f009da75",
+     "completed"
+    ],
+    [
+     "67e993b1ac26bf29380a320b",
+     "completed"
+    ],
+    [
+     "66058ccf06ef1d50a60c1f48",
+     "active"
+    ],
+    [
+     "66058ccde8e4f17985230807",
+     "completed"
+    ],
+    [
+     "66058ccbc7f3584787181478",
+     "completed"
+    ],
+    [
+     "66058cbd9f59e625462acc8e",
+     "completed"
+    ]
+   ]
+  },
+  {
+   "name": "R4 取消后当前任务与全部前置保持原状",
+   "ok": true,
+   "detail": [
+    [
+     "67e993f5ed537409f009da75",
+     "none"
+    ],
+    [
+     "67e993b1ac26bf29380a320b",
+     "none"
+    ],
+    [
+     "66058ccf06ef1d50a60c1f48",
+     "none"
+    ],
+    [
+     "66058ccde8e4f17985230807",
+     "none"
+    ],
+    [
+     "66058ccbc7f3584787181478",
+     "none"
+    ],
+    [
+     "66058cbd9f59e625462acc8e",
+     "none"
+    ]
+   ]
+  },
+  {
+   "name": "R5 未开始仍弹「重置后续任务」确认（含仅重置当前）",
+   "ok": true,
+   "detail": {
+    "title": "重置后续任务？",
+    "btns": [
+     "取消",
+     "仅重置当前任务",
+     "确认并重置后续任务"
+    ]
+   }
+  },
+  {
+   "name": "R6 「仅重置当前任务」不动后续",
+   "ok": true,
+   "detail": [
+    "none",
+    "completed",
+    "completed"
+   ]
+  },
+  {
+   "name": "P1 状态写入立即落盘（localStorage）",
+   "ok": true,
+   "detail": {
+    "key": "6740a2c17e3818d5bb0648b6",
+    "saved": true
+   }
+  },
+  {
+   "name": "P2 刷新后任务状态恢复",
+   "ok": true,
+   "detail": "completed"
+  },
+  {
+   "name": "P3 三模式进度隔离：PvP 已完成 ≠ PvE/PvPS",
+   "ok": true,
+   "detail": {
+    "regular": "completed",
+    "pve": "none",
+    "pvps": "none"
+   }
+  },
+  {
+   "name": "P4 所有请求同源（离线可跑）",
+   "ok": true,
+   "detail": {
+    "total": 732,
+    "external": []
+   }
+  },
+  {
+   "name": "P5 无 JS 异常",
+   "ok": true,
+   "detail": []
+  }
+ ],
+ "detail": {
+  "modeBar": {
+   "inMenubar": true,
+   "buttons": [
+    {
+     "key": "regular",
+     "text": "PvP",
+     "selected": "true"
+    },
+    {
+     "key": "pve",
+     "text": "PvE",
+     "selected": "false"
+    },
+    {
+     "key": "pvps",
+     "text": "PvPS（赛季服）",
+     "selected": "false"
+    }
+   ],
+   "mode": "regular",
+   "api": true
+  },
+  "perView": {
+   "map": {
+    "visible": true,
+    "mode": "regular",
+    "inMenubar": true
+   },
+   "loadout": {
+    "visible": true,
+    "mode": "regular",
+    "inMenubar": true
+   },
+   "gun": {
+    "visible": true,
+    "mode": "regular",
+    "inMenubar": true
+   },
+   "ammo": {
+    "visible": true,
+    "mode": "regular",
+    "inMenubar": true
+   },
+   "tasks": {
+    "visible": true,
+    "mode": "regular",
+    "inMenubar": true
+   }
+  },
+  "chain": {
+   "target": "67e993f5ed537409f009da75",
+   "depth": 17,
+   "chain": [
+    "67e993f5ed537409f009da75",
+    "67e993b1ac26bf29380a320b",
+    "66058ccf06ef1d50a60c1f48",
+    "66058ccde8e4f17985230807",
+    "66058ccbc7f3584787181478",
+    "66058cbd9f59e625462acc8e"
+   ]
+  },
+  "prereqDialog": {
+   "title": "前置任务尚未完成",
+   "items": [
+    "直接前置（第 1 层）",
+    "「天降大礼 [PVP ZONE]」：未开始 → 已完成（需 已完成；因「迟来的奖励（PVP）」需要）",
+    "间接前置（第 2 层）",
+    "「两害相权（PVP）」：未开始 → 进行中（需 进行中；因「天降大礼 [PVP ZONE]」需要）",
+    "间接前置（第 3 层）",
+    "「良心作祟 - 2（PVP）」：未开始 → 已完成（需 已完成；因「两害相权（PVP）」需要）",
+    "间接前置（第 4 层）",
+    "「良心作祟 - 1（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 2（PVP）」需要）",
+    "间接前置（第 5 层）",
+    "「保持领先（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 1（PVP）」需要）",
+    "「声东击西 - 1（PVP）」：未开始 → 已完成（需 已完成；因「良心作祟 - 1（PVP）」需要）",
+    "间接前置（第 6 层）",
+    "「再创新高！- 6（PVP）」：未开始 → 已完成（需 已完成；因「保持领先（PVP）」需要）",
+    "「惊喜（PVP）」：未开始 → 已完成（需 已完成；因「声东击西 - 1（PVP）」需要）",
+    "间接前置（第 7 层）",
+    "「再创新高！- 5（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 6（PVP）」需要）",
+    "「平衡之力 - 2（PVP）」：未开始 → 已完成（需 已完成；因「惊喜（PVP）」需要）",
+    "间接前置（第 8 层）",
+    "「再创新高！- 4（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 5（PVP）」需要）",
+    "「平衡之力 - 1（PVP）」：未开始 → 已完成（需 已完成；因「平衡之力 - 2（PVP）」需要）",
+    "间接前置（第 9 层）",
+    "「再创新高！- 3（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 4（PVP）」需要）",
+    "「赚点快钱 - 2（PVP）」：未开始 → 已完成（需 已完成；因「平衡之力 - 1（PVP）」需要）",
+    "间接前置（第 10 层）",
+    "「再创新高！- 2（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 3（PVP）」需要）",
+    "「赚点快钱 - 1（PVP）」：未开始 → 已完成（需 已完成；因「赚点快钱 - 2（PVP）」需要）",
+    "间接前置（第 11 层）",
+    "「再创新高！- 1（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 2（PVP）」需要）",
+    "间接前置（第 12 层）",
+    "「专业热身 - 2（PVP）」：未开始 → 已完成（需 已完成；因「再创新高！- 1（PVP）」需要）",
+    "间接前置（第 13 层）",
+    "「专业热身 - 1（PVP）」：未开始 → 已完成（需 已完成；因「专业热身 - 2（PVP）」需要）",
+    "间接前置（第 14 层）",
+    "「竞技场差事（PVP）」：未开始 → 进行中（需 进行中；因「专业热身 - 1（PVP）」需要）"
+   ],
+   "btns": [
+    "取消",
+    "确认并调整前置任务"
+   ]
+  },
+  "chainAfter": [
+   [
+    "67e993f5ed537409f009da75",
+    "completed"
+   ],
+   [
+    "67e993b1ac26bf29380a320b",
+    "completed"
+   ],
+   [
+    "66058ccf06ef1d50a60c1f48",
+    "active"
+   ],
+   [
+    "66058ccde8e4f17985230807",
+    "completed"
+   ],
+   [
+    "66058ccbc7f3584787181478",
+    "completed"
+   ],
+   [
+    "66058cbd9f59e625462acc8e",
+    "completed"
+   ]
+  ],
+  "chainCancel": [
+   [
+    "67e993f5ed537409f009da75",
+    "none"
+   ],
+   [
+    "67e993b1ac26bf29380a320b",
+    "none"
+   ],
+   [
+    "66058ccf06ef1d50a60c1f48",
+    "none"
+   ],
+   [
+    "66058ccde8e4f17985230807",
+    "none"
+   ],
+   [
+    "66058ccbc7f3584787181478",
+    "none"
+   ],
+   [
+    "66058cbd9f59e625462acc8e",
+    "none"
+   ]
+  ],
+  "resetDialog": {
+   "title": "重置后续任务？",
+   "btns": [
+    "取消",
+    "仅重置当前任务",
+    "确认并重置后续任务"
+   ]
+  }
+ }
+}

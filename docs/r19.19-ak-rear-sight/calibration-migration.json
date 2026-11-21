@@ -1,0 +1,150 @@
+{
+ "schema": "r19.19-calibration-migration/1",
+ "gunsBefore": 152,
+ "gunsAfter": 152,
+ "recordsBefore": 397,
+ "recordsAfter": 397,
+ "recordsDeleted": 0,
+ "changes": [
+  {
+   "gun": "AK-105",
+   "gunId": "5ac66d9b5acfc4001633997a",
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "status": "moved-down-one",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "displayRow": 1,
+    "topPad": 0
+   },
+   "after": {
+    "logicalRow": 2,
+    "col": 6,
+    "displayRow": 2
+   }
+  },
+  {
+   "gun": "AK-74",
+   "gunId": "5bf3e03b0db834001d2c4a9c",
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "status": "moved-down-one",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "displayRow": 1,
+    "topPad": 0
+   },
+   "after": {
+    "logicalRow": 2,
+    "col": 6,
+    "displayRow": 2
+   }
+  },
+  {
+   "gun": "AK-74N",
+   "gunId": "5644bd2b4bdc2d3b4c8b4572",
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "status": "moved-down-one",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "displayRow": 1,
+    "topPad": 0
+   },
+   "after": {
+    "logicalRow": 2,
+    "col": 6,
+    "displayRow": 2
+   }
+  },
+  {
+   "gun": "AKS-74",
+   "gunId": "5bf3e0490db83400196199af",
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "status": "moved-down-one",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "displayRow": 1,
+    "topPad": 0
+   },
+   "after": {
+    "logicalRow": 2,
+    "col": 6,
+    "displayRow": 2
+   }
+  },
+  {
+   "gun": "AKS-74N",
+   "gunId": "5ab8e9fcd8ce870019439434",
+   "key": "mod_sight_rear|mod_sight_rear|",
+   "status": "moved-down-one",
+   "before": {
+    "logicalRow": 1,
+    "col": 6,
+    "displayRow": 1,
+    "topPad": 0
+   },
+   "after": {
+    "logicalRow": 2,
+    "col": 6,
+    "displayRow": 2
+   }
+  },
+  {
+   "gun": "AKM 7.62x39 突击步枪",
+   "gunId": "59d6088586f774275f37482f",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale",
+   "beforeNote": "",
+   "coords-preserved": {
+    "logicalRow": 2,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMN 7.62x39 突击步枪",
+   "gunId": "5a0ec13bfcdbcb00165aa685",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale",
+   "beforeNote": "",
+   "coords-preserved": {
+    "logicalRow": 2,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMS 7.62x39 突击步枪",
+   "gunId": "59ff346386f77477562ff5e2",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale",
+   "beforeNote": "",
+   "coords-preserved": {
+    "logicalRow": 2,
+    "col": 6
+   }
+  },
+  {
+   "gun": "AKMSN 7.62x39 突击步枪",
+   "gunId": "5abcbc27d8ce8700182eceeb",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale",
+   "beforeNote": "",
+   "coords-preserved": {
+    "logicalRow": 2,
+    "col": 6
+   }
+  },
+  {
+   "gun": "VPO-136 野猪-KM 7.62x39 卡宾枪",
+   "gunId": "59e6152586f77473dc057aa1",
+   "key": "mod_sight_rear/mod_sight_rear|mod_sight_rear|59d650cf86f7741b846413a4",
+   "status": "marked-stale",
+   "beforeNote": "",
+   "coords-preserved": {
+    "logicalRow": 2,
+    "col": 6
+   }
+  }
+ ]
+}

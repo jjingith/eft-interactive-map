@@ -1,0 +1,2355 @@
+/* ============================================================
+   theme-windows-xp.css — R18：全站 Windows XP Luna Blue 视觉层
+   ------------------------------------------------------------
+   定位：**纯视觉覆盖层**，在 style.css 之后加载；不改动任何布局参数、
+   不改 DOM、不改交互。业务样式（grid/flex 尺寸、滚动、粘性执行条、
+   弹窗定位）仍由 style.css 负责，这里只换「颜色 / 边框 / 阴影 / 字体」。
+
+   覆盖范围：
+   · 全局框架：菜单栏、侧栏、状态栏、按钮、输入框、下拉、复选、表格、滚动条；
+   · 配装工作台（.loadout-workbench）、配枪工作台（.gun-workbench）、
+     弹药页与逐发模拟器（.am-workbench / .am-modal）；
+   · 地图 HUD 与地图浮动面板（地图画布本身保持深色：底图与彩色标注压在上面）。
+
+   不覆盖：
+   · 地图底图 / 标注 / 路线 / 定位图层（SVG 内部样式由脚本注入，主题不碰）；
+   · 任何尺寸变量（--lw-side-w / --lw-u / 表格行高 / 滚动高度等）。
+
+   所有选择器都带作用域前缀或 `html` 前缀，避免溢出到其它模块。
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Luna 令牌
+   ------------------------------------------------------------ */
+:root {
+  /* 标题栏 / 品牌条 */
+  --xp-luna-1: #0a3f9e;
+  --xp-luna-2: #1466e0;
+  --xp-luna-3: #4a9bff;
+  --xp-luna-text: #ffffff;
+
+  /* 面 / 边 */
+  --xp-face: #ece9d8;
+  --xp-face-2: #f7f5ee;
+  --xp-face-3: #ffffff;
+  --xp-border: #aca899;
+  --xp-border-soft: #d6d2c2;
+  --xp-border-dark: #7f9db9;
+
+  /* 3D 凸起按钮 */
+  --xp-btn-face-a: #fdfdfd;
+  --xp-btn-face-b: #f1efe4;
+  --xp-btn-face-c: #e2dfcf;
+  --xp-btn-face-d: #f7f5ee;
+  --xp-btn-border: #7f9db9;
+  --xp-btn-border-hi: #ffffff;
+  --xp-btn-hover-a: #fffdf3;
+  --xp-btn-hover-b: #ffeec6;
+  --xp-btn-hover-c: #ffd98a;
+  --xp-btn-hover-border: #e8a33d;
+  --xp-btn-disabled-face: #f2f0e6;
+  --xp-btn-disabled-text: #69675b;
+
+  /* 文本 */
+  --xp-text: #000000;
+  --xp-text-dim: #4a4a4a;
+  --xp-sel: #316ac5;
+  --xp-sel-text: #ffffff;
+  --xp-link: #1e63c8;
+
+  /* 表格 */
+  --xp-th-a: #fdfdfd;
+  --xp-th-b: #ece9d8;
+  --xp-row-alt: #f7f5ee;
+  --xp-row-hover: #eaf3ff;
+  --xp-row-sel: #316ac5;
+
+  /* 信息提示 */
+  --xp-tip-bg: #ffffe1;
+  --xp-tip-border: #8f8f6f;
+
+  /* 状态色（浅底可读版） */
+  --xp-ok: #0b6b3a;
+  --xp-warn: #7a5200;
+  --xp-bad: #a11b1b;
+  --xp-info: #0a4fa8;
+
+  /* ===== R19.15 统一设计令牌（字体 / 字号 / 间距 / 圆角 / 交互色） ===== */
+  --xp-font-family: Tahoma, "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --xp-font-mono: Consolas, "Courier New", monospace;
+  --xp-fs-micro: 11px;      /* 微型辅助信息 */
+  --xp-fs-compact: 12px;    /* 表格 / 紧凑控件 */
+  --xp-fs-body: 13px;       /* 正文 */
+  --xp-fs-strong: 14px;     /* 强调正文 */
+  --xp-fs-panel: 15px;      /* 面板标题 */
+  --xp-fs-title: 18px;      /* 页面标题 */
+  --xp-space-1: 4px;
+  --xp-space-2: 6px;
+  --xp-space-3: 8px;
+  --xp-space-4: 12px;
+  --xp-space-5: 16px;
+  --xp-space-6: 20px;
+  --xp-space-7: 24px;
+  --xp-radius-panel: 0px;   /* 面板 / 分组：方正 */
+  --xp-radius-control: 2px; /* 输入框 / 表格 */
+  --xp-radius-btn: 3px;     /* 按钮 */
+  --xp-divider: #d5d0c0;
+  /* 交互高亮：亮橙黄（悬停 + 持续高亮共用一套色阶） */
+  --xp-hover-a: #ffcc00;
+  --xp-hover-b: #ffbb1f;
+  --xp-hover-c: #ff9933;
+  --xp-hover-border: #c97a10;
+  --xp-hover-text: #000000;
+}
+
+/* ------------------------------------------------------------
+   2. 三个工作台的颜色令牌翻成 Luna 浅色
+      （原样式是深色数据工作台；这里只改色板，尺寸/布局变量一律不动）
+   ------------------------------------------------------------ */
+.loadout-workbench {
+  --lw-bg: #ece9d8;
+  --lw-panel: #f7f5ee;
+  --lw-panel-2: #ffffff;
+  --lw-line: #d6d2c2;
+  --lw-line-2: #aca899;
+  --lw-divider: #aca899;
+  --lw-txt: #000000;
+  --lw-dim: #4a4a4a;
+  --lw-accent: #0a3f9e;
+  --lw-accent-2: #1e63c8;
+  --lw-select: #dbe7f7;
+  --lw-price: #7a5c00;
+  --lw-positive: #0b6b3a;
+  --lw-warn: #7a5200;
+  --lw-bad: #a11b1b;
+  --lw-ok: #005f8a;
+}
+
+.gun-workbench {
+  --lw-bg: #ece9d8;
+  --lw-panel: #f7f5ee;
+  --lw-panel-2: #ffffff;
+  --lw-line: #d6d2c2;
+  --lw-line-2: #aca899;
+  --lw-txt: #000000;
+  --lw-dim: #4a4a4a;
+  --lw-accent: #0a3f9e;
+  --lw-accent-2: #1e63c8;
+  --lw-warn: #7a5200;
+  --lw-bad: #a11b1b;
+}
+
+.am-workbench,
+#am-detail {
+  --am-bg: #ece9d8;
+  --am-panel: #f7f5ee;
+  --am-panel-2: #ffffff;
+  --am-line: #d6d2c2;
+  --am-line-2: #aca899;
+  --am-txt: #000000;
+  --am-dim: #4a4a4a;
+  --am-accent: #0a3f9e;
+  --am-accent-2: #1e63c8;
+  --am-warn: #7a5200;
+  --am-bad: #a11b1b;
+  --am-ok: #0b6b3a;
+}
+
+/* ------------------------------------------------------------
+   3. 工作台外壳：米灰工作区 + 细边框
+   ------------------------------------------------------------ */
+html .lw-scope,
+html .loadout-workbench,
+html .gun-workbench,
+html .am-workbench {
+  background: var(--xp-face);
+  color: var(--xp-text);
+  font-family: Tahoma, "Microsoft YaHei", "Microsoft YaHei UI", sans-serif;
+}
+
+/* 顶部工具条：XP 工具条（浅面 + 底部分隔线） */
+html .loadout-workbench .lw-top,
+html .gun-workbench .gw-top,
+html .am-workbench .am-top {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f2e8 42%, var(--xp-face) 100%);
+  border-bottom: 1px solid var(--xp-border);
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+/* 左侧栏：浅面 + 右侧分隔 */
+html .loadout-workbench .lw-side,
+html .gun-workbench .gw-side,
+html .am-workbench .am-side {
+  background: var(--xp-face-2);
+  border-right: 1px solid var(--xp-border);
+  box-shadow: inset -1px 0 0 #ffffff;
+}
+
+/* 分组标题：经典蓝色小标题 */
+html .loadout-workbench .lw-h3,
+html .gun-workbench .gw-h3,
+html .am-workbench .am-h3,
+html .loadout-workbench .lw-node-group-head {
+  color: var(--xp-luna-1);
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   4. 按钮：XP Luna 凸起 / 悬停 / 按下 / 禁用 / 焦点
+   ------------------------------------------------------------ */
+html .loadout-workbench button:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close),
+html .gun-workbench button:not(.gw-hit):not(.gw-card),
+html .am-workbench button:not(.am-tab):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x),
+html .lw-modal-box button {
+  background: linear-gradient(180deg, var(--xp-btn-face-a) 0%, var(--xp-btn-face-b) 46%,
+                                       var(--xp-btn-face-c) 54%, var(--xp-btn-face-d) 100%);
+  border: 1px solid var(--xp-btn-border);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px var(--xp-btn-border-hi);
+  color: var(--xp-text);
+  padding: 2px 9px;
+  cursor: pointer;
+}
+
+html .loadout-workbench button:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close):hover:not([disabled]),
+html .gun-workbench button:not(.gw-hit):not(.gw-card):hover:not([disabled]),
+html .am-workbench button:not(.am-tab):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):hover:not([disabled]),
+html .lw-modal-box button:hover:not([disabled]) {
+  background: linear-gradient(180deg, var(--xp-hover-a) 0%, var(--xp-hover-b) 46%,
+                                       var(--xp-hover-c) 54%, #ffd27a 100%);
+  border-color: var(--xp-hover-border);
+  color: var(--xp-hover-text);
+}
+
+html .loadout-workbench button:not(.lw-cell):not(.lw-cat):not(.lw-node):not(.lw-node-x):not(.lw-preset-close):active:not([disabled]),
+html .gun-workbench button:not(.gw-hit):not(.gw-card):active:not([disabled]),
+html .am-workbench button:not(.am-tab):not(.am-sim-prbox):not(.am-sim-zhead):not(.am-modal-x):active:not([disabled]),
+html .lw-modal-box button:active:not([disabled]) {
+  background: linear-gradient(180deg, #ffc21f 0%, #ffb02a 55%, #ff9933 100%);
+  border-color: #b26a0d;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .22), inset -1px -1px 0 #ffffff;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+html .loadout-workbench button[disabled],
+html .gun-workbench button[disabled],
+html .am-workbench button[disabled] {
+  background: var(--xp-btn-disabled-face);
+  border-color: #c9c5b6;
+  box-shadow: none;
+  color: var(--xp-btn-disabled-text);
+  cursor: default;
+}
+
+/* 焦点环：XP 的虚线内框（键盘可见） */
+html .loadout-workbench button:focus-visible,
+html .gun-workbench button:focus-visible,
+html .am-workbench button:focus-visible,
+html .lw-modal-box button:focus-visible {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+
+/* 槽位卡片 / 分类标签页/节点按钮：不加凸起，保持「卡片」层次 */
+html .loadout-workbench .lw-cell,
+html .loadout-workbench .lw-node,
+html .loadout-workbench .lw-cat {
+  box-shadow: none;
+}
+
+/* 默认动作按钮（开始模拟 / 装填）：XP 的「默认按钮」深蓝边 */
+html .am-workbench .am-sim-run,
+html .am-workbench .am-sim-genbtn {
+  border-color: #003c74;
+  box-shadow: inset 0 0 0 1px #ffffff, 0 0 0 1px #6f9ed6;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------
+   5. 输入框 / 下拉 / 数字框：白底 + 内凹边框
+   ------------------------------------------------------------ */
+html .loadout-workbench input[type="search"],
+html .loadout-workbench input[type="text"],
+html .loadout-workbench input[type="number"],
+html .gun-workbench input[type="search"],
+html .gun-workbench input[type="text"],
+html .gun-workbench input[type="number"],
+html .am-workbench input[type="search"],
+html .am-workbench input[type="text"],
+html .am-workbench input[type="number"],
+html .loadout-workbench select,
+html .gun-workbench select,
+html .am-workbench select,
+html .lw-modal-box input,
+html .lw-modal-box select {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark);
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .07);
+  color: var(--xp-text);
+  font-family: Tahoma, "Microsoft YaHei", "Microsoft YaHei UI", sans-serif;
+}
+
+html .loadout-workbench input:focus,
+html .gun-workbench input:focus,
+html .am-workbench input:focus,
+html .loadout-workbench select:focus,
+html .gun-workbench select:focus,
+html .am-workbench select:focus,
+html .lw-modal-box input:focus,
+html .lw-modal-box select:focus {
+  outline: none;
+  border-color: var(--xp-sel);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .07), 0 0 0 1px rgba(49, 106, 197, .35);
+}
+
+/* 数字框里的上下箭头保持系统样式即可，这里只统一底色 */
+html .am-workbench input[type="checkbox"],
+html .loadout-workbench input[type="checkbox"],
+html .gun-workbench input[type="checkbox"],
+html .am-workbench input[type="range"] {
+  accent-color: var(--xp-sel);
+}
+
+/* 占位文字：浅底用中灰，别用原来的暗灰 */
+html .loadout-workbench ::placeholder,
+html .gun-workbench ::placeholder,
+html .am-workbench ::placeholder {
+  color: #7a7a7a;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   6. 标签页：弹药页 5 个主标签 + 配装分类
+   ------------------------------------------------------------ */
+html .am-workbench .am-tab {
+  background: linear-gradient(180deg, #f7f5ee, #e6e3d5);
+  border: 1px solid var(--xp-border);
+  border-bottom-color: var(--xp-border-soft);
+  border-radius: 3px 3px 0 0;
+  color: #232323;
+  font-weight: 600;
+  margin-bottom: -1px;
+}
+
+html .am-workbench .am-tab:hover {
+  background: linear-gradient(180deg, #ffffff, #eef4ff);
+  border-color: #7f9db9;
+  color: #000000;
+}
+
+html .am-workbench .am-tab[aria-selected="true"] {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #f7f5ee 100%);
+  border-color: var(--xp-border);
+  border-bottom-color: #ffffff;
+  color: var(--xp-luna-1);
+  font-weight: 700;
+}
+
+html .am-workbench .am-tabs {
+  border-bottom: 1px solid var(--xp-border-soft);
+  align-items: flex-end;
+}
+
+/* R70：弹药/弹道标题 + 副标题（Luna 蓝主标题、灰蓝小字副标题） */
+html .am-workbench .am-head {
+  border-right-color: var(--xp-border-soft);
+}
+html .am-workbench .am-title {
+  color: var(--xp-luna-1);
+}
+html .am-workbench .am-subtitle {
+  color: #4a6a9a;
+}
+
+/* 配装顶部分类：做成 XP 工具条按钮，选中态深蓝底白字 */
+html .loadout-workbench .lw-cat {
+  background: linear-gradient(180deg, #ffffff, #f1efe4);
+  border: 1px solid var(--xp-border);
+  border-radius: 3px;
+  color: #232323;
+}
+
+html .loadout-workbench .lw-cat:hover {
+  background: linear-gradient(180deg, #ffffff, #eaf3ff);
+  border-color: #7f9db9;
+  color: #000000;
+}
+
+html .loadout-workbench .lw-cat[aria-selected="true"] {
+  background: linear-gradient(180deg, #4a9bff 0%, #1466e0 52%, #0a3f9e 100%);
+  border-color: #0a3f9e;
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   7. 表格：XP 列表视图（浅灰表头 + 交替行 + 蓝底选中）
+   ------------------------------------------------------------ */
+html .loadout-workbench .tbl-scroll,
+html .gun-workbench .tbl-scroll {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark);
+}
+
+html .loadout-workbench .tbl-head,
+html .gun-workbench .tbl-head {
+  background: linear-gradient(180deg, var(--xp-th-a) 0%, var(--xp-th-b) 100%);
+  border-bottom: 1px solid var(--xp-border);
+}
+
+html .loadout-workbench .tbl-head .tbl-cell {
+  color: #232323;
+  border-right: 1px solid var(--xp-border-soft);
+}
+
+html .loadout-workbench .tbl-head .tbl-cell:hover {
+  background: var(--xp-row-hover);
+  color: #000000;
+}
+
+html .loadout-workbench .tbl-row {
+  background: #ffffff;
+  border-top: 1px solid #ebe7d8;
+}
+
+html .loadout-workbench .tbl-row:nth-child(even) {
+  background: var(--xp-row-alt);
+}
+
+html .loadout-workbench .tbl-row:hover {
+  background: var(--xp-row-hover);
+}
+
+html .loadout-workbench .tbl-row[aria-selected="true"] {
+  background: var(--xp-row-sel);
+  box-shadow: inset 2px 0 0 #0a3f9e;
+  color: var(--xp-sel-text);
+}
+
+html .loadout-workbench .tbl-row[aria-selected="true"] .tbl-cell,
+html .loadout-workbench .tbl-row[aria-selected="true"] .tbl-num,
+html .loadout-workbench .tbl-row[aria-selected="true"] .tbl-mid {
+  color: var(--xp-sel-text);
+}
+
+html .loadout-workbench .tbl-cell,
+html .loadout-workbench .tbl-num,
+html .loadout-workbench .tbl-mid {
+  color: #000000;
+}
+
+/* R267：内衬护甲值 / 防弹等级、获取方式价格——style.css 里是给深色主题写的浅灰字，
+   在 XP 浅色底上对比度太低；这里统一加深（同样作用于选中行，selected 规则的优先级更高）。 */
+html .loadout-workbench .lw-liner-cell { color: #2e2e29; }
+html .loadout-workbench .lw-liner-cl { color: #111111; }
+html .loadout-workbench .lw-liner-dur { color: #3a3a34; }
+html .loadout-workbench .lw-liner-sum { color: #2e2e29; }
+html .loadout-workbench .lw-src-price { color: #111111; }
+html .loadout-workbench .lw-src-req { color: #3a3a34; }
+html .loadout-workbench .lw-price-num { color: #111111; }
+html .loadout-workbench .lw-price-lv { color: #111111; }
+html .loadout-workbench .lw-price-glyph { color: #5a5a54; }
+
+html .loadout-workbench .tbl-row.tbl-conflict[aria-selected="true"] {
+  background: #f5d9d9;
+  color: #000000;
+}
+
+/* 弹药页沿用同一套列表视图口径 */
+html .am-workbench .tbl-scroll {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark);
+}
+
+html .am-workbench .tbl-head {
+  background: linear-gradient(180deg, var(--xp-th-a) 0%, var(--xp-th-b) 100%);
+  border-bottom: 1px solid var(--xp-border);
+}
+
+html .am-workbench .tbl-row:nth-child(even) {
+  background: var(--xp-row-alt);
+}
+
+html .am-workbench .tbl-row:hover {
+  background: var(--xp-row-hover);
+}
+
+/* ------------------------------------------------------------
+   8. 滚动条：XP 的浅色滑块（限工作台与侧栏，不动地图）
+   ------------------------------------------------------------ */
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar,
+html .gun-workbench .tbl-scroll::-webkit-scrollbar,
+html .am-workbench .tbl-scroll::-webkit-scrollbar,
+html .am-workbench .am-side::-webkit-scrollbar,
+html .loadout-workbench .lw-side::-webkit-scrollbar,
+html .am-workbench .am-sim-cfg::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-track,
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-track,
+html .am-workbench .tbl-scroll::-webkit-scrollbar-track,
+html .am-workbench .am-sim-cfg::-webkit-scrollbar-track {
+  background: #f1efe4;
+  border-left: 1px solid var(--xp-border-soft);
+}
+
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-thumb,
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-thumb,
+html .am-workbench .tbl-scroll::-webkit-scrollbar-thumb,
+html .am-workbench .am-sim-cfg::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffffff 0%, #e8e4d6 45%, #cfcabb 55%, #f4f2e8 100%);
+  border: 1px solid #9d9a8d;
+  border-radius: 2px;
+  min-width: 40px;
+}
+
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-thumb:hover,
+html .am-workbench .am-sim-cfg::-webkit-scrollbar-thumb:hover {
+  border-color: #7f9db9;
+}
+
+/* ------------------------------------------------------------
+   9. 弹窗 / 浮层：Luna 窗口（蓝色标题栏 + 白面）
+   ------------------------------------------------------------ */
+html .lw-modal-box,
+html .am-modal-box {
+  background: var(--xp-face-2);
+  border: 1px solid #0a3f9e;
+  border-radius: 4px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .45), inset 0 0 0 1px #ffffff;
+  color: var(--xp-text);
+}
+
+html .lw-modal-head,
+html .am-modal-head {
+  background: linear-gradient(180deg, var(--xp-luna-2) 0%, var(--xp-luna-1) 62%, #08327c 100%);
+  border-bottom: 1px solid #08327c;
+  border-radius: 3px 3px 0 0;
+  color: var(--xp-luna-text);
+  font-weight: 700;
+  padding: 5px 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+html .lw-modal-title,
+html .am-modal-title {
+  color: #ffffff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+}
+
+html .lw-modal-body,
+html .am-modal-body {
+  background: var(--xp-face-2);
+  color: var(--xp-text);
+}
+
+html .am-modal {
+  background: rgba(10, 20, 40, .45);
+}
+
+/* 关闭按钮：XP 的方形小叉 */
+html .lw-modal-x,
+html .am-modal-x,
+html .lw-preset-close {
+  background: linear-gradient(180deg, #ffffff, #e6e3d5);
+  border: 1px solid var(--xp-border);
+  border-radius: 3px;
+  color: #232323;
+  font-weight: 700;
+}
+
+html .lw-modal-x:hover,
+html .am-modal-x:hover,
+html .lw-preset-close:hover {
+  background: linear-gradient(180deg, #ffd9d9, #e88b8b);
+  border-color: #a11b1b;
+  color: #3b0000;
+}
+
+/* 弹药选择浮层（挂在 body 下）：Luna 小窗口 */
+html .am-sim-ammodlg {
+  background: var(--xp-face-2);
+  border: 1px solid #0a3f9e;
+  border-radius: 4px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .45), inset 0 0 0 1px #ffffff;
+  color: var(--xp-text);
+}
+
+/* 提示气泡：XP 的淡黄信息条 */
+html .lw-tip,
+html .marker-pop,
+html .am-graph-tip {
+  background: var(--xp-tip-bg);
+  border: 1px solid var(--xp-tip-border);
+  color: #000000;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .28);
+}
+
+/* ------------------------------------------------------------
+   10. 工作台内的「卡片 / 面板 / 分组」：统一浅面 + 1px 边
+   ------------------------------------------------------------ */
+html .loadout-workbench .lw-core,
+html .loadout-workbench .lw-block,
+html .loadout-workbench .lw-board,
+html .loadout-workbench .lw-cost,
+html .gun-workbench .gw-stats,
+html .gun-workbench .gw-tree,
+html .gun-workbench .gw-browse,
+html .am-workbench .am-groups,
+html .am-workbench .am-range,
+html .am-workbench .am-graph-params,
+html .am-workbench .am-graph-stage {
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border-soft);
+  border-radius: 3px;
+}
+
+html .am-workbench .am-graph-stage {
+  background: #ffffff;
+}
+
+/* 逐发模拟器：左侧参数框 + 分区 + 结果区 */
+html .am-workbench .am-sim-box {
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border-soft);
+  border-radius: 3px;
+}
+
+html .am-workbench .am-sim-runbar {
+  background: linear-gradient(180deg, #ffffff 0%, var(--xp-face) 100%);
+  border: 1px solid var(--xp-border);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+html .am-workbench .am-sim-zsec {
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border-soft);
+  border-radius: 3px;
+}
+
+html .am-workbench .am-sim-prrow {
+  background: #ffffff;
+  border-bottom: 1px dashed var(--xp-border-soft);
+}
+
+html .am-workbench .am-sim-prrow.am-sim-dropbefore {
+  box-shadow: inset 0 2px 0 var(--xp-luna-2);
+  background: #eaf3ff;
+}
+
+html .am-workbench .am-sim-prrow.am-sim-dropafter {
+  box-shadow: inset 0 -2px 0 var(--xp-luna-2);
+  background: #eaf3ff;
+}
+
+html .am-workbench .am-sim-prbox {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark);
+  border-radius: 2px;
+}
+
+html .am-workbench .am-sim-prshort,
+html .am-workbench .am-sim-dlgshort {
+  background: rgba(255, 255, 255, .82);
+  color: #0a3f9e;
+  border-top: 1px solid var(--xp-border-soft);
+}
+
+html .am-workbench .am-sim-dlgopt {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-soft);
+  border-radius: 2px;
+  color: var(--xp-text);
+}
+
+html .am-workbench .am-sim-dlgopt:hover {
+  background: var(--xp-row-hover);
+  border-color: var(--xp-border-dark);
+}
+
+html .am-workbench .am-sim-dlgopt.am-sim-dlgcur {
+  border-color: var(--xp-luna-2);
+  box-shadow: inset 0 0 0 1px rgba(20, 102, 224, .35);
+}
+
+/* 逐发日志：等宽数字在浅底上仍要清晰 */
+html .am-workbench .am-sim-log table,
+html .am-workbench .am-sim-log .am-sim-detailcell {
+  color: #000000;
+}
+
+html .am-workbench .am-sim-log thead th {
+  background: linear-gradient(180deg, var(--xp-th-a), var(--xp-th-b));
+  border-bottom: 1px solid var(--xp-border);
+  color: #232323;
+}
+
+html .am-workbench .am-sim-log tbody tr:nth-child(even) {
+  background: var(--xp-row-alt);
+}
+
+html .am-workbench .am-sim-log tbody tr:hover {
+  background: var(--xp-row-hover);
+}
+
+/* 目标血量面板：浅底下保持对比 */
+html .am-workbench .am-sim-hpfig {
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border-soft);
+}
+
+/* ------------------------------------------------------------
+   11. 地图区周边的 XP 化（画布本身保持深色）
+   ------------------------------------------------------------ */
+html .hud button,
+html .hud-scale {
+  background: linear-gradient(180deg, #ffffff 0%, #f1efe4 46%, #e2dfcf 54%, #f7f5ee 100%);
+  border: 1px solid var(--xp-btn-border);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px #ffffff;
+  color: #000000;
+}
+
+html .hud button:hover,
+html .hud-scale:hover {
+  background: linear-gradient(180deg, #fffdf3, #ffeec6 46%, #ffd98a 54%, #fff8e4);
+  border-color: var(--xp-btn-hover-border);
+  color: #000000;
+}
+
+html .hud button.on {
+  background: linear-gradient(180deg, #4a9bff, #1466e0 60%, #0a3f9e);
+  border-color: #0a3f9e;
+  color: #ffffff;
+}
+
+html .hud-scale-value {
+  color: #0a3f9e;
+}
+
+html .statusbar {
+  background: linear-gradient(180deg, #f7f5ee, var(--xp-face));
+  border-top: 1px solid var(--xp-border);
+  color: #333333;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+html .statusbar .muted {
+  color: #4a4a4a;
+}
+
+html .statusbar .pos-off {
+  color: #646152;
+}
+
+html .statusbar .pos-on {
+  color: #0b6b3a;
+}
+
+/* 错误条：XP 的浅红提示 */
+html .error {
+  background: #ffecec;
+  border: 1px solid #c00000;
+  color: #7a0000;
+}
+
+/* ------------------------------------------------------------
+   12. 自动映射块（由 style.css 的深色声明逐条翻成 Luna 浅色）
+       前缀 `html` 提高特异性，保证覆盖原规则。
+   ------------------------------------------------------------ */
+html .loadout-workbench .lw-top {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-cat:hover {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-price:hover:not([disabled]) {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-side {
+  background: #ece9d8;
+}
+html .loadout-workbench .lw-stat-lab {
+  color: #000000;
+}
+html .loadout-workbench .lw-stat-weight .lw-stat-lab {
+  color: #3a3a3a;
+}
+html .loadout-workbench .lw-node-group-side .lw-node {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+html .loadout-workbench .lw-cell {
+  color: #000000;
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+html .loadout-workbench .lw-cell:hover {
+  background: #f7f5ee;
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-cell[data-state="focus"] {
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-cell[data-state="on"] {
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-cell[data-state="empty"] .lw-cell-label {
+  color: #000000;
+}
+html .loadout-workbench .lw-cl-badge {
+  border: 1px solid #aca899;
+}
+html .loadout-workbench .lw-at-badge.lw-at-heavy {
+  background: #ffffff;
+}
+html .loadout-workbench .lw-at-badge.lw-at-light {
+  background: #d6d2c2;
+}
+html .loadout-workbench .lw-cost-total b {
+  color: #000000;
+}
+html .loadout-workbench .lw-cost-rows {
+  background: #ffffff;
+}
+html .loadout-workbench .lw-cost-cell {
+  border-right: 2px solid #aca899;
+}
+html .loadout-workbench .lw-cost-cell em {
+  color: #232323;
+}
+html .loadout-workbench .tbl-scroll {
+  background: #ece9d8;
+}
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-track {
+  background: #ece9d8;
+}
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-thumb {
+  background: #d6d2c2;
+  border: 2px solid #aca899;
+}
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-thumb:hover {
+  background: #d6d2c2;
+}
+html .loadout-workbench .tbl-scroll::-webkit-scrollbar-corner {
+  background: #ece9d8;
+}
+html .loadout-workbench .tbl-head {
+  background: #ece9d8;
+}
+html .loadout-workbench .tbl-head .tbl-cell {
+  color: #3a3a3a;
+  border-right: 1px solid #aca899;
+}
+html .loadout-workbench .tbl-head .tbl-cell:hover {
+  background: #f7f5ee;
+  color: #232323;
+}
+html .loadout-workbench .tbl-cell {
+  color: #000000;
+}
+/* R300e：配装表不再逐单元格画列分隔线（会一段段断开）；
+   改由 .tbl-vlines 覆盖层画整条竖线，这里只给竖线定颜色。 */
+html .loadout-workbench .tbl-head .tbl-cell,
+html .loadout-workbench .tbl-row .tbl-cell {
+  border-right: 0 !important;
+  /* R19.67：断线的真正来源是 XP 皮肤给每个单元格右缘贴的 tbl-grid-v.png
+     （assets/xp-ui/xp-ui-app.css 的 border-image，与 border 宽度无关）。
+     每个格各画一段、行间留缝，看起来就是「连续线旁边的断续竖线」，必须一并关掉。 */
+  border-image: none !important;
+}
+html .loadout-workbench .tbl-vlines > i {
+  background: #aca899;
+}
+/* R19.68：配枪 / 弹药表与配装表同源——XP 皮肤给每格右缘贴 tbl-grid-v.png，
+   每格一段、行间留缝。这里一并关掉贴图和逐格边框，改用覆盖层画整条竖线。 */
+html .gun-workbench .tbl-head .tbl-cell,
+html .gun-workbench .tbl-row .tbl-cell,
+html .am-workbench .tbl-head .tbl-cell,
+html .am-workbench .tbl-row .tbl-cell {
+  border-right: 0 !important;
+  border-image: none !important;
+}
+html .gun-workbench .tbl-vlines > i,
+html .am-workbench .tbl-vlines > i {
+  background: #aca899;
+}
+html .loadout-workbench .tbl-row {
+  border-top: 1px solid #aca899;
+}
+html .loadout-workbench .tbl-row:nth-child(even) {
+  background: #ece9d8;
+}
+html .loadout-workbench .tbl-row:hover {
+  background: #f7f5ee;
+}
+html .loadout-workbench .tbl-row.tbl-conflict[aria-selected="true"] {
+  background: #f7f5ee;
+}
+html .loadout-workbench .tbl-num, html .loadout-workbench .tbl-mid {
+  color: #000000;
+}
+html .loadout-workbench .lw-debuff-lab {
+  color: #4a4a4a;
+}
+html .loadout-workbench .lw-plate-visual {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+html .loadout-workbench .lw-plate-visual[data-empty="1"] {
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-plate-stats {
+  color: #232323;
+}
+html .loadout-workbench .lw-plate-cl {
+  color: #232323;
+}
+html .loadout-workbench .lw-plate-mat {
+  color: #000000;
+  background: #ffffff;
+}
+html .loadout-workbench .lw-plate-dur {
+  color: #232323;
+}
+html .loadout-workbench .lw-liner-sum {
+  color: #232323;
+}
+html .loadout-workbench .lw-liner-cell {
+  color: #232323;
+}
+html .loadout-workbench .lw-src:hover {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-src-req {
+  color: #232323;
+}
+html .loadout-workbench .lw-tip {
+  background: #ece9d8;
+  border: 1px solid var(--lw-line-2, #aca899);
+  border-left: 3px solid var(--lw-accent, #4a6b18);
+  color: #000000;
+}
+html .loadout-workbench .lw-tip-line {
+  color: #232323;
+}
+html .lw-scope .lw-modal-box {
+  background: var(--lw-panel, #ece9d8);
+  border: 1px solid var(--lw-line-2, #aca899);
+  color: var(--lw-txt, #232323);
+}
+html .lw-scope .lw-modal-head {
+  background: var(--lw-panel-2, #f7f5ee);
+  border-bottom: 1px solid var(--lw-line, #aca899);
+}
+html .lw-scope .lw-modal-x {
+  color: var(--lw-dim, #4a4a4a);
+}
+html .lw-scope .lw-modal-x:hover {
+  border-color: var(--lw-bad, #a11b1b);
+}
+html .lw-scope .lw-modal-note {
+  color: var(--lw-dim, #4a4a4a);
+  border-bottom: 1px solid var(--lw-line, #aca899);
+}
+html .lw-scope .lw-modal-foot {
+  border-top: 1px solid var(--lw-line, #aca899);
+  background: var(--lw-panel-2, #f7f5ee);
+}
+html .lw-scope .lw-modal-state {
+  color: var(--lw-dim, #4a4a4a);
+}
+html .lw-scope .lw-modal-state[data-state="on"] {
+  color: var(--lw-accent-2, #4a6b18);
+}
+html .lw-scope .lw-modal-btn {
+  color: var(--lw-txt, #232323);
+  background: #f7f5ee;
+  border: 1px solid var(--lw-line-2, #aca899);
+}
+html .lw-scope .lw-modal-btn:hover {
+  border-color: var(--lw-accent, #4a6b18);
+}
+html .loadout-workbench .lw-node-group {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-node {
+  color: #232323;
+  background: #ffffff;
+  border: 1px solid #aca899;
+}
+html .loadout-workbench .lw-node:hover {
+  background: #ffffff;
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-node[data-state="focus"] {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-node[data-state="on"] {
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-node[data-state="conflict"] {
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-node-name {
+  color: #000000;
+}
+html .loadout-workbench .lw-node-liner {
+  background: #f7f5ee;
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-node-liner:hover {
+  background: #f7f5ee;
+  border-color: #aca899;
+}
+html .loadout-workbench .lw-node-liner .lw-node-label {
+  color: #232323;
+}
+html .loadout-workbench .lw-node-fact {
+  color: #3a3a3a;
+}
+html .loadout-workbench .tbl-row.tbl-conflict {
+  background: #f7f5ee;
+}
+html .loadout-workbench .tbl-row.tbl-conflict:hover {
+  background: #f7f5ee;
+}
+html .loadout-workbench .tbl-row.tbl-conflict .tbl-cell {
+  color: #232323;
+}
+html .loadout-workbench .lw-conflict-chip {
+  color: #232323;
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+}
+html .gun-workbench .gw-result:hover {
+  background: #f7f5ee;
+}
+html .gun-workbench .gw-slot {
+  background: #f7f5ee;
+}
+html .gun-workbench .gw-slot:hover {
+  background: #f7f5ee;
+  border-color: #aca899;
+}
+html .gun-workbench .gw-slot[data-state="empty"] {
+  color: #232323;
+}
+html .gun-workbench .gw-browse-gun:hover {
+  background: #f7f5ee;
+}
+html .gun-workbench .gw-visual-img {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-scroll {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-track {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-thumb {
+  background: #d6d2c2;
+  border: 2px solid #aca899;
+}
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-thumb:hover {
+  background: #d6d2c2;
+}
+html .gun-workbench .tbl-scroll::-webkit-scrollbar-corner {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-head {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-head .tbl-cell {
+  color: #3a3a3a;
+  border-right: 1px solid #aca899;
+}
+html .gun-workbench .tbl-head .tbl-cell:hover {
+  background: #f7f5ee;
+  color: #232323;
+}
+html .gun-workbench .tbl-cell {
+  color: #000000;
+}
+html .gun-workbench .tbl-row {
+  border-top: 1px solid #aca899;
+}
+html .gun-workbench .tbl-row:nth-child(even) {
+  background: #ece9d8;
+}
+html .gun-workbench .tbl-row:hover {
+  background: #f7f5ee;
+}
+html .gun-workbench .tbl-num, html .gun-workbench .tbl-mid {
+  color: #000000;
+}
+html .lw-scope .lw-preset-list {
+  border-right: 1px solid var(--lw-line, #aca899);
+}
+html .lw-scope .lw-preset-row {
+  color: var(--lw-txt, #232323);
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+}
+html .lw-scope .lw-preset-row:hover {
+  border-color: #aca899;
+  background: #f7f5ee;
+}
+html .lw-scope .lw-preset-row[aria-selected="true"] {
+  border-color: var(--lw-accent, #4a6b18);
+  background: #f7f5ee;
+}
+html .lw-scope .lw-preset-row span {
+  color: var(--lw-dim, #4a4a4a);
+}
+html .lw-scope .lw-preset-input {
+  color: var(--lw-txt, #232323);
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+html .lw-scope .lw-preset-path {
+  color: #3a3a3a;
+}
+html .lw-scope .lw-preset-msg {
+  color: var(--lw-dim, #4a4a4a);
+}
+html .lw-scope .lw-preset-msg[data-tone="bad"] {
+  color: var(--lw-bad, #a11b1b);
+}
+html .lw-scope .lw-preset-msg[data-tone="on"] {
+  color: var(--lw-accent-2, #4a6b18);
+}
+html .loadout-workbench .lw-cost-miss, html .gun-workbench .lw-cost-miss {
+  color: var(--lw-warn, #7a5200);
+}
+html .loadout-workbench .lw-cell[data-state="missing"] {
+  border-color: var(--lw-bad, #a11b1b) !important;
+  background: #f7f5ee;
+}
+html .loadout-workbench .lw-cell[data-state="missing"] .lw-cell-label {
+  color: #232323;
+}
+html .am-workbench .am-tab[aria-selected="true"] {
+  color: #000000;
+  background: #ece9d8;
+}
+html .am-workbench .am-search {
+  color: #000000;
+  background: #ece9d8;
+}
+html .am-workbench .am-table .tbl-scroll {
+  background: #ece9d8;
+}
+html .am-workbench .tbl-head {
+  background: #ece9d8;
+  border-bottom: 1px solid #aca899;
+}
+html .am-workbench .tbl-row {
+  border-top: 1px solid #aca899;
+}
+html .am-workbench .tbl-row:nth-child(even) {
+  background: #ece9d8;
+}
+html .am-workbench .tbl-row:hover {
+  background: #f7f5ee;
+}
+html .am-workbench .tbl-row[aria-selected="true"] {
+  background: #ffffff;
+}
+html .am-workbench .am-cell-2l b {
+  color: #000000;
+}
+html .am-workbench .am-cell-2l span {
+  color: #3a3a3a;
+}
+html .am-workbench .am-h3 {
+  color: #000000;
+}
+html .am-workbench .am-btn {
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+}
+html .am-workbench .am-group-head b {
+  color: #000000;
+}
+html .am-workbench .am-group-head > span {
+  color: #3a3a3a;
+}
+html .am-workbench .am-show {
+  color: #4a4a4a;
+  border: 1px solid #aca899;
+}
+html .am-workbench .am-chip {
+  background: #f7f5ee;
+}
+html .am-workbench .am-chip:hover {
+  border-color: #aca899;
+}
+/* R229：当前筛选下 0 发子弹的口径置灰。XP 按钮是位图九宫格（xp-ui-app.css 把背景设成
+   transparent + border-image），改 background/color 会被高特异性规则压过，用整体降透明度；
+   不用 filter:grayscale，那样会把「已选中」的按下态也洗掉、更看不出点过没有。 */
+html .am-workbench .am-chip[data-empty="1"]:not([aria-pressed="true"]) { opacity: .45; }
+html .am-workbench .am-chip[data-empty="1"][aria-pressed="true"] { opacity: .7; }
+html .am-workbench .am-num {
+  color: #232323;
+  background: #ece9d8;
+}
+html .am-workbench .am-dist select {
+  color: #232323;
+  background: #ece9d8;
+}
+html .am-workbench .am-note {
+  color: #3a3a3a;
+}
+html .am-workbench .am-graph {
+  background: #ece9d8;
+}
+html .am-workbench .am-graph-mode {
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+  color: #232323;
+}
+html .am-workbench .am-graph-mode:hover {
+  border-color: #aca899;
+}
+html .am-workbench .am-graph-mode[aria-selected="true"] {
+  background: #ffffff;
+  border-color: #aca899;
+  color: #000000;
+}
+html .am-workbench .am-graph-param {
+  color: #232323;
+}
+html .am-workbench .am-graph-param input, html .am-workbench .am-graph-param select {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+  color: #000000;
+}
+html .am-workbench .am-graph-zoomreset {
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+  color: #232323;
+}
+html .am-workbench .am-graph-zoomreset:hover {
+  border-color: #aca899;
+}
+html .am-workbench .am-graph-note {
+  color: #4a4a4a;
+}
+html .am-workbench .am-graph-tip {
+  background: #ece9d8;
+  border: 1px solid #aca899;
+}
+html .am-workbench .am-graph-tip .am-graph-tip-row:hover .am-graph-tip-name {
+  color: #232323;
+}
+html .am-workbench .am-graph-tip-meta {
+  color: #232323;
+}
+html .am-workbench .am-graph-tip-more {
+  color: #7a5200;
+}
+html .am-workbench .am-graph-lg {
+  color: #232323;
+}
+html .am-workbench .am-sim-hpfig {
+  background: radial-gradient(ellipse at 50% 38%, rgba(54, 74, 64, .16), rgba(0, 0, 0, 0) 62%),
+    linear-gradient(180deg, #ece9d8 0%, #ece9d8 100%);
+}
+html .am-workbench .am-sim-hpbar {
+  background: #ece9d8;
+}
+html .am-workbench .am-sim-hpfill {
+  background: linear-gradient(180deg, #2fbf22, #d6d2c2 60%, #d6d2c2);
+}
+html .am-workbench .am-sim-hpzero .am-sim-hpfill {
+  background: #f7f5ee;
+}
+html .am-workbench .am-sim-hpzero .am-sim-hpname {
+  color: #a11b1b;
+}
+html .am-workbench .am-sim-hpstar {
+  color: #000000;
+}
+html .am-workbench .am-sim-hpmax {
+  color: #000000;
+}
+html .am-workbench .am-sim-loader {
+  background: #ece9d8;
+}
+html .am-workbench .am-sim-loaderhead {
+  background: linear-gradient(180deg, #f7f5ee, #ece9d8);
+}
+html .am-workbench .am-sim-lh-cap {
+  color: #000000;
+}
+html .am-workbench .am-sim-pr-top {
+  border-left: 3px solid #aca899;
+}
+html .am-workbench .am-sim-pr-loop {
+  border-left: 3px solid #aca899;
+}
+html .am-workbench .am-sim-pridx {
+  color: #000000;
+  background: #f7f5ee;
+}
+html .am-workbench .am-sim-prbtn {
+  color: #232323;
+  background: #f7f5ee;
+}
+html .am-modal-box {
+  background: #ece9d8;
+  border: 1px solid var(--am-line-2, #aca899);
+  color: var(--am-txt, #232323);
+}
+html .am-modal-head {
+  background: #f7f5ee;
+  border-bottom: 1px solid #aca899;
+}
+html .am-detail-meta {
+  color: #4a4a4a;
+}
+html .am-modal-x {
+  color: #4a4a4a;
+}
+html .am-modal-x:hover {
+  border-color: var(--am-bad, #a11b1b);
+}
+html .am-stat {
+  background: #f7f5ee;
+  border: 1px solid #aca899;
+}
+html .am-stat-lab {
+  color: #4a4a4a;
+}
+html .am-stat-num {
+  color: #000000;
+}
+html .am-stat-num[data-tone="dim"] {
+  color: #3a3a3a;
+}
+html .am-detail-h4 {
+  color: #000000;
+}
+html .am-detail-note {
+  color: #3a3a3a;
+}
+html .am-detail-tbl {
+  border: 1px solid #aca899;
+  background: #ece9d8;
+}
+html .am-detail-tr > span {
+  border-right: 1px solid #aca899;
+}
+html .am-detail-tr > span:first-child {
+  color: #4a4a4a;
+}
+html .am-detail-th {
+  background: #ece9d8;
+  border-bottom: 1px solid #aca899;
+}
+html .am-detail-th > span {
+  color: #4a4a4a;
+}
+html .am-detail-tr:hover {
+  background: #f7f5ee;
+}
+html .am-detail-rows .am-detail-tr:first-child {
+  color: #232323;
+}
+html .am-sim-chk {
+  color: #232323;
+  border: 1px solid #aca899;
+  background: #f7f5ee;
+}
+html .am-sim-chk:hover {
+  border-color: #aca899;
+}
+html .am-sim-prrow {
+  border-bottom: 1px dashed #aca899;
+}
+html .am-sim-prrow.am-sim-droptarget {
+  background: #f7f5ee;
+}
+html .am-sim-pridx {
+  color: #232323;
+}
+html .am-sim-przone {
+  background: #f7f5ee;
+  color: #232323;
+}
+html .am-sim-pr-top .am-sim-przone {
+  background: #ffffff;
+  color: #232323;
+}
+html .am-sim-pr-bottom .am-sim-przone {
+  background: #f7f5ee;
+  color: #232323;
+}
+html .am-sim-prbox {
+  border: 1px solid #aca899;
+  background: #ece9d8;
+}
+html .am-sim-prbox:hover {
+  border-color: #aca899;
+}
+html .am-sim-prfilled {
+  border-color: #aca899;
+}
+html .am-sim-prmeta {
+  color: #000000;
+}
+html .am-sim-prbtn {
+  border: 1px solid #aca899;
+  background: #f7f5ee;
+  color: #232323;
+}
+html .am-sim-prbtn:hover {
+  border-color: #aca899;
+}
+html .am-sim-ammodlg {
+  border: 1px solid #aca899;
+  background: #f7f5ee;
+}
+html .am-sim-dlgtitle {
+  color: #000000;
+}
+html .am-sim-dlgopt {
+  border: 1px solid #aca899;
+  background: #ece9d8;
+  color: #232323;
+}
+html .am-sim-dlgopt:hover {
+  border-color: #aca899;
+  background: #f7f5ee;
+}
+html .am-sim-dlgcur {
+  border-color: #aca899;
+}
+html .am-sim-dlgstats {
+  color: #232323;
+}
+html .am-sim-dlgcurtag {
+  color: #232323;
+  border: 1px solid #aca899;
+}
+html .am-sim-zsec {
+  border: 1px solid #aca899;
+  background: #ece9d8;
+}
+html .am-sim-zsec.am-sim-ztop {
+  border-left: 3px solid #aca899;
+}
+html .am-sim-zsec.am-sim-zloop {
+  border-left: 3px solid #aca899;
+}
+html .am-sim-zsec.am-sim-zbottom {
+  border-left: 3px solid #aca899;
+}
+html .am-sim-zsec.am-sim-droptarget {
+  background: #f7f5ee;
+}
+html .am-sim-ztitle {
+  color: #232323;
+}
+html .am-sim-ztop .am-sim-ztitle {
+  color: #232323;
+}
+html .am-sim-zbottom .am-sim-ztitle {
+  color: #232323;
+}
+html .am-sim-zempty {
+  border: 1px dashed #aca899;
+}
+html .am-sim-prrow.am-sim-dropbefore {
+  background: #f7f5ee;
+}
+html .am-sim-prrow.am-sim-dropafter {
+  background: #f7f5ee;
+}
+
+/* ------------------------------------------------------------
+   13. 修正层（自动映射之后的定点修色）
+       自动映射会把「深底浅字」翻成「浅底」，但少数元素的白字/浅字
+       原先写在别的规则里，需要在末尾统一压回可读的深墨。这一层同时
+       把表格底改回纯白（自动块用的是 Luna 面米灰，列表视图应为白底）。
+   ------------------------------------------------------------ */
+
+/* 列表视图：白底 */
+html .loadout-workbench .tbl-scroll,
+html .gun-workbench .tbl-scroll,
+html .am-workbench .am-table .tbl-scroll {
+  background: #ffffff;
+}
+
+/* —— 配装：槽位卡片与费用条 —— */
+html .loadout-workbench .lw-cell-label {
+  color: #232323;
+}
+
+html .loadout-workbench .lw-cell[data-state="on"] .lw-cell-label,
+html .loadout-workbench .lw-cell[data-state="focus"] .lw-cell-label {
+  color: #0a3f9e;
+}
+
+html .loadout-workbench .lw-cell[data-state="empty"] .lw-cell-label {
+  color: #6a6a6a;
+}
+
+html .loadout-workbench .lw-cost-total span {
+  color: #0a3f9e;
+}
+
+html .loadout-workbench .lw-cost-total b {
+  color: #0b6b3a;
+}
+
+html .loadout-workbench .lw-cost-rows {
+  background: linear-gradient(180deg, #f7f5ee, #e6e3d5);
+  border: 1px solid var(--xp-border);
+}
+
+html .loadout-workbench .lw-cost-cell {
+  border-right: 1px solid var(--xp-border-soft);
+}
+
+html .loadout-workbench .lw-cost-cell h4 {
+  color: #232323;
+}
+
+html .loadout-workbench .lw-cost-cell em {
+  color: #5a5a5a;
+}
+
+html .loadout-workbench .lw-cost-cell b {
+  color: #000000;
+}
+
+html .loadout-workbench .lw-focus-name {
+  color: #0a3f9e;
+}
+
+html .loadout-workbench .lw-stat-num,
+html .loadout-workbench .lw-stat-weight .lw-stat-num {
+  color: #5c4400;
+}
+
+/* —— 模拟器：目标血量面板（原为深底浅字） —— */
+html .am-workbench .am-sim-hpname {
+  color: #232323;
+}
+
+html .am-workbench .am-sim-hpzero .am-sim-hpname {
+  color: #a11b1b;
+}
+
+html .am-workbench .am-sim-hpnum {
+  color: #000000;
+}
+
+html .am-workbench .am-sim-hpcur {
+  color: #0b6b3a;
+}
+
+html .am-workbench .am-sim-hpmax {
+  color: #4a4a4a;
+}
+
+html .am-workbench .am-sim-hpfigdead .am-sim-hpcur {
+  color: #a11b1b;
+}
+
+html .am-workbench .am-sim-hpfig {
+  background: linear-gradient(180deg, #ffffff, #f2f0e6);
+  border: 1px solid var(--xp-border-soft);
+}
+
+/* —— 次级文字统一压深，保证浅底可读 —— */
+html .am-workbench .am-hint,
+html .am-workbench .am-dash,
+html .am-workbench .am-sim-zhint,
+html .am-workbench .am-sim-note,
+html .am-workbench .am-sim-dim,
+html .am-workbench .am-note,
+html .loadout-workbench .lw-hint,
+html .loadout-workbench .lw-note,
+html .loadout-workbench .lw-foot,
+html .gun-workbench .lw-hint {
+  color: #4a4a4a;
+}
+
+html .am-workbench .am-sim-prplus {
+  color: #6a7480;
+}
+
+/* —— 选中行里的次级信息仍要能看清 —— */
+html .loadout-workbench .tbl-row[aria-selected="true"] .tbl-sort {
+  color: #dce7fb;
+}
+
+/* —— 弹药图表：坐标系 / 网格 / 标注换成浅底版
+     图表用 SVG presentation attribute 上色（不是 CSS），所以按原色值做属性选择器，
+     只改「画布底 + 网格 + 坐标文字」，散点/曲线/图例的分类色一律不动。 —— */
+html .am-workbench .am-graph-svg [fill="#12161c"],
+html .am-workbench .am-chart-svg [fill="#12161c"] {
+  fill: #ffffff;
+}
+
+html .am-workbench .am-graph-svg [stroke="#333c49"],
+html .am-workbench .am-chart-svg [stroke="#333c49"] {
+  stroke: #aca899;
+}
+
+html .am-workbench .am-graph-svg [stroke="#3a3a3a"],
+html .am-workbench .am-chart-svg [stroke="#3a3a3a"] {
+  stroke: #a9a595;
+}
+
+html .am-workbench .am-graph-svg [stroke="#242b35"],
+html .am-workbench .am-chart-svg [stroke="#242b35"],
+html .am-workbench .am-graph-svg [stroke="#1c222b"],
+html .am-workbench .am-chart-svg [stroke="#1c222b"] {
+  stroke: #e3e0d0;
+}
+
+html .am-workbench .am-graph-svg [fill="#7b8593"],
+html .am-workbench .am-chart-svg [fill="#7b8593"] {
+  fill: #4a4a4a;
+}
+
+html .am-workbench .am-graph-svg [fill="#9aa4b2"],
+html .am-workbench .am-chart-svg [fill="#9aa4b2"] {
+  fill: #232323;
+}
+
+/* —— 散点标记：图标底片原来是深色小圆，浅底上换成白底细边（数据/图标不动） —— */
+html .am-workbench .am-graph-svg [fill="#161c24"] {
+  fill: #ffffff;
+}
+
+html .am-workbench .am-graph-svg [stroke="#414c5a"] {
+  stroke: #7a766a;
+}
+
+/* —— 空槽位标签 / 关掉的图层：浅底上再压深一档，仍能看出是「未启用」 —— */
+html .loadout-workbench .lw-cell[data-state="empty"] .lw-cell-label {
+  color: #4a4a4a;
+}
+
+/* —— R299：装备名按 PSD 改为卡片右上角浮字、无底；旧的贴底白底条已废弃 —— */
+html .loadout-workbench .lw-cell-name {
+  color: #fff;
+  background: transparent;
+  border: 0;
+  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 1px 2px #000;
+}
+
+html .loadout-workbench .lw-cell[data-state="focus"] .lw-cell-name,
+html .loadout-workbench .lw-cell[data-state="on"] .lw-cell-name {
+  color: #fff;
+}
+
+/* —— 左栏「防护区域示意图」容器：R30.0 从深色底板改成 XP 浅底 ——
+   原来给这块的容器刷 #1e1e1e，是为了给上游那套**白色线稿**当底；
+   但工作台整体是 XP 浅色面板（#ECE9D8 + 白色卡片），这块近黑方块夹在
+   一排白色装备卡中间非常突兀 —— 用户反馈的「怎么是纯黑的」就是它。
+   改成白底 + 细边后，白色线稿由 .lw-zone-deco-img 的 brightness 压灰显示，
+   深色躯干占位图由 .lw-zone-deco-ph 提亮，两种情况都不需要深色底。 */
+html .loadout-workbench .lw-deco-zone {
+  background: #ffffff;
+  border: 1px solid var(--xp-border);
+}
+
+html .legend-item[data-on="false"] .legend-name {
+  color: #6b675c;
+}
+
+html .legend-item[data-on="false"] .legend-count {
+  color: #69675b;
+}
+
+/* —— 弹药行的「—」与 0% 之类次级数值 —— */
+html .am-workbench .am-workbench .tbl-cell,
+html .am-workbench .am-table .tbl-cell {
+  color: #000000;
+}
+
+html .am-workbench .am-dash,
+html .am-workbench .am-sim-dim {
+  color: #4a4a4a;
+}
+
+/* —— 槽位卡片：白底 + 1px 凹边（空槽）/ 蓝边（选中）/ 红边（数据缺失） —— */
+html .loadout-workbench .lw-cell {
+  background: #ffffff;
+  border: 1px solid var(--xp-border);
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #e6e3d5;
+  color: #232323;
+}
+
+html .loadout-workbench .lw-cell:hover {
+  background: var(--xp-row-hover);
+  border-color: var(--xp-border-dark);
+}
+
+html .loadout-workbench .lw-cell[data-state="focus"] {
+  background: #dbe7f7;
+  border-color: var(--xp-sel);
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+html .loadout-workbench .lw-cell[data-state="on"] {
+  border-color: var(--xp-sel);
+}
+
+/* —— 空槽卡片：XP 凹陷白底 + 极淡 45° 斜纹 ——
+   R30.0：空槽占位图已从「游戏内实拍卡面（深色斜纹底、不透明）」换成
+   **透明底石墨素描**（tools/build_slot_sketches.py）。原来那张不透明深色卡面放在
+   XP 浅色面板上就是一块纯黑异物。现在底板由 CSS 绘制：
+     · 底色：接近白但比已装卡片略暗一档，让「空 / 有」一眼可分；
+     · 斜纹：游戏卡面本就是斜纹底，这里用 repeating-linear-gradient 复刻**质感**
+       而不是**深色底**，透明度压到 0.03 量级，只在近看时起作用。 */
+html .loadout-workbench .lw-cell[data-state="empty"] {
+  background-color: #faf9f4;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, .034) 0 2px,
+    rgba(255, 255, 255, 0) 2px 6px);
+}
+
+html .loadout-workbench .lw-cell[data-state="missing"] {
+  border-color: #a11b1b;
+}
+
+html .loadout-workbench .lw-cell[data-state="missing"] .lw-cell-label {
+  color: #a11b1b;
+}
+
+/* 卡片板：浅面 + 细边，和右侧列表区分层次 */
+html .loadout-workbench .lw-board {
+  background: var(--xp-face-2);
+  border: 1px solid var(--xp-border-soft);
+  border-radius: 3px;
+}
+
+/* 模拟器的下拉：白底（浅面里再压一层白，层级更清楚） */
+html .am-workbench .am-sim .am-sim-sel,
+html .am-workbench .am-sim .am-sim-num {
+  background: #ffffff;
+}
+
+/* —— 模拟器：血条铭牌 / 逐层明细行（原文用深色 rgba 渐变，自动块只处理 hex，这里补上） —— */
+html .am-workbench .am-sim-hpnameplate {
+  background: linear-gradient(180deg, #ffffff, #ece9d8);
+  border: 1px solid var(--xp-border);
+  border-right: none;
+}
+
+html .am-workbench .am-sim-hpbar {
+  background: #ffffff;
+  border: 1px solid var(--xp-border-soft);
+}
+
+html .am-workbench .am-sim-log tr.am-sim-detail td.am-sim-detailcell {
+  background: #f7f5ee;
+  border-bottom: 1px solid var(--xp-border-soft);
+  color: #000000;
+}
+
+html .am-workbench .am-sim-detailhead {
+  color: #4a4a4a;
+}
+
+html .am-workbench .am-sim-detailtail {
+  color: #0a3f9e;
+}
+
+/* 逐发日志行：奇偶交替用 XP 的浅色，与表格其它部分一致 */
+html .am-workbench .am-sim-log tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+html .am-workbench .am-sim-log tbody tr:nth-child(even) td {
+  background: #f7f5ee;
+}
+
+html .am-workbench .am-sim-log tr.am-sim-detail td.am-sim-detailcell {
+  background: #f2f0e6;
+}
+
+html .am-workbench .am-sim-log tr.am-sim-killrow td {
+  background: #ffe9e9;
+  color: #7a0000;
+}
+
+html .am-workbench .am-sim-log tr.am-sim-killmark td {
+  background: #ffdcdc;
+  color: #a11b1b;
+}
+
+/* ============================================================
+   14. 终层：把「渐变面」重新压回（自动块用 background 简写覆盖过
+       渐变，导致工具条/表头/标题栏变成纯色）。必须留在文件最后。
+   ============================================================ */
+
+/* 工具条 */
+html .loadout-workbench .lw-top,
+html .gun-workbench .gw-top,
+html .am-workbench .am-top {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f2e8 42%, var(--xp-face) 100%);
+  border-bottom: 1px solid var(--xp-border);
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+
+/* 侧栏 */
+html .loadout-workbench .lw-side,
+html .gun-workbench .gw-side,
+html .am-workbench .am-side {
+  background: var(--xp-face-2);
+  border-right: 1px solid var(--xp-border);
+}
+
+/* 表头 */
+html .loadout-workbench .tbl-head,
+html .gun-workbench .tbl-head,
+html .am-workbench .tbl-head {
+  background: linear-gradient(180deg, var(--xp-th-a) 0%, var(--xp-th-b) 100%);
+  border-bottom: 1px solid var(--xp-border);
+}
+
+/* 标签页 */
+html .am-workbench .am-tab {
+  background: linear-gradient(180deg, #f7f5ee, #e6e3d5);
+  border: 1px solid var(--xp-border);
+  border-bottom-color: var(--xp-border-soft);
+  border-radius: 3px 3px 0 0;
+  color: #232323;
+}
+
+html .am-workbench .am-tab[aria-selected="true"] {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 70%, #f7f5ee 100%);
+  border-color: var(--xp-border);
+  border-bottom-color: #ffffff;
+  color: var(--xp-luna-1);
+  font-weight: 700;
+}
+
+/* 弹窗标题栏：Luna 蓝渐变 + 白字 */
+html .lw-modal-head,
+html .am-modal-head {
+  background: linear-gradient(180deg, var(--xp-luna-2) 0%, var(--xp-luna-1) 62%, #08327c 100%);
+  border-bottom: 1px solid #08327c;
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+
+html .lw-modal-title,
+html .am-modal-title {
+  color: #ffffff;
+}
+
+/* 默认动作按钮：深蓝边（避免被通用按钮边框覆盖） */
+html .am-workbench .am-sim-run,
+html .am-workbench .am-sim-genbtn {
+  border-color: #003c74;
+  box-shadow: inset 0 0 0 1px #ffffff, 0 0 0 1px #6f9ed6;
+  font-weight: 700;
+}
+
+/* 列表行（自动块的纯色可能盖掉交替色） */
+html .loadout-workbench .tbl-row {
+  background: #ffffff;
+}
+
+html .loadout-workbench .tbl-row:nth-child(even) {
+  background: var(--xp-row-alt);
+}
+
+html .loadout-workbench .tbl-row:hover {
+  background: var(--xp-row-hover);
+}
+
+html .loadout-workbench .tbl-row[aria-selected="true"] {
+  background: var(--xp-row-sel);
+  color: var(--xp-sel-text);
+}
+
+html .am-workbench .tbl-row:nth-child(even) {
+  background: var(--xp-row-alt);
+}
+
+/* 分类按钮（配装顶栏）选中态 */
+html .loadout-workbench .lw-cat[aria-selected="true"] {
+  background: linear-gradient(180deg, #4a9bff 0%, #1466e0 52%, #0a3f9e 100%);
+  border-color: #0a3f9e;
+  color: #ffffff;
+}
+
+/* 弹药详情弹窗里的曲线图：图表在 #am-detail 内（不在 .am-workbench 里），
+   这里补一份同口径的属性选择器，让画布底 / 网格 / 坐标文字跟上浅色主题。 */
+html #am-detail .am-chart-svg [fill="#12161c"] { fill: #ffffff; }
+html #am-detail .am-chart-svg [stroke="#333c49"] { stroke: #aca899; }
+html #am-detail .am-chart-svg [stroke="#3a3a3a"] { stroke: #a9a595; }
+html #am-detail .am-chart-svg [stroke="#242b35"],
+html #am-detail .am-chart-svg [stroke="#1c222b"] { stroke: #e3e0d0; }
+html #am-detail .am-chart-svg [fill="#7b8593"] { fill: #4a4a4a; }
+html #am-detail .am-chart-svg [fill="#9aa4b2"] { fill: #232323; }
+
+/* ============================================================
+   R18.1 终层：三处文字对比度定点修正 + 空槽剪影融合
+   ------------------------------------------------------------
+   这一层只做「颜色 / 混合模式」这类纯视觉修正，不新增布局、
+   不改变任何组件结构，全部限定在原有作用域内。
+   ============================================================ */
+
+/* ---- 1. 配装左侧装备栏的悬停提示 ----
+   背景在 R18 已翻成 XP 浅米色（#ece9d8），lw-tip-line 也改成了深色，
+   但 **lw-tip-head（第一行装备全名）漏掉了**，仍沿用 style.css 的 #fff，
+   于是「白字 + 浅米底」几乎不可辨认。这里把标题行一并压到近黑色，
+   与正文同一个层级体系（标题更重，用纯黑 + 字重 700 已经够区分）。 */
+html .loadout-workbench .lw-tip .lw-tip-head {
+  color: #000000;
+}
+
+html .loadout-workbench .lw-tip .lw-tip-line {
+  color: #232323;
+}
+
+/* ---- 2. 弹药页 BALLISTICS graph 散点图 ----
+   图表用 SVG presentation attribute 上色，R18 已经按原色值做了属性选择器映射
+   （画布底 / 网格 / 坐标刻度 / 轴标签）。漏掉的是**悬停提示里的弹药名称**：
+   .am-graph-tip 的底色已翻浅，#dfe6ee 的行文字与 .am-graph-tip-name 都没跟着翻，
+   在浅底上等于隐形。这里补齐整条链路，包含行内的名字与次级信息。 */
+html .am-workbench .am-graph-tip .am-graph-tip-row {
+  color: #232323;
+}
+
+html .am-workbench .am-graph-tip .am-graph-tip-name {
+  color: #000000;
+  font-weight: 700;
+}
+
+html .am-workbench .am-graph-tip .am-graph-tip-row:hover .am-graph-tip-name {
+  color: #0a3f9e;
+}
+
+html .am-workbench .am-graph-tip .am-graph-tip-meta {
+  color: #4a4a4a;
+}
+
+/* 图例与说明文字再压深一档，和轴文字（#4a4a4a / #232323）保持同一对比水平 */
+html .am-workbench .am-graph-note,
+html .am-workbench .am-graph-lg {
+  color: #232323;
+}
+
+/* ---- 3. 弹药详情弹窗标题栏 ----
+   标题栏是 Luna 蓝渐变（白字），但 .am-detail-meta（口径 · 类型 · 分组）
+   在 R18 被单独设成 #4a4a4a 深灰，落在蓝底上对比不足 —— 用户看到的就是
+   「FMJ.357 · 子弹 · PISTOL/SMG」后半段发灰。这里改回浅色，
+   与 .am-modal-title 的白字同一套配色，仅比纯白略降一档以免喧宾夺主。 */
+html .am-modal-head .am-detail-meta {
+  /* 纯白而不是灰白：标题栏渐变最亮的一段是 #1466e0，灰白 #dbe7fb 在它上面只有 4.58:1
+     （按渐变中段算），压到最亮端会掉到 4.4 以下；纯白在整段渐变上都 >= 5.2:1。
+     用户要求「清晰的白色或灰白色」，这里取白色，和 .am-modal-title 同一套配色。 */
+  color: #ffffff;
+}
+
+html .am-modal-head .am-detail-name {
+  color: #ffffff;
+}
+
+html .am-modal-head .am-modal-x {
+  color: #dbe7fb;
+}
+
+html .am-modal-head .am-modal-x:hover {
+  color: #ffffff;
+}
+
+/* ---- 4. 空槽剪影与卡片底色的融合 ----
+   空槽剪影 PNG 自带纯白底，卡片在 XP 主题下也是白色，正常态严丝合缝。
+   但选中态（data-state="focus"）卡片底是浅蓝，白底图会盖出一块白方块。
+   multiply 让白色参与混合后与卡片底色完全一致、黑色保持不变，
+   选中态就只剩「黑剪影 + 浅蓝卡底」，不出现白块。
+   （剪影图形的黑/白取值本身不变，只影响与底色的合成方式。） */
+/* R19.4：剪影已是透明底 PNG，multiply 混合废止（会破坏物品原色的做法一律不再使用） */
+html .loadout-workbench .lw-sil {
+  mix-blend-mode: normal;
+}
+
+/* 躯干装饰那张旧剪影是深灰透明底，不参与 multiply，避免在浅底上被压没 */
+html .loadout-workbench .lw-deco .lw-sil {
+  mix-blend-mode: normal;
+  background: transparent;
+}
+
+/* ---- 5. 空槽剪影上的槽位名 ----
+   R18.1 把空槽图形换成了「纯黑剪影」，而 R18 已把 .lw-cell-label 压成深色 #232323，
+   深色字叠在纯黑剪影上等于看不见（截图中「主武器 1 / 背包 / 手枪」几乎消失）。
+   这里给标签加一层半透明白底衬：黑剪影、彩色实物图标、浅蓝选中底三种情况下都能读，
+   且只是给文字块加内边距，不改变卡片尺寸、不挪动剪影位置。 */
+html .loadout-workbench .lw-cell .lw-cell-label {
+  padding: 0 3px;
+  background: rgba(255, 255, 255, .88);
+  border-radius: 2px;
+  color: #000000;
+}
+
+html .loadout-workbench .lw-cell[data-state="empty"] .lw-cell-label {
+  color: #232323;
+}
+
+/* ---- R19：配枪属性面板的数值颜色 ----
+   `.gw-stat-num` 在 style.css 里是 #ededed（深色工作台时代的浅色文字），
+   R18 的自动映射块只翻了 background/color/border 的直写值，没覆盖到这条选择器的
+   实际使用点，导致「基础枪械 / 改装槽位 / 已装配件」三行的值在 XP 白底上几乎看不见。
+   这里补一条限定作用域的深色，不影响其它工作台。 */
+html .gun-workbench .gw-stat-num {
+  color: #000000;
+}
+
+html .gun-workbench .gw-stat-num[data-tone="bad"] {
+  color: #a11b1b;
+}
+
+html .gun-workbench .gw-stat-val {
+  color: #000000;
+}
+
+/* ---- R19：配枪候选表的配件名 ----
+   同 `.gw-stat-num` 的问题：`.gw-row-name b` 在 style.css 里写死 `#e6ebf2`（深色工作台
+   时代的浅色字），R18 的自动映射没有覆盖到它，于是在 XP 白底表格里配件名完全看不见，
+   只剩 `<i>` 里的类型标签「配件」。这里补深色，图标底片也一并压成浅色圆角。 */
+html .gun-workbench .gw-row-name b {
+  color: #000000;
+}
+
+html .gun-workbench .gw-row-name i {
+  color: #4a4a4a;
+}
+
+html .gun-workbench .gw-row-ic {
+  background: #ffffff;
+}
+
+/* ---- R19.3 P2：浏览卡片悬停/选中统一黄色高亮 ----
+   实测根因：`.gw-card[aria-current="true"]` 用 var(--lw-select, #2c3646)，XP 主题没有
+   覆盖 --lw-select，落到深色回退值 rgb(44,54,70)，选中卡变成"黑底黑字"。
+   按用户要求：悬停与选中都用黄色系，选中更深一档；文字保持深色。 */
+html .gun-workbench .gw-card:hover {
+  background: #fff3c4;
+  border-color: #e8a33d;
+}
+html .gun-workbench .gw-card[aria-current="true"],
+html .gun-workbench .gw-card[aria-current="true"]:hover {
+  background: #ffe9a8;
+  border-color: #c8832a;
+}
+html .gun-workbench .gw-card:focus-visible {
+  outline: 2px solid #c8832a;
+  outline-offset: 1px;
+}
+html .gun-workbench .gw-card[aria-current="true"] .gw-card-cal,
+html .gun-workbench .gw-card[aria-current="true"] .gw-card-badge {
+  background: #fffdf5;
+}
+/* 筛选芯片的按下态：R19.8 改为 Luna 深蓝底白字，与未选中（米灰底黑字）形成明确区分 */
+html .gun-workbench .gw-chip[aria-pressed="true"] {
+  background: linear-gradient(180deg, #2f72d8 0%, #0a3f9e 100%);
+  border-color: #003c74;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px #7fb0ec, 0 0 0 1px rgba(0, 60, 116, .25);
+}
+
+/* ---- R19.3 P3：工作台文字对比度（对比度审计 6 处低对比全部修复） ----
+   审计结果（rgb 前景 on rgb 背景 → 对比度）：
+   .gw-current #fff on #fff = 1.00；.gw-visual-name #fff on #f7f5ee = 1.09；
+   .gw-chip b #e7edf5 on #fff = 1.18；.lw-focus-title #fff on #ece9d8 = 1.22；
+   增减差值绿 #7dbb5e ≈ 2.1~2.3；pressed 芯片 1.72。全部改深色/加深语义色。 */
+html .gun-workbench .gw-visual-name { color: #000000; }
+html .gun-workbench .gw-current { color: #000000; }
+html .gun-workbench .gw-chip b { color: #000000; }
+html .gun-workbench .gw-chip i { color: #4a4a4a; }
+html .gun-workbench .lw-focus-title { color: #000000; }
+html .gun-workbench .gw-finalcost { color: #1e5c1e; }
+html .gun-workbench .gw-stat-val { color: #000000; }
+html .gun-workbench .gw-stat-head { color: #3d5c14; }
+/* 增减语义色加深（保留绿=更好/红=更差的方向语义） */
+html .gun-workbench .gw-part-badges i[data-dir="up"],
+html .gun-workbench .gw-timeline td[data-dir="up"],
+html .gun-workbench .gw-stat-delta[data-dir="up"] { color: #2e6b2e; }
+html .gun-workbench .gw-part-badges i[data-dir="down"],
+html .gun-workbench .gw-timeline td[data-dir="down"],
+html .gun-workbench .gw-stat-delta[data-dir="down"] { color: #a03327; }
+
+/* ---- R19.3 P2 补充：卡片自身在悬停/选中/焦点三态下都不再被 XP 按钮皮肤接管。
+   上面三段 :not(.gw-card) 是结构性修复；这里补焦点态的可见样式（不用文字特效）。 */
+html .gun-workbench .gw-card:focus {
+  outline: 2px solid #c8832a;
+  outline-offset: 1px;
+}
+html .gun-workbench .gw-card:active {
+  background: #ffe9a8;
+}
+
+/* ------------------------------------------------------------
+   R19.10：FORGE 型号选择器 —— 悬停 / 选中 / 展开的最终裁定
+   ------------------------------------------------------------
+   根因（实测计算样式）：style.css 里
+     .gun-workbench .gw-forge-opts .gw-forge-poolrow[data-on="1"] { background: var(--lw-select, #2c3646) }
+   优先级 (0,4,0)，而 `.gun-workbench` 在 XP 令牌段里**没有**定义 --lw-select，
+   于是回退到深色 #2c3646 → 选中行变成「黑底黑字」。
+   这里用 (0,5,2) 的选择器把三态统一成卡片同款黄色系：悬停浅黄、选中深黄、文字恒黑。
+   ------------------------------------------------------------ */
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow:hover:not([disabled]) {
+  background: linear-gradient(180deg, #fffdf3 0%, #fff3c4 100%);
+  border-color: #e8a33d;
+  box-shadow: inset 0 0 0 1px #e8c07a;
+  color: #000000;
+}
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"],
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"]:hover:not([disabled]),
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"]:active:not([disabled]),
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"]:focus {
+  background: linear-gradient(180deg, #fff6d2 0%, #ffe9a8 100%);
+  border-color: #c8832a;
+  box-shadow: inset 0 0 0 1px #f2ca77;
+  color: #000000;
+  font-weight: 700;
+}
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"] .gw-forge-mag {
+  color: #6b4a00;
+}
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow[data-on="1"]:focus-visible {
+  outline: 2px solid #c8832a;
+  outline-offset: 1px;
+}
+/* 档位 / 手电 / 激光按钮：已带约束但列表收起 → 淡黄底（展开时仍用 Luna 蓝色按下态） */
+html .gun-workbench .gw-forge .gw-chips .gw-chip[data-on="1"]:not([aria-pressed="true"]) {
+  background: linear-gradient(180deg, #fffdf3 0%, #ffeec6 100%);
+  border-color: #c8832a;
+  color: #000000;
+  font-weight: 700;
+}
+html .gun-workbench .gw-forge-warn { color: #a11b1b; }
+
+/* 收起态只有一款已选型号：名字允许折行，别用省略号把型号名藏掉 */
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow.gw-forge-picked {
+  align-items: flex-start;
+}
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow.gw-forge-picked img {
+  margin-top: 1px;
+}
+html .gun-workbench .gw-forge .gw-forge-opts button.gw-forge-poolrow.gw-forge-picked span {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* ============================================================================
+   R19.15 统一规范层（Windows XP Luna）
+   这是本项目唯一的「设计令牌 → 组件」权威层：
+     · 字体/字号、间距、边框、分割线、圆角、交互高亮全部读 :root 令牌；
+     · 只作用于工作台与弹窗（地图图层 / 画布坐标 / 表格列宽不受影响）；
+     · 冲突红斜纹、禁用态、错误态优先级高于交互高亮，不会被橙黄覆盖。
+   ============================================================================ */
+
+/* ---- 1) 字体与字号阶梯 ---- */
+html body,
+html button,
+html input,
+html select,
+html textarea,
+html .tbl,
+html .lw-modal-box,
+html .am-modal {
+  font-family: var(--xp-font-family);
+}
+html body { font-size: var(--xp-fs-body); }
+/* 按钮/控件一律用紧凑字号，避免 font:inherit 继承出 13.3333px 这类碎片字号 */
+html button,
+html .gw-btn,
+html .view-btn,
+html .gw-mode,
+html .gw-chip,
+html .lw-tab,
+html .am-tab { font-size: var(--xp-fs-compact); }
+/* 按钮/控件一律用紧凑字号，避免 font:inherit 继承出 13.3333px 这类碎片字号 */
+html button,
+html .gw-btn,
+html .view-btn,
+html .gw-mode,
+html .gw-chip,
+html .lw-tab,
+html .am-tab { font-size: var(--xp-fs-compact); }
+html .loadout-workbench,
+html .gun-workbench,
+html .am-workbench { font-size: var(--xp-fs-compact); }
+/* 消除由 em/百分比继承产生的碎字号（12.36 / 15.45 / 13.33 之类） */
+html .loadout-workbench .lw-h3,
+html .gun-workbench .gw-h3,
+html .am-workbench .am-h3,
+html .lw-modal-box .lw-modal-title,
+html .am-modal .am-modal-title { font-size: var(--xp-fs-panel); }
+html .app-title,
+html .topbar .brand,
+html .topbar-title { font-size: var(--xp-fs-title); }
+html .loadout-workbench .lw-table,
+html .gun-workbench .tbl,
+html .am-workbench .am-table { font-size: var(--xp-fs-compact); }
+html .loadout-workbench .lw-hint,
+html .gun-workbench .gw-hint,
+html .am-workbench .am-hint,
+html .lw-modal-box .lw-preset-msg { font-size: var(--xp-fs-micro); }
+
+/* ---- 2) 面板 / 分组：方正、1px 边框、统一底色 ---- */
+html .loadout-workbench .lw-panel,
+html .loadout-workbench .lw-card,
+html .gun-workbench .gw-panel,
+html .gun-workbench .gw-page,
+html .gun-workbench .gw-canvas,
+html .gun-workbench .gw-forge,
+html .gun-workbench .gw-cands,
+html .am-workbench .am-panel,
+html .am-workbench .am-sim-box,
+html .lw-modal-box,
+html .am-modal {
+  border: 1px solid var(--xp-border);
+  border-radius: var(--xp-radius-panel);
+}
+
+/* ---- 3) 表格：0 圆角 + 统一分割线 ---- */
+html .tbl,
+html .tbl-head,
+html .tbl-row,
+html .tbl-cell { border-radius: 0; }
+html .tbl-head,
+html .tbl-row.tbl-head { border-bottom: 1px solid var(--xp-border); }
+html .tbl-row { border-bottom: 1px solid var(--xp-divider); }
+html .tbl-cell { border-right: 1px solid var(--xp-divider); }
+
+/* ---- 4) 输入框 / 下拉框 ---- */
+html input[type="text"],
+html input[type="number"],
+html input[type="search"],
+html input:not([type]),
+html select,
+html textarea {
+  border: 1px solid var(--xp-border-dark);
+  border-radius: var(--xp-radius-control);
+  background: #ffffff;
+  color: var(--xp-text);
+  font-size: var(--xp-fs-compact);
+}
+html input:focus,
+html select:focus,
+html textarea:focus {
+  outline: 1px solid #f0b429;
+  outline-offset: 0;
+  border-color: var(--xp-hover-border);
+}
+
+/* ---- 5) 交互高亮：悬停 & 持续选中（亮橙黄，同一色阶） ---- */
+/* 5.1 顶部导航 / 视图切换 / 模式与分类页签 */
+html .view-btn:hover:not([disabled]),
+html .gw-mode:hover:not([disabled]),
+html .gw-btn:hover:not([disabled]),
+html .gw-btn:hover:not([disabled]),
+html .gw-chip:hover:not([disabled]),
+html .lw-tab:hover:not([disabled]),
+html .am-tab:hover:not([disabled]),
+html .lw-cat:hover:not([disabled]) {
+  background: linear-gradient(180deg, var(--xp-hover-a) 0%, var(--xp-hover-b) 50%,
+                                       var(--xp-hover-c) 100%);
+  border-color: var(--xp-hover-border);
+  color: var(--xp-hover-text);
+}
+/* 5.2 持续高亮：导航、页签、开关、已选筛选项（重新渲染后仍由 aria 状态驱动） */
+html .view-btn[aria-selected="true"],
+html .gw-mode[aria-selected="true"],
+html .gw-chip[aria-pressed="true"],
+html .lw-tab[aria-selected="true"],
+html .am-tab[aria-selected="true"],
+html .lw-cat[aria-pressed="true"],
+html button[aria-pressed="true"]:not([disabled]),
+html .gw-btn[data-on="1"]:not([disabled]),
+html .gw-btn[data-on="1"]:not([disabled]),
+html .gw-forge-poolrow[data-on="1"] {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffc93d 52%, #ffb02a 100%);
+  border-color: var(--xp-hover-border);
+  color: var(--xp-hover-text);
+}
+html .view-btn[aria-selected="true"]:hover,
+html .gw-mode[aria-selected="true"]:hover,
+html .lw-tab[aria-selected="true"]:hover,
+html .am-tab[aria-selected="true"]:hover,
+html button[aria-pressed="true"]:hover:not([disabled]) {
+  background: linear-gradient(180deg, #ffd24d 0%, #ffbb1f 52%, #ff9933 100%);
+  border-color: #b26a0d;
+}
+/* 5.3 普通操作按钮点击后保持高亮（由 JS 打 data-flash="1"，鼠标离开不立即消失） */
+html button[data-flash="1"]:not([disabled]):not([aria-pressed="true"]) {
+  background: linear-gradient(180deg, #ffe08a 0%, #ffc93d 52%, #ffb02a 100%);
+  border-color: var(--xp-hover-border);
+  color: var(--xp-hover-text);
+}
+/* 5.4 语义状态优先：禁用 / 冲突 / 错误不被橙黄覆盖 */
+html button[disabled],
+html button[disabled]:hover,
+html .tbl-row.tbl-conflict,
+html .tbl-row.tbl-conflict:hover,
+html .tbl-row.tbl-conflict .tbl-cell {
+  /* 冲突行保持红斜纹，禁用按钮保持灰面 */
+  color: inherit;
+}
+html button[disabled]:hover { background: var(--xp-btn-disabled-face); border-color: #c9c5b6; }
+
+/* ---- 6) 圆角收敛：面板/表格/分组一律方正，按钮与控件保持克制圆角 ---- */
+html .lw-panel,
+html .lw-card,
+html .gw-panel,
+html .gw-forge,
+html .gw-cands,
+html .am-panel,
+html .lw-modal-box,
+html .am-modal,
+html .gw-canvas,
+html .gw-meta { border-radius: var(--xp-radius-panel); }
+html button,
+html .view-btn,
+html .gw-mode,
+html .gw-chip,
+html .lw-tab,
+html .am-tab { border-radius: var(--xp-radius-btn); }
+
+/* ------------------------------------------------------------
+   R72：任务顶栏「模式 + 版本」紧凑作用域条（XP 配色）
+   ------------------------------------------------------------ */
+html .tk-seg {
+  background: #ffffff;
+  border-color: var(--xp-border-dark);
+  border-radius: 2px;
+}
+html .tk-seg-btn {
+  background: linear-gradient(180deg, #ffffff 0%, #f1efe4 46%, #e2dfcf 54%, #f7f5ee 100%);
+  color: #232323;
+}
+html .tk-seg-btn + .tk-seg-btn { border-left-color: var(--xp-border); }
+html .tk-seg-btn.is-on {
+  background: linear-gradient(180deg, #dbe7fb 0%, #b8d0f0 100%);
+  color: var(--xp-luna-1);
+  box-shadow: inset 1px 1px 0 #6f8fc0, inset -1px -1px 0 #ffffff;
+}
+html .tk-edition {
+  border-color: var(--xp-border-dark);
+  border-radius: 2px;
+}
+html .tk-scope-feedback { color: #0a6a2a; }

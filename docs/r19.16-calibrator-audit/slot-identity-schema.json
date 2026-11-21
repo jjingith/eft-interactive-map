@@ -1,0 +1,36 @@
+{
+ "generatedFor": "R19.16",
+ "schemaVersion": 1,
+ "keyFormula": "slotPath + '|' + slotId + '|' + ownerItemId",
+ "keyExample": "mod_mount/mod_scope|mod_scope|591ee00d86f774592f7b841e",
+ "entryFields": {
+  "slotId": "真实槽位 ID（mod_xxx）",
+  "slotPath": "完整槽位路径（含父槽位链）",
+  "ownerItemId": "拥有该子槽位的物品 ID（父槽安装件；根级为空字符串）",
+  "logicalRow": "逻辑行（权威值，= 显示行 − topPad，顶部扩展不改变它）",
+  "col": "列 1..9（权威值）",
+  "topPad": "保存当时的顶部扩展偏移，仅用于还原显示坐标",
+  "displayRow": "保存当时的显示行（logicalRow + topPad），仅作参考",
+  "role": "布局角色（dovetailMount / receiverUpper / …）",
+  "source": "manual（人工校准）",
+  "note": "用户备注",
+  "autoRow / autoCol": "保存当时自动布局的显示坐标，便于回溯",
+  "updatedAt": "修改时间"
+ },
+ "rationale": "同一 slotId 在不同父件下可能是不同安装结构，故身份必须含 slotPath 与 ownerItemId，避免坐标串用",
+ "sample": {
+  "slotId": "mod_scope",
+  "slotPath": "mod_mount/mod_scope",
+  "ownerItemId": "591ee00d86f774592f7b841e",
+  "logicalRow": 1,
+  "col": 8,
+  "topPad": 0,
+  "displayRow": null,
+  "role": "",
+  "source": "manual",
+  "note": "",
+  "updatedAt": "2026-10-27T11:29:21",
+  "autoRow": null,
+  "autoCol": null
+ }
+}

@@ -1,0 +1,1285 @@
+{
+  "source": "D:\\personal\\trae\\02-塔科夫\\eft-interactive-map\\..\\ui图标\\xp风格ui\\20261106补充.jpg",
+  "source_size": [
+    4096,
+    4096
+  ],
+  "key_color": [
+    242.46,
+    6.52,
+    246.42
+  ],
+  "key_color_hex": "#F207F6",
+  "key_std": [
+    2.44,
+    2.53,
+    2.96
+  ],
+  "edges": [
+    {
+      "edge": "top",
+      "mean": [
+        244.3,
+        6.24,
+        246.78
+      ],
+      "std": [
+        1.82,
+        1.56,
+        2.39
+      ],
+      "min": [
+        [
+          238,
+          251
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          237,
+          254
+        ]
+      ]
+    },
+    {
+      "edge": "bottom",
+      "mean": [
+        241.54,
+        7.82,
+        244.45
+      ],
+      "std": [
+        2.19,
+        3.54,
+        3.92
+      ],
+      "min": [
+        [
+          234,
+          250
+        ],
+        [
+          0,
+          18
+        ],
+        [
+          231,
+          255
+        ]
+      ]
+    },
+    {
+      "edge": "left",
+      "mean": [
+        242.86,
+        7.11,
+        246.95
+      ],
+      "std": [
+        2.3,
+        2.03,
+        2.44
+      ],
+      "min": [
+        [
+          235,
+          251
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          236,
+          254
+        ]
+      ]
+    },
+    {
+      "edge": "right",
+      "mean": [
+        241.15,
+        4.91,
+        247.5
+      ],
+      "std": [
+        2.07,
+        1.33,
+        1.54
+      ],
+      "min": [
+        [
+          233,
+          249
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          239,
+          255
+        ]
+      ]
+    }
+  ],
+  "tol": 45.0,
+  "erode": 2,
+  "median": 3,
+  "items": [
+    {
+      "name": "statusbar-bg",
+      "crop_px": [
+        204,
+        203,
+        1465,
+        403
+      ],
+      "crop_size": [
+        1261,
+        200
+      ],
+      "out_size": [
+        630,
+        100
+      ],
+      "expect_1x": [
+        800,
+        24
+      ],
+      "dev_w": -0.212,
+      "dev_h": 3.167,
+      "near_key_px": 2,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "dialog-box",
+      "crop_px": [
+        204,
+        534,
+        1465,
+        1472
+      ],
+      "crop_size": [
+        1261,
+        938
+      ],
+      "out_size": [
+        630,
+        469
+      ],
+      "expect_1x": [
+        720,
+        480
+      ],
+      "dev_w": -0.125,
+      "dev_h": -0.023,
+      "near_key_px": 3278,
+      "fringe_px": 1,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "dialog-head",
+      "crop_px": [
+        204,
+        1651,
+        1465,
+        1798
+      ],
+      "crop_size": [
+        1261,
+        147
+      ],
+      "out_size": [
+        630,
+        74
+      ],
+      "expect_1x": [
+        720,
+        38
+      ],
+      "dev_w": -0.125,
+      "dev_h": 0.947,
+      "near_key_px": 1,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "tbl-head",
+      "crop_px": [
+        204,
+        1925,
+        1465,
+        2299
+      ],
+      "crop_size": [
+        1261,
+        374
+      ],
+      "out_size": [
+        630,
+        187
+      ],
+      "expect_1x": [
+        600,
+        32
+      ],
+      "dev_w": 0.05,
+      "dev_h": 4.844,
+      "near_key_px": 2,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "tbl-row",
+      "crop_px": [
+        230,
+        2526,
+        332,
+        2706
+      ],
+      "crop_size": [
+        102,
+        180
+      ],
+      "out_size": [
+        600,
+        24
+      ],
+      "expect_1x": [
+        600,
+        24
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "tbl-row-alt",
+      "crop_px": [
+        230,
+        2736,
+        332,
+        2796
+      ],
+      "crop_size": [
+        102,
+        60
+      ],
+      "out_size": [
+        600,
+        24
+      ],
+      "expect_1x": [
+        600,
+        24
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "tbl-grid-h",
+      "crop_px": [
+        230,
+        2513,
+        332,
+        2519
+      ],
+      "crop_size": [
+        102,
+        6
+      ],
+      "out_size": [
+        600,
+        1
+      ],
+      "expect_1x": [
+        600,
+        1
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "menu-panel-bg",
+      "crop_px": [
+        1633,
+        203,
+        2502,
+        859
+      ],
+      "crop_size": [
+        869,
+        656
+      ],
+      "out_size": [
+        434,
+        328
+      ],
+      "expect_1x": [
+        330,
+        210
+      ],
+      "dev_w": 0.315,
+      "dev_h": 0.562,
+      "near_key_px": 1867,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "menu-panel-sep",
+      "crop_px": [
+        1634,
+        1000,
+        2502,
+        1006
+      ],
+      "crop_size": [
+        868,
+        6
+      ],
+      "out_size": [
+        330,
+        1
+      ],
+      "expect_1x": [
+        330,
+        1
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "app-menu-panel-bg",
+      "crop_px": [
+        1633,
+        1146,
+        2324,
+        1671
+      ],
+      "crop_size": [
+        691,
+        525
+      ],
+      "out_size": [
+        346,
+        262
+      ],
+      "expect_1x": [
+        210,
+        140
+      ],
+      "dev_w": 0.648,
+      "dev_h": 0.871,
+      "near_key_px": 1936,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "context-menu-bg",
+      "crop_px": [
+        1633,
+        1861,
+        2106,
+        2214
+      ],
+      "crop_size": [
+        473,
+        353
+      ],
+      "out_size": [
+        236,
+        176
+      ],
+      "expect_1x": [
+        146,
+        96
+      ],
+      "dev_w": 0.616,
+      "dev_h": 0.833,
+      "near_key_px": 1471,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "context-menu-sep",
+      "crop_px": [
+        1635,
+        2349,
+        2109,
+        2355
+      ],
+      "crop_size": [
+        474,
+        6
+      ],
+      "out_size": [
+        146,
+        1
+      ],
+      "expect_1x": [
+        146,
+        1
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "tbl-grid-v",
+      "crop_px": [
+        1752,
+        2650,
+        1756,
+        2870
+      ],
+      "crop_size": [
+        4,
+        220
+      ],
+      "out_size": [
+        1,
+        24
+      ],
+      "expect_1x": [
+        1,
+        24
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-track",
+      "crop_px": [
+        2654,
+        204,
+        2764,
+        1190
+      ],
+      "crop_size": [
+        110,
+        986
+      ],
+      "out_size": [
+        22,
+        171
+      ],
+      "expect_1x": [
+        22,
+        171
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 6,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-thumb",
+      "crop_px": [
+        2867,
+        204,
+        3000,
+        523
+      ],
+      "crop_size": [
+        133,
+        319
+      ],
+      "out_size": [
+        23,
+        51
+      ],
+      "expect_1x": [
+        23,
+        51
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 423,
+      "fringe_px": 1,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-thumb-hover",
+      "crop_px": [
+        2867,
+        641,
+        3000,
+        963
+      ],
+      "crop_size": [
+        133,
+        322
+      ],
+      "out_size": [
+        23,
+        51
+      ],
+      "expect_1x": [
+        23,
+        51
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 517,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-thumb-pressed",
+      "crop_px": [
+        2867,
+        1080,
+        3000,
+        1401
+      ],
+      "crop_size": [
+        133,
+        321
+      ],
+      "out_size": [
+        23,
+        51
+      ],
+      "expect_1x": [
+        23,
+        51
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 499,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-arrow-up",
+      "crop_px": [
+        2703,
+        1533,
+        2863,
+        1690
+      ],
+      "crop_size": [
+        160,
+        157
+      ],
+      "out_size": [
+        22,
+        27
+      ],
+      "expect_1x": [
+        22,
+        27
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 240,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-arrow-up-hover",
+      "crop_px": [
+        2703,
+        1804,
+        2863,
+        1960
+      ],
+      "crop_size": [
+        160,
+        156
+      ],
+      "out_size": [
+        22,
+        27
+      ],
+      "expect_1x": [
+        22,
+        27
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 263,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-arrow-up-pressed",
+      "crop_px": [
+        2703,
+        2075,
+        2863,
+        2224
+      ],
+      "crop_size": [
+        160,
+        149
+      ],
+      "out_size": [
+        22,
+        27
+      ],
+      "expect_1x": [
+        22,
+        27
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 194,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-arrow-down",
+      "crop_px": [
+        2703,
+        2228,
+        2863,
+        2378
+      ],
+      "crop_size": [
+        160,
+        150
+      ],
+      "out_size": [
+        22,
+        27
+      ],
+      "expect_1x": [
+        22,
+        27
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 184,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-v-arrow-down-hover",
+      "expect_1x": [
+        22,
+        27
+      ],
+      "usable": false,
+      "verdict": "源图未绘制该件（连通域中不存在）"
+    },
+    {
+      "name": "scroll-v-arrow-down-pressed",
+      "crop_px": [
+        2703,
+        2494,
+        2863,
+        2648
+      ],
+      "crop_size": [
+        160,
+        154
+      ],
+      "out_size": [
+        22,
+        27
+      ],
+      "expect_1x": [
+        22,
+        27
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 193,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "statusbar-cell",
+      "crop_px": [
+        2043,
+        2865,
+        2599,
+        3022
+      ],
+      "crop_size": [
+        556,
+        157
+      ],
+      "out_size": [
+        120,
+        18
+      ],
+      "expect_1x": [
+        120,
+        18
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 4,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "statusbar-sep",
+      "crop_px": [
+        2703,
+        2867,
+        2730,
+        3024
+      ],
+      "crop_size": [
+        27,
+        157
+      ],
+      "out_size": [
+        2,
+        18
+      ],
+      "expect_1x": [
+        2,
+        18
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-h-track",
+      "crop_px": [
+        2043,
+        3147,
+        2599,
+        3295
+      ],
+      "crop_size": [
+        556,
+        148
+      ],
+      "out_size": [
+        71,
+        21
+      ],
+      "expect_1x": [
+        71,
+        21
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 3,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-h-thumb",
+      "expect_1x": [
+        44,
+        21
+      ],
+      "usable": false,
+      "verdict": "源图未绘制该件（连通域中不存在）"
+    },
+    {
+      "name": "scroll-h-thumb-hover",
+      "crop_px": [
+        2043,
+        3416,
+        2558,
+        3565
+      ],
+      "crop_size": [
+        515,
+        149
+      ],
+      "out_size": [
+        44,
+        21
+      ],
+      "expect_1x": [
+        44,
+        21
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 868,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-h-thumb-pressed",
+      "crop_px": [
+        2043,
+        3685,
+        2558,
+        3833
+      ],
+      "crop_size": [
+        515,
+        148
+      ],
+      "out_size": [
+        44,
+        21
+      ],
+      "expect_1x": [
+        44,
+        21
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 806,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-h-arrow-left",
+      "crop_px": [
+        2704,
+        3148,
+        2863,
+        3305
+      ],
+      "crop_size": [
+        159,
+        157
+      ],
+      "out_size": [
+        21,
+        21
+      ],
+      "expect_1x": [
+        21,
+        21
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 228,
+      "fringe_px": 1,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "scroll-h-arrow-right",
+      "crop_px": [
+        2704,
+        3423,
+        2864,
+        3578
+      ],
+      "crop_size": [
+        160,
+        155
+      ],
+      "out_size": [
+        21,
+        21
+      ],
+      "expect_1x": [
+        21,
+        21
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 214,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "select-disabled",
+      "crop_px": [
+        3195,
+        203,
+        3893,
+        390
+      ],
+      "crop_size": [
+        698,
+        187
+      ],
+      "out_size": [
+        349,
+        94
+      ],
+      "expect_1x": [
+        204,
+        33
+      ],
+      "dev_w": 0.711,
+      "dev_h": 1.848,
+      "near_key_px": 2,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "progress-fill",
+      "crop_px": [
+        3201,
+        527,
+        3622,
+        631
+      ],
+      "crop_size": [
+        421,
+        104
+      ],
+      "out_size": [
+        197,
+        17
+      ],
+      "expect_1x": [
+        200,
+        17
+      ],
+      "dev_w": -3,
+      "dev_h": 0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用 ｜ 二次修正：剔除右端 3px 烘焙轨道框（beige），保留纯蓝填充 197×17；CSS 按 100% 宽度拉伸，无缩放失真"
+    },
+    {
+      "name": "progress-fill-100",
+      "crop_px": [
+        3195,
+        769,
+        3893,
+        889
+      ],
+      "crop_size": [
+        698,
+        120
+      ],
+      "out_size": [
+        200,
+        17
+      ],
+      "expect_1x": [
+        200,
+        17
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 1,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "progress-fill-indeterminate",
+      "crop_px": [
+        3195,
+        1019,
+        3893,
+        1137
+      ],
+      "crop_size": [
+        698,
+        118
+      ],
+      "out_size": [
+        200,
+        17
+      ],
+      "expect_1x": [
+        200,
+        17
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 3,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "range-track",
+      "crop_px": [
+        3235,
+        1267,
+        3495,
+        1385
+      ],
+      "crop_size": [
+        260,
+        118
+      ],
+      "out_size": [
+        208,
+        15
+      ],
+      "expect_1x": [
+        208,
+        15
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 0,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "range-thumb",
+      "crop_px": [
+        3272,
+        1513,
+        3404,
+        1703
+      ],
+      "crop_size": [
+        132,
+        190
+      ],
+      "out_size": [
+        19,
+        33
+      ],
+      "expect_1x": [
+        19,
+        33
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 575,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "range-thumb-hover",
+      "crop_px": [
+        3272,
+        1818,
+        3404,
+        2006
+      ],
+      "crop_size": [
+        132,
+        188
+      ],
+      "out_size": [
+        19,
+        33
+      ],
+      "expect_1x": [
+        19,
+        33
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 580,
+      "fringe_px": 1,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "range-thumb-pressed",
+      "crop_px": [
+        3272,
+        2122,
+        3404,
+        2310
+      ],
+      "crop_size": [
+        132,
+        188
+      ],
+      "out_size": [
+        19,
+        33
+      ],
+      "expect_1x": [
+        19,
+        33
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 438,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "empty-box",
+      "crop_px": [
+        3273,
+        2429,
+        3653,
+        2849
+      ],
+      "crop_size": [
+        380,
+        420
+      ],
+      "out_size": [
+        48,
+        48
+      ],
+      "expect_1x": [
+        48,
+        48
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 9555,
+      "fringe_px": 2,
+      "usable": true,
+      "verdict": "可用"
+    },
+    {
+      "name": "badge-md",
+      "crop_px": [
+        3272,
+        2968,
+        3556,
+        3134
+      ],
+      "crop_size": [
+        284,
+        166
+      ],
+      "out_size": [
+        28,
+        19
+      ],
+      "expect_1x": [
+        28,
+        19
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 1340,
+      "fringe_px": 0,
+      "usable": false,
+      "verdict": "图内烘焙了 EMPTY 文字，与提示词要求（中心留空）不符，不可用作徽标底"
+    },
+    {
+      "name": "badge-sm",
+      "crop_px": [
+        3272,
+        3254,
+        3448,
+        3353
+      ],
+      "crop_size": [
+        176,
+        99
+      ],
+      "out_size": [
+        20,
+        14
+      ],
+      "expect_1x": [
+        20,
+        14
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 686,
+      "fringe_px": 0,
+      "usable": false,
+      "verdict": "图内烘焙了 EMPTY 文字，与提示词要求（中心留空）不符，不可用作徽标底"
+    },
+    {
+      "name": "check-disabled",
+      "crop_px": [
+        3273,
+        3471,
+        3407,
+        3606
+      ],
+      "crop_size": [
+        134,
+        135
+      ],
+      "out_size": [
+        24,
+        24
+      ],
+      "expect_1x": [
+        24,
+        24
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 63,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "图内已画入勾号；只能当「禁用+已选」使用，不能当「禁用未选」"
+    },
+    {
+      "name": "radio-disabled",
+      "crop_px": [
+        3273,
+        3727,
+        3407,
+        3860
+      ],
+      "crop_size": [
+        134,
+        133
+      ],
+      "out_size": [
+        24,
+        24
+      ],
+      "expect_1x": [
+        24,
+        24
+      ],
+      "dev_w": 0.0,
+      "dev_h": 0.0,
+      "near_key_px": 60,
+      "fringe_px": 0,
+      "usable": true,
+      "verdict": "可用"
+    }
+  ]
+}

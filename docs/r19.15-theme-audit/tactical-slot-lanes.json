@@ -1,0 +1,614 @@
+{
+  "generatedFor": "R19.15",
+  "guns": [
+    {
+      "gun": "SV-98 7.62x54R 栓动式狙击步枪",
+      "id": "55801eed4bdc2d89578b4588",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 1,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": null,
+        "tacticalCols": [
+          1
+        ],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "SIG P226R 9x19 手枪",
+      "id": "56d59856d2720bd8418b456a",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "托卡列夫 TT-33 7.62x25 手枪",
+      "id": "571a12c42459771f627b58a0",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 1,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": null,
+        "tacticalCols": [
+          1
+        ],
+        "scopeCol": null,
+        "rearSightCol": null,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Glock 17 9x19 手枪",
+      "id": "5a7ae0c351dfba0017554310",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 3,
+        "tacticalCols": [
+          4
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "GLOCK 18C 9x19 冲锋手枪",
+      "id": "5b1fa9b25acfc40018633c01",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "托卡列夫 TT-33 7.62x25 黄金手枪",
+      "id": "5b3b713c5acfc4330140bd8d",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 1,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": null,
+        "tacticalCols": [
+          1
+        ],
+        "scopeCol": null,
+        "rearSightCol": null,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "HK MP7A1 4.6x30 冲锋枪",
+      "id": "5ba26383d4351e00334c93d9",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_001",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_002",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 2,
+        "tacticalCols": [
+          3,
+          4
+        ],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_002",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        }
+      ]
+    },
+    {
+      "gun": "HK MP7A2 4.6x30 冲锋枪",
+      "id": "5bd70322209c4d00d7167b8f",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_001",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_002",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 2,
+        "tacticalCols": [
+          3,
+          4
+        ],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_002",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        }
+      ]
+    },
+    {
+      "gun": "伯莱塔 M9A3 9x19 手枪",
+      "id": "5cadc190ae921500103bb3b6",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 3,
+        "tacticalCols": [
+          4
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "ASh-12 12.7x55 突击步枪",
+      "id": "5cadfbf7ae92152ac412eeef",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        },
+        {
+          "slot": "mod_tactical_001",
+          "row": 6,
+          "col": 2,
+          "lane": "r6 备用车道"
+        },
+        {
+          "slot": "mod_tactical_002",
+          "row": 6,
+          "col": 3,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 4,
+        "tacticalCols": [],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_000",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        },
+        {
+          "path": "mod_tactical_001",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c2）"
+        },
+        {
+          "path": "mod_tactical_002",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c3）"
+        }
+      ]
+    },
+    {
+      "gun": "FN Five-seveN MK2 5.7x28 手枪",
+      "id": "5d3eb3b0a4b93615055e84d2",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "FN Five-seveN MK2 5.7x28 手枪 (FDE)",
+      "id": "5d67abc1a4b93614ec50137f",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 3,
+        "tacticalCols": [
+          4
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "FN GL-40 Mk.2 榴弹发射器",
+      "id": "5e81ebcd8e146c7080625e15",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_001",
+          "row": 2,
+          "col": 4,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_002",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 2,
+        "tacticalCols": [
+          3,
+          4
+        ],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_002",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        }
+      ]
+    },
+    {
+      "gun": "TDI KRISS Vector Gen.2 .45 ACP 冲锋枪",
+      "id": "5fb64bc92b1b027b1f50bcf2",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 4,
+        "tacticalCols": [],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_000",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        }
+      ]
+    },
+    {
+      "gun": "TDI KRISS Vector Gen.2 9x19 冲锋枪",
+      "id": "5fc3f2d5900b1d5091531e57",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 6,
+          "col": 1,
+          "lane": "r6 备用车道"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 4,
+        "tacticalCols": [],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": [
+        {
+          "path": "mod_tactical_000",
+          "why": "上导轨战术槽第 2 行已满，转入子弹行下一行（r6c1）"
+        }
+      ]
+    },
+    {
+      "gun": "列别杰夫 PL-15 9x19 手枪",
+      "id": "602a9740da11d6478d5a06dc",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "联盟-TM STM-9 Gen.2 9x19 卡宾枪",
+      "id": "60339954d62c9b14ed777c06",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 2,
+        "tacticalCols": [
+          3
+        ],
+        "scopeCol": 5,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Chiappa 犀牛 50DS .357 左轮手枪",
+      "id": "61a4c8884f95bc3b2c5dc96f",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 2,
+        "tacticalCols": [
+          3
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Milkor M32A1 MSGL 40 毫米榴弹发射器",
+      "id": "6275303a9f372d6ea97f9ec7",
+      "slots": [
+        {
+          "slot": "mod_tactical_000",
+          "row": 2,
+          "col": 1,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_001",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        },
+        {
+          "slot": "mod_tactical_002",
+          "row": 2,
+          "col": 3,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": null,
+        "tacticalCols": [
+          1,
+          2,
+          3
+        ],
+        "scopeCol": 5,
+        "rearSightCol": null,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Glock 19X 9x19 手枪",
+      "id": "63088377b5cd696784087147",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "RSh-12 12.7x55转轮手枪",
+      "id": "633ec7c2a6918cb895019c6c",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 1,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": null,
+        "tacticalCols": [
+          1
+        ],
+        "scopeCol": 5,
+        "rearSightCol": null,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪",
+      "id": "669fa39b48fc9f8db6035a0c",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    },
+    {
+      "gun": "Magnum Research “沙漠之鹰”L6 .50 AE手枪（白色虎纹）",
+      "id": "669fa3d876116c89840b1217",
+      "slots": [
+        {
+          "slot": "mod_tactical",
+          "row": 2,
+          "col": 2,
+          "lane": "r2 上导轨行"
+        }
+      ],
+      "topRowOrder": {
+        "frontSightCol": 1,
+        "tacticalCols": [
+          2
+        ],
+        "scopeCol": null,
+        "rearSightCol": 8,
+        "orderOk": true
+      },
+      "exceptions": []
+    }
+  ],
+  "summary": {
+    "rootTacticalGuns": 23,
+    "onTopRow": 20,
+    "fallbackRow6": 6,
+    "orderViolations": 0
+  }
+}
