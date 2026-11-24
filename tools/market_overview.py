@@ -17,6 +17,7 @@ from __future__ import annotations
 import datetime
 import json
 import os
+import sys
 from typing import Any
 
 try:
@@ -126,6 +127,22 @@ TYPE_SECTORS = {
 
 
 def _project_root() -> str:
+    """返回包含 `data/` 的目录（源码树根，或打包后的 _internal）。
+
+    PyInstaller 冻结后 `__file__` 落在 `<exe>/_internal/tools/market_overview.py`，
+    上两级虽然是 `<exe>/_internal`，但 __file__ 在 onefile 模式下并不可靠，
+    所以优先用 _MEIPASS / exe 旁的 _internal 兜底，确保 items.json 能被读到。
+    否则这里会返回错目录 → items.json 读空 → 名称全部回退成物品 ID（安装版才会出现）。
+    """
+    if getattr(sys, "frozen", False):
+        meipass = getattr(sys, "_MEIPASS", None)
+        if meipass and os.path.isdir(os.path.join(meipass, "data")):
+            return meipass
+        exe_dir = os.path.dirname(os.path.abspath(sys.executable))
+        internal = os.path.join(exe_dir, "_internal")
+        if os.path.isdir(os.path.join(internal, "data")):
+            return internal
+        return exe_dir
     return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 

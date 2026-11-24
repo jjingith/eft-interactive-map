@@ -39,6 +39,13 @@ build/price-collector/
 build/data-backup-*/
 build/*.json
 build/release.*/
+
+# 根目录的发布测试 / 旧版备份目录（627MB 安装包与历次解压副本）
+release-test/
+release.old.*/
+release-0.2.*/
+# 开发过程截图（不被代码引用）
+.shots/
 # 根目录一次性验证页 / 探针脚本
 _*.html
 _*.png

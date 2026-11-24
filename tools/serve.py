@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import errno
 import hashlib
+import html
 import json
 import mimetypes
 import os
@@ -57,7 +58,7 @@ import prices_source
 import screenshot
 
 
-VERSION = "0.2.8.3"
+VERSION = "0.2.9.0"
 UPDATE_REPO_API = "https://api.github.com/repos/jjingith/eft-interactive-map/releases/latest"
 _UPDATE_CACHE: dict[str, Any] = {"at": 0.0, "payload": None}
 _UPDATE_CACHE_LOCK = threading.Lock()
@@ -117,6 +118,240 @@ def update_check_payload() -> dict[str, Any]:
     with _UPDATE_CACHE_LOCK:
         _UPDATE_CACHE.update({"at": now, "payload": payload})
     return dict(payload)
+
+
+# ---------------------------------------------------------------- 游戏更新（官方补丁说明）
+# 数据源为什么是 Steam 官方公告：EFT 上架 Steam 后，BSG 的补丁说明会同步发在
+# Steam 公告里，而 Steam 有一个稳定的 JSON 接口（ISteamNews）。官网是 Cloudflare +
+# HTML，解析脆弱且随时会变；这里只需要一个「能长期不坏」的源。
+# 公告正文是 Steam BBCode（[h3]标题[/h3]、[list][*][p]…[/p][/*][/list]），
+# 下面的 parse_steam_bbcode 把它拆成「分区 + 条目」，供页面按 改动/修复 分组显示。
+GAME_NEWS_APPID = "3932890"
+GAME_NEWS_URL = ("https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/"
+                 "?appid=%s&count=60&maxlength=0&format=json" % GAME_NEWS_APPID)
+GAME_NEWS_PAGE = "https://store.steampowered.com/news/app/%s/view/%%s" % GAME_NEWS_APPID
+GAME_NEWS_HOME = "https://store.steampowered.com/news/app/%s" % GAME_NEWS_APPID
+GAME_CHANGES_BUNDLED = os.path.join("data", "game-changes.json")
+GAME_CHANGES_CACHE_DIR = "game-changes"
+GAME_CHANGES_CACHE_NAME = "news.json"
+GAME_CHANGES_TTL = 6 * 3600.0             # 超过 6 小时没刷新就在界面上提示「可能不是最新」
+_GAME_NEWS_REFRESH_LOCK = threading.Lock()
+
+_PATCH_TITLE_RE = re.compile(r"^\s*patch\s+([0-9][0-9A-Za-z.\-]*)\s*$", re.I)
+_BB_HEADER_RE = re.compile(r"\[h([1-6])\](.*?)\[/h\1\]", re.S | re.I)
+_BB_INLINE_RE = re.compile(
+    r"\[/?(?:b|i|u|s|code|quote|center|left|right"
+    r"|dynamiclink[^\]]*|previewyoutube[^\]]*|video[^\]]*|sticker[^\]]*"
+    r"|url(?:=[^\]]*)?|img[^\]]*)\]", re.I)
+
+
+def _bb_text(value: str) -> str:
+    """去掉行内 BBCode / HTML 实体，压掉多余空白。"""
+    text = _BB_INLINE_RE.sub("", value or "")
+    text = text.replace("[/*]", "").replace("[/p]", " ")
+    text = html.unescape(text)
+    return re.sub(r"[ \t\u00a0]+", " ", text).strip()
+
+
+def parse_steam_bbcode(body: str) -> list[dict]:
+    """Steam 公告 BBCode → `[{title, blocks:[{type,text}]}]`。
+
+    type 只有两种：`bullet`（列表项，页面上加 ·）与 `para`（普通段落）。
+    `[h1]~[h6]` 开新分区；没有标题的内容归到一个 title 为空的分区里。
+    """
+    text = str(body or "")
+    # 图片与分隔线先整体丢掉：它们对「这版改了什么」没有信息量
+    text = re.sub(r"\[img[^\]]*\].*?\[/img\]", " ", text, flags=re.S | re.I)
+    text = re.sub(r"\[hr\]\s*\[/hr\]", "\n", text, flags=re.I)
+    text = _BB_HEADER_RE.sub(lambda m: "\n\x01" + _bb_text(m.group(2)) + "\n", text)
+    text = re.sub(r"\[\*\]", "\n\x02", text)
+    text = re.sub(r"\[/?list\]", "\n", text, flags=re.I)
+    text = re.sub(r"\[p\]", "", text, flags=re.I)
+    text = re.sub(r"\[/p\]", "\n", text, flags=re.I)
+    text = _BB_INLINE_RE.sub("", text).replace("[/*]", "")
+
+    sections: list[dict] = []
+    current: dict | None = None
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("\x01"):
+            title = _bb_text(line[1:])
+            current = {"title": title, "blocks": []}
+            sections.append(current)
+            continue
+        kind = "bullet" if line.startswith("\x02") else "para"
+        clean = _bb_text(line[1:] if kind == "bullet" else line)
+        if not clean:
+            continue
+        if current is None:
+            current = {"title": "", "blocks": []}
+            sections.append(current)
+        current["blocks"].append({"type": kind, "text": clean})
+    return [section for section in sections if section["blocks"]]
+
+
+def _version_kind(version: str) -> str:
+    """版本号类型：x.y.0.0 大版本 / x.y.z.0 小版本 / 第 4 位非 0 是热修。"""
+    parts = []
+    for piece in str(version or "").split("."):
+        parts.append(int(piece) if piece.isdigit() else 0)
+    if len(parts) >= 4 and parts[3] > 0:
+        return "热修"
+    if len(parts) >= 3 and parts[2] > 0:
+        return "小版本"
+    return "大版本"
+
+
+def _patch_entry(item: dict) -> dict | None:
+    """一条 Steam 公告 → 一个版本条目；不是 `Patch x.y.z` 的公告返回 None。"""
+    title = html.unescape(str(item.get("title") or "")).strip()
+    match = _PATCH_TITLE_RE.match(title)
+    if not match:
+        return None
+    version = match.group(1).rstrip(".")
+    sections = parse_steam_bbcode(str(item.get("contents") or ""))
+    if not sections:
+        return None
+    try:
+        stamp = int(item.get("date") or 0)
+    except (TypeError, ValueError):
+        stamp = 0
+    gid = str(item.get("gid") or "").strip()
+    bullets = sum(1 for s in sections for b in s["blocks"] if b["type"] == "bullet")
+    return {
+        "id": "steam-" + (gid or version),
+        "version": version,
+        "kind": _version_kind(version),
+        "title": title,
+        "date": time.strftime("%Y-%m-%d", time.localtime(stamp)) if stamp else "",
+        "timestamp": stamp,
+        "url": (GAME_NEWS_PAGE % gid) if gid else GAME_NEWS_HOME,
+        "sections": sections,
+        "bullets": bullets,
+    }
+
+
+def fetch_game_changes(timeout: float = 12.0) -> list[dict]:
+    """拉 Steam 官方公告并只保留补丁条目（按时间倒序）。"""
+    request = urllib.request.Request(
+        GAME_NEWS_URL, headers={"User-Agent": "EFTMap-GameChanges"})
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        data = json.loads(response.read(4 * 1024 * 1024).decode("utf-8"))
+    items = ((data.get("appnews") or {}).get("newsitems") or [])
+    entries: list[dict] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        # 只认 BSG 自己在 Steam 发的公告；媒体转载（PlayGround.ru 等）不算官方补丁说明
+        if str(item.get("feedname") or "") != "steam_community_announcements":
+            continue
+        entry = _patch_entry(item)
+        if entry:
+            entries.append(entry)
+    entries.sort(key=lambda entry: entry["timestamp"], reverse=True)
+    return entries
+
+
+def game_changes_cache_path(config_dir: str) -> str:
+    return os.path.join(config_dir, GAME_CHANGES_CACHE_DIR, GAME_CHANGES_CACHE_NAME)
+
+
+def _read_game_changes_file(path: str) -> dict:
+    try:
+        with open(path, encoding="utf-8") as handle:
+            data = json.load(handle)
+    except (OSError, ValueError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _merge_game_changes(*groups: list[dict]) -> list[dict]:
+    """按 id 合并多份数据（先出现的优先），再按时间倒序。"""
+    merged: dict[str, dict] = {}
+    for group in groups:
+        for entry in group or []:
+            if not isinstance(entry, dict):
+                continue
+            key = str(entry.get("id") or entry.get("version") or "")
+            if not key or key in merged:
+                continue
+            if not isinstance(entry.get("sections"), list) or not entry["sections"]:
+                continue
+            merged[key] = entry
+    return sorted(merged.values(), key=lambda e: int(e.get("timestamp") or 0), reverse=True)
+
+
+def game_changes_payload(root: str, config_dir: str | None = None) -> dict:
+    """页面读取用：内置快照 + 本地缓存合并，**不打网络**（离线可用、秒开）。"""
+    bundled_path = os.path.join(root, GAME_CHANGES_BUNDLED)
+    bundled = _read_game_changes_file(bundled_path)
+    cache_path = game_changes_cache_path(config_dir) if config_dir else ""
+    cached = _read_game_changes_file(cache_path) if cache_path else {}
+    entries = _merge_game_changes(cached.get("entries") or [], bundled.get("entries") or [])
+    age = None
+    if cache_path:
+        try:
+            age = time.time() - os.path.getmtime(cache_path)
+        except OSError:
+            age = None
+    return {
+        "ok": True,
+        "entries": entries,
+        "count": len(entries),
+        "source": {"name": "Steam 官方公告", "url": GAME_NEWS_HOME,
+                   "note": "补丁说明为官方英文原文，分区标题已中文化"},
+        "bundledAt": str(bundled.get("generated_at") or ""),
+        "fetchedAt": str(cached.get("fetched_at") or ""),
+        "from": "cache" if cached.get("entries") else "bundled",
+        "stale": bool(age is not None and age > GAME_CHANGES_TTL),
+    }
+
+
+def refresh_game_changes(root: str, config_dir: str | None = None) -> dict:
+    """点「检查更新」时调用：抓 Steam → 与缓存/内置合并 → 原子写回缓存。"""
+    payload = game_changes_payload(root, config_dir)
+    before = int(payload.get("count") or 0)
+    if not _GAME_NEWS_REFRESH_LOCK.acquire(blocking=False):
+        payload.update({"ok": False, "busy": True, "error": "正在获取中，请稍候"})
+        return payload
+    try:
+        try:
+            entries = fetch_game_changes()
+        except Exception as exc:  # noqa: BLE001 - 网络失败不能影响已内置的内容
+            payload.update({"ok": False, "error": "无法获取官方公告：%s" % str(exc)[:160]})
+            return payload
+        if not entries:
+            payload.update({"ok": False, "error": "官方公告里没有解析到补丁条目"})
+            return payload
+        if config_dir:
+            path = game_changes_cache_path(config_dir)
+            try:
+                os.makedirs(os.path.dirname(path), exist_ok=True)
+                temp = path + ".tmp"
+                with open(temp, "w", encoding="utf-8") as handle:
+                    json.dump({"fetched_at": time.strftime("%Y-%m-%d %H:%M"),
+                               "source": "steam", "entries": entries},
+                              handle, ensure_ascii=False)
+                os.replace(temp, path)
+            except OSError as exc:  # 缓存写不进去也要把本次结果返回给页面
+                payload["warning"] = "缓存写入失败：%s" % exc
+        merged = _merge_game_changes(entries, payload.get("entries") or [])
+        payload.update({
+            "ok": True,
+            "entries": merged,
+            "count": len(merged),
+            "added": max(0, len(merged) - before),
+            "fetchedAt": time.strftime("%Y-%m-%d %H:%M"),
+            "from": "network",
+            "stale": False,
+        })
+        return payload
+    finally:
+        _GAME_NEWS_REFRESH_LOCK.release()
+
+
 APP_ID = "eft-interactive-map"
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 8787
@@ -446,9 +681,14 @@ def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
         for field in ("traderSell", "trader", "base"):
             if main is None:
                 main = price.get(field)
+        # R303：候选补齐可切换所需的字段（前端点「?」后可改选这一项）。
+        # detail 是完整价格对象，切换后直接顶替 match.price，三档价格/商人标记都不会错。
         cand = {"id": iid, "name": name,
                 "price": main if main is not None else per_slot,
-                "perSlot": per_slot, "kind": price.get("priceSource")}
+                "perSlot": per_slot, "kind": price.get("priceSource"),
+                "short": ocr.short_name_of(name), "gw": rec.get("gw"), "gh": rec.get("gh"),
+                "weight": rec.get("w"), "noFlea": bool(price.get("noFlea")),
+                "detail": price}
         cur = by_name.get(name)
         if cur is None or (cand["perSlot"] or -1) > (cur["perSlot"] or -1):
             by_name[name] = cand
@@ -609,9 +849,15 @@ def _ocr_ambig_candidates(ids: list, catalog: dict, snap_items: dict) -> list:
         price = _ocr_resolve_price(rec, row, {}, None)
         src = price.get("priceSource")
         label = "flea" if src == "flea" else "trader"
-        out.append({"name": rec.get("n") or iid, "caliber": _ocr_caliber(rec.get("n")),
+        # R303：补 id / 短名 / 格数 / 完整价格，前端可点选切换口径。
+        out.append({"id": iid, "name": rec.get("n") or iid,
+                    "short": ocr.short_name_of(rec.get("n") or ""),
+                    "caliber": _ocr_caliber(rec.get("n")),
                     "kind": _ocr_ammo_kind(rec) or "", "source": label,
-                    "price": price.get("base")})
+                    "price": price.get("base"), "perSlot": price.get("perSlot"),
+                    "gw": rec.get("gw"), "gh": rec.get("gh"),
+                    "weight": rec.get("w"), "noFlea": bool(price.get("noFlea")),
+                    "detail": price})
     return out
 
 
@@ -882,6 +1128,42 @@ def detect_screenshots_dir(game_dir: str | None = None) -> tuple[str | None, str
             return fallback, "自动探测到截图目录：%s（还没有截图）" % fallback
         return None, "未找到可用的 EFT 截图目录（可在启动器里手动指定）"
     return best, "自动探测到截图目录：%s" % best
+
+
+def pick_folder_dialog(current: str | None = None, title: str = "选择目录") -> str | None:
+    """弹出系统文件夹选择框，返回用户选中的绝对路径；取消 / 失败返回 None。
+
+    网页端 <input type=file webkitdirectory> 拿不到绝对路径（浏览器安全限制），
+    所以目录类设置经由本机服务调用 Windows 原生对话框。服务端是用户自己启动的
+    桌面程序，运行在交互会话里，能正常弹窗；不加 CREATE_NO_WINDOW，否则对话框
+    会被隐藏。非 Windows / 无 GUI 环境直接返回 None，前端保留文本输入兜底。
+    """
+    if os.name != "nt":
+        return None
+    ps = (
+        "Add-Type -AssemblyName System.Windows.Forms; "
+        "$d = New-Object System.Windows.Forms.FolderBrowserDialog; "
+        "$d.Description = $args[0]; "
+        "$d.ShowNewFolderButton = $true; "
+    )
+    if current and os.path.isdir(current):
+        # 用单引号字面量，路径里的单引号翻倍（PowerShell 转义）
+        ps += "$d.SelectedPath = '%s'; " % current.replace("'", "''")
+    ps += (
+        "if ($d.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) "
+        "{ Write-Output $d.SelectedPath }"
+    )
+    try:
+        proc = subprocess.run(
+            ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps, title],
+            capture_output=True, text=True, timeout=180,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+    out = (proc.stdout or "").strip()
+    if out and os.path.isdir(out):
+        return os.path.abspath(out)
+    return None
 
 
 def best_logs_dir(primary, alternatives) -> str | None:
@@ -2139,6 +2421,17 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                 return self._send_json(200, health_payload(root, tracker, follower, shotter, pruner))
             if path == "/api/update-check":
                 return self._send_json(200, update_check_payload())
+            if path == "/api/game-changes":
+                # 只读本地（内置快照 + 缓存），不打网络：离线也能秒开
+                return self._send_json(200, game_changes_payload(root, app_dir))
+            if path == "/api/pick-folder":
+                # 网页端「浏览…」：弹系统文件夹选择框拿绝对路径（浏览器自身做不到）。
+                from urllib.parse import parse_qs
+                qs = parse_qs(query)
+                current = (qs.get("current") or [""])[0]
+                title = (qs.get("title") or ["选择目录"])[0]
+                picked = pick_folder_dialog(current or None, title)
+                return self._send_json(200, {"ok": True, "path": picked})
             if path == "/api/presets":
                 return self._handle_presets_get(query)
             if path == "/api/live-prices":
@@ -2285,6 +2578,8 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                 return self._handle_price_cache_sync()
             if path == "/api/live-prices/refresh":
                 return self._handle_live_prices_refresh()
+            if path == "/api/game-changes/refresh":
+                return self._handle_game_changes_refresh()
             if path == "/api/prices/refresh":
                 return self._handle_flea_refresh()
             if path == "/api/shutdown":
@@ -3260,6 +3555,25 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                 self._send_json(400, {"ok": False, "error": "请求体不是合法 JSON"})
                 return None
             return body if isinstance(body, dict) else {}
+
+        def _handle_game_changes_refresh(self):
+            """`POST /api/game-changes/refresh`：本机 / 同源页面触发一次官方公告拉取。
+
+            只读的对外抓取（取官方补丁说明），没有破坏性副作用；仍然限制来源，
+            避免任意网页借用户的本机服务当免费代理。
+            """
+            if not self._is_loopback_client():
+                return self._send_json(403, {"ok": False, "error": "只允许本机刷新"})
+            origin = self.headers.get("Origin") or self.headers.get("Referer")
+            if origin and not self._same_origin_ok():
+                return self._send_json(403, {"ok": False, "error": "跨站请求被拒绝"})
+            try:
+                length = int(self.headers.get("Content-Length") or 0)
+            except (TypeError, ValueError):
+                length = 0
+            if 0 < length <= 65536:      # 读尽请求体，保持 keep-alive 连接干净
+                self.rfile.read(length)
+            return self._send_json(200, refresh_game_changes(root, app_dir))
 
         def _handle_live_prices_refresh(self):
             """`POST /api/live-prices/refresh`：桌面壳凭 token、网页凭同源会话触发抓取。

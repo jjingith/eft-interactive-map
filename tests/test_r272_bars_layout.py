@@ -46,8 +46,9 @@ def test_workspace_nav_lives_in_top_bar():
     assert bar_start < menus < view < status < bar_right
     menubar_js = _read(os.path.join(ROOT, "js", "app-menubar.js"))
     assert "insertBefore(workspace, menus)" in menubar_js, "启动后工作区应排在应用菜单之前"
-    # 市场大盘是「市场」工作区内的子页，不新增顶层视图 → 6 个工作区。
-    assert html.count('id="view-btn-') == 6
+    # 市场大盘是「市场」工作区内的子页，不新增顶层视图；
+    # R305 只加了一个「更新」（游戏补丁说明）→ 顶层工作区 7 个。
+    assert html.count('id="view-btn-') == 7
 
     view_block = _between(html, 'id="view-switch"', 'id="app-menu-status"')
     for vt in ("vt-prices", "vt-market-meta", "vt-member-expire"):

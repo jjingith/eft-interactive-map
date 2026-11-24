@@ -186,7 +186,8 @@ def test_market_board_is_inside_market_workspace():
     assert 'src="js/market-workspace.js' in html
     assert "GWMarketBoard" in js
     assert "GWMarketWorkspace" in js
-    assert 'var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market"]' in js
+    # R305 追加了「更新」视图；这里只锁「大盘不是顶层视图」，列表内容随版本演进
+    assert 'var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market", "changes"]' in js
     assert "在售挂单数" in board and "非成交量" in board
     # 「成交量」只允许出现在否定语境（非成交量 / 不是成交量 / 而非成交量），
     # 不得作为指标名单独出现——否则等于把挂单数谎报成成交量。

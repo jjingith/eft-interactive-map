@@ -111,3 +111,118 @@
   background: var(--ui-color-border);
   border-color: var(--ui-color-surface-alt);
 }
+
+/* ============================================================================
+ * R303：OCR 重名物资的「?」与候选选择菜单
+ * ----------------------------------------------------------------------------
+ * 背景：截图识别时，游戏内显示名相同、实际不同物品（钥匙卡 / 海报…）或同短名
+ * 不同口径（.338 AP / .300 AP）无法从截图区分，服务端标 ambiguous 让前端打「?」。
+ * 旧版「?」只有 tooltip、点了没反应（用户反馈「不可交互」）；这里做成可点选。
+ * 菜单 append 到 body（避开 #market-view 的 overflow 裁剪），所以不能用
+ * #market-view 作用域内的令牌，直接写与暗色主题一致的固定值。
+ * ==========================================================================*/
+
+.mk-ocr-ambig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin-left: 4px;
+  border: 1px solid #8a6d1f;
+  border-radius: 50%;
+  background: #6b5410;
+  color: #ffd76a;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: -2px;
+}
+.mk-ocr-ambig:hover,
+.mk-ocr-ambig:focus-visible {
+  background: #8a6d1f;
+  color: #fff3c4;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 215, 106, .35);
+}
+/* 已手动选择过：蓝色，提示「可改选」而不是「待确认」 */
+.mk-ocr-ambig.is-picked {
+  background: #2f6cb0;
+  border-color: #6aa8ff;
+  color: #eaf3ff;
+}
+.mk-ocr-ambig.is-picked:hover,
+.mk-ocr-ambig.is-picked:focus-visible {
+  background: #3d80cc;
+  box-shadow: 0 0 0 2px rgba(106, 168, 255, .35);
+}
+
+.mk-ocr-cand-menu {
+  position: fixed;
+  z-index: 10050;
+  min-width: 280px;
+  max-width: 440px;
+  max-height: 340px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid #4e5b6b;
+  border-radius: 4px;
+  background: #232b35;
+  color: #dfe5ec;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .6);
+  font-size: 12px;
+}
+.mk-ocr-cand-head {
+  padding: 4px 6px 6px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #3a4552;
+  color: #9aa6b4;
+  font-size: 11px;
+}
+.mk-ocr-cand-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name price" "meta price";
+  gap: 0 10px;
+  width: 100%;
+  margin: 0;
+  padding: 5px 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mk-ocr-cand-item:hover,
+.mk-ocr-cand-item:focus-visible {
+  background: #263a52;
+  border-color: #2f6cb0;
+  outline: none;
+}
+.mk-ocr-cand-item.is-picked { border-color: #6aa8ff; }
+.mk-ocr-cand-item.is-picked .mk-ocr-cand-name::before {
+  content: "✓ ";
+  color: #6aa8ff;
+}
+.mk-ocr-cand-name {
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mk-ocr-cand-meta {
+  grid-area: meta;
+  color: #9aa6b4;
+  font-size: 10px;
+}
+.mk-ocr-cand-price {
+  grid-area: price;
+  align-self: center;
+  color: #ffd76a;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}

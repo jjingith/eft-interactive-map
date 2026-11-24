@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="assets/xp-ui/xp-ui-app.css?v=r19.97">
 <link rel="stylesheet" href="styles/modern-flat.css?v=r19.97">
 <link rel="stylesheet" href="styles/market-dark.css?v=r19.97">
+<!-- R305 游戏更新视图（独立作用域 #changes-view / .ch-*，最后加载只影响自己） -->
+<link rel="stylesheet" href="styles/changes.css?v=r19.97">
 </head>
 <body>
 
@@ -169,11 +171,19 @@
                  inputmode="numeric" spellcheck="false"
                  title="自动截图间隔：允许 200–60000 毫秒（0.2–60 秒）。下限按「游戏写盘 + 目录刷新」的最短可靠周期取 200ms，上限 60s 避免战局中几乎不产生定位点；服务端另有 config.clamp_interval 再钳一次">
           <label for="mini-shots-dir">截图目录</label>
-          <input type="text" id="mini-shots-dir" placeholder="留空 = 自动识别" spellcheck="false"
-                 title="EFT 截图目录。留空时服务端自动探测 Documents\Escape from Tarkov\Screenshots 等常见位置，并显示当前识别到的绝对路径">
+          <div class="mini-dir-field">
+            <input type="text" id="mini-shots-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                   title="EFT 截图目录。留空时服务端自动探测 Documents\Escape from Tarkov\Screenshots 等常见位置，并显示当前识别到的绝对路径">
+            <button type="button" class="mini-dir-browse" data-dir-for="mini-shots-dir"
+                    data-dir-title="选择 EFT 截图目录" title="打开文件夹选择窗口">浏览…</button>
+          </div>
           <label for="mini-log-dir">日志目录</label>
-          <input type="text" id="mini-log-dir" placeholder="留空 = 自动识别" spellcheck="false"
-                 title="EFT 日志目录（含 log_* 会话文件夹）。留空时服务端自动探测游戏目录\Logs、%LOCALAPPDATA%\Battlestate Games\EFT\Logs、Documents\Escape from Tarkov\Logs 等位置">
+          <div class="mini-dir-field">
+            <input type="text" id="mini-log-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                   title="EFT 日志目录（含 log_* 会话文件夹）。留空时服务端自动探测游戏目录\Logs、%LOCALAPPDATA%\Battlestate Games\EFT\Logs、Documents\Escape from Tarkov\Logs 等位置">
+            <button type="button" class="mini-dir-browse" data-dir-for="mini-log-dir"
+                    data-dir-title="选择 EFT 日志目录" title="打开文件夹选择窗口">浏览…</button>
+          </div>
           <label class="toggle mini-enabled-toggle mini-shot-wide"
                  title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
             <input type="checkbox" id="mini-shot-cleanup">战局结束清理
@@ -288,7 +298,7 @@
                 </div>
               </dl>
               <p class="about-note muted" id="about-meta-line"></p>
-              <p class="about-note muted" id="about-build-line">构建版本：—（仅用于排查；右上角与状态栏显示数据截止日期）</p>
+              <p class="about-note muted" id="about-build-line">构建版本：—（仅用于排查；右上角与状态栏显示应用版本）</p>
               <p class="about-note"><a href="https://github.com/jjingith/eft-interactive-map/releases"
                  target="_blank" rel="noopener noreferrer">检查更新 / 下载发布包</a>
                  · <a href="https://afdian.com/item/cb09a30cdf4411f1959f52540025c377"
@@ -347,6 +357,15 @@
               title="市场（跳蚤行情、价格筛选与市场大盘）">
         <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M2.2 3.2h5.2l6.4 6.4-5.2 5.2-6.4-6.4z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><circle cx="4.8" cy="5.8" r="1.15" fill="currentColor"/><path d="M8.2 8.2l3.6-3.6" stroke="currentColor" stroke-width="1" opacity=".5"/></svg></span>
         <span class="vt-label">市场</span>
+      </button>
+    </div>
+    <span class="vt-sep" role="presentation" aria-hidden="true"></span>
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-changes"
+              role="tab" data-view="changes" aria-selected="false" aria-controls="changes-view"
+              title="更新（官方补丁说明）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M3.2 1.8h6.2l3.4 3.4v9H3.2z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M9.4 1.8v3.4h3.4" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M5.2 7.4h5.6M5.2 9.4h5.6M5.2 11.4h3.4" stroke="currentColor" stroke-width="1" opacity=".6"/><circle cx="12.4" cy="12.2" r="2.3" fill="#b5453a" stroke="#f6efdd" stroke-width="1"/></svg></span>
+        <span class="vt-label">更新</span>
       </button>
     </div>
   </div>
@@ -424,7 +443,7 @@
           title="价格数据来源：快照 / 实时 / 回退" role="status" aria-live="polite">快照（PvP，构建期）</span>
   </div>
   <span id="build-rev" class="build-rev"
-        title="数据截止：来自 data/meta.json 的 generatedAt（主数据源 tarkov.dev 快照生成时间）；构建版本见「关于」">数据截止 —</span>
+        title="应用版本：来自本地服务端 /api/update-check 的 current_version（tools/serve.py 的 VERSION）；构建标记见「关于」">版本 —</span>
 </div>
 
 <!-- R82：上下文栏（第三行，随视图切换）。这里只留空槽，控件由 js/app-menubar.js 在启动时
@@ -1184,13 +1203,20 @@
   <div id="market-board-pane" class="mk-ws-pane" role="tabpanel" aria-label="市场大盘" hidden></div>
 </section>
 
+<section id="changes-view" class="view-pane" hidden aria-label="游戏更新">
+  <!-- R305：游戏更新（对照 db4tarkov.com/changes 的信息架构）。
+       数据是 BSG 在 Steam 上发的官方补丁公告，由本机服务 /api/game-changes 解析成
+       「分区 + 条目」后返回；完全离线时用随包内置的 data/game-changes.json。
+       骨架与渲染全部由 js/changes.js 生成，这里只留容器。 -->
+</section>
+
 </div>
 
 <!-- R83：底部状态栏（第四层）。字段全部读现有状态，不写死：
-     左 = 当前视图 + 当前地图；中 = 数据版本 + 游戏模式；右 = 数据状态 + 数据截止。
-     860 及以下只留视图 / 地图 / 数据截止，其余字段收进整条 title。 -->
+     左 = 当前视图 + 当前地图；中 = 数据版本 + 游戏模式；右 = 数据状态 + 应用版本。
+     860 及以下只留视图 / 地图 / 应用版本，其余字段收进整条 title。 -->
 <div class="app-statusbar" id="app-statusbar" role="status" aria-live="polite"
-     title="当前视图 / 地图 / 数据版本 / 模式 / 数据截止">
+     title="当前视图 / 地图 / 数据版本 / 模式 / 应用版本">
   <span class="sb-cell sb-view" id="sb-view">视图：地图</span>
   <span class="sb-cell sb-map" id="sb-map">地图：—</span>
   <span class="sb-gap"></span>
@@ -1198,7 +1224,7 @@
   <span class="sb-cell sb-optional" id="sb-mode">模式：—</span>
   <span class="sb-gap"></span>
   <span class="sb-cell sb-state" id="sb-state">加载中…</span>
-  <span class="sb-cell sb-rev" id="sb-rev" title="数据截止：来自 data/meta.json 的 generatedAt（主数据源 tarkov.dev）">数据截止 —</span>
+  <span class="sb-cell sb-rev" id="sb-rev" title="应用版本：来自 /api/update-check 的 current_version">版本 —</span>
 </div>
 
 <div id="update-notice" class="update-notice" hidden role="dialog" aria-modal="true"
@@ -1228,6 +1254,7 @@
 <script src="js/ui-components.js?v=r19.97"></script>
 <script src="js/game-mode.js?v=r19.97"></script>
 <script src="js/task-graph-layout.js?v=r19.97"></script>
+<script src="js/changes.js?v=r19.97"></script>
 <script src="app.js?v=r19.97"></script>
 <script src="calibrator.js?v=r19.97"></script>
 <script src="tasks.js?v=r19.97"></script>
@@ -1253,12 +1280,12 @@
       document.head.appendChild(meta);
     }
     meta.setAttribute('content', rev);
-    /* R301：右上角不再暴露构建号（只显示数据截止日期，由 app-menubar.js 回填）。
-       构建号保留在 documentElement / meta 与「关于」面板，排查时仍可查。 */
+    /* R303：右上角显示应用版本（由 app-menubar.js 从 /api/update-check 回填）。
+       构建标记 R19.xx 保留在 documentElement / meta 与「关于」面板，排查时仍可查。 */
     if (badge) { badge.setAttribute('data-rev', rev); }
     var aboutBuild = document.getElementById('about-build-line');
     if (aboutBuild) {
-      aboutBuild.textContent = '构建版本：' + rev + '（仅用于排查；右上角与状态栏显示数据截止日期）';
+      aboutBuild.textContent = '构建版本：' + rev + '（仅用于排查；右上角与状态栏显示应用版本）';
     }
     if (window.console && console.info) { console.info('[EFTMap] build-rev = ' + rev); }
   }

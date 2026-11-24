@@ -102,8 +102,9 @@ def test_finish_page_has_both_checkboxes():
     assert 'AFDIAN_URL = "https://afdian.com/item/' in source
     assert "self.launch_var" in source
     assert "self.afdian_var" in source
-    assert "启动 \" + APP_NAME + \"（独立窗口）" in source
-    assert "前往爱发电页面" in source
+    # R304：完成页文案改成传统安装程序的短句，「（独立窗口）」这类解释已去掉
+    assert "安装完成后启动 " in source and "APP_NAME" in source
+    assert "访问爱发电页面" in source
     # 完成按钮必须真的按勾选动作
     assert "def _open_after_install(self):" in source
     assert "webbrowser.open(AFDIAN_URL)" in source

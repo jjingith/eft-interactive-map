@@ -179,6 +179,9 @@ $MustHave = @(
     (Join-Path $Internal "js\ui-components.js"),
     (Join-Path $Internal "js\game-mode.js"),
     (Join-Path $Internal "js\task-graph-layout.js"),
+    # R305：游戏更新视图（独立模块 + 独立样式），index.html 直接引用。
+    (Join-Path $Internal "js\changes.js"),
+    (Join-Path $Internal "styles\changes.css"),
     (Join-Path $Internal "data\maps.json"),
     (Join-Path $Internal "data\items.json"),
     # R279：OCR 短名表 + ONNX 模型，缺一个「截图识别」就只剩框选、不出价格。
@@ -190,6 +193,8 @@ $MustHave = @(
     (Join-Path $Internal "data\roadnet.json"),
     (Join-Path $Internal "data\tasks\tasks.regular.json"),
     (Join-Path $Internal "data\i18n\ui-zh.json"),
+    # R305：游戏更新页的随包快照；缺它离线打开「更新」页是空的。
+    (Join-Path $Internal "data\game-changes.json"),
     # 行情抓取器以源码形式随包（serve.py 在冻结产物里用 --run-tool 交给
     # 同一份解释器执行，而不是把 EFTMap.exe 当 python 用）。
     (Join-Path $Internal "tools\live_prices.py"),

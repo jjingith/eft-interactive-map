@@ -1,0 +1,250 @@
+/* ============================================================================
+ * R305 游戏更新视图（对照 db4tarkov.com/changes 的信息架构）
+ * ----------------------------------------------------------------------------
+ * 左侧版本时间线、右侧改动详情；整体沿用主程序的 XP Luna 语言：
+ * 米色面板、1px 凹/凸边框、Tahoma 12px、选中行是经典的蓝底白字。
+ * 数据由 /api/game-changes 提供（内置快照 + 本地缓存），正文是官方英文原文。
+ * ==========================================================================*/
+
+#changes-view { display: flex; flex-direction: column; min-height: 0; }
+#changes-view[hidden] { display: none; }
+
+/* 价格口径 / 行情截止时间属于市场页的控件（#vt-prices / #vt-market-meta 在视图工具条里），
+   更新页没有任何价格，留着只会让人以为这里也能刷行情。 */
+body[data-view="changes"] #vt-prices,
+body[data-view="changes"] #vt-market-meta { display: none; }
+
+.ch-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  background: var(--xp-face, #ece9d8);
+  color: var(--xp-text, #000);
+  font: 12px/1.5 var(--xp-font-family, "Tahoma", "Microsoft YaHei", sans-serif);
+}
+
+/* ---------------------------------------------------------------- 工具栏 */
+.ch-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--xp-border, #aca899);
+  background: var(--xp-face, #ece9d8);
+}
+.ch-tb-left { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.ch-tb-title { font-size: 13px; font-weight: 700; color: #1b3a6b; }
+.ch-tb-sub { font-size: 11px; color: var(--xp-text-dim, #4a4a4a); }
+.ch-tb-right { display: flex; align-items: center; gap: 6px; min-width: 0; }
+
+.ch-search {
+  width: 240px;
+  height: 22px;
+  padding: 0 6px;
+  border: 1px solid var(--xp-btn-border, #7f9db9);
+  background: #ffffff;
+  color: var(--xp-text, #000);
+  font: 12px var(--xp-font-family, "Tahoma", "Microsoft YaHei", sans-serif);
+  outline: none;
+}
+.ch-search:focus { border-color: #2f6cb4; box-shadow: 0 0 0 1px rgba(47, 108, 180, .25); }
+
+/* 经典立体按钮：上浅下深的米色面 + 1px 蓝灰边 + 顶部 1px 高光。
+   注意：modern-flat.css 给**所有** button 加了 XP 皮肤并带 !important，
+   所以这里的每条背景/边框也必须带 !important 才能压回去（靠 #changes-view 提权）。 */
+#changes-view .ch-refresh {
+  min-width: 84px;
+  height: 22px;
+  padding: 0 10px;
+  border: 1px solid var(--xp-btn-border, #7f9db9) !important;
+  background: linear-gradient(#fdfdfd, #f1efe4 55%, #e2dfcf) !important;
+  box-shadow: inset 0 1px 0 #ffffff;
+  color: #23231b !important;
+  font: 12px var(--xp-font-family, "Tahoma", "Microsoft YaHei", sans-serif);
+  cursor: pointer;
+}
+#changes-view .ch-refresh:hover {
+  border-color: var(--xp-btn-hover-border, #e8a33d) !important;
+  background: linear-gradient(#fffdf3, #ffeec6 55%, #ffd98a) !important;
+}
+#changes-view .ch-refresh:active {
+  background: #e2dfcf !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .18);
+}
+#changes-view .ch-refresh:disabled {
+  color: var(--xp-btn-disabled-text, #69675b) !important;
+  background: var(--xp-btn-disabled-face, #f2f0e6) !important;
+  border-color: var(--xp-border-soft, #d6d2c2) !important;
+  cursor: default;
+}
+
+/* ---------------------------------------------------------------- 主体 */
+.ch-main {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 6px;
+  padding: 6px;
+}
+
+.ch-side {
+  flex: 0 0 236px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;          /* 不加这行：列表项的 nowrap 摘要会把它撑成 800px+ */
+  min-height: 0;
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark, #7f9db9);
+}
+.ch-side-head {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  border-bottom: 1px solid var(--xp-border, #aca899);
+  background: linear-gradient(#fdfdfd, #ece9d8);
+  color: #23231b;
+  font-size: 11px;
+  font-weight: 700;
+}
+.ch-list { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 2px; }
+
+/* 列表项不是「按钮」：把全局 XP 按钮皮肤（渐变底 / 圆角 / 立体边 / 橙色悬停）显式关掉，
+   只在选中行用经典的蓝底白字。 */
+#changes-view .ch-item {
+  display: block;
+  width: 100%;
+  margin: 0 0 1px;
+  padding: 4px 7px 5px;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transform: none !important;
+}
+#changes-view .ch-item:hover {
+  background: #f2f7ff !important;
+  background-image: none !important;
+  border-color: #b8d0ee !important;
+  color: inherit !important;
+}
+#changes-view .ch-item[aria-selected="true"] {
+  background: var(--xp-sel, #316ac5) !important;
+  background-image: none !important;
+  border-color: #1e4f9c !important;
+  color: var(--xp-sel-text, #ffffff) !important;
+}
+.ch-item-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.ch-ver { font-weight: 700; font-size: 12px; letter-spacing: .2px; }
+.ch-kind {
+  flex: 0 0 auto;
+  padding: 0 5px;
+  border: 1px solid #b8b39c;
+  border-radius: 2px;
+  background: #f7f5ee;
+  color: #5c5949;
+  font-size: 10px;
+  line-height: 15px;
+}
+.ch-kind-lg { font-size: 11px; line-height: 17px; padding: 0 6px; }
+.ch-item[aria-selected="true"] .ch-kind {
+  background: #24559f;
+  border-color: #6f9fdd;
+  color: #eaf2ff;
+}
+.ch-item-meta { display: flex; align-items: center; gap: 8px; font-size: 10px; color: #5c5949; }
+.ch-item[aria-selected="true"] .ch-item-meta { color: #cddcf3; }
+.ch-item-sum {
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: 10px;
+  color: #6b6860;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ch-item[aria-selected="true"] .ch-item-sum { color: #b9cdea; }
+
+.ch-empty { padding: 18px 10px; color: #6b6860; text-align: center; font-size: 11px; }
+
+/* ---------------------------------------------------------------- 详情 */
+.ch-detail {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: auto;
+  padding: 10px 14px 18px;
+  background: #ffffff;
+  border: 1px solid var(--xp-border-dark, #7f9db9);
+}
+.ch-detail-head { padding-bottom: 8px; border-bottom: 1px solid var(--xp-border-soft, #d6d2c2); }
+.ch-title-row { display: flex; align-items: center; gap: 8px; }
+.ch-title { margin: 0; font-size: 17px; font-weight: 700; color: #10233f; }
+.ch-detail-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 3px;
+  color: #5c5949;
+  font-size: 11px;
+}
+.ch-dot { color: #b3ae99; }
+.ch-link { color: var(--xp-link, #1e63c8); text-decoration: none; }
+.ch-link:hover { text-decoration: underline; }
+
+.ch-section { margin-top: 14px; }
+.ch-sec-title {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 0 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #e4e0d0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1b3a6b;
+}
+.ch-sec-en { font-size: 10px; font-weight: 400; color: #8a8474; }
+.ch-para { margin: 4px 0; color: #23231b; }
+.ch-bullets { margin: 4px 0 0; padding-left: 18px; }
+.ch-bullets li { margin: 2px 0; line-height: 1.55; color: #23231b; }
+.ch-bullets li::marker { color: #8fa6c4; }
+
+.ch-foot {
+  margin: 18px 0 0;
+  padding-top: 8px;
+  border-top: 1px dashed #d6d2c2;
+  color: #8a8474;
+  font-size: 10px;
+}
+
+.ch-placeholder { padding: 26px 10px; color: #4a4a4a; }
+.ch-placeholder-title { margin: 0 0 6px; font-size: 14px; font-weight: 700; }
+
+/* ---------------------------------------------------------------- 状态栏 */
+.ch-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  border-top: 1px solid var(--xp-border, #aca899);
+  background: var(--xp-face, #ece9d8);
+  color: var(--xp-text-dim, #4a4a4a);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ch-status-text { overflow: hidden; text-overflow: ellipsis; }
+.ch-status.is-error .ch-status-msg { color: #a81616; font-weight: 700; }
+.ch-status-warn { margin-left: auto; color: #8a5a00; }
+
+@media (max-width: 1024px) {
+  .ch-side { flex: 0 0 196px; }
+  .ch-search { width: 180px; }
+}

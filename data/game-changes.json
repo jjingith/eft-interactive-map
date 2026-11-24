@@ -1,0 +1,3023 @@
+{
+ "generated_at": "2026-11-24 16:17",
+ "source": "steam-official-announcements",
+ "source_url": "https://store.steampowered.com/news/app/3932890",
+ "entries": [
+  {
+   "id": "steam-1847920302235601",
+   "version": "1.3.0.0",
+   "kind": "大版本",
+   "title": "Patch 1.3.0.0",
+   "date": "2026-10-30",
+   "timestamp": 1793292990,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1847920302235601",
+   "sections": [
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "New Halloween in-game event;"
+      },
+      {
+       "type": "bullet",
+       "text": "Switched the in-game weather season to fall;"
+      },
+      {
+       "type": "bullet",
+       "text": "Changed the colliders of certain items in the Currency and Valuables categories to make them easier to find and pick up during raids;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added high-difficulty PMC bots to PvE Zone. They can spawn on high-level locations."
+      }
+     ]
+    },
+    {
+     "title": "Expansion Hub",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added new Hideout customization sets:"
+      },
+      {
+       "type": "bullet",
+       "text": "Your Own Celestial Empire;"
+      },
+      {
+       "type": "bullet",
+       "text": "Once Upon a Time in Tarkov."
+      },
+      {
+       "type": "para",
+       "text": "Other themed Hideout customization options will become available in upcoming updates."
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Adjusted the leveling mechanics for the Metabolism skill. Skill progression is now calculated based on the amount of energy or hydration restored;"
+      },
+      {
+       "type": "bullet",
+       "text": "Significantly increased the leveling speed of all skills in Seasonal mode;"
+      },
+      {
+       "type": "bullet",
+       "text": "Balanced the effect of diminishing returns on skill progression calculations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the lifetime of tripwires placed by players."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect calculation of the Partisan spawn chance in raids without low PMC karma players;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that could prevent magazines from being loaded or unloaded after a weapon malfunction;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect field of view when using certain optics;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect breathing volume for certain PMC voices;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various visual issues with geometry and colliders on Icebreaker, Interchange, and Shoreline;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that prevented some players from accessing traders’ interactive scenes;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused PMC bots to behave incorrectly in certain cases. PMC bots now always consider players hostile;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed weapon skill leveling speed. It now matches the leveling speed of other skills."
+      },
+      {
+       "type": "para",
+       "text": "The switch to Unity 6, previously scheduled for October, has been moved to mid-November as part of update 1.3.5.0."
+      }
+     ]
+    }
+   ],
+   "bullets": 18
+  },
+  {
+   "id": "steam-1845383656396722",
+   "version": "1.2.0.0",
+   "kind": "大版本",
+   "title": "Patch 1.2.0.0",
+   "date": "2026-10-06",
+   "timestamp": 1791298665,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1845383656396722",
+   "sections": [
+    {
+     "title": "EXFIL Brothers Program",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added the EXFIL Brothers Program to the game. As part of the program, experienced players (Operators) can receive bonuses for playing together with friends who have just started their journey in Tarkov (Candidates)."
+      },
+      {
+       "type": "para",
+       "text": "Operators and Candidates receive a 5% XP bonus for playing raids together, as well as other rewards tied to the Candidate's progress or game edition."
+      },
+      {
+       "type": "para",
+       "text": "Candidate rewards are designed to make it easier for new players to get into the game. Operator rewards are intended to help during the later stages of progression and allow Operators to stand out with unique customization."
+      },
+      {
+       "type": "para",
+       "text": "The program can be completed and rewards can be earned in any Escape from Tarkov mode, but it has no connection to Escape from Tarkov: Arena."
+      },
+      {
+       "type": "para",
+       "text": "Rules"
+      },
+      {
+       "type": "para",
+       "text": "To participate in the program, an Operator must share their unique referral link from the \"My Candidates\" table with a friend. This table is located on the \"Management\" tab of the \"EXFIL Brothers\" page on the offiial website: https://www.escapefromtarkov.com/"
+      },
+      {
+       "type": "para",
+       "text": "To start the program, a Candidate who is logged in on the website must follow their friend's link and confirm that they want to establish the connection."
+      },
+      {
+       "type": "para",
+       "text": "A player can become an Operator if their account meet the following criteria:"
+      },
+      {
+       "type": "bullet",
+       "text": "It was registered more than 7 days ago;"
+      },
+      {
+       "type": "bullet",
+       "text": "It has a level 30 character in any Escape from Tarkov game mode;"
+      },
+      {
+       "type": "bullet",
+       "text": "It has at least 40 hours in-game."
+      },
+      {
+       "type": "para",
+       "text": "A player can become a Candidate if their account meets at least one of the following criteria:"
+      },
+      {
+       "type": "bullet",
+       "text": "It was registered less than 7 days ago;"
+      },
+      {
+       "type": "bullet",
+       "text": "It has less than 40 hours in-game."
+      },
+      {
+       "type": "para",
+       "text": "To view the details and all available rewards, visit the \"EXFIL Brothers\" page on the official Escape from Tarkov website."
+      },
+      {
+       "type": "para",
+       "text": "Rewards"
+      },
+      {
+       "type": "para",
+       "text": "The following rewards are available to players as part of EXFIL Brothers:"
+      },
+      {
+       "type": "para",
+       "text": "Candidate:"
+      },
+      {
+       "type": "bullet",
+       "text": "5 support kits;"
+      },
+      {
+       "type": "bullet",
+       "text": "9 500 000 roubles;"
+      },
+      {
+       "type": "bullet",
+       "text": "10 000 dollars;"
+      },
+      {
+       "type": "bullet",
+       "text": "Junk Box;"
+      },
+      {
+       "type": "bullet",
+       "text": "Ammunition case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Magazine case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Key case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Document case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Medicine case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Weapon case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Item case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Armband (Candidate)."
+      },
+      {
+       "type": "para",
+       "text": "Operator:"
+      },
+      {
+       "type": "bullet",
+       "text": "Up to 1200 TarCoins per Candidate;"
+      },
+      {
+       "type": "bullet",
+       "text": "“Shoulder to Lean On” achievement;"
+      },
+      {
+       "type": "bullet",
+       "text": "Up to 6 Bitcoins per Candidate;"
+      },
+      {
+       "type": "bullet",
+       "text": "Boot Camp Hideout set;"
+      },
+      {
+       "type": "bullet",
+       "text": "PMC Operator Upper;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Document case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Medicine case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Weapon case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Item case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Armband (Operator);"
+      },
+      {
+       "type": "bullet",
+       "text": "Men in Tarkov poster;"
+      },
+      {
+       "type": "bullet",
+       "text": "Pulp Mission poster;"
+      },
+      {
+       "type": "bullet",
+       "text": "EXFIL Bros poster."
+      },
+      {
+       "type": "para",
+       "text": "Use these threads to find your duo"
+      },
+      {
+       "type": "para",
+       "text": "Looking for a Candidate"
+      },
+      {
+       "type": "para",
+       "text": "Looking for an Operator"
+      }
+     ]
+    },
+    {
+     "title": "Changes to faction relations between bots in PvE",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "We've reworked bot interaction logic to make the world feel more dynamic and unpredictable:"
+      },
+      {
+       "type": "bullet",
+       "text": "Significantly increased the chance of USEC and BEAR PMC bots teaming up and remaining non-hostile to each other;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added a small chance for PMC bots to remain neutral toward a PMC player until the player approaches or attacks them;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the chance of PMC bots being neutral toward Scav bots;"
+      },
+      {
+       "type": "bullet",
+       "text": "PMC bots will more often initiate combat with Scavs and Bosses;"
+      },
+      {
+       "type": "bullet",
+       "text": "PMC bots won't attack player Scavs first unless the player Scav approaches or attacks them."
+      }
+     ]
+    },
+    {
+     "title": "Changes to PMC bot behavior on locations",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "We've changed the behavior system and number of PMC bots on locations. These changes affect their movement and activity."
+      },
+      {
+       "type": "para",
+       "text": "Points of interest and movement"
+      },
+      {
+       "type": "para",
+       "text": "PMC bots will now move more actively toward points of interest and task areas. They can be encountered in areas they didn't previously visit, and their movement is now less linear and more varied."
+      },
+      {
+       "type": "para",
+       "text": "PMC bot numbers and distribution"
+      },
+      {
+       "type": "para",
+       "text": "There will now always be PMC bots present at the start of a raid on a location. Their numbers are more consistent, with less variation. PMC bot spawns are also distributed more evenly across locations."
+      },
+      {
+       "type": "para",
+       "text": "Added PMC bot spawns to The Labyrinth, where they will participate in combat on the location."
+      },
+      {
+       "type": "para",
+       "text": "Depending on the location, PMC bots of appropriate levels will appear in raids. For example, The Lab will have more high-level PMC bots."
+      },
+      {
+       "type": "para",
+       "text": "PMC bot gear, difficulty, and weapons"
+      },
+      {
+       "type": "para",
+       "text": "A PMC bot's gear, weapons, and combat difficulty now depend on its level and faction."
+      },
+      {
+       "type": "para",
+       "text": "Low-level bots pose less of a threat to players and use gear usually available to players at lower trader Loyalty Levels."
+      },
+      {
+       "type": "para",
+       "text": "High-level bots are more dangerous, use better weapons, and are equipped with high-level gear."
+      }
+     ]
+    },
+    {
+     "title": "Prestige system in PvE Zone",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Prestige is a mechanic for high-level players that unlocks a set of new unique rewards and allows them to start their exploration of Tarkov again while retaining part of their progression."
+      },
+      {
+       "type": "para",
+       "text": "To Prestige, players must meet a number of different requirements, which become more demanding with each subsequent Prestige level. These requirements may include:"
+      },
+      {
+       "type": "bullet",
+       "text": "High character level;"
+      },
+      {
+       "type": "bullet",
+       "text": "Completion of certain in-game tasks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Construction of certain Hideout zones;"
+      },
+      {
+       "type": "bullet",
+       "text": "Completion of the main storyline;"
+      },
+      {
+       "type": "bullet",
+       "text": "Having certain items and a certain amount of money in the stash;"
+      },
+      {
+       "type": "bullet",
+       "text": "Leveling character skills."
+      },
+      {
+       "type": "para",
+       "text": "The first Prestige level in PvE Zone has reduced requirements compared to PvP. All players who haven't reset their progression since the release of Escape from Tarkov can now do so through Prestige. In this case, they will not only receive its rewards, but also unlock the release content, storyline, Icebreaker chapter, and all future events."
+      },
+      {
+       "type": "para",
+       "text": "Each Prestige level resets the player's profile progression only in PvE Zone."
+      },
+      {
+       "type": "para",
+       "text": "When Prestiging, players can retain some gear, a certain percentage of character skills, and weapon mastery, up to 50%."
+      },
+      {
+       "type": "para",
+       "text": "Patch 1.2.0.0 features six PvE Prestige levels."
+      },
+      {
+       "type": "para",
+       "text": "Many rewards earned through Prestige in PvE Zone will remain with the player permanently, but only for their PvE Zone character."
+      },
+      {
+       "type": "para",
+       "text": "There are also rewards that can only be earned through Prestige in PvE Zone but will be available in all modes:"
+      },
+      {
+       "type": "bullet",
+       "text": "TarCoins;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique dogtags;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Shooting Range Targets;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Hideout Posters;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique melee weapons;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Tarko figurines;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unique Secure container Gamma."
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Improved server-side player position synchronization to reduce the number of rubber-banding situations. Further network synchronization improvements are planned for upcoming updates;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the ability to switch trading modes with \"Ctrl+LMB\": while on the trading screen, players can use the hotkey on an item from a trader or in their stash to automatically switch between the purchase and sale screens. If an item has been placed on the sales table and the player switches to the purchase screen, the item will remain on the sales table until they fully exit the trading menu;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the ability to pin players in the friends list;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added a visual indicator for the \"Run-Through\" extraction status. The extraction timer will now be displayed in white if the player will receive this status when the timer expires;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the interaction with drum magazines: loading ammunition through the context menu, unloading ammunition from the drum, displaying loaded ammunition, and loading an ammo pack;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the ability to inspect your own PMC dogtag on the character screen;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the profile customization. Players can now choose which ending to display on their profile. Endings can be displayed on any player profile, including PvP, PvE Zone, and PvP Seasons profiles."
+      }
+     ]
+    },
+    {
+     "title": "Customs",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Balancing changes"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted the PMC and Scav extracts: added new exits;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added new loot spots in locked dorms rooms, the USEC warehouse, and other areas of the location;"
+      },
+      {
+       "type": "bullet",
+       "text": "Locked containers are now guaranteed to contain loot;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added two new keys: ZB-1013 Key and Guard Post Key."
+      },
+      {
+       "type": "para",
+       "text": "Fixes"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the flare extraction area: the sniper will no longer open fire when moving along the wall;"
+      },
+      {
+       "type": "bullet",
+       "text": "The safes in the company director's office that were previously inaccessible can now be opened;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the Boiler Room Basement (Co-op) extract: it is now available regardless of which part of the location the player spawned in;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various doors that were previously locked by the Factory emergency exit key;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various geometry issues on the location."
+      }
+     ]
+    },
+    {
+     "title": "Interchange",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Balancing changes"
+      },
+      {
+       "type": "bullet",
+       "text": "Added new loot spots at the Emercom camp, Objects #11SR, #14, and #21WS, OLI service areas, Kiba Arms store, and other areas of the location;"
+      },
+      {
+       "type": "bullet",
+       "text": "Locked containers are now guaranteed to contain loot;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added new loot containers to the location, including PMC bodies;"
+      },
+      {
+       "type": "bullet",
+       "text": "Changed the loot template for the cash registers in OLI, Goshan, and IDEA;"
+      },
+      {
+       "type": "bullet",
+       "text": "Keys are no longer required to open cash registers in the standalone ULTRA stores. Keys are still required for the cash registers in Goshan, IDEA, and OLI."
+      },
+      {
+       "type": "para",
+       "text": "Fixes"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the truck cabins previously locked by the Factory emergency exit key;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various geometry issues on the location."
+      }
+     ]
+    },
+    {
+     "title": "Shoreline",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Reworked environmental audio on the location."
+      }
+     ]
+    },
+    {
+     "title": "Expansions Hub",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Added the ability to purchase in-game roubles in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added USEC Tony and BEAR Den PMC voiceover packs."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that prevented transitions between locations after a series of transitions in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused red visual artifacts to appear in optic lenses in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue with incorrect lighting in the Hideout in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various visual, culling, and collider issues across all locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where loading into PvE Zone would not progress past the \"Loading configuration files\" stage;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that prevented players from leaving the starting area on Terminal in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue with incorrect differences in gunshot volume between single and automatic fire;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect bot interactions with smoke from smoke grenades;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused bots to get stuck on collisions in local raids in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect bot vision through transparent objects in The Lab;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that allowed players to load ammunition into the same magazine while multiple players were simultaneously inspecting a container;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect Black Division positioning on Ground Zero in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of the money transfer screen when transitioning to Icebreaker in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect landmine behavior in local raids in PvE Zone in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of player nicknames on the group formation screen;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused death sounds to replay incorrectly on the raid-end screen in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused players to become invulnerable after interacting with the BTR in local raids in PvE Zone in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that allowed players to plant a PMC dogtag that wasn't in their inventory when completing tasks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused task-related items to be lost when moving them during raid loading in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where shadow and volumetric lighting settings weren't saved after restarting the game client;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of the transition list on Lighthouse in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that prevented players from transitioning in online raids in PvE Zone in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of the AGS-17 sight;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various minor issues when interacting with the UI outside of raids;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed Tagilla spawning near the player at the beginning of a raid on Factory."
+      }
+     ]
+    }
+   ],
+   "bullets": 98
+  },
+  {
+   "id": "steam-1842846814455578",
+   "version": "1.1.5.0",
+   "kind": "小版本",
+   "title": "Patch 1.1.5.0",
+   "date": "2026-09-08",
+   "timestamp": 1788872664,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1842846814455578",
+   "sections": [
+    {
+     "title": "Lighthouse rework",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "To give players more control over the risks they face while moving through the location and reduce their dependence on random factors, the following changes have been made:"
+      },
+      {
+       "type": "bullet",
+       "text": "Rogues have moved from the water treatment plant to the mountain chalets;"
+      },
+      {
+       "type": "bullet",
+       "text": "There are no longer any stationary weapons at the water treatment plant;"
+      },
+      {
+       "type": "bullet",
+       "text": "The open areas along the main road have been reworked to provide more cover and additional routes;"
+      },
+      {
+       "type": "bullet",
+       "text": "All landmines have been removed from the water treatment plant;"
+      },
+      {
+       "type": "bullet",
+       "text": "A transition point to Icebreaker has been added to the location. The hovercraft stays at the pier near the water cottages;"
+      },
+      {
+       "type": "bullet",
+       "text": "A temporary task chain focused on the shifting faction balance on Lighthouse has been added;"
+      },
+      {
+       "type": "bullet",
+       "text": "Loot distribution has been reworked. Rogue stashes containing their abandoned gear have been added throughout the location;"
+      },
+      {
+       "type": "bullet",
+       "text": "The BTR now patrols the location. Its route has several variants and covers the entire location, including the approach to the bridge leading to the peninsula and the water treatment plant;"
+      },
+      {
+       "type": "bullet",
+       "text": "Underground passages have been added in the mountains, shortening the route to the extracts in the southern part of the location;"
+      },
+      {
+       "type": "bullet",
+       "text": "The Marked Room has been moved from Lightkeeper's peninsula;"
+      },
+      {
+       "type": "bullet",
+       "text": "The location of the Prapor's camp required for main story tasks has been changed."
+      }
+     ]
+    },
+    {
+     "title": "Lightkeeper access task chain rework",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The task chain that unlocks access to Lightkeeper, as well as the requirements to start it, have been completely reworked. The chain is now more focused on testing the player's skills rather than repetitive tasks of the same type."
+      },
+      {
+       "type": "para",
+       "text": "To receive the first task in the \"To the Light\" chain, you must:"
+      },
+      {
+       "type": "bullet",
+       "text": "Gain access to Lighthouse through the \"Tour\" storyline;"
+      },
+      {
+       "type": "bullet",
+       "text": "Have Loyalty Level 3 with all traders except Fence and Ref;"
+      },
+      {
+       "type": "bullet",
+       "text": "Ask Mechanic about the possibility of working with Lightkeeper."
+      }
+     ]
+    },
+    {
+     "title": "Lightkeeper task rebalance",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Some tasks have been significantly reworked based on player feedback. For some of his tasks, Lightkeeper will now reward players with a rare key to a loot room located on the Lighthouse peninsula."
+      }
+     ]
+    },
+    {
+     "title": "Side task changes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Several tasks that are primarily completed on Lighthouse have been changed. Several new tasks have also been added to make progression smoother."
+      }
+     ]
+    },
+    {
+     "title": "Changes to the rules for accessing Icebreaker",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Icebreaker can now be accessed from Shoreline and Lighthouse;"
+      },
+      {
+       "type": "bullet",
+       "text": "Icebreaker no longer requires a payment in roubles, but does require a one-time use \"Sudak-tudak\" marine repair kit."
+      },
+      {
+       "type": "para",
+       "text": "This item can be obtained by completing Ragman's \"Pay the Fare!\" task. After completing it, you'll gain access to a special type of operational task that rewards more \"Sudak-tudak\" repair kits."
+      }
+     ]
+    },
+    {
+     "title": "Hideout customization set",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The \"Rave\" Hideout customization set is now available in the Expansions Hub. It features an underground club aesthetic and includes wall, floor, and ceiling decorations."
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Added an indicator for tasks for which an item can currently be handed over;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the ability to view the profile of and report a PMC or player Scav from the list of killed players after a raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the area that must be hit to shoot off the lock on a container or door;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the \"Can't Drink Away Skill\" task, which rewards the Loui Peeton wallet. The task becomes available after completing \"Is This a Reference?\";"
+      },
+      {
+       "type": "bullet",
+       "text": "Added an Icebreaker Model Kit item to the rewards for the \"Part of the Ship, Part of the Crew\" achievement, along with a crafting recipe using this item;"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted the attitude of Rogues toward USEC characters."
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Adjusted the XP multiplier awarded for transitions. It will now increase more gradually, starting at a lower value than before for 1-2 transitions and reaching the previous values at 16 or more transitions;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the XP gained for eliminating Wedge, his squad, and Black Division operatives on Icebreaker;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the XP gained for eliminating Shadow of Tagilla, Vengeful Killa, and Scavs in The Labyrinth;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the purchase price of euros and dollars from traders;"
+      },
+      {
+       "type": "bullet",
+       "text": "Changed the sale price of the HK MP5 at Mechanic and Peacekeeper Loyalty Level 2;"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed armor from the following face masks:"
+      },
+      {
+       "type": "bullet",
+       "text": "Glorious E mask;"
+      },
+      {
+       "type": "bullet",
+       "text": "Shattered mask;"
+      },
+      {
+       "type": "bullet",
+       "text": "DevTac Samurai Menpo Mask;"
+      },
+      {
+       "type": "bullet",
+       "text": "DevTac Samurai Menpo Mask (White);"
+      },
+      {
+       "type": "bullet",
+       "text": "Death Shadow mask;"
+      },
+      {
+       "type": "bullet",
+       "text": "Death Shadow mask (Gray)."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused saved weapon presets to disappear after a raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed issues with empty keybind entries in the controls settings for some players;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where, with the Fresh Wound effect active and the Dr. Jekyll modifier selected, bleeding effects would open too frequently;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the excessive optic shading in The Lab and certain other locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed part of the environment disappearing in Spectator Mode on Reserve;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of body-part health in Spectator Mode in some cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed known issues that could cause padlocked doors to remain impassable even after the lock had been shot off;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed hit registration issues when firing bolt-action rifles immediately after mounting them on a bipod;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed incorrect display of the character's wrist when inspecting certain weapons;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed issues with reloading weapons using magazines from pockets when the player had an unsearched rig equipped;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where the Strength and Endurance skills would not level up during the first raid after training in the Hideout gym;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where some items could continue to be marked as available for task handover even after they were no longer required;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where regular Scavs would become hostile toward a player Scav who had damaged a Black Division operative;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed bot reactions to gas grenade throws;"
+      },
+      {
+       "type": "bullet",
+       "text": "Made various UI/UX fixes and improvements to the character selection and gesture screens, magazine preset loading, and the main menu while in a raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed some issues that could cause the game to crash while loading into a raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed various culling and environment issues across multiple locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where creating a character would clear the list of favorite crafting recipes in other modes;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that prevented some posters from being placed in the Hideout;"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed ammunition from the magazines of some weapon presets in trader inventories;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the missing weapon attachments from Patch 1.1.0.0 to Peacekeeper's stock;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect weapon presets for Sanitar, Killa, and Kaban's guards."
+      }
+     ]
+    }
+   ],
+   "bullets": 56
+  },
+  {
+   "id": "steam-1839676055896016",
+   "version": "1.1.0.0",
+   "kind": "大版本",
+   "title": "Patch 1.1.0.0",
+   "date": "2026-08-04",
+   "timestamp": 1785796388,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1839676055896016",
+   "sections": [
+    {
+     "title": "Seasons system and Season One",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "With the release of Patch 1.1.0.0, the Seasons system has been introduced to Escape from Tarkov, along with the launch of the first season, KORD BREACH."
+      },
+      {
+       "type": "para",
+       "text": "Each season will introduce new rules, mechanics, rewards, and gameplay changes designed to diversify the experience and provide players with new progression challenges."
+      }
+     ]
+    },
+    {
+     "title": "Seasonal character",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added a new Seasonal Character profile. Seasonal Characters exist on separate servers and are completely independent from PvP Zone and PvE Zone characters."
+      },
+      {
+       "type": "para",
+       "text": "Seasonal Character progression is automatically reset every four to six months with the release of a major content update and the start of a new season."
+      },
+      {
+       "type": "para",
+       "text": "Seasonal Characters can be created and switched between from a dedicated character selection screen."
+      }
+     ]
+    },
+    {
+     "title": "Global season modifiers",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Global Modifiers are season rules that alter, simplify, or increase the difficulty of specific gameplay elements."
+      },
+      {
+       "type": "para",
+       "text": "Global modifiers:"
+      },
+      {
+       "type": "bullet",
+       "text": "Apply only to Seasonal Characters;"
+      },
+      {
+       "type": "bullet",
+       "text": "Are enabled for all players participating in the season;"
+      },
+      {
+       "type": "bullet",
+       "text": "Cannot be changed, disabled, or selected individually."
+      },
+      {
+       "type": "para",
+       "text": "Each new season will feature a different set of Global modifiers, creating a fresh gameplay experience and new progression challenges."
+      },
+      {
+       "type": "para",
+       "text": "In the future, we are also considering community voting that would allow players to influence the selection of Global modifiers for upcoming seasons."
+      },
+      {
+       "type": "para",
+       "text": "A complete list of active Global modifiers is displayed during Seasonal Character creation."
+      }
+     ]
+    },
+    {
+     "title": "Personal season modifiers",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Personal modifiers allow players to customize their progression by increasing the overall difficulty or making certain gameplay elements easier."
+      },
+      {
+       "type": "para",
+       "text": "When creating a Seasonal Character, players can choose from both positive and negative Personal modifiers."
+      },
+      {
+       "type": "para",
+       "text": "Each modifier has a point value:"
+      },
+      {
+       "type": "bullet",
+       "text": "Negative modifiers grant points;"
+      },
+      {
+       "type": "bullet",
+       "text": "Positive modifiers consume points."
+      },
+      {
+       "type": "para",
+       "text": "The final point balance must be zero or higher in order to create a Seasonal Character."
+      },
+      {
+       "type": "para",
+       "text": "Selecting Personal modifiers is entirely optional. Characters can also be created without any Personal modifiers."
+      },
+      {
+       "type": "para",
+       "text": "Once the character has been created, selected modifiers can be viewed on the Character screen, under the Skills tab."
+      }
+     ]
+    },
+    {
+     "title": "Seasonal rewards",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Seasonal rewards are unique trader offers that can be unlocked by playing a Seasonal Character."
+      },
+      {
+       "type": "para",
+       "text": "To unlock a Seasonal reward, one or more of the following conditions must be met:"
+      },
+      {
+       "type": "bullet",
+       "text": "Reach a specific PMC level;"
+      },
+      {
+       "type": "bullet",
+       "text": "Complete a specified task;"
+      },
+      {
+       "type": "bullet",
+       "text": "Complete a task chain."
+      },
+      {
+       "type": "para",
+       "text": "Once unlocked, Seasonal Rewards become permanently available across all game modes: PvP Zone, PvE Zone, PvP Season."
+      },
+      {
+       "type": "para",
+       "text": "Added a new task line, KORD BREACH. Completing this chain allows players to:"
+      },
+      {
+       "type": "bullet",
+       "text": "Earn achievements."
+      },
+      {
+       "type": "bullet",
+       "text": "Unlock new Operational Tasks."
+      },
+      {
+       "type": "bullet",
+       "text": "Unlock trade offers for highly valuable items."
+      },
+      {
+       "type": "bullet",
+       "text": "Unlock a trade offer for the new weapon."
+      },
+      {
+       "type": "para",
+       "text": "Added new trade offers for highly valuable items to the Seasonal mode."
+      },
+      {
+       "type": "para",
+       "text": "Any Seasonal Rewards that remain locked at the end of the KORD BREACH season will become permanently unobtainable. Rewards already unlocked will remain permanently available on the player's account."
+      }
+     ]
+    },
+    {
+     "title": "Battle Pass",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "A free Battle Pass has been added alongside the launch of the first KORD BREACH season."
+      },
+      {
+       "type": "para",
+       "text": "Battle Pass progression is shared across all game modes: PvP Season, PvP Zone, and PvE Zone."
+      },
+      {
+       "type": "para",
+       "text": "To progress through the Battle Pass and unlock rewards, players must find and submit TerraGroup documentation."
+      },
+      {
+       "type": "para",
+       "text": "Rewards can be unlocked once the required number of documents is present in the inventory of any game mode. Once unlocked, rewards become available across all modes simultaneously."
+      },
+      {
+       "type": "para",
+       "text": "Documents can be obtained:"
+      },
+      {
+       "type": "bullet",
+       "text": "During raids across various Tarkov locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "By completing the KORD BREACH special task line;"
+      },
+      {
+       "type": "bullet",
+       "text": "By eliminating certain Black Division operatives."
+      },
+      {
+       "type": "para",
+       "text": "Documentation found in raids functions similarly to task items. Each player receives their own personal document spawns. Documentation found on defeated Black Division operatives is also shared among all players. Other players cannot pick up documentation intended for you before you do or loot it from your PMC's body."
+      },
+      {
+       "type": "para",
+       "text": "The amount of documentation that can be found in raids each day is limited. The daily limit depends on the selected game mode, while progress toward that limit is shared across all modes."
+      },
+      {
+       "type": "para",
+       "text": "A new document type, Classified Documents, has also been introduced. It acts as a universal resource that can replace any other document when unlocking Battle Pass rewards."
+      },
+      {
+       "type": "para",
+       "text": "Classified Documents can be purchased through the Expansion Hub."
+      }
+     ]
+    },
+    {
+     "title": "Achievements",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added new achievements, including seasonal achievements."
+      },
+      {
+       "type": "para",
+       "text": "Seasonal achievement rules:"
+      },
+      {
+       "type": "bullet",
+       "text": "Seasonal achievements can only be earned by a Seasonal Character."
+      },
+      {
+       "type": "bullet",
+       "text": "After a season ends, these achievements can still be earned in future seasons."
+      },
+      {
+       "type": "para",
+       "text": "The Kappa Path achievement:"
+      },
+      {
+       "type": "bullet",
+       "text": "Starting with Season 1, this achievement can no longer be earned;"
+      },
+      {
+       "type": "bullet",
+       "text": "Instead, players who complete the Collector task will receive the Dawn of a New Era achievement;"
+      },
+      {
+       "type": "bullet",
+       "text": "Players who have already earned The Kappa Path will keep it in their in-game profile. However, it will no longer be displayed on Steam, allowing players to continue earning 100% achievement completion."
+      },
+      {
+       "type": "para",
+       "text": "The Chris's Heir achievement has had its rarity changed from Common to Rare."
+      }
+     ]
+    },
+    {
+     "title": "Side task rebalance and distribution changes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The side task distribution system has been reworked. Most side tasks are now tied to a specific Trader Loyalty Level (LL). These tasks become available in small groups of 2-4 tasks for each trader. To unlock the next group, players must either complete several tasks at the current Trader LL or reach the next Trader LL."
+      },
+      {
+       "type": "para",
+       "text": "The primary goal of these changes is to make progression less linear and less dependent on specific tasks."
+      },
+      {
+       "type": "para",
+       "text": "The primary rewards for these tasks are now money, XP, and Trader reputation."
+      },
+      {
+       "type": "para",
+       "text": "Some side tasks will continue to unlock as part of task chains regardless of Trader LL. These task chains will reward players with especially rare trader offers or crafting recipes."
+      },
+      {
+       "type": "para",
+       "text": "Important rewards from these chains will now be displayed when accepting the first task, allowing players to see what they can unlock before completing the chain."
+      },
+      {
+       "type": "para",
+       "text": "Additionally, a large-scale rebalance has been carried out for task rewards, objectives, locations, completion zones, and other related elements."
+      },
+      {
+       "type": "para",
+       "text": "For side tasks requiring the elimination of Scavs, only regular Scavs, Sniper Scavs, and Player Scavs now count toward completion. Scav Bosses, Raiders, and Rogues no longer count."
+      }
+     ]
+    },
+    {
+     "title": "Group-shared task progression",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Your squad can now help you complete certain task objectives. These objectives are marked with a special icon in the task UI."
+      },
+      {
+       "type": "para",
+       "text": "How it works:"
+      },
+      {
+       "type": "bullet",
+       "text": "Eligible objectives may come from Story, Side, or even Operational Tasks."
+      },
+      {
+       "type": "bullet",
+       "text": "Any player, regardless of level or faction, can contribute to your task progress, even if they do not currently have the task active. The only requirement is that they are in your group."
+      },
+      {
+       "type": "bullet",
+       "text": "The assisting player must still fulfill all task conditions, such as distance, required equipment, active status effects, and so on."
+      },
+      {
+       "type": "bullet",
+       "text": "Some tasks remain strictly solo. We consider completing these tasks alone to be an important test of player skill (for example, The Tarkov Shooter, The Punisher, and similar task chains)."
+      }
+     ]
+    },
+    {
+     "title": "Balancing changes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The following changes apply to all game modes: PvP Season, PvP Zone, and PvE Zone."
+      },
+      {
+       "type": "para",
+       "text": "Economy:"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the trader prices by an average of 25%;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the price traders pay for items sold by players by an average of 20%;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the Flea Market fee from 3% to 5%."
+      },
+      {
+       "type": "para",
+       "text": "Traders:"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed the required trader sales volume from Loyalty Level requirements;"
+      },
+      {
+       "type": "bullet",
+       "text": "Rebalanced the reputation requirements for all Loyalty Levels of the following traders: Prapor, Therapist, Fence, Skier, Peacekeeper, Mechanic, Ragman, and Jaeger;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reputation rewards from side tasks have also been adjusted;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reputation values for existing PvP Zone and PvE Zone characters have been recalculated based on the new requirements."
+      },
+      {
+       "type": "bullet",
+       "text": "Rebalanced the character level requirements for all Loyalty Levels of the listed traders."
+      },
+      {
+       "type": "para",
+       "text": "Trade offers:"
+      },
+      {
+       "type": "bullet",
+       "text": "Several popular ammunition types and magazines previously sold at Trader Loyalty Levels 2 and 3 have been moved down by one Loyalty Level, making them available earlier."
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the price of the following ammunition:"
+      },
+      {
+       "type": "bullet",
+       "text": "5.45x39mm FMJ"
+      },
+      {
+       "type": "bullet",
+       "text": "5.56x45mm FMJ"
+      },
+      {
+       "type": "bullet",
+       "text": "7.62x39mm FMJ"
+      },
+      {
+       "type": "bullet",
+       "text": "9x19mm Green Tracer"
+      },
+      {
+       "type": "bullet",
+       "text": ".45 ACP Lasermatch FMJ"
+      },
+      {
+       "type": "bullet",
+       "text": "Added new weapon presets to Trader Loyalty Level 1 for several traders;"
+      },
+      {
+       "type": "bullet",
+       "text": "Many trader offers previously locked behind task completion are now available immediately upon reaching the required Trader Loyalty Level;"
+      },
+      {
+       "type": "bullet",
+       "text": "Some trader offers previously unlocked through tasks have been moved to different task rewards;"
+      },
+      {
+       "type": "bullet",
+       "text": "Players who had previously unlocked these offers will lose access to them until they complete the new required task;"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed the outdated trade offers that could still appear in Flea Market tooltips;"
+      },
+      {
+       "type": "bullet",
+       "text": "Ref's inventory now primarily features armor vests and plate carriers without armor plates installed, and their prices have been reduced accordingly;"
+      },
+      {
+       "type": "bullet",
+       "text": "Significantly reworked weapon mod trader offers, including which traders and Loyalty Levels unlock them, as well as their prices and purchase limits."
+      },
+      {
+       "type": "para",
+       "text": "Hideout:"
+      },
+      {
+       "type": "bullet",
+       "text": "Simplified the construction requirements for some Level 1-3 Hideout zones;"
+      },
+      {
+       "type": "bullet",
+       "text": "In both PvP Zone and PvE Zone, the Found in Raid requirement has been removed from some construction materials;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced construction times for certain Hideout zones;"
+      },
+      {
+       "type": "bullet",
+       "text": "The Workbench is no longer required to access the Weapon Build system. Weapon builds are now available from the start of the game;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added money requirements to the construction of many Hideout areas;"
+      },
+      {
+       "type": "bullet",
+       "text": "Some crafting recipes previously unlocked through tasks have been moved to different task rewards;"
+      },
+      {
+       "type": "bullet",
+       "text": "Players who had previously unlocked these recipes will lose access to them until they complete the new required task."
+      },
+      {
+       "type": "para",
+       "text": "Insurance:"
+      },
+      {
+       "type": "bullet",
+       "text": "Applies only to PvP Zone and PvE Zone, as insurance is disabled in PvP Season:"
+      },
+      {
+       "type": "bullet",
+       "text": "Added a new insurance option from Jaeger. It offers the fastest return time but is also the most expensive. However, Jaeger doesn't like to wait, so insurance return messages expire much sooner;"
+      },
+      {
+       "type": "bullet",
+       "text": "Insurance returns from Prapor and Therapist are now much faster, though their insurance services have become slightly more expensive. Insurance return messages are also stored for longer;"
+      },
+      {
+       "type": "bullet",
+       "text": "Higher Trader Loyalty Levels now provide a small discount on insurance."
+      },
+      {
+       "type": "para",
+       "text": "Therapist post-raid healing:"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the cost of healing;"
+      },
+      {
+       "type": "bullet",
+       "text": "Higher Loyalty Levels with Therapist now provide a small discount on healing services."
+      },
+      {
+       "type": "para",
+       "text": "Weapon repair:"
+      },
+      {
+       "type": "bullet",
+       "text": "Weapon repairs are now slightly more expensive at lower Trader Loyalty Levels, but higher Loyalty Levels provide a small repair discount."
+      },
+      {
+       "type": "para",
+       "text": "Experience:"
+      },
+      {
+       "type": "bullet",
+       "text": "Rebalanced XP modifiers for transitioning between locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added XP rewards for completing story chapters."
+      },
+      {
+       "type": "para",
+       "text": "Containers:"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the size of the Medicine Case and Magazine Case;"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted their prices and barter trades accordingly."
+      },
+      {
+       "type": "para",
+       "text": "Weapons:"
+      },
+      {
+       "type": "bullet",
+       "text": "Significantly reduced the accuracy penalty for revolvers and revolver shotguns when firing in Double Action mode."
+      }
+     ]
+    },
+    {
+     "title": "Tactical Clothing",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Tactical clothing purchased from Ragman is now permanently unlocked on your account. You no longer need to repurchase it after resetting your profile, reaching Prestige, or creating a Seasonal character;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the price of Ragman's basic Tactical Clothing;"
+      },
+      {
+       "type": "bullet",
+       "text": "The Predator Upper and Adik Tracksuit, unlocked through achievements, no longer require purchase and are permanently unlocked on your account immediately."
+      }
+     ]
+    },
+    {
+     "title": "Spectator camera",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "After your PMC dies, you can now spectate any surviving squadmate until they die or the raid ends;"
+      },
+      {
+       "type": "para",
+       "text": "You can leave spectator mode at any time and proceed to the raid end screen;"
+      },
+      {
+       "type": "para",
+       "text": "Spectator mode now activates automatically after your PMC dies. This can be disabled in the game settings."
+      }
+     ]
+    },
+    {
+     "title": "Expanded beginner support messages",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Support messages now more accurately identify players who have fallen into difficult situations;"
+      },
+      {
+       "type": "para",
+       "text": "Players who die in a raid while in severe financial and equipment hardship will now receive a support message containing a special container with enough gear for a fully equipped raid;"
+      },
+      {
+       "type": "para",
+       "text": "This support package can be received no more than once every 18 hours, and the message must also be claimed within 18 hours of being received."
+      }
+     ]
+    },
+    {
+     "title": "PvP Season synchronization with EFT: Arena",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added one-way progression synchronization from EFT: Arena to PvP Season."
+      },
+      {
+       "type": "para",
+       "text": "The following progress is transferred from EFT: Arena to PvP Season:"
+      },
+      {
+       "type": "bullet",
+       "text": "PMC experience earned;"
+      },
+      {
+       "type": "bullet",
+       "text": "Skill and weapon mastery experience;"
+      },
+      {
+       "type": "bullet",
+       "text": "Trader reputation and unlocked trade offers;"
+      },
+      {
+       "type": "bullet",
+       "text": "Currency, GP Coins, Lega Medals, and gear crates after completing the Jack of All Trades task in EFT: Arena;"
+      },
+      {
+       "type": "bullet",
+       "text": "Unlocked Tactical Clothing."
+      },
+      {
+       "type": "para",
+       "text": "The transfer limit for currency and items in PvP Season has been reduced compared to PvP Zone."
+      },
+      {
+       "type": "para",
+       "text": "Tactical Clothing is synchronized between EFT: Arena and PvP Season in both directions. If Tactical Clothing is unlocked in one game, it automatically becomes available in the other."
+      },
+      {
+       "type": "para",
+       "text": "Important! Only PMC experience and trader reputation earned in EFT: Arena after the start of the KORD BREACH season will be transferred to PvP Season."
+      },
+      {
+       "type": "bullet",
+       "text": "Previously earned progress will not be transferred."
+      },
+      {
+       "type": "bullet",
+       "text": "Item transfers and Seasonal character progression sync from PvP Season to EFT: Arena are not supported."
+      },
+      {
+       "type": "bullet",
+       "text": "For example, if your EFT: Arena character had already reached Level 78 before the season began, that level will not be transferred to PvP Season. However, if you earn, for example, 10,000 PMC experience in EFT: Arena after the start of the season, that experience will also be awarded to your Seasonal character."
+      }
+     ]
+    },
+    {
+     "title": "Game mode selection",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added a dedicated game mode selection screen, displayed when launching the game client."
+      }
+     ]
+    },
+    {
+     "title": "Character customization",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added the ability to change your PMC's appearance and voice in the new Customization tab."
+      },
+      {
+       "type": "para",
+       "text": "Selected customization settings are saved automatically."
+      }
+     ]
+    },
+    {
+     "title": "Player profile",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The player profile now displays:"
+      },
+      {
+       "type": "bullet",
+       "text": "Selected Personal modifiers;"
+      },
+      {
+       "type": "bullet",
+       "text": "KORD BREACH Battle Pass progress."
+      }
+     ]
+    },
+    {
+     "title": "Interactive mechanics and effects",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added new interactive mechanics across locations:"
+      },
+      {
+       "type": "bullet",
+       "text": "Padlocks on certain doors;"
+      },
+      {
+       "type": "bullet",
+       "text": "Padlocks on certain containers;"
+      },
+      {
+       "type": "bullet",
+       "text": "Openable elevator doors."
+      },
+      {
+       "type": "para",
+       "text": "Added new interactive environmental effects:"
+      },
+      {
+       "type": "bullet",
+       "text": "Breakable bottles;"
+      },
+      {
+       "type": "bullet",
+       "text": "Exploding fire extinguishers;"
+      },
+      {
+       "type": "bullet",
+       "text": "Vehicles that emit smoke after being hit."
+      },
+      {
+       "type": "para",
+       "text": "Exploding gas cylinders have also been added to additional locations. Their visual explosion effects have been reworked."
+      }
+     ]
+    },
+    {
+     "title": "Interface",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added new loading screen banners explaining the Scav faction rules and Fence reputation."
+      }
+     ]
+    },
+    {
+     "title": "Optimizations",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Implemented a new method of calculating the playable area on Streets of Tarkov. This reduces unnecessary location data processing and frees up more system resources to render the environment actually visible to the player."
+      },
+      {
+       "type": "para",
+       "text": "Performed additional optimization work on Customs."
+      }
+     ]
+    },
+    {
+     "title": "Content",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Norinco QBZ-191 5.8x42 assault rifle;"
+      },
+      {
+       "type": "bullet",
+       "text": "Howa Type 20 5.56x45 assault rifle;"
+      },
+      {
+       "type": "bullet",
+       "text": "HK 416A5 5.56x45 assault rifle in RAL 8000 color;"
+      },
+      {
+       "type": "bullet",
+       "text": "New attachments for PKM/PKP, AKS074U, FN SCAR, AR-15, and more;"
+      },
+      {
+       "type": "bullet",
+       "text": "New 5.8x42mm caliber:"
+      },
+      {
+       "type": "bullet",
+       "text": "DBP191 general-purpose cartridge;"
+      },
+      {
+       "type": "bullet",
+       "text": "DBX95 tracer cartridge;"
+      },
+      {
+       "type": "bullet",
+       "text": "DVC12 armor-piercing cartridge;"
+      },
+      {
+       "type": "bullet",
+       "text": "DBX12 armor-piercing tracer cartridge;"
+      },
+      {
+       "type": "bullet",
+       "text": "4 new streamer items;"
+      },
+      {
+       "type": "bullet",
+       "text": "2 new Tactical Clothing sets:"
+      },
+      {
+       "type": "bullet",
+       "text": "USEC Corsair"
+      },
+      {
+       "type": "bullet",
+       "text": "BEAR Airborne Infantry"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an incorrect third-person player animation when stopping after walking;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the missing weapon sway while aiming;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the missing reload animations for bots in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed multiple culling issues across locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed several incorrect voice lines for the USEC Rob voice;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect trader reputation calculations after reaching Prestige;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect distant LOD of the Lantac Dragon 5.56x45 muzzle brake;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the ricochet settings for gear with armor points, including armor vests, plate carriers, helmets, additional armor components, and more;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed a UI freeze that could occur while interacting with the BTR Driver dialogue in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the issue with the skill leveling bonus from trophies in the Hall of Fame, and removed the requirement for the player to personally score the kill."
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an error that could occur when loading into a raid in certain cases."
+      }
+     ]
+    }
+   ],
+   "bullets": 108
+  },
+  {
+   "id": "steam-1836506165571045",
+   "version": "1.0.6.0",
+   "kind": "小版本",
+   "title": "Patch 1.0.6.0",
+   "date": "2026-07-04",
+   "timestamp": 1783097233,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1836506165571045",
+   "sections": [
+    {
+     "title": "",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "This update includes a number of technical components and changes required for the upcoming launch of the Expansion Hub. The Expansion Hub will not be available immediately after the update is installed, and TarCoins will not be converted to players' accounts at this time. We will announce the launch date of the Expansion Hub separately."
+      }
+     ]
+    },
+    {
+     "title": "QoL",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Added the ability to search for tasks by name on the side task and operational task screens. Search now works by task name, objective, location, and Trader."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused weapons to overheat too quickly on Streets of Tarkov in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where weapons could remain suspended in midair after a player's death in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect female voice audio in The Lab;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect audio for certain gunshots at medium range;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed a number of incorrect UI elements on the Character and Weapon Builds screens;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an incorrect animation for the MSGL grenade launcher's cylinder in certain cases."
+      }
+     ]
+    }
+   ],
+   "bullets": 7
+  },
+  {
+   "id": "steam-1833334318577081",
+   "version": "1.0.5.0",
+   "kind": "小版本",
+   "title": "Patch 1.0.5.0",
+   "date": "2026-05-25",
+   "timestamp": 1779713148,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1833334318577081",
+   "sections": [
+    {
+     "title": "In-game event “Icebreaker” and story chapter “Boreas”",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "How did the Paradigm Shipping icebreaker end up trapped inside Tarkov’s blockade ring? What happened to its crew? Who is behind it all? You’ll uncover the answers by completing a new story chapter during an expedition focused on exploration and PvE gameplay. And if answers alone are not enough, the loot will make it worth your while."
+      },
+      {
+       "type": "para",
+       "text": "Icebreaker is a separate location for 1-3 players, available in all game modes. There, you will face AI enemies either solo or as part of a group. You will not be matched with random players on Icebreaker."
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Added a mechanic that assists players in locating in-raid items required for tasks. Players will now see an expanded directional indicator when approaching the spawn location of a required task item;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added additional notifications when interacting with signal flare extractions;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added an experimental graphics setting that shifts the load of certain light sources from the CPU to the GPU. The option is available for higher-end graphics cards;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased chance of death after injecting Obdolbos 1 to 33%;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added several new streamer items."
+      }
+     ]
+    },
+    {
+     "title": "Personalization",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Added new USEC Gen 4 and BEAR Slavianka customization sets, available for purchase on the official Escape from Tarkov website and on Steam."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed a cause of memory leaks related to the audio system in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Optimized the animation system to reduce CPU usage;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where the limb selection interface for healing could disappear in certain situations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed visual artifacts when using x2 and x4 resampling while interacting with Traders and the Hideout in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of error 228 that could occur when removing an expiring water filter from the Water Collector zone in the Hideout;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed several visual issues related to geometry and colliders across locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed a cause of severe client performance drops when dragging ammo from the inventory over a full magazine in the search window;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where kills with Saiga-12K 12ga automatic shotgun (Redline) did not count towards progression of the tasks “Silent Caliber” and “Punisher p.4”;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect compass behavior after exiting the BTR;"
+      },
+      {
+       "type": "bullet",
+       "text": "Number of minor fixes to various aspects of the game."
+      }
+     ]
+    }
+   ],
+   "bullets": 15
+  },
+  {
+   "id": "steam-1832700592800225",
+   "version": "1.0.4.9",
+   "kind": "热修",
+   "title": "Patch 1.0.4.9",
+   "date": "2026-05-19",
+   "timestamp": 1779174059,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1832700592800225",
+   "sections": [
+    {
+     "title": "New perks for game editions",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Starting today, Escape from Tarkov editions receive new bonuses in addition to what they previously provided."
+      },
+      {
+       "type": "para",
+       "text": "Your active edition will increase the experience gain in raid:"
+      },
+      {
+       "type": "bullet",
+       "text": "Left Behind Edition - 7% XP bonus"
+      },
+      {
+       "type": "bullet",
+       "text": "Prepare for Escape Edition - 9% XP bonus"
+      },
+      {
+       "type": "bullet",
+       "text": "Edge of Darkness Limited Edition - 12% XP bonus"
+      },
+      {
+       "type": "bullet",
+       "text": "The Unheard Edition - 20% XP bonus, applied to all group members"
+      },
+      {
+       "type": "para",
+       "text": "Group bonus does not stack with other bonuses or with itself. For example, if players with Prepare for Escape and The Unheard Edition play together, each will receive 20% more XP. Same goes for a group of multiple The Unheard Edition players."
+      },
+      {
+       "type": "para",
+       "text": "Apart from that, owners of The Unheard Edition now have an additional opportunity for customization - it now allows using clothing regardless of faction."
+      },
+      {
+       "type": "para",
+       "text": "This feature applies to all tactical clothing, including items from BattlePass and Tactical Maps from EFT: Arena."
+      },
+      {
+       "type": "para",
+       "text": "These additions will make upgrades more valuable without affecting gameplay during the raid in any way."
+      },
+      {
+       "type": "para",
+       "text": "New bonuses are also available to players who already own the upgraded editions."
+      }
+     ]
+    },
+    {
+     "title": "The Unheard Edition Sale",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "A special offer is available on the official website: a 25% discount for purchasing and upgrading to The Unheard Edition."
+      },
+      {
+       "type": "para",
+       "text": "Please note that the permanent 50% discount for upgrading from the Edge of Darkness edition to The Unheard Edition cannot be combined with the current discount."
+      },
+      {
+       "type": "para",
+       "text": "This offer is active until May 20, 7:59 AM BST / 2:59 AM EST."
+      }
+     ]
+    }
+   ],
+   "bullets": 4
+  },
+  {
+   "id": "steam-1830163047265808",
+   "version": "1.0.4.5",
+   "kind": "热修",
+   "title": "Patch 1.0.4.5",
+   "date": "2026-04-20",
+   "timestamp": 1776686694,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1830163047265808",
+   "sections": [
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Improvements aimed at optimizing off-raid screens;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the FPS limit in menus and added an option to adjust it in the game settings ;"
+      },
+      {
+       "type": "bullet",
+       "text": "Several changes to the animation system and audio engine to improve PC resource usage;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reworked the architecture of post-raid systems to further reduce the time required to exit a raid and return to the menu;"
+      },
+      {
+       "type": "bullet",
+       "text": "As part of optimization efforts, an updated player culling system has been implemented on Lighthouse, Shoreline, Woods, and Ground Zero. The system will be introduced to the remaining locations in future updates;"
+      },
+      {
+       "type": "bullet",
+       "text": "Implemented an iteration of environment object and geometry optimization for Streets of Tarkov to improve location performance;"
+      },
+      {
+       "type": "para",
+       "text": "Please note that the impact of these changes will depend on your PC configuration and in-game settings."
+      },
+      {
+       "type": "bullet",
+       "text": "Introduced a task progression protection system in local PvE Zone raids in case of unexpected client shutdowns. If the game closes unexpectedly, task progress will now revert to the state at the start of the raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Updated the left-shoulder firing stance logic. Switching to the right shoulder will no longer happen instantly when colliding with obstacles. Instead, the weapon will continue moving for a short period without changing stance;"
+      },
+      {
+       "type": "bullet",
+       "text": "Updated the K/D display in character stats. It now only counts PMC kills;"
+      },
+      {
+       "type": "bullet",
+       "text": "New character customisation options, gear and weapons from Season 2 of EFT: Arena have been added to Ref’s assortment."
+      }
+     ]
+    },
+    {
+     "title": "Balancing changes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "With this update, we introduce the second stage of weapon mod adjustments, focusing on barrels and handguards. Muzzle devices and stocks were further adjusted based on the first iteration."
+      },
+      {
+       "type": "para",
+       "text": "Barrels follow the same principle as before. Longer barrels provide greater recoil reduction but impose higher ergonomics penalties. Changes were made to:"
+      },
+      {
+       "type": "bullet",
+       "text": "Standardize parameters and make them clearer."
+      },
+      {
+       "type": "bullet",
+       "text": "Make the choice between short and long barrels more meaningful."
+      },
+      {
+       "type": "para",
+       "text": "Handguards no longer reduce recoil. Their role is now to offset ergonomics penalties imposed by barrels."
+      },
+      {
+       "type": "para",
+       "text": "Muzzle devices were further refined following the first iteration. Suppressors and their combos with compensators now reduce ergonomics more and affect recoil less."
+      },
+      {
+       "type": "para",
+       "text": "These changes are intended to further increase the popularity of \"loud\" weapon builds. It's worth noting again that adjustments to muzzle flash are planned for future updates."
+      },
+      {
+       "type": "para",
+       "text": "Buttstocks received minor adjustments, mainly addressing inaccuracies from the first iteration."
+      },
+      {
+       "type": "para",
+       "text": "Base stats of many weapons have been updated to better align with the new balance. Recoil and ergonomics have been improved for the following:"
+      },
+      {
+       "type": "bullet",
+       "text": "All AK, AKM, and AK-100 series weapons;"
+      },
+      {
+       "type": "bullet",
+       "text": "Steyr AUG A1;"
+      },
+      {
+       "type": "bullet",
+       "text": "Steyr AUG A3;"
+      },
+      {
+       "type": "bullet",
+       "text": "HK G36;"
+      },
+      {
+       "type": "bullet",
+       "text": "HK 416A5;"
+      },
+      {
+       "type": "bullet",
+       "text": "FN SCAR-L;"
+      },
+      {
+       "type": "bullet",
+       "text": "FN SCAR-H;"
+      },
+      {
+       "type": "bullet",
+       "text": "SIG MCX-SPEAR;"
+      },
+      {
+       "type": "bullet",
+       "text": "SIG MCX .300;"
+      },
+      {
+       "type": "bullet",
+       "text": "CMMG Mk47 Mutant;"
+      },
+      {
+       "type": "bullet",
+       "text": "Rifle Dynamics RD-704;"
+      },
+      {
+       "type": "bullet",
+       "text": "Aklys Defense Velociraptor;"
+      },
+      {
+       "type": "bullet",
+       "text": "All machine guns;"
+      },
+      {
+       "type": "bullet",
+       "text": "All bolt-action and marksman rifles chambered in 7.62x51, 7.62x54R, .338, and .50 BMG."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where dead players and bots could appear to move visually in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where damage would not register after a weapon malfunction if the player had previously used a stationary weapon;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of error 228 during trader dialogues that could block task progression;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixes to culling, shadows, textures, and location geometry;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where armor could not be picked up if it was dropped while interacting with the modification window;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect behavior of PMC bots toward player Scavs with Fence reputation 6 or higher in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue preventing further progression in The Labyrinth after spawning in the room requiring a burner tool to exit;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect display of smoke grenades in the player’s hands if another player threw a smoke grenade at them;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display of changes in the “Combat Skill Leveling Boost” field in the Hall of Fame Hideout zone when one dogtag was replaced with another of a similar level;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where PostFX settings would not display when preview was enabled;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where some players could get stuck in the secret saferoom on Interchange without a way to exit;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect display of stationary weapons used by bots and multiple cases where bots could float while using them;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed multiple issues with incorrect behavior of loot and gear items when dropped in raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display of current movement noise level and stance height during raids;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the third-person animation for inspecting your own inventory."
+      }
+     ]
+    }
+   ],
+   "bullets": 41
+  },
+  {
+   "id": "steam-1828441623104815",
+   "version": "1.0.4.0",
+   "kind": "小版本",
+   "title": "Patch 1.0.4.0",
+   "date": "2026-03-27",
+   "timestamp": 1774624520,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1828441623104815",
+   "sections": [
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Multiple improvements aimed at optimizing client performance across all locations. The impact of these changes will depend on the player’s hardware configuration and in-game settings;"
+      },
+      {
+       "type": "bullet",
+       "text": "As part of optimization efforts, an updated player culling system has been implemented on Customs, Interchange, and Reserve. This system has already been active on Streets of Tarkov. Implementation on all locations is planned in future updates;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the responsiveness and smoothness of main menu tabs and dialogue loading;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added the ability to play as a Scav solo in PvE Zone on a local client to reduce raid matchmaking time;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added further improvements aimed at reducing online raid loading times;"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted the healing priority for multifunctional medkits: after treating bleedings, priority is now given to head and thorax;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added magazine drop sounds during reload and when discarding magazines."
+      }
+     ]
+    },
+    {
+     "title": "Personalization",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Players who have previously purchased the Edge of Darkness edition, as well as those who upgraded from Edge of Darkness to The Unheard Edition, now have access to unique customization sets for both factions."
+      }
+     ]
+    },
+    {
+     "title": "Balancing changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Figurines and posters previously available as rewards during the Release Twitch Drops event now spawn on locations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the available time window for transitioning from Shoreline to Terminal;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the experience gained for completing PMC operational tasks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Significantly simplified the PMC operational task objectives;"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed the objectives for co-op extraction in both PMC and Scav operational tasks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the number of Priest kills required for completion in the story chapter “They Are Already Here” to 1;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the trader response wait timers by 40% in the following story chapters: Falling Skies, The Ticket, The Unheard, The Labyrinth, and Batya;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added alternative objectives to the story chapter “Tour” to simplify location unlocks. Players can now either visit the location multiple times or survive on it one time to complete the objective;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the duration of most Hideout crafts required for story progression by 40%;"
+      },
+      {
+       "type": "bullet",
+       "text": "Standardized the protection zones of front and rear built-in armor for light armor vests and armored rigs;"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted the prices for most armor vests and armored rigs. Prices of plate carriers without built-in armor have been significantly reduced;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the Raider count in The Lab by 20%;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the quantity and quality of loot in locked and marked rooms;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the fuel tank spawn chance at gas stations on Customs, Lighthouse, and Shoreline;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the arming distance of the 40mm VOG-25 round to 10 meters;"
+      },
+      {
+       "type": "bullet",
+       "text": "Reduced the trader sell price of the 40x46mm M386 (HE) grenade;"
+      },
+      {
+       "type": "bullet",
+       "text": "Increased the trader sell price of the 40mm VOG-25 grenade."
+      },
+      {
+       "type": "para",
+       "text": "Expanded the objective areas for elimination tasks with specific zones:"
+      },
+      {
+       "type": "bullet",
+       "text": "The Huntsman Path - Secured Perimeter;"
+      },
+      {
+       "type": "bullet",
+       "text": "The Huntsman Path - Evil Watchman;"
+      },
+      {
+       "type": "bullet",
+       "text": "Capturing Outposts;"
+      },
+      {
+       "type": "bullet",
+       "text": "Claustrophobia;"
+      },
+      {
+       "type": "bullet",
+       "text": "Rite of Passage;"
+      },
+      {
+       "type": "bullet",
+       "text": "Provide Viewership;"
+      },
+      {
+       "type": "bullet",
+       "text": "No Swiping;"
+      },
+      {
+       "type": "bullet",
+       "text": "Return the Favor;"
+      },
+      {
+       "type": "bullet",
+       "text": "Provocation;"
+      },
+      {
+       "type": "bullet",
+       "text": "Gendarmerie - Tickets, Please;"
+      },
+      {
+       "type": "bullet",
+       "text": "Gendarmerie - District Patrol;"
+      },
+      {
+       "type": "bullet",
+       "text": "Gendarmerie - Mall Cop;"
+      },
+      {
+       "type": "bullet",
+       "text": "Long Road;"
+      },
+      {
+       "type": "bullet",
+       "text": "Overpopulation;"
+      },
+      {
+       "type": "bullet",
+       "text": "Pest Control;"
+      },
+      {
+       "type": "bullet",
+       "text": "Safe Corridor;"
+      },
+      {
+       "type": "bullet",
+       "text": "No Place for Renegades."
+      },
+      {
+       "type": "para",
+       "text": "Adjusted the built-in armor protection zones for the following armor vests and armored rigs:"
+      },
+      {
+       "type": "bullet",
+       "text": "ECLiPSE RBAV-AF plate carrier – removed the groin protection;"
+      },
+      {
+       "type": "bullet",
+       "text": "Crye Precision AVS, Stich Profi Plate Carrier V2 – moved the stomach protection to groin protection, removed the lower back protection."
+      },
+      {
+       "type": "para",
+       "text": "Reduced the penalties and increased the spawn chance for the following heavy armor vests:"
+      },
+      {
+       "type": "bullet",
+       "text": "6B43 Zabralo-Sh body armor;"
+      },
+      {
+       "type": "bullet",
+       "text": "FORT Redut-M body armor;"
+      },
+      {
+       "type": "bullet",
+       "text": "FORT Redut-T5 body armor;"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (Full Protection Kit);"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (Assault Kit);"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (High Mobility Kit)."
+      },
+      {
+       "type": "para",
+       "text": "Added new barters at Ragman Loyalty Level 4:"
+      },
+      {
+       "type": "bullet",
+       "text": "FORT Redut-M body armor (Without plates);"
+      },
+      {
+       "type": "bullet",
+       "text": "FORT Redut-T5 body armor (Without plates);"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (Full Protection Kit) (Without plates)."
+      },
+      {
+       "type": "para",
+       "text": "Removed outdated trade offers at Mechanic Loyalty Level 1, previously unlocked after completing the task “Failed Setup”:"
+      },
+      {
+       "type": "bullet",
+       "text": "GP-25 Kostyor 40mm underbarrel grenade launcher;"
+      },
+      {
+       "type": "bullet",
+       "text": "M203 40mm underbarrel grenade launcher;"
+      },
+      {
+       "type": "bullet",
+       "text": "40x46mm M386 (HE) grenade;"
+      },
+      {
+       "type": "bullet",
+       "text": "40mm VOG-25 grenade."
+      },
+      {
+       "type": "para",
+       "text": "Reduced the requirements for the following barters:"
+      },
+      {
+       "type": "bullet",
+       "text": "M203 40mm underbarrel grenade launcher;"
+      },
+      {
+       "type": "bullet",
+       "text": "6B43 Zabralo-Sh body armor;;"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (Full Protection Kit);"
+      },
+      {
+       "type": "bullet",
+       "text": "IOTV Gen4 body armor (Assault Kit);"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Please note that some fixes may contain story spoilers."
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the issues with culling, shadows, textures, and location geometry;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where water bodies could disappear for some players at certain graphics settings;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where healing continued after cancellation when searching a backpack looted from another player;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where players in PvE Zone did not receive achievements after completing all conditions. Missing achievements will be granted;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect damage registration after fixing a weapon malfunction in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of BTR Driver task progression resetting in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Removed the ability to list incomplete ammo stacks on the Flea Market;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the inability to pay for vehicle extracts when currency was split across multiple stacks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where gear preset purchases failed if items required different currencies or barter trades;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cases where killed bots remained in eating or drinking animations;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where opening the search window in the stash caused client freezes for some players;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where the lowest durability armor was selected when equipping presets;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the unnatural water reflections with SSR enabled;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the inability to transfer money to Mechanic in the story chapter “The Unheard”;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed Error 228 when handing in multiple documents to Mr. Kerman during the first intel submission;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the duplicated Kerman dialogues in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed Error 228 occurring after exiting certain dialogues;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the inability to hand over roubles in the task “To Great Heights! - Part 4”;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed item loss from backpacks in PvE Zone in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the third-person sprint animation transitions from crouched position;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the duplicate notifications when switching between story chapters;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the missing dialogue response options in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the missing flashbang explosion sound when player was above or below the detonation point;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue preventing item filter selection at traders;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect purchase price of the BNTI Kirasa-N armor (Green) at trader Ref;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the inability to transfer items to traders immediately after receiving them via in-game messages;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the ammo display in the Scav Case rewards;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the missing rewards from the Cultist Circle in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect stash size display for The Unheard Edition in the Hideout;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the fuel display in the Generator zone after visiting another player’s Hideout;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the client freezes when viewing certain player profiles;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where some PMC bots would not attack player Scavs in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed Error 228 when refreshing Hideout zones;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect edition localization on the final statistics screen;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the issues in Black Division and Birdeye weapon presets, as well as Kollontay gear presets."
+      },
+      {
+       "type": "bullet",
+       "text": "Reworked the tripwire placement system for The Labyrinth. Tripwires no longer spawn in immediate player spawn points."
+      }
+     ]
+    }
+   ],
+   "bullets": 96
+  },
+  {
+   "id": "steam-1826362059920738",
+   "version": "1.0.2.5",
+   "kind": "热修",
+   "title": "Patch 1.0.2.5",
+   "date": "2026-03-05",
+   "timestamp": 1772711486,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1826362059920738",
+   "sections": [
+    {
+     "title": "Changes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Adjusted the game server launch mechanics to speed up the process of the creation of rooms for matches and getting players into the raid;"
+      },
+      {
+       "type": "bullet",
+       "text": "Adjusted the raid completion mechanics and the display of post-raid statistics to speed up the process of leaving the raid after its completion;"
+      },
+      {
+       "type": "bullet",
+       "text": "Optimized the launch speed of the game client and menu loading;"
+      },
+      {
+       "type": "bullet",
+       "text": "Added a permanent display of the Zubr boat departure timer to the final part of the Terminal;"
+      },
+      {
+       "type": "bullet",
+       "text": "Updated the DLSS to version 4.5, and added support for new Presets."
+      }
+     ]
+    },
+    {
+     "title": "Changes to weapon attachments",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Adjusted the stats of most weapon attachments, i.e. muzzle devices, magazines, grips, and buttstocks. Our goal was to bridge the gap between the most popular, high-tier attachments and those that are currently rarely used."
+      },
+      {
+       "type": "para",
+       "text": "Muzzle devices"
+      },
+      {
+       "type": "bullet",
+       "text": "Flash hiders, muzzle brakes, and similar attachments now reduce recoil more effectively;"
+      },
+      {
+       "type": "bullet",
+       "text": "Suppressors, including their combos with various muzzle brakes, now have a smaller impact on recoil. In exchange, their ergonomics penalty has been reduced."
+      },
+      {
+       "type": "para",
+       "text": "These changes are aimed at addressing the current prevalence of suppressors, which are used almost universally. We want players to make a choice when building weapons: better recoil control with a muzzle brake versus relative stealth with a suppressor."
+      },
+      {
+       "type": "para",
+       "text": "Magazines"
+      },
+      {
+       "type": "para",
+       "text": "Adjusted the bonuses and penalties of all existing magazines into a more consistent system. The impact of high-capacity magazines on weapon ergonomics has been reduced. Load, unload, and check speed modifiers have also been significantly adjusted."
+      },
+      {
+       "type": "para",
+       "text": "Magazines that are the only available option for compatible weapons, such as machine gun boxes, now have significantly softer penalties to ergonomics and other stats."
+      },
+      {
+       "type": "para",
+       "text": "Grips and buttstocks"
+      },
+      {
+       "type": "para",
+       "text": "Narrowed the stat gap between different pistol grips, front grips, and buttstocks. Late-game attachments still slightly outperform their budget counterparts, but the difference is much smaller than it was before."
+      },
+      {
+       "type": "para",
+       "text": "We believe this will allow players to make builds based on visual preference among other things, eliminating the established flow of \"good\" and \"bad\" attachments."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Please note that some fixes may contain spoilers for story tasks."
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused the interface to duplicate when looting rigs, containers, or the inventories of killed players or bots in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the progress of Priest kills getting reset after the raid in the story chapter “They Are Already Here”;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where Mr. Kerman would not make contact after an unsuccessful search for the RFID card encryption device in The Lab;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused the dialogue with Lightkeeper to freeze, preventing players from receiving the Armored case in one of the story tasks;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused the dialogue with Lightkeeper to freeze, preventing players from obtaining the RFID card in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of players receiving a Flea Market ban due to Error 214 when the verification window failed to appear;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of Error 228 occurring when quickly purchasing multiple items on the Flea Market;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect sound occlusion behavior in certain areas of the D2 bunker on Reserve;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the network synchronization of grenade throws and BTR movement;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect damage calculation that resulted in no penalties being applied for a blacked-out limb;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect experience display on the post-raid statistics screen after completing a raid with the Run-Through status in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where some players would spawn into a raid without a weapon in their hands in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed a persistent muzzle flash after firing the GP-25 underbarrel grenade launcher in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused players to slide on inclined surfaces after jumping in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the brief sprint animation triggering when strafing or turning the camera in the direction of movement in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the cause of long transition times when switching to the Character screen and the Tasks tab in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where audio tapes produced in the Hideout would not appear in the handbook without restarting the game;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue where gear presets suggested purchasing weapon parts even though the required weapon build was already in the stash;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display issues with certain reward types and unlock conditions on the task screen;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display of night vision device mounts and adapters;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect ambient sound behavior in certain indoor areas on Terminal;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect Steam Rich Presence status switching in certain cases;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect scroll bar appearance in certain dropdown lists in the interface;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the search field not being automatically focused when opening the “Search in Stash” window;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display of the mouse sensitivity setting on the settings screen;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect bot behavior after fully depleting ammunition in stationary weapons in certain cases."
+      }
+     ]
+    }
+   ],
+   "bullets": 33
+  }
+ ]
+}

@@ -794,8 +794,9 @@
       };
     }
     if (state.priceSnap && state.priceSnap.phase === "loading") {
-      return { kind: "pending", short: "正在读取行情…", modeLabel: modeShort(mode),
-        detail: "正在从云端读取当前模式行情。" };
+      return { kind: "pending", short: "正在从云端读取行情", modeLabel: modeShort(mode),
+        loading: true, detail: "正在从云端读取当前模式行情。" +
+          "本地有缓存时直接复用，不会重复下载。" };
     }
     if (serverSnap && serverSnap.mode === mode && !serverSnap.available) {
       return {
@@ -870,7 +871,8 @@
     var info = priceSourceInfo();
     el.priceSourceBadge.textContent = info.short;
     el.priceSourceBadge.title = info.detail;
-    el.priceSourceBadge.className = "price-source-badge is-" + info.kind;
+    el.priceSourceBadge.className = "price-source-badge is-" + info.kind +
+      (info.loading ? " is-loading" : "");
     el.priceSourceBadge.setAttribute("data-kind", info.kind);
     el.priceSourceBadge.setAttribute("aria-label", "价格数据来源：" + info.short);
   }
@@ -2123,6 +2125,7 @@
     el.gunView = $("gun-view");
     el.taskView = $("task-view");        // R19.22：任务系统（独立模块 tasks.js）
     el.marketView = $("market-view");    // R97：市场（独立模块 js/market.js）
+    el.changesView = $("changes-view");  // R305：游戏更新（独立模块 js/changes.js）
     // R286：市场大盘已并入 #market-view 的子页（#market-board-pane），不再有独立顶层 view。
     el.gearTable = $("gear-table");
     el.sensInput = $("sens-input");
@@ -2729,6 +2732,8 @@
         || location.hash === "#stories" || /^#stories:/.test(location.hash || ""))) {
       state.view = "tasks";
     }
+    // R305：游戏更新也可以直接深链打开（从文档 / 公告里点链接就能到「更新」页）
+    if (!state.mini && location.hash === "#changes") { state.view = "changes"; }
 
     var savedGear = null;
     try { savedGear = JSON.parse(localStorage.getItem(LS_LOADOUT) || "null"); } catch (e) { /* 忽略 */ }
@@ -3078,9 +3083,10 @@
     }
     // 视图：只在真的不同才切，避免每次配置广播都重新量一次地图尺寸
     // R19.22：#tasks 深链优先于服务端保存的视图（否则会被上一次停留的视图覆盖）
+    // R305：#changes 同理——打开更新页的深链不能被旧配置顶回地图
     // R77b：小地图**永远不消费** ui.view——它的视图是固定的地图，不跟主窗走。
     if (!state.mini && typeof ui.view === "string" && VIEWS.indexOf(ui.view) >= 0 && ui.view !== state.view
-        && !/^#(tasks|stories)/.test(location.hash || "")) {
+        && !/^#(tasks|stories|changes)/.test(location.hash || "")) {
       setView(ui.view, false);   // 服务端来的切换不再回写，避免自回环
     }
     // 配装根槽位：逐槽比对（服务端只覆盖它确实给了的槽；子槽不走配置文件）
@@ -4314,6 +4320,11 @@
     // R86：小地图不消费任务 / 剧情深链，任何 hash 都不切主视图（?mini=1 零影响）。
     if (state.mini) { return false; }
     var h = location.hash || "";
+    // R305：#changes 直接打开游戏更新页（该段要求纯 ES5，注释里也不能出现反引号）
+    if (h === "#changes") {
+      setView("changes", false);
+      return true;
+    }
     if (h !== "#tasks" && !/^#tasks:/.test(h)) {
       // R86：剧情深链 #stories[:<storyId>[~<pointKey>]]
       var storyRoute = storyRouteFromHash();
@@ -8087,8 +8098,18 @@
       if (box) { box.classList.toggle("is-member-locked", !member); }
     }
     if (el.miniShotCleanup) { el.miniShotCleanup.checked = !!shot.cleanup_on_raid_end; }
-    if (el.miniShotsDir) { el.miniShotsDir.value = (cfg && cfg.screenshots_dir) || ""; }
-    if (el.miniLogDir) { el.miniLogDir.value = (cfg && cfg.log_dir) || ""; }
+    if (el.miniShotsDir) {
+      el.miniShotsDir.value = (cfg && cfg.screenshots_dir) || "";
+      // R303：把自动探测到的路径放进 placeholder，用户一眼能看到"自动识别到了哪里"；
+      // 不动 value，保持"留空 = 自动"的语义。探测失败时提示改为手动选择。
+      var shotAuto = (r && r.screenshotsDir) || (r && r.screenshotsDefault) || "";
+      el.miniShotsDir.placeholder = shotAuto ? ("自动：" + shotAuto) : "未识别，请点浏览选择";
+    }
+    if (el.miniLogDir) {
+      el.miniLogDir.value = (cfg && cfg.log_dir) || "";
+      var logAuto = (r && r.logDir) || "";
+      el.miniLogDir.placeholder = logAuto ? ("自动：" + logAuto) : "未识别，请点浏览选择";
+    }
     if (el.miniShotKey) {
       if (r.shotKey) {
         el.miniShotKey.textContent = "截图键：" + r.shotKey + "（来源 " + shotKeySourceLabel(r.shotKeySource) + "）";
@@ -8351,6 +8372,41 @@
         var patch = {};
         patch[pair[1]] = String(node.value || "").trim() || null;
         queuePrefs(patch);
+      });
+    });
+
+    // R303：目录输入旁的「浏览…」→ 本机服务弹系统文件夹选择框，回填路径并保存。
+    // 浏览器自身拿不到本地绝对路径，所以走服务端对话框；取消时不改动输入框。
+    Array.prototype.forEach.call(document.querySelectorAll(".mini-dir-browse"), function (btn) {
+      btn.addEventListener("click", function () {
+        var input = document.getElementById(btn.getAttribute("data-dir-for"));
+        if (!input) { return; }
+        var current = String(input.value || "").trim();
+        var title = btn.getAttribute("data-dir-title") || "选择目录";
+        btn.disabled = true;
+        var oldText = btn.textContent;
+        btn.textContent = "选择中…";
+        fetch("api/pick-folder?current=" + encodeURIComponent(current) +
+              "&title=" + encodeURIComponent(title), { cache: "no-store" })
+          .then(function (r) {
+            if (!r.ok) { throw new Error("HTTP " + r.status); }
+            return r.json();
+          })
+          .then(function (j) {
+            if (j && j.path) {
+              input.value = j.path;
+              input.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+          })
+          .catch(function (err) {
+            if (window.console && console.warn) {
+              console.warn("文件夹选择失败：", err);
+            }
+          })
+          .then(function () {
+            btn.disabled = false;
+            btn.textContent = oldText;
+          });
       });
     });
 
@@ -8931,7 +8987,7 @@
   var LS_FOCUS = "eftmap.focus";     // 当前选中的槽位节点 id（含子槽 "父/子"），只走 localStorage
   var LS_SENS = "eftmap.sens";
   var LS_COLW = "eftmap.colw";       // 表格列宽（按槽位类别 + 同名同义列共享），重启后恢复
-  var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market"];   // R19.22 任务；R97 市场（R286 大盘是市场子页）
+  var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market", "changes"];   // R19.22 任务；R97 市场（R286 大盘是市场子页）；R305 游戏更新
 
   // 配装根槽位：归属**只用构建期算好的一级类别 `cat`**（data/items.json 的 `audit.rules`
   // 写明每一类的判定依据，全部来自上游真实字段）。
@@ -10082,7 +10138,7 @@
       }
     }
     var panes = { map: el.mapView, loadout: el.loadoutView, gun: el.gunView, ammo: el.ammoView,
-                  tasks: el.taskView, market: el.marketView };
+                  tasks: el.taskView, market: el.marketView, changes: el.changesView };
     for (var key in panes) {
       if (panes[key]) { panes[key].hidden = (key !== name); }
     }
@@ -10093,6 +10149,11 @@
     if (name === "tasks" && window.GWTasks) { window.GWTasks.mount(); window.GWTasks.open(); }
     // R97：市场视图懒挂载（只读既有行情缓存与报价函数，不新建价格数据层）
     if (name === "market" && window.GWMarket) { window.GWMarket.mount(); window.GWMarket.open(); }
+    // R305：游戏更新视图懒挂载（读本机 /api/game-changes，离线用内置快照）
+    if (name === "changes" && window.GWChanges) {
+      window.GWChanges.mount();
+      window.GWChanges.open();
+    }
     // R286：市场工作区内部的「市场列表 / 市场大盘」子页切换由 market-workspace.js 统一处理；
     // 旧配置 / 旧深链带过来的 __gwMarketTab 在这里消费一次。
     if (name === "market" && window.GWMarketWorkspace) {

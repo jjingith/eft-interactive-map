@@ -53,7 +53,7 @@ filedialog = None
 messagebox = None
 
 APP_NAME = "EFT 互动地图"
-VERSION = "0.2.8.2"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
+VERSION = "0.2.9.0"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
 REG_KEY = r"Software\Microsoft\Windows\CurrentVersion\Uninstall\EFTMap"
 APP_EXE = "EFTMap.exe"
 APP_SHELL = "EFTMapDesktop.exe"   # 无边框客户端壳；与 EFTMap.exe 同目录出包
@@ -86,6 +86,26 @@ $sc.TargetPath = $Target
 $sc.WorkingDirectory = $WorkDir
 $sc.IconLocation = $Icon
 $sc.Save()
+"""
+
+# 安装前关闭「还在运行的旧版本」。只关位于目标安装目录内、且文件名在本程序
+# 白名单里的进程，绝不按进程名全局杀（避免误伤用户别的实例 / 同名程序）。
+# 返回被关闭的 PID 数。经 WMI 拿可执行路径，路径带中文也安全（PS 内部是 Unicode）。
+_CLOSE_PROCS_SCRIPT = """param([string]$InstallDir,[string]$ExeNames)
+$target = [System.IO.Path]::GetFullPath($InstallDir).TrimEnd('\\') + '\\'
+$names = @($ExeNames -split ',')
+$closed = 0
+Get-CimInstance Win32_Process | ForEach-Object {
+    $p = $_
+    $exe = $p.ExecutablePath
+    if (-not $exe) { return }
+    try { $full = [System.IO.Path]::GetFullPath($exe) } catch { return }
+    if (-not $full.StartsWith($target, [System.StringComparison]::OrdinalIgnoreCase)) { return }
+    $name = [System.IO.Path]::GetFileName($full)
+    if ($names -notcontains $name) { return }
+    try { Stop-Process -Id $p.ProcessId -Force -ErrorAction Stop; $closed++ } catch { }
+}
+Write-Output $closed
 """
 
 # 建 .lnk 用的临时名：必须**纯 ASCII**（见 create_shortcut 注释）
@@ -196,15 +216,38 @@ def create_shortcut(lnk: str, target: str, work_dir: str, icon: str) -> None:
             # powershell 是控制台子系统程序；安装器本身是 --noconsole 产物，
             # 不加这个就会在建快捷方式时闪一个 PowerShell/cmd 窗口（R75）。
             kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-        subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
-                        "-File", handle.name, "-Lnk", tmp, "-Target", target,
-                        "-WorkDir", work_dir, "-Icon", icon], **kwargs)
+        try:
+            subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+                            "-File", handle.name, "-Lnk", tmp, "-Target", target,
+                            "-WorkDir", work_dir, "-Icon", icon],
+                           timeout=120, **kwargs)
+        except subprocess.TimeoutExpired:
+            # 装机时系统正被「解包 240MB + 复制 240MB + 杀软扫描」压着，
+            # PowerShell 起不来是有过的；给明确原因，别让人对着进度条干等。
+            raise InstallError(
+                "创建快捷方式超时：%s\n"
+                "通常是安全软件拦截了 PowerShell。可以先跳过，装完后手动在开始菜单新建快捷方式。" % lnk)
     finally:
         try:
             os.remove(handle.name)
         except OSError:
             pass
-    os.replace(tmp, lnk)
+
+    # 覆盖已有 .lnk：目标文件可能被杀软 / 资源管理器短暂占用（实测遇到过 WinError 5），
+    # 直接 os.replace 失败会让整个安装停在最后一步。删掉重试几次，别把瞬时占用当致命错误。
+    last_error: OSError | None = None
+    for attempt in range(4):
+        try:
+            os.replace(tmp, lnk)
+            return
+        except OSError as exc:
+            last_error = exc
+            try:
+                os.remove(lnk)
+            except OSError:
+                pass
+            time.sleep(0.3 * (attempt + 1))
+    raise last_error  # type: ignore[misc]
 
 
 def dir_size_kb(path: str) -> int:
@@ -322,6 +365,12 @@ def _exception_text(exc: BaseException) -> str:
 
 def classify_error(exc: BaseException) -> str:
     """把底层异常翻译成用户能看懂、能采取行动的中文原因。"""
+    # 引擎自己抛的 InstallError 已经写好了给人看的中文（目录非空、缺文件…），
+    # 直接取第一行；否则会被下面的关键字规则吞成「未识别的错误」。
+    if isinstance(exc, InstallError):
+        first = _exception_text(exc).strip().split("\n", 1)[0].strip()
+        if first:
+            return first
     text = _exception_text(exc).lower()
     if any(k in text for k in ("errno 28", "winerror 112", "no space left", "disk full",
                                "空间不足", "磁盘已满")):
@@ -351,7 +400,7 @@ def describe_install_state(state: dict | None) -> str:
         return "程序文件尚未写入安装目录（复制已在暂存目录中止并清理），目标目录保持原状。"
     if state.get("cleaned_old"):
         return "旧版本已清理，新文件尚未写入。可以点「重试」重新安装。"
-    return "未对安装目录做任何改动。可以点「重试」重新安装。"
+    return "未对安装目录做任何改动。"
 
 
 def write_error_log(exc: BaseException, *, install_dir: str | None = None,
@@ -584,6 +633,46 @@ def _wait_until_absent(path: str, timeout: float = 25.0, interval: float = 0.5) 
     return not os.path.exists(path)
 
 
+def close_running_old_app(install_dir: str, timeout: float = 30.0) -> int:
+    """关闭仍在运行的旧版程序，避免清理目录时文件被占用而失败。
+
+    只关可执行路径落在 `install_dir` 内、且文件名属于本程序的进程
+    （EFTMap.exe / EFTMapDesktop.exe / Uninstall.exe + WebView 壳）。按路径而非
+    进程名匹配，绝不误杀装在别处的同名程序或用户在别处的实例。
+    返回被关闭的进程数；非 Windows / 无匹配进程 / 关闭失败都返回 0，不抛异常。
+    """
+    if os.name != "nt":
+        return 0
+    exe_names = ",".join((APP_EXE, APP_SHELL, UNINSTALL_EXE))
+    handle = tempfile.NamedTemporaryFile("w", suffix=".ps1", delete=False, encoding="utf-8")
+    try:
+        handle.write(_CLOSE_PROCS_SCRIPT)
+        handle.close()
+        kwargs: dict = {
+            "stdout": subprocess.PIPE, "stderr": subprocess.DEVNULL,
+            "text": True, "encoding": "utf-8", "errors": "replace",
+        }
+        kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        proc = subprocess.run(
+            ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+             "-File", handle.name, "-InstallDir", os.path.abspath(install_dir),
+             "-ExeNames", exe_names],
+            timeout=timeout, **kwargs,
+        )
+        out = (proc.stdout or "").strip()
+        try:
+            return int(out.splitlines()[-1]) if out else 0
+        except ValueError:
+            return 0
+    except (OSError, subprocess.SubprocessError):
+        return 0
+    finally:
+        try:
+            os.remove(handle.name)
+        except OSError:
+            pass
+
+
 def _run_legacy_uninstaller(install_dir: str, info: dict, timeout: float = 30.0) -> bool:
     """静默调用旧版 Uninstall.exe 并**等它退出**。
 
@@ -762,12 +851,17 @@ def install_into(install_dir: str, desktop: bool = True, on_step=None, *,
         # 1) 旧版本 / 上次失败残留。没有旧版就完全跳过，不等待、不弹窗。
         existing = detect_existing_install(target)
         if existing:
+            # 先关掉还在运行的旧版：否则它的 exe / DLL 被占用，清理会失败并把
+            # 旧目录改名成 .old-*，既留下垃圾又可能让新版本启动到旧文件。
+            if close_running_old_app(target) > 0:
+                step("已关闭正在运行的旧版本。")
+                _wait_until_absent(os.path.join(target, APP_EXE), timeout=10.0)
             state["cleanup"] = cleanup_existing(target, on_step, existing)
             state["cleaned_old"] = True
         elif os.path.isdir(target) and not _is_empty_dir(target):
             raise InstallError(
                 "安装目录不为空，且不是本程序的旧版本：%s\n"
-                "为避免误删其他文件，安装器不会自动清空该目录。"
+                "为避免误删其他文件，安装器不会自动清空该目录。\n"
                 "请换一个空目录，或手动清理后重试。" % target)
 
         # 2) 暂存复制 → 校验 → 原子换入。
@@ -849,22 +943,132 @@ def uninstall(install_dir: str) -> None:
 # ---------------------------------------------------------------- 安装向导
 AFDIAN_URL = "https://afdian.com/item/cb09a30cdf4411f1959f52540025c377"
 
+# ---- 视觉规格：Windows XP 时代经典 InstallShield 向导 ------------------------
+# 所有尺寸都是 96 DPI 下的「逻辑像素」，创建控件前统一乘 SCALE（见 _ui_scale）。
+# 这样 125% / 150% 缩放时窗口与间距等比放大，不会出现按钮被挤出窗口或文字被裁切；
+# 字体一律用磅值（point），Tk 自己按 DPI 换算，不重复放大。
+WIN_W, WIN_H = 640, 430       # 客户区尺寸（不含系统标题栏）
+LEFT_W = 162                  # 左侧蓝色品牌区宽度
+BAR_H = 46                    # 底部导航条高度
+PAD_X = 22                    # 右侧内容区左右留白
+
+C_BLUE_TOP = "#0b2c60"        # 品牌区渐变上端（经典深蓝）
+C_BLUE_BOTTOM = "#1b56a4"     # 品牌区渐变下端
+C_BLUE_LINE = "#2f6cb4"       # 品牌区等高线装饰
+C_BG = "#ffffff"
+C_TEXT = "#111111"
+C_TEXT_DIM = "#4b4b4b"
+C_RULE = "#9c9c9c"
+C_BAR_BG = "#ece9d8"          # XP 对话框底色（浅灰米）
+C_BAR_LINE = "#aca899"
+C_FIELD_LINE = "#7f9db9"
+C_PROGRESS = "#0a5fcc"
+C_OK = "#1a7f37"
+C_ERR = "#a81616"
+
+# 每页的「标题」与「正文首句」。标题画在右侧内容区顶部，正文首句放在页面里，
+# 这样换页只替换右侧内容，左侧品牌区与底部按钮条始终不动。
 WIZARD_TITLES = [
-    ("欢迎使用 " + APP_NAME, "这套向导会把程序装到本机，全程不需要联网。"),
-    ("选择安装位置", "默认装到当前用户目录，不需要管理员权限。"),
-    ("正在安装", "正在把文件复制到本机，完成后会自动校验。"),
-    ("安装完成", "下面两个勾选决定关闭安装器后要不要顺手做点什么。"),
+    ("欢迎使用 " + APP_NAME + "安装向导",
+     "安装程序将在电脑上安装 " + APP_NAME + "。\n\n单击「下一步」继续。"),
+    ("选择安装位置",
+     "安装程序将把 " + APP_NAME + " 安装到以下文件夹。"),
+    ("正在安装 " + APP_NAME,
+     "请稍候，安装程序正在复制程序文件。"),
+    (APP_NAME + "安装完成",
+     "程序已成功安装到你的电脑。"),
 ]
+
+FAIL_TITLE = ("安装未能完成", "安装程序在写入文件时遇到问题。")
+
+STAGE_FALLBACK = "正在准备安装…"
+
+
+def _ui_scale(root) -> float:
+    """DPI 缩放系数。
+
+    优先读环境变量 EFTMAP_INSTALLER_SCALE：验收要在 125%/150% 下看真实布局，
+    用它把同一套代码跑到对应比例（仍走正常渲染路径，不是把窗口硬拉大）。
+    """
+    forced = os.environ.get("EFTMAP_INSTALLER_SCALE", "").strip()
+    if forced:
+        try:
+            return max(0.75, min(3.0, float(forced)))
+        except ValueError:
+            pass
+    try:
+        return max(0.75, min(3.0, root.winfo_fpixels("1i") / 96.0))
+    except Exception:  # noqa: BLE001 - 拿不到 DPI 就按 100% 画
+        return 1.0
+
+
+def _blend(c1: str, c2: str, t: float) -> str:
+    """两色线性插值，用于品牌区纵向渐变。"""
+    a = (int(c1[1:3], 16), int(c1[3:5], 16), int(c1[5:7], 16))
+    b = (int(c2[1:3], 16), int(c2[3:5], 16), int(c2[5:7], 16))
+    return "#%02x%02x%02x" % tuple(
+        int(round(a[i] + (b[i] - a[i]) * t)) for i in range(3))
+
+
+def _asset_path(name: str) -> str:
+    """assets/ 下的文件：打包后取 payload/assets，源码运行时取仓库根 assets。"""
+    roots = []
+    base = getattr(sys, "_MEIPASS", "")
+    if base:
+        roots.append(os.path.join(base, "payload"))
+    roots.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    for root in roots:
+        path = os.path.join(root, "assets", name)
+        if os.path.isfile(path):
+            return path
+    return ""
+
+
+def _plate_image(scale: float):
+    """左侧品牌区的应用图标。
+
+    Tk 的 PhotoImage 只认 PNG/GIF 且不能缩放，所以构建期预渲染了几档尺寸，
+    这里挑最接近目标像素的一张。找不到就返回 None，由调用方画几何替身。
+    """
+    target = 56.0 * scale
+    best = None
+    for size in (56, 70, 84, 112):
+        if best is None or abs(size - target) < abs(best - target):
+            best = size
+    for size in ([best] + [56, 70, 84, 112]):
+        path = _asset_path("app-plate-%d.png" % size)
+        if path:
+            try:
+                return tk.PhotoImage(file=path)
+            except Exception:  # noqa: BLE001 - 图标坏了不影响安装
+                continue
+    return None
+
+
+def _pick_font(root) -> str:
+    """中文界面字体：优先雅黑（清晰），退回系统自带的几个常见族。"""
+    try:
+        from tkinter import font as tkfont
+        families = set(tkfont.families(root))
+    except Exception:  # noqa: BLE001
+        return "Tahoma"
+    for name in ("Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI",
+                 "Tahoma", "SimSun"):
+        if name in families:
+            return name
+    return "Tahoma"
 
 
 class InstallWindow:
-    """经典四步向导：欢迎 → 安装选项 → 安装中 → 完成。
+    """经典 InstallShield 式四步向导：欢迎 → 安装位置 → 安装中 → 完成（或失败）。
 
-    为什么不用第三方 UI 库：安装器只有这一个窗口，原生 tk/ttk 已经够用，
-    少一个依赖就少一类「朋友机器上打不开」的故障。窗口尺寸写死，避免
-    高 DPI 下按字符宽度自动撑开后按钮跑出屏幕。
+    结构固定为三块，换页只动中间那块：
+        左：蓝色品牌区（图标 / 产品名 / 等高线装饰 / 版本）
+        右：白底内容区（标题 + 分隔线 + 当前页）
+        下：浅灰米色导航条（上一步 / 下一步（安装 / 完成 / 重试）/ 取消）
 
-    完成页的两个勾选按产品要求给：一个启动互动地图，一个前往爱发电页面。
+    安装引擎（install_into）完全没动，这里只做显示层：进度靠线程 + 队列回传，
+    避免复制大文件时窗口假死。
     """
 
     def __init__(self, root: tk.Tk):
@@ -876,24 +1080,37 @@ class InstallWindow:
         self.log_path = ""
         self.install_target = ""
 
-        root.title(APP_NAME + " " + VERSION + " · 安装")
-        root.geometry("560x430")
-        root.minsize(560, 430)
+        # ---- 尺寸与字体（全部按 DPI 缩放）
+        self.s = _ui_scale(root)
+        p = self.px
+        self.w = p(WIN_W)
+        self.h = p(WIN_H)
+        self.left_w = p(LEFT_W)
+        self.bar_h = p(BAR_H)
+        self.pad = p(PAD_X)
+        self.cw = self.w - self.left_w - 2 * self.pad   # 内容区可用宽度
+
+        self.fam = _pick_font(root)
+        self.f_body = (self.fam, 9)
+        self.f_small = (self.fam, 8)
+        self.f_title = (self.fam, 13, "bold")
+        self.f_brand = (self.fam, 11, "bold")
+        self.f_step = (self.fam, 9, "bold")
+
+        self._bar_job = None
+        self._bar_phase = 0
+        self._bar_full = False
+        self._plate = None
+
+        root.title(APP_NAME + " " + VERSION + " 安装")
+        root.geometry("%dx%d" % (self.w, self.h))
+        root.minsize(self.w, self.h)
         root.resizable(False, False)
+        root.configure(bg=C_BG)
 
-        header = tk.Frame(root, padx=18)
-        header.pack(fill="x", pady=(14, 0))
-        self.title_label = tk.Label(
-            header, text="", anchor="w",
-            font=("Microsoft YaHei UI", 13, "bold"))
-        self.title_label.pack(fill="x")
-        self.sub_label = tk.Label(
-            header, text="", anchor="w", justify="left", wraplength=520, fg="#555555")
-        self.sub_label.pack(fill="x", pady=(4, 0))
-        tk.Frame(root, height=1, bg="#A0A0A0").pack(fill="x", padx=18, pady=(10, 0))
-
-        self.body = tk.Frame(root, padx=18, pady=10)
-        self.body.pack(fill="both", expand=True)
+        self._build_brand_panel()
+        self._build_bottom_bar()
+        self._build_content()
 
         self._build_welcome()
         self._build_options()
@@ -902,145 +1119,318 @@ class InstallWindow:
         self.pages = [self.page_welcome, self.page_options,
                       self.page_progress, self.page_result]
 
-        footer = tk.Frame(root, padx=18)
-        footer.pack(fill="x", side="bottom", pady=(0, 12))
-        self.status = tk.Label(footer, text="点「下一步」继续。", anchor="w", fg="#444444")
-        self.status.pack(side="left", fill="x", expand=True)
-
-        self.btn_next = tk.Button(footer, text="下一步", width=11,
-                                  command=self._next, default="active")
-        self.btn_next.pack(side="right")
-        self.btn_back = tk.Button(footer, text="上一步", width=9, command=self._back)
-        self.btn_back.pack(side="right", padx=(0, 8))
-        self.btn_cancel = tk.Button(footer, text="取消", width=9, command=self._cancel)
-        self.btn_cancel.pack(side="right", padx=(0, 8))
-
-        self.root.protocol("WM_DELETE_WINDOW", self._cancel)
-        self.root.after(100, self._pump)
+        root.protocol("WM_DELETE_WINDOW", self._cancel)
+        root.bind("<Return>", self._on_return)
+        root.bind("<Escape>", lambda _e: self._cancel())
+        root.after(100, self._pump)
         self.show_page(0)
 
-    # ---------------------------------------------------------------- 页面构建
-    def _new_page(self) -> "tk.Frame":
-        return tk.Frame(self.body)
+    # ------------------------------------------------------------ 基础工具
+    def px(self, n: float) -> int:
+        """逻辑像素 → 实际像素（四舍五入，避免 1px 边框在 125% 下消失）。"""
+        return int(round(float(n) * self.s))
 
+    def _mkbutton(self, parent, text: str, command, width: int = 8,
+                  default: bool = False):
+        """传统 Windows 立体按钮：raised 边框 + 米灰底色 + 焦点黑框。"""
+        btn = tk.Button(
+            parent, text=text, command=command, width=width,
+            font=self.f_body, bg=C_BAR_BG, fg=C_TEXT,
+            activebackground="#e2dfd0", activeforeground=C_TEXT,
+            disabledforeground="#8b8b8b",
+            relief="raised", bd=1, padx=self.px(6), pady=self.px(2),
+            highlightthickness=1, highlightbackground=C_BAR_BG,
+            highlightcolor="#000000", takefocus=True)
+        if default:
+            btn.configure(default="active")
+        return btn
+
+    def _enable(self, btn, on: bool, text: str | None = None):
+        """显式切换可用状态：Tk 在某些主题下 disabledforeground 不生效，
+        文字颜色自己改最稳，禁用/可点一眼能分出来。"""
+        btn.configure(state="normal" if on else "disabled",
+                      fg=C_TEXT if on else "#8b8b8b")
+        if text is not None:
+            btn.configure(text=text)
+
+    def _linkbutton(self, parent, text: str, command):
+        """内容区里的次要动作按钮（复制错误 / 打开日志），比导航按钮小一号。"""
+        return tk.Button(parent, text=text, command=command,
+                         font=self.f_small, bg=C_BAR_BG, fg=C_TEXT,
+                         activebackground="#e2dfd0", relief="raised", bd=1,
+                         padx=self.px(8), pady=self.px(2),
+                         highlightthickness=0, takefocus=True)
+
+    # ------------------------------------------------------------ 左侧品牌区
+    def _build_brand_panel(self):
+        h = self.h - self.bar_h
+        cv = tk.Canvas(self.root, width=self.left_w, height=h,
+                       bd=0, highlightthickness=0, bg=C_BLUE_TOP)
+        cv.place(x=0, y=0, width=self.left_w, height=h)
+
+        # 纵向渐变：一行一条 1px 线，抵消逐像素画图的成本（只在建窗时画一次）
+        steps = h
+        for i in range(steps):
+            cv.create_line(0, i, self.left_w, i,
+                           fill=_blend(C_BLUE_TOP, C_BLUE_BOTTOM,
+                                       i / float(max(1, steps - 1))))
+
+        # 等高线装饰：三圈平滑闭合曲线，压在下半部，低对比不抢眼
+        import math
+        cx, cy = self.left_w * 0.08, h * 0.88
+        for ring, base in enumerate((0.30, 0.46, 0.62)):
+            pts = []
+            segments = 64
+            for i in range(segments):
+                ang = 2.0 * math.pi * i / segments
+                wobble = 1.0 + 0.09 * math.sin(3 * ang + ring * 0.9) \
+                    + 0.04 * math.sin(5 * ang - ring)
+                rx = base * self.left_w * 1.15 * wobble
+                ry = base * self.left_w * 0.95 * wobble
+                pts.extend((cx + rx * math.cos(ang), cy + ry * math.sin(ang)))
+            cv.create_line(*pts, smooth=True, fill=C_BLUE_LINE, width=1)
+
+        cv.create_line(self.left_w - 1, 0, self.left_w - 1, h, fill="#0a2a55")
+
+        # 产品图标 + 名称
+        icon_x, icon_y = self.px(20), self.px(18)
+        plate = _plate_image(self.s)
+        if plate is not None:
+            self._plate = plate          # 必须留引用，否则被 GC 后画不出来
+            side = plate.width()
+            cv.create_rectangle(icon_x - 1, icon_y - 1, icon_x + side, icon_y + side,
+                                outline="#5f88c0")
+            cv.create_image(icon_x, icon_y, image=plate, anchor="nw")
+            text_y = icon_y + side + self.px(12)
+        else:
+            # 图标资源缺失时的替身：菱形地图标记
+            side = self.px(48)
+            cv.create_rectangle(icon_x, icon_y, icon_x + side, icon_y + side,
+                                outline="#5f88c0", fill="#12386f")
+            cv.create_line(icon_x + side * 0.5, icon_y + self.px(10),
+                           icon_x + side * 0.75, icon_y + side * 0.5,
+                           icon_x + side * 0.5, icon_y + side - self.px(10),
+                           icon_x + side * 0.25, icon_y + side * 0.5,
+                           icon_x + side * 0.5, icon_y + self.px(10),
+                           fill="#cfe0f5", width=2)
+            text_y = icon_y + side + self.px(12)
+
+        cv.create_text(icon_x, text_y, text=APP_NAME, anchor="nw",
+                       fill="#ffffff", font=self.f_brand)
+        cv.create_text(icon_x, text_y + self.px(22), text="安装向导", anchor="nw",
+                       fill="#b9cfec", font=self.f_body)
+        cv.create_text(icon_x, h - self.px(14), text="版本 " + VERSION,
+                       anchor="sw", fill="#8fadd4", font=self.f_small)
+        self.brand = cv
+
+    # ------------------------------------------------------------ 底部导航条
+    def _build_bottom_bar(self):
+        bar = tk.Frame(self.root, bg=C_BAR_BG)
+        bar.place(x=0, y=self.h - self.bar_h, width=self.w, height=self.bar_h)
+        tk.Frame(bar, bg=C_BAR_LINE, height=1).place(x=0, y=0, width=self.w, height=1)
+        tk.Frame(bar, bg="#ffffff", height=1).place(x=0, y=1, width=self.w, height=1)
+
+        row = tk.Frame(bar, bg=C_BAR_BG)
+        row.place(relx=1.0, rely=0.5, anchor="e", x=-self.pad)
+
+        # side="right" 先放的在最右：取消 → 下一步 → 上一步（视觉从左到右反之）
+        self.btn_cancel = self._mkbutton(row, "取消", self._cancel, width=8)
+        self.btn_cancel.pack(side="right")
+        self.btn_next = self._mkbutton(row, "下一步", self._next,
+                                       width=8, default=True)
+        self.btn_next.pack(side="right", padx=(0, self.px(7)))
+        self.btn_back = self._mkbutton(row, "上一步", self._back, width=8)
+        self.btn_back.pack(side="right", padx=(0, self.px(7)))
+        self.bar = bar
+
+    # ------------------------------------------------------------ 右侧内容区
+    def _build_content(self):
+        self.content = tk.Frame(self.root, bg=C_BG)
+        self.content.place(x=self.left_w, y=0,
+                           width=self.w - self.left_w, height=self.h - self.bar_h)
+
+        self.title_label = tk.Label(
+            self.content, text="", anchor="w", justify="left",
+            bg=C_BG, fg=C_TEXT, font=self.f_title, wraplength=self.cw)
+        self.title_label.pack(fill="x", padx=self.pad, pady=(self.px(15), 0))
+
+        tk.Frame(self.content, bg=C_RULE, height=1).pack(
+            fill="x", padx=self.pad, pady=(self.px(7), 0))
+
+        self.bodyhost = tk.Frame(self.content, bg=C_BG)
+        self.bodyhost.pack(fill="both", expand=True,
+                           padx=self.pad, pady=(self.px(13), self.px(8)))
+
+    def _new_page(self) -> "tk.Frame":
+        return tk.Frame(self.bodyhost, bg=C_BG)
+
+    def _intro(self, page, text: str, dim: bool = False):
+        tk.Label(page, text=text, anchor="nw", justify="left",
+                 bg=C_BG, fg=C_TEXT_DIM if dim else C_TEXT,
+                 font=self.f_body, wraplength=self.cw).pack(fill="x")
+
+    # ------------------------------------------------------------ 第 1 页：欢迎
     def _build_welcome(self):
         page = self._new_page()
         self.page_welcome = page
-        tk.Label(page, text="点「下一步」开始安装。", anchor="w").pack(fill="x", pady=(2, 8))
+        self._intro(page, WIZARD_TITLES[0][1])
 
-        box = tk.Frame(page, bd=1, relief="groove", padx=12, pady=10)
-        box.pack(fill="x")
-        rows = [
-            ("会装什么", "互动地图主程序、独立窗口外壳、卸载程序。"),
-            ("不会动什么", "你的配置与预设（%APPDATA%\\EFTMap）会保留，升级不丢。"),
-            ("运行环境", "Windows 10 / 11 64 位；建议装有 WebView2 运行时（下一步会检测）。"),
-            ("安装位置", default_install_dir()),
-        ]
-        for i, (key, text) in enumerate(rows):
-            tk.Label(box, text=key, anchor="nw", width=9, fg="#204070").grid(
-                row=i, column=0, sticky="nw", pady=(0, 6))
-            tk.Label(box, text=text, anchor="w", justify="left", wraplength=390).grid(
-                row=i, column=1, sticky="w", pady=(0, 6))
-        box.columnconfigure(1, weight=1)
+        info = tk.Frame(page, bg=C_BG)
+        info.pack(fill="x", pady=(self.px(18), 0))
+        info.columnconfigure(1, weight=1)
+        rows = (("版本", VERSION),
+                ("安装位置", default_install_dir()))
+        for i, (key, value) in enumerate(rows):
+            tk.Label(info, text=key + "：", anchor="nw", bg=C_BG,
+                     fg=C_TEXT_DIM, font=self.f_body).grid(
+                row=i, column=0, sticky="nw", pady=(0, self.px(6)))
+            tk.Label(info, text=value, anchor="nw", justify="left", bg=C_BG,
+                     fg=C_TEXT, font=self.f_body,
+                     wraplength=self.cw - self.px(64)).grid(
+                row=i, column=1, sticky="w", pady=(0, self.px(6)))
 
-        tk.Label(page, text="下一步可以改安装位置、决定要不要建桌面快捷方式。",
-                 anchor="w", fg="#777777").pack(fill="x", pady=(10, 0))
+        tk.Label(page, text="重新安装或更新时，当前用户的配置和预设会保留。",
+                 anchor="w", bg=C_BG, fg=C_TEXT_DIM,
+                 font=self.f_small).pack(fill="x", pady=(self.px(12), 0))
 
+    # ------------------------------------------------------------ 第 2 页：安装位置
     def _build_options(self):
         page = self._new_page()
         self.page_options = page
+        self._intro(page, WIZARD_TITLES[1][1])
 
-        tk.Label(page, text="安装位置：", anchor="w").grid(row=0, column=0, sticky="w")
+        form = tk.Frame(page, bg=C_BG)
+        form.pack(fill="x", pady=(self.px(14), 0))
+        form.columnconfigure(1, weight=1)
+
+        tk.Label(form, text="安装位置：", anchor="w", bg=C_BG,
+                 fg=C_TEXT, font=self.f_body).grid(row=0, column=0, sticky="w")
         self.dir_var = tk.StringVar(value=default_install_dir())
-        tk.Entry(page, textvariable=self.dir_var, width=46).grid(
-            row=0, column=1, sticky="we", padx=(0, 6))
-        tk.Button(page, text="浏览…", command=self._browse).grid(row=0, column=2)
+        entry = tk.Entry(form, textvariable=self.dir_var, font=self.f_body,
+                         bg="#ffffff", fg=C_TEXT, relief="sunken", bd=1,
+                         insertbackground=C_TEXT, highlightthickness=0)
+        entry.grid(row=0, column=1, sticky="we",
+                   padx=(self.px(8), self.px(7)), ipady=self.px(2))
+        self._mkbutton(form, "浏览…", self._browse, width=6).grid(row=0, column=2)
 
         self.desktop_var = tk.BooleanVar(value=True)
-        tk.Checkbutton(page, text="创建桌面快捷方式", variable=self.desktop_var).grid(
-            row=1, column=0, columnspan=3, sticky="w", pady=(12, 0))
+        tk.Checkbutton(form, text="在桌面创建快捷方式", variable=self.desktop_var,
+                       anchor="w", bg=C_BG, fg=C_TEXT, font=self.f_body,
+                       activebackground=C_BG, activeforeground=C_TEXT,
+                       selectcolor="#ffffff", highlightthickness=0, bd=0).grid(
+            row=1, column=0, columnspan=3, sticky="w", pady=(self.px(14), 0))
 
-        tk.Label(page, text="装好后双击快捷方式即可启动（启动框 → 自动打开界面）。",
-                 anchor="w", fg="#777777").grid(
-            row=2, column=0, columnspan=3, sticky="w", pady=(6, 0))
+        tk.Label(form, text="开始菜单快捷方式将自动创建。", anchor="w",
+                 bg=C_BG, fg=C_TEXT_DIM, font=self.f_small).grid(
+            row=2, column=0, columnspan=3, sticky="w", pady=(self.px(6), 0))
 
-        # WebView2 检测结果：Win10 干净机器可能没有运行时，缺它时桌面壳会退成兼容模式。
+        # WebView2 检测：Win10 干净机器常见缺失，缺它时桌面壳只能走兼容模式。
+        # 只作提示，不是安装的前置条件。
         self.webview2 = webview2_version()
-        wv2_row = tk.Frame(page)
-        wv2_row.grid(row=3, column=0, columnspan=3, sticky="we", pady=(14, 0))
+        wv2 = tk.Frame(page, bg=C_BG)
+        wv2.pack(fill="x", pady=(self.px(20), 0))
         if self.webview2:
-            wv2_text = "WebView2 运行时：已就绪（%s）" % self.webview2
-            wv2_fg = "#1A7F37"
+            wv2_text = "WebView2 运行时：已安装。"
+            wv2_fg = C_OK
         else:
-            wv2_text = ("未检测到 WebView2 运行时（Win10 常见）。可以继续安装，但启动后会进入"
-                        "兼容模式（用浏览器打开），没有独立窗口；建议先安装运行时。")
-            wv2_fg = "#C00000"
-        self.wv2_label = tk.Label(wv2_row, text=wv2_text, wraplength=370,
-                                  justify="left", anchor="w", fg=wv2_fg)
-        self.wv2_label.pack(side="left", fill="x", expand=True)
+            wv2_text = ("未检测到 Microsoft Edge WebView2 Runtime。仍可继续安装；"
+                        "缺少该组件时，程序将使用兼容模式打开地图。")
+            wv2_fg = C_ERR
+        self.wv2_label = tk.Label(wv2, text=wv2_text, anchor="nw", justify="left",
+                                  bg=C_BG, fg=wv2_fg, font=self.f_body,
+                                  wraplength=self.cw)
+        self.wv2_label.pack(fill="x")
         if not self.webview2:
-            tk.Button(wv2_row, text="下载并安装", command=self._open_wv2).pack(
-                side="right", padx=(6, 0))
+            self._mkbutton(wv2, "下载 WebView2", self._open_wv2, width=12).pack(
+                anchor="w", pady=(self.px(8), 0))
 
-        page.columnconfigure(1, weight=1)
-
+    # ------------------------------------------------------------ 第 3 页：进度
     def _build_progress(self):
         page = self._new_page()
         self.page_progress = page
-        tk.Label(page, text="正在把文件复制到本机…", anchor="w",
-                 font=("Microsoft YaHei UI", 10)).pack(fill="x", pady=(18, 0))
-        self.bar = ttk.Progressbar(page, mode="indeterminate", length=500)
-        self.bar.pack(fill="x", pady=(12, 6))
-        tk.Label(page, text="安装期间请不要关闭窗口。文件较大，通常需要十几秒到一分钟。",
-                 anchor="w", fg="#777777").pack(fill="x")
+        self._intro(page, WIZARD_TITLES[2][1])
 
+        self.step_var = tk.StringVar(value=STAGE_FALLBACK)
+        tk.Label(page, textvariable=self.step_var, anchor="w", bg=C_BG,
+                 fg=C_TEXT, font=self.f_step).pack(
+            fill="x", pady=(self.px(22), 0))
+
+        bar_h = self.px(16)
+        self.bar_canvas = tk.Canvas(page, height=bar_h, bg="#ffffff", bd=0,
+                                    highlightthickness=1,
+                                    highlightbackground=C_FIELD_LINE)
+        self.bar_canvas.pack(fill="x", pady=(self.px(7), 0))
+        self.bar_h_px = bar_h
+
+        tk.Label(page, text="安装期间请不要关闭窗口。", anchor="w", bg=C_BG,
+                 fg=C_TEXT_DIM, font=self.f_small).pack(
+            fill="x", pady=(self.px(10), 0))
+
+    # ------------------------------------------------------------ 第 4 页：完成 / 失败
     def _build_result(self):
         page = self._new_page()
         self.page_result = page
 
-        self.result_title = tk.Label(page, text="安装完成", anchor="w",
-                                     font=("Microsoft YaHei UI", 12, "bold"), fg="#1A7F37")
-        self.result_title.pack(fill="x")
-        self.result_path = tk.Label(page, text="", anchor="w", fg="#555555")
-        self.result_path.pack(fill="x", pady=(4, 10))
+        # 成功块
+        self.done_box = tk.Frame(page, bg=C_BG)
+        tk.Label(self.done_box, text=WIZARD_TITLES[3][1], anchor="w", bg=C_BG,
+                 fg=C_TEXT, font=self.f_body).pack(fill="x")
+        self.result_path = tk.Label(self.done_box, text="", anchor="nw",
+                                    justify="left", bg=C_BG, fg=C_TEXT_DIM,
+                                    font=self.f_body, wraplength=self.cw)
+        self.result_path.pack(fill="x", pady=(self.px(8), 0))
 
-        self.result_opts = tk.Frame(page)
-        self.result_opts.pack(fill="x")
         self.launch_var = tk.BooleanVar(value=True)
         self.afdian_var = tk.BooleanVar(value=False)
-        tk.Checkbutton(self.result_opts, text="启动 " + APP_NAME + "（独立窗口）",
-                       variable=self.launch_var).pack(anchor="w")
-        tk.Checkbutton(self.result_opts, text="前往爱发电页面（了解会员与支持作者）",
-                       variable=self.afdian_var).pack(anchor="w", pady=(6, 0))
-        self.result_note = tk.Label(
-            page, text="两个勾选都可以不选；以后从开始菜单或桌面快捷方式启动即可。",
-            anchor="w", fg="#777777")
-        self.result_note.pack(fill="x", pady=(10, 0))
+        opts = tk.Frame(self.done_box, bg=C_BG)
+        opts.pack(fill="x", pady=(self.px(20), 0))
+        for text, var, gap in (
+                ("安装完成后启动 " + APP_NAME, self.launch_var, self.px(9)),
+                ("访问爱发电页面", self.afdian_var, 0)):
+            tk.Checkbutton(opts, text=text, variable=var, anchor="w", bg=C_BG,
+                           fg=C_TEXT, font=self.f_body, activebackground=C_BG,
+                           activeforeground=C_TEXT, selectcolor="#ffffff",
+                           highlightthickness=0, bd=0).pack(
+                fill="x", pady=(0, gap))
 
-        # 失败详情面板：默认隐藏；出错后展开成可滚动、可全选复制的多行文本，
-        # 避免长错误被固定宽度窗口截断（朋友看到的 `安装失败: [('C:\...\_MEI...` 即此问题）。
-        self.error_frame = tk.Frame(page)
-        self.error_frame.pack(fill="both", expand=True, pady=(10, 0))
-        self.error_frame.pack_forget()
-        self.error_frame.columnconfigure(0, weight=1)
-        self.error_frame.rowconfigure(0, weight=1)
-        self.error_text = tk.Text(self.error_frame, height=12, wrap="word",
-                                  relief="sunken", borderwidth=1)
-        scroll = ttk.Scrollbar(self.error_frame, orient="vertical",
+        # 失败块
+        self.fail_box = tk.Frame(page, bg=C_BG)
+        self.fail_reason = tk.Label(self.fail_box, text="", anchor="nw",
+                                    justify="left", bg=C_BG, fg=C_TEXT,
+                                    font=self.f_body, wraplength=self.cw)
+        self.fail_reason.pack(fill="x")
+        self.fail_hint = tk.Label(self.fail_box, text="", anchor="nw",
+                                  justify="left", bg=C_BG, fg=C_TEXT_DIM,
+                                  font=self.f_small, wraplength=self.cw)
+        self.fail_hint.pack(fill="x", pady=(self.px(6), 0))
+
+        detail = tk.Frame(self.fail_box, bg=C_BG)
+        detail.pack(fill="both", expand=True, pady=(self.px(10), 0))
+        detail.columnconfigure(0, weight=1)
+        detail.rowconfigure(0, weight=1)
+        # 完整异常留在可滚动、可全选复制的小框里：页面保持简洁，诊断能力不丢
+        self.error_text = tk.Text(detail, height=6, wrap="word", relief="sunken",
+                                  bd=1, font=(self.fam, 8), bg="#ffffff",
+                                  fg=C_TEXT, highlightthickness=0)
+        scroll = ttk.Scrollbar(detail, orient="vertical",
                                command=self.error_text.yview)
         self.error_text.configure(yscrollcommand=scroll.set)
         self.error_text.grid(row=0, column=0, sticky="nsew")
         scroll.grid(row=0, column=1, sticky="ns")
-        detail_row = tk.Frame(self.error_frame)
-        detail_row.grid(row=1, column=0, columnspan=2, sticky="we", pady=(6, 0))
-        self.log_label = tk.Label(detail_row, text="", anchor="w", justify="left",
-                                  wraplength=470)
-        self.log_label.pack(side="left", fill="x", expand=True)
-        tk.Button(detail_row, text="复制错误", command=self._copy_error).pack(
-            side="right", padx=(6, 0))
-        tk.Button(detail_row, text="打开日志", command=self._open_log).pack(side="right")
 
-    # ---------------------------------------------------------------- 翻页
+        # 日志路径单独一行：和按钮挤在一行时，长路径会在中间断开，很难读
+        self.log_label = tk.Label(self.fail_box, text="", anchor="w", justify="left",
+                                  bg=C_BG, fg=C_TEXT_DIM, font=self.f_small,
+                                  wraplength=self.cw)
+        self.log_label.pack(fill="x", pady=(self.px(7), 0))
+
+        actions = tk.Frame(self.fail_box, bg=C_BG)
+        actions.pack(fill="x", pady=(self.px(6), 0))
+        self._linkbutton(actions, "打开日志", self._open_log).pack(side="right")
+        self._linkbutton(actions, "复制错误信息", self._copy_error).pack(
+            side="right", padx=(0, self.px(6)))
+
+    # ------------------------------------------------------------ 翻页
     def show_page(self, index: int):
         self.page = index
         for i, page in enumerate(self.pages):
@@ -1048,30 +1438,42 @@ class InstallWindow:
                 page.pack(fill="both", expand=True)
             else:
                 page.pack_forget()
-        title, sub = WIZARD_TITLES[index]
+
         if index == 3 and not self.done:
-            title, sub = "安装未完成", "排查后点「重试」；安装器会先清理本次残留。"
+            title, sub = FAIL_TITLE
+        else:
+            title, sub = WIZARD_TITLES[index]
         self.title_label.configure(text=title)
-        self.sub_label.configure(text=sub)
 
         if index in (0, 1):
             if not self.btn_back.winfo_manager():
-                # 用 before= 插回「安装」与「取消」之间，否则 side=right 会让它跑到最左
-                self.btn_back.pack(side="right", padx=(0, 8), before=self.btn_cancel)
-            self.btn_back.configure(state="normal" if index == 1 else "disabled")
-            self.btn_cancel.configure(state="normal", text="取消")
-            self.btn_next.configure(state="normal", text="下一步" if index == 0 else "安装")
-            # 状态栏文字跟着按钮走：第二页的按钮已经是「安装」，不能再写「点下一步」。
-            self.status.configure(
-                text="点「下一步」继续。" if index == 0 else "点「安装」开始写入文件。",
-                fg="#444444")
+                # side="right" 的排版顺序是「先放的在最右」，所以「上一步」必须
+                # 插到「下一步」之后才会落在最左；用 before= 会插成中间，按钮顺序会乱。
+                self.btn_back.pack(side="right", padx=(0, self.px(7)),
+                                   after=self.btn_next)
+            self._enable(self.btn_back, index == 1)
+            self._enable(self.btn_cancel, True, "取消")
+            self._enable(self.btn_next, True,
+                         "下一步" if index == 0 else "安装")
+            self.btn_next.configure(default="active")
         elif index == 2:
             self.btn_back.pack_forget()
-            self.btn_next.configure(state="disabled", text="正在安装…")
-            self.btn_cancel.configure(state="disabled")
+            # 默认按钮的黑框要去掉，否则禁用的主按钮看着仍像可点
+            self._enable(self.btn_next, False, "正在安装…")
+            self.btn_next.configure(default="normal")
+            self._enable(self.btn_cancel, False)
+        elif self.done:
+            self.btn_back.pack_forget()
+            self._enable(self.btn_next, True, "完成")
+            self.btn_next.configure(default="active")
+            self.btn_cancel.pack_forget()
         else:
             self.btn_back.pack_forget()
-            self.btn_cancel.configure(state="normal", text="关闭")
+            self._enable(self.btn_next, True, "重试")
+            self.btn_next.configure(default="active")
+            if not self.btn_cancel.winfo_manager():
+                self.btn_cancel.pack(side="right")
+            self._enable(self.btn_cancel, True, "关闭")
 
     def _next(self):
         if self.page == 0:
@@ -1084,54 +1486,97 @@ class InstallWindow:
             if self.done:
                 self._open_after_install()
                 return
-            # 失败页的「重试」：回到安装选项，让用户改完目录 / 勾选再装一次。
-            self.error_frame.pack_forget()
-            self.root.resizable(False, False)
-            self.root.minsize(560, 430)
-            self.root.geometry("560x430")
+            # 失败页的「重试」：回到安装位置页，改完再装一次
+            self.error_text.delete("1.0", "end")
+            self.log_label.configure(text="")
             self.show_page(1)
-            self.status.configure(text="改正后点「安装」重试。", fg="#444444")
 
     def _back(self):
         if self.page == 1:
             self.show_page(0)
 
+    def _on_return(self, _event=None):
+        """回车 = 默认按钮。焦点在路径输入框时不当成确认，避免误装。"""
+        try:
+            if isinstance(self.root.focus_get(), tk.Entry):
+                return
+        except Exception:  # noqa: BLE001
+            pass
+        btn = self.btn_next
+        if str(btn.cget("state")) != "disabled":
+            self._next()
+
+    # ------------------------------------------------------------ 进度条动画
+    def _bar_tick(self):
+        if self._bar_full:
+            return
+        cv = self.bar_canvas
+        cv.delete("seg")
+        width = max(self.cw - 2, 10)
+        height = self.bar_h_px
+        seg = self.px(9)
+        step = seg + self.px(3)
+        # 一条约四成宽的「块带」从左往右循环（经典等待样式）：带子之外不画，
+        # 否则整条进度条会被铺满，看着像已经装完了。
+        band = max(int(width * 0.42), step * 3)
+        span = width + band
+        start = (self._bar_phase % span) - band
+        for i in range(int(band / step) + 1):
+            x = start + i * step
+            x0, x1 = max(x, 1), min(x + seg, width - 1)
+            if x1 > x0:
+                cv.create_rectangle(x0, 2, x1, height - 2,
+                                    fill=C_PROGRESS, outline="", tags="seg")
+        self._bar_phase += self.px(16)
+        self._bar_job = self.root.after(55, self._bar_tick)
+
+    def _bar_start(self):
+        self._bar_full = False
+        self._bar_phase = 0
+        if self._bar_job is None:
+            self._bar_tick()
+
+    def _bar_stop(self):
+        if self._bar_job is not None:
+            try:
+                self.root.after_cancel(self._bar_job)
+            except Exception:  # noqa: BLE001
+                pass
+            self._bar_job = None
+
+    def _bar_finish(self):
+        self._bar_stop()
+        self._bar_full = True
+        cv = self.bar_canvas
+        cv.delete("seg")
+        cv.create_rectangle(1, 1, max(self.cw - 2, 2), self.bar_h_px - 1,
+                            fill=C_PROGRESS, outline="", tags="seg")
+
+    # ------------------------------------------------------------ 动作
     def _open_wv2(self):
         webbrowser.open(WEBVIEW2_URL)
 
     def _browse(self):
-        chosen = filedialog.askdirectory(initialdir=self.dir_var.get() or default_install_dir())
+        chosen = filedialog.askdirectory(
+            initialdir=self.dir_var.get() or default_install_dir())
         if chosen:
             self.dir_var.set(chosen)
 
     def _start(self):
         if self.installing:
             return
-        # 缺 WebView2 时必须先给出明确提示与安装方式，而不是装完启动才发现没有独立窗口。
-        if not self.webview2 and messagebox is not None:
-            go_download = messagebox.askyesno(
-                "缺少 WebView2 运行时",
-                "未检测到 Microsoft Edge WebView2 运行时。\n\n"
-                "程序可以继续安装，但启动后会进入兼容模式（用浏览器打开），"
-                "没有独立窗口与内置菜单。\n\n"
-                "现在去下载并安装 WebView2 运行时吗？\n\n" + WEBVIEW2_URL)
-            if go_download:
-                webbrowser.open(WEBVIEW2_URL)
-                return
         target = self.dir_var.get().strip() or default_install_dir()
         desktop = bool(self.desktop_var.get())
         self.install_target = target
-        # 重试前清空上一次的错误面板与日志路径，状态回到正常颜色。
         self.error_text.delete("1.0", "end")
-        self.error_frame.pack_forget()
         self.log_label.configure(text="")
         self.log_path = ""
-        self.status.configure(text="正在准备安装…", fg="#000000")
+        self.step_var.set("正在准备安装…")
         self.installing = True
         self.show_page(2)
-        self.bar.configure(mode="indeterminate")
-        self.bar.start(12)
-        threading.Thread(target=self._worker, args=(target, desktop), daemon=True).start()
+        self._bar_start()
+        threading.Thread(target=self._worker, args=(target, desktop),
+                         daemon=True).start()
 
     def _worker(self, target: str, desktop: bool):
         try:
@@ -1143,7 +1588,8 @@ class InstallWindow:
                 log_path = write_error_log(exc, install_dir=target, state=state)
             except Exception:  # noqa: BLE001 - 写日志失败也不能吞掉原始异常
                 log_path = ""
-            self.events.put(("__error__", {"exc": exc, "log_path": log_path, "state": state}))
+            self.events.put(("__error__", {"exc": exc, "log_path": log_path,
+                                           "state": state}))
 
     def _pump(self):
         # 注意：处理完成/失败事件后不能 return，否则「重试」时事件再没人消费，窗口会假死。
@@ -1157,7 +1603,7 @@ class InstallWindow:
                     elif kind == "__error__":
                         self._fail(value)
                     continue
-                self.status.configure(text=item)
+                self.step_var.set(str(item))
         except queue.Empty:
             pass
         self.root.after(100, self._pump)
@@ -1166,56 +1612,53 @@ class InstallWindow:
         self.done = True
         self.installing = False
         self.install_target = target
-        self.bar.stop()
-        self.bar.configure(mode="determinate", value=100)
-        self.result_title.configure(text="安装完成", fg="#1A7F37")
+        self._bar_finish()
+        self.step_var.set("安装完成。")
         self.result_path.configure(text="安装位置：" + target)
-        self.error_frame.pack_forget()
-        self.result_opts.pack(fill="x")
-        self.result_note.pack(fill="x", pady=(10, 0))
+        self.fail_box.pack_forget()
+        self.done_box.pack(fill="both", expand=True)
         self.show_page(3)
-        self.btn_next.configure(text="完成", state="normal")
-        self.btn_cancel.pack_forget()
-        self.status.configure(text="安装完成 · 可在开始菜单找到「" + APP_NAME + "」",
-                              fg="#1A7F37")
+        self.btn_next.focus_set()
 
     def _fail(self, report: dict):
         exc = report.get("exc")
         log_path = report.get("log_path") or ""
         self.log_path = log_path
         self.installing = False
+        self._bar_stop()
         reason = classify_error(exc) if exc is not None else "未知错误"
+        # InstallError 的多行消息里，第一行是原因、其余是给用户的处理建议，
+        # 把建议放到灰色提示位，比一句通用话术有用。
+        hint = "按上面的提示处理后点「重试」；也可以点「关闭」退出，稍后重新运行安装程序。"
+        if isinstance(exc, InstallError):
+            extra = [line.strip() for line in _exception_text(exc).splitlines()[1:]
+                     if line.strip()]
+            if extra:
+                # 保留引擎给的换行：中文整段折行时容易把句号单独甩到下一行
+                hint = "\n".join(extra)
+        self.fail_reason.configure(text=reason)
+        self.fail_hint.configure(text=hint)
+
         detail = [
-            "安装未完成。",
-            "",
-            "当前状态：" + describe_install_state(report.get("state")),
+            "安装状态：" + describe_install_state(report.get("state")),
             "",
             "失败原因：" + reason,
             "",
             "异常：" + type(exc).__name__ + ": " + _exception_text(exc),
         ]
         if log_path:
-            detail.extend(["", "完整诊断日志（含 traceback 与 _MEI 解包目录文件清单）：", log_path])
-            self.log_label.configure(text="日志文件：" + log_path)
+            detail.extend(["", "完整诊断日志（含 traceback 与 _MEI 解包目录文件清单）：",
+                           log_path])
+            self.log_label.configure(text="日志：" + log_path)
         else:
-            detail.extend(["", "诊断日志写入失败；请把上方异常全文复制发给开发者。"])
-            self.log_label.configure(text="日志写入失败，请复制上方错误全文")
-        detail.extend(["", "排查后点「重试」即可；安装器会先清理本次残留，不需要手动删目录。"])
-
+            detail.extend(["", "诊断日志写入失败；请复制上面的错误全文发给开发者。"])
+            self.log_label.configure(text="日志写入失败")
         self.error_text.delete("1.0", "end")
         self.error_text.insert("1.0", "\n".join(detail))
-        self.result_title.configure(text="安装未完成", fg="#C00000")
-        self.result_path.configure(text="失败原因：" + reason)
-        self.result_opts.pack_forget()
-        self.result_note.pack_forget()
+
+        self.done_box.pack_forget()
+        self.fail_box.pack(fill="both", expand=True)
         self.show_page(3)
-        self.error_frame.pack(fill="both", expand=True, pady=(10, 0))
-        self.btn_next.configure(text="重试", state="normal")
-        self.btn_cancel.configure(state="normal", text="关闭")
-        self.status.configure(text="安装失败：" + reason, fg="#C00000")
-        self.root.resizable(True, True)
-        self.root.minsize(640, 480)
-        self.root.geometry("780x620")
 
     def _open_log(self):
         if not self.log_path or not os.path.isfile(self.log_path):
@@ -1235,10 +1678,7 @@ class InstallWindow:
             self.root.clipboard_append(text)
         except Exception:  # noqa: BLE001 - 剪贴板偶发被占用，不能因此再抛错
             pass
-        if self.log_path:
-            self.log_label.configure(text="已复制错误全文。日志文件：" + self.log_path)
-        else:
-            self.log_label.configure(text="已复制错误全文。")
+        self.log_label.configure(text="已复制错误全文")
 
     def _open_after_install(self):
         """完成页的「完成」：按勾选启动程序 / 打开爱发电，然后关窗。"""
@@ -1261,6 +1701,26 @@ class InstallWindow:
         self.root.destroy()
 
 
+def _enable_dpi_awareness() -> None:
+    """在创建 Tk 之前声明进程 DPI 感知。
+
+    不声明的话系统会把窗口当位图整体拉伸（125%/150% 下发虚），Tk 拿到的
+    winfo_fpixels('1i') 也永远是 96，缩放布局无从谈起。
+    """
+    try:
+        import ctypes
+        # 1 = PROCESS_SYSTEM_DPI_AWARE（Win8.1+）
+        ctypes.windll.shcore.SetProcessDpiAwareness(1)
+        return
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        import ctypes
+        ctypes.windll.user32.SetProcessDPIAware()
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def app_icon_path() -> str:
     """R282：安装向导窗口图标。onefile 产物在解包目录的 payload/assets，
     仓库内直接跑时用根 assets/app.ico；找不到就保持 Tk 默认图标。"""
@@ -1280,6 +1740,8 @@ def run_gui() -> int:
     import tkinter as tk_mod
     from tkinter import filedialog as filedialog_mod, messagebox as messagebox_mod, ttk as ttk_mod
     tk, ttk, filedialog, messagebox = tk_mod, ttk_mod, filedialog_mod, messagebox_mod
+    # 必须在 Tk() 之前：晚于窗口创建再声明，系统已经按 96 DPI 把窗口画出来了。
+    _enable_dpi_awareness()
     root = tk.Tk()
     icon = app_icon_path()
     if icon:

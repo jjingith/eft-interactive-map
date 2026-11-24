@@ -33,6 +33,9 @@ $script:RuntimeFiles = @(
     "data/flea-prices.json",
     "data/flea-prices-pve.json",
     "data/flea-prices-pvps.json",
+    # R305：游戏更新页的随包快照（tools/fetch_game_changes.py 生成）。
+    # 缺它时「更新」页在离线状态下是空的，只有点过「检查更新」才有内容。
+    "data/game-changes.json",
     "data/forge-constraints.json",
     "data/gun-compat.json",
     "data/gun-layout-calibration.json",

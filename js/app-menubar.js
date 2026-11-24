@@ -299,60 +299,55 @@
     syncBuildRev();
 
     loadDataVersion();
-    loadDataDate();
+    loadAppVersion();
   }
 
-  // ---------------------------------------------------------------- 数据版本（R301）
-  /* 右上角 / 状态栏显示的都是「数据截止」，真值只认 data/meta.json 的 generatedAt
-     —— 那是本项目主数据源 tarkov.dev 的快照生成时间，和界面里物品/任务/价格同源。
-     旧版这里显示的是「游戏版本 X」，取自 data/game-truth/meta.json 的
-     source.exe_version（**本机 EFT 客户端** exe 版本）—— 与 tarkov.dev 数据源无关，
-     会让人误以为数据来自那个客户端版本。R301 起改为数据截止日期，不再冒充游戏版本。 */
-  var dataDate = "";
-  var dataDateTitle = "";
-  var dataDateSeq = 0;   // 数据版本请求序号：只采纳最后一次请求的结果
+  // ---------------------------------------------------------------- 应用版本（R303）
+  /* 右上角 / 状态栏显示应用自身的版本号（如 0.2.8.3），真值取自本地服务端
+     /api/update-check 的 current_version（= tools/serve.py 的 VERSION，唯一真源）。
+     历史：R84 显示游戏版本（本机客户端 exe 版本）、R301 改数据截止日期、
+     R303 按用户要求改为应用版本。构建标记 R19.xx 仍只在「关于」里，不上顶栏。 */
+  var appVersion = "";
+  var appVersionTitle = "";
+  var appVersionSeq = 0;
 
-  function setDataDate(v, title) {
-    dataDate = v;
-    dataDateTitle = title;
+  function setAppVersion(v, title, available, latest) {
+    appVersion = v;
+    appVersionTitle = title;
     var badge = document.getElementById("build-rev");
     if (badge) {
-      badge.textContent = "数据截止 " + v;
+      badge.textContent = v;
       badge.setAttribute("title", title);
     }
     syncStatus();
   }
 
-  function loadDataDate() {
-    // 切换账号版本后重新取一次；只让最后一次请求落地，避免旧响应后到写回旧值。
-    var seq = ++dataDateSeq;
+  function loadAppVersion() {
+    var seq = ++appVersionSeq;
     function fail() {
-      if (seq !== dataDateSeq) { return; }
+      if (seq !== appVersionSeq) { return; }
       var badge = document.getElementById("build-rev");
       if (badge) {
-        badge.textContent = "数据截止 —";
-        badge.setAttribute("title", "未读到 data/meta.json 的 generatedAt；构建版本见「关于」");
+        badge.textContent = "版本 —";
+        badge.setAttribute("title", "未读到应用版本；构建标记见「关于」");
       }
       syncStatus();
     }
-    function apply(j) {
-      if (seq !== dataDateSeq) { return; }
-      var raw = String((j && j.generatedAt) || "").trim();
-      if (!raw) { throw new Error("no generatedAt"); }
-      // generatedAt 形如 2026-11-15T13:01:30Z，界面只取日期部分
-      var day = /^\d{4}-\d{2}-\d{2}/.test(raw) ? raw.slice(0, 10) : raw;
-      setDataDate(day, "数据截止 " + day +
-        " · 来源 data/meta.json 的 generatedAt（主数据源 tarkov.dev 快照生成时间）" +
-        " · 完整时间戳 " + raw);
-    }
-    // 优先复用 app.js 已渲染到 #about-meta-line 的版本文案，避免重复请求
-    var line = document.getElementById("about-meta-line");
-    var m = line && /版本\s+(\S+)\s*·/.exec(line.textContent || "");
-    if (m) { apply({ generatedAt: m[1] }); return; }
-    fetch("data/meta.json", { cache: "no-store" }).then(function (r) {
+    fetch("api/update-check", { cache: "no-store" }).then(function (r) {
       if (!r.ok) { throw new Error("HTTP " + r.status); }
       return r.json();
-    }).then(apply).catch(fail);
+    }).then(function (j) {
+      if (seq !== appVersionSeq) { return; }
+      var cur = String((j && j.current_version) || "").trim();
+      if (!cur) { throw new Error("no current_version"); }
+      var v = "v" + cur;
+      var title = "应用版本 " + v;
+      // 有新版本时在悬停提示里说明，不占徽标正文
+      if (j.available && j.latest_version) {
+        title += " · 有可用更新 " + j.latest_version;
+      }
+      setAppVersion(v, title);
+    }).catch(fail);
   }
 
   /** 构建号只出现在「帮助 → 关于」，从内联脚本写的 data-rev 读取，不在顶栏显示。 */
@@ -362,7 +357,7 @@
       document.documentElement.getAttribute("data-build-rev") || "";
     var line = document.getElementById("about-build-line");
     if (line && rev && rev !== "—") {
-      line.textContent = "构建版本：" + rev + "（仅用于排查；右上角与状态栏显示数据截止日期）";
+      line.textContent = "构建版本：" + rev + "（仅用于排查；右上角与状态栏显示应用版本）";
     }
   }
 
@@ -431,11 +426,11 @@
 
     var revEl = document.getElementById("sb-rev");
     if (revEl) {
-      if (dataDate) {
-        revEl.textContent = "数据截止 " + dataDate;
-        revEl.setAttribute("title", dataDateTitle);
-      } else if (!/数据截止/.test(revEl.textContent || "")) {
-        revEl.textContent = "数据截止 —";
+      if (appVersion) {
+        revEl.textContent = "版本 " + appVersion;
+        revEl.setAttribute("title", appVersionTitle);
+      } else if (!/版本/.test(revEl.textContent || "")) {
+        revEl.textContent = "版本 —";
       }
     }
 
@@ -967,7 +962,7 @@
     // 导致选完版本要刷新才更新文案。这里改为监听 window，并在事件里立刻同步。
     function onEdition() {
       sync();             // 版本名直接读当前 GWDataScope，同一次点击内落地
-      loadDataDate();     // 数据截止日期重取（同一份 data/meta.json，切换版本数据源不变）
+      loadAppVersion();   // 应用版本重取（切换账号版本不影响应用版本，沿用同一接口）
     }
 
     sync();

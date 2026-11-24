@@ -1689,7 +1689,8 @@
   }
 
   // ---------------------------------------------------------------- R234 截图识别
-  var ocrState = { img: null, url: "", crop: null, dragging: false, dragStart: null, busy: false };
+  var ocrState = { img: null, url: "", crop: null, dragging: false, dragStart: null,
+                   busy: false, lastResult: null, menu: null };
 
   function ocrOpen() {
     if (!ui.ocr) { return; }
@@ -1834,7 +1835,125 @@
     });
   }
 
+  /* R303：重名物资的候选选择菜单。
+     游戏内显示名相同、实际是不同物品（钥匙卡 / 海报…）或同短名不同口径（.338 AP / .300 AP），
+     OCR 从截图上分不出来，所以标「?」。此前「?」只有 tooltip、点了没反应（用户反馈）；
+     现在点开「?」得到候选清单，选一项就把该行切到那个物品，价格/图标/每格价一起换。 */
+
+  function ocrCloseCandMenu() {
+    if (ocrState.menu) {
+      var node = ocrState.menu;
+      ocrState.menu = null;
+      if (node.parentNode) { node.parentNode.removeChild(node); }
+    }
+    document.removeEventListener("mousedown", ocrCandMenuOutside, true);
+    document.removeEventListener("keydown", ocrCandMenuEsc, true);
+  }
+
+  function ocrCandMenuOutside(ev) {
+    if (!ocrState.menu) { return; }
+    if (ocrState.menu.contains(ev.target)) { return; }
+    ocrCloseCandMenu();
+  }
+
+  function ocrCandMenuEsc(ev) {
+    if (ev.key === "Escape") { ocrCloseCandMenu(); }
+  }
+
+  /** 把候选的价格明细换到 match 上；缺 detail 时按单项价格尽力还原。 */
+  function ocrApplyCandidate(m, cand) {
+    if (!m || !cand) { return; }
+    m.id = cand.id || m.id;
+    m.name = cand.name || m.name;
+    m.short = cand.short || "";
+    if (cand.gw !== undefined) { m.gw = cand.gw; }
+    if (cand.gh !== undefined) { m.gh = cand.gh; }
+    if (cand.weight !== undefined) { m.weight = cand.weight; }
+    // 弹药候选的 kind 是形态（loose 散装 / pack 弹药包），切换后徽标要跟着变
+    if (cand.kind === "loose" || cand.kind === "pack") { m.ammoKind = cand.kind; }
+    if (cand.detail) {
+      m.price = cand.detail;
+    } else {
+      // 老后端 / 弹药候选没有 detail：按 kind 还原一条够渲染的价格记录
+      var amount = (typeof cand.price === "number") ? cand.price : null;
+      var priced = { lastLow: amount, base: amount,
+                     perSlot: cand.perSlot, priceSource: cand.kind || "flea",
+                     noFlea: !!cand.noFlea };
+      if (cand.kind === "traderSell") { priced.traderSell = amount; }
+      if (cand.kind === "trader") { priced.trader = amount; }
+      m.price = priced;
+    }
+    m.userPickedId = cand.id || "";
+  }
+
+  function ocrOpenCandMenu(ev, anchor, cands, m) {
+    if (ev) { ev.stopPropagation(); ev.preventDefault(); }
+    // 再点同一个「?」收起（当作开关）
+    if (ocrState.menu && ocrState.menu.__anchor === anchor) {
+      ocrCloseCandMenu();
+      return;
+    }
+    ocrCloseCandMenu();
+    if (!cands || !cands.length) { return; }
+
+    var menu = el("div", "mk-ocr-cand-menu");
+    menu.setAttribute("role", "listbox");
+    menu.setAttribute("aria-label", "重名物资候选");
+    menu.__anchor = anchor;
+    menu.appendChild(el("div", "mk-ocr-cand-head",
+      "名称相同、物品不同：点击选择正确的物品"));
+
+    cands.forEach(function (c) {
+      var item = el("button", "mk-ocr-cand-item");
+      item.type = "button";
+      item.setAttribute("role", "option");
+      if (m.userPickedId && m.userPickedId === c.id) {
+        item.classList.add("is-picked");
+        item.setAttribute("aria-selected", "true");
+      }
+      var line1 = el("span", "mk-ocr-cand-name", c.name || c.id);
+      item.appendChild(line1);
+      var meta = [];
+      if (c.caliber) { meta.push(c.caliber); }
+      if (c.kind === "loose") { meta.push("散装"); }
+      else if (c.kind === "pack") { meta.push("弹药包"); }
+      if (typeof c.perSlot === "number" && c.perSlot > 0) {
+        meta.push("每格 " + fmt(c.perSlot));
+      }
+      if (meta.length) { item.appendChild(el("span", "mk-ocr-cand-meta", meta.join(" · "))); }
+      var amount = (typeof c.price === "number") ? (fmt(c.price) + " ₽") : "无价";
+      item.appendChild(el("span", "mk-ocr-cand-price", amount));
+      item.title = (c.name || c.id) + "（" + (amount) + "）";
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+        ocrApplyCandidate(m, c);
+        ocrCloseCandMenu();
+        if (ocrState.lastResult) { ocrRenderResult(ocrState.lastResult); }
+      });
+      menu.appendChild(item);
+    });
+
+    document.body.appendChild(menu);
+    // 定位：优先贴「?」下方；下方放不下就翻到上方；左右夹在视口内
+    var r = anchor.getBoundingClientRect();
+    var mw = menu.offsetWidth, mh = menu.offsetHeight;
+    var left = Math.max(8, Math.min(r.left, window.innerWidth - mw - 8));
+    var top = r.bottom + 6;
+    if (top + mh > window.innerHeight - 8) {
+      top = Math.max(8, r.top - mh - 6);
+    }
+    menu.style.left = left + "px";
+    menu.style.top = top + "px";
+    ocrState.menu = menu;
+    document.addEventListener("mousedown", ocrCandMenuOutside, true);
+    document.addEventListener("keydown", ocrCandMenuEsc, true);
+    var first = menu.querySelector(".mk-ocr-cand-item");
+    if (first) { first.focus(); }
+  }
+
   function ocrRenderResult(d) {
+    ocrState.lastResult = d;
+    ocrCloseCandMenu();
     // R19.81：未登录只识别物品名，价格一律留空（服务端已抹掉目录基线价）
     ocrSetStatus(d.counts.matched + " / " + d.counts.lines +
       " 行匹配 · OCR " + d.tookMs + " ms" +
@@ -1906,13 +2025,28 @@
         // R251：同短名多口径（.338 AP vs .300 AP、50 发装 .300/.45 撞车…）——
         // 游戏内显示名完全相同，截图上无法区分，标「?」并把候选价目写进 tooltip
         if (m.price && m.price.ambiguous) {
-          var cands = (m.price.candidates || []).map(function (c) {
+          var ammoCands = m.price.candidates || [];
+          var cands = ammoCands.map(function (c) {
             return c.name + "  " + (typeof c.price === "number" ? fmt(c.price) + " ₽" : "无价")
               + (c.kind === "loose" ? "/发" : "");
           }).join("\n");
           var amb = el("span", "mk-ocr-ambig", "?");
-          amb.title = "短名相同、口径不同（游戏内显示名一样，截图上无法区分）。\n"
-            + "当前显示的是 " + m.name + " 的价；全部候选：\n" + cands;
+          amb.setAttribute("role", "button");
+          amb.tabIndex = 0;
+          if (m.userPickedId) { amb.classList.add("is-picked"); }
+          amb.title = "短名相同、口径不同（游戏内显示名一样，截图上无法区分）。"
+            + (m.userPickedId ? "\n已手动选择：" + m.name + "（点击可改选）" : "\n点击选择正确的口径")
+            + "\n当前显示的是 " + m.name + " 的价；全部候选：\n" + cands;
+          (function (node, list) {
+            node.addEventListener("click", function (e) {
+              ocrOpenCandMenu(e, node, list, m);
+            });
+            node.addEventListener("keydown", function (e) {
+              if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+                ocrOpenCandMenu(e, node, list, m);
+              }
+            });
+          })(amb, ammoCands);
           priceTd.appendChild(amb);
           priceTd.title = amb.title;
         }
@@ -1921,12 +2055,27 @@
       // 例：实验室白卡 / 蓝色记号钥匙卡 / 钥匙卡收纳盒在游戏里都显示「钥匙卡」，
       // 截图看不出区别；旧逻辑按「每格价最高」直接挑，白卡会被显示成收纳盒的价。
       if (m.ambiguous && !(m.price && m.price.ambiguous)) {
-        var icands = (m.candidates || []).map(function (c) {
+        var itemCands = m.candidates || [];
+        var icands = itemCands.map(function (c) {
           return c.name + "  " + (typeof c.price === "number" ? fmt(c.price) + " ₽" : "无价");
         }).join("\n");
         var iamb = el("span", "mk-ocr-ambig", "?");
-        iamb.title = "显示名相同、物品不同（游戏内显示名一样，截图上无法区分）。\n"
-          + "当前显示的是 " + m.name + " 的价；全部候选：\n" + icands;
+        iamb.setAttribute("role", "button");
+        iamb.tabIndex = 0;
+        if (m.userPickedId) { iamb.classList.add("is-picked"); }
+        iamb.title = "显示名相同、物品不同（游戏内显示名一样，截图上无法区分）。"
+          + (m.userPickedId ? "\n已手动选择：" + m.name + "（点击可改选）" : "\n点击选择正确的物品")
+          + "\n当前显示的是 " + m.name + " 的价；全部候选：\n" + icands;
+        (function (node, list) {
+          node.addEventListener("click", function (e) {
+            ocrOpenCandMenu(e, node, list, m);
+          });
+          node.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+              ocrOpenCandMenu(e, node, list, m);
+            }
+          });
+        })(iamb, itemCands);
         nameBox.appendChild(iamb);      // 挂在名字后面：一眼看出「这名字有歧义」
         priceTd.classList.add("mk-ocr-price-ambig");
         priceTd.title = iamb.title;

@@ -85,6 +85,15 @@ $iconDir = Join-Path $Target "assets"
 New-Item -ItemType Directory -Force -Path $iconDir | Out-Null
 Copy-Item -LiteralPath $appIcon -Destination (Join-Path $iconDir "app.ico") -Force
 Write-Host "并入应用图标：assets\app.ico"
+# R304：安装向导左侧品牌区的产品图标。Tk 的 PhotoImage 只认 PNG 且不能缩放，
+# 所以按 100%/125%/150%/200% 预渲染几档（由 assets/app.ico 生成后随仓库提交），
+# 安装器按当前 DPI 挑最接近的一张，避免图标糊成马赛克。
+foreach ($plate in @("app-plate-56.png", "app-plate-70.png", "app-plate-84.png", "app-plate-112.png")) {
+    $src = Join-Path $Root "assets\$plate"
+    if (-not (Test-Path $src)) { throw "缺少安装向导图标：$src" }
+    Copy-Item -LiteralPath $src -Destination (Join-Path $iconDir $plate) -Force
+}
+Write-Host "并入安装向导图标：assets\app-plate-*.png"
 
 # R75：发布前校验 PE 子系统必须是 GUI(2)。CUI(3) 的 exe 双击会先弹一个控制台窗口，
 # 这是「不像正常软件」的直接来源；把判据写进打包流程，避免以后谁改了打包参数又犯。
