@@ -162,9 +162,12 @@ def test_scan_host_settings_contract():
 
 def test_page_settings_contract():
     html = open(os.path.join(ROOT, "index.html"), encoding="utf-8").read()
-    assert 'id="app-sec-ocr"' in html and ">价格识别</button>" in html
+    # R306：价格识别从小地图旁的设置分区拆到一级菜单「小工具」→ 面板 id 为 am-ocr-panel
+    assert 'id="am-ocr-panel"' in html and 'aria-label="价格识别设置"' in html
     assert 'id="ocr-hotkey"' in html and 'id="ocr-tiers"' in html
+    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
     assert html.index("am-mini-panel") < html.index("am-ocr-panel"), "价格识别在小地图设置之后"
+    assert 'id="am-ocr-panel"' in tools, "价格识别面板必须在「小工具」一级菜单里"
     js = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()
     for marker in ("function applyOcrSettings", "function collectOcrTiers",
                    "function bindOcrSettings",

@@ -31,36 +31,19 @@
   <div class="brand app-brand" id="app-brand">
     <h1 title="塔科夫互动地图">塔科夫互动地图</h1>
   </div>
-  <nav class="app-menus" id="app-menus" role="menubar" aria-label="主菜单">
-    <div class="app-menu">
-      <button type="button" class="app-menu-btn app-app-trigger" id="am-app" role="menuitem"
-              aria-haspopup="dialog" aria-expanded="false" aria-controls="am-app-panel">应用菜单 ▾</button>
-      <div class="app-menu-panel app-app-panel" id="am-app-panel" role="dialog"
-           aria-modal="false" aria-label="应用设置" hidden>
-        <button type="button" class="app-app-close" id="am-app-close"
-                title="关闭" aria-label="关闭应用菜单">×</button>
-        <nav class="app-app-nav" role="tablist" aria-label="设置分区" aria-orientation="vertical">
-          <button type="button" class="app-app-navbtn is-active" role="tab" data-sec="file"
-                  aria-selected="true" aria-controls="app-sec-file">文件</button>
-          <button type="button" class="app-app-navbtn" role="tab" data-sec="tools"
-                  aria-selected="false" aria-controls="app-sec-tools">工具</button>
-          <button type="button" class="app-app-navbtn" role="tab" data-sec="mini"
-                  aria-selected="false" aria-controls="app-sec-mini">小地图</button>
-          <button type="button" class="app-app-navbtn" role="tab" data-sec="ocr"
-                  aria-selected="false" aria-controls="app-sec-ocr">价格识别</button>
-          <button type="button" class="app-app-navbtn" role="tab" data-sec="about"
-                  aria-selected="false" aria-controls="app-sec-about">关于</button>
-        </nav>
-        <div class="app-app-body">
-          <section class="app-app-sec" id="app-sec-file" data-sec="file"
-                   role="tabpanel" aria-label="文件">
-            <h4 class="app-app-h">文件</h4>
-            <button type="button" class="app-menu-item" role="menuitem" data-cmd="save-config">保存配置<span class="app-menu-hint">界面偏好写回配置文件</span></button>
-            <button type="button" class="app-menu-item" role="menuitem" data-cmd="reload">重新载入<span class="app-menu-hint">刷新页面并重新量取地图</span></button>
-          </section>
-          <section class="app-app-sec" id="app-sec-mini" data-sec="mini"
-                   role="tabpanel" aria-label="小地图" hidden>
-            <div class="app-menu-panel app-mini-panel" id="am-mini-panel" role="region"
+    <nav class="app-menus" id="app-menus" role="menubar" aria-label="主菜单">
+    <!-- R306：小地图浮窗 + 价格识别从设置弹层拆出，成为一级菜单「小工具」；
+         「应用菜单」更名「设置」，只留目录与关于两个分区；文件 / 工具两个分区按要求移除。
+         raid-block（战局状态 / 任务日志）等元素仍被 app.js 写入，挪进 #app-legacy-sec
+         隐藏保活——直接删掉会让状态更新拿不到节点。 -->
+    <div class="app-menu app-tools-menu">
+      <button type="button" class="app-menu-btn" id="am-tools" role="menuitem"
+              aria-haspopup="true" aria-expanded="false"
+              aria-controls="am-tools-panel" title="小工具：小地图浮窗、价格识别">小工具 ▾</button>
+      <div class="app-menu-panel app-tools-panel" id="am-tools-panel" role="dialog"
+           aria-label="小工具" hidden>
+        <div class="app-tool-sec">
+<div class="app-menu-panel app-mini-panel" id="am-mini-panel" role="region"
                  aria-label="小地图设置">
         <h4 class="about-h">显示与行为</h4>
         <p class="muted settings-note">置顶、可点击穿透的小地图窗口。下列选项<strong>改完立刻生效</strong>，不用重启小窗。</p>
@@ -170,32 +153,17 @@
           <input type="number" id="mini-shot-interval" min="200" max="60000" step="100" value="5000"
                  inputmode="numeric" spellcheck="false"
                  title="自动截图间隔：允许 200–60000 毫秒（0.2–60 秒）。下限按「游戏写盘 + 目录刷新」的最短可靠周期取 200ms，上限 60s 避免战局中几乎不产生定位点；服务端另有 config.clamp_interval 再钳一次">
-          <label for="mini-shots-dir">截图目录</label>
-          <div class="mini-dir-field">
-            <input type="text" id="mini-shots-dir" placeholder="留空 = 自动识别" spellcheck="false"
-                   title="EFT 截图目录。留空时服务端自动探测 Documents\Escape from Tarkov\Screenshots 等常见位置，并显示当前识别到的绝对路径">
-            <button type="button" class="mini-dir-browse" data-dir-for="mini-shots-dir"
-                    data-dir-title="选择 EFT 截图目录" title="打开文件夹选择窗口">浏览…</button>
-          </div>
-          <label for="mini-log-dir">日志目录</label>
-          <div class="mini-dir-field">
-            <input type="text" id="mini-log-dir" placeholder="留空 = 自动识别" spellcheck="false"
-                   title="EFT 日志目录（含 log_* 会话文件夹）。留空时服务端自动探测游戏目录\Logs、%LOCALAPPDATA%\Battlestate Games\EFT\Logs、Documents\Escape from Tarkov\Logs 等位置">
-            <button type="button" class="mini-dir-browse" data-dir-for="mini-log-dir"
-                    data-dir-title="选择 EFT 日志目录" title="打开文件夹选择窗口">浏览…</button>
-          </div>
           <label class="toggle mini-enabled-toggle mini-shot-wide"
                  title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
             <input type="checkbox" id="mini-shot-cleanup">战局结束清理
           </label>
           <span id="mini-shot-key" class="mini-path-note">截图键：读取中…</span>
-          <span id="mini-paths-note" class="mini-path-note">目录：读取中…</span>
         </div>
             </div>
-          </section>
-          <section class="app-app-sec" id="app-sec-ocr" data-sec="ocr"
-                   role="tabpanel" aria-label="价格识别" hidden>
-            <div class="app-menu-panel" id="am-ocr-panel" role="region"
+          
+        </div>
+        <div class="app-tool-sec">
+<div class="app-menu-panel" id="am-ocr-panel" role="region"
                  aria-label="价格识别设置">
         <h4 class="about-h">截图识别</h4>
         <p class="muted settings-note">按热键框选装备，价格直接叠在装备上。</p>
@@ -221,22 +189,47 @@
           <button type="button" class="ocr-tier-add" id="ocr-tier-add">添加档位</button>
         </div>
             </div>
-          </section>
-          <section class="app-app-sec" id="app-sec-tools" data-sec="tools"
-                   role="tabpanel" aria-label="工具" hidden>
-            <h4 class="app-app-h">工具</h4>
-            <button type="button" class="app-menu-item" role="menuitem" data-cmd="profile">个人属性<span class="app-menu-hint">力量 / 耐力 / 类别技能</span></button>
-            <div class="menu-panel" id="raid-block">
-              <p id="raid-status" class="muted">正在读取日志监控状态…</p>
-              <p id="raid-note" class="muted raid-note"></p>
-              <p id="shot-status" class="muted shot-status">自动截图：未开启（在启动器里开启）</p>
-              <p id="clean-status" class="muted shot-status">自动删除截图：未开启（在启动器里开启）</p>
-              <div class="quest-counts">
-                <span>本局完成 <strong id="quest-done">0</strong></span>
-                <span>本局接取 <strong id="quest-started">0</strong></span>
+          
+        </div>
+      </div>
+    </div>
+    <div class="app-menu app-settings-menu">
+      <button type="button" class="app-menu-btn app-app-trigger" id="am-app" role="menuitem"
+              aria-haspopup="dialog" aria-expanded="false"
+              aria-controls="am-app-panel" title="设置：截图与日志目录、关于">设置 ▾</button>
+      <div class="app-menu-panel app-app-panel" id="am-app-panel" role="dialog"
+           aria-modal="false" aria-label="设置" hidden>
+        <button type="button" class="app-app-close" id="am-app-close"
+                title="关闭" aria-label="关闭设置菜单">×</button>
+        <nav class="app-app-nav" role="tablist" aria-label="设置分区" aria-orientation="vertical">
+          <button type="button" class="app-app-navbtn is-active" role="tab" data-sec="dirs"
+                  aria-selected="true" aria-controls="app-sec-dirs">目录</button>
+          <button type="button" class="app-app-navbtn" role="tab" data-sec="about"
+                  aria-selected="false" aria-controls="app-sec-about">关于</button>
+        </nav>
+        <div class="app-app-body">
+          <section class="app-app-sec" id="app-sec-dirs" data-sec="dirs"
+                   role="tabpanel" aria-label="目录">
+            <h4 class="app-app-h">截图与日志目录</h4>
+            <p class="muted settings-note">留空时由本机服务自动探测；这里填的手动值优先于自动识别。「浏览…」打开系统文件夹选择框，改动立即写回配置文件。</p>
+            <div class="app-mini-panel app-dir-panel">
+              <div class="mini-shot-settings">
+<label for="mini-shots-dir">截图目录</label>
+          <div class="mini-dir-field">
+            <input type="text" id="mini-shots-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                   title="EFT 截图目录。留空时服务端自动探测 Documents\Escape from Tarkov\Screenshots 等常见位置，并显示当前识别到的绝对路径">
+            <button type="button" class="mini-dir-browse" data-dir-for="mini-shots-dir"
+                    data-dir-title="选择 EFT 截图目录" title="打开文件夹选择窗口">浏览…</button>
+          </div>
+          <label for="mini-log-dir">日志目录</label>
+          <div class="mini-dir-field">
+            <input type="text" id="mini-log-dir" placeholder="留空 = 自动识别" spellcheck="false"
+                   title="EFT 日志目录（含 log_* 会话文件夹）。留空时服务端自动探测游戏目录\Logs、%LOCALAPPDATA%\Battlestate Games\EFT\Logs、Documents\Escape from Tarkov\Logs 等位置">
+            <button type="button" class="mini-dir-browse" data-dir-for="mini-log-dir"
+                    data-dir-title="选择 EFT 日志目录" title="打开文件夹选择窗口">浏览…</button>
+          </div>
+          <span id="mini-paths-note" class="mini-path-note">目录：读取中…</span>
               </div>
-              <ul id="quest-log" class="quest-log"></ul>
-              <p class="muted quest-hint" id="quest-hint">任务事件来自游戏日志的推送通知（只有任务开始 / 完成 / 失败，没有条件级进度）。</p>
             </div>
           </section>
           <section class="app-app-sec" id="app-sec-about" data-sec="about"
@@ -307,6 +300,31 @@
           </section>
         </div>
       </div>
+    </div>
+    <div id="app-legacy-sec" hidden aria-hidden="true">
+<section class="app-app-sec" id="app-sec-file" data-sec="file"
+                   role="tabpanel" aria-label="文件">
+            <h4 class="app-app-h">文件</h4>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="save-config">保存配置<span class="app-menu-hint">界面偏好写回配置文件</span></button>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="reload">重新载入<span class="app-menu-hint">刷新页面并重新量取地图</span></button>
+          </section>
+<section class="app-app-sec" id="app-sec-tools" data-sec="tools"
+                   role="tabpanel" aria-label="工具" hidden>
+            <h4 class="app-app-h">工具</h4>
+            <button type="button" class="app-menu-item" role="menuitem" data-cmd="profile">个人属性<span class="app-menu-hint">力量 / 耐力 / 类别技能</span></button>
+            <div class="menu-panel" id="raid-block">
+              <p id="raid-status" class="muted">正在读取日志监控状态…</p>
+              <p id="raid-note" class="muted raid-note"></p>
+              <p id="shot-status" class="muted shot-status">自动截图：未开启（在启动器里开启）</p>
+              <p id="clean-status" class="muted shot-status">自动删除截图：未开启（在启动器里开启）</p>
+              <div class="quest-counts">
+                <span>本局完成 <strong id="quest-done">0</strong></span>
+                <span>本局接取 <strong id="quest-started">0</strong></span>
+              </div>
+              <ul id="quest-log" class="quest-log"></ul>
+              <p class="muted quest-hint" id="quest-hint">任务事件来自游戏日志的推送通知（只有任务开始 / 完成 / 失败，没有条件级进度）。</p>
+            </div>
+          </section>
     </div>
   </nav>
 
@@ -1067,6 +1085,11 @@
       <p id="gw-prof-err" class="gw-prof-err" hidden role="alert"></p>
     </div>
     <footer class="gw-prof-foot gw-attrs-foot">
+      <!-- R306：左侧醒目 Save —— 一次保存三个页签（商人好感 / 藏身处 / 技能），
+           写入本机 localStorage，下次启动按上次保存的值沿用；保存后不关闭面板。 -->
+      <button type="button" class="gw-attrs-saveleft" id="gw-attrs-saveleft"
+              title="把三个页签的全部属性设置保存到本机，下次启动自动沿用">保存设置</button>
+      <span class="gw-attrs-savehint" id="gw-attrs-savehint" role="status" aria-live="polite"></span>
       <button type="button" class="gw-btn" id="gw-prof-cancel">取消</button>
       <button type="button" class="gw-prof-save gw-attrs-confirm" id="gw-prof-save">✓ Confirm</button>
     </footer>

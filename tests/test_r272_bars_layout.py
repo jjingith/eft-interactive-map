@@ -1,8 +1,9 @@
-"""第一阶段：主导航与地图页结构。
+"""第一阶段：主导航与地图页结构（R306 起按「小工具 + 设置」两个一级菜单）。
 
 用户确认的线框图（docs/ui-system/wireframes/main-nav-map-v1.html）：
   · 工作区导航常驻顶栏；
-  · 文件 / 工具 / 小地图 / 价格识别 / 关于 收进单一「应用菜单」；
+  · R306：小地图 / 价格识别从设置拆出，成为一级菜单「小工具」；
+  · 「应用菜单」更名「设置」，只保留目录 / 关于两个分区；
   · 地图工具栏放地图、楼层、定位、复位、显示；
   · 左栏放图层搜索与常用快捷开关。
 
@@ -31,9 +32,13 @@ def _between(text, start_marker, end_marker):
 def test_single_app_menu_entry():
     html = _read(HTML)
     assert 'id="am-app"' in html
-    for old in ("am-file", "am-view", "am-help", "am-mini", "am-ocr", "am-tools"):
+    # R306：小地图 / 价格识别拆成新一级菜单「小工具」；旧的分散入口仍不得存在
+    assert 'id="am-tools"' in html, "R306 起「小工具」是一级菜单入口"
+    for old in ("am-file", "am-view", "am-help", "am-mini", "am-ocr"):
         assert 'id="%s"' % old not in html, "旧一级菜单 %s 应已合并" % old
     assert html.index('id="app-menus"') < html.index('id="am-app"') < html.index("</nav>")
+    assert html.index('id="app-menus"') < html.index('id="am-tools"') < html.index('id="am-app"'), \
+        "R306：小工具排在设置之前"
 
 
 def test_workspace_nav_lives_in_top_bar():
@@ -65,25 +70,40 @@ def test_legacy_menubar_is_hidden_anchor():
         "旧第二行只作为隐藏锚点存在"
 
 
-def test_app_menu_has_five_sections():
+def test_app_menu_has_two_sections_and_tools_menu():
     html = _read(HTML)
-    panel = _between(html, 'id="am-app-panel"', 'id="app-menu-status"')
+    # R306：设置只剩「目录 / 关于」两个分区
+    panel = _between(html, 'id="am-app-panel"', 'id="app-legacy-sec"')
     nav = _between(panel, 'class="app-app-nav"', '</nav>')
-    assert [nav.index('data-sec="%s"' % sec) for sec in ("file", "tools", "mini", "ocr", "about")] == sorted(
-        nav.index('data-sec="%s"' % sec) for sec in ("file", "tools", "mini", "ocr", "about")
+    assert [nav.index('data-sec="%s"' % sec) for sec in ("dirs", "about")] == sorted(
+        nav.index('data-sec="%s"' % sec) for sec in ("dirs", "about")
     )
-    for sec in ("file", "tools", "mini", "ocr", "about"):
+    for sec in ("dirs", "about"):
         assert 'id="app-sec-%s"' % sec in panel
         assert 'data-sec="%s"' % sec in panel
+    for gone in ("app-sec-file", "app-sec-tools", "app-sec-mini", "app-sec-ocr"):
+        assert 'id="%s"' % gone not in panel, "%s 不应再出现在设置面板" % gone
     assert 'id="app-sec-market"' not in panel
     assert "在线行情" not in panel
 
+    # 小工具一级菜单：小地图 + 价格识别两个分区平铺
+    tools = _between(html, 'id="am-tools-panel"', 'id="app-legacy-sec"')
+    assert 'id="am-mini-panel"' in tools and 'id="am-ocr-panel"' in tools
+    assert tools.index("am-mini-panel") < tools.index("am-ocr-panel")
+    assert tools.count('class="app-tool-sec') == 2
 
-def test_moved_panels_live_inside_app_menu():
+
+def test_moved_panels_live_inside_tools_menu_and_legacy_anchor():
     html = _read(HTML)
-    panel = _between(html, 'id="am-app-panel"', 'id="context-bar"')
-    for ident in ("am-mini-panel", "am-ocr-panel", "raid-block", "about-block"):
-        assert 'id="%s"' % ident in panel, "%s 应迁入应用菜单分区" % ident
+    tools = _between(html, 'id="am-tools-panel"', 'id="app-legacy-sec"')
+    for ident in ("am-mini-panel", "am-ocr-panel"):
+        assert 'id="%s"' % ident in tools, "%s 应迁入「小工具」菜单" % ident
+    # raid-block 等仍被 app.js 写入，必须留在 hidden 的 legacy 容器里保活
+    legacy = _between(html, 'id="app-legacy-sec"', 'id="context-bar"')
+    for ident in ("raid-block", "raid-status", "quest-log", "shot-status"):
+        assert 'id="%s"' % ident in legacy, "%s 应在 legacy 保活容器里" % ident
+    panel = _between(html, 'id="am-app-panel"', 'id="app-legacy-sec"')
+    assert 'id="about-block"' in panel, "关于仍在设置面板"
     assert 'id="menu-settings"' not in html
     assert 'id="menu-about"' in html, "关于旧按钮保留为隐藏锚点"
 

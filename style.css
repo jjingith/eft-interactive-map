@@ -1329,6 +1329,54 @@ html #layer-toggles .legend-group-toggle:hover { color: var(--ui-color-primary);
   cursor: not-allowed;
 }
 
+/* R306：一级菜单「小工具」（小地图浮窗 + 价格识别）。
+   面板里保留原始的 .app-menu-panel / .app-mini-panel 包装——大量作用域样式挂在它们上；
+   这里只去掉包装自带的下拉定位与 XP 位图边框，让两段设置在面板里平铺、外层滚动。 */
+html body .app-tools-panel {
+  left: auto;
+  right: 0;
+  width: 440px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - var(--amh, 34px) - 12px);
+  overflow-y: auto;
+}
+html body .app-tools-panel .app-menu-panel {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
+  min-width: 0;
+  max-width: none;
+  border: 0;
+  border-image: none;
+  background: transparent;
+  padding: 0;
+  max-height: none;
+  overflow: visible;
+}
+html body .app-tools-panel .app-mini-panel {
+  width: auto;
+  max-height: none;
+  overflow: visible;
+}
+.app-tool-sec + .app-tool-sec {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--xp-border-soft, #d6d2c2);
+}
+/* R306：设置里的目录分区沿用 .app-mini-panel 的表单栅格（截图/日志目录 + 浏览…），
+   但不要它的浮层定位与固定宽度。 */
+html body .app-dir-panel {
+  left: auto;
+  right: auto;
+  top: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: none;
+  overflow: visible;
+}
+
 /* 状态条 */
 .statusbar {
   position: absolute; left: 0; right: 0; bottom: 0;

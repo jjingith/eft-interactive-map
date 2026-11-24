@@ -756,11 +756,14 @@ if IS_WINDOWS:
                         pass
                 return 0
             if msg == WM_LBUTTONDOWN:
-                pt = wintypes.POINT(ctypes.c_short(lparam & 0xFFFF).value,
-                                    ctypes.c_short((lparam >> 16) & 0xFFFF).value)
-                _user32.ScreenToClient(hwnd, ctypes.byref(pt))
+                # R306：WM_LBUTTONDOWN 的 lparam 已经是**客户坐标**（只有 WM_NCHITTEST
+                # 才是屏幕坐标）。旧代码把它当屏幕坐标又做了一次 ScreenToClient，
+                # 标签窗不在 (0,0) 时命中区被整体平移 → 点「?」徽章永远打不中，
+                # 表现为「徽记看得到、点了没反应」。这里直接用客户坐标。
+                x = ctypes.c_short(lparam & 0xFFFF).value
+                y = ctypes.c_short((lparam >> 16) & 0xFFFF).value
                 try:
-                    idx = _ACTIVE.hit_badge(pt.x, pt.y)
+                    idx = _ACTIVE.hit_badge(x, y)
                     if idx is not None:
                         _ACTIVE.toggle_menu(idx)
                 except Exception as exc:            # 选单链路异常不能炸消息循环

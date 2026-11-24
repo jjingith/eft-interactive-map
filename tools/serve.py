@@ -58,7 +58,7 @@ import prices_source
 import screenshot
 
 
-VERSION = "0.2.9.0"
+VERSION = "0.2.9.1"
 UPDATE_REPO_API = "https://api.github.com/repos/jjingith/eft-interactive-map/releases/latest"
 _UPDATE_CACHE: dict[str, Any] = {"at": 0.0, "payload": None}
 _UPDATE_CACHE_LOCK = threading.Lock()
@@ -1135,8 +1135,11 @@ def pick_folder_dialog(current: str | None = None, title: str = "选择目录") 
 
     网页端 <input type=file webkitdirectory> 拿不到绝对路径（浏览器安全限制），
     所以目录类设置经由本机服务调用 Windows 原生对话框。服务端是用户自己启动的
-    桌面程序，运行在交互会话里，能正常弹窗；不加 CREATE_NO_WINDOW，否则对话框
-    会被隐藏。非 Windows / 无 GUI 环境直接返回 None，前端保留文本输入兜底。
+    桌面程序，运行在交互会话里，能正常弹窗。
+    R306：加 CREATE_NO_WINDOW——powershell 是控制台子系统程序，不加就会在
+    点「浏览…」时闪一个控制台窗口。对话框本身是该进程里的 GUI 窗口，
+    与控制台无关，实测加了这个标志对话框照常弹出（R306 有探针验证）。
+    非 Windows / 无 GUI 环境直接返回 None，前端保留文本输入兜底。
     """
     if os.name != "nt":
         return None
@@ -1153,10 +1156,13 @@ def pick_folder_dialog(current: str | None = None, title: str = "选择目录") 
         "if ($d.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) "
         "{ Write-Output $d.SelectedPath }"
     )
+    kwargs: dict = {"capture_output": True, "text": True, "timeout": 180}
+    if os.name == "nt":
+        kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
     try:
         proc = subprocess.run(
             ["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", ps, title],
-            capture_output=True, text=True, timeout=180,
+            **kwargs,
         )
     except (OSError, subprocess.SubprocessError):
         return None

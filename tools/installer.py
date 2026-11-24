@@ -53,7 +53,7 @@ filedialog = None
 messagebox = None
 
 APP_NAME = "EFT 互动地图"
-VERSION = "0.2.9.0"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
+VERSION = "0.2.9.1"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
 REG_KEY = r"Software\Microsoft\Windows\CurrentVersion\Uninstall\EFTMap"
 APP_EXE = "EFTMap.exe"
 APP_SHELL = "EFTMapDesktop.exe"   # 无边框客户端壳；与 EFTMap.exe 同目录出包
@@ -680,6 +680,13 @@ def _run_legacy_uninstaller(install_dir: str, info: dict, timeout: float = 30.0)
     `--run-tool <安装目录>\\_internal\\tools\\installer.py --uninstall --dir <目录>` 执行；
     它只删程序目录、快捷方式和注册表项，**不动 %APPDATA%\\EFTMap** 里的配置与预设。
     旧卸载器退出后还会甩出一个延迟删除 cmd，因此调用方要继续轮询目录是否消失。
+
+    R306：这里不能用 CREATE_NO_WINDOW。旧卸载器是 GUI 程序（无控制台），
+    它自己的延迟删除 cmd 若由**旧版代码**（0.2.7 及更早，创建 cmd 时没加
+    CREATE_NO_WINDOW）发起，控制台子进程会在「无控制台的父进程」下**新开一个
+    可见控制台**——这就是升级安装时一闪而过的黑窗。改用「分配一个隐藏控制台」：
+    CREATE_NEW_CONSOLE + STARTF_USESHOWWINDOW(SW_HIDE)，旧代码的子进程会继承
+    这个隐藏控制台，不再新建可见窗口；新版代码自己带 CREATE_NO_WINDOW，不受影响。
     """
     exe = info.get("uninstall_exe") or os.path.join(install_dir, UNINSTALL_EXE)
     script = info.get("script") or uninstall_script(install_dir)
@@ -688,7 +695,11 @@ def _run_legacy_uninstaller(install_dir: str, info: dict, timeout: float = 30.0)
     args = [exe, "--run-tool", script, "--uninstall", "--dir", os.path.abspath(install_dir)]
     kwargs: dict = {"cwd": tempfile.gettempdir(), "close_fds": True}
     if os.name == "nt":
-        kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        kwargs["creationflags"] = subprocess.CREATE_NEW_CONSOLE
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+        kwargs["startupinfo"] = startupinfo
     try:
         proc = subprocess.Popen(args, **kwargs)
     except OSError:

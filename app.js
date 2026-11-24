@@ -23082,7 +23082,10 @@
       rows: $("gw-prof-skillrows"),
       err: $("gw-prof-err"),
       cancel: $("gw-prof-cancel"),
-      save: $("gw-prof-save")
+      save: $("gw-prof-save"),
+      // R306：左侧「保存设置」显式保存键（不关闭面板）+ 行内确认文案
+      attrsSave: $("gw-attrs-saveleft"),
+      saveHint: $("gw-attrs-savehint")
     };
   }
 
@@ -23314,8 +23317,10 @@
     if (e.modal) { e.modal.hidden = true; }
   }
 
-  /** 保存：三页签一次落盘到当前模式；技能变化立即重算整枪属性。 */
-  function gwProfileSubmit() {
+  /** 保存：三页签一次落盘到当前模式；技能变化立即重算整枪属性。
+   *  R306：opts.keepOpen=true 时不关闭面板（左侧「保存设置」用），供连续调整。 */
+  function gwProfileSubmit(opts) {
+    var keepOpen = !!(opts && opts.keepOpen);
     var e = gwProfileEls();
     var byClass = {};
     if (e.rows) {
@@ -23374,7 +23379,16 @@
     state.profile = null;          // 重新读取当前模式技能
     state.gwAttrs = all;
     if (e.err) { e.err.hidden = true; }
-    gwProfileClose();
+    if (!keepOpen) {
+      gwProfileClose();
+    } else if (e.saveHint) {
+      // R306：左侧 Save 的显式反馈 —— 面板留在原地，方便继续调整
+      e.saveHint.textContent = "已保存到本机，下次启动自动沿用";
+      clearTimeout(gwProfileSubmit._hintTimer);
+      gwProfileSubmit._hintTimer = setTimeout(function () {
+        if (e.saveHint) { e.saveHint.textContent = ""; }
+      }, 3000);
+    }
     // 全局重算：技能影响整枪属性；商人/藏身处影响价格与来源
     if (state.view === "gun") { renderGun(); }
     if (state.view === "loadout" && state.items) { renderLoadout(); }
@@ -23394,6 +23408,12 @@
     if (e.x) { e.x.addEventListener("click", gwProfileClose); }
     if (e.cancel) { e.cancel.addEventListener("click", gwProfileClose); }
     if (e.save) { e.save.addEventListener("click", gwProfileSubmit); }
+    // R306：左侧「保存设置」= 保存三页签全部内容并留在面板内（显式保存 + 行内反馈）
+    if (e.attrsSave) {
+      e.attrsSave.addEventListener("click", function () {
+        gwProfileSubmit({ keepOpen: true });
+      });
+    }
     e.tabs.forEach(function (b) {
       b.addEventListener("click", function () { gwAttrsShowTab(b.dataset.attrtab); });
     });

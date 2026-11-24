@@ -1232,6 +1232,13 @@
 .mb-sector.up { background: rgba(229, 72, 77, calc(var(--mb-heat, .2) * .32)); }
 .mb-sector.down { background: rgba(46, 160, 67, calc(var(--mb-heat, .2) * .32)); }
 .mb-sector:hover, .mb-sector.is-active { border-color: var(--mb-accent); }
+/* R306：无行情数据的板块（情报物品等任务情报类）置灰不可点，避免点进去 0 项 */
+.mb-sector.is-empty {
+  opacity: .42;
+  cursor: default;
+  filter: grayscale(1);
+}
+.mb-sector.is-empty:hover { border-color: var(--mb-line); }
 .mb-sector-name { font-size: 11px; font-weight: 700; }
 .mb-sector-change { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .mb-sector-meta { font-size: 9px; color: var(--mb-muted); }

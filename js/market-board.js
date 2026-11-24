@@ -66,7 +66,8 @@
     narrow: false,
     chart: null,
     hover: -1,
-    status: ""
+    status: "",
+    emptySectors: {}      // R306：没有任何 48h 行情的板块（点进去只会是 0 项）
   };
   var ui = {};
   var modeUnsub = null;
@@ -696,8 +697,12 @@
     tbody.textContent = "";
     var rows = rankRows(key);
     if (!rows.length) {
+      var emptyMsg = state.enrichLoading ? "正在重算榜单…"
+        : (state.sector && state.emptySectors && state.emptySectors[state.sector]
+          ? sectorName(state.sector) + "板块暂无可统计的行情：板块内多为不上架跳蚤市场的任务情报类物资"
+          : "暂无满足条件的数据");
       var tr = el("tr");
-      var td = el("td", "mb-table-empty", state.enrichLoading ? "正在重算榜单…" : "暂无满足条件的数据");
+      var td = el("td", "mb-table-empty", emptyMsg);
       td.colSpan = key === "trend" ? 5 : (key === "hot" ? 5 : 8);
       tr.appendChild(td);
       tbody.appendChild(tr);
@@ -782,6 +787,17 @@
         offers: 0, avgChange: null
       };
     });
+    // R306：板块里没有任何一条 48h 涨跌（情报物品就是这种——板块内 92 个全是
+    // 不上架跳蚤市场的任务情报，up/down/flat 全 0）时标记为空板块：
+    // chip 置灰不可点，避免「点进去 0 项」的死胡同。
+    state.emptySectors = {};
+    list.forEach(function (sector) {
+      if (!sector.up && !sector.down && !sector.flat &&
+          (sector.avgChange === null || sector.avgChange === undefined)) {
+        state.emptySectors[sector.key] = true;
+      }
+    });
+    if (!sectors.length) { state.emptySectors = {}; }
     var maxAbs = 1;
     list.forEach(function (sector) {
       var value = Math.abs(Number(sector.avgChange) || 0);
@@ -789,21 +805,28 @@
     });
     list.forEach(function (sector) {
       var value = Number(sector.avgChange) || 0;
+      var empty = !!state.emptySectors[sector.key];
       var intensity = Math.min(0.85, 0.16 + Math.abs(value) / maxAbs * 0.55);
-      var cell = el("button", "mb-sector " + sign(value));
+      var cell = el("button", "mb-sector " + sign(value) + (empty ? " is-empty" : ""));
       cell.type = "button";
       cell.style.setProperty("--mb-heat", intensity.toFixed(2));
       cell.classList.toggle("is-active", state.sector === sector.key);
+      if (empty) { cell.setAttribute("aria-disabled", "true"); }
       cell.appendChild(el("span", "mb-sector-name", sector.label || sector.key));
       cell.appendChild(el("span", "mb-sector-change", pct(sector.avgChange)));
-      cell.appendChild(el("span", "mb-sector-meta",
+      cell.appendChild(el("span", "mb-sector-meta", empty ? "无行情数据" :
         sector.items + " 项 · 涨 " + sector.up + " / 跌 " + sector.down));
-      cell.title = (sector.label || sector.key) + "：在售挂单 " + fmt(sector.offers, 0) +
-        "；点击查看该板块的涨跌榜";
-      cell.addEventListener("click", function () {
-        state.sector = state.sector === sector.key ? "" : sector.key;
-        load();
-      });
+      if (empty) {
+        cell.title = (sector.label || sector.key) +
+          "：当前数据源没有该板块的行情（板块内多为不上架跳蚤市场的任务情报类物资），不可筛选";
+      } else {
+        cell.title = (sector.label || sector.key) + "：在售挂单 " + fmt(sector.offers, 0) +
+          "；点击查看该板块的涨跌榜";
+        cell.addEventListener("click", function () {
+          state.sector = state.sector === sector.key ? "" : sector.key;
+          load();
+        });
+      }
       box.appendChild(cell);
     });
   }

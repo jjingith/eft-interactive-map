@@ -262,17 +262,18 @@ def test_merge_ui_accepts_overlay_patch():
 
 
 def test_app_js_wires_overlay_settings_in_minimap_menu():
-    """小地图设置仍在应用菜单内；行情不再有客户端设置分区。"""
+    """R306：小地图设置在一级菜单「小工具」内；设置面板不再有小地图 / 行情分区。"""
     src = (ROOT / "app.js").read_text(encoding="utf-8")
     assert "function applyOverlaySettings" in src
     assert "bindOverlaySettings();" in src
 
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    panel = html[html.index('id="am-app-panel"'):html.index('id="context-bar"')]
-    assert 'id="app-sec-mini"' in panel
-    assert 'id="am-mini-panel"' in panel
-    assert 'id="app-sec-market"' not in panel
-    assert 'id="settings-block"' not in panel
+    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
+    assert 'id="am-mini-panel"' in tools
+    assert 'id="app-sec-mini"' not in tools
+    panel = html[html.index('id="am-app-panel"'):html.index('id="app-legacy-sec"')]
+    for gone in ("app-sec-mini", "app-sec-market", "settings-block"):
+        assert 'id="%s"' % gone not in panel
 
 
 def test_app_js_settings_persist_overlay_patch():
@@ -350,17 +351,18 @@ def test_merge_ui_accepts_overlay_patch():
 
 
 def test_app_js_wires_overlay_settings_in_minimap_menu():
-    """小地图设置仍在应用菜单内；行情不再有客户端设置分区。"""
+    """R306：小地图设置在一级菜单「小工具」内；设置面板不再有小地图 / 行情分区。"""
     src = (ROOT / "app.js").read_text(encoding="utf-8")
     assert "function applyOverlaySettings" in src
     assert "bindOverlaySettings();" in src
 
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    panel = html[html.index('id="am-app-panel"'):html.index('id="context-bar"')]
-    assert 'id="app-sec-mini"' in panel
-    assert 'id="am-mini-panel"' in panel
-    assert 'id="app-sec-market"' not in panel
-    assert 'id="settings-block"' not in panel
+    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
+    assert 'id="am-mini-panel"' in tools
+    assert 'id="app-sec-mini"' not in tools
+    panel = html[html.index('id="am-app-panel"'):html.index('id="app-legacy-sec"')]
+    for gone in ("app-sec-mini", "app-sec-market", "settings-block"):
+        assert 'id="%s"' % gone not in panel
 
 
 def test_app_js_settings_persist_overlay_patch():
