@@ -368,6 +368,8 @@ def is_ambig_price(m: dict) -> bool:
         差价小的继续报价（只挂徽章），免得满屏问号。
     """
     p = m.get("price") or {}
+    if p.get("pickedId"):
+        return False          # R309：已手动选定物品/口径 → 正常报价，仍跟随价格口径
     if p.get("manual") is not None:
         return False          # 玩家已在菜单里选定具体物品/口径 → 按所选价正常显示
     if p.get("ambiguous"):
@@ -1948,10 +1950,53 @@ class OverlaySession:
             self.close_menu()
             return
         c = cands[row]
-        p = m["price"]
-        # 手动选择后固定显示所选价（price_base 优先 manual），徽章保留可重选
-        p["manual"] = c.get("price")
-        p["manualName"] = c.get("name")
+        old = m.get("price") or {}
+        detail = c.get("detail")
+        if isinstance(detail, dict) and detail:
+            # R309：用候选的完整价格对象替换，**不写 manual**——
+            # 旧实现把单个数字写进 price.manual，price_base 永远优先返回它，
+            # 选中候选后再切「最新 / 24h / 7日」价格就不动了。
+            p = dict(detail)
+            if old.get("ammoStack"):
+                # 散装弹：候选价是单发价，恢复「单发 × 堆叠」的整堆价
+                qty = max(1, int(old.get("qty") or 1))
+                unit = c.get("unit")
+                if not isinstance(unit, (int, float)) or unit <= 0:
+                    unit = p.get("trader") or p.get("traderSell") or p.get("base")
+                gw, gh = m.get("gw"), m.get("gh")
+                slots = (gw * gh) if (isinstance(gw, int) and isinstance(gh, int)
+                                      and gw > 0 and gh > 0) else 1
+                if isinstance(unit, (int, float)) and unit > 0:
+                    total = unit * qty
+                    p.update({"lastLow": None, "avg24h": None, "avg7d": None,
+                              "w72": None, "w30d": None, "base": total,
+                              "perSlot": total / slots, "priceSource": "trader",
+                              "trader": total, "noFlea": True, "ammoStack": True,
+                              "ammoPack": False, "unitPrice": unit, "qty": qty,
+                              "qtyFound": True})
+                    m["ammoKind"] = "loose"
+                    m["qty"] = qty
+            # 候选清单与「口径歧义」标记保留：徽章还在，可再点开改选
+            if old.get("candidates"):
+                p["candidates"] = old["candidates"]
+            if old.get("ambiguous"):
+                p["ambiguous"] = True
+            p["pickedId"] = c.get("id") or ""
+            p["manualName"] = c.get("name")
+            if c.get("name"):
+                p["name"] = c["name"]
+            m["price"] = p
+        else:
+            # 老后端没有 detail：只能固定单值（切口径不再变化）
+            old["manual"] = c.get("price")
+            old["manualName"] = c.get("name")
+        if c.get("name"):
+            m["name"] = c["name"]
+        if c.get("id"):
+            m["id"] = c["id"]
+        for key in ("gw", "gh", "weight"):
+            if c.get(key) is not None:
+                m[key] = c[key]
         self.close_menu()
         self._redraw()
 

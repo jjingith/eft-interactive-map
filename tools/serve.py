@@ -870,14 +870,17 @@ def _ocr_ambig_candidates(ids: list, catalog: dict, snap_items: dict) -> list:
         src = price.get("priceSource")
         label = "flea" if src == "flea" else "trader"
         # R303：补 id / 短名 / 格数 / 完整价格，前端可点选切换口径。
+        # R309：再补 unit（散装弹单发商人价）——宿主选中候选后要用它恢复「整堆价」。
+        kind = _ocr_ammo_kind(rec) or ""
+        unit = _trader_sell_price(rec)[0] if kind == "loose" else None
         out.append({"id": iid, "name": rec.get("n") or iid,
                     "short": ocr.short_name_of(rec.get("n") or ""),
                     "caliber": _ocr_caliber(rec.get("n")),
-                    "kind": _ocr_ammo_kind(rec) or "", "source": label,
+                    "kind": kind, "source": label,
                     "price": price.get("base"), "perSlot": price.get("perSlot"),
                     "gw": rec.get("gw"), "gh": rec.get("gh"),
                     "weight": rec.get("w"), "noFlea": bool(price.get("noFlea")),
-                    "detail": price})
+                    "unit": unit, "detail": price})
     return out
 
 

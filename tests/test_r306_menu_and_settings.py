@@ -173,4 +173,7 @@ def test_badge_click_uses_client_coords_not_screen():
 def test_badge_menu_selection_still_wired():
     assert "def hit_badge" in SCAN and "def toggle_menu" in SCAN
     assert "def menu_click" in SCAN and "def pick_candidate" in SCAN
-    assert 'p["manual"] = c.get("price")' in SCAN
+    # R309：选中候选用完整价格对象（detail）替换，切口径仍会变；
+    # 老后端没有 detail 时才退回固定单价 manual。
+    assert 'p["pickedId"] = c.get("id") or ""' in SCAN
+    assert 'old["manual"] = c.get("price")' in SCAN
