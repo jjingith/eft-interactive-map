@@ -1340,6 +1340,28 @@ html body .app-dir-panel {
   max-height: none;
   overflow: visible;
 }
+/* R309：目录分区底部的「默认位置」速查。两条短句，给不想翻文档的人一个抓手。 */
+.app-dir-guide {
+  max-width: 620px;
+  margin: 12px 0 0;
+  padding: 8px 10px 9px;
+  border: 1px solid var(--xp-line, var(--ui-color-border-soft));
+  border-left: 3px solid var(--ui-color-primary, #0a3f9e);
+  background: #faf9f2;
+  color: var(--xp-muted, var(--ui-color-text-muted));
+  font-size: 11px;
+  line-height: 1.6;
+}
+.app-dir-guide p { margin: 0; }
+.app-dir-guide p + p { margin-top: 4px; }
+.app-dir-guide b { color: #3b3b31; font-weight: 700; }
+.app-dir-guide code {
+  padding: 0 3px;
+  background: #f0eee2;
+  color: #3b3b31;
+  font: 10px/1.5 Consolas, "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
 
 /* 状态条 */
 .statusbar {
