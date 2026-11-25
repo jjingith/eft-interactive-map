@@ -8,8 +8,8 @@
 事实约束：游戏内物品名印的就是短名（AP / FMJ / BP …），口径完全不可见；
 OCR 能拿到的只有「短名文本 + 右下角数量」。可用的确定性证据：
   ① 弹药包：xx/xx 的容量数 ↔ 名字里的「N发装」（20/20 → .338 AP 包唯一）；
-  ② 散装：同短名弹药包的口径分布投票，只在压倒性（某口径 ≥3 种包装规格，
-    或全部包同口径）时锁定——票数本质是包装规格种类数，不是流行度。
+  ② 散装：口径无法从截图上区分 → **全部口径列进候选选单**，让玩家自己选
+     （R309 用户口径：不再按同短名弹药包的口径分布去猜，宁可全列出来）。
 无法唯一确定（.338/.300/.45 包都是 50 发装；散装 AP 包口径 1:1:1）就如实
 标 ambiguous=True + candidates 价目表，前端画黄色「?」徽章让玩家核对。
 """
@@ -97,7 +97,7 @@ def test_ap_pack_50_collides_and_is_flagged(catalog3):
 
 
 def test_ap_loose_is_inherently_ambiguous(catalog3):
-    """.338 AP 与 .300 Blackout AP 散装：包口径分布 1:1:1，投票不锁定 → 歧义。"""
+    """.338 AP 与 .300 Blackout AP 散装：口径无法区分 → 两个都进候选、标歧义。"""
     items, loose, packs = _split(catalog3, "AP")
     lines = [_line("AP", 145, 42), _line("80", 141, 138, 33, 23)]
     kind, qty, narrowed, _found, ambig = serve._ocr_ammo_decision(
@@ -107,25 +107,30 @@ def test_ap_loose_is_inherently_ambiguous(catalog3):
 
 
 def test_fmj_loose_11_calibers_stays_ambiguous(catalog3):
-    """FMJ 散装 11 个口径：5.56 两票只是两种包装规格，不是流行度 → 不锁定。"""
+    """FMJ 散装 11 个口径全部保留：不猜口径，交给选单。"""
     items, loose, packs = _split(catalog3, "FMJ")
     assert len(loose) == 11
-    narrowed = serve._ocr_prefer_loose(loose, packs, items)
-    assert narrowed == loose and serve._ocr_ambiguous(narrowed, items) is True
+    lines = [_line("FMJ", 145, 42), _line("80", 141, 138, 33, 23)]
+    kind, qty, narrowed, _found, ambig = serve._ocr_ammo_decision(
+        _name_box(), lines, loose + packs, items)
+    assert kind == "loose" and qty == 80
+    assert narrowed == loose and ambig is True
 
 
-# ------------------------------------------------------- 能锁定的场景
+# ------------------------------------------------------- 不再按包装分布猜口径
 
-@pytest.mark.parametrize("short,caliber", [
-    ("BP", "5.45x39"), ("PS", "5.45x39"), ("US", "5.45x39"), ("PP", "5.45x39"),
-])
-def test_dominant_pack_caliber_locks_loose(catalog3, short, caliber):
-    """BP/PS/US/PP 的包以 5.45x39 为主（≥3 种包装规格）→ 散装锁定该口径，无歧义。"""
+@pytest.mark.parametrize("short", ["BP", "PS", "US", "PP"])
+def test_pack_distribution_never_hides_calibers(catalog3, short):
+    """R309：包再多也只说明包装规格，不代表玩家手里散装弹的口径 → 全列。"""
     items, loose, packs = _split(catalog3, short)
     assert len(loose) >= 2
-    narrowed = serve._ocr_prefer_loose(loose, packs, items)
-    assert all(serve._ocr_caliber(items[i]["n"]) == caliber for i in narrowed)
-    assert serve._ocr_ambiguous(narrowed, items) is False
+    lines = [_line(short, 145, 42), _line("80", 141, 138, 33, 23)]
+    kind, _qty, narrowed, _found, ambig = serve._ocr_ammo_decision(
+        _name_box(), lines, loose + packs, items)
+    assert kind == "loose"
+    assert narrowed == loose, "不得按包装分布收窄口径"
+    assert ambig is True
+    assert serve._ocr_ambiguous(narrowed, items) is True
 
 
 # ------------------------------------------------------- 候选价目表

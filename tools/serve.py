@@ -848,34 +848,8 @@ def _ocr_prefer_pack(packs: list, catalog: dict, qty: int) -> list:
     return sized or packs
 
 
-def _ocr_prefer_loose(loose: list, packs: list, catalog: dict) -> list:
-    """同名多口径（BP 有 5.45x39 / 7.62x39 / 9x39）时，用弹药包口径分布投票。
-
-    票数 = 该口径在数据里「包装规格」的种类数，不是流行度——FMJ 的 5.56 有
-    50/100 发两种装所以得 2 票，不代表玩家手里的散装 FMJ 就是 5.56。因此
-    只认压倒性证据：最高口径 ≥3 种包装规格，或全部包都是同一口径。
-    BP（5.45x39 三种规格 vs 2/1）锁定 5.45；AP/FMJ 分布接近均匀时不锁定，
-    交由歧义标注（R251），比瞎猜一个口径更诚实。"""
-    if len(loose) <= 1:
-        return loose
-    votes: dict[str, int] = {}
-    for i in packs:
-        c = _ocr_caliber((catalog.get(i) or {}).get("n"))
-        if c:
-            votes[c] = votes.get(c, 0) + 1
-    if not votes:
-        return loose
-    ranked = sorted(votes.items(), key=lambda kv: -kv[1])
-    top, tv = ranked[0]
-    if not (tv >= 3 or (tv >= 2 and len(votes) == 1)):
-        return loose
-    same = [i for i in loose
-            if _ocr_caliber((catalog.get(i) or {}).get("n")) == top]
-    return same or loose
-
-
 def _ocr_ambiguous(ids: list, catalog: dict) -> bool:
-    """缩小后的候选里仍含 >1 个口径 → 截图上根本无法区分，必须如实标注。"""
+    """候选里是否仍含 >1 个口径 → 截图上根本无法区分，必须如实标注。"""
     return len({_ocr_caliber((catalog.get(i) or {}).get("n")) or "?"
                 for i in ids}) > 1
 
@@ -914,8 +888,9 @@ def _ocr_ammo_decision(match: dict, lines: list, ids: list, catalog: dict,
     kind: "pack"（显示弹药包价）/ "loose"（单价×堆叠）/ None（非弹药，不干预）
     narrowed_ids 为空表示数据里没有该形态，调用方应退回原逻辑。
     `counts` 可由调用方预先算好（整张图只扫一次），省略时内部现算。
-    ambiguous: 缩小后仍有多个口径（.338 AP vs .300 AP、50 发装 .300/.45 撞车…）。
-    截图上只有短名 + 数量，这种歧义没法消除，只能标出来让玩家核对（R251）。
+    ambiguous: 候选里仍有多个口径（.338 AP vs .300 AP、散装 BP 的三种口径…）。
+    截图上只有短名 + 数量，这种歧义没法消除，只能全部列进选单让玩家核对。
+    散装弹**不再按同短名弹药包的口径分布去猜**（R309 用户口径：宁可全部列出来）。
     """
     packs = [i for i in ids if _ocr_ammo_kind(catalog.get(i) or {}) == "pack"]
     loose = [i for i in ids if _ocr_ammo_kind(catalog.get(i) or {}) == "loose"]
@@ -928,9 +903,8 @@ def _ocr_ammo_decision(match: dict, lines: list, ids: list, catalog: dict,
                 _ocr_ambiguous(narrowed, catalog))
     if loose:
         qty = cnt["qty"] if (cnt and not cnt["pack"]) else 1
-        narrowed = _ocr_prefer_loose(loose, packs, catalog)
-        return ("loose", qty, narrowed, bool(cnt and not cnt["pack"]),
-                _ocr_ambiguous(narrowed, catalog))
+        return ("loose", qty, loose, bool(cnt and not cnt["pack"]),
+                _ocr_ambiguous(loose, catalog))
     # 只有弹药包数据、又没读到 xx/xx：仍按弹药包显示，不臆造散装单价
     return "pack", 0, packs, False, _ocr_ambiguous(packs, catalog)
 
@@ -3376,8 +3350,8 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                 ids = name_to_ids.get(matcher.names_for(m["key"])[0]) or []
                 # R250：短名同时指向散装子弹与弹药包时，按格子右下角的数量形态
                 # 决定用哪一类候选（xx/xx=弹药包 / 纯数字=散装堆叠）。
-                # R251：ammo_ambig = 缩小后仍有多个口径（.338 AP vs .300 AP…），
-                # 截图上无法区分，只标注不瞎猜。
+                # R251：ammo_ambig = 候选里仍有多个口径（.338 AP vs .300 AP…），
+                # 截图上无法区分，只标注不瞎猜；R309 起散装不再按包装分布收窄。
                 ammo_kind, ammo_qty, ammo_ids, ammo_found, ammo_ambig = \
                     _ocr_ammo_decision(m, lines, ids, catalog, count_lines)
                 if ammo_kind and ammo_ids:
@@ -3442,8 +3416,7 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                     best["price"]["ammoStack"] = False
                 if ammo_kind and ammo_ambig:
                     # R251：同短名多口径无法从截图区分（显示名都是 AP/FMJ）。
-                    # 显示的价取自 price.name（每格价最高的那个口径），
-                    # 候选价目表一并给前端，tooltip 里让玩家自己核对。
+                    # 浮窗只画 ? 徽章（不报价），候选价目表给前端选单自己核对。
                     best["price"]["ambiguous"] = True
                     best["price"]["candidates"] = _ocr_ambig_candidates(
                         ammo_ids, catalog, snap_items)

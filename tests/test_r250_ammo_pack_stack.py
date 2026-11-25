@@ -142,15 +142,18 @@ def test_decision_no_count_line_falls_back_to_single_bullet(catalog3):
     assert narrowed
 
 
-def test_prefer_loose_uses_dominant_pack_caliber(catalog3):
-    """BP 有 5.45x39 / 7.62x39 / 9x39 三个散装候选，按同短名弹药包口径取 5.45x39。"""
+def test_loose_decision_keeps_every_caliber(catalog3):
+    """R309：散装 BP 的 5.45x39 / 7.62x39 / 9x39 全部保留，不再按包的口径分布猜。"""
     _names, _idx, items = catalog3
     ids = _ids_for("BP", catalog3)
     loose = [i for i in ids if serve._ocr_ammo_kind(items[i]) == "loose"]
     packs = [i for i in ids if serve._ocr_ammo_kind(items[i]) == "pack"]
     assert len(loose) == 3
-    picked = serve._ocr_prefer_loose(loose, packs, items)
-    assert [items[i]["n"] for i in picked] == ["5.45x39毫米 BP"]
+    kind, _qty, picked, _found, ambig = serve._ocr_ammo_decision(
+        _name_box(), [_line("BP", 145, 42), _line("80", 141, 138, 33)], loose + packs, items)
+    assert kind == "loose"
+    assert picked == loose
+    assert ambig is True
 
 
 # ---------------------------------------------------------------- 计价
