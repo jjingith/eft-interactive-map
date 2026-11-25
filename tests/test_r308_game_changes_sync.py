@@ -254,6 +254,64 @@ def test_minimap_panel_has_manual_shot_key_controls():
     assert "自动读取游戏绑定" in js
 
 
+# ---------------------------------------------------------------- 顶栏保存 / 模式持久化
+def test_topbar_save_button_persists_mode_and_ui():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'id="am-save-state"' in html
+    assert html.index('id="am-save-state"') < html.index('id="am-attrs"'), "保存键在属性设置左边"
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert "function bindSaveState" in js
+    assert 'GWGameMode.set(mode, "force")' in js
+    assert "savePrefsNow()" in js
+    flats = (ROOT / "styles" / "modern-flat.css").read_text(encoding="utf-8")
+    assert "html body #am-save-state" in flats
+
+
+def test_game_mode_restores_from_server_when_storage_empty():
+    """R308：localStorage 被清 / 换 profile 时，从服务端 dataScope.mode 恢复，不再回默认 PvP。"""
+    gm = (ROOT / "js" / "game-mode.js").read_text(encoding="utf-8")
+    assert "function restoreFromServer" in gm
+    assert "api/config" in gm
+    assert "config.dataScope" in gm or "config && p.config.dataScope" in gm
+    assert 'set(key, "server")' in gm
+    assert "readStored()" in gm
+
+
+# ---------------------------------------------------------------- 弹药页筛选折叠 / 模拟器精简
+def test_ammo_side_is_collapsible():
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    assert 'id="am-side-toggle"' in html and 'id="am-side"' in html
+    css = (ROOT / "style.css").read_text(encoding="utf-8")
+    assert ".am-workbench.am-side-collapsed" in css
+    assert ".am-workbench.am-side-collapsed .am-side { display: none; }" in css
+    js = (ROOT / "app.js").read_text(encoding="utf-8")
+    assert "function applyAmmoSide" in js
+    assert 'eftmap.ammoSide' in js
+
+
+def test_sim_panel_drops_verbose_explanations():
+    app = (ROOT / "app.js").read_text(encoding="utf-8")
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    gone = (
+        "只读本机配置、不碰游戏进程",
+        "参数校验仍在引擎入口执行",
+        "名义射速只决定",
+        "生成顺序固定",
+        "障碍物穿透与护甲是两套机制",
+    )
+    for text in gone:
+        assert text not in app and text not in html, "不该再显示：%s" % text
+    # 空态只留一句操作提示；构建标记退到按钮 tooltip
+    assert '配置完成后点「开始模拟」。' in app
+    assert "btnRun.title = AM_BUILD" in app
+
+
+def test_sim_left_column_is_compact():
+    css = (ROOT / "style.css").read_text(encoding="utf-8")
+    assert "grid-template-columns: 340px minmax(0, 1fr)" in css
+    assert ".am-workbench .am-sim-cfg { display: flex; flex-direction: column; gap: 6px;" in css
+
+
 # ---------------------------------------------------------------- 行情页脚注精简
 def test_market_foot_note_is_concise():
     """R308：页脚只留「按游戏模式自动跟随 · 云端行情」，不再罗列会员/免费差异。"""

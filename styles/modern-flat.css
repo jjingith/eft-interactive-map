@@ -389,6 +389,24 @@ html body .gw-attrs-savehint {
 }
 .gw-attrs-savehint:empty { display: none; }
 
+/* R308：顶栏「保存」——显式保存当前模式与界面偏好，主色底白字，位置紧贴属性设置左侧 */
+html body #am-save-state {
+  background: var(--ui-color-primary, #0a3f9e) !important;
+  border-color: #082f78 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+html body #am-save-state:hover {
+  background: #1466e0 !important;
+  border-color: #0a3f9e !important;
+  color: #fff !important;
+}
+html body #am-save-state:active {
+  background: #08306f !important;
+  color: #fff !important;
+  transform: none;
+}
+
 /* ---------------------------------------------------------------- 7. 尊重减少动态 */
 @media (prefers-reduced-motion: reduce) {
   html body button, html body .xp-btn { transition: none !important; }

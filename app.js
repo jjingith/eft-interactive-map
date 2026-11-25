@@ -2243,6 +2243,8 @@
     el.amReset = $("am-reset");
     el.amMaxdist = $("am-maxdist");
     el.amNote = $("am-note");
+    el.amSideToggle = $("am-side-toggle");   // R308：右侧筛选栏折叠
+    el.amWorkbench = $("am-workbench");
     el.amTable = $("am-table");
     el.amGraph = $("am-graph");
     el.amSim = $("am-sim");
@@ -2269,6 +2271,7 @@
     bindLoadoutUI();
     bindGunUI();
     bindProfileUI();
+    bindSaveState();
     bindAmmoUI();
     initDataScope();
     loadEditions();
@@ -23439,6 +23442,27 @@
     return true;
   }
 
+  /** R308：顶栏「保存」——把当前游戏模式 + 全部界面偏好显式写盘，下次启动沿用。
+   *  模式除了 localStorage，还会写进服务端配置 dataScope.mode（game-mode.js 启动时回读），
+   *  这样即使浏览器/壳清了 localStorage，也不会每次都被默认 PvP 覆盖。 */
+  function bindSaveState() {
+    var btn = $("am-save-state");
+    if (!btn) { return; }
+    btn.addEventListener("click", function () {
+      var mode = (window.GWGameMode && typeof GWGameMode.get === "function")
+        ? GWGameMode.get() : null;
+      if (mode && window.GWGameMode && typeof GWGameMode.set === "function") {
+        window.GWGameMode.set(mode, "force");   // 落 localStorage + 推 dataScope.mode
+      }
+      savePrefsNow();                            // ui.*：视图 / 图层 / 配装 / 列宽…
+      if (typeof gunToast === "function") {
+        var info = (window.GWGameMode && GWGameMode.info) ? GWGameMode.info(mode) : null;
+        gunToast("已保存当前设置" + (info && info.label ? "（" + info.label + "）" : "") +
+                 "，下次启动沿用");
+      }
+    });
+  }
+
   function bindProfileUI() {
     var e = gwProfileEls();
     var entry = $("am-attrs");
@@ -25512,15 +25536,6 @@
     { k: "left", n: "左侧" }, { k: "right", n: "右侧" }
   ];
   var AM_SIM_DIR_ZH = { front: "正面", back: "背面", left: "左侧", right: "右侧" };
-  var AM_SIM_MODE_ASSUME = {
-    single: "单发：名义射速只决定「最快连续击发」间隔；扳机节奏由玩家决定，本引擎不建模停顿。",
-    fullauto: "全自动：按名义射速连续击发，Δt = 60000 / rpm。",
-    semiauto: "半自动：与单发同样按最快击发间隔计算，不含扳机停顿。",
-    burst: "连发：按名义射速计算，未建模连发间隔与松开扳机的停顿。",
-    doublet: "双连发：按名义射速计算，未建模连发间隔。",
-    doubleaction: "双动：按名义射速计算。",
-    shotgun: "霰弹：按名义射速计算。"
-  };
 
   function amSimState() {
     if (!state.amSim) {
@@ -26472,11 +26487,10 @@
     var btnRun = elTag("button", "am-btn am-sim-run", "开始模拟");
     btnRun.type = "button";
     btnRun.setAttribute("data-act", "sim-run");
+    // R308：构建标记只放在 tooltip（排查缓存时用），不占可见版面
+    btnRun.title = AM_BUILD + " 构建 · " + compatBuildStamp();
     runRow.appendChild(btnRun);
-    var runHint = elTag("div", "am-sim-runhint",
-      AM_BUILD + " 构建 · " + (compatBuildStamp()) + " · 配置改完后直接点这里；参数校验仍在引擎入口执行。");
     runBar.appendChild(runRow);
-    runBar.appendChild(runHint);
     cfgCol.appendChild(runBar);
 
     // —— 1. 射击枪械（按口径 → 平台分组；射速由枪械数据决定，只读） ——
@@ -26549,9 +26563,6 @@
     var blist = elTag("div", "am-sim-barrierlist");
     blist.setAttribute("data-sim", "barrier-list");
     boxB.appendChild(blist);
-    boxB.appendChild(elTag("p", "am-sim-note",
-      "障碍物穿透与护甲是两套机制：基础概率取弹药 pch（PenetrationChanceObstacle）× 材质倍率，" +
-      "材质倍率/穿后保留比例为估算（estimated），不是游戏原始公式。"));
     cfgCol.appendChild(boxB);
 
     // —— 2b. 射击方向（R16-F：决定经过前/后/左侧板与对应软甲，不再把前后板串成一条链） ——
@@ -26578,9 +26589,6 @@
     exitLab.title = "默认关闭。开启后仅额外扣对侧插板耐久并单独记账，不改变入体伤害（estimated）";
     dRow.appendChild(exitLab);
     boxDir.appendChild(dRow);
-    boxDir.appendChild(elTag("p", "am-sim-note",
-      "方向只决定「这一发会经过哪些层」：正面射击不会把后插板当第二层防护；" +
-      "对侧插板只可能作为入体后的独立事件出现（默认不建模）。"));
     cfgCol.appendChild(boxDir);
 
     // —— 3. 目标类型 + 具体目标 ——
@@ -26785,19 +26793,7 @@
     hvRow.appendChild(amSimNumField("重型护甲技能 Lv", "hv-level", s.hvLevel, 0, 50,
       "0–50 级：仅 ArmorType=Heavy 的护甲层钝伤 BT ×(1−Lv×0.004)；来源 globals SkillsSettings.HeavyVests"));
     boxM.appendChild(hvRow);
-    boxM.appendChild(elTag("p", "am-sim-note",
-      "距离衰减：G1 类阻力 + 50 m 归零的近似模型（原文 Shot 飞行段未摘到，非官方）。" +
-      "碎片化：概率取官方 FragmentationChance；触发条件与倍率为社区经验（pen<20 归零、+0.5×），官方可能已调整。" +
-      "技能：0.004/级来自 globals BluntThroughputDamageHVestsReducePerLevel；等级曲线是否另有递减未知。"));
     cfgCol.appendChild(boxM);
-
-
-    // —— 6. 收尾提示（执行入口在顶部 sticky 条，向下滚动时也可用） ——
-    var box6 = elTag("div", "am-sim-box am-sim-footbox");
-    box6.appendChild(elTag("h4", "am-sim-h", "执行"));
-    box6.appendChild(elTag("p", "am-sim-note",
-      "「开始模拟」固定在左侧栏顶部；单次运行输出逐发日志，多次运行输出统计表，点任意一局可回看该局配置与日志。"));
-    cfgCol.appendChild(box6);
 
     // —— 输出列 ——
     outCol.appendChild(elTag("div", "am-sim-out-hint"));
@@ -27112,8 +27108,6 @@
     } else if (modes.length) {
       info.appendChild(elTag("span", "am-sim-dim", modes[0].n));
     }
-    var note = AM_SIM_MODE_ASSUME[s.gunMode] || "该射击模式尚未确认，按数据中的名义射速计算。";
-    info.appendChild(elTag("span", "am-sim-note", note));
   }
 
   /** 换枪后的联动清理：弹匣失效 → 换掉；弹药不兼容 → 移除并提示；超出容量 → 截断。 */
@@ -27223,8 +27217,6 @@
       row.appendChild(x);
       list.appendChild(row);
     }
-    list.appendChild(elTag("p", "am-sim-note",
-      "系数为估算（estimated），不是游戏原始数据；穿透即停止（社区资料未见转钝伤）。详见 docs/r15-fixes/barrier-research.md"));
   }
 
   /** 目标装备池说明：Boss/护卫为强制白名单；PMC/Scav 无公开固定池 → 不限制（不伪造限制）。 */
@@ -27850,12 +27842,8 @@
     var gen = elTag("button", "am-btn am-sim-btn am-sim-genbtn", "按预设装填弹匣");
     gen.type = "button";
     gen.setAttribute("data-act", "sim-preset-load");
+    gen.title = "按左侧排好的分区顺序装填；拖拽行可调整顺序，循环区最多 5 种弹药";
     box.appendChild(gen);
-    box.appendChild(elTag("p", "am-sim-note",
-      "生成顺序固定：首发区（按配置顺序）→ 循环区（按行序循环、不足一轮按序截断）→ 末尾区（按配置顺序）；" +
-      "所有行都可拖（空行也可，不需要先选弹药）：拖到分区标题/某一行 = 插入该区（前/后由指针位置决定），" +
-      "跨区插入会改变角色且不留副本；循环区最多 5 种弹药（空行不占名额）；清空某行只影响该行。" +
-      "最终逐发序列在开始模拟后由引擎生成，见右侧逐发日志。"));
   }
 
   /** 弹药选择弹窗根节点：挂在 document.body 下（fixed 浮层），不被左栏 overflow 裁切。
@@ -28060,7 +28048,7 @@
     if (s.multi) { renderSimMulti(sum, log); return; }
     var r = s.result;
     if (!r) {
-      sum.appendChild(elTag("p", "am-sim-dim", "配置完成后点「开始模拟」。甲伤与跳弹按 0.13.x 客户端反编译原文：甲伤 = 穿透力×甲伤%×clamp(穿透力/(10×等级))×材质毁损，跳弹后伤害/甲伤/穿透力全部 ÷2 仍扣耐久；头盔与插板都参与跳弹。穿透浮动 = N(纸面穿透力, 0.13.x 模板 PenetrationPowerDiviation)，固定种子可复现；穿透概率仍为 R19.8 绝对耐久模型（估算）。伤害/穿透随距离衰减与弹药页同源。"));
+      sum.appendChild(elTag("p", "am-sim-dim", "配置完成后点「开始模拟」。"));
       return;
     }
     renderSimSingle(sum, log, r);
@@ -28642,7 +28630,31 @@
     renderSimOut();
   }
 
+  var LS_AMMO_SIDE = "eftmap.ammoSide";
+
+  /** R308：弹药页右侧筛选栏折叠（状态记在本机，重开保持）。 */
+  function applyAmmoSide(collapsed, persist) {
+    if (el.amWorkbench) { el.amWorkbench.classList.toggle("am-side-collapsed", !!collapsed); }
+    if (el.amSideToggle) {
+      el.amSideToggle.textContent = collapsed ? "展开筛选" : "收起筛选";
+      el.amSideToggle.setAttribute("aria-expanded", String(!collapsed));
+    }
+    if (persist) {
+      try { localStorage.setItem(LS_AMMO_SIDE, collapsed ? "0" : "1"); } catch (e) { /* 忽略 */ }
+    }
+  }
+
   function bindAmmoUI() {
+    if (el.amSideToggle) {
+      el.amSideToggle.addEventListener("click", function () {
+        var collapsed = !!(el.amWorkbench &&
+          el.amWorkbench.classList.contains("am-side-collapsed"));
+        applyAmmoSide(!collapsed, true);
+      });
+    }
+    var savedSide = null;
+    try { savedSide = localStorage.getItem(LS_AMMO_SIDE); } catch (e) { /* 忽略 */ }
+    applyAmmoSide(savedSide === "0", false);
     if (el.amTabs) {
       el.amTabs.addEventListener("click", function (ev) {
         var btn = ev.target;

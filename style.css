@@ -4117,6 +4117,10 @@ html body .app-dir-panel {
   background: var(--am-panel);
   border-left: 1px solid var(--am-line-2);
 }
+/* R308：右侧筛选栏可折叠——收起后主表占满整行 */
+.am-workbench.am-side-collapsed { grid-template-columns: minmax(0, 1fr); }
+.am-workbench.am-side-collapsed .am-side { display: none; }
+.am-workbench .am-side-toggle { flex: 0 0 auto; }
 .am-workbench .am-side-head { display: flex; align-items: center; justify-content: space-between; }
 
 /* ---- R20.8：参考站侧栏控件（价格口径 / 来源 / 单位 分段按钮组 + 商人等级滑条） ----
@@ -4398,25 +4402,25 @@ html body .app-dir-panel {
 /* ---- 逐发击杀模拟器（第十四轮阶段D，样式仅限 .am-sim 作用域） ---- */
 .am-workbench .am-sim {
   display: grid;
-  grid-template-columns: 372px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 8px;
   align-items: start;
   width: 100%;
   min-height: 0;
-  padding: 12px;
+  padding: 8px;
 }
-.am-workbench .am-sim-cfg { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.am-workbench .am-sim-cfg { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .am-workbench .am-sim-out { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .am-workbench .am-sim-box {
   background: var(--am-panel);
   border: 1px solid var(--am-line);
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 .am-workbench .am-sim-h { margin: 0; font-size: 12px; color: var(--am-accent-2); font-weight: 600; }
-.am-workbench .am-sim-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-end; }
+.am-workbench .am-sim-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: flex-end; }
 .am-workbench .am-sim-field { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .am-workbench .am-sim-flabel { font-size: 10px; color: var(--am-dim); }
 .am-workbench .am-sim-num {
@@ -4597,8 +4601,8 @@ html body .app-dir-panel {
   z-index: 6;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px;
+  gap: 3px;
+  padding: 6px;
   background: linear-gradient(180deg, rgba(24, 30, 27, .98), rgba(14, 18, 16, .98));
   border: 1px solid var(--am-accent);
   border-radius: 4px;

@@ -155,11 +155,44 @@
     syncButtons();
   }
 
+  /** R308：localStorage 没有值时（壳清缓存 / 换 profile / 首次启动），回读服务端
+      配置里的 dataScope.mode——否则每次启动都会用默认 PvP 把已保存的模式覆盖掉。 */
+  function restoreFromServer() {
+    var done = false;
+    var fallback = function () {
+      if (done) { return; }
+      done = true;
+      pushMode(current);
+    };
+    try {
+      if (typeof fetch !== "function") { fallback(); return; }
+      fetch("api/config", { cache: "no-store" }).then(function (r) {
+        return r.ok ? r.json() : null;
+      }).then(function (p) {
+        if (done) { return; }
+        var key = p && p.config && p.config.dataScope && p.config.dataScope.mode;
+        if (valid(key)) {
+          done = true;
+          set(key, "server");   // 落 localStorage + 通知订阅者；set 内部会 pushMode
+        } else {
+          fallback();
+        }
+      }).catch(fallback);
+    } catch (e) {
+      fallback();
+    }
+  }
+
   // 启动即读存储（不等 mount，任务模块可能先问模式）
+  // R308：没有本地存储时先问服务端，避免默认 PvP 覆盖上次保存的模式。
   (function () {
     var saved = readStored();
-    if (saved) { current = saved; }
-    pushMode(current);    // R260：页面一打开就把当前模式同步给截图识别
+    if (saved) {
+      current = saved;
+      pushMode(current);    // 页面一打开就把当前模式同步给截图识别
+    } else {
+      restoreFromServer();
+    }
   })();
 
   window.GWGameMode = {

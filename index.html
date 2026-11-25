@@ -243,6 +243,9 @@
 
   <span class="app-menu-status" id="app-menu-status" hidden></span>
   <div class="app-menubar-right" id="app-menubar-right">
+    <!-- R308：显式保存当前设置（游戏模式 / 视图 / 图层 / 配装…），下次启动沿用 -->
+    <button type="button" class="app-menu-btn app-save-btn" id="am-save-state"
+            title="保存当前设置（游戏模式、视图、图层、配装等），下次启动自动沿用">保存</button>
     <!-- R19.93：属性设置入口（商人好感 / 藏身处设施 / 技能等级，按模式独立保存） -->
     <button type="button" class="app-menu-btn" id="am-attrs"
             aria-haspopup="dialog" aria-controls="gw-profile"
@@ -976,6 +979,10 @@
            placeholder="搜索弹药名称 / 口径 / 类型…" aria-label="搜索弹药">
     <span class="am-count" id="am-count"></span>
     <span class="am-hint" id="am-hint"></span>
+    <!-- R308：右侧筛选栏可折叠，腾出表格宽度 -->
+    <button type="button" class="am-btn am-side-toggle" id="am-side-toggle"
+            aria-expanded="true" aria-controls="am-side"
+            title="收起 / 展开右侧筛选栏">收起筛选</button>
   </header>
 
   <!-- R20.8：侧栏按参考站 db4tarkov.com/ammo 的顺序重排——
@@ -983,7 +990,7 @@
        语义树实测：参考站侧栏 role="Navigation menu"，宽 320，含 3 段价格按钮、
        4 段来源按钮、only TraderLvl（复选 + 滑条）、metric/imperial、
        5 个武器类别分组（各带 SHOW）、4 组数值滑条。 -->
-  <aside class="am-side" aria-label="弹药筛选">
+  <aside class="am-side" id="am-side" aria-label="弹药筛选">
 
     <div class="am-side-head">
       <h3 class="am-h3">筛选</h3>
@@ -1176,7 +1183,6 @@
             <output></output>
           </label>
         </div>
-        <p class="muted" id="ov-note">小浮窗由 tools/overlay.py 托管，只读本机配置、不碰游戏进程。</p>
 
         <h4 class="about-h">视野与显示</h4>
         <div class="hud-scales mini-scales">
