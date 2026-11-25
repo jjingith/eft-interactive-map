@@ -363,7 +363,6 @@
   function sourceLabel(snap) {
     if (!snap) { return "行情"; }
     if (snap.cached) { return "云端缓存（非实时）"; }
-    if (snap.dataDelayed) { return "云端行情（延迟 12 小时）"; }
     return "云端行情";
   }
 
@@ -820,8 +819,7 @@
     srcEl.textContent = sourceLabel(snap);
     srcEl.title = "逐行来源：" + sourceLabel(snap) + "（" + modeLabel(st.scopeMode()) + "）" +
       (snap && snap.snapshotAt ? "\n数据时间：" + snap.snapshotAt : "") +
-      (snap && snap.live === true ? "\n会员云端最新数据" :
-        (snap && snap.cached ? "\n云端缓存（非实时）" : "\n免费云端数据（延迟 12 小时）")) +
+      (snap && snap.cached ? "\n云端缓存（非实时）" : "") +
       (upd ? "\n该物品数据时间：" + upd : "\n该行没有逐物品更新时间");
     sub.appendChild(srcEl);
     box.appendChild(sub);
@@ -973,7 +971,7 @@
     "offline": "云端暂时连不上",
     "network": "云端暂时连不上",
     "no_price_data": "云端还没有该模式的行情数据",
-    "data_delayed": "免费版行情延迟 12 小时，云端还没有到可见时间的数据",
+    "data_delayed": "云端还没有到可见时间的数据",
     "fetch-failed": "本机服务没有响应",
     "bad-mode": "模式参数不被接受"
   };
@@ -1146,13 +1144,8 @@
         text = "数据截止 " + when + "（" + shortAge(snap.snapshotAt) + "）";
         if (snap.cached) {
           text += " · 缓存（非实时）";
-        } else if (snap.dataDelayed) {
-          text += " · 免费延迟 12 小时";
         } else {
           text += " · 近实时";
-        }
-        if (typeof quota.remaining_today === "number") {
-          text += " · 今日剩余 " + quota.remaining_today + " 次";
         }
         stale = liveStale(snap) && !(snap.dataDelayed && !snap.cached);
         if (stale) { text += " · 已过期 " + agePhrase(liveAgeSec(snap)); }
@@ -1163,25 +1156,17 @@
 
     if (ui.cutoffFetch) {
       ui.cutoffFetch.classList.remove("is-fresh");
-      var freeTier = snap && snap.tier && snap.tier !== "member";
-      var remaining = typeof quota.remaining_today === "number"
-        ? "，今日剩余 " + quota.remaining_today + " 次" : "";
-      ui.cutoffFetch.title = freeTier
-        ? "获取最新数据（免费：每日 24 次，CD 59:59，数据延迟 12 小时" + remaining + "）"
-        : "获取最新数据（会员：CD 30 秒，不限次数）";
+      ui.cutoffFetch.title = "从云端获取最新行情";
     }
 
     var lines = [
-      "会员：云端最新快照 · CD 30 秒，每日不限次数",
-      "免费：云端快照延迟 12 小时 · 每日 24 次 · CD 59:59",
-      "额度与 CD 均记录在云端账号上；断网时显示本机上次成功结果"
+      "行情来自云端；额度与 CD 记录在云端账号上。",
+      "断网时显示本机上次成功结果。"
     ];
     if (!snap || !snap.available) {
       lines.push("当前模式暂无可用行情");
     } else if (snap.cached) {
       lines.push("当前：云端暂不可用，显示本机上次成功获取的缓存");
-    } else if (snap.dataDelayed) {
-      lines.push("当前：免费版数据（比会员延迟 12 小时）");
     }
     ui.cutoff.title = lines.join("\n");
 
@@ -1204,8 +1189,8 @@
                 + whenText + "），不是实时行情。恢复联网后点「获取最新数据」即可更新。";
             }
           } else if (snap.dataDelayed) {
-            ui.stale.textContent = "免费版行情比会员延迟 12 小时（数据截止 " + whenText
-              + "）。每日可获取 " + (quota.daily_limit || 24) + " 次，每次成功后 CD 59 分 59 秒。";
+            ui.stale.textContent = "当前显示的是延迟约 12 小时的云端数据（截止 " + whenText
+              + "），不是实时行情。";
           } else if (stale) {
             ui.stale.textContent = "云端行情已过期" +
               (age !== null ? " " + agePhrase(age) : "") +
@@ -1241,7 +1226,7 @@
     ui.empty.classList.remove("is-error");
     ui.empty.classList.add("is-loading");
     ui.emptyTitle.textContent = title || "正在从云端读取当前模式行情…";
-    ui.emptyDetail.textContent = detail || "免费版数据比会员延迟 12 小时；登录后才会请求云端。";
+    ui.emptyDetail.textContent = detail || "行情来自云端，读取完成后自动显示。";
     ui.emptyBtn.textContent = "";
     ui.emptyBtn.hidden = true;
     ui.emptyBtn.onclick = null;
@@ -1360,7 +1345,7 @@
       if (ui.banner) { ui.banner.hidden = true; }
       updateCutoff();   // 旧模式的截止时间不能留在当前模式上
       showLoading("正在从云端读取 " + modeLabel(cur) + " 的行情…",
-        "免费版数据比会员延迟 12 小时；登录后才会请求云端。");
+        "行情来自云端，读取完成后自动显示。");
       if (ui.count) { ui.count.textContent = "正在读取 " + modeLabel(cur) + " 行情…"; }
       return true;
     }
@@ -1393,7 +1378,7 @@
     loading = true;
     var cur = modeLabel(st.scopeMode());
     if (ui.count) { ui.count.textContent = "正在读取 " + cur + " 行情…"; }
-    if (!rows.length) { showLoading("正在从云端读取当前模式行情…", "免费版数据比会员延迟 12 小时。"); }
+    if (!rows.length) { showLoading("正在从云端读取当前模式行情…"); }
     var done = function () {
       loading = false;
       loaded = true;
@@ -1412,7 +1397,7 @@
     if (!api || loading || loaded) { return; }
     loading = true;
     if (ui.count) { ui.count.textContent = "正在读取当前模式行情…"; }
-    if (!rows.length) { showLoading("正在从云端读取当前模式行情…", "免费版数据比会员延迟 12 小时。"); }
+    if (!rows.length) { showLoading("正在从云端读取当前模式行情…"); }
     var snapshotReady = api.ensureSnapshot ? api.ensureSnapshot({ reason: "load" })
       : Promise.resolve(api.snapshot ? api.snapshot() : null);
     Promise.resolve(snapshotReady).then(function () {
@@ -1495,7 +1480,7 @@
     html.push('    <span class="mk-foot-sel" hidden>已选 0 件</span>');
     html.push('    <button type="button" class="mk-btn mk-copy-sel" hidden>复制所选</button>');
     html.push('    <button type="button" class="mk-link mk-sel-clear" hidden>清除选择</button>');
-    html.push('    <span class="mk-foot-note">按游戏模式自动跟随 · 云端行情 · 免费延迟 12 小时 / 会员 30 秒 CD · 不做伪实时</span>');
+    html.push('    <span class="mk-foot-note">按游戏模式自动跟随 · 云端行情</span>');
     html.push('  </div>');
     html.push('  <div class="mk-toast" role="status" aria-live="polite" hidden></div>');
     html.push('  <div class="mk-modal" hidden>');
@@ -1633,7 +1618,7 @@
     ui.cutoffFetch.type = "button";
     ui.cutoffFetch.className = "mk-cutoff-fetch";
     ui.cutoffFetch.textContent = "获取最新数据";
-    ui.cutoffFetch.title = "从云端获取行情（免费：每日 24 次、CD 59:59；会员：CD 30 秒）";
+    ui.cutoffFetch.title = "从云端获取最新行情";
     ui.cutoffFetch.addEventListener("click", manualFetch);
     var cutoffWrap = document.createElement("span");
     cutoffWrap.className = "mk-cutoff-wrap";
@@ -2883,7 +2868,7 @@
     } else if (entry && entry.snapshots > 0) {
       text = "云端缓存：" + entry.snapshots + " 份快照 · 更新于 " + fmtCacheTime(entry.updated_at);
     } else {
-      text = "云端缓存还没下载（会员登录后自动下载，也可以点右侧按钮）";
+      text = "云端缓存还没下载（登录会员账号后自动下载）";
     }
     var label = el("span", "mk-cache-text", text);
     bar.appendChild(label);
@@ -3142,7 +3127,7 @@
     if (histState.phase === "error") {
       if (histState.error === "member-required") {
         ui.hist72.appendChild(histEmptyBox("价格历史是会员功能", [
-          "免费账户可在市场大盘查看延迟 12 小时的云端行情；逐物品完整曲线需要会员。"
+          "开通会员后可查看完整的逐物品价格曲线。"
         ]));
         return;
       }
@@ -3175,7 +3160,7 @@
       var cloudState = (data && data.cloud && data.cloud.status) || "";
       if (cloudState === "member_required") {
         ui.hist72.appendChild(histEmptyBox("云端历史是会员数据", [
-          "本机还没有采集到快照。开通会员后这里会直接显示采集机上传的完整曲线，不用等本机攒样本。",
+          "本机还没有采集到快照。开通会员后这里会直接显示云端采集的完整曲线。",
           "价格每 30 分钟更新一次，缺的时段就是没有采样，不插值。"
         ]));
         return;
@@ -3188,7 +3173,7 @@
         return;
       }
       ui.hist72.appendChild(histEmptyBox("还没有历史快照", [
-        "价格每 30 分钟采集一次：采集机上传到云端，会员的客户端打开这里就能直接看到曲线。",
+        "价格每 30 分钟采集一次；开通会员后可直接查看云端完整曲线。",
         "本机与云端都没有可用样本，所以这里不画线。"
       ]));
       return;

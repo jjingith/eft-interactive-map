@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-"""R262：数据截止徽标的悬停注释精简。
+"""R262 / R308：数据截止徽标的悬停注释保持精简。
 
-用户反馈（2026-11-12）：「鼠标移到底部『数据截止 20:01（23 分钟前）· 近实时』上显示的
-注释没必要写那么清楚，写明『会员版数据是云端服务器实时抓取、免费版是离线快照』就行。」
-
-即：徽标文字（数据截止/近实时）保持不变，只把 title 悬停注释从一大段精简为两句话。
+R262（2026-11-12）要求把大段拼装精简成两句话；
+R308（2026-11-25）用户进一步要求不在各页面重复「免费 / 会员」差异：
+这里只说明行情来自云端、额度与 CD 在账号上，不再罗列两档的次数与延迟。
 """
 
 import os
@@ -16,9 +15,11 @@ ROOT = os.path.dirname(TEST_DIR)
 JS = open(os.path.join(ROOT, "js", "market.js"), encoding="utf-8").read()
 
 
-def test_tooltip_has_concise_two_line_explanation():
-    assert "会员：云端最新快照 · CD 30 秒，每日不限次数" in JS
-    assert "免费：云端快照延迟 12 小时 · 每日 24 次 · CD 59:59" in JS
+def test_tooltip_has_concise_explanation_without_tier_comparison():
+    body = _update_cutoff_body()
+    assert "行情来自云端；额度与 CD 记录在云端账号上。" in body
+    assert "会员：" not in body and "免费：" not in body, \
+        "行情页不再罗列会员 / 免费两档的次数与 CD"
 
 
 def _update_cutoff_body():
@@ -36,8 +37,8 @@ def test_tooltip_drops_verbose_details():
 
 
 def test_badge_label_still_shows_cutoff():
-    # 徽标正文（数据截止 … · 近实时 / 缓存 / 免费延迟）保持清楚
+    # 徽标正文（数据截止 … · 近实时 / 缓存）保持清楚
     assert "数据截止" in JS
     assert "· 近实时" in JS
     assert "非实时" in JS
-    assert "免费延迟 12 小时" in JS
+    assert "免费延迟 12 小时" not in JS, "R308：不再到处写免费 / 会员差异"

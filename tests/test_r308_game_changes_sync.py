@@ -252,3 +252,12 @@ def test_minimap_panel_has_manual_shot_key_controls():
     assert "function saveShotKey" in js
     assert "auto_screenshot: { key: val || null }" in js
     assert "自动读取游戏绑定" in js
+
+
+# ---------------------------------------------------------------- 行情页脚注精简
+def test_market_foot_note_is_concise():
+    """R308：页脚只留「按游戏模式自动跟随 · 云端行情」，不再罗列会员/免费差异。"""
+    js = (ROOT / "js" / "market.js").read_text(encoding="utf-8")
+    assert "按游戏模式自动跟随 · 云端行情</span>" in js
+    assert "不做伪实时" not in js
+    assert "会员 30 秒 CD" not in js

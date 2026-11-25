@@ -780,15 +780,10 @@
     var serverSnap = state.priceSnap && state.priceSnap.payload;
     if (serverSnap && serverSnap.mode === mode && serverSnap.available) {
       var cutoff = serverSnap.snapshotAt || serverSnap.dataAt || null;
-      var isMemberQuote = serverSnap.tier === "member";
-      var short = serverSnap.cached
-        ? "云端缓存（非实时）"
-        : (isMemberQuote ? "会员云端行情" : "免费云端行情（延迟 12 小时）");
+      var short = serverSnap.cached ? "云端缓存（非实时）" : "云端行情";
       return {
         kind: "live", short: short, modeLabel: modeShort(mode),
-        detail: (isMemberQuote
-          ? "价格由云端按会员权限下发，会员 CD 30 秒、每日不限次数。"
-          : "价格由云端下发，免费账号每日 24 次、CD 59:59，数据比会员延迟 12 小时。") +
+        detail: "价格由云端下发。" +
           (serverSnap.cached ? " 当前为上次成功获取的缓存。" : "") +
           (cutoff ? " 当前行情截止时间：" + cutoff + "。" : "")
       };
@@ -7811,7 +7806,7 @@
     var tip = document.createElement("div");
     tip.id = "ocr-member-tip";
     tip.className = "ocr-member-tip";
-    tip.textContent = "价格档位自定义是会员功能；免费版价格固定灰白色显示。";
+    tip.textContent = "价格档位自定义是会员功能。";
     var box = el.ocrStyleBox;
     box.style.position = box.style.position || "relative";
     box.appendChild(tip);

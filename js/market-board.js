@@ -124,8 +124,7 @@
   function sourceLabel(data) {
     if (!data) { return "云端行情"; }
     if (data.cached) { return "云端缓存（非实时）"; }
-    if (data.dataDelayed || data.tier === "free") { return "云端行情 · 免费延迟 12 小时"; }
-    return "云端行情 · 会员最新";
+    return "云端行情";
   }
   function timeText(iso) {
     if (!iso) { return "—"; }
