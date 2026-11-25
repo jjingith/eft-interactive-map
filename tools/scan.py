@@ -1546,6 +1546,38 @@ if IS_WINDOWS:
         tmp = ImageDraw.Draw(Image.new("RGBA", (8, 8)))
         return tmp.textlength(text, font=font)
 
+    _ITEM_ICON_CACHE: dict = {}
+
+    def _item_icon(item_id, size: int):
+        """物品小图标（assets/icons-transparent/<id>.png），按 (id, 尺寸) 缓存。
+
+        同名不同 id 的物品（女郎海报各变体）只靠文字分不清，选单/详情卡里带上小图。
+        缺图返回 None，调用方退回占位框。
+        """
+        from PIL import Image, ImageOps
+
+        iid = str(item_id or "")
+        size = max(8, int(size))
+        if not iid or any(ch in iid for ch in ("/", "\\", "..")):
+            return None
+        key = (iid, size)
+        if key in _ITEM_ICON_CACHE:
+            return _ITEM_ICON_CACHE[key]
+        path = os.path.join(_asset_root(), "assets", "icons-transparent", iid + ".png")
+        img = None
+        if os.path.isfile(path):
+            try:
+                with Image.open(path) as src:
+                    canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+                    fit = ImageOps.contain(src.convert("RGBA"), (size, size), Image.LANCZOS)
+                    canvas.alpha_composite(fit, ((size - fit.width) // 2,
+                                                 (size - fit.height) // 2))
+                    img = canvas
+            except Exception:  # noqa: BLE001 - 坏图不能拖垮选单
+                img = None
+        _ITEM_ICON_CACHE[key] = img
+        return img
+
     def render_menu(candidates: list, fs: int, current_name: str = "",
                     title: str = "选择口径"):
         """R253：口径选单位图（点浮窗 ? 徽章弹出）。
@@ -1561,23 +1593,42 @@ if IS_WINDOWS:
         row_h = int(round(fs * 1.7))
         pad = max(6, int(round(fs * 0.55)))
         dot_r = max(2, int(round(fs * 0.16)))
+        icon_sz = max(12, row_h - 6)        # R309：每个候选带物品小图
         f = _font("msyh", fs)
+        fv = _font("segoeuib", fs)
+
+        def _price_parts(text: str):
+            """'7,000 ₽/发' → 数字段用 Segoe UI Bold（雅黑没有 ₽ 字形），/发 用雅黑。"""
+            if text.endswith("/发"):
+                return text[:-2], "/发"
+            return text, ""
+
+        def _price_w(text: str) -> float:
+            num, tail = _price_parts(text)
+            return dr_len(num, fv) + (dr_len(tail, f) if tail else 0.0)
+
+        def _draw_price(x: float, y: float, text: str, fill) -> None:
+            num, tail = _price_parts(text)
+            dr.text((x, y), num, font=fv, fill=fill)
+            if tail:
+                dr.text((x + dr_len(num, fv), y), tail, font=f, fill=fill)
+
         rows = []
         price_ws = []
         for c in candidates or []:
             name = str(c.get("name") or "?")
             price = c.get("price")
             price_txt = fmt_short(price) + ("/发" if c.get("kind") == "loose" else "")
-            rows.append((name, price_txt, bool(price)))
-            price_ws.append(dr_len(price_txt, f))
+            rows.append((name, price_txt, bool(price), str(c.get("id") or "")))
+            price_ws.append(_price_w(price_txt))
         if not rows:
             return None, []
         # 先定菜单宽：名字与价格之间永远留 ≥1.2×字号 的空隙，名字超长则截断
         max_price_w = max(price_ws)
         name_avail = max(60, int(dr_len(".338 Lapua Magnum FMJ", f) * 1.4))
-        w = int(max_price_w + name_avail + pad * 2 + dot_r * 2 + 10)
+        w = int(max_price_w + name_avail + pad * 2 + dot_r * 2 + icon_sz + 6 + 10)
         w = max(w, int(dr_len(title, f)) + pad * 2)
-        name_limit = w - 3 - pad * 2 - dot_r * 2 - 8 - max_price_w
+        name_limit = w - 3 - pad * 2 - dot_r * 2 - icon_sz - 6 - 8 - max_price_w
         title_h = int(round(fs * 1.5))
         h = title_h + row_h * len(rows) + pad
         img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -1595,11 +1646,11 @@ if IS_WINDOWS:
                 font=f, fill=(255, 255, 255, 245))
         rects = []
         y = title_h + pad // 2
-        for (name, price_txt, has_price), pw in zip(rows, price_ws):
+        for (name, price_txt, has_price, cid), pw in zip(rows, price_ws):
             rects.append((0, y, w - 3, y + row_h))
             cy = y + row_h // 2
-            # 当前推断（price.name）实心蓝点，否则浅灰空心圈
-            cur = bool(current_name) and str(c.get("id") or name) == str(current_name)
+            # 当前选中项（按 id）实心蓝点，否则浅灰空心圈
+            cur = bool(current_name) and cid == str(current_name)
             dot = (58, 110, 200, 255) if cur else (0, 0, 0, 0)
             if cur:
                 dr.ellipse([pad, cy - dot_r, pad + dot_r * 2, cy + dot_r], fill=dot)
@@ -1607,6 +1658,14 @@ if IS_WINDOWS:
                 dr.ellipse([pad, cy - dot_r, pad + dot_r * 2, cy + dot_r],
                            outline=(190, 196, 205, 255), width=1)
             tx = pad + dot_r * 2 + 8
+            icon = _item_icon(cid, icon_sz)
+            iy = cy - icon_sz // 2
+            if icon is not None:
+                img.alpha_composite(icon, (tx, iy))
+            else:
+                dr.rounded_rectangle([tx, iy, tx + icon_sz, iy + icon_sz],
+                                     radius=2, fill=(232, 232, 228, 210))
+            tx += icon_sz + 6
             shown = name
             while shown and dr_len(shown, f) > name_limit:
                 shown = shown[:-1]
@@ -1615,8 +1674,7 @@ if IS_WINDOWS:
             dr.text((tx, cy - fs * 0.62), shown, font=f, fill=(30, 32, 36, 245))
             px = w - 3 - pad - pw
             if has_price:
-                dr.text((px, cy - fs * 0.62), price_txt,
-                        font=f, fill=(70, 74, 80, 245))
+                _draw_price(px, cy - fs * 0.62, price_txt, (70, 74, 80, 245))
             else:
                 nw = dr_len("无价", f)
                 dr.text((w - 3 - pad - nw, cy - fs * 0.62), "无价",
@@ -1644,7 +1702,8 @@ if IS_WINDOWS:
         ft = _font("msyh", title_fs)
         pad = max(6, int(round(8 * s)))
         w = max(216, int(round(232 * s)))
-        title_h = max(19, int(round(21 * s)))
+        title_h = max(24, int(round(28 * s)))
+        icon_sz = max(14, title_h - max(4, int(round(6 * s))))
         row_h = max(15, int(round(17 * s)))
         chart_h = max(46, int(round(56 * s)))
         note_h = max(12, int(round(13 * s)))
@@ -1666,17 +1725,25 @@ if IS_WINDOWS:
         dr.rounded_rectangle([0, 0, w - 3, h - 1], radius=3,
                              fill=(255, 255, 255, 250),
                              outline=(122, 150, 214, 255), width=1)
-        # 标题条：物品名（超长截断）
+        # 标题条：物品小图 + 物品名（小图帮同名不同 id 的物品区分）
         dr.rounded_rectangle([1, 1, w - 4, title_h], radius=2,
                              fill=(91, 125, 191, 255))
+        icon = _item_icon((m or {}).get("id"), icon_sz)
+        tx = pad
+        if icon is not None:
+            bx, by = pad - 1, (title_h - icon_sz) // 2
+            dr.rounded_rectangle([bx, by, bx + icon_sz, by + icon_sz], radius=2,
+                                 fill=(255, 255, 255, 235))
+            img.alpha_composite(icon, (bx, by))
+            tx = pad + icon_sz + 6
         name = str((m or {}).get("name") or (m or {}).get("text") or "物品")
-        max_name = w - pad * 2 - 3
+        max_name = w - tx - 3
         shown = name
         while shown and dr.textlength(shown, font=ft) > max_name:
             shown = shown[:-1]
         if shown != name:
             shown = shown[:-1] + "…"
-        dr.text((pad, (title_h - title_fs) // 2 - 1), shown, font=ft,
+        dr.text((tx, (title_h - title_fs) // 2 - 1), shown, font=ft,
                 fill=(255, 255, 255, 248))
         y = title_h + pad // 2
         for idx, (label, key) in enumerate(fields):

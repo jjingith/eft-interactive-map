@@ -139,3 +139,49 @@ def test_fetch_price_history_handles_403(monkeypatch):
     monkeypatch.setattr(urllib.request, "build_opener", lambda *a, **k: _Opener())
     pts, status = scan.fetch_price_history("http://127.0.0.1:8787", "pve", "abc")
     assert pts == [] and status == "http-403"
+
+
+# ---------------------------------------------------------------- R309 物品小图
+
+POSTER_A = "6759e19a8367ee2b0c0f4b92"
+POSTER_B = "6759e6c39422e1708e0e9b81"
+
+
+def test_item_icon_loads_and_missing_falls_back():
+    assert scan._item_icon(POSTER_A, 20) is not None, "海报图标应能加载"
+    assert scan._item_icon("no-such-item-id", 20) is None
+    assert scan._item_icon("../../etc/passwd", 20) is None, "id 不允许路径穿越"
+
+
+def test_menu_rows_show_distinct_item_icons():
+    rows = [
+        {"id": POSTER_A, "name": "女郎海报", "price": 40000},
+        {"id": POSTER_B, "name": "女郎海报", "price": 25555},
+    ]
+    img, _rects = scan.render_menu(rows, 13, POSTER_A, "选择物品")
+    assert img is not None
+    # 同一名字、不同 id：两行的图标区像素必须不一样（否则等于没画小图）
+    row_h = int(round(13 * 1.7))
+    title_h = int(round(13 * 1.5))
+    icon_sz = max(12, row_h - 6)
+    pad = max(6, int(round(13 * 0.55)))
+    dot_r = max(2, int(round(13 * 0.16)))
+    x0 = pad + dot_r * 2 + 8
+    y0 = title_h + pad // 2
+    a = img.crop((x0, y0, x0 + icon_sz, y0 + icon_sz)).tobytes()
+    b = img.crop((x0, y0 + row_h, x0 + icon_sz, y0 + row_h + icon_sz)).tobytes()
+    assert a != b, "两个候选的小图不能相同"
+
+
+def test_detail_card_includes_item_icon():
+    p = {"priceSource": "flea", "lastLow": 25555, "avg24h": 33109, "avg7d": 29510}
+    a = scan.render_detail_card({"id": POSTER_A, "name": "女郎海报", "price": p},
+                                0, [], "empty", 1.0)
+    b = scan.render_detail_card({"id": POSTER_B, "name": "女郎海报", "price": p},
+                                0, [], "empty", 1.0)
+    assert a.size == b.size
+    # 标题栏左侧小图不同 → 位图不同
+    title_h = int(round(28 * 1.0))
+    icon_sz = max(14, title_h - int(round(6 * 1.0)))
+    box = (8, (title_h - icon_sz) // 2, 8 + icon_sz, (title_h - icon_sz) // 2 + icon_sz)
+    assert a.crop(box).tobytes() != b.crop(box).tobytes()
