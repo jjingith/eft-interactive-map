@@ -641,13 +641,13 @@ def _ocr_resolve_price(rec: dict, snap_row: dict, hist_row: dict, avg7_val):
             "traderSellLvl": tsell_lvl, "noFlea": True,
         }
     # 都不卖 → 商人收购价（玩家卖给商人）
-    tbuy, tbuy_id, _ = _trader_sell_price(rec)
+    tbuy, tbuy_id, approx = _trader_sell_price(rec)
     return {
         "lastLow": None, "avg24h": None, "avg7d": None,
         "w72": None, "w30d": None,
         "base": tbuy, "perSlot": (tbuy / slots) if tbuy else None,
         "priceSource": "trader", "trader": tbuy, "traderId": tbuy_id,
-        "noFlea": True,
+        "noFlea": True, "traderApprox": approx,
     }
 
 
@@ -698,6 +698,19 @@ def _ocr_prefer_base_variant(ids: list, catalog: dict) -> list:
         return ids
     plain = [i for i in ids if not _ocr_name_is_variant((catalog.get(i) or {}).get("n"))]
     return plain if plain else ids
+
+
+def _ocr_variant_rank(name: str, disp: str, price: dict, per_slot) -> tuple:
+    """同名多 id 的挑选顺序：全名以显示名结尾 > 有真实行情 > 每格价高。
+
+    R309（用户实测「文件包」）：两个同名物品里，一个跳蚤有真价（99,999），另一个
+    跳蚤不卖、只剩 `p.b` 基础价兜底（167,469，traderApprox）。旧逻辑只比每格价，
+    基础价更高就盖过真实跳蚤价，浮窗显示错的数、也拉不到历史曲线。基础价是估算，
+    永远排在真实行情之后。
+    """
+    suffix = 1 if str(name).endswith(disp) else 0
+    approx = bool((price or {}).get("traderApprox"))
+    return (suffix, 0 if approx else 1, per_slot if per_slot is not None else -1)
 
 
 def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
@@ -3386,9 +3399,9 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                             "noFlea": no_flea, "price": price}
                     # 撞名时的排序：**全名以该显示名结尾**的优先。游戏内短名几乎都是全名
                     # 的末段（「TerraGroup实验室访问钥匙卡」），而容器/打包品不是
-                    # （「钥匙卡收纳盒」）。同档再比每格价。
-                    suffix = 1 if str(cand["name"]).endswith(disp) else 0
-                    rank = (suffix, per_slot if per_slot is not None else -1)
+                    # （「钥匙卡收纳盒」）。R309：同名多 id 时真实行情优先于基础价兜底，
+                    # 同档再比每格价（见 _ocr_variant_rank）。
+                    rank = _ocr_variant_rank(cand["name"], disp, price, per_slot)
                     if best is None or rank > best_rank:
                         best, best_rank = cand, rank
                 if best is None:
