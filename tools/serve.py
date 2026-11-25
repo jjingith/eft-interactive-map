@@ -881,12 +881,15 @@ def _ocr_ambiguous(ids: list, catalog: dict) -> bool:
 
 
 def _ocr_ambig_candidates(ids: list, catalog: dict, snap_items: dict) -> list:
-    """歧义候选价目表（市场页 tooltip 用）：每个口径显示什么价一目了然。
+    """歧义候选价目表（市场页 / 浮窗选单用）：每个口径显示什么价一目了然。
 
     R258：与主浮窗同一套三档优先级解析（跳蚤价 → 商人售卖价 → 商人收购价），
-    保证候选价与识别价一致。最多列 6 个，避免 FMJ 这种 11 口径组刷屏。"""
+    保证候选价与识别价一致。
+    R309：不再截断到 6 条——FMJ 有 11 个口径，旧实现把 6.8x51 等后半段直接丢掉，
+    表现为「选单里少了口径」。菜单自身会按屏幕缩小字号，11 条不会刷屏。
+    """
     out = []
-    for iid in ids[:6]:
+    for iid in ids:
         rec = catalog.get(iid) or {}
         row = snap_items.get(iid) or {}
         price = _ocr_resolve_price(rec, row, {}, None)

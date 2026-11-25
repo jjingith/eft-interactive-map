@@ -146,6 +146,17 @@ def test_ambig_candidates_lists_caliber_prices(catalog3):
     assert by_cal[".338"]["name"] == ".338 Lapua Magnum AP"
 
 
+def test_ambig_candidates_keep_every_caliber(catalog3):
+    """R309：候选表不得截断——FMJ 11 个口径，旧实现 [:6] 把 6.8x51 等直接丢掉。"""
+    items, loose, _packs = _split(catalog3, "FMJ")
+    assert len(loose) == 11
+    cands = serve._ocr_ambig_candidates(loose, items, {})
+    cals = [c["caliber"] for c in cands]
+    assert len(cands) == len(loose), "候选数量必须等于候选口径数量"
+    assert set(cals) == {serve._ocr_caliber(items[i]["n"]) for i in loose}
+    assert "6.8x51" in cals
+
+
 # ------------------------------------------------------- 前端与装配契约
 
 def test_contract_ambiguous_wired_end_to_end():
