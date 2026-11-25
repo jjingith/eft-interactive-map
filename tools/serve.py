@@ -4255,6 +4255,39 @@ def resolve_settings(args) -> dict[str, Any]:
     return {"app_dir": app_dir, "config": cfg, "game_dir": game_dir, "screenshots": screenshots}
 
 
+def start_ocr_host(url: str, config_dir: str | None = None):
+    """R309：源码模式（`启动项目.bat` → serve.py）也要拉起截图识别宿主。
+
+    R308 之后双击 bat 只启动 serve.py，而宿主（tools/scan.py，负责全局热键
+    → 框选 → 透明浮窗）原来只由 launcher.py 拉起——源码模式下按热键
+    自然毫无反应。这里在服务 listen 之后补上 spawn：宿主会先探 /api/health，
+    且自带命名互斥量，已有宿主时新起的这个会自行退出。
+    `EFT_OCR_HOST=0` 可整体关掉（排查 / 自动化测试用）。
+    """
+    if (os.environ.get("EFT_OCR_HOST") or "").strip().lower() in {"0", "off", "false", "no"}:
+        return None
+    script = os.path.join(ROOT, "tools", "scan.py")
+    if not os.path.isfile(script):
+        return None
+    kwargs: dict[str, Any] = {"cwd": ROOT}
+    if getattr(sys, "frozen", False):
+        # 冻结产物里 sys.executable 是 EFTMap.exe；宿主由 --run-tool 在同一套依赖里跑
+        cmd = [sys.executable, "--run-tool", script, "--server", url]
+        kwargs.update({"stdout": subprocess.DEVNULL, "stderr": subprocess.DEVNULL,
+                       "stdin": subprocess.DEVNULL})
+        if os.name == "nt":
+            kwargs["creationflags"] = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    else:
+        # 源码模式共享 bat 的控制台：宿主异常时 traceback 能直接看到
+        cmd = [sys.executable, script, "--server", url]
+    if config_dir:
+        cmd += ["--config-dir", config_dir]   # 热键等偏好要与当前服务读同一份配置
+    try:
+        return subprocess.Popen(cmd, **kwargs)
+    except OSError:
+        return None
+
+
 def main(argv=None) -> int:
     args = parse_args(argv)
     settings = resolve_settings(args)
@@ -4282,6 +4315,9 @@ def main(argv=None) -> int:
     print("自动删除截图：%s（在启动器里开关；只删开启后产生、且已读过位置的旧截图）"
           % ("已开启" if httpd.pruner.snapshot()["enabled"] else "未开启"))
     print("配置文件：%s" % config.config_path(settings["app_dir"]))
+    ocr_host = start_ocr_host(url, settings["app_dir"])
+    if ocr_host is not None:
+        print("截图识别：已在后台启动（热键见「小工具 → 价格识别」）")
     print("按 Ctrl+C 停止服务。")
     if not args.no_browser:
         webbrowser.open(url)
@@ -4292,6 +4328,8 @@ def main(argv=None) -> int:
         print("\n已停止。")
     finally:
         httpd.server_close()
+        if ocr_host is not None and ocr_host.poll() is None:
+            ocr_host.terminate()
     return 0
 
 
