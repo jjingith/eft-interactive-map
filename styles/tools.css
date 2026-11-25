@@ -1,0 +1,125 @@
+/* ============================================================================
+ * R307 小工具视图（左栏工具列表 + 右栏设置）
+ * ----------------------------------------------------------------------------
+ * 与地图 / 配装同级的一级视图。沿用主程序的 XP Luna 语言：米色左栏、白底内容、
+ * 选中项蓝底白字。右栏内容沿用 .app-mini-panel 的作用域样式（滑条 / 开关 / 目录
+ * 栅格都挂在那上面），这里只把它的浮层定位与位图边框中和掉。
+ * ==========================================================================*/
+
+#tools-view { display: flex; flex-direction: column; min-height: 0; }
+#tools-view[hidden] { display: none; }
+
+.tl-shell {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  background: var(--xp-face, #ece9d8);
+  color: var(--xp-text, #000);
+  font: 12px/1.5 var(--xp-font-family, "Tahoma", "Microsoft YaHei", sans-serif);
+}
+
+/* ---------------------------------------------------------------- 左栏 */
+.tl-side {
+  flex: 0 0 236px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  border-right: 1px solid var(--xp-border, #aca899);
+  background: var(--xp-face, #ece9d8);
+}
+.tl-side-head {
+  flex: 0 0 auto;
+  padding: 3px 10px;
+  border-bottom: 1px solid var(--xp-border, #aca899);
+  background: linear-gradient(#fdfdfd, #ece9d8);
+  font-size: 11px;
+  font-weight: 700;
+  color: #23231b;
+}
+.tl-list { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 4px; }
+
+/* 列表项是 button：modern-flat.css 给所有 button 上了 XP 皮肤并带 !important，
+   这里靠 .tl-item 提权 + 同带 !important 压回列表语义。 */
+#tools-view .tl-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  margin: 0 0 2px;
+  padding: 6px 8px;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transform: none !important;
+}
+#tools-view .tl-item:hover {
+  background: #f2f7ff !important;
+  background-image: none !important;
+  border-color: #b8d0ee !important;
+  color: inherit !important;
+}
+#tools-view .tl-item.is-active {
+  background: var(--xp-sel, #316ac5) !important;
+  border-color: #1e4f9c !important;
+  color: var(--xp-sel-text, #ffffff) !important;
+}
+.tl-name { font-size: 12px; font-weight: 700; }
+.tl-desc { font-size: 10px; line-height: 1.4; color: #6b6860; }
+#tools-view .tl-item.is-active .tl-desc { color: #cddcf3; }
+.tl-side-note {
+  flex: 0 0 auto;
+  margin: 8px 10px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #8a8474;
+}
+
+/* ---------------------------------------------------------------- 右栏 */
+.tl-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 16px 20px;
+  background: #ffffff;
+}
+.tl-pane[hidden] { display: none; }
+.tl-pane > .settings-note:first-of-type { margin-top: -2px; }
+
+/* 中和下拉面板的定位与 XP 位图边框：内容本身的作用域样式（.app-mini-panel）保留 */
+html body .tl-pane .app-menu-panel {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
+  min-width: 0;
+  max-width: none;
+  border: 0;
+  border-image: none;
+  background: transparent;
+  padding: 0;
+  max-height: none;
+  overflow: visible;
+}
+/* 内容区限制可读宽度：小地图那一段控件很多，铺满 4K 会把滑条拉得过长。
+   注意 .app-mini-panel 自己有 width:380px，这里要一起改。 */
+html body .tl-pane .app-mini-panel {
+  width: auto;
+  max-width: 760px;
+  max-height: none;
+  overflow: visible;
+}
+html body .tl-pane > .app-menu-panel { max-width: 760px; }
+
+@media (max-width: 1024px) {
+  .tl-side { flex: 0 0 196px; }
+  .tl-desc { display: none; }
+}

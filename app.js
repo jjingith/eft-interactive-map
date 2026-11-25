@@ -2126,6 +2126,7 @@
     el.taskView = $("task-view");        // R19.22：任务系统（独立模块 tasks.js）
     el.marketView = $("market-view");    // R97：市场（独立模块 js/market.js）
     el.changesView = $("changes-view");  // R305：游戏更新（独立模块 js/changes.js）
+    el.toolsView = $("tools-view");      // R307：小工具（独立模块 js/tools-view.js）
     // R286：市场大盘已并入 #market-view 的子页（#market-board-pane），不再有独立顶层 view。
     el.gearTable = $("gear-table");
     el.sensInput = $("sens-input");
@@ -2734,6 +2735,7 @@
     }
     // R305：游戏更新也可以直接深链打开（从文档 / 公告里点链接就能到「更新」页）
     if (!state.mini && location.hash === "#changes") { state.view = "changes"; }
+    if (!state.mini && location.hash === "#tools") { state.view = "tools"; }
 
     var savedGear = null;
     try { savedGear = JSON.parse(localStorage.getItem(LS_LOADOUT) || "null"); } catch (e) { /* 忽略 */ }
@@ -2983,6 +2985,10 @@
   // 其余键本来就有值比对守卫，窗口放宽同样受益。
   var SELF_ECHO_GRACE = 2500;
   var lastOwnPrefPostAt = 0;
+  // R307：本地刚切过视图的时间戳。服务端配置回声（以及 ConfigWatcher 的 1s 轮询广播）
+  // 可能比本地状态旧，宽限窗口内不拿 ui.view 覆盖本地视图——否则点「更新」「小工具」
+  // 这类新视图会被顶回点击前的页面（表现为停留一瞬间就跳回去）。
+  var lastViewSwitchAt = 0;
 
   function flushPrefs() {
     prefTimer = null;
@@ -3086,7 +3092,8 @@
     // R305：#changes 同理——打开更新页的深链不能被旧配置顶回地图
     // R77b：小地图**永远不消费** ui.view——它的视图是固定的地图，不跟主窗走。
     if (!state.mini && typeof ui.view === "string" && VIEWS.indexOf(ui.view) >= 0 && ui.view !== state.view
-        && !/^#(tasks|stories|changes)/.test(location.hash || "")) {
+        && !/^#(tasks|stories|changes|tools)/.test(location.hash || "")
+        && Date.now() - lastViewSwitchAt > SELF_ECHO_GRACE) {
       setView(ui.view, false);   // 服务端来的切换不再回写，避免自回环
     }
     // 配装根槽位：逐槽比对（服务端只覆盖它确实给了的槽；子槽不走配置文件）
@@ -4323,6 +4330,11 @@
     // R305：#changes 直接打开游戏更新页（该段要求纯 ES5，注释里也不能出现反引号）
     if (h === "#changes") {
       setView("changes", false);
+      return true;
+    }
+    // R307：#tools 直接打开小工具视图
+    if (h === "#tools") {
+      setView("tools", false);
       return true;
     }
     if (h !== "#tasks" && !/^#tasks:/.test(h)) {
@@ -8987,7 +8999,7 @@
   var LS_FOCUS = "eftmap.focus";     // 当前选中的槽位节点 id（含子槽 "父/子"），只走 localStorage
   var LS_SENS = "eftmap.sens";
   var LS_COLW = "eftmap.colw";       // 表格列宽（按槽位类别 + 同名同义列共享），重启后恢复
-  var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market", "changes"];   // R19.22 任务；R97 市场（R286 大盘是市场子页）；R305 游戏更新
+  var VIEWS = ["map", "loadout", "gun", "ammo", "tasks", "market", "changes", "tools"];   // R19.22 任务；R97 市场（R286 大盘是市场子页）；R305 游戏更新
 
   // 配装根槽位：归属**只用构建期算好的一级类别 `cat`**（data/items.json 的 `audit.rules`
   // 写明每一类的判定依据，全部来自上游真实字段）。
@@ -10113,6 +10125,7 @@
     }
     if (VIEWS.indexOf(name) < 0) { name = "map"; }
     state.view = name;
+    lastViewSwitchAt = Date.now();
     // R98：切离地图视图时，先把**只属于地图语义**的浮层收掉。
     // 标记小浮窗 #marker-pop 是 position:fixed 且挂在 <body> 上（不在 #map-view 里），
     // 只靠隐藏 #map-view 管不住它，会一直压在任务 / 弹药 / 配枪 / 配装页面上。
@@ -10138,7 +10151,8 @@
       }
     }
     var panes = { map: el.mapView, loadout: el.loadoutView, gun: el.gunView, ammo: el.ammoView,
-                  tasks: el.taskView, market: el.marketView, changes: el.changesView };
+                  tasks: el.taskView, market: el.marketView, changes: el.changesView,
+                  tools: el.toolsView };
     for (var key in panes) {
       if (panes[key]) { panes[key].hidden = (key !== name); }
     }
@@ -10153,6 +10167,11 @@
     if (name === "changes" && window.GWChanges) {
       window.GWChanges.mount();
       window.GWChanges.open();
+    }
+    // R307：小工具视图（左栏工具列表 + 右栏设置），纯静态 DOM，只做一次绑定
+    if (name === "tools" && window.GWTools) {
+      window.GWTools.mount();
+      window.GWTools.open();
     }
     // R286：市场工作区内部的「市场列表 / 市场大盘」子页切换由 market-workspace.js 统一处理；
     // 旧配置 / 旧深链带过来的 __gwMarketTab 在这里消费一次。

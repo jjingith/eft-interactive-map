@@ -165,7 +165,7 @@ def test_page_settings_contract():
     # R306：价格识别从小地图旁的设置分区拆到一级菜单「小工具」→ 面板 id 为 am-ocr-panel
     assert 'id="am-ocr-panel"' in html and 'aria-label="价格识别设置"' in html
     assert 'id="ocr-hotkey"' in html and 'id="ocr-tiers"' in html
-    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
+    tools = html[html.index('id="tools-view"'):html.index('</section>', html.index('id="tools-view"')) + 10]
     assert html.index("am-mini-panel") < html.index("am-ocr-panel"), "价格识别在小地图设置之后"
     assert 'id="am-ocr-panel"' in tools, "价格识别面板必须在「小工具」一级菜单里"
     js = open(os.path.join(ROOT, "app.js"), encoding="utf-8").read()

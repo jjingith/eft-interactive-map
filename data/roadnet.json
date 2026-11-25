@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "tool": "tools/roadnet.py",
- "generatedAt": "2026-11-24T12:30:14Z",
+ "generatedAt": "2026-11-25T03:09:02Z",
  "cellNote": "格子码 0 不可通行 / 1 道路 / 2 地形 / 3 难走，每格 2 bit 低位在前",
  "maps": {
   "streets-of-tarkov": {

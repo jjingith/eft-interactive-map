@@ -36,14 +36,13 @@ def _block(text: str, start: str, end: str) -> str:
 
 
 # ---------------------------------------------------------------- 1. 菜单结构
-def test_tools_menu_is_first_level_before_settings():
-    assert 'id="am-tools"' in HTML and 'id="am-tools-panel"' in HTML
-    assert HTML.index('id="am-tools"') < HTML.index('id="am-app"')
-    assert "小工具" in HTML
-    # 一级菜单按「小工具 → 设置」排列，且都在 #app-menus 里
+def test_tools_is_a_top_level_view_before_settings():
+    """R307：小工具从下拉菜单提为一级视图（与地图同级），设置仍是顶栏菜单。"""
+    assert 'id="view-btn-tools"' in HTML and 'id="tools-view"' in HTML
+    assert 'id="am-tools"' not in HTML and 'id="am-tools-panel"' not in HTML
+    assert HTML.index('id="view-btn-changes"') < HTML.index('id="view-btn-tools"')
     menus = _block(HTML, 'id="app-menus"', "</nav>")
-    assert 'id="am-tools"' in menus and 'id="am-app"' in menus
-    assert '"app-menu-btn" id="am-tools"' in menus
+    assert 'id="am-app"' in menus and 'id="am-tools"' not in menus
 
 
 def test_settings_has_only_dirs_and_about_tabs():
@@ -63,9 +62,9 @@ def test_directory_settings_moved_into_settings():
     for ident in ("mini-shots-dir", "mini-log-dir", "mini-paths-note"):
         assert 'id="%s"' % ident in dirs
     assert dirs.count("mini-dir-browse") == 2
-    # 小工具里的小地图面板不再包含目录字段
-    tools = _block(HTML, 'id="am-tools-panel"', 'id="app-legacy-sec"')
-    mini = _block(tools, 'id="am-mini-panel"', 'class="app-tool-sec"')
+    # 小工具视图里的小地图面板不再包含目录字段
+    tools = _block(HTML, 'id="tools-view"', "</section>")
+    mini = _block(tools, 'id="am-mini-panel"', 'id="am-ocr-panel"')
     assert 'id="mini-shots-dir"' not in mini and 'id="mini-log-dir"' not in mini
 
 
@@ -82,12 +81,12 @@ def test_about_section_id_is_unique():
     assert HTML.count('id="app-sec-about"') == 1, "重复 id 会让「关于」面板点击后显示空内容"
 
 
-def test_tools_panel_css_is_scoped_and_scrollable():
-    css = _block(CSS, "html body .app-tools-panel {", "}")
-    assert "width: 440px" in css
-    assert "overflow-y: auto" in css
-    assert "right: 0" in css
-    nested = _block(CSS, "html body .app-tools-panel .app-menu-panel {", "}")
+def test_tools_view_css_is_scoped_and_neutralizes_panel_chrome():
+    """R307：小工具是视图，样式在新文件里；嵌套的下拉面板要中和定位与位图边框。"""
+    tools_css = (ROOT / "styles" / "tools.css").read_text(encoding="utf-8")
+    assert "#tools-view" in tools_css
+    assert ".tl-item.is-active" in tools_css
+    nested = _block(tools_css, "html body .tl-pane .app-menu-panel {", "}")
     assert "position: static" in nested
     assert "border-image: none" in nested
     dirs = _block(CSS, "html body .app-dir-panel {", "}")

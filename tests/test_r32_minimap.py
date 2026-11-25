@@ -268,7 +268,7 @@ def test_app_js_wires_overlay_settings_in_minimap_menu():
     assert "bindOverlaySettings();" in src
 
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
+    tools = html[html.index('id="tools-view"'):html.index('</section>', html.index('id="tools-view"')) + 10]
     assert 'id="am-mini-panel"' in tools
     assert 'id="app-sec-mini"' not in tools
     panel = html[html.index('id="am-app-panel"'):html.index('id="app-legacy-sec"')]
@@ -357,7 +357,7 @@ def test_app_js_wires_overlay_settings_in_minimap_menu():
     assert "bindOverlaySettings();" in src
 
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    tools = html[html.index('id="am-tools-panel"'):html.index('id="app-legacy-sec"')]
+    tools = html[html.index('id="tools-view"'):html.index('</section>', html.index('id="tools-view"')) + 10]
     assert 'id="am-mini-panel"' in tools
     assert 'id="app-sec-mini"' not in tools
     panel = html[html.index('id="am-app-panel"'):html.index('id="app-legacy-sec"')]

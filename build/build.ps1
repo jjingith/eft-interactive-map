@@ -182,6 +182,9 @@ $MustHave = @(
     # R305：游戏更新视图（独立模块 + 独立样式），index.html 直接引用。
     (Join-Path $Internal "js\changes.js"),
     (Join-Path $Internal "styles\changes.css"),
+    # R307：小工具视图（独立模块 + 独立样式）。
+    (Join-Path $Internal "js\tools-view.js"),
+    (Join-Path $Internal "styles\tools.css"),
     (Join-Path $Internal "data\maps.json"),
     (Join-Path $Internal "data\items.json"),
     # R279：OCR 短名表 + ONNX 模型，缺一个「截图识别」就只剩框选、不出价格。

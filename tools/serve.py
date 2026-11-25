@@ -58,7 +58,7 @@ import prices_source
 import screenshot
 
 
-VERSION = "0.2.9.1"
+VERSION = "0.2.9.2"
 UPDATE_REPO_API = "https://api.github.com/repos/jjingith/eft-interactive-map/releases/latest"
 _UPDATE_CACHE: dict[str, Any] = {"at": 0.0, "payload": None}
 _UPDATE_CACHE_LOCK = threading.Lock()

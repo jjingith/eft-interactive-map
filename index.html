@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="styles/market-dark.css?v=r19.97">
 <!-- R305 游戏更新视图（独立作用域 #changes-view / .ch-*，最后加载只影响自己） -->
 <link rel="stylesheet" href="styles/changes.css?v=r19.97">
+<link rel="stylesheet" href="styles/tools.css?v=r19.97">
 </head>
 <body>
 
@@ -36,164 +37,7 @@
          「应用菜单」更名「设置」，只留目录与关于两个分区；文件 / 工具两个分区按要求移除。
          raid-block（战局状态 / 任务日志）等元素仍被 app.js 写入，挪进 #app-legacy-sec
          隐藏保活——直接删掉会让状态更新拿不到节点。 -->
-    <div class="app-menu app-tools-menu">
-      <button type="button" class="app-menu-btn" id="am-tools" role="menuitem"
-              aria-haspopup="true" aria-expanded="false"
-              aria-controls="am-tools-panel" title="小工具：小地图浮窗、价格识别">小工具 ▾</button>
-      <div class="app-menu-panel app-tools-panel" id="am-tools-panel" role="dialog"
-           aria-label="小工具" hidden>
-        <div class="app-tool-sec">
-<div class="app-menu-panel app-mini-panel" id="am-mini-panel" role="region"
-                 aria-label="小地图设置">
-        <h4 class="about-h">显示与行为</h4>
-        <p class="muted settings-note">置顶、可点击穿透的小地图窗口。下列选项<strong>改完立刻生效</strong>，不用重启小窗。</p>
-
-        <div class="mini-toggles">
-          <label class="toggle mini-enabled-toggle"
-                 title="显示 / 隐藏游戏内小地图浮窗；与宿主 Ctrl+Shift+M 共用配置项 overlay.enabled">
-            <input type="checkbox" id="ov-enabled"><span class="dot dot-floor"></span>显示小地图浮窗
-          </label>
-          <label class="toggle mini-enabled-toggle" hidden>
-            <input type="checkbox" id="mini-enabled">
-          </label>
-          <label class="toggle mini-enabled-toggle" title="小地图视野固定在玩家周围（推荐）">
-            <input type="checkbox" id="ov-follow" checked><span class="dot dot-floor"></span>跟随玩家
-          </label>
-          <label class="toggle mini-enabled-toggle" hidden>
-            <input type="checkbox" id="mini-follow" checked>
-          </label>
-          <label class="toggle mini-enabled-toggle"
-                 title="自动缩放：进图 / 切图时把小地图视野套回中间的 100 米档（参考小地图实现的默认中档）；不会每张截图都缩放。不读取开镜 / 倍镜数据">
-            <input type="checkbox" id="mini-auto-zoom"><span class="dot dot-floor"></span>自动缩放
-          </label>
-          <label class="toggle mini-enabled-toggle" title="显示地图上的文字标签（小尺寸下会糊，默认关）">
-            <input type="checkbox" id="ov-labels"><span class="dot dot-floor"></span>显示标签
-          </label>
-          <label class="toggle mini-enabled-toggle" title="鼠标直接穿过小窗（不挡游戏操作）；关掉后可以点小窗里的东西">
-            <input type="checkbox" id="ov-click" checked><span class="dot dot-floor"></span>点击穿透
-          </label>
-        </div>
-
-        <h4 class="about-h">尺寸与位置</h4>
-        <div class="ov-rows">
-          <label class="ov-row">大小
-            <input type="range" id="ov-size" min="120" max="600" step="10" aria-label="小浮窗边长">
-            <output id="ov-size-v">260px</output>
-          </label>
-          <label class="ov-row">透明度
-            <input type="range" id="ov-opacity" min="0.3" max="1" step="0.05" aria-label="小浮窗透明度">
-            <output id="ov-opacity-v">90%</output>
-          </label>
-          <label class="ov-row">位置
-            <select id="ov-corner" aria-label="吸附角落">
-              <option value="bottom-right">右下</option>
-              <option value="bottom-left">左下</option>
-              <option value="top-right">右上</option>
-              <option value="top-left">左上</option>
-            </select>
-            <output></output>
-          </label>
-          <label class="ov-row">偏移 X
-            <input type="range" id="ov-offset-x" min="-300" max="300" step="10" aria-label="横向偏移">
-            <output id="ov-offset-x-v">0</output>
-          </label>
-          <label class="ov-row">偏移 Y
-            <input type="range" id="ov-offset-y" min="-300" max="300" step="10" aria-label="纵向偏移">
-            <output id="ov-offset-y-v">0</output>
-          </label>
-          <label class="ov-row">形状
-            <select id="ov-shape" aria-label="小窗形状">
-              <option value="square">方形</option>
-              <option value="circle">圆形</option>
-            </select>
-            <output></output>
-          </label>
-        </div>
-        <p class="muted" id="ov-note">小浮窗由 tools/overlay.py 托管，只读本机配置、不碰游戏进程。</p>
-
-        <h4 class="about-h">视野与显示</h4>
-        <div class="hud-scales mini-scales">
-          <label class="hud-scale" title="小地图视野：以玩家为中心、半径 25 / 50 / 100 / 200 / 300 米。米数是游戏世界坐标（按每张图的 worldToSvg 换算），不是屏幕比例">
-            视野
-            <input type="range" id="mini-radius" min="0" max="4" step="1" value="2"
-                   aria-label="小地图视野半径（米）">
-            <span id="mini-radius-value" class="hud-scale-value">100 米</span>
-          </label>
-          <label class="hud-scale" title="小地图窗口里地名的大小（只影响小地图，主地图用「显示」块里那条）">
-            小地名
-            <input type="range" id="mini-label-scale" min="0.1" max="1.9" step="0.01" value="1"
-                   aria-label="小地图地名缩放">
-            <span id="mini-label-scale-value" class="hud-scale-value">100%</span>
-          </label>
-          <label class="hud-scale" title="小地图窗口里地名的透明度（只影响小地图，主地图用「显示」块里那条）">
-            地名透明
-            <input type="range" id="mini-label-alpha" min="0" max="1" step="0.01" value="1"
-                   aria-label="小地图地名透明度">
-            <span id="mini-label-alpha-value" class="hud-scale-value">100%</span>
-          </label>
-          <label class="hud-scale" title="小地图窗口里图标的大小（只影响小地图，主地图用「显示」块里那条）">
-            小图标
-            <input type="range" id="mini-icon-scale" min="0.1" max="1.9" step="0.01" value="1"
-                   aria-label="小地图图标缩放">
-            <span id="mini-icon-scale-value" class="hud-scale-value">100%</span>
-          </label>
-        </div>
-
-        <h4 class="about-h">自动截图</h4>
-        <div class="mini-toggles">
-          <label class="toggle mini-enabled-toggle"
-                 title="自动截图：与启动器里的「自动截图」是同一个开关（auto_screenshot.enabled）。开启后由本地服务在战局中按设定间隔发送游戏内截图键">
-            <input type="checkbox" id="mini-shot"><span class="dot dot-floor"></span>自动截图
-          </label>
-        </div>
-        <!-- R107：自动截图设置。间隔 / 战局结束清理走 auto_screenshot.*；两个目录输入框留空 = 自动识别，
-             填写后写 screenshots_dir / log_dir，服务端下次探测时优先用手动值。 -->
-        <div class="mini-shot-settings">
-          <label for="mini-shot-interval">间隔 ms</label>
-          <input type="number" id="mini-shot-interval" min="200" max="60000" step="100" value="5000"
-                 inputmode="numeric" spellcheck="false"
-                 title="自动截图间隔：允许 200–60000 毫秒（0.2–60 秒）。下限按「游戏写盘 + 目录刷新」的最短可靠周期取 200ms，上限 60s 避免战局中几乎不产生定位点；服务端另有 config.clamp_interval 再钳一次">
-          <label class="toggle mini-enabled-toggle mini-shot-wide"
-                 title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
-            <input type="checkbox" id="mini-shot-cleanup">战局结束清理
-          </label>
-          <span id="mini-shot-key" class="mini-path-note">截图键：读取中…</span>
-        </div>
-            </div>
-          
-        </div>
-        <div class="app-tool-sec">
-<div class="app-menu-panel" id="am-ocr-panel" role="region"
-                 aria-label="价格识别设置">
-        <h4 class="about-h">截图识别</h4>
-        <p class="muted settings-note">按热键框选装备，价格直接叠在装备上。</p>
-        <div class="ocr-fullrow">
-          <label><input type="checkbox" id="ocr-fullscreen"> 全屏识别（不框选，直接识别整个屏幕）</label>
-        </div>
-        <div class="ocr-hotkey-row">
-          <label for="ocr-hotkey">截图热键</label>
-          <button type="button" class="ocr-hotkey-btn" id="ocr-hotkey"
-                  title="点击后按下新快捷键（须含 Ctrl / Alt / Shift，避免占用游戏按键）；Esc 取消。改完约 1 秒内生效">ctrl+alt+p</button>
-          <button type="button" class="ocr-hotkey-reset" id="ocr-hotkey-reset"
-                  title="恢复默认热键 ctrl+alt+p">恢复默认</button>
-        </div>
-        <div class="ocr-style-box" id="ocr-style-box">
-          <h4 class="about-h">价格档位<span class="ocr-member-tag">会员</span></h4>
-          <p class="muted settings-note">按价格分档上色；配色依据的「整体 / 单格」可在下方切换。</p>
-          <div class="ocr-basis-row" id="ocr-basis-row">
-            <span class="ocr-basis-label">配色依据</span>
-            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="overall" checked> 整体价格</label>
-            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="perslot"> 单格价格</label>
-          </div>
-          <div id="ocr-tiers"></div>
-          <button type="button" class="ocr-tier-add" id="ocr-tier-add">添加档位</button>
-        </div>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-    <div class="app-menu app-settings-menu">
+        <div class="app-menu app-settings-menu">
       <button type="button" class="app-menu-btn app-app-trigger" id="am-app" role="menuitem"
               aria-haspopup="dialog" aria-expanded="false"
               aria-controls="am-app-panel" title="设置：截图与日志目录、关于">设置 ▾</button>
@@ -384,6 +228,15 @@
               title="更新（官方补丁说明）">
         <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M3.2 1.8h6.2l3.4 3.4v9H3.2z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M9.4 1.8v3.4h3.4" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M5.2 7.4h5.6M5.2 9.4h5.6M5.2 11.4h3.4" stroke="currentColor" stroke-width="1" opacity=".6"/><circle cx="12.4" cy="12.2" r="2.3" fill="#b5453a" stroke="#f6efdd" stroke-width="1"/></svg></span>
         <span class="vt-label">更新</span>
+      </button>
+    </div>
+    <span class="vt-sep" role="presentation" aria-hidden="true"></span>
+    <div class="vt-group" role="presentation">
+      <button type="button" class="view-btn vt-btn" id="view-btn-tools"
+              role="tab" data-view="tools" aria-selected="false" aria-controls="tools-view"
+              title="小工具（小地图浮窗、价格识别）">
+        <span class="vt-ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M2.2 5.2h4.2V2.2h3.2v3h4.2v3.2h-4.2v5.4H6.4V8.4H2.2z" fill="#f6efdd" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M9.6 2.2v3M2.2 8.4h4.2" stroke="currentColor" stroke-width="1" opacity=".55"/></svg></span>
+        <span class="vt-label">小工具</span>
       </button>
     </div>
   </div>
@@ -1233,6 +1086,180 @@
        骨架与渲染全部由 js/changes.js 生成，这里只留容器。 -->
 </section>
 
+<section id="tools-view" class="view-pane" hidden aria-label="小工具">
+  <!-- R307：小工具从顶栏下拉改成一级视图（与地图 / 配装同级）。
+       左栏是工具列表，右栏是对应设置；以后新增工具只需加一个 .tl-item 和一个 .tl-pane。
+       两块内容（#am-mini-panel / #am-ocr-panel）沿用原有 id 与作用域类：
+       mini 模式（?mini=1）会把 #am-mini-panel 临时搬进小窗，id 不能改。 -->
+  <div class="tl-shell">
+    <aside class="tl-side" aria-label="小工具列表">
+      <div class="tl-side-head">小工具</div>
+      <div class="tl-list" role="tablist" aria-orientation="vertical">
+        <button type="button" class="tl-item is-active" role="tab" data-tool="mini"
+                aria-selected="true" aria-controls="tool-pane-mini">
+          <span class="tl-name">小地图浮窗</span>
+          <span class="tl-desc">置顶小窗的显示、尺寸、视野与自动截图</span>
+        </button>
+        <button type="button" class="tl-item" role="tab" data-tool="ocr"
+                aria-selected="false" aria-controls="tool-pane-ocr">
+          <span class="tl-name">价格识别</span>
+          <span class="tl-desc">截图识别装备价格的触发方式与配色档位</span>
+        </button>
+      </div>
+      <p class="tl-side-note">新增的小工具会依次列在这里。</p>
+    </aside>
+    <div class="tl-body">
+      <div class="tl-pane" id="tool-pane-mini" data-tool-pane="mini" role="tabpanel" aria-label="小地图浮窗">
+<div class="app-menu-panel app-mini-panel" id="am-mini-panel" role="region"
+                 aria-label="小地图设置">
+        <h4 class="about-h">显示与行为</h4>
+        <p class="muted settings-note">置顶、可点击穿透的小地图窗口。下列选项<strong>改完立刻生效</strong>，不用重启小窗。</p>
+
+        <div class="mini-toggles">
+          <label class="toggle mini-enabled-toggle"
+                 title="显示 / 隐藏游戏内小地图浮窗；与宿主 Ctrl+Shift+M 共用配置项 overlay.enabled">
+            <input type="checkbox" id="ov-enabled"><span class="dot dot-floor"></span>显示小地图浮窗
+          </label>
+          <label class="toggle mini-enabled-toggle" hidden>
+            <input type="checkbox" id="mini-enabled">
+          </label>
+          <label class="toggle mini-enabled-toggle" title="小地图视野固定在玩家周围（推荐）">
+            <input type="checkbox" id="ov-follow" checked><span class="dot dot-floor"></span>跟随玩家
+          </label>
+          <label class="toggle mini-enabled-toggle" hidden>
+            <input type="checkbox" id="mini-follow" checked>
+          </label>
+          <label class="toggle mini-enabled-toggle"
+                 title="自动缩放：进图 / 切图时把小地图视野套回中间的 100 米档（参考小地图实现的默认中档）；不会每张截图都缩放。不读取开镜 / 倍镜数据">
+            <input type="checkbox" id="mini-auto-zoom"><span class="dot dot-floor"></span>自动缩放
+          </label>
+          <label class="toggle mini-enabled-toggle" title="显示地图上的文字标签（小尺寸下会糊，默认关）">
+            <input type="checkbox" id="ov-labels"><span class="dot dot-floor"></span>显示标签
+          </label>
+          <label class="toggle mini-enabled-toggle" title="鼠标直接穿过小窗（不挡游戏操作）；关掉后可以点小窗里的东西">
+            <input type="checkbox" id="ov-click" checked><span class="dot dot-floor"></span>点击穿透
+          </label>
+        </div>
+
+        <h4 class="about-h">尺寸与位置</h4>
+        <div class="ov-rows">
+          <label class="ov-row">大小
+            <input type="range" id="ov-size" min="120" max="600" step="10" aria-label="小浮窗边长">
+            <output id="ov-size-v">260px</output>
+          </label>
+          <label class="ov-row">透明度
+            <input type="range" id="ov-opacity" min="0.3" max="1" step="0.05" aria-label="小浮窗透明度">
+            <output id="ov-opacity-v">90%</output>
+          </label>
+          <label class="ov-row">位置
+            <select id="ov-corner" aria-label="吸附角落">
+              <option value="bottom-right">右下</option>
+              <option value="bottom-left">左下</option>
+              <option value="top-right">右上</option>
+              <option value="top-left">左上</option>
+            </select>
+            <output></output>
+          </label>
+          <label class="ov-row">偏移 X
+            <input type="range" id="ov-offset-x" min="-300" max="300" step="10" aria-label="横向偏移">
+            <output id="ov-offset-x-v">0</output>
+          </label>
+          <label class="ov-row">偏移 Y
+            <input type="range" id="ov-offset-y" min="-300" max="300" step="10" aria-label="纵向偏移">
+            <output id="ov-offset-y-v">0</output>
+          </label>
+          <label class="ov-row">形状
+            <select id="ov-shape" aria-label="小窗形状">
+              <option value="square">方形</option>
+              <option value="circle">圆形</option>
+            </select>
+            <output></output>
+          </label>
+        </div>
+        <p class="muted" id="ov-note">小浮窗由 tools/overlay.py 托管，只读本机配置、不碰游戏进程。</p>
+
+        <h4 class="about-h">视野与显示</h4>
+        <div class="hud-scales mini-scales">
+          <label class="hud-scale" title="小地图视野：以玩家为中心、半径 25 / 50 / 100 / 200 / 300 米。米数是游戏世界坐标（按每张图的 worldToSvg 换算），不是屏幕比例">
+            视野
+            <input type="range" id="mini-radius" min="0" max="4" step="1" value="2"
+                   aria-label="小地图视野半径（米）">
+            <span id="mini-radius-value" class="hud-scale-value">100 米</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里地名的大小（只影响小地图，主地图用「显示」块里那条）">
+            小地名
+            <input type="range" id="mini-label-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="小地图地名缩放">
+            <span id="mini-label-scale-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里地名的透明度（只影响小地图，主地图用「显示」块里那条）">
+            地名透明
+            <input type="range" id="mini-label-alpha" min="0" max="1" step="0.01" value="1"
+                   aria-label="小地图地名透明度">
+            <span id="mini-label-alpha-value" class="hud-scale-value">100%</span>
+          </label>
+          <label class="hud-scale" title="小地图窗口里图标的大小（只影响小地图，主地图用「显示」块里那条）">
+            小图标
+            <input type="range" id="mini-icon-scale" min="0.1" max="1.9" step="0.01" value="1"
+                   aria-label="小地图图标缩放">
+            <span id="mini-icon-scale-value" class="hud-scale-value">100%</span>
+          </label>
+        </div>
+
+        <h4 class="about-h">自动截图</h4>
+        <div class="mini-toggles">
+          <label class="toggle mini-enabled-toggle"
+                 title="自动截图：与启动器里的「自动截图」是同一个开关（auto_screenshot.enabled）。开启后由本地服务在战局中按设定间隔发送游戏内截图键">
+            <input type="checkbox" id="mini-shot"><span class="dot dot-floor"></span>自动截图
+          </label>
+        </div>
+        <!-- R107：自动截图设置。间隔 / 战局结束清理走 auto_screenshot.*；两个目录输入框留空 = 自动识别，
+             填写后写 screenshots_dir / log_dir，服务端下次探测时优先用手动值。 -->
+        <div class="mini-shot-settings">
+          <label for="mini-shot-interval">间隔 ms</label>
+          <input type="number" id="mini-shot-interval" min="200" max="60000" step="100" value="5000"
+                 inputmode="numeric" spellcheck="false"
+                 title="自动截图间隔：允许 200–60000 毫秒（0.2–60 秒）。下限按「游戏写盘 + 目录刷新」的最短可靠周期取 200ms，上限 60s 避免战局中几乎不产生定位点；服务端另有 config.clamp_interval 再钳一次">
+          <label class="toggle mini-enabled-toggle mini-shot-wide"
+                 title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
+            <input type="checkbox" id="mini-shot-cleanup">战局结束清理
+          </label>
+          <span id="mini-shot-key" class="mini-path-note">截图键：读取中…</span>
+        </div>
+            </div>
+      </div>
+      <div class="tl-pane" id="tool-pane-ocr" data-tool-pane="ocr" role="tabpanel" aria-label="价格识别" hidden>
+<div class="app-menu-panel" id="am-ocr-panel" role="region"
+                 aria-label="价格识别设置">
+        <h4 class="about-h">截图识别</h4>
+        <p class="muted settings-note">按热键框选装备，价格直接叠在装备上。</p>
+        <div class="ocr-fullrow">
+          <label><input type="checkbox" id="ocr-fullscreen"> 全屏识别（不框选，直接识别整个屏幕）</label>
+        </div>
+        <div class="ocr-hotkey-row">
+          <label for="ocr-hotkey">截图热键</label>
+          <button type="button" class="ocr-hotkey-btn" id="ocr-hotkey"
+                  title="点击后按下新快捷键（须含 Ctrl / Alt / Shift，避免占用游戏按键）；Esc 取消。改完约 1 秒内生效">ctrl+alt+p</button>
+          <button type="button" class="ocr-hotkey-reset" id="ocr-hotkey-reset"
+                  title="恢复默认热键 ctrl+alt+p">恢复默认</button>
+        </div>
+        <div class="ocr-style-box" id="ocr-style-box">
+          <h4 class="about-h">价格档位<span class="ocr-member-tag">会员</span></h4>
+          <p class="muted settings-note">按价格分档上色；配色依据的「整体 / 单格」可在下方切换。</p>
+          <div class="ocr-basis-row" id="ocr-basis-row">
+            <span class="ocr-basis-label">配色依据</span>
+            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="overall" checked> 整体价格</label>
+            <label class="ocr-basis-opt"><input type="radio" name="ocr-tier-basis" value="perslot"> 单格价格</label>
+          </div>
+          <div id="ocr-tiers"></div>
+          <button type="button" class="ocr-tier-add" id="ocr-tier-add">添加档位</button>
+        </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </div>
 
 <!-- R83：底部状态栏（第四层）。字段全部读现有状态，不写死：
@@ -1278,6 +1305,7 @@
 <script src="js/game-mode.js?v=r19.97"></script>
 <script src="js/task-graph-layout.js?v=r19.97"></script>
 <script src="js/changes.js?v=r19.97"></script>
+<script src="js/tools-view.js?v=r19.97"></script>
 <script src="app.js?v=r19.97"></script>
 <script src="calibrator.js?v=r19.97"></script>
 <script src="tasks.js?v=r19.97"></script>

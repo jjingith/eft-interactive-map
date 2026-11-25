@@ -32,13 +32,16 @@ def _between(text, start_marker, end_marker):
 def test_single_app_menu_entry():
     html = _read(HTML)
     assert 'id="am-app"' in html
-    # R306：小地图 / 价格识别拆成新一级菜单「小工具」；旧的分散入口仍不得存在
-    assert 'id="am-tools"' in html, "R306 起「小工具」是一级菜单入口"
+    # R307：小工具改成与地图同级的一级视图，顶栏不再有「小工具」下拉菜单
+    assert 'id="am-tools"' not in html and 'id="am-tools-panel"' not in html, \
+        "R307 起小工具是视图，不再占菜单入口"
+    assert 'id="view-btn-tools"' in html and 'id="tools-view"' in html
     for old in ("am-file", "am-view", "am-help", "am-mini", "am-ocr"):
         assert 'id="%s"' % old not in html, "旧一级菜单 %s 应已合并" % old
     assert html.index('id="app-menus"') < html.index('id="am-app"') < html.index("</nav>")
-    assert html.index('id="app-menus"') < html.index('id="am-tools"') < html.index('id="am-app"'), \
-        "R306：小工具排在设置之前"
+    # 视图顺序：更新 → 小工具
+    assert html.index('id="view-btn-changes"') < html.index('id="view-btn-tools"'), \
+        "R307：小工具排在更新之后"
 
 
 def test_workspace_nav_lives_in_top_bar():
@@ -52,8 +55,8 @@ def test_workspace_nav_lives_in_top_bar():
     menubar_js = _read(os.path.join(ROOT, "js", "app-menubar.js"))
     assert "insertBefore(workspace, menus)" in menubar_js, "启动后工作区应排在应用菜单之前"
     # 市场大盘是「市场」工作区内的子页，不新增顶层视图；
-    # R305 只加了一个「更新」（游戏补丁说明）→ 顶层工作区 7 个。
-    assert html.count('id="view-btn-') == 7
+    # R305 加「更新」、R307 把小工具提为视图 → 顶层工作区 8 个。
+    assert html.count('id="view-btn-') == 8
 
     view_block = _between(html, 'id="view-switch"', 'id="app-menu-status"')
     for vt in ("vt-prices", "vt-market-meta", "vt-member-expire"):
@@ -86,18 +89,19 @@ def test_app_menu_has_two_sections_and_tools_menu():
     assert 'id="app-sec-market"' not in panel
     assert "在线行情" not in panel
 
-    # 小工具一级菜单：小地图 + 价格识别两个分区平铺
-    tools = _between(html, 'id="am-tools-panel"', 'id="app-legacy-sec"')
+    # 小工具是视图：左栏两项 → 右侧两个 pane，小地图在前
+    tools = _between(html, 'id="tools-view"', "</section>")
     assert 'id="am-mini-panel"' in tools and 'id="am-ocr-panel"' in tools
     assert tools.index("am-mini-panel") < tools.index("am-ocr-panel")
-    assert tools.count('class="app-tool-sec') == 2
+    assert tools.count('class="tl-item') == 2
+    assert tools.count('data-tool-pane=') == 2
 
 
 def test_moved_panels_live_inside_tools_menu_and_legacy_anchor():
     html = _read(HTML)
-    tools = _between(html, 'id="am-tools-panel"', 'id="app-legacy-sec"')
+    tools = _between(html, 'id="tools-view"', "</section>")
     for ident in ("am-mini-panel", "am-ocr-panel"):
-        assert 'id="%s"' % ident in tools, "%s 应迁入「小工具」菜单" % ident
+        assert 'id="%s"' % ident in tools, "%s 应迁入「小工具」视图" % ident
     # raid-block 等仍被 app.js 写入，必须留在 hidden 的 legacy 容器里保活
     legacy = _between(html, 'id="app-legacy-sec"', 'id="context-bar"')
     for ident in ("raid-block", "raid-status", "quest-log", "shot-status"):

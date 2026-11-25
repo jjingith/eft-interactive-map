@@ -53,7 +53,7 @@ filedialog = None
 messagebox = None
 
 APP_NAME = "EFT 互动地图"
-VERSION = "0.2.9.1"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
+VERSION = "0.2.9.2"          # 与 tools/serve.py 的 VERSION 一致（有测试锁死）
 REG_KEY = r"Software\Microsoft\Windows\CurrentVersion\Uninstall\EFTMap"
 APP_EXE = "EFTMap.exe"
 APP_SHELL = "EFTMapDesktop.exe"   # 无边框客户端壳；与 EFTMap.exe 同目录出包

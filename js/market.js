@@ -372,6 +372,16 @@
     return !snap || snap.live !== true;
   }
 
+  /** R307：没有跳蚤报价的物品也要进列表。给一个结构与真报价一致、值全为 null 的占位，
+      让渲染 / 排序 / 详情共用同一套代码，不用到处判空。 */
+  function emptyQuote() {
+    return {
+      lastLow: null, avg24h: null, low: null, high: null, avg7d: null,
+      offers: null, updated: null, minLevel: null,
+      rowFetchedAt: null, fetchedAt: null, source: ""
+    };
+  }
+
   function buildRows() {
     // 清掉上次会员会话遗留的本地均价档位；免费档只展示云端最新价。
     if (api && typeof api.isMember === "function" && !api.isMember()) {
@@ -379,15 +389,19 @@
     }
     var items = api.items() || {};
     var snap = snapshotPayload();
-    var fItems = (snap && snap.available && snap.items) || {};
     rows = [];
     rowById = {};
     usesIndex = {};
-    Object.keys(fItems).forEach(function (id) {
+    // R307：以**全量物品**为基准，不再只遍历有行情的条目。
+    // 尼基塔每次更新都会改可上架名单（例如 0.16 后一批散装子弹恢复上架），
+    // 只按当前有价的清单渲染会让「今天没价」的物品在市场里彻底搜不到（BTC 就是典型）。
+    // 预设（pt=Preset）不是实体物品，排除。
+    Object.keys(items).forEach(function (id) {
       var rec = items[id];
-      if (!rec) { return; }
-      var quote = api.quote(id);
-      if (!quote) { return; }
+      if (!rec || rec.pt === "Preset") { return; }
+      var real = api.quote(id);
+      var quote = real || emptyQuote();
+      var hasQuote = !!real;
       var buy = traderBuyOf(rec);
       var sell = quote.lastLow;
       var profit = (buy && sell !== null) ? (sell - buy.price) : null;
@@ -413,6 +427,7 @@
         perKg: perKg,
         types: typeSet,
         noFlea: !!typeSet.noFlea,
+        hasQuote: hasQuote,          // R307：false = 没有跳蚤报价，列表里标「无报价」
         sellTo: (rec.sl || []).filter(function (x) {
           return Array.isArray(x) && x[0] && typeof x[1] === "number" && x[1] > 0;
         })
@@ -785,6 +800,14 @@
       shortEl.textContent = row.short;
       sub.appendChild(shortEl);
     }
+    if (!row.hasQuote) {
+      var noQuote = document.createElement("span");
+      noQuote.className = "mk-noquote";
+      noQuote.textContent = "无报价";
+      noQuote.title = "当前数据源里该物资没有跳蚤行情（可能是任务物品、未上架或刚改过可上架名单）；" +
+        "物品本身仍在这里，等下一次抓取有了价格就会显示。";
+      sub.appendChild(noQuote);
+    }
     var upd = row.quote.updated || row.quote.rowFetchedAt;
     var ageEl = document.createElement("span");
     ageEl.className = "mk-age";
@@ -897,7 +920,8 @@
     if (ui.typeClear) { ui.typeClear.hidden = !st.types.length; }
     if (ui.count) {
       ui.count.textContent = loaded
-        ? ("筛选结果 " + filtered.length + " 条 / 有行情 " + rows.length + " 条")
+        ? ("筛选结果 " + filtered.length + " 条 / 全部 " + rows.length + " 条（有报价 " +
+           rows.filter(function (r) { return r.hasQuote; }).length + " 条）")
         : "正在读取本地行情…";
     }
     updateSortHeads();

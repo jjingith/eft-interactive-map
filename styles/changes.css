@@ -12,7 +12,10 @@
 /* 价格口径 / 行情截止时间属于市场页的控件（#vt-prices / #vt-market-meta 在视图工具条里），
    更新页没有任何价格，留着只会让人以为这里也能刷行情。 */
 body[data-view="changes"] #vt-prices,
-body[data-view="changes"] #vt-market-meta { display: none; }
+body[data-view="changes"] #vt-market-meta,
+body[data-view="tools"] #vt-prices,
+body[data-view="tools"] #vt-market-meta,
+body[data-view="tools"] #vt-member-expire { display: none; }
 
 .ch-wrap {
   display: flex;

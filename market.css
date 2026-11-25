@@ -445,6 +445,17 @@
   line-height: 14px;
 }
 .mk-age { flex: 0 0 auto; color: var(--ui-color-text-muted, var(--ui-color-text-muted)); font-variant-numeric: tabular-nums; }
+/* R307：没有跳蚤报价的物资（BTC / 任务情报等）——列表里照常显示，标一个中性徽记 */
+.mk-noquote {
+  flex: 0 0 auto;
+  padding: 0 4px;
+  border: 1px dashed var(--ui-color-border, #aca899);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ui-color-text-muted, #6b6860);
+  font-size: 9px;
+  line-height: 13px;
+}
 
 .mk-row { cursor: pointer; }
 .mk-row.is-selected { background: var(--ui-color-selected-bg, #eaf3ff); }
