@@ -45,8 +45,8 @@ def test_tools_view_layout_has_list_and_panes():
     assert 'data-tool="mini"' in block and 'data-tool="ocr"' in block
     assert 'id="tool-pane-mini"' in block and 'id="tool-pane-ocr"' in block
     assert 'id="am-mini-panel"' in block and 'id="am-ocr-panel"' in block
-    # 为以后扩展留的说明
-    assert "新增的小工具" in block
+    # R309：左栏底部「新增的小工具会依次列在这里」的常驻说明已移除，保持左栏只剩工具列表
+    assert "新增的小工具" not in block
     # 小地图在前、价格识别在后（与用户熟悉的顺序一致）
     assert block.index("am-mini-panel") < block.index("am-ocr-panel")
 

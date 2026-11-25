@@ -20,7 +20,7 @@
 
 /* ---------------------------------------------------------------- 左栏 */
 .tl-side {
-  flex: 0 0 236px;
+  flex: 0 0 220px;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -30,26 +30,26 @@
 }
 .tl-side-head {
   flex: 0 0 auto;
-  padding: 3px 10px;
+  padding: 9px 12px;
   border-bottom: 1px solid var(--xp-border, #aca899);
   background: linear-gradient(#fdfdfd, #ece9d8);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #23231b;
 }
-.tl-list { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 4px; }
+.tl-list { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 6px; }
 
 /* 列表项是 button：modern-flat.css 给所有 button 上了 XP 皮肤并带 !important，
    这里靠 .tl-item 提权 + 同带 !important 压回列表语义。 */
 #tools-view .tl-item {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
   width: 100%;
-  margin: 0 0 2px;
-  padding: 6px 8px;
+  margin: 0 0 3px;
+  padding: 8px 10px;
   border: 1px solid transparent !important;
-  border-radius: 0 !important;
+  border-radius: 3px !important;
   background: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
@@ -69,17 +69,11 @@
   background: var(--xp-sel, #316ac5) !important;
   border-color: #1e4f9c !important;
   color: var(--xp-sel-text, #ffffff) !important;
+  box-shadow: inset 3px 0 0 #7fb2ff !important;
 }
 .tl-name { font-size: 12px; font-weight: 700; }
-.tl-desc { font-size: 10px; line-height: 1.4; color: #6b6860; }
-#tools-view .tl-item.is-active .tl-desc { color: #cddcf3; }
-.tl-side-note {
-  flex: 0 0 auto;
-  margin: 8px 10px 10px;
-  font-size: 10px;
-  line-height: 1.5;
-  color: #8a8474;
-}
+.tl-desc { font-size: 10px; line-height: 1.35; color: #6b6860; }
+#tools-view .tl-item.is-active .tl-desc { color: #dbe7fb; }
 
 /* ---------------------------------------------------------------- 右栏 */
 .tl-body {
@@ -87,11 +81,37 @@
   min-width: 0;
   min-height: 0;
   overflow: auto;
-  padding: 12px 16px 20px;
-  background: #ffffff;
+  padding: 0;
+  background: #f5f4ee;
 }
+.tl-pane { width: 100%; max-width: 960px; margin: 0 auto; padding: 18px 24px 28px; }
 .tl-pane[hidden] { display: none; }
-.tl-pane > .settings-note:first-of-type { margin-top: -2px; }
+.tl-pane-head {
+  margin: 0 0 16px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #d9d4c5;
+}
+.tl-pane-title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #2b2a24;
+}
+.tl-pane-sub {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #7a7568;
+}
+
+/* 分组标题：卡片之间留白由它分隔 */
+#tools-view .tl-pane h4.about-h {
+  margin: 18px 0 6px;
+  font-size: 12px;
+  color: #3f3d34;
+}
+#tools-view .tl-pane .tl-pane-head + .app-menu-panel > h4.about-h:first-child,
+#tools-view .tl-pane .tl-pane-head + h4.about-h { margin-top: 0; }
+#tools-view .tl-pane .settings-note { max-width: 760px; }
 
 /* 中和下拉面板的定位与 XP 位图边框：内容本身的作用域样式（.app-mini-panel）保留 */
 html body .tl-pane .app-menu-panel {
@@ -109,17 +129,112 @@ html body .tl-pane .app-menu-panel {
   max-height: none;
   overflow: visible;
 }
-/* 内容区限制可读宽度：小地图那一段控件很多，铺满 4K 会把滑条拉得过长。
-   注意 .app-mini-panel 自己有 width:380px，这里要一起改。 */
 html body .tl-pane .app-mini-panel {
   width: auto;
-  max-width: 760px;
+  max-width: none;
   max-height: none;
   overflow: visible;
 }
-html body .tl-pane > .app-menu-panel { max-width: 760px; }
+
+/* ---------------------------------------------------------------- 设置卡片
+   把每组控件放进白底卡片；作用域锁在 #tools-view，?mini=1 把小地图面板搬进
+   小窗后仍是原来的紧凑样式。 */
+#tools-view .tl-pane .mini-toggles,
+#tools-view .tl-pane .ov-rows,
+#tools-view .tl-pane .hud-scales,
+#tools-view .tl-pane .mini-shot-settings,
+#tools-view .tl-pane .ocr-fullrow,
+#tools-view .tl-pane .ocr-hotkey-row,
+#tools-view .tl-pane .ocr-style-box {
+  background: #ffffff;
+  border: 1px solid #ddd8ca;
+  border-radius: 4px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+}
+#tools-view .tl-pane .ocr-style-box { margin-top: 10px; border-top: 1px solid #ddd8ca; }
+
+/* 开关组：栅格排开，别一条条占满整行 */
+#tools-view .tl-pane .mini-toggles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 6px 20px;
+}
+/* 尺寸与位置：两列，每条三列网格（标签 / 轨道 / 数值）；轨道撑满该列，
+   数值紧贴轨道右端，不再留一大段空档 */
+#tools-view .tl-pane .ov-rows {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 26px;
+  margin: 0;
+}
+#tools-view .tl-pane .ov-row { grid-template-columns: 56px minmax(0, 1fr) 52px; }
+#tools-view .tl-pane .ov-row select { width: 100%; min-width: 0; }
+/* 视野与显示：同样两列；去掉内层小方框，整卡只有一层边框 */
+#tools-view .tl-pane .hud-scales {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 22px;
+  align-items: stretch;
+}
+#tools-view .tl-pane .hud-scale {
+  background: transparent;
+  border-color: transparent;
+  padding: 4px 2px;
+}
+/* 自动截图：一张卡里两列表单（间隔 / 截图键），开关与说明跨列 */
+#tools-view .tl-pane .mini-shot-settings {
+  grid-template-columns: 86px minmax(0, 300px) 86px minmax(0, 1fr);
+  align-items: center;
+  justify-content: start;
+  gap: 8px 14px;
+  margin-top: 0;
+  padding-top: 12px;
+  border-top: 1px solid #ddd8ca;
+}
+#tools-view .tl-pane .mini-shot-settings .mini-toggles {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+#tools-view .tl-pane .mini-shot-settings .mini-shot-wide,
+#tools-view .tl-pane .mini-shot-settings .mini-path-note { grid-column: 1 / -1; }
+#tools-view .tl-pane .mini-shot-settings .mini-dir-field input[type="text"] { max-width: 300px; }
+#tools-view .tl-pane .mini-shot-settings.is-member-locked::after {
+  content: "非会员固定 10 秒截图间隔";
+}
+/* 价格识别：全屏识别与热键合成一张卡；热键按钮别拉满整行 */
+#tools-view .tl-pane .ocr-fullrow {
+  margin: 0;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 0;
+}
+#tools-view .tl-pane .ocr-hotkey-row {
+  margin: 0;
+  flex-wrap: wrap;
+  border-radius: 0 0 4px 4px;
+}
+#tools-view .tl-pane .ocr-hotkey-btn { flex: 0 1 220px; }
+#tools-view .tl-pane .ocr-style-box > h4.about-h:first-child { margin-top: 0; }
+/* 档位列表收窄到一列表单宽度，删除键不再甩到卡片最右端 */
+#tools-view .tl-pane .ocr-basis-row,
+#tools-view .tl-pane #ocr-tiers { max-width: 640px; }
+#tools-view .tl-pane .ocr-tier-line input[type="number"] { max-width: none; }
+/* 会员门控：只压暗可改的控件，别把整张卡洗成灰的 */
+#tools-view .tl-pane .ocr-style-box.is-member-locked { opacity: 1; }
+#tools-view .tl-pane .ocr-style-box.is-member-locked .ocr-basis-row,
+#tools-view .tl-pane .ocr-style-box.is-member-locked #ocr-tiers,
+#tools-view .tl-pane .ocr-style-box.is-member-locked .ocr-tier-add { opacity: .6; }
 
 @media (max-width: 1024px) {
   .tl-side { flex: 0 0 196px; }
   .tl-desc { display: none; }
+  #tools-view .tl-pane .ov-rows,
+  #tools-view .tl-pane .hud-scales { grid-template-columns: minmax(0, 1fr); }
+}
+/* 窄窗：自动截图的两列表单回退成单列，避免固定列宽把输入框挤没 */
+@media (max-width: 900px) {
+  #tools-view .tl-pane .mini-shot-settings { grid-template-columns: 86px minmax(0, 1fr); }
 }
