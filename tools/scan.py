@@ -1217,8 +1217,12 @@ if IS_WINDOWS:
         dr = ImageDraw.Draw(img)
         ordered = sorted(matches or [],
                          key=lambda x: (int(x.get("x") or 0), int(x.get("y") or 0)))
+        # R309：徽章矩形记的是**原始 matches 下标**。render 按 (x,y) 重排过，
+        # 若直接记排序后的位置，open_menu 拿到的就是另一件物品（多数没有候选，
+        # 表现为「点 ? 没反应」）。
+        orig_of = {id(m): i for i, m in enumerate(matches or [])}
         fixed_fs = _fixed_label_font(dr, ordered, tiers, base_fs, unit)
-        for idx, m in enumerate(ordered):
+        for pos, m in enumerate(ordered):
             ax = int(m.get("x") or 0)
             ay = int(m.get("y") or 0)
             try:
@@ -1268,7 +1272,7 @@ if IS_WINDOWS:
             total_h = step + int(round(fs2 * 1.30))
             # 同一列下方最近的装备名：价格块不得越到它的行上（否则压住下一件名字）
             next_top = None
-            for n in ordered[idx + 1:]:
+            for n in ordered[pos + 1:]:
                 ny = int(n.get("y") or 0)
                 if ny < ay + max(bh, base_fs):     # 同一行邻格不算「下方阻挡」
                     continue
@@ -1283,13 +1287,17 @@ if IS_WINDOWS:
             bd, _bg = _ambig_metrics(fs)
 
             def _badge_rect(lx, ly, size=None):
-                """主价行最左元素是 ? 徽章（R253 可点击命中区，画布坐标）。"""
-                if not (amb and badges_out is not None):
+                """主价行最左元素是 ? 徽章（R253 可点击命中区，画布坐标）。
+
+                R309：`soft`（撞名但价差小、仍报价）也会在价格左侧画 ?，
+                命中区必须一并登记，否则那枚徽章是鼠标穿透的。
+                """
+                if not ((amb or soft) and badges_out is not None):
                     return
                 d = _ambig_metrics(size or fs)[0]
                 by = ly + max(0, ((size or fs) - d) // 2)
-                badges_out.append((idx, (int(lx), int(by),
-                                         int(lx + d), int(by + d))))
+                badges_out.append((orig_of.get(id(m), pos),
+                                   (int(lx), int(by), int(lx + d), int(by + d))))
 
             if start_y + total_h <= limit:
                 if amb:
