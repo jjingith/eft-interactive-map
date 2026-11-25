@@ -1209,7 +1209,7 @@
         <h4 class="about-h">自动截图</h4>
         <div class="mini-toggles">
           <label class="toggle mini-enabled-toggle"
-                 title="自动截图：与启动器里的「自动截图」是同一个开关（auto_screenshot.enabled）。开启后由本地服务在战局中按设定间隔发送游戏内截图键">
+                 title="自动截图：本地服务的 auto_screenshot.enabled 开关。开启后由本地服务在战局中按设定间隔发送游戏内截图键">
             <input type="checkbox" id="mini-shot"><span class="dot dot-floor"></span>自动截图
           </label>
         </div>
@@ -1224,6 +1224,15 @@
                  title="战局结束时只清理本工具自动截的图（按「发键后新出现」的清单判定），手动截图不会被删">
             <input type="checkbox" id="mini-shot-cleanup">战局结束清理
           </label>
+          <!-- R308：启动器移除后，截图键改在这里手动填写；留空 = 自动读游戏 Control.ini / 日志绑定 -->
+          <label for="mini-shot-key-input">截图键</label>
+          <div class="mini-dir-field">
+            <input type="text" id="mini-shot-key-input" placeholder="如 V / F12 / SysReq（留空 = 自动）"
+                   spellcheck="false" maxlength="40"
+                   title="游戏内「截图」绑定的按键名。留空时由本地服务自动读取游戏 Control.ini / 日志里的绑定，不会猜默认键">
+            <button type="button" class="mini-dir-browse" id="mini-shot-key-save"
+                    title="保存截图键（写入 auto_screenshot.key，立即生效）">保存</button>
+          </div>
           <span id="mini-shot-key" class="mini-path-note">截图键：读取中…</span>
         </div>
             </div>

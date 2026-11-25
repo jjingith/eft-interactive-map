@@ -2,7 +2,7 @@
 
 一款给《逃离塔科夫》玩家用的本地互动地图工具。地图查询、实时定位、路线规划、任务监控、配装和配枪都在同一个窗口里。
 
-当前源码版本 **0.2.9.2**，Windows 平台，个人使用永久免费。
+当前源码版本 **0.2.9.3**，Windows 平台，个人使用永久免费。
 
 [下载发布包](https://github.com/jjingith/eft-interactive-map/releases) · [详细使用说明](docs/USAGE.md)
 
@@ -117,7 +117,7 @@ powershell -ExecutionPolicy Bypass -File build\build.ps1
 powershell -ExecutionPolicy Bypass -File build\build_release.ps1
 ```
 
-版本号以 `tools/serve.py` 的 `VERSION` 为准，当前 0.2.9.2。PyInstaller 只在构建期需要。
+版本号以 `tools/serve.py` 的 `VERSION` 为准，当前 0.2.9.3。PyInstaller 只在构建期需要。
 
 测试用 pytest，全部离线运行：
 

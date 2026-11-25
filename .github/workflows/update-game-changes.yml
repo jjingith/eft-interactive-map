@@ -1,0 +1,52 @@
+# 定时把 Steam 官方补丁公告同步成仓库里的云端快照（data/game-changes.json）。
+#
+# 为什么用仓库而不是自建服务器：
+#   客户端已经会读 GitHub 上的这份 JSON（api.github.com 的 raw 媒体类型），
+#   补丁说明更新时只需要这个 workflow 提交一次数据文件，**不用重新打包发版**。
+#   新版本客户端进入「更新」页会自动补拉；Steam 直连失败时也回退到这里。
+#
+# 手动补抓一次：Actions → Sync game patch notes → Run workflow。
+name: Sync game patch notes
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"      # 每 6 小时（UTC 的 17 分，避开整点拥堵）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: game-changes-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # 与 CI 一致用 Windows：tools/fetch_game_changes.py 会 import serve（Windows 项目），
+    # 在 Linux runner 上没必要冒险去验证它的跨平台导入。
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 抓取官方补丁公告
+        shell: pwsh
+        run: python tools/fetch_game_changes.py --if-changed
+
+      - name: 提交变化
+        shell: pwsh
+        run: |
+          git diff --quiet -- data/game-changes.json
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "没有新补丁，跳过提交"
+            exit 0
+          }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/game-changes.json
+          git commit -m "data: 自动同步官方补丁说明"
+          git push

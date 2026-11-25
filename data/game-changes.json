@@ -1,8 +1,268 @@
 {
- "generated_at": "2026-11-24 16:17",
+ "generated_at": "2026-11-25 11:44",
  "source": "steam-official-announcements",
  "source_url": "https://store.steampowered.com/news/app/3932890",
  "entries": [
+  {
+   "id": "steam-1849827110445989",
+   "version": "1.3.5.0",
+   "kind": "小版本",
+   "title": "Patch 1.3.5.0",
+   "date": "2026-11-24",
+   "timestamp": 1795523583,
+   "url": "https://store.steampowered.com/news/app/3932890/view/1849827110445989",
+   "sections": [
+    {
+     "title": "Halloween event",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The in-game Halloween event has ended. Please note that Scav behavior toward Player Scavs and the penalty for killing them have been reverted to their standard settings."
+      }
+     ]
+    },
+    {
+     "title": "Performance and optimization",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Loading into and out of raids"
+      },
+      {
+       "type": "para",
+       "text": "We've made changes to every stage of connecting to a raid: the resource loading architecture has been completely reworked. Connecting to the server now takes place in parallel with loading the location, while unloading resources after a raid now frees up RAM more efficiently."
+      },
+      {
+       "type": "para",
+       "text": "Game server optimization"
+      },
+      {
+       "type": "para",
+       "text": "Optimized server resource consumption, significantly improving hit registration accuracy and reducing packet loss."
+      },
+      {
+       "type": "para",
+       "text": "Performance improvements"
+      },
+      {
+       "type": "para",
+       "text": "Implemented a number of optimizations to improve frame rate smoothness both during raids and when interacting with the Hideout."
+      },
+      {
+       "type": "para",
+       "text": "Door synchronization"
+      },
+      {
+       "type": "para",
+       "text": "Reworked the network logic for interacting with doors, significantly reducing cases where their states become desynchronized between the client and server."
+      },
+      {
+       "type": "para",
+       "text": "Memory leaks"
+      },
+      {
+       "type": "para",
+       "text": "Fixed issues that caused uncontrolled RAM usage growth and performance drops during extended gaming sessions."
+      }
+     ]
+    },
+    {
+     "title": "RenderStack graphics engine",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "As part of Patch 1.3.5.0, graphics systems and visual effects have been brought together into a unified technology platform called RenderStack. This lays the groundwork for quickly integrating new technologies in the future while already delivering performance improvements:"
+      },
+      {
+       "type": "bullet",
+       "text": "Vegetation and long-distance rendering: Reworked grass rendering and the distant projection system for trees and bushes;"
+      },
+      {
+       "type": "bullet",
+       "text": "Lighting and shadows: Updated the distant and interior shadow systems, making transitions smoother. Volumetric lighting now puts significantly less load on the CPU and GPU;"
+      },
+      {
+       "type": "bullet",
+       "text": "Environmental decals: Optimized decal rendering speed while minimizing system load;"
+      },
+      {
+       "type": "bullet",
+       "text": "Optics: Improved image quality and detail in optics while reducing FPS drops when aiming down sights;"
+      },
+      {
+       "type": "bullet",
+       "text": "Upscaling technologies: Improved the stability and image quality of NVIDIA DLSS, as well as the performance of AMD FSR 2 and FSR 3;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fullscreen effects: Optimized the processing of injury, desaturation, and sharpening effects;"
+      },
+      {
+       "type": "bullet",
+       "text": "Seasonal materials: Optimized seasonal transitions by preloading landscape materials, reducing RAM usage."
+      }
+     ]
+    },
+    {
+     "title": "Raid reconnect rework",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Reworked the raid reconnection system for cases involving network issues or lost connections to the server. With the new implementation, the game won't need to reload resources or the world state, allowing players to reconnect to a raid faster once their connection is restored."
+      },
+      {
+       "type": "para",
+       "text": "Please note that these changes don't apply when the game client closes unexpectedly (crash, OS failure, PC restart, etc.). In these cases, reconnecting will take longer than it would for connection issues."
+      },
+      {
+       "type": "para",
+       "text": "We've also improved interaction with the game backend, allowing players to reconnect to game servers if their connection is lost out of raid."
+      }
+     ]
+    },
+    {
+     "title": "Unity 6",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "The technical improvements listed above are the result of months of manual work by our engineers on the game's code. The team conducted in-depth profiling and reworked key internal systems, resulting in improved game performance that many players will notice. This work was not directly dependent on the engine version upgrade, but the transition will also make further improvements possible."
+      },
+      {
+       "type": "para",
+       "text": "We've upgraded the project to the latest version of Unity 6, giving us access to modern development tools that we'll need to implement new technologies such as DirectX 12, FSR 4.0, DLSS Frame Generation, and others in upcoming updates."
+      }
+     ]
+    },
+    {
+     "title": "Changes to the Handbook",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Added separate location categories for keys and keycards;"
+      },
+      {
+       "type": "bullet",
+       "text": "Split headwear into two categories: headwear and helmets;"
+      },
+      {
+       "type": "bullet",
+       "text": "Moved helmet components to a separate category;"
+      },
+      {
+       "type": "bullet",
+       "text": "Split chest rigs into two categories: armored rigs and chest rigs;"
+      },
+      {
+       "type": "bullet",
+       "text": "Moved Tarko figurines to a separate category;"
+      },
+      {
+       "type": "bullet",
+       "text": "Moved dogtags to a separate category;"
+      },
+      {
+       "type": "bullet",
+       "text": "Moved armor plates to a separate category;"
+      },
+      {
+       "type": "bullet",
+       "text": "Moved loot containers to a separate category;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the categories of certain items."
+      }
+     ]
+    },
+    {
+     "title": "Expansion Hub",
+     "blocks": [
+      {
+       "type": "para",
+       "text": "Updated the system of personalized discounts on packs in the Expansion Hub."
+      },
+      {
+       "type": "para",
+       "text": "Improved price calculations to account for items players have already purchased. Also expanded the list of packs eligible for discounts when players already own some of their contents:"
+      },
+      {
+       "type": "bullet",
+       "text": "USEC Veteran Pack;"
+      },
+      {
+       "type": "bullet",
+       "text": "BEAR Veteran Pack;"
+      },
+      {
+       "type": "bullet",
+       "text": "PMC Veteran Pack;"
+      },
+      {
+       "type": "bullet",
+       "text": "Executive PMC Pack."
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "blocks": [
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused the selected character movement speed to reset after packet loss or network delays;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that could cause bots to stop shooting for no apparent reason;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the PMC bot gear having a Found in Raid mark in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused task rewards to be granted multiple times if a player lost connection while playing a local raid in PvE Zone;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that could cause the armored case to disappear after completing The Ticket story chapter task;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that could softlock further exchanges of Battle Pass documents if a player attempted to exchange a document locked in their stash;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the fuel consumption display in the Hideout when the Solar Power zone is built and the Hideout Management skill is leveled up;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the incorrect name of the item selection window for the Hall of Fame zone in the Hideout;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed an issue that caused the killer's nickname to be displayed incorrectly after death on Terminal if the player had taken damage from another player on Shoreline;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the skill display on the Skills screen after changing the display mode;"
+      },
+      {
+       "type": "bullet",
+       "text": "Improved the UX of Hideout crafting;"
+      },
+      {
+       "type": "bullet",
+       "text": "Fixed the display of hidden extracts for players in a group when one of the players picked up a secret exit note;"
+      },
+      {
+       "type": "bullet",
+       "text": "Numerous minor UI fixes."
+      }
+     ]
+    }
+   ],
+   "bullets": 33
+  },
   {
    "id": "steam-1847920302235601",
    "version": "1.3.0.0",
@@ -2819,205 +3079,6 @@
     }
    ],
    "bullets": 96
-  },
-  {
-   "id": "steam-1826362059920738",
-   "version": "1.0.2.5",
-   "kind": "热修",
-   "title": "Patch 1.0.2.5",
-   "date": "2026-03-05",
-   "timestamp": 1772711486,
-   "url": "https://store.steampowered.com/news/app/3932890/view/1826362059920738",
-   "sections": [
-    {
-     "title": "Changes",
-     "blocks": [
-      {
-       "type": "bullet",
-       "text": "Adjusted the game server launch mechanics to speed up the process of the creation of rooms for matches and getting players into the raid;"
-      },
-      {
-       "type": "bullet",
-       "text": "Adjusted the raid completion mechanics and the display of post-raid statistics to speed up the process of leaving the raid after its completion;"
-      },
-      {
-       "type": "bullet",
-       "text": "Optimized the launch speed of the game client and menu loading;"
-      },
-      {
-       "type": "bullet",
-       "text": "Added a permanent display of the Zubr boat departure timer to the final part of the Terminal;"
-      },
-      {
-       "type": "bullet",
-       "text": "Updated the DLSS to version 4.5, and added support for new Presets."
-      }
-     ]
-    },
-    {
-     "title": "Changes to weapon attachments",
-     "blocks": [
-      {
-       "type": "para",
-       "text": "Adjusted the stats of most weapon attachments, i.e. muzzle devices, magazines, grips, and buttstocks. Our goal was to bridge the gap between the most popular, high-tier attachments and those that are currently rarely used."
-      },
-      {
-       "type": "para",
-       "text": "Muzzle devices"
-      },
-      {
-       "type": "bullet",
-       "text": "Flash hiders, muzzle brakes, and similar attachments now reduce recoil more effectively;"
-      },
-      {
-       "type": "bullet",
-       "text": "Suppressors, including their combos with various muzzle brakes, now have a smaller impact on recoil. In exchange, their ergonomics penalty has been reduced."
-      },
-      {
-       "type": "para",
-       "text": "These changes are aimed at addressing the current prevalence of suppressors, which are used almost universally. We want players to make a choice when building weapons: better recoil control with a muzzle brake versus relative stealth with a suppressor."
-      },
-      {
-       "type": "para",
-       "text": "Magazines"
-      },
-      {
-       "type": "para",
-       "text": "Adjusted the bonuses and penalties of all existing magazines into a more consistent system. The impact of high-capacity magazines on weapon ergonomics has been reduced. Load, unload, and check speed modifiers have also been significantly adjusted."
-      },
-      {
-       "type": "para",
-       "text": "Magazines that are the only available option for compatible weapons, such as machine gun boxes, now have significantly softer penalties to ergonomics and other stats."
-      },
-      {
-       "type": "para",
-       "text": "Grips and buttstocks"
-      },
-      {
-       "type": "para",
-       "text": "Narrowed the stat gap between different pistol grips, front grips, and buttstocks. Late-game attachments still slightly outperform their budget counterparts, but the difference is much smaller than it was before."
-      },
-      {
-       "type": "para",
-       "text": "We believe this will allow players to make builds based on visual preference among other things, eliminating the established flow of \"good\" and \"bad\" attachments."
-      }
-     ]
-    },
-    {
-     "title": "Fixes",
-     "blocks": [
-      {
-       "type": "para",
-       "text": "Please note that some fixes may contain spoilers for story tasks."
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue that caused the interface to duplicate when looting rigs, containers, or the inventories of killed players or bots in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the progress of Priest kills getting reset after the raid in the story chapter “They Are Already Here”;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue where Mr. Kerman would not make contact after an unsuccessful search for the RFID card encryption device in The Lab;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue that caused the dialogue with Lightkeeper to freeze, preventing players from receiving the Armored case in one of the story tasks;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue that caused the dialogue with Lightkeeper to freeze, preventing players from obtaining the RFID card in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the cause of players receiving a Flea Market ban due to Error 214 when the verification window failed to appear;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the cause of Error 228 occurring when quickly purchasing multiple items on the Flea Market;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect sound occlusion behavior in certain areas of the D2 bunker on Reserve;"
-      },
-      {
-       "type": "bullet",
-       "text": "Improved the network synchronization of grenade throws and BTR movement;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect damage calculation that resulted in no penalties being applied for a blacked-out limb;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect experience display on the post-raid statistics screen after completing a raid with the Run-Through status in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue where some players would spawn into a raid without a weapon in their hands in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed a persistent muzzle flash after firing the GP-25 underbarrel grenade launcher in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue that caused players to slide on inclined surfaces after jumping in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the brief sprint animation triggering when strafing or turning the camera in the direction of movement in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the cause of long transition times when switching to the Character screen and the Tasks tab in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue where audio tapes produced in the Hideout would not appear in the handbook without restarting the game;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed an issue where gear presets suggested purchasing weapon parts even though the required weapon build was already in the stash;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the display issues with certain reward types and unlock conditions on the task screen;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the display of night vision device mounts and adapters;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect ambient sound behavior in certain indoor areas on Terminal;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect Steam Rich Presence status switching in certain cases;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect scroll bar appearance in certain dropdown lists in the interface;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the search field not being automatically focused when opening the “Search in Stash” window;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the display of the mouse sensitivity setting on the settings screen;"
-      },
-      {
-       "type": "bullet",
-       "text": "Fixed the incorrect bot behavior after fully depleting ammunition in stationary weapons in certain cases."
-      }
-     ]
-    }
-   ],
-   "bullets": 33
   }
  ]
 }

@@ -192,7 +192,9 @@ def test_refresh_failure_keeps_what_we_have(tmp_path, monkeypatch):
     def boom(timeout=12.0):
         raise OSError("network down")
 
+    # R308：Steam 失败后会尝试云端快照，这里也要断掉，确保走「全部失败」分支
     monkeypatch.setattr(serve, "fetch_game_changes", boom)
+    monkeypatch.setattr(serve, "fetch_game_changes_remote", boom)
     data = serve.refresh_game_changes(str(root), str(cfg))
     assert data["ok"] is False
     assert "network down" in data["error"]

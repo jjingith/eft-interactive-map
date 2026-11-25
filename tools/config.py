@@ -676,9 +676,11 @@ def _normalize_overlay(raw) -> dict:
 
 # ---------------------------------------------------------------- 配装视图（第十六轮）
 # 顶栏视图的白名单：切换结果写进 ui.view，刷新后停在同一视图。
-# 必须与 app.js 的 VIEWS 保持一致，否则白名单外的视图（例如 ammo）会被
-# `_normalize_ui` 丢弃，而合并时旧值（如 map）会保留并随配置广播把界面切回去。
-VIEWS = ("map", "loadout", "gun", "ammo", "tasks", "market")   # R19.22 任务；R97 市场（与 app.js 的 VIEWS 同步）
+# 必须与 app.js 的 VIEWS 保持一致，否则白名单外的视图会被 `_normalize_ui` 丢弃，
+# 而合并时旧值（如 market）会保留并随配置广播把界面切回去——R308 的
+# 「价格识别里点单格价格就跳回市场」就是这个原因（changes / tools 漏了白名单）。
+VIEWS = ("map", "loadout", "gun", "ammo", "tasks", "market", "changes", "tools")
+# R19.22 任务；R97 市场；R305 游戏更新；R307 小工具（与 app.js 的 VIEWS 同步）
 VIEW_DEFAULT = "map"
 
 # 配装的根槽位（顺序与前端 app.js 的 ROOT_SLOTS 一致）：key 一一对应。
@@ -974,6 +976,10 @@ def merge_ui(cfg, prefs) -> dict:
                 shot.get("interval_ms"), merged["account"]["member"])
         if isinstance(shot.get("cleanup_on_raid_end"), bool):
             merged["auto_screenshot"]["cleanup_on_raid_end"] = shot["cleanup_on_raid_end"]
+        # R308：启动器移除后，截图键改为页面手动设置；空值/None = 清掉手动值，
+        # 回到「自动读取游戏 Control.ini / 日志绑定」。
+        if "key" in shot and (shot["key"] is None or isinstance(shot["key"], str)):
+            merged["auto_screenshot"]["key"] = _as_text(shot["key"])
 
     # R107：页面可直接改日志目录 / 截图目录；空串 = 清掉手动值，退回自动探测
     if isinstance(prefs, dict):

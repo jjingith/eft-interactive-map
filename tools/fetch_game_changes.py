@@ -46,6 +46,8 @@ def main(argv=None) -> int:
     parser.add_argument("--from", dest="source", default=None,
                         help="本地 ISteamNews JSON（不给则直连 Steam）")
     parser.add_argument("--check", action="store_true", help="只比较，不写文件")
+    parser.add_argument("--if-changed", action="store_true",
+                        help="条目没有变化时不写文件（定时任务用，避免只改 generated_at 也产生提交）")
     args = parser.parse_args(argv)
 
     entries = _entries_from_file(args.source) if args.source else serve.fetch_game_changes()
@@ -54,12 +56,20 @@ def main(argv=None) -> int:
         return 1
 
     old = {}
+    old_entries = []
     if os.path.isfile(out_path):
         try:
             with open(out_path, encoding="utf-8") as handle:
-                old = {e["id"]: e for e in (json.load(handle).get("entries") or [])}
+                old_entries = json.load(handle).get("entries") or []
+                old = {e["id"]: e for e in old_entries}
         except (OSError, ValueError):
             old = {}
+            old_entries = []
+    if args.if_changed:
+        canon = lambda rows: json.dumps(rows, ensure_ascii=False, sort_keys=True)
+        if canon(old_entries) == canon(entries):
+            print("补丁条目没有变化，不写文件")
+            return 0
     added = [e for e in entries if e["id"] not in old]
     print("解析到 %d 个版本，其中 %d 个是新增：" % (len(entries), len(added)))
     for entry in entries[:12]:

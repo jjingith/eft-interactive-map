@@ -4,7 +4,8 @@
  * 信息架构对照 db4tarkov.com/changes：左边是版本时间线，右边是该版本改了什么。
  * 数据不是本站编辑的，而是 BSG 发在 Steam 上的官方补丁公告：
  *   - GET  api/game-changes          读内置快照 + 本地缓存（不打网络，离线可用）
- *   - POST api/game-changes/refresh  抓一次官方公告并落缓存
+ *   - POST api/game-changes/refresh  抓一次官方公告并落缓存（Steam 不通时自动读云端快照）
+ * R308：进入视图发现数据陈旧（或无缓存）会自动补拉一次，不再需要手动点「检查更新」。
  * 正文保留英文原文（翻译大段补丁说明容易失真），只把分区标题映射成中文。
  *
  * 对外接口（window.GWChanges）：
@@ -40,6 +41,12 @@
     "maps": "地图改动",
     "expansion hub": "扩展中心",
     "events": "活动",
+    "halloween event": "万圣节活动",
+    "performance and optimization": "性能与优化",
+    "renderstack graphics engine": "RenderStack 图形引擎",
+    "raid reconnect rework": "战局重连重做",
+    "unity 6": "Unity 6 引擎",
+    "changes to the handbook": "图鉴改动",
     "other": "其他"
   };
 
@@ -53,7 +60,8 @@
     meta: null,
     busy: false,
     message: "",
-    messageError: false
+    messageError: false,
+    autoTried: false       // R308：本次会话已自动补拉过一次就不再打扰
   };
 
   // ---------------------------------------------------------------- 小工具
@@ -191,18 +199,31 @@
 
   function load() {
     setMessage("正在读取补丁数据…", false);
-    requestJSON("api/game-changes").then(applyPayload).catch(function (error) {
+    requestJSON("api/game-changes").then(function (data) {
+      applyPayload(data);
+      maybeAutoRefresh(data);
+    }).catch(function (error) {
       setMessage("读取失败：" + error.message, true);
       renderAll();
     });
   }
 
-  function refreshNow() {
+  /** R308：本地数据缺失或超过 6 小时时，进入视图就自动补拉一次，
+      用户不用再点「检查更新」。每个会话最多自动试一次，失败不反复骚扰。 */
+  function maybeAutoRefresh(data) {
+    if (state.autoTried || state.busy) { return; }
+    if (data && !data.stale && data.from === "cache") { return; }
+    state.autoTried = true;
+    refreshNow({ auto: true });
+  }
+
+  function refreshNow(opts) {
+    var auto = !!(opts && opts.auto);
     if (state.busy) { return; }
     state.busy = true;
     els.refresh.disabled = true;
     els.refresh.textContent = "正在获取…";
-    setMessage("正在从 Steam 官方公告获取…", false);
+    setMessage(auto ? "正在后台获取最新补丁说明…" : "正在从 Steam 官方公告获取…", false);
     requestJSON("api/game-changes/refresh", {
       method: "POST",
       cache: "no-store",
@@ -212,14 +233,15 @@
       if (!data.ok) {
         // 失败时也把已缓存的内容留在页面上，只报错、不清空
         if (data.entries && data.entries.length) { applyPayload(data); }
-        setMessage(data.error || "获取失败", true);
+        setMessage(data.error || "获取失败", !auto);
         return;
       }
       var added = Number(data.added) || 0;
       applyPayload(data);
       setMessage(added > 0 ? "已更新：新增 " + added + " 个版本" : "已是最新，共 " + data.count + " 个版本", false);
     }).catch(function (error) {
-      setMessage("无法获取官方公告：" + error.message, true);
+      setMessage(auto ? "暂时无法获取最新补丁说明，先显示本地数据"
+                      : "无法获取官方公告：" + error.message, !auto);
     }).then(function () {
       state.busy = false;
       els.refresh.disabled = false;
@@ -300,7 +322,7 @@
       var empty = el("div", "ch-placeholder");
       empty.appendChild(el("p", "ch-placeholder-title", "还没有可显示的补丁说明"));
       empty.appendChild(el("p", null,
-        "点右上角「检查更新」从 Steam 官方公告获取。没有网络时也可以看随安装包内置的最近几个版本。"));
+        "进入本页会自动获取最新补丁说明；没有网络时显示随安装包内置的最近几个版本。"));
       box.appendChild(empty);
       return;
     }
@@ -378,7 +400,9 @@
     if (latest && latest.date) { parts.push("最近 " + latest.date); }
     if (meta.fetchedAt) { parts.push("检查于 " + meta.fetchedAt); }
     else if (meta.bundledAt) { parts.push("内置快照 " + meta.bundledAt); }
-    parts.push(meta.from === "cache" ? "来源：本地缓存" : "来源：随包快照");
+    var fromText = { cache: "本地缓存", bundled: "随包快照",
+                     network: "官方公告", cloud: "云端快照" };
+    parts.push("来源：" + (fromText[meta.from] || "随包快照"));
     bar.appendChild(el("span", "ch-status-text", parts.join(" · ")));
     if (meta.stale && !meta.fetchedAt) {
       bar.appendChild(el("span", "ch-status-warn", "缓存已超过 6 小时，建议检查更新"));
@@ -421,7 +445,9 @@
     mount: mount,
     open: function () {
       mount();
-      if (!state.entries.length) { load(); }
+      // R308：每次进入都重读本地（快照+缓存，毫秒级），数据陈旧时自动补拉最新；
+      // 长时间开着应用再进来也能看到新补丁。
+      load();
       if (els.search) { els.search.focus(); }
     },
     refresh: refreshNow,

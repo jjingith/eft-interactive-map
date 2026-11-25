@@ -58,7 +58,7 @@ import prices_source
 import screenshot
 
 
-VERSION = "0.2.9.2"
+VERSION = "0.2.9.3"
 UPDATE_REPO_API = "https://api.github.com/repos/jjingith/eft-interactive-map/releases/latest"
 _UPDATE_CACHE: dict[str, Any] = {"at": 0.0, "payload": None}
 _UPDATE_CACHE_LOCK = threading.Lock()
@@ -135,6 +135,13 @@ GAME_CHANGES_BUNDLED = os.path.join("data", "game-changes.json")
 GAME_CHANGES_CACHE_DIR = "game-changes"
 GAME_CHANGES_CACHE_NAME = "news.json"
 GAME_CHANGES_TTL = 6 * 3600.0             # 超过 6 小时没刷新就在界面上提示「可能不是最新」
+# R308：云端发布的补丁快照（GitHub 仓库里的 data/game-changes.json，由
+# .github/workflows/update-game-changes.yml 每 6 小时自动更新并提交）。
+# 老版本客户端不用重新打包，只要本机服务能访问 GitHub 就能拿到最新补丁说明；
+# Steam 直连失败（被墙 / 抽风）时也走这里兜底。
+GAME_CHANGES_REMOTE_URL = (
+    "https://api.github.com/repos/jjingith/eft-interactive-map/contents/"
+    "data/game-changes.json?ref=main")
 _GAME_NEWS_REFRESH_LOCK = threading.Lock()
 
 _PATCH_TITLE_RE = re.compile(r"^\s*patch\s+([0-9][0-9A-Za-z.\-]*)\s*$", re.I)
@@ -258,6 +265,31 @@ def game_changes_cache_path(config_dir: str) -> str:
     return os.path.join(config_dir, GAME_CHANGES_CACHE_DIR, GAME_CHANGES_CACHE_NAME)
 
 
+def fetch_game_changes_remote(timeout: float = 8.0) -> list[dict]:
+    """从 GitHub 仓库读取云端补丁快照（自动同步产物，免重新打包客户端）。
+
+    走 GitHub contents API 的 raw 媒体类型，只拉一个 100KB 左右的 JSON；
+    未登录限流 60 次/小时，而本机最多每 6 小时拉一次，余量充足。
+    """
+    request = urllib.request.Request(
+        GAME_CHANGES_REMOTE_URL,
+        headers={"Accept": "application/vnd.github.raw",
+                 "User-Agent": "EFTMap-GameChanges"})
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        data = json.loads(response.read(4 * 1024 * 1024).decode("utf-8"))
+    entries = data.get("entries") if isinstance(data, dict) else None
+    if not isinstance(entries, list):
+        raise ValueError("云端快照格式不正确")
+    cleaned = [
+        entry for entry in entries
+        if isinstance(entry, dict) and entry.get("version")
+        and isinstance(entry.get("sections"), list) and entry["sections"]
+    ]
+    if not cleaned:
+        raise ValueError("云端快照里没有补丁条目")
+    return cleaned
+
+
 def _read_game_changes_file(path: str) -> dict:
     try:
         with open(path, encoding="utf-8") as handle:
@@ -310,20 +342,31 @@ def game_changes_payload(root: str, config_dir: str | None = None) -> dict:
 
 
 def refresh_game_changes(root: str, config_dir: str | None = None) -> dict:
-    """点「检查更新」时调用：抓 Steam → 与缓存/内置合并 → 原子写回缓存。"""
+    """抓最新补丁说明：先 Steam 官方公告，失败再读 GitHub 云端快照，最后原子写缓存。"""
     payload = game_changes_payload(root, config_dir)
     before = int(payload.get("count") or 0)
     if not _GAME_NEWS_REFRESH_LOCK.acquire(blocking=False):
         payload.update({"ok": False, "busy": True, "error": "正在获取中，请稍候"})
         return payload
     try:
+        errors: list[str] = []
+        entries: list[dict] = []
+        origin = "network"
         try:
             entries = fetch_game_changes()
         except Exception as exc:  # noqa: BLE001 - 网络失败不能影响已内置的内容
-            payload.update({"ok": False, "error": "无法获取官方公告：%s" % str(exc)[:160]})
-            return payload
+            errors.append("官方公告：%s" % str(exc)[:120])
         if not entries:
-            payload.update({"ok": False, "error": "官方公告里没有解析到补丁条目"})
+            # R308：Steam 不通（被墙/抽风）或暂时抓不到条目时，读仓库里自动同步的
+            # 云端快照——老客户端无需重新打包也能看到新版本补丁说明。
+            try:
+                entries = fetch_game_changes_remote()
+                origin = "cloud"
+            except Exception as exc:  # noqa: BLE001
+                errors.append("云端快照：%s" % str(exc)[:120])
+        if not entries:
+            payload.update({"ok": False,
+                            "error": "无法获取补丁说明（%s）" % "；".join(errors)})
             return payload
         if config_dir:
             path = game_changes_cache_path(config_dir)
@@ -332,7 +375,7 @@ def refresh_game_changes(root: str, config_dir: str | None = None) -> dict:
                 temp = path + ".tmp"
                 with open(temp, "w", encoding="utf-8") as handle:
                     json.dump({"fetched_at": time.strftime("%Y-%m-%d %H:%M"),
-                               "source": "steam", "entries": entries},
+                               "source": origin, "entries": entries},
                               handle, ensure_ascii=False)
                 os.replace(temp, path)
             except OSError as exc:  # 缓存写不进去也要把本次结果返回给页面
@@ -344,7 +387,7 @@ def refresh_game_changes(root: str, config_dir: str | None = None) -> dict:
             "count": len(merged),
             "added": max(0, len(merged) - before),
             "fetchedAt": time.strftime("%Y-%m-%d %H:%M"),
-            "from": "network",
+            "from": origin,
             "stale": False,
         })
         return payload
@@ -2121,14 +2164,35 @@ class ScreenshotPruner:
                 continue
 
 
+def _resolved_shot_key(cfg: dict) -> tuple[str, str]:
+    """截图键：手动填写的值优先；没填时读游戏 Control.ini 的 MakeScreenshot 绑定。
+
+    返回 (键名, 来源)。来源用于页面显示（manual / control.ini），读不到时返回空串。
+    """
+    shot = (cfg or {}).get("auto_screenshot") or {}
+    manual = str(shot.get("key") or "").strip()
+    if manual:
+        return manual, "manual"
+    try:
+        detected = eftlog.read_screenshot_key_from_control_ini()
+    except Exception:  # noqa: BLE001 - 读不到配置不能影响界面
+        detected = None
+    return (detected or "", "control.ini" if detected else "")
+
+
 def config_payload(app_dir: str) -> dict[str, Any]:
     """`/api/config` 与 SSE `config` 事件共用的一份负载。"""
     cfg = config.load(app_dir)
+    shot_key, shot_key_source = _resolved_shot_key(cfg)
     return {
         "config": cfg,
         "resolved": {
             "appDir": app_dir,
             "soundsDir": config.sounds_dir(app_dir),
+            # R308：截图键没有启动器了，页面要知道当前生效的键与来源；
+            # 手动值写 auto_screenshot.key，留空时由 Control.ini / 日志绑定兜底。
+            "shotKey": shot_key,
+            "shotKeySource": shot_key_source,
         },
     }
 

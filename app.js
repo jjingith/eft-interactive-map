@@ -2115,6 +2115,8 @@
     el.miniShotsDir = $("mini-shots-dir");
     el.miniLogDir = $("mini-log-dir");
     el.miniShotKey = $("mini-shot-key");
+    el.miniShotKeyInput = $("mini-shot-key-input");   // R308：截图键手动设置
+    el.miniShotKeySave = $("mini-shot-key-save");
     el.miniPathsNote = $("mini-paths-note");
     el.saveConfig = $("save-config");
     el.pinnedList = $("pinned-list");
@@ -8123,11 +8125,15 @@
       el.miniLogDir.placeholder = logAuto ? ("自动：" + logAuto) : "未识别，请点浏览选择";
     }
     if (el.miniShotKey) {
+      // R308：启动器已移除，手动键在面板里填；这里显示当前生效的键与来源。
       if (r.shotKey) {
-        el.miniShotKey.textContent = "截图键：" + r.shotKey + "（来源 " + shotKeySourceLabel(r.shotKeySource) + "）";
+        el.miniShotKey.textContent = "截图键：" + r.shotKey + "（" + shotKeySourceLabel(r.shotKeySource) + "）";
       } else {
-        el.miniShotKey.textContent = "截图键：读不到（请在启动器里手动填写，不会猜默认键）";
+        el.miniShotKey.textContent = "截图键：未设置（留空时自动读取游戏绑定；也可在上方手动填写）";
       }
+    }
+    if (el.miniShotKeyInput && document.activeElement !== el.miniShotKeyInput) {
+      el.miniShotKeyInput.value = String(shot.key || "");
     }
     if (el.miniPathsNote) {
       var parts = [];
@@ -8375,6 +8381,26 @@
       });
     }
 
+    // R308：截图键手动设置（启动器已移除）。留空 = 清掉手动值，回到自动读取游戏绑定。
+    function saveShotKey() {
+      var val = String((el.miniShotKeyInput && el.miniShotKeyInput.value) || "").trim();
+      queuePrefs({ auto_screenshot: { key: val || null } });
+      if (el.miniShotKey) {
+        el.miniShotKey.textContent = val
+          ? "截图键：" + val + "（手动设置）"
+          : "截图键：未设置（留空时自动读取游戏绑定）";
+      }
+      if (typeof gunToast === "function") {
+        gunToast(val ? "截图键已保存：" + val : "已清除手动截图键，改用游戏绑定");
+      }
+    }
+    if (el.miniShotKeySave) { el.miniShotKeySave.addEventListener("click", saveShotKey); }
+    if (el.miniShotKeyInput) {
+      el.miniShotKeyInput.addEventListener("keydown", function (ev) {
+        if (ev.key === "Enter") { ev.preventDefault(); saveShotKey(); }
+      });
+    }
+
     // R107：日志 / 截图目录手动覆盖。留空 = null，服务端回到自动识别。
     [[el.miniShotsDir, "screenshots_dir"], [el.miniLogDir, "log_dir"]].forEach(function (pair) {
       var node = pair[0];
@@ -8389,7 +8415,7 @@
 
     // R303：目录输入旁的「浏览…」→ 本机服务弹系统文件夹选择框，回填路径并保存。
     // 浏览器自身拿不到本地绝对路径，所以走服务端对话框；取消时不改动输入框。
-    Array.prototype.forEach.call(document.querySelectorAll(".mini-dir-browse"), function (btn) {
+    Array.prototype.forEach.call(document.querySelectorAll(".mini-dir-browse[data-dir-for]"), function (btn) {
       btn.addEventListener("click", function () {
         var input = document.getElementById(btn.getAttribute("data-dir-for"));
         if (!input) { return; }
