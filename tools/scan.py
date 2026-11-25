@@ -40,6 +40,7 @@ import json
 import math
 import os
 import sys
+import threading
 import time
 
 TOOLS = os.path.dirname(os.path.abspath(__file__))
@@ -666,6 +667,15 @@ if IS_WINDOWS:
     # R247：ShareX 式原生选区窗（热键只 ShowWindow，不抓屏/不上传/不开浏览器）
     _SELECT_ACTIVE: "NativeSelection | None" = None
     _SELECT_RESULTS: list = []     # ("done", rect) / ("cancel", None)
+    # R309：价格详情卡的历史曲线在后台线程取，主循环回填（窗口只在主线程动）
+    _DETAIL_RESULTS: list = []
+
+    def _detail_worker(server, mode, item_id, idx, results):
+        try:
+            points, status = fetch_price_history(server, mode, item_id)
+        except Exception as exc:  # noqa: BLE001 - 曲线失败不影响三档价
+            points, status = [], "%s: %s" % (type(exc).__name__, exc)
+        results.append((idx, item_id, points, status))
 
     def _msg_point(hwnd, lparam):
         """WM_MOUSE* 的 lparam → 屏幕坐标（多屏负坐标也正确）。"""
@@ -708,12 +718,16 @@ if IS_WINDOWS:
         if msg == WM_NCHITTEST:
             if role in (2, 4, 5):      # 演示底图 / 选区边框 / 提示条：全穿透
                 return HTTRANSPARENT
-            if role == 0 and _ACTIVE is not None:   # 标签窗：仅 ? 徽章可点
+            if role == 0 and _ACTIVE is not None:   # 标签窗：仅 ? 徽章 / 价格文本可点
                 pt = wintypes.POINT(ctypes.c_short(lparam & 0xFFFF).value,
                                     ctypes.c_short((lparam >> 16) & 0xFFFF).value)
                 _user32.ScreenToClient(hwnd, ctypes.byref(pt))
-                return HTCLIENT if _ACTIVE.hit_badge(pt.x, pt.y) is not None \
+                if _ACTIVE.hit_badge(pt.x, pt.y) is not None:
+                    return HTCLIENT
+                return HTCLIENT if _ACTIVE.hit_price(pt.x, pt.y) is not None \
                     else HTTRANSPARENT
+            if role == 7:              # R309 价格详情卡：整窗可点
+                return HTCLIENT
             if role == 6:              # 口径选单：整窗可点（SetCapture 点外关闭）
                 return HTCLIENT
             if role == 1 and _ACTIVE is not None:   # 控制条：仅两个 XP 按钮可点
@@ -768,9 +782,26 @@ if IS_WINDOWS:
                     idx = _ACTIVE.hit_badge(x, y)
                     if idx is not None:
                         _ACTIVE.toggle_menu(idx)
+                    else:
+                        pidx = _ACTIVE.hit_price(x, y)
+                        if pidx is not None:
+                            _ACTIVE.toggle_detail(pidx)     # R309：点价格看详情
                 except Exception as exc:            # 选单链路异常不能炸消息循环
                     log_exc("[scan] badge click", exc)
                 return 0
+        if role == 7 and _ACTIVE is not None:
+            # R309 价格详情卡：卡片有 SetCapture，点卡外（客户端坐标越界）即关闭
+            if msg == WM_LBUTTONDOWN:
+                x = ctypes.c_short(lparam & 0xFFFF).value
+                y = ctypes.c_short((lparam >> 16) & 0xFFFF).value
+                w, h = _ACTIVE.detail_size
+                if not (0 <= x < w and 0 <= y < h):
+                    _ACTIVE.close_detail()
+                return 0
+            if msg == WM_RBUTTONDOWN:
+                _ACTIVE.close_detail()
+                return 0
+            return 0
         if role == 6 and _ACTIVE is not None:
             if msg == WM_MOUSEMOVE:
                 # 光标在菜单上 → 取消收起定时器（让悬停弹窗保持）
@@ -1190,7 +1221,8 @@ if IS_WINDOWS:
 
     def render_labels(region_w: int, region_h: int, matches: list, mode_key: str,
                       tiers: list | None = None, extra_bottom: int = 0,
-                      badges_out: list | None = None, tier_basis: str = "overall"):
+                      badges_out: list | None = None, tier_basis: str = "overall",
+                      prices_out: list | None = None):
         """价格标签位图（R249）：第 1 行留空（装备名那一行），第 2 行整体价、
         第 3 行单格价；**两行右端都对齐装备名最右侧的字**。
 
@@ -1208,6 +1240,8 @@ if IS_WINDOWS:
 
         `badges_out`：传入 list 时收集每件歧义物品的 ? 徽章矩形（画布坐标，
         R253 徽章可点击弹口径选单用）：[(match 序号, (x0, y0, x1, y1)), …]。
+        `prices_out`：传入 list 时收集**价格文本**的可点击矩形（R309 点价格弹详情），
+        格式同上；只画徽章不报价的歧义物品不收集。
         """
         from PIL import Image, ImageDraw
 
@@ -1301,6 +1335,14 @@ if IS_WINDOWS:
                 badges_out.append((orig_of.get(id(m), pos),
                                    (int(lx), int(by), int(lx + d), int(by + d))))
 
+            def _price_rect(lx, ly, lw, size):
+                """R309：价格文本的可点击矩形（点一下弹物品详情小卡）。"""
+                if prices_out is None:
+                    return
+                prices_out.append((orig_of.get(id(m), pos),
+                                   (int(lx), int(ly) - 2,
+                                    int(lx + lw), int(ly + size * 1.25))))
+
             if start_y + total_h <= limit:
                 if amb:
                     # R256：歧义物品只画 ? 徽章（不画价格）；悬停徽章弹窗列出候选口径+价
@@ -1311,6 +1353,8 @@ if IS_WINDOWS:
                     _draw_price_line(dr, (x1, start_y), line1, fk, tier, fs, cart, soft,
                                      cart_kind, img, trader_portrait_id(m))
                     _draw_price_line(dr, (x2, start_y + step), line2, fk, tier, fs2)
+                    _price_rect(x1, start_y, w1, fs)
+                    _price_rect(x2, start_y + step, w2, fs2)
             elif next_top is None and ay - total_h - gap >= 0:
                 # 屏幕下沿兜底：下方没空间就画在名字上方（不会碰到下一行）
                 top = ay - total_h - gap
@@ -1322,6 +1366,8 @@ if IS_WINDOWS:
                     _draw_price_line(dr, (x1, top), line1, fk, tier, fs, cart, soft,
                                      cart_kind, img, trader_portrait_id(m))
                     _draw_price_line(dr, (x2, top + step), line2, fk, tier, fs2)
+                    _price_rect(x1, top, w1, fs)
+                    _price_rect(x2, top + step, w2, fs2)
             else:
                 # 行距太密（相邻两件贴得很近）：退化为名字右侧单行，绝不压字
                 inline = main + (" · 单格 " + slot_txt if slot_txt != "—" else "")
@@ -1337,6 +1383,7 @@ if IS_WINDOWS:
                     _badge_rect(ix, ay, fs2)
                     _draw_price_line(dr, (ix, ay), inline, fk, tier, fs2, cart, soft,
                                      cart_kind, img, trader_portrait_id(m))
+                    _price_rect(ix, ay, iw, fs2)
         return img
 
     # ---- R249：项目现成的 XP Luna 按钮皮肤（assets/xp-ui/btn-*.png） ----
@@ -1576,6 +1623,160 @@ if IS_WINDOWS:
             y += row_h
         return img, rects
 
+    # ---- R309：点价格 → 紧凑详情卡（三档价 + 7 日曲线） ----
+
+    def render_detail_card(m: dict, mode_idx: int, points: list | None,
+                           status: str = "", scale: float = 1.0):
+        """单件物品详情：名称 + 最新/24h/7日价 + 近 7 天曲线（贴价格弹出的紧凑卡）。
+
+        `points` 为 /api/price-history 的 [[iso, lastLow, avg24h], …]；
+        None=正在加载；空列表=无历史。曲线画 lastLow（与「最新价格」同口径）。
+        返回位图（RGBA）。
+        """
+        from PIL import Image, ImageDraw
+
+        s = max(1.0, min(2.0, scale))
+        fs = max(10, int(round(11 * s)))
+        f = _font("msyh", fs)
+        fv = _font("segoeuib", fs)
+        title_fs = max(11, int(round(12 * s)))
+        ft = _font("msyh", title_fs)
+        pad = max(6, int(round(8 * s)))
+        w = max(216, int(round(232 * s)))
+        title_h = max(19, int(round(21 * s)))
+        row_h = max(15, int(round(17 * s)))
+        chart_h = max(46, int(round(56 * s)))
+        note_h = max(12, int(round(13 * s)))
+        p = (m or {}).get("price") or {}
+        fields = (("最新价格", "lastLow"), ("24小时均价", "avg24h"), ("7日均价", "avg7d"))
+        # 商人价 / 基础价兜底说明（跳蚤三档都是 —）：只占一行小字
+        note = ""
+        if all(not isinstance(p.get(k), (int, float)) for _lbl, k in fields):
+            fallback = p.get("trader") or p.get("traderSell") or p.get("base")
+            if isinstance(fallback, (int, float)) and fallback > 0:
+                note = ("商人/基础价 " + fmt_short(fallback)
+                        + ("（按商人收购价）" if p.get("priceSource") == "trader" else ""))
+        h = title_h + pad // 2 + row_h * 3 + (note_h + 4 if note else 0) + chart_h + pad // 2
+        w = max(w, int(round(216 * s)))
+        img = Image.new("RGBA", (w, h + 2), (0, 0, 0, 0))
+        dr = ImageDraw.Draw(img)
+        # 阴影 + 白底 + Luna 蓝边
+        dr.rounded_rectangle([2, 2, w - 1, h + 1], radius=3, fill=(0, 0, 0, 70))
+        dr.rounded_rectangle([0, 0, w - 3, h - 1], radius=3,
+                             fill=(255, 255, 255, 250),
+                             outline=(122, 150, 214, 255), width=1)
+        # 标题条：物品名（超长截断）
+        dr.rounded_rectangle([1, 1, w - 4, title_h], radius=2,
+                             fill=(91, 125, 191, 255))
+        name = str((m or {}).get("name") or (m or {}).get("text") or "物品")
+        max_name = w - pad * 2 - 3
+        shown = name
+        while shown and dr.textlength(shown, font=ft) > max_name:
+            shown = shown[:-1]
+        if shown != name:
+            shown = shown[:-1] + "…"
+        dr.text((pad, (title_h - title_fs) // 2 - 1), shown, font=ft,
+                fill=(255, 255, 255, 248))
+        y = title_h + pad // 2
+        for idx, (label, key) in enumerate(fields):
+            if idx == int(mode_idx):
+                dr.rounded_rectangle([4, y - 1, w - 7, y + row_h - 2], radius=2,
+                                     fill=(219, 231, 251, 255))
+            dr.text((pad, y + (row_h - fs) // 2 - 1), label, font=f,
+                    fill=(70, 74, 80, 245))
+            value = p.get(key)
+            txt = fmt_short(value)
+            vw = dr.textlength(txt, font=fv)
+            dr.text((w - pad - vw - 3, y + (row_h - fs) // 2 - 1), txt, font=fv,
+                    fill=(28, 34, 44, 250) if isinstance(value, (int, float)) else (160, 160, 156, 240))
+            y += row_h
+        if note:
+            # ₽ 雅黑缺字形：按「₽」拆开，符号换 Segoe UI Bold 画，其余中文仍用雅黑
+            nx = pad
+            pieces = note.split("₽")
+            for i, part in enumerate(pieces):
+                if part:
+                    dr.text((nx, y + 1), part, font=f, fill=(120, 116, 104, 245))
+                    nx += dr.textlength(part, font=f)
+                if i < len(pieces) - 1:
+                    dr.text((nx + fs * 0.2, y + 1), "₽", font=fv,
+                            fill=(120, 116, 104, 245))
+                    nx += dr.textlength("₽", font=fv) + fs * 0.2
+            y += note_h + 4
+        # 曲线区
+        x0, x1 = pad, w - pad - 3
+        y0, y1 = y + 2, y + chart_h - 2
+        dr.rectangle([x0, y0, x1, y1], outline=(224, 228, 235, 255))
+        dr.text((x0 + 3, y0 + 1), "近 7 天", font=f, fill=(150, 154, 160, 245))
+        vals = []
+        for pt in points or []:
+            try:
+                v = pt[1]
+            except (TypeError, IndexError):
+                v = None
+            if isinstance(v, (int, float)) and not isinstance(v, bool) and v > 0:
+                vals.append(float(v))
+        if points is None:
+            msg = "曲线加载中…"
+            dr.text((x0 + 3, (y0 + y1) / 2 - fs * 0.7), msg, font=f,
+                    fill=(150, 154, 160, 245))
+        elif len(vals) < 2:
+            dr.text((x0 + 3, (y0 + y1) / 2 - fs * 0.7), "无历史曲线", font=f,
+                    fill=(150, 154, 160, 245))
+        else:
+            lo, hi = min(vals), max(vals)
+            span = (hi - lo) or 1.0
+            top, bot = y0 + 14, y1 - 12
+            for frac in (0.0, 0.5, 1.0):
+                gy = top + (bot - top) * frac
+                dr.line([(x0 + 1, gy), (x1 - 1, gy)], fill=(238, 241, 246, 255))
+            n = len(vals)
+            if n > 80:                       # 30 分钟一个点，7 天 300+ 个；抽稀后曲线更干净
+                step = (n - 1) / 79.0
+                vals = [vals[int(round(i * step))] for i in range(80)]
+                n = 80
+            pts_px = []
+            for i, v in enumerate(vals):
+                px = x0 + 2 + (x1 - x0 - 4) * (i / max(1, n - 1))
+                py = bot - (bot - top) * ((v - lo) / span)
+                pts_px.append((px, py))
+            dr.line(pts_px, fill=(58, 110, 200, 255), width=max(1, int(round(s))))
+            lx, ly = pts_px[-1]
+            r = max(2, int(round(2 * s)))
+            dr.ellipse([lx - r, ly - r, lx + r, ly + r], fill=(58, 110, 200, 255))
+            dr.text((x0 + 3, bot + 1), fmt_short(lo), font=fv, fill=(150, 154, 160, 240))
+            hw = dr.textlength(fmt_short(hi), font=fv)
+            dr.text((x1 - 3 - hw, y0 + 1), fmt_short(hi), font=fv, fill=(150, 154, 160, 240))
+        return img
+
+    def fetch_price_history(server: str | None, mode: str, item_id: str,
+                            days: int = 7, timeout: float = 8.0):
+        """向 BFF 要单件历史曲线（会员接口）；返回 (points, status)。
+
+        失败不抛：返回 ([], 原因)，详情卡仍显示三档价。
+        """
+        import urllib.error
+        import urllib.parse
+        import urllib.request
+
+        if not server or not item_id:
+            return [], "no-server"
+        url = (server.rstrip("/") + "/api/price-history?mode="
+               + urllib.parse.quote(str(mode or "regular"))
+               + "&itemId=" + urllib.parse.quote(str(item_id))
+               + "&days=" + str(int(days)))
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        try:
+            with opener.open(url, timeout=timeout) as r:
+                doc = json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            return [], "http-%s" % exc.code
+        except Exception as exc:  # noqa: BLE001 - 网络失败只影响曲线
+            return [], "%s: %s" % (type(exc).__name__, exc)
+        row = ((doc.get("series") or {}).get(str(item_id)) or {})
+        pts = row.get("points") or []
+        return (pts if isinstance(pts, list) else []), ("ok" if pts else "empty")
+
 
 class NativeSelection:
     """R247 · ShareX 式原生选区窗（热键零抓屏、零 HTTP、零浏览器）。
@@ -1774,6 +1975,7 @@ class OverlaySession:
         self.labels_hwnd = create_overlay_window(0)
         self.ctrl_hwnd = create_overlay_window(1)
         self.menu_hwnd = create_overlay_window(6)   # R253 口径选单
+        self.detail_hwnd = create_overlay_window(7)  # R309 价格详情卡
         self.btn_gamemode = None
         self.btn_basis = None
         self.btn_close = None
@@ -1784,9 +1986,16 @@ class OverlaySession:
         self._tracking = False
         self._badge_tracking = False        # 悬停定时器用的 TrackMouseEvent 武装状态
         self.badges: list = []               # R253：[(match_idx, 徽章矩形画布坐标)]
+        self.prices: list = []               # R309：[(match_idx, 价格文本矩形画布坐标)]
         self.menu_for: int | None = None     # 打开选单的 match 序号
         self.menu_rows: list = []            # 选单行矩形（菜单窗客户坐标）
         self.menu_pinned = False             # True=点击打开（常驻）；False=悬停打开（自动收起）
+        self.detail_for: int | None = None   # R309：打开详情卡的 match 序号
+        self.detail_pos = (0, 0)
+        self.detail_size = (0, 0)
+        self._detail_points: list | None = None
+        self._detail_status = ""
+        self._detail_cache: dict = {}        # (mode, item_id) → (points, status)
         # R256：会员态**只认 BFF 的权威快照**（宿主进程读不到本机内存里的会员态）。
         # 启动时拉一次；拉不到按本机 config 兜底；仍失败=非会员（按钮灰）。
         self.member = fetch_member_state(server, config_dir)
@@ -1869,6 +2078,88 @@ class OverlaySession:
                 return idx
         return None
 
+    # ---- R309：价格点击 → 物品详情卡（三档价 + 7 日曲线） ----
+
+    def hit_price(self, x: int, y: int) -> int | None:
+        """标签窗客户坐标命中哪段价格文本 → match 序号；没命中 → None。"""
+        for idx, rect in self.prices:
+            x0, y0, x1, y1 = rect
+            if x0 <= x < x1 and y0 <= y < y1:
+                return idx
+        return None
+
+    def toggle_detail(self, idx: int) -> None:
+        if self.detail_for == idx:
+            self.close_detail()
+        else:
+            self.open_detail(idx)
+
+    def close_detail(self) -> None:
+        if self.detail_for is None:
+            return
+        self.detail_for = None
+        self._detail_points = None
+        self._detail_status = ""
+        _user32.ReleaseCapture()
+        _user32.ShowWindow(self.detail_hwnd, SW_HIDE)
+
+    def open_detail(self, idx: int) -> None:
+        m = self.matches[idx] if 0 <= idx < len(self.matches) else None
+        if not m:
+            return
+        self.close_menu()
+        iid = str(m.get("id") or "")
+        mode = self.game_mode_code
+        cached = self._detail_cache.get((mode, iid))
+        points, status = cached if cached is not None else (None, "loading")
+        img = render_detail_card(m, self.mode_idx, points, status, self.ui_scale)
+        sw, sh = screen_size()
+        r = self._rect or (0, 0, 0, 0)
+        anchor = next((rect for i, rect in self.prices if i == idx), None)
+        if anchor:
+            px = r[0] + anchor[2] + 6
+            py = r[1] + anchor[1] - 6
+            if px + img.width > sw - 4:
+                px = r[0] + anchor[0] - img.width - 6
+        else:
+            px, py = r[0] + 20, r[1] + 20
+        px = max(4, min(px, sw - img.width - 4))
+        py = max(4, min(py, sh - img.height - 4))
+        self.detail_for = idx
+        self._detail_points = points
+        self._detail_status = status
+        self.detail_pos = (px, py)
+        self.detail_size = img.size
+        set_layered_bitmap(self.detail_hwnd, img, px, py)
+        _user32.ShowWindow(self.detail_hwnd, SW_SHOWNOACTIVATE)
+        _topmost(self.detail_hwnd)
+        _user32.SetCapture(ctypes.c_void_p(self.detail_hwnd))   # 点卡外 → 关闭
+        if cached is None and iid:
+            threading.Thread(target=_detail_worker,
+                             args=(self._server, mode, iid, idx, _DETAIL_RESULTS),
+                             daemon=True).start()
+
+    def apply_detail_history(self, idx: int, item_id: str, points: list,
+                             status: str) -> None:
+        """后台线程取回曲线后由主循环回填（窗口操作只在主线程做）。"""
+        if self.detail_for != idx:
+            return
+        m = self.matches[idx] if 0 <= idx < len(self.matches) else None
+        if not m or str(m.get("id") or "") != str(item_id):
+            return
+        self._detail_points = points
+        self._detail_status = status
+        self._detail_cache[(self.game_mode_code, str(item_id))] = (points, status)
+        img = render_detail_card(m, self.mode_idx, points, status, self.ui_scale)
+        sw, sh = screen_size()
+        px, py = self.detail_pos
+        px = max(4, min(px, sw - img.width - 4))
+        py = max(4, min(py, sh - img.height - 4))
+        self.detail_pos = (px, py)
+        self.detail_size = img.size
+        set_layered_bitmap(self.detail_hwnd, img, px, py)
+        _topmost(self.detail_hwnd)
+
     def toggle_menu(self, idx: int) -> None:
         """点击徽章：悬停已打开的先钉住（而不是关掉），钉住后再点才关闭。"""
         if self.menu_for == idx and self.menu_pinned:
@@ -1882,6 +2173,7 @@ class OverlaySession:
         cands = ambig_candidates(m)
         if not cands:
             return
+        self.close_detail()          # R309：口径选单与价格详情卡互斥
         # 菜单字号与识别标签字号解耦：标签行高跟随游戏截图分辨率（1080p/2K 下可达 40+），
         # 沿用它会让 10 个候选撑出接近整屏的弹窗。菜单按屏幕与候选数自适应，
         # 上限 16px；仍放不下就继续缩字号，但不裁剪候选（行号要与 cands 一一对应）。
@@ -2045,7 +2337,9 @@ class OverlaySession:
 
     def close(self) -> None:
         self.close_menu()
-        for hwnd in (self.labels_hwnd, self.ctrl_hwnd, self.menu_hwnd):
+        self.close_detail()
+        for hwnd in (self.labels_hwnd, self.ctrl_hwnd, self.menu_hwnd,
+                     self.detail_hwnd):
             try:
                 _user32.DestroyWindow(hwnd)
             except Exception:
@@ -2058,7 +2352,8 @@ class OverlaySession:
         import overlay as _ov
 
         return not (_ov.is_alive(self.labels_hwnd) and _ov.is_alive(self.ctrl_hwnd)
-                    and _ov.is_alive(self.menu_hwnd))
+                    and _ov.is_alive(self.menu_hwnd)
+                    and _ov.is_alive(self.detail_hwnd))
 
     def _redraw(self) -> None:
         sw, sh = screen_size()
@@ -2071,12 +2366,15 @@ class OverlaySession:
         extra = int(label_base_font(self.matches) * 2.6) + 10
         extra = max(0, min(extra, sh - (ry + rh), 600))
         badges: list = []
+        prices: list = []
         labels = render_labels(rw, rh, self.matches, PRICE_MODES[self.mode_idx][0],
                                load_label_tiers(self._config_dir, member=self.member),
                                extra_bottom=extra,
                                badges_out=badges,
-                               tier_basis=load_tier_basis(self._config_dir))
+                               tier_basis=load_tier_basis(self._config_dir),
+                               prices_out=prices)
         self.badges = badges                  # R253：? 徽章命中区随位图更新
+        self.prices = prices                  # R309：价格文本命中区（点一下看详情）
         set_layered_bitmap(self.labels_hwnd, labels, rx, ry)
         self._place_control(rx, ry, rw, rh, sw, sh)
         for hwnd in (self.labels_hwnd, self.ctrl_hwnd):
@@ -2088,6 +2386,21 @@ class OverlaySession:
         if self.menu_for is not None:
             _user32.ShowWindow(self.menu_hwnd, SW_SHOWNOACTIVATE)
             _topmost(self.menu_hwnd)
+        # R309：详情卡开着时，切换价格口径 / 重绘要同步刷新卡里的高亮与曲线
+        if self.detail_for is not None:
+            m = (self.matches[self.detail_for]
+                 if 0 <= self.detail_for < len(self.matches) else None)
+            if m:
+                img = render_detail_card(m, self.mode_idx, self._detail_points,
+                                         self._detail_status, self.ui_scale)
+                px, py = self.detail_pos
+                px = max(4, min(px, sw - img.width - 4))
+                py = max(4, min(py, sh - img.height - 4))
+                self.detail_pos = (px, py)
+                self.detail_size = img.size
+                set_layered_bitmap(self.detail_hwnd, img, px, py)
+                _user32.ShowWindow(self.detail_hwnd, SW_SHOWNOACTIVATE)
+                _topmost(self.detail_hwnd)
 
 
 def scan_profile_dir(profile_dir: str | None = None) -> str:
@@ -2700,6 +3013,14 @@ def watch_native(server: str, hotkey, config_dir: str | None):
                     log_exc("浮窗创建失败", exc)
             else:
                 log("没有识别到物品")
+
+        while _DETAIL_RESULTS:
+            idx, item_id, pts, status = _DETAIL_RESULTS.pop(0)
+            if sess is not None:
+                try:
+                    sess.apply_detail_history(idx, item_id, pts, status)
+                except Exception as exc:  # noqa: BLE001 - 回填失败只影响曲线
+                    log_exc("[scan] detail history", exc)
 
         if sess is not None and sess.dead():
             sess = None
