@@ -58,12 +58,40 @@ def test_collision_lists_every_distinct_item():
 
 
 def test_same_item_duplicated_by_two_ids_is_not_a_collision():
-    """同一件物品重复录入（全名完全相同）不能算歧义——否则满屏都是「?」。"""
+    """同一件物品重复录入（全名与价格都几乎相同）不能算歧义——否则满屏都是「?」。"""
     cat = _catalog()
     cat["dup_of_a"] = dict(cat[KEY_A])          # 同名的第二条 id
     snap = {"avg7d": {"values": {}}}
     rows = serve._ocr_name_collision([KEY_A, "dup_of_a"], cat, {}, {}, snap)
-    assert len(rows) == 1, "同名多 id 应折叠成一条"
+    assert len(rows) == 1, "同名同价多 id 应折叠成一条"
+
+
+def test_same_full_name_but_different_price_kept_as_candidates():
+    """R309：全名相同但价格差很大（文件包两代/海报变体）不能折叠，否则静默选错。"""
+    cat = _catalog()
+    cat["dup_of_a_cheap"] = dict(cat[KEY_A], p={"b": 10000})
+    rows = serve._ocr_name_collision([KEY_A, "dup_of_a_cheap"], cat, {}, {},
+                                     {"avg7d": {"values": {}}})
+    assert len(rows) == 2, "同名不同价必须保留两个候选供玩家选"
+    assert {r["id"] for r in rows} == {KEY_A, "dup_of_a_cheap"}
+
+
+def test_annotate_collision_keeps_price_for_same_full_name():
+    """同名同全名的数据变体：报价 + ?（priceSpread=1.0），别把价格换成纯问号。"""
+    best = {"name": "文件包", "price": {"lastLow": 118000}}
+    collided = [{"name": "文件包", "perSlot": 59000},
+                {"name": "文件包", "perSlot": 83734}]
+    serve._ocr_annotate_collision(best, collided)
+    assert best["ambiguous"] is True and best["candidates"] == collided
+    assert best["priceSpread"] == 1.0
+
+
+def test_annotate_collision_keeps_spread_for_distinct_names():
+    best = {"name": "钥匙卡", "price": {"lastLow": 458453}}
+    collided = [{"name": "蓝色记号钥匙卡", "perSlot": 298989},
+                {"name": "钥匙卡收纳盒", "perSlot": 458453}]
+    serve._ocr_annotate_collision(best, collided)
+    assert best["priceSpread"] > 1.5, "不同全名仍按真实价差，只画 ? 不报价"
 
 
 def test_single_candidate_is_not_ambiguous():

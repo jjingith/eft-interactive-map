@@ -1552,6 +1552,7 @@ if IS_WINDOWS:
 
         XP Luna 弹出菜单风格：白底、Luna 蓝边框、深蓝标题条「选择口径」；
         每行 = 圆点(当前推断口径实心蓝) + 物品名 + 右对齐精确卢布价。
+        R309：`current_name` 传入**物品 id**（同名不同 id 的候选靠 id 区分圆点）。
         返回 (位图, 行矩形列表)（菜单客户坐标），供点击命中。
         """
         from PIL import Image, ImageDraw
@@ -1598,7 +1599,7 @@ if IS_WINDOWS:
             rects.append((0, y, w - 3, y + row_h))
             cy = y + row_h // 2
             # 当前推断（price.name）实心蓝点，否则浅灰空心圈
-            cur = bool(current_name) and name == current_name
+            cur = bool(current_name) and str(c.get("id") or name) == str(current_name)
             dot = (58, 110, 200, 255) if cur else (0, 0, 0, 0)
             if cur:
                 dr.ellipse([pad, cy - dot_r, pad + dot_r * 2, cy + dot_r], fill=dot)
@@ -2181,7 +2182,8 @@ class OverlaySession:
         fs = max(10, min(16, int(round(13 * self.ui_scale))))
         item_hit = bool((m or {}).get("ambiguous")) and not p.get("ambiguous")
         title = "选择物品" if item_hit else "选择口径"
-        current = p.get("name") or (m or {}).get("name") or ""
+        # R309：按 id 标当前项（同名不同 id 的候选不会一起亮圆点）
+        current = str(p.get("pickedId") or (m or {}).get("id") or "")
         img, rows = render_menu(cands, fs, current, title)
         for _ in range(8):
             if img is None:

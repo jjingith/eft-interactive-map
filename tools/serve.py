@@ -713,6 +713,25 @@ def _ocr_variant_rank(name: str, disp: str, price: dict, per_slot) -> tuple:
     return (suffix, 0 if approx else 1, per_slot if per_slot is not None else -1)
 
 
+def _ocr_annotate_collision(best: dict, collided: list) -> None:
+    """把撞名候选写到 match 上，并算价差。
+
+    同名**不同物**（钥匙卡 / 收纳盒）价差大 → priceSpread 原样，浮窗只画 ?；
+    全名完全相同、只是数据里两代同名物品（文件包、海报…）→ 强制 1.0，
+    保留报价 + 挂 ?（用户可点开改选），否则整件物品会被一个问号替掉。
+    """
+    if len(collided) < 2:
+        return
+    best["ambiguous"] = True
+    best["candidates"] = collided
+    vals = [c["perSlot"] for c in collided
+            if isinstance(c["perSlot"], (int, float)) and c["perSlot"] > 0]
+    if len(vals) >= 2:
+        spread = round(max(vals) / min(vals), 2)
+        same_full = len({c.get("name") for c in collided}) == 1
+        best["priceSpread"] = 1.0 if same_full else spread
+
+
 def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
                         hist: dict, snap: dict) -> list:
     """同一个游戏内显示名对应多个**不同物品**时的候选清单。
@@ -722,9 +741,11 @@ def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
     于是白卡被显示成收纳盒的价格。这里把候选**按全名折叠**后返回，长度 ≥2 即
     说明该显示名确实歧义，调用方据此打「?」徽记并把候选价目写进 tooltip。
 
-    同一件物品重复录入（全名完全相同）折叠成一条，取每格价最高的那条作代表。
+    同一件物品重复录入（全名与价格都几乎相同）折叠成一条，取每格价最高的那条作代表；
+    R309：全名相同但价格差很大 = 数据里两代/两个同名物品（文件包、女郎海报…），
+    不能折叠，否则会静默选错一个且没有「?」可选。
     """
-    by_name: dict[str, dict] = {}
+    groups: dict[str, list[dict]] = {}
     for iid in ids:
         rec = catalog.get(iid) or {}
         name = rec.get("n") or iid
@@ -745,10 +766,23 @@ def _ocr_name_collision(ids: list, catalog: dict, snap_items: dict,
                 "short": ocr.short_name_of(name), "gw": rec.get("gw"), "gh": rec.get("gh"),
                 "weight": rec.get("w"), "noFlea": bool(price.get("noFlea")),
                 "detail": price}
-        cur = by_name.get(name)
-        if cur is None or (cand["perSlot"] or -1) > (cur["perSlot"] or -1):
-            by_name[name] = cand
-    return sorted(by_name.values(),
+        bucket = groups.setdefault(name, [])
+        dup = None
+        for cur in bucket:
+            a, b = cur.get("perSlot"), per_slot
+            if a is None and b is None:
+                dup = cur
+                break
+            if (isinstance(a, (int, float)) and isinstance(b, (int, float))
+                    and a > 0 and b > 0 and max(a, b) / min(a, b) <= 1.05):
+                dup = cur
+                break
+        if dup is None:
+            bucket.append(cand)
+        elif (cand["perSlot"] or -1) > (dup["perSlot"] or -1):
+            bucket[bucket.index(dup)] = cand
+    flat = [c for bucket in groups.values() for c in bucket]
+    return sorted(flat,
                   key=lambda c: -(c["perSlot"] if c["perSlot"] is not None else -1))
 
 
@@ -3413,15 +3447,7 @@ def build_handler(root: str, tracker: PositionTracker, follower: eftlog.LogFollo
                 # 弹药有自己的通道（口径歧义 / 弹药包形态），这里不掺和，避免双重标注。
                 if not ammo_kind:
                     collided = _ocr_name_collision(ids, catalog, snap_items, hist, snap)
-                    if len(collided) > 1:
-                        best["ambiguous"] = True
-                        best["candidates"] = collided
-                        # 候选价差：浮窗据此决定「只画徽章不报价」还是「报价 + 徽章」。
-                        # 差价很小的同名组（同款不同色）不该被剥掉价格。
-                        vals = [c["perSlot"] for c in collided
-                                if isinstance(c["perSlot"], (int, float)) and c["perSlot"] > 0]
-                        if len(vals) >= 2:
-                            best["priceSpread"] = round(max(vals) / min(vals), 2)
+                    _ocr_annotate_collision(best, collided)
                 if ammo_kind == "loose" and not _ocr_apply_ammo_stack(
                         best, catalog, ammo_qty, ammo_found):
                     ammo_kind = None       # 没取到商人收购价，保留原结果
