@@ -1398,10 +1398,26 @@ if IS_WINDOWS:
         dr.line([(x0 + 1, y0 + 1), (x1 - 2, y0 + 1)], fill=(255, 255, 255, 235))
         dr.line([(x0 + 1, y0 + 1), (x0 + 1, y1 - 2)], fill=(255, 255, 255, 235))
 
+    def _paint_status_field(img, box):
+        """只读金额栏：XP 凹面（暗线在上/左、亮线在下/右），不做按钮高光，
+        避免玩家误以为可以点。"""
+        from PIL import ImageDraw
+
+        x0, y0, x1, y1 = box
+        dr = ImageDraw.Draw(img)
+        dr.rectangle([x0, y0, x1 - 1, y1 - 1], fill=(250, 249, 242, 246),
+                     outline=(128, 126, 116, 255))
+        dr.line([(x0 + 1, y0 + 1), (x1 - 2, y0 + 1)], fill=(170, 166, 152, 230))
+        dr.line([(x0 + 1, y0 + 1), (x0 + 1, y1 - 2)], fill=(170, 166, 152, 230))
+        dr.line([(x0 + 2, y1 - 2), (x1 - 2, y1 - 2)], fill=(255, 255, 255, 235))
+        dr.line([(x1 - 2, y0 + 2), (x1 - 2, y1 - 2)], fill=(255, 255, 255, 235))
+
     def render_control(gamemode_label: str, basis_label: str, scale: float = 1.0,
                        hover: str | None = None, pressed: str | None = None,
-                       member: bool = True):
+                       member: bool = True, total_label: str = ""):
         """R256：**三个分开的 XP Luna 按钮** [切换模式][价格切换][✕关闭]，中间全透明间隔。
+        R309：`total_label` 非空时，在最左侧「切换模式」按钮边上加一块只读总价值栏；
+        它不参与 hit_button（鼠标照样穿透），只用来一眼看总价。
 
         顺序（左→右）严格按需求：价格切换按钮的左侧是「切换模式」按钮。
         返回 (位图, gamemode矩形, basis矩形, close矩形)（客户坐标）。
@@ -1414,15 +1430,31 @@ if IS_WINDOWS:
         f = _font("msyh", fs)
         pad = max(5, int(6 * s))
         h = max(22, int(round(24 * s)))
+        gap = max(3, int(round(4 * s)))     # 两键之间的透明间隔：真的是三个按钮
+
+        def _chip_text_w(text: str) -> float:
+            """金额栏文本宽：末尾 ₽ 雅黑没有字形，按 Segoe UI Bold 单独量。"""
+            body, rub = (text[:-1], "₽") if text.endswith("₽") else (text, "")
+            w = dr_len(body, f) if body else 0.0
+            if rub:
+                w += dr_len(rub, _font("segoeuib", fs)) + fs * 0.10
+            return w
+
+        total_w = 0
+        if total_label:
+            total_w = int(round(_chip_text_w(total_label))) + pad * 2
         gm_w = int(round(dr_len(gamemode_label, f))) + pad * 2 + 6
         basis_w = int(round(dr_len(basis_label, f))) + pad * 2 + 6
         close_w = h
-        gap = max(3, int(round(4 * s)))     # 两键之间的透明间隔：真的是三个按钮
-        w = gm_w + gap + basis_w + gap + close_w
+        x = (total_w + gap) if total_w else 0
+        w = x + gm_w + gap + basis_w + gap + close_w
         img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-        rect_gm = (0, 0, gm_w, h)
-        rect_basis = (gm_w + gap, 0, gm_w + gap + basis_w, h)
-        rect_close = (gm_w + gap + basis_w + gap, 0, w, h)
+        rect_total = (0, 0, total_w, h) if total_w else None
+        rect_gm = (x, 0, x + gm_w, h)
+        rect_basis = (x + gm_w + gap, 0, x + gm_w + gap + basis_w, h)
+        rect_close = (x + gm_w + gap + basis_w + gap, 0, w, h)
+        if rect_total:
+            _paint_status_field(img, rect_total)
         for key, rect in (("gamemode", rect_gm), ("basis", rect_basis),
                           ("close", rect_close)):
             state = ("normal" if not member and key in ("gamemode", "basis")
@@ -1432,6 +1464,17 @@ if IS_WINDOWS:
         dr = ImageDraw.Draw(img)
         ink_off = (150, 154, 160, 235)
         ink_on = (24, 24, 24, 245)
+        if rect_total:
+            # ₽ 用 Segoe UI Bold：雅黑缺少该字形，直接画会变豆腐块
+            body, rub = ((total_label[:-1], "₽") if total_label.endswith("₽")
+                         else (total_label, ""))
+            tx, ty = rect_total[0] + pad, (h - fs) / 2 - 1
+            if body:
+                dr.text((tx, ty), body, font=f, fill=(28, 34, 44, 245))
+                tx += dr.textlength(body, font=f)
+            if rub:
+                dr.text((tx + fs * 0.10, ty), rub, font=_font("segoeuib", fs),
+                        fill=(28, 34, 44, 245))
         tw_gm = dr.textlength(gamemode_label, font=f)
         dr.text((rect_gm[0] + (gm_w - tw_gm) / 2, (h - fs) / 2 - 1), gamemode_label,
                 font=f, fill=ink_off if not member else ink_on)
@@ -1782,6 +1825,30 @@ class OverlaySession:
     def mode_label(self) -> str:
         return PRICE_MODES[self.mode_idx][1]
 
+    def total_value_text(self) -> str:
+        """控制条上的「总价值」：本次识别所有装备当前显示价之和。
+
+        口径与浮窗价格严格同源（price_base，散装弹已是整堆价）。
+        只画 ? 的歧义物品没有可靠价，不计入并被标成 ≈（总额只是已知下限）。
+        """
+        key = PRICE_MODES[self.mode_idx][0]
+        total = 0.0
+        has = False
+        partial = False
+        for m in self.matches:
+            if is_ambig_price(m):
+                partial = True
+                continue
+            base = price_base(m, key)
+            if (isinstance(base, (int, float)) and not isinstance(base, bool)
+                    and math.isfinite(base) and base > 0):
+                total += float(base)
+                has = True
+            else:
+                partial = True
+        amount = fmt_short(total if has else 0)
+        return "总价值 " + ("≈ " if (has and partial) else "") + amount
+
     def hit_button(self, x: int, y: int) -> str | None:
         """客户坐标落在哪个 XP 按钮上（键之间的透明间隔不响应点击）。"""
         for key, rect in (("gamemode", self.btn_gamemode), ("basis", self.btn_basis),
@@ -1920,7 +1987,8 @@ class OverlaySession:
                        sw: int, sh: int) -> None:
         ctrl, rect_gm, rect_basis, rect_close = render_control(
             self.game_mode_label, self.mode_label, self.ui_scale,
-            self._hover, self._pressed, member=self.member)
+            self._hover, self._pressed, member=self.member,
+            total_label=self.total_value_text())
         self.btn_gamemode = rect_gm
         self.btn_basis = rect_basis
         self.btn_close = rect_close
